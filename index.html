@@ -69,9 +69,16 @@ nav a:hover::after, nav a.on::after { transform: scaleX(1); }
 .btn.danger:hover { border-color: var(--fg); color: var(--fg); }
 
 /* hero */
-.hero { position: relative; min-height: 460px; display: flex; align-items: flex-end; border-bottom: 1px solid var(--line); overflow: hidden; }
+.hero { position: relative; min-height: 460px; display: grid; grid-template-columns: minmax(0, 1fr); border-bottom: 1px solid var(--line); overflow: hidden; }
+.hslide { grid-area: 1 / 1; position: relative; display: flex; align-items: flex-end; opacity: 0; visibility: hidden; transition: opacity .6s ease, visibility 0s linear .6s; }
+.hslide.on { opacity: 1; visibility: visible; transition: opacity .7s ease .6s, visibility 0s linear .6s; }
+.hslide::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, #000 4%, rgba(0,0,0,.25) 60%, rgba(0,0,0,.65)); }
+.hdots { position: absolute; z-index: 3; left: 50%; bottom: 8px; transform: translateX(-50%); display: flex; gap: 4px; }
+.hdots button { background: none; border: 0; padding: 10px 4px; cursor: pointer; }
+.hdots button::before { content: ""; display: block; width: 28px; height: 3px; background: #555; transition: background .3s, width .3s var(--ease); }
+.hdots button:hover::before { background: #aaa; }
+.hdots button.on::before { background: var(--fg); width: 40px; }
 .hero .bg { position: absolute; inset: 0; background-size: cover; background-position: center top; opacity: .6; animation: kenburns 24s ease-in-out infinite alternate; }
-.hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, #000 4%, rgba(0,0,0,.25) 60%, rgba(0,0,0,.65)); }
 .hero .wrap { position: relative; z-index: 1; padding-block: 48px; width: 100%; }
 .hero .tags, .hero h1, .hero p, .hero .row { animation: riseIn .7s var(--ease) both; }
 .hero h1 { animation-delay: .08s; }
@@ -266,7 +273,7 @@ body.admin .admin-only { display: revert !important; }
 
   /* accueil */
   .hero { min-height: 0; }
-  .hero .wrap { padding-top: 150px; padding-bottom: 28px; }
+  .hero .wrap { padding-top: 150px; padding-bottom: 40px; }
   .hero h1 { font-size: 44px; margin-bottom: 12px; }
   .hero p { margin-bottom: 20px; font-size: 15px; }
   .section-head { padding-top: 28px; padding-bottom: 14px; }
@@ -552,7 +559,39 @@ function emptyBox(title, text, btn) {
   return '<div class="wrap"><div class="empty"><h1>' + title + '</h1><p>' + text + '</p>' + (btn || "") + '</div></div>';
 }
 
+/* Carrousel de l'accueil : les 5 derniers ajouts, changement toutes les 10 s en fondu */
+var heroTimer = null;
+function heroSlide(h, on) {
+  return '<div class="hslide' + (on ? " on" : "") + '"><div class="bg" style="background-image:url(\'' + esc(h.backdrop || h.poster) + '\')"></div><div class="wrap">' +
+    '<div class="tags">' + (langLabel(h) ? '<span class="lang">' + esc(langLabel(h)) + '</span>' : '') + [isMovie(h) ? "Film" : "Série", h.year, (h.genres || []).slice(0, 3).join(" / ")].filter(Boolean).map(function (t) { return "<span>" + esc(t) + "</span>"; }).join("") + '</div>' +
+    '<h1>' + esc(h.name) + '</h1><p>' + esc(h.overview || "") + '</p>' +
+    '<div class="row"><button class="btn" data-watch="' + esc(h.id) + '">Regarder</button><a class="btn ghost" href="#/serie/' + esc(h.id) + '">Voir la fiche</a></div></div></div>';
+}
+function startHero() {
+  clearInterval(heroTimer); heroTimer = null;
+  var hero = document.querySelector(".hero"); if (!hero) return;
+  var slides = Array.prototype.slice.call(hero.querySelectorAll(".hslide"));
+  var dots = Array.prototype.slice.call(hero.querySelectorAll(".hdots button"));
+  if (slides.length < 2) return;
+  var cur = 0;
+  function go(n) {
+    cur = (n + slides.length) % slides.length;
+    slides.forEach(function (s, k) { s.classList.toggle("on", k === cur); });
+    dots.forEach(function (d, k) { d.classList.toggle("on", k === cur); });
+  }
+  function arm() {
+    clearInterval(heroTimer);
+    heroTimer = setInterval(function () {
+      if (!document.body.contains(hero)) { clearInterval(heroTimer); heroTimer = null; return; }
+      if (!document.hidden) go(cur + 1);
+    }, 10000);
+  }
+  dots.forEach(function (d) { d.addEventListener("click", function () { go(+d.dataset.i); arm(); }); });
+  arm();
+}
+
 function viewHome() {
+  clearInterval(heroTimer); heroTimer = null;
   var app = $("#app");
   if (!db.length) {
     app.innerHTML = ADMIN ?
@@ -563,14 +602,13 @@ function viewHome() {
   var list = sortedDb();
   var tv = list.filter(function (s) { return !isMovie(s); });
   var mv = list.filter(isMovie);
-  var h = list[0];
-  var html = '<section class="hero"><div class="bg" style="background-image:url(\'' + esc(h.backdrop || h.poster) + '\')"></div><div class="wrap">' +
-    '<div class="tags">' + (langLabel(h) ? '<span class="lang">' + esc(langLabel(h)) + '</span>' : '') + [isMovie(h) ? "Film" : "Série", h.year, (h.genres || []).slice(0, 3).join(" / ")].filter(Boolean).map(function (t) { return "<span>" + esc(t) + "</span>"; }).join("") + '</div>' +
-    '<h1>' + esc(h.name) + '</h1><p>' + esc(h.overview || "") + '</p>' +
-    '<div class="row"><button class="btn" data-watch="' + esc(h.id) + '">Regarder</button><a class="btn ghost" href="#/serie/' + esc(h.id) + '">Voir la fiche</a></div></div></section>';
+  var picks = list.slice(0, 5);
+  var html = '<section class="hero">' + picks.map(function (h, k) { return heroSlide(h, k === 0); }).join("") +
+    (picks.length > 1 ? '<div class="hdots">' + picks.map(function (h, k) { return '<button type="button" data-i="' + k + '" class="' + (k === 0 ? "on" : "") + '" aria-label="Diapositive ' + (k + 1) + '"></button>'; }).join("") + '</div>' : '') + '</section>';
   html += rail("Derniers ajouts", list);
   if (tv.length && mv.length) html += rail("Séries", tv, "#/series") + rail("Films", mv, "#/films");
   $("#app").innerHTML = html;
+  startHero();
 }
 
 function viewList(title, pred) {
