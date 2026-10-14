@@ -109,6 +109,17 @@ nav a:hover::after, nav a.on::after { transform: scaleX(1); }
   .card:hover .poster img { transform: scale(1.05); filter: brightness(.75); }
 }
 .card:active .poster { transform: scale(.97); border-color: var(--fg); }
+.poster .lang, .tags .lang { font-family: var(--mono); font-weight: 500; text-transform: uppercase; letter-spacing: .06em; background: var(--fg); color: var(--bg); line-height: 1; white-space: nowrap; }
+.poster .lang { position: absolute; z-index: 1; top: 8px; left: 8px; font-size: 10px; padding: 4px 6px; }
+.tags .lang { font-size: 12px; padding: 5px 8px; font-weight: 700; }
+.tags .lang::before, .tags .lang + span::before { content: none !important; }
+.langpick { display: flex; gap: 10px; flex-wrap: wrap; }
+.chk { cursor: pointer; display: inline-flex; }
+.chk input { position: absolute; opacity: 0; pointer-events: none; }
+.chk i { font-style: normal; font-family: var(--mono); font-size: 13px; letter-spacing: .06em; border: 1px solid var(--line); padding: 9px 16px; color: var(--dim); transition: color .2s, border-color .2s, background .2s; }
+.chk input:checked + i { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+.chk input:focus-visible + i { outline: 2px solid var(--fg); outline-offset: 3px; }
+label.f > span.lbl, .f > span.lbl { display: block; font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: var(--dim); margin-bottom: 6px; }
 .poster .ph { position: absolute; inset: 0; display: grid; place-items: center; font-family: var(--display); font-size: 64px; font-weight: 900; color: #2a2a2a; }
 .card .meta { padding-top: 10px; }
 .card .meta b { display: block; font-weight: 500; font-size: 15px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
@@ -401,6 +412,7 @@ function normalize(s) {
   if (!s) return s;
   if (!s.type) s.type = "tv";
   if (!Array.isArray(s.sources)) s.sources = [];
+  if (!Array.isArray(s.langs)) s.langs = [];
   autoNameAll(s.sources);
   if (s.type === "movie" && !s.sources.length && s.link) s.sources = [{ name: hostName(s.link), url: s.link }];
   (s.seasons || []).forEach(function (se) {
@@ -509,7 +521,12 @@ function card(s, i) {
   var meta = [s.type === "movie" ? "Film" : "", s.year, s.rating ? "★ " + s.rating : ""].filter(Boolean).join("  ·  ");
   return '<a class="card" style="--i:' + Math.min(i || 0, 14) + '" href="#/serie/' + esc(s.id) + '"><div class="poster">' +
     (s.poster ? '<img loading="lazy" src="' + esc(s.poster) + '" alt="' + esc(s.name) + '">' : '<div class="ph">' + esc(s.name.charAt(0)) + '</div>') +
-    '</div><div class="meta"><b>' + esc(s.name) + '</b><span>' + esc(meta) + '</span></div></a>';
+    (langLabel(s) ? '<span class="lang">' + esc(langLabel(s)) + '</span>' : '') + '</div><div class="meta"><b>' + esc(s.name) + '</b><span>' + esc(meta) + '</span></div></a>';
+}
+/* Langue : VOSTFR, VF ou VOSTFR + VF */
+function langLabel(s) {
+  var l = (s && s.langs) || [];
+  return ["VOSTFR", "VF"].filter(function (x) { return l.indexOf(x) > -1; }).join(" + ");
 }
 function sortedDb() { return db.slice().sort(function (a, b) { return (b.addedAt || 0) - (a.addedAt || 0); }); }
 function isMovie(s) { return s.type === "movie"; }
@@ -535,7 +552,7 @@ function viewHome() {
   var mv = list.filter(isMovie);
   var h = list[0];
   var html = '<section class="hero"><div class="bg" style="background-image:url(\'' + esc(h.backdrop || h.poster) + '\')"></div><div class="wrap">' +
-    '<div class="tags">' + [isMovie(h) ? "Film" : "Série", h.year, (h.genres || []).slice(0, 3).join(" / ")].filter(Boolean).map(function (t) { return "<span>" + esc(t) + "</span>"; }).join("") + '</div>' +
+    '<div class="tags">' + (langLabel(h) ? '<span class="lang">' + esc(langLabel(h)) + '</span>' : '') + [isMovie(h) ? "Film" : "Série", h.year, (h.genres || []).slice(0, 3).join(" / ")].filter(Boolean).map(function (t) { return "<span>" + esc(t) + "</span>"; }).join("") + '</div>' +
     '<h1>' + esc(h.name) + '</h1><p>' + esc(h.overview || "") + '</p>' +
     '<div class="row"><button class="btn" data-watch="' + esc(h.id) + '">Regarder</button><a class="btn ghost" href="#/serie/' + esc(h.id) + '">Voir la fiche</a></div></div></section>';
   html += rail("Derniers ajouts", list);
@@ -584,7 +601,7 @@ function viewSerie(id) {
   }
   var html = '<section class="detail"><div class="bg" style="background-image:url(\'' + esc(s.backdrop || s.poster) + '\')"></div><div class="wrap">' +
     '<div class="poster">' + (s.poster ? '<img src="' + esc(s.poster) + '" alt="' + esc(s.name) + '">' : '<div class="ph">' + esc(s.name.charAt(0)) + '</div>') + '</div>' +
-    '<div><div class="tags">' + tags.map(function (t) { return "<span>" + esc(t) + "</span>"; }).join("") + '</div>' +
+    '<div><div class="tags">' + (langLabel(s) ? '<span class="lang">' + esc(langLabel(s)) + '</span>' : '') + tags.map(function (t) { return "<span>" + esc(t) + "</span>"; }).join("") + '</div>' +
     '<h1>' + esc(s.name) + '</h1>' + (s.original_name && s.original_name !== s.name ? '<div class="orig">' + esc(s.original_name) + '</div>' : '<div class="orig"></div>') +
     '<p class="ov">' + esc(s.overview || "Pas de synopsis.") + '</p>' +
     '<div class="row"><button class="btn" data-watch="' + esc(s.id) + '">Regarder</button>' + (ADMIN ? '<a class="btn ghost" href="#/modifier/' + esc(s.id) + '">Modifier</a><button class="btn danger" data-del="' + esc(s.id) + '">Supprimer</button>' : '') + '</div>' + srcChips +
@@ -641,7 +658,7 @@ var draft = null;
 var results = [];
 
 function blank(type) {
-  return { id: (type === "movie" ? "m" : "c") + Date.now(), type: type, name: "", original_name: "", year: "", overview: "", genres: [], rating: "", status: "", runtime: "", poster: "", backdrop: "", cast: [], seasons: [], sources: [], addedAt: Date.now() };
+  return { id: (type === "movie" ? "m" : "c") + Date.now(), type: type, name: "", original_name: "", year: "", overview: "", genres: [], rating: "", status: "", runtime: "", poster: "", backdrop: "", cast: [], seasons: [], sources: [], langs: [], addedAt: Date.now() };
 }
 
 function viewEditor(id) {
@@ -701,6 +718,7 @@ function renderEditor() {
     '<label class="f"><span>Note /10</span><input type="text" data-f="rating" value="' + esc(d.rating) + '"></label>' +
     '<label class="f"><span>Statut</span><input type="text" data-f="status" value="' + esc(d.status) + '"></label>' +
     (movie ? '<label class="f"><span>Durée (minutes)</span><input type="text" data-f="runtime" value="' + esc(d.runtime) + '"></label>' : '') + '</div>' +
+    '<div class="f"><span class="lbl">Langue affichée sur la fiche</span><div class="langpick">' + ["VOSTFR", "VF"].map(function (L) { return '<label class="chk"><input type="checkbox" data-lang="' + L + '"' + ((d.langs || []).indexOf(L) > -1 ? " checked" : "") + '><i>' + L + '</i></label>'; }).join("") + '</div></div>' +
     '<label class="f"><span>Genres (séparés par une virgule)</span><input type="text" data-f="genres" value="' + esc((d.genres || []).join(", ")) + '"></label>' +
     '<label class="f"><span>Synopsis</span><textarea data-f="overview">' + esc(d.overview) + '</textarea></label>' +
     '<div class="two"><label class="f"><span>Affiche (URL)</span><input type="url" data-f="poster" value="' + esc(d.poster) + '"></label>' +
@@ -735,6 +753,7 @@ function pickMovie(id, old) {
     });
     if (old) {
       draft.sources = old.sources || [];
+      draft.langs = old.langs || [];
       draft.addedAt = old.addedAt || draft.addedAt;
       toast("Fiche mise à jour, tes sources sont conservées");
     } else {
@@ -1011,6 +1030,12 @@ document.addEventListener("input", function (e) {
     return;
   }
   if (!draft) return;
+  if (t.dataset.lang) {
+    var set = (draft.langs || []).filter(function (x) { return x !== t.dataset.lang; });
+    if (t.checked) set.push(t.dataset.lang);
+    draft.langs = set;
+    return;
+  }
   if (t.dataset.f) {
     var f = t.dataset.f, val = t.value;
     if (f === "genres") draft.genres = val.split(",").map(function (x) { return x.trim(); }).filter(Boolean);
