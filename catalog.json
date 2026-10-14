@@ -1,0 +1,208 @@
+[
+  {
+    "id": "293607",
+    "type": "tv",
+    "name": "100 jours en espionne",
+    "original_name": "100일의 거짓말",
+    "year": "2026",
+    "overview": "En quête de liberté, la meilleure pickpocket de Séoul infiltre le gouvernement colonial japonais pour lui dérober des secrets, mais tombe amoureuse du fils de sa cible.",
+    "genres": [
+      "Action & Adventure",
+      "Drame"
+    ],
+    "rating": "9.0",
+    "status": "Returning Series",
+    "poster": "https://image.tmdb.org/t/p/w500/wf7l8ZfGGkOKcQGF3Htt5DDhBxD.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/3SvKCITqMtjgPIhFBjRc4yTAc4H.jpg",
+    "cast": [
+      {
+        "name": "Kim You-jung",
+        "character": "Lee Ga-gyeong"
+      },
+      {
+        "name": "Jinyoung",
+        "character": "Kim Tae-woong / Hideo Sato"
+      },
+      {
+        "name": "김현주",
+        "character": "Yu So-ran"
+      },
+      {
+        "name": "Lee Mu-saeng",
+        "character": "Yu Philip"
+      },
+      {
+        "name": "Jin Sun-kyu",
+        "character": "Shinichi Sato"
+      },
+      {
+        "name": "Seo Jeong-yeon",
+        "character": "Ryu Gwan-sil / Yanagi"
+      },
+      {
+        "name": "Kiko Oi",
+        "character": "Hanako Sato"
+      },
+      {
+        "name": "박정연",
+        "character": "Kim Myeong-nam"
+      },
+      {
+        "name": "이선",
+        "character": "Lee Young-bok"
+      },
+      {
+        "name": "김인권",
+        "character": "Han Cheol-ryong"
+      },
+      {
+        "name": "최덕문",
+        "character": "Kwak Woon-hak"
+      },
+      {
+        "name": "이도군",
+        "character": "Jang Jeong-yeop"
+      }
+    ],
+    "seasons": [
+      {
+        "number": 1,
+        "name": "Saison 1",
+        "episodes": [
+          {
+            "number": 1,
+            "name": "Épisode 1",
+            "overview": "Pickpocket Lee Ga-gyeong has just one goal — to flee colonial Joseon. But she soon ends up unexpectedly entangled with the Korean independence movement.",
+            "air_date": "2026-10-10",
+            "sources": [
+              {
+                "name": "VIDARA",
+                "url": "https://vidara.to/e/2TgyEgZCFGobY"
+              },
+              {
+                "name": "UQLOAD",
+                "url": "https://uqload.vc/embed-vzlzv64p907n.html"
+              }
+            ]
+          },
+          {
+            "number": 2,
+            "name": "Épisode 2",
+            "overview": "Ga-gyeong's language skills shock Yoo Philip and Yoo So-ran. Meanwhile, Kim Tae-ung's insistence that Ga-gyeong return his wallet raises her suspicions.",
+            "air_date": "2026-10-11",
+            "sources": [
+              {
+                "name": "VIDARA",
+                "url": "https://vidara.to/e/5thkvKklZ5I2D"
+              },
+              {
+                "name": "UQLOAD",
+                "url": "https://uqload.vc/embed-z1zyz49djtuq.html"
+              }
+            ]
+          },
+          {
+            "number": 3,
+            "name": "Épisode 3",
+            "overview": "",
+            "air_date": "2026-10-17",
+            "sources": []
+          },
+          {
+            "number": 4,
+            "name": "Épisode 4",
+            "overview": "",
+            "air_date": "2026-10-18",
+            "sources": []
+          },
+          {
+            "number": 5,
+            "name": "Épisode 5",
+            "overview": "",
+            "air_date": "2026-10-24",
+            "sources": []
+          },
+          {
+            "number": 6,
+            "name": "Épisode 6",
+            "overview": "",
+            "air_date": "2026-10-25",
+            "sources": []
+          },
+          {
+            "number": 7,
+            "name": "Épisode 7",
+            "overview": "",
+            "air_date": "2026-10-31",
+            "sources": []
+          },
+          {
+            "number": 8,
+            "name": "Épisode 8",
+            "overview": "",
+            "air_date": "2026-11-01",
+            "sources": []
+          },
+          {
+            "number": 9,
+            "name": "Épisode 9",
+            "overview": "",
+            "air_date": "2026-11-07",
+            "sources": []
+          },
+          {
+            "number": 10,
+            "name": "Épisode 10",
+            "overview": "",
+            "air_date": "2026-11-08",
+            "sources": []
+          },
+          {
+            "number": 11,
+            "name": "Épisode 11",
+            "overview": "",
+            "air_date": "2026-11-14",
+            "sources": []
+          },
+          {
+            "number": 12,
+            "name": "Épisode 12",
+            "overview": "",
+            "air_date": "2026-11-15",
+            "sources": []
+          },
+          {
+            "number": 13,
+            "name": "Épisode 13",
+            "overview": "",
+            "air_date": "2026-11-21",
+            "sources": []
+          },
+          {
+            "number": 14,
+            "name": "Épisode 14",
+            "overview": "",
+            "air_date": "2026-11-22",
+            "sources": []
+          },
+          {
+            "number": 15,
+            "name": "Épisode 15",
+            "overview": "",
+            "air_date": "2026-11-28",
+            "sources": []
+          },
+          {
+            "number": 16,
+            "name": "Épisode 16",
+            "overview": "",
+            "air_date": "2026-11-29",
+            "sources": []
+          }
+        ]
+      }
+    ],
+    "sources": [],
+    "addedAt": 1792016935358
+  }
+]
