@@ -70,8 +70,8 @@ nav a:hover::after, nav a.on::after { transform: scaleX(1); }
 
 /* hero */
 .hero { position: relative; min-height: 460px; display: grid; grid-template-columns: minmax(0, 1fr); border-bottom: 1px solid var(--line); overflow: hidden; }
-.hslide { grid-area: 1 / 1; position: relative; display: flex; align-items: flex-end; opacity: 0; visibility: hidden; transition: opacity .6s ease, visibility 0s linear .6s; }
-.hslide.on { opacity: 1; visibility: visible; transition: opacity .7s ease .6s, visibility 0s linear .6s; }
+.hslide { grid-area: 1 / 1; position: relative; display: flex; align-items: flex-end; opacity: 0; visibility: hidden; transition: opacity .25s ease, visibility 0s linear .25s; }
+.hslide.on { opacity: 1; visibility: visible; transition: opacity .3s ease .25s, visibility 0s linear .25s; }
 .hslide::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, #000 4%, rgba(0,0,0,.25) 60%, rgba(0,0,0,.65)); }
 .hdots { position: absolute; z-index: 3; left: 50%; bottom: 8px; transform: translateX(-50%); display: flex; gap: 4px; }
 .hdots button { background: none; border: 0; padding: 10px 4px; cursor: pointer; }
