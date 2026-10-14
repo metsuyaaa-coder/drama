@@ -203,7 +203,10 @@
       }
     ],
     "sources": [],
-    "addedAt": 1792016398551
+    "addedAt": 1792016398551,
+    "langs": [
+      "VOSTFR"
+    ]
   },
   {
     "id": "275102",
@@ -374,7 +377,11 @@
       }
     ],
     "sources": [],
-    "addedAt": 1792017932096
+    "addedAt": 1792017932096,
+    "langs": [
+      "VOSTFR",
+      "VF"
+    ]
   },
   {
     "id": "293610",
@@ -553,6 +560,209 @@
       }
     ],
     "sources": [],
-    "addedAt": 1792018030964
+    "addedAt": 1792018030964,
+    "langs": [
+      "VOSTFR"
+    ]
+  },
+  {
+    "id": "278573",
+    "type": "tv",
+    "name": "Perfect Crown",
+    "original_name": "21세기 대군부인",
+    "year": "2026",
+    "overview": "Bienvenue en Corée du Sud, dans une monarchie constitutionnelle du 21e siècle où se mêlent tradition et modernité, et où le glamour masque une hiérarchie bien ancrée dans la société. Seong Hui-ju, cadette d'une riche famille et PDG talentueuse, a tout pour elle. Mais son statut de roturière lui vaut le mépris de l'élite. Lassée de la pression exercée par sa famille pour qu'elle se marie, Hui-ju prend son avenir en main. Après avoir rencontré le grand-prince Ian au banquet du roi, elle lui propose un mariage de convenance. Elle a tout, sauf un titre, et lui n'a justement que son titre. Ce couple du siècle parviendra-t-il à briser les barrières sociales pour forger son propre destin ?",
+    "genres": [
+      "Comédie",
+      "Drame"
+    ],
+    "rating": "9.0",
+    "status": "Ended",
+    "poster": "https://image.tmdb.org/t/p/w500/z6on6DbEKpE9gOr8lvjj3xebGtd.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/6ekykPwvAywJRjFEnUoCFWTO9O3.jpg",
+    "cast": [
+      {
+        "name": "IU",
+        "character": "Seong Hui-ju"
+      },
+      {
+        "name": "Byeon Woo-seok",
+        "character": "Grand Prince I-an"
+      },
+      {
+        "name": "Steve Sanghyun Noh",
+        "character": "Min Jeong-u"
+      },
+      {
+        "name": "Gong Seung-yeon",
+        "character": "Yun I-rang"
+      },
+      {
+        "name": "Yoo Su-bin",
+        "character": "Choi Hyeon"
+      },
+      {
+        "name": "Lee Yeon",
+        "character": "Do Hye-jeong"
+      }
+    ],
+    "seasons": [
+      {
+        "number": 1,
+        "name": "Saison 1",
+        "episodes": [
+          {
+            "number": 1,
+            "name": "Épisode 1",
+            "overview": "Cadette d'une famille riche et PDG accomplie, Seong Hui-ju est méprisée par la société à cause de ses origines roturières. Sa rencontre fortuite avec le grand-prince Ian à la fête d'anniversaire du roi tombe à pic : sa famille la poussant à se marie.",
+            "air_date": "2026-04-10",
+            "sources": [
+              {
+                "name": "VIDARA",
+                "url": "https://vidara.to/e/3QfRuU3eWf2pd"
+              }
+            ]
+          },
+          {
+            "number": 2,
+            "name": "Épisode 2",
+            "overview": "Leur entourage ne leur laisse aucun répit. Seong Hui-ju rencontre des prétendants choisis par sa famille et la reine douairière veut imposer une épouse au grand-prince Ian. Quand ils se retrouvent à un gala professionnel, Ian doit décider s'il veut participer aux manigances de Hui-ju.",
+            "air_date": "2026-04-11",
+            "sources": [
+              {
+                "name": "VIDARA",
+                "url": "https://vidara.to/e/eUMaYzaQipoBC"
+              }
+            ]
+          },
+          {
+            "number": 3,
+            "name": "Épisode 3",
+            "overview": "Alors que le grand-prince Ian et Seong Hui-ju se préparent à devenir le couple du siècle, un scandale ébranle la presse et la famille royale. La position implicite d'Ian sème le trouble, tandis que Hui-ju doit s'adapter à un tout nouvel environnement.",
+            "air_date": "2026-04-17",
+            "sources": [
+              {
+                "name": "VIDARA",
+                "url": "https://vidara.to/e/xgOueNVwmNOUW"
+              }
+            ]
+          },
+          {
+            "number": 4,
+            "name": "Épisode 4",
+            "overview": "Hui-ju s'installe chez le grand-prince Ian. Son franc-parler et son mépris de l'étiquette exaspèrent la dame de cour, Choi. Le grand-prince, lui, est amusé par ce vent de fraîcheur. Mais quelqu'un complote dans l'ombre pour empêcher Hui-ju d'entrer dans la famille royale.",
+            "air_date": "2026-04-18",
+            "sources": [
+              {
+                "name": "VIDARA",
+                "url": "https://vidara.to/e/EzQNWBlkb36Wp"
+              }
+            ]
+          },
+          {
+            "number": 5,
+            "name": "Épisode 5",
+            "overview": "Hanté par le passé, Ian hésite à révéler ses véritables sentiments à Seong Hui-ju, convaincu qu'il vaut mieux s'éloigner que risquer sa vie. La famille royale et le groupe Castle cherchent un responsable pour l'accident, tandis que Hui-ju mobilise son équipe pour faire la lumière sur les détails.",
+            "air_date": "2026-04-24",
+            "sources": [
+              {
+                "name": "VIDARA",
+                "url": "https://vidara.to/e/K1PgGFz1ZalgO"
+              }
+            ]
+          },
+          {
+            "number": 6,
+            "name": "Épisode 6",
+            "overview": "Le couple du siècle fait son grand retour. Sous les yeux de la foule, ils dansent une valse et se jurent un amour éternel. Mais leur promesse est-elle sincère ? Loin de l'agitation de la fête, ils se remémorent leur passé et le manque d'amour et d'approbation de leurs familles.",
+            "air_date": "2026-04-25",
+            "sources": [
+              {
+                "name": "VIDARA",
+                "url": "https://vidara.to/e/01pwhHhg0gn8e"
+              }
+            ]
+          },
+          {
+            "number": 7,
+            "name": "Épisode 7",
+            "overview": "Seong Hui-ju et le grand-prince Ian préparent leur mariage, mais un événement imprévu jette un froid sur leur relation que la reine douairière et le Premier ministre ne peuvent plus ignorer.",
+            "air_date": "2026-05-01",
+            "sources": [
+              {
+                "name": "VIDARA",
+                "url": "https://vidara.to/e/4JdlGj1dD8Ldt"
+              }
+            ]
+          },
+          {
+            "number": 8,
+            "name": "Épisode 8",
+            "overview": "La princesse du 21e siècle est enfin couronnée. Malheureusement, son ascension sociale ne fait pas que des heureux.",
+            "air_date": "2026-05-02",
+            "sources": [
+              {
+                "name": "VIDARA",
+                "url": "https://vidara.to/e/dpDMfNI88jG0b"
+              }
+            ]
+          },
+          {
+            "number": 9,
+            "name": "Épisode 9",
+            "overview": "À peine mariés, le grand-prince Ian et Hui-ju affrontent une série de crises politiques. L'opinion publique se déchaîne, et d'anciennes rumeurs refont surface. Leurs ennemis y voient une occasion de passer à l'acte.",
+            "air_date": "2026-05-08",
+            "sources": [
+              {
+                "name": "VIDARA",
+                "url": "https://vidara.to/e/LM71BZYML1U5k"
+              }
+            ]
+          },
+          {
+            "number": 10,
+            "name": "Épisode 10",
+            "overview": "Leur affection mutuelle est-elle devenue un poison ? Alors qu'ils peinent à être honnêtes, leur entourage essaie de gagner du temps. Mais une nouvelle ébranle la cour royale.",
+            "air_date": "2026-05-09",
+            "sources": [
+              {
+                "name": "VIDARA",
+                "url": "https://vidara.to/e/2z1IXUQrSyI1H"
+              }
+            ]
+          },
+          {
+            "number": 11,
+            "name": "Épisode 11",
+            "overview": "Une explosion, comme un écho du passé, ravage le pavillon royal. Tandis que Hui-ju protège le grand-prince et traque un ennemi dans l'ombre, le grand-prince ose enfin révéler un secret inavoué de longue date.",
+            "air_date": "2026-05-15",
+            "sources": [
+              {
+                "name": "VIDARA",
+                "url": "https://vidara.to/e/790VZKjrFjYYP"
+              }
+            ]
+          },
+          {
+            "number": 12,
+            "name": "Épisode 12",
+            "overview": "N'en déplaise aux plus pessimistes, aucun obstacle n'est insurmontable. Hui-ju et le prince Ian se dressent contre ceux qui ont imposé ces contraintes pour créer un monde où chacun est libre de poursuivre ses désirs.",
+            "air_date": "2026-05-16",
+            "sources": [
+              {
+                "name": "VIDARA",
+                "url": "https://vidara.to/e/KW1kJkCQK5RKC"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "sources": [],
+    "addedAt": 1792019052334,
+    "langs": [
+      "VOSTFR",
+      "VF"
+    ]
   }
 ]
