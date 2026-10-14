@@ -98,14 +98,17 @@ nav a:hover::after, nav a.on::after { transform: scaleX(1); }
 .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(168px, 1fr)); gap: 22px 16px; padding-bottom: 72px; }
 .rail-sec { padding-bottom: 12px; }
 #app > .rail-sec:last-child { padding-bottom: 72px; }
-.rail { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x proximity; padding-bottom: 12px; scrollbar-width: thin; scrollbar-color: #333 transparent; }
+.rail { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x proximity; scroll-padding-left: 16px; padding: 14px 16px 22px; margin: -14px -16px -10px; scrollbar-width: thin; scrollbar-color: #333 transparent; }
 .rail .card { flex: 0 0 168px; scroll-snap-align: start; }
 .card { display: block; min-width: 0; animation: cardIn .5s var(--ease) both; animation-delay: calc(var(--i, 0) * 45ms); }
 .poster { aspect-ratio: 2 / 3; background: var(--panel); border: 1px solid var(--line); overflow: hidden; position: relative; }
 .poster img { width: 100%; height: 100%; object-fit: cover; transition: transform .45s var(--ease), filter .35s ease; }
 .card .poster { transition: transform .35s var(--ease), border-color .3s, box-shadow .35s; }
-.card:hover .poster { transform: translateY(-5px); border-color: var(--fg); box-shadow: 0 12px 30px rgba(255,255,255,.08); }
-.card:hover .poster img { transform: scale(1.05); filter: brightness(.75); }
+@media (hover: hover) {
+  .card:hover .poster { transform: translateY(-5px); border-color: var(--fg); box-shadow: 0 12px 30px rgba(255,255,255,.08); }
+  .card:hover .poster img { transform: scale(1.05); filter: brightness(.75); }
+}
+.card:active .poster { transform: scale(.97); border-color: var(--fg); }
 .poster .ph { position: absolute; inset: 0; display: grid; place-items: center; font-family: var(--display); font-size: 64px; font-weight: 900; color: #2a2a2a; }
 .card .meta { padding-top: 10px; }
 .card .meta b { display: block; font-weight: 500; font-size: 15px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
@@ -225,21 +228,76 @@ body.admin .admin-only { display: revert !important; }
 .toast.show { opacity: 1; transform: translateX(-50%); }
 
 @media (max-width: 720px) {
-  header.top .wrap { gap: 10px 16px; flex-wrap: wrap; padding-block: 10px; }
-  nav { gap: 14px; font-size: 12px; }
-  .logo { font-size: 24px; }
-  .search { order: 3; width: 100%; margin-left: 0; }
-  .hero { min-height: 400px; }
-  .detail .wrap { grid-template-columns: minmax(0, 1fr); gap: 24px; padding-block: 32px; }
-  .detail .poster { max-width: 200px; }
-  .grid { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 18px 12px; }
-  .rail .card { flex-basis: 132px; }
-  .eprow { grid-template-columns: 30px minmax(0, 1fr); }
+  /* en-tête : logo à gauche, menu à droite, recherche pleine largeur dessous */
+  header.top .wrap { flex-wrap: wrap; gap: 6px 12px; min-height: 0; padding-top: 10px; padding-bottom: 12px; }
+  .logo { font-size: 26px; }
+  nav { margin-left: auto; gap: 18px; font-size: 12px; }
+  nav a { padding: 8px 0; }
+  .search { order: 3; flex: 1 0 100%; width: 100%; margin-left: 0; }
+  .search input { font-size: 16px; padding: 10px 12px; border: 1px solid var(--line); background: var(--panel); }
+  .search input:focus { border-color: var(--fg); }
+
+  /* boutons plus faciles à toucher */
+  .btn { min-height: 44px; padding: 10px 18px; }
+  .btn.small { min-height: 38px; padding: 8px 14px; }
+  .chip { padding: 8px 14px; }
+  .hero .row, .detail .row { gap: 10px; }
+  .hero .row .btn, .detail .row .btn { flex: 1 1 140px; }
+
+  /* accueil */
+  .hero { min-height: 0; }
+  .hero .wrap { padding-top: 150px; padding-bottom: 28px; }
+  .hero h1 { font-size: 44px; margin-bottom: 12px; }
+  .hero p { margin-bottom: 20px; font-size: 15px; }
+  .section-head { padding-top: 28px; padding-bottom: 14px; }
+  .section-head h2 { font-size: 24px; }
+  .listhead { padding-top: 28px; }
+  .listhead h1 { font-size: 44px; }
+  .rail { gap: 12px; scrollbar-width: none; }
+  .rail::-webkit-scrollbar { display: none; }
+  .rail .card { flex-basis: 128px; }
+  .grid { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 20px 12px; padding-bottom: 48px; }
+  .card .meta b { font-size: 14px; }
+  .card .meta span { font-size: 11px; }
+  #app > .rail-sec:last-child { padding-bottom: 48px; }
+
+  /* fiche */
+  .detail .wrap { grid-template-columns: minmax(0, 1fr); gap: 20px; padding-top: 24px; padding-bottom: 32px; }
+  .detail .poster { width: 150px; max-width: 150px; }
+  .detail h1 { font-size: 40px; }
+  .detail p.ov { font-size: 15px; margin-bottom: 20px; }
+  .cast { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); column-gap: 14px; }
+  .seasons { padding-bottom: 48px; }
+  details.season summary { font-size: 20px; padding: 16px 0; }
+  details.season summary:hover { padding-left: 0; }
+  .ep { grid-template-columns: 30px minmax(0, 1fr); gap: 4px 12px; }
+  .ep .act { grid-column: 2; flex-direction: row; align-items: center; gap: 12px; margin-top: 6px; }
+
+  /* éditeur */
+  .page { padding-top: 28px; padding-bottom: 64px; }
+  .findbox .btn { flex: 1 1 auto; }
+  .form { gap: 16px; }
+  .preview { grid-template-columns: 90px minmax(0, 1fr); }
+  .tpl { grid-template-columns: minmax(0, 1fr); }
+  .tpl .btn { width: 100%; }
+  .bulk { padding: 12px; }
+  .bulkrow .btn { flex: 1 1 auto; }
+  .epedit summary { padding: 12px; }
+  .eprow { grid-template-columns: 30px minmax(0, 1fr); padding: 8px 12px; }
   .eprow .t { grid-column: 2; }
   .eprow textarea { grid-column: 1 / -1; }
-  .tpl { grid-template-columns: minmax(0, 1fr); }
-  .preview { grid-template-columns: 90px minmax(0, 1fr); }
-  .phead b { max-width: 100%; }
+  .bar .btn { flex: 1 1 auto; }
+
+  /* lecteur */
+  dialog#player { width: 100vw; max-width: 100vw; border-left: 0; border-right: 0; }
+  .phead { padding: 10px 12px; gap: 8px; }
+  .phead b { max-width: 100%; flex: 1 0 100%; }
+  .srcs { flex: 1 0 100%; }
+  .phead .row { flex: 1 0 100%; gap: 8px; }
+  .phead .row .btn { flex: 1 1 auto; min-height: 38px; padding: 8px 6px; font-size: 11px; letter-spacing: .03em; }
+
+  /* pied de page */
+  footer .wrap { flex-direction: column; align-items: flex-start; gap: 12px; }
 }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
 </style>
@@ -625,7 +683,7 @@ function renderEditor() {
       d.seasons.map(function (se, i) {
         var filled = (se.episodes || []).filter(function (e) { return (e.sources || []).length; }).length;
         return '<details class="epedit"' + ((keepOpen != null ? i === keepOpen : i === 0) ? " open" : "") + '><summary>' + esc(se.name || "Saison " + se.number) + '<i>' + filled + "/" + (se.episodes || []).length + ' avec sources</i></summary>' +
-          '<div class="bulk"><label class="f"><span>Ajout en masse : un épisode par ligne, dans l\'ordre (plusieurs liens sur une ligne = plusieurs sources)</span><textarea data-bulkta="' + i + '" placeholder="https://uqload.vc/embed-xxxx.html&#10;https://uqload.vc/embed-yyyy.html&#10;https://uqload.vc/embed-zzzz.html"></textarea></label>' +
+          '<div class="bulk"><label class="f"><span>Ajout en masse : un épisode par ligne, dans l\'ordre. Les sources s\'ajoutent à celles qui existent déjà (un autre hébergeur = une source en plus)</span><textarea data-bulkta="' + i + '" placeholder="https://uqload.vc/embed-xxxx.html&#10;https://uqload.vc/embed-yyyy.html&#10;https://uqload.vc/embed-zzzz.html"></textarea></label>' +
           '<div class="bulkrow"><label class="f"><span>À partir de l\'épisode</span><input type="number" min="1" value="1" data-bulkfrom="' + i + '"></label><button class="btn ghost" type="button" data-bulk="' + i + '">Remplir la saison</button></div></div>' +
           (se.episodes || []).map(function (ep, j) {
             return '<div class="eprow"><span class="n">' + String(ep.number).padStart(2, "0") + '</span><span class="t">' + esc(ep.name || "") + '</span><textarea data-s="' + i + '" data-e="' + j + '" placeholder="Nom | lien (une source par ligne)" aria-label="Sources saison ' + esc(se.number) + ' épisode ' + esc(ep.number) + '">' + esc(srcToText(ep.sources)) + '</textarea></div>';
@@ -884,8 +942,15 @@ document.addEventListener("click", function (e) {
       var ep = eps[first + k]; if (!ep) return;
       var urls = line.match(/https?:\/\/[^\s;]+/g) || [];
       if (!urls.length) return;
-      if (urls.length === 1) ep.sources = textToSrc(line);
-      else ep.sources = numberDupes(urls.map(function (u) { return { name: hostName(u), url: u }; }));
+      var news = urls.length === 1 ? textToSrc(line) : urls.map(function (u) { return { name: hostName(u), url: u }; });
+      var cur2 = ep.sources || [];
+      news.forEach(function (ns) {
+        if (cur2.some(function (o) { return o.url === ns.url; })) return;
+        var same = cur2.filter(function (o) { return hostName(o.url) === hostName(ns.url); })[0];
+        if (same) same.url = ns.url;
+        else cur2.push(ns);
+      });
+      ep.sources = numberDupes(cur2);
       done++;
     });
     keepOpen = si; renderEditor(); keepOpen = null;

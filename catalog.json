@@ -78,10 +78,6 @@
               {
                 "name": "VIDARA",
                 "url": "https://vidara.to/e/2TgyEgZCFGobY"
-              },
-              {
-                "name": "UQLOAD",
-                "url": "https://uqload.vc/embed-vzlzv64p907n.html"
               }
             ]
           },
@@ -94,10 +90,6 @@
               {
                 "name": "VIDARA",
                 "url": "https://vidara.to/e/5thkvKklZ5I2D"
-              },
-              {
-                "name": "UQLOAD",
-                "url": "https://uqload.vc/embed-z1zyz49djtuq.html"
               }
             ]
           },
@@ -203,6 +195,348 @@
       }
     ],
     "sources": [],
-    "addedAt": 1792016935358
+    "addedAt": 1792016398551
+  },
+  {
+    "id": "275102",
+    "type": "tv",
+    "name": "The Scandal",
+    "original_name": "스캔들",
+    "year": "2026",
+    "overview": "Durant la période Joseon, une proposition secrète éveille les désirs d'une aristocrate talentueuse, d'un séducteur notoire et d'une jeune femme naïve prise au piège d'un jeu cruel.",
+    "genres": [
+      "Drame"
+    ],
+    "rating": "6.8",
+    "status": "Ended",
+    "poster": "https://image.tmdb.org/t/p/w500/8ra17h8Z3NX14qdWaOKn0scURJR.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/uc1p1PEbEMpdIHqnU9TESNC6Jhp.jpg",
+    "cast": [
+      {
+        "name": "Son Ye-jin",
+        "character": "Lady Cho"
+      },
+      {
+        "name": "Ji Chang-wook",
+        "character": "Cho Won"
+      },
+      {
+        "name": "Nana",
+        "character": "Ahn Hui-yeon"
+      },
+      {
+        "name": "Han Seon-hwa",
+        "character": "So-ok's Mom"
+      },
+      {
+        "name": "신윤하",
+        "character": "Lee So-ok"
+      },
+      {
+        "name": "강지은",
+        "character": "Lady Jeonggyeong"
+      },
+      {
+        "name": "권도균",
+        "character": "Chil-seong"
+      },
+      {
+        "name": "강찬희",
+        "character": "Kwon In-ho"
+      },
+      {
+        "name": "강명수",
+        "character": "Commander of the royal guard"
+      },
+      {
+        "name": "정기섭",
+        "character": "Left State Councillor"
+      },
+      {
+        "name": "채서진",
+        "character": "Mi-ok"
+      },
+      {
+        "name": "신소현",
+        "character": "Cho Yoon [Young]"
+      }
+    ],
+    "seasons": [
+      {
+        "number": 1,
+        "name": "Saison 1",
+        "episodes": [
+          {
+            "number": 1,
+            "name": "Épisode 1",
+            "overview": "Dame Cho dissimule son malaise lorsque le seigneur Yoo prend une concubine afin d'avoir un héritier. Elle écrit ensuite à son cousin Cho Won pour lui soumettre une idée.",
+            "air_date": "2026-09-18",
+            "sources": [
+              {
+                "name": "VIDARA",
+                "url": "https://vidara.to/e/o0KoP8VjByjK2"
+              }
+            ]
+          },
+          {
+            "number": 2,
+            "name": "Épisode 2",
+            "overview": "Dame Cho et le séducteur notoire Cho Won se lancent dans un jeu dangereux. Ils jettent leur dévolu sur une femme vertueuse qui pourrait bien ne pas céder si facilement.",
+            "air_date": "2026-09-18",
+            "sources": [
+              {
+                "name": "VIDARA",
+                "url": "https://vidara.to/e/p11nSozxWwKeC"
+              }
+            ]
+          },
+          {
+            "number": 3,
+            "name": "Épisode 3",
+            "overview": "Cho Won approche Hui-yeon, ce qui ravive son chagrin et met sa foi à l'épreuve. Il provoque ensuite Dame Cho avec une manœuvre qui pourrait lui donner l'avantage.",
+            "air_date": "2026-09-18",
+            "sources": [
+              {
+                "name": "VIDARA",
+                "url": "https://vidara.to/e/qLMR4mPCXnzcb"
+              }
+            ]
+          },
+          {
+            "number": 4,
+            "name": "Épisode 4",
+            "overview": "Cho Won a autrefois tenté d'oublier son désir pour Dame Cho en compagnie de courtisanes, sans succès. Alors qu’il cherche à séduire Hui-yeon, son masque commence à tomber.",
+            "air_date": "2026-09-18",
+            "sources": [
+              {
+                "name": "VIDARA",
+                "url": "https://vidara.to/e/FaM5h5snLtw3j"
+              }
+            ]
+          },
+          {
+            "number": 5,
+            "name": "Épisode 5",
+            "overview": "Dame Cho profite des sentiments secrets que So-ok éprouve pour un autre. En parallèle, des sentiments complexes submergent Cho Won alors que sa relation avec Hui-yeon s'intensifie.",
+            "air_date": "2026-09-18",
+            "sources": [
+              {
+                "name": "VIDARA",
+                "url": "https://vidara.to/e/N1BBIUNRZ8dLa"
+              }
+            ]
+          },
+          {
+            "number": 6,
+            "name": "Épisode 6",
+            "overview": "Dame Cho prévient Cho Won que le pari va entacher son honneur et la réputation de sa famille. Mais il jure d'aller jusqu'au bout, alors que des sentiments émergent.",
+            "air_date": "2026-09-18",
+            "sources": [
+              {
+                "name": "VIDARA",
+                "url": "https://vidara.to/e/bDv8gNdbM7FxT"
+              }
+            ]
+          },
+          {
+            "number": 7,
+            "name": "Épisode 7",
+            "overview": "Cho Won et Hui-yeon se rapprochent alors qu'ils profitent ensemble d'un bref répit à l'abri des regards. Mais un ordre royal vient perturber cette sérénité.",
+            "air_date": "2026-09-18",
+            "sources": [
+              {
+                "name": "VIDARA",
+                "url": "https://vidara.to/e/xLiCBKbni0sjq"
+              }
+            ]
+          },
+          {
+            "number": 8,
+            "name": "Épisode 8",
+            "overview": "Alors que leur pari échappe à tout contrôle, Dame Cho doit rendre des comptes à Cho Won et à Hui-yeon. Jusqu'où ira-t-elle pour mener son plan à bien ?",
+            "air_date": "2026-09-18",
+            "sources": [
+              {
+                "name": "VIDARA",
+                "url": "https://vidara.to/e/wQqaJbGvO4nOd"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "sources": [],
+    "addedAt": 1792017932096
+  },
+  {
+    "id": "293610",
+    "type": "tv",
+    "name": "Doctor X : Mafia en blouse blanche",
+    "original_name": "닥터X: 하얀 마피아의 시대",
+    "year": "2026",
+    "overview": "Kye Su-Jeong, une brillante chirurgienne, est affectée à l'hôpital universitaire de Guseo pour pourvoir un poste vacant en chirurgie. Elle y fait ses preuves grâce à son talent et met en lumière les absurdités du milieu médical. Elle se lie d'amitié avec Bu Seung-Kwon, le directeur de l'hôpital, et l'interne Park Tae-Kyeong",
+    "genres": [
+      "Mystère",
+      "Drame",
+      "Crime"
+    ],
+    "rating": "8.9",
+    "status": "Returning Series",
+    "poster": "https://image.tmdb.org/t/p/w500/xYFTiwC7Tl0xOUFiVFUPWXHTHnr.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/mDYIV71RL3mkaW8IfSGNthuVB7l.jpg",
+    "cast": [
+      {
+        "name": "Kim Ji-won",
+        "character": "Gye Su-jeong"
+      },
+      {
+        "name": "Lee Jung-eun",
+        "character": "Jeong Hee-sook"
+      },
+      {
+        "name": "Son Hyun-joo",
+        "character": "Bu Seung-gwon"
+      },
+      {
+        "name": "김우석",
+        "character": "Park Tae-Kyeong"
+      },
+      {
+        "name": "이진희",
+        "character": "Jo Won-jin"
+      },
+      {
+        "name": "Kim Young-min",
+        "character": "Do Yoon-sik"
+      },
+      {
+        "name": "Lee Sung-wook",
+        "character": "Bae Heung-gon"
+      },
+      {
+        "name": "Kwon Seung-woo",
+        "character": "Ma Seong-gyoo"
+      },
+      {
+        "name": "Heo Joon-seok",
+        "character": "Kim Seong-jin"
+      },
+      {
+        "name": "Kim Young-ah",
+        "character": "Lee Seon-ae"
+      },
+      {
+        "name": "최덕문",
+        "character": "Yang Eung-goo"
+      },
+      {
+        "name": "김정영",
+        "character": "Yoo Mi-kyeong"
+      }
+    ],
+    "seasons": [
+      {
+        "number": 1,
+        "name": "Saison 1",
+        "episodes": [
+          {
+            "number": 1,
+            "name": "Épisode 1",
+            "overview": "Lors de son premier jour à l'hôpital, Gye Su-jeong fait des vagues en se prononçant sur une opération à venir... qu'elle reprend en main quand une crise se déclenche.",
+            "air_date": "2026-10-09",
+            "sources": [
+              {
+                "name": "VIDARA",
+                "url": "https://vidara.to/e/yxmRmsmX4zOOn"
+              }
+            ]
+          },
+          {
+            "number": 2,
+            "name": "Épisode 2",
+            "overview": "Faced with two pancreatic cancer patients — a wealthy chairman and a teenager — hospital staff clash over who to prioritize. But Su-jeong wastes no time.",
+            "air_date": "2026-10-10",
+            "sources": [
+              {
+                "name": "VIDARA",
+                "url": "https://vidara.to/e/X8HN8WRXjyREk"
+              }
+            ]
+          },
+          {
+            "number": 3,
+            "name": "Épisode 3",
+            "overview": "",
+            "air_date": "2026-10-16",
+            "sources": []
+          },
+          {
+            "number": 4,
+            "name": "Épisode 4",
+            "overview": "",
+            "air_date": "2026-10-17",
+            "sources": []
+          },
+          {
+            "number": 5,
+            "name": "Épisode 5",
+            "overview": "",
+            "air_date": "2026-10-23",
+            "sources": []
+          },
+          {
+            "number": 6,
+            "name": "Épisode 6",
+            "overview": "",
+            "air_date": "2026-10-24",
+            "sources": []
+          },
+          {
+            "number": 7,
+            "name": "Épisode 7",
+            "overview": "",
+            "air_date": "2026-10-30",
+            "sources": []
+          },
+          {
+            "number": 8,
+            "name": "Épisode 8",
+            "overview": "",
+            "air_date": "2026-10-31",
+            "sources": []
+          },
+          {
+            "number": 9,
+            "name": "Épisode 9",
+            "overview": "",
+            "air_date": "2026-11-06",
+            "sources": []
+          },
+          {
+            "number": 10,
+            "name": "Épisode 10",
+            "overview": "",
+            "air_date": "2026-11-07",
+            "sources": []
+          },
+          {
+            "number": 11,
+            "name": "Épisode 11",
+            "overview": "",
+            "air_date": "2026-11-13",
+            "sources": []
+          },
+          {
+            "number": 12,
+            "name": "Épisode 12",
+            "overview": "",
+            "air_date": "2026-11-14",
+            "sources": []
+          }
+        ]
+      }
+    ],
+    "sources": [],
+    "addedAt": 1792018030964
   }
 ]
