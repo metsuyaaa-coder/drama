@@ -216,8 +216,17 @@ dialog#player[open]::backdrop { animation: fadeIn .3s ease both; }
 .phead { display: flex; align-items: center; gap: 12px; padding: 10px 14px; border-bottom: 1px solid var(--line); font-size: 14px; flex-wrap: wrap; }
 .phead b { font-weight: 500; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; max-width: 40%; }
 .srcs { display: flex; flex-wrap: wrap; gap: 6px; flex: 1; min-width: 0; }
-.pframe { aspect-ratio: 16 / 9; background: #050505; }
-.pframe iframe { width: 100%; height: 100%; border: 0; display: block; }
+.pframe { aspect-ratio: 16 / 9; background: #050505; position: relative; overflow: hidden; }
+.pstage { position: absolute; inset: 0; transform-origin: center center; }
+.pstage iframe { width: 100%; height: 100%; border: 0; display: block; }
+.fsbar, .fswake { display: none; }
+.pframe.fsui .fsbar { display: flex; align-items: center; gap: 6px; position: absolute; z-index: 6; top: calc(12px + env(safe-area-inset-top, 0px)); left: 50%; transform: translate(-50%, -10px); background: rgba(0,0,0,.82); border: 1px solid var(--line); padding: 6px 8px 6px 12px; opacity: 0; pointer-events: none; transition: opacity .25s, transform .3s var(--ease); backdrop-filter: blur(6px); }
+.pframe.fsui.bar .fsbar { opacity: 1; transform: translate(-50%, 0); pointer-events: auto; }
+.fsbar span { font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: var(--dim); margin-right: 4px; }
+.fsbar button { background: transparent; border: 1px solid var(--line); color: var(--dim); padding: 7px 12px; font-size: 12px; text-transform: uppercase; letter-spacing: .06em; cursor: pointer; border-radius: 0; transition: color .2s, background .2s, border-color .2s; }
+.fsbar button:hover { color: var(--fg); border-color: var(--dim); }
+.fsbar button.on { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+.pframe.fsui:not(.bar) .fswake { display: block; position: absolute; z-index: 5; top: 0; left: 0; right: 0; height: 56px; }
 .pframe:fullscreen { width: 100%; height: 100%; aspect-ratio: auto; background: #000; }
 .pframe:-webkit-full-screen { width: 100%; height: 100%; aspect-ratio: auto; background: #000; }
 dialog#player.wide { position: fixed; inset: 0; margin: 0; width: 100vw; max-width: 100vw; height: 100vh; height: 100dvh; max-height: none; border: 0; overflow: hidden; }
@@ -346,7 +355,11 @@ body.admin .admin-only { display: revert !important; }
 
 <dialog id="player">
   <div class="phead"><b id="ptitle"></b><span class="srcs" id="psrc"></span><span class="row"><button class="btn small ghost" id="pfull" type="button">Plein écran</button><a id="pext" class="btn small ghost" target="_blank" rel="noopener">Nouvel onglet</a><button class="btn small ghost" id="pclose" type="button">Fermer</button></span></div>
-  <div class="pframe" id="pframe"></div>
+  <div class="pframe" id="pframe">
+    <div class="pstage" id="pstage"></div>
+    <div class="fswake" id="fswake"></div>
+    <div class="fsbar" id="fsbar" role="group" aria-label="Format de la vidéo"><span>Format</span><button type="button" data-fit="normal">Normal</button><button type="button" data-fit="zoom">Zoom</button><button type="button" data-fit="stretch">Étirer</button></div>
+  </div>
 </dialog>
 <div class="toast" id="toast" role="status"></div>
 
@@ -842,7 +855,7 @@ function renderPlayer() {
   var s = cur.sources[cur.i], url = safeUrl(s.url);
   $("#ptitle").textContent = cur.title;
   $("#pext").href = url;
-  $("#pframe").innerHTML = '<iframe src="' + esc(url) + '" allowfullscreen webkitallowfullscreen mozallowfullscreen allow="autoplay; fullscreen; picture-in-picture; encrypted-media"></iframe>';
+  $("#pstage").innerHTML = '<iframe src="' + esc(url) + '" allowfullscreen webkitallowfullscreen mozallowfullscreen allow="autoplay; fullscreen; picture-in-picture; encrypted-media"></iframe>';
   $("#psrc").innerHTML = cur.sources.length > 1 ? cur.sources.map(function (x, k) {
     return '<button type="button" class="chip' + (k === cur.i ? " on" : "") + '" data-src="' + k + '">' + esc(x.name) + '</button>';
   }).join("") : "";
@@ -850,16 +863,16 @@ function renderPlayer() {
 function closePlayer() {
   var d = $("#player");
   if ((document.fullscreenElement || document.webkitFullscreenElement) && document.exitFullscreen) { try { document.exitFullscreen(); } catch (e) {} }
-  $("#pframe").innerHTML = ""; d.classList.remove("wide");
+  $("#pstage").innerHTML = ""; d.classList.remove("wide"); syncFs();
   if (d.close) d.close(); else d.removeAttribute("open");
 }
 function toggleFull() {
   var d = $("#player"), b = $("#pfull"), f = $("#pframe");
   var fsEl = document.fullscreenElement || document.webkitFullscreenElement;
   if (fsEl) { (document.exitFullscreen || document.webkitExitFullscreen).call(document); return; }
-  if (d.classList.contains("wide")) { d.classList.remove("wide"); b.textContent = "Plein écran"; return; }
+  if (d.classList.contains("wide")) { d.classList.remove("wide"); b.textContent = "Plein écran"; syncFs(); return; }
   var req = f.requestFullscreen || f.webkitRequestFullscreen;
-  var fallback = function () { d.classList.add("wide"); b.textContent = "Quitter le plein écran"; };
+  var fallback = function () { d.classList.add("wide"); b.textContent = "Quitter le plein écran"; syncFs(); };
   if (!req) { fallback(); return; }
   try {
     var p = req.call(f);
@@ -1047,11 +1060,75 @@ document.addEventListener("input", function (e) {
   }
 });
 
+
+/* ===== Plein écran : réglage du format (Normal / Zoom / Étirer), barre visible 5 s ===== */
+var FITKEY = "noir.fit", fitMode = "normal", barTimer = null, fsOn = false;
+try { var sf = localStorage.getItem(FITKEY); if (sf === "zoom" || sf === "stretch") fitMode = sf; } catch (e) {}
+
+function inFullscreen() {
+  var fsEl = document.fullscreenElement || document.webkitFullscreenElement;
+  return !!(fsEl && fsEl === $("#pframe")) || $("#player").classList.contains("wide");
+}
+/* L'iframe est cross-origin : on ne peut pas toucher à la vidéo, on étire donc l'iframe entière.
+   On suppose une vidéo 16:9 (cas normal) qui laisse des bandes noires dans l'iframe. */
+function applyFit() {
+  var st = $("#pstage"), fr = $("#pframe");
+  var on = inFullscreen(), W = fr.clientWidth, H = fr.clientHeight, r = 16 / 9, sx = 1, sy = 1;
+  if (on && W && H && fitMode !== "normal") {
+    if (W / H >= r) { sx = W / (H * r); sy = fitMode === "zoom" ? sx : 1; }
+    else { sy = H / (W / r); sx = fitMode === "zoom" ? sy : 1; }
+  }
+  st.style.transform = (sx === 1 && sy === 1) ? "" : "scale(" + sx.toFixed(4) + "," + sy.toFixed(4) + ")";
+  Array.prototype.forEach.call(document.querySelectorAll("#fsbar [data-fit]"), function (b) {
+    var o = b.dataset.fit === fitMode; b.classList.toggle("on", o); b.setAttribute("aria-pressed", o ? "true" : "false");
+  });
+}
+function hideBar() {
+  clearTimeout(barTimer);
+  $("#pframe").classList.remove("bar");
+  /* rend le focus à la page : le prochain toucher dans la vidéo déclenchera « blur » et réaffichera la barre */
+  try { var ae = document.activeElement; if (ae && ae.tagName === "IFRAME") ae.blur(); window.focus(); } catch (e) {}
+}
+function showBar() {
+  if (!fsOn) return;
+  $("#pframe").classList.add("bar");
+  clearTimeout(barTimer);
+  barTimer = setTimeout(hideBar, 5000);
+}
+function syncFs() {
+  var on = inFullscreen() && $("#player").open !== false;
+  var fr = $("#pframe");
+  if (on === fsOn) { applyFit(); return; }
+  fsOn = on;
+  fr.classList.toggle("fsui", on);
+  applyFit();
+  if (on) showBar(); else { clearTimeout(barTimer); fr.classList.remove("bar"); }
+}
+$("#fsbar").addEventListener("click", function (e) {
+  var b = e.target.closest("[data-fit]"); if (!b) return;
+  fitMode = b.dataset.fit;
+  try { localStorage.setItem(FITKEY, fitMode); } catch (err) {}
+  applyFit(); showBar();
+});
+["pointermove", "pointerdown", "touchstart"].forEach(function (ev) {
+  $("#fsbar").addEventListener(ev, function () { if (fsOn) showBar(); }, { passive: true });
+});
+["pointerenter", "pointerdown", "touchstart"].forEach(function (ev) {
+  $("#fswake").addEventListener(ev, function () { showBar(); }, { passive: true });
+});
+/* un toucher dans la vidéo fait perdre le focus à la page : on réaffiche la barre */
+window.addEventListener("blur", function () {
+  if (fsOn && !$("#pframe").classList.contains("bar") && document.activeElement && document.activeElement.tagName === "IFRAME") showBar();
+});
+window.addEventListener("resize", applyFit);
+window.addEventListener("orientationchange", function () { setTimeout(applyFit, 250); });
+
 $("#pclose").addEventListener("click", closePlayer);
 $("#pfull").addEventListener("click", toggleFull);
-document.addEventListener("fullscreenchange", function () { if (!$("#player").classList.contains("wide")) $("#pfull").textContent = document.fullscreenElement ? "Quitter le plein écran" : "Plein écran"; });
+document.addEventListener("fullscreenchange", function () { if (!$("#player").classList.contains("wide")) $("#pfull").textContent = document.fullscreenElement ? "Quitter le plein écran" : "Plein écran"; syncFs(); });
+document.addEventListener("webkitfullscreenchange", function () { if (!$("#player").classList.contains("wide")) $("#pfull").textContent = document.webkitFullscreenElement ? "Quitter le plein écran" : "Plein écran"; syncFs(); });
 $("#player").addEventListener("click", function (e) { if (e.target === this) closePlayer(); });
-$("#player").addEventListener("close", function () { $("#pframe").innerHTML = ""; });
+$("#player").addEventListener("close", function () { $("#pstage").innerHTML = ""; syncFs(); });
 
 $("#btn-export").addEventListener("click", function () {
   var a = document.createElement("a");
