@@ -458,7 +458,9 @@ footer .wrap.about { display: grid; grid-template-columns: repeat(auto-fit, minm
 .new { display: inline-flex; align-items: center; gap: 5px; font-family: var(--mono); font-weight: 700; text-transform: uppercase; letter-spacing: .06em; background: var(--fg); color: var(--bg); line-height: 1; white-space: nowrap; }
 .new i { width: 5px; height: 5px; border-radius: 50%; background: var(--bg); flex: 0 0 auto; animation: blink 1.6s ease-in-out infinite; }
 @keyframes blink { 50% { opacity: .2; } }
-.poster .new { position: absolute; z-index: 1; top: 8px; right: 8px; font-size: 10px; padding: 4px 6px; }
+.poster .new { position: absolute; z-index: 1; top: 8px; left: 8px; font-size: 10px; padding: 4px 6px; }
+.poster .lang + .new, .poster .live + .new { top: 30px; }
+.poster .lang + .live + .new { top: 52px; }
 .tags .new { font-size: 12px; padding: 5px 8px; margin-right: 100%; }
 .tags .new::before, .tags .new + span::before { content: none !important; }
 .ep b .new { font-size: 10px; padding: 4px 6px; margin-left: 8px; vertical-align: middle; }
