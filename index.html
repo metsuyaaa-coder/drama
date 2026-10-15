@@ -472,7 +472,7 @@ footer .wrap.about { display: grid; grid-template-columns: repeat(auto-fit, minm
 .seasonbar { padding: 0 0 14px; }
 .epi.seen .et { color: var(--dim); }
 .epi.seen.on .et { color: var(--bg); }
-@media (max-width: 720px) { nav { gap: 14px; } }
+@media (max-width: 720px) { nav { gap: 12px; } }
 </style>
 </head>
 <body>
@@ -485,6 +485,7 @@ footer .wrap.about { display: grid; grid-template-columns: repeat(auto-fit, minm
       <a href="#/series" id="nav-series">Séries</a>
       <a href="#/films" id="nav-films">Films</a>
       <a href="#/ma-liste" id="nav-list">Ma liste</a>
+      <a href="#/demande" id="nav-req">Demande</a>
       <a href="#/ajouter" id="nav-add" class="admin-only">Ajouter</a>
     </nav>
     <div class="search"><input id="q" type="text" placeholder="Rechercher un titre" autocomplete="off" aria-label="Rechercher dans le catalogue"><div class="sugg" id="sugg" hidden></div></div>
@@ -959,6 +960,18 @@ function viewHome() {
   refreshTrending().then(function (ch) { if (ch && (location.hash || "#/") === "#/") viewHome(); });
 }
 
+var REQ_URL = "https://formsubmit.co/ajax/metsuyaaa@gmail.com";
+function viewRequest(pre) {
+  var t = ""; try { t = decodeURIComponent(pre || ""); } catch (e) { t = pre || ""; }
+  $("#app").innerHTML = '<div class="wrap"><form class="authbox" id="reqform" style="max-width:520px"><h1>Demander un titre</h1>' +
+    '<p class="lead">Il manque une série ou un film ? Dis-le-moi, je l\'ajoute dès que possible.</p>' +
+    '<label class="f"><span>Ton pseudo</span><input type="text" name="pseudo" required maxlength="40" autocomplete="nickname"></label>' +
+    '<label class="f"><span>Nom exact de la série ou du film</span><input type="text" name="titre" required maxlength="120" value="' + esc(t) + '"></label>' +
+    '<label class="f"><span>Date de sortie (ou année)</span><input type="text" name="date" required maxlength="40" placeholder="ex. 2024"></label>' +
+    '<input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0">' +
+    '<p class="note" id="autherr"></p><div class="row"><button class="btn" type="submit">Envoyer</button><a class="btn ghost" href="#/">Retour</a></div></form></div>';
+}
+
 function viewMyList() {
   var items = listItems();
   var html = '<div class="wrap listhead"><h1>Ma liste</h1><p class="note">' + items.length + (items.length > 1 ? " titres" : " titre") + ' · enregistrée sur cet appareil</p></div>';
@@ -1017,7 +1030,7 @@ function viewSearch(q) {
   var base = sortedDb().filter(function (s) { return titleMatch(s, needle); });
   var found = base;
   html += '<p class="note">' + found.length + (found.length > 1 ? " résultats" : " résultat") + ' pour « ' + esc(q.trim()) + ' »' + "" + '</p></div>';
-  if (!base.length) { $("#app").innerHTML = html + emptyBox("Rien trouvé", "Aucun titre ne correspond. Essaie un autre mot.", '<a class="btn ghost" href="#/">Retour à l\'accueil</a>'); return; }
+  if (!base.length) { $("#app").innerHTML = html + emptyBox("Rien trouvé", "Aucun titre ne correspond. Essaie un autre mot, ou demande-le-moi.", '<div class="row"><a class="btn" href="#/demande/' + encodeURIComponent(q.trim()) + '">Demander ce titre</a><a class="btn ghost" href="#/">Retour à l\'accueil</a></div>'); return; }
   html += '<div class="wrap"><div class="grid" style="padding-top:28px">' + found.map(card).join("") + '</div></div>';
   $("#app").innerHTML = html;
 }
@@ -1402,7 +1415,7 @@ function toggleFull() {
 }
 
 /* ===== Routage ===== */
-var NAVMAP = { "": "nav-home", series: "nav-series", films: "nav-films", ajouter: "nav-add", modifier: "nav-add", "ma-liste": "nav-list" };
+var NAVMAP = { "": "nav-home", series: "nav-series", films: "nav-films", ajouter: "nav-add", modifier: "nav-add", "ma-liste": "nav-list", demande: "nav-req" };
 
 function route(force) {
   force = force === true;
@@ -1431,6 +1444,7 @@ function route(force) {
   else if (a === "series") { rerender = function () { viewList("Séries", function (s) { return !isMovie(s); }); }; rerender(); }
   else if (a === "films") { rerender = function () { viewList("Films", isMovie); }; rerender(); }
   else if (a === "ma-liste") viewMyList();
+  else if (a === "demande") viewRequest(b);
   else if (a === "recherche") { rerender = function () { viewSearch(b); }; rerender(); }
   else if (a === "admin") viewLogin();
   else if (a === "motdepasse") viewSetPassword(false);
@@ -1599,6 +1613,26 @@ document.addEventListener("submit", function (e) {
       renderResults();
       if (!results.length) $("#res").innerHTML = '<p class="note">Aucun résultat.</p>';
     }).catch(function (err) { $("#res").innerHTML = '<p class="note">' + esc(err.message) + '</p>'; });
+  } else if (id === "reqform") {
+    e.preventDefault();
+    var rf = e.target, fd = new FormData(rf);
+    if (fd.get("_honey")) return;
+    var lastReq = 0; try { lastReq = +localStorage.getItem("noir.reqAt") || 0; } catch (er) {}
+    if (Date.now() - lastReq < 30000) { authError(rf, "Patiente quelques secondes avant d'envoyer une autre demande"); return; }
+    var rb = rf.querySelector("button[type=submit]"); rb.disabled = true; rb.textContent = "Envoi…";
+    var titre = String(fd.get("titre") || "").trim();
+    fetch(REQ_URL, { method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" }, body: JSON.stringify({
+      _subject: "DramaByM : demande « " + titre + " »", _captcha: "false", _template: "table",
+      "Pseudo": String(fd.get("pseudo") || "").trim(), "Titre": titre, "Date de sortie": String(fd.get("date") || "").trim()
+    }) }).then(function (r) {
+      return r.json().catch(function () { return {}; }).then(function (j) { if (!r.ok || j.success === false || j.success === "false") throw new Error("envoi"); });
+    }).then(function () {
+      try { localStorage.setItem("noir.reqAt", String(Date.now())); } catch (er) {}
+      $("#app").innerHTML = '<div class="wrap"><div class="authbox"><h1>Merci</h1><p class="lead">Ta demande est bien envoyée. Je l\'ajoute dès que possible.</p><div class="row"><a class="btn" href="#/">Retour à l\'accueil</a><a class="btn ghost" href="#/demande">Une autre demande</a></div></div></div>';
+    }).catch(function () {
+      rb.disabled = false; rb.textContent = "Envoyer";
+      authError(rf, "L'envoi a échoué. Réessaie dans un moment.");
+    });
   } else if (id === "login") {
     e.preventDefault();
     if (pwHash($("#pw").value) === savedHash()) loginAdmin();
