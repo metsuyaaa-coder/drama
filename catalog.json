@@ -206,7 +206,8 @@
     "addedAt": 1792016398551,
     "langs": [
       "VOSTFR"
-    ]
+    ],
+    "trend": 78
   },
   {
     "id": "275102",
@@ -563,7 +564,8 @@
     "addedAt": 1792018030964,
     "langs": [
       "VOSTFR"
-    ]
+    ],
+    "trend": 89
   },
   {
     "id": "278573",
@@ -763,6 +765,525 @@
     "langs": [
       "VOSTFR",
       "VF"
+    ]
+  },
+  {
+    "id": "m1058424",
+    "type": "movie",
+    "name": "Hope",
+    "original_name": "호프",
+    "year": "2026",
+    "overview": "Alors que les secours sont mobilisés ailleurs et que toute communication est interrompue, les habitants de Hope doivent faire face seuls à une menace grandissante. Tandis que certains tentent de protéger le village, d’autres s’aventurent dans la montagne… mais deviennent à leur tour des proies. L’ignorance et la peur déclenchent une spirale incontrôlable aux conséquences dévastatrices.",
+    "genres": [
+      "Science-Fiction",
+      "Mystère",
+      "Action"
+    ],
+    "rating": "7.2",
+    "pop": 191.1737,
+    "status": "Released",
+    "runtime": 160,
+    "poster": "https://image.tmdb.org/t/p/w500/tGdFDoA9qyt0t6Qr9MFnOl8Z2Jz.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/xBcKnWJHodUpvzUVIWTuNMnvEwl.jpg",
+    "cast": [
+      {
+        "name": "Hwang Jung-min",
+        "character": "Go Bum-seok"
+      },
+      {
+        "name": "조인성",
+        "character": "Go Sung-ki"
+      },
+      {
+        "name": "Jung Ho-Yeon",
+        "character": "Lim Sung-ae"
+      },
+      {
+        "name": "Alicia Vikander",
+        "character": "J'aur"
+      },
+      {
+        "name": "Michael Fassbender",
+        "character": "Ma'veyyo"
+      },
+      {
+        "name": "Taylor Russell",
+        "character": "Ai'dovor"
+      },
+      {
+        "name": "Cameron Britton",
+        "character": "Va'migere"
+      },
+      {
+        "name": "Lee Sang-hee",
+        "character": "Nak-yeon"
+      },
+      {
+        "name": "음문석",
+        "character": "Yang-bae"
+      },
+      {
+        "name": "임현식",
+        "character": "Hae-sul"
+      },
+      {
+        "name": "Hwang Seok-jeong",
+        "character": "Head of Health Center"
+      },
+      {
+        "name": "Han Woo-yeol",
+        "character": "Wan-seob"
+      }
+    ],
+    "seasons": [],
+    "sources": [
+      {
+        "name": "VIDARA (VFQ)",
+        "url": "https://vidara.to/e/BzHQVFDTYsM7q"
+      },
+      {
+        "name": "UQLOAD",
+        "url": "https://uqload.vc/embed-bauoh90lty4u.html"
+      }
+    ],
+    "addedAt": 1792082586790,
+    "langs": [
+      "VOSTFR",
+      "VF"
+    ]
+  },
+  {
+    "id": "305644",
+    "type": "tv",
+    "name": "Quatre mains, deux sonates",
+    "original_name": "포핸즈",
+    "year": "2026",
+    "overview": "Kang Bi-o, prodige du piano au lycée, excelle constamment en études et en virtuosité pianistique. Considéré comme une future icône de la musique classique, promis à un brillant avenir dans les plus grands concours internationaux, sa carrière bascule lorsqu'il rencontre un rival inattendu : Choi Jeong-yo. Pianiste au talent inné, Jeong-yo a renoncé à son don exceptionnel suite à une enfance difficile. Son admission soudaine au lycée des arts de Corée le met face à Bi-o, le pianiste même qui a ravivé sa passion pour le piano. Jeong-yo est alors contraint de se confronter à ce don qu'il avait autrefois abandonné, et une amitié se noue entre eux.",
+    "genres": [
+      "Drame"
+    ],
+    "rating": "9.2",
+    "pop": 25.0528,
+    "status": "Ended",
+    "poster": "https://image.tmdb.org/t/p/w500/nzghhjtKVX1n7DIMhTuQrHqeXdQ.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/fYL4I6cezb06BHhQlrNjNhy7jhf.jpg",
+    "cast": [
+      {
+        "name": "Song Kang",
+        "character": "Kang Pi-o"
+      },
+      {
+        "name": "Lee Jun-young",
+        "character": "Choi Jeong-yo"
+      },
+      {
+        "name": "장규리",
+        "character": "Hong Jae-in"
+      },
+      {
+        "name": "윤세아",
+        "character": "Kang Ji-hye"
+      },
+      {
+        "name": "Jung Jin-young",
+        "character": "Kang Seung-woon"
+      },
+      {
+        "name": "서재희",
+        "character": "Yoon Sun-joo"
+      },
+      {
+        "name": "성노진",
+        "character": "Choi Ki-taek"
+      },
+      {
+        "name": "이명로",
+        "character": "Cho Hyun-cheol"
+      },
+      {
+        "name": "김민",
+        "character": "Boss Kim"
+      },
+      {
+        "name": "김혜화",
+        "character": "Han Hyun-jung"
+      },
+      {
+        "name": "Kim Ju-hun",
+        "character": "Do Hyeon-su"
+      },
+      {
+        "name": "Lee Sang-jun",
+        "character": "Yoon Han-rim"
+      }
+    ],
+    "seasons": [
+      {
+        "number": 1,
+        "name": "Saison 1",
+        "episodes": [
+          {
+            "number": 1,
+            "name": "Épisode 1",
+            "overview": "Kang Pi-o is known around school as an unrivaled talent — until he meets the mysterious Choi Jeong-yo and realizes he may have finally met his match.",
+            "air_date": "2026-08-29",
+            "sources": [
+              {
+                "name": "VIDARA",
+                "url": "https://vidara.to/e/ohzEDomqEreFp"
+              },
+              {
+                "name": "PLAYMATE",
+                "url": "https://playmate.to/embed/hIetlWRx1BeC7"
+              }
+            ]
+          },
+          {
+            "number": 2,
+            "name": "Épisode 2",
+            "overview": "With Jeong-yo now his classmate, a bitter Pi-o keeps his distance. But when the two are tasked with a joint performance, Pi-o finds himself warming up.",
+            "air_date": "2026-08-30",
+            "sources": [
+              {
+                "name": "VIDARA",
+                "url": "https://vidara.to/e/XCNKuBxl2cuA2"
+              },
+              {
+                "name": "PLAYMATE",
+                "url": "https://playmate.to/embed/FS1cR2ed7YUWU"
+              }
+            ]
+          },
+          {
+            "number": 3,
+            "name": "Épisode 3",
+            "overview": "When crisis strikes right before the joint stage, Pi-o improvises a fix — only to wonder if it was a mistake when Jeong-yo's skills outshine his own.",
+            "air_date": "2026-09-05",
+            "sources": [
+              {
+                "name": "VIDARA",
+                "url": "https://vidara.to/e/lPxNEpn0zBWGO"
+              },
+              {
+                "name": "PLAYMATE",
+                "url": "https://playmate.to/embed/b9gSOaqAPdDCF"
+              }
+            ]
+          },
+          {
+            "number": 4,
+            "name": "Épisode 4",
+            "overview": "With Pi-o determined to reclaim his love for music, Jeong-yo shows Pi-o how to have fun on the piano. Jeong-yo's family troubles catch up to him.",
+            "air_date": "2026-09-06",
+            "sources": [
+              {
+                "name": "VIDARA",
+                "url": "https://vidara.to/e/n7JxEHraWahct"
+              },
+              {
+                "name": "PLAYMATE",
+                "url": "https://playmate.to/embed/4WbHDkwe4XKJe"
+              }
+            ]
+          },
+          {
+            "number": 5,
+            "name": "Épisode 5",
+            "overview": "Intent on proving himself, Pi-o joins the Prague Harmonie International Competition and asks Jeong-yo to join too. Pi-o's obsessive practice takes a toll.",
+            "air_date": "2026-09-12",
+            "sources": [
+              {
+                "name": "VIDARA",
+                "url": "https://vidara.to/e/dSUzFCU25R6UN"
+              },
+              {
+                "name": "PLAYMATE",
+                "url": "https://playmate.to/embed/u40BvdLaFHfT9"
+              }
+            ]
+          },
+          {
+            "number": 6,
+            "name": "Épisode 6",
+            "overview": "Years later, Pi-o is successful and world-renowned — but miserable. Hong Jae-in tries to let Pi-o know how she feels. Pi-o hunts down news of Jeong-yo.",
+            "air_date": "2026-09-13",
+            "sources": [
+              {
+                "name": "VIDARA",
+                "url": "https://vidara.to/e/FOTHTpm9UWuTx"
+              },
+              {
+                "name": "PLAYMATE",
+                "url": "https://playmate.to/embed/757tyIfbbGqmA"
+              }
+            ]
+          },
+          {
+            "number": 7,
+            "name": "Épisode 7",
+            "overview": "Pi-o finds himself stuck deep in a slump, but can't seem to overcome his fears alone. Later, a familiar face suggests collaborating on a performance.",
+            "air_date": "2026-09-19",
+            "sources": [
+              {
+                "name": "VIDARA",
+                "url": "https://vidara.to/e/n3vEWDI0TDDKZ"
+              },
+              {
+                "name": "PLAYMATE",
+                "url": "https://playmate.to/embed/VWcwMP486bUUl"
+              }
+            ]
+          },
+          {
+            "number": 8,
+            "name": "Épisode 8",
+            "overview": "Pi-o faces increasing pressure to do the joint performance, but his issues with the piano only get worse. Jeong-yo finally steps in to help.",
+            "air_date": "2026-09-20",
+            "sources": [
+              {
+                "name": "VIDARA",
+                "url": "https://vidara.to/e/2N0nzGyv49Msj"
+              },
+              {
+                "name": "PLAYMATE",
+                "url": "https://playmate.to/embed/kB7NWo3PnFdzx"
+              }
+            ]
+          },
+          {
+            "number": 9,
+            "name": "Épisode 9",
+            "overview": "Pi-o learns the shocking truth behind Jeong-yo's kidnapping. Jeong-yo asks for Pi-o's help with a piano piece, but his harsh words leave Pi-o rattled.",
+            "air_date": "2026-09-26",
+            "sources": [
+              {
+                "name": "VIDARA",
+                "url": "https://vidara.to/e/piaKZontGk29F"
+              },
+              {
+                "name": "PLAYMATE",
+                "url": "https://playmate.to/embed/jvvv2xBYYxa56"
+              }
+            ]
+          },
+          {
+            "number": 10,
+            "name": "Épisode 10",
+            "overview": "Pi-o realizes Jeong-yo has been hiding a huge secret. With everything revealed, Jeong-yo turns even more cruel, and Pi-o falls deeper into despair.",
+            "air_date": "2026-09-27",
+            "sources": [
+              {
+                "name": "VIDARA",
+                "url": "https://vidara.to/e/JLWW4nuWjrBnv"
+              },
+              {
+                "name": "PLAYMATE",
+                "url": "https://playmate.to/embed/bAy04TAnjC9S2"
+              }
+            ]
+          },
+          {
+            "number": 11,
+            "name": "Épisode 11",
+            "overview": "As the Korean Symphony’s 80th anniversary concert begins, Jeong-yo and Pi-o face a turning point — but when the performance ends, only one person remains on stage.",
+            "air_date": "2026-10-03",
+            "sources": [
+              {
+                "name": "VIDARA",
+                "url": "https://vidara.to/e/Fs9vSFyPnGDDK"
+              },
+              {
+                "name": "PLAYMATE",
+                "url": "https://playmate.to/embed/wCDPkwH5AgDvG"
+              }
+            ]
+          },
+          {
+            "number": 12,
+            "name": "Épisode 12",
+            "overview": "After painful losses, Pi-o considers leaving music behind, but Jeong-yo shares his final feelings as their last four-hands performance begins.",
+            "air_date": "2026-10-04",
+            "sources": [
+              {
+                "name": "VIDARA",
+                "url": "https://vidara.to/e/qvkhFT3ITA1Gt"
+              },
+              {
+                "name": "PLAYMATE",
+                "url": "https://playmate.to/embed/vyliAbY5JHRmy"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "sources": [],
+    "addedAt": 1792089827752,
+    "langs": [
+      "VOSTFR"
+    ]
+  },
+  {
+    "id": "316197",
+    "type": "tv",
+    "name": "Dive into You",
+    "original_name": "너에게 다이브",
+    "year": "2026",
+    "overview": "Une actrice et son frère jumeau voyagent dans le temps – et échangent leurs corps – pour sauver la vie de leur ami.",
+    "genres": [
+      "Comédie",
+      "Drame",
+      "Science-Fiction & Fantastique"
+    ],
+    "rating": "8.0",
+    "pop": 16.9127,
+    "status": "Returning Series",
+    "poster": "https://image.tmdb.org/t/p/w500/21pLXbvuyfgUaAhhxkuvoX1pAN1.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/jseW3HucgNjN2CwJa3MiOlF4xMO.jpg",
+    "cast": [
+      {
+        "name": "보나",
+        "character": "Yoon Ha-na"
+      },
+      {
+        "name": "박서함",
+        "character": "Jeong Woo-jae"
+      },
+      {
+        "name": "Jang Se-hyuk",
+        "character": "Yoon Ha-ru"
+      },
+      {
+        "name": "Moon Seung-you",
+        "character": "Seo Ye-rang"
+      }
+    ],
+    "seasons": [
+      {
+        "number": 1,
+        "name": "Saison 1",
+        "episodes": [
+          {
+            "number": 1,
+            "name": "Épisode 1",
+            "overview": "After Woo-jae’s death, Ha-na begins traveling through time. She finally reunites with Woo-jae, but when he looks at her, he doesn’t see Ha-na—he sees Ha-ru.",
+            "air_date": "2026-09-26",
+            "sources": [
+              {
+                "name": "VIDARA",
+                "url": "https://vidara.to/e/5YXxZiybnWGFQ"
+              }
+            ]
+          },
+          {
+            "number": 2,
+            "name": "Épisode 2",
+            "overview": "With their bodies mysteriously swapped, the twins hatch a plan to save Woo-jae. But to change his fate, they must first turn him into a national team athlete.",
+            "air_date": "2026-09-27",
+            "sources": [
+              {
+                "name": "VIDARA",
+                "url": "https://vidara.to/e/G7RAaPCAZqPIV"
+              }
+            ]
+          },
+          {
+            "number": 3,
+            "name": "Épisode 3",
+            "overview": "Even after changing the past, Woo-jae dies again while saving Ha-na. As Ha-na falls into despair, Ha-ru suggests a new way to change their fate.",
+            "air_date": "2026-10-03",
+            "sources": [
+              {
+                "name": "VIDARA",
+                "url": "https://vidara.to/e/YVAMUlgvZT9Sn"
+              }
+            ]
+          },
+          {
+            "number": 4,
+            "name": "Épisode 4",
+            "overview": "Woo-jae becomes a judo champion but is confused when he starts developing feelings for Ha-na in Ha-ru’s body.",
+            "air_date": "2026-10-04",
+            "sources": [
+              {
+                "name": "VIDARA",
+                "url": "https://vidara.to/e/9y8cAiISS2MT3"
+              }
+            ]
+          },
+          {
+            "number": 5,
+            "name": "Épisode 5",
+            "overview": "The twins travel back to their college days and regain their original bodies. After discovering Woo-jae is majoring in security and protection, they search for a way to change the future.",
+            "air_date": "2026-10-10",
+            "sources": [
+              {
+                "name": "VIDARA",
+                "url": "https://vidara.to/e/nQdHtHc3D14Au"
+              }
+            ]
+          },
+          {
+            "number": 6,
+            "name": "Épisode 6",
+            "overview": "A love triangle forms as Woo-jae and Hyeong-won compete for the same person, while someone discovers the twins’ secret of time travel.",
+            "air_date": "2026-10-11",
+            "sources": [
+              {
+                "name": "VIDARA",
+                "url": "https://vidara.to/e/hs5DmaOKYRpji"
+              }
+            ]
+          },
+          {
+            "number": 7,
+            "name": "Épisode 7",
+            "overview": "",
+            "air_date": "2026-10-17",
+            "sources": []
+          },
+          {
+            "number": 8,
+            "name": "Épisode 8",
+            "overview": "",
+            "air_date": "2026-10-18",
+            "sources": []
+          },
+          {
+            "number": 9,
+            "name": "Épisode 9",
+            "overview": "",
+            "air_date": "2026-10-24",
+            "sources": []
+          },
+          {
+            "number": 10,
+            "name": "Épisode 10",
+            "overview": "",
+            "air_date": "2026-10-25",
+            "sources": []
+          },
+          {
+            "number": 11,
+            "name": "Épisode 11",
+            "overview": "",
+            "air_date": "2026-10-31",
+            "sources": []
+          },
+          {
+            "number": 12,
+            "name": "Épisode 12",
+            "overview": "",
+            "air_date": "2026-11-01",
+            "sources": []
+          }
+        ]
+      }
+    ],
+    "sources": [],
+    "addedAt": 1792090157440,
+    "langs": [
+      "VOSTFR"
     ]
   }
 ]
