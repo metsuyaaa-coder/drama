@@ -427,13 +427,11 @@ footer .wrap.about { display: grid; grid-template-columns: repeat(auto-fit, minm
 .tags .live { font-size: 12px; padding: 4px 8px; font-weight: 700; }
 .tags .live::before, .tags .live + span::before { content: none !important; }
 
-/* mobile : le badge « En cours » passe sous le badge de langue */
-@media (max-width: 720px) {
-  .poster .live { left: 8px; right: auto; }
-  .poster .lang + .live { top: 30px; }
-  .tags .lang { margin-right: 100%; }
-  .tags .live { margin-right: 100%; }
-}
+/* le badge « En cours » passe sous le badge de langue (mobile et PC) */
+.poster .live { left: 8px; right: auto; }
+.poster .lang + .live { top: 30px; }
+.tags .lang { margin-right: 100%; }
+.tags .live { margin-right: 100%; }
 </style>
 </head>
 <body>
