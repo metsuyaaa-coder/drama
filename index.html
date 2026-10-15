@@ -344,6 +344,13 @@ dialog#player .phead { flex-wrap: nowrap; gap: 16px; padding: max(10px, env(safe
 .phead .row { flex: 0 0 auto; flex-wrap: nowrap; }
 dialog#player .pframe { flex: 1; min-height: 0; aspect-ratio: auto; background: #000; }
 .pbar { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px 24px; padding: 12px max(16px, env(safe-area-inset-right, 0px)) calc(12px + env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px)); border-top: 1px solid var(--line); background: #050505; }
+.pbar .ptip { flex: 0 0 100%; display: flex; align-items: center; gap: 10px; font-size: 13px; color: var(--dim); min-height: 34px; }
+.ptip p { margin: 0; flex: 1; min-width: 0; animation: fadeIn .35s ease both; }
+.ptip b { color: var(--fg); font-weight: 700; margin-right: 6px; }
+.ptip a { color: var(--fg); text-decoration: underline; text-underline-offset: 3px; }
+.ptip #tcount { font-family: var(--mono); font-size: 11px; }
+.tbtn { flex: 0 0 auto; width: 32px; height: 32px; display: grid; place-items: center; background: transparent; border: 1px solid var(--line); color: var(--dim); font-size: 20px; line-height: 1; cursor: pointer; border-radius: 0; transition: color .2s, border-color .2s; }
+.tbtn:hover { color: var(--fg); border-color: var(--dim); }
 .pbar .pl { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; min-width: 0; }
 .pbar .srcs { flex: 0 1 auto; }
 .pbar .pn { display: flex; gap: 8px; margin-left: auto; }
@@ -416,6 +423,7 @@ dialog#player.wide { display: flex; }
     <div class="fsbar" id="fsbar" role="group" aria-label="Format de la vidéo"><span>Format</span><button type="button" data-fit="normal">Normal</button><button type="button" data-fit="zoom">Zoom</button><button type="button" data-fit="stretch">Étirer</button></div>
   </div>
   <div class="pbar" id="pbar">
+    <div class="ptip" id="ptip"><button type="button" class="tbtn" id="tprev" aria-label="Conseil précédent">‹</button><p id="ttext" aria-live="polite"></p><button type="button" class="tbtn" id="tnext" aria-label="Conseil suivant">›</button><span id="tcount"></span></div>
     <div class="pl" id="pl"><span class="chiplbl">Serveur</span><span class="srcs" id="psrc"></span></div>
     <div class="pn" id="pnav"><button class="btn small ghost" id="pprev" type="button">Épisode précédent</button><button class="btn small" id="pnext" type="button">Épisode suivant</button></div>
   </div>
@@ -986,6 +994,8 @@ function renderPlayer() {
   var s = cur.sources[cur.i], url = safeUrl(s.url);
   $("#ptitle").textContent = cur.title;
   $("#psub").textContent = cur.sub || "";
+  showTip(tipIdx);
+  clearInterval(tipTimer); tipTimer = setInterval(function () { showTip(tipIdx + 1); }, 9000);
   $("#pl").style.display = cur.sources.length > 1 ? "flex" : "none";
   $("#pnav").style.display = cur.nav ? "flex" : "none";
   $("#pprev").disabled = !(cur.nav && cur.nav.prev);
@@ -1009,7 +1019,26 @@ function playEp(s, si, num) {
     next: n ? function () { playEp(s, n.si, n.ep.number); } : null
   });
 }
+/* Conseils du lecteur, en carrousel */
+var tipIdx = 0, tipTimer = null;
+function tipList() {
+  var t = [];
+  if (cur.sources && cur.sources.length > 1) t.push("<b>Astuce</b> Si le lecteur bug ou ne démarre pas, essaie un autre serveur en bas à gauche.");
+  t.push('<b>Marre des pubs ?</b> Installe <a href="https://brave.com/" target="_blank" rel="noopener">Brave</a>, un navigateur qui bloque les pubs.');
+  t.push("<b>Bandes noires ?</b> Passe en plein écran, puis choisis Zoom ou Étirer dans la barre Format.");
+  return t;
+}
+function showTip(n) {
+  var t = tipList();
+  tipIdx = (n + t.length) % t.length;
+  $("#ttext").innerHTML = t[tipIdx];
+  $("#tcount").textContent = (tipIdx + 1) + "/" + t.length;
+}
+function stepTip(d) { showTip(tipIdx + d); clearInterval(tipTimer); tipTimer = setInterval(function () { showTip(tipIdx + 1); }, 9000); }
+$("#tprev").addEventListener("click", function () { stepTip(-1); });
+$("#tnext").addEventListener("click", function () { stepTip(1); });
 function closePlayer() {
+  clearInterval(tipTimer);
   var d = $("#player");
   if ((document.fullscreenElement || document.webkitFullscreenElement) && document.exitFullscreen) { try { document.exitFullscreen(); } catch (e) {} }
   $("#pstage").innerHTML = ""; d.classList.remove("wide"); syncFs();
@@ -1298,7 +1327,7 @@ $("#pfull").addEventListener("click", toggleFull);
 document.addEventListener("fullscreenchange", function () { if (!$("#player").classList.contains("wide")) $("#pfull").textContent = document.fullscreenElement ? "Quitter le plein écran" : "Plein écran"; syncFs(); });
 document.addEventListener("webkitfullscreenchange", function () { if (!$("#player").classList.contains("wide")) $("#pfull").textContent = document.webkitFullscreenElement ? "Quitter le plein écran" : "Plein écran"; syncFs(); });
 $("#player").addEventListener("click", function (e) { if (e.target === this) closePlayer(); });
-$("#player").addEventListener("close", function () { $("#pstage").innerHTML = ""; syncFs(); });
+$("#player").addEventListener("close", function () { clearInterval(tipTimer); $("#pstage").innerHTML = ""; syncFs(); });
 
 $("#btn-export").addEventListener("click", function () {
   var a = document.createElement("a");
