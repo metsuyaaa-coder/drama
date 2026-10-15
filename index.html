@@ -332,6 +332,45 @@ body.admin .admin-only { display: revert !important; }
   footer .wrap { flex-direction: column; align-items: flex-start; gap: 12px; }
 }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+
+/* lecteur plein écran façon streaming */
+dialog#player { width: 100vw; max-width: 100vw; height: 100vh; height: 100dvh; max-height: none; margin: 0; border: 0; display: none; flex-direction: column; overflow: hidden; }
+dialog#player[open] { display: flex; }
+dialog#player .phead { flex-wrap: nowrap; gap: 16px; padding: max(10px, env(safe-area-inset-top, 0px)) max(16px, env(safe-area-inset-right, 0px)) 10px max(16px, env(safe-area-inset-left, 0px)); background: #000; }
+.phead .pt { flex: 1; min-width: 0; display: flex; flex-direction: column; line-height: 1.2; }
+.phead .pt b { max-width: 100%; font-family: var(--display); font-weight: 700; font-size: 24px; text-transform: uppercase; letter-spacing: .03em; }
+.phead .pt small { color: var(--dim); font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.phead .pt small:empty { display: none; }
+.phead .row { flex: 0 0 auto; flex-wrap: nowrap; }
+dialog#player .pframe { flex: 1; min-height: 0; aspect-ratio: auto; background: #000; }
+.pbar { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px 24px; padding: 12px max(16px, env(safe-area-inset-right, 0px)) calc(12px + env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px)); border-top: 1px solid var(--line); background: #050505; }
+.pbar .pl { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; min-width: 0; }
+.pbar .srcs { flex: 0 1 auto; }
+.pbar .pn { display: flex; gap: 8px; margin-left: auto; }
+.pbar .btn:disabled { opacity: .3; pointer-events: none; }
+dialog#player.wide .pbar { display: none; }
+dialog#player.wide { display: flex; }
+
+/* recherche : suggestions sous la barre, sans filtres */
+.sugg { position: absolute; top: calc(100% + 8px); right: 0; width: min(400px, 92vw); background: #080808; border: 1px solid var(--line); box-shadow: 0 18px 40px rgba(0,0,0,.7); z-index: 30; max-height: 70vh; overflow-y: auto; }
+.sugg[hidden] { display: none; }
+.sg { display: flex; align-items: center; gap: 12px; padding: 8px 12px; border-bottom: 1px solid var(--line); transition: background .15s; }
+.sg:hover, .sg:focus-visible { background: #181818; }
+.sgp { flex: 0 0 40px; aspect-ratio: 2 / 3; background: var(--panel); overflow: hidden; }
+.sgp img { width: 100%; height: 100%; object-fit: cover; }
+.sgt { min-width: 0; display: flex; flex-direction: column; }
+.sgt b { font-weight: 500; font-size: 15px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.sgt small { font-family: var(--mono); font-size: 11px; color: var(--dim); }
+.sg.all { justify-content: center; font-size: 13px; color: var(--dim); border-bottom: 0; }
+.sgn { margin: 0; padding: 14px 12px; color: var(--dim); font-size: 14px; }
+@media (max-width: 720px) {
+  .sugg { left: 0; right: 0; width: auto; }
+  dialog#player .phead { gap: 8px; }
+  .phead .pt b { font-size: 19px; }
+  #pext { display: none; }
+  .pbar .pn { width: 100%; }
+  .pbar .pn .btn { flex: 1 1 0; }
+}
 </style>
 </head>
 <body>
@@ -345,7 +384,7 @@ body.admin .admin-only { display: revert !important; }
       <a href="#/films" id="nav-films">Films</a>
       <a href="#/ajouter" id="nav-add" class="admin-only">Ajouter</a>
     </nav>
-    <div class="search"><input id="q" type="text" placeholder="Rechercher un titre" autocomplete="off" aria-label="Rechercher dans le catalogue"></div>
+    <div class="search"><input id="q" type="text" placeholder="Rechercher un titre" autocomplete="off" aria-label="Rechercher dans le catalogue"><div class="sugg" id="sugg" hidden></div></div>
   </div>
 </header>
 
@@ -366,11 +405,19 @@ body.admin .admin-only { display: revert !important; }
 </footer>
 
 <dialog id="player">
-  <div class="phead"><b id="ptitle"></b><span class="srcs" id="psrc"></span><span class="row"><button class="btn small ghost" id="pfull" type="button">Plein écran</button><a id="pext" class="btn small ghost" target="_blank" rel="noopener">Nouvel onglet</a><button class="btn small ghost" id="pclose" type="button">Fermer</button></span></div>
+  <div class="phead">
+    <button class="btn small ghost" id="pclose" type="button">Retour</button>
+    <div class="pt"><b id="ptitle"></b><small id="psub"></small></div>
+    <span class="row"><button class="btn small ghost" id="pfull" type="button">Plein écran</button><a id="pext" class="btn small ghost" target="_blank" rel="noopener">Nouvel onglet</a></span>
+  </div>
   <div class="pframe" id="pframe">
     <div class="pstage" id="pstage"></div>
     <div class="fswake" id="fswake"></div>
     <div class="fsbar" id="fsbar" role="group" aria-label="Format de la vidéo"><span>Format</span><button type="button" data-fit="normal">Normal</button><button type="button" data-fit="zoom">Zoom</button><button type="button" data-fit="stretch">Étirer</button></div>
+  </div>
+  <div class="pbar" id="pbar">
+    <div class="pl" id="pl"><span class="chiplbl">Serveur</span><span class="srcs" id="psrc"></span></div>
+    <div class="pn" id="pnav"><button class="btn small ghost" id="pprev" type="button">Épisode précédent</button><button class="btn small" id="pnext" type="button">Épisode suivant</button></div>
   </div>
 </dialog>
 <div class="toast" id="toast" role="status"></div>
@@ -673,11 +720,10 @@ function viewSearch(q) {
   var html = '<div class="wrap listhead"><h1>Recherche</h1>';
   if (!needle) { $("#app").innerHTML = html + '<p class="note">Tape un titre dans la barre en haut.</p></div>'; return; }
   var base = sortedDb().filter(function (s) { return s.name.toLowerCase().indexOf(needle) > -1 || (s.original_name || "").toLowerCase().indexOf(needle) > -1; });
-  var found = base.filter(langMatch);
-  html += '<p class="note">' + found.length + (found.length > 1 ? " résultats" : " résultat") + ' pour « ' + esc(q.trim()) + ' »' + (langFilter ? " en " + langFilter : "") + '</p></div>';
+  var found = base;
+  html += '<p class="note">' + found.length + (found.length > 1 ? " résultats" : " résultat") + ' pour « ' + esc(q.trim()) + ' »' + "" + '</p></div>';
   if (!base.length) { $("#app").innerHTML = html + emptyBox("Rien trouvé", "Aucun titre ne correspond. Essaie un autre mot.", '<a class="btn ghost" href="#/">Retour à l\'accueil</a>'); return; }
-  html += '<div class="wrap"><div class="section-head" style="padding-block:24px 0">' + langChips() + '</div>' +
-    (found.length ? '<div class="grid" style="padding-top:28px">' + found.map(card).join("") + '</div>' : '<p class="note" style="padding:28px 0 48px">Aucun résultat dans cette langue.</p>') + '</div>';
+  html += '<div class="wrap"><div class="grid" style="padding-top:28px">' + found.map(card).join("") + '</div></div>';
   $("#app").innerHTML = html;
 }
 
@@ -925,9 +971,9 @@ function saveDraft() {
 /* ===== Lecteur ===== */
 var cur = { sources: [], i: 0, title: "" };
 
-function play(sources, title, idx) {
+function play(sources, title, idx, sub, nav) {
   if (!sources || !sources.length) { toast("Aucune source sur cette fiche"); return; }
-  cur = { sources: sources, i: idx || 0, title: title };
+  cur = { sources: sources, i: idx || 0, title: title, sub: sub || "", nav: nav || null };
   var dlg = $("#player");
   renderPlayer();
   dlg.classList.remove("wide");
@@ -937,11 +983,29 @@ function play(sources, title, idx) {
 function renderPlayer() {
   var s = cur.sources[cur.i], url = safeUrl(s.url);
   $("#ptitle").textContent = cur.title;
+  $("#psub").textContent = cur.sub || "";
+  $("#pl").style.display = cur.sources.length > 1 ? "flex" : "none";
+  $("#pnav").style.display = cur.nav ? "flex" : "none";
+  $("#pprev").disabled = !(cur.nav && cur.nav.prev);
+  $("#pnext").disabled = !(cur.nav && cur.nav.next);
   $("#pext").href = url;
   $("#pstage").innerHTML = '<iframe src="' + esc(url) + '" allowfullscreen webkitallowfullscreen mozallowfullscreen allow="autoplay; fullscreen; picture-in-picture; encrypted-media"></iframe>';
   $("#psrc").innerHTML = cur.sources.length > 1 ? cur.sources.map(function (x, k) {
     return '<button type="button" class="chip' + (k === cur.i ? " on" : "") + '" data-src="' + k + '">' + esc(x.name) + '</button>';
   }).join("") : "";
+}
+/* Lit un épisode et prépare « précédent / suivant » parmi les épisodes qui ont une source */
+function playEp(s, si, num) {
+  var flat = [];
+  s.seasons.forEach(function (se, i) { (se.episodes || []).forEach(function (ep) { if ((ep.sources || []).length) flat.push({ si: i, ep: ep }); }); });
+  var k = -1;
+  flat.forEach(function (x, j) { if (x.si === si && String(x.ep.number) === String(num)) k = j; });
+  if (k < 0) { toast("Cet épisode n'a pas de source"); return; }
+  var c = flat[k], se = s.seasons[si], p = flat[k - 1], n = flat[k + 1];
+  play(c.ep.sources, s.name, 0, "Saison " + se.number + " · Épisode " + c.ep.number + (c.ep.name ? " : " + c.ep.name : ""), {
+    prev: p ? function () { playEp(s, p.si, p.ep.number); } : null,
+    next: n ? function () { playEp(s, n.si, n.ep.number); } : null
+  });
 }
 function closePlayer() {
   var d = $("#player");
@@ -979,6 +1043,7 @@ function route(force) {
   lastPage = a;
 
   var q = $("#q");
+  $("#sugg").hidden = true;
   if (a !== "recherche" && q.value) q.value = "";
   if (a === "recherche" && q.value !== b && document.activeElement !== q) q.value = b;
 
@@ -1007,6 +1072,26 @@ function route(force) {
 }
 window.addEventListener("hashchange", function () { route(); });
 
+/* ===== Recherche : suggestions sous la barre ===== */
+function searchHits(q) {
+  var n = q.trim().toLowerCase(); if (!n) return [];
+  return sortedDb().filter(function (s) { return s.name.toLowerCase().indexOf(n) > -1 || (s.original_name || "").toLowerCase().indexOf(n) > -1; });
+}
+function showSugg(v) {
+  var box = $("#sugg"), hits = searchHits(v);
+  if (!v.trim()) { box.hidden = true; return; }
+  box.innerHTML = hits.length ? hits.slice(0, 6).map(function (s) {
+    return '<a class="sg" href="#/serie/' + esc(s.id) + '"><span class="sgp">' + (s.poster ? '<img src="' + esc(s.poster) + '" alt="">' : '') + '</span><span class="sgt"><b>' + esc(s.name) + '</b><small>' + esc([isMovie(s) ? "Film" : "Série", s.year].filter(Boolean).join(" · ")) + '</small></span></a>';
+  }).join("") + (hits.length > 6 ? '<a class="sg all" href="#/recherche/' + encodeURIComponent(v.trim()) + '">Voir les ' + hits.length + ' résultats</a>' : "") : '<p class="sgn">Aucun titre trouvé</p>';
+  box.hidden = false;
+}
+$("#q").addEventListener("focus", function () { showSugg(this.value); });
+$("#q").addEventListener("keydown", function (e) {
+  if (e.key === "Enter" && this.value.trim()) { $("#sugg").hidden = true; location.hash = "#/recherche/" + encodeURIComponent(this.value.trim()); this.blur(); }
+  else if (e.key === "Escape") { $("#sugg").hidden = true; this.blur(); }
+});
+document.addEventListener("click", function (e) { if (!e.target.closest(".search")) $("#sugg").hidden = true; });
+
 /* ===== Événements ===== */
 document.addEventListener("click", function (e) {
   var nav = e.target.closest("header.top a[href^='#/']");
@@ -1026,8 +1111,7 @@ document.addEventListener("click", function (e) {
   }
   else if (t.dataset.playep != null) {
     var p = t.dataset.playep.split("|"), s2 = byId(p[0]), se = s2.seasons[+p[1]];
-    var ep = se.episodes.filter(function (x) { return String(x.number) === p[2]; })[0];
-    play(ep.sources, s2.name + " · S" + String(se.number).padStart(2, "0") + "E" + String(ep.number).padStart(2, "0"));
+    playEp(s2, +p[1], p[2]);
   }
   else if (t.dataset.src != null) { cur.i = +t.dataset.src; renderPlayer(); }
   else if (t.dataset.del != null) {
@@ -1121,9 +1205,7 @@ document.addEventListener("submit", function (e) {
 document.addEventListener("input", function (e) {
   var t = e.target;
   if (t.id === "q") {
-    var v = t.value, target = v.trim() ? "#/recherche/" + encodeURIComponent(v) : "#/";
-    if (location.hash.indexOf("#/recherche") === 0) { history.replaceState(null, "", target); route(); }
-    else location.hash = target;
+    showSugg(t.value);
     return;
   }
   if (!draft) return;
@@ -1208,6 +1290,8 @@ window.addEventListener("resize", applyFit);
 window.addEventListener("orientationchange", function () { setTimeout(applyFit, 250); });
 
 $("#pclose").addEventListener("click", closePlayer);
+$("#pprev").addEventListener("click", function () { if (cur.nav && cur.nav.prev) cur.nav.prev(); });
+$("#pnext").addEventListener("click", function () { if (cur.nav && cur.nav.next) cur.nav.next(); });
 $("#pfull").addEventListener("click", toggleFull);
 document.addEventListener("fullscreenchange", function () { if (!$("#player").classList.contains("wide")) $("#pfull").textContent = document.fullscreenElement ? "Quitter le plein écran" : "Plein écran"; syncFs(); });
 document.addEventListener("webkitfullscreenchange", function () { if (!$("#player").classList.contains("wide")) $("#pfull").textContent = document.webkitFullscreenElement ? "Quitter le plein écran" : "Plein écran"; syncFs(); });
