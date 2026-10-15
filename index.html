@@ -37,7 +37,7 @@ img { max-width: 100%; display: block; }
 @keyframes pageIn { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
 @keyframes cardIn { from { opacity: 0; transform: translateY(18px) scale(.98); } to { opacity: 1; transform: none; } }
 @keyframes riseIn { from { opacity: 0; transform: translateY(26px); } to { opacity: 1; transform: none; } }
-@keyframes kenburns { from { transform: scale(1); } to { transform: scale(1.08); } }
+@keyframes kenburns { from { transform: scale(1); } to { transform: scale(1.04); } }
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 @keyframes dialogIn { from { opacity: 0; transform: translateY(12px) scale(.98); } to { opacity: 1; transform: none; } }
 @keyframes shake { 20%, 60% { transform: translateX(-8px); } 40%, 80% { transform: translateX(8px); } }
@@ -78,11 +78,11 @@ nav a:hover::after, nav a.on::after { transform: scaleX(1); }
 .hdots button::before { content: ""; display: block; width: 28px; height: 3px; background: #555; transition: background .3s, width .3s var(--ease); }
 .hdots button:hover::before { background: #aaa; }
 .hdots button.on::before { background: var(--fg); width: 40px; }
-.hero .bg { position: absolute; inset: 0; background-size: cover; background-position: center top; opacity: .6; }
+.hero .bg { position: absolute; inset: 0; background-size: cover; background-position: center 20%; opacity: .8; image-rendering: auto; }
 .hslide.on .bg { animation: heroZoom 1.4s var(--ease) both; }
 .hero .wrap { position: relative; z-index: 1; padding-block: 48px; width: 100%; }
 @keyframes heroIn { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
-@keyframes heroZoom { from { transform: scale(1.1); } to { transform: scale(1); } }
+@keyframes heroZoom { from { transform: scale(1.04); } to { transform: scale(1); } }
 .hslide.on .tags, .hslide.on h1, .hslide.on p, .hslide.on .row { animation: heroIn .55s var(--ease) both; }
 .hslide.on h1 { animation-delay: .06s; }
 .hslide.on p { animation-delay: .12s; }
@@ -645,8 +645,10 @@ function refreshTrending() {
     return changed;
   }).catch(function () { return false; });
 }
+/* Passe une image TMDB (w500, w1280…) en pleine résolution */
+function hq(u) { return String(u || "").replace(/\/t\/p\/w\d+\//, "/t/p/original/"); }
 function heroSlide(h, on) {
-  return '<div class="hslide' + (on ? " on" : "") + '"><div class="bg" style="background-image:url(\'' + esc(h.backdrop || h.poster) + '\')"></div><div class="wrap">' +
+  return '<div class="hslide' + (on ? " on" : "") + '"><div class="bg" style="background-image:url(\'' + esc(hq(h.backdrop || h.poster)) + '\')"></div><div class="wrap">' +
     '<div class="tags">' + (langLabel(h) ? '<span class="lang">' + esc(langLabel(h)) + '</span>' : '') + [isMovie(h) ? "Film" : "Série", h.year, (h.genres || []).slice(0, 3).join(" / ")].filter(Boolean).map(function (t) { return "<span>" + esc(t) + "</span>"; }).join("") + '</div>' +
     '<h1>' + esc(h.name) + '</h1><p>' + esc(h.overview || "") + '</p>' +
     '<div class="row"><button class="btn" data-watch="' + esc(h.id) + '">Regarder</button><a class="btn ghost" href="#/serie/' + esc(h.id) + '">Voir la fiche</a></div></div></div>';
@@ -741,7 +743,7 @@ function viewSerie(id) {
       srcChips = '<p class="note" style="margin-top:14px">' + (ADMIN ? 'Aucune source pour l\'instant. Ajoute-en avec « Modifier ».' : 'Aucune source disponible pour l\'instant.') + '</p>';
     }
   }
-  var html = '<section class="detail"><div class="bg" style="background-image:url(\'' + esc(s.backdrop || s.poster) + '\')"></div><div class="wrap">' +
+  var html = '<section class="detail"><div class="bg" style="background-image:url(\'' + esc(hq(s.backdrop || s.poster)) + '\')"></div><div class="wrap">' +
     '<div class="poster">' + (s.poster ? '<img src="' + esc(s.poster) + '" alt="' + esc(s.name) + '">' : '<div class="ph">' + esc(s.name.charAt(0)) + '</div>') + '</div>' +
     '<div><div class="tags">' + (langLabel(s) ? '<span class="lang">' + esc(langLabel(s)) + '</span>' : '') + tags.map(function (t) { return "<span>" + esc(t) + "</span>"; }).join("") + '</div>' +
     '<h1>' + esc(s.name) + '</h1>' + (s.original_name && s.original_name !== s.name ? '<div class="orig">' + esc(s.original_name) + '</div>' : '<div class="orig"></div>') +
@@ -889,7 +891,7 @@ function pickMovie(id, old) {
       genres: (t.genres || []).map(function (g) { return g.name; }),
       rating: t.vote_average ? t.vote_average.toFixed(1) : "", pop: t.popularity || 0,
       status: t.status || "", runtime: t.runtime || "",
-      poster: img(t.poster_path, "w500"), backdrop: img(t.backdrop_path, "w1280"),
+      poster: img(t.poster_path, "w500"), backdrop: img(t.backdrop_path, "original"),
       cast: ((t.credits && t.credits.cast) || []).slice(0, 12).map(function (c) { return { name: c.name, character: c.character }; }),
       seasons: [], sources: [], addedAt: Date.now()
     });
@@ -929,7 +931,7 @@ function pickTv(id, old) {
         year: (t.first_air_date || "").slice(0, 4), overview: t.overview || "",
         genres: (t.genres || []).map(function (g) { return g.name; }),
         rating: t.vote_average ? t.vote_average.toFixed(1) : "", pop: t.popularity || 0,
-        status: t.status || "", poster: img(t.poster_path, "w500"), backdrop: img(t.backdrop_path, "w1280"),
+        status: t.status || "", poster: img(t.poster_path, "w500"), backdrop: img(t.backdrop_path, "original"),
         cast: ((t.credits && t.credits.cast) || []).slice(0, 12).map(function (c) { return { name: c.name, character: c.character }; }),
         seasons: seasons.map(function (s, i) {
           return { number: s.season_number, name: s.name, episodes: (full[i].episodes || []).map(function (e) { return { number: e.episode_number, name: e.name, overview: e.overview || "", air_date: e.air_date || "", sources: [] }; }) };
