@@ -403,6 +403,23 @@ dialog#player::-webkit-scrollbar { display: none; }
 
 /* reprendre */
 .card .poster .rtag { position: absolute; z-index: 1; left: 0; right: 0; bottom: 0; padding: 7px 10px; background: var(--fg); color: var(--bg); font-weight: 700; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; }
+
+/* message d'accueil */
+dialog#welcome { width: min(520px, 94vw); padding: 0; border: 1px solid var(--line); background: #000; color: var(--fg); }
+dialog#welcome[open] { animation: dialogIn .3s var(--ease) both; }
+dialog#welcome::backdrop { background: rgba(0,0,0,.85); }
+.wbox { padding: 32px 28px 28px; display: grid; gap: 16px; }
+.wbox h2 { font-family: var(--display); font-weight: 900; font-size: clamp(34px, 8vw, 48px); line-height: .95; text-transform: uppercase; margin: 0; }
+.wbox p { margin: 0; color: #cfcfcf; }
+.wbox .beta { justify-self: start; font-family: var(--mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; background: var(--fg); color: var(--bg); padding: 4px 8px; line-height: 1; }
+.contact { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; border: 1px solid var(--line); padding: 12px 14px; font-size: 14px; }
+.contact b { font-family: var(--mono); font-weight: 500; }
+.wbox .btn { justify-self: start; }
+footer .wrap.about { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 28px; align-items: start; justify-content: stretch; margin-top: 24px; padding-top: 24px; border-top: 1px solid var(--line); }
+.about h3 { font-family: var(--display); font-weight: 700; font-size: 20px; text-transform: uppercase; letter-spacing: .03em; color: var(--fg); margin: 0 0 8px; }
+.about p { margin: 0 0 12px; max-width: 60ch; }
+.about .btn { text-decoration: none; }
+.about .mail { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; font-family: var(--mono); font-size: 12px; margin-top: 12px; word-break: break-all; }
 </style>
 </head>
 <body>
@@ -426,6 +443,7 @@ dialog#player::-webkit-scrollbar { display: none; }
   <div class="wrap">
     <span id="count">0 fiche</span>
     <div class="links">
+      <button id="btn-info" type="button">Infos du site</button>
       <button id="btn-export" type="button" class="admin-only">Publier (catalog.json)</button>
       <button id="btn-import" type="button" class="admin-only">Importer</button>
       <button id="btn-key" type="button" class="admin-only">Clé TMDB</button>
@@ -433,6 +451,18 @@ dialog#player::-webkit-scrollbar { display: none; }
       <button id="btn-quit" type="button" class="admin-only">Quitter le mode admin</button>
     </div>
     <input id="file" type="file" accept="application/json" hidden>
+  </div>
+  <div class="wrap about">
+    <div>
+      <h3>À propos des contenus</h3>
+      <p>DramaByM référence des contenus disponibles auprès de services tiers. Le site n'héberge aucun fichier vidéo, et leur disponibilité dépend de ces services.</p>
+    </div>
+    <div>
+      <h3>Soutenir le site</h3>
+      <p>Le site est gratuit. Si tu veux aider à le faire grandir, un don PayPal est le bienvenu.</p>
+      <a class="btn small" href="https://www.paypal.com/donate/?business=makroum.mohamed.mahdi%40gmail.com&currency_code=EUR" target="_blank" rel="noopener">Faire un don</a>
+      <div class="mail"><span>PayPal : makroum.mohamed.mahdi@gmail.com</span><button type="button" class="btn small ghost" data-copy="makroum.mohamed.mahdi@gmail.com">Copier</button></div>
+    </div>
   </div>
 </footer>
 
@@ -451,6 +481,17 @@ dialog#player::-webkit-scrollbar { display: none; }
     <div class="ptip" id="ptip"><button type="button" class="tbtn" id="tprev" aria-label="Conseil précédent">‹</button><p id="ttext" aria-live="polite"></p><button type="button" class="tbtn" id="tnext" aria-label="Conseil suivant">›</button><span id="tcount"></span></div>
     <div class="pl" id="pl"><span class="chiplbl">Serveur</span><span class="srcs" id="psrc"></span></div>
     <div class="pn" id="pnav"><button class="btn small ghost" id="pprev" type="button">Épisode précédent</button><button class="btn small" id="pnext" type="button">Épisode suivant</button></div>
+  </div>
+</dialog>
+<dialog id="welcome" aria-labelledby="wtitle">
+  <div class="wbox">
+    <span class="beta">Bêta</span>
+    <h2 id="wtitle">Bienvenue sur DramaByM</h2>
+    <p>Le site est en bêta : des titres sont ajoutés tous les jours.</p>
+    <p>Ce n'est pas vraiment un site de streaming. C'est plutôt une liste qui te facilite la vie, en rassemblant au même endroit des contenus disponibles chez des services tiers.</p>
+    <p>Une idée, un bug, ou l'envie de contribuer ? Écris-moi sur Discord.</p>
+    <div class="contact"><span>Discord</span><b>meyriuu</b><button type="button" class="btn small ghost" data-copy="meyriuu">Copier</button></div>
+    <button class="btn" id="welcome-ok" type="button">Compris</button>
   </div>
 </dialog>
 <div class="toast" id="toast" role="status"></div>
@@ -1441,6 +1482,20 @@ $("#btn-quit").addEventListener("click", function () {
   location.hash = "#/"; location.reload();
 });
 
+/* ===== Message d'accueil et copie ===== */
+var WELKEY = "noir.welcome";
+function openWelcome() { var d = $("#welcome"); if (d.showModal && !d.open) d.showModal(); }
+function closeWelcome() { var d = $("#welcome"); if (d.open) d.close(); }
+$("#welcome-ok").addEventListener("click", closeWelcome);
+$("#welcome").addEventListener("click", function (e) { if (e.target === this) closeWelcome(); });
+$("#welcome").addEventListener("close", function () { try { localStorage.setItem(WELKEY, "1"); } catch (e) {} });
+$("#btn-info").addEventListener("click", openWelcome);
+document.addEventListener("click", function (e) {
+  var b = e.target.closest("[data-copy]"); if (!b) return;
+  var txt = b.dataset.copy;
+  try { navigator.clipboard.writeText(txt).then(function () { toast("Copié : " + txt); }, function () { toast(txt); }); } catch (err) { toast(txt); }
+});
+
 /* Les visiteurs voient le catalogue publié dans catalog.json, à côté de index.html */
 function loadCatalog() {
   return fetch("catalog.json?v=" + Date.now(), { cache: "no-store" }).then(function (r) {
@@ -1457,6 +1512,7 @@ function loadCatalog() {
 document.body.classList.toggle("admin", ADMIN);
 $("#app").innerHTML = '<div class="wrap"><p class="note" style="padding:48px 0">Chargement…</p></div>';
 loadCatalog().then(function () { route(true); });
+try { if (!localStorage.getItem(WELKEY)) setTimeout(openWelcome, 700); } catch (e) {}
 </script>
 </body>
 </html>
