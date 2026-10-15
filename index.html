@@ -420,6 +420,12 @@ footer .wrap.about { display: grid; grid-template-columns: repeat(auto-fit, minm
 .about p { margin: 0 0 12px; max-width: 60ch; }
 .about .btn { text-decoration: none; }
 .about .mail { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; font-family: var(--mono); font-size: 12px; margin-top: 12px; word-break: break-all; }
+
+/* badge « En cours » (séries toujours diffusées) */
+.live { font-family: var(--mono); font-weight: 500; text-transform: uppercase; letter-spacing: .06em; background: #000; color: var(--fg); border: 1px solid var(--fg); line-height: 1; white-space: nowrap; }
+.poster .live { position: absolute; z-index: 1; top: 8px; right: 8px; font-size: 10px; padding: 4px 6px; }
+.tags .live { font-size: 12px; padding: 4px 8px; font-weight: 700; }
+.tags .live::before, .tags .live + span::before { content: none !important; }
 </style>
 </head>
 <body>
@@ -668,9 +674,11 @@ function card(s, i) {
   var meta = [s.type === "movie" ? "Film" : "", s.year, s.rating ? "★ " + s.rating : ""].filter(Boolean).join("  ·  ");
   return '<a class="card" style="--i:' + Math.min(i || 0, 14) + '" href="#/serie/' + esc(s.id) + '"><div class="poster">' +
     (s.poster ? '<img loading="lazy" src="' + esc(s.poster) + '" alt="' + esc(s.name) + '">' : '<div class="ph">' + esc(s.name.charAt(0)) + '</div>') +
-    (langLabel(s) ? '<span class="lang">' + esc(langLabel(s)) + '</span>' : '') + '</div><div class="meta"><b>' + esc(s.name) + '</b><span>' + esc(meta) + '</span></div></a>';
+    (langLabel(s) ? '<span class="lang">' + esc(langLabel(s)) + '</span>' : '') + (ongoing(s) ? '<span class="live">En cours</span>' : '') + '</div><div class="meta"><b>' + esc(s.name) + '</b><span>' + esc(meta) + '</span></div></a>';
 }
 /* Langue : VOSTFR, VF ou VOSTFR + VF */
+/* Série toujours diffusée (jamais pour un film) */
+function ongoing(s) { return !!s && s.type !== "movie" && /returning|en cours|in production/i.test(String(s.status || "")); }
 function langLabel(s) {
   var l = (s && s.langs) || [];
   return ["VOSTFR", "VF"].filter(function (x) { return l.indexOf(x) > -1; }).join(" + ");
@@ -760,7 +768,7 @@ function refreshTrending() {
 function hq(u) { return String(u || "").replace(/\/t\/p\/w\d+\//, "/t/p/original/"); }
 function heroSlide(h, on) {
   return '<div class="hslide' + (on ? " on" : "") + '"><div class="bg" style="background-image:url(\'' + esc(hq(h.backdrop || h.poster)) + '\')"></div><div class="wrap">' +
-    '<div class="tags">' + (langLabel(h) ? '<span class="lang">' + esc(langLabel(h)) + '</span>' : '') + [isMovie(h) ? "Film" : "Série", h.year, (h.genres || []).slice(0, 3).join(" / ")].filter(Boolean).map(function (t) { return "<span>" + esc(t) + "</span>"; }).join("") + '</div>' +
+    '<div class="tags">' + (langLabel(h) ? '<span class="lang">' + esc(langLabel(h)) + '</span>' : '') + (ongoing(h) ? '<span class="live">En cours</span>' : '') + [isMovie(h) ? "Film" : "Série", h.year, (h.genres || []).slice(0, 3).join(" / ")].filter(Boolean).map(function (t) { return "<span>" + esc(t) + "</span>"; }).join("") + '</div>' +
     '<h1>' + esc(h.name) + '</h1><p>' + esc(h.overview || "") + '</p>' +
     '<div class="row"><button class="btn" data-watch="' + esc(h.id) + '">Regarder</button><a class="btn ghost" href="#/serie/' + esc(h.id) + '">Voir la fiche</a></div></div></div>';
 }
@@ -847,7 +855,7 @@ function viewSerie(id) {
   var app = $("#app");
   if (!s) { app.innerHTML = emptyBox("Introuvable", "Cette fiche n'existe pas ou a été supprimée.", '<a class="btn" href="#/">Retour à l\'accueil</a>'); return; }
   var movie = isMovie(s);
-  var tags = [movie ? "Film" : "Série", s.year, (s.genres || []).join(" / "), movie ? fmtRuntime(s.runtime) : "", statusFr(s.status), s.rating ? "★ " + s.rating : ""].filter(Boolean);
+  var tags = [movie ? "Film" : "Série", s.year, (s.genres || []).join(" / "), movie ? fmtRuntime(s.runtime) : "", ongoing(s) ? "" : statusFr(s.status), s.rating ? "★ " + s.rating : ""].filter(Boolean);
   var srcChips = "";
   if (movie) {
     if ((s.sources || []).length > 1) {
@@ -858,7 +866,7 @@ function viewSerie(id) {
   }
   var html = '<section class="detail"><div class="bg" style="background-image:url(\'' + esc(hq(s.backdrop || s.poster)) + '\')"></div><div class="wrap">' +
     '<div class="poster">' + (s.poster ? '<img src="' + esc(s.poster) + '" alt="' + esc(s.name) + '">' : '<div class="ph">' + esc(s.name.charAt(0)) + '</div>') + '</div>' +
-    '<div><div class="tags">' + (langLabel(s) ? '<span class="lang">' + esc(langLabel(s)) + '</span>' : '') + tags.map(function (t) { return "<span>" + esc(t) + "</span>"; }).join("") + '</div>' +
+    '<div><div class="tags">' + (langLabel(s) ? '<span class="lang">' + esc(langLabel(s)) + '</span>' : '') + (ongoing(s) ? '<span class="live">En cours</span>' : '') + tags.map(function (t) { return "<span>" + esc(t) + "</span>"; }).join("") + '</div>' +
     '<h1>' + esc(s.name) + '</h1>' + (s.original_name && s.original_name !== s.name ? '<div class="orig">' + esc(s.original_name) + '</div>' : '<div class="orig"></div>') +
     '<p class="ov">' + esc(s.overview || "Pas de synopsis.") + '</p>' +
     '<div class="row"><button class="btn" data-watch="' + esc(s.id) + '">Regarder</button>' + (ADMIN ? '<a class="btn ghost" href="#/modifier/' + esc(s.id) + '">Modifier</a><button class="btn danger" data-del="' + esc(s.id) + '">Supprimer</button>' : '') + '</div>' + srcChips +
