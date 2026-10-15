@@ -124,6 +124,8 @@ nav a:hover::after, nav a.on::after { transform: scaleX(1); }
 .tags .lang { font-size: 12px; padding: 5px 8px; font-weight: 700; }
 .tags .lang::before, .tags .lang + span::before { content: none !important; }
 .langpick { display: flex; gap: 10px; flex-wrap: wrap; }
+.langchips { margin-top: 10px; align-items: center; }
+.chiplbl { font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: var(--dim); margin-right: 4px; }
 .chk { cursor: pointer; display: inline-flex; }
 .chk input { position: absolute; opacity: 0; pointer-events: none; }
 .chk i { font-style: normal; font-family: var(--mono); font-size: 13px; letter-spacing: .06em; border: 1px solid var(--line); padding: 9px 16px; color: var(--dim); transition: color .2s, border-color .2s, background .2s; }
@@ -535,7 +537,7 @@ var STATUS = { "Returning Series": "En cours", "Ended": "Terminée", "Canceled":
 function statusFr(s) { return STATUS[s] || s || ""; }
 
 /* ===== Vues ===== */
-var filter = "";
+var filter = "", langFilter = "";
 var rerender = null;
 var lastPage = null;
 var pendingScroll = false;
@@ -562,8 +564,40 @@ function emptyBox(title, text, btn) {
   return '<div class="wrap"><div class="empty"><h1>' + title + '</h1><p>' + text + '</p>' + (btn || "") + '</div></div>';
 }
 
-/* Carrousel de l'accueil : les 5 derniers ajouts, changement toutes les 10 s en fondu */
-var heroTimer = null;
+/* Carrousel de l'accueil : les 4 titres les plus populaires du moment (tendances TMDB de la semaine) */
+var heroTimer = null, TRENDKEY = "noir.trendAt";
+function popularPicks(n) {
+  return db.slice().sort(function (a, b) {
+    return (b.trend || 0) - (a.trend || 0) || (b.pop || 0) - (a.pop || 0) ||
+      (parseFloat(b.rating) || 0) - (parseFloat(a.rating) || 0) || (b.addedAt || 0) - (a.addedAt || 0);
+  }).slice(0, n);
+}
+/* En mode admin, avec la clé TMDB : met à jour le score « tendance » de chaque fiche (au plus toutes les 6 h).
+   Le score est enregistré dans le catalogue, donc les visiteurs le voient après publication. */
+function refreshTrending() {
+  if (!ADMIN || !getToken()) return Promise.resolve(false);
+  var last = 0; try { last = +localStorage.getItem(TRENDKEY) || 0; } catch (e) {}
+  if (Date.now() - last < 6 * 3600 * 1000) return Promise.resolve(false);
+  var jobs = [];
+  ["movie", "tv"].forEach(function (ty) {
+    [1, 2, 3].forEach(function (pg) {
+      jobs.push(tmdb("/trending/" + ty + "/week", { page: pg }).then(function (r) { return { ty: ty, pg: pg, res: r.results || [] }; }).catch(function () { return null; }));
+    });
+  });
+  return Promise.all(jobs).then(function (all) {
+    var score = {}, got = 0;
+    all.forEach(function (x) {
+      if (!x) return; got++;
+      x.res.forEach(function (it, k) { score[(x.ty === "movie" ? "m" : "") + it.id] = 100 - ((x.pg - 1) * 20 + k); });
+    });
+    if (!got) return false;
+    var changed = false;
+    db.forEach(function (s) { var v = score[String(s.id)] || 0; if ((s.trend || 0) !== v) { s.trend = v; changed = true; } });
+    try { localStorage.setItem(TRENDKEY, String(Date.now())); } catch (e) {}
+    if (changed) persist();
+    return changed;
+  }).catch(function () { return false; });
+}
 function heroSlide(h, on) {
   return '<div class="hslide' + (on ? " on" : "") + '"><div class="bg" style="background-image:url(\'' + esc(h.backdrop || h.poster) + '\')"></div><div class="wrap">' +
     '<div class="tags">' + (langLabel(h) ? '<span class="lang">' + esc(langLabel(h)) + '</span>' : '') + [isMovie(h) ? "Film" : "Série", h.year, (h.genres || []).slice(0, 3).join(" / ")].filter(Boolean).map(function (t) { return "<span>" + esc(t) + "</span>"; }).join("") + '</div>' +
@@ -605,26 +639,32 @@ function viewHome() {
   var list = sortedDb();
   var tv = list.filter(function (s) { return !isMovie(s); });
   var mv = list.filter(isMovie);
-  var picks = list.slice(0, 5);
+  var picks = popularPicks(4);
   var html = '<section class="hero">' + picks.map(function (h, k) { return heroSlide(h, k === 0); }).join("") +
     (picks.length > 1 ? '<div class="hdots">' + picks.map(function (h, k) { return '<button type="button" data-i="' + k + '" class="' + (k === 0 ? "on" : "") + '" aria-label="Diapositive ' + (k + 1) + '"></button>'; }).join("") + '</div>' : '') + '</section>';
   html += rail("Derniers ajouts", list);
   if (tv.length && mv.length) html += rail("Séries", tv, "#/series") + rail("Films", mv, "#/films");
   $("#app").innerHTML = html;
   startHero();
+  refreshTrending().then(function (ch) { if (ch && (location.hash || "#/") === "#/") viewHome(); });
 }
 
+function langMatch(s) { return !langFilter || (s.langs || []).indexOf(langFilter) > -1; }
+function langChips() {
+  return '<div class="chips langchips"><span class="chiplbl">Langue</span><button class="chip' + (!langFilter ? " on" : "") + '" data-langf="">Toutes</button>' +
+    ["VOSTFR", "VF"].map(function (L) { return '<button class="chip' + (langFilter === L ? " on" : "") + '" data-langf="' + L + '">' + L + '</button>'; }).join("") + '</div>';
+}
 function viewList(title, pred) {
   var list = sortedDb().filter(pred);
   var genres = {};
   list.forEach(function (s) { (s.genres || []).forEach(function (g) { genres[g] = 1; }); });
-  var shown = list.filter(function (s) { return !filter || (s.genres || []).indexOf(filter) > -1; });
+  var shown = list.filter(function (s) { return (!filter || (s.genres || []).indexOf(filter) > -1) && langMatch(s); });
   var html = '<div class="wrap listhead"><h1>' + esc(title) + '</h1><p class="note">' + list.length + (list.length > 1 ? " titres" : " titre") + '</p></div>';
   if (!list.length) { $("#app").innerHTML = html + emptyBox("Rien ici", "Aucun titre dans cette section pour l'instant.", '<a class="btn ghost" href="#/">Retour à l\'accueil</a>'); return; }
   html += '<div class="wrap"><div class="section-head" style="padding-block:24px 18px"><div class="chips">' +
     '<button class="chip' + (!filter ? " on" : "") + '" data-genre="">Tout</button>' +
     Object.keys(genres).sort().map(function (g) { return '<button class="chip' + (filter === g ? " on" : "") + '" data-genre="' + esc(g) + '">' + esc(g) + '</button>'; }).join("") +
-    '</div></div><div class="grid">' + shown.map(card).join("") + '</div></div>';
+    '</div>' + langChips() + '</div>' + (shown.length ? '<div class="grid">' + shown.map(card).join("") + '</div>' : '<p class="note" style="padding-bottom:48px">Aucun titre avec ces filtres.</p>') + '</div>';
   $("#app").innerHTML = html;
 }
 
@@ -632,10 +672,12 @@ function viewSearch(q) {
   var needle = q.trim().toLowerCase();
   var html = '<div class="wrap listhead"><h1>Recherche</h1>';
   if (!needle) { $("#app").innerHTML = html + '<p class="note">Tape un titre dans la barre en haut.</p></div>'; return; }
-  var found = sortedDb().filter(function (s) { return s.name.toLowerCase().indexOf(needle) > -1 || (s.original_name || "").toLowerCase().indexOf(needle) > -1; });
-  html += '<p class="note">' + found.length + (found.length > 1 ? " résultats" : " résultat") + ' pour « ' + esc(q.trim()) + ' »</p></div>';
-  html += found.length ? '<div class="wrap"><div class="grid" style="padding-top:28px">' + found.map(card).join("") + '</div></div>' :
-    emptyBox("Rien trouvé", "Aucun titre ne correspond. Essaie un autre mot.", '<a class="btn ghost" href="#/">Retour à l\'accueil</a>');
+  var base = sortedDb().filter(function (s) { return s.name.toLowerCase().indexOf(needle) > -1 || (s.original_name || "").toLowerCase().indexOf(needle) > -1; });
+  var found = base.filter(langMatch);
+  html += '<p class="note">' + found.length + (found.length > 1 ? " résultats" : " résultat") + ' pour « ' + esc(q.trim()) + ' »' + (langFilter ? " en " + langFilter : "") + '</p></div>';
+  if (!base.length) { $("#app").innerHTML = html + emptyBox("Rien trouvé", "Aucun titre ne correspond. Essaie un autre mot.", '<a class="btn ghost" href="#/">Retour à l\'accueil</a>'); return; }
+  html += '<div class="wrap"><div class="section-head" style="padding-block:24px 0">' + langChips() + '</div>' +
+    (found.length ? '<div class="grid" style="padding-top:28px">' + found.map(card).join("") + '</div>' : '<p class="note" style="padding:28px 0 48px">Aucun résultat dans cette langue.</p>') + '</div>';
   $("#app").innerHTML = html;
 }
 
@@ -799,7 +841,7 @@ function pickMovie(id, old) {
       id: "m" + t.id, type: "movie", name: t.title || "", original_name: t.original_title || "",
       year: (t.release_date || "").slice(0, 4), overview: t.overview || "",
       genres: (t.genres || []).map(function (g) { return g.name; }),
-      rating: t.vote_average ? t.vote_average.toFixed(1) : "",
+      rating: t.vote_average ? t.vote_average.toFixed(1) : "", pop: t.popularity || 0,
       status: t.status || "", runtime: t.runtime || "",
       poster: img(t.poster_path, "w500"), backdrop: img(t.backdrop_path, "w1280"),
       cast: ((t.credits && t.credits.cast) || []).slice(0, 12).map(function (c) { return { name: c.name, character: c.character }; }),
@@ -840,7 +882,7 @@ function pickTv(id, old) {
         id: String(t.id), type: "tv", name: t.name || "", original_name: t.original_name || "",
         year: (t.first_air_date || "").slice(0, 4), overview: t.overview || "",
         genres: (t.genres || []).map(function (g) { return g.name; }),
-        rating: t.vote_average ? t.vote_average.toFixed(1) : "",
+        rating: t.vote_average ? t.vote_average.toFixed(1) : "", pop: t.popularity || 0,
         status: t.status || "", poster: img(t.poster_path, "w500"), backdrop: img(t.backdrop_path, "w1280"),
         cast: ((t.credits && t.credits.cast) || []).slice(0, 12).map(function (c) { return { name: c.name, character: c.character }; }),
         seasons: seasons.map(function (s, i) {
@@ -873,7 +915,7 @@ function saveDraft() {
   normalize(draft);
   var i = -1;
   db.forEach(function (x, k) { if (String(x.id) === String(draft.id)) i = k; });
-  if (i > -1) db[i] = draft; else db.push(draft);
+  if (i > -1) { if (draft.trend == null) draft.trend = db[i].trend; db[i] = draft; } else db.push(draft);
   persist();
   toast("Fiche enregistrée");
   var id = draft.id; draft = null;
@@ -933,7 +975,7 @@ function route(force) {
   if ((a === "ajouter" || a === "modifier" || a === "motdepasse") && !ADMIN) { location.hash = "#/admin"; return; }
 
   var changed = force || a !== lastPage || a === "serie" || a === "modifier";
-  if (a !== lastPage) filter = "";
+  if (a !== lastPage) { filter = ""; langFilter = ""; }
   lastPage = a;
 
   var q = $("#q");
@@ -949,7 +991,7 @@ function route(force) {
   if (a === "serie") viewSerie(b);
   else if (a === "series") { rerender = function () { viewList("Séries", function (s) { return !isMovie(s); }); }; rerender(); }
   else if (a === "films") { rerender = function () { viewList("Films", isMovie); }; rerender(); }
-  else if (a === "recherche") viewSearch(b);
+  else if (a === "recherche") { rerender = function () { viewSearch(b); }; rerender(); }
   else if (a === "admin") viewLogin();
   else if (a === "motdepasse") viewSetPassword(false);
   else if (a === "ajouter") viewEditor();
@@ -969,7 +1011,7 @@ window.addEventListener("hashchange", function () { route(); });
 document.addEventListener("click", function (e) {
   var nav = e.target.closest("header.top a[href^='#/']");
   if (nav && nav.getAttribute("href") === (location.hash || "#/")) { e.preventDefault(); route(true); return; }
-  var t = e.target.closest("[data-watch],[data-movsrc],[data-playep],[data-src],[data-del],[data-genre],[data-pick],[data-bulk],#save,#applytpl,#manual,#manualfilm,#refresh,#copyhash");
+  var t = e.target.closest("[data-watch],[data-movsrc],[data-playep],[data-src],[data-del],[data-genre],[data-langf],[data-pick],[data-bulk],#save,#applytpl,#manual,#manualfilm,#refresh,#copyhash");
   if (!t) return;
   if (t.dataset.watch != null) {
     var w = byId(t.dataset.watch); if (!w) return;
@@ -993,6 +1035,7 @@ document.addEventListener("click", function (e) {
     else { t.dataset.armed = "1"; t.textContent = "Confirmer ?"; setTimeout(function () { if (t.isConnected) { delete t.dataset.armed; t.textContent = "Supprimer"; } }, 3000); }
   }
   else if (t.dataset.genre != null) { filter = t.dataset.genre; if (rerender) rerender(); }
+  else if (t.dataset.langf != null) { langFilter = t.dataset.langf; if (rerender) rerender(); }
   else if (t.dataset.pick != null) pick(t.dataset.pick);
   else if (t.id === "save") saveDraft();
   else if (t.id === "refresh") pick((draft.type === "movie" ? "movie|" + String(draft.id).replace(/^m/, "") : "tv|" + draft.id), draft);
