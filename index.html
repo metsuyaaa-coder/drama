@@ -1683,7 +1683,7 @@ function renderProfileBtn() {
 }
 function setSession(phrase, p) {
   PHRASE = phrase; PROFILE = p; if (!Array.isArray(PROFILE.list)) PROFILE.list = [];
-  try { localStorage.setItem(PHKEY, phrase); } catch (e) {}
+  try { localStorage.setItem(PHKEY, phrase); localStorage.setItem("noir.psync", String(Date.now())); } catch (e) {}
   cacheProfile(); renderProfileBtn();
 }
 /* Les droits admin donnés par un profil sont retirés quand le profil se déconnecte ou perd son rôle */
@@ -1708,9 +1708,13 @@ function applyRole() {
   if (!isStaff()) dropProfileAdmin();
   return false;
 }
-function profileSync() {
+/* Pour économiser les requêtes : le profil n'est resynchronisé qu'au plus toutes les 10 minutes */
+function profileSync(force) {
   if (!PHRASE) return;
+  var last = 0; try { last = parseInt(localStorage.getItem("noir.psync"), 10) || 0; } catch (e) {}
+  if (!force && PROFILE && Date.now() - last < 600000) return;
   api("login").then(function (r) {
+    try { localStorage.setItem("noir.psync", String(Date.now())); } catch (e) {}
     var before = JSON.stringify(PROFILE);
     PROFILE = r.profile; cacheProfile(); renderProfileBtn();
     var gained = applyRole();
