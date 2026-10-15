@@ -398,6 +398,10 @@ html.lock, html.lock body { overflow: hidden; }
 html:has(dialog#player[open]), html:has(dialog#player[open]) body { overflow: hidden; }
 dialog#player { overflow: hidden; scrollbar-width: none; overscroll-behavior: contain; }
 dialog#player::-webkit-scrollbar { display: none; }
+
+/* rangées : pas de barre de défilement visible (flèches, molette et doigt suffisent) */
+.rail { scrollbar-width: none; -ms-overflow-style: none; }
+.rail::-webkit-scrollbar { display: none; }
 </style>
 </head>
 <body>
