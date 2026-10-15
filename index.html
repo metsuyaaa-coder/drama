@@ -453,6 +453,24 @@ footer .wrap.about { display: grid; grid-template-columns: repeat(auto-fit, minm
 .poster .lang + .live { top: 30px; }
 .tags .lang { margin-right: 100%; }
 .tags .live { margin-right: 100%; }
+
+/* badge « Nouvel épisode » */
+.new { display: inline-flex; align-items: center; gap: 5px; font-family: var(--mono); font-weight: 700; text-transform: uppercase; letter-spacing: .06em; background: var(--fg); color: var(--bg); line-height: 1; white-space: nowrap; }
+.new i { width: 5px; height: 5px; border-radius: 50%; background: var(--bg); flex: 0 0 auto; animation: blink 1.6s ease-in-out infinite; }
+@keyframes blink { 50% { opacity: .2; } }
+.poster .new { position: absolute; z-index: 1; top: 8px; right: 8px; font-size: 10px; padding: 4px 6px; }
+.tags .new { font-size: 12px; padding: 5px 8px; margin-right: 100%; }
+.tags .new::before, .tags .new + span::before { content: none !important; }
+.ep b .new { font-size: 10px; padding: 4px 6px; margin-left: 8px; vertical-align: middle; }
+
+/* épisodes vus */
+.ep.seen .n, .ep.seen b { color: var(--dim); }
+.btn.ghost.on { background: var(--fg); color: var(--bg); }
+.btn.ghost.on:hover { background: transparent; color: var(--fg); }
+.seasonbar { padding: 0 0 14px; }
+.epi.seen .et { color: var(--dim); }
+.epi.seen.on .et { color: var(--bg); }
+@media (max-width: 720px) { nav { gap: 14px; } }
 </style>
 </head>
 <body>
@@ -464,6 +482,7 @@ footer .wrap.about { display: grid; grid-template-columns: repeat(auto-fit, minm
       <a href="#/" id="nav-home">Accueil</a>
       <a href="#/series" id="nav-series">Séries</a>
       <a href="#/films" id="nav-films">Films</a>
+      <a href="#/ma-liste" id="nav-list">Ma liste</a>
       <a href="#/ajouter" id="nav-add" class="admin-only">Ajouter</a>
     </nav>
     <div class="search"><input id="q" type="text" placeholder="Rechercher un titre" autocomplete="off" aria-label="Rechercher dans le catalogue"><div class="sugg" id="sugg" hidden></div></div>
@@ -706,7 +725,7 @@ function card(s, i) {
   var meta = [s.type === "movie" ? "Film" : "", s.year, s.rating ? "★ " + s.rating : ""].filter(Boolean).join("  ·  ");
   return '<a class="card" style="--i:' + Math.min(i || 0, 14) + '" href="#/serie/' + esc(s.id) + '"><div class="poster">' +
     (s.poster ? '<img loading="lazy" src="' + esc(s.poster) + '" alt="' + esc(s.name) + '">' : '<div class="ph">' + esc(s.name.charAt(0)) + '</div>') +
-    (langLabel(s) ? '<span class="lang">' + esc(langLabel(s)) + '</span>' : '') + (ongoing(s) ? '<span class="live">En cours</span>' : '') + '</div><div class="meta"><b>' + esc(s.name) + '</b><span>' + esc(meta) + '</span></div></a>';
+    (langLabel(s) ? '<span class="lang">' + esc(langLabel(s)) + '</span>' : '') + (ongoing(s) ? '<span class="live">En cours</span>' : '') + (newEpisode(s) ? newBadge("Nouvel ép.") : '') + '</div><div class="meta"><b>' + esc(s.name) + '</b><span>' + esc(meta) + '</span></div></a>';
 }
 /* Langue : VOSTFR, VF ou VOSTFR + VF */
 /* Série toujours diffusée (jamais pour un film) */
@@ -754,6 +773,89 @@ function resumeWatch(id) {
   var s = byId(id), r = readResume()[id]; if (!s || !r) return;
   if (isMovie(s)) { saveResume(s.id); play(s.sources, s.name); } else playEp(s, r.si, r.n);
 }
+/* ===== Épisodes vus, nouveautés, ma liste (tout reste dans le navigateur) ===== */
+var SEENKEY = "noir.seen", LISTKEY = "noir.list", NEWDAYS = 10;
+function readSeen() { var v = readJSON(SEENKEY, {}); return v && typeof v === "object" && !Array.isArray(v) ? v : {}; }
+function epKey(se, ep) { return se.number + "x" + ep.number; }
+function isSeen(sid, se, ep) { var m = readSeen()[sid]; return !!(m && m[epKey(se, ep)]); }
+function setSeenMany(sid, se, on, onlyEp) {
+  var all = readSeen(), m = all[sid] || {};
+  (se.episodes || []).forEach(function (ep) {
+    if (onlyEp && ep !== onlyEp) return;
+    if (on) m[epKey(se, ep)] = 1; else delete m[epKey(se, ep)];
+  });
+  if (Object.keys(m).length) all[sid] = m; else delete all[sid];
+  try { localStorage.setItem(SEENKEY, JSON.stringify(all)); } catch (e) { toast("Stockage plein ou bloqué par le navigateur"); }
+}
+function setSeen(sid, se, ep, on) { setSeenMany(sid, se, on, ep); }
+function markCurSeen() {
+  var n = cur.nav && cur.nav.eps; if (!n) return;
+  var se = n.s.seasons[n.si], ep = se && (se.episodes || []).filter(function (x) { return String(x.number) === String(n.num); })[0];
+  if (ep) setSeen(n.s.id, se, ep, true);
+}
+/* Un épisode est « nouveau » s'il est sorti dans les NEWDAYS derniers jours */
+function isRecent(d) {
+  if (!d) return false;
+  var t = new Date(d + "T00:00:00").getTime(); if (isNaN(t)) return false;
+  var age = (Date.now() - t) / 864e5;
+  return age >= 0 && age <= NEWDAYS;
+}
+/* Dernier épisode récent, avec source et pas encore vu (sert au badge des affiches) */
+function newEpisode(s) {
+  if (!s || isMovie(s)) return null;
+  var seen = readSeen()[s.id] || {}, best = null;
+  (s.seasons || []).forEach(function (se) {
+    (se.episodes || []).forEach(function (ep) {
+      if (!isRecent(ep.air_date) || !(ep.sources || []).length || seen[epKey(se, ep)]) return;
+      if (!best || ep.air_date > best.ep.air_date) best = { se: se, ep: ep };
+    });
+  });
+  return best;
+}
+function newBadge(label) { return '<span class="new"><i></i>' + esc(label) + '</span>'; }
+function readList() { var l = readJSON(LISTKEY, []); return Array.isArray(l) ? l.map(String) : []; }
+function inList(id) { return readList().indexOf(String(id)) > -1; }
+function toggleList(id) {
+  var l = readList(), k = l.indexOf(String(id));
+  if (k > -1) l.splice(k, 1); else l.unshift(String(id));
+  try { localStorage.setItem(LISTKEY, JSON.stringify(l)); } catch (e) { toast("Stockage plein ou bloqué par le navigateur"); }
+  return k === -1;
+}
+function listItems() { return readList().map(function (id) { return byId(id); }).filter(Boolean); }
+/* Met à jour la fiche en place après un changement « vu », sans tout redessiner */
+function refreshSeen(s) {
+  var seen = readSeen()[s.id] || {};
+  var blocks = document.querySelectorAll("details.season");
+  (s.seasons || []).forEach(function (se, i) {
+    var d = blocks[i]; if (!d) return;
+    var rows = d.querySelectorAll(".ep"), cnt = 0, all = true, eps = se.episodes || [];
+    eps.forEach(function (ep, k) {
+      var on = !!seen[epKey(se, ep)];
+      if (on) cnt++; else all = false;
+      var row = rows[k]; if (!row) return;
+      row.classList.toggle("seen", on);
+      var b = row.querySelector(".seenbtn");
+      if (b) { b.textContent = on ? "Vu ✓" : "Marquer vu"; b.classList.toggle("on", on); }
+      var title = row.querySelector("b"), nb = title && title.querySelector(".new"), fresh = !on && isRecent(ep.air_date);
+      if (nb && !fresh) nb.remove();
+      else if (!nb && fresh && title) title.insertAdjacentHTML("beforeend", " " + newBadge("Nouveau"));
+    });
+    var im = d.querySelector("summary i");
+    if (im) im.textContent = eps.length + " ÉPISODES" + (cnt ? " · " + cnt + " VUS" : "");
+    var sb = d.querySelector("[data-seenseason]");
+    if (sb) sb.textContent = all && eps.length ? "Tout marquer non vu" : "Tout marquer comme vu";
+  });
+  var tags = document.querySelector(".detail .tags");
+  if (tags) {
+    var badge = tags.querySelector(".new"), ne = newEpisode(s);
+    if (badge && !ne) badge.remove();
+    else if (!badge && ne) {
+      var first = Array.prototype.filter.call(tags.children, function (c) { return !c.className; })[0];
+      if (first) first.insertAdjacentHTML("beforebegin", newBadge("Nouvel épisode")); else tags.insertAdjacentHTML("beforeend", newBadge("Nouvel épisode"));
+    }
+  }
+}
+
 function rail(title, list, href, fn) {
   return '<section class="wrap rail-sec"><div class="section-head"><h2>' + esc(title) + '</h2>' + (href ? '<a class="more" href="' + href + '">Tout voir</a>' : '') + '</div><div class="railwrap"><div class="rail">' + list.slice(0, 14).map(fn || card).join("") + '</div>' + arrows("data-rail") + '</div></section>';
 }
@@ -800,7 +902,7 @@ function refreshTrending() {
 function hq(u) { return String(u || "").replace(/\/t\/p\/w\d+\//, "/t/p/original/"); }
 function heroSlide(h, on) {
   return '<div class="hslide' + (on ? " on" : "") + '"><div class="bg" style="background-image:url(\'' + esc(hq(h.backdrop || h.poster)) + '\')"></div><div class="wrap">' +
-    '<div class="tags">' + (langLabel(h) ? '<span class="lang">' + esc(langLabel(h)) + '</span>' : '') + (ongoing(h) ? '<span class="live">En cours</span>' : '') + [isMovie(h) ? "Film" : "Série", h.year, (h.genres || []).slice(0, 3).join(" / ")].filter(Boolean).map(function (t) { return "<span>" + esc(t) + "</span>"; }).join("") + '</div>' +
+    '<div class="tags">' + (langLabel(h) ? '<span class="lang">' + esc(langLabel(h)) + '</span>' : '') + (ongoing(h) ? '<span class="live">En cours</span>' : '') + (newEpisode(h) ? newBadge("Nouvel épisode") : '') + [isMovie(h) ? "Film" : "Série", h.year, (h.genres || []).slice(0, 3).join(" / ")].filter(Boolean).map(function (t) { return "<span>" + esc(t) + "</span>"; }).join("") + '</div>' +
     '<h1>' + esc(h.name) + '</h1><p>' + esc(h.overview || "") + '</p>' +
     '<div class="row"><button class="btn" data-watch="' + esc(h.id) + '">Regarder</button><a class="btn ghost" href="#/serie/' + esc(h.id) + '">Voir la fiche</a></div></div></div>';
 }
@@ -844,11 +946,22 @@ function viewHome() {
     (picks.length > 1 ? '<div class="hdots">' + picks.map(function (h, k) { return '<button type="button" data-i="' + k + '" class="' + (k === 0 ? "on" : "") + '" aria-label="Diapositive ' + (k + 1) + '"></button>'; }).join("") + '</div>' : '') + '</section>';
   var rs = resumeList();
   if (rs.length) html += rail("Reprendre", rs, "", resumeCard);
+  var fresh = tv.filter(function (s) { return newEpisode(s); });
+  if (fresh.length) html += rail("Nouveaux épisodes", fresh);
+  var ml = listItems();
+  if (ml.length) html += rail("Ma liste", ml, "#/ma-liste");
   html += rail("Derniers ajouts", list);
   if (tv.length && mv.length) html += rail("Séries", tv, "#/series") + rail("Films", mv, "#/films");
   $("#app").innerHTML = html;
   startHero();
   refreshTrending().then(function (ch) { if (ch && (location.hash || "#/") === "#/") viewHome(); });
+}
+
+function viewMyList() {
+  var items = listItems();
+  var html = '<div class="wrap listhead"><h1>Ma liste</h1><p class="note">' + items.length + (items.length > 1 ? " titres" : " titre") + ' · enregistrée sur cet appareil</p></div>';
+  if (!items.length) { $("#app").innerHTML = html + emptyBox("Liste vide", "Ajoute des titres depuis leur fiche avec « + Ma liste ».", '<a class="btn ghost" href="#/">Parcourir le catalogue</a>'); return; }
+  $("#app").innerHTML = html + '<div class="wrap"><div class="grid" style="padding-top:28px">' + items.map(card).join("") + '</div></div>';
 }
 
 function langMatch(s) { return !langFilter || (s.langs || []).indexOf(langFilter) > -1; }
@@ -912,6 +1025,9 @@ function viewSerie(id) {
   var app = $("#app");
   if (!s) { app.innerHTML = emptyBox("Introuvable", "Cette fiche n'existe pas ou a été supprimée.", '<a class="btn" href="#/">Retour à l\'accueil</a>'); return; }
   var movie = isMovie(s);
+  var seenMap = readSeen()[s.id] || {};
+  function seenCount(se) { return (se.episodes || []).filter(function (ep) { return seenMap[epKey(se, ep)]; }).length; }
+  var ne = newEpisode(s);
   var tags = [movie ? "Film" : "Série", s.year, (s.genres || []).join(" / "), movie ? fmtRuntime(s.runtime) : "", ongoing(s) ? "" : statusFr(s.status), s.rating ? "★ " + s.rating : ""].filter(Boolean);
   var srcChips = "";
   if (movie) {
@@ -923,19 +1039,20 @@ function viewSerie(id) {
   }
   var html = '<section class="detail"><div class="bg" style="background-image:url(\'' + esc(hq(s.backdrop || s.poster)) + '\')"></div><div class="wrap">' +
     '<div class="poster">' + (s.poster ? '<img src="' + esc(s.poster) + '" alt="' + esc(s.name) + '">' : '<div class="ph">' + esc(s.name.charAt(0)) + '</div>') + '</div>' +
-    '<div><div class="tags">' + (langLabel(s) ? '<span class="lang">' + esc(langLabel(s)) + '</span>' : '') + (ongoing(s) ? '<span class="live">En cours</span>' : '') + tags.map(function (t) { return "<span>" + esc(t) + "</span>"; }).join("") + '</div>' +
+    '<div><div class="tags">' + (langLabel(s) ? '<span class="lang">' + esc(langLabel(s)) + '</span>' : '') + (ongoing(s) ? '<span class="live">En cours</span>' : '') + (ne ? newBadge("Nouvel épisode") : '') + tags.map(function (t) { return "<span>" + esc(t) + "</span>"; }).join("") + '</div>' +
     '<h1>' + esc(s.name) + '</h1>' + (s.original_name && s.original_name !== s.name ? '<div class="orig">' + esc(s.original_name) + '</div>' : '<div class="orig"></div>') +
     '<p class="ov">' + esc(s.overview || "Pas de synopsis.") + '</p>' +
-    '<div class="row"><button class="btn" data-watch="' + esc(s.id) + '">Regarder</button>' + (ADMIN ? '<a class="btn ghost" href="#/modifier/' + esc(s.id) + '">Modifier</a><button class="btn danger" data-del="' + esc(s.id) + '">Supprimer</button>' : '') + '</div>' + srcChips +
+    '<div class="row"><button class="btn" data-watch="' + esc(s.id) + '">Regarder</button><button class="btn ghost' + (inList(s.id) ? " on" : "") + '" type="button" data-list="' + esc(s.id) + '">' + (inList(s.id) ? "✓ Dans ma liste" : "+ Ma liste") + '</button>' + (ADMIN ? '<a class="btn ghost" href="#/modifier/' + esc(s.id) + '">Modifier</a><button class="btn danger" data-del="' + esc(s.id) + '">Supprimer</button>' : '') + '</div>' + srcChips +
     ((s.cast || []).length ? '<h3 class="note" style="margin:32px 0 0;text-transform:uppercase;letter-spacing:.08em">Distribution</h3><div class="cast">' + s.cast.slice(0, 12).map(function (c) { return '<div><b>' + esc(c.name) + '</b><span>' + esc(c.character || "") + '</span></div>'; }).join("") + '</div>' : '') +
     '</div></div></section>';
   if (!movie && (s.seasons || []).length) {
     html += '<div class="wrap seasons" id="seasons"><div class="section-head"><h2>Épisodes</h2></div>' + s.seasons.map(function (se, i) {
-      return '<details class="season"' + (i === 0 ? " open" : "") + '><summary><span>' + esc(se.name || "Saison " + se.number) + '</span><span class="sm"><i>' + (se.episodes || []).length + ' ÉPISODES</i></span></summary>' +
+      return '<details class="season"' + (i === 0 ? " open" : "") + '><summary><span>' + esc(se.name || "Saison " + se.number) + '</span><span class="sm"><i>' + (se.episodes || []).length + ' ÉPISODES' + (seenCount(se) ? ' · ' + seenCount(se) + ' VUS' : '') + '</i></span></summary>' +
+        '<div class="seasonbar"><button type="button" class="btn small ghost" data-seenseason="' + esc(s.id) + '|' + i + '">' + (seenCount(se) === (se.episodes || []).length && seenCount(se) ? "Tout marquer non vu" : "Tout marquer comme vu") + '</button></div>' +
         (se.episodes || []).map(function (ep, k) {
-          var n = (ep.sources || []).length;
-          return '<div class="ep" style="--k:' + Math.min(k, 12) + '"><span class="n">' + String(ep.number).padStart(2, "0") + '</span><div><b>' + esc(ep.name || "Épisode " + ep.number) + '</b>' + (ep.air_date ? '<small class="d">' + esc(fmtDate(ep.air_date)) + '</small>' : '') + (ep.overview ? '<small>' + esc(ep.overview) + '</small>' : '') + '</div>' +
-            '<div class="act">' + (n ? '<button class="btn small" data-playep="' + esc(s.id) + '|' + i + '|' + esc(ep.number) + '">Lire</button>' + (n > 1 ? '<span class="off">' + n + ' sources</span>' : '') : '<span class="off">Sans source</span>') + '</div></div>';
+          var n = (ep.sources || []).length, seen = !!seenMap[epKey(se, ep)], fresh = !seen && isRecent(ep.air_date);
+          return '<div class="ep' + (seen ? " seen" : "") + '" style="--k:' + Math.min(k, 12) + '"><span class="n">' + String(ep.number).padStart(2, "0") + '</span><div><b>' + esc(ep.name || "Épisode " + ep.number) + (fresh ? " " + newBadge("Nouveau") : "") + '</b>' + (ep.air_date ? '<small class="d">' + esc(fmtDate(ep.air_date)) + '</small>' : '') + (ep.overview ? '<small>' + esc(ep.overview) + '</small>' : '') + '</div>' +
+            '<div class="act">' + (n ? '<button class="btn small" data-playep="' + esc(s.id) + '|' + i + '|' + esc(ep.number) + '">Lire</button>' + (n > 1 ? '<span class="off">' + n + ' sources</span>' : '') : '<span class="off">Sans source</span>') + '<button type="button" class="btn small ghost seenbtn' + (seen ? " on" : "") + '" data-seen="' + esc(s.id) + '|' + i + '|' + esc(ep.number) + '">' + (seen ? "Vu ✓" : "Marquer vu") + '</button></div></div>';
         }).join("") + '</details>';
     }).join("") + '</div>';
   }
@@ -1234,7 +1351,8 @@ function renderEps() {
   $("#pepss").style.display = d.list.length > 1 ? "" : "none";
   $("#pepsl").innerHTML = sel.eps.map(function (ep) {
     var on = sel.i === d.n.si && String(ep.number) === String(d.n.num);
-    return '<button type="button" class="epi' + (on ? " on" : "") + '" data-eps="' + sel.i + '|' + esc(ep.number) + '"><span class="en">' + esc(ep.number) + '</span><span class="et">' + esc(ep.name || ("Épisode " + ep.number)) + '</span>' + (on ? '<span class="ec">En lecture</span>' : "") + '</button>';
+    var sv = !!(readSeen()[d.n.s.id] || {})[epKey(sel.se, ep)];
+    return '<button type="button" class="epi' + (on ? " on" : "") + (sv ? " seen" : "") + '" data-eps="' + sel.i + '|' + esc(ep.number) + '"><span class="en">' + esc(ep.number) + '</span><span class="et">' + esc(ep.name || ("Épisode " + ep.number)) + '</span>' + (on ? '<span class="ec">En lecture</span>' : sv ? '<span class="ec">Vu</span>' : "") + '</button>';
   }).join("");
   var onEl = $("#pepsl").querySelector(".epi.on");
   if (onEl) $("#pepsl").scrollTop = Math.max(0, onEl.offsetTop - $("#pepsl").clientHeight / 2 + onEl.offsetHeight / 2);
@@ -1282,7 +1400,7 @@ function toggleFull() {
 }
 
 /* ===== Routage ===== */
-var NAVMAP = { "": "nav-home", series: "nav-series", films: "nav-films", ajouter: "nav-add", modifier: "nav-add" };
+var NAVMAP = { "": "nav-home", series: "nav-series", films: "nav-films", ajouter: "nav-add", modifier: "nav-add", "ma-liste": "nav-list" };
 
 function route(force) {
   force = force === true;
@@ -1310,6 +1428,7 @@ function route(force) {
   if (a === "serie") viewSerie(b);
   else if (a === "series") { rerender = function () { viewList("Séries", function (s) { return !isMovie(s); }); }; rerender(); }
   else if (a === "films") { rerender = function () { viewList("Films", isMovie); }; rerender(); }
+  else if (a === "ma-liste") viewMyList();
   else if (a === "recherche") { rerender = function () { viewSearch(b); }; rerender(); }
   else if (a === "admin") viewLogin();
   else if (a === "motdepasse") viewSetPassword(false);
@@ -1367,7 +1486,7 @@ document.addEventListener("click", function (e) { if (!e.target.closest(".search
 document.addEventListener("click", function (e) {
   var nav = e.target.closest("header.top a[href^='#/']");
   if (nav && nav.getAttribute("href") === (location.hash || "#/")) { e.preventDefault(); route(true); return; }
-  var t = e.target.closest("[data-resume],[data-watch],[data-movsrc],[data-playep],[data-src],[data-del],[data-genre],[data-langf],[data-pick],[data-bulk],#save,#applytpl,#manual,#manualfilm,#refresh,#copyhash");
+  var t = e.target.closest("[data-resume],[data-watch],[data-movsrc],[data-playep],[data-src],[data-del],[data-list],[data-seen],[data-seenseason],[data-genre],[data-langf],[data-pick],[data-bulk],#save,#applytpl,#manual,#manualfilm,#refresh,#copyhash");
   if (!t) return;
   if (t.dataset.resume != null) { e.preventDefault(); resumeWatch(t.dataset.resume); }
   else if (t.dataset.watch != null) {
@@ -1389,6 +1508,26 @@ document.addEventListener("click", function (e) {
   else if (t.dataset.del != null) {
     if (t.dataset.armed) { db = db.filter(function (x) { return String(x.id) !== t.dataset.del; }); persist(); toast("Fiche supprimée"); location.hash = "#/"; }
     else { t.dataset.armed = "1"; t.textContent = "Confirmer ?"; setTimeout(function () { if (t.isConnected) { delete t.dataset.armed; t.textContent = "Supprimer"; } }, 3000); }
+  }
+  else if (t.dataset.list != null) {
+    var listOn = toggleList(t.dataset.list);
+    t.textContent = listOn ? "✓ Dans ma liste" : "+ Ma liste";
+    t.classList.toggle("on", listOn);
+    toast(listOn ? "Ajouté à ma liste" : "Retiré de ma liste");
+  }
+  else if (t.dataset.seen != null) {
+    var sp = t.dataset.seen.split("|"), ss = byId(sp[0]); if (!ss) return;
+    var sse = ss.seasons[+sp[1]], sep = sse && (sse.episodes || []).filter(function (x) { return String(x.number) === sp[2]; })[0];
+    if (!sep) return;
+    setSeen(ss.id, sse, sep, !isSeen(ss.id, sse, sep));
+    refreshSeen(ss);
+  }
+  else if (t.dataset.seenseason != null) {
+    var qs = t.dataset.seenseason.split("|"), s3 = byId(qs[0]); if (!s3) return;
+    var se3 = s3.seasons[+qs[1]]; if (!se3) return;
+    var allSeen = (se3.episodes || []).length > 0 && (se3.episodes || []).every(function (x) { return isSeen(s3.id, se3, x); });
+    setSeenMany(s3.id, se3, !allSeen);
+    refreshSeen(s3);
   }
   else if (t.dataset.genre != null) { filter = t.dataset.genre; if (rerender) rerender(); }
   else if (t.dataset.langf != null) { langFilter = t.dataset.langf; if (rerender) rerender(); }
@@ -1563,7 +1702,7 @@ window.addEventListener("orientationchange", function () { setTimeout(applyFit, 
 
 $("#pclose").addEventListener("click", closePlayer);
 $("#pprev").addEventListener("click", function () { if (cur.nav && cur.nav.prev) cur.nav.prev(); });
-$("#pnext").addEventListener("click", function () { if (cur.nav && cur.nav.next) cur.nav.next(); });
+$("#pnext").addEventListener("click", function () { if (cur.nav && cur.nav.next) { markCurSeen(); cur.nav.next(); } });
 $("#pfull").addEventListener("click", toggleFull);
 document.addEventListener("fullscreenchange", function () { if (!$("#player").classList.contains("wide")) $("#pfull").textContent = document.fullscreenElement ? "Quitter le plein écran" : "Plein écran"; syncFs(); });
 document.addEventListener("webkitfullscreenchange", function () { if (!$("#player").classList.contains("wide")) $("#pfull").textContent = document.webkitFullscreenElement ? "Quitter le plein écran" : "Plein écran"; syncFs(); });
