@@ -426,6 +426,14 @@ footer .wrap.about { display: grid; grid-template-columns: repeat(auto-fit, minm
 .poster .live { position: absolute; z-index: 1; top: 8px; right: 8px; font-size: 10px; padding: 4px 6px; }
 .tags .live { font-size: 12px; padding: 4px 8px; font-weight: 700; }
 .tags .live::before, .tags .live + span::before { content: none !important; }
+
+/* mobile : le badge « En cours » passe sous le badge de langue */
+@media (max-width: 720px) {
+  .poster .live { left: 8px; right: auto; }
+  .poster .lang + .live { top: 30px; }
+  .tags .lang { margin-right: 100%; }
+  .tags .live { margin-right: 100%; }
+}
 </style>
 </head>
 <body>
@@ -838,11 +846,36 @@ function viewList(title, pred) {
   $("#app").innerHTML = html;
 }
 
+/* Recherche multilingue : on ignore la casse, les accents et la ponctuation, et on compare
+   avec le titre, le titre original et tous les titres alternatifs / traductions de TMDB (champ aka) */
+function fold(x) {
+  x = String(x || "").toLowerCase();
+  try { x = x.normalize("NFD").replace(/[\u0300-\u036f]/g, ""); } catch (e) {}
+  try { x = x.replace(/[^\p{L}\p{N}]+/gu, " "); } catch (e) { x = x.replace(/[^a-z0-9\u00c0-\uffff]+/g, " "); }
+  return x.trim();
+}
+function titleMatch(s, n) {
+  if (!n) return false;
+  var names = [s.name, s.original_name].concat(Array.isArray(s.aka) ? s.aka : []);
+  for (var i = 0; i < names.length; i++) { if (names[i] && fold(names[i]).indexOf(n) > -1) return true; }
+  return false;
+}
+/* Titres dans toutes les langues, depuis une réponse TMDB avec translations + alternative_titles */
+function akaFrom(t, movie) {
+  var out = [], seen = {};
+  function add(x) { x = String(x || "").trim(); var k = x.toLowerCase(); if (x && !seen[k]) { seen[k] = 1; out.push(x); } }
+  ((t.translations && t.translations.translations) || []).forEach(function (r) { add(r.data && (movie ? r.data.title : r.data.name)); });
+  var al = t.alternative_titles || {};
+  (al.titles || al.results || []).forEach(function (r) { add(r.title); });
+  add(t.original_title || t.original_name);
+  return out;
+}
+
 function viewSearch(q) {
-  var needle = q.trim().toLowerCase();
+  var needle = fold(q) || q.trim().toLowerCase();
   var html = '<div class="wrap listhead"><h1>Recherche</h1>';
   if (!needle) { $("#app").innerHTML = html + '<p class="note">Tape un titre dans la barre en haut.</p></div>'; return; }
-  var base = sortedDb().filter(function (s) { return s.name.toLowerCase().indexOf(needle) > -1 || (s.original_name || "").toLowerCase().indexOf(needle) > -1; });
+  var base = sortedDb().filter(function (s) { return titleMatch(s, needle); });
   var found = base;
   html += '<p class="note">' + found.length + (found.length > 1 ? " résultats" : " résultat") + ' pour « ' + esc(q.trim()) + ' »' + "" + '</p></div>';
   if (!base.length) { $("#app").innerHTML = html + emptyBox("Rien trouvé", "Aucun titre ne correspond. Essaie un autre mot.", '<a class="btn ghost" href="#/">Retour à l\'accueil</a>'); return; }
@@ -1005,9 +1038,9 @@ function afterPick() {
 
 function pickMovie(id, old) {
   var el = $("#editor"); if (el) el.innerHTML = '<p class="note">Chargement de la fiche…</p>';
-  tmdb("/movie/" + id, { append_to_response: "credits" }).then(function (t) {
+  tmdb("/movie/" + id, { append_to_response: "credits,translations,alternative_titles" }).then(function (t) {
     draft = normalize({
-      id: "m" + t.id, type: "movie", name: t.title || "", original_name: t.original_title || "",
+      id: "m" + t.id, type: "movie", name: t.title || "", original_name: t.original_title || "", aka: akaFrom(t, true),
       year: (t.release_date || "").slice(0, 4), overview: t.overview || "",
       genres: (t.genres || []).map(function (g) { return g.name; }),
       rating: t.vote_average ? t.vote_average.toFixed(1) : "", pop: t.popularity || 0,
@@ -1031,7 +1064,7 @@ function pickMovie(id, old) {
 
 function pickTv(id, old) {
   var el = $("#editor"); if (el) el.innerHTML = '<p class="note">Chargement de la fiche…</p>';
-  tmdb("/tv/" + id, { append_to_response: "credits" }).then(function (t) {
+  tmdb("/tv/" + id, { append_to_response: "credits,translations,alternative_titles" }).then(function (t) {
     var seasons = (t.seasons || []).filter(function (s) { return s.season_number > 0; });
     var one = function (s, lang) { return tmdb("/tv/" + id + "/season/" + s.season_number, { language: lang }).catch(function () { return { episodes: [] }; }); };
     return Promise.all(seasons.map(function (s) {
@@ -1048,7 +1081,7 @@ function pickTv(id, old) {
       });
     })).then(function (full) {
       draft = normalize({
-        id: String(t.id), type: "tv", name: t.name || "", original_name: t.original_name || "",
+        id: String(t.id), type: "tv", name: t.name || "", original_name: t.original_name || "", aka: akaFrom(t, false),
         year: (t.first_air_date || "").slice(0, 4), overview: t.overview || "",
         genres: (t.genres || []).map(function (g) { return g.name; }),
         rating: t.vote_average ? t.vote_average.toFixed(1) : "", pop: t.popularity || 0,
@@ -1238,8 +1271,8 @@ window.addEventListener("resize", updRails);
 
 /* ===== Recherche : suggestions sous la barre ===== */
 function searchHits(q) {
-  var n = q.trim().toLowerCase(); if (!n) return [];
-  return sortedDb().filter(function (s) { return s.name.toLowerCase().indexOf(n) > -1 || (s.original_name || "").toLowerCase().indexOf(n) > -1; });
+  var n = fold(q) || q.trim().toLowerCase(); if (!n) return [];
+  return sortedDb().filter(function (s) { return titleMatch(s, n); });
 }
 function showSugg(v) {
   var box = $("#sugg"), hits = searchHits(v);
@@ -1518,9 +1551,26 @@ function loadCatalog() {
   }).catch(function () {});
 }
 
+/* Admin : ajoute les titres multilingues aux fiches déjà au catalogue (une seule fois par fiche) */
+function backfillAka() {
+  if (!ADMIN || !getToken()) return;
+  var todo = db.filter(function (s) { return !Array.isArray(s.aka) && /^m?\d+$/.test(String(s.id)); });
+  if (!todo.length) return;
+  var done = 0;
+  (function next() {
+    var s = todo.shift();
+    if (!s) { if (done) { persist(); toast("Recherche multilingue activée sur " + done + " titre(s) : ré-exporte le catalogue"); } return; }
+    var movie = isMovie(s), id = String(s.id).replace(/^m/, "");
+    tmdb((movie ? "/movie/" : "/tv/") + id, { append_to_response: "translations,alternative_titles" })
+      .then(function (t) { s.aka = akaFrom(t, movie); done++; })
+      .catch(function (e) { if (/404/.test(e.message)) { s.aka = []; done++; } })
+      .then(function () { setTimeout(next, 150); });
+  })();
+}
+
 document.body.classList.toggle("admin", ADMIN);
 $("#app").innerHTML = '<div class="wrap"><p class="note" style="padding:48px 0">Chargement…</p></div>';
-loadCatalog().then(function () { route(true); });
+loadCatalog().then(function () { route(true); backfillAka(); });
 try { if (!localStorage.getItem(WELKEY)) setTimeout(openWelcome, 700); } catch (e) {}
 </script>
 </body>

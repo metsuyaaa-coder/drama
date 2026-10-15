@@ -1285,5 +1285,224 @@
     "langs": [
       "VOSTFR"
     ]
+  },
+  {
+    "id": "314939",
+    "type": "tv",
+    "name": "Un autre amour que le tien",
+    "original_name": "너 말고 다른 연애",
+    "year": "2026",
+    "overview": "Une romance réaliste et touchante sur un couple qui, après dix ans de vie commune, voit sa relation confortable bouleversée par des sentiments inattendus.",
+    "genres": [
+      "Drame",
+      "Comédie"
+    ],
+    "rating": "6.3",
+    "pop": 41.154,
+    "status": "Returning Series",
+    "poster": "https://image.tmdb.org/t/p/w500/lu3tuzFl4c6rx1WcoLOGZlkTjaw.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/moUjiEzpJVNZc7hyNRBbLPt0CPX.jpg",
+    "cast": [
+      {
+        "name": "Seo Kang-joon",
+        "character": "Namgung Ho"
+      },
+      {
+        "name": "Ahn Eun-jin",
+        "character": "Lee Mi-do"
+      },
+      {
+        "name": "Lee Joo-ahn",
+        "character": "Han Tae-seung"
+      },
+      {
+        "name": "Jo A-ram",
+        "character": "Park Soo-ah"
+      },
+      {
+        "name": "이민재",
+        "character": "Lee Wan-do"
+      },
+      {
+        "name": "Kim Nam-hee",
+        "character": "Lee Young-do"
+      },
+      {
+        "name": "Kim Mi-kyung",
+        "character": "Ma Suk-hee"
+      },
+      {
+        "name": "Kwak Si-yang",
+        "character": "Seo Joo-hyuk"
+      },
+      {
+        "name": "허지나",
+        "character": "Ko Moon-young"
+      },
+      {
+        "name": "Lee Jun-hyeok",
+        "character": "Eom Ho-sik"
+      },
+      {
+        "name": "천이슬",
+        "character": "Oh Yeon-ju"
+      },
+      {
+        "name": "송지우",
+        "character": "Song Hae-na"
+      }
+    ],
+    "seasons": [
+      {
+        "number": 1,
+        "name": "Saison 1",
+        "episodes": [
+          {
+            "number": 1,
+            "name": "Dix ans ensemble : mariage ou rupture ?",
+            "overview": "Namgung et Mi-do se sont rencontrés à sept ans et sont sortis ensemble à vingt-six. Après dix ans ensemble, l'amour qu'ils croyaient éternel commence à vaciller sous le poids du temps. Alors que leur relation évolue, ils doivent affronter les réalités de l'amour et de la vie.",
+            "air_date": "2026-09-12",
+            "sources": [
+              {
+                "name": "VIDARA",
+                "url": "https://vidara.to/e/hbnOPoWNxJrp0"
+              }
+            ]
+          },
+          {
+            "number": 2,
+            "name": "Peut-on redevenir des inconnus ?",
+            "overview": "Après dix ans ensemble, Mi-do et Namgung peinent à surmonter leur rupture. Même participer à un événement romantique ne parvient pas à raviver leur flamme, mais les souvenirs de leur amour continuent de les ramener l'un vers l'autre.",
+            "air_date": "2026-09-13",
+            "sources": [
+              {
+                "name": "VIDARA",
+                "url": "https://vidara.to/e/bC6TJm3DgbbKe"
+              }
+            ]
+          },
+          {
+            "number": 3,
+            "name": "Peut-on retrouver cette passion ?",
+            "overview": "Une romance réaliste et touchante sur un couple qui, après dix ans de vie commune, voit sa relation confortable bouleversée par des sentiments inattendus.",
+            "air_date": "2026-09-19",
+            "sources": [
+              {
+                "name": "VIDARA",
+                "url": "https://vidara.to/e/IZtGFoRm8TH8n"
+              }
+            ]
+          },
+          {
+            "number": 4,
+            "name": "Rêvons-nous du même avenir ?",
+            "overview": "Une romance réaliste et touchante sur un couple qui, après dix ans de vie commune, voit sa relation confortable bouleversée par des sentiments inattendus.",
+            "air_date": "2026-09-20",
+            "sources": [
+              {
+                "name": "VIDARA",
+                "url": "https://vidara.to/e/sUjzbTLyZ1dYM"
+              }
+            ]
+          },
+          {
+            "number": 5,
+            "name": "Are There Any Untold Stories Between Us?",
+            "overview": "Mi-do is shocked after waking up at Tae-seung's office. Meanwhile, Namgung notices a mysterious caller on Mi-do's phone and becomes uneasy. As always, the two pretend everything is fine for each other's sake. But the more they try to protect the relationship, the deeper their secrets become.",
+            "air_date": "2026-10-03",
+            "sources": [
+              {
+                "name": "VIDARA",
+                "url": "https://vidara.to/e/EDj2DpUmfm0vz"
+              }
+            ]
+          },
+          {
+            "number": 6,
+            "name": "Who Is Our Best Hero?",
+            "overview": "Mi-do deeply regrets what happened that day. Meanwhile, Namgung plans something to cheer her up. But unexpected visitors at his workplace push things in an unforeseen direction.",
+            "air_date": "2026-10-04",
+            "sources": [
+              {
+                "name": "VIDARA",
+                "url": "https://vidara.to/e/cwy4ONBhR27hF"
+              }
+            ]
+          },
+          {
+            "number": 7,
+            "name": "Are We Allies or Enemies?",
+            "overview": "Namgung learns the truth about what happened that day, and the deep trust between the couple begins to unravel. Meanwhile, pressured by Ju-hyeok, Tae-seung makes an unexpected decision as his feelings for Mi-do deepen. At the same time, Su-a relentlessly pursues Namgung while investigating the sweet potato corruption scandal.",
+            "air_date": "2026-10-10",
+            "sources": [
+              {
+                "name": "VIDARA",
+                "url": "https://vidara.to/e/yNeh8FwYpAdbY"
+              }
+            ]
+          },
+          {
+            "number": 8,
+            "name": "What Remains of Our Passionate Love?",
+            "overview": "Namgung and Mi-do confront emotions they have long suppressed for each other's sake. As their pain pulls them in different directions, they come up with a bold proposal that could upend their relationship.",
+            "air_date": "2026-10-11",
+            "sources": [
+              {
+                "name": "VIDARA",
+                "url": "https://vidara.to/e/B4ChfZOi4AilX"
+              }
+            ]
+          },
+          {
+            "number": 9,
+            "name": "Épisode 9",
+            "overview": "",
+            "air_date": "2026-10-17",
+            "sources": []
+          },
+          {
+            "number": 10,
+            "name": "Épisode 10",
+            "overview": "",
+            "air_date": "2026-10-18",
+            "sources": []
+          },
+          {
+            "number": 11,
+            "name": "Épisode 11",
+            "overview": "",
+            "air_date": "2026-10-24",
+            "sources": []
+          },
+          {
+            "number": 12,
+            "name": "Épisode 12",
+            "overview": "",
+            "air_date": "2026-10-25",
+            "sources": []
+          },
+          {
+            "number": 13,
+            "name": "Épisode 13",
+            "overview": "",
+            "air_date": "2026-10-31",
+            "sources": []
+          },
+          {
+            "number": 14,
+            "name": "Épisode 14",
+            "overview": "",
+            "air_date": "2026-11-01",
+            "sources": []
+          }
+        ]
+      }
+    ],
+    "sources": [],
+    "addedAt": 1792092943222,
+    "langs": [
+      "VOSTFR",
+      "VF"
+    ]
   }
 ]
