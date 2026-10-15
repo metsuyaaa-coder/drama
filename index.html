@@ -453,6 +453,35 @@ footer .wrap.about { display: grid; grid-template-columns: repeat(auto-fit, minm
 .poster .lang + .live { top: 30px; }
 .tags .lang { margin-right: 100%; }
 .tags .live { margin-right: 100%; }
+
+/* profil, Ma liste et gestion des rôles */
+.pbtn { display: inline-flex; align-items: center; gap: 8px; max-width: 180px; padding: 3px 12px 3px 3px; background: transparent; border: 1px solid var(--line); color: var(--fg); font-size: 13px; cursor: pointer; border-radius: 0; transition: border-color .2s; }
+.pbtn:hover { border-color: var(--fg); }
+.pbtn .av { flex: 0 0 auto; width: 28px; height: 28px; display: grid; place-items: center; background: var(--fg); color: var(--bg); font-family: var(--display); font-weight: 900; font-size: 17px; line-height: 1; text-transform: uppercase; }
+.pbtn .av svg { width: 16px; height: 16px; }
+.pbtn .pn2 { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+dialog#profile { width: min(480px, 94vw); max-height: 92vh; max-height: 92dvh; padding: 0; border: 1px solid var(--line); background: #000; color: var(--fg); overflow: auto; }
+dialog#profile[open] { animation: dialogIn .3s var(--ease) both; }
+dialog#profile::backdrop { background: rgba(0,0,0,.85); }
+.pfform { display: grid; gap: 12px; }
+.pfform .btn { justify-self: start; }
+.pfsep { display: flex; align-items: center; gap: 12px; color: var(--dim); font-family: var(--mono); font-size: 12px; text-transform: uppercase; letter-spacing: .08em; }
+.pfsep::before, .pfsep::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+.phrase { padding: 16px; border: 1px dashed var(--fg); background: var(--panel); font-family: var(--mono); font-size: 17px; text-align: center; word-break: break-all; user-select: all; }
+.phrase[hidden] { display: none; }
+.rbadge { justify-self: start; display: inline-block; padding: 4px 8px; border: 1px solid var(--fg); font-family: var(--mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; line-height: 1; }
+.rbadge.r-owner, .rbadge.r-admin { background: var(--fg); color: var(--bg); }
+.pfmenu { display: grid; gap: 8px; }
+.pfmenu .btn { justify-self: stretch; }
+.prow { display: flex; align-items: center; flex-wrap: wrap; gap: 10px 16px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+.prow .pi { flex: 1 1 200px; min-width: 0; display: flex; flex-direction: column; }
+.prow .pi small, .prow .pc { font-family: var(--mono); font-size: 11px; color: var(--dim); }
+.prow .pa { display: flex; flex-wrap: wrap; gap: 8px; }
+@media (max-width: 720px) {
+  .search { order: 3; flex: 1 0 calc(100% - 56px); width: auto; }
+  .pbtn { order: 3; padding: 3px; }
+  .pbtn .pn2 { display: none; }
+}
 </style>
 </head>
 <body>
@@ -467,6 +496,7 @@ footer .wrap.about { display: grid; grid-template-columns: repeat(auto-fit, minm
       <a href="#/ajouter" id="nav-add" class="admin-only">Ajouter</a>
     </nav>
     <div class="search"><input id="q" type="text" placeholder="Rechercher un titre" autocomplete="off" aria-label="Rechercher dans le catalogue"><div class="sugg" id="sugg" hidden></div></div>
+    <button class="pbtn" id="btn-profile" type="button" aria-label="Mon profil"><span class="av" id="pav"></span><span class="pn2" id="pname">Profil</span></button>
   </div>
 </header>
 
@@ -521,6 +551,7 @@ footer .wrap.about { display: grid; grid-template-columns: repeat(auto-fit, minm
     <div class="el" id="pepsl"></div>
   </div>
 </dialog>
+<dialog id="profile" aria-labelledby="pftitle"><div class="wbox" id="pbox"></div></dialog>
 <dialog id="welcome" aria-labelledby="wtitle">
   <div class="wbox">
     <span class="beta">Bêta</span>
@@ -844,6 +875,7 @@ function viewHome() {
     (picks.length > 1 ? '<div class="hdots">' + picks.map(function (h, k) { return '<button type="button" data-i="' + k + '" class="' + (k === 0 ? "on" : "") + '" aria-label="Diapositive ' + (k + 1) + '"></button>'; }).join("") + '</div>' : '') + '</section>';
   var rs = resumeList();
   if (rs.length) html += rail("Reprendre", rs, "", resumeCard);
+  if (PROFILE) { var wlItems = watchItems(); if (wlItems.length) html += rail("Ma liste", wlItems, "#/maliste"); }
   html += rail("Derniers ajouts", list);
   if (tv.length && mv.length) html += rail("Séries", tv, "#/series") + rail("Films", mv, "#/films");
   $("#app").innerHTML = html;
@@ -926,7 +958,7 @@ function viewSerie(id) {
     '<div><div class="tags">' + (langLabel(s) ? '<span class="lang">' + esc(langLabel(s)) + '</span>' : '') + (ongoing(s) ? '<span class="live">En cours</span>' : '') + tags.map(function (t) { return "<span>" + esc(t) + "</span>"; }).join("") + '</div>' +
     '<h1>' + esc(s.name) + '</h1>' + (s.original_name && s.original_name !== s.name ? '<div class="orig">' + esc(s.original_name) + '</div>' : '<div class="orig"></div>') +
     '<p class="ov">' + esc(s.overview || "Pas de synopsis.") + '</p>' +
-    '<div class="row"><button class="btn" data-watch="' + esc(s.id) + '">Regarder</button>' + (ADMIN ? '<a class="btn ghost" href="#/modifier/' + esc(s.id) + '">Modifier</a><button class="btn danger" data-del="' + esc(s.id) + '">Supprimer</button>' : '') + '</div>' + srcChips +
+    '<div class="row"><button class="btn" data-watch="' + esc(s.id) + '">Regarder</button>' + wlBtn(s.id) + (ADMIN ? '<a class="btn ghost" href="#/modifier/' + esc(s.id) + '">Modifier</a><button class="btn danger" data-del="' + esc(s.id) + '">Supprimer</button>' : '') + '</div>' + srcChips +
     ((s.cast || []).length ? '<h3 class="note" style="margin:32px 0 0;text-transform:uppercase;letter-spacing:.08em">Distribution</h3><div class="cast">' + s.cast.slice(0, 12).map(function (c) { return '<div><b>' + esc(c.name) + '</b><span>' + esc(c.character || "") + '</span></div>'; }).join("") + '</div>' : '') +
     '</div></div></section>';
   if (!movie && (s.seasons || []).length) {
@@ -1312,6 +1344,8 @@ function route(force) {
   else if (a === "films") { rerender = function () { viewList("Films", isMovie); }; rerender(); }
   else if (a === "recherche") { rerender = function () { viewSearch(b); }; rerender(); }
   else if (a === "admin") viewLogin();
+  else if (a === "maliste") viewWatchlist();
+  else if (a === "profils") viewProfils();
   else if (a === "motdepasse") viewSetPassword(false);
   else if (a === "ajouter") viewEditor();
   else if (a === "modifier") viewEditor(b);
@@ -1612,6 +1646,204 @@ document.addEventListener("click", function (e) {
   try { navigator.clipboard.writeText(txt).then(function () { toast("Copié : " + txt); }, function () { toast(txt); }); } catch (err) { toast(txt); }
 });
 
+/* ===== Profils (phrase secrète), Ma liste et rôles ===== */
+var PHKEY = "noir.phrase", PRKEY = "noir.profile";
+var PHRASE = ""; try { PHRASE = localStorage.getItem(PHKEY) || ""; } catch (e) {}
+var PROFILE = PHRASE ? readJSON(PRKEY, null) : null;
+if (PROFILE && !Array.isArray(PROFILE.list)) PROFILE.list = [];
+var saveTimer = null, savePending = false;
+
+function isStaff() { return !!PROFILE && (PROFILE.role === "admin" || PROFILE.role === "owner"); }
+function roleLabel(r) { return r === "owner" ? "Propriétaire" : r === "admin" ? "Admin" : "Membre"; }
+function normPhraseC(p) { return String(p || "").toLowerCase().trim().replace(/[\s_]+/g, "-").replace(/-+/g, "-"); }
+function cacheProfile() { try { if (PROFILE) localStorage.setItem(PRKEY, JSON.stringify(PROFILE)); else localStorage.removeItem(PRKEY); } catch (e) {} }
+
+function api(action, body, opts) {
+  opts = opts || {};
+  var ph = opts.phrase != null ? opts.phrase : PHRASE;
+  return fetch("/api/profil", {
+    method: "POST", keepalive: !!opts.keepalive,
+    headers: { "Content-Type": "application/json", Authorization: "Bearer " + ph },
+    body: JSON.stringify(Object.assign({ action: action }, body || {}))
+  }).then(function (r) {
+    return r.json().catch(function () { return {}; }).then(function (j) {
+      if (!r.ok) {
+        var e = new Error(r.status === 404 ? "Les profils ne sont pas disponibles sur cet hébergement" : (j.error || "Erreur " + r.status));
+        e.status = r.status; throw e;
+      }
+      return j;
+    });
+  }, function () { throw new Error("Serveur des profils injoignable"); });
+}
+
+function renderProfileBtn() {
+  var av = $("#pav"), nm = $("#pname"); if (!av) return;
+  if (PROFILE) { av.textContent = (PROFILE.name || "?").charAt(0); nm.textContent = PROFILE.name; }
+  else { av.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg>'; nm.textContent = "Profil"; }
+}
+function setSession(phrase, p) {
+  PHRASE = phrase; PROFILE = p; if (!Array.isArray(PROFILE.list)) PROFILE.list = [];
+  try { localStorage.setItem(PHKEY, phrase); } catch (e) {}
+  cacheProfile(); renderProfileBtn();
+}
+/* Les droits admin donnés par un profil sont retirés quand le profil se déconnecte ou perd son rôle */
+function dropProfileAdmin() {
+  var via = ""; try { via = localStorage.getItem("noir.adminvia") || ""; } catch (e) {}
+  if (via === "profile" && ADMIN) {
+    try { localStorage.removeItem("noir.admin"); localStorage.removeItem("noir.adminvia"); } catch (e) {}
+    location.reload();
+  }
+}
+function clearSession() {
+  PHRASE = ""; PROFILE = null;
+  try { localStorage.removeItem(PHKEY); localStorage.removeItem(PRKEY); } catch (e) {}
+  renderProfileBtn(); dropProfileAdmin();
+}
+/* Active ou retire le mode admin selon le rôle du profil. Renvoie true si le mode admin vient d'être activé. */
+function applyRole() {
+  if (isStaff() && !ADMIN) {
+    try { localStorage.setItem("noir.adminvia", "profile"); } catch (e) {}
+    loginAdmin(true); backfillAka(); return true;
+  }
+  if (!isStaff()) dropProfileAdmin();
+  return false;
+}
+function profileSync() {
+  if (!PHRASE) return;
+  api("login").then(function (r) {
+    var before = JSON.stringify(PROFILE);
+    PROFILE = r.profile; cacheProfile(); renderProfileBtn();
+    var gained = applyRole();
+    if (gained || JSON.stringify(PROFILE) !== before) route();
+  }).catch(function (e) {
+    if (e.status === 401) { clearSession(); toast("Profil introuvable : reconnecte-toi avec ta phrase"); route(); }
+  });
+}
+
+/* Ma liste */
+function inList(id) { return !!PROFILE && PROFILE.list.indexOf(String(id)) > -1; }
+function watchItems() { return PROFILE ? PROFILE.list.map(byId).filter(Boolean) : []; }
+function wlBtn(id) { return '<button class="btn ghost" type="button" data-wl="' + esc(id) + '">' + (inList(id) ? "✓ Dans ma liste" : "+ Ma liste") + '</button>'; }
+function toggleList(id) {
+  if (!PROFILE) { toast("Connecte-toi pour utiliser Ma liste"); openProfile(); return; }
+  id = String(id);
+  var i = PROFILE.list.indexOf(id);
+  if (i > -1) PROFILE.list.splice(i, 1); else PROFILE.list.unshift(id);
+  cacheProfile(); queueSave();
+  Array.prototype.forEach.call(document.querySelectorAll("[data-wl]"), function (b) { if (b.dataset.wl === id) b.textContent = inList(id) ? "✓ Dans ma liste" : "+ Ma liste"; });
+  toast(i > -1 ? "Retiré de Ma liste" : "Ajouté à Ma liste");
+}
+function queueSave() { savePending = true; clearTimeout(saveTimer); saveTimer = setTimeout(function () { flushSave(false); }, 700); }
+function flushSave(keep) {
+  clearTimeout(saveTimer);
+  if (!savePending || !PHRASE || !PROFILE) return;
+  savePending = false;
+  api("save", { list: PROFILE.list.slice() }, { keepalive: !!keep }).catch(function () { savePending = true; toast("Ma liste n'a pas pu être enregistrée"); });
+}
+document.addEventListener("visibilitychange", function () { if (document.visibilityState === "hidden") flushSave(true); });
+window.addEventListener("pagehide", function () { flushSave(true); });
+
+function viewWatchlist() {
+  var app = $("#app");
+  if (!PROFILE) { app.innerHTML = emptyBox("Ma liste", "Connecte-toi avec ton profil pour retrouver tes séries et tes films à voir, sur tous tes appareils.", '<button class="btn" type="button" data-pa="open">Me connecter</button>'); return; }
+  var items = watchItems();
+  if (!items.length) { app.innerHTML = emptyBox("Ma liste est vide", "Ajoute des séries et des films depuis leur fiche avec le bouton « + Ma liste ».", '<a class="btn" href="#/">Parcourir le catalogue</a>'); return; }
+  app.innerHTML = '<div class="wrap listhead"><h1>Ma liste</h1><p class="note">' + items.length + (items.length > 1 ? " titres" : " titre") + '</p></div><div class="wrap"><div class="grid" style="padding-top:28px">' + items.map(card).join("") + '</div></div>';
+}
+
+/* Gestion des profils (admins et propriétaire) */
+function viewProfils() {
+  var app = $("#app");
+  if (!isStaff()) { app.innerHTML = emptyBox("Accès refusé", "Cette page est réservée aux admins.", '<a class="btn ghost" href="#/">Retour à l\'accueil</a>'); return; }
+  app.innerHTML = '<div class="wrap listhead"><h1>Profils</h1><p class="note">Chargement…</p></div>';
+  api("users").then(function (r) {
+    if ((location.hash || "") !== "#/profils") return;
+    var owner = PROFILE.role === "owner";
+    var rows = r.users.map(function (u) {
+      var me = u.id === PROFILE.id, acts = "";
+      if (owner && u.role !== "owner") {
+        acts = (u.role === "admin" ? '<button class="btn small ghost" type="button" data-prole="' + esc(u.id) + '|user">Retirer admin</button>' : '<button class="btn small" type="button" data-prole="' + esc(u.id) + '|admin">Passer admin</button>') +
+          '<button class="btn small danger" type="button" data-prm="' + esc(u.id) + '|' + esc(u.name) + '">Supprimer</button>';
+      }
+      return '<div class="prow"><div class="pi"><b>' + esc(u.name) + (me ? " (toi)" : "") + '</b><small>' + (u.created ? "depuis le " + new Date(u.created).toLocaleDateString("fr-FR") : "") + '</small></div><span class="rbadge r-' + esc(u.role) + '">' + roleLabel(u.role) + '</span><span class="pc">' + u.count + (u.count > 1 ? " titres" : " titre") + '</span>' + (acts ? '<div class="pa">' + acts + '</div>' : '') + '</div>';
+    }).join("");
+    app.innerHTML = '<div class="wrap listhead"><h1>Profils</h1><p class="note">' + r.users.length + (r.users.length > 1 ? " profils" : " profil") + (owner ? "" : " · seul le propriétaire peut changer les rôles") + '</p></div><div class="wrap" style="padding-bottom:72px">' + (rows || '<p class="note">Aucun profil.</p>') + '</div>';
+  }).catch(function (e) { app.innerHTML = '<div class="wrap listhead"><h1>Profils</h1><p class="note">' + esc(e.message) + '</p></div>'; });
+}
+
+/* Fenêtre du profil */
+function renderProfile(view) {
+  var box = $("#pbox"), h = "";
+  if (view === "created") {
+    h = '<span class="beta">Profil créé</span><h2 id="pftitle">Ta phrase secrète</h2>' +
+      '<p>C\'est ta seule clé pour te reconnecter sur un autre appareil. Elle ne peut pas être récupérée : copie-la ou note-la maintenant.</p>' +
+      '<div class="phrase">' + esc(PHRASE) + '</div>' +
+      '<div class="row"><button class="btn" type="button" data-copy="' + esc(PHRASE) + '">Copier la phrase</button><button class="btn ghost" type="button" data-pa="close">J\'ai noté ma phrase</button></div>';
+  } else if (PROFILE) {
+    h = '<span class="rbadge r-' + esc(PROFILE.role) + '">' + roleLabel(PROFILE.role) + '</span><h2 id="pftitle">' + esc(PROFILE.name) + '</h2>' +
+      '<div class="pfmenu"><a class="btn ghost" href="#/maliste" data-pa="close">Ma liste (' + watchItems().length + ')</a>' + (isStaff() ? '<a class="btn ghost" href="#/profils" data-pa="close">Gérer les profils</a>' : '') + '</div>' +
+      '<div class="phrase" id="phrase" hidden>' + esc(PHRASE) + '</div>' +
+      '<div class="row"><button class="btn small ghost" type="button" data-pa="showphrase">Afficher ma phrase</button><button class="btn small ghost" type="button" data-pa="logout">Se déconnecter</button><button class="btn small ghost" type="button" data-pa="close">Fermer</button></div>';
+  } else {
+    h = '<h2 id="pftitle">Mon profil</h2>' +
+      '<p>Crée un profil pour garder ta liste de séries et de films à voir sur tous tes appareils. Pas d\'email ni de mot de passe : tu reçois une phrase secrète.</p>' +
+      '<form class="pfform" data-pf="create"><label class="f"><span>Choisis un pseudo</span><input id="pf-name" maxlength="24" autocomplete="nickname" placeholder="ex : Oppa-Fan"></label><button class="btn" type="submit">Créer mon profil</button></form>' +
+      '<div class="pfsep"><span>ou</span></div>' +
+      '<form class="pfform" data-pf="login"><label class="f"><span>J\'ai déjà une phrase secrète</span><input id="pf-phrase" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="oppa-soju-seoul-kimchi-4821"></label><button class="btn ghost" type="submit">Me connecter</button></form>' +
+      '<p class="note" id="pferr"></p><button class="btn small ghost" type="button" data-pa="close">Fermer</button>';
+  }
+  box.innerHTML = h;
+}
+function openProfile() { renderProfile(); var d = $("#profile"); if (d.showModal) { if (!d.open) d.showModal(); } else d.setAttribute("open", ""); }
+function closeProfile() { var d = $("#profile"); if (d.close) { if (d.open) d.close(); } else d.removeAttribute("open"); }
+function pfError(m) { var e = $("#pferr"); if (e) e.textContent = m; }
+
+document.addEventListener("submit", function (e) {
+  var f = e.target.closest("[data-pf]"); if (!f) return;
+  e.preventDefault();
+  var btn = f.querySelector("button[type=submit]"); if (btn) btn.disabled = true;
+  var done = function () { if (btn) btn.disabled = false; };
+  if (f.dataset.pf === "create") {
+    api("create", { name: $("#pf-name").value }, { phrase: "" }).then(function (r) {
+      setSession(r.phrase, r.profile); renderProfile("created"); route();
+    }).catch(function (err) { pfError(err.message); }).then(done);
+  } else {
+    var ph = normPhraseC($("#pf-phrase").value);
+    if (!ph) { pfError("Entre ta phrase secrète"); done(); return; }
+    api("login", {}, { phrase: ph }).then(function (r) {
+      setSession(ph, r.profile); applyRole(); renderProfile(); toast("Bienvenue " + r.profile.name); route();
+    }).catch(function (err) { pfError(err.message); }).then(done);
+  }
+});
+document.addEventListener("click", function (e) {
+  var t = e.target;
+  var wl = t.closest("[data-wl]"); if (wl) { toggleList(wl.dataset.wl); return; }
+  if (t.closest("#btn-profile")) { openProfile(); return; }
+  var pa = t.closest("[data-pa]");
+  if (pa) {
+    var a = pa.dataset.pa;
+    if (a === "open") openProfile();
+    else if (a === "close") closeProfile();
+    else if (a === "showphrase") { var ph = $("#phrase"); if (ph) { ph.hidden = !ph.hidden; pa.textContent = ph.hidden ? "Afficher ma phrase" : "Masquer ma phrase"; } }
+    else if (a === "logout") { flushSave(false); clearSession(); renderProfile(); toast("Déconnecté"); route(); }
+    return;
+  }
+  var pr = t.closest("[data-prole]");
+  if (pr) {
+    var p = pr.dataset.prole.split("|");
+    api("setrole", { target: p[0], role: p[1] }).then(function () { toast(p[1] === "admin" ? "Profil passé admin" : "Droits admin retirés"); viewProfils(); }).catch(function (err) { toast(err.message); });
+    return;
+  }
+  var rm = t.closest("[data-prm]");
+  if (rm) {
+    var q = rm.dataset.prm.split("|");
+    if (!window.confirm("Supprimer le profil « " + q.slice(1).join("|") + " » ? Sa liste sera perdue.")) return;
+    api("remove", { target: q[0] }).then(function () { toast("Profil supprimé"); viewProfils(); }).catch(function (err) { toast(err.message); });
+  }
+});
+$("#profile").addEventListener("click", function (e) { if (e.target === this) closeProfile(); });
+renderProfileBtn();
+
 /* Les visiteurs voient le catalogue publié dans catalog.json, à côté de index.html */
 function loadCatalog() {
   return fetch("catalog.json?v=" + Date.now(), { cache: "no-store" }).then(function (r) {
@@ -1644,7 +1876,7 @@ function backfillAka() {
 
 document.body.classList.toggle("admin", ADMIN);
 $("#app").innerHTML = '<div class="wrap"><p class="note" style="padding:48px 0">Chargement…</p></div>';
-loadCatalog().then(function () { route(true); backfillAka(); });
+loadCatalog().then(function () { route(true); backfillAka(); profileSync(); });
 try { if (!localStorage.getItem(WELKEY)) setTimeout(openWelcome, 700); } catch (e) {}
 </script>
 </body>
