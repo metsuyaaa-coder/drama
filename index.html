@@ -1625,13 +1625,14 @@ document.addEventListener("submit", function (e) {
       _subject: "DramaByM : demande « " + titre + " »", _captcha: "false", _template: "table",
       "Pseudo": String(fd.get("pseudo") || "").trim(), "Titre": titre, "Date de sortie": String(fd.get("date") || "").trim()
     }) }).then(function (r) {
-      return r.json().catch(function () { return {}; }).then(function (j) { if (!r.ok || j.success === false || j.success === "false") throw new Error("envoi"); });
+      return r.json().catch(function () { return {}; }).then(function (j) { if (!r.ok || j.success === false || j.success === "false") throw new Error(String(j.message || "refusé par le service")); });
     }).then(function () {
       try { localStorage.setItem("noir.reqAt", String(Date.now())); } catch (er) {}
       $("#app").innerHTML = '<div class="wrap"><div class="authbox"><h1>Merci</h1><p class="lead">Ta demande est bien envoyée. Je l\'ajoute dès que possible.</p><div class="row"><a class="btn" href="#/">Retour à l\'accueil</a><a class="btn ghost" href="#/demande">Une autre demande</a></div></div></div>';
-    }).catch(function () {
+    }).catch(function (err) {
       rb.disabled = false; rb.textContent = "Envoyer";
-      authError(rf, "L'envoi a échoué. Réessaie dans un moment.");
+      var m = err && err.message ? err.message : "";
+      authError(rf, "L'envoi a échoué : " + (err instanceof TypeError ? "connexion impossible (ouvre le site depuis son adresse en ligne, pas depuis le fichier sur ton ordinateur)." : (m || "réessaie dans un moment.")));
     });
   } else if (id === "login") {
     e.preventDefault();
