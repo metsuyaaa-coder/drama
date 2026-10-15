@@ -472,7 +472,20 @@ footer .wrap.about { display: grid; grid-template-columns: repeat(auto-fit, minm
 .seasonbar { padding: 0 0 14px; }
 .epi.seen .et { color: var(--dim); }
 .epi.seen.on .et { color: var(--bg); }
-@media (max-width: 720px) { nav { gap: 12px; } }
+.burger { display: none; }
+@media (max-width: 720px) {
+  .burger { display: grid; place-items: center; margin-left: auto; width: 44px; height: 44px; padding: 0; background: transparent; border: 1px solid var(--fg); border-radius: 0; cursor: pointer; transition: background .2s, color .2s; }
+  .burger svg { width: 22px; height: 22px; }
+  .burger .x { display: none; }
+  header.top.open .burger .x { display: block; }
+  header.top.open .burger .b { display: none; }
+  header.top.open .burger { background: var(--fg); color: var(--bg); }
+  header.top nav { display: none; order: 2; flex: 1 0 100%; flex-direction: column; gap: 0; margin-left: 0; font-size: 14px; border-top: 1px solid var(--line); }
+  header.top.open nav { display: flex; animation: fadeIn .2s ease both; }
+  header.top nav a { padding: 14px 0; border-bottom: 1px solid var(--line); }
+  header.top nav a::after { display: none; }
+  header.top nav a.on { color: var(--fg); }
+}
 </style>
 </head>
 <body>
@@ -480,7 +493,8 @@ footer .wrap.about { display: grid; grid-template-columns: repeat(auto-fit, minm
 <header class="top">
   <div class="wrap">
     <a class="logo" href="#/">DramaByM</a>
-    <nav>
+    <button class="burger" id="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mainnav"><svg class="b" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 8h14M5 12h14M5 16h14"/></svg><svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <nav id="mainnav">
       <a href="#/" id="nav-home">Accueil</a>
       <a href="#/series" id="nav-series">Séries</a>
       <a href="#/films" id="nav-films">Films</a>
@@ -1431,6 +1445,7 @@ function route(force) {
 
   var q = $("#q");
   $("#sugg").hidden = true;
+  $("header.top").classList.remove("open"); $("#burger").setAttribute("aria-expanded", "false");
   if (a !== "recherche" && q.value) q.value = "";
   if (a === "recherche" && q.value !== b && document.activeElement !== q) q.value = b;
 
@@ -1737,6 +1752,10 @@ window.addEventListener("blur", function () {
 window.addEventListener("resize", applyFit);
 window.addEventListener("orientationchange", function () { setTimeout(applyFit, 250); });
 
+$("#burger").addEventListener("click", function () {
+  var o = $("header.top").classList.toggle("open");
+  this.setAttribute("aria-expanded", o ? "true" : "false");
+});
 $("#pclose").addEventListener("click", closePlayer);
 $("#pprev").addEventListener("click", function () { if (cur.nav && cur.nav.prev) cur.nav.prev(); });
 $("#pnext").addEventListener("click", function () { if (cur.nav && cur.nav.next) { markCurSeen(); cur.nav.next(); } });
