@@ -527,6 +527,10 @@ footer .wrap.about { display: grid; grid-template-columns: repeat(auto-fit, minm
       <p>DramaByM référence des contenus disponibles auprès de services tiers. Le site n'héberge aucun fichier vidéo, et leur disponibilité dépend de ces services.</p>
     </div>
     <div>
+      <h3>Une demande ?</h3>
+      <p>N'hésitez pas à faire des demandes dans <a href="https://dramabym.vercel.app/#/demande">dramabym.vercel.app/#/demande</a></p>
+    </div>
+    <div>
       <h3>Soutenir le site</h3>
       <p>Le site est gratuit. Si tu veux aider à le faire grandir, un don PayPal est le bienvenu.</p>
       <a class="btn small" href="https://www.paypal.com/donate/?business=makroum.mohamed.mahdi%40gmail.com&currency_code=EUR" target="_blank" rel="noopener">Faire un don</a>
@@ -564,6 +568,7 @@ footer .wrap.about { display: grid; grid-template-columns: repeat(auto-fit, minm
     <p>Le site est en bêta : des titres sont ajoutés tous les jours.</p>
     <p>Ce n'est pas vraiment un site de streaming. C'est plutôt une liste qui te facilite la vie, en rassemblant au même endroit des contenus disponibles chez des services tiers.</p>
     <p>Si j'ai un jour les moyens de maintenir le site, il deviendra un vrai site de streaming, en bien meilleur.</p>
+    <p>Il manque un titre ? N'hésitez pas à faire des demandes dans <a href="https://dramabym.vercel.app/#/demande" style="text-decoration:underline;text-underline-offset:3px">dramabym.vercel.app/#/demande</a></p>
     <p>Une idée, un bug, ou l'envie de contribuer ? Écris-moi sur Discord.</p>
     <div class="contact"><span>Discord</span><b>meyriuu.</b><button type="button" class="btn small ghost" data-copy="meyriuu.">Copier</button></div>
     <button class="btn" id="welcome-ok" type="button">Compris</button>
@@ -974,11 +979,15 @@ function viewHome() {
   refreshTrending().then(function (ch) { if (ch && (location.hash || "#/") === "#/") viewHome(); });
 }
 
-var REQ_URL = "https://formsubmit.co/ajax/metsuyaaa@gmail.com";
+var REQ_MAX = 5;
+function todayKey() { var d = new Date(); return d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate(); }
+function reqToday() { var r = readJSON("noir.reqDay", null); return r && r.d === todayKey() ? (+r.n || 0) : 0; }
+function bumpReq() { try { localStorage.setItem("noir.reqDay", JSON.stringify({ d: todayKey(), n: reqToday() + 1 })); } catch (e) {} }
+var REQ_URL = "https://formsubmit.co/ajax/318f68b57ef527181c572ab6c865d64a";
 function viewRequest(pre) {
   var t = ""; try { t = decodeURIComponent(pre || ""); } catch (e) { t = pre || ""; }
   $("#app").innerHTML = '<div class="wrap"><form class="authbox" id="reqform" style="max-width:520px"><h1>Demander un titre</h1>' +
-    '<p class="lead">Il manque une série ou un film ? Dis-le-moi, je l\'ajoute dès que possible.</p>' +
+    '<p class="lead">Il manque une série ou un film ? Dis-le-moi, je l\'ajoute dès que possible. ' + REQ_MAX + ' demandes maximum par jour.</p>' +
     '<label class="f"><span>Ton pseudo</span><input type="text" name="pseudo" required maxlength="40" autocomplete="nickname"></label>' +
     '<label class="f"><span>Nom exact de la série ou du film</span><input type="text" name="titre" required maxlength="120" value="' + esc(t) + '"></label>' +
     '<label class="f"><span>Date de sortie (ou année)</span><input type="text" name="date" required maxlength="40" placeholder="ex. 2024"></label>' +
@@ -986,11 +995,37 @@ function viewRequest(pre) {
     '<p class="note" id="autherr"></p><div class="row"><button class="btn" type="submit">Envoyer</button><a class="btn ghost" href="#/">Retour</a></div></form></div>';
 }
 
+var listTab = "list";
+function seenTitles() {
+  var all = readSeen(), out = [];
+  sortedDb().forEach(function (s) {
+    if (isMovie(s) || !all[s.id]) return;
+    var n = 0, total = 0;
+    (s.seasons || []).forEach(function (se) {
+      (se.episodes || []).forEach(function (ep) { total++; if (all[s.id][epKey(se, ep)]) n++; });
+    });
+    if (n) out.push(Object.assign({}, s, { _n: n, _t: total }));
+  });
+  return out;
+}
+function seenCard(s, i) {
+  return '<a class="card" style="--i:' + Math.min(i || 0, 14) + '" href="#/serie/' + esc(s.id) + '"><div class="poster">' +
+    (s.poster ? '<img loading="lazy" src="' + esc(s.poster) + '" alt="' + esc(s.name) + '">' : '<div class="ph">' + esc(s.name.charAt(0)) + '</div>') +
+    '<span class="rtag">' + (s._t && s._n >= s._t ? "Tout vu" : s._n + "/" + s._t + " vus") + '</span></div><div class="meta"><b>' + esc(s.name) + '</b><span>' + esc([s.year, s._n + " / " + s._t + " épisodes"].filter(Boolean).join("  ·  ")) + '</span></div></a>';
+}
 function viewMyList() {
-  var items = listItems();
-  var html = '<div class="wrap listhead"><h1>Ma liste</h1><p class="note">' + items.length + (items.length > 1 ? " titres" : " titre") + ' · enregistrée sur cet appareil</p></div>';
-  if (!items.length) { $("#app").innerHTML = html + emptyBox("Liste vide", "Ajoute des titres depuis leur fiche avec « + Ma liste ».", '<a class="btn ghost" href="#/">Parcourir le catalogue</a>'); return; }
-  $("#app").innerHTML = html + '<div class="wrap"><div class="grid" style="padding-top:28px">' + items.map(card).join("") + '</div></div>';
+  var items = listItems(), seen = seenTitles();
+  var html = '<div class="wrap listhead"><h1>Ma liste</h1><p class="note">Enregistrée sur cet appareil</p></div>' +
+    '<div class="wrap"><div class="section-head" style="padding-block:24px 18px"><div class="chips">' +
+    '<button class="chip' + (listTab === "list" ? " on" : "") + '" data-listtab="list">À regarder (' + items.length + ')</button>' +
+    '<button class="chip' + (listTab === "seen" ? " on" : "") + '" data-listtab="seen">Vus (' + seen.length + ')</button></div></div>';
+  var body;
+  if (listTab === "seen") {
+    body = seen.length ? '<div class="grid">' + seen.map(seenCard).join("") + '</div>' : '<p class="note" style="padding-bottom:48px">Aucun épisode marqué comme vu pour l\'instant. Utilise « Marquer vu » sur la fiche d\'une série.</p>';
+  } else {
+    body = items.length ? '<div class="grid">' + items.map(card).join("") + '</div>' : '<p class="note" style="padding-bottom:48px">Ta liste est vide. Ajoute des titres depuis leur fiche avec « + Ma liste ».</p>';
+  }
+  $("#app").innerHTML = html + body + '</div>';
 }
 
 function langMatch(s) { return !langFilter || (s.langs || []).indexOf(langFilter) > -1; }
@@ -1440,7 +1475,7 @@ function route(force) {
   if ((a === "ajouter" || a === "modifier" || a === "motdepasse") && !ADMIN) { location.hash = "#/admin"; return; }
 
   var changed = force || a !== lastPage || a === "serie" || a === "modifier";
-  if (a !== lastPage) { filter = ""; langFilter = ""; }
+  if (a !== lastPage) { filter = ""; langFilter = ""; listTab = "list"; }
   lastPage = a;
 
   var q = $("#q");
@@ -1458,7 +1493,7 @@ function route(force) {
   if (a === "serie") viewSerie(b);
   else if (a === "series") { rerender = function () { viewList("Séries", function (s) { return !isMovie(s); }); }; rerender(); }
   else if (a === "films") { rerender = function () { viewList("Films", isMovie); }; rerender(); }
-  else if (a === "ma-liste") viewMyList();
+  else if (a === "ma-liste") { rerender = viewMyList; rerender(); }
   else if (a === "demande") viewRequest(b);
   else if (a === "recherche") { rerender = function () { viewSearch(b); }; rerender(); }
   else if (a === "admin") viewLogin();
@@ -1517,7 +1552,7 @@ document.addEventListener("click", function (e) { if (!e.target.closest(".search
 document.addEventListener("click", function (e) {
   var nav = e.target.closest("header.top a[href^='#/']");
   if (nav && nav.getAttribute("href") === (location.hash || "#/")) { e.preventDefault(); route(true); return; }
-  var t = e.target.closest("[data-resume],[data-watch],[data-movsrc],[data-playep],[data-src],[data-del],[data-list],[data-seen],[data-seenseason],[data-genre],[data-langf],[data-pick],[data-bulk],#save,#applytpl,#manual,#manualfilm,#refresh,#copyhash");
+  var t = e.target.closest("[data-resume],[data-watch],[data-movsrc],[data-playep],[data-src],[data-del],[data-list],[data-listtab],[data-seen],[data-seenseason],[data-genre],[data-langf],[data-pick],[data-bulk],#save,#applytpl,#manual,#manualfilm,#refresh,#copyhash");
   if (!t) return;
   if (t.dataset.resume != null) { e.preventDefault(); resumeWatch(t.dataset.resume); }
   else if (t.dataset.watch != null) {
@@ -1560,6 +1595,7 @@ document.addEventListener("click", function (e) {
     setSeenMany(s3.id, se3, !allSeen);
     refreshSeen(s3);
   }
+  else if (t.dataset.listtab != null) { listTab = t.dataset.listtab; if (rerender) rerender(); }
   else if (t.dataset.genre != null) { filter = t.dataset.genre; if (rerender) rerender(); }
   else if (t.dataset.langf != null) { langFilter = t.dataset.langf; if (rerender) rerender(); }
   else if (t.dataset.pick != null) pick(t.dataset.pick);
@@ -1634,6 +1670,7 @@ document.addEventListener("submit", function (e) {
     if (fd.get("_honey")) return;
     var lastReq = 0; try { lastReq = +localStorage.getItem("noir.reqAt") || 0; } catch (er) {}
     if (Date.now() - lastReq < 30000) { authError(rf, "Patiente quelques secondes avant d'envoyer une autre demande"); return; }
+    if (reqToday() >= REQ_MAX) { authError(rf, "Tu as atteint la limite de " + REQ_MAX + " demandes par jour. Reviens demain."); return; }
     var rb = rf.querySelector("button[type=submit]"); rb.disabled = true; rb.textContent = "Envoi…";
     var titre = String(fd.get("titre") || "").trim();
     fetch(REQ_URL, { method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" }, body: JSON.stringify({
@@ -1643,6 +1680,7 @@ document.addEventListener("submit", function (e) {
       return r.json().catch(function () { return {}; }).then(function (j) { if (!r.ok || j.success === false || j.success === "false") throw new Error(String(j.message || "refusé par le service")); });
     }).then(function () {
       try { localStorage.setItem("noir.reqAt", String(Date.now())); } catch (er) {}
+      bumpReq();
       $("#app").innerHTML = '<div class="wrap"><div class="authbox"><h1>Merci</h1><p class="lead">Ta demande est bien envoyée. Je l\'ajoute dès que possible.</p><div class="row"><a class="btn" href="#/">Retour à l\'accueil</a><a class="btn ghost" href="#/demande">Une autre demande</a></div></div></div>';
     }).catch(function (err) {
       rb.disabled = false; rb.textContent = "Envoyer";
@@ -1798,7 +1836,7 @@ var WELKEY = "noir.welcome";
 function openWelcome() { var d = $("#welcome"); if (d.showModal && !d.open) d.showModal(); }
 function closeWelcome() { var d = $("#welcome"); if (d.open) d.close(); }
 $("#welcome-ok").addEventListener("click", closeWelcome);
-$("#welcome").addEventListener("click", function (e) { if (e.target === this) closeWelcome(); });
+$("#welcome").addEventListener("click", function (e) { if (e.target === this || e.target.closest("a[href]")) closeWelcome(); });
 $("#welcome").addEventListener("close", function () { try { localStorage.setItem(WELKEY, "1"); } catch (e) {} });
 $("#btn-info").addEventListener("click", openWelcome);
 document.addEventListener("click", function (e) {
