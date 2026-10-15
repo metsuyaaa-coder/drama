@@ -207,7 +207,7 @@
     "langs": [
       "VOSTFR"
     ],
-    "trend": 78,
+    "trend": 80,
     "aka": [
       "100 Days of Deception",
       "百日谎言",
@@ -981,7 +981,8 @@
       "Espoir",
       "Hopeu",
       "호프"
-    ]
+    ],
+    "trend": 96
   },
   {
     "id": "305644",
@@ -2020,6 +2021,351 @@
     "langs": [
       "VOSTFR",
       "VF"
+    ]
+  },
+  {
+    "id": "296140",
+    "type": "tv",
+    "name": "My Bias, My Boss",
+    "original_name": "최애의 사원",
+    "aka": [
+      "My Bias, My Boss",
+      "我的偶像总裁",
+      "Mi ídolo, mi jefe",
+      "最愛の社員",
+      "Meu Idol é Meu Chefe",
+      "เมื่อเมนฉันเป็นประธานบริษัท",
+      "Bias tôi, sếp của tôi",
+      "我的偶像總裁",
+      "Любимая сотрудница",
+      "Moj idol, moj šef",
+      "مفضلي ومديري",
+      "My Bias, My Bows",
+      "האיידול שלי, הבוס שלי",
+      "最爱的社员",
+      "My Bias My Boss",
+      "העובדת המועדפת עליי",
+      "우리 오빠는 아이돌",
+      "Choi-ae-ui Sa-won",
+      "Choae-ui Sawon",
+      "Мой босс, мой герой",
+      "My Oppa is an Idol",
+      "My Favorite Employee",
+      "최애의 사원"
+    ],
+    "year": "2026",
+    "overview": "Une fan inconditionnelle décroche un poste dans une entreprise de mode, pour découvrir peu après que celle-ci a été cofondée par son idole absolue. Bien décidée à rester professionnelle, elle dissimule son identité de fan, mais se laisse rapidement déstabiliser par le PDG de l’entreprise, un véritable bourreau de travail. Alors que des sentiments amoureux secrets et non réciproques ainsi que des difficultés personnelles soigneusement cachées viennent compliquer les relations entre les trois protagonistes, elle se retrouve tiraillée entre son obsession de toujours et une nouvelle relation aussi inattendue que troublante.",
+    "genres": [
+      "Comédie",
+      "Drame"
+    ],
+    "rating": "8.2",
+    "pop": 11.4831,
+    "status": "Ended",
+    "poster": "https://image.tmdb.org/t/p/w500/b5jBoSQ7CW1zDJURuctD30mATuO.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/eBD46F44qKGPZiRLffO4q3JF8Hc.jpg",
+    "cast": [
+      {
+        "name": "강훈",
+        "character": "Kang Ha-gi"
+      },
+      {
+        "name": "Kim Hye-jun",
+        "character": "Nam Da-reum"
+      },
+      {
+        "name": "차우민",
+        "character": "Lee Chan"
+      },
+      {
+        "name": "유나",
+        "character": "Yoon Choi"
+      },
+      {
+        "name": "천우진",
+        "character": "Roy"
+      },
+      {
+        "name": "윤현석",
+        "character": "Hyeok"
+      },
+      {
+        "name": "백승",
+        "character": "Tae-oh"
+      },
+      {
+        "name": "Jung Hyun Min",
+        "character": "Ji-nu"
+      },
+      {
+        "name": "공지호",
+        "character": "Park Mi-mi"
+      },
+      {
+        "name": "Kim Ah-young",
+        "character": "Lee Seul-ah"
+      },
+      {
+        "name": "Hwang Seong-bin",
+        "character": "Kim Min-woo"
+      },
+      {
+        "name": "Heo Joon-seok",
+        "character": "Choi Seong-wook"
+      }
+    ],
+    "seasons": [
+      {
+        "number": 1,
+        "name": "Saison 1",
+        "episodes": [
+          {
+            "number": 1,
+            "name": "Épisode 1",
+            "overview": "To work beside her idol, Da-reum joins a startup but instead faces a prickly, suspicious CEO.",
+            "air_date": "2026-08-03",
+            "sources": [
+              {
+                "name": "VIDARA",
+                "url": "https://vidara.to/e/DsUFfC8SaMz92"
+              },
+              {
+                "name": "PLAYMATE",
+                "url": "https://playmate.to/embed/nxg7197xednGp"
+              },
+              {
+                "name": "UQLOAD",
+                "url": "https://uqload.vc/embed-5lew37brg8r6.html"
+              }
+            ]
+          },
+          {
+            "number": 2,
+            "name": "Épisode 2",
+            "overview": "Da-reum aims to be employee of the year in order to travel with her idol, Chan, but her enthusiasm only triggers her CEO's deep suspicions.",
+            "air_date": "2026-08-04",
+            "sources": [
+              {
+                "name": "VIDARA",
+                "url": "https://vidara.to/e/BOzp4HWpecTMN"
+              },
+              {
+                "name": "PLAYMATE",
+                "url": "https://playmate.to/embed/8NaSCJxhg7C2H"
+              },
+              {
+                "name": "UQLOAD",
+                "url": "https://uqload.vc/embed-f3ciqd9luuht.html"
+              }
+            ]
+          },
+          {
+            "number": 3,
+            "name": "Épisode 3",
+            "overview": "Da-reum makes a shocking confession.",
+            "air_date": "2026-08-10",
+            "sources": [
+              {
+                "name": "VIDARA",
+                "url": "https://vidara.to/e/l0Cu1TJoIpWsu"
+              },
+              {
+                "name": "PLAYMATE",
+                "url": "https://playmate.to/embed/8vgDa4DRgkKUu"
+              },
+              {
+                "name": "UQLOAD",
+                "url": "https://uqload.vc/embed-gq3ndc4ohvz1.html"
+              }
+            ]
+          },
+          {
+            "number": 4,
+            "name": "Épisode 4",
+            "overview": "Da-reum finds herself caught in a love triangle.",
+            "air_date": "2026-08-11",
+            "sources": [
+              {
+                "name": "VIDARA",
+                "url": "https://vidara.to/e/jxJf5HYr8jttm"
+              },
+              {
+                "name": "PLAYMATE",
+                "url": "https://playmate.to/embed/Ac7ce4FlLXso5"
+              },
+              {
+                "name": "UQLOAD",
+                "url": "https://uqload.vc/embed-4cj9lgbhicxp.html"
+              }
+            ]
+          },
+          {
+            "number": 5,
+            "name": "Épisode 5",
+            "overview": "Ha-gi and Da-reum grow closer on a secret business trip.",
+            "air_date": "2026-08-17",
+            "sources": [
+              {
+                "name": "VIDARA",
+                "url": "https://vidara.to/e/iB6lsVBk2l1TQ"
+              },
+              {
+                "name": "PLAYMATE",
+                "url": "https://playmate.to/embed/nQzCCoBBFaQ8W"
+              },
+              {
+                "name": "UQLOAD",
+                "url": "https://uqload.vc/embed-h2qre1nqompb.html"
+              }
+            ]
+          },
+          {
+            "number": 6,
+            "name": "Épisode 6",
+            "overview": "A major shift changes everything after the season's first snow.",
+            "air_date": "2026-08-18",
+            "sources": [
+              {
+                "name": "VIDARA",
+                "url": "https://vidara.to/e/JtovdTElvavMQ"
+              },
+              {
+                "name": "PLAYMATE",
+                "url": "https://playmate.to/embed/YwQWGJ8aV5xdI"
+              },
+              {
+                "name": "UQLOAD",
+                "url": "https://uqload.vc/embed-yoke9und8u7a.html"
+              }
+            ]
+          },
+          {
+            "number": 7,
+            "name": "Épisode 7",
+            "overview": "Ha-gi prepares to confess his true feelings -- only to be blindsided at the crucial moment.",
+            "air_date": "2026-08-24",
+            "sources": [
+              {
+                "name": "VIDARA",
+                "url": "https://vidara.to/e/XtqLHEw1Hyo52"
+              },
+              {
+                "name": "PLAYMATE",
+                "url": "https://playmate.to/embed/21YU7Cm3ngxhL"
+              },
+              {
+                "name": "UQLOAD",
+                "url": "https://uqload.vc/embed-edwqqesvnlee.html"
+              }
+            ]
+          },
+          {
+            "number": 8,
+            "name": "Épisode 8",
+            "overview": "A harsh boycott throws the company into chaos.",
+            "air_date": "2026-08-25",
+            "sources": [
+              {
+                "name": "VIDARA",
+                "url": "https://vidara.to/e/ALmZYFwmgNa99"
+              },
+              {
+                "name": "PLAYMATE",
+                "url": "https://playmate.to/embed/nb1hjNrhCT1yv"
+              },
+              {
+                "name": "UQLOAD",
+                "url": "https://uqload.vc/embed-tzopl1fw19zc.html"
+              }
+            ]
+          },
+          {
+            "number": 9,
+            "name": "Épisode 9",
+            "overview": "Ha-gi and Da-reum's secret office romance is put to the test.",
+            "air_date": "2026-08-31",
+            "sources": [
+              {
+                "name": "VIDARA",
+                "url": "https://vidara.to/e/VQaCoqxYkB0e1"
+              },
+              {
+                "name": "PLAYMATE",
+                "url": "https://playmate.to/embed/2FXIaMBs7BIjj"
+              },
+              {
+                "name": "UQLOAD",
+                "url": "https://uqload.vc/embed-0g8au3yzkfz0.html"
+              }
+            ]
+          },
+          {
+            "number": 10,
+            "name": "Épisode 10",
+            "overview": "Jeong-yeon's return sparks jealousy, while a shocking discovery pushes Da-reum to the edge.",
+            "air_date": "2026-09-01",
+            "sources": [
+              {
+                "name": "VIDARA",
+                "url": "https://vidara.to/e/qes3cIQOYHyTE"
+              },
+              {
+                "name": "PLAYMATE",
+                "url": "https://playmate.to/embed/L1F4gWJIXbwRW"
+              },
+              {
+                "name": "UQLOAD",
+                "url": "https://uqload.vc/embed-cbqzntu1lcfy.html"
+              }
+            ]
+          },
+          {
+            "number": 11,
+            "name": "Épisode 11",
+            "overview": "A mole shatters the company, driving a betrayed Ha-gi to vanish.",
+            "air_date": "2026-09-07",
+            "sources": [
+              {
+                "name": "VIDARA",
+                "url": "https://vidara.to/e/IlTWfviMCdKWw"
+              },
+              {
+                "name": "PLAYMATE",
+                "url": "https://playmate.to/embed/jMuDd9MdpIJlw"
+              },
+              {
+                "name": "UQLOAD",
+                "url": "https://uqload.vc/embed-ajrffr4ie0wj.html"
+              }
+            ]
+          },
+          {
+            "number": 12,
+            "name": "Épisode 12",
+            "overview": "Da-reum receives a life-changing offer while D.N.X reunites onstage.",
+            "air_date": "2026-09-08",
+            "sources": [
+              {
+                "name": "VIDARA",
+                "url": "https://vidara.to/e/q7g5FsXIXmfcj"
+              },
+              {
+                "name": "PLAYMATE",
+                "url": "https://playmate.to/embed/8zruzmBoFSG5y"
+              },
+              {
+                "name": "UQLOAD",
+                "url": "https://uqload.vc/embed-iv05rz9sn9v6.html"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "sources": [],
+    "addedAt": 1792105780104,
+    "langs": [
+      "VOSTFR"
     ]
   }
 ]
