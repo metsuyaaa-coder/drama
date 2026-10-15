@@ -356,6 +356,25 @@ dialog#player .pframe { flex: 1; min-height: 0; aspect-ratio: auto; background: 
 .pbar .pn { display: flex; gap: 8px; margin-left: auto; }
 .pbar .btn:disabled { opacity: .3; pointer-events: none; }
 dialog#player.wide .pbar { display: none; }
+#peplist svg { width: 16px; height: 16px; flex: 0 0 auto; }
+
+/* panneau « Épisodes » dans le lecteur */
+.peps { position: absolute; z-index: 6; top: 0; right: 0; bottom: 0; width: min(400px, 100%); display: flex; flex-direction: column; background: rgba(5,5,5,.97); border-left: 1px solid var(--line); animation: epsIn .25s var(--ease) both; }
+.peps[hidden] { display: none; }
+@keyframes epsIn { from { opacity: 0; transform: translateX(24px); } to { opacity: 1; transform: none; } }
+.peps .eh { flex: 0 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: max(14px, env(safe-area-inset-top, 0px)) max(16px, env(safe-area-inset-right, 0px)) 12px 16px; border-bottom: 1px solid var(--line); }
+.peps .eh b { font-family: var(--display); font-weight: 700; font-size: 22px; text-transform: uppercase; letter-spacing: .03em; }
+.peps .es { flex: 0 0 auto; display: flex; gap: 8px; padding: 10px 16px; overflow-x: auto; border-bottom: 1px solid var(--line); scrollbar-width: none; }
+.peps .es::-webkit-scrollbar { display: none; }
+.peps .es .chip { flex: 0 0 auto; white-space: nowrap; }
+.peps .el { position: relative; flex: 1; min-height: 0; overflow-y: auto; overscroll-behavior: contain; padding-bottom: env(safe-area-inset-bottom, 0px); scrollbar-width: thin; scrollbar-color: #333 transparent; }
+.epi { display: flex; align-items: baseline; gap: 14px; width: 100%; text-align: left; background: transparent; border: 0; border-bottom: 1px solid var(--line); padding: 12px max(16px, env(safe-area-inset-right, 0px)) 12px 16px; color: var(--fg); cursor: pointer; border-radius: 0; transition: background .2s, color .2s; }
+.epi:hover { background: #151515; }
+.epi .en { flex: 0 0 auto; min-width: 2.2ch; font-family: var(--mono); font-size: 12px; color: var(--dim); }
+.epi .et { flex: 1; min-width: 0; font-size: 14px; }
+.epi .ec { flex: 0 0 auto; font-family: var(--mono); font-size: 10px; letter-spacing: .06em; text-transform: uppercase; }
+.epi.on { background: var(--fg); color: var(--bg); }
+.epi.on .en { color: #444; }
 dialog#player.wide { display: flex; }
 
 /* recherche : suggestions sous la barre, sans filtres */
@@ -377,6 +396,8 @@ dialog#player.wide { display: flex; }
   #pext { display: none; }
   .pbar .pn { width: 100%; }
   .pbar .pn .btn { flex: 1 1 0; }
+  .pbar .pn #peplist { flex: 0 0 auto; padding-inline: 14px; }
+  #peplist span { display: none; }
 }
 
 /* flèches de défilement (PC) */
@@ -492,7 +513,12 @@ footer .wrap.about { display: grid; grid-template-columns: repeat(auto-fit, minm
   <div class="pbar" id="pbar">
     <div class="ptip" id="ptip"><button type="button" class="tbtn" id="tprev" aria-label="Conseil précédent">‹</button><p id="ttext" aria-live="polite"></p><button type="button" class="tbtn" id="tnext" aria-label="Conseil suivant">›</button><span id="tcount"></span></div>
     <div class="pl" id="pl"><span class="chiplbl">Serveur</span><span class="srcs" id="psrc"></span></div>
-    <div class="pn" id="pnav"><button class="btn small ghost" id="pprev" type="button">Épisode précédent</button><button class="btn small" id="pnext" type="button">Épisode suivant</button></div>
+    <div class="pn" id="pnav"><button class="btn small ghost" id="pprev" type="button">Épisode précédent</button><button class="btn small ghost" id="peplist" type="button" aria-label="Liste des épisodes" title="Épisodes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="9" width="14" height="11" rx="1.5"/><path d="M7 5.5h12.5A1.5 1.5 0 0 1 21 7v9"/><path d="M11 2.5h8.5A1.5 1.5 0 0 1 21 4"/></svg><span>Épisodes</span></button><button class="btn small" id="pnext" type="button">Épisode suivant</button></div>
+  </div>
+  <div class="peps" id="peps" hidden role="dialog" aria-label="Liste des épisodes">
+    <div class="eh"><b>Épisodes</b><button class="btn small ghost" id="pepsx" type="button">Fermer</button></div>
+    <div class="es" id="pepss"></div>
+    <div class="el" id="pepsl"></div>
   </div>
 </dialog>
 <dialog id="welcome" aria-labelledby="wtitle">
@@ -1143,6 +1169,8 @@ function renderPlayer() {
   clearInterval(tipTimer); tipTimer = setInterval(function () { showTip(tipIdx + 1); }, 9000);
   $("#pl").style.display = cur.sources.length > 1 ? "flex" : "none";
   $("#pnav").style.display = cur.nav ? "flex" : "none";
+  $("#peplist").style.display = (cur.nav && cur.nav.eps) ? "" : "none";
+  $("#peps").hidden = true;
   $("#pprev").disabled = !(cur.nav && cur.nav.prev);
   $("#pnext").disabled = !(cur.nav && cur.nav.next);
   $("#pext").href = url;
@@ -1162,7 +1190,8 @@ function playEp(s, si, num) {
   saveResume(s.id, si, c.ep.number);
   play(c.ep.sources, s.name, 0, "Saison " + se.number + " · Épisode " + c.ep.number + (c.ep.name ? " : " + c.ep.name : ""), {
     prev: p ? function () { playEp(s, p.si, p.ep.number); } : null,
-    next: n ? function () { playEp(s, n.si, n.ep.number); } : null
+    next: n ? function () { playEp(s, n.si, n.ep.number); } : null,
+    eps: { s: s, si: si, num: c.ep.number }
   });
 }
 /* Conseils du lecteur, en carrousel */
@@ -1183,6 +1212,53 @@ function showTip(n) {
 function stepTip(d) { showTip(tipIdx + d); clearInterval(tipTimer); tipTimer = setInterval(function () { showTip(tipIdx + 1); }, 9000); }
 $("#tprev").addEventListener("click", function () { stepTip(-1); });
 $("#tnext").addEventListener("click", function () { stepTip(1); });
+/* Panneau « Épisodes » : saisons + épisodes qui ont une source */
+var epsSeason = 0;
+function epsData() {
+  var n = cur.nav && cur.nav.eps; if (!n) return null;
+  var list = [];
+  (n.s.seasons || []).forEach(function (se, i) {
+    var eps = (se.episodes || []).filter(function (ep) { return (ep.sources || []).length; });
+    if (eps.length) list.push({ i: i, se: se, eps: eps });
+  });
+  return { n: n, list: list };
+}
+function renderEps() {
+  var d = epsData(); if (!d) return;
+  var sel = d.list.filter(function (x) { return x.i === epsSeason; })[0] || d.list[0];
+  if (!sel) { $("#pepss").innerHTML = ""; $("#pepsl").innerHTML = '<p class="note" style="padding:16px">Aucun épisode disponible.</p>'; return; }
+  epsSeason = sel.i;
+  $("#pepss").innerHTML = d.list.length > 1 ? d.list.map(function (x) {
+    return '<button type="button" class="chip' + (x.i === sel.i ? " on" : "") + '" data-esn="' + x.i + '">Saison ' + esc(x.se.number) + '</button>';
+  }).join("") : "";
+  $("#pepss").style.display = d.list.length > 1 ? "" : "none";
+  $("#pepsl").innerHTML = sel.eps.map(function (ep) {
+    var on = sel.i === d.n.si && String(ep.number) === String(d.n.num);
+    return '<button type="button" class="epi' + (on ? " on" : "") + '" data-eps="' + sel.i + '|' + esc(ep.number) + '"><span class="en">' + esc(ep.number) + '</span><span class="et">' + esc(ep.name || ("Épisode " + ep.number)) + '</span>' + (on ? '<span class="ec">En lecture</span>' : "") + '</button>';
+  }).join("");
+  var onEl = $("#pepsl").querySelector(".epi.on");
+  if (onEl) $("#pepsl").scrollTop = Math.max(0, onEl.offsetTop - $("#pepsl").clientHeight / 2 + onEl.offsetHeight / 2);
+}
+function openEps() {
+  var d = epsData(); if (!d) return;
+  epsSeason = d.n.si;
+  $("#peps").hidden = false;
+  renderEps();
+}
+function closeEps() { $("#peps").hidden = true; }
+$("#peplist").addEventListener("click", function () { if ($("#peps").hidden) openEps(); else closeEps(); });
+$("#pepsx").addEventListener("click", closeEps);
+$("#peps").addEventListener("click", function (e) {
+  var c = e.target.closest("[data-esn]");
+  if (c) { epsSeason = parseInt(c.dataset.esn, 10); renderEps(); return; }
+  var b = e.target.closest("[data-eps]");
+  if (!b) return;
+  var p = b.dataset.eps.split("|"), d = epsData(); if (!d) return;
+  closeEps();
+  playEp(d.n.s, parseInt(p[0], 10), p[1]);
+});
+$("#player").addEventListener("cancel", function (e) { if (!$("#peps").hidden) { e.preventDefault(); closeEps(); } });
+
 function closePlayer() {
   clearInterval(tipTimer);
   document.documentElement.classList.remove("lock");
@@ -1492,7 +1568,7 @@ $("#pfull").addEventListener("click", toggleFull);
 document.addEventListener("fullscreenchange", function () { if (!$("#player").classList.contains("wide")) $("#pfull").textContent = document.fullscreenElement ? "Quitter le plein écran" : "Plein écran"; syncFs(); });
 document.addEventListener("webkitfullscreenchange", function () { if (!$("#player").classList.contains("wide")) $("#pfull").textContent = document.webkitFullscreenElement ? "Quitter le plein écran" : "Plein écran"; syncFs(); });
 $("#player").addEventListener("click", function (e) { if (e.target === this) closePlayer(); });
-$("#player").addEventListener("close", function () { clearInterval(tipTimer); document.documentElement.classList.remove("lock"); $("#pstage").innerHTML = ""; syncFs(); });
+$("#player").addEventListener("close", function () { closeEps(); clearInterval(tipTimer); document.documentElement.classList.remove("lock"); $("#pstage").innerHTML = ""; syncFs(); });
 
 $("#btn-export").addEventListener("click", function () {
   var a = document.createElement("a");
