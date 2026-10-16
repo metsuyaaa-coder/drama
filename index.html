@@ -732,22 +732,25 @@ function autoNameAll(arr) {
 }
 
 /* Sources : une par ligne, au format "Nom | lien" (ou juste le lien) */
-function srcToText(arr) { return (arr || []).map(function (s) { return [s.name, s.url, s.quality || "", s.size || ""].join(" | ").replace(/( \| )+$/, ""); }).join("\n"); }
+function srcToText(arr) {
+  return (arr || []).map(function (s) {
+    return s.name + " | " + s.url + (s.quality ? " " + s.quality : "") + (s.size ? " " + s.size : "");
+  }).join("\n");
+}
+/* Une ligne : "Nom | lien 1080p 35go" (Nom, qualité et taille facultatifs, ordre libre après le lien) */
 function textToSrc(text) {
-  var out = [];
+  var out = [], UN = { ko: "Ko", mo: "Mo", go: "Go", to: "To", kb: "KB", mb: "MB", gb: "GB", tb: "TB" };
   String(text || "").split("\n").forEach(function (line) {
     line = line.trim(); if (!line) return;
-    var parts = line.split("|").map(function (x) { return x.trim(); }), name = "", url = "", rest = [];
-    if (/^https?:/i.test(parts[0])) { url = parts[0]; rest = parts.slice(1); }
-    else { name = parts[0]; url = parts[1] || ""; rest = parts.slice(2); }
-    if (!url) return;
+    var m = line.match(/https?:\/\/[^\s|]+/); if (!m) return;
+    var url = m[0];
+    var name = line.slice(0, m.index).replace(/[|\s]+$/, "").trim();
+    var after = line.slice(m.index + url.length).replace(/\|/g, " ");
     var o = { name: name || hostName(url), url: url };
-    rest.forEach(function (x) {
-      if (!x) return;
-      if (/\d\s*(ko|mo|go|to|kb|mb|gb|tb|o)\b/i.test(x) && !o.size) o.size = x;
-      else if (!o.quality) o.quality = x;
-      else if (!o.size) o.size = x;
-    });
+    var sz = after.match(/(\d+(?:[.,]\d+)?)\s*(ko|mo|go|to|kb|mb|gb|tb)\b/i);
+    if (sz) { o.size = sz[1] + " " + UN[sz[2].toLowerCase()]; after = after.replace(sz[0], " "); }
+    var q = after.replace(/\s+/g, " ").trim();
+    if (q) o.quality = q;
     out.push(o);
   });
   return numberDupes(out);
@@ -1140,6 +1143,18 @@ function dlLinks(arr, label, cls) {
   }).join("");
 }
 
+document.addEventListener("click", function (e) {
+  if (!e.target.closest("[data-godl]")) return;
+  dlMode = true;
+  var sec = $("#seasons"); if (!sec) return;
+  sec.classList.add("dlmode");
+  document.querySelectorAll("[data-dltab]").forEach(function (x) {
+    var on = x.dataset.dltab === "dl";
+    x.classList.toggle("on", on); x.setAttribute("aria-selected", on ? "true" : "false");
+  });
+  sec.scrollIntoView({ behavior: "smooth", block: "start" });
+});
+
 /* Fenêtre de téléchargement : lien + Copier / Ouvrir + qualité et taille */
 (function () {
   var box = document.createElement("div");
@@ -1203,7 +1218,7 @@ function viewSerie(id) {
     '<div><div class="tags">' + (langLabel(s) ? '<span class="lang">' + esc(langLabel(s)) + '</span>' : '') + (ongoing(s) ? '<span class="live">En cours</span>' : '') + (ne ? newBadge("Nouvel épisode") : '') + tags.map(function (t) { return "<span>" + esc(t) + "</span>"; }).join("") + '</div>' +
     '<h1>' + esc(s.name) + '</h1>' + (s.original_name && s.original_name !== s.name ? '<div class="orig">' + esc(s.original_name) + '</div>' : '<div class="orig"></div>') +
     '<p class="ov">' + esc(s.overview || "Pas de synopsis.") + '</p>' +
-    '<div class="row"><button class="btn" data-watch="' + esc(s.id) + '">Regarder</button>' + (movie ? dlLinks(s.downloads, "Télécharger", " ghost") : "") + '<button class="btn ghost' + (inList(s.id) ? " on" : "") + '" type="button" data-list="' + esc(s.id) + '">' + (inList(s.id) ? "✓ Dans ma liste" : "+ Ma liste") + '</button>' + (ADMIN ? '<a class="btn ghost" href="#/modifier/' + esc(s.id) + '">Modifier</a><button class="btn danger" data-del="' + esc(s.id) + '">Supprimer</button>' : '') + '</div>' + srcChips +
+    '<div class="row"><button class="btn" data-watch="' + esc(s.id) + '">Regarder</button>' + (movie ? dlLinks(s.downloads, "Télécharger", " ghost") : "") + (!movie && showDl ? '<button class="btn ghost" type="button" data-godl="1">Télécharger</button>' : "") + '<button class="btn ghost' + (inList(s.id) ? " on" : "") + '" type="button" data-list="' + esc(s.id) + '">' + (inList(s.id) ? "✓ Dans ma liste" : "+ Ma liste") + '</button>' + (ADMIN ? '<a class="btn ghost" href="#/modifier/' + esc(s.id) + '">Modifier</a><button class="btn danger" data-del="' + esc(s.id) + '">Supprimer</button>' : '') + '</div>' + srcChips +
     ((s.cast || []).length ? '<h3 class="note" style="margin:32px 0 0;text-transform:uppercase;letter-spacing:.08em">Distribution</h3><div class="cast">' + s.cast.slice(0, 12).map(function (c) { return '<div><b>' + esc(c.name) + '</b><span>' + esc(c.character || "") + '</span></div>'; }).join("") + '</div>' : '') +
     '</div></div></section>';
   if (!movie && (s.seasons || []).length) {
@@ -1313,18 +1328,18 @@ function renderEditor() {
   }
   var dlEdit;
   if (movie) {
-    dlEdit = '<label class="f"><span>Liens de téléchargement du film (1fichier)</span><textarea class="srcbox" data-f="downloads" placeholder="1fichier | https://1fichier.com/?xxxxxxxx | 1080p | 2,1 Go">' + esc(srcToText(d.downloads)) + '</textarea></label>' +
+    dlEdit = '<label class="f"><span>Liens de téléchargement du film (1fichier)</span><textarea class="srcbox" data-f="downloads" placeholder="1fichier | https://1fichier.com/?xxxxxxxx 1080p 2,1go">' + esc(srcToText(d.downloads)) + '</textarea></label>' +
       '<p class="note">Un lien par ligne, au format Nom | lien. Sans nom, il prend celui du site (ex. 1FICHIER).</p>';
   } else if ((d.seasons || []).length) {
-    dlEdit = '<p class="note">Colle le lien 1fichier de la saison entière, et/ou un lien par épisode. Format : Nom | lien | qualité | taille (ex. 1fichier | https://… | 1080p | 1,4 Go), qualité et taille sont facultatives. Les visiteurs les voient dans l\'onglet « Télécharger » de la fiche.</p>' +
+    dlEdit = '<p class="note">Colle le lien 1fichier de la saison entière, et/ou un lien par épisode. Écris simplement : Nom | lien 1080p 1,4go (la qualité et la taille se mettent juste après le lien, séparées par des espaces, et sont facultatives). Les visiteurs les voient dans l\'onglet « Télécharger » de la fiche.</p>' +
       d.seasons.map(function (se, i) {
         var eps = se.episodes || [], filled = eps.filter(function (e) { return (e.downloads || []).length; }).length;
         return '<details class="epedit"' + (keepOpenDl === i ? " open" : "") + '><summary>' + esc(se.name || "Saison " + se.number) + '<i>' + ((se.downloads || []).length ? "pack ✓ · " : "") + filled + "/" + eps.length + ' avec lien</i></summary>' +
-          '<div class="bulk"><label class="f"><span>Lien de la saison entière (pack)</span><textarea class="srcbox" style="min-height:60px" data-dlseason="' + i + '" placeholder="1fichier | https://1fichier.com/dir/xxxxxxxx | 1080p | 25 Go">' + esc(srcToText(se.downloads)) + '</textarea></label></div>' +
+          '<div class="bulk"><label class="f"><span>Lien de la saison entière (pack)</span><textarea class="srcbox" style="min-height:60px" data-dlseason="' + i + '" placeholder="1fichier | https://1fichier.com/dir/xxxxxxxx 1080p 25go">' + esc(srcToText(se.downloads)) + '</textarea></label></div>' +
           '<div class="bulk"><label class="f"><span>Ajout en masse : un lien par épisode, un par ligne, dans l\'ordre (remplace les liens existants de ces épisodes)</span><textarea data-dlbulkta="' + i + '" placeholder="https://1fichier.com/?aaaa&#10;https://1fichier.com/?bbbb&#10;https://1fichier.com/?cccc"></textarea></label>' +
           '<div class="bulkrow"><label class="f"><span>À partir de l\'épisode</span><input type="number" min="1" value="1" data-dlbulkfrom="' + i + '"></label><button class="btn ghost" type="button" data-dlbulk="' + i + '">Remplir la saison</button></div></div>' +
           eps.map(function (ep, j) {
-            return '<div class="eprow"><span class="n">' + String(ep.number).padStart(2, "0") + '</span><span class="t">' + esc(ep.name || "") + '</span><textarea data-dls="' + i + '" data-dle="' + j + '" placeholder="Nom | lien 1fichier | qualité | taille (un par ligne)" aria-label="Téléchargement saison ' + esc(se.number) + ' épisode ' + esc(ep.number) + '">' + esc(srcToText(ep.downloads)) + '</textarea></div>';
+            return '<div class="eprow"><span class="n">' + String(ep.number).padStart(2, "0") + '</span><span class="t">' + esc(ep.name || "") + '</span><textarea data-dls="' + i + '" data-dle="' + j + '" placeholder="Nom | lien 1080p 2go (un par ligne)" aria-label="Téléchargement saison ' + esc(se.number) + ' épisode ' + esc(ep.number) + '">' + esc(srcToText(ep.downloads)) + '</textarea></div>';
           }).join("") + '</details>';
       }).join("");
   } else {
