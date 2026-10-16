@@ -1060,7 +1060,10 @@ function viewHome() {
     (picks.length > 1 ? '<div class="hdots">' + picks.map(function (h, k) { return '<button type="button" data-i="' + k + '" class="' + (k === 0 ? "on" : "") + '" aria-label="Diapositive ' + (k + 1) + '"></button>'; }).join("") + '</div>' : '') + '</section>';
   var rs = resumeList();
   if (rs.length) html += rail("Reprendre", rs, "", resumeCard);
-  var fresh = tv.filter(function (s) { return newEpisode(s); });
+  var fresh = tv.filter(function (s) { return newEpisode(s); }).sort(function (a, b) {
+    var da = newEpisode(a).ep.air_date, db = newEpisode(b).ep.air_date;
+    return da < db ? 1 : da > db ? -1 : (b.addedAt || 0) - (a.addedAt || 0);
+  });
   if (fresh.length) html += rail("Nouveaux épisodes", fresh);
   var ml = listItems();
   if (ml.length) html += rail("Ma liste", ml, "#/ma-liste");
