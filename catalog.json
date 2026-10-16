@@ -606,8 +606,28 @@
               "name": "Épisode 3",
               "overview": "",
               "air_date": "2026-10-16",
-              "sources": [],
-              "downloads": []
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/09adi9vhA9U10"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/1beitjsENq5T9"
+                },
+                {
+                  "name": "UQLOAD",
+                  "url": "https://uqload.vc/embed-v6n8916hwstw.html"
+                }
+              ],
+              "downloads": [
+                {
+                  "name": "1FICHIER",
+                  "url": "https://1fichier.com/?453rfjul6t7nuvyie39a",
+                  "size": "2.4 Go",
+                  "quality": "1080p (H.264)"
+                }
+              ]
             },
             {
               "number": 4,
@@ -2529,6 +2549,483 @@
       ],
       "sources": [],
       "addedAt": 1792105780104,
+      "langs": [
+        "VOSTFR"
+      ],
+      "downloads": []
+    },
+    {
+      "id": "212204",
+      "type": "tv",
+      "name": "Twinkling Watermelon",
+      "original_name": "반짝이는 워터멜론",
+      "aka": [
+        "반짝이는 워터멜론",
+        "هندوانه درخشان",
+        "Twinkling Watermelon",
+        "Melancia Cintilante",
+        "闪亮的西瓜",
+        "TWINKLING WATERMELON - ကြယ်နီ‌လေးတို့ရဲ့ ချစ်တေးသံ",
+        "閃亮的西瓜",
+        "Twinkling Watermelon ย้อนวัยใจสู้ฝัน",
+        "Dưa Hấu Lấp Lánh",
+        "Сяючий Кавунчик",
+        "Když zní srdce",
+        "رحلة إلى الماضي",
+        "Svjetlucava lubenica",
+        "Мерцающий арбуз",
+        "輝くウォーターメロン～僕らをつなぐ恋うた～",
+        "אבטיח מנצנץ",
+        "Sandía chispeante",
+        "闪烁的西瓜",
+        "Shining Watermelon",
+        "Banjjagineun Woteomellon",
+        "반짝이는워터멜론",
+        "သံစဉ်အိမ်မက်များဆီသို့",
+        "ဖရဲသီးလေးရဲ့ ဂီတ",
+        "Sparkling Watermelon",
+        "Ngọt Ngào Rực Rỡ"
+      ],
+      "year": "2023",
+      "overview": "En 2023, Eun Gyeol (Ryeoun) est un lycéen passionné par la musique. La journée, c'est un élève modèle studieux, mais quand vient la nuit, il se métamorphose en guitariste dans un groupe. Un jour, il est attiré par hasard dans une boutique de musique étrange et se retrouve subitement en 1995. Il se retrouve alors nez à nez avec son père, Ha Yi Chan (Choi Hyun Wook) lui-même lycéen ! Yi Chan prend Eun Gyeol pour un fou lorsqu'il l'entend l'appeler « papa ». Mais fait encore plus préoccupant, il semblerait que Yi Chan ait le béguin pour une violoncelliste hautaine qui s'appelle Se Kyeong (Seol In Ah) et pas pour sa future mère Cheong Ah (Shin Eun Soo) ! Afin de tenter de rétablir la situation, Eun Gyeol rejoint le groupe mené par son futur père. Mais cela lui permettra-t-il de rapprocher ses futurs parents... et pourra-t-il un jour rejoindre son époque ?",
+      "genres": [
+        "Science-Fiction & Fantastique",
+        "Drame"
+      ],
+      "rating": "8.8",
+      "pop": 18.1381,
+      "status": "Ended",
+      "poster": "https://image.tmdb.org/t/p/w500/fD1WFaH8Bo4g6SqAOwCQg3Ry6zv.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/original/efaMS00Fevc3fw2dbeP7rh22O6D.jpg",
+      "cast": [
+        {
+          "name": "려운",
+          "character": "Ha Eun-gyeol"
+        },
+        {
+          "name": "최현욱",
+          "character": "Ha Yi-chan"
+        },
+        {
+          "name": "Seorina",
+          "character": "Choi Se-gyeong / On Eun-yu"
+        },
+        {
+          "name": "신은수",
+          "character": "Yoon Chung-ah"
+        },
+        {
+          "name": "최원영",
+          "character": "Eun-gyeol's Father"
+        },
+        {
+          "name": "Seo Young-hee",
+          "character": "Eun-gyeol's Mother"
+        },
+        {
+          "name": "정상훈",
+          "character": "Master"
+        },
+        {
+          "name": "Cheon Ho-jin",
+          "character": "Grandpa Viva"
+        },
+        {
+          "name": "Goh Doo-shim",
+          "character": "Go Yang-hee"
+        },
+        {
+          "name": "Ju-Ryoung Kim",
+          "character": "Im Ji-mi"
+        },
+        {
+          "name": "봉재현",
+          "character": "Ha Eun-ho"
+        },
+        {
+          "name": "Ju-ne",
+          "character": "Koo Jun-hyeong"
+        }
+      ],
+      "seasons": [
+        {
+          "number": 1,
+          "name": "Saison 1",
+          "episodes": [
+            {
+              "number": 1,
+              "name": "Passion Is Born",
+              "overview": "Eun-gyeol and his family move into a new neighborhood. He meets a man who offers to teach him how to play the guitar, and Eun-gyeol works hard to learn it. As he deals with bullies at school, he practices playing the guitar until he is as good as the man who taught him. However, tragedy strikes, and he and his family are forced to move again.",
+              "air_date": "2023-09-25",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/V64DSvmtiWGso"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/Inru4uHmaxdWK"
+                }
+              ],
+              "downloads": [
+                {
+                  "name": "1FICHIER",
+                  "url": "https://1fichier.com/?johdr222ymwuumq524n6",
+                  "quality": "1080p (H.264)"
+                }
+              ]
+            },
+            {
+              "number": 2,
+              "name": "Eun-gyeol Quits Music",
+              "overview": "Eun-gyeol tries his best to quit music, but it's not easy for him to do. He gets scouted to join SPINE9, an indie band in Hongdae. To make things worse, he finally gets his hands on the guitar promised by the Viva Music store owner. He is torn by which path to take and finds himself walking into a suspicious music store.",
+              "air_date": "2023-09-26",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/NqXgcDSVHv5NJ"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/h2ByonYcLPvfL"
+                }
+              ],
+              "downloads": [
+                {
+                  "name": "1FICHIER",
+                  "url": "https://1fichier.com/?03g5pqk4d7pjzs223b2q",
+                  "quality": "1080p (H.264)"
+                }
+              ]
+            },
+            {
+              "number": 3,
+              "name": "Seoul 1995",
+              "overview": "Eun-gyeol gets stuck in 1995 and doesn't know how to return to the present. What's worse is that he meets his young father, Yi-chan, who can talk and wants to start a band to impress a girl who isn't Eun-gyeol's mother. Eun-gyeol poses as Yoon Dong-jin, a musical genius, in order to try to become a member of Yi-chan's band.",
+              "air_date": "2023-10-02",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/42iQnNRO4bnjW"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/8xBTiBBrtwk6B"
+                }
+              ],
+              "downloads": [
+                {
+                  "name": "1FICHIER",
+                  "url": "https://1fichier.com/?98iqqub0vg15xbthzclj",
+                  "quality": "1080p (H.264)"
+                }
+              ]
+            },
+            {
+              "number": 4,
+              "name": "Eun-gyeol Becomes Yi-chan's Tutor",
+              "overview": "Eun-gyeol encounters Se-gyeong in her teens and learns a few things about her life that don't make sense in the future. Meanwhile, Yi-chan meets Chung-ah for the first time, but she doesn't say a word. Yi-chan tries to get away from Eun-gyeol, but Eun-gyeol follows him to the Snail Guesthouse and ends up becoming Yi-chan's math tutor.",
+              "air_date": "2023-10-03",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/wAalS5mxT5T3b"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/M1kvSPEXpEIeT"
+                }
+              ],
+              "downloads": [
+                {
+                  "name": "1FICHIER",
+                  "url": "https://1fichier.com/?zsqncedpj3sq82r9p4ww",
+                  "quality": "1080p (H.264)"
+                }
+              ]
+            },
+            {
+              "number": 5,
+              "name": "Se-gyeong Leaves the Country",
+              "overview": "Eun-gyeol resolves to stop the accident that caused Yi-chan to become deaf and clings to him, vowing to teach him everything he needs to know. He even promises to gift him the band Yi-chan needs. However, the school festival is in one month, and the person Yi-chan is doing this for has left the country and isn't going to return.",
+              "air_date": "2023-10-09",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/Pu10GvLaDoYcW"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/psQE5ODD7rNUV"
+                }
+              ],
+              "downloads": [
+                {
+                  "name": "1FICHIER",
+                  "url": "https://1fichier.com/?ajppbb8gmbk6jis8k18q",
+                  "quality": "1080p (H.264)"
+                }
+              ]
+            },
+            {
+              "number": 6,
+              "name": "Se-gyeong Returns",
+              "overview": "Everyone is confused at Se-gyeong's return, especially Eun-gyeol, who sternly warns her to stay away from Yi-chan. However, it doesn't work, and Se-gyeong approaches Yi-chan with different intentions. Meanwhile, Chung-ah can only stand by and watch as she realizes she's lost her chance to tell Yi-chan how she feels.",
+              "air_date": "2023-10-10",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/IL87f44aMGz2q"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/Gk6cCyISJTd0D"
+                }
+              ],
+              "downloads": [
+                {
+                  "name": "1FICHIER",
+                  "url": "https://1fichier.com/?wl6k0o6scneqrftepnsj",
+                  "quality": "1080p (H.264)"
+                }
+              ]
+            },
+            {
+              "number": 7,
+              "name": "Where Are You Eun-gyeol?",
+              "overview": "Chung-ah wakes up, realizing she's lying on a hospital bed, with the revelation that Yi-chan carried her there on his back. Later, Yi-chan learns her name from her tag for the first time. Meanwhile, Eun-gyeol has been silent for days, causing concern for Yi-chan. Attempting to locate him, Yi-chan hands out flyers and ends up facing trouble with local thugs. Se-gyeong desperately meets with each band member to verify something important.",
+              "air_date": "2023-10-16",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/6lSyX5wyx3ZTH"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/K5P9JPXYlpZOE"
+                }
+              ],
+              "downloads": [
+                {
+                  "name": "1FICHIER",
+                  "url": "https://1fichier.com/?9rjl6c6nbpt1ywjki0z3",
+                  "quality": "1080p (H.264)"
+                }
+              ]
+            },
+            {
+              "number": 8,
+              "name": "I Found Ha Eun-gyeol",
+              "overview": "Eun-gyeol wakes up at the house of the Jinsung Family after the accident. He finds out that Chung-ah was the daughter of Chairman Yoon Gun-hyung. Meanwhile, Yi-chan is hospitalized after getting beat up by the local thugs. Se-gyeong tells him that Chung-ah was the one who called for help to save him. Meanwhile, Eun-gyeol decides to help Chung-ah learn the sign language.",
+              "air_date": "2023-10-17",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/FHUOK2kdPsgmc"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/y5ynCQtsFEkjn"
+                }
+              ],
+              "downloads": [
+                {
+                  "name": "1FICHIER",
+                  "url": "https://1fichier.com/?69m2gqngrhfo4koxr1ek",
+                  "quality": "1080p (H.264)"
+                }
+              ]
+            },
+            {
+              "number": 9,
+              "name": "Friendship or Love?",
+              "overview": "Astounded by Eun-gyeol's candid love confession for Se-gyeong, Yi-chan retaliates with a spirited punch. Eun-gyeol's attempts at self-defense lead to Yi-chan having a bleeding nose on both sides. The schoolyard transforms into a battleground as students try to intervene, and the entire situation gains momentum. Se-gyeong (actually Eun-yu) is left in shock by the unexpected confession. Meanwhile, Eun-gyeol uncovers a hidden secret about Chung-ah.",
+              "air_date": "2023-10-23",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/uQ6cHgfbXrQyP"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/E2PD7QpcEsGnW"
+                }
+              ],
+              "downloads": [
+                {
+                  "name": "1FICHIER",
+                  "url": "https://1fichier.com/?ii2ovnjiqv7adu1dqcpj",
+                  "quality": "1080p (H.264)"
+                }
+              ]
+            },
+            {
+              "number": 10,
+              "name": "Let Yourself Twinkle",
+              "overview": "Eun-gyeol can't hide his feelings for Se-gyeong and ends up kissing her. Chung-ah's stepmother calls Eun-gyeol separately and tells him to quit before he teaches Chung-ah sign language. The members of the band decide to change their band name and theme right before the festival and ask Se-gyeong and Chung-ah for help. Meanwhile, Eun-gyeol learns that Master has sent a helper for him.",
+              "air_date": "2023-10-24",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/epcWB6fMK1QKm"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/Elxd3nl886Jwo"
+                }
+              ],
+              "downloads": [
+                {
+                  "name": "1FICHIER",
+                  "url": "https://1fichier.com/?3zx4xiw1i5w3bxpyx1i5",
+                  "quality": "1080p (H.264)"
+                }
+              ]
+            },
+            {
+              "number": 11,
+              "name": "Dangerous Rehearsal",
+              "overview": "As the festival draws near, the boys are intensely focused on fine-tuning their band performance. Meanwhile, Eun-gyeol reflects on a pivotal clue related to a potential accident leading to hearing loss. Believing Dong-jin to be the helper that Master mentioned, he pleads with Yi-chan to skip the rehearsal, but his request is dismissed. Meanwhile, Eun-yu grapples with the challenge of uncovering her mother's genuine first love.",
+              "air_date": "2023-10-30",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/U2o3QvHv70KcI"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/s2ofYgvbWkioo"
+                }
+              ],
+              "downloads": [
+                {
+                  "name": "1FICHIER",
+                  "url": "https://1fichier.com/?pljtmkz4de07go77swus",
+                  "quality": "1080p (H.264)"
+                }
+              ]
+            },
+            {
+              "number": 12,
+              "name": "The Day of Decision",
+              "overview": "Eun-gyeol successfully cancels the rehearsal and prevents Yi-chan from getting seriously hurt. Chairman Yoon extends the contract with Eun-gyeol and changes the terms and conditions. The day of the festival is finally here, and Se-gyeong has to choose between Eun-gyeol and Yi-chan. Chung-ah decides not to show up at the festival.",
+              "air_date": "2023-10-31",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/1jUBmbroB6uU8"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/9R0KaER8IKnw7"
+                }
+              ],
+              "downloads": [
+                {
+                  "name": "1FICHIER",
+                  "url": "https://1fichier.com/?9vyn6z5rxf96ehz017xu",
+                  "quality": "1080p (H.264)"
+                }
+              ]
+            },
+            {
+              "number": 13,
+              "name": "The Final Festival",
+              "overview": "As the enchanting glow of their festival fades, Eun-gyeol and Eun-yu acknowledge the depth of their feelings, hoping for a lasting connection. Meanwhile, the anticipated disbandment takes an unexpected turn, giving the boys another shot at the stage. The hurdle now is creating their own song, and Yi-chan suggests a gathering for this endeavor while musing on how to persuade Chung-ah to join.",
+              "air_date": "2023-11-06",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/QCBwlcxwJfAAS"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/kmRqwGPoWJKqR"
+                }
+              ],
+              "downloads": [
+                {
+                  "name": "1FICHIER",
+                  "url": "https://1fichier.com/?ktuzmzs27u0c8qwp4llw",
+                  "quality": "1080p (H.264)"
+                }
+              ]
+            },
+            {
+              "number": 14,
+              "name": "Another Time Traveler",
+              "overview": "Eun-gyeol and Se-gyeong realize that they’re both time travelers. He learns that Se-gyeong also had a mission to accomplish while she was in 1995. Eun-gyeol finds out that Chung-ah has been confined and abused for the past 12 years. Meanwhile, Se-gyeong tells Eun-gyeol that Yi-chan’s accident didn’t happen on the day before the festival and that it hasn’t happened yet.",
+              "air_date": "2023-11-07",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/t2QcYzRipeJHh"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/j2lWl56KoP2Zb"
+                }
+              ],
+              "downloads": [
+                {
+                  "name": "1FICHIER",
+                  "url": "https://1fichier.com/?fp8rfcyslk4ihpmx7kib",
+                  "quality": "1080p (H.264)"
+                }
+              ]
+            },
+            {
+              "number": 15,
+              "name": "The Hints",
+              "overview": "Eun-yu drops clues about Yi-chan's real hearing loss incident to Eun-gyeol. Knowing that Eun-gyeol tends to shoulder blame for everything, she pledges to support him through this tough time. However, suspicions linger in her mind about the complexity of her connection with Eun-gyeol. Together, they methodically investigate everyone linked to the accident in search of the truth. Meanwhile, Yi-chan assures Eun-gyeol that he won't leave the house for the entire day.",
+              "air_date": "2023-11-13",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/lM6ABl8I6tmjz"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/OglJn3F4aTeHZ"
+                }
+              ],
+              "downloads": [
+                {
+                  "name": "1FICHIER",
+                  "url": "https://1fichier.com/?svjshpadj0qzqbthtxse",
+                  "quality": "1080p (H.264)"
+                }
+              ]
+            },
+            {
+              "number": 16,
+              "name": "Everything You Hoped for and More",
+              "overview": "Yi-chan gets hit by a car and loses his hearing. Master tells Eun-gyeol to go back to his time, but he refuses, determined to catch the guy who hit Yi-chan. Se-gyeong convinces Eun-gyeol to return to 2023, and when he finally does, a completely different life awaits him.",
+              "air_date": "2023-11-14",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/VHo68FXz0Jdo1"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/1RXzjaio2iRV3"
+                }
+              ],
+              "downloads": [
+                {
+                  "name": "1FICHIER",
+                  "url": "https://1fichier.com/?yhc1e75zalmdai4yx9cy",
+                  "quality": "1080p (H.264)"
+                }
+              ]
+            }
+          ],
+          "downloads": []
+        }
+      ],
+      "sources": [],
+      "addedAt": 1792185621329,
       "langs": [
         "VOSTFR"
       ],
