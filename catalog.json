@@ -1,2505 +1,2376 @@
-[
-  {
-    "id": "293607",
-    "type": "tv",
-    "name": "100 jours en espionne",
-    "original_name": "100일의 거짓말",
-    "year": "2026",
-    "overview": "En quête de liberté, la meilleure pickpocket de Séoul infiltre le gouvernement colonial japonais pour lui dérober des secrets, mais tombe amoureuse du fils de sa cible.",
-    "genres": [
-      "Action & Adventure",
-      "Drame"
-    ],
-    "rating": "9.0",
-    "status": "Returning Series",
-    "poster": "https://image.tmdb.org/t/p/w500/wf7l8ZfGGkOKcQGF3Htt5DDhBxD.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/w1280/3SvKCITqMtjgPIhFBjRc4yTAc4H.jpg",
-    "cast": [
-      {
-        "name": "Kim You-jung",
-        "character": "Lee Ga-gyeong"
-      },
-      {
-        "name": "Jinyoung",
-        "character": "Kim Tae-woong / Hideo Sato"
-      },
-      {
-        "name": "김현주",
-        "character": "Yu So-ran"
-      },
-      {
-        "name": "Lee Mu-saeng",
-        "character": "Yu Philip"
-      },
-      {
-        "name": "Jin Sun-kyu",
-        "character": "Shinichi Sato"
-      },
-      {
-        "name": "Seo Jeong-yeon",
-        "character": "Ryu Gwan-sil / Yanagi"
-      },
-      {
-        "name": "Kiko Oi",
-        "character": "Hanako Sato"
-      },
-      {
-        "name": "박정연",
-        "character": "Kim Myeong-nam"
-      },
-      {
-        "name": "이선",
-        "character": "Lee Young-bok"
-      },
-      {
-        "name": "김인권",
-        "character": "Han Cheol-ryong"
-      },
-      {
-        "name": "최덕문",
-        "character": "Kwak Woon-hak"
-      },
-      {
-        "name": "이도군",
-        "character": "Jang Jeong-yeop"
-      }
-    ],
-    "seasons": [
-      {
-        "number": 1,
-        "name": "Saison 1",
-        "episodes": [
-          {
-            "number": 1,
-            "name": "Épisode 1",
-            "overview": "Pickpocket Lee Ga-gyeong has just one goal — to flee colonial Joseon. But she soon ends up unexpectedly entangled with the Korean independence movement.",
-            "air_date": "2026-10-10",
-            "sources": [
-              {
-                "name": "VIDARA",
-                "url": "https://vidara.to/e/2TgyEgZCFGobY"
-              },
-              {
-                "name": "UQLOAD",
-                "url": "https://uqload.vc/embed-vzlzv64p907n.html"
-              }
-            ],
-            "downloads": []
-          },
-          {
-            "number": 2,
-            "name": "Épisode 2",
-            "overview": "Ga-gyeong's language skills shock Yoo Philip and Yoo So-ran. Meanwhile, Kim Tae-ung's insistence that Ga-gyeong return his wallet raises her suspicions.",
-            "air_date": "2026-10-11",
-            "sources": [
-              {
-                "name": "VIDARA",
-                "url": "https://vidara.to/e/5thkvKklZ5I2D"
-              },
-              {
-                "name": "UQLOAD",
-                "url": "https://uqload.vc/embed-z1zyz49djtuq.html"
-              }
-            ],
-            "downloads": []
-          },
-          {
-            "number": 3,
-            "name": "Épisode 3",
-            "overview": "",
-            "air_date": "2026-10-17",
-            "sources": [],
-            "downloads": []
-          },
-          {
-            "number": 4,
-            "name": "Épisode 4",
-            "overview": "",
-            "air_date": "2026-10-18",
-            "sources": [],
-            "downloads": []
-          },
-          {
-            "number": 5,
-            "name": "Épisode 5",
-            "overview": "",
-            "air_date": "2026-10-24",
-            "sources": [],
-            "downloads": []
-          },
-          {
-            "number": 6,
-            "name": "Épisode 6",
-            "overview": "",
-            "air_date": "2026-10-25",
-            "sources": [],
-            "downloads": []
-          },
-          {
-            "number": 7,
-            "name": "Épisode 7",
-            "overview": "",
-            "air_date": "2026-10-31",
-            "sources": [],
-            "downloads": []
-          },
-          {
-            "number": 8,
-            "name": "Épisode 8",
-            "overview": "",
-            "air_date": "2026-11-01",
-            "sources": [],
-            "downloads": []
-          },
-          {
-            "number": 9,
-            "name": "Épisode 9",
-            "overview": "",
-            "air_date": "2026-11-07",
-            "sources": [],
-            "downloads": []
-          },
-          {
-            "number": 10,
-            "name": "Épisode 10",
-            "overview": "",
-            "air_date": "2026-11-08",
-            "sources": [],
-            "downloads": []
-          },
-          {
-            "number": 11,
-            "name": "Épisode 11",
-            "overview": "",
-            "air_date": "2026-11-14",
-            "sources": [],
-            "downloads": []
-          },
-          {
-            "number": 12,
-            "name": "Épisode 12",
-            "overview": "",
-            "air_date": "2026-11-15",
-            "sources": [],
-            "downloads": []
-          },
-          {
-            "number": 13,
-            "name": "Épisode 13",
-            "overview": "",
-            "air_date": "2026-11-21",
-            "sources": [],
-            "downloads": []
-          },
-          {
-            "number": 14,
-            "name": "Épisode 14",
-            "overview": "",
-            "air_date": "2026-11-22",
-            "sources": [],
-            "downloads": []
-          },
-          {
-            "number": 15,
-            "name": "Épisode 15",
-            "overview": "",
-            "air_date": "2026-11-28",
-            "sources": [],
-            "downloads": []
-          },
-          {
-            "number": 16,
-            "name": "Épisode 16",
-            "overview": "",
-            "air_date": "2026-11-29",
-            "sources": [],
-            "downloads": []
-          }
-        ],
-        "downloads": []
-      }
-    ],
-    "sources": [],
-    "addedAt": 1792016398551,
-    "langs": [
-      "VOSTFR"
-    ],
-    "trend": 80,
-    "aka": [
-      "100 Days of Deception",
-      "百日谎言",
-      "100 Dias de Mentiras",
-      "百日謊言",
-      "100 дни на измама",
-      "100 днів омани",
-      "100 ימים של ריגול",
-      "100 วันปฏิบัติการลวง",
-      "100 días de engaño",
-      "100 de zile de minciuni",
-      "100 Ngày Lừa Dối",
-      "100 dni oszustwa",
-      "100日の嘘",
-      "مئة يوم من الخداع 100",
-      "100 jours en espionne",
-      "100 дней лжи",
-      "百日的谎言",
-      "100ilui Geojitmal",
-      "100-il-ui Geo-jit-mal",
-      "Baekilui Geojinmal",
-      "Hundred Days of Lies",
-      "Hundred Days of Deception",
-      "100 Days of Lies",
-      "100일의 거짓말"
-    ],
-    "downloads": []
+{
+  "settings": {
+    "downloads": "private"
   },
-  {
-    "id": "275102",
-    "type": "tv",
-    "name": "The Scandal",
-    "original_name": "스캔들",
-    "year": "2026",
-    "overview": "Durant la période Joseon, une proposition secrète éveille les désirs d'une aristocrate talentueuse, d'un séducteur notoire et d'une jeune femme naïve prise au piège d'un jeu cruel.",
-    "genres": [
-      "Drame"
-    ],
-    "rating": "6.8",
-    "status": "Ended",
-    "poster": "https://image.tmdb.org/t/p/w500/8ra17h8Z3NX14qdWaOKn0scURJR.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/w1280/uc1p1PEbEMpdIHqnU9TESNC6Jhp.jpg",
-    "cast": [
-      {
-        "name": "Son Ye-jin",
-        "character": "Lady Cho"
-      },
-      {
-        "name": "Ji Chang-wook",
-        "character": "Cho Won"
-      },
-      {
-        "name": "Nana",
-        "character": "Ahn Hui-yeon"
-      },
-      {
-        "name": "Han Seon-hwa",
-        "character": "So-ok's Mom"
-      },
-      {
-        "name": "신윤하",
-        "character": "Lee So-ok"
-      },
-      {
-        "name": "강지은",
-        "character": "Lady Jeonggyeong"
-      },
-      {
-        "name": "권도균",
-        "character": "Chil-seong"
-      },
-      {
-        "name": "강찬희",
-        "character": "Kwon In-ho"
-      },
-      {
-        "name": "강명수",
-        "character": "Commander of the royal guard"
-      },
-      {
-        "name": "정기섭",
-        "character": "Left State Councillor"
-      },
-      {
-        "name": "채서진",
-        "character": "Mi-ok"
-      },
-      {
-        "name": "신소현",
-        "character": "Cho Yoon [Young]"
-      }
-    ],
-    "seasons": [
-      {
-        "number": 1,
-        "name": "Saison 1",
-        "episodes": [
-          {
-            "number": 1,
-            "name": "Épisode 1",
-            "overview": "Dame Cho dissimule son malaise lorsque le seigneur Yoo prend une concubine afin d'avoir un héritier. Elle écrit ensuite à son cousin Cho Won pour lui soumettre une idée.",
-            "air_date": "2026-09-18",
-            "sources": [
-              {
-                "name": "VIDARA",
-                "url": "https://vidara.to/e/o0KoP8VjByjK2"
-              }
-            ],
-            "downloads": []
-          },
-          {
-            "number": 2,
-            "name": "Épisode 2",
-            "overview": "Dame Cho et le séducteur notoire Cho Won se lancent dans un jeu dangereux. Ils jettent leur dévolu sur une femme vertueuse qui pourrait bien ne pas céder si facilement.",
-            "air_date": "2026-09-18",
-            "sources": [
-              {
-                "name": "VIDARA",
-                "url": "https://vidara.to/e/p11nSozxWwKeC"
-              }
-            ],
-            "downloads": []
-          },
-          {
-            "number": 3,
-            "name": "Épisode 3",
-            "overview": "Cho Won approche Hui-yeon, ce qui ravive son chagrin et met sa foi à l'épreuve. Il provoque ensuite Dame Cho avec une manœuvre qui pourrait lui donner l'avantage.",
-            "air_date": "2026-09-18",
-            "sources": [
-              {
-                "name": "VIDARA",
-                "url": "https://vidara.to/e/qLMR4mPCXnzcb"
-              }
-            ],
-            "downloads": []
-          },
-          {
-            "number": 4,
-            "name": "Épisode 4",
-            "overview": "Cho Won a autrefois tenté d'oublier son désir pour Dame Cho en compagnie de courtisanes, sans succès. Alors qu’il cherche à séduire Hui-yeon, son masque commence à tomber.",
-            "air_date": "2026-09-18",
-            "sources": [
-              {
-                "name": "VIDARA",
-                "url": "https://vidara.to/e/FaM5h5snLtw3j"
-              }
-            ],
-            "downloads": []
-          },
-          {
-            "number": 5,
-            "name": "Épisode 5",
-            "overview": "Dame Cho profite des sentiments secrets que So-ok éprouve pour un autre. En parallèle, des sentiments complexes submergent Cho Won alors que sa relation avec Hui-yeon s'intensifie.",
-            "air_date": "2026-09-18",
-            "sources": [
-              {
-                "name": "VIDARA",
-                "url": "https://vidara.to/e/N1BBIUNRZ8dLa"
-              }
-            ],
-            "downloads": []
-          },
-          {
-            "number": 6,
-            "name": "Épisode 6",
-            "overview": "Dame Cho prévient Cho Won que le pari va entacher son honneur et la réputation de sa famille. Mais il jure d'aller jusqu'au bout, alors que des sentiments émergent.",
-            "air_date": "2026-09-18",
-            "sources": [
-              {
-                "name": "VIDARA",
-                "url": "https://vidara.to/e/bDv8gNdbM7FxT"
-              }
-            ],
-            "downloads": []
-          },
-          {
-            "number": 7,
-            "name": "Épisode 7",
-            "overview": "Cho Won et Hui-yeon se rapprochent alors qu'ils profitent ensemble d'un bref répit à l'abri des regards. Mais un ordre royal vient perturber cette sérénité.",
-            "air_date": "2026-09-18",
-            "sources": [
-              {
-                "name": "VIDARA",
-                "url": "https://vidara.to/e/xLiCBKbni0sjq"
-              }
-            ],
-            "downloads": []
-          },
-          {
-            "number": 8,
-            "name": "Épisode 8",
-            "overview": "Alors que leur pari échappe à tout contrôle, Dame Cho doit rendre des comptes à Cho Won et à Hui-yeon. Jusqu'où ira-t-elle pour mener son plan à bien ?",
-            "air_date": "2026-09-18",
-            "sources": [
-              {
-                "name": "VIDARA",
-                "url": "https://vidara.to/e/wQqaJbGvO4nOd"
-              }
-            ],
-            "downloads": []
-          }
-        ],
-        "downloads": []
-      }
-    ],
-    "sources": [],
-    "addedAt": 1792017932096,
-    "langs": [
-      "VOSTFR",
-      "VF"
-    ],
-    "aka": [
-      "The Scandal",
-      "挑情丑闻",
-      "挑情醜聞",
-      "Escândalo e Intriga",
-      "الفضيحة",
-      "Skandal",
-      "הסקנדל",
-      "Скандал",
-      "Το Σκάνδαλο",
-      "Skandál",
-      "O Escândalo",
-      "ฉาวโฉ่โชซอน",
-      "El escándalo",
-      "A botrány",
-      "Scandalul",
-      "スキャンダル",
-      "අපකීර්තිය",
-      "द स्कैंडल",
-      "Scandalo e passione",
-      "Скандал в Чосоне",
-      "Скандалът",
-      "دی اسکینڈل",
-      "丑闻",
-      "스캔들"
-    ],
-    "downloads": []
-  },
-  {
-    "id": "293610",
-    "type": "tv",
-    "name": "Doctor X : Mafia en blouse blanche",
-    "original_name": "닥터X: 하얀 마피아의 시대",
-    "year": "2026",
-    "overview": "Kye Su-Jeong, une brillante chirurgienne, est affectée à l'hôpital universitaire de Guseo pour pourvoir un poste vacant en chirurgie. Elle y fait ses preuves grâce à son talent et met en lumière les absurdités du milieu médical. Elle se lie d'amitié avec Bu Seung-Kwon, le directeur de l'hôpital, et l'interne Park Tae-Kyeong",
-    "genres": [
-      "Mystère",
-      "Drame",
-      "Crime"
-    ],
-    "rating": "8.9",
-    "status": "Returning Series",
-    "poster": "https://image.tmdb.org/t/p/w500/xYFTiwC7Tl0xOUFiVFUPWXHTHnr.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/w1280/mDYIV71RL3mkaW8IfSGNthuVB7l.jpg",
-    "cast": [
-      {
-        "name": "Kim Ji-won",
-        "character": "Gye Su-jeong"
-      },
-      {
-        "name": "Lee Jung-eun",
-        "character": "Jeong Hee-sook"
-      },
-      {
-        "name": "Son Hyun-joo",
-        "character": "Bu Seung-gwon"
-      },
-      {
-        "name": "김우석",
-        "character": "Park Tae-Kyeong"
-      },
-      {
-        "name": "이진희",
-        "character": "Jo Won-jin"
-      },
-      {
-        "name": "Kim Young-min",
-        "character": "Do Yoon-sik"
-      },
-      {
-        "name": "Lee Sung-wook",
-        "character": "Bae Heung-gon"
-      },
-      {
-        "name": "Kwon Seung-woo",
-        "character": "Ma Seong-gyoo"
-      },
-      {
-        "name": "Heo Joon-seok",
-        "character": "Kim Seong-jin"
-      },
-      {
-        "name": "Kim Young-ah",
-        "character": "Lee Seon-ae"
-      },
-      {
-        "name": "최덕문",
-        "character": "Yang Eung-goo"
-      },
-      {
-        "name": "김정영",
-        "character": "Yoo Mi-kyeong"
-      }
-    ],
-    "seasons": [
-      {
-        "number": 1,
-        "name": "Saison 1",
-        "episodes": [
-          {
-            "number": 1,
-            "name": "Épisode 1",
-            "overview": "Lors de son premier jour à l'hôpital, Gye Su-jeong fait des vagues en se prononçant sur une opération à venir... qu'elle reprend en main quand une crise se déclenche.",
-            "air_date": "2026-10-09",
-            "sources": [
-              {
-                "name": "VIDARA",
-                "url": "https://vidara.to/e/yxmRmsmX4zOOn"
-              },
-              {
-                "name": "UQLOAD",
-                "url": "https://uqload.vc/embed-m1tmawcz7c7k.html"
-              }
-            ],
-            "downloads": []
-          },
-          {
-            "number": 2,
-            "name": "Épisode 2",
-            "overview": "Faced with two pancreatic cancer patients — a wealthy chairman and a teenager — hospital staff clash over who to prioritize. But Su-jeong wastes no time.",
-            "air_date": "2026-10-10",
-            "sources": [
-              {
-                "name": "VIDARA",
-                "url": "https://vidara.to/e/X8HN8WRXjyREk"
-              },
-              {
-                "name": "UQLOAD",
-                "url": "https://uqload.vc/embed-cs61nhnp5yge.html"
-              }
-            ],
-            "downloads": []
-          },
-          {
-            "number": 3,
-            "name": "Épisode 3",
-            "overview": "",
-            "air_date": "2026-10-16",
-            "sources": [],
-            "downloads": []
-          },
-          {
-            "number": 4,
-            "name": "Épisode 4",
-            "overview": "",
-            "air_date": "2026-10-17",
-            "sources": [],
-            "downloads": []
-          },
-          {
-            "number": 5,
-            "name": "Épisode 5",
-            "overview": "",
-            "air_date": "2026-10-23",
-            "sources": [],
-            "downloads": []
-          },
-          {
-            "number": 6,
-            "name": "Épisode 6",
-            "overview": "",
-            "air_date": "2026-10-24",
-            "sources": [],
-            "downloads": []
-          },
-          {
-            "number": 7,
-            "name": "Épisode 7",
-            "overview": "",
-            "air_date": "2026-10-30",
-            "sources": [],
-            "downloads": []
-          },
-          {
-            "number": 8,
-            "name": "Épisode 8",
-            "overview": "",
-            "air_date": "2026-10-31",
-            "sources": [],
-            "downloads": []
-          },
-          {
-            "number": 9,
-            "name": "Épisode 9",
-            "overview": "",
-            "air_date": "2026-11-06",
-            "sources": [],
-            "downloads": []
-          },
-          {
-            "number": 10,
-            "name": "Épisode 10",
-            "overview": "",
-            "air_date": "2026-11-07",
-            "sources": [],
-            "downloads": []
-          },
-          {
-            "number": 11,
-            "name": "Épisode 11",
-            "overview": "",
-            "air_date": "2026-11-13",
-            "sources": [],
-            "downloads": []
-          },
-          {
-            "number": 12,
-            "name": "Épisode 12",
-            "overview": "",
-            "air_date": "2026-11-14",
-            "sources": [],
-            "downloads": []
-          }
-        ],
-        "downloads": []
-      }
-    ],
-    "sources": [],
-    "addedAt": 1792018030964,
-    "langs": [
-      "VOSTFR"
-    ],
-    "trend": 89,
-    "aka": [
-      "Doctor X: Mafia in White",
-      "ドクターX ～白衣のマフィア～",
-      "Doctor X：白色黑手党时代",
-      "Doctor X：白色黑手黨時代",
-      "Доктор X: Мафия в бяло",
-      "Doctor X: A Máfia do Jaleco Branco",
-      "ด็อกเตอร์เอ็กซ์",
-      "الدكتورة إكس",
-      "Doctor X Mafia in White",
-      "Доктор Икс: Эпоха белой мафии",
-      "Doktorka X",
-      "Doctor X : Mafia en blouse blanche",
-      "דוקטור X",
-      "Doctor X: Mafia în alb",
-      "Доктор X",
-      "Doctor X",
-      "Doctor X: A Máfia das Batas Brancas",
-      "Bác sĩ X: Mafia Áo Trắng",
-      "Ｘ医生",
-      "ドクターX 〜白衣のマコィア〜",
-      "닥터Ｘ",
-      "Доктор Икс",
-      "닥터X: 하얀 마피아의 시대"
-    ],
-    "downloads": []
-  },
-  {
-    "id": "278573",
-    "type": "tv",
-    "name": "Perfect Crown",
-    "original_name": "21세기 대군부인",
-    "year": "2026",
-    "overview": "Bienvenue en Corée du Sud, dans une monarchie constitutionnelle du 21e siècle où se mêlent tradition et modernité, et où le glamour masque une hiérarchie bien ancrée dans la société. Seong Hui-ju, cadette d'une riche famille et PDG talentueuse, a tout pour elle. Mais son statut de roturière lui vaut le mépris de l'élite. Lassée de la pression exercée par sa famille pour qu'elle se marie, Hui-ju prend son avenir en main. Après avoir rencontré le grand-prince Ian au banquet du roi, elle lui propose un mariage de convenance. Elle a tout, sauf un titre, et lui n'a justement que son titre. Ce couple du siècle parviendra-t-il à briser les barrières sociales pour forger son propre destin ?",
-    "genres": [
-      "Comédie",
-      "Drame"
-    ],
-    "rating": "9.0",
-    "status": "Ended",
-    "poster": "https://image.tmdb.org/t/p/w500/z6on6DbEKpE9gOr8lvjj3xebGtd.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/w1280/6ekykPwvAywJRjFEnUoCFWTO9O3.jpg",
-    "cast": [
-      {
-        "name": "IU",
-        "character": "Seong Hui-ju"
-      },
-      {
-        "name": "Byeon Woo-seok",
-        "character": "Grand Prince I-an"
-      },
-      {
-        "name": "Steve Sanghyun Noh",
-        "character": "Min Jeong-u"
-      },
-      {
-        "name": "Gong Seung-yeon",
-        "character": "Yun I-rang"
-      },
-      {
-        "name": "Yoo Su-bin",
-        "character": "Choi Hyeon"
-      },
-      {
-        "name": "Lee Yeon",
-        "character": "Do Hye-jeong"
-      }
-    ],
-    "seasons": [
-      {
-        "number": 1,
-        "name": "Saison 1",
-        "episodes": [
-          {
-            "number": 1,
-            "name": "Épisode 1",
-            "overview": "Cadette d'une famille riche et PDG accomplie, Seong Hui-ju est méprisée par la société à cause de ses origines roturières. Sa rencontre fortuite avec le grand-prince Ian à la fête d'anniversaire du roi tombe à pic : sa famille la poussant à se marie.",
-            "air_date": "2026-04-10",
-            "sources": [
-              {
-                "name": "VIDARA",
-                "url": "https://vidara.to/e/3QfRuU3eWf2pd"
-              }
-            ],
-            "downloads": []
-          },
-          {
-            "number": 2,
-            "name": "Épisode 2",
-            "overview": "Leur entourage ne leur laisse aucun répit. Seong Hui-ju rencontre des prétendants choisis par sa famille et la reine douairière veut imposer une épouse au grand-prince Ian. Quand ils se retrouvent à un gala professionnel, Ian doit décider s'il veut participer aux manigances de Hui-ju.",
-            "air_date": "2026-04-11",
-            "sources": [
-              {
-                "name": "VIDARA",
-                "url": "https://vidara.to/e/eUMaYzaQipoBC"
-              }
-            ],
-            "downloads": []
-          },
-          {
-            "number": 3,
-            "name": "Épisode 3",
-            "overview": "Alors que le grand-prince Ian et Seong Hui-ju se préparent à devenir le couple du siècle, un scandale ébranle la presse et la famille royale. La position implicite d'Ian sème le trouble, tandis que Hui-ju doit s'adapter à un tout nouvel environnement.",
-            "air_date": "2026-04-17",
-            "sources": [
-              {
-                "name": "VIDARA",
-                "url": "https://vidara.to/e/xgOueNVwmNOUW"
-              }
-            ],
-            "downloads": []
-          },
-          {
-            "number": 4,
-            "name": "Épisode 4",
-            "overview": "Hui-ju s'installe chez le grand-prince Ian. Son franc-parler et son mépris de l'étiquette exaspèrent la dame de cour, Choi. Le grand-prince, lui, est amusé par ce vent de fraîcheur. Mais quelqu'un complote dans l'ombre pour empêcher Hui-ju d'entrer dans la famille royale.",
-            "air_date": "2026-04-18",
-            "sources": [
-              {
-                "name": "VIDARA",
-                "url": "https://vidara.to/e/EzQNWBlkb36Wp"
-              }
-            ],
-            "downloads": []
-          },
-          {
-            "number": 5,
-            "name": "Épisode 5",
-            "overview": "Hanté par le passé, Ian hésite à révéler ses véritables sentiments à Seong Hui-ju, convaincu qu'il vaut mieux s'éloigner que risquer sa vie. La famille royale et le groupe Castle cherchent un responsable pour l'accident, tandis que Hui-ju mobilise son équipe pour faire la lumière sur les détails.",
-            "air_date": "2026-04-24",
-            "sources": [
-              {
-                "name": "VIDARA",
-                "url": "https://vidara.to/e/K1PgGFz1ZalgO"
-              }
-            ],
-            "downloads": []
-          },
-          {
-            "number": 6,
-            "name": "Épisode 6",
-            "overview": "Le couple du siècle fait son grand retour. Sous les yeux de la foule, ils dansent une valse et se jurent un amour éternel. Mais leur promesse est-elle sincère ? Loin de l'agitation de la fête, ils se remémorent leur passé et le manque d'amour et d'approbation de leurs familles.",
-            "air_date": "2026-04-25",
-            "sources": [
-              {
-                "name": "VIDARA",
-                "url": "https://vidara.to/e/01pwhHhg0gn8e"
-              }
-            ],
-            "downloads": []
-          },
-          {
-            "number": 7,
-            "name": "Épisode 7",
-            "overview": "Seong Hui-ju et le grand-prince Ian préparent leur mariage, mais un événement imprévu jette un froid sur leur relation que la reine douairière et le Premier ministre ne peuvent plus ignorer.",
-            "air_date": "2026-05-01",
-            "sources": [
-              {
-                "name": "VIDARA",
-                "url": "https://vidara.to/e/4JdlGj1dD8Ldt"
-              }
-            ],
-            "downloads": []
-          },
-          {
-            "number": 8,
-            "name": "Épisode 8",
-            "overview": "La princesse du 21e siècle est enfin couronnée. Malheureusement, son ascension sociale ne fait pas que des heureux.",
-            "air_date": "2026-05-02",
-            "sources": [
-              {
-                "name": "VIDARA",
-                "url": "https://vidara.to/e/dpDMfNI88jG0b"
-              }
-            ],
-            "downloads": []
-          },
-          {
-            "number": 9,
-            "name": "Épisode 9",
-            "overview": "À peine mariés, le grand-prince Ian et Hui-ju affrontent une série de crises politiques. L'opinion publique se déchaîne, et d'anciennes rumeurs refont surface. Leurs ennemis y voient une occasion de passer à l'acte.",
-            "air_date": "2026-05-08",
-            "sources": [
-              {
-                "name": "VIDARA",
-                "url": "https://vidara.to/e/LM71BZYML1U5k"
-              }
-            ],
-            "downloads": []
-          },
-          {
-            "number": 10,
-            "name": "Épisode 10",
-            "overview": "Leur affection mutuelle est-elle devenue un poison ? Alors qu'ils peinent à être honnêtes, leur entourage essaie de gagner du temps. Mais une nouvelle ébranle la cour royale.",
-            "air_date": "2026-05-09",
-            "sources": [
-              {
-                "name": "VIDARA",
-                "url": "https://vidara.to/e/2z1IXUQrSyI1H"
-              }
-            ],
-            "downloads": []
-          },
-          {
-            "number": 11,
-            "name": "Épisode 11",
-            "overview": "Une explosion, comme un écho du passé, ravage le pavillon royal. Tandis que Hui-ju protège le grand-prince et traque un ennemi dans l'ombre, le grand-prince ose enfin révéler un secret inavoué de longue date.",
-            "air_date": "2026-05-15",
-            "sources": [
-              {
-                "name": "VIDARA",
-                "url": "https://vidara.to/e/790VZKjrFjYYP"
-              }
-            ],
-            "downloads": []
-          },
-          {
-            "number": 12,
-            "name": "Épisode 12",
-            "overview": "N'en déplaise aux plus pessimistes, aucun obstacle n'est insurmontable. Hui-ju et le prince Ian se dressent contre ceux qui ont imposé ces contraintes pour créer un monde où chacun est libre de poursuivre ses désirs.",
-            "air_date": "2026-05-16",
-            "sources": [
-              {
-                "name": "VIDARA",
-                "url": "https://vidara.to/e/KW1kJkCQK5RKC"
-              }
-            ],
-            "downloads": []
-          }
-        ],
-        "downloads": []
-      }
-    ],
-    "sources": [],
-    "addedAt": 1792019052334,
-    "langs": [
-      "VOSTFR",
-      "VF"
-    ],
-    "aka": [
-      "Perfect Crown",
-      "21世纪大君夫人",
-      "21世紀大君夫人",
-      "A Coroa Perfeita",
-      "21世紀の大君夫人",
-      "La corona perfecta",
-      "Дружина принца XXI століття",
-      "รักนี้มงลง",
-      "التاج المثالي",
-      "Dokonalá koruna",
-      "Khế Ước Hoàng Gia",
-      "Перфектната корона",
-      "Жена принца XXI века",
-      "تاج بی نقص",
-      "כתר מושלם",
-      "A Esposa do Grande Príncipe do Século 21",
-      "אשת הנסיך הגדול: ההכתרה המושלמת",
-      "21segi Daegun Buin",
-      "21st Century Grand Prince's Wife",
-      "Wife of a 21st Century Prince",
-      "21세기 대군부인"
-    ],
-    "downloads": []
-  },
-  {
-    "id": "m1058424",
-    "type": "movie",
-    "name": "Hope",
-    "original_name": "호프",
-    "year": "2026",
-    "overview": "Alors que les secours sont mobilisés ailleurs et que toute communication est interrompue, les habitants de Hope doivent faire face seuls à une menace grandissante. Tandis que certains tentent de protéger le village, d’autres s’aventurent dans la montagne… mais deviennent à leur tour des proies. L’ignorance et la peur déclenchent une spirale incontrôlable aux conséquences dévastatrices.",
-    "genres": [
-      "Science-Fiction",
-      "Mystère",
-      "Action"
-    ],
-    "rating": "7.2",
-    "pop": 191.1737,
-    "status": "Released",
-    "runtime": 160,
-    "poster": "https://image.tmdb.org/t/p/w500/tGdFDoA9qyt0t6Qr9MFnOl8Z2Jz.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/w1280/xBcKnWJHodUpvzUVIWTuNMnvEwl.jpg",
-    "cast": [
-      {
-        "name": "Hwang Jung-min",
-        "character": "Go Bum-seok"
-      },
-      {
-        "name": "조인성",
-        "character": "Go Sung-ki"
-      },
-      {
-        "name": "Jung Ho-Yeon",
-        "character": "Lim Sung-ae"
-      },
-      {
-        "name": "Alicia Vikander",
-        "character": "J'aur"
-      },
-      {
-        "name": "Michael Fassbender",
-        "character": "Ma'veyyo"
-      },
-      {
-        "name": "Taylor Russell",
-        "character": "Ai'dovor"
-      },
-      {
-        "name": "Cameron Britton",
-        "character": "Va'migere"
-      },
-      {
-        "name": "Lee Sang-hee",
-        "character": "Nak-yeon"
-      },
-      {
-        "name": "음문석",
-        "character": "Yang-bae"
-      },
-      {
-        "name": "임현식",
-        "character": "Hae-sul"
-      },
-      {
-        "name": "Hwang Seok-jeong",
-        "character": "Head of Health Center"
-      },
-      {
-        "name": "Han Woo-yeol",
-        "character": "Wan-seob"
-      }
-    ],
-    "seasons": [],
-    "sources": [
-      {
-        "name": "VIDARA (VFQ)",
-        "url": "https://vidara.to/e/BzHQVFDTYsM7q"
-      },
-      {
-        "name": "UQLOAD",
-        "url": "https://uqload.vc/embed-bauoh90lty4u.html"
-      }
-    ],
-    "addedAt": 1792082586790,
-    "langs": [
-      "VOSTFR",
-      "VF"
-    ],
-    "aka": [
-      "Hope",
-      "希望",
-      "Witajcie w Hope",
-      "Надія",
-      "Hope: El primer impacto",
-      "Добро дошли у Хоуп",
-      "Надежда",
-      "希望：末日血戰",
-      "أمل",
-      "HOPE：逆襲希望港",
-      "Vilties uostas",
-      "Hope: O Primeiro Impacto",
-      "Хоуп",
-      "Hope: Vùng Tử Địa",
-      "โฮป",
-      "იმედი",
-      "Cerības osta",
-      "תקווה",
-      "Dobro došli u Hope",
-      "Hope - Remény",
-      "Ümid",
-      "Hope: Atacul final",
-      "امید",
-      "湖浦港",
-      "ចម្បាំងបង្ហូរឈាមអវសានលោក",
-      "הופ",
-      "Espoir",
-      "Hopeu",
-      "호프"
-    ],
-    "trend": 96,
-    "downloads": []
-  },
-  {
-    "id": "305644",
-    "type": "tv",
-    "name": "Quatre mains, deux sonates",
-    "original_name": "포핸즈",
-    "year": "2026",
-    "overview": "Kang Bi-o, prodige du piano au lycée, excelle constamment en études et en virtuosité pianistique. Considéré comme une future icône de la musique classique, promis à un brillant avenir dans les plus grands concours internationaux, sa carrière bascule lorsqu'il rencontre un rival inattendu : Choi Jeong-yo. Pianiste au talent inné, Jeong-yo a renoncé à son don exceptionnel suite à une enfance difficile. Son admission soudaine au lycée des arts de Corée le met face à Bi-o, le pianiste même qui a ravivé sa passion pour le piano. Jeong-yo est alors contraint de se confronter à ce don qu'il avait autrefois abandonné, et une amitié se noue entre eux.",
-    "genres": [
-      "Drame"
-    ],
-    "rating": "9.2",
-    "pop": 25.0528,
-    "status": "Ended",
-    "poster": "https://image.tmdb.org/t/p/w500/nzghhjtKVX1n7DIMhTuQrHqeXdQ.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/w1280/fYL4I6cezb06BHhQlrNjNhy7jhf.jpg",
-    "cast": [
-      {
-        "name": "Song Kang",
-        "character": "Kang Pi-o"
-      },
-      {
-        "name": "Lee Jun-young",
-        "character": "Choi Jeong-yo"
-      },
-      {
-        "name": "장규리",
-        "character": "Hong Jae-in"
-      },
-      {
-        "name": "윤세아",
-        "character": "Kang Ji-hye"
-      },
-      {
-        "name": "Jung Jin-young",
-        "character": "Kang Seung-woon"
-      },
-      {
-        "name": "서재희",
-        "character": "Yoon Sun-joo"
-      },
-      {
-        "name": "성노진",
-        "character": "Choi Ki-taek"
-      },
-      {
-        "name": "이명로",
-        "character": "Cho Hyun-cheol"
-      },
-      {
-        "name": "김민",
-        "character": "Boss Kim"
-      },
-      {
-        "name": "김혜화",
-        "character": "Han Hyun-jung"
-      },
-      {
-        "name": "Kim Ju-hun",
-        "character": "Do Hyeon-su"
-      },
-      {
-        "name": "Lee Sang-jun",
-        "character": "Yoon Han-rim"
-      }
-    ],
-    "seasons": [
-      {
-        "number": 1,
-        "name": "Saison 1",
-        "episodes": [
-          {
-            "number": 1,
-            "name": "Épisode 1",
-            "overview": "Kang Pi-o is known around school as an unrivaled talent — until he meets the mysterious Choi Jeong-yo and realizes he may have finally met his match.",
-            "air_date": "2026-08-29",
-            "sources": [
-              {
-                "name": "VIDARA",
-                "url": "https://vidara.to/e/ohzEDomqEreFp"
-              },
-              {
-                "name": "PLAYMATE",
-                "url": "https://playmate.to/embed/hIetlWRx1BeC7"
-              }
-            ],
-            "downloads": []
-          },
-          {
-            "number": 2,
-            "name": "Épisode 2",
-            "overview": "With Jeong-yo now his classmate, a bitter Pi-o keeps his distance. But when the two are tasked with a joint performance, Pi-o finds himself warming up.",
-            "air_date": "2026-08-30",
-            "sources": [
-              {
-                "name": "VIDARA",
-                "url": "https://vidara.to/e/XCNKuBxl2cuA2"
-              },
-              {
-                "name": "PLAYMATE",
-                "url": "https://playmate.to/embed/FS1cR2ed7YUWU"
-              }
-            ],
-            "downloads": []
-          },
-          {
-            "number": 3,
-            "name": "Épisode 3",
-            "overview": "When crisis strikes right before the joint stage, Pi-o improvises a fix — only to wonder if it was a mistake when Jeong-yo's skills outshine his own.",
-            "air_date": "2026-09-05",
-            "sources": [
-              {
-                "name": "VIDARA",
-                "url": "https://vidara.to/e/lPxNEpn0zBWGO"
-              },
-              {
-                "name": "PLAYMATE",
-                "url": "https://playmate.to/embed/b9gSOaqAPdDCF"
-              }
-            ],
-            "downloads": []
-          },
-          {
-            "number": 4,
-            "name": "Épisode 4",
-            "overview": "With Pi-o determined to reclaim his love for music, Jeong-yo shows Pi-o how to have fun on the piano. Jeong-yo's family troubles catch up to him.",
-            "air_date": "2026-09-06",
-            "sources": [
-              {
-                "name": "VIDARA",
-                "url": "https://vidara.to/e/n7JxEHraWahct"
-              },
-              {
-                "name": "PLAYMATE",
-                "url": "https://playmate.to/embed/4WbHDkwe4XKJe"
-              }
-            ],
-            "downloads": []
-          },
-          {
-            "number": 5,
-            "name": "Épisode 5",
-            "overview": "Intent on proving himself, Pi-o joins the Prague Harmonie International Competition and asks Jeong-yo to join too. Pi-o's obsessive practice takes a toll.",
-            "air_date": "2026-09-12",
-            "sources": [
-              {
-                "name": "VIDARA",
-                "url": "https://vidara.to/e/dSUzFCU25R6UN"
-              },
-              {
-                "name": "PLAYMATE",
-                "url": "https://playmate.to/embed/u40BvdLaFHfT9"
-              }
-            ],
-            "downloads": []
-          },
-          {
-            "number": 6,
-            "name": "Épisode 6",
-            "overview": "Years later, Pi-o is successful and world-renowned — but miserable. Hong Jae-in tries to let Pi-o know how she feels. Pi-o hunts down news of Jeong-yo.",
-            "air_date": "2026-09-13",
-            "sources": [
-              {
-                "name": "VIDARA",
-                "url": "https://vidara.to/e/FOTHTpm9UWuTx"
-              },
-              {
-                "name": "PLAYMATE",
-                "url": "https://playmate.to/embed/757tyIfbbGqmA"
-              }
-            ],
-            "downloads": []
-          },
-          {
-            "number": 7,
-            "name": "Épisode 7",
-            "overview": "Pi-o finds himself stuck deep in a slump, but can't seem to overcome his fears alone. Later, a familiar face suggests collaborating on a performance.",
-            "air_date": "2026-09-19",
-            "sources": [
-              {
-                "name": "VIDARA",
-                "url": "https://vidara.to/e/n3vEWDI0TDDKZ"
-              },
-              {
-                "name": "PLAYMATE",
-                "url": "https://playmate.to/embed/VWcwMP486bUUl"
-              }
-            ],
-            "downloads": []
-          },
-          {
-            "number": 8,
-            "name": "Épisode 8",
-            "overview": "Pi-o faces increasing pressure to do the joint performance, but his issues with the piano only get worse. Jeong-yo finally steps in to help.",
-            "air_date": "2026-09-20",
-            "sources": [
-              {
-                "name": "VIDARA",
-                "url": "https://vidara.to/e/2N0nzGyv49Msj"
-              },
-              {
-                "name": "PLAYMATE",
-                "url": "https://playmate.to/embed/kB7NWo3PnFdzx"
-              }
-            ],
-            "downloads": []
-          },
-          {
-            "number": 9,
-            "name": "Épisode 9",
-            "overview": "Pi-o learns the shocking truth behind Jeong-yo's kidnapping. Jeong-yo asks for Pi-o's help with a piano piece, but his harsh words leave Pi-o rattled.",
-            "air_date": "2026-09-26",
-            "sources": [
-              {
-                "name": "VIDARA",
-                "url": "https://vidara.to/e/piaKZontGk29F"
-              },
-              {
-                "name": "PLAYMATE",
-                "url": "https://playmate.to/embed/jvvv2xBYYxa56"
-              }
-            ],
-            "downloads": []
-          },
-          {
-            "number": 10,
-            "name": "Épisode 10",
-            "overview": "Pi-o realizes Jeong-yo has been hiding a huge secret. With everything revealed, Jeong-yo turns even more cruel, and Pi-o falls deeper into despair.",
-            "air_date": "2026-09-27",
-            "sources": [
-              {
-                "name": "VIDARA",
-                "url": "https://vidara.to/e/JLWW4nuWjrBnv"
-              },
-              {
-                "name": "PLAYMATE",
-                "url": "https://playmate.to/embed/bAy04TAnjC9S2"
-              }
-            ],
-            "downloads": []
-          },
-          {
-            "number": 11,
-            "name": "Épisode 11",
-            "overview": "As the Korean Symphony’s 80th anniversary concert begins, Jeong-yo and Pi-o face a turning point — but when the performance ends, only one person remains on stage.",
-            "air_date": "2026-10-03",
-            "sources": [
-              {
-                "name": "VIDARA",
-                "url": "https://vidara.to/e/Fs9vSFyPnGDDK"
-              },
-              {
-                "name": "PLAYMATE",
-                "url": "https://playmate.to/embed/wCDPkwH5AgDvG"
-              }
-            ],
-            "downloads": []
-          },
-          {
-            "number": 12,
-            "name": "Épisode 12",
-            "overview": "After painful losses, Pi-o considers leaving music behind, but Jeong-yo shares his final feelings as their last four-hands performance begins.",
-            "air_date": "2026-10-04",
-            "sources": [
-              {
-                "name": "VIDARA",
-                "url": "https://vidara.to/e/qvkhFT3ITA1Gt"
-              },
-              {
-                "name": "PLAYMATE",
-                "url": "https://playmate.to/embed/vyliAbY5JHRmy"
-              }
-            ],
-            "downloads": []
-          }
-        ],
-        "downloads": []
-      }
-    ],
-    "sources": [],
-    "addedAt": 1792089827752,
-    "langs": [
-      "VOSTFR"
-    ],
-    "aka": [
-      "Four Hands, Two Sonatas",
-      "四手联弹，两首奏鸣曲",
-      "Cuatro manos, dos sonatas",
-      "Duas Sonatas a Quatro Mãos",
-      "Quatro Mãos, Duas Sonatas",
-      "フォーハンズ ～2人のソナタ～",
-      "Чотири руки, дві сонати",
-      "四手聯彈，兩首奏鳴曲",
-      "สี่มือ สองท่วงทำนอง",
-      "Patru mâini, două sonate",
-      "Quatre mains, deux sonates",
-      "Четыре руки, две сонаты",
-      "Cztery ręce, dwie sonaty",
-      "ארבע ידיים, שתי סונטות",
-      "Τέσσερα Χέρια, Δύο Σονάτες",
-      "Négy kéz, két szonáta",
-      "Bốn Bàn Tay, Hai Bản Sonata",
-      "포핸즈"
-    ],
-    "downloads": []
-  },
-  {
-    "id": "316197",
-    "type": "tv",
-    "name": "Dive into You",
-    "original_name": "너에게 다이브",
-    "year": "2026",
-    "overview": "Une actrice et son frère jumeau voyagent dans le temps – et échangent leurs corps – pour sauver la vie de leur ami.",
-    "genres": [
-      "Comédie",
-      "Drame",
-      "Science-Fiction & Fantastique"
-    ],
-    "rating": "8.0",
-    "pop": 16.9127,
-    "status": "Returning Series",
-    "poster": "https://image.tmdb.org/t/p/w500/21pLXbvuyfgUaAhhxkuvoX1pAN1.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/w1280/jseW3HucgNjN2CwJa3MiOlF4xMO.jpg",
-    "cast": [
-      {
-        "name": "보나",
-        "character": "Yoon Ha-na"
-      },
-      {
-        "name": "박서함",
-        "character": "Jeong Woo-jae"
-      },
-      {
-        "name": "Jang Se-hyuk",
-        "character": "Yoon Ha-ru"
-      },
-      {
-        "name": "Moon Seung-you",
-        "character": "Seo Ye-rang"
-      }
-    ],
-    "seasons": [
-      {
-        "number": 1,
-        "name": "Saison 1",
-        "episodes": [
-          {
-            "number": 1,
-            "name": "Épisode 1",
-            "overview": "After Woo-jae’s death, Ha-na begins traveling through time. She finally reunites with Woo-jae, but when he looks at her, he doesn’t see Ha-na—he sees Ha-ru.",
-            "air_date": "2026-09-26",
-            "sources": [
-              {
-                "name": "VIDARA",
-                "url": "https://vidara.to/e/5YXxZiybnWGFQ"
-              },
-              {
-                "name": "PLAYMATE",
-                "url": "https://playmate.to/embed/OUMCEnlPAqzMU"
-              },
-              {
-                "name": "UQLOAD",
-                "url": "https://uqload.vc/embed-c49jps70wbmu.html"
-              }
-            ],
-            "downloads": []
-          },
-          {
-            "number": 2,
-            "name": "Épisode 2",
-            "overview": "With their bodies mysteriously swapped, the twins hatch a plan to save Woo-jae. But to change his fate, they must first turn him into a national team athlete.",
-            "air_date": "2026-09-27",
-            "sources": [
-              {
-                "name": "VIDARA",
-                "url": "https://vidara.to/e/G7RAaPCAZqPIV"
-              },
-              {
-                "name": "PLAYMATE",
-                "url": "https://playmate.to/embed/OBPx6KJaAQbkS"
-              },
-              {
-                "name": "UQLOAD",
-                "url": "https://uqload.vc/embed-l5pewc05t1xp.html"
-              }
-            ],
-            "downloads": []
-          },
-          {
-            "number": 3,
-            "name": "Épisode 3",
-            "overview": "Even after changing the past, Woo-jae dies again while saving Ha-na. As Ha-na falls into despair, Ha-ru suggests a new way to change their fate.",
-            "air_date": "2026-10-03",
-            "sources": [
-              {
-                "name": "VIDARA",
-                "url": "https://vidara.to/e/YVAMUlgvZT9Sn"
-              },
-              {
-                "name": "PLAYMATE",
-                "url": "https://playmate.to/embed/HRRG2TzLutO17"
-              },
-              {
-                "name": "UQLOAD",
-                "url": "https://uqload.vc/embed-y5dwrdf5g0j1.html"
-              }
-            ],
-            "downloads": []
-          },
-          {
-            "number": 4,
-            "name": "Épisode 4",
-            "overview": "Woo-jae becomes a judo champion but is confused when he starts developing feelings for Ha-na in Ha-ru’s body.",
-            "air_date": "2026-10-04",
-            "sources": [
-              {
-                "name": "VIDARA",
-                "url": "https://vidara.to/e/9y8cAiISS2MT3"
-              },
-              {
-                "name": "PLAYMATE",
-                "url": "https://playmate.to/embed/rvl5l1ggDZ8xl"
-              },
-              {
-                "name": "UQLOAD",
-                "url": "https://uqload.vc/embed-1m73oweb3xx7.html"
-              }
-            ],
-            "downloads": []
-          },
-          {
-            "number": 5,
-            "name": "Épisode 5",
-            "overview": "The twins travel back to their college days and regain their original bodies. After discovering Woo-jae is majoring in security and protection, they search for a way to change the future.",
-            "air_date": "2026-10-10",
-            "sources": [
-              {
-                "name": "VIDARA",
-                "url": "https://vidara.to/e/nQdHtHc3D14Au"
-              },
-              {
-                "name": "PLAYMATE",
-                "url": "https://playmate.to/embed/x8WdVygQYIU6c"
-              },
-              {
-                "name": "UQLOAD",
-                "url": "https://uqload.vc/embed-yxc47s2v5p7c.html"
-              }
-            ],
-            "downloads": []
-          },
-          {
-            "number": 6,
-            "name": "Épisode 6",
-            "overview": "A love triangle forms as Woo-jae and Hyeong-won compete for the same person, while someone discovers the twins’ secret of time travel.",
-            "air_date": "2026-10-11",
-            "sources": [
-              {
-                "name": "VIDARA",
-                "url": "https://vidara.to/e/hs5DmaOKYRpji"
-              },
-              {
-                "name": "PLAYMATE",
-                "url": "https://playmate.to/embed/GlVKFE0c6DpEo"
-              },
-              {
-                "name": "UQLOAD",
-                "url": "https://uqload.vc/embed-logymxhaafxc.html"
-              }
-            ],
-            "downloads": []
-          },
-          {
-            "number": 7,
-            "name": "Épisode 7",
-            "overview": "",
-            "air_date": "2026-10-17",
-            "sources": [],
-            "downloads": []
-          },
-          {
-            "number": 8,
-            "name": "Épisode 8",
-            "overview": "",
-            "air_date": "2026-10-18",
-            "sources": [],
-            "downloads": []
-          },
-          {
-            "number": 9,
-            "name": "Épisode 9",
-            "overview": "",
-            "air_date": "2026-10-24",
-            "sources": [],
-            "downloads": []
-          },
-          {
-            "number": 10,
-            "name": "Épisode 10",
-            "overview": "",
-            "air_date": "2026-10-25",
-            "sources": [],
-            "downloads": []
-          },
-          {
-            "number": 11,
-            "name": "Épisode 11",
-            "overview": "",
-            "air_date": "2026-10-31",
-            "sources": [],
-            "downloads": []
-          },
-          {
-            "number": 12,
-            "name": "Épisode 12",
-            "overview": "",
-            "air_date": "2026-11-01",
-            "sources": [],
-            "downloads": []
-          }
-        ],
-        "downloads": [
-          {
-            "name": "1FICHIER",
-            "url": "https://1fichier.com/?lzr5mr1kjzj0g76mfmhp",
-            "size": "29 Go",
-            "quality": "1080p (H.264)"
-          }
-        ]
-      }
-    ],
-    "sources": [],
-    "addedAt": 1792090157440,
-    "langs": [
-      "VOSTFR"
-    ],
-    "aka": [
-      "再次奔向你",
-      "Dive into You",
-      "De volta para você",
-      "向你跳水",
-      "Volveré Por Ti",
-      "君へダイブ",
-      "Потопете се в себе си",
-      "ดิ่งลึกสู่ใจเธอ",
-      "الغوص في حبك",
-      "Погружение к тебе",
-      "向你Dive",
-      "潜入你心",
-      "Погружаясь в тебя",
-      "너에게 다이브"
-    ],
-    "downloads": []
-  },
-  {
-    "id": "314939",
-    "type": "tv",
-    "name": "Un autre amour que le tien",
-    "original_name": "너 말고 다른 연애",
-    "year": "2026",
-    "overview": "Une romance réaliste et touchante sur un couple qui, après dix ans de vie commune, voit sa relation confortable bouleversée par des sentiments inattendus.",
-    "genres": [
-      "Drame",
-      "Comédie"
-    ],
-    "rating": "6.3",
-    "pop": 41.154,
-    "status": "Returning Series",
-    "poster": "https://image.tmdb.org/t/p/w500/lu3tuzFl4c6rx1WcoLOGZlkTjaw.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/original/moUjiEzpJVNZc7hyNRBbLPt0CPX.jpg",
-    "cast": [
-      {
-        "name": "Seo Kang-joon",
-        "character": "Namgung Ho"
-      },
-      {
-        "name": "Ahn Eun-jin",
-        "character": "Lee Mi-do"
-      },
-      {
-        "name": "Lee Joo-ahn",
-        "character": "Han Tae-seung"
-      },
-      {
-        "name": "Jo A-ram",
-        "character": "Park Soo-ah"
-      },
-      {
-        "name": "이민재",
-        "character": "Lee Wan-do"
-      },
-      {
-        "name": "Kim Nam-hee",
-        "character": "Lee Young-do"
-      },
-      {
-        "name": "Kim Mi-kyung",
-        "character": "Ma Suk-hee"
-      },
-      {
-        "name": "Kwak Si-yang",
-        "character": "Seo Joo-hyuk"
-      },
-      {
-        "name": "허지나",
-        "character": "Ko Moon-young"
-      },
-      {
-        "name": "Lee Jun-hyeok",
-        "character": "Eom Ho-sik"
-      },
-      {
-        "name": "천이슬",
-        "character": "Oh Yeon-ju"
-      },
-      {
-        "name": "송지우",
-        "character": "Song Hae-na"
-      }
-    ],
-    "seasons": [
-      {
-        "number": 1,
-        "name": "Saison 1",
-        "episodes": [
-          {
-            "number": 1,
-            "name": "Dix ans ensemble : mariage ou rupture ?",
-            "overview": "Namgung et Mi-do se sont rencontrés à sept ans et sont sortis ensemble à vingt-six. Après dix ans ensemble, l'amour qu'ils croyaient éternel commence à vaciller sous le poids du temps. Alors que leur relation évolue, ils doivent affronter les réalités de l'amour et de la vie.",
-            "air_date": "2026-09-12",
-            "sources": [
-              {
-                "name": "VIDARA",
-                "url": "https://vidara.to/e/hbnOPoWNxJrp0"
-              },
-              {
-                "name": "PLAYMATE",
-                "url": "https://playmate.to/embed/8hPXJmRQQaTTC"
-              },
-              {
-                "name": "UQLOAD",
-                "url": "https://uqload.vc/embed-lu6fpdz9205l.html"
-              }
-            ],
-            "downloads": []
-          },
-          {
-            "number": 2,
-            "name": "Peut-on redevenir des inconnus ?",
-            "overview": "Après dix ans ensemble, Mi-do et Namgung peinent à surmonter leur rupture. Même participer à un événement romantique ne parvient pas à raviver leur flamme, mais les souvenirs de leur amour continuent de les ramener l'un vers l'autre.",
-            "air_date": "2026-09-13",
-            "sources": [
-              {
-                "name": "VIDARA",
-                "url": "https://vidara.to/e/bC6TJm3DgbbKe"
-              },
-              {
-                "name": "PLAYMATE",
-                "url": "https://playmate.to/embed/bQOJsvf2M7Rc2"
-              },
-              {
-                "name": "UQLOAD",
-                "url": "https://uqload.vc/embed-fuxcci4g5jjg.html"
-              }
-            ],
-            "downloads": []
-          },
-          {
-            "number": 3,
-            "name": "Peut-on retrouver cette passion ?",
-            "overview": "Une romance réaliste et touchante sur un couple qui, après dix ans de vie commune, voit sa relation confortable bouleversée par des sentiments inattendus.",
-            "air_date": "2026-09-19",
-            "sources": [
-              {
-                "name": "VIDARA",
-                "url": "https://vidara.to/e/IZtGFoRm8TH8n"
-              },
-              {
-                "name": "PLAYMATE",
-                "url": "https://playmate.to/embed/RfPzcR4oIHMU0"
-              },
-              {
-                "name": "UQLOAD",
-                "url": "https://uqload.vc/embed-pv2u7h8v5bj3.html"
-              }
-            ],
-            "downloads": []
-          },
-          {
-            "number": 4,
-            "name": "Rêvons-nous du même avenir ?",
-            "overview": "Une romance réaliste et touchante sur un couple qui, après dix ans de vie commune, voit sa relation confortable bouleversée par des sentiments inattendus.",
-            "air_date": "2026-09-20",
-            "sources": [
-              {
-                "name": "VIDARA",
-                "url": "https://vidara.to/e/sUjzbTLyZ1dYM"
-              },
-              {
-                "name": "PLAYMATE",
-                "url": "https://playmate.to/embed/J6jceidU6vKVS"
-              },
-              {
-                "name": "UQLOAD",
-                "url": "https://uqload.vc/embed-e0od46ai4l1v.html"
-              }
-            ],
-            "downloads": []
-          },
-          {
-            "number": 5,
-            "name": "Are There Any Untold Stories Between Us?",
-            "overview": "Mi-do is shocked after waking up at Tae-seung's office. Meanwhile, Namgung notices a mysterious caller on Mi-do's phone and becomes uneasy. As always, the two pretend everything is fine for each other's sake. But the more they try to protect the relationship, the deeper their secrets become.",
-            "air_date": "2026-10-03",
-            "sources": [
-              {
-                "name": "VIDARA",
-                "url": "https://vidara.to/e/EDj2DpUmfm0vz"
-              },
-              {
-                "name": "PLAYMATE",
-                "url": "https://playmate.to/embed/TlxrUpqHsskXb"
-              },
-              {
-                "name": "UQLOAD",
-                "url": "https://uqload.vc/embed-t7rabjjuvupp.html"
-              }
-            ],
-            "downloads": []
-          },
-          {
-            "number": 6,
-            "name": "Who Is Our Best Hero?",
-            "overview": "Mi-do deeply regrets what happened that day. Meanwhile, Namgung plans something to cheer her up. But unexpected visitors at his workplace push things in an unforeseen direction.",
-            "air_date": "2026-10-04",
-            "sources": [
-              {
-                "name": "VIDARA",
-                "url": "https://vidara.to/e/cwy4ONBhR27hF"
-              },
-              {
-                "name": "PLAYMATE",
-                "url": "https://playmate.to/embed/qXDCwnEd0FuBO"
-              },
-              {
-                "name": "UQLOAD",
-                "url": "https://uqload.vc/embed-fr4qcr0y3rz3.html"
-              }
-            ],
-            "downloads": []
-          },
-          {
-            "number": 7,
-            "name": "Are We Allies or Enemies?",
-            "overview": "Namgung learns the truth about what happened that day, and the deep trust between the couple begins to unravel. Meanwhile, pressured by Ju-hyeok, Tae-seung makes an unexpected decision as his feelings for Mi-do deepen. At the same time, Su-a relentlessly pursues Namgung while investigating the sweet potato corruption scandal.",
-            "air_date": "2026-10-10",
-            "sources": [
-              {
-                "name": "VIDARA",
-                "url": "https://vidara.to/e/yNeh8FwYpAdbY"
-              },
-              {
-                "name": "PLAYMATE",
-                "url": "https://playmate.to/embed/ysHmvhnEFX3G5"
-              },
-              {
-                "name": "UQLOAD",
-                "url": "https://uqload.vc/embed-eagin2y2p6nr.html"
-              }
-            ],
-            "downloads": []
-          },
-          {
-            "number": 8,
-            "name": "What Remains of Our Passionate Love?",
-            "overview": "Namgung and Mi-do confront emotions they have long suppressed for each other's sake. As their pain pulls them in different directions, they come up with a bold proposal that could upend their relationship.",
-            "air_date": "2026-10-11",
-            "sources": [
-              {
-                "name": "VIDARA",
-                "url": "https://vidara.to/e/B4ChfZOi4AilX"
-              },
-              {
-                "name": "PLAYMATE",
-                "url": "https://playmate.to/embed/X8tlikfJLKOhR"
-              },
-              {
-                "name": "UQLOAD",
-                "url": "https://uqload.vc/embed-rrm24ry2h8p3.html"
-              }
-            ],
-            "downloads": []
-          },
-          {
-            "number": 9,
-            "name": "Épisode 9",
-            "overview": "",
-            "air_date": "2026-10-17",
-            "sources": [],
-            "downloads": []
-          },
-          {
-            "number": 10,
-            "name": "Épisode 10",
-            "overview": "",
-            "air_date": "2026-10-18",
-            "sources": [],
-            "downloads": []
-          },
-          {
-            "number": 11,
-            "name": "Épisode 11",
-            "overview": "",
-            "air_date": "2026-10-24",
-            "sources": [],
-            "downloads": []
-          },
-          {
-            "number": 12,
-            "name": "Épisode 12",
-            "overview": "",
-            "air_date": "2026-10-25",
-            "sources": [],
-            "downloads": []
-          },
-          {
-            "number": 13,
-            "name": "Épisode 13",
-            "overview": "",
-            "air_date": "2026-10-31",
-            "sources": [],
-            "downloads": []
-          },
-          {
-            "number": 14,
-            "name": "Épisode 14",
-            "overview": "",
-            "air_date": "2026-11-01",
-            "sources": [],
-            "downloads": []
-          }
-        ],
-        "downloads": []
-      }
-    ],
-    "sources": [],
-    "addedAt": 1792092943222,
-    "langs": [
-      "VOSTFR",
-      "VF"
-    ],
-    "aka": [
-      "不是你的恋爱",
-      "Um Amor Diferente do Seu",
-      "A Love Other Than Yours",
-      "Кохання, але не з тобою/ Кохання поза нами",
-      "Eine andere Liebe als deine",
-      "Un amor distinto al tuyo",
-      "Un autre amour que le tien",
-      "Un amore diverso dal tuo",
-      "Másféle szerelem",
-      "Miłość inna niż ty",
-      "O iubire alta decât a ta",
-      "Senden Başka Bir Aşk",
-      "Láska jiná než tvá",
-      "Μια Αγάπη Διαφορετική από τη Δική σου",
-      "حُبٌّ آخَر غَير حُبِّك",
-      "अ लव अदर देन योर्स",
-      "เมื่อหัวใจมีใครอีกคน",
-      "あなたとは違う恋愛",
-      "除了你之外的戀愛",
-      "Любовь, но не с тобой",
-      "除了你之外的恋爱",
-      "君以外の恋愛",
-      "Neo Malgo Dareun Yeonae",
-      "不是和你談的戀愛",
-      "Not You, Another Love",
-      "너 말고 다른 연애"
-    ],
-    "downloads": []
-  },
-  {
-    "id": "290193",
-    "type": "tv",
-    "name": "Comme un rat",
-    "original_name": "들쥐",
-    "aka": [
-      "Mousetrap",
-      "鼠惑",
-      "O Rato",
-      "なりすましの鼠",
-      "Mousetrap - Identità rubata",
-      "مصيدة فئران",
-      "Mišolovka",
-      "הפיתיון",
-      "Щуроловка",
-      "Ποντικοπαγίδα",
-      "Bẫy chuột",
-      "Myšilov",
-      "กับดักจับลวง",
-      "Ratonera",
-      "Egérfogó",
-      "Pułapka na myszy",
-      "Ratoeira",
-      "Șobolanul",
-      "මවුස්ට්‍රැප්",
-      "माउसट्रैप",
-      "Comme un rat",
-      "Мишката в капана",
-      "تله موش",
-      "Полёвка",
-      "ماؤسٹریپ",
-      "სათაგური",
-      "Охота на двойника",
-      "Охота на двойника, Мышеловка",
-      "The Rat",
-      "들쥐"
-    ],
-    "year": "2026",
-    "overview": "Un écrivain reclus découvre à son réveil que son identité a été volée. Il doit alors s'allier avec un usurier impitoyable pour traquer le Rat, l'inconnu qui a saccagé sa vie.",
-    "genres": [
-      "Crime",
-      "Drame",
-      "Mystère"
-    ],
-    "rating": "8.1",
-    "pop": 16.7832,
-    "status": "Ended",
-    "poster": "https://image.tmdb.org/t/p/w500/7J2jPfh45mOyXTiycPpfoiYQAfv.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/original/3bHz9dYSZ5XDxY0zDaBpYgUOhE2.jpg",
-    "cast": [
-      {
-        "name": "Ryu Jun-yeol",
-        "character": "Je Moon-jae / The Rat"
-      },
-      {
-        "name": "Sul Kyung-gu",
-        "character": "Noja"
-      },
-      {
-        "name": "Lee Kyu-hyung",
-        "character": "Sun-yong"
-      },
-      {
-        "name": "Kim Seung-oh",
-        "character": "Seung-gyu"
-      },
-      {
-        "name": "Hyun Bong-sik",
-        "character": "Myung-su"
-      },
-      {
-        "name": "Moo Jin-sung",
-        "character": "Son Su-hyun"
-      }
-    ],
-    "seasons": [
-      {
-        "number": 1,
-        "name": "Saison 1",
-        "episodes": [
-          {
-            "number": 1,
-            "name": "Épisode 1",
-            "overview": "Je Moon-jae, un écrivain solitaire de génie qui se tient à l'écart du monde, voit son identité volée. Il doit alors faire face à son double.",
-            "air_date": "2026-08-28",
-            "sources": [
-              {
-                "name": "VIDARA",
-                "url": "https://vidara.to/e/XNraEcYnaTmWg"
-              }
-            ],
-            "downloads": []
-          },
-          {
-            "number": 2,
-            "name": "Épisode 2",
-            "overview": "Noja découvre le monde du blanchiment d'identité quand Moon-jae lui file entre les doigts. De son côté, le détective Park Sun-yong met au jour le lien qui les unit.",
-            "air_date": "2026-08-28",
-            "sources": [
-              {
-                "name": "VIDARA",
-                "url": "https://vidara.to/e/07p49axke0OHs"
-              }
-            ],
-            "downloads": []
-          },
-          {
-            "number": 3,
-            "name": "Épisode 3",
-            "overview": "À la fois méfiant et intrigué, Noja fait de Moon-jae son client et son otage. À travers cette alliance précaire, ils préparent leur plan méticuleusement.",
-            "air_date": "2026-08-28",
-            "sources": [
-              {
-                "name": "VIDARA",
-                "url": "https://vidara.to/e/uAEAbxFY8cJTp"
-              }
-            ],
-            "downloads": []
-          },
-          {
-            "number": 4,
-            "name": "Épisode 4",
-            "overview": "Moon-jae soupçonne le Rat de venir tout droit de son passé. Après avoir retrouvé la mémoire, il se rend sur l'île où l'homme vivait autrefois, accompagné de Noja.",
-            "air_date": "2026-08-28",
-            "sources": [
-              {
-                "name": "VIDARA",
-                "url": "https://vidara.to/e/w9BNkyT1fOurJ"
-              }
-            ],
-            "downloads": []
-          },
-          {
-            "number": 5,
-            "name": "Épisode 5",
-            "overview": "Un lien choquant entre Noja et le Rat est révélé, tandis que Sun-yong est sur le point d'obtenir une preuve cruciale. Le Rat fait une apparition publique pour acculer Moon-jae.",
-            "air_date": "2026-08-28",
-            "sources": [
-              {
-                "name": "VIDARA",
-                "url": "https://vidara.to/e/bID89BIhgr2t2"
-              }
-            ],
-            "downloads": []
-          },
-          {
-            "number": 6,
-            "name": "Épisode 6",
-            "overview": "Moon-jae contacte son ancienne éditrice dans l'espoir de se voir innocenté. Perplexe, il se raccroche à un message envoyé par Noja.",
-            "air_date": "2026-08-28",
-            "sources": [
-              {
-                "name": "VIDARA",
-                "url": "https://vidara.to/e/SOne2Vp9Rza1Z"
-              }
-            ],
-            "downloads": []
-          },
-          {
-            "number": 7,
-            "name": "Épisode 7",
-            "overview": "Après s'être échappé de justesse, Moon-jae se lance à la recherche d'une personne capable de révéler son identité. Sun-yong découvre une vérité troublante sur son passé.",
-            "air_date": "2026-08-28",
-            "sources": [
-              {
-                "name": "VIDARA",
-                "url": "https://vidara.to/e/vaEz4zTMQ0Qi8"
-              }
-            ],
-            "downloads": []
-          },
-          {
-            "number": 8,
-            "name": "Épisode 8",
-            "overview": "Les ennuis continuent pour Moon-jae. En quête de réponses, Sun-yong se rend dans un hospice, mais son témoin a disparu. Plus tard, le passé de Noja l'envoie six pieds sous terre.",
-            "air_date": "2026-08-28",
-            "sources": [
-              {
-                "name": "VIDARA",
-                "url": "https://vidara.to/e/kYOIPa81A0bq2"
-              }
-            ],
-            "downloads": []
-          },
-          {
-            "number": 9,
-            "name": "Épisode 9",
-            "overview": "Moon-jae échappe à la police pour retrouver le Rat là où tout a commencé. Noja lui offre un conseil précieux tandis que Sun-yong est toujours à la recherche d'un témoin clé.",
-            "air_date": "2026-08-28",
-            "sources": [
-              {
-                "name": "VIDARA",
-                "url": "https://vidara.to/e/FRqAqPlSFGmCt"
-              }
-            ],
-            "downloads": []
-          },
-          {
-            "number": 10,
-            "name": "Épisode 10",
-            "overview": "Moon-jae se retrouve en plein cœur du piège de toute une vie. Alors que chaque mensonge et identité volée refont surface, il s'interroge : est-il le prédateur ou la proie ?",
-            "air_date": "2026-08-28",
-            "sources": [
-              {
-                "name": "VIDARA",
-                "url": "https://vidara.to/e/2sqo3MWDLE1Gb"
-              }
-            ],
-            "downloads": []
-          }
-        ],
-        "downloads": []
-      }
-    ],
-    "sources": [],
-    "addedAt": 1792095503552,
-    "langs": [
-      "VOSTFR",
-      "VF"
-    ],
-    "downloads": []
-  },
-  {
-    "id": "296140",
-    "type": "tv",
-    "name": "My Bias, My Boss",
-    "original_name": "최애의 사원",
-    "aka": [
-      "My Bias, My Boss",
-      "我的偶像总裁",
-      "Mi ídolo, mi jefe",
-      "最愛の社員",
-      "Meu Idol é Meu Chefe",
-      "เมื่อเมนฉันเป็นประธานบริษัท",
-      "Bias tôi, sếp của tôi",
-      "我的偶像總裁",
-      "Любимая сотрудница",
-      "Moj idol, moj šef",
-      "مفضلي ومديري",
-      "My Bias, My Bows",
-      "האיידול שלי, הבוס שלי",
-      "最爱的社员",
-      "My Bias My Boss",
-      "העובדת המועדפת עליי",
-      "우리 오빠는 아이돌",
-      "Choi-ae-ui Sa-won",
-      "Choae-ui Sawon",
-      "Мой босс, мой герой",
-      "My Oppa is an Idol",
-      "My Favorite Employee",
-      "최애의 사원"
-    ],
-    "year": "2026",
-    "overview": "Une fan inconditionnelle décroche un poste dans une entreprise de mode, pour découvrir peu après que celle-ci a été cofondée par son idole absolue. Bien décidée à rester professionnelle, elle dissimule son identité de fan, mais se laisse rapidement déstabiliser par le PDG de l’entreprise, un véritable bourreau de travail. Alors que des sentiments amoureux secrets et non réciproques ainsi que des difficultés personnelles soigneusement cachées viennent compliquer les relations entre les trois protagonistes, elle se retrouve tiraillée entre son obsession de toujours et une nouvelle relation aussi inattendue que troublante.",
-    "genres": [
-      "Comédie",
-      "Drame"
-    ],
-    "rating": "8.2",
-    "pop": 11.4831,
-    "status": "Ended",
-    "poster": "https://image.tmdb.org/t/p/w500/b5jBoSQ7CW1zDJURuctD30mATuO.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/original/eBD46F44qKGPZiRLffO4q3JF8Hc.jpg",
-    "cast": [
-      {
-        "name": "강훈",
-        "character": "Kang Ha-gi"
-      },
-      {
-        "name": "Kim Hye-jun",
-        "character": "Nam Da-reum"
-      },
-      {
-        "name": "차우민",
-        "character": "Lee Chan"
-      },
-      {
-        "name": "유나",
-        "character": "Yoon Choi"
-      },
-      {
-        "name": "천우진",
-        "character": "Roy"
-      },
-      {
-        "name": "윤현석",
-        "character": "Hyeok"
-      },
-      {
-        "name": "백승",
-        "character": "Tae-oh"
-      },
-      {
-        "name": "Jung Hyun Min",
-        "character": "Ji-nu"
-      },
-      {
-        "name": "공지호",
-        "character": "Park Mi-mi"
-      },
-      {
-        "name": "Kim Ah-young",
-        "character": "Lee Seul-ah"
-      },
-      {
-        "name": "Hwang Seong-bin",
-        "character": "Kim Min-woo"
-      },
-      {
-        "name": "Heo Joon-seok",
-        "character": "Choi Seong-wook"
-      }
-    ],
-    "seasons": [
-      {
-        "number": 1,
-        "name": "Saison 1",
-        "episodes": [
-          {
-            "number": 1,
-            "name": "Épisode 1",
-            "overview": "To work beside her idol, Da-reum joins a startup but instead faces a prickly, suspicious CEO.",
-            "air_date": "2026-08-03",
-            "sources": [
-              {
-                "name": "VIDARA",
-                "url": "https://vidara.to/e/DsUFfC8SaMz92"
-              },
-              {
-                "name": "PLAYMATE",
-                "url": "https://playmate.to/embed/nxg7197xednGp"
-              },
-              {
-                "name": "UQLOAD",
-                "url": "https://uqload.vc/embed-5lew37brg8r6.html"
-              }
-            ],
-            "downloads": []
-          },
-          {
-            "number": 2,
-            "name": "Épisode 2",
-            "overview": "Da-reum aims to be employee of the year in order to travel with her idol, Chan, but her enthusiasm only triggers her CEO's deep suspicions.",
-            "air_date": "2026-08-04",
-            "sources": [
-              {
-                "name": "VIDARA",
-                "url": "https://vidara.to/e/BOzp4HWpecTMN"
-              },
-              {
-                "name": "PLAYMATE",
-                "url": "https://playmate.to/embed/8NaSCJxhg7C2H"
-              },
-              {
-                "name": "UQLOAD",
-                "url": "https://uqload.vc/embed-f3ciqd9luuht.html"
-              }
-            ],
-            "downloads": []
-          },
-          {
-            "number": 3,
-            "name": "Épisode 3",
-            "overview": "Da-reum makes a shocking confession.",
-            "air_date": "2026-08-10",
-            "sources": [
-              {
-                "name": "VIDARA",
-                "url": "https://vidara.to/e/l0Cu1TJoIpWsu"
-              },
-              {
-                "name": "PLAYMATE",
-                "url": "https://playmate.to/embed/8vgDa4DRgkKUu"
-              },
-              {
-                "name": "UQLOAD",
-                "url": "https://uqload.vc/embed-gq3ndc4ohvz1.html"
-              }
-            ],
-            "downloads": []
-          },
-          {
-            "number": 4,
-            "name": "Épisode 4",
-            "overview": "Da-reum finds herself caught in a love triangle.",
-            "air_date": "2026-08-11",
-            "sources": [
-              {
-                "name": "VIDARA",
-                "url": "https://vidara.to/e/jxJf5HYr8jttm"
-              },
-              {
-                "name": "PLAYMATE",
-                "url": "https://playmate.to/embed/Ac7ce4FlLXso5"
-              },
-              {
-                "name": "UQLOAD",
-                "url": "https://uqload.vc/embed-4cj9lgbhicxp.html"
-              }
-            ],
-            "downloads": []
-          },
-          {
-            "number": 5,
-            "name": "Épisode 5",
-            "overview": "Ha-gi and Da-reum grow closer on a secret business trip.",
-            "air_date": "2026-08-17",
-            "sources": [
-              {
-                "name": "VIDARA",
-                "url": "https://vidara.to/e/iB6lsVBk2l1TQ"
-              },
-              {
-                "name": "PLAYMATE",
-                "url": "https://playmate.to/embed/nQzCCoBBFaQ8W"
-              },
-              {
-                "name": "UQLOAD",
-                "url": "https://uqload.vc/embed-h2qre1nqompb.html"
-              }
-            ],
-            "downloads": []
-          },
-          {
-            "number": 6,
-            "name": "Épisode 6",
-            "overview": "A major shift changes everything after the season's first snow.",
-            "air_date": "2026-08-18",
-            "sources": [
-              {
-                "name": "VIDARA",
-                "url": "https://vidara.to/e/JtovdTElvavMQ"
-              },
-              {
-                "name": "PLAYMATE",
-                "url": "https://playmate.to/embed/YwQWGJ8aV5xdI"
-              },
-              {
-                "name": "UQLOAD",
-                "url": "https://uqload.vc/embed-yoke9und8u7a.html"
-              }
-            ],
-            "downloads": []
-          },
-          {
-            "number": 7,
-            "name": "Épisode 7",
-            "overview": "Ha-gi prepares to confess his true feelings -- only to be blindsided at the crucial moment.",
-            "air_date": "2026-08-24",
-            "sources": [
-              {
-                "name": "VIDARA",
-                "url": "https://vidara.to/e/XtqLHEw1Hyo52"
-              },
-              {
-                "name": "PLAYMATE",
-                "url": "https://playmate.to/embed/21YU7Cm3ngxhL"
-              },
-              {
-                "name": "UQLOAD",
-                "url": "https://uqload.vc/embed-edwqqesvnlee.html"
-              }
-            ],
-            "downloads": []
-          },
-          {
-            "number": 8,
-            "name": "Épisode 8",
-            "overview": "A harsh boycott throws the company into chaos.",
-            "air_date": "2026-08-25",
-            "sources": [
-              {
-                "name": "VIDARA",
-                "url": "https://vidara.to/e/ALmZYFwmgNa99"
-              },
-              {
-                "name": "PLAYMATE",
-                "url": "https://playmate.to/embed/nb1hjNrhCT1yv"
-              },
-              {
-                "name": "UQLOAD",
-                "url": "https://uqload.vc/embed-tzopl1fw19zc.html"
-              }
-            ],
-            "downloads": []
-          },
-          {
-            "number": 9,
-            "name": "Épisode 9",
-            "overview": "Ha-gi and Da-reum's secret office romance is put to the test.",
-            "air_date": "2026-08-31",
-            "sources": [
-              {
-                "name": "VIDARA",
-                "url": "https://vidara.to/e/VQaCoqxYkB0e1"
-              },
-              {
-                "name": "PLAYMATE",
-                "url": "https://playmate.to/embed/2FXIaMBs7BIjj"
-              },
-              {
-                "name": "UQLOAD",
-                "url": "https://uqload.vc/embed-0g8au3yzkfz0.html"
-              }
-            ],
-            "downloads": []
-          },
-          {
-            "number": 10,
-            "name": "Épisode 10",
-            "overview": "Jeong-yeon's return sparks jealousy, while a shocking discovery pushes Da-reum to the edge.",
-            "air_date": "2026-09-01",
-            "sources": [
-              {
-                "name": "VIDARA",
-                "url": "https://vidara.to/e/qes3cIQOYHyTE"
-              },
-              {
-                "name": "PLAYMATE",
-                "url": "https://playmate.to/embed/L1F4gWJIXbwRW"
-              },
-              {
-                "name": "UQLOAD",
-                "url": "https://uqload.vc/embed-cbqzntu1lcfy.html"
-              }
-            ],
-            "downloads": []
-          },
-          {
-            "number": 11,
-            "name": "Épisode 11",
-            "overview": "A mole shatters the company, driving a betrayed Ha-gi to vanish.",
-            "air_date": "2026-09-07",
-            "sources": [
-              {
-                "name": "VIDARA",
-                "url": "https://vidara.to/e/IlTWfviMCdKWw"
-              },
-              {
-                "name": "PLAYMATE",
-                "url": "https://playmate.to/embed/jMuDd9MdpIJlw"
-              },
-              {
-                "name": "UQLOAD",
-                "url": "https://uqload.vc/embed-ajrffr4ie0wj.html"
-              }
-            ],
-            "downloads": []
-          },
-          {
-            "number": 12,
-            "name": "Épisode 12",
-            "overview": "Da-reum receives a life-changing offer while D.N.X reunites onstage.",
-            "air_date": "2026-09-08",
-            "sources": [
-              {
-                "name": "VIDARA",
-                "url": "https://vidara.to/e/q7g5FsXIXmfcj"
-              },
-              {
-                "name": "PLAYMATE",
-                "url": "https://playmate.to/embed/8zruzmBoFSG5y"
-              },
-              {
-                "name": "UQLOAD",
-                "url": "https://uqload.vc/embed-iv05rz9sn9v6.html"
-              }
-            ],
-            "downloads": []
-          }
-        ],
-        "downloads": []
-      }
-    ],
-    "sources": [],
-    "addedAt": 1792105780104,
-    "langs": [
-      "VOSTFR"
-    ],
-    "downloads": []
-  }
-]
+  "series": [
+    {
+      "id": "293607",
+      "type": "tv",
+      "name": "100 jours en espionne",
+      "original_name": "100일의 거짓말",
+      "year": "2026",
+      "overview": "En quête de liberté, la meilleure pickpocket de Séoul infiltre le gouvernement colonial japonais pour lui dérober des secrets, mais tombe amoureuse du fils de sa cible.",
+      "genres": [
+        "Action & Adventure",
+        "Drame"
+      ],
+      "rating": "9.0",
+      "status": "Returning Series",
+      "poster": "https://image.tmdb.org/t/p/w500/wf7l8ZfGGkOKcQGF3Htt5DDhBxD.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/w1280/3SvKCITqMtjgPIhFBjRc4yTAc4H.jpg",
+      "cast": [
+        {
+          "name": "Kim You-jung",
+          "character": "Lee Ga-gyeong"
+        },
+        {
+          "name": "Jinyoung",
+          "character": "Kim Tae-woong / Hideo Sato"
+        },
+        {
+          "name": "김현주",
+          "character": "Yu So-ran"
+        },
+        {
+          "name": "Lee Mu-saeng",
+          "character": "Yu Philip"
+        },
+        {
+          "name": "Jin Sun-kyu",
+          "character": "Shinichi Sato"
+        },
+        {
+          "name": "Seo Jeong-yeon",
+          "character": "Ryu Gwan-sil / Yanagi"
+        },
+        {
+          "name": "Kiko Oi",
+          "character": "Hanako Sato"
+        },
+        {
+          "name": "박정연",
+          "character": "Kim Myeong-nam"
+        },
+        {
+          "name": "이선",
+          "character": "Lee Young-bok"
+        },
+        {
+          "name": "김인권",
+          "character": "Han Cheol-ryong"
+        },
+        {
+          "name": "최덕문",
+          "character": "Kwak Woon-hak"
+        },
+        {
+          "name": "이도군",
+          "character": "Jang Jeong-yeop"
+        }
+      ],
+      "seasons": [
+        {
+          "number": 1,
+          "name": "Saison 1",
+          "episodes": [
+            {
+              "number": 1,
+              "name": "Épisode 1",
+              "overview": "Pickpocket Lee Ga-gyeong has just one goal — to flee colonial Joseon. But she soon ends up unexpectedly entangled with the Korean independence movement.",
+              "air_date": "2026-10-10",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/2TgyEgZCFGobY"
+                },
+                {
+                  "name": "UQLOAD",
+                  "url": "https://uqload.vc/embed-vzlzv64p907n.html"
+                }
+              ]
+            },
+            {
+              "number": 2,
+              "name": "Épisode 2",
+              "overview": "Ga-gyeong's language skills shock Yoo Philip and Yoo So-ran. Meanwhile, Kim Tae-ung's insistence that Ga-gyeong return his wallet raises her suspicions.",
+              "air_date": "2026-10-11",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/5thkvKklZ5I2D"
+                },
+                {
+                  "name": "UQLOAD",
+                  "url": "https://uqload.vc/embed-z1zyz49djtuq.html"
+                }
+              ]
+            },
+            {
+              "number": 3,
+              "name": "Épisode 3",
+              "overview": "",
+              "air_date": "2026-10-17",
+              "sources": []
+            },
+            {
+              "number": 4,
+              "name": "Épisode 4",
+              "overview": "",
+              "air_date": "2026-10-18",
+              "sources": []
+            },
+            {
+              "number": 5,
+              "name": "Épisode 5",
+              "overview": "",
+              "air_date": "2026-10-24",
+              "sources": []
+            },
+            {
+              "number": 6,
+              "name": "Épisode 6",
+              "overview": "",
+              "air_date": "2026-10-25",
+              "sources": []
+            },
+            {
+              "number": 7,
+              "name": "Épisode 7",
+              "overview": "",
+              "air_date": "2026-10-31",
+              "sources": []
+            },
+            {
+              "number": 8,
+              "name": "Épisode 8",
+              "overview": "",
+              "air_date": "2026-11-01",
+              "sources": []
+            },
+            {
+              "number": 9,
+              "name": "Épisode 9",
+              "overview": "",
+              "air_date": "2026-11-07",
+              "sources": []
+            },
+            {
+              "number": 10,
+              "name": "Épisode 10",
+              "overview": "",
+              "air_date": "2026-11-08",
+              "sources": []
+            },
+            {
+              "number": 11,
+              "name": "Épisode 11",
+              "overview": "",
+              "air_date": "2026-11-14",
+              "sources": []
+            },
+            {
+              "number": 12,
+              "name": "Épisode 12",
+              "overview": "",
+              "air_date": "2026-11-15",
+              "sources": []
+            },
+            {
+              "number": 13,
+              "name": "Épisode 13",
+              "overview": "",
+              "air_date": "2026-11-21",
+              "sources": []
+            },
+            {
+              "number": 14,
+              "name": "Épisode 14",
+              "overview": "",
+              "air_date": "2026-11-22",
+              "sources": []
+            },
+            {
+              "number": 15,
+              "name": "Épisode 15",
+              "overview": "",
+              "air_date": "2026-11-28",
+              "sources": []
+            },
+            {
+              "number": 16,
+              "name": "Épisode 16",
+              "overview": "",
+              "air_date": "2026-11-29",
+              "sources": []
+            }
+          ]
+        }
+      ],
+      "sources": [],
+      "addedAt": 1792016398551,
+      "langs": [
+        "VOSTFR"
+      ],
+      "trend": 80,
+      "aka": [
+        "100 Days of Deception",
+        "百日谎言",
+        "100 Dias de Mentiras",
+        "百日謊言",
+        "100 дни на измама",
+        "100 днів омани",
+        "100 ימים של ריגול",
+        "100 วันปฏิบัติการลวง",
+        "100 días de engaño",
+        "100 de zile de minciuni",
+        "100 Ngày Lừa Dối",
+        "100 dni oszustwa",
+        "100日の嘘",
+        "مئة يوم من الخداع 100",
+        "100 jours en espionne",
+        "100 дней лжи",
+        "百日的谎言",
+        "100ilui Geojitmal",
+        "100-il-ui Geo-jit-mal",
+        "Baekilui Geojinmal",
+        "Hundred Days of Lies",
+        "Hundred Days of Deception",
+        "100 Days of Lies",
+        "100일의 거짓말"
+      ]
+    },
+    {
+      "id": "275102",
+      "type": "tv",
+      "name": "The Scandal",
+      "original_name": "스캔들",
+      "year": "2026",
+      "overview": "Durant la période Joseon, une proposition secrète éveille les désirs d'une aristocrate talentueuse, d'un séducteur notoire et d'une jeune femme naïve prise au piège d'un jeu cruel.",
+      "genres": [
+        "Drame"
+      ],
+      "rating": "6.8",
+      "status": "Ended",
+      "poster": "https://image.tmdb.org/t/p/w500/8ra17h8Z3NX14qdWaOKn0scURJR.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/w1280/uc1p1PEbEMpdIHqnU9TESNC6Jhp.jpg",
+      "cast": [
+        {
+          "name": "Son Ye-jin",
+          "character": "Lady Cho"
+        },
+        {
+          "name": "Ji Chang-wook",
+          "character": "Cho Won"
+        },
+        {
+          "name": "Nana",
+          "character": "Ahn Hui-yeon"
+        },
+        {
+          "name": "Han Seon-hwa",
+          "character": "So-ok's Mom"
+        },
+        {
+          "name": "신윤하",
+          "character": "Lee So-ok"
+        },
+        {
+          "name": "강지은",
+          "character": "Lady Jeonggyeong"
+        },
+        {
+          "name": "권도균",
+          "character": "Chil-seong"
+        },
+        {
+          "name": "강찬희",
+          "character": "Kwon In-ho"
+        },
+        {
+          "name": "강명수",
+          "character": "Commander of the royal guard"
+        },
+        {
+          "name": "정기섭",
+          "character": "Left State Councillor"
+        },
+        {
+          "name": "채서진",
+          "character": "Mi-ok"
+        },
+        {
+          "name": "신소현",
+          "character": "Cho Yoon [Young]"
+        }
+      ],
+      "seasons": [
+        {
+          "number": 1,
+          "name": "Saison 1",
+          "episodes": [
+            {
+              "number": 1,
+              "name": "Épisode 1",
+              "overview": "Dame Cho dissimule son malaise lorsque le seigneur Yoo prend une concubine afin d'avoir un héritier. Elle écrit ensuite à son cousin Cho Won pour lui soumettre une idée.",
+              "air_date": "2026-09-18",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/o0KoP8VjByjK2"
+                }
+              ]
+            },
+            {
+              "number": 2,
+              "name": "Épisode 2",
+              "overview": "Dame Cho et le séducteur notoire Cho Won se lancent dans un jeu dangereux. Ils jettent leur dévolu sur une femme vertueuse qui pourrait bien ne pas céder si facilement.",
+              "air_date": "2026-09-18",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/p11nSozxWwKeC"
+                }
+              ]
+            },
+            {
+              "number": 3,
+              "name": "Épisode 3",
+              "overview": "Cho Won approche Hui-yeon, ce qui ravive son chagrin et met sa foi à l'épreuve. Il provoque ensuite Dame Cho avec une manœuvre qui pourrait lui donner l'avantage.",
+              "air_date": "2026-09-18",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/qLMR4mPCXnzcb"
+                }
+              ]
+            },
+            {
+              "number": 4,
+              "name": "Épisode 4",
+              "overview": "Cho Won a autrefois tenté d'oublier son désir pour Dame Cho en compagnie de courtisanes, sans succès. Alors qu’il cherche à séduire Hui-yeon, son masque commence à tomber.",
+              "air_date": "2026-09-18",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/FaM5h5snLtw3j"
+                }
+              ]
+            },
+            {
+              "number": 5,
+              "name": "Épisode 5",
+              "overview": "Dame Cho profite des sentiments secrets que So-ok éprouve pour un autre. En parallèle, des sentiments complexes submergent Cho Won alors que sa relation avec Hui-yeon s'intensifie.",
+              "air_date": "2026-09-18",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/N1BBIUNRZ8dLa"
+                }
+              ]
+            },
+            {
+              "number": 6,
+              "name": "Épisode 6",
+              "overview": "Dame Cho prévient Cho Won que le pari va entacher son honneur et la réputation de sa famille. Mais il jure d'aller jusqu'au bout, alors que des sentiments émergent.",
+              "air_date": "2026-09-18",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/bDv8gNdbM7FxT"
+                }
+              ]
+            },
+            {
+              "number": 7,
+              "name": "Épisode 7",
+              "overview": "Cho Won et Hui-yeon se rapprochent alors qu'ils profitent ensemble d'un bref répit à l'abri des regards. Mais un ordre royal vient perturber cette sérénité.",
+              "air_date": "2026-09-18",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/xLiCBKbni0sjq"
+                }
+              ]
+            },
+            {
+              "number": 8,
+              "name": "Épisode 8",
+              "overview": "Alors que leur pari échappe à tout contrôle, Dame Cho doit rendre des comptes à Cho Won et à Hui-yeon. Jusqu'où ira-t-elle pour mener son plan à bien ?",
+              "air_date": "2026-09-18",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/wQqaJbGvO4nOd"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "sources": [],
+      "addedAt": 1792017932096,
+      "langs": [
+        "VOSTFR",
+        "VF"
+      ],
+      "aka": [
+        "The Scandal",
+        "挑情丑闻",
+        "挑情醜聞",
+        "Escândalo e Intriga",
+        "الفضيحة",
+        "Skandal",
+        "הסקנדל",
+        "Скандал",
+        "Το Σκάνδαλο",
+        "Skandál",
+        "O Escândalo",
+        "ฉาวโฉ่โชซอน",
+        "El escándalo",
+        "A botrány",
+        "Scandalul",
+        "スキャンダル",
+        "අපකීර්තිය",
+        "द स्कैंडल",
+        "Scandalo e passione",
+        "Скандал в Чосоне",
+        "Скандалът",
+        "دی اسکینڈل",
+        "丑闻",
+        "스캔들"
+      ]
+    },
+    {
+      "id": "293610",
+      "type": "tv",
+      "name": "Doctor X : Mafia en blouse blanche",
+      "original_name": "닥터X: 하얀 마피아의 시대",
+      "year": "2026",
+      "overview": "Kye Su-Jeong, une brillante chirurgienne, est affectée à l'hôpital universitaire de Guseo pour pourvoir un poste vacant en chirurgie. Elle y fait ses preuves grâce à son talent et met en lumière les absurdités du milieu médical. Elle se lie d'amitié avec Bu Seung-Kwon, le directeur de l'hôpital, et l'interne Park Tae-Kyeong",
+      "genres": [
+        "Mystère",
+        "Drame",
+        "Crime"
+      ],
+      "rating": "8.9",
+      "status": "Returning Series",
+      "poster": "https://image.tmdb.org/t/p/w500/xYFTiwC7Tl0xOUFiVFUPWXHTHnr.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/w1280/mDYIV71RL3mkaW8IfSGNthuVB7l.jpg",
+      "cast": [
+        {
+          "name": "Kim Ji-won",
+          "character": "Gye Su-jeong"
+        },
+        {
+          "name": "Lee Jung-eun",
+          "character": "Jeong Hee-sook"
+        },
+        {
+          "name": "Son Hyun-joo",
+          "character": "Bu Seung-gwon"
+        },
+        {
+          "name": "김우석",
+          "character": "Park Tae-Kyeong"
+        },
+        {
+          "name": "이진희",
+          "character": "Jo Won-jin"
+        },
+        {
+          "name": "Kim Young-min",
+          "character": "Do Yoon-sik"
+        },
+        {
+          "name": "Lee Sung-wook",
+          "character": "Bae Heung-gon"
+        },
+        {
+          "name": "Kwon Seung-woo",
+          "character": "Ma Seong-gyoo"
+        },
+        {
+          "name": "Heo Joon-seok",
+          "character": "Kim Seong-jin"
+        },
+        {
+          "name": "Kim Young-ah",
+          "character": "Lee Seon-ae"
+        },
+        {
+          "name": "최덕문",
+          "character": "Yang Eung-goo"
+        },
+        {
+          "name": "김정영",
+          "character": "Yoo Mi-kyeong"
+        }
+      ],
+      "seasons": [
+        {
+          "number": 1,
+          "name": "Saison 1",
+          "episodes": [
+            {
+              "number": 1,
+              "name": "Épisode 1",
+              "overview": "Lors de son premier jour à l'hôpital, Gye Su-jeong fait des vagues en se prononçant sur une opération à venir... qu'elle reprend en main quand une crise se déclenche.",
+              "air_date": "2026-10-09",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/yxmRmsmX4zOOn"
+                },
+                {
+                  "name": "UQLOAD",
+                  "url": "https://uqload.vc/embed-m1tmawcz7c7k.html"
+                }
+              ]
+            },
+            {
+              "number": 2,
+              "name": "Épisode 2",
+              "overview": "Faced with two pancreatic cancer patients — a wealthy chairman and a teenager — hospital staff clash over who to prioritize. But Su-jeong wastes no time.",
+              "air_date": "2026-10-10",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/X8HN8WRXjyREk"
+                },
+                {
+                  "name": "UQLOAD",
+                  "url": "https://uqload.vc/embed-cs61nhnp5yge.html"
+                }
+              ]
+            },
+            {
+              "number": 3,
+              "name": "Épisode 3",
+              "overview": "",
+              "air_date": "2026-10-16",
+              "sources": []
+            },
+            {
+              "number": 4,
+              "name": "Épisode 4",
+              "overview": "",
+              "air_date": "2026-10-17",
+              "sources": []
+            },
+            {
+              "number": 5,
+              "name": "Épisode 5",
+              "overview": "",
+              "air_date": "2026-10-23",
+              "sources": []
+            },
+            {
+              "number": 6,
+              "name": "Épisode 6",
+              "overview": "",
+              "air_date": "2026-10-24",
+              "sources": []
+            },
+            {
+              "number": 7,
+              "name": "Épisode 7",
+              "overview": "",
+              "air_date": "2026-10-30",
+              "sources": []
+            },
+            {
+              "number": 8,
+              "name": "Épisode 8",
+              "overview": "",
+              "air_date": "2026-10-31",
+              "sources": []
+            },
+            {
+              "number": 9,
+              "name": "Épisode 9",
+              "overview": "",
+              "air_date": "2026-11-06",
+              "sources": []
+            },
+            {
+              "number": 10,
+              "name": "Épisode 10",
+              "overview": "",
+              "air_date": "2026-11-07",
+              "sources": []
+            },
+            {
+              "number": 11,
+              "name": "Épisode 11",
+              "overview": "",
+              "air_date": "2026-11-13",
+              "sources": []
+            },
+            {
+              "number": 12,
+              "name": "Épisode 12",
+              "overview": "",
+              "air_date": "2026-11-14",
+              "sources": []
+            }
+          ]
+        }
+      ],
+      "sources": [],
+      "addedAt": 1792018030964,
+      "langs": [
+        "VOSTFR"
+      ],
+      "trend": 89,
+      "aka": [
+        "Doctor X: Mafia in White",
+        "ドクターX ～白衣のマフィア～",
+        "Doctor X：白色黑手党时代",
+        "Doctor X：白色黑手黨時代",
+        "Доктор X: Мафия в бяло",
+        "Doctor X: A Máfia do Jaleco Branco",
+        "ด็อกเตอร์เอ็กซ์",
+        "الدكتورة إكس",
+        "Doctor X Mafia in White",
+        "Доктор Икс: Эпоха белой мафии",
+        "Doktorka X",
+        "Doctor X : Mafia en blouse blanche",
+        "דוקטור X",
+        "Doctor X: Mafia în alb",
+        "Доктор X",
+        "Doctor X",
+        "Doctor X: A Máfia das Batas Brancas",
+        "Bác sĩ X: Mafia Áo Trắng",
+        "Ｘ医生",
+        "ドクターX 〜白衣のマコィア〜",
+        "닥터Ｘ",
+        "Доктор Икс",
+        "닥터X: 하얀 마피아의 시대"
+      ]
+    },
+    {
+      "id": "278573",
+      "type": "tv",
+      "name": "Perfect Crown",
+      "original_name": "21세기 대군부인",
+      "year": "2026",
+      "overview": "Bienvenue en Corée du Sud, dans une monarchie constitutionnelle du 21e siècle où se mêlent tradition et modernité, et où le glamour masque une hiérarchie bien ancrée dans la société. Seong Hui-ju, cadette d'une riche famille et PDG talentueuse, a tout pour elle. Mais son statut de roturière lui vaut le mépris de l'élite. Lassée de la pression exercée par sa famille pour qu'elle se marie, Hui-ju prend son avenir en main. Après avoir rencontré le grand-prince Ian au banquet du roi, elle lui propose un mariage de convenance. Elle a tout, sauf un titre, et lui n'a justement que son titre. Ce couple du siècle parviendra-t-il à briser les barrières sociales pour forger son propre destin ?",
+      "genres": [
+        "Comédie",
+        "Drame"
+      ],
+      "rating": "9.0",
+      "status": "Ended",
+      "poster": "https://image.tmdb.org/t/p/w500/z6on6DbEKpE9gOr8lvjj3xebGtd.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/w1280/6ekykPwvAywJRjFEnUoCFWTO9O3.jpg",
+      "cast": [
+        {
+          "name": "IU",
+          "character": "Seong Hui-ju"
+        },
+        {
+          "name": "Byeon Woo-seok",
+          "character": "Grand Prince I-an"
+        },
+        {
+          "name": "Steve Sanghyun Noh",
+          "character": "Min Jeong-u"
+        },
+        {
+          "name": "Gong Seung-yeon",
+          "character": "Yun I-rang"
+        },
+        {
+          "name": "Yoo Su-bin",
+          "character": "Choi Hyeon"
+        },
+        {
+          "name": "Lee Yeon",
+          "character": "Do Hye-jeong"
+        }
+      ],
+      "seasons": [
+        {
+          "number": 1,
+          "name": "Saison 1",
+          "episodes": [
+            {
+              "number": 1,
+              "name": "Épisode 1",
+              "overview": "Cadette d'une famille riche et PDG accomplie, Seong Hui-ju est méprisée par la société à cause de ses origines roturières. Sa rencontre fortuite avec le grand-prince Ian à la fête d'anniversaire du roi tombe à pic : sa famille la poussant à se marie.",
+              "air_date": "2026-04-10",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/3QfRuU3eWf2pd"
+                }
+              ]
+            },
+            {
+              "number": 2,
+              "name": "Épisode 2",
+              "overview": "Leur entourage ne leur laisse aucun répit. Seong Hui-ju rencontre des prétendants choisis par sa famille et la reine douairière veut imposer une épouse au grand-prince Ian. Quand ils se retrouvent à un gala professionnel, Ian doit décider s'il veut participer aux manigances de Hui-ju.",
+              "air_date": "2026-04-11",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/eUMaYzaQipoBC"
+                }
+              ]
+            },
+            {
+              "number": 3,
+              "name": "Épisode 3",
+              "overview": "Alors que le grand-prince Ian et Seong Hui-ju se préparent à devenir le couple du siècle, un scandale ébranle la presse et la famille royale. La position implicite d'Ian sème le trouble, tandis que Hui-ju doit s'adapter à un tout nouvel environnement.",
+              "air_date": "2026-04-17",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/xgOueNVwmNOUW"
+                }
+              ]
+            },
+            {
+              "number": 4,
+              "name": "Épisode 4",
+              "overview": "Hui-ju s'installe chez le grand-prince Ian. Son franc-parler et son mépris de l'étiquette exaspèrent la dame de cour, Choi. Le grand-prince, lui, est amusé par ce vent de fraîcheur. Mais quelqu'un complote dans l'ombre pour empêcher Hui-ju d'entrer dans la famille royale.",
+              "air_date": "2026-04-18",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/EzQNWBlkb36Wp"
+                }
+              ]
+            },
+            {
+              "number": 5,
+              "name": "Épisode 5",
+              "overview": "Hanté par le passé, Ian hésite à révéler ses véritables sentiments à Seong Hui-ju, convaincu qu'il vaut mieux s'éloigner que risquer sa vie. La famille royale et le groupe Castle cherchent un responsable pour l'accident, tandis que Hui-ju mobilise son équipe pour faire la lumière sur les détails.",
+              "air_date": "2026-04-24",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/K1PgGFz1ZalgO"
+                }
+              ]
+            },
+            {
+              "number": 6,
+              "name": "Épisode 6",
+              "overview": "Le couple du siècle fait son grand retour. Sous les yeux de la foule, ils dansent une valse et se jurent un amour éternel. Mais leur promesse est-elle sincère ? Loin de l'agitation de la fête, ils se remémorent leur passé et le manque d'amour et d'approbation de leurs familles.",
+              "air_date": "2026-04-25",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/01pwhHhg0gn8e"
+                }
+              ]
+            },
+            {
+              "number": 7,
+              "name": "Épisode 7",
+              "overview": "Seong Hui-ju et le grand-prince Ian préparent leur mariage, mais un événement imprévu jette un froid sur leur relation que la reine douairière et le Premier ministre ne peuvent plus ignorer.",
+              "air_date": "2026-05-01",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/4JdlGj1dD8Ldt"
+                }
+              ]
+            },
+            {
+              "number": 8,
+              "name": "Épisode 8",
+              "overview": "La princesse du 21e siècle est enfin couronnée. Malheureusement, son ascension sociale ne fait pas que des heureux.",
+              "air_date": "2026-05-02",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/dpDMfNI88jG0b"
+                }
+              ]
+            },
+            {
+              "number": 9,
+              "name": "Épisode 9",
+              "overview": "À peine mariés, le grand-prince Ian et Hui-ju affrontent une série de crises politiques. L'opinion publique se déchaîne, et d'anciennes rumeurs refont surface. Leurs ennemis y voient une occasion de passer à l'acte.",
+              "air_date": "2026-05-08",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/LM71BZYML1U5k"
+                }
+              ]
+            },
+            {
+              "number": 10,
+              "name": "Épisode 10",
+              "overview": "Leur affection mutuelle est-elle devenue un poison ? Alors qu'ils peinent à être honnêtes, leur entourage essaie de gagner du temps. Mais une nouvelle ébranle la cour royale.",
+              "air_date": "2026-05-09",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/2z1IXUQrSyI1H"
+                }
+              ]
+            },
+            {
+              "number": 11,
+              "name": "Épisode 11",
+              "overview": "Une explosion, comme un écho du passé, ravage le pavillon royal. Tandis que Hui-ju protège le grand-prince et traque un ennemi dans l'ombre, le grand-prince ose enfin révéler un secret inavoué de longue date.",
+              "air_date": "2026-05-15",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/790VZKjrFjYYP"
+                }
+              ]
+            },
+            {
+              "number": 12,
+              "name": "Épisode 12",
+              "overview": "N'en déplaise aux plus pessimistes, aucun obstacle n'est insurmontable. Hui-ju et le prince Ian se dressent contre ceux qui ont imposé ces contraintes pour créer un monde où chacun est libre de poursuivre ses désirs.",
+              "air_date": "2026-05-16",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/KW1kJkCQK5RKC"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "sources": [],
+      "addedAt": 1792019052334,
+      "langs": [
+        "VOSTFR",
+        "VF"
+      ],
+      "aka": [
+        "Perfect Crown",
+        "21世纪大君夫人",
+        "21世紀大君夫人",
+        "A Coroa Perfeita",
+        "21世紀の大君夫人",
+        "La corona perfecta",
+        "Дружина принца XXI століття",
+        "รักนี้มงลง",
+        "التاج المثالي",
+        "Dokonalá koruna",
+        "Khế Ước Hoàng Gia",
+        "Перфектната корона",
+        "Жена принца XXI века",
+        "تاج بی نقص",
+        "כתר מושלם",
+        "A Esposa do Grande Príncipe do Século 21",
+        "אשת הנסיך הגדול: ההכתרה המושלמת",
+        "21segi Daegun Buin",
+        "21st Century Grand Prince's Wife",
+        "Wife of a 21st Century Prince",
+        "21세기 대군부인"
+      ]
+    },
+    {
+      "id": "m1058424",
+      "type": "movie",
+      "name": "Hope",
+      "original_name": "호프",
+      "year": "2026",
+      "overview": "Alors que les secours sont mobilisés ailleurs et que toute communication est interrompue, les habitants de Hope doivent faire face seuls à une menace grandissante. Tandis que certains tentent de protéger le village, d’autres s’aventurent dans la montagne… mais deviennent à leur tour des proies. L’ignorance et la peur déclenchent une spirale incontrôlable aux conséquences dévastatrices.",
+      "genres": [
+        "Science-Fiction",
+        "Mystère",
+        "Action"
+      ],
+      "rating": "7.2",
+      "pop": 191.1737,
+      "status": "Released",
+      "runtime": 160,
+      "poster": "https://image.tmdb.org/t/p/w500/tGdFDoA9qyt0t6Qr9MFnOl8Z2Jz.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/w1280/xBcKnWJHodUpvzUVIWTuNMnvEwl.jpg",
+      "cast": [
+        {
+          "name": "Hwang Jung-min",
+          "character": "Go Bum-seok"
+        },
+        {
+          "name": "조인성",
+          "character": "Go Sung-ki"
+        },
+        {
+          "name": "Jung Ho-Yeon",
+          "character": "Lim Sung-ae"
+        },
+        {
+          "name": "Alicia Vikander",
+          "character": "J'aur"
+        },
+        {
+          "name": "Michael Fassbender",
+          "character": "Ma'veyyo"
+        },
+        {
+          "name": "Taylor Russell",
+          "character": "Ai'dovor"
+        },
+        {
+          "name": "Cameron Britton",
+          "character": "Va'migere"
+        },
+        {
+          "name": "Lee Sang-hee",
+          "character": "Nak-yeon"
+        },
+        {
+          "name": "음문석",
+          "character": "Yang-bae"
+        },
+        {
+          "name": "임현식",
+          "character": "Hae-sul"
+        },
+        {
+          "name": "Hwang Seok-jeong",
+          "character": "Head of Health Center"
+        },
+        {
+          "name": "Han Woo-yeol",
+          "character": "Wan-seob"
+        }
+      ],
+      "seasons": [],
+      "sources": [
+        {
+          "name": "VIDARA (VFQ)",
+          "url": "https://vidara.to/e/BzHQVFDTYsM7q"
+        },
+        {
+          "name": "UQLOAD",
+          "url": "https://uqload.vc/embed-bauoh90lty4u.html"
+        }
+      ],
+      "addedAt": 1792082586790,
+      "langs": [
+        "VOSTFR",
+        "VF"
+      ],
+      "aka": [
+        "Hope",
+        "希望",
+        "Witajcie w Hope",
+        "Надія",
+        "Hope: El primer impacto",
+        "Добро дошли у Хоуп",
+        "Надежда",
+        "希望：末日血戰",
+        "أمل",
+        "HOPE：逆襲希望港",
+        "Vilties uostas",
+        "Hope: O Primeiro Impacto",
+        "Хоуп",
+        "Hope: Vùng Tử Địa",
+        "โฮป",
+        "იმედი",
+        "Cerības osta",
+        "תקווה",
+        "Dobro došli u Hope",
+        "Hope - Remény",
+        "Ümid",
+        "Hope: Atacul final",
+        "امید",
+        "湖浦港",
+        "ចម្បាំងបង្ហូរឈាមអវសានលោក",
+        "הופ",
+        "Espoir",
+        "Hopeu",
+        "호프"
+      ],
+      "trend": 96
+    },
+    {
+      "id": "305644",
+      "type": "tv",
+      "name": "Quatre mains, deux sonates",
+      "original_name": "포핸즈",
+      "year": "2026",
+      "overview": "Kang Bi-o, prodige du piano au lycée, excelle constamment en études et en virtuosité pianistique. Considéré comme une future icône de la musique classique, promis à un brillant avenir dans les plus grands concours internationaux, sa carrière bascule lorsqu'il rencontre un rival inattendu : Choi Jeong-yo. Pianiste au talent inné, Jeong-yo a renoncé à son don exceptionnel suite à une enfance difficile. Son admission soudaine au lycée des arts de Corée le met face à Bi-o, le pianiste même qui a ravivé sa passion pour le piano. Jeong-yo est alors contraint de se confronter à ce don qu'il avait autrefois abandonné, et une amitié se noue entre eux.",
+      "genres": [
+        "Drame"
+      ],
+      "rating": "9.2",
+      "pop": 25.0528,
+      "status": "Ended",
+      "poster": "https://image.tmdb.org/t/p/w500/nzghhjtKVX1n7DIMhTuQrHqeXdQ.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/w1280/fYL4I6cezb06BHhQlrNjNhy7jhf.jpg",
+      "cast": [
+        {
+          "name": "Song Kang",
+          "character": "Kang Pi-o"
+        },
+        {
+          "name": "Lee Jun-young",
+          "character": "Choi Jeong-yo"
+        },
+        {
+          "name": "장규리",
+          "character": "Hong Jae-in"
+        },
+        {
+          "name": "윤세아",
+          "character": "Kang Ji-hye"
+        },
+        {
+          "name": "Jung Jin-young",
+          "character": "Kang Seung-woon"
+        },
+        {
+          "name": "서재희",
+          "character": "Yoon Sun-joo"
+        },
+        {
+          "name": "성노진",
+          "character": "Choi Ki-taek"
+        },
+        {
+          "name": "이명로",
+          "character": "Cho Hyun-cheol"
+        },
+        {
+          "name": "김민",
+          "character": "Boss Kim"
+        },
+        {
+          "name": "김혜화",
+          "character": "Han Hyun-jung"
+        },
+        {
+          "name": "Kim Ju-hun",
+          "character": "Do Hyeon-su"
+        },
+        {
+          "name": "Lee Sang-jun",
+          "character": "Yoon Han-rim"
+        }
+      ],
+      "seasons": [
+        {
+          "number": 1,
+          "name": "Saison 1",
+          "episodes": [
+            {
+              "number": 1,
+              "name": "Épisode 1",
+              "overview": "Kang Pi-o is known around school as an unrivaled talent — until he meets the mysterious Choi Jeong-yo and realizes he may have finally met his match.",
+              "air_date": "2026-08-29",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/ohzEDomqEreFp"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/hIetlWRx1BeC7"
+                }
+              ]
+            },
+            {
+              "number": 2,
+              "name": "Épisode 2",
+              "overview": "With Jeong-yo now his classmate, a bitter Pi-o keeps his distance. But when the two are tasked with a joint performance, Pi-o finds himself warming up.",
+              "air_date": "2026-08-30",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/XCNKuBxl2cuA2"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/FS1cR2ed7YUWU"
+                }
+              ]
+            },
+            {
+              "number": 3,
+              "name": "Épisode 3",
+              "overview": "When crisis strikes right before the joint stage, Pi-o improvises a fix — only to wonder if it was a mistake when Jeong-yo's skills outshine his own.",
+              "air_date": "2026-09-05",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/lPxNEpn0zBWGO"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/b9gSOaqAPdDCF"
+                }
+              ]
+            },
+            {
+              "number": 4,
+              "name": "Épisode 4",
+              "overview": "With Pi-o determined to reclaim his love for music, Jeong-yo shows Pi-o how to have fun on the piano. Jeong-yo's family troubles catch up to him.",
+              "air_date": "2026-09-06",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/n7JxEHraWahct"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/4WbHDkwe4XKJe"
+                }
+              ]
+            },
+            {
+              "number": 5,
+              "name": "Épisode 5",
+              "overview": "Intent on proving himself, Pi-o joins the Prague Harmonie International Competition and asks Jeong-yo to join too. Pi-o's obsessive practice takes a toll.",
+              "air_date": "2026-09-12",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/dSUzFCU25R6UN"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/u40BvdLaFHfT9"
+                }
+              ]
+            },
+            {
+              "number": 6,
+              "name": "Épisode 6",
+              "overview": "Years later, Pi-o is successful and world-renowned — but miserable. Hong Jae-in tries to let Pi-o know how she feels. Pi-o hunts down news of Jeong-yo.",
+              "air_date": "2026-09-13",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/FOTHTpm9UWuTx"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/757tyIfbbGqmA"
+                }
+              ]
+            },
+            {
+              "number": 7,
+              "name": "Épisode 7",
+              "overview": "Pi-o finds himself stuck deep in a slump, but can't seem to overcome his fears alone. Later, a familiar face suggests collaborating on a performance.",
+              "air_date": "2026-09-19",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/n3vEWDI0TDDKZ"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/VWcwMP486bUUl"
+                }
+              ]
+            },
+            {
+              "number": 8,
+              "name": "Épisode 8",
+              "overview": "Pi-o faces increasing pressure to do the joint performance, but his issues with the piano only get worse. Jeong-yo finally steps in to help.",
+              "air_date": "2026-09-20",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/2N0nzGyv49Msj"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/kB7NWo3PnFdzx"
+                }
+              ]
+            },
+            {
+              "number": 9,
+              "name": "Épisode 9",
+              "overview": "Pi-o learns the shocking truth behind Jeong-yo's kidnapping. Jeong-yo asks for Pi-o's help with a piano piece, but his harsh words leave Pi-o rattled.",
+              "air_date": "2026-09-26",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/piaKZontGk29F"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/jvvv2xBYYxa56"
+                }
+              ]
+            },
+            {
+              "number": 10,
+              "name": "Épisode 10",
+              "overview": "Pi-o realizes Jeong-yo has been hiding a huge secret. With everything revealed, Jeong-yo turns even more cruel, and Pi-o falls deeper into despair.",
+              "air_date": "2026-09-27",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/JLWW4nuWjrBnv"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/bAy04TAnjC9S2"
+                }
+              ]
+            },
+            {
+              "number": 11,
+              "name": "Épisode 11",
+              "overview": "As the Korean Symphony’s 80th anniversary concert begins, Jeong-yo and Pi-o face a turning point — but when the performance ends, only one person remains on stage.",
+              "air_date": "2026-10-03",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/Fs9vSFyPnGDDK"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/wCDPkwH5AgDvG"
+                }
+              ]
+            },
+            {
+              "number": 12,
+              "name": "Épisode 12",
+              "overview": "After painful losses, Pi-o considers leaving music behind, but Jeong-yo shares his final feelings as their last four-hands performance begins.",
+              "air_date": "2026-10-04",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/qvkhFT3ITA1Gt"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/vyliAbY5JHRmy"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "sources": [],
+      "addedAt": 1792089827752,
+      "langs": [
+        "VOSTFR"
+      ],
+      "aka": [
+        "Four Hands, Two Sonatas",
+        "四手联弹，两首奏鸣曲",
+        "Cuatro manos, dos sonatas",
+        "Duas Sonatas a Quatro Mãos",
+        "Quatro Mãos, Duas Sonatas",
+        "フォーハンズ ～2人のソナタ～",
+        "Чотири руки, дві сонати",
+        "四手聯彈，兩首奏鳴曲",
+        "สี่มือ สองท่วงทำนอง",
+        "Patru mâini, două sonate",
+        "Quatre mains, deux sonates",
+        "Четыре руки, две сонаты",
+        "Cztery ręce, dwie sonaty",
+        "ארבע ידיים, שתי סונטות",
+        "Τέσσερα Χέρια, Δύο Σονάτες",
+        "Négy kéz, két szonáta",
+        "Bốn Bàn Tay, Hai Bản Sonata",
+        "포핸즈"
+      ]
+    },
+    {
+      "id": "316197",
+      "type": "tv",
+      "name": "Dive into You",
+      "original_name": "너에게 다이브",
+      "year": "2026",
+      "overview": "Une actrice et son frère jumeau voyagent dans le temps – et échangent leurs corps – pour sauver la vie de leur ami.",
+      "genres": [
+        "Comédie",
+        "Drame",
+        "Science-Fiction & Fantastique"
+      ],
+      "rating": "8.0",
+      "pop": 16.9127,
+      "status": "Returning Series",
+      "poster": "https://image.tmdb.org/t/p/w500/21pLXbvuyfgUaAhhxkuvoX1pAN1.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/w1280/jseW3HucgNjN2CwJa3MiOlF4xMO.jpg",
+      "cast": [
+        {
+          "name": "보나",
+          "character": "Yoon Ha-na"
+        },
+        {
+          "name": "박서함",
+          "character": "Jeong Woo-jae"
+        },
+        {
+          "name": "Jang Se-hyuk",
+          "character": "Yoon Ha-ru"
+        },
+        {
+          "name": "Moon Seung-you",
+          "character": "Seo Ye-rang"
+        }
+      ],
+      "seasons": [
+        {
+          "number": 1,
+          "name": "Saison 1",
+          "episodes": [
+            {
+              "number": 1,
+              "name": "Épisode 1",
+              "overview": "After Woo-jae’s death, Ha-na begins traveling through time. She finally reunites with Woo-jae, but when he looks at her, he doesn’t see Ha-na—he sees Ha-ru.",
+              "air_date": "2026-09-26",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/5YXxZiybnWGFQ"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/OUMCEnlPAqzMU"
+                },
+                {
+                  "name": "UQLOAD",
+                  "url": "https://uqload.vc/embed-c49jps70wbmu.html"
+                }
+              ]
+            },
+            {
+              "number": 2,
+              "name": "Épisode 2",
+              "overview": "With their bodies mysteriously swapped, the twins hatch a plan to save Woo-jae. But to change his fate, they must first turn him into a national team athlete.",
+              "air_date": "2026-09-27",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/G7RAaPCAZqPIV"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/OBPx6KJaAQbkS"
+                },
+                {
+                  "name": "UQLOAD",
+                  "url": "https://uqload.vc/embed-l5pewc05t1xp.html"
+                }
+              ]
+            },
+            {
+              "number": 3,
+              "name": "Épisode 3",
+              "overview": "Even after changing the past, Woo-jae dies again while saving Ha-na. As Ha-na falls into despair, Ha-ru suggests a new way to change their fate.",
+              "air_date": "2026-10-03",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/YVAMUlgvZT9Sn"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/HRRG2TzLutO17"
+                },
+                {
+                  "name": "UQLOAD",
+                  "url": "https://uqload.vc/embed-y5dwrdf5g0j1.html"
+                }
+              ]
+            },
+            {
+              "number": 4,
+              "name": "Épisode 4",
+              "overview": "Woo-jae becomes a judo champion but is confused when he starts developing feelings for Ha-na in Ha-ru’s body.",
+              "air_date": "2026-10-04",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/9y8cAiISS2MT3"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/rvl5l1ggDZ8xl"
+                },
+                {
+                  "name": "UQLOAD",
+                  "url": "https://uqload.vc/embed-1m73oweb3xx7.html"
+                }
+              ]
+            },
+            {
+              "number": 5,
+              "name": "Épisode 5",
+              "overview": "The twins travel back to their college days and regain their original bodies. After discovering Woo-jae is majoring in security and protection, they search for a way to change the future.",
+              "air_date": "2026-10-10",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/nQdHtHc3D14Au"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/x8WdVygQYIU6c"
+                },
+                {
+                  "name": "UQLOAD",
+                  "url": "https://uqload.vc/embed-yxc47s2v5p7c.html"
+                }
+              ]
+            },
+            {
+              "number": 6,
+              "name": "Épisode 6",
+              "overview": "A love triangle forms as Woo-jae and Hyeong-won compete for the same person, while someone discovers the twins’ secret of time travel.",
+              "air_date": "2026-10-11",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/hs5DmaOKYRpji"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/GlVKFE0c6DpEo"
+                },
+                {
+                  "name": "UQLOAD",
+                  "url": "https://uqload.vc/embed-logymxhaafxc.html"
+                }
+              ]
+            },
+            {
+              "number": 7,
+              "name": "Épisode 7",
+              "overview": "",
+              "air_date": "2026-10-17",
+              "sources": []
+            },
+            {
+              "number": 8,
+              "name": "Épisode 8",
+              "overview": "",
+              "air_date": "2026-10-18",
+              "sources": []
+            },
+            {
+              "number": 9,
+              "name": "Épisode 9",
+              "overview": "",
+              "air_date": "2026-10-24",
+              "sources": []
+            },
+            {
+              "number": 10,
+              "name": "Épisode 10",
+              "overview": "",
+              "air_date": "2026-10-25",
+              "sources": []
+            },
+            {
+              "number": 11,
+              "name": "Épisode 11",
+              "overview": "",
+              "air_date": "2026-10-31",
+              "sources": []
+            },
+            {
+              "number": 12,
+              "name": "Épisode 12",
+              "overview": "",
+              "air_date": "2026-11-01",
+              "sources": []
+            }
+          ]
+        }
+      ],
+      "sources": [],
+      "addedAt": 1792090157440,
+      "langs": [
+        "VOSTFR"
+      ],
+      "aka": [
+        "再次奔向你",
+        "Dive into You",
+        "De volta para você",
+        "向你跳水",
+        "Volveré Por Ti",
+        "君へダイブ",
+        "Потопете се в себе си",
+        "ดิ่งลึกสู่ใจเธอ",
+        "الغوص في حبك",
+        "Погружение к тебе",
+        "向你Dive",
+        "潜入你心",
+        "Погружаясь в тебя",
+        "너에게 다이브"
+      ]
+    },
+    {
+      "id": "314939",
+      "type": "tv",
+      "name": "Un autre amour que le tien",
+      "original_name": "너 말고 다른 연애",
+      "year": "2026",
+      "overview": "Une romance réaliste et touchante sur un couple qui, après dix ans de vie commune, voit sa relation confortable bouleversée par des sentiments inattendus.",
+      "genres": [
+        "Drame",
+        "Comédie"
+      ],
+      "rating": "6.3",
+      "pop": 41.154,
+      "status": "Returning Series",
+      "poster": "https://image.tmdb.org/t/p/w500/lu3tuzFl4c6rx1WcoLOGZlkTjaw.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/original/moUjiEzpJVNZc7hyNRBbLPt0CPX.jpg",
+      "cast": [
+        {
+          "name": "Seo Kang-joon",
+          "character": "Namgung Ho"
+        },
+        {
+          "name": "Ahn Eun-jin",
+          "character": "Lee Mi-do"
+        },
+        {
+          "name": "Lee Joo-ahn",
+          "character": "Han Tae-seung"
+        },
+        {
+          "name": "Jo A-ram",
+          "character": "Park Soo-ah"
+        },
+        {
+          "name": "이민재",
+          "character": "Lee Wan-do"
+        },
+        {
+          "name": "Kim Nam-hee",
+          "character": "Lee Young-do"
+        },
+        {
+          "name": "Kim Mi-kyung",
+          "character": "Ma Suk-hee"
+        },
+        {
+          "name": "Kwak Si-yang",
+          "character": "Seo Joo-hyuk"
+        },
+        {
+          "name": "허지나",
+          "character": "Ko Moon-young"
+        },
+        {
+          "name": "Lee Jun-hyeok",
+          "character": "Eom Ho-sik"
+        },
+        {
+          "name": "천이슬",
+          "character": "Oh Yeon-ju"
+        },
+        {
+          "name": "송지우",
+          "character": "Song Hae-na"
+        }
+      ],
+      "seasons": [
+        {
+          "number": 1,
+          "name": "Saison 1",
+          "episodes": [
+            {
+              "number": 1,
+              "name": "Dix ans ensemble : mariage ou rupture ?",
+              "overview": "Namgung et Mi-do se sont rencontrés à sept ans et sont sortis ensemble à vingt-six. Après dix ans ensemble, l'amour qu'ils croyaient éternel commence à vaciller sous le poids du temps. Alors que leur relation évolue, ils doivent affronter les réalités de l'amour et de la vie.",
+              "air_date": "2026-09-12",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/hbnOPoWNxJrp0"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/8hPXJmRQQaTTC"
+                },
+                {
+                  "name": "UQLOAD",
+                  "url": "https://uqload.vc/embed-lu6fpdz9205l.html"
+                }
+              ]
+            },
+            {
+              "number": 2,
+              "name": "Peut-on redevenir des inconnus ?",
+              "overview": "Après dix ans ensemble, Mi-do et Namgung peinent à surmonter leur rupture. Même participer à un événement romantique ne parvient pas à raviver leur flamme, mais les souvenirs de leur amour continuent de les ramener l'un vers l'autre.",
+              "air_date": "2026-09-13",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/bC6TJm3DgbbKe"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/bQOJsvf2M7Rc2"
+                },
+                {
+                  "name": "UQLOAD",
+                  "url": "https://uqload.vc/embed-fuxcci4g5jjg.html"
+                }
+              ]
+            },
+            {
+              "number": 3,
+              "name": "Peut-on retrouver cette passion ?",
+              "overview": "Une romance réaliste et touchante sur un couple qui, après dix ans de vie commune, voit sa relation confortable bouleversée par des sentiments inattendus.",
+              "air_date": "2026-09-19",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/IZtGFoRm8TH8n"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/RfPzcR4oIHMU0"
+                },
+                {
+                  "name": "UQLOAD",
+                  "url": "https://uqload.vc/embed-pv2u7h8v5bj3.html"
+                }
+              ]
+            },
+            {
+              "number": 4,
+              "name": "Rêvons-nous du même avenir ?",
+              "overview": "Une romance réaliste et touchante sur un couple qui, après dix ans de vie commune, voit sa relation confortable bouleversée par des sentiments inattendus.",
+              "air_date": "2026-09-20",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/sUjzbTLyZ1dYM"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/J6jceidU6vKVS"
+                },
+                {
+                  "name": "UQLOAD",
+                  "url": "https://uqload.vc/embed-e0od46ai4l1v.html"
+                }
+              ]
+            },
+            {
+              "number": 5,
+              "name": "Are There Any Untold Stories Between Us?",
+              "overview": "Mi-do is shocked after waking up at Tae-seung's office. Meanwhile, Namgung notices a mysterious caller on Mi-do's phone and becomes uneasy. As always, the two pretend everything is fine for each other's sake. But the more they try to protect the relationship, the deeper their secrets become.",
+              "air_date": "2026-10-03",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/EDj2DpUmfm0vz"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/TlxrUpqHsskXb"
+                },
+                {
+                  "name": "UQLOAD",
+                  "url": "https://uqload.vc/embed-t7rabjjuvupp.html"
+                }
+              ]
+            },
+            {
+              "number": 6,
+              "name": "Who Is Our Best Hero?",
+              "overview": "Mi-do deeply regrets what happened that day. Meanwhile, Namgung plans something to cheer her up. But unexpected visitors at his workplace push things in an unforeseen direction.",
+              "air_date": "2026-10-04",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/cwy4ONBhR27hF"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/qXDCwnEd0FuBO"
+                },
+                {
+                  "name": "UQLOAD",
+                  "url": "https://uqload.vc/embed-fr4qcr0y3rz3.html"
+                }
+              ]
+            },
+            {
+              "number": 7,
+              "name": "Are We Allies or Enemies?",
+              "overview": "Namgung learns the truth about what happened that day, and the deep trust between the couple begins to unravel. Meanwhile, pressured by Ju-hyeok, Tae-seung makes an unexpected decision as his feelings for Mi-do deepen. At the same time, Su-a relentlessly pursues Namgung while investigating the sweet potato corruption scandal.",
+              "air_date": "2026-10-10",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/yNeh8FwYpAdbY"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/ysHmvhnEFX3G5"
+                },
+                {
+                  "name": "UQLOAD",
+                  "url": "https://uqload.vc/embed-eagin2y2p6nr.html"
+                }
+              ]
+            },
+            {
+              "number": 8,
+              "name": "What Remains of Our Passionate Love?",
+              "overview": "Namgung and Mi-do confront emotions they have long suppressed for each other's sake. As their pain pulls them in different directions, they come up with a bold proposal that could upend their relationship.",
+              "air_date": "2026-10-11",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/B4ChfZOi4AilX"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/X8tlikfJLKOhR"
+                },
+                {
+                  "name": "UQLOAD",
+                  "url": "https://uqload.vc/embed-rrm24ry2h8p3.html"
+                }
+              ]
+            },
+            {
+              "number": 9,
+              "name": "Épisode 9",
+              "overview": "",
+              "air_date": "2026-10-17",
+              "sources": []
+            },
+            {
+              "number": 10,
+              "name": "Épisode 10",
+              "overview": "",
+              "air_date": "2026-10-18",
+              "sources": []
+            },
+            {
+              "number": 11,
+              "name": "Épisode 11",
+              "overview": "",
+              "air_date": "2026-10-24",
+              "sources": []
+            },
+            {
+              "number": 12,
+              "name": "Épisode 12",
+              "overview": "",
+              "air_date": "2026-10-25",
+              "sources": []
+            },
+            {
+              "number": 13,
+              "name": "Épisode 13",
+              "overview": "",
+              "air_date": "2026-10-31",
+              "sources": []
+            },
+            {
+              "number": 14,
+              "name": "Épisode 14",
+              "overview": "",
+              "air_date": "2026-11-01",
+              "sources": []
+            }
+          ]
+        }
+      ],
+      "sources": [],
+      "addedAt": 1792092943222,
+      "langs": [
+        "VOSTFR",
+        "VF"
+      ],
+      "aka": [
+        "不是你的恋爱",
+        "Um Amor Diferente do Seu",
+        "A Love Other Than Yours",
+        "Кохання, але не з тобою/ Кохання поза нами",
+        "Eine andere Liebe als deine",
+        "Un amor distinto al tuyo",
+        "Un autre amour que le tien",
+        "Un amore diverso dal tuo",
+        "Másféle szerelem",
+        "Miłość inna niż ty",
+        "O iubire alta decât a ta",
+        "Senden Başka Bir Aşk",
+        "Láska jiná než tvá",
+        "Μια Αγάπη Διαφορετική από τη Δική σου",
+        "حُبٌّ آخَر غَير حُبِّك",
+        "अ लव अदर देन योर्स",
+        "เมื่อหัวใจมีใครอีกคน",
+        "あなたとは違う恋愛",
+        "除了你之外的戀愛",
+        "Любовь, но не с тобой",
+        "除了你之外的恋爱",
+        "君以外の恋愛",
+        "Neo Malgo Dareun Yeonae",
+        "不是和你談的戀愛",
+        "Not You, Another Love",
+        "너 말고 다른 연애"
+      ]
+    },
+    {
+      "id": "290193",
+      "type": "tv",
+      "name": "Comme un rat",
+      "original_name": "들쥐",
+      "aka": [
+        "Mousetrap",
+        "鼠惑",
+        "O Rato",
+        "なりすましの鼠",
+        "Mousetrap - Identità rubata",
+        "مصيدة فئران",
+        "Mišolovka",
+        "הפיתיון",
+        "Щуроловка",
+        "Ποντικοπαγίδα",
+        "Bẫy chuột",
+        "Myšilov",
+        "กับดักจับลวง",
+        "Ratonera",
+        "Egérfogó",
+        "Pułapka na myszy",
+        "Ratoeira",
+        "Șobolanul",
+        "මවුස්ට්‍රැප්",
+        "माउसट्रैप",
+        "Comme un rat",
+        "Мишката в капана",
+        "تله موش",
+        "Полёвка",
+        "ماؤسٹریپ",
+        "სათაგური",
+        "Охота на двойника",
+        "Охота на двойника, Мышеловка",
+        "The Rat",
+        "들쥐"
+      ],
+      "year": "2026",
+      "overview": "Un écrivain reclus découvre à son réveil que son identité a été volée. Il doit alors s'allier avec un usurier impitoyable pour traquer le Rat, l'inconnu qui a saccagé sa vie.",
+      "genres": [
+        "Crime",
+        "Drame",
+        "Mystère"
+      ],
+      "rating": "8.1",
+      "pop": 16.7832,
+      "status": "Ended",
+      "poster": "https://image.tmdb.org/t/p/w500/7J2jPfh45mOyXTiycPpfoiYQAfv.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/original/3bHz9dYSZ5XDxY0zDaBpYgUOhE2.jpg",
+      "cast": [
+        {
+          "name": "Ryu Jun-yeol",
+          "character": "Je Moon-jae / The Rat"
+        },
+        {
+          "name": "Sul Kyung-gu",
+          "character": "Noja"
+        },
+        {
+          "name": "Lee Kyu-hyung",
+          "character": "Sun-yong"
+        },
+        {
+          "name": "Kim Seung-oh",
+          "character": "Seung-gyu"
+        },
+        {
+          "name": "Hyun Bong-sik",
+          "character": "Myung-su"
+        },
+        {
+          "name": "Moo Jin-sung",
+          "character": "Son Su-hyun"
+        }
+      ],
+      "seasons": [
+        {
+          "number": 1,
+          "name": "Saison 1",
+          "episodes": [
+            {
+              "number": 1,
+              "name": "Épisode 1",
+              "overview": "Je Moon-jae, un écrivain solitaire de génie qui se tient à l'écart du monde, voit son identité volée. Il doit alors faire face à son double.",
+              "air_date": "2026-08-28",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/XNraEcYnaTmWg"
+                }
+              ]
+            },
+            {
+              "number": 2,
+              "name": "Épisode 2",
+              "overview": "Noja découvre le monde du blanchiment d'identité quand Moon-jae lui file entre les doigts. De son côté, le détective Park Sun-yong met au jour le lien qui les unit.",
+              "air_date": "2026-08-28",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/07p49axke0OHs"
+                }
+              ]
+            },
+            {
+              "number": 3,
+              "name": "Épisode 3",
+              "overview": "À la fois méfiant et intrigué, Noja fait de Moon-jae son client et son otage. À travers cette alliance précaire, ils préparent leur plan méticuleusement.",
+              "air_date": "2026-08-28",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/uAEAbxFY8cJTp"
+                }
+              ]
+            },
+            {
+              "number": 4,
+              "name": "Épisode 4",
+              "overview": "Moon-jae soupçonne le Rat de venir tout droit de son passé. Après avoir retrouvé la mémoire, il se rend sur l'île où l'homme vivait autrefois, accompagné de Noja.",
+              "air_date": "2026-08-28",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/w9BNkyT1fOurJ"
+                }
+              ]
+            },
+            {
+              "number": 5,
+              "name": "Épisode 5",
+              "overview": "Un lien choquant entre Noja et le Rat est révélé, tandis que Sun-yong est sur le point d'obtenir une preuve cruciale. Le Rat fait une apparition publique pour acculer Moon-jae.",
+              "air_date": "2026-08-28",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/bID89BIhgr2t2"
+                }
+              ]
+            },
+            {
+              "number": 6,
+              "name": "Épisode 6",
+              "overview": "Moon-jae contacte son ancienne éditrice dans l'espoir de se voir innocenté. Perplexe, il se raccroche à un message envoyé par Noja.",
+              "air_date": "2026-08-28",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/SOne2Vp9Rza1Z"
+                }
+              ]
+            },
+            {
+              "number": 7,
+              "name": "Épisode 7",
+              "overview": "Après s'être échappé de justesse, Moon-jae se lance à la recherche d'une personne capable de révéler son identité. Sun-yong découvre une vérité troublante sur son passé.",
+              "air_date": "2026-08-28",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/vaEz4zTMQ0Qi8"
+                }
+              ]
+            },
+            {
+              "number": 8,
+              "name": "Épisode 8",
+              "overview": "Les ennuis continuent pour Moon-jae. En quête de réponses, Sun-yong se rend dans un hospice, mais son témoin a disparu. Plus tard, le passé de Noja l'envoie six pieds sous terre.",
+              "air_date": "2026-08-28",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/kYOIPa81A0bq2"
+                }
+              ]
+            },
+            {
+              "number": 9,
+              "name": "Épisode 9",
+              "overview": "Moon-jae échappe à la police pour retrouver le Rat là où tout a commencé. Noja lui offre un conseil précieux tandis que Sun-yong est toujours à la recherche d'un témoin clé.",
+              "air_date": "2026-08-28",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/FRqAqPlSFGmCt"
+                }
+              ]
+            },
+            {
+              "number": 10,
+              "name": "Épisode 10",
+              "overview": "Moon-jae se retrouve en plein cœur du piège de toute une vie. Alors que chaque mensonge et identité volée refont surface, il s'interroge : est-il le prédateur ou la proie ?",
+              "air_date": "2026-08-28",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/2sqo3MWDLE1Gb"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "sources": [],
+      "addedAt": 1792095503552,
+      "langs": [
+        "VOSTFR",
+        "VF"
+      ]
+    },
+    {
+      "id": "296140",
+      "type": "tv",
+      "name": "My Bias, My Boss",
+      "original_name": "최애의 사원",
+      "aka": [
+        "My Bias, My Boss",
+        "我的偶像总裁",
+        "Mi ídolo, mi jefe",
+        "最愛の社員",
+        "Meu Idol é Meu Chefe",
+        "เมื่อเมนฉันเป็นประธานบริษัท",
+        "Bias tôi, sếp của tôi",
+        "我的偶像總裁",
+        "Любимая сотрудница",
+        "Moj idol, moj šef",
+        "مفضلي ومديري",
+        "My Bias, My Bows",
+        "האיידול שלי, הבוס שלי",
+        "最爱的社员",
+        "My Bias My Boss",
+        "העובדת המועדפת עליי",
+        "우리 오빠는 아이돌",
+        "Choi-ae-ui Sa-won",
+        "Choae-ui Sawon",
+        "Мой босс, мой герой",
+        "My Oppa is an Idol",
+        "My Favorite Employee",
+        "최애의 사원"
+      ],
+      "year": "2026",
+      "overview": "Une fan inconditionnelle décroche un poste dans une entreprise de mode, pour découvrir peu après que celle-ci a été cofondée par son idole absolue. Bien décidée à rester professionnelle, elle dissimule son identité de fan, mais se laisse rapidement déstabiliser par le PDG de l’entreprise, un véritable bourreau de travail. Alors que des sentiments amoureux secrets et non réciproques ainsi que des difficultés personnelles soigneusement cachées viennent compliquer les relations entre les trois protagonistes, elle se retrouve tiraillée entre son obsession de toujours et une nouvelle relation aussi inattendue que troublante.",
+      "genres": [
+        "Comédie",
+        "Drame"
+      ],
+      "rating": "8.2",
+      "pop": 11.4831,
+      "status": "Ended",
+      "poster": "https://image.tmdb.org/t/p/w500/b5jBoSQ7CW1zDJURuctD30mATuO.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/original/eBD46F44qKGPZiRLffO4q3JF8Hc.jpg",
+      "cast": [
+        {
+          "name": "강훈",
+          "character": "Kang Ha-gi"
+        },
+        {
+          "name": "Kim Hye-jun",
+          "character": "Nam Da-reum"
+        },
+        {
+          "name": "차우민",
+          "character": "Lee Chan"
+        },
+        {
+          "name": "유나",
+          "character": "Yoon Choi"
+        },
+        {
+          "name": "천우진",
+          "character": "Roy"
+        },
+        {
+          "name": "윤현석",
+          "character": "Hyeok"
+        },
+        {
+          "name": "백승",
+          "character": "Tae-oh"
+        },
+        {
+          "name": "Jung Hyun Min",
+          "character": "Ji-nu"
+        },
+        {
+          "name": "공지호",
+          "character": "Park Mi-mi"
+        },
+        {
+          "name": "Kim Ah-young",
+          "character": "Lee Seul-ah"
+        },
+        {
+          "name": "Hwang Seong-bin",
+          "character": "Kim Min-woo"
+        },
+        {
+          "name": "Heo Joon-seok",
+          "character": "Choi Seong-wook"
+        }
+      ],
+      "seasons": [
+        {
+          "number": 1,
+          "name": "Saison 1",
+          "episodes": [
+            {
+              "number": 1,
+              "name": "Épisode 1",
+              "overview": "To work beside her idol, Da-reum joins a startup but instead faces a prickly, suspicious CEO.",
+              "air_date": "2026-08-03",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/DsUFfC8SaMz92"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/nxg7197xednGp"
+                },
+                {
+                  "name": "UQLOAD",
+                  "url": "https://uqload.vc/embed-5lew37brg8r6.html"
+                }
+              ]
+            },
+            {
+              "number": 2,
+              "name": "Épisode 2",
+              "overview": "Da-reum aims to be employee of the year in order to travel with her idol, Chan, but her enthusiasm only triggers her CEO's deep suspicions.",
+              "air_date": "2026-08-04",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/BOzp4HWpecTMN"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/8NaSCJxhg7C2H"
+                },
+                {
+                  "name": "UQLOAD",
+                  "url": "https://uqload.vc/embed-f3ciqd9luuht.html"
+                }
+              ]
+            },
+            {
+              "number": 3,
+              "name": "Épisode 3",
+              "overview": "Da-reum makes a shocking confession.",
+              "air_date": "2026-08-10",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/l0Cu1TJoIpWsu"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/8vgDa4DRgkKUu"
+                },
+                {
+                  "name": "UQLOAD",
+                  "url": "https://uqload.vc/embed-gq3ndc4ohvz1.html"
+                }
+              ]
+            },
+            {
+              "number": 4,
+              "name": "Épisode 4",
+              "overview": "Da-reum finds herself caught in a love triangle.",
+              "air_date": "2026-08-11",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/jxJf5HYr8jttm"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/Ac7ce4FlLXso5"
+                },
+                {
+                  "name": "UQLOAD",
+                  "url": "https://uqload.vc/embed-4cj9lgbhicxp.html"
+                }
+              ]
+            },
+            {
+              "number": 5,
+              "name": "Épisode 5",
+              "overview": "Ha-gi and Da-reum grow closer on a secret business trip.",
+              "air_date": "2026-08-17",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/iB6lsVBk2l1TQ"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/nQzCCoBBFaQ8W"
+                },
+                {
+                  "name": "UQLOAD",
+                  "url": "https://uqload.vc/embed-h2qre1nqompb.html"
+                }
+              ]
+            },
+            {
+              "number": 6,
+              "name": "Épisode 6",
+              "overview": "A major shift changes everything after the season's first snow.",
+              "air_date": "2026-08-18",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/JtovdTElvavMQ"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/YwQWGJ8aV5xdI"
+                },
+                {
+                  "name": "UQLOAD",
+                  "url": "https://uqload.vc/embed-yoke9und8u7a.html"
+                }
+              ]
+            },
+            {
+              "number": 7,
+              "name": "Épisode 7",
+              "overview": "Ha-gi prepares to confess his true feelings -- only to be blindsided at the crucial moment.",
+              "air_date": "2026-08-24",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/XtqLHEw1Hyo52"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/21YU7Cm3ngxhL"
+                },
+                {
+                  "name": "UQLOAD",
+                  "url": "https://uqload.vc/embed-edwqqesvnlee.html"
+                }
+              ]
+            },
+            {
+              "number": 8,
+              "name": "Épisode 8",
+              "overview": "A harsh boycott throws the company into chaos.",
+              "air_date": "2026-08-25",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/ALmZYFwmgNa99"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/nb1hjNrhCT1yv"
+                },
+                {
+                  "name": "UQLOAD",
+                  "url": "https://uqload.vc/embed-tzopl1fw19zc.html"
+                }
+              ]
+            },
+            {
+              "number": 9,
+              "name": "Épisode 9",
+              "overview": "Ha-gi and Da-reum's secret office romance is put to the test.",
+              "air_date": "2026-08-31",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/VQaCoqxYkB0e1"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/2FXIaMBs7BIjj"
+                },
+                {
+                  "name": "UQLOAD",
+                  "url": "https://uqload.vc/embed-0g8au3yzkfz0.html"
+                }
+              ]
+            },
+            {
+              "number": 10,
+              "name": "Épisode 10",
+              "overview": "Jeong-yeon's return sparks jealousy, while a shocking discovery pushes Da-reum to the edge.",
+              "air_date": "2026-09-01",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/qes3cIQOYHyTE"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/L1F4gWJIXbwRW"
+                },
+                {
+                  "name": "UQLOAD",
+                  "url": "https://uqload.vc/embed-cbqzntu1lcfy.html"
+                }
+              ]
+            },
+            {
+              "number": 11,
+              "name": "Épisode 11",
+              "overview": "A mole shatters the company, driving a betrayed Ha-gi to vanish.",
+              "air_date": "2026-09-07",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/IlTWfviMCdKWw"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/jMuDd9MdpIJlw"
+                },
+                {
+                  "name": "UQLOAD",
+                  "url": "https://uqload.vc/embed-ajrffr4ie0wj.html"
+                }
+              ]
+            },
+            {
+              "number": 12,
+              "name": "Épisode 12",
+              "overview": "Da-reum receives a life-changing offer while D.N.X reunites onstage.",
+              "air_date": "2026-09-08",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/q7g5FsXIXmfcj"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/8zruzmBoFSG5y"
+                },
+                {
+                  "name": "UQLOAD",
+                  "url": "https://uqload.vc/embed-iv05rz9sn9v6.html"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "sources": [],
+      "addedAt": 1792105780104,
+      "langs": [
+        "VOSTFR"
+      ]
+    }
+  ]
+}
