@@ -497,6 +497,23 @@ footer .wrap.about { display: grid; grid-template-columns: repeat(auto-fit, minm
 .dllink { border: 1px solid var(--line); padding: 12px; font-size: 13px; word-break: break-all; user-select: all; color: var(--dim); margin-bottom: 16px; }
 .dlbtns { display: flex; gap: 10px; flex-wrap: wrap; }
 .dlbtns .btn { flex: 1; text-align: center; justify-content: center; }
+@keyframes dlfade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes dlpop { from { opacity: 0; transform: translateY(18px) scale(.94); } to { opacity: 1; transform: none; } }
+@keyframes dlitem { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+.dlmodal { animation: dlfade .2s ease-out; backdrop-filter: blur(4px); }
+.dlmodal:not([hidden]) .dlcard { animation: dlpop .28s cubic-bezier(.2,.9,.3,1.2); }
+.dlmodal:not([hidden]) .dlcard > * { animation: dlitem .3s ease-out backwards; }
+.dlmodal:not([hidden]) .dlcard > :nth-child(3) { animation-delay: .05s; }
+.dlmodal:not([hidden]) .dlcard > :nth-child(4) { animation-delay: .1s; }
+.dlmodal:not([hidden]) .dlcard > :nth-child(5) { animation-delay: .15s; }
+.dlx { transition: transform .2s; }
+.dlx:hover { transform: rotate(90deg); }
+.dllink { transition: border-color .2s, color .2s; }
+.dllink:hover { border-color: var(--fg); color: var(--fg); }
+.dlbtns .btn { transition: transform .15s, background .2s, color .2s; }
+.dlbtns .btn:active { transform: scale(.96); }
+.dlbtns .btn.ok { background: var(--fg); color: var(--bg); animation: dlpop .25s ease-out; }
+@media (prefers-reduced-motion: reduce) { .dlmodal, .dlcard, .dlcard > * { animation: none !important; } }
 .burger { display: none; }
 @media (max-width: 720px) {
   .burger { display: grid; place-items: center; margin-left: auto; width: 44px; height: 44px; padding: 0; background: transparent; border: 1px solid var(--fg); border-radius: 0; cursor: pointer; transition: background .2s, color .2s; }
@@ -1186,7 +1203,7 @@ document.addEventListener("click", function (e) {
       return;
     }
     if (e.target === box || e.target.id === "dlm-x") close();
-    else if (e.target.id === "dlm-copy") copy(box.dataset.url).then(function () { toast("Lien copié"); }, function () { toast("Copie impossible, sélectionne le lien à la main"); });
+    else if (e.target.id === "dlm-copy") copy(box.dataset.url).then(function () { toast("Lien copié"); var cb = $("#dlm-copy"); cb.textContent = "Copié ✓"; cb.classList.add("ok"); clearTimeout(cb.t); cb.t = setTimeout(function () { cb.textContent = "Copier le lien"; cb.classList.remove("ok"); }, 1600); }, function () { toast("Copie impossible, sélectionne le lien à la main"); });
     else if (e.target.id === "dlm-open") setTimeout(close, 100);
   });
   document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !box.hidden) close(); });
@@ -1694,8 +1711,16 @@ document.addEventListener("click", function (e) {
     var w = byId(t.dataset.watch); if (!w) return;
     if (isMovie(w)) { saveResume(w.id); play(w.sources, w.name); }
     else if (!(w.seasons || []).length) toast("Cette fiche n'a pas encore d'épisodes");
-    else if (location.hash === "#/serie/" + w.id) scrollSeasons();
-    else { pendingScroll = true; location.hash = "#/serie/" + w.id; }
+    else if (location.hash === "#/serie/" + w.id) {
+      dlMode = false;
+      var secW = $("#seasons"); if (secW) secW.classList.remove("dlmode");
+      document.querySelectorAll("[data-dltab]").forEach(function (x) {
+        var on = x.dataset.dltab === "watch";
+        x.classList.toggle("on", on); x.setAttribute("aria-selected", on ? "true" : "false");
+      });
+      scrollSeasons();
+    }
+    else { dlMode = false; pendingScroll = true; location.hash = "#/serie/" + w.id; }
   }
   else if (t.dataset.movsrc != null) {
     var m = t.dataset.movsrc.split("|"), mv = byId(m[0]);
