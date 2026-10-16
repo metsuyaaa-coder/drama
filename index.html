@@ -520,6 +520,12 @@ footer .wrap.about { display: grid; grid-template-columns: repeat(auto-fit, minm
 .dlbtns .btn:active { transform: scale(.96); }
 .dlbtns .btn.ok { background: var(--fg); color: var(--bg); animation: dlpop .25s ease-out; }
 @media (prefers-reduced-motion: reduce) { .dlmodal, .dlcard, .dlcard > * { animation: none !important; } }
+/* bouton Lire des épisodes : bien plus grand */
+.ep .act .btn[data-playep] { padding: 13px 34px; font-size: 16px; min-width: 130px; min-height: 48px; }
+.sres .card { animation: none; }
+@media (max-width: 720px) {
+  .ep .act .btn[data-playep] { flex: 1 1 auto; min-height: 52px; font-size: 17px; padding: 14px 28px; }
+}
 .burger { display: none; }
 @media (max-width: 720px) {
   .burger { display: grid; place-items: center; margin-left: auto; width: 44px; height: 44px; padding: 0; background: transparent; border: 1px solid var(--fg); border-radius: 0; cursor: pointer; transition: background .2s, color .2s; }
@@ -593,7 +599,7 @@ footer .wrap.about { display: grid; grid-template-columns: repeat(auto-fit, minm
   <div class="phead">
     <button class="btn small ghost" id="pclose" type="button">Retour</button>
     <div class="pt"><b id="ptitle"></b><small id="psub"></small></div>
-    <span class="row"><button class="btn small ghost" id="pfull" type="button">Plein écran</button><a id="pext" class="btn small ghost" target="_blank" rel="noopener">Nouvel onglet</a></span>
+    <span class="row"><span id="pdl" style="display:contents"></span><button class="btn small ghost" id="pfull" type="button">Plein écran</button><a id="pext" class="btn small ghost" target="_blank" rel="noopener">Nouvel onglet</a></span>
   </div>
   <div class="pframe" id="pframe">
     <div class="pstage" id="pstage"></div>
@@ -824,7 +830,7 @@ var STATUS = { "Returning Series": "En cours", "Ended": "Terminée", "Canceled":
 function statusFr(s) { return STATUS[s] || s || ""; }
 
 /* ===== Vues ===== */
-var filter = "", langFilter = "", dlFilter = false;
+var filter = "", langFilter = "", dlFilter = false, typeFilter = "", curQ = "", searchBack = "#/";
 var rerender = null;
 var lastPage = null;
 var pendingScroll = false;
@@ -879,7 +885,7 @@ function resumeCard(s, i) {
 }
 function resumeWatch(id) {
   var s = byId(id), r = readResume()[id]; if (!s || !r) return;
-  if (isMovie(s)) { saveResume(s.id); play(s.sources, s.name); } else playEp(s, r.si, r.n);
+  if (isMovie(s)) { saveResume(s.id); play(s.sources, s.name, 0, "", null, s.downloads); } else playEp(s, r.si, r.n);
 }
 /* ===== Épisodes vus, nouveautés, ma liste (tout reste dans le navigateur) ===== */
 var SEENKEY = "noir.seen", LISTKEY = "noir.list", NEWDAYS = 10;
@@ -1159,17 +1165,31 @@ function akaFrom(t, movie) {
 }
 
 function viewSearch(q) {
+  q = q || "";
   var needle = fold(q) || q.trim().toLowerCase();
-  var html = '<div class="wrap listhead"><h1>Recherche</h1>';
-  if (!needle) { $("#app").innerHTML = html + '<p class="note">Tape un titre dans la barre en haut.</p></div>'; return; }
-  var base = sortedDb().filter(function (s) { return titleMatch(s, needle); });
+  var base = sortedDb().filter(function (s) { return !needle || titleMatch(s, needle); });
   var canDl = dlOpen();
   if (!canDl) dlFilter = false;
-  var found = dlFilter ? base.filter(hasDl) : base;
-  html += '<p class="note">' + found.length + (found.length > 1 ? " résultats" : " résultat") + ' pour « ' + esc(q.trim()) + ' »' + "" + '</p></div>';
-  if (!base.length) { $("#app").innerHTML = html + emptyBox("Rien trouvé", "Aucun titre ne correspond. Essaie un autre mot, ou demande-le-moi.", '<div class="row"><a class="btn" href="#/demande/' + encodeURIComponent(q.trim()) + '">Demander ce titre</a><a class="btn ghost" href="#/">Retour à l\'accueil</a></div>'); return; }
-  var dlChips = canDl ? '<div class="chips langchips" style="padding-top:24px"><span class="chiplbl">Téléchargement</span><button class="chip' + (!dlFilter ? " on" : "") + '" data-dlf="">Tous</button><button class="chip' + (dlFilter ? " on" : "") + '" data-dlf="1">Avec lien</button></div>' : '';
-  html += '<div class="wrap">' + dlChips + (found.length ? '<div class="grid" style="padding-top:28px">' + found.map(card).join("") + '</div>' : '<p class="note" style="padding:28px 0 48px">Aucun résultat avec un lien de téléchargement.</p>') + '</div>';
+  var genres = {};
+  base.forEach(function (s) { (s.genres || []).forEach(function (g) { genres[g] = 1; }); });
+  var found = base.filter(function (s) {
+    return (!typeFilter || (typeFilter === "movie") === isMovie(s)) &&
+      (!filter || (s.genres || []).indexOf(filter) > -1) && langMatch(s) && (!dlFilter || hasDl(s));
+  });
+  var html = '<div class="wrap listhead"><h1>Recherche</h1><p class="note">' + found.length + (found.length > 1 ? " résultats" : " résultat") + (q.trim() ? ' pour « ' + esc(q.trim()) + ' »' : '') + '</p>' +
+    '<a class="btn small ghost" style="margin-top:14px" href="' + esc(searchBack) + '">Fermer la recherche</a></div>';
+  if (needle && !base.length) {
+    $("#app").innerHTML = html + emptyBox("Rien trouvé", "Aucun titre ne correspond. Essaie un autre mot, ou demande-le-moi.", '<div class="row"><a class="btn" href="#/demande/' + encodeURIComponent(q.trim()) + '">Demander ce titre</a><a class="btn ghost" href="#/">Retour à l\'accueil</a></div>');
+    return;
+  }
+  function chip(attr, val, label, on) { return '<button class="chip' + (on ? " on" : "") + '" ' + attr + '="' + esc(val) + '">' + esc(label) + '</button>'; }
+  function row(label, items) { return '<div class="chips langchips"><span class="chiplbl">' + label + '</span>' + items + '</div>'; }
+  var filters =
+    row("Type", chip("data-typef", "", "Tout", !typeFilter) + chip("data-typef", "tv", "Séries", typeFilter === "tv") + chip("data-typef", "movie", "Films", typeFilter === "movie")) +
+    row("Langue", chip("data-langf", "", "Toutes", !langFilter) + ["VOSTFR", "VF"].map(function (L) { return chip("data-langf", L, L, langFilter === L); }).join("")) +
+    (Object.keys(genres).length ? row("Genre", chip("data-genre", "", "Tout", !filter) + Object.keys(genres).sort().map(function (g) { return chip("data-genre", g, g, filter === g); }).join("")) : "") +
+    (canDl ? row("Téléchargement", chip("data-dlf", "", "Tous", !dlFilter) + chip("data-dlf", "1", "Avec lien", dlFilter)) : "");
+  html += '<div class="wrap sres">' + filters + (found.length ? '<div class="grid" style="padding-top:28px">' + found.map(card).join("") + '</div>' : '<p class="note" style="padding:28px 0 48px">Aucun titre avec ces filtres.</p>') + '</div>';
   $("#app").innerHTML = html;
 }
 
@@ -1209,9 +1229,9 @@ document.addEventListener("click", function (e) {
   box.innerHTML = '<div class="dlcard" role="dialog" aria-modal="true" aria-labelledby="dlm-t"><button type="button" class="dlx" id="dlm-x" aria-label="Fermer">×</button><h3 id="dlm-t"></h3><div class="dlmeta" id="dlm-meta"></div><div class="dlad" id="dlm-ad"><p><b>Une pub va s\'ouvrir.</b> Ne clique sur rien dans la pub : ferme-la simplement pour revenir ici et débloquer le lien. C\'est ce qui permet de garder le site gratuit, merci !</p><button type="button" class="btn" id="dlm-adgo">Voir la pub pour débloquer</button></div><div class="dllink" id="dlm-url" hidden></div><div class="dlbtns" id="dlm-btns" hidden><button type="button" class="btn" id="dlm-copy">Copier le lien</button><a class="btn ghost" id="dlm-open" target="_blank" rel="noopener noreferrer">Ouvrir</a></div></div>';
   document.body.appendChild(box);
   var AD_URL = "https://exteriorsingularsharply.com/vi505s58ib?key=27027f4e669d53db2f88ab994262ff92";
-  var waiting = false, leftAt = 0, adTimer = 0, realUrl = "";
+  var waiting = false, leftAt = 0, adTimer = 0, backT = 0, realUrl = "";
   function lock() {
-    waiting = false; leftAt = 0; clearTimeout(adTimer);
+    waiting = false; leftAt = 0; clearTimeout(adTimer); clearTimeout(backT); backT = 0;
     $("#dlm-ad").hidden = false; $("#dlm-url").hidden = true; $("#dlm-btns").hidden = true;
     $("#dlm-url").textContent = ""; $("#dlm-open").removeAttribute("href");
     var g = $("#dlm-adgo"); g.disabled = false; g.textContent = "Voir la pub pour débloquer";
@@ -1222,14 +1242,19 @@ document.addEventListener("click", function (e) {
     $("#dlm-ad").hidden = true; $("#dlm-url").hidden = false; $("#dlm-btns").hidden = false;
     toast("Lien débloqué, merci !");
   }
+  /* Dès que le visiteur est parti vers la pub puis revient (focus, onglet visible, ou n'importe quel geste sur la page), on débloque.
+     Même un retour très rapide débloque : on attend juste 1 s depuis le départ, au lieu de rester bloqué. */
   function adBack() {
-    if (!waiting || !leftAt) return;
-    if (Date.now() - leftAt >= 1500) unlock();
+    if (!waiting || !leftAt || backT) return;
+    backT = setTimeout(function () { backT = 0; if (waiting) unlock(); }, Math.max(0, 1000 - (Date.now() - leftAt)));
   }
-  function adLeft() { if (waiting && !leftAt) leftAt = Date.now(); }
+  function adLeft() { if (waiting && !leftAt) { leftAt = Date.now(); clearTimeout(adTimer); } }
   window.addEventListener("blur", adLeft);
   window.addEventListener("focus", adBack);
   document.addEventListener("visibilitychange", function () { document.hidden ? adLeft() : adBack(); });
+  ["pointermove", "pointerdown", "touchstart", "keydown", "scroll"].forEach(function (ev) {
+    document.addEventListener(ev, function () { if (waiting && leftAt && !document.hidden) adBack(); }, { passive: true, capture: true });
+  });
   function close() { box.hidden = true; lock(); realUrl = ""; box.dataset.url = ""; }
   function copy(txt) {
     if (navigator.clipboard && navigator.clipboard.writeText) return navigator.clipboard.writeText(txt);
@@ -1251,6 +1276,8 @@ document.addEventListener("click", function (e) {
       realUrl = b.dataset.dlurl;
       box.dataset.url = realUrl;
       lock();
+      /* si le lecteur est ouvert, la fenêtre doit être dedans pour passer au-dessus */
+      (document.querySelector("dialog#player[open]") || document.body).appendChild(box);
       box.hidden = false; $("#dlm-adgo").focus();
       return;
     }
@@ -1567,9 +1594,9 @@ function saveDraft() {
 /* ===== Lecteur ===== */
 var cur = { sources: [], i: 0, title: "" };
 
-function play(sources, title, idx, sub, nav) {
+function play(sources, title, idx, sub, nav, dls) {
   if (!sources || !sources.length) { toast("Aucune source sur cette fiche"); return; }
-  cur = { sources: sources, i: idx || 0, title: title, sub: sub || "", nav: nav || null };
+  cur = { sources: sources, i: idx || 0, title: title, sub: sub || "", nav: nav || null, dl: dls || [] };
   var dlg = $("#player");
   renderPlayer();
   dlg.classList.remove("wide");
@@ -1581,6 +1608,7 @@ function renderPlayer() {
   var s = cur.sources[cur.i], url = safeUrl(s.url);
   $("#ptitle").textContent = cur.title;
   $("#psub").textContent = cur.sub || "";
+  $("#pdl").innerHTML = dlOpen() ? dlLinks(cur.dl, "Télécharger", " ghost") : "";
   showTip(tipIdx);
   clearInterval(tipTimer); tipTimer = setInterval(function () { showTip(tipIdx + 1); }, 9000);
   $("#pl").style.display = cur.sources.length > 1 ? "flex" : "none";
@@ -1608,7 +1636,7 @@ function playEp(s, si, num) {
     prev: p ? function () { playEp(s, p.si, p.ep.number); } : null,
     next: n ? function () { playEp(s, n.si, n.ep.number); } : null,
     eps: { s: s, si: si, num: c.ep.number }
-  });
+  }, c.ep.downloads);
 }
 /* Conseils du lecteur, en carrousel */
 var tipIdx = 0, tipTimer = null;
@@ -1710,7 +1738,7 @@ function route(force) {
   if ((a === "ajouter" || a === "modifier" || a === "motdepasse" || a === "panel") && !ADMIN) { location.hash = "#/admin"; return; }
 
   var changed = force || a !== lastPage || a === "serie" || a === "modifier";
-  if (a !== lastPage) { filter = ""; langFilter = ""; dlFilter = false; listTab = "list"; }
+  if (a !== lastPage) { filter = ""; langFilter = ""; dlFilter = false; typeFilter = ""; listTab = "list"; }
   lastPage = a;
 
   var q = $("#q");
@@ -1730,7 +1758,7 @@ function route(force) {
   else if (a === "films") { rerender = function () { viewList("Films", isMovie); }; rerender(); }
   else if (a === "ma-liste") { rerender = viewMyList; rerender(); }
   else if (a === "demande") viewRequest(b);
-  else if (a === "recherche") { rerender = function () { viewSearch(b); }; rerender(); }
+  else if (a === "recherche") { curQ = b; rerender = function () { viewSearch(curQ); }; rerender(); }
   else if (a === "admin") viewLogin();
   else if (a === "motdepasse") viewSetPassword(false);
   else if (a === "panel") viewPanel();
@@ -1777,10 +1805,25 @@ function showSugg(v) {
   }).join("") + (hits.length > 6 ? '<a class="sg all" href="#/recherche/' + encodeURIComponent(v.trim()) + '">Voir les ' + hits.length + ' résultats</a>' : "") : '<p class="sgn">Aucun titre trouvé</p>';
   box.hidden = false;
 }
-$("#q").addEventListener("focus", function () { showSugg(this.value); });
+/* Clic sur la barre : on ouvre la page de recherche avec ses filtres, les résultats se mettent à jour en tapant */
+function openSearch() {
+  if (lastPage === "recherche") return;
+  searchBack = location.hash || "#/";
+  curQ = $("#q").value.trim();
+  location.hash = "#/recherche/" + encodeURIComponent(curQ);
+}
+function liveSearch(v) {
+  curQ = v;
+  var h = "#/recherche/" + encodeURIComponent(v.trim());
+  if (lastPage !== "recherche") { searchBack = location.hash || "#/"; location.hash = h; return; }
+  try { history.replaceState(null, "", h); } catch (e) {}
+  viewSearch(v);
+}
+$("#q").addEventListener("focus", openSearch);
+$("#q").addEventListener("click", openSearch);
 $("#q").addEventListener("keydown", function (e) {
-  if (e.key === "Enter" && this.value.trim()) { $("#sugg").hidden = true; location.hash = "#/recherche/" + encodeURIComponent(this.value.trim()); this.blur(); }
-  else if (e.key === "Escape") { $("#sugg").hidden = true; this.blur(); }
+  if (e.key === "Enter") this.blur();
+  else if (e.key === "Escape") { if (!this.value.trim() && lastPage === "recherche") location.hash = searchBack; this.blur(); }
 });
 document.addEventListener("click", function (e) { if (!e.target.closest(".search")) $("#sugg").hidden = true; });
 
@@ -1788,12 +1831,12 @@ document.addEventListener("click", function (e) { if (!e.target.closest(".search
 document.addEventListener("click", function (e) {
   var nav = e.target.closest("header.top a[href^='#/']");
   if (nav && nav.getAttribute("href") === (location.hash || "#/")) { e.preventDefault(); route(true); return; }
-  var t = e.target.closest("[data-resume],[data-watch],[data-movsrc],[data-playep],[data-src],[data-del],[data-list],[data-listtab],[data-seen],[data-seenseason],[data-genre],[data-langf],[data-dlf],[data-pick],[data-bulk],[data-dlbulk],[data-dltab],#save,#applytpl,#manual,#manualfilm,#refresh,#copyhash");
+  var t = e.target.closest("[data-resume],[data-watch],[data-movsrc],[data-playep],[data-src],[data-del],[data-list],[data-listtab],[data-seen],[data-seenseason],[data-genre],[data-langf],[data-dlf],[data-typef],[data-pick],[data-bulk],[data-dlbulk],[data-dltab],#save,#applytpl,#manual,#manualfilm,#refresh,#copyhash");
   if (!t) return;
   if (t.dataset.resume != null) { e.preventDefault(); resumeWatch(t.dataset.resume); }
   else if (t.dataset.watch != null) {
     var w = byId(t.dataset.watch); if (!w) return;
-    if (isMovie(w)) { saveResume(w.id); play(w.sources, w.name); }
+    if (isMovie(w)) { saveResume(w.id); play(w.sources, w.name, 0, "", null, w.downloads); }
     else if (!(w.seasons || []).length) toast("Cette fiche n'a pas encore d'épisodes");
     else if (location.hash === "#/serie/" + w.id) {
       dlMode = false;
@@ -1808,7 +1851,7 @@ document.addEventListener("click", function (e) {
   }
   else if (t.dataset.movsrc != null) {
     var m = t.dataset.movsrc.split("|"), mv = byId(m[0]);
-    if (mv) { saveResume(mv.id); play(mv.sources, mv.name, +m[1]); }
+    if (mv) { saveResume(mv.id); play(mv.sources, mv.name, +m[1], "", null, mv.downloads); }
   }
   else if (t.dataset.playep != null) {
     var p = t.dataset.playep.split("|"), s2 = byId(p[0]), se = s2.seasons[+p[1]];
@@ -1868,6 +1911,7 @@ document.addEventListener("click", function (e) {
   else if (t.dataset.genre != null) { filter = t.dataset.genre; if (rerender) rerender(); }
   else if (t.dataset.langf != null) { langFilter = t.dataset.langf; if (rerender) rerender(); }
   else if (t.dataset.dlf != null) { dlFilter = t.dataset.dlf === "1"; if (rerender) rerender(); }
+  else if (t.dataset.typef != null) { typeFilter = t.dataset.typef; if (rerender) rerender(); }
   else if (t.dataset.pick != null) pick(t.dataset.pick);
   else if (t.id === "save") saveDraft();
   else if (t.id === "refresh") pick((draft.type === "movie" ? "movie|" + String(draft.id).replace(/^m/, "") : "tv|" + draft.id), draft);
@@ -1976,7 +2020,7 @@ document.addEventListener("submit", function (e) {
 document.addEventListener("input", function (e) {
   var t = e.target;
   if (t.id === "q") {
-    showSugg(t.value);
+    liveSearch(t.value);
     return;
   }
   if (!draft) return;
