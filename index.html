@@ -66,6 +66,7 @@ nav a:hover::after, nav a.on::after { transform: scaleX(1); }
 .btn.ghost:hover { background: var(--fg); color: var(--bg); }
 .btn.small { padding: 7px 14px; font-size: 12px; }
 /* boutons Télécharger : vert clair */
+.btn .dlic { width: 1.15em; height: 1.15em; flex: none; }
 .btn[data-dlopen], .btn[data-godl] { background: #86efac; border-color: #86efac; color: #052e16; }
 .btn[data-dlopen]:hover, .btn[data-godl]:hover { background: transparent; border-color: #86efac; color: #86efac; }
 .btn.danger { border-color: #555; color: var(--dim); background: transparent; }
@@ -1216,11 +1217,12 @@ function hasDl(s) {
     return (se.downloads || []).length || (se.episodes || []).some(function (ep) { return (ep.downloads || []).length; });
   });
 }
+var DLICON = '<svg class="dlic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>';
 function dlLinks(arr, label, cls) {
   arr = arr || [];
   return arr.map(function (x) {
     var full = label + (arr.length > 1 ? " · " + x.name : "");
-    return '<button type="button" class="btn small' + (cls || "") + '" data-dlopen="1" data-dlname="' + esc(full) + '" data-dlurl="' + esc(safeUrl(x.url)) + '" data-dlq="' + esc(x.quality || "") + '" data-dlsize="' + esc(x.size || "") + '">' + esc(full) + '</button>';
+    return '<button type="button" class="btn small' + (cls || "") + '" data-dlopen="1" data-dlname="' + esc(full) + '" data-dlurl="' + esc(safeUrl(x.url)) + '" data-dlq="' + esc(x.quality || "") + '" data-dlsize="' + esc(x.size || "") + '">' + DLICON + '<span>' + esc(full) + '</span></button>';
   }).join("");
 }
 
@@ -1340,7 +1342,7 @@ function viewSerie(id) {
     '<div><div class="tags">' + (langLabel(s) ? '<span class="lang">' + esc(langLabel(s)) + '</span>' : '') + (ongoing(s) ? '<span class="live">En cours</span>' : '') + (ne ? newBadge("Nouvel épisode") : '') + tags.map(function (t) { return "<span>" + esc(t) + "</span>"; }).join("") + '</div>' +
     '<h1>' + esc(s.name) + '</h1>' + (s.original_name && s.original_name !== s.name ? '<div class="orig">' + esc(s.original_name) + '</div>' : '<div class="orig"></div>') +
     '<p class="ov">' + esc(s.overview || "Pas de synopsis.") + '</p>' +
-    '<div class="row"><button class="btn" data-watch="' + esc(s.id) + '">Regarder</button>' + (movie && dlOpen() ? dlLinks(s.downloads, "Télécharger", " ghost") : "") + (!movie && showDl ? '<button class="btn ghost" type="button" data-godl="1">Télécharger</button>' : "") + '<button class="btn ghost' + (inList(s.id) ? " on" : "") + '" type="button" data-list="' + esc(s.id) + '">' + (inList(s.id) ? "✓ Dans ma liste" : "+ Ma liste") + '</button>' + (ADMIN ? '<a class="btn ghost" href="#/modifier/' + esc(s.id) + '">Modifier</a><button class="btn danger" data-del="' + esc(s.id) + '">Supprimer</button>' : '') + '</div>' + srcChips +
+    '<div class="row"><button class="btn" data-watch="' + esc(s.id) + '">Regarder</button>' + (movie && dlOpen() ? dlLinks(s.downloads, "Télécharger", " ghost") : "") + (!movie && showDl ? '<button class="btn ghost" type="button" data-godl="1">' + DLICON + '<span>Télécharger</span></button>' : "") + '<button class="btn ghost' + (inList(s.id) ? " on" : "") + '" type="button" data-list="' + esc(s.id) + '">' + (inList(s.id) ? "✓ Dans ma liste" : "+ Ma liste") + '</button>' + (ADMIN ? '<a class="btn ghost" href="#/modifier/' + esc(s.id) + '">Modifier</a><button class="btn danger" data-del="' + esc(s.id) + '">Supprimer</button>' : '') + '</div>' + srcChips +
     ((s.cast || []).length ? '<h3 class="note" style="margin:32px 0 0;text-transform:uppercase;letter-spacing:.08em">Distribution</h3><div class="cast">' + s.cast.slice(0, 12).map(function (c) { return '<div><b>' + esc(c.name) + '</b><span>' + esc(c.character || "") + '</span></div>'; }).join("") + '</div>' : '') +
     '</div></div></section>';
   if (!movie && (s.seasons || []).length) {
