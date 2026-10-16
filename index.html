@@ -824,7 +824,7 @@ var STATUS = { "Returning Series": "En cours", "Ended": "Terminée", "Canceled":
 function statusFr(s) { return STATUS[s] || s || ""; }
 
 /* ===== Vues ===== */
-var filter = "", langFilter = "";
+var filter = "", langFilter = "", dlFilter = false;
 var rerender = null;
 var lastPage = null;
 var pendingScroll = false;
@@ -1163,10 +1163,13 @@ function viewSearch(q) {
   var html = '<div class="wrap listhead"><h1>Recherche</h1>';
   if (!needle) { $("#app").innerHTML = html + '<p class="note">Tape un titre dans la barre en haut.</p></div>'; return; }
   var base = sortedDb().filter(function (s) { return titleMatch(s, needle); });
-  var found = base;
+  var canDl = dlOpen();
+  if (!canDl) dlFilter = false;
+  var found = dlFilter ? base.filter(hasDl) : base;
   html += '<p class="note">' + found.length + (found.length > 1 ? " résultats" : " résultat") + ' pour « ' + esc(q.trim()) + ' »' + "" + '</p></div>';
   if (!base.length) { $("#app").innerHTML = html + emptyBox("Rien trouvé", "Aucun titre ne correspond. Essaie un autre mot, ou demande-le-moi.", '<div class="row"><a class="btn" href="#/demande/' + encodeURIComponent(q.trim()) + '">Demander ce titre</a><a class="btn ghost" href="#/">Retour à l\'accueil</a></div>'); return; }
-  html += '<div class="wrap"><div class="grid" style="padding-top:28px">' + found.map(card).join("") + '</div></div>';
+  var dlChips = canDl ? '<div class="chips langchips" style="padding-top:24px"><span class="chiplbl">Téléchargement</span><button class="chip' + (!dlFilter ? " on" : "") + '" data-dlf="">Tous</button><button class="chip' + (dlFilter ? " on" : "") + '" data-dlf="1">Avec lien</button></div>' : '';
+  html += '<div class="wrap">' + dlChips + (found.length ? '<div class="grid" style="padding-top:28px">' + found.map(card).join("") + '</div>' : '<p class="note" style="padding:28px 0 48px">Aucun résultat avec un lien de téléchargement.</p>') + '</div>';
   $("#app").innerHTML = html;
 }
 
@@ -1707,7 +1710,7 @@ function route(force) {
   if ((a === "ajouter" || a === "modifier" || a === "motdepasse" || a === "panel") && !ADMIN) { location.hash = "#/admin"; return; }
 
   var changed = force || a !== lastPage || a === "serie" || a === "modifier";
-  if (a !== lastPage) { filter = ""; langFilter = ""; listTab = "list"; }
+  if (a !== lastPage) { filter = ""; langFilter = ""; dlFilter = false; listTab = "list"; }
   lastPage = a;
 
   var q = $("#q");
@@ -1785,7 +1788,7 @@ document.addEventListener("click", function (e) { if (!e.target.closest(".search
 document.addEventListener("click", function (e) {
   var nav = e.target.closest("header.top a[href^='#/']");
   if (nav && nav.getAttribute("href") === (location.hash || "#/")) { e.preventDefault(); route(true); return; }
-  var t = e.target.closest("[data-resume],[data-watch],[data-movsrc],[data-playep],[data-src],[data-del],[data-list],[data-listtab],[data-seen],[data-seenseason],[data-genre],[data-langf],[data-pick],[data-bulk],[data-dlbulk],[data-dltab],#save,#applytpl,#manual,#manualfilm,#refresh,#copyhash");
+  var t = e.target.closest("[data-resume],[data-watch],[data-movsrc],[data-playep],[data-src],[data-del],[data-list],[data-listtab],[data-seen],[data-seenseason],[data-genre],[data-langf],[data-dlf],[data-pick],[data-bulk],[data-dlbulk],[data-dltab],#save,#applytpl,#manual,#manualfilm,#refresh,#copyhash");
   if (!t) return;
   if (t.dataset.resume != null) { e.preventDefault(); resumeWatch(t.dataset.resume); }
   else if (t.dataset.watch != null) {
@@ -1864,6 +1867,7 @@ document.addEventListener("click", function (e) {
   else if (t.dataset.listtab != null) { listTab = t.dataset.listtab; if (rerender) rerender(); }
   else if (t.dataset.genre != null) { filter = t.dataset.genre; if (rerender) rerender(); }
   else if (t.dataset.langf != null) { langFilter = t.dataset.langf; if (rerender) rerender(); }
+  else if (t.dataset.dlf != null) { dlFilter = t.dataset.dlf === "1"; if (rerender) rerender(); }
   else if (t.dataset.pick != null) pick(t.dataset.pick);
   else if (t.id === "save") saveDraft();
   else if (t.id === "refresh") pick((draft.type === "movie" ? "movie|" + String(draft.id).replace(/^m/, "") : "tv|" + draft.id), draft);
