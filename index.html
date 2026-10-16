@@ -496,6 +496,12 @@ footer .wrap.about { display: grid; grid-template-columns: repeat(auto-fit, minm
 .dlmeta i { display: block; font-style: normal; font-size: 11px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase; color: var(--dim); margin-bottom: 2px; }
 .dllink { border: 1px solid var(--line); padding: 12px; font-size: 13px; word-break: break-all; user-select: all; color: var(--dim); margin-bottom: 16px; }
 .dlbtns { display: flex; gap: 10px; flex-wrap: wrap; }
+.dlad { border: 1px dashed var(--dim); padding: 16px; margin-bottom: 4px; }
+.dlad[hidden], .dllink[hidden], .dlbtns[hidden] { display: none; }
+.dlad p { margin: 0 0 14px; font-size: 14px; line-height: 1.5; color: #cfcfcf; }
+.dlad p b { color: var(--fg); }
+.dlad .btn { width: 100%; }
+.dlad .btn[disabled] { opacity: .5; cursor: wait; }
 .dlbtns .btn { flex: 1; text-align: center; justify-content: center; }
 @keyframes dlfade { from { opacity: 0; } to { opacity: 1; } }
 @keyframes dlpop { from { opacity: 0; transform: translateY(18px) scale(.94); } to { opacity: 1; transform: none; } }
@@ -1176,9 +1182,31 @@ document.addEventListener("click", function (e) {
 (function () {
   var box = document.createElement("div");
   box.className = "dlmodal"; box.id = "dlmodal"; box.hidden = true;
-  box.innerHTML = '<div class="dlcard" role="dialog" aria-modal="true" aria-labelledby="dlm-t"><button type="button" class="dlx" id="dlm-x" aria-label="Fermer">×</button><h3 id="dlm-t"></h3><div class="dlmeta" id="dlm-meta"></div><div class="dllink" id="dlm-url"></div><div class="dlbtns"><button type="button" class="btn" id="dlm-copy">Copier le lien</button><a class="btn ghost" id="dlm-open" target="_blank" rel="noopener noreferrer">Ouvrir</a></div></div>';
+  box.innerHTML = '<div class="dlcard" role="dialog" aria-modal="true" aria-labelledby="dlm-t"><button type="button" class="dlx" id="dlm-x" aria-label="Fermer">×</button><h3 id="dlm-t"></h3><div class="dlmeta" id="dlm-meta"></div><div class="dlad" id="dlm-ad"><p><b>Une pub va s\'ouvrir.</b> Ne clique sur rien dans la pub : ferme-la simplement pour revenir ici et débloquer le lien. C\'est ce qui permet de garder le site gratuit, merci !</p><button type="button" class="btn" id="dlm-adgo">Voir la pub pour débloquer</button></div><div class="dllink" id="dlm-url" hidden></div><div class="dlbtns" id="dlm-btns" hidden><button type="button" class="btn" id="dlm-copy">Copier le lien</button><a class="btn ghost" id="dlm-open" target="_blank" rel="noopener noreferrer">Ouvrir</a></div></div>';
   document.body.appendChild(box);
-  function close() { box.hidden = true; }
+  var AD_URL = "https://exteriorsingularsharply.com/vi505s58ib?key=27027f4e669d53db2f88ab994262ff92";
+  var waiting = false, leftAt = 0, adTimer = 0, realUrl = "";
+  function lock() {
+    waiting = false; leftAt = 0; clearTimeout(adTimer);
+    $("#dlm-ad").hidden = false; $("#dlm-url").hidden = true; $("#dlm-btns").hidden = true;
+    $("#dlm-url").textContent = ""; $("#dlm-open").removeAttribute("href");
+    var g = $("#dlm-adgo"); g.disabled = false; g.textContent = "Voir la pub pour débloquer";
+  }
+  function unlock() {
+    waiting = false; clearTimeout(adTimer);
+    $("#dlm-url").textContent = realUrl; $("#dlm-open").href = realUrl;
+    $("#dlm-ad").hidden = true; $("#dlm-url").hidden = false; $("#dlm-btns").hidden = false;
+    toast("Lien débloqué, merci !");
+  }
+  function adBack() {
+    if (!waiting || !leftAt) return;
+    if (Date.now() - leftAt >= 1500) unlock();
+  }
+  function adLeft() { if (waiting && !leftAt) leftAt = Date.now(); }
+  window.addEventListener("blur", adLeft);
+  window.addEventListener("focus", adBack);
+  document.addEventListener("visibilitychange", function () { document.hidden ? adLeft() : adBack(); });
+  function close() { box.hidden = true; lock(); realUrl = ""; box.dataset.url = ""; }
   function copy(txt) {
     if (navigator.clipboard && navigator.clipboard.writeText) return navigator.clipboard.writeText(txt);
     return new Promise(function (res, rej) {
@@ -1196,10 +1224,22 @@ document.addEventListener("click", function (e) {
       if (b.dataset.dlq) meta.push("<span><i>Qualité</i>" + esc(b.dataset.dlq) + "</span>");
       if (b.dataset.dlsize) meta.push("<span><i>Taille</i>" + esc(b.dataset.dlsize) + "</span>");
       $("#dlm-meta").innerHTML = meta.join(""); $("#dlm-meta").hidden = !meta.length;
-      $("#dlm-url").textContent = b.dataset.dlurl;
-      $("#dlm-open").href = b.dataset.dlurl;
-      box.dataset.url = b.dataset.dlurl;
-      box.hidden = false; $("#dlm-copy").focus();
+      realUrl = b.dataset.dlurl;
+      box.dataset.url = realUrl;
+      lock();
+      box.hidden = false; $("#dlm-adgo").focus();
+      return;
+    }
+    if (e.target.id === "dlm-adgo") {
+      var a = document.createElement("a");
+      a.href = AD_URL; a.target = "_blank"; a.rel = "noopener noreferrer";
+      document.body.appendChild(a); a.click(); a.remove();
+      waiting = true; leftAt = 0;
+      e.target.disabled = true; e.target.textContent = "Ferme la pub pour continuer…";
+      clearTimeout(adTimer);
+      adTimer = setTimeout(function () {
+        if (waiting && !leftAt) { waiting = false; var g = $("#dlm-adgo"); g.disabled = false; g.textContent = "Réessayer (autorise les pop-ups)"; }
+      }, 8000);
       return;
     }
     if (e.target === box || e.target.id === "dlm-x") close();
