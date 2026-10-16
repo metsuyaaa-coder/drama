@@ -303,7 +303,7 @@ body.admin .admin-only { display: revert !important; }
   details.season summary { font-size: 20px; padding: 16px 0; }
   details.season summary:hover { padding-left: 0; }
   .ep { grid-template-columns: 30px minmax(0, 1fr); gap: 4px 12px; }
-  .ep .act { grid-column: 2; flex-direction: row; align-items: center; gap: 12px; margin-top: 6px; }
+  .ep .act, .seasons.dlmode .ep .dlact { grid-column: 2; flex-direction: row; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin-top: 6px; }
 
   /* éditeur */
   .page { padding-top: 28px; padding-bottom: 64px; }
@@ -470,6 +470,18 @@ footer .wrap.about { display: grid; grid-template-columns: repeat(auto-fit, minm
 .btn.ghost.on { background: var(--fg); color: var(--bg); }
 .btn.ghost.on:hover { background: transparent; color: var(--fg); }
 .seasonbar { padding: 0 0 14px; }
+
+/* onglet Regarder / Télécharger */
+.tabs { display: inline-flex; border: 1px solid var(--line); }
+.tab { background: transparent; border: 0; padding: 8px 18px; font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--dim); cursor: pointer; border-radius: 0; transition: background .2s, color .2s; }
+.tab + .tab { border-left: 1px solid var(--line); }
+.tab:hover { color: var(--fg); }
+.tab.on { background: var(--fg); color: var(--bg); }
+.dlbar, .dlonly, .ep .dlact { display: none; }
+.seasons.dlmode .seasonbar, .seasons.dlmode .ep .act { display: none; }
+.seasons.dlmode .dlbar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; padding: 0 0 14px; }
+.seasons.dlmode .dlonly { display: block; padding-bottom: 14px; }
+.seasons.dlmode .ep .dlact { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
 .epi.seen .et { color: var(--dim); }
 .epi.seen.on .et { color: var(--bg); }
 .burger { display: none; }
@@ -639,10 +651,16 @@ function normalize(s) {
   if (!s.type) s.type = "tv";
   if (!Array.isArray(s.sources)) s.sources = [];
   if (!Array.isArray(s.langs)) s.langs = [];
+  if (!Array.isArray(s.downloads)) s.downloads = [];
   autoNameAll(s.sources);
+  autoNameAll(s.downloads);
   if (s.type === "movie" && !s.sources.length && s.link) s.sources = [{ name: hostName(s.link), url: s.link }];
   (s.seasons || []).forEach(function (se) {
+    if (!Array.isArray(se.downloads)) se.downloads = [];
+    autoNameAll(se.downloads);
     (se.episodes || []).forEach(function (ep) {
+      if (!Array.isArray(ep.downloads)) ep.downloads = [];
+      autoNameAll(ep.downloads);
       if (!Array.isArray(ep.sources)) ep.sources = [];
       if (!ep.sources.length && ep.link) ep.sources = [{ name: hostName(ep.link), url: ep.link }];
       autoNameAll(ep.sources);
@@ -1084,11 +1102,31 @@ function viewSearch(q) {
   $("#app").innerHTML = html;
 }
 
+/* Téléchargement : liens 1fichier ajoutés par l'admin (film, saison entière, épisode) */
+var dlMode = false;
+function hasDl(s) {
+  if (!s) return false;
+  if ((s.downloads || []).length) return true;
+  return (s.seasons || []).some(function (se) {
+    return (se.downloads || []).length || (se.episodes || []).some(function (ep) { return (ep.downloads || []).length; });
+  });
+}
+function dlLinks(arr, label, cls) {
+  arr = arr || [];
+  return arr.map(function (x) {
+    return '<a class="btn small' + (cls || "") + '" href="' + esc(safeUrl(x.url)) + '" target="_blank" rel="noopener noreferrer">' + esc(label + (arr.length > 1 ? " · " + x.name : "")) + '</a>';
+  }).join("");
+}
+
 function viewSerie(id) {
   var s = byId(id);
   var app = $("#app");
   if (!s) { app.innerHTML = emptyBox("Introuvable", "Cette fiche n'existe pas ou a été supprimée.", '<a class="btn" href="#/">Retour à l\'accueil</a>'); return; }
   var movie = isMovie(s);
+  if (viewSerie.last !== String(s.id)) dlMode = false;
+  viewSerie.last = String(s.id);
+  var showDl = !movie && (hasDl(s) || ADMIN);
+  if (!showDl) dlMode = false;
   var seenMap = readSeen()[s.id] || {};
   function seenCount(se) { return (se.episodes || []).filter(function (ep) { return seenMap[epKey(se, ep)]; }).length; }
   var ne = newEpisode(s);
@@ -1106,17 +1144,19 @@ function viewSerie(id) {
     '<div><div class="tags">' + (langLabel(s) ? '<span class="lang">' + esc(langLabel(s)) + '</span>' : '') + (ongoing(s) ? '<span class="live">En cours</span>' : '') + (ne ? newBadge("Nouvel épisode") : '') + tags.map(function (t) { return "<span>" + esc(t) + "</span>"; }).join("") + '</div>' +
     '<h1>' + esc(s.name) + '</h1>' + (s.original_name && s.original_name !== s.name ? '<div class="orig">' + esc(s.original_name) + '</div>' : '<div class="orig"></div>') +
     '<p class="ov">' + esc(s.overview || "Pas de synopsis.") + '</p>' +
-    '<div class="row"><button class="btn" data-watch="' + esc(s.id) + '">Regarder</button><button class="btn ghost' + (inList(s.id) ? " on" : "") + '" type="button" data-list="' + esc(s.id) + '">' + (inList(s.id) ? "✓ Dans ma liste" : "+ Ma liste") + '</button>' + (ADMIN ? '<a class="btn ghost" href="#/modifier/' + esc(s.id) + '">Modifier</a><button class="btn danger" data-del="' + esc(s.id) + '">Supprimer</button>' : '') + '</div>' + srcChips +
+    '<div class="row"><button class="btn" data-watch="' + esc(s.id) + '">Regarder</button>' + (movie ? dlLinks(s.downloads, "Télécharger", " ghost") : "") + '<button class="btn ghost' + (inList(s.id) ? " on" : "") + '" type="button" data-list="' + esc(s.id) + '">' + (inList(s.id) ? "✓ Dans ma liste" : "+ Ma liste") + '</button>' + (ADMIN ? '<a class="btn ghost" href="#/modifier/' + esc(s.id) + '">Modifier</a><button class="btn danger" data-del="' + esc(s.id) + '">Supprimer</button>' : '') + '</div>' + srcChips +
     ((s.cast || []).length ? '<h3 class="note" style="margin:32px 0 0;text-transform:uppercase;letter-spacing:.08em">Distribution</h3><div class="cast">' + s.cast.slice(0, 12).map(function (c) { return '<div><b>' + esc(c.name) + '</b><span>' + esc(c.character || "") + '</span></div>'; }).join("") + '</div>' : '') +
     '</div></div></section>';
   if (!movie && (s.seasons || []).length) {
-    html += '<div class="wrap seasons" id="seasons"><div class="section-head"><h2>Épisodes</h2></div>' + s.seasons.map(function (se, i) {
+    html += '<div class="wrap seasons' + (dlMode ? ' dlmode' : '') + '" id="seasons"><div class="section-head"><h2>Épisodes</h2>' + (showDl ? '<div class="tabs" role="tablist"><button type="button" class="tab' + (dlMode ? '' : ' on') + '" role="tab" data-dltab="watch">Regarder</button><button type="button" class="tab' + (dlMode ? ' on' : '') + '" role="tab" data-dltab="dl">Télécharger</button></div>' : '') + '</div>' + (ADMIN && !hasDl(s) ? '<p class="note dlonly">Aucun lien de téléchargement pour l\'instant. Ajoute-en avec « Modifier ».</p>' : '') + s.seasons.map(function (se, i) {
       return '<details class="season"' + (i === 0 ? " open" : "") + '><summary><span>' + esc(se.name || "Saison " + se.number) + '</span><span class="sm"><i>' + (se.episodes || []).length + ' ÉPISODES' + (seenCount(se) ? ' · ' + seenCount(se) + ' VUS' : '') + '</i></span></summary>' +
         '<div class="seasonbar"><button type="button" class="btn small ghost" data-seenseason="' + esc(s.id) + '|' + i + '">' + (seenCount(se) === (se.episodes || []).length && seenCount(se) ? "Tout marquer non vu" : "Tout marquer comme vu") + '</button></div>' +
+        ((se.downloads || []).length ? '<div class="dlbar">' + dlLinks(se.downloads, "Télécharger toute la saison") + '</div>' : '') +
         (se.episodes || []).map(function (ep, k) {
           var n = (ep.sources || []).length, seen = !!seenMap[epKey(se, ep)], fresh = !seen && isRecent(ep.air_date);
           return '<div class="ep' + (seen ? " seen" : "") + '" style="--k:' + Math.min(k, 12) + '"><span class="n">' + String(ep.number).padStart(2, "0") + '</span><div><b>' + esc(ep.name || "Épisode " + ep.number) + (fresh ? " " + newBadge("Nouveau") : "") + '</b>' + (ep.air_date ? '<small class="d">' + esc(fmtDate(ep.air_date)) + '</small>' : '') + (ep.overview ? '<small>' + esc(ep.overview) + '</small>' : '') + '</div>' +
-            '<div class="act">' + (n ? '<button class="btn small" data-playep="' + esc(s.id) + '|' + i + '|' + esc(ep.number) + '">Lire</button>' + (n > 1 ? '<span class="off">' + n + ' sources</span>' : '') : '<span class="off">Sans source</span>') + '<button type="button" class="btn small ghost seenbtn' + (seen ? " on" : "") + '" data-seen="' + esc(s.id) + '|' + i + '|' + esc(ep.number) + '">' + (seen ? "Vu ✓" : "Marquer vu") + '</button></div></div>';
+            '<div class="act">' + (n ? '<button class="btn small" data-playep="' + esc(s.id) + '|' + i + '|' + esc(ep.number) + '">Lire</button>' + (n > 1 ? '<span class="off">' + n + ' sources</span>' : '') : '<span class="off">Sans source</span>') + '<button type="button" class="btn small ghost seenbtn' + (seen ? " on" : "") + '" data-seen="' + esc(s.id) + '|' + i + '|' + esc(ep.number) + '">' + (seen ? "Vu ✓" : "Marquer vu") + '</button></div>' +
+            '<div class="dlact">' + ((ep.downloads || []).length ? dlLinks(ep.downloads, "Télécharger") : '<span class="off">Pas de lien</span>') + '</div></div>';
         }).join("") + '</details>';
     }).join("") + '</div>';
   }
@@ -1187,7 +1227,7 @@ function renderResults() {
   }).join("") + '</div>' : "";
 }
 
-var keepOpen = null;
+var keepOpen = null, keepOpenDl = null;
 function renderEditor() {
   var el = $("#editor"); if (!el) return;
   if (!draft) { el.innerHTML = ""; return; }
@@ -1212,6 +1252,25 @@ function renderEditor() {
   } else {
     reading = '<p class="note">Aucune saison importée. Les saisons arrivent avec la recherche TMDB.</p>';
   }
+  var dlEdit;
+  if (movie) {
+    dlEdit = '<label class="f"><span>Liens de téléchargement du film (1fichier)</span><textarea class="srcbox" data-f="downloads" placeholder="1fichier | https://1fichier.com/?xxxxxxxx">' + esc(srcToText(d.downloads)) + '</textarea></label>' +
+      '<p class="note">Un lien par ligne, au format Nom | lien. Sans nom, il prend celui du site (ex. 1FICHIER).</p>';
+  } else if ((d.seasons || []).length) {
+    dlEdit = '<p class="note">Colle le lien 1fichier de la saison entière, et/ou un lien par épisode. Les visiteurs les voient dans l\'onglet « Télécharger » de la fiche.</p>' +
+      d.seasons.map(function (se, i) {
+        var eps = se.episodes || [], filled = eps.filter(function (e) { return (e.downloads || []).length; }).length;
+        return '<details class="epedit"' + (keepOpenDl === i ? " open" : "") + '><summary>' + esc(se.name || "Saison " + se.number) + '<i>' + ((se.downloads || []).length ? "pack ✓ · " : "") + filled + "/" + eps.length + ' avec lien</i></summary>' +
+          '<div class="bulk"><label class="f"><span>Lien de la saison entière (pack)</span><textarea class="srcbox" style="min-height:60px" data-dlseason="' + i + '" placeholder="1fichier | https://1fichier.com/dir/xxxxxxxx">' + esc(srcToText(se.downloads)) + '</textarea></label></div>' +
+          '<div class="bulk"><label class="f"><span>Ajout en masse : un lien par épisode, un par ligne, dans l\'ordre (remplace les liens existants de ces épisodes)</span><textarea data-dlbulkta="' + i + '" placeholder="https://1fichier.com/?aaaa&#10;https://1fichier.com/?bbbb&#10;https://1fichier.com/?cccc"></textarea></label>' +
+          '<div class="bulkrow"><label class="f"><span>À partir de l\'épisode</span><input type="number" min="1" value="1" data-dlbulkfrom="' + i + '"></label><button class="btn ghost" type="button" data-dlbulk="' + i + '">Remplir la saison</button></div></div>' +
+          eps.map(function (ep, j) {
+            return '<div class="eprow"><span class="n">' + String(ep.number).padStart(2, "0") + '</span><span class="t">' + esc(ep.name || "") + '</span><textarea data-dls="' + i + '" data-dle="' + j + '" placeholder="Nom | lien 1fichier (un par ligne)" aria-label="Téléchargement saison ' + esc(se.number) + ' épisode ' + esc(ep.number) + '">' + esc(srcToText(ep.downloads)) + '</textarea></div>';
+          }).join("") + '</details>';
+      }).join("");
+  } else {
+    dlEdit = '<p class="note">Aucune saison importée.</p>';
+  }
   el.innerHTML = '<div class="form">' +
     (canRefresh ? '<div><button class="btn small ghost" type="button" id="refresh">Mettre à jour depuis TMDB</button> <span class="note">Récupère les infos à jour, tes sources sont gardées.</span></div>' : '') +
     '<div class="preview"><div class="poster">' + (d.poster ? '<img src="' + esc(d.poster) + '" alt="">' : '<div class="ph">?</div>') + '</div><div class="two" style="grid-template-columns:1fr">' +
@@ -1227,7 +1286,7 @@ function renderEditor() {
     '<div class="two"><label class="f"><span>Affiche (URL)</span><input type="url" data-f="poster" value="' + esc(d.poster) + '"></label>' +
     '<label class="f"><span>Fond (URL)</span><input type="url" data-f="backdrop" value="' + esc(d.backdrop) + '"></label></div>' +
     '<label class="f"><span>Distribution (une ligne par acteur : Nom — Rôle)</span><textarea data-f="cast">' + esc((d.cast || []).map(function (c) { return c.name + (c.character ? " — " + c.character : ""); }).join("\n")) + '</textarea></label>' +
-    '<h3>Lecture</h3>' + reading +
+    '<h3>Lecture</h3>' + reading + '<h3>Téléchargement</h3>' + dlEdit +
     '<div class="bar"><button class="btn" type="button" id="save">' + (saved ? "Enregistrer" : "Ajouter au catalogue") + '</button><a class="btn ghost" href="#/">Annuler</a></div></div>';
 }
 
@@ -1256,6 +1315,7 @@ function pickMovie(id, old) {
     });
     if (old) {
       draft.sources = old.sources || [];
+      draft.downloads = old.downloads || [];
       draft.langs = old.langs || [];
       draft.addedAt = old.addedAt || draft.addedAt;
       toast("Fiche mise à jour, tes sources sont conservées");
@@ -1302,9 +1362,10 @@ function pickTv(id, old) {
         draft.seasons.forEach(function (se) {
           var os = (old.seasons || []).filter(function (x) { return x.number === se.number; })[0];
           if (!os) return;
+          se.downloads = os.downloads || [];
           se.episodes.forEach(function (ep) {
             var oe = (os.episodes || []).filter(function (x) { return x.number === ep.number; })[0];
-            if (oe) ep.sources = oe.sources || [];
+            if (oe) { ep.sources = oe.sources || []; ep.downloads = oe.downloads || []; }
           });
         });
         toast("Fiche mise à jour, tes sources sont conservées");
@@ -1552,7 +1613,7 @@ document.addEventListener("click", function (e) { if (!e.target.closest(".search
 document.addEventListener("click", function (e) {
   var nav = e.target.closest("header.top a[href^='#/']");
   if (nav && nav.getAttribute("href") === (location.hash || "#/")) { e.preventDefault(); route(true); return; }
-  var t = e.target.closest("[data-resume],[data-watch],[data-movsrc],[data-playep],[data-src],[data-del],[data-list],[data-listtab],[data-seen],[data-seenseason],[data-genre],[data-langf],[data-pick],[data-bulk],#save,#applytpl,#manual,#manualfilm,#refresh,#copyhash");
+  var t = e.target.closest("[data-resume],[data-watch],[data-movsrc],[data-playep],[data-src],[data-del],[data-list],[data-listtab],[data-seen],[data-seenseason],[data-genre],[data-langf],[data-pick],[data-bulk],[data-dlbulk],[data-dltab],#save,#applytpl,#manual,#manualfilm,#refresh,#copyhash");
   if (!t) return;
   if (t.dataset.resume != null) { e.preventDefault(); resumeWatch(t.dataset.resume); }
   else if (t.dataset.watch != null) {
@@ -1594,6 +1655,31 @@ document.addEventListener("click", function (e) {
     var allSeen = (se3.episodes || []).length > 0 && (se3.episodes || []).every(function (x) { return isSeen(s3.id, se3, x); });
     setSeenMany(s3.id, se3, !allSeen);
     refreshSeen(s3);
+  }
+  else if (t.dataset.dltab != null) {
+    dlMode = t.dataset.dltab === "dl";
+    var secEl = $("#seasons"); if (secEl) secEl.classList.toggle("dlmode", dlMode);
+    document.querySelectorAll("[data-dltab]").forEach(function (x) {
+      var on = (x.dataset.dltab === "dl") === dlMode;
+      x.classList.toggle("on", on); x.setAttribute("aria-selected", on ? "true" : "false");
+    });
+  }
+  else if (t.dataset.dlbulk != null) {
+    var di = +t.dataset.dlbulk, dbox = document.querySelector('[data-dlbulkta="' + di + '"]'), dfrom = document.querySelector('[data-dlbulkfrom="' + di + '"]');
+    var dlines = dbox.value.split("\n").map(function (l) { return l.trim(); }).filter(Boolean);
+    if (!dlines.length) { toast("Colle d'abord un lien par ligne"); return; }
+    var deps = draft.seasons[di].episodes, dstart = Math.max(1, parseInt(dfrom.value, 10) || 1), dfirst = deps.length;
+    for (var dq = 0; dq < deps.length; dq++) { if (+deps[dq].number >= dstart) { dfirst = dq; break; } }
+    var ddone = 0;
+    dlines.forEach(function (line, k) {
+      var ep = deps[dfirst + k]; if (!ep) return;
+      var urls = line.match(/https?:\/\/[^\s;]+/g) || [];
+      if (!urls.length) return;
+      ep.downloads = urls.length === 1 ? textToSrc(line) : numberDupes(urls.map(function (u) { return { name: hostName(u), url: u }; }));
+      ddone++;
+    });
+    keepOpenDl = di; renderEditor(); keepOpenDl = null;
+    toast(ddone + " épisode" + (ddone > 1 ? "s" : "") + " rempli" + (ddone > 1 ? "s" : "") + (dlines.length > deps.length - dfirst ? " (trop de lignes, les derniers sont ignorés)" : ""));
   }
   else if (t.dataset.listtab != null) { listTab = t.dataset.listtab; if (rerender) rerender(); }
   else if (t.dataset.genre != null) { filter = t.dataset.genre; if (rerender) rerender(); }
@@ -1721,9 +1807,14 @@ document.addEventListener("input", function (e) {
     if (f === "genres") draft.genres = val.split(",").map(function (x) { return x.trim(); }).filter(Boolean);
     else if (f === "cast") draft.cast = val.split("\n").map(function (l) { var p = l.split(/\s+[—-]\s+/); return p[0].trim() ? { name: p[0].trim(), character: (p[1] || "").trim() } : null; }).filter(Boolean);
     else if (f === "sources") draft.sources = textToSrc(val);
+    else if (f === "downloads") draft.downloads = textToSrc(val);
     else draft[f] = val;
   } else if (t.dataset.s != null) {
     draft.seasons[+t.dataset.s].episodes[+t.dataset.e].sources = textToSrc(t.value);
+  } else if (t.dataset.dlseason != null) {
+    draft.seasons[+t.dataset.dlseason].downloads = textToSrc(t.value);
+  } else if (t.dataset.dls != null) {
+    draft.seasons[+t.dataset.dls].episodes[+t.dataset.dle].downloads = textToSrc(t.value);
   }
 });
 
