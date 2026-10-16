@@ -717,7 +717,19 @@ var SETKEY = "noir.settings";
 var SETTINGS = { downloads: "public" };
 if (ADMIN) { var _st = readJSON(SETKEY, null); if (_st && _st.downloads === "private") SETTINGS.downloads = "private"; }
 function saveSettings() { try { localStorage.setItem(SETKEY, JSON.stringify(SETTINGS)); } catch (e) {} }
-function dlOpen() { return ADMIN || SETTINGS.downloads !== "private"; }
+var PREVIEW = false;
+function dlAdmin() { return ADMIN && !PREVIEW; }
+function dlOpen() { return dlAdmin() || SETTINGS.downloads !== "private"; }
+function setPreview(on) {
+  PREVIEW = on;
+  var b = document.getElementById("preview-bar");
+  if (!on) { if (b) b.remove(); return; }
+  if (b) return;
+  b = document.createElement("div"); b.id = "preview-bar";
+  b.style.cssText = "position:fixed;left:0;right:0;bottom:0;z-index:95;background:var(--fg);color:var(--bg);padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));display:flex;gap:14px;align-items:center;justify-content:center;flex-wrap:wrap;font-size:13px;font-weight:600";
+  b.innerHTML = '<span>Aperçu visiteur : téléchargements ' + (SETTINGS.downloads === "private" ? "masqués" : "visibles") + '</span><button type="button" id="preview-quit" style="background:transparent;color:var(--bg);border:1px solid var(--bg);padding:5px 12px;font-weight:700;cursor:pointer">Quitter l\'aperçu</button>';
+  document.body.appendChild(b);
+}
 function persist() { try { localStorage.setItem(STORE, JSON.stringify(db)); } catch (e) { toast("Stockage plein ou bloqué par le navigateur"); } }
 function getToken() { try { return localStorage.getItem(KEYSTORE) || CONFIG.TOKEN; } catch (e) { return CONFIG.TOKEN; } }
 
@@ -1265,7 +1277,7 @@ function viewSerie(id) {
   var movie = isMovie(s);
   if (viewSerie.last !== String(s.id)) dlMode = false;
   viewSerie.last = String(s.id);
-  var showDl = !movie && dlOpen() && (hasDl(s) || ADMIN);
+  var showDl = !movie && dlOpen() && (hasDl(s) || dlAdmin());
   if (!showDl) dlMode = false;
   var seenMap = readSeen()[s.id] || {};
   function seenCount(se) { return (se.episodes || []).filter(function (ep) { return seenMap[epKey(se, ep)]; }).length; }
@@ -1288,7 +1300,7 @@ function viewSerie(id) {
     ((s.cast || []).length ? '<h3 class="note" style="margin:32px 0 0;text-transform:uppercase;letter-spacing:.08em">Distribution</h3><div class="cast">' + s.cast.slice(0, 12).map(function (c) { return '<div><b>' + esc(c.name) + '</b><span>' + esc(c.character || "") + '</span></div>'; }).join("") + '</div>' : '') +
     '</div></div></section>';
   if (!movie && (s.seasons || []).length) {
-    html += '<div class="wrap seasons' + (dlMode ? ' dlmode' : '') + '" id="seasons"><div class="section-head"><h2>Épisodes</h2>' + (showDl ? '<div class="tabs" role="tablist"><button type="button" class="tab' + (dlMode ? '' : ' on') + '" role="tab" data-dltab="watch">Regarder</button><button type="button" class="tab' + (dlMode ? ' on' : '') + '" role="tab" data-dltab="dl">Télécharger</button></div>' : '') + '</div>' + (ADMIN && !hasDl(s) ? '<p class="note dlonly">Aucun lien de téléchargement pour l\'instant. Ajoute-en avec « Modifier ».</p>' : '') + s.seasons.map(function (se, i) {
+    html += '<div class="wrap seasons' + (dlMode ? ' dlmode' : '') + '" id="seasons"><div class="section-head"><h2>Épisodes</h2>' + (showDl ? '<div class="tabs" role="tablist"><button type="button" class="tab' + (dlMode ? '' : ' on') + '" role="tab" data-dltab="watch">Regarder</button><button type="button" class="tab' + (dlMode ? ' on' : '') + '" role="tab" data-dltab="dl">Télécharger</button></div>' : '') + '</div>' + (dlAdmin() && !hasDl(s) ? '<p class="note dlonly">Aucun lien de téléchargement pour l\'instant. Ajoute-en avec « Modifier ».</p>' : '') + s.seasons.map(function (se, i) {
       return '<details class="season"' + (i === 0 ? " open" : "") + '><summary><span>' + esc(se.name || "Saison " + se.number) + '</span><span class="sm"><i>' + (se.episodes || []).length + ' ÉPISODES' + (seenCount(se) ? ' · ' + seenCount(se) + ' VUS' : '') + '</i></span></summary>' +
         '<div class="seasonbar"><button type="button" class="btn small ghost" data-seenseason="' + esc(s.id) + '|' + i + '">' + (seenCount(se) === (se.episodes || []).length && seenCount(se) ? "Tout marquer non vu" : "Tout marquer comme vu") + '</button></div>' +
         (dlOpen() && (se.downloads || []).length ? '<div class="dlbar">' + dlLinks(se.downloads, "Télécharger toute la saison") + '</div>' : '') +
@@ -1319,7 +1331,7 @@ function viewPanel() {
     '<div class="tabs" role="tablist" style="justify-self:start"><button type="button" class="tab' + (priv ? '' : ' on') + '" role="tab" aria-selected="' + (priv ? 'false' : 'true') + '" data-setdl="public">Public</button><button type="button" class="tab' + (priv ? ' on' : '') + '" role="tab" aria-selected="' + (priv ? 'true' : 'false') + '" data-setdl="private">Privé</button></div>' +
     '<p class="note" style="margin:0">' + (priv
       ? 'Privé : seul toi (en mode admin) vois les boutons et l\'onglet Télécharger. À la publication, les liens sont retirés de catalog.json, donc personne ne peut les lire dans le fichier. Ils restent sur ce navigateur : fais une sauvegarde complète.'
-      : 'Public : tous les visiteurs voient les boutons et l\'onglet Télécharger sur les fiches qui ont des liens.') + '</p></div>' +
+      : 'Public : tous les visiteurs voient les boutons et l\'onglet Télécharger sur les fiches qui ont des liens.') + '</p><div class="row"><button class="btn ghost small" type="button" data-preview="1">Voir comme un visiteur</button></div></div>' +
     '<div style="display:grid;gap:12px"><h3 class="note" style="margin:0;text-transform:uppercase;letter-spacing:.08em">Catalogue</h3>' +
     '<div class="row"><button class="btn" type="button" data-clickid="btn-export">Publier (catalog.json)</button><button class="btn ghost" type="button" id="btn-backup">Sauvegarde complète</button><button class="btn ghost" type="button" data-clickid="btn-import">Importer</button></div></div>' +
     '<div style="display:grid;gap:12px"><h3 class="note" style="margin:0;text-transform:uppercase;letter-spacing:.08em">Accès</h3>' +
@@ -2091,6 +2103,8 @@ document.addEventListener("click", function (e) {
     toast("Téléchargements : " + (SETTINGS.downloads === "private" ? "privé" : "public") + ". Publie le catalogue pour l'appliquer aux visiteurs.");
     return;
   }
+  if (e.target.closest("[data-preview]")) { setPreview(true); location.hash = "#/"; route(true); return; }
+  if (e.target.id === "preview-quit") { setPreview(false); location.hash = "#/panel"; route(true); return; }
   var c = e.target.closest("[data-clickid]");
   if (c) { var el = document.getElementById(c.dataset.clickid); if (el) el.click(); return; }
   if (e.target.id === "btn-backup") { saveJson({ settings: { downloads: SETTINGS.downloads }, series: db }, "catalog-sauvegarde.json"); toast("Sauvegarde complète téléchargée (avec les liens)"); }
