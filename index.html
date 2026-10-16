@@ -423,6 +423,10 @@ dialog#player::-webkit-scrollbar { display: none; }
 .rail::-webkit-scrollbar { display: none; }
 
 /* reprendre */
+.card .poster .rdel { position: absolute; z-index: 2; top: 8px; right: 8px; width: 30px; height: 30px; border-radius: 50%; border: 0; background: rgba(0,0,0,.7); color: #fff; font-size: 20px; line-height: 1; cursor: pointer; display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity .2s, background .2s; }
+.card:hover .rdel, .card .rdel:focus-visible { opacity: 1; }
+.card .rdel:hover { background: #000; }
+@media (hover: none) { .card .poster .rdel { opacity: 1; } }
 .card .poster .rtag { position: absolute; z-index: 1; left: 0; right: 0; bottom: 0; padding: 7px 10px; background: var(--fg); color: var(--bg); font-weight: 700; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; }
 
 /* message d'accueil */
@@ -881,7 +885,11 @@ function resumeList() {
 function resumeCard(s, i) {
   return '<a class="card" style="--i:' + Math.min(i || 0, 14) + '" href="#/serie/' + esc(s.id) + '" data-resume="' + esc(s.id) + '"><div class="poster">' +
     (s.poster ? '<img loading="lazy" src="' + esc(s.poster) + '" alt="' + esc(s.name) + '">' : '<div class="ph">' + esc(s.name.charAt(0)) + '</div>') +
-    '<span class="rtag">Reprendre</span></div><div class="meta"><b>' + esc(s.name) + '</b><span>' + esc(s._r) + '</span></div></a>';
+    '<span class="rtag">Reprendre</span><button type="button" class="rdel" data-resumedel="' + esc(s.id) + '" aria-label="Retirer de Reprendre" title="Retirer de Reprendre">&times;</button></div><div class="meta"><b>' + esc(s.name) + '</b><span>' + esc(s._r) + '</span></div></a>';
+}
+function removeResume(id) {
+  var r = readResume(); delete r[id];
+  try { localStorage.setItem(RESUMEKEY, JSON.stringify(r)); } catch (e) {}
 }
 function resumeWatch(id) {
   var s = byId(id), r = readResume()[id]; if (!s || !r) return;
@@ -1065,10 +1073,10 @@ function viewHome() {
     return da < db ? 1 : da > db ? -1 : (b.addedAt || 0) - (a.addedAt || 0);
   });
   if (fresh.length) html += rail("Nouveaux épisodes", fresh);
-  var ml = listItems();
-  if (ml.length) html += rail("Ma liste", ml, "#/ma-liste");
   html += rail("Derniers ajouts", list);
   if (tv.length && mv.length) html += rail("Séries", tv, "#/series") + rail("Films", mv, "#/films");
+  var ml = listItems();
+  if (ml.length) html += rail("Ma liste", ml, "#/ma-liste");
   $("#app").innerHTML = html;
   startHero();
   refreshTrending().then(function (ch) { if (ch && (location.hash || "#/") === "#/") viewHome(); });
@@ -1834,6 +1842,8 @@ document.addEventListener("click", function (e) { if (!e.target.closest(".search
 document.addEventListener("click", function (e) {
   var nav = e.target.closest("header.top a[href^='#/']");
   if (nav && nav.getAttribute("href") === (location.hash || "#/")) { e.preventDefault(); route(true); return; }
+  var rd = e.target.closest("[data-resumedel]");
+  if (rd) { e.preventDefault(); e.stopPropagation(); removeResume(rd.dataset.resumedel); viewHome(); return; }
   var t = e.target.closest("[data-resume],[data-watch],[data-movsrc],[data-playep],[data-src],[data-del],[data-list],[data-listtab],[data-seen],[data-seenseason],[data-genre],[data-langf],[data-dlf],[data-typef],[data-pick],[data-bulk],[data-dlbulk],[data-dltab],#save,#applytpl,#manual,#manualfilm,#refresh,#copyhash");
   if (!t) return;
   if (t.dataset.resume != null) { e.preventDefault(); resumeWatch(t.dataset.resume); }
