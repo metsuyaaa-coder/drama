@@ -549,6 +549,7 @@ footer .wrap.about { display: grid; grid-template-columns: repeat(auto-fit, minm
       <a href="#/ma-liste" id="nav-list">Ma liste</a>
       <a href="#/demande" id="nav-req">Demande</a>
       <a href="#/ajouter" id="nav-add" class="admin-only">Ajouter</a>
+      <a href="#/panel" id="nav-panel" class="admin-only">Admin</a>
     </nav>
     <div class="search"><input id="q" type="text" placeholder="Rechercher un titre" autocomplete="off" aria-label="Rechercher dans le catalogue"><div class="sugg" id="sugg" hidden></div></div>
   </div>
@@ -564,6 +565,7 @@ footer .wrap.about { display: grid; grid-template-columns: repeat(auto-fit, minm
       <button id="btn-export" type="button" class="admin-only">Publier (catalog.json)</button>
       <button id="btn-import" type="button" class="admin-only">Importer</button>
       <button id="btn-key" type="button" class="admin-only">Clé TMDB</button>
+      <a href="#/panel" class="admin-only">Panneau admin</a>
       <a href="#/motdepasse" class="admin-only">Mot de passe</a>
       <button id="btn-quit" type="button" class="admin-only">Quitter le mode admin</button>
     </div>
@@ -709,6 +711,13 @@ function normalize(s) {
 /* Mode admin : connexion par mot de passe. Les visiteurs lisent catalog.json. */
 var ADMIN = readJSON("noir.admin", false) === true;
 var db = ADMIN ? readJSON(STORE, []).map(normalize) : [];
+
+/* Réglages du site (téléchargement public ou privé). Les visiteurs les lisent dans catalog.json ; l'admin les garde sur son navigateur. */
+var SETKEY = "noir.settings";
+var SETTINGS = { downloads: "public" };
+if (ADMIN) { var _st = readJSON(SETKEY, null); if (_st && _st.downloads === "private") SETTINGS.downloads = "private"; }
+function saveSettings() { try { localStorage.setItem(SETKEY, JSON.stringify(SETTINGS)); } catch (e) {} }
+function dlOpen() { return ADMIN || SETTINGS.downloads !== "private"; }
 function persist() { try { localStorage.setItem(STORE, JSON.stringify(db)); } catch (e) { toast("Stockage plein ou bloqué par le navigateur"); } }
 function getToken() { try { return localStorage.getItem(KEYSTORE) || CONFIG.TOKEN; } catch (e) { return CONFIG.TOKEN; } }
 
@@ -1256,7 +1265,7 @@ function viewSerie(id) {
   var movie = isMovie(s);
   if (viewSerie.last !== String(s.id)) dlMode = false;
   viewSerie.last = String(s.id);
-  var showDl = !movie && (hasDl(s) || ADMIN);
+  var showDl = !movie && dlOpen() && (hasDl(s) || ADMIN);
   if (!showDl) dlMode = false;
   var seenMap = readSeen()[s.id] || {};
   function seenCount(se) { return (se.episodes || []).filter(function (ep) { return seenMap[epKey(se, ep)]; }).length; }
@@ -1275,19 +1284,19 @@ function viewSerie(id) {
     '<div><div class="tags">' + (langLabel(s) ? '<span class="lang">' + esc(langLabel(s)) + '</span>' : '') + (ongoing(s) ? '<span class="live">En cours</span>' : '') + (ne ? newBadge("Nouvel épisode") : '') + tags.map(function (t) { return "<span>" + esc(t) + "</span>"; }).join("") + '</div>' +
     '<h1>' + esc(s.name) + '</h1>' + (s.original_name && s.original_name !== s.name ? '<div class="orig">' + esc(s.original_name) + '</div>' : '<div class="orig"></div>') +
     '<p class="ov">' + esc(s.overview || "Pas de synopsis.") + '</p>' +
-    '<div class="row"><button class="btn" data-watch="' + esc(s.id) + '">Regarder</button>' + (movie ? dlLinks(s.downloads, "Télécharger", " ghost") : "") + (!movie && showDl ? '<button class="btn ghost" type="button" data-godl="1">Télécharger</button>' : "") + '<button class="btn ghost' + (inList(s.id) ? " on" : "") + '" type="button" data-list="' + esc(s.id) + '">' + (inList(s.id) ? "✓ Dans ma liste" : "+ Ma liste") + '</button>' + (ADMIN ? '<a class="btn ghost" href="#/modifier/' + esc(s.id) + '">Modifier</a><button class="btn danger" data-del="' + esc(s.id) + '">Supprimer</button>' : '') + '</div>' + srcChips +
+    '<div class="row"><button class="btn" data-watch="' + esc(s.id) + '">Regarder</button>' + (movie && dlOpen() ? dlLinks(s.downloads, "Télécharger", " ghost") : "") + (!movie && showDl ? '<button class="btn ghost" type="button" data-godl="1">Télécharger</button>' : "") + '<button class="btn ghost' + (inList(s.id) ? " on" : "") + '" type="button" data-list="' + esc(s.id) + '">' + (inList(s.id) ? "✓ Dans ma liste" : "+ Ma liste") + '</button>' + (ADMIN ? '<a class="btn ghost" href="#/modifier/' + esc(s.id) + '">Modifier</a><button class="btn danger" data-del="' + esc(s.id) + '">Supprimer</button>' : '') + '</div>' + srcChips +
     ((s.cast || []).length ? '<h3 class="note" style="margin:32px 0 0;text-transform:uppercase;letter-spacing:.08em">Distribution</h3><div class="cast">' + s.cast.slice(0, 12).map(function (c) { return '<div><b>' + esc(c.name) + '</b><span>' + esc(c.character || "") + '</span></div>'; }).join("") + '</div>' : '') +
     '</div></div></section>';
   if (!movie && (s.seasons || []).length) {
     html += '<div class="wrap seasons' + (dlMode ? ' dlmode' : '') + '" id="seasons"><div class="section-head"><h2>Épisodes</h2>' + (showDl ? '<div class="tabs" role="tablist"><button type="button" class="tab' + (dlMode ? '' : ' on') + '" role="tab" data-dltab="watch">Regarder</button><button type="button" class="tab' + (dlMode ? ' on' : '') + '" role="tab" data-dltab="dl">Télécharger</button></div>' : '') + '</div>' + (ADMIN && !hasDl(s) ? '<p class="note dlonly">Aucun lien de téléchargement pour l\'instant. Ajoute-en avec « Modifier ».</p>' : '') + s.seasons.map(function (se, i) {
       return '<details class="season"' + (i === 0 ? " open" : "") + '><summary><span>' + esc(se.name || "Saison " + se.number) + '</span><span class="sm"><i>' + (se.episodes || []).length + ' ÉPISODES' + (seenCount(se) ? ' · ' + seenCount(se) + ' VUS' : '') + '</i></span></summary>' +
         '<div class="seasonbar"><button type="button" class="btn small ghost" data-seenseason="' + esc(s.id) + '|' + i + '">' + (seenCount(se) === (se.episodes || []).length && seenCount(se) ? "Tout marquer non vu" : "Tout marquer comme vu") + '</button></div>' +
-        ((se.downloads || []).length ? '<div class="dlbar">' + dlLinks(se.downloads, "Télécharger toute la saison") + '</div>' : '') +
+        (dlOpen() && (se.downloads || []).length ? '<div class="dlbar">' + dlLinks(se.downloads, "Télécharger toute la saison") + '</div>' : '') +
         (se.episodes || []).map(function (ep, k) {
           var n = (ep.sources || []).length, seen = !!seenMap[epKey(se, ep)], fresh = !seen && isRecent(ep.air_date);
           return '<div class="ep' + (seen ? " seen" : "") + '" style="--k:' + Math.min(k, 12) + '"><span class="n">' + String(ep.number).padStart(2, "0") + '</span><div><b>' + esc(ep.name || "Épisode " + ep.number) + (fresh ? " " + newBadge("Nouveau") : "") + '</b>' + (ep.air_date ? '<small class="d">' + esc(fmtDate(ep.air_date)) + '</small>' : '') + (ep.overview ? '<small>' + esc(ep.overview) + '</small>' : '') + '</div>' +
             '<div class="act">' + (n ? '<button class="btn small" data-playep="' + esc(s.id) + '|' + i + '|' + esc(ep.number) + '">Lire</button>' + (n > 1 ? '<span class="off">' + n + ' sources</span>' : '') : '<span class="off">Sans source</span>') + '<button type="button" class="btn small ghost seenbtn' + (seen ? " on" : "") + '" data-seen="' + esc(s.id) + '|' + i + '|' + esc(ep.number) + '">' + (seen ? "Vu ✓" : "Marquer vu") + '</button></div>' +
-            '<div class="dlact">' + ((ep.downloads || []).length ? dlLinks(ep.downloads, "Télécharger") : '<span class="off">Pas de lien</span>') + '</div></div>';
+            (dlOpen() ? '<div class="dlact">' + ((ep.downloads || []).length ? dlLinks(ep.downloads, "Télécharger") : '<span class="off">Pas de lien</span>') + '</div>' : '') + '</div>';
         }).join("") + '</details>';
     }).join("") + '</div>';
   }
@@ -1297,6 +1306,25 @@ function viewSerie(id) {
 function scrollSeasons() {
   var el = $("#seasons");
   if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+/* ===== Panneau admin ===== */
+function viewPanel() {
+  var priv = SETTINGS.downloads === "private";
+  var n = db.filter(hasDl).length;
+  $("#app").innerHTML = '<div class="wrap"><div class="authbox" style="max-width:560px"><h1>Panneau admin</h1>' +
+    '<p class="lead">Réglages du site. Pour que les visiteurs les voient, clique ensuite sur « Publier » et remets catalog.json en ligne.</p>' +
+    '<div style="display:grid;gap:12px"><h3 class="note" style="margin:0;text-transform:uppercase;letter-spacing:.08em">Téléchargements</h3>' +
+    '<p class="note" style="margin:0">' + n + (n > 1 ? ' fiches ont' : ' fiche a') + ' des liens de téléchargement.</p>' +
+    '<div class="tabs" role="tablist" style="justify-self:start"><button type="button" class="tab' + (priv ? '' : ' on') + '" role="tab" aria-selected="' + (priv ? 'false' : 'true') + '" data-setdl="public">Public</button><button type="button" class="tab' + (priv ? ' on' : '') + '" role="tab" aria-selected="' + (priv ? 'true' : 'false') + '" data-setdl="private">Privé</button></div>' +
+    '<p class="note" style="margin:0">' + (priv
+      ? 'Privé : seul toi (en mode admin) vois les boutons et l\'onglet Télécharger. À la publication, les liens sont retirés de catalog.json, donc personne ne peut les lire dans le fichier. Ils restent sur ce navigateur : fais une sauvegarde complète.'
+      : 'Public : tous les visiteurs voient les boutons et l\'onglet Télécharger sur les fiches qui ont des liens.') + '</p></div>' +
+    '<div style="display:grid;gap:12px"><h3 class="note" style="margin:0;text-transform:uppercase;letter-spacing:.08em">Catalogue</h3>' +
+    '<div class="row"><button class="btn" type="button" data-clickid="btn-export">Publier (catalog.json)</button><button class="btn ghost" type="button" id="btn-backup">Sauvegarde complète</button><button class="btn ghost" type="button" data-clickid="btn-import">Importer</button></div></div>' +
+    '<div style="display:grid;gap:12px"><h3 class="note" style="margin:0;text-transform:uppercase;letter-spacing:.08em">Accès</h3>' +
+    '<div class="row"><button class="btn ghost" type="button" data-clickid="btn-key">Clé TMDB</button><a class="btn ghost" href="#/motdepasse">Mot de passe</a><button class="btn danger" type="button" data-clickid="btn-quit">Quitter le mode admin</button></div></div>' +
+    '</div></div>';
 }
 
 /* ===== Connexion et mot de passe ===== */
@@ -1656,7 +1684,7 @@ function toggleFull() {
 }
 
 /* ===== Routage ===== */
-var NAVMAP = { "": "nav-home", series: "nav-series", films: "nav-films", ajouter: "nav-add", modifier: "nav-add", "ma-liste": "nav-list", demande: "nav-req" };
+var NAVMAP = { "": "nav-home", series: "nav-series", films: "nav-films", ajouter: "nav-add", modifier: "nav-add", panel: "nav-panel", "ma-liste": "nav-list", demande: "nav-req" };
 
 function route(force) {
   force = force === true;
@@ -1664,7 +1692,7 @@ function route(force) {
   var a = parts[1] || "", b = parts[2] || "";
   if (a === "recherche") { try { b = decodeURIComponent(parts.slice(2).join("/")); } catch (e) { b = parts.slice(2).join("/"); } }
 
-  if ((a === "ajouter" || a === "modifier" || a === "motdepasse") && !ADMIN) { location.hash = "#/admin"; return; }
+  if ((a === "ajouter" || a === "modifier" || a === "motdepasse" || a === "panel") && !ADMIN) { location.hash = "#/admin"; return; }
 
   var changed = force || a !== lastPage || a === "serie" || a === "modifier";
   if (a !== lastPage) { filter = ""; langFilter = ""; listTab = "list"; }
@@ -1690,6 +1718,7 @@ function route(force) {
   else if (a === "recherche") { rerender = function () { viewSearch(b); }; rerender(); }
   else if (a === "admin") viewLogin();
   else if (a === "motdepasse") viewSetPassword(false);
+  else if (a === "panel") viewPanel();
   else if (a === "ajouter") viewEditor();
   else if (a === "modifier") viewEditor(b);
   else viewHome();
@@ -2033,20 +2062,60 @@ document.addEventListener("webkitfullscreenchange", function () { if (!$("#playe
 $("#player").addEventListener("click", function (e) { if (e.target === this) closePlayer(); });
 $("#player").addEventListener("close", function () { closeEps(); clearInterval(tipTimer); document.documentElement.classList.remove("lock"); $("#pstage").innerHTML = ""; syncFs(); });
 
-$("#btn-export").addEventListener("click", function () {
+/* Fichier publié : en mode privé, les liens de téléchargement en sont retirés */
+function stripDl(list) {
+  list.forEach(function (x) {
+    delete x.downloads;
+    (x.seasons || []).forEach(function (se) { delete se.downloads; (se.episodes || []).forEach(function (ep) { delete ep.downloads; }); });
+  });
+  return list;
+}
+function saveJson(obj, name) {
   var a = document.createElement("a");
-  a.href = URL.createObjectURL(new Blob([JSON.stringify(db, null, 2)], { type: "application/json" }));
-  a.download = "catalog.json"; document.body.appendChild(a); a.click(); a.remove();
-  toast("catalog.json téléchargé : mets-le à côté de index.html sur ton hébergement");
+  a.href = URL.createObjectURL(new Blob([JSON.stringify(obj, null, 2)], { type: "application/json" }));
+  a.download = name; document.body.appendChild(a); a.click(); a.remove();
+}
+$("#btn-export").addEventListener("click", function () {
+  var priv = SETTINGS.downloads === "private";
+  var list = JSON.parse(JSON.stringify(db));
+  if (priv) stripDl(list);
+  saveJson({ settings: { downloads: SETTINGS.downloads }, series: list }, "catalog.json");
+  toast("catalog.json téléchargé" + (priv ? " (téléchargements privés : liens retirés)" : "") + " : mets-le à côté de index.html sur ton hébergement");
 });
+document.addEventListener("click", function (e) {
+  if (!ADMIN) return;
+  var t = e.target.closest("[data-setdl]");
+  if (t) {
+    SETTINGS.downloads = t.dataset.setdl === "private" ? "private" : "public";
+    saveSettings(); viewPanel();
+    toast("Téléchargements : " + (SETTINGS.downloads === "private" ? "privé" : "public") + ". Publie le catalogue pour l'appliquer aux visiteurs.");
+    return;
+  }
+  var c = e.target.closest("[data-clickid]");
+  if (c) { var el = document.getElementById(c.dataset.clickid); if (el) el.click(); return; }
+  if (e.target.id === "btn-backup") { saveJson({ settings: { downloads: SETTINGS.downloads }, series: db }, "catalog-sauvegarde.json"); toast("Sauvegarde complète téléchargée (avec les liens)"); }
+});
+/* Import : si le fichier n'a pas de liens de téléchargement, on garde ceux déjà présents */
+function keepDl(n, o) {
+  if (!n.downloads.length) n.downloads = o.downloads || [];
+  (n.seasons || []).forEach(function (se) {
+    var os = (o.seasons || []).filter(function (x) { return x.number === se.number; })[0];
+    if (!os) return;
+    if (!se.downloads.length) se.downloads = os.downloads || [];
+    (se.episodes || []).forEach(function (ep) {
+      var oe = (os.episodes || []).filter(function (x) { return x.number === ep.number; })[0];
+      if (oe && !ep.downloads.length) ep.downloads = oe.downloads || [];
+    });
+  });
+}
 $("#btn-import").addEventListener("click", function () { $("#file").click(); });
 $("#file").addEventListener("change", function () {
   var f = this.files[0]; if (!f) return;
   var r = new FileReader();
   r.onload = function () {
     try {
-      var data = JSON.parse(r.result); if (!Array.isArray(data)) throw 0;
-      data.forEach(function (s) { if (!s || !s.id || !s.name) return; normalize(s); var i = -1; db.forEach(function (x, k) { if (String(x.id) === String(s.id)) i = k; }); if (i > -1) db[i] = s; else db.push(s); });
+      var data = JSON.parse(r.result); if (data && !Array.isArray(data) && Array.isArray(data.series)) data = data.series; if (!Array.isArray(data)) throw 0;
+      data.forEach(function (s) { if (!s || !s.id || !s.name) return; normalize(s); var i = -1; db.forEach(function (x, k) { if (String(x.id) === String(s.id)) i = k; }); if (i > -1) { keepDl(s, db[i]); db[i] = s; } else db.push(s); });
       persist(); toast("Catalogue importé"); route(true);
     } catch (e) { toast("Fichier invalide"); }
   };
@@ -2081,10 +2150,16 @@ function loadCatalog() {
     if (!r.ok) throw new Error("catalog.json introuvable");
     return r.json();
   }).then(function (data) {
+    var st = null;
+    if (data && !Array.isArray(data) && Array.isArray(data.series)) { st = data.settings || null; data = data.series; }
     if (!Array.isArray(data)) return;
     data = data.map(normalize);
-    if (!ADMIN) db = data;
-    else if (!db.length) { db = data; persist(); }
+    var priv = !!(st && st.downloads === "private");
+    if (!ADMIN) { db = data; SETTINGS.downloads = priv ? "private" : "public"; }
+    else if (!db.length) {
+      db = data; persist();
+      if (!readJSON(SETKEY, null)) { SETTINGS.downloads = priv ? "private" : "public"; saveSettings(); }
+    }
   }).catch(function () {});
 }
 
