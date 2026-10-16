@@ -1030,7 +1030,7 @@ function heroSlide(h, on) {
   return '<div class="hslide' + (on ? " on" : "") + '"><div class="bg" style="background-image:url(\'' + esc(hq(h.backdrop || h.poster)) + '\')"></div><div class="wrap">' +
     '<div class="tags">' + (langLabel(h) ? '<span class="lang">' + esc(langLabel(h)) + '</span>' : '') + (ongoing(h) ? '<span class="live">En cours</span>' : '') + (newEpisode(h) ? newBadge("Nouvel épisode") : '') + [isMovie(h) ? "Film" : "Série", h.year, (h.genres || []).slice(0, 3).join(" / ")].filter(Boolean).map(function (t) { return "<span>" + esc(t) + "</span>"; }).join("") + '</div>' +
     '<h1>' + esc(h.name) + '</h1><p>' + esc(h.overview || "") + '</p>' +
-    '<div class="row"><button class="btn" data-watch="' + esc(h.id) + '">Regarder</button><a class="btn ghost" href="#/serie/' + esc(h.id) + '">Voir la fiche</a></div></div></div>';
+    '<div class="row"><button class="btn" data-watch="' + esc(h.id) + '">' + PLAYICON + '<span>Regarder</span></button><a class="btn ghost" href="#/serie/' + esc(h.id) + '">Voir la fiche</a></div></div></div>';
 }
 function startHero() {
   clearInterval(heroTimer); heroTimer = null;
@@ -1217,6 +1217,7 @@ function hasDl(s) {
     return (se.downloads || []).length || (se.episodes || []).some(function (ep) { return (ep.downloads || []).length; });
   });
 }
+var PLAYICON = '<svg class="dlic" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12.5-7.5a1 1 0 0 0 0-1.72L8.5 3.64A1 1 0 0 0 7 4.5z"/></svg>';
 var DLICON = '<svg class="dlic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>';
 function dlLinks(arr, label, cls) {
   arr = arr || [];
@@ -1342,7 +1343,7 @@ function viewSerie(id) {
     '<div><div class="tags">' + (langLabel(s) ? '<span class="lang">' + esc(langLabel(s)) + '</span>' : '') + (ongoing(s) ? '<span class="live">En cours</span>' : '') + (ne ? newBadge("Nouvel épisode") : '') + tags.map(function (t) { return "<span>" + esc(t) + "</span>"; }).join("") + '</div>' +
     '<h1>' + esc(s.name) + '</h1>' + (s.original_name && s.original_name !== s.name ? '<div class="orig">' + esc(s.original_name) + '</div>' : '<div class="orig"></div>') +
     '<p class="ov">' + esc(s.overview || "Pas de synopsis.") + '</p>' +
-    '<div class="row"><button class="btn" data-watch="' + esc(s.id) + '">Regarder</button>' + (movie && dlOpen() ? dlLinks(s.downloads, "Télécharger", " ghost") : "") + (!movie && showDl ? '<button class="btn ghost" type="button" data-godl="1">' + DLICON + '<span>Télécharger</span></button>' : "") + '<button class="btn ghost' + (inList(s.id) ? " on" : "") + '" type="button" data-list="' + esc(s.id) + '">' + (inList(s.id) ? "✓ Dans ma liste" : "+ Ma liste") + '</button>' + (ADMIN ? '<a class="btn ghost" href="#/modifier/' + esc(s.id) + '">Modifier</a><button class="btn danger" data-del="' + esc(s.id) + '">Supprimer</button>' : '') + '</div>' + srcChips +
+    '<div class="row"><button class="btn" data-watch="' + esc(s.id) + '">' + PLAYICON + '<span>Regarder</span></button>' + (movie && dlOpen() ? dlLinks(s.downloads, "Télécharger", " ghost") : "") + (!movie && showDl ? '<button class="btn ghost" type="button" data-godl="1">' + DLICON + '<span>Télécharger</span></button>' : "") + '<button class="btn ghost' + (inList(s.id) ? " on" : "") + '" type="button" data-list="' + esc(s.id) + '">' + (inList(s.id) ? "✓ Dans ma liste" : "+ Ma liste") + '</button>' + (ADMIN ? '<a class="btn ghost" href="#/modifier/' + esc(s.id) + '">Modifier</a><button class="btn danger" data-del="' + esc(s.id) + '">Supprimer</button>' : '') + '</div>' + srcChips +
     ((s.cast || []).length ? '<h3 class="note" style="margin:32px 0 0;text-transform:uppercase;letter-spacing:.08em">Distribution</h3><div class="cast">' + s.cast.slice(0, 12).map(function (c) { return '<div><b>' + esc(c.name) + '</b><span>' + esc(c.character || "") + '</span></div>'; }).join("") + '</div>' : '') +
     '</div></div></section>';
   if (!movie && (s.seasons || []).length) {
@@ -1353,7 +1354,7 @@ function viewSerie(id) {
         (se.episodes || []).map(function (ep, k) {
           var n = (ep.sources || []).length, seen = !!seenMap[epKey(se, ep)], fresh = !seen && isRecent(ep.air_date);
           return '<div class="ep' + (seen ? " seen" : "") + '" style="--k:' + Math.min(k, 12) + '"><span class="n">' + String(ep.number).padStart(2, "0") + '</span><div><b>' + esc(ep.name || "Épisode " + ep.number) + (fresh ? " " + newBadge("Nouveau") : "") + '</b>' + (ep.air_date ? '<small class="d">' + esc(fmtDate(ep.air_date)) + '</small>' : '') + (ep.overview ? '<small>' + esc(ep.overview) + '</small>' : '') + '</div>' +
-            '<div class="act">' + (n ? '<button class="btn small" data-playep="' + esc(s.id) + '|' + i + '|' + esc(ep.number) + '">Lire</button>' + (n > 1 ? '<span class="off">' + n + ' sources</span>' : '') : '<span class="off">Sans source</span>') + '<button type="button" class="btn small ghost seenbtn' + (seen ? " on" : "") + '" data-seen="' + esc(s.id) + '|' + i + '|' + esc(ep.number) + '">' + (seen ? "Vu ✓" : "Marquer vu") + '</button></div>' +
+            '<div class="act">' + (n ? '<button class="btn small" data-playep="' + esc(s.id) + '|' + i + '|' + esc(ep.number) + '">' + PLAYICON + '<span>Lire</span></button>' + (n > 1 ? '<span class="off">' + n + ' sources</span>' : '') : '<span class="off">Sans source</span>') + '<button type="button" class="btn small ghost seenbtn' + (seen ? " on" : "") + '" data-seen="' + esc(s.id) + '|' + i + '|' + esc(ep.number) + '">' + (seen ? "Vu ✓" : "Marquer vu") + '</button></div>' +
             (dlOpen() ? '<div class="dlact">' + ((ep.downloads || []).length ? dlLinks(ep.downloads, "Télécharger") : '<span class="off">Pas de lien</span>') + '</div>' : '') + '</div>';
         }).join("") + '</details>';
     }).join("") + '</div>';
