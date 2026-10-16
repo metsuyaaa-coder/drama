@@ -2101,12 +2101,24 @@ function showBar() {
   clearTimeout(barTimer);
   barTimer = setTimeout(hideBar, 5000);
 }
+/* rotation auto : on passe en paysage en entrant en plein écran, et on rend la main en sortant
+   (l'API n'est pas dispo partout, ex. iPhone/Safari : on ignore alors sans erreur) */
+function lockLandscape() {
+  try {
+    var o = window.screen && screen.orientation;
+    if (o && o.lock) { var p = o.lock("landscape"); if (p && p.catch) p.catch(function () {}); }
+  } catch (e) {}
+}
+function unlockOrientation() {
+  try { var o = window.screen && screen.orientation; if (o && o.unlock) o.unlock(); } catch (e) {}
+}
 function syncFs() {
   var on = inFullscreen() && $("#player").open !== false;
   var fr = $("#pframe");
   if (on === fsOn) { applyFit(); return; }
   fsOn = on;
   fr.classList.toggle("fsui", on);
+  if (on) lockLandscape(); else unlockOrientation();
   applyFit();
   if (on) showBar(); else { clearTimeout(barTimer); fr.classList.remove("bar"); }
 }
