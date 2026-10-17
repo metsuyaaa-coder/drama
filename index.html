@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<base href="/">
 <title>DramaByM</title>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="icon" type="image/png" sizes="192x192" href="favicon.png">
@@ -583,16 +584,16 @@ footer .wrap.about { display: grid; grid-template-columns: repeat(auto-fit, minm
 
 <header class="top">
   <div class="wrap">
-    <a class="logo" href="#/">DramaByM</a>
+    <a class="logo" href="/">DramaByM</a>
     <button class="burger" id="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mainnav"><svg class="b" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 8h14M5 12h14M5 16h14"/></svg><svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
     <nav id="mainnav">
-      <a href="#/" id="nav-home">Accueil</a>
-      <a href="#/series" id="nav-series">Séries</a>
-      <a href="#/films" id="nav-films">Films</a>
-      <a href="#/ma-liste" id="nav-list">Ma liste</a>
-      <a href="#/demande" id="nav-req">Demande</a>
-      <a href="#/ajouter" id="nav-add" class="admin-only">Ajouter</a>
-      <a href="#/panel" id="nav-panel" class="admin-only">Admin</a>
+      <a href="/" id="nav-home">Accueil</a>
+      <a href="/series" id="nav-series">Séries</a>
+      <a href="/films" id="nav-films">Films</a>
+      <a href="/ma-liste" id="nav-list">Ma liste</a>
+      <a href="/demande" id="nav-req">Demande</a>
+      <a href="/ajouter" id="nav-add" class="admin-only">Ajouter</a>
+      <a href="/panel" id="nav-panel" class="admin-only">Admin</a>
     </nav>
     <div class="search"><input id="q" type="text" placeholder="Rechercher un titre" autocomplete="off" aria-label="Rechercher dans le catalogue"><div class="sugg" id="sugg" hidden></div></div>
   </div>
@@ -609,8 +610,8 @@ footer .wrap.about { display: grid; grid-template-columns: repeat(auto-fit, minm
       <button id="btn-import" type="button" class="admin-only">Importer</button>
       <button id="btn-key" type="button" class="admin-only">Clé TMDB</button>
       <button id="btn-gh" type="button" class="admin-only">GitHub</button>
-      <a href="#/panel" class="admin-only">Panneau admin</a>
-      <a href="#/motdepasse" class="admin-only">Mot de passe</a>
+      <a href="/panel" class="admin-only">Panneau admin</a>
+      <a href="/motdepasse" class="admin-only">Mot de passe</a>
       <button id="btn-quit" type="button" class="admin-only">Quitter le mode admin</button>
     </div>
     <input id="file" type="file" accept="application/json" hidden>
@@ -622,7 +623,7 @@ footer .wrap.about { display: grid; grid-template-columns: repeat(auto-fit, minm
     </div>
     <div>
       <h3>Une demande ?</h3>
-      <p>N'hésitez pas à faire des demandes dans <a href="https://dramabym.vercel.app/#/demande">dramabym.vercel.app/#/demande</a></p>
+      <p>N'hésitez pas à faire des demandes dans <a href="https://dramabym.vercel.app/demande">dramabym.vercel.app/demande</a></p>
     </div>
     <div>
       <h3>Soutenir le site</h3>
@@ -647,8 +648,8 @@ footer .wrap.about { display: grid; grid-template-columns: repeat(auto-fit, minm
   <div class="pbar" id="pbar">
     <div class="ptip" id="ptip"><button type="button" class="tbtn" id="tprev" aria-label="Conseil précédent">‹</button><p id="ttext" aria-live="polite"></p><button type="button" class="tbtn" id="tnext" aria-label="Conseil suivant">›</button><span id="tcount"></span></div>
     <div class="pl" id="pl"><span class="chiplbl">Serveur</span><span class="srcs" id="psrc"></span></div>
-    <div class="pone" id="pone" style="display:none"><span>Besoin d'une autre source ou celle-ci bug ?</span><a href="#/demande" id="pdemande">/demande</a></div>
-    <div class="pone" id="pone2" style="display:none"><span>Besoin d'un lien de téléchargement ?</span><a href="#/demande" id="pdemande2">/demande</a></div>
+    <div class="pone" id="pone" style="display:none"><span>Besoin d'une autre source ou celle-ci bug ?</span><a href="/demande" id="pdemande">/demande</a></div>
+    <div class="pone" id="pone2" style="display:none"><span>Besoin d'un lien de téléchargement ?</span><a href="/demande" id="pdemande2">/demande</a></div>
     <div class="pn" id="pnav"><button class="btn small ghost" id="pprev" type="button">Épisode précédent</button><button class="btn small ghost" id="peplist" type="button" aria-label="Liste des épisodes" title="Épisodes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="9" width="14" height="11" rx="1.5"/><path d="M7 5.5h12.5A1.5 1.5 0 0 1 21 7v9"/><path d="M11 2.5h8.5A1.5 1.5 0 0 1 21 4"/></svg><span>Épisodes</span></button><button class="btn small" id="pnext" type="button">Épisode suivant</button></div>
   </div>
   <div class="peps" id="peps" hidden role="dialog" aria-label="Liste des épisodes">
@@ -664,7 +665,7 @@ footer .wrap.about { display: grid; grid-template-columns: repeat(auto-fit, minm
     <p>Le site est en bêta : des titres sont ajoutés tous les jours.</p>
     <p>Ce n'est pas vraiment un site de streaming. C'est plutôt une liste qui te facilite la vie, en rassemblant au même endroit des contenus disponibles chez des services tiers.</p>
     <p>Si j'ai un jour les moyens de maintenir le site, il deviendra un vrai site de streaming, en bien meilleur.</p>
-    <p>Il manque un titre ? N'hésitez pas à faire des demandes dans <a href="https://dramabym.vercel.app/#/demande" style="text-decoration:underline;text-underline-offset:3px">dramabym.vercel.app/#/demande</a></p>
+    <p>Il manque un titre ? N'hésitez pas à faire des demandes dans <a href="https://dramabym.vercel.app/demande" style="text-decoration:underline;text-underline-offset:3px">dramabym.vercel.app/demande</a></p>
     <p>Une idée, un bug, ou l'envie de contribuer ? Écris-moi sur Discord.</p>
     <div class="contact"><span>Discord</span><b>meyriuu.</b><button type="button" class="btn small ghost" data-copy="meyriuu.">Copier</button></div>
     <button class="btn" id="welcome-ok" type="button">Compris</button>
@@ -677,14 +678,27 @@ footer .wrap.about { display: grid; grid-template-columns: repeat(auto-fit, minm
 var CONFIG = {
   TOKEN: "",       /* jeton TMDB : à coller via « Clé TMDB » en mode admin */
   ADMIN_HASH: "",  /* ancien format (un seul admin) : laisse vide, les admins sont dans ADMINS */
-  ADMINS: [{ name: "NEBULA", hash: "614d778ed0cba5ca0a8417fb496e2cb752f2e111ed385d663c6771cb040b9266" }],  /* liste des admins : gérée depuis #/headadmin */
-  HEAD_HASH: "12afa2afc52f8d72a5d94d6e75aef998d73d95d61c0792b99d93a850795b71a2",   /* empreinte du mot de passe Head admin : à créer sur #/headadmin puis à coller ici */
+  ADMINS: [{ name: "NEBULA", hash: "614d778ed0cba5ca0a8417fb496e2cb752f2e111ed385d663c6771cb040b9266" }],  /* liste des admins : gérée depuis /headadmin */
+  HEAD_HASH: "12afa2afc52f8d72a5d94d6e75aef998d73d95d61c0792b99d93a850795b71a2",   /* empreinte du mot de passe Head admin : à créer sur /headadmin puis à coller ici */
   TOKEN_ENC: "",   /* jeton TMDB chiffré avec ton mot de passe : se débloque tout seul à la connexion admin */
   GITHUB_REPO: "metsuyaaa-coder/drama", /* ex. "pseudo/depot" : si rempli, les visiteurs lisent catalog.json directement sur GitHub (mise à jour en direct) */
   GITHUB_BRANCH: "main",
   GITHUB_PATH: "catalog.json",
   LANG: "fr-FR"
 };
+/* ===== Navigation sans # : /serie/12, /demande, /headadmin… ===== */
+function curPath() {
+  var p = location.pathname.replace(/\/index\.html$/, "/");
+  if (p.length > 1) p = p.replace(/\/+$/, "");
+  return p || "/";
+}
+function go(path, replace) {
+  try { history[replace ? "replaceState" : "pushState"](null, "", path); }
+  catch (e) { location.href = path; return; }
+  route();
+}
+/* anciens liens avec # (ex. /#/demande) : on les convertit en /demande */
+if (/^#\//.test(location.hash)) { try { history.replaceState(null, "", location.hash.slice(1)); } catch (e) {} }
 var API = "https://api.themoviedb.org/3";
 var IMG = "https://image.tmdb.org/t/p/";
 var STORE = "noir.series.v1";
@@ -827,10 +841,10 @@ function loginAdmin(stay, hash) {
   try { localStorage.setItem("noir.admin", JSON.stringify(hash || "")); } catch (e) {}
   var local = readJSON(STORE, []).map(normalize);
   ADMIN_ID = hash || ""; ADMIN = true;
-  if (local.length) db = local;
+  if (local.length) { db = local; loadCatalog().then(function () { route(true); }); }
   document.body.classList.add("admin");
   persist();
-  if (!stay) { toast("Mode admin activé"); location.hash = "#/"; }
+  if (!stay) { toast("Mode admin activé"); go("/"); }
 }
 
 function esc(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
@@ -914,14 +928,14 @@ var STATUS = { "Returning Series": "En cours", "Ended": "Terminée", "Canceled":
 function statusFr(s) { return STATUS[s] || s || ""; }
 
 /* ===== Vues ===== */
-var filter = "", langFilter = "", dlFilter = false, newFilter = "", kdFilter = "", typeFilter = "", curQ = "", searchBack = "#/";
+var filter = "", langFilter = "", dlFilter = false, newFilter = "", kdFilter = "", typeFilter = "", curQ = "", searchBack = "/";
 var rerender = null;
 var lastPage = null;
 var pendingScroll = false;
 
 function card(s, i) {
   var meta = [s.type === "movie" ? "Film" : "", s.year, s.rating ? "★ " + s.rating : ""].filter(Boolean).join("  ·  ");
-  return '<a class="card" style="--i:' + Math.min(i || 0, 14) + '" href="#/serie/' + esc(s.id) + '"><div class="poster">' +
+  return '<a class="card" style="--i:' + Math.min(i || 0, 14) + '" href="/serie/' + esc(s.id) + '"><div class="poster">' +
     (s.poster ? '<img loading="lazy" src="' + esc(s.poster) + '" alt="' + esc(s.name) + '">' : '<div class="ph">' + esc(s.name.charAt(0)) + '</div>') +
     (langLabel(s) ? '<span class="lang">' + esc(langLabel(s)) + '</span>' : '') + (newEpisode(s) ? newBadge("Nouvel ép.") : '') + '</div><div class="meta"><b>' + esc(s.name) + '</b><span>' + esc(meta) + '</span></div></a>';
 }
@@ -963,7 +977,7 @@ function resumeList() {
   return out;
 }
 function resumeCard(s, i) {
-  return '<a class="card" style="--i:' + Math.min(i || 0, 14) + '" href="#/serie/' + esc(s.id) + '" data-resume="' + esc(s.id) + '"><div class="poster">' +
+  return '<a class="card" style="--i:' + Math.min(i || 0, 14) + '" href="/serie/' + esc(s.id) + '" data-resume="' + esc(s.id) + '"><div class="poster">' +
     (s.poster ? '<img loading="lazy" src="' + esc(s.poster) + '" alt="' + esc(s.name) + '">' : '<div class="ph">' + esc(s.name.charAt(0)) + '</div>') +
     '<span class="rtag">Reprendre</span><button type="button" class="rdel" data-resumedel="' + esc(s.id) + '" aria-label="Retirer de Reprendre" title="Retirer de Reprendre">&times;</button></div><div class="meta"><b>' + esc(s.name) + '</b><span>' + esc(s._r) + '</span></div></a>';
 }
@@ -1147,7 +1161,7 @@ function heroSlide(h, on) {
   return '<div class="hslide' + (on ? " on" : "") + '"><div class="bg" style="background-image:url(\'' + esc(hq(h.backdrop || h.poster)) + '\')"></div><div class="wrap">' +
     '<div class="tags">' + (langLabel(h) ? '<span class="lang">' + esc(langLabel(h)) + '</span>' : '') + (newEpisode(h) ? newBadge("Nouvel épisode") : '') + [isMovie(h) ? "Film" : "Série", h.year, (h.genres || []).slice(0, 3).join(" / ")].filter(Boolean).map(function (t) { return "<span>" + esc(t) + "</span>"; }).join("") + '</div>' +
     '<h1>' + esc(h.name) + '</h1><p>' + esc(h.overview || "") + '</p>' +
-    '<div class="row"><button class="btn" data-watch="' + esc(h.id) + '">' + PLAYICON + '<span>Regarder</span></button><a class="btn ghost" href="#/serie/' + esc(h.id) + '">Voir la fiche</a></div></div></div>';
+    '<div class="row"><button class="btn" data-watch="' + esc(h.id) + '">' + PLAYICON + '<span>Regarder</span></button><a class="btn ghost" href="/serie/' + esc(h.id) + '">Voir la fiche</a></div></div></div>';
 }
 function startHero() {
   clearInterval(heroTimer); heroTimer = null;
@@ -1177,7 +1191,7 @@ function viewHome() {
   var app = $("#app");
   if (!db.length) {
     app.innerHTML = ADMIN ?
-      emptyBox("Catalogue vide", "Cherche une série ou un film sur TMDB, ajuste la fiche, ajoute tes sources, puis publie le catalogue pour que tout le monde le voie.", '<a class="btn" href="#/ajouter">Créer ma première fiche</a>') :
+      emptyBox("Catalogue vide", "Cherche une série ou un film sur TMDB, ajuste la fiche, ajoute tes sources, puis publie le catalogue pour que tout le monde le voie.", '<a class="btn" href="/ajouter">Créer ma première fiche</a>') :
       emptyBox("Bientôt", "Le catalogue est vide pour l'instant. Reviens un peu plus tard.");
     return;
   }
@@ -1197,12 +1211,12 @@ function viewHome() {
   var newTv = tv.filter(function (s) { return newSeries(s); });
   if (newTv.length) html += rail("Nouvelles séries", newTv);
   html += rail("Derniers ajouts", list);
-  if (tv.length && mv.length) html += rail("Séries", tv, "#/series") + rail("Films", mv, "#/films");
+  if (tv.length && mv.length) html += rail("Séries", tv, "/series") + rail("Films", mv, "/films");
   var ml = listItems();
-  if (ml.length) html += rail("Ma liste", ml, "#/ma-liste");
+  if (ml.length) html += rail("Ma liste", ml, "/ma-liste");
   $("#app").innerHTML = html;
   startHero();
-  refreshTrending().then(function (ch) { if (ch && (location.hash || "#/") === "#/") viewHome(); });
+  refreshTrending().then(function (ch) { if (ch && curPath() === "/") viewHome(); });
 }
 
 var REQ_MAX = 5;
@@ -1220,7 +1234,7 @@ function viewRequest(pre, kind) {
     '<label class="f"><span>Ta demande</span><select name="type"><option value="stream"' + (kind === "stream" ? " selected" : "") + '>Streaming</option><option value="dl"' + (kind === "dl" ? " selected" : "") + '>Téléchargement</option><option value="both"' + (kind === "both" ? " selected" : "") + '>Les deux (streaming + téléchargement)</option></select></label>' +
     '<label class="f"><span>Date de sortie (ou année)</span><input type="text" name="date" required maxlength="40" placeholder="ex. 2024"></label>' +
     '<input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0">' +
-    '<p class="note" id="autherr"></p><div class="row"><button class="btn" type="submit">Envoyer</button><a class="btn ghost" href="#/">Retour</a></div></form></div>';
+    '<p class="note" id="autherr"></p><div class="row"><button class="btn" type="submit">Envoyer</button><a class="btn ghost" href="/">Retour</a></div></form></div>';
 }
 
 var listTab = "list";
@@ -1237,7 +1251,7 @@ function seenTitles() {
   return out;
 }
 function seenCard(s, i) {
-  return '<a class="card" style="--i:' + Math.min(i || 0, 14) + '" href="#/serie/' + esc(s.id) + '"><div class="poster">' +
+  return '<a class="card" style="--i:' + Math.min(i || 0, 14) + '" href="/serie/' + esc(s.id) + '"><div class="poster">' +
     (s.poster ? '<img loading="lazy" src="' + esc(s.poster) + '" alt="' + esc(s.name) + '">' : '<div class="ph">' + esc(s.name.charAt(0)) + '</div>') +
     '<span class="rtag">' + (s._t && s._n >= s._t ? "Tout vu" : s._n + "/" + s._t + " vus") + '</span></div><div class="meta"><b>' + esc(s.name) + '</b><span>' + esc([s.year, s._n + " / " + s._t + " épisodes"].filter(Boolean).join("  ·  ")) + '</span></div></a>';
 }
@@ -1280,7 +1294,7 @@ function viewList(title, pred) {
   if (kdTypes.indexOf(kdFilter) < 0) kdFilter = "";
   var shown = list.filter(function (s) { return (!filter || (s.genres || []).indexOf(filter) > -1) && langMatch(s) && newMatch(s); });
   var html = '<div class="wrap listhead"><h1>' + esc(title) + '</h1><p class="note">' + list.length + (list.length > 1 ? " titres" : " titre") + '</p></div>';
-  if (!list.length) { $("#app").innerHTML = html + emptyBox("Rien ici", "Aucun titre dans cette section pour l'instant.", '<a class="btn ghost" href="#/">Retour à l\'accueil</a>'); return; }
+  if (!list.length) { $("#app").innerHTML = html + emptyBox("Rien ici", "Aucun titre dans cette section pour l'instant.", '<a class="btn ghost" href="/">Retour à l\'accueil</a>'); return; }
   html += '<div class="wrap"><div class="section-head" style="padding-block:24px 18px"><div class="chips">' +
     '<button class="chip' + (!filter ? " on" : "") + '" data-genre="">Tout</button>' +
     Object.keys(genres).sort().map(function (g) { return '<button class="chip' + (filter === g ? " on" : "") + '" data-genre="' + esc(g) + '">' + esc(g) + '</button>'; }).join("") +
@@ -1347,7 +1361,7 @@ function viewSearch(q) {
   var html = '<div class="wrap listhead"><h1>Recherche</h1><p class="note">' + found.length + (found.length > 1 ? " résultats" : " résultat") + (q.trim() ? ' pour « ' + esc(q.trim()) + ' »' : '') + '</p>' +
     '<a class="btn small ghost" style="margin-top:14px" href="' + esc(searchBack) + '">Fermer la recherche</a></div>';
   if (needle && !base.length) {
-    $("#app").innerHTML = html + emptyBox("Rien trouvé", "Aucun titre ne correspond. Essaie un autre mot, ou demande-le-moi.", '<div class="row"><a class="btn" href="#/demande/' + encodeURIComponent(q.trim()) + '">Demander ce titre</a><a class="btn ghost" href="#/">Retour à l\'accueil</a></div>');
+    $("#app").innerHTML = html + emptyBox("Rien trouvé", "Aucun titre ne correspond. Essaie un autre mot, ou demande-le-moi.", '<div class="row"><a class="btn" href="/demande/' + encodeURIComponent(q.trim()) + '">Demander ce titre</a><a class="btn ghost" href="/">Retour à l\'accueil</a></div>');
     return;
   }
   function chip(attr, val, label, on) { return '<button class="chip' + (on ? " on" : "") + '" ' + attr + '="' + esc(val) + '">' + esc(label) + '</button>'; }
@@ -1475,12 +1489,12 @@ document.addEventListener("click", function (e) {
 function viewSerie(id) {
   var s = byId(id);
   var app = $("#app");
-  if (!s) { app.innerHTML = emptyBox("Introuvable", "Cette fiche n'existe pas ou a été supprimée.", '<a class="btn" href="#/">Retour à l\'accueil</a>'); return; }
+  if (!s) { app.innerHTML = emptyBox("Introuvable", "Cette fiche n'existe pas ou a été supprimée.", '<a class="btn" href="/">Retour à l\'accueil</a>'); return; }
   var movie = isMovie(s);
   if (viewSerie.last !== String(s.id)) dlMode = false;
   viewSerie.last = String(s.id);
   var showDl = !movie && dlOpen() && (hasDl(s) || dlAdmin());
-  var reqDl = '#/demande/' + encodeURIComponent(s.name || '') + '/dl';
+  var reqDl = '/demande/' + encodeURIComponent(s.name || '') + '/dl';
   var dlBtnMovie = movie && dlOpen() ? ((s.downloads || []).length ? dlLinks(s.downloads, "Télécharger", " ghost") : '<a class="btn ghost" data-reqdl="1" href="' + reqDl + '">' + DLICON + '<span>Télécharger</span></a>') : "";
   var dlBtnSerie = !movie && dlOpen() ? (showDl ? '<button class="btn ghost" type="button" data-godl="1">' + DLICON + '<span>Télécharger</span></button>' : '<a class="btn ghost" data-reqdl="1" href="' + reqDl + '">' + DLICON + '<span>Télécharger</span></a>') : "";
   if (!showDl) dlMode = false;
@@ -1501,7 +1515,7 @@ function viewSerie(id) {
     '<div><div class="tags">' + (langLabel(s) ? '<span class="lang">' + esc(langLabel(s)) + '</span>' : '') + (ongoing(s) ? '<span class="live">En cours</span>' : '') + (ne ? newBadge("Nouvel épisode") : '') + novBadge(s) + kdBadge(s) + tags.map(function (t) { return "<span>" + esc(t) + "</span>"; }).join("") + '</div>' +
     '<h1>' + esc(s.name) + '</h1>' + (s.original_name && s.original_name !== s.name ? '<div class="orig">' + esc(s.original_name) + '</div>' : '<div class="orig"></div>') +
     '<p class="ov">' + esc(s.overview || "Pas de synopsis.") + '</p>' +
-    '<div class="row"><button class="btn" data-watch="' + esc(s.id) + '">' + PLAYICON + '<span>Regarder</span></button>' + dlBtnMovie + dlBtnSerie + '<button class="btn ghost' + (inList(s.id) ? " on" : "") + '" type="button" data-list="' + esc(s.id) + '">' + (inList(s.id) ? "✓ Dans ma liste" : "+ Ma liste") + '</button>' + (ADMIN ? '<a class="btn ghost" href="#/modifier/' + esc(s.id) + '">Modifier</a>' + (canDeleteFiche(s) ? '<button class="btn danger" data-del="' + esc(s.id) + '">Supprimer</button>' : '') : '') + '</div>' + srcChips +
+    '<div class="row"><button class="btn" data-watch="' + esc(s.id) + '">' + PLAYICON + '<span>Regarder</span></button>' + dlBtnMovie + dlBtnSerie + '<button class="btn ghost' + (inList(s.id) ? " on" : "") + '" type="button" data-list="' + esc(s.id) + '">' + (inList(s.id) ? "✓ Dans ma liste" : "+ Ma liste") + '</button>' + (ADMIN ? '<a class="btn ghost" href="/modifier/' + esc(s.id) + '">Modifier</a>' + (canDeleteFiche(s) ? '<button class="btn danger" data-del="' + esc(s.id) + '">Supprimer</button>' : '') : '') + '</div>' + srcChips +
     ((s.cast || []).length ? '<h3 class="note" style="margin:32px 0 0;text-transform:uppercase;letter-spacing:.08em">Distribution</h3><div class="cast">' + s.cast.slice(0, 12).map(function (c) { return '<div><b>' + esc(c.name) + '</b><span>' + esc(c.character || "") + '</span></div>'; }).join("") + '</div>' : '') +
     '</div></div></section>';
   if (!movie && (s.seasons || []).length) {
@@ -1546,26 +1560,26 @@ function viewPanel() {
     '<div class="row"><button class="btn" type="button" data-clickid="btn-export">Publier (catalog.json)</button><button class="btn ghost" type="button" id="btn-backup">Sauvegarde complète</button><button class="btn ghost" type="button" data-clickid="btn-import">Importer</button><button class="btn ghost" type="button" id="btn-pull">Récupérer depuis GitHub</button></div>' +
     '<p class="note" style="margin:0">' + (ghRepo() && ghToken() ? 'GitHub lié (' + esc(ghRepo()) + ') : « Publier » envoie catalog.json directement sur le dépôt.' : 'Pour publier en un clic sans re-uploader le fichier, lie ton dépôt avec « GitHub ».') + '</p></div>' +
     '<div style="display:grid;gap:12px"><h3 class="note" style="margin:0;text-transform:uppercase;letter-spacing:.08em">Accès</h3>' +
-    '<div class="row"><button class="btn ghost" type="button" data-clickid="btn-key">Clé TMDB</button><button class="btn ghost" type="button" data-clickid="btn-gh">GitHub</button><a class="btn ghost" href="#/motdepasse">Mot de passe</a><button class="btn danger" type="button" data-clickid="btn-quit">Quitter le mode admin</button></div></div>' +
+    '<div class="row"><button class="btn ghost" type="button" data-clickid="btn-key">Clé TMDB</button><button class="btn ghost" type="button" data-clickid="btn-gh">GitHub</button><a class="btn ghost" href="/motdepasse">Mot de passe</a><button class="btn danger" type="button" data-clickid="btn-quit">Quitter le mode admin</button></div></div>' +
     '</div></div>';
 }
 
 /* ===== Connexion et mot de passe ===== */
 function viewLogin() {
-  if (ADMIN) { location.hash = "#/"; return; }
+  if (ADMIN) { go("/"); return; }
   if (!adminHashes().length) {
-    $("#app").innerHTML = '<div class="wrap"><div class="authbox"><h1>Admin</h1><p class="lead">L\'accès admin n\'est pas configuré sur ce site.</p><div class="row"><a class="btn" href="#/">Retour</a></div></div></div>';
+    $("#app").innerHTML = '<div class="wrap"><div class="authbox"><h1>Admin</h1><p class="lead">L\'accès admin n\'est pas configuré sur ce site.</p><div class="row"><a class="btn" href="/">Retour</a></div></div></div>';
     return;
   }
   $("#app").innerHTML = '<div class="wrap"><form class="authbox" id="login"><h1>Admin</h1><p class="lead">Entre ton mot de passe pour ajouter ou modifier des fiches.</p>' +
     '<label class="f"><span>Mot de passe</span><input type="password" id="pw" autocomplete="current-password"></label><p class="note" id="autherr"></p>' +
-    '<div class="row"><button class="btn" type="submit">Entrer</button><a class="btn ghost" href="#/">Retour</a></div></form></div>';
+    '<div class="row"><button class="btn" type="submit">Entrer</button><a class="btn ghost" href="/">Retour</a></div></form></div>';
   var pw = $("#pw"); if (pw) pw.focus();
 }
 
 function viewSetPassword(first) {
   if ((CONFIG.ADMINS || []).length || CONFIG.ADMIN_HASH) {
-    $("#app").innerHTML = '<div class="wrap"><div class="authbox"><h1>Mot de passe</h1><p class="lead">Les accès admin sont gérés par le Head admin (ajout, retrait, changement de mot de passe). Demande-lui si tu dois changer le tien.</p><div class="row"><a class="btn" href="#/">Retour</a></div></div></div>';
+    $("#app").innerHTML = '<div class="wrap"><div class="authbox"><h1>Mot de passe</h1><p class="lead">Les accès admin sont gérés par le Head admin (ajout, retrait, changement de mot de passe). Demande-lui si tu dois changer le tien.</p><div class="row"><a class="btn" href="/">Retour</a></div></div></div>';
     return;
   }
   var fixed = !!CONFIG.ADMIN_HASH;
@@ -1574,7 +1588,7 @@ function viewSetPassword(first) {
     (fixed && !first ? '<p class="note">Le fichier contient déjà un ADMIN_HASH : c\'est lui qui est utilisé. Retire-le du fichier pour que ce nouveau mot de passe compte.</p>' : '') +
     '<label class="f"><span>Mot de passe (6 caractères minimum)</span><input type="password" id="pw1" autocomplete="new-password"></label>' +
     '<label class="f"><span>Confirmer</span><input type="password" id="pw2" autocomplete="new-password"></label><p class="note" id="autherr"></p>' +
-    '<div class="row"><button class="btn" type="submit">Enregistrer</button><a class="btn ghost" href="#/">Annuler</a></div></form></div>';
+    '<div class="row"><button class="btn" type="submit">Enregistrer</button><a class="btn ghost" href="/">Annuler</a></div></form></div>';
   var p = $("#pw1"); if (p) p.focus();
 }
 
@@ -1582,10 +1596,10 @@ function viewPasswordDone(hash) {
   $("#app").innerHTML = '<div class="wrap"><div class="authbox"><h1>C\'est noté</h1>' +
     '<p class="lead">Ton mot de passe marche sur ce navigateur. Pour l\'utiliser aussi sur d\'autres appareils, colle cette ligne dans le fichier index.html, dans CONFIG, puis remets le fichier en ligne.</p>' +
     '<pre class="code" id="hashline">ADMIN_HASH: "' + esc(hash) + '",</pre>' +
-    '<div class="row"><button class="btn ghost" type="button" id="copyhash">Copier la ligne</button><a class="btn" href="#/">Continuer</a></div></div></div>';
+    '<div class="row"><button class="btn ghost" type="button" id="copyhash">Copier la ligne</button><a class="btn" href="/">Continuer</a></div></div></div>';
 }
 
-/* ===== Head admin : gère la liste des admins (#/headadmin) ===== */
+/* ===== Head admin : gère la liste des admins (/headadmin) ===== */
 var headDraft = null;
 function headOk() { return isHead(); }
 function configAdmins() {
@@ -1605,13 +1619,13 @@ function viewHead() {
       '<p class="lead">Le Head admin n\'est pas encore créé. Choisis son mot de passe : tu recevras une ligne à coller dans index.html (CONFIG, à la place de HEAD_HASH), puis tu remets le fichier en ligne.</p>' +
       '<label class="f"><span>Mot de passe (8 caractères minimum)</span><input type="password" id="hp1" autocomplete="new-password"></label>' +
       '<label class="f"><span>Confirmer</span><input type="password" id="hp2" autocomplete="new-password"></label><p class="note" id="autherr"></p>' +
-      '<div class="row"><button class="btn" type="submit">Créer</button><a class="btn ghost" href="#/">Retour</a></div></form></div>';
+      '<div class="row"><button class="btn" type="submit">Créer</button><a class="btn ghost" href="/">Retour</a></div></form></div>';
     return;
   }
   if (!headOk()) {
     app.innerHTML = '<div class="wrap"><form class="authbox" id="headlogin"><h1>Head admin</h1><p class="lead">Accès réservé : gestion des admins.</p>' +
       '<label class="f"><span>Mot de passe Head admin</span><input type="password" id="hpw" autocomplete="current-password"></label><p class="note" id="autherr"></p>' +
-      '<div class="row"><button class="btn" type="submit">Entrer</button><a class="btn ghost" href="#/">Retour</a></div></form></div>';
+      '<div class="row"><button class="btn" type="submit">Entrer</button><a class="btn ghost" href="/">Retour</a></div></form></div>';
     var f = $("#hpw"); if (f) f.focus();
     return;
   }
@@ -1630,8 +1644,8 @@ function viewHead() {
     (changed
       ? '<div style="display:grid;gap:12px"><h3 class="note" style="margin:0;text-transform:uppercase;letter-spacing:.08em">À publier</h3><p class="note" style="margin:0">Remplace les lignes ADMIN_HASH et ADMINS dans CONFIG (index.html) par celles-ci, puis remets le fichier en ligne.</p><pre class="code" id="hashline">' + esc(adminsLine(headDraft)) + '</pre><div class="row"><button class="btn" type="button" id="copyhash">Copier les lignes</button><button class="btn ghost" type="button" id="head-reset">Annuler les changements</button></div></div>'
       : '<p class="note">Aucun changement en attente.</p>') +
-    '<div class="row"><a class="btn" href="#/ajouter">Ajouter une fiche</a><a class="btn ghost" href="#/panel">Panneau admin</a></div>' +
-    '<div class="row"><button class="btn ghost" type="button" id="head-quit">Se déconnecter</button><a class="btn ghost" href="#/">Retour au site</a></div></div></div>';
+    '<div class="row"><a class="btn" href="/ajouter">Ajouter une fiche</a><a class="btn ghost" href="/panel">Panneau admin</a></div>' +
+    '<div class="row"><button class="btn ghost" type="button" id="head-quit">Se déconnecter</button><a class="btn ghost" href="/">Retour au site</a></div></div></div>';
 }
 document.addEventListener("submit", function (e) {
   var id = e.target.id;
@@ -1643,7 +1657,7 @@ document.addEventListener("submit", function (e) {
     if (p1 !== p2) { authError(e.target, "Les deux mots de passe sont différents"); return; }
     $("#app").innerHTML = '<div class="wrap"><div class="authbox"><h1>C\'est noté</h1><p class="lead">Colle cette ligne dans index.html, dans CONFIG (à la place de la ligne HEAD_HASH), puis remets le fichier en ligne. Ensuite connecte-toi ici avec ce mot de passe.</p>' +
       '<pre class="code" id="hashline">HEAD_HASH: "' + esc(pwHash("head:" + p1)) + '",</pre>' +
-      '<div class="row"><button class="btn ghost" type="button" id="copyhash">Copier la ligne</button><a class="btn" href="#/">Continuer</a></div></div></div>';
+      '<div class="row"><button class="btn ghost" type="button" id="copyhash">Copier la ligne</button><a class="btn" href="/">Continuer</a></div></div></div>';
   } else if (id === "headlogin") {
     e.preventDefault();
     var h = pwHash("head:" + $("#hpw").value);
@@ -1670,7 +1684,7 @@ document.addEventListener("click", function (e) {
     headDraft.splice(i, 1); viewHead(); return;
   }
   if (e.target.id === "head-reset") { headDraft = configAdmins(); viewHead(); return; }
-  if (e.target.id === "head-quit") { try { localStorage.removeItem("noir.admin"); } catch (er) {} headDraft = null; location.hash = "#/"; location.reload(); }
+  if (e.target.id === "head-quit") { try { localStorage.removeItem("noir.admin"); } catch (er) {} headDraft = null; location.href = "/"; }
 });
 
 /* ===== Éditeur ===== */
@@ -1683,7 +1697,7 @@ function blank(type) {
 
 function viewEditor(id) {
   var existing = id ? byId(id) : null;
-  if (id && !existing) { location.hash = "#/ajouter"; return; }
+  if (id && !existing) { go("/ajouter", true); return; }
   if (existing) draft = JSON.parse(JSON.stringify(existing)); else if (!draft || draft.__saved) draft = null;
   results = existing ? [] : results;
   var app = $("#app");
@@ -1764,7 +1778,7 @@ function renderEditor() {
     '<label class="f"><span>Fond (URL)</span><input type="url" data-f="backdrop" value="' + esc(d.backdrop) + '"></label></div>' +
     '<label class="f"><span>Distribution (une ligne par acteur : Nom — Rôle)</span><textarea data-f="cast">' + esc((d.cast || []).map(function (c) { return c.name + (c.character ? " — " + c.character : ""); }).join("\n")) + '</textarea></label>' +
     '<h3>Lecture</h3>' + reading + '<h3>Téléchargement</h3>' + dlEdit +
-    '<div class="bar"><button class="btn" type="button" id="save">' + (saved ? "Enregistrer" : "Ajouter au catalogue") + '</button><a class="btn ghost" href="#/">Annuler</a></div></div>';
+    '<div class="bar"><button class="btn" type="button" id="save">' + (saved ? "Enregistrer" : "Ajouter au catalogue") + '</button><a class="btn ghost" href="/">Annuler</a></div></div>';
 }
 
 function pick(spec, old) {
@@ -1903,11 +1917,11 @@ function saveDraft() {
   var i = -1;
   db.forEach(function (x, k) { if (String(x.id) === String(draft.id)) i = k; });
   var kept = mergeOwn(i > -1 ? db[i] : null, draft);
-  if (i > -1) { if (draft.trend == null) draft.trend = db[i].trend; db[i] = draft; } else db.push(draft);
+  if (i > -1) { if (draft.trend == null) draft.trend = db[i].trend; db[i] = draft; } else { db.push(draft); tombDrop(draft.id); }
   persist();
   toast(kept ? "Fiche enregistrée. " + kept + (kept > 1 ? " liens d'autres admins ont été conservés (tu ne peux supprimer que les tiens)." : " lien d'un autre admin a été conservé (tu ne peux supprimer que les tiens).") : "Fiche enregistrée");
   var id = draft.id; draft = null;
-  location.hash = "#/serie/" + id;
+  go("/serie/" + id);
 }
 
 /* ===== Lecteur ===== */
@@ -1927,7 +1941,7 @@ function renderPlayer() {
   var s = cur.sources[cur.i], url = safeUrl(s.url);
   $("#ptitle").textContent = cur.title;
   $("#psub").textContent = cur.sub || "";
-  var rq = "#/demande/" + encodeURIComponent(cur.title || "");
+  var rq = "/demande/" + encodeURIComponent(cur.title || "");
   $("#pdl").innerHTML = dlOpen() ? ((cur.dl || []).length ? dlLinks(cur.dl, "Télécharger", " ghost") : '<a class="btn small ghost" data-reqdl="1" href="' + rq + '/dl">' + DLICON + '<span>Télécharger</span></a>') : "";
   $("#pdemande").href = rq + "/stream"; $("#pdemande2").href = rq + "/dl";
   showTip(tipIdx);
@@ -2054,11 +2068,11 @@ var NAVMAP = { "": "nav-home", series: "nav-series", films: "nav-films", ajouter
 
 function route(force) {
   force = force === true;
-  var parts = (location.hash.slice(1) || "/").split("/");
+  var parts = curPath().split("/");
   var a = (parts[1] || "").toLowerCase(), b = parts[2] || "";
   if (a === "recherche") { try { b = decodeURIComponent(parts.slice(2).join("/")); } catch (e) { b = parts.slice(2).join("/"); } }
 
-  if ((a === "ajouter" || a === "modifier" || a === "motdepasse" || a === "panel") && !ADMIN) { location.hash = "#/admin"; return; }
+  if ((a === "ajouter" || a === "modifier" || a === "motdepasse" || a === "panel") && !ADMIN) { go("/admin", true); return; }
 
   var changed = force || a !== lastPage || a === "serie" || a === "modifier";
   if (a !== lastPage) { filter = ""; langFilter = ""; dlFilter = false; newFilter = ""; kdFilter = ""; typeFilter = ""; listTab = "list"; }
@@ -2098,7 +2112,7 @@ function route(force) {
   setTimeout(updRails, 80);
   if (pendingScroll) { pendingScroll = false; setTimeout(scrollSeasons, 60); }
 }
-window.addEventListener("hashchange", function () { route(); });
+window.addEventListener("popstate", function () { route(); });
 
 /* ===== Flèches des rangées (PC) ===== */
 function updRails() {
@@ -2125,21 +2139,21 @@ function showSugg(v) {
   var box = $("#sugg"), hits = searchHits(v);
   if (!v.trim()) { box.hidden = true; return; }
   box.innerHTML = hits.length ? hits.slice(0, 6).map(function (s) {
-    return '<a class="sg" href="#/serie/' + esc(s.id) + '"><span class="sgp">' + (s.poster ? '<img src="' + esc(s.poster) + '" alt="">' : '') + '</span><span class="sgt"><b>' + esc(s.name) + '</b><small>' + esc([isMovie(s) ? "Film" : "Série", s.year].filter(Boolean).join(" · ")) + '</small></span></a>';
-  }).join("") + (hits.length > 6 ? '<a class="sg all" href="#/recherche/' + encodeURIComponent(v.trim()) + '">Voir les ' + hits.length + ' résultats</a>' : "") : '<p class="sgn">Aucun titre trouvé</p>';
+    return '<a class="sg" href="/serie/' + esc(s.id) + '"><span class="sgp">' + (s.poster ? '<img src="' + esc(s.poster) + '" alt="">' : '') + '</span><span class="sgt"><b>' + esc(s.name) + '</b><small>' + esc([isMovie(s) ? "Film" : "Série", s.year].filter(Boolean).join(" · ")) + '</small></span></a>';
+  }).join("") + (hits.length > 6 ? '<a class="sg all" href="/recherche/' + encodeURIComponent(v.trim()) + '">Voir les ' + hits.length + ' résultats</a>' : "") : '<p class="sgn">Aucun titre trouvé</p>';
   box.hidden = false;
 }
 /* Clic sur la barre : on ouvre la page de recherche avec ses filtres, les résultats se mettent à jour en tapant */
 function openSearch() {
   if (lastPage === "recherche") return;
-  searchBack = location.hash || "#/";
+  searchBack = curPath();
   curQ = $("#q").value.trim();
-  location.hash = "#/recherche/" + encodeURIComponent(curQ);
+  go("/recherche/" + encodeURIComponent(curQ));
 }
 function liveSearch(v) {
   curQ = v;
-  var h = "#/recherche/" + encodeURIComponent(v.trim());
-  if (lastPage !== "recherche") { searchBack = location.hash || "#/"; location.hash = h; return; }
+  var h = "/recherche/" + encodeURIComponent(v.trim());
+  if (lastPage !== "recherche") { searchBack = curPath(); go(h); return; }
   try { history.replaceState(null, "", h); } catch (e) {}
   viewSearch(v);
 }
@@ -2147,14 +2161,12 @@ $("#q").addEventListener("focus", openSearch);
 $("#q").addEventListener("click", openSearch);
 $("#q").addEventListener("keydown", function (e) {
   if (e.key === "Enter") this.blur();
-  else if (e.key === "Escape") { if (!this.value.trim() && lastPage === "recherche") location.hash = searchBack; this.blur(); }
+  else if (e.key === "Escape") { if (!this.value.trim() && lastPage === "recherche") go(searchBack); this.blur(); }
 });
 document.addEventListener("click", function (e) { if (!e.target.closest(".search")) $("#sugg").hidden = true; });
 
 /* ===== Événements ===== */
 document.addEventListener("click", function (e) {
-  var nav = e.target.closest("header.top a[href^='#/']");
-  if (nav && nav.getAttribute("href") === (location.hash || "#/")) { e.preventDefault(); route(true); return; }
   var rd = e.target.closest("[data-resumedel]");
   if (rd) { e.preventDefault(); e.stopPropagation(); removeResume(rd.dataset.resumedel); viewHome(); return; }
   var t = e.target.closest("[data-resume],[data-watch],[data-movsrc],[data-playep],[data-src],[data-del],[data-list],[data-listtab],[data-seen],[data-seenseason],[data-genre],[data-langf],[data-newf],[data-kdf],[data-dlf],[data-typef],[data-pick],[data-bulk],[data-dlbulk],[data-dltab],#save,#applytpl,#refreshall,#manual,#manualfilm,#refresh,#copyhash");
@@ -2164,7 +2176,7 @@ document.addEventListener("click", function (e) {
     var w = byId(t.dataset.watch); if (!w) return;
     if (isMovie(w)) { saveResume(w.id); play(w.sources, w.name, 0, "", null, w.downloads); }
     else if (!(w.seasons || []).length) toast("Cette fiche n'a pas encore d'épisodes");
-    else if (location.hash === "#/serie/" + w.id) {
+    else if (curPath() === "/serie/" + w.id) {
       dlMode = false;
       var secW = $("#seasons"); if (secW) secW.classList.remove("dlmode");
       document.querySelectorAll("[data-dltab]").forEach(function (x) {
@@ -2173,7 +2185,7 @@ document.addEventListener("click", function (e) {
       });
       scrollSeasons();
     }
-    else { dlMode = false; pendingScroll = true; location.hash = "#/serie/" + w.id; }
+    else { dlMode = false; pendingScroll = true; go("/serie/" + w.id); }
   }
   else if (t.dataset.movsrc != null) {
     var m = t.dataset.movsrc.split("|"), mv = byId(m[0]);
@@ -2187,7 +2199,7 @@ document.addEventListener("click", function (e) {
   else if (t.dataset.del != null) {
     var fx = byId(t.dataset.del);
     if (fx && !canDeleteFiche(fx)) { toast("Cette fiche contient des liens d'autres admins : seul le Head admin peut la supprimer."); return; }
-    if (t.dataset.armed) { db = db.filter(function (x) { return String(x.id) !== t.dataset.del; }); persist(); toast("Fiche supprimée"); location.hash = "#/"; }
+    if (t.dataset.armed) { tombAdd(t.dataset.del); db = db.filter(function (x) { return String(x.id) !== t.dataset.del; }); persist(); toast("Fiche supprimée"); go("/"); }
     else { t.dataset.armed = "1"; t.textContent = "Confirmer ?"; setTimeout(function () { if (t.isConnected) { delete t.dataset.armed; t.textContent = "Supprimer"; } }, 3000); }
   }
   else if (t.dataset.list != null) {
@@ -2326,7 +2338,7 @@ document.addEventListener("submit", function (e) {
     }).then(function () {
       try { localStorage.setItem("noir.reqAt", String(Date.now())); } catch (er) {}
       bumpReq();
-      $("#app").innerHTML = '<div class="wrap"><div class="authbox"><h1>Merci</h1><p class="lead">Ta demande est bien envoyée. Je l\'ajoute dès que possible.</p><div class="row"><a class="btn" href="#/">Retour à l\'accueil</a><a class="btn ghost" href="#/demande">Une autre demande</a></div></div></div>';
+      $("#app").innerHTML = '<div class="wrap"><div class="authbox"><h1>Merci</h1><p class="lead">Ta demande est bien envoyée. Je l\'ajoute dès que possible.</p><div class="row"><a class="btn" href="/">Retour à l\'accueil</a><a class="btn ghost" href="/demande">Une autre demande</a></div></div></div>';
     }).catch(function (err) {
       rb.disabled = false; rb.textContent = "Envoyer";
       var m = err && err.message ? err.message : "";
@@ -2539,7 +2551,7 @@ $("#btn-gh").addEventListener("click", function () {
     if (t && t.trim()) localStorage.setItem(GHTOKEY, t.trim());
   } catch (e) {}
   toast(ghToken() ? "GitHub lié : « Publier » envoie directement catalog.json" : "Dépôt enregistré, il manque le jeton");
-  if ((location.hash || "") === "#/panel") viewPanel();
+  if (curPath() === "/panel") viewPanel();
 });
 $("#btn-export").addEventListener("click", function () {
   var priv = SETTINGS.downloads === "private";
@@ -2550,6 +2562,7 @@ $("#btn-export").addEventListener("click", function () {
   if (ghRepo() && ghToken()) {
     toast("Publication sur GitHub…");
     ghPublish(obj).then(function () {
+      tombSave([]);
       toast("Publié sur GitHub ✓" + (priv ? " (liens de téléchargement retirés)" : "") + (CONFIG.GITHUB_REPO ? " Les visiteurs le voient dans quelques secondes." : " Visible après le redéploiement de GitHub Pages (environ 1 minute)."));
     }).catch(function (e) { download(); toast((e && e.message ? e.message : "Échec GitHub") + " : catalog.json téléchargé à la place"); });
     return;
@@ -2566,8 +2579,8 @@ document.addEventListener("click", function (e) {
     toast("Téléchargements : " + (SETTINGS.downloads === "private" ? "privé" : "public") + ". Publie le catalogue pour l'appliquer aux visiteurs.");
     return;
   }
-  if (e.target.closest("[data-preview]")) { setPreview(true); location.hash = "#/"; route(true); return; }
-  if (e.target.id === "preview-quit") { setPreview(false); location.hash = "#/panel"; route(true); return; }
+  if (e.target.closest("[data-preview]")) { setPreview(true); go("/"); route(true); return; }
+  if (e.target.id === "preview-quit") { setPreview(false); go("/panel"); route(true); return; }
   var c = e.target.closest("[data-clickid]");
   if (c) { var el = document.getElementById(c.dataset.clickid); if (el) el.click(); return; }
   if (e.target.id === "btn-pull") { ghPull(); return; }
@@ -2589,7 +2602,7 @@ function keepDl(n, o) {
 function importCatalogData(data, label) {
   if (data && !Array.isArray(data) && Array.isArray(data.series)) data = data.series;
   if (!Array.isArray(data)) throw 0;
-  data.forEach(function (s) { if (!s || !s.id || !s.name) return; normalize(s); var i = -1; db.forEach(function (x, k) { if (String(x.id) === String(s.id)) i = k; }); if (i > -1) { keepDl(s, db[i]); mergeOwn(db[i], s, true); db[i] = s; } else { mergeOwn(null, s, true); db.push(s); } });
+  data.forEach(function (s) { if (!s || !s.id || !s.name) return; normalize(s); var i = -1; db.forEach(function (x, k) { if (String(x.id) === String(s.id)) i = k; }); if (i > -1) { keepDl(s, db[i]); mergeOwn(db[i], s, true); db[i] = s; } else { mergeOwn(null, s, true); db.push(s); tombDrop(s.id); } });
   persist(); toast(label || "Catalogue importé"); route(true);
 }
 $("#btn-import").addEventListener("click", function () { $("#file").click(); });
@@ -2616,12 +2629,12 @@ $("#btn-key").addEventListener("click", function () {
     $("#app").innerHTML = '<div class="wrap"><div class="authbox"><h1>Clé TMDB retenue</h1>' +
       '<p class="lead">Colle cette ligne dans le fichier index.html, dans CONFIG (à la place de la ligne TOKEN_ENC existante), puis remets le fichier en ligne. Ensuite la clé se débloque toute seule quand tu te connectes en admin, sur n\'importe quel appareil. Elle est chiffrée : personne ne peut la lire.</p>' +
       '<pre class="code" id="hashline">TOKEN_ENC: "' + esc(blob) + '",</pre>' +
-      '<div class="row"><button class="btn ghost" type="button" id="copyhash">Copier la ligne</button><a class="btn" href="#/">Continuer</a></div></div></div>';
+      '<div class="row"><button class="btn ghost" type="button" id="copyhash">Copier la ligne</button><a class="btn" href="/">Continuer</a></div></div></div>';
   }).catch(function () { toast("Impossible de chiffrer la clé ici (ouvre le site en https)"); });
 });
 $("#btn-quit").addEventListener("click", function () {
   try { localStorage.removeItem("noir.admin"); } catch (e) {}
-  location.hash = "#/"; location.reload();
+  location.href = "/";
 });
 
 /* ===== Message d'accueil et copie ===== */
@@ -2646,7 +2659,7 @@ function ghParse(spec) {
 function ghUrl(gi) { return "https://api.github.com/repos/" + gi.repo + "/contents/" + encodeURI(CONFIG.GITHUB_PATH || "catalog.json"); }
 function fetchCatalogData() {
   var local = function () {
-    return fetch("catalog.json?v=" + Date.now(), { cache: "no-store" }).then(function (r) {
+    return fetch("/catalog.json?v=" + Date.now(), { cache: "no-store" }).then(function (r) {
       if (!r.ok) throw new Error("catalog.json introuvable");
       return r.json();
     });
@@ -2656,6 +2669,49 @@ function fetchCatalogData() {
   return fetch(ghUrl(gi) + "?ref=" + encodeURIComponent(gi.branch), { headers: { Accept: "application/vnd.github.raw+json" }, cache: "no-store" })
     .then(function (r) { if (!r.ok) throw new Error("github"); return r.json(); })
     .catch(local);
+}
+/* Fiches supprimées ici mais pas encore publiées : on ne les ressuscite pas à la synchro */
+var DELKEY = "noir.deleted";
+function tombs() { var t = readJSON(DELKEY, []); return Array.isArray(t) ? t : []; }
+function tombSave(t) { try { localStorage.setItem(DELKEY, JSON.stringify(t)); } catch (e) {} }
+function tombAdd(id) { var t = tombs(); id = String(id); if (t.indexOf(id) < 0) { t.push(id); tombSave(t); } }
+function tombDrop(id) { var t = tombs(); id = String(id); if (t.indexOf(id) > -1) tombSave(t.filter(function (x) { return x !== id; })); }
+
+/* Synchro admin : ajoute à ta copie locale les fiches, saisons, épisodes et liens publiés par les autres admins.
+   Rien n'est retiré ni écrasé : tes modifications non publiées restent intactes. */
+function addMissingLinks(local, remote) {
+  var me = myId(), ch = false;
+  (remote || []).forEach(function (r) {
+    if (!r || !r.url || r.by === me || findUrl(local, r.url)) return;
+    local.push(r); ch = true;
+  });
+  return ch;
+}
+function mergeFiche(l, r) {
+  var ch = false;
+  ch = addMissingLinks(l.sources, r.sources) || ch;
+  ch = addMissingLinks(l.downloads, r.downloads) || ch;
+  (r.seasons || []).forEach(function (rs) {
+    var ls = null; (l.seasons || []).forEach(function (x) { if (x.number === rs.number) ls = x; });
+    if (!ls) { (l.seasons = l.seasons || []).push(rs); ch = true; return; }
+    ch = addMissingLinks(ls.downloads, rs.downloads) || ch;
+    (rs.episodes || []).forEach(function (re) {
+      var le = null; (ls.episodes || []).forEach(function (x) { if (x.number === re.number) le = x; });
+      if (!le) { (ls.episodes = ls.episodes || []).push(re); ch = true; return; }
+      ch = addMissingLinks(le.sources, re.sources) || ch;
+      ch = addMissingLinks(le.downloads, re.downloads) || ch;
+    });
+  });
+  return ch;
+}
+function mergeRemote(data) {
+  var dead = tombs(), ch = false;
+  data.forEach(function (s) {
+    if (!s || !s.id || !s.name || dead.indexOf(String(s.id)) > -1) return;
+    var l = byId(s.id);
+    if (!l) { db.push(s); ch = true; } else if (mergeFiche(l, s)) ch = true;
+  });
+  return ch;
 }
 function loadCatalog() {
   return fetchCatalogData().then(function (data) {
@@ -2668,7 +2724,7 @@ function loadCatalog() {
     else if (!db.length) {
       db = data; persist();
       if (!readJSON(SETKEY, null)) { SETTINGS.downloads = priv ? "private" : "public"; saveSettings(); }
-    }
+    } else if (mergeRemote(data)) persist();
   }).catch(function () {});
 }
 
@@ -2780,7 +2836,7 @@ function refreshAll() {
     if (ok) msg += " Clique sur « Publier » pour que les visiteurs voient les changements.";
     show(msg);
     toast(ok + " fiche" + (ok > 1 ? "s" : "") + " mise" + (ok > 1 ? "s" : "") + " à jour");
-    if ((location.hash || "#/") === "#/") viewHome();
+    if (curPath() === "/") viewHome();
   };
   (function next() {
     var id = todo.shift();
@@ -2818,6 +2874,15 @@ function backfillAka() {
   })();
 }
 
+document.addEventListener("click", function (e) {
+  if (e.defaultPrevented || e.button || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+  var a = e.target.closest("a[href^='/']");
+  if (!a || a.target === "_blank" || a.hasAttribute("download")) return;
+  var h = a.getAttribute("href");
+  if (h.indexOf("//") === 0) return;
+  e.preventDefault();
+  if (h === curPath()) route(true); else go(h);
+});
 document.body.classList.toggle("admin", ADMIN);
 $("#app").innerHTML = '<div class="wrap"><p class="note" style="padding:48px 0">Chargement…</p></div>';
 loadCatalog().then(function () { route(true); backfillAka(); });
