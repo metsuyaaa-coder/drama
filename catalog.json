@@ -5360,7 +5360,13 @@
               "name": "Épisode 5",
               "overview": "",
               "air_date": "2026-10-17",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-xcbor8t9dv4h.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -5368,7 +5374,13 @@
               "name": "Épisode 6",
               "overview": "",
               "air_date": "2026-10-17",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-zmr0tzd11iag.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -5574,7 +5586,7 @@
       ],
       "downloads": [],
       "posterV": 2,
-      "updatedAt": 1792266856315,
+      "updatedAt": 1792278921688,
       "trend": 82
     },
     {
