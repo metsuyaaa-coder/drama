@@ -662,7 +662,9 @@ footer .wrap.about { display: grid; grid-template-columns: repeat(auto-fit, minm
 /* ===== Configuration ===== */
 var CONFIG = {
   TOKEN: "",       /* jeton TMDB : à coller via « Clé TMDB » en mode admin */
-  ADMIN_HASH: "9265112ed1c7bd17b961005cdbd1a9747aec5636a1c0fb51d107b18ce38bc071",  /* empreinte du mot de passe admin (fixe, personne ne peut en créer un autre) */
+  ADMIN_HASH: "",  /* ancien format (un seul admin) : laisse vide, les admins sont dans ADMINS */
+  ADMINS: [{ name: "Admin principal", hash: "9265112ed1c7bd17b961005cdbd1a9747aec5636a1c0fb51d107b18ce38bc071" }],  /* liste des admins : gérée depuis #/headadmin */
+  HEAD_HASH: "12afa2afc52f8d72a5d94d6e75aef998d73d95d61c0792b99d93a850795b71a2",   /* empreinte du mot de passe Head admin : à créer sur #/headadmin puis à coller ici */
   TOKEN_ENC: "",   /* jeton TMDB chiffré avec ton mot de passe : se débloque tout seul à la connexion admin */
   LANG: "fr-FR"
 };
@@ -711,7 +713,13 @@ function sha256(str) {
   return H.map(function (x) { return ("00000000" + (x >>> 0).toString(16)).slice(-8); }).join("");
 }
 function pwHash(pw) { return sha256("dramabym:" + pw); }
-function savedHash() { try { return CONFIG.ADMIN_HASH || localStorage.getItem(PWSTORE) || ""; } catch (e) { return CONFIG.ADMIN_HASH || ""; } }
+function adminHashes() {
+  var l = [];
+  (CONFIG.ADMINS || []).forEach(function (a) { if (a && a.hash) l.push(a.hash); });
+  if (CONFIG.ADMIN_HASH) l.push(CONFIG.ADMIN_HASH);
+  if (!l.length) { try { var h = localStorage.getItem(PWSTORE); if (h) l.push(h); } catch (e) {} }
+  return l;
+}
 
 /* ===== Données ===== */
 function readJSON(k, fallback) { try { var v = JSON.parse(localStorage.getItem(k)); return v == null ? fallback : v; } catch (e) { return fallback; } }
@@ -742,7 +750,7 @@ function normalize(s) {
 }
 
 /* Mode admin : connexion par mot de passe. Les visiteurs lisent catalog.json. */
-var ADMIN = readJSON("noir.admin", false) === true;
+var ADMIN = (function () { var v = readJSON("noir.admin", ""); return typeof v === "string" && v !== "" && adminHashes().indexOf(v) > -1; })();
 var db = ADMIN ? readJSON(STORE, []).map(normalize) : [];
 
 /* Réglages du site (téléchargement public ou privé). Les visiteurs les lisent dans catalog.json ; l'admin les garde sur son navigateur. */
@@ -789,8 +797,8 @@ function unlockToken(pw) {
   if (!CONFIG.TOKEN_ENC || !window.crypto || !crypto.subtle) return Promise.resolve();
   return decToken(CONFIG.TOKEN_ENC, pw).then(function (t) { try { localStorage.setItem(KEYSTORE, t); } catch (e) {} }).catch(function () {});
 }
-function loginAdmin(stay) {
-  try { localStorage.setItem("noir.admin", "true"); } catch (e) {}
+function loginAdmin(stay, hash) {
+  try { localStorage.setItem("noir.admin", JSON.stringify(hash || "")); } catch (e) {}
   var local = readJSON(STORE, []).map(normalize);
   ADMIN = true;
   if (local.length) db = local;
@@ -1503,7 +1511,7 @@ function viewPanel() {
 /* ===== Connexion et mot de passe ===== */
 function viewLogin() {
   if (ADMIN) { location.hash = "#/"; return; }
-  if (!savedHash()) {
+  if (!adminHashes().length) {
     $("#app").innerHTML = '<div class="wrap"><div class="authbox"><h1>Admin</h1><p class="lead">L\'accès admin n\'est pas configuré sur ce site.</p><div class="row"><a class="btn" href="#/">Retour</a></div></div></div>';
     return;
   }
@@ -1514,6 +1522,10 @@ function viewLogin() {
 }
 
 function viewSetPassword(first) {
+  if ((CONFIG.ADMINS || []).length || CONFIG.ADMIN_HASH) {
+    $("#app").innerHTML = '<div class="wrap"><div class="authbox"><h1>Mot de passe</h1><p class="lead">Les accès admin sont gérés par le Head admin (ajout, retrait, changement de mot de passe). Demande-lui si tu dois changer le tien.</p><div class="row"><a class="btn" href="#/">Retour</a></div></div></div>';
+    return;
+  }
   var fixed = !!CONFIG.ADMIN_HASH;
   $("#app").innerHTML = '<div class="wrap"><form class="authbox" id="setpw"><h1>' + (first ? "Crée ton accès" : "Mot de passe") + '</h1>' +
     '<p class="lead">' + (first ? "Choisis un mot de passe admin. Il te sera demandé pour ajouter ou modifier des fiches." : "Choisis un nouveau mot de passe admin.") + '</p>' +
@@ -1530,6 +1542,94 @@ function viewPasswordDone(hash) {
     '<pre class="code" id="hashline">ADMIN_HASH: "' + esc(hash) + '",</pre>' +
     '<div class="row"><button class="btn ghost" type="button" id="copyhash">Copier la ligne</button><a class="btn" href="#/">Continuer</a></div></div></div>';
 }
+
+/* ===== Head admin : gère la liste des admins (#/headadmin) ===== */
+var HEADKEY = "noir.head";
+var headDraft = null;
+function headOk() { try { return !!CONFIG.HEAD_HASH && sessionStorage.getItem(HEADKEY) === CONFIG.HEAD_HASH; } catch (e) { return false; } }
+function configAdmins() {
+  var l = [];
+  if (CONFIG.ADMIN_HASH) l.push({ name: "Admin principal", hash: CONFIG.ADMIN_HASH });
+  (CONFIG.ADMINS || []).forEach(function (a) { if (a && a.hash) l.push({ name: String(a.name || "Admin"), hash: a.hash }); });
+  return l;
+}
+function cleanName(v) { return String(v || "").replace(/[<>"'\\`]/g, "").trim().slice(0, 30); }
+function adminsLine(list) {
+  return 'ADMIN_HASH: "",\nADMINS: [' + list.map(function (a) { return '{ name: ' + JSON.stringify(a.name) + ', hash: "' + a.hash + '" }'; }).join(", ") + '],';
+}
+function viewHead() {
+  var app = $("#app");
+  if (!CONFIG.HEAD_HASH) {
+    app.innerHTML = '<div class="wrap"><form class="authbox" id="headsetup"><h1>Head admin</h1>' +
+      '<p class="lead">Le Head admin n\'est pas encore créé. Choisis son mot de passe : tu recevras une ligne à coller dans index.html (CONFIG, à la place de HEAD_HASH), puis tu remets le fichier en ligne.</p>' +
+      '<label class="f"><span>Mot de passe (8 caractères minimum)</span><input type="password" id="hp1" autocomplete="new-password"></label>' +
+      '<label class="f"><span>Confirmer</span><input type="password" id="hp2" autocomplete="new-password"></label><p class="note" id="autherr"></p>' +
+      '<div class="row"><button class="btn" type="submit">Créer</button><a class="btn ghost" href="#/">Retour</a></div></form></div>';
+    return;
+  }
+  if (!headOk()) {
+    app.innerHTML = '<div class="wrap"><form class="authbox" id="headlogin"><h1>Head admin</h1><p class="lead">Accès réservé : gestion des admins.</p>' +
+      '<label class="f"><span>Mot de passe Head admin</span><input type="password" id="hpw" autocomplete="current-password"></label><p class="note" id="autherr"></p>' +
+      '<div class="row"><button class="btn" type="submit">Entrer</button><a class="btn ghost" href="#/">Retour</a></div></form></div>';
+    var f = $("#hpw"); if (f) f.focus();
+    return;
+  }
+  if (!headDraft) headDraft = configAdmins();
+  var changed = JSON.stringify(headDraft) !== JSON.stringify(configAdmins());
+  var rows = headDraft.length ? headDraft.map(function (a, i) {
+    return '<div style="display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--line)"><b>' + esc(a.name) + '</b><button class="btn danger small" type="button" data-headdel="' + i + '">Retirer</button></div>';
+  }).join("") : '<p class="note">Aucun admin pour l\'instant.</p>';
+  app.innerHTML = '<div class="wrap"><div class="authbox" style="max-width:560px"><h1>Head admin</h1>' +
+    '<p class="lead">Ajoute ou retire des admins. Un admin retiré perd l\'accès dès que le fichier mis à jour est en ligne, même s\'il était déjà connecté.</p>' +
+    '<div style="display:grid;gap:4px"><h3 class="note" style="margin:0 0 6px;text-transform:uppercase;letter-spacing:.08em">Admins (' + headDraft.length + ')</h3>' + rows + '</div>' +
+    '<form id="headadd" style="display:grid;gap:12px"><h3 class="note" style="margin:0;text-transform:uppercase;letter-spacing:.08em">Ajouter un admin</h3>' +
+    '<label class="f"><span>Nom</span><input type="text" id="an" maxlength="30" autocomplete="off"></label>' +
+    '<label class="f"><span>Mot de passe (6 caractères minimum)</span><input type="text" id="ap" autocomplete="off"></label><p class="note" id="autherr"></p>' +
+    '<div class="row"><button class="btn ghost" type="submit">Ajouter</button></div></form>' +
+    (changed
+      ? '<div style="display:grid;gap:12px"><h3 class="note" style="margin:0;text-transform:uppercase;letter-spacing:.08em">À publier</h3><p class="note" style="margin:0">Remplace les lignes ADMIN_HASH et ADMINS dans CONFIG (index.html) par celles-ci, puis remets le fichier en ligne.</p><pre class="code" id="hashline">' + esc(adminsLine(headDraft)) + '</pre><div class="row"><button class="btn" type="button" id="copyhash">Copier les lignes</button><button class="btn ghost" type="button" id="head-reset">Annuler les changements</button></div></div>'
+      : '<p class="note">Aucun changement en attente.</p>') +
+    '<div class="row"><button class="btn ghost" type="button" id="head-quit">Se déconnecter</button><a class="btn ghost" href="#/">Retour au site</a></div></div></div>';
+}
+document.addEventListener("submit", function (e) {
+  var id = e.target.id;
+  if (id === "headsetup") {
+    e.preventDefault();
+    var p1 = $("#hp1").value, p2 = $("#hp2").value;
+    if (CONFIG.HEAD_HASH) return;
+    if (p1.length < 8) { authError(e.target, "8 caractères minimum"); return; }
+    if (p1 !== p2) { authError(e.target, "Les deux mots de passe sont différents"); return; }
+    $("#app").innerHTML = '<div class="wrap"><div class="authbox"><h1>C\'est noté</h1><p class="lead">Colle cette ligne dans index.html, dans CONFIG (à la place de la ligne HEAD_HASH), puis remets le fichier en ligne. Ensuite connecte-toi ici avec ce mot de passe.</p>' +
+      '<pre class="code" id="hashline">HEAD_HASH: "' + esc(pwHash("head:" + p1)) + '",</pre>' +
+      '<div class="row"><button class="btn ghost" type="button" id="copyhash">Copier la ligne</button><a class="btn" href="#/">Continuer</a></div></div></div>';
+  } else if (id === "headlogin") {
+    e.preventDefault();
+    var h = pwHash("head:" + $("#hpw").value);
+    if (CONFIG.HEAD_HASH && h === CONFIG.HEAD_HASH) { try { sessionStorage.setItem(HEADKEY, h); } catch (er) {} headDraft = configAdmins(); viewHead(); }
+    else { $("#hpw").value = ""; authError(e.target, "Mot de passe incorrect"); }
+  } else if (id === "headadd") {
+    e.preventDefault();
+    if (!headOk()) return;
+    var nm = cleanName($("#an").value), pw = $("#ap").value;
+    if (!nm) { authError(e.target, "Donne un nom à cet admin"); return; }
+    if (pw.length < 6) { authError(e.target, "6 caractères minimum"); return; }
+    var ph = pwHash(pw);
+    if (headDraft.some(function (a) { return a.hash === ph; })) { authError(e.target, "Ce mot de passe est déjà utilisé par un autre admin"); return; }
+    headDraft.push({ name: nm, hash: ph });
+    viewHead();
+  }
+});
+document.addEventListener("click", function (e) {
+  var d = e.target.closest("[data-headdel]");
+  if (d && headDraft && headOk()) {
+    var i = +d.dataset.headdel, a = headDraft[i];
+    if (!a) return;
+    if (!window.confirm("Retirer « " + a.name + " » des admins ?")) return;
+    headDraft.splice(i, 1); viewHead(); return;
+  }
+  if (e.target.id === "head-reset") { headDraft = configAdmins(); viewHead(); return; }
+  if (e.target.id === "head-quit") { try { sessionStorage.removeItem(HEADKEY); } catch (er) {} headDraft = null; viewHead(); }
+});
 
 /* ===== Éditeur ===== */
 var draft = null;
@@ -1870,7 +1970,7 @@ var NAVMAP = { "": "nav-home", series: "nav-series", films: "nav-films", ajouter
 function route(force) {
   force = force === true;
   var parts = (location.hash.slice(1) || "/").split("/");
-  var a = parts[1] || "", b = parts[2] || "";
+  var a = (parts[1] || "").toLowerCase(), b = parts[2] || "";
   if (a === "recherche") { try { b = decodeURIComponent(parts.slice(2).join("/")); } catch (e) { b = parts.slice(2).join("/"); } }
 
   if ((a === "ajouter" || a === "modifier" || a === "motdepasse" || a === "panel") && !ADMIN) { location.hash = "#/admin"; return; }
@@ -1898,6 +1998,7 @@ function route(force) {
   else if (a === "demande") viewRequest(b, parts[3]);
   else if (a === "recherche") { curQ = b; rerender = function () { viewSearch(curQ); }; rerender(); }
   else if (a === "admin") viewLogin();
+  else if (a === "headadmin") viewHead();
   else if (a === "motdepasse") viewSetPassword(false);
   else if (a === "panel") viewPanel();
   else if (a === "ajouter") viewEditor();
@@ -2147,7 +2248,8 @@ document.addEventListener("submit", function (e) {
   } else if (id === "login") {
     e.preventDefault();
     var pwv = $("#pw").value;
-    if (pwHash(pwv) === savedHash()) unlockToken(pwv).then(function () { loginAdmin(); });
+    var ph = pwHash(pwv);
+    if (adminHashes().indexOf(ph) > -1) unlockToken(pwv).then(function () { loginAdmin(false, ph); });
     else { $("#pw").value = ""; authError(e.target, "Mot de passe incorrect"); }
   } else if (id === "setpw") {
     e.preventDefault();
@@ -2157,7 +2259,6 @@ document.addEventListener("submit", function (e) {
     if (p1 !== p2) { authError(e.target, "Les deux mots de passe sont différents"); return; }
     var h = pwHash(p1);
     try { localStorage.setItem(PWSTORE, h); } catch (err) {}
-    if (!ADMIN) loginAdmin(true);
     viewPasswordDone(h);
   }
 });
@@ -2351,7 +2452,7 @@ $("#btn-key").addEventListener("click", function () {
   if (!window.crypto || !crypto.subtle) return;
   var p = window.prompt("Pour que le site retienne la clé sur tous tes appareils, retape ton mot de passe admin (ou annule).");
   if (!p) return;
-  if (pwHash(p) !== savedHash()) { toast("Mot de passe incorrect, la clé reste seulement sur ce navigateur"); return; }
+  if (adminHashes().indexOf(pwHash(p)) < 0) { toast("Mot de passe incorrect, la clé reste seulement sur ce navigateur"); return; }
   encToken(k, p).then(function (blob) {
     $("#app").innerHTML = '<div class="wrap"><div class="authbox"><h1>Clé TMDB retenue</h1>' +
       '<p class="lead">Colle cette ligne dans le fichier index.html, dans CONFIG (à la place de la ligne TOKEN_ENC existante), puis remets le fichier en ligne. Ensuite la clé se débloque toute seule quand tu te connectes en admin, sur n\'importe quel appareil. Elle est chiffrée : personne ne peut la lire.</p>' +
