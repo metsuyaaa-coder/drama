@@ -595,6 +595,7 @@ footer .wrap.about { display: grid; grid-template-columns: repeat(auto-fit, minm
       <button id="btn-export" type="button" class="admin-only">Publier (catalog.json)</button>
       <button id="btn-import" type="button" class="admin-only">Importer</button>
       <button id="btn-key" type="button" class="admin-only">Clé TMDB</button>
+      <button id="btn-gh" type="button" class="admin-only">GitHub</button>
       <a href="#/panel" class="admin-only">Panneau admin</a>
       <a href="#/motdepasse" class="admin-only">Mot de passe</a>
       <button id="btn-quit" type="button" class="admin-only">Quitter le mode admin</button>
@@ -666,6 +667,9 @@ var CONFIG = {
   ADMINS: [{ name: "NEBULA", hash: "614d778ed0cba5ca0a8417fb496e2cb752f2e111ed385d663c6771cb040b9266" }],  /* liste des admins : gérée depuis #/headadmin */
   HEAD_HASH: "12afa2afc52f8d72a5d94d6e75aef998d73d95d61c0792b99d93a850795b71a2",   /* empreinte du mot de passe Head admin : à créer sur #/headadmin puis à coller ici */
   TOKEN_ENC: "",   /* jeton TMDB chiffré avec ton mot de passe : se débloque tout seul à la connexion admin */
+  GITHUB_REPO: "metsuyaaa-coder/drama", /* ex. "pseudo/depot" : si rempli, les visiteurs lisent catalog.json directement sur GitHub (mise à jour en direct) */
+  GITHUB_BRANCH: "main",
+  GITHUB_PATH: "catalog.json",
   LANG: "fr-FR"
 };
 var API = "https://api.themoviedb.org/3";
@@ -1526,9 +1530,10 @@ function viewPanel() {
     '<div class="row"><button class="btn" type="button" id="refreshall"' + (refreshingAll || !nt ? ' disabled' : '') + '>Tout mettre à jour depuis TMDB</button></div>' +
     '<p class="note" id="refreshall-status" style="margin:0"></p></div>' +
     '<div style="display:grid;gap:12px"><h3 class="note" style="margin:0;text-transform:uppercase;letter-spacing:.08em">Catalogue</h3>' +
-    '<div class="row"><button class="btn" type="button" data-clickid="btn-export">Publier (catalog.json)</button><button class="btn ghost" type="button" id="btn-backup">Sauvegarde complète</button><button class="btn ghost" type="button" data-clickid="btn-import">Importer</button></div></div>' +
+    '<div class="row"><button class="btn" type="button" data-clickid="btn-export">Publier (catalog.json)</button><button class="btn ghost" type="button" id="btn-backup">Sauvegarde complète</button><button class="btn ghost" type="button" data-clickid="btn-import">Importer</button><button class="btn ghost" type="button" id="btn-pull">Récupérer depuis GitHub</button></div>' +
+    '<p class="note" style="margin:0">' + (ghRepo() && ghToken() ? 'GitHub lié (' + esc(ghRepo()) + ') : « Publier » envoie catalog.json directement sur le dépôt.' : 'Pour publier en un clic sans re-uploader le fichier, lie ton dépôt avec « GitHub ».') + '</p></div>' +
     '<div style="display:grid;gap:12px"><h3 class="note" style="margin:0;text-transform:uppercase;letter-spacing:.08em">Accès</h3>' +
-    '<div class="row"><button class="btn ghost" type="button" data-clickid="btn-key">Clé TMDB</button><a class="btn ghost" href="#/motdepasse">Mot de passe</a><button class="btn danger" type="button" data-clickid="btn-quit">Quitter le mode admin</button></div></div>' +
+    '<div class="row"><button class="btn ghost" type="button" data-clickid="btn-key">Clé TMDB</button><button class="btn ghost" type="button" data-clickid="btn-gh">GitHub</button><a class="btn ghost" href="#/motdepasse">Mot de passe</a><button class="btn danger" type="button" data-clickid="btn-quit">Quitter le mode admin</button></div></div>' +
     '</div></div>';
 }
 
@@ -2466,12 +2471,78 @@ function saveJson(obj, name) {
   a.href = URL.createObjectURL(new Blob([JSON.stringify(obj, null, 2)], { type: "application/json" }));
   a.download = name; document.body.appendChild(a); a.click(); a.remove();
 }
+/* ===== Publication directe sur GitHub (sans re-uploader catalog.json) ===== */
+var GHTOKEY = "noir.ghtoken", GHREPOKEY = "noir.ghrepo";
+function ghToken() { try { return localStorage.getItem(GHTOKEY) || ""; } catch (e) { return ""; } }
+function ghRepo() { var r = CONFIG.GITHUB_REPO || ""; if (!r) { try { r = localStorage.getItem(GHREPOKEY) || ""; } catch (e) {} } return r; }
+function ghErr(r) {
+  var m = r.status === 401 ? "Jeton GitHub refusé (expiré ou faux)"
+    : r.status === 403 ? "GitHub refuse l'accès (droits du jeton ou limite atteinte)"
+    : r.status === 404 ? "Dépôt ou branche introuvable (vérifie le nom et les droits « Contents : Read and write »)"
+    : r.status === 409 || r.status === 422 ? "Conflit : le fichier a changé entre-temps, réessaie"
+    : "Erreur GitHub " + r.status;
+  var e = new Error(m); e.status = r.status; return e;
+}
+function ghHeaders(extra) {
+  var h = { Authorization: "Bearer " + ghToken(), Accept: "application/vnd.github+json" };
+  Object.keys(extra || {}).forEach(function (k) { h[k] = extra[k]; });
+  return h;
+}
+function ghPublish(obj, tried) {
+  var gi = ghParse(ghRepo());
+  if (!gi || !ghToken()) return Promise.reject(new Error("GitHub non lié"));
+  var url = ghUrl(gi);
+  return fetch(url + "?ref=" + encodeURIComponent(gi.branch), { headers: ghHeaders(), cache: "no-store" }).then(function (r) {
+    if (r.status === 404) return null;
+    if (!r.ok) throw ghErr(r);
+    return r.json();
+  }).then(function (cur) {
+    var body = { message: "Mise à jour du catalogue (" + myId() + ")", content: btoa(unescape(encodeURIComponent(JSON.stringify(obj, null, 2)))), branch: gi.branch };
+    if (cur && cur.sha) body.sha = cur.sha;
+    return fetch(url, { method: "PUT", headers: ghHeaders({ "Content-Type": "application/json" }), body: JSON.stringify(body) });
+  }).then(function (r) {
+    if (!r.ok) { var e = ghErr(r); if ((r.status === 409 || r.status === 422) && !tried) return ghPublish(obj, true); throw e; }
+    return r.json();
+  });
+}
+function ghPull() {
+  var gi = ghParse(ghRepo());
+  if (!gi || !ghToken()) { toast("Lie d'abord ton dépôt avec « GitHub »"); return; }
+  toast("Récupération depuis GitHub…");
+  fetch(ghUrl(gi) + "?ref=" + encodeURIComponent(gi.branch), { headers: ghHeaders({ Accept: "application/vnd.github.raw+json" }), cache: "no-store" })
+    .then(function (r) { if (!r.ok) throw ghErr(r); return r.json(); })
+    .then(function (data) { importCatalogData(data, "Catalogue récupéré depuis GitHub (tes liens sont conservés)"); })
+    .catch(function (e) { toast(e && e.message ? e.message : "Impossible de lire le catalogue sur GitHub"); });
+}
+$("#btn-gh").addEventListener("click", function () {
+  var r = window.prompt("Dépôt GitHub du site, au format pseudo/depot (ou pseudo/depot@branche).\nLaisse vide pour délier.", ghRepo());
+  if (r == null) return;
+  r = r.trim();
+  if (r && !ghParse(r)) { toast("Format invalide : écris pseudo/depot"); return; }
+  var t = r ? window.prompt("Colle ton jeton GitHub (droit « Contents : Read and write » sur ce dépôt uniquement).\nLaisse vide pour garder l'actuel.", "") : "";
+  try {
+    if (!r) { localStorage.removeItem(GHREPOKEY); localStorage.removeItem(GHTOKEY); toast("GitHub délié : « Publier » télécharge de nouveau le fichier"); return; }
+    if (!CONFIG.GITHUB_REPO) localStorage.setItem(GHREPOKEY, r);
+    if (t && t.trim()) localStorage.setItem(GHTOKEY, t.trim());
+  } catch (e) {}
+  toast(ghToken() ? "GitHub lié : « Publier » envoie directement catalog.json" : "Dépôt enregistré, il manque le jeton");
+  if ((location.hash || "") === "#/panel") viewPanel();
+});
 $("#btn-export").addEventListener("click", function () {
   var priv = SETTINGS.downloads === "private";
   var list = JSON.parse(JSON.stringify(db));
   if (priv) stripDl(list);
-  saveJson({ settings: { downloads: SETTINGS.downloads }, series: list }, "catalog.json");
-  toast("catalog.json téléchargé" + (priv ? " (téléchargements privés : liens retirés)" : "") + " : mets-le à côté de index.html sur ton hébergement");
+  var obj = { settings: { downloads: SETTINGS.downloads }, series: list };
+  var download = function () { saveJson(obj, "catalog.json"); };
+  if (ghRepo() && ghToken()) {
+    toast("Publication sur GitHub…");
+    ghPublish(obj).then(function () {
+      toast("Publié sur GitHub ✓" + (priv ? " (liens de téléchargement retirés)" : "") + (CONFIG.GITHUB_REPO ? " Les visiteurs le voient dans quelques secondes." : " Visible après le redéploiement de GitHub Pages (environ 1 minute)."));
+    }).catch(function (e) { download(); toast((e && e.message ? e.message : "Échec GitHub") + " : catalog.json téléchargé à la place"); });
+    return;
+  }
+  download();
+  toast("catalog.json téléchargé" + (priv ? " (téléchargements privés : liens retirés)" : "") + " : mets-le à côté de index.html sur ton hébergement. Astuce : lie ton dépôt avec « GitHub » pour publier en un clic.");
 });
 document.addEventListener("click", function (e) {
   if (!ADMIN) return;
@@ -2486,6 +2557,7 @@ document.addEventListener("click", function (e) {
   if (e.target.id === "preview-quit") { setPreview(false); location.hash = "#/panel"; route(true); return; }
   var c = e.target.closest("[data-clickid]");
   if (c) { var el = document.getElementById(c.dataset.clickid); if (el) el.click(); return; }
+  if (e.target.id === "btn-pull") { ghPull(); return; }
   if (e.target.id === "btn-backup") { saveJson({ settings: { downloads: SETTINGS.downloads }, series: db }, "catalog-sauvegarde.json"); toast("Sauvegarde complète téléchargée (avec les liens)"); }
 });
 /* Import : si le fichier n'a pas de liens de téléchargement, on garde ceux déjà présents */
@@ -2501,15 +2573,19 @@ function keepDl(n, o) {
     });
   });
 }
+function importCatalogData(data, label) {
+  if (data && !Array.isArray(data) && Array.isArray(data.series)) data = data.series;
+  if (!Array.isArray(data)) throw 0;
+  data.forEach(function (s) { if (!s || !s.id || !s.name) return; normalize(s); var i = -1; db.forEach(function (x, k) { if (String(x.id) === String(s.id)) i = k; }); if (i > -1) { keepDl(s, db[i]); mergeOwn(db[i], s, true); db[i] = s; } else { mergeOwn(null, s, true); db.push(s); } });
+  persist(); toast(label || "Catalogue importé"); route(true);
+}
 $("#btn-import").addEventListener("click", function () { $("#file").click(); });
 $("#file").addEventListener("change", function () {
   var f = this.files[0]; if (!f) return;
   var r = new FileReader();
   r.onload = function () {
     try {
-      var data = JSON.parse(r.result); if (data && !Array.isArray(data) && Array.isArray(data.series)) data = data.series; if (!Array.isArray(data)) throw 0;
-      data.forEach(function (s) { if (!s || !s.id || !s.name) return; normalize(s); var i = -1; db.forEach(function (x, k) { if (String(x.id) === String(s.id)) i = k; }); if (i > -1) { keepDl(s, db[i]); mergeOwn(db[i], s, true); db[i] = s; } else { mergeOwn(null, s, true); db.push(s); } });
-      persist(); toast("Catalogue importé"); route(true);
+      importCatalogData(JSON.parse(r.result));
     } catch (e) { toast("Fichier invalide"); }
   };
   r.readAsText(f); this.value = "";
@@ -2550,11 +2626,26 @@ document.addEventListener("click", function (e) {
 });
 
 /* Les visiteurs voient le catalogue publié dans catalog.json, à côté de index.html */
+function ghParse(spec) {
+  var m = String(spec || "").trim().match(/^([\w.-]+\/[\w.-]+)(?:@(.+))?$/);
+  return m ? { repo: m[1], branch: m[2] || CONFIG.GITHUB_BRANCH || "main" } : null;
+}
+function ghUrl(gi) { return "https://api.github.com/repos/" + gi.repo + "/contents/" + encodeURI(CONFIG.GITHUB_PATH || "catalog.json"); }
+function fetchCatalogData() {
+  var local = function () {
+    return fetch("catalog.json?v=" + Date.now(), { cache: "no-store" }).then(function (r) {
+      if (!r.ok) throw new Error("catalog.json introuvable");
+      return r.json();
+    });
+  };
+  var gi = ghParse(CONFIG.GITHUB_REPO);
+  if (!gi) return local();
+  return fetch(ghUrl(gi) + "?ref=" + encodeURIComponent(gi.branch), { headers: { Accept: "application/vnd.github.raw+json" }, cache: "no-store" })
+    .then(function (r) { if (!r.ok) throw new Error("github"); return r.json(); })
+    .catch(local);
+}
 function loadCatalog() {
-  return fetch("catalog.json?v=" + Date.now(), { cache: "no-store" }).then(function (r) {
-    if (!r.ok) throw new Error("catalog.json introuvable");
-    return r.json();
-  }).then(function (data) {
+  return fetchCatalogData().then(function (data) {
     var st = null;
     if (data && !Array.isArray(data) && Array.isArray(data.series)) { st = data.settings || null; data = data.series; }
     if (!Array.isArray(data)) return;
