@@ -817,7 +817,7 @@ var db = ADMIN ? readJSON(STORE, []).map(normalize) : [];
 /* Réglages du site (téléchargement public ou privé). Les visiteurs les lisent dans catalog.json ; l'admin les garde sur son navigateur. */
 var SETKEY = "noir.settings";
 var SETTINGS = { downloads: "public" };
-if (ADMIN) { var _st = readJSON(SETKEY, null); if (_st && _st.downloads === "private") SETTINGS.downloads = "private"; }
+if (ADMIN) { var _st = readJSON(SETKEY, null); if (_st && _st.downloads === "private") SETTINGS.downloads = "private"; if (_st && "player" in _st) { SETTINGS.player = _st.player; SETTINGS.playerAt = +_st.playerAt || 0; } }
 function saveSettings() { try { localStorage.setItem(SETKEY, JSON.stringify(SETTINGS)); } catch (e) {} }
 var PREVIEW = false;
 function dlAdmin() { return ADMIN && !PREVIEW; }
@@ -1645,6 +1645,7 @@ function viewPanel() {
     '<div style="display:grid;gap:12px"><h3 class="note" style="margin:0;text-transform:uppercase;letter-spacing:.08em">Catalogue</h3>' +
     '<div class="row"><button class="btn" type="button" data-clickid="btn-export">Publier (catalog.json)</button><button class="btn ghost" type="button" id="btn-backup">Sauvegarde complète</button><button class="btn ghost" type="button" data-clickid="btn-import">Importer</button><button class="btn ghost" type="button" id="btn-pull">Récupérer depuis GitHub</button>' + '<button class="btn ghost" type="button" id="btn-autosync">Synchro auto : ' + (readJSON("noir.autosync", true) !== false ? 'ON' : 'OFF') + '</button>' + (isHead() ? '<button class="btn ghost" type="button" id="btn-forcerefresh">Rafraîchir tous les admins</button>' : '') + '</div>' +
     '<p class="note" style="margin:0">' + (ghRepo() && ghToken() ? 'GitHub lié (' + esc(ghRepo()) + ') : « Publier » envoie catalog.json directement sur le dépôt.' : 'Pour publier en un clic sans re-uploader le fichier, lie ton dépôt avec « GitHub ».') + '</p></div>' +
+    playerSection() +
     '<div style="display:grid;gap:12px"><h3 class="note" style="margin:0;text-transform:uppercase;letter-spacing:.08em">Accès</h3>' +
     '<div class="row"><button class="btn ghost" type="button" data-clickid="btn-key">Clé TMDB</button><button class="btn ghost" type="button" data-clickid="btn-gh">GitHub</button><a class="btn ghost" href="/motdepasse">Mot de passe</a><button class="btn danger" type="button" data-clickid="btn-quit">Quitter le mode admin</button></div></div>' +
     '</div></div>';
@@ -2024,12 +2025,36 @@ function saveDraft() {
 var cur = { sources: [], i: 0, title: "" };
 
 var PREFERRED = "playmate";
+/* Lecteur par défaut pour tout le monde : choisi par le Head admin (settings.player dans catalog.json). Vide = première source de la liste. */
+function defaultPlayer() { return SETTINGS.player == null ? PREFERRED : String(SETTINGS.player); }
 function defaultSrc(sources) {
+  var P = defaultPlayer().toLowerCase().trim();
+  if (!P) return 0;
   for (var i = 0; i < (sources || []).length; i++) {
     var x = sources[i] || {};
-    if (String(x.name || "").toLowerCase().indexOf(PREFERRED) > -1 || String(x.url || "").toLowerCase().indexOf(PREFERRED) > -1) return i;
+    if (String(x.name || "").toLowerCase().indexOf(P) > -1 || String(x.url || "").toLowerCase().indexOf(P) > -1) return i;
   }
   return 0;
+}
+function adoptPlayer(st) {
+  if (!st || !("player" in st)) return;
+  if (!ADMIN || (+st.playerAt || 0) >= (+SETTINGS.playerAt || 0)) { SETTINGS.player = st.player; SETTINGS.playerAt = +st.playerAt || 0; if (ADMIN) saveSettings(); }
+}
+function playerCounts() {
+  var m = {}, add = function (a) { (a || []).forEach(function (x) { var n = String(x && x.name || "").replace(/\s+\d+$/, "").trim().toLowerCase(); if (n) m[n] = (m[n] || 0) + 1; }); };
+  db.forEach(function (f) { add(f.sources); (f.seasons || []).forEach(function (se) { (se.episodes || []).forEach(function (ep) { add(ep.sources); }); }); });
+  return m;
+}
+function playerSection() {
+  if (!isHead()) return "";
+  var m = playerCounts(), cur0 = SETTINGS.player == null ? PREFERRED : String(SETTINGS.player).toLowerCase();
+  if (cur0 && m[cur0] == null) m[cur0] = 0;
+  var names = Object.keys(m).sort(function (a, b) { return (m[b] - m[a]) || (a < b ? -1 : 1); });
+  var opts = '<option value="__auto__"' + (!cur0 ? " selected" : "") + '>Automatique (première source de la liste)</option>' +
+    names.map(function (n) { return '<option value="' + esc(n) + '"' + (n === cur0 ? " selected" : "") + '>' + esc(n.toUpperCase()) + ' (' + m[n] + ' source' + (m[n] > 1 ? "s" : "") + ')</option>'; }).join("");
+  return '<div style="display:grid;gap:12px"><h3 class="note" style="margin:0;text-transform:uppercase;letter-spacing:.08em">Lecteur par défaut</h3>' +
+    '<div class="row"><select id="def-player" style="background:var(--bg);color:var(--fg);border:1px solid var(--line);border-radius:0;padding:10px 12px;min-width:260px">' + opts + '</select><button class="btn" type="button" id="def-player-save">Appliquer à tout le monde</button></div>' +
+    '<p class="note" style="margin:0">C\'est le serveur qui se lance en premier pour tous les visiteurs et admins. S\'il n\'existe pas sur un film ou un épisode, c\'est la première source qui est prise. Chacun peut toujours changer de serveur dans le lecteur.</p></div>';
 }
 function play(sources, title, idx, sub, nav, dls) {
   if (!sources || !sources.length) { toast("Aucune source sur cette fiche"); return; }
@@ -2640,6 +2665,8 @@ function ghPublish(obj, tried) {
     }
     obj.deletedLinks = t.links; obj.deletedFiches = t.fiches;
     if (remote && remote.team && (!TEAM || (+remote.team.at || 0) > (+TEAM.at || 0))) obj.team = remote.team; else if (TEAM) obj.team = TEAM;
+    var rps = remote && remote.settings;
+    if (rps && "player" in rps && (+rps.playerAt || 0) > (+SETTINGS.playerAt || 0) && obj.settings) { obj.settings.player = rps.player; obj.settings.playerAt = rps.playerAt; }
     var rfa = Math.max(+(remote && remote.refreshAt) || 0, +readJSON(RFKEY, 0) || 0); if (rfa) obj.refreshAt = rfa;
     return fetch(url + "?ref=" + encodeURIComponent(gi.branch), { headers: ghHeaders(), cache: "no-store" });
   }).then(function (r) {
@@ -2684,6 +2711,7 @@ function buildCatalogObj() {
   if (priv) stripDl(list);
   var tt = finalTombs(null);
   var obj = { settings: { downloads: SETTINGS.downloads }, series: list, deletedLinks: tt.links, deletedFiches: tt.fiches };
+  if (SETTINGS.player != null) { obj.settings.player = SETTINGS.player; obj.settings.playerAt = SETTINGS.playerAt || 0; }
   var rf0 = +readJSON(RFKEY, 0) || 0; if (rf0) obj.refreshAt = rf0;
   if (TEAM) obj.team = TEAM;
   return obj;
@@ -2735,6 +2763,13 @@ document.addEventListener("click", function (e) {
   var c = e.target.closest("[data-clickid]");
   if (c) { var el = document.getElementById(c.dataset.clickid); if (el) el.click(); return; }
   if (e.target.id === "btn-pull") { ghPull(); return; }
+  if (e.target.id === "def-player-save") {
+    if (!isHead()) return;
+    var sel = $("#def-player"); if (!sel) return;
+    SETTINGS.player = sel.value === "__auto__" ? "" : sel.value; SETTINGS.playerAt = Date.now(); saveSettings();
+    toast(autoSyncOn() ? "Lecteur par défaut enregistré pour tout le monde" : "Lecteur par défaut enregistré. Clique sur « Publier » pour l'appliquer à tout le monde.");
+    markDirty(); return;
+  }
   if (e.target.id === "btn-autosync") {
     var on = readJSON("noir.autosync", true) !== false;
     try { localStorage.setItem("noir.autosync", JSON.stringify(!on)); } catch (er) {}
@@ -3013,6 +3048,7 @@ function loadCatalog() {
     if (!Array.isArray(data)) return;
     data = data.map(normalize);
     var priv = !!(st && st.downloads === "private");
+    adoptPlayer(st);
     if (!ADMIN) { db = data; SETTINGS.downloads = priv ? "private" : "public"; }
     else if (!db.length) {
       db = data; persist();
