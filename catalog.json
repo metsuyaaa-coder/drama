@@ -6835,7 +6835,15 @@
                   "by": "head"
                 }
               ],
-              "downloads": []
+              "downloads": [
+                {
+                  "name": "1FICHIER",
+                  "url": "https://1fichier.com/?l99szxexv10p9s4nivju",
+                  "size": "1.9 Go",
+                  "quality": "1080p (H.264)",
+                  "by": "head"
+                }
+              ]
             },
             {
               "number": 3,
@@ -6909,7 +6917,7 @@
       "addedAt": 1792268922038,
       "langs": [],
       "downloads": [],
-      "updatedAt": 1792268966668
+      "updatedAt": 1792269044149
     }
   ],
   "deletedLinks": [
