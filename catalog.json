@@ -6,7 +6,7 @@
     {
       "id": "293607",
       "type": "tv",
-      "name": "100 Days of Deception",
+      "name": "100 jours en espionne",
       "original_name": "100일의 거짓말",
       "year": "2026",
       "overview": "En quête de liberté, la meilleure pickpocket de Séoul infiltre le gouvernement colonial japonais pour lui dérober des secrets, mais tombe amoureuse du fils de sa cible.",
@@ -242,7 +242,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "trend": 69,
+      "trend": 65,
       "aka": [
         "100 Days of Deception",
         "百日谎言",
@@ -271,10 +271,6 @@
       ],
       "downloads": [],
       "pop": 49.9822,
-      "origin_country": [
-        "KR"
-      ],
-      "original_language": "ko",
       "posterV": 2
     },
     {
@@ -488,16 +484,12 @@
       ],
       "downloads": [],
       "pop": 82.1886,
-      "origin_country": [
-        "KR"
-      ],
-      "original_language": "ko",
       "posterV": 2
     },
     {
       "id": "293610",
       "type": "tv",
-      "name": "Doctor X: Mafia in White",
+      "name": "Doctor X : Mafia en blouse blanche",
       "original_name": "닥터X: 하얀 마피아의 시대",
       "aka": [
         "Doctor X: Mafia in White",
@@ -750,11 +742,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "trend": 89,
-      "origin_country": [
-        "KR"
-      ],
-      "original_language": "ko",
+      "trend": 96,
       "posterV": 2
     },
     {
@@ -994,10 +982,6 @@
       ],
       "downloads": [],
       "pop": 89.3532,
-      "origin_country": [
-        "KR"
-      ],
-      "original_language": "ko",
       "posterV": 2
     },
     {
@@ -1116,7 +1100,7 @@
         "Hopeu",
         "호프"
       ],
-      "trend": 100,
+      "trend": 96,
       "downloads": [
         {
           "name": "1FICHIER",
@@ -1130,7 +1114,7 @@
     {
       "id": "305644",
       "type": "tv",
-      "name": "Four Hands, Two Sonatas",
+      "name": "Quatre mains, deux sonates",
       "original_name": "포핸즈",
       "year": "2026",
       "overview": "Kang Bi-o, prodige du piano au lycée, excelle constamment en études et en virtuosité pianistique. Considéré comme une future icône de la musique classique, promis à un brillant avenir dans les plus grands concours internationaux, sa carrière bascule lorsqu'il rencontre un rival inattendu : Choi Jeong-yo. Pianiste au talent inné, Jeong-yo a renoncé à son don exceptionnel suite à une enfance difficile. Son admission soudaine au lycée des arts de Corée le met face à Bi-o, le pianiste même qui a ravivé sa passion pour le piano. Jeong-yo est alors contraint de se confronter à ce don qu'il avait autrefois abandonné, et une amitié se noue entre eux.",
@@ -1431,10 +1415,6 @@
         "포핸즈"
       ],
       "downloads": [],
-      "origin_country": [
-        "KR"
-      ],
-      "original_language": "ko",
       "posterV": 2
     },
     {
@@ -1677,10 +1657,6 @@
         "너에게 다이브"
       ],
       "downloads": [],
-      "origin_country": [
-        "KR"
-      ],
-      "original_language": "ko",
       "posterV": 2
     },
     {
@@ -1688,38 +1664,6 @@
       "type": "tv",
       "name": "A Love Other Than Yours",
       "original_name": "너 말고 다른 연애",
-      "origin_country": [
-        "KR"
-      ],
-      "original_language": "ko",
-      "aka": [
-        "不是你的恋爱",
-        "Um Amor Diferente do Seu",
-        "A Love Other Than Yours",
-        "Кохання, але не з тобою/ Кохання поза нами",
-        "Eine andere Liebe als deine",
-        "Un amor distinto al tuyo",
-        "Un autre amour que le tien",
-        "Un amore diverso dal tuo",
-        "Másféle szerelem",
-        "Miłość inna niż ty",
-        "O iubire alta decât a ta",
-        "Senden Başka Bir Aşk",
-        "Láska jiná než tvá",
-        "Μια Αγάπη Διαφορετική από τη Δική σου",
-        "حُبٌّ آخَر غَير حُبِّك",
-        "अ लव अदर देन योर्स",
-        "เมื่อหัวใจมีใครอีกคน",
-        "あなたとは違う恋愛",
-        "除了你之外的戀愛",
-        "Любовь, но не с тобой",
-        "除了你之外的恋爱",
-        "君以外の恋愛",
-        "Neo Malgo Dareun Yeonae",
-        "不是和你談的戀愛",
-        "Not You, Another Love",
-        "너 말고 다른 연애"
-      ],
       "year": "2026",
       "overview": "Une romance réaliste et touchante sur un couple qui, après dix ans de vie commune, voit sa relation confortable bouleversée par des sentiments inattendus.",
       "genres": [
@@ -1794,18 +1738,20 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/hbnOPoWNxJrp0",
-                  "by": "head"
+                  "url": "https://vidara.to/e/hbnOPoWNxJrp0"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/8hPXJmRQQaTTC",
-                  "by": "head"
+                  "url": "https://playmate.to/embed/8hPXJmRQQaTTC"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-lu6fpdz9205l.html",
-                  "by": "head"
+                  "url": "https://uqload.vc/embed-lu6fpdz9205l.html"
+                },
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-jgsqys9jwdvt.html",
+                  "by": "614d778ed0"
                 }
               ],
               "downloads": []
@@ -1818,18 +1764,20 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/bC6TJm3DgbbKe",
-                  "by": "head"
+                  "url": "https://vidara.to/e/bC6TJm3DgbbKe"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/bQOJsvf2M7Rc2",
-                  "by": "head"
+                  "url": "https://playmate.to/embed/bQOJsvf2M7Rc2"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-fuxcci4g5jjg.html",
-                  "by": "head"
+                  "url": "https://uqload.vc/embed-fuxcci4g5jjg.html"
+                },
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-5tpjlu5t0lw7.html",
+                  "by": "614d778ed0"
                 }
               ],
               "downloads": []
@@ -1842,18 +1790,20 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/IZtGFoRm8TH8n",
-                  "by": "head"
+                  "url": "https://vidara.to/e/IZtGFoRm8TH8n"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/RfPzcR4oIHMU0",
-                  "by": "head"
+                  "url": "https://playmate.to/embed/RfPzcR4oIHMU0"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-pv2u7h8v5bj3.html",
-                  "by": "head"
+                  "url": "https://uqload.vc/embed-pv2u7h8v5bj3.html"
+                },
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-5o8s6z3cbctv.html",
+                  "by": "614d778ed0"
                 }
               ],
               "downloads": []
@@ -1866,18 +1816,20 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/sUjzbTLyZ1dYM",
-                  "by": "head"
+                  "url": "https://vidara.to/e/sUjzbTLyZ1dYM"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/J6jceidU6vKVS",
-                  "by": "head"
+                  "url": "https://playmate.to/embed/J6jceidU6vKVS"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-e0od46ai4l1v.html",
-                  "by": "head"
+                  "url": "https://uqload.vc/embed-e0od46ai4l1v.html"
+                },
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-ecwo9i7ceh7o.html",
+                  "by": "614d778ed0"
                 }
               ],
               "downloads": []
@@ -1890,18 +1842,20 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/EDj2DpUmfm0vz",
-                  "by": "head"
+                  "url": "https://vidara.to/e/EDj2DpUmfm0vz"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/TlxrUpqHsskXb",
-                  "by": "head"
+                  "url": "https://playmate.to/embed/TlxrUpqHsskXb"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-t7rabjjuvupp.html",
-                  "by": "head"
+                  "url": "https://uqload.vc/embed-t7rabjjuvupp.html"
+                },
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-4cua8d8jxhe3.html",
+                  "by": "614d778ed0"
                 }
               ],
               "downloads": []
@@ -1914,18 +1868,20 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/cwy4ONBhR27hF",
-                  "by": "head"
+                  "url": "https://vidara.to/e/cwy4ONBhR27hF"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/qXDCwnEd0FuBO",
-                  "by": "head"
+                  "url": "https://playmate.to/embed/qXDCwnEd0FuBO"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-fr4qcr0y3rz3.html",
-                  "by": "head"
+                  "url": "https://uqload.vc/embed-fr4qcr0y3rz3.html"
+                },
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-fw05xx8ax8u9.html",
+                  "by": "614d778ed0"
                 }
               ],
               "downloads": []
@@ -1938,18 +1894,20 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/yNeh8FwYpAdbY",
-                  "by": "head"
+                  "url": "https://vidara.to/e/yNeh8FwYpAdbY"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/ysHmvhnEFX3G5",
-                  "by": "head"
+                  "url": "https://playmate.to/embed/ysHmvhnEFX3G5"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-eagin2y2p6nr.html",
-                  "by": "head"
+                  "url": "https://uqload.vc/embed-eagin2y2p6nr.html"
+                },
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-vlg16s7f37uj.html",
+                  "by": "614d778ed0"
                 }
               ],
               "downloads": []
@@ -1962,18 +1920,20 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/B4ChfZOi4AilX",
-                  "by": "head"
+                  "url": "https://vidara.to/e/B4ChfZOi4AilX"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/X8tlikfJLKOhR",
-                  "by": "head"
+                  "url": "https://playmate.to/embed/X8tlikfJLKOhR"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-rrm24ry2h8p3.html",
-                  "by": "head"
+                  "url": "https://uqload.vc/embed-rrm24ry2h8p3.html"
+                },
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-hez70w3fx9it.html",
+                  "by": "614d778ed0"
                 }
               ],
               "downloads": []
@@ -2060,13 +2020,41 @@
         "VOSTFR",
         "VF"
       ],
+      "aka": [
+        "不是你的恋爱",
+        "Um Amor Diferente do Seu",
+        "A Love Other Than Yours",
+        "Кохання, але не з тобою/ Кохання поза нами",
+        "Eine andere Liebe als deine",
+        "Un amor distinto al tuyo",
+        "Un autre amour que le tien",
+        "Un amore diverso dal tuo",
+        "Másféle szerelem",
+        "Miłość inna niż ty",
+        "O iubire alta decât a ta",
+        "Senden Başka Bir Aşk",
+        "Láska jiná než tvá",
+        "Μια Αγάπη Διαφορετική από τη Δική σου",
+        "حُبٌّ آخَر غَير حُبِّك",
+        "अ लव अदर देन योर्स",
+        "เมื่อหัวใจมีใครอีกคน",
+        "あなたとは違う恋愛",
+        "除了你之外的戀愛",
+        "Любовь, но не с тобой",
+        "除了你之外的恋爱",
+        "君以外の恋愛",
+        "Neo Malgo Dareun Yeonae",
+        "不是和你談的戀愛",
+        "Not You, Another Love",
+        "너 말고 다른 연애"
+      ],
       "downloads": [],
       "posterV": 2
     },
     {
       "id": "290193",
       "type": "tv",
-      "name": "Mousetrap",
+      "name": "Comme un rat",
       "original_name": "들쥐",
       "aka": [
         "Mousetrap",
@@ -2284,10 +2272,6 @@
         "VF"
       ],
       "downloads": [],
-      "origin_country": [
-        "KR"
-      ],
-      "original_language": "ko",
       "posterV": 2
     },
     {
@@ -2648,10 +2632,6 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "origin_country": [
-        "KR"
-      ],
-      "original_language": "ko",
       "posterV": 2
     },
     {
@@ -3194,16 +3174,12 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "origin_country": [
-        "KR"
-      ],
-      "original_language": "ko",
       "posterV": 2
     },
     {
       "id": "218539",
       "type": "tv",
-      "name": "My Demon",
+      "name": "Mon démon",
       "original_name": "마이데몬",
       "aka": [
         "My Demon",
@@ -3649,16 +3625,12 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "origin_country": [
-        "KR"
-      ],
-      "original_language": "ko",
       "posterV": 2
     },
     {
       "id": "276161",
       "type": "tv",
-      "name": "Teach You a Lesson",
+      "name": "Que ça vous serve de leçon !",
       "original_name": "Teach You a Lesson",
       "aka": [
         "Teach You a Lesson",
@@ -3877,10 +3849,6 @@
         "VF"
       ],
       "downloads": [],
-      "origin_country": [
-        "KR"
-      ],
-      "original_language": "ko",
       "posterV": 2
     },
     {
@@ -4142,10 +4110,6 @@
         "VF"
       ],
       "downloads": [],
-      "origin_country": [
-        "KR"
-      ],
-      "original_language": "ko",
       "posterV": 2
     },
     {
@@ -4251,8 +4215,7 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/mp3IkH93GCYvN",
-                  "by": "head"
+                  "url": "https://vidara.to/e/mp3IkH93GCYvN"
                 }
               ],
               "downloads": []
@@ -4265,8 +4228,7 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/qdN7B275Ic9Se",
-                  "by": "head"
+                  "url": "https://vidara.to/e/qdN7B275Ic9Se"
                 }
               ],
               "downloads": []
@@ -4279,8 +4241,7 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/6dpwAECh2o6Ll",
-                  "by": "head"
+                  "url": "https://vidara.to/e/6dpwAECh2o6Ll"
                 }
               ],
               "downloads": []
@@ -4293,8 +4254,7 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/5tO7CYOBn7luP",
-                  "by": "head"
+                  "url": "https://vidara.to/e/5tO7CYOBn7luP"
                 }
               ],
               "downloads": []
@@ -4307,8 +4267,7 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/z8YqmV5X1qbJW",
-                  "by": "head"
+                  "url": "https://vidara.to/e/z8YqmV5X1qbJW"
                 }
               ],
               "downloads": []
@@ -4321,8 +4280,7 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/Av4SEMxKd8bRg",
-                  "by": "head"
+                  "url": "https://vidara.to/e/Av4SEMxKd8bRg"
                 }
               ],
               "downloads": []
@@ -4335,8 +4293,7 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/lNvdUFH0JxyEN",
-                  "by": "head"
+                  "url": "https://vidara.to/e/lNvdUFH0JxyEN"
                 }
               ],
               "downloads": []
@@ -4349,8 +4306,7 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/jHFlIqMhXT0M4",
-                  "by": "head"
+                  "url": "https://vidara.to/e/jHFlIqMhXT0M4"
                 }
               ],
               "downloads": []
@@ -4366,10 +4322,6 @@
         "VF"
       ],
       "downloads": [],
-      "origin_country": [
-        "JP"
-      ],
-      "original_language": "ja",
       "posterV": 2
     },
     {
@@ -4434,8 +4386,7 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/drjwGqDUVzGrw",
-                  "by": "head"
+                  "url": "https://vidara.to/e/drjwGqDUVzGrw"
                 }
               ],
               "downloads": []
@@ -4448,8 +4399,7 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/pyezT0ZeaVzrV",
-                  "by": "head"
+                  "url": "https://vidara.to/e/pyezT0ZeaVzrV"
                 }
               ],
               "downloads": []
@@ -4462,8 +4412,7 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/etifBhL0sBQQH",
-                  "by": "head"
+                  "url": "https://vidara.to/e/etifBhL0sBQQH"
                 }
               ],
               "downloads": []
@@ -4476,8 +4425,7 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/x3oeNTfKSSPJX",
-                  "by": "head"
+                  "url": "https://vidara.to/e/x3oeNTfKSSPJX"
                 }
               ],
               "downloads": []
@@ -4490,8 +4438,7 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/LNn3A8MaUvxzS",
-                  "by": "head"
+                  "url": "https://vidara.to/e/LNn3A8MaUvxzS"
                 }
               ],
               "downloads": []
@@ -4504,8 +4451,7 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/io5OTJBO0dEBc",
-                  "by": "head"
+                  "url": "https://vidara.to/e/io5OTJBO0dEBc"
                 }
               ],
               "downloads": []
@@ -4525,8 +4471,7 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/UQLfiglPL0MW7",
-                  "by": "head"
+                  "url": "https://vidara.to/e/UQLfiglPL0MW7"
                 }
               ],
               "downloads": []
@@ -4539,8 +4484,7 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/BjCVWO8gFbKCk",
-                  "by": "head"
+                  "url": "https://vidara.to/e/BjCVWO8gFbKCk"
                 }
               ],
               "downloads": []
@@ -4553,8 +4497,7 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/Eh8jOqNtRtHWM",
-                  "by": "head"
+                  "url": "https://vidara.to/e/Eh8jOqNtRtHWM"
                 }
               ],
               "downloads": []
@@ -4612,16 +4555,12 @@
         "VF"
       ],
       "downloads": [],
-      "origin_country": [
-        "KR"
-      ],
-      "original_language": "ko",
       "posterV": 2
     },
     {
       "id": "289423",
       "type": "tv",
-      "name": "Take Charge of My Heart",
+      "name": "Recharge mon Coeur",
       "original_name": "나를 충전해줘",
       "aka": [
         "Take Charge of My Heart",
@@ -4855,10 +4794,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "origin_country": [
-        "KR"
-      ],
-      "original_language": "ko",
+      "trend": 71,
       "posterV": 2
     },
     {
@@ -4919,11 +4855,11 @@
               "air_date": "2026-10-16",
               "sources": [
                 {
-                  "name": "VIDMOLY 2",
+                  "name": "VIDMOLY",
                   "url": "https://vidmoly.me/v/2yld09tdh2b7"
                 },
                 {
-                  "name": "VIDMOLY",
+                  "name": "VIDMOLY 2",
                   "url": "https://vidmoly.org/embed-2yld09tdh2b7.html",
                   "by": "614d778ed0"
                 }
@@ -4937,7 +4873,7 @@
               "air_date": "2026-10-16",
               "sources": [
                 {
-                  "name": "VIDMOLY 2",
+                  "name": "VIDMOLY",
                   "url": "https://vidmoly.me/v/ftm3yk26ikx5"
                 },
                 {
@@ -4955,7 +4891,7 @@
               "air_date": "2026-10-16",
               "sources": [
                 {
-                  "name": "VIDMOLY 2",
+                  "name": "VIDMOLY",
                   "url": "https://vidmoly.me/v/x3lw9r89bioi"
                 },
                 {
@@ -4973,7 +4909,7 @@
               "air_date": "2026-10-16",
               "sources": [
                 {
-                  "name": "VIDMOLY 2",
+                  "name": "VIDMOLY",
                   "url": "https://vidmoly.me/v/6ifc1l4tf216"
                 },
                 {
@@ -5543,6 +5479,439 @@
       ],
       "downloads": [],
       "posterV": 2
+    },
+    {
+      "id": "304452",
+      "type": "tv",
+      "name": "The Lament of Autumn",
+      "original_name": "玉簟秋",
+      "origin_country": [
+        "CN"
+      ],
+      "original_language": "zh",
+      "aka": [
+        "The Lament of Autumn",
+        "ลำนำสารทฤดู",
+        "Le Deuil de l’Automne",
+        "玉簟秋",
+        "Плачът на есента",
+        "Ngọc Điệm Thu"
+      ],
+      "year": "2026",
+      "overview": "Sous l'ère Républicaine, Ye Ping Jun cherche à payer les frais médicaux de sa mère avec son nouvel emploi. Mais pour son premier jour de travail, elle se retrouve accidentellement prise dans une tentative d'assassinat contre le cinquième fils de la famille Yu, Yu Chang Xuan. Quand elle se retrouve suspecte, elle fait un pari avec ce dernier : elle a dix jours pour trouver le vrai coupable. Yu Chang Xuan en profite, espérant pourvoir se rapprocher de Ye Ping Jun.",
+      "genres": [
+        "Drame"
+      ],
+      "rating": "9.0",
+      "pop": 53.6394,
+      "status": "Returning Series",
+      "poster": "https://image.tmdb.org/t/p/original/nGSj4YtMOwP4cjGSD1fDlI6WLag.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/original/vD84yLJVVd7cC2lKF8sEukQG2A3.jpg",
+      "cast": [
+        {
+          "name": "丞磊",
+          "character": "Yu Changxuan"
+        },
+        {
+          "name": "徐若晗",
+          "character": "Ye Pingjun"
+        }
+      ],
+      "seasons": [
+        {
+          "number": 1,
+          "name": "Saison 1",
+          "episodes": [
+            {
+              "number": 1,
+              "name": "The Ten-Day Pact",
+              "overview": "In 1919, northern warlord Cheng Jun sets his sights on the presidency and courts military backing from Sujing's three cities. Hoping to secure his own future, Yu Zhongquan, who controls Nanhuai, decides to join forces with Cheng's close ally, Chu Wenfu, and support Cheng's bid.",
+              "air_date": "2026-10-12",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-57h53cjzil8l.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 2,
+              "name": "New Plan",
+              "overview": "Ye Pingjun starts working at the Yuchun Troupe. The troupe leader reminds Ye Pingjun not to offend Yu Changxuan.",
+              "air_date": "2026-10-12",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-tdh7j0iu23zd.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 3,
+              "name": "Secret Execution",
+              "overview": "Yu Changxuan admits his defeat to Ye Pingjun after a ten-day bet. Not only did he release her, but he also gave her some silver dollars. Ye Pingjun can't contain her sorrow and rage. She rebukes Yu Changxuan for acting all high and mighty and cruel.",
+              "air_date": "2026-10-12",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-6iqjcq48xas1.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 4,
+              "name": "Birthday Party",
+              "overview": "Yu Changxuan and Gu Ruitong plan to hijack Mou Linsen and Tao Xili's smuggled weapons with the help of the Cheng Army.",
+              "air_date": "2026-10-12",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-uqoeb9cwlqbv.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 5,
+              "name": "His True Intentions",
+              "overview": "Yu Changxuan learns that Ye Pingjun caught a chill and developed a fever while on the boat. Though he claims not to care, he shows up at her door with a basket of nourishing tonics to visit her.",
+              "air_date": "2026-10-13",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-yqmyfhiw1uj0.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 6,
+              "name": "Half a Jade Pendant",
+              "overview": "Tao Xili abducts Ye Pingjun and whips her in a warehouse outside the city to vent his anger. She stubbornly refuses to admit any wrongdoing, but during the struggle, she spots half a jade pendant at his waist. It resembles a keepsake her mother once owned, leaving her wondering what the connection could be.",
+              "air_date": "2026-10-13",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-pcv5j03ugdmo.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 7,
+              "name": "Chunfeng Theater Troupe Sealed Off",
+              "overview": "Chunfeng Theater Troupe is suddenly sealed off. Ye Pingjun instinctively assumes that it was Yu Changxuan's revenge. Ye Pingjun begs him and weighs the pros and cons for him, but Yu Changxuan rejects her both times. They part on bad terms.",
+              "air_date": "2026-10-14",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-htsjgi281sxl.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 8,
+              "name": "Épisode 8",
+              "overview": "",
+              "air_date": "2026-10-14",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-eippahhl9lgv.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 9,
+              "name": "Épisode 9",
+              "overview": "",
+              "air_date": "2026-10-15",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-dqq28tl83336.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 10,
+              "name": "Épisode 10",
+              "overview": "",
+              "air_date": "2026-10-15",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-lzark1k0654d.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 11,
+              "name": "Épisode 11",
+              "overview": "",
+              "air_date": "2026-10-16",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 12,
+              "name": "Épisode 12",
+              "overview": "",
+              "air_date": "2026-10-16",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 13,
+              "name": "Épisode 13",
+              "overview": "",
+              "air_date": "2026-10-17",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 14,
+              "name": "Épisode 14",
+              "overview": "",
+              "air_date": "2026-10-18",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 15,
+              "name": "Épisode 15",
+              "overview": "",
+              "air_date": "",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 16,
+              "name": "Épisode 16",
+              "overview": "",
+              "air_date": "",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 17,
+              "name": "Épisode 17",
+              "overview": "",
+              "air_date": "",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 18,
+              "name": "Épisode 18",
+              "overview": "",
+              "air_date": "",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 19,
+              "name": "Épisode 19",
+              "overview": "",
+              "air_date": "",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 20,
+              "name": "Épisode 20",
+              "overview": "",
+              "air_date": "",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 21,
+              "name": "Épisode 21",
+              "overview": "",
+              "air_date": "",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 22,
+              "name": "Épisode 22",
+              "overview": "",
+              "air_date": "",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 23,
+              "name": "Épisode 23",
+              "overview": "",
+              "air_date": "",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 24,
+              "name": "Épisode 24",
+              "overview": "",
+              "air_date": "",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 25,
+              "name": "Épisode 25",
+              "overview": "",
+              "air_date": "",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 26,
+              "name": "Épisode 26",
+              "overview": "",
+              "air_date": "",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 27,
+              "name": "Épisode 27",
+              "overview": "",
+              "air_date": "",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 28,
+              "name": "Épisode 28",
+              "overview": "",
+              "air_date": "",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 29,
+              "name": "Épisode 29",
+              "overview": "",
+              "air_date": "",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 30,
+              "name": "Épisode 30",
+              "overview": "",
+              "air_date": "",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 31,
+              "name": "Épisode 31",
+              "overview": "",
+              "air_date": "",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 32,
+              "name": "Épisode 32",
+              "overview": "",
+              "air_date": "",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 33,
+              "name": "Épisode 33",
+              "overview": "",
+              "air_date": "",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 34,
+              "name": "Épisode 34",
+              "overview": "",
+              "air_date": "",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 35,
+              "name": "Épisode 35",
+              "overview": "",
+              "air_date": "",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 36,
+              "name": "Épisode 36",
+              "overview": "",
+              "air_date": "",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 37,
+              "name": "Épisode 37",
+              "overview": "",
+              "air_date": "",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 38,
+              "name": "Épisode 38",
+              "overview": "",
+              "air_date": "",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 39,
+              "name": "Épisode 39",
+              "overview": "",
+              "air_date": "",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 40,
+              "name": "Épisode 40",
+              "overview": "",
+              "air_date": "",
+              "sources": [],
+              "downloads": []
+            }
+          ],
+          "downloads": []
+        }
+      ],
+      "sources": [],
+      "addedAt": 1792257731153,
+      "langs": [
+        "VOSTFR"
+      ],
+      "downloads": []
     }
   ]
 }
