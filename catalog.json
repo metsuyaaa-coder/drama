@@ -6,7 +6,7 @@
     {
       "id": "293607",
       "type": "tv",
-      "name": "100 jours en espionne",
+      "name": "100 Days of Deception",
       "original_name": "100일의 거짓말",
       "year": "2026",
       "overview": "En quête de liberté, la meilleure pickpocket de Séoul infiltre le gouvernement colonial japonais pour lui dérober des secrets, mais tombe amoureuse du fils de sa cible.",
@@ -242,7 +242,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "trend": 65,
+      "trend": 69,
       "aka": [
         "100 Days of Deception",
         "百日谎言",
@@ -270,7 +270,11 @@
         "100일의 거짓말"
       ],
       "downloads": [],
-      "pop": 49.9822
+      "pop": 49.9822,
+      "origin_country": [
+        "KR"
+      ],
+      "original_language": "ko"
     },
     {
       "id": "275102",
@@ -482,12 +486,16 @@
         "스캔들"
       ],
       "downloads": [],
-      "pop": 82.1886
+      "pop": 82.1886,
+      "origin_country": [
+        "KR"
+      ],
+      "original_language": "ko"
     },
     {
       "id": "293610",
       "type": "tv",
-      "name": "Doctor X : Mafia en blouse blanche",
+      "name": "Doctor X: Mafia in White",
       "original_name": "닥터X: 하얀 마피아의 시대",
       "aka": [
         "Doctor X: Mafia in White",
@@ -740,7 +748,11 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "trend": 96
+      "trend": 89,
+      "origin_country": [
+        "KR"
+      ],
+      "original_language": "ko"
     },
     {
       "id": "278573",
@@ -978,7 +990,11 @@
         "21세기 대군부인"
       ],
       "downloads": [],
-      "pop": 89.3532
+      "pop": 89.3532,
+      "origin_country": [
+        "KR"
+      ],
+      "original_language": "ko"
     },
     {
       "id": "m1058424",
@@ -1096,7 +1112,7 @@
         "Hopeu",
         "호프"
       ],
-      "trend": 96,
+      "trend": 100,
       "downloads": [
         {
           "name": "1FICHIER",
@@ -1109,7 +1125,7 @@
     {
       "id": "305644",
       "type": "tv",
-      "name": "Quatre mains, deux sonates",
+      "name": "Four Hands, Two Sonatas",
       "original_name": "포핸즈",
       "year": "2026",
       "overview": "Kang Bi-o, prodige du piano au lycée, excelle constamment en études et en virtuosité pianistique. Considéré comme une future icône de la musique classique, promis à un brillant avenir dans les plus grands concours internationaux, sa carrière bascule lorsqu'il rencontre un rival inattendu : Choi Jeong-yo. Pianiste au talent inné, Jeong-yo a renoncé à son don exceptionnel suite à une enfance difficile. Son admission soudaine au lycée des arts de Corée le met face à Bi-o, le pianiste même qui a ravivé sa passion pour le piano. Jeong-yo est alors contraint de se confronter à ce don qu'il avait autrefois abandonné, et une amitié se noue entre eux.",
@@ -1409,7 +1425,11 @@
         "Bốn Bàn Tay, Hai Bản Sonata",
         "포핸즈"
       ],
-      "downloads": []
+      "downloads": [],
+      "origin_country": [
+        "KR"
+      ],
+      "original_language": "ko"
     },
     {
       "id": "316197",
@@ -1650,13 +1670,49 @@
         "Погружаясь в тебя",
         "너에게 다이브"
       ],
-      "downloads": []
+      "downloads": [],
+      "origin_country": [
+        "KR"
+      ],
+      "original_language": "ko"
     },
     {
       "id": "314939",
       "type": "tv",
       "name": "A Love Other Than Yours",
       "original_name": "너 말고 다른 연애",
+      "origin_country": [
+        "KR"
+      ],
+      "original_language": "ko",
+      "aka": [
+        "不是你的恋爱",
+        "Um Amor Diferente do Seu",
+        "A Love Other Than Yours",
+        "Кохання, але не з тобою/ Кохання поза нами",
+        "Eine andere Liebe als deine",
+        "Un amor distinto al tuyo",
+        "Un autre amour que le tien",
+        "Un amore diverso dal tuo",
+        "Másféle szerelem",
+        "Miłość inna niż ty",
+        "O iubire alta decât a ta",
+        "Senden Başka Bir Aşk",
+        "Láska jiná než tvá",
+        "Μια Αγάπη Διαφορετική από τη Δική σου",
+        "حُبٌّ آخَر غَير حُبِّك",
+        "अ लव अदर देन योर्स",
+        "เมื่อหัวใจมีใครอีกคน",
+        "あなたとは違う恋愛",
+        "除了你之外的戀愛",
+        "Любовь, но не с тобой",
+        "除了你之外的恋爱",
+        "君以外の恋愛",
+        "Neo Malgo Dareun Yeonae",
+        "不是和你談的戀愛",
+        "Not You, Another Love",
+        "너 말고 다른 연애"
+      ],
       "year": "2026",
       "overview": "Une romance réaliste et touchante sur un couple qui, après dix ans de vie commune, voit sa relation confortable bouleversée par des sentiments inattendus.",
       "genres": [
@@ -1666,7 +1722,7 @@
       "rating": "6.3",
       "pop": 38.7696,
       "status": "Returning Series",
-      "poster": "https://image.tmdb.org/t/p/original/iKgdhgBPi1cCRRqsUgaxUDRuFP6.jpg",
+      "poster": "https://image.tmdb.org/t/p/w500/lu3tuzFl4c6rx1WcoLOGZlkTjaw.jpg",
       "backdrop": "https://image.tmdb.org/t/p/original/moUjiEzpJVNZc7hyNRBbLPt0CPX.jpg",
       "cast": [
         {
@@ -1731,20 +1787,18 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/hbnOPoWNxJrp0"
+                  "url": "https://vidara.to/e/hbnOPoWNxJrp0",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/8hPXJmRQQaTTC"
+                  "url": "https://playmate.to/embed/8hPXJmRQQaTTC",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-lu6fpdz9205l.html"
-                },
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-jgsqys9jwdvt.html",
-                  "by": "614d778ed0"
+                  "url": "https://uqload.vc/embed-lu6fpdz9205l.html",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -1757,20 +1811,18 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/bC6TJm3DgbbKe"
+                  "url": "https://vidara.to/e/bC6TJm3DgbbKe",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/bQOJsvf2M7Rc2"
+                  "url": "https://playmate.to/embed/bQOJsvf2M7Rc2",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-fuxcci4g5jjg.html"
-                },
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-5tpjlu5t0lw7.html",
-                  "by": "614d778ed0"
+                  "url": "https://uqload.vc/embed-fuxcci4g5jjg.html",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -1783,20 +1835,18 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/IZtGFoRm8TH8n"
+                  "url": "https://vidara.to/e/IZtGFoRm8TH8n",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/RfPzcR4oIHMU0"
+                  "url": "https://playmate.to/embed/RfPzcR4oIHMU0",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-pv2u7h8v5bj3.html"
-                },
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-5o8s6z3cbctv.html",
-                  "by": "614d778ed0"
+                  "url": "https://uqload.vc/embed-pv2u7h8v5bj3.html",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -1809,20 +1859,18 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/sUjzbTLyZ1dYM"
+                  "url": "https://vidara.to/e/sUjzbTLyZ1dYM",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/J6jceidU6vKVS"
+                  "url": "https://playmate.to/embed/J6jceidU6vKVS",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-e0od46ai4l1v.html"
-                },
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-ecwo9i7ceh7o.html",
-                  "by": "614d778ed0"
+                  "url": "https://uqload.vc/embed-e0od46ai4l1v.html",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -1835,20 +1883,18 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/EDj2DpUmfm0vz"
+                  "url": "https://vidara.to/e/EDj2DpUmfm0vz",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/TlxrUpqHsskXb"
+                  "url": "https://playmate.to/embed/TlxrUpqHsskXb",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-t7rabjjuvupp.html"
-                },
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-4cua8d8jxhe3.html",
-                  "by": "614d778ed0"
+                  "url": "https://uqload.vc/embed-t7rabjjuvupp.html",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -1861,20 +1907,18 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/cwy4ONBhR27hF"
+                  "url": "https://vidara.to/e/cwy4ONBhR27hF",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/qXDCwnEd0FuBO"
+                  "url": "https://playmate.to/embed/qXDCwnEd0FuBO",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-fr4qcr0y3rz3.html"
-                },
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-fw05xx8ax8u9.html",
-                  "by": "614d778ed0"
+                  "url": "https://uqload.vc/embed-fr4qcr0y3rz3.html",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -1887,20 +1931,18 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/yNeh8FwYpAdbY"
+                  "url": "https://vidara.to/e/yNeh8FwYpAdbY",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/ysHmvhnEFX3G5"
+                  "url": "https://playmate.to/embed/ysHmvhnEFX3G5",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-eagin2y2p6nr.html"
-                },
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-vlg16s7f37uj.html",
-                  "by": "614d778ed0"
+                  "url": "https://uqload.vc/embed-eagin2y2p6nr.html",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -1913,20 +1955,18 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/B4ChfZOi4AilX"
+                  "url": "https://vidara.to/e/B4ChfZOi4AilX",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/X8tlikfJLKOhR"
+                  "url": "https://playmate.to/embed/X8tlikfJLKOhR",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-rrm24ry2h8p3.html"
-                },
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-hez70w3fx9it.html",
-                  "by": "614d778ed0"
+                  "url": "https://uqload.vc/embed-rrm24ry2h8p3.html",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -1936,8 +1976,32 @@
               "name": "Épisode 9",
               "overview": "",
               "air_date": "2026-10-17",
-              "sources": [],
-              "downloads": []
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/hzlT59N2iJae4",
+                  "by": "head"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/WXHtTDT0GZGHH",
+                  "by": "head"
+                },
+                {
+                  "name": "UQLOAD",
+                  "url": "https://uqload.vc/embed-thiwvq68hkov.html",
+                  "by": "head"
+                }
+              ],
+              "downloads": [
+                {
+                  "name": "1FICHIER",
+                  "url": "https://1fichier.com/?55hjiq3ifazqwzwcqq5l",
+                  "size": "2.7 Go",
+                  "quality": "1080p (H.264)",
+                  "by": "head"
+                }
+              ]
             },
             {
               "number": 10,
@@ -1989,40 +2053,12 @@
         "VOSTFR",
         "VF"
       ],
-      "aka": [
-        "不是你的恋爱",
-        "Um Amor Diferente do Seu",
-        "A Love Other Than Yours",
-        "Кохання, але не з тобою/ Кохання поза нами",
-        "Eine andere Liebe als deine",
-        "Un amor distinto al tuyo",
-        "Un autre amour que le tien",
-        "Un amore diverso dal tuo",
-        "Másféle szerelem",
-        "Miłość inna niż ty",
-        "O iubire alta decât a ta",
-        "Senden Başka Bir Aşk",
-        "Láska jiná než tvá",
-        "Μια Αγάπη Διαφορετική από τη Δική σου",
-        "حُبٌّ آخَر غَير حُبِّك",
-        "अ लव अदर देन योर्स",
-        "เมื่อหัวใจมีใครอีกคน",
-        "あなたとは違う恋愛",
-        "除了你之外的戀愛",
-        "Любовь, но не с тобой",
-        "除了你之外的恋爱",
-        "君以外の恋愛",
-        "Neo Malgo Dareun Yeonae",
-        "不是和你談的戀愛",
-        "Not You, Another Love",
-        "너 말고 다른 연애"
-      ],
       "downloads": []
     },
     {
       "id": "290193",
       "type": "tv",
-      "name": "Comme un rat",
+      "name": "Mousetrap",
       "original_name": "들쥐",
       "aka": [
         "Mousetrap",
@@ -2239,7 +2275,11 @@
         "VOSTFR",
         "VF"
       ],
-      "downloads": []
+      "downloads": [],
+      "origin_country": [
+        "KR"
+      ],
+      "original_language": "ko"
     },
     {
       "id": "296140",
@@ -2598,7 +2638,11 @@
       "langs": [
         "VOSTFR"
       ],
-      "downloads": []
+      "downloads": [],
+      "origin_country": [
+        "KR"
+      ],
+      "original_language": "ko"
     },
     {
       "id": "212204",
@@ -3139,12 +3183,16 @@
       "langs": [
         "VOSTFR"
       ],
-      "downloads": []
+      "downloads": [],
+      "origin_country": [
+        "KR"
+      ],
+      "original_language": "ko"
     },
     {
       "id": "218539",
       "type": "tv",
-      "name": "Mon démon",
+      "name": "My Demon",
       "original_name": "마이데몬",
       "aka": [
         "My Demon",
@@ -3589,12 +3637,16 @@
       "langs": [
         "VOSTFR"
       ],
-      "downloads": []
+      "downloads": [],
+      "origin_country": [
+        "KR"
+      ],
+      "original_language": "ko"
     },
     {
       "id": "276161",
       "type": "tv",
-      "name": "Que ça vous serve de leçon !",
+      "name": "Teach You a Lesson",
       "original_name": "Teach You a Lesson",
       "aka": [
         "Teach You a Lesson",
@@ -3812,7 +3864,11 @@
         "VOSTFR",
         "VF"
       ],
-      "downloads": []
+      "downloads": [],
+      "origin_country": [
+        "KR"
+      ],
+      "original_language": "ko"
     },
     {
       "id": "99966",
@@ -4072,7 +4128,11 @@
         "VOSTFR",
         "VF"
       ],
-      "downloads": []
+      "downloads": [],
+      "origin_country": [
+        "KR"
+      ],
+      "original_language": "ko"
     },
     {
       "id": "298008",
@@ -4177,7 +4237,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/mp3IkH93GCYvN"
+                  "url": "https://vidara.to/e/mp3IkH93GCYvN",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -4190,7 +4251,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/qdN7B275Ic9Se"
+                  "url": "https://vidara.to/e/qdN7B275Ic9Se",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -4203,7 +4265,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/6dpwAECh2o6Ll"
+                  "url": "https://vidara.to/e/6dpwAECh2o6Ll",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -4216,7 +4279,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/5tO7CYOBn7luP"
+                  "url": "https://vidara.to/e/5tO7CYOBn7luP",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -4229,7 +4293,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/z8YqmV5X1qbJW"
+                  "url": "https://vidara.to/e/z8YqmV5X1qbJW",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -4242,7 +4307,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/Av4SEMxKd8bRg"
+                  "url": "https://vidara.to/e/Av4SEMxKd8bRg",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -4255,7 +4321,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/lNvdUFH0JxyEN"
+                  "url": "https://vidara.to/e/lNvdUFH0JxyEN",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -4268,7 +4335,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/jHFlIqMhXT0M4"
+                  "url": "https://vidara.to/e/jHFlIqMhXT0M4",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -4283,7 +4351,11 @@
         "VOSTFR",
         "VF"
       ],
-      "downloads": []
+      "downloads": [],
+      "origin_country": [
+        "JP"
+      ],
+      "original_language": "ja"
     },
     {
       "id": "246473",
@@ -4347,7 +4419,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/drjwGqDUVzGrw"
+                  "url": "https://vidara.to/e/drjwGqDUVzGrw",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -4360,7 +4433,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/pyezT0ZeaVzrV"
+                  "url": "https://vidara.to/e/pyezT0ZeaVzrV",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -4373,7 +4447,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/etifBhL0sBQQH"
+                  "url": "https://vidara.to/e/etifBhL0sBQQH",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -4386,7 +4461,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/x3oeNTfKSSPJX"
+                  "url": "https://vidara.to/e/x3oeNTfKSSPJX",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -4399,7 +4475,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/LNn3A8MaUvxzS"
+                  "url": "https://vidara.to/e/LNn3A8MaUvxzS",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -4412,7 +4489,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/io5OTJBO0dEBc"
+                  "url": "https://vidara.to/e/io5OTJBO0dEBc",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -4432,7 +4510,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/UQLfiglPL0MW7"
+                  "url": "https://vidara.to/e/UQLfiglPL0MW7",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -4445,7 +4524,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/BjCVWO8gFbKCk"
+                  "url": "https://vidara.to/e/BjCVWO8gFbKCk",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -4458,7 +4538,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/Eh8jOqNtRtHWM"
+                  "url": "https://vidara.to/e/Eh8jOqNtRtHWM",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -4468,7 +4549,13 @@
               "name": "The Beginning of the End",
               "overview": "Kitae sets a dangerous plan in motion as part of his relentless pursuit of power.",
               "air_date": "2026-09-16",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/Kqdtte2i17tND",
+                  "by": "head"
+                }
+              ],
               "downloads": []
             },
             {
@@ -4476,7 +4563,13 @@
               "name": "God's Will",
               "overview": "As Geonyoung closes in, the conflict between Kitae and Kihyun continues to escalate.",
               "air_date": "2026-09-23",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/aBZoGx9iSqPGG",
+                  "by": "head"
+                }
+              ],
               "downloads": []
             },
             {
@@ -4484,7 +4577,13 @@
               "name": "Made in Korea",
               "overview": "Kitae and Geonyoung each set their final plans in motion.",
               "air_date": "2026-09-23",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/2fmN4IYdt3I5H",
+                  "by": "head"
+                }
+              ],
               "downloads": []
             }
           ],
@@ -4497,12 +4596,16 @@
         "VOSTFR",
         "VF"
       ],
-      "downloads": []
+      "downloads": [],
+      "origin_country": [
+        "KR"
+      ],
+      "original_language": "ko"
     },
     {
       "id": "289423",
       "type": "tv",
-      "name": "Recharge mon Coeur",
+      "name": "Take Charge of My Heart",
       "original_name": "나를 충전해줘",
       "aka": [
         "Take Charge of My Heart",
@@ -4736,7 +4839,10 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "trend": 71
+      "origin_country": [
+        "KR"
+      ],
+      "original_language": "ko"
     },
     {
       "id": "300146",
@@ -4797,10 +4903,6 @@
               "sources": [
                 {
                   "name": "VIDMOLY",
-                  "url": "https://vidmoly.me/v/2yld09tdh2b7"
-                },
-                {
-                  "name": "VIDMOLY 2",
                   "url": "https://vidmoly.org/embed-2yld09tdh2b7.html",
                   "by": "614d778ed0"
                 }
@@ -4813,10 +4915,6 @@
               "overview": "A-Chou agrees to marry Lu Zhuo in Wei Rao's place, but she warns her mother about the Wei family. Meanwhile, the true heiress takes on the name Jundai.",
               "air_date": "2026-10-16",
               "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.me/v/ftm3yk26ikx5"
-                },
                 {
                   "name": "VIDMOLY 2",
                   "url": "https://vidmoly.org/embed-ftm3yk26ikx5.html",
@@ -4832,10 +4930,6 @@
               "air_date": "2026-10-16",
               "sources": [
                 {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.me/v/x3lw9r89bioi"
-                },
-                {
                   "name": "VIDMOLY 2",
                   "url": "https://vidmoly.org/embed-x3lw9r89bioi.html",
                   "by": "614d778ed0"
@@ -4849,10 +4943,6 @@
               "overview": "Wei Rao's maid helps her with a cover-up after Lu Zhuo nearly learns a lethal secret. A customary visit to the Wei family leads to a deadly setup.",
               "air_date": "2026-10-16",
               "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.me/v/6ifc1l4tf216"
-                },
                 {
                   "name": "VIDMOLY 2",
                   "url": "https://vidmoly.org/embed-6ifc1l4tf216.html",
