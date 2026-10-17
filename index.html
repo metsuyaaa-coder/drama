@@ -579,27 +579,26 @@ footer .wrap.about { display: grid; grid-template-columns: repeat(auto-fit, minm
   header.top nav a.on { color: var(--fg); }
 }
 
-/* Sélection de l'équipe */
+/* Sélection de l'équipe : même langage que le hero (noir, mono, filets fins, pas de couleur) */
 .team { padding-top: 8px; padding-bottom: 40px; }
-.teambox { position: relative; overflow: hidden; border: 1px solid var(--line); min-height: 320px; display: flex; align-items: flex-end; background: #0b0b0b; }
+.teambox { position: relative; overflow: hidden; border: 1px solid var(--line); min-height: 300px; display: flex; align-items: flex-end; background: var(--panel); }
 .teambox .bg { position: absolute; inset: 0; background-size: cover; background-position: center 20%; opacity: .8; }
-.teambox::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(0,0,0,.88) 0%, rgba(0,0,0,.45) 55%, rgba(0,0,0,.1) 100%), linear-gradient(0deg, rgba(0,0,0,.6), transparent 55%); }
-.teambox .in { position: relative; z-index: 1; padding: 36px; max-width: 680px; }
-.tbadge { display: inline-block; background: #d9232d; color: #fff; font-family: var(--mono); font-size: 12px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; padding: 6px 12px; margin-bottom: 14px; }
-.teambox h2 { font-family: var(--display); font-weight: 900; font-size: clamp(28px, 5vw, 52px); line-height: 1; margin: 0 0 14px; text-wrap: balance; }
-.tchips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
-.tchips span { font-family: var(--mono); font-size: 12px; padding: 5px 9px; border: 1px solid var(--line); background: rgba(0,0,0,.5); }
-.teambox p { max-width: 58ch; color: #d4d4d4; margin: 0 0 20px; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
-.teambox .row { display: flex; flex-wrap: wrap; gap: 10px; }
+.teambox::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, #000 4%, rgba(0,0,0,.25) 60%, rgba(0,0,0,.65)); }
+.teambox .in { position: relative; z-index: 1; padding: 32px; width: 100%; }
+.teambox .tags { margin-bottom: 14px; }
+.teambox h2 { font-family: var(--display); font-weight: 900; font-size: clamp(36px, 6vw, 72px); line-height: .95; margin: 0 0 14px; text-transform: uppercase; text-wrap: balance; max-width: 16ch; }
+.teambox p { max-width: 58ch; color: #cfcfcf; margin: 0 0 22px; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
 .teambox.empty { min-height: 0; border-style: dashed; }
 .teambox.empty::after { display: none; }
-.teambox.empty .in { max-width: none; }
-.teambox.empty p { margin-bottom: 14px; }
-.teambox.edit .in { max-width: 560px; display: grid; gap: 12px; }
-.teambox.edit select, .teambox.edit textarea { width: 100%; background: #111; color: var(--fg); border: 1px solid var(--line); padding: 10px 12px; font: inherit; }
+.teambox.empty p { margin-bottom: 16px; }
+.teambox.edit { min-height: 0; }
+.teambox.edit::after { display: none; }
+.teambox.edit .in { max-width: 620px; display: grid; gap: 14px; }
+.teambox.edit .tags { margin-bottom: 0; }
+.teambox.edit select, .teambox.edit textarea { width: 100%; background: var(--bg); color: var(--fg); border: 1px solid var(--line); border-radius: 0; padding: 10px 12px; }
 .teambox.edit textarea { min-height: 90px; resize: vertical; }
 .teambox.edit label { display: grid; gap: 6px; font-family: var(--mono); font-size: 12px; color: var(--dim); text-transform: uppercase; letter-spacing: .06em; }
-@media (max-width: 700px) { .teambox { min-height: 280px; } .teambox .in { padding: 22px 18px; } }
+@media (max-width: 700px) { .teambox { min-height: 260px; } .teambox .in { padding: 22px 16px; } }
 </style>
 </head>
 <body>
@@ -1237,7 +1236,7 @@ function adoptTeam(data) {
 function teamBlock() {
   var head = isHead(), s = TEAM && TEAM.id ? byId(TEAM.id) : null;
   if (!s && !head) return "";
-  var badge = '<span class="tbadge">🔥 La sélection de l\'équipe</span>';
+  var badge = '<div class="tags"><span class="lang">Sélection de l\'équipe</span></div>';
   if (head && teamEditing) {
     var opts = sortedDb().slice().sort(function (a, b) { return String(a.name).localeCompare(String(b.name)); }).map(function (x) {
       return '<option value="' + esc(x.id) + '"' + (TEAM && String(TEAM.id) === String(x.id) ? " selected" : "") + '>' + esc(x.name) + (x.year ? " (" + esc(x.year) + ")" : "") + (isMovie(x) ? " · film" : "") + '</option>';
@@ -1248,15 +1247,12 @@ function teamBlock() {
       '<div class="row"><button class="btn" type="button" data-team="save">Enregistrer</button><button class="btn ghost" type="button" data-team="cancel">Annuler</button>' + (s ? '<button class="btn danger" type="button" data-team="remove">Retirer</button>' : '') + '</div></div></div></section>';
   }
   if (!s) return '<section class="wrap team"><div class="teambox empty"><div class="in">' + badge + '<p>Aucun titre mis en avant pour le moment.</p><div class="row"><button class="btn" type="button" data-team="edit">Choisir un titre</button></div></div></div></section>';
-  var chips = [];
-  if (s.rating) chips.push("★ " + s.rating + "/10");
-  chips = chips.concat((s.genres || []).slice(0, 3));
-  chips.push(isMovie(s) ? (s.runtime ? s.runtime + " min" : "Film") : "Série");
-  if (s.year) chips.push(s.year);
-  return '<section class="wrap team"><div class="teambox"><div class="bg" style="background-image:url(\'' + esc(hq(s.backdrop || s.poster)) + '\')"></div><div class="in">' + badge +
-    '<h2>' + esc(s.name) + '</h2><div class="tchips">' + chips.map(function (c) { return "<span>" + esc(c) + "</span>"; }).join("") + '</div>' +
+  var chips = [isMovie(s) ? "Film" : "Série", s.year, s.rating ? "★ " + s.rating : "", (s.genres || []).slice(0, 3).join(" / "), isMovie(s) && s.runtime ? s.runtime + " min" : ""].filter(Boolean);
+  return '<section class="wrap team"><div class="teambox"><div class="bg" style="background-image:url(\'' + esc(hq(s.backdrop || s.poster)) + '\')"></div><div class="in">' +
+    '<div class="tags"><span class="lang">Sélection de l\'équipe</span>' + chips.map(function (c) { return "<span>" + esc(c) + "</span>"; }).join("") + '</div>' +
+    '<h2>' + esc(s.name) + '</h2>' +
     '<p>' + esc((TEAM && TEAM.text) || s.overview || "") + '</p>' +
-    '<div class="row"><a class="btn" href="/serie/' + esc(s.id) + '">Voir la fiche</a>' + (head ? '<button class="btn ghost" type="button" data-team="edit">Modifier la sélection</button>' : '') + '</div></div></div></section>';
+    '<div class="row"><a class="btn" href="/serie/' + esc(s.id) + '">Voir la fiche</a>' + (head ? '<button class="btn ghost" type="button" data-team="edit">Modifier</button>' : '') + '</div></div></div></section>';
 }
 document.addEventListener("click", function (e) {
   var b = e.target.closest("[data-team]"); if (!b || !isHead()) return;
