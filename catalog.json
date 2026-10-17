@@ -83,11 +83,13 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/2TgyEgZCFGobY"
+                  "url": "https://vidara.to/e/2TgyEgZCFGobY",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-vzlzv64p907n.html"
+                  "url": "https://uqload.vc/embed-vzlzv64p907n.html",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -101,7 +103,8 @@
                   "name": "1FICHIER",
                   "url": "https://1fichier.com/?xg1jsq8vmidbsuw2gdif",
                   "size": "2.8 Go",
-                  "quality": "1080p (H.264)"
+                  "quality": "1080p (H.264)",
+                  "by": "head"
                 }
               ]
             },
@@ -113,11 +116,13 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/5thkvKklZ5I2D"
+                  "url": "https://vidara.to/e/5thkvKklZ5I2D",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-z1zyz49djtuq.html"
+                  "url": "https://uqload.vc/embed-z1zyz49djtuq.html",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -131,7 +136,8 @@
                   "name": "1FICHIER",
                   "url": "https://1fichier.com/?871905qoy820g0cncdyi",
                   "size": "2.6 Go",
-                  "quality": "1080p (H.264)"
+                  "quality": "1080p (H.264)",
+                  "by": "head"
                 }
               ]
             },
@@ -157,14 +163,7 @@
                   "by": "head"
                 }
               ],
-              "downloads": [
-                {
-                  "name": "1FICHIER",
-                  "url": "https://1fichier.com/?abhv2ccz9gh3cktnl4rd",
-                  "quality": "100p (H.264) 2.7",
-                  "by": "head"
-                }
-              ]
+              "downloads": []
             },
             {
               "number": 4,
@@ -279,7 +278,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "trend": 69,
+      "trend": 78,
       "aka": [
         "100 Days of Deception",
         "百日谎言",
@@ -640,11 +639,13 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/yxmRmsmX4zOOn"
+                  "url": "https://vidara.to/e/yxmRmsmX4zOOn",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-m1tmawcz7c7k.html"
+                  "url": "https://uqload.vc/embed-m1tmawcz7c7k.html",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -658,7 +659,8 @@
                   "name": "1FICHIER",
                   "url": "https://1fichier.com/?1qd8vda0u704nuwfzs2g",
                   "size": "2.32 Go",
-                  "quality": "1080p (H.264)"
+                  "quality": "1080p (H.264)",
+                  "by": "head"
                 }
               ]
             },
@@ -670,11 +672,13 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/X8HN8WRXjyREk"
+                  "url": "https://vidara.to/e/X8HN8WRXjyREk",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-cs61nhnp5yge.html"
+                  "url": "https://uqload.vc/embed-cs61nhnp5yge.html",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -688,7 +692,8 @@
                   "name": "1FICHIER",
                   "url": "https://1fichier.com/?xxzdrtttn7jbmkzlslaj",
                   "size": "2.3 Go",
-                  "quality": "1080p (H.264)"
+                  "quality": "1080p (H.264)",
+                  "by": "head"
                 }
               ]
             },
@@ -700,15 +705,18 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/09adi9vhA9U10"
+                  "url": "https://vidara.to/e/09adi9vhA9U10",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/1beitjsENq5T9"
+                  "url": "https://playmate.to/embed/1beitjsENq5T9",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-v6n8916hwstw.html"
+                  "url": "https://uqload.vc/embed-v6n8916hwstw.html",
+                  "by": "head"
                 }
               ],
               "downloads": [
@@ -716,14 +724,15 @@
                   "name": "1FICHIER",
                   "url": "https://1fichier.com/?453rfjul6t7nuvyie39a",
                   "size": "2.4 Go",
-                  "quality": "1080p (H.264)"
+                  "quality": "1080p (H.264)",
+                  "by": "head"
                 }
               ]
             },
             {
               "number": 4,
               "name": "Épisode 4",
-              "overview": "",
+              "overview": "After a new surgeon arrives at the hospital, Jang Hui-suk and Su-jeong keep a close eye on him. Meanwhile, a pharmaceutical rep suffers an emergency.",
               "air_date": "2026-10-17",
               "sources": [
                 {
@@ -742,15 +751,7 @@
                   "by": "head"
                 }
               ],
-              "downloads": [
-                {
-                  "name": "1FICHIER",
-                  "url": "https://1fichier.com/?lrrk5j55drnbredahieo",
-                  "size": "2.2 Go",
-                  "quality": "1080p (H.264)",
-                  "by": "head"
-                }
-              ]
+              "downloads": []
             },
             {
               "number": 5,
@@ -826,7 +827,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "trend": 89,
+      "trend": 88,
       "origin_country": [
         "KR"
       ],
@@ -1709,15 +1710,18 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/5YXxZiybnWGFQ"
+                  "url": "https://vidara.to/e/5YXxZiybnWGFQ",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/OUMCEnlPAqzMU"
+                  "url": "https://playmate.to/embed/OUMCEnlPAqzMU",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-c49jps70wbmu.html"
+                  "url": "https://uqload.vc/embed-c49jps70wbmu.html",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -1730,15 +1734,18 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/G7RAaPCAZqPIV"
+                  "url": "https://vidara.to/e/G7RAaPCAZqPIV",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/OBPx6KJaAQbkS"
+                  "url": "https://playmate.to/embed/OBPx6KJaAQbkS",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-l5pewc05t1xp.html"
+                  "url": "https://uqload.vc/embed-l5pewc05t1xp.html",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -1751,15 +1758,18 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/YVAMUlgvZT9Sn"
+                  "url": "https://vidara.to/e/YVAMUlgvZT9Sn",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/HRRG2TzLutO17"
+                  "url": "https://playmate.to/embed/HRRG2TzLutO17",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-y5dwrdf5g0j1.html"
+                  "url": "https://uqload.vc/embed-y5dwrdf5g0j1.html",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -1772,15 +1782,18 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/9y8cAiISS2MT3"
+                  "url": "https://vidara.to/e/9y8cAiISS2MT3",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/rvl5l1ggDZ8xl"
+                  "url": "https://playmate.to/embed/rvl5l1ggDZ8xl",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-1m73oweb3xx7.html"
+                  "url": "https://uqload.vc/embed-1m73oweb3xx7.html",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -1793,15 +1806,18 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/nQdHtHc3D14Au"
+                  "url": "https://vidara.to/e/nQdHtHc3D14Au",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/x8WdVygQYIU6c"
+                  "url": "https://playmate.to/embed/x8WdVygQYIU6c",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-yxc47s2v5p7c.html"
+                  "url": "https://uqload.vc/embed-yxc47s2v5p7c.html",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -1814,15 +1830,18 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/hs5DmaOKYRpji"
+                  "url": "https://vidara.to/e/hs5DmaOKYRpji",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/GlVKFE0c6DpEo"
+                  "url": "https://playmate.to/embed/GlVKFE0c6DpEo",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-logymxhaafxc.html"
+                  "url": "https://uqload.vc/embed-logymxhaafxc.html",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -5249,6 +5268,7 @@
       ],
       "original_language": "ko",
       "posterV": 2,
+      "trend": 74,
       "updatedAt": 1792267958988
     },
     {
@@ -5305,12 +5325,13 @@
             {
               "number": 1,
               "name": "Épisode 1",
-              "overview": "After discovering her lookalike, cruel heiress Wei Rao conspires to use the woman as a pawn when a sudden crisis forces an unwanted marriage.",
+              "overview": "Après avoir découvert son sosie, la cruelle héritière Wei Rao décide de l'utiliser comme pion lorsqu'une crise soudaine lui impose un mariage non désiré.",
               "air_date": "2026-10-16",
               "sources": [
                 {
-                  "name": "VIDMOLY 2",
-                  "url": "https://vidmoly.me/v/2yld09tdh2b7"
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.me/v/2yld09tdh2b7",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -5318,12 +5339,13 @@
             {
               "number": 2,
               "name": "Épisode 2",
-              "overview": "A-Chou agrees to marry Lu Zhuo in Wei Rao's place, but she warns her mother about the Wei family. Meanwhile, the true heiress takes on the name Jundai.",
+              "overview": "A-Chou accepte d'épouser Lu Zhuo à la place de Wei Rao, mais met sa mère en garde contre la famille Wei. Pendant ce temps, la véritable héritière prend le nom de Jundai.",
               "air_date": "2026-10-16",
               "sources": [
                 {
-                  "name": "VIDMOLY 2",
-                  "url": "https://vidmoly.me/v/ftm3yk26ikx5"
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.me/v/ftm3yk26ikx5",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -5331,12 +5353,13 @@
             {
               "number": 3,
               "name": "Épisode 3",
-              "overview": "After refusing to leave, the impostor Wei Rao makes a painful sacrifice to win Lu Zhuo's trust. Meanwhile, a calculated plot begins to unfold.",
+              "overview": "Après avoir refusé de partir, l'imposteur Wei Rao fait un sacrifice douloureux pour gagner la confiance de Lu Zhuo. Pendant ce temps, une machination dérape.",
               "air_date": "2026-10-16",
               "sources": [
                 {
-                  "name": "VIDMOLY 2",
-                  "url": "https://vidmoly.me/v/x3lw9r89bioi"
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.me/v/x3lw9r89bioi",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -5344,12 +5367,13 @@
             {
               "number": 4,
               "name": "Épisode 4",
-              "overview": "Wei Rao's maid helps her with a cover-up after Lu Zhuo nearly learns a lethal secret. A customary visit to the Wei family leads to a deadly setup.",
+              "overview": "La servante de Wei Rao l'aide à dissimuler des preuves après que Lu Zhuo a failli découvrir un secret mortel. Une visite traditionnelle chez les Wei mène à un piège fatal.",
               "air_date": "2026-10-16",
               "sources": [
                 {
-                  "name": "VIDMOLY 2",
-                  "url": "https://vidmoly.me/v/6ifc1l4tf216"
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.me/v/6ifc1l4tf216",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -5357,7 +5381,7 @@
             {
               "number": 5,
               "name": "Épisode 5",
-              "overview": "",
+              "overview": "Après avoir survécu à l'incendie de la bibliothèque, Wei Rao tente de cacher une lettre secrète. Lu Zhuo se méfie en remarquant ses mains calleuses.",
               "air_date": "2026-10-17",
               "sources": [],
               "downloads": []
@@ -5365,7 +5389,7 @@
             {
               "number": 6,
               "name": "Épisode 6",
-              "overview": "",
+              "overview": "Wei Rao est félicitée pour l'organisation d'un grand banquet d'anniversaire. Mais le danger plane sur sa demeure, tandis que Lu Zhuo prépare un complot secret avec des papillons.",
               "air_date": "2026-10-17",
               "sources": [],
               "downloads": []
@@ -5573,6 +5597,7 @@
       ],
       "downloads": [],
       "posterV": 2,
+      "trend": 91,
       "updatedAt": 1792266856315
     },
     {
@@ -6813,15 +6838,7 @@
                   "by": "head"
                 }
               ],
-              "downloads": [
-                {
-                  "name": "1FICHIER",
-                  "url": "https://1fichier.com/?l99szxexv10p9s4nivju",
-                  "size": "1.9 Go",
-                  "quality": "1080p (H.264)",
-                  "by": "head"
-                }
-              ]
+              "downloads": []
             },
             {
               "number": 3,
@@ -6897,7 +6914,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792269192781
+      "updatedAt": 1792269220965
     }
   ],
   "deletedLinks": [
@@ -6907,10 +6924,10 @@
     "300146\thttps://vidmoly.org/embed-6ifc1l4tf216.html"
   ],
   "deletedFiches": [],
+  "refreshAt": 1792269059181,
   "team": {
     "id": "208336",
     "text": "",
     "at": 1792265241111
-  },
-  "refreshAt": 1792269059181
+  }
 }
