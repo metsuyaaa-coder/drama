@@ -1,6 +1,8 @@
 {
   "settings": {
-    "downloads": "public"
+    "downloads": "public",
+    "player": "vidara",
+    "playerAt": 1792265161950
   },
   "series": [
     {
@@ -1581,18 +1583,15 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/5YXxZiybnWGFQ",
-                  "by": "head"
+                  "url": "https://vidara.to/e/5YXxZiybnWGFQ"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/OUMCEnlPAqzMU",
-                  "by": "head"
+                  "url": "https://playmate.to/embed/OUMCEnlPAqzMU"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-c49jps70wbmu.html",
-                  "by": "head"
+                  "url": "https://uqload.vc/embed-c49jps70wbmu.html"
                 }
               ],
               "downloads": []
@@ -1605,18 +1604,15 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/G7RAaPCAZqPIV",
-                  "by": "head"
+                  "url": "https://vidara.to/e/G7RAaPCAZqPIV"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/OBPx6KJaAQbkS",
-                  "by": "head"
+                  "url": "https://playmate.to/embed/OBPx6KJaAQbkS"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-l5pewc05t1xp.html",
-                  "by": "head"
+                  "url": "https://uqload.vc/embed-l5pewc05t1xp.html"
                 }
               ],
               "downloads": []
@@ -1629,18 +1625,15 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/YVAMUlgvZT9Sn",
-                  "by": "head"
+                  "url": "https://vidara.to/e/YVAMUlgvZT9Sn"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/HRRG2TzLutO17",
-                  "by": "head"
+                  "url": "https://playmate.to/embed/HRRG2TzLutO17"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-y5dwrdf5g0j1.html",
-                  "by": "head"
+                  "url": "https://uqload.vc/embed-y5dwrdf5g0j1.html"
                 }
               ],
               "downloads": []
@@ -1653,18 +1646,15 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/9y8cAiISS2MT3",
-                  "by": "head"
+                  "url": "https://vidara.to/e/9y8cAiISS2MT3"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/rvl5l1ggDZ8xl",
-                  "by": "head"
+                  "url": "https://playmate.to/embed/rvl5l1ggDZ8xl"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-1m73oweb3xx7.html",
-                  "by": "head"
+                  "url": "https://uqload.vc/embed-1m73oweb3xx7.html"
                 }
               ],
               "downloads": []
@@ -1677,18 +1667,15 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/nQdHtHc3D14Au",
-                  "by": "head"
+                  "url": "https://vidara.to/e/nQdHtHc3D14Au"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/x8WdVygQYIU6c",
-                  "by": "head"
+                  "url": "https://playmate.to/embed/x8WdVygQYIU6c"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-yxc47s2v5p7c.html",
-                  "by": "head"
+                  "url": "https://uqload.vc/embed-yxc47s2v5p7c.html"
                 }
               ],
               "downloads": []
@@ -1701,18 +1688,15 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/hs5DmaOKYRpji",
-                  "by": "head"
+                  "url": "https://vidara.to/e/hs5DmaOKYRpji"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/GlVKFE0c6DpEo",
-                  "by": "head"
+                  "url": "https://playmate.to/embed/GlVKFE0c6DpEo"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-logymxhaafxc.html",
-                  "by": "head"
+                  "url": "https://uqload.vc/embed-logymxhaafxc.html"
                 }
               ],
               "downloads": []
@@ -1734,15 +1718,7 @@
                   "by": "head"
                 }
               ],
-              "downloads": [
-                {
-                  "name": "1FICHIER",
-                  "url": "https://1fichier.com/?11i34h23d8x3yx82hb2l",
-                  "size": "2.4 Go",
-                  "quality": "1080p (H.264)",
-                  "by": "head"
-                }
-              ]
+              "downloads": []
             },
             {
               "number": 8,
