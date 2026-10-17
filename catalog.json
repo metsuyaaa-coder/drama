@@ -1,6 +1,8 @@
 {
   "settings": {
-    "downloads": "public"
+    "downloads": "public",
+    "player": "vidara",
+    "playerAt": 1792266162243
   },
   "series": [
     {
