@@ -1576,7 +1576,7 @@ function viewPanel() {
     '<div class="row"><button class="btn" type="button" id="refreshall"' + (refreshingAll || !nt ? ' disabled' : '') + '>Tout mettre à jour depuis TMDB</button></div>' +
     '<p class="note" id="refreshall-status" style="margin:0"></p></div>' +
     '<div style="display:grid;gap:12px"><h3 class="note" style="margin:0;text-transform:uppercase;letter-spacing:.08em">Catalogue</h3>' +
-    '<div class="row"><button class="btn" type="button" data-clickid="btn-export">Publier (catalog.json)</button><button class="btn ghost" type="button" id="btn-backup">Sauvegarde complète</button><button class="btn ghost" type="button" data-clickid="btn-import">Importer</button><button class="btn ghost" type="button" id="btn-pull">Récupérer depuis GitHub</button></div>' +
+    '<div class="row"><button class="btn" type="button" data-clickid="btn-export">Publier (catalog.json)</button><button class="btn ghost" type="button" id="btn-backup">Sauvegarde complète</button><button class="btn ghost" type="button" data-clickid="btn-import">Importer</button><button class="btn ghost" type="button" id="btn-pull">Récupérer depuis GitHub</button>' + (isHead() ? '<button class="btn ghost" type="button" id="btn-forcerefresh">Rafraîchir tous les admins</button>' : '') + '</div>' +
     '<p class="note" style="margin:0">' + (ghRepo() && ghToken() ? 'GitHub lié (' + esc(ghRepo()) + ') : « Publier » envoie catalog.json directement sur le dépôt.' : 'Pour publier en un clic sans re-uploader le fichier, lie ton dépôt avec « GitHub ».') + '</p></div>' +
     '<div style="display:grid;gap:12px"><h3 class="note" style="margin:0;text-transform:uppercase;letter-spacing:.08em">Accès</h3>' +
     '<div class="row"><button class="btn ghost" type="button" data-clickid="btn-key">Clé TMDB</button><button class="btn ghost" type="button" data-clickid="btn-gh">GitHub</button><a class="btn ghost" href="/motdepasse">Mot de passe</a><button class="btn danger" type="button" data-clickid="btn-quit">Quitter le mode admin</button></div></div>' +
@@ -2561,6 +2561,7 @@ function ghPublish(obj, tried) {
     var t = finalTombs({ links: (remote && remote.deletedLinks) || [], fiches: (remote && remote.deletedFiches) || [] });
     if (obj.series) obj.series = pruneList(obj.series, t).list;
     obj.deletedLinks = t.links; obj.deletedFiches = t.fiches;
+    var rfa = Math.max(+(remote && remote.refreshAt) || 0, +readJSON(RFKEY, 0) || 0); if (rfa) obj.refreshAt = rfa;
     return fetch(url + "?ref=" + encodeURIComponent(gi.branch), { headers: ghHeaders(), cache: "no-store" });
   }).then(function (r) {
     if (r.status === 404) return null;
@@ -2604,6 +2605,7 @@ $("#btn-export").addEventListener("click", function () {
   if (priv) stripDl(list);
   var tt = finalTombs(null);
   var obj = { settings: { downloads: SETTINGS.downloads }, series: list, deletedLinks: tt.links, deletedFiches: tt.fiches };
+  var rf0 = +readJSON(RFKEY, 0) || 0; if (rf0) obj.refreshAt = rf0;
   var download = function () { saveJson(obj, "catalog.json"); };
   if (ghRepo() && ghToken()) {
     toast("Publication sur GitHub…");
@@ -2632,6 +2634,15 @@ document.addEventListener("click", function (e) {
   var c = e.target.closest("[data-clickid]");
   if (c) { var el = document.getElementById(c.dataset.clickid); if (el) el.click(); return; }
   if (e.target.id === "btn-pull") { ghPull(); return; }
+  if (e.target.id === "btn-forcerefresh") {
+    if (!isHead()) return;
+    if (!(ghRepo() && ghToken())) { toast("Lie d'abord GitHub : le signal passe par catalog.json"); return; }
+    if (!window.confirm("Tous les admins vont recharger leur page (ceux qui sont en train d'éditer une fiche attendent d'avoir fini).\n\nLe catalogue va être publié maintenant. Continuer ?")) return;
+    var now = Date.now();
+    try { localStorage.setItem(RFKEY, JSON.stringify(now)); localStorage.setItem(RFSEEN, JSON.stringify(now)); } catch (er) {}
+    $("#btn-export").click();
+    return;
+  }
   if (e.target.id === "btn-backup") { saveJson({ settings: { downloads: SETTINGS.downloads }, series: db }, "catalog-sauvegarde.json"); toast("Sauvegarde complète téléchargée (avec les liens)"); }
 });
 /* Import : si le fichier n'a pas de liens de téléchargement, on garde ceux déjà présents */
@@ -2764,6 +2775,20 @@ function finalTombs(remote) {
     fiches: uniq(tombs().concat(rtomb().fiches, (remote.fiches || []).map(String))).filter(function (i) { return rv.indexOf("F" + i) < 0; })
   };
 }
+/* Signal « rafraîchir tous les admins » : le Head admin met une date dans catalog.json (refreshAt), les autres rechargent la page quand ils la voient */
+var RFKEY = "noir.refreshAt", RFSEEN = "noir.refreshSeen";
+function checkRefreshSignal(data) {
+  if (!ADMIN || !data || Array.isArray(data)) return false;
+  var at = +data.refreshAt || 0; if (!at) return false;
+  var seen = readJSON(RFSEEN, null);
+  if (seen != null && at <= +seen) return false;
+  if (draft) return false;   /* je suis en train d'éditer une fiche : on ne perd rien, on réessaie plus tard */
+  try { localStorage.setItem(RFSEEN, JSON.stringify(at)); } catch (e) {}
+  if (seen == null) return false;
+  toast("Mise à jour demandée par le Head admin : rechargement…");
+  setTimeout(function () { location.reload(); }, 1200);
+  return true;
+}
 function ingestRemoteTombs(data) {
   if (!data || Array.isArray(data) || (!("deletedLinks" in data) && !("deletedFiches" in data))) return;
   var rv = revived();
@@ -2869,7 +2894,7 @@ function mergeRemote(data) {
 function loadCatalog() {
   return fetchCatalogData().then(function (data) {
     var st = null;
-    if (ADMIN) ingestRemoteTombs(data);
+    if (ADMIN) { ingestRemoteTombs(data); checkRefreshSignal(data); }
     if (data && !Array.isArray(data) && Array.isArray(data.series)) { st = data.settings || null; data = data.series; }
     if (!Array.isArray(data)) return;
     data = data.map(normalize);
@@ -3046,6 +3071,20 @@ document.addEventListener("click", function (e) {
 document.body.classList.toggle("admin", ADMIN);
 $("#app").innerHTML = '<div class="wrap"><p class="note" style="padding:48px 0">Chargement…</p></div>';
 loadCatalog().then(function () { route(true); backfillAka(); });
+/* Admins : on regarde le catalogue publié toutes les 60 s (et quand l'onglet redevient visible) pour récupérer suppressions, sources et signal de rafraîchissement */
+var polling = false;
+function pollCatalog() {
+  if (!ADMIN || polling || document.hidden || draft || refreshingAll) return;
+  polling = true;
+  var before = JSON.stringify(db);
+  loadCatalog().then(function () {
+    polling = false;
+    var pl = $("#player");
+    if (!draft && !(pl && pl.open) && JSON.stringify(db) !== before) route(true);
+  }, function () { polling = false; });
+}
+setInterval(pollCatalog, 60000);
+document.addEventListener("visibilitychange", function () { if (!document.hidden) pollCatalog(); });
 try { if (!localStorage.getItem(WELKEY)) setTimeout(openWelcome, 700); } catch (e) {}
 </script>
 </body>
