@@ -7112,8 +7112,16 @@
       "langs": [
         "VOSTFR"
       ],
-      "downloads": [],
-      "updatedAt": 1792270855564
+      "downloads": [
+        {
+          "name": "1FICHIER",
+          "url": "https://1fichier.com/?kr8321bkucx5ml5gzigp",
+          "size": "6.8 Go",
+          "quality": "1080p (H.264)",
+          "by": "head"
+        }
+      ],
+      "updatedAt": 1792271265545
     }
   ],
   "deletedLinks": [
