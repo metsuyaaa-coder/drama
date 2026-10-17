@@ -1809,7 +1809,7 @@ function pickMovie(id, old) {
       genres: (t.genres || []).map(function (g) { return g.name; }),
       rating: t.vote_average ? t.vote_average.toFixed(1) : "", pop: t.popularity || 0,
       status: t.status || "", runtime: t.runtime || "",
-      poster: img(bestPoster(t), "w500"), backdrop: img(t.backdrop_path, "original"),
+      poster: img(bestPoster(t), "w500"), posterV: 2, backdrop: img(t.backdrop_path, "original"),
       cast: ((t.credits && t.credits.cast) || []).slice(0, 12).map(function (c) { return { name: c.name, character: c.character }; }),
       seasons: [], sources: [], addedAt: Date.now()
     });
@@ -1850,7 +1850,7 @@ function pickTv(id, old) {
         year: (t.first_air_date || "").slice(0, 4), overview: t.overview || "",
         genres: (t.genres || []).map(function (g) { return g.name; }),
         rating: t.vote_average ? t.vote_average.toFixed(1) : "", pop: t.popularity || 0,
-        status: t.status || "", poster: img(bestPoster(t), "w500"), backdrop: img(t.backdrop_path, "original"),
+        status: t.status || "", poster: img(bestPoster(t), "w500"), posterV: 2, backdrop: img(t.backdrop_path, "original"),
         cast: ((t.credits && t.credits.cast) || []).slice(0, 12).map(function (c) { return { name: c.name, character: c.character }; }),
         seasons: seasons.map(function (s, i) {
           return { number: s.season_number, name: s.name, episodes: (full[i].episodes || []).map(function (e) { return { number: e.episode_number, name: e.name, overview: e.overview || "", air_date: e.air_date || "", sources: [] }; }) };
@@ -2706,6 +2706,8 @@ function addMissingLinks(local, remote) {
 }
 function mergeFiche(l, r) {
   var ch = false;
+  /* affiche choisie avec la règle anglais / langue originale : elle remplace une ancienne affiche française */
+  if (r.posterV >= 2 && !(l.posterV >= 2) && r.poster && r.poster !== l.poster) { l.poster = r.poster; l.posterV = r.posterV; ch = true; }
   ch = addMissingLinks(l.sources, r.sources) || ch;
   ch = addMissingLinks(l.downloads, r.downloads) || ch;
   (r.seasons || []).forEach(function (rs) {
@@ -2759,7 +2761,7 @@ function tmdbFresh(s) {
     return {
       genres: (t.genres || []).map(function (g) { return g.name; }),
       rating: t.vote_average ? t.vote_average.toFixed(1) : "", pop: t.popularity || 0,
-      status: t.status || "", poster: img(bestPoster(t), "w500"), backdrop: img(t.backdrop_path, "original"),
+      status: t.status || "", poster: img(bestPoster(t), "w500"), posterV: 2, backdrop: img(t.backdrop_path, "original"),
       cast: ((t.credits && t.credits.cast) || []).slice(0, 12).map(function (c) { return { name: c.name, character: c.character }; })
     };
   };
