@@ -911,7 +911,7 @@ function resumeWatch(id) {
   if (isMovie(s)) { saveResume(s.id); play(s.sources, s.name, 0, "", null, s.downloads); } else playEp(s, r.si, r.n);
 }
 /* ===== Épisodes vus, nouveautés, ma liste (tout reste dans le navigateur) ===== */
-var SEENKEY = "noir.seen", LISTKEY = "noir.list", NEWDAYS = 7;
+var SEENKEY = "noir.seen", LISTKEY = "noir.list", NEWDAYS = 7, NEWSERIESDAYS = 15;
 function readSeen() { var v = readJSON(SEENKEY, {}); return v && typeof v === "object" && !Array.isArray(v) ? v : {}; }
 function epKey(se, ep) { return se.number + "x" + ep.number; }
 function isSeen(sid, se, ep) { var m = readSeen()[sid]; return !!(m && m[epKey(se, ep)]); }
@@ -949,7 +949,7 @@ function newEpisode(s) {
   });
   return best;
 }
-/* Série qui vient de sortir (1er épisode il y a moins de NEWDAYS jours, au moins une source) :
+/* Série qui vient de sortir (1er épisode il y a moins de NEWSERIESDAYS jours, au moins une source) :
    « Nouveau » si tous les épisodes sortent en 1 jour (saison entière d'un coup), sinon « Nouvelle série » */
 function newSeries(s) {
   if (!s || isMovie(s)) return "";
@@ -962,7 +962,7 @@ function newSeries(s) {
   });
   if (!ds.length || !src) return "";
   var min = Math.min.apply(null, ds), max = Math.max.apply(null, ds), age = (Date.now() - min) / 864e5;
-  if (age < 0 || age > NEWDAYS) return "";
+  if (age < 0 || age > NEWSERIESDAYS) return "";
   return ds.length > 1 && (max - min) / 864e5 <= 1 ? "Nouveau" : "Nouvelle série";
 }
 function novBadge(s, above) {
