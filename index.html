@@ -750,7 +750,16 @@ function normalize(s) {
 }
 
 /* Mode admin : connexion par mot de passe. Les visiteurs lisent catalog.json. */
-var ADMIN = (function () { var v = readJSON("noir.admin", ""); return typeof v === "string" && v !== "" && adminHashes().indexOf(v) > -1; })();
+var ADMIN_ID = (function () {
+  var v = readJSON("noir.admin", "");
+  if (typeof v !== "string" || !v) return "";
+  if (adminHashes().indexOf(v) > -1) return v;
+  if (CONFIG.HEAD_HASH && v === CONFIG.HEAD_HASH) return v;
+  return "";
+})();
+var ADMIN = !!ADMIN_ID;
+function isHead() { return ADMIN && !!CONFIG.HEAD_HASH && ADMIN_ID === CONFIG.HEAD_HASH; }
+function myId() { return isHead() ? "head" : String(ADMIN_ID).slice(0, 10); }
 var db = ADMIN ? readJSON(STORE, []).map(normalize) : [];
 
 /* Réglages du site (téléchargement public ou privé). Les visiteurs les lisent dans catalog.json ; l'admin les garde sur son navigateur. */
@@ -800,7 +809,7 @@ function unlockToken(pw) {
 function loginAdmin(stay, hash) {
   try { localStorage.setItem("noir.admin", JSON.stringify(hash || "")); } catch (e) {}
   var local = readJSON(STORE, []).map(normalize);
-  ADMIN = true;
+  ADMIN_ID = hash || ""; ADMIN = true;
   if (local.length) db = local;
   document.body.classList.add("admin");
   persist();
@@ -1460,7 +1469,7 @@ function viewSerie(id) {
     '<div><div class="tags">' + (langLabel(s) ? '<span class="lang">' + esc(langLabel(s)) + '</span>' : '') + (ongoing(s) ? '<span class="live">En cours</span>' : '') + (ne ? newBadge("Nouvel épisode") : '') + novBadge(s) + kdBadge(s) + tags.map(function (t) { return "<span>" + esc(t) + "</span>"; }).join("") + '</div>' +
     '<h1>' + esc(s.name) + '</h1>' + (s.original_name && s.original_name !== s.name ? '<div class="orig">' + esc(s.original_name) + '</div>' : '<div class="orig"></div>') +
     '<p class="ov">' + esc(s.overview || "Pas de synopsis.") + '</p>' +
-    '<div class="row"><button class="btn" data-watch="' + esc(s.id) + '">' + PLAYICON + '<span>Regarder</span></button>' + dlBtnMovie + dlBtnSerie + '<button class="btn ghost' + (inList(s.id) ? " on" : "") + '" type="button" data-list="' + esc(s.id) + '">' + (inList(s.id) ? "✓ Dans ma liste" : "+ Ma liste") + '</button>' + (ADMIN ? '<a class="btn ghost" href="#/modifier/' + esc(s.id) + '">Modifier</a><button class="btn danger" data-del="' + esc(s.id) + '">Supprimer</button>' : '') + '</div>' + srcChips +
+    '<div class="row"><button class="btn" data-watch="' + esc(s.id) + '">' + PLAYICON + '<span>Regarder</span></button>' + dlBtnMovie + dlBtnSerie + '<button class="btn ghost' + (inList(s.id) ? " on" : "") + '" type="button" data-list="' + esc(s.id) + '">' + (inList(s.id) ? "✓ Dans ma liste" : "+ Ma liste") + '</button>' + (ADMIN ? '<a class="btn ghost" href="#/modifier/' + esc(s.id) + '">Modifier</a>' + (canDeleteFiche(s) ? '<button class="btn danger" data-del="' + esc(s.id) + '">Supprimer</button>' : '') : '') + '</div>' + srcChips +
     ((s.cast || []).length ? '<h3 class="note" style="margin:32px 0 0;text-transform:uppercase;letter-spacing:.08em">Distribution</h3><div class="cast">' + s.cast.slice(0, 12).map(function (c) { return '<div><b>' + esc(c.name) + '</b><span>' + esc(c.character || "") + '</span></div>'; }).join("") + '</div>' : '') +
     '</div></div></section>';
   if (!movie && (s.seasons || []).length) {
@@ -1544,9 +1553,8 @@ function viewPasswordDone(hash) {
 }
 
 /* ===== Head admin : gère la liste des admins (#/headadmin) ===== */
-var HEADKEY = "noir.head";
 var headDraft = null;
-function headOk() { try { return !!CONFIG.HEAD_HASH && sessionStorage.getItem(HEADKEY) === CONFIG.HEAD_HASH; } catch (e) { return false; } }
+function headOk() { return isHead(); }
 function configAdmins() {
   var l = [];
   if (CONFIG.ADMIN_HASH) l.push({ name: "Admin principal", hash: CONFIG.ADMIN_HASH });
@@ -1580,7 +1588,7 @@ function viewHead() {
     return '<div style="display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--line)"><b>' + esc(a.name) + '</b><button class="btn danger small" type="button" data-headdel="' + i + '">Retirer</button></div>';
   }).join("") : '<p class="note">Aucun admin pour l\'instant.</p>';
   app.innerHTML = '<div class="wrap"><div class="authbox" style="max-width:560px"><h1>Head admin</h1>' +
-    '<p class="lead">Ajoute ou retire des admins. Un admin retiré perd l\'accès dès que le fichier mis à jour est en ligne, même s\'il était déjà connecté.</p>' +
+    '<p class="lead">Tu as toutes les permissions : tu peux ajouter, modifier et supprimer n\'importe quelle fiche ou n\'importe quel lien. Ajoute ou retire des admins ici. Un admin retiré perd l\'accès dès que le fichier mis à jour est en ligne, même s\'il était déjà connecté.</p>' +
     '<div style="display:grid;gap:4px"><h3 class="note" style="margin:0 0 6px;text-transform:uppercase;letter-spacing:.08em">Admins (' + headDraft.length + ')</h3>' + rows + '</div>' +
     '<form id="headadd" style="display:grid;gap:12px"><h3 class="note" style="margin:0;text-transform:uppercase;letter-spacing:.08em">Ajouter un admin</h3>' +
     '<label class="f"><span>Nom</span><input type="text" id="an" maxlength="30" autocomplete="off"></label>' +
@@ -1589,6 +1597,7 @@ function viewHead() {
     (changed
       ? '<div style="display:grid;gap:12px"><h3 class="note" style="margin:0;text-transform:uppercase;letter-spacing:.08em">À publier</h3><p class="note" style="margin:0">Remplace les lignes ADMIN_HASH et ADMINS dans CONFIG (index.html) par celles-ci, puis remets le fichier en ligne.</p><pre class="code" id="hashline">' + esc(adminsLine(headDraft)) + '</pre><div class="row"><button class="btn" type="button" id="copyhash">Copier les lignes</button><button class="btn ghost" type="button" id="head-reset">Annuler les changements</button></div></div>'
       : '<p class="note">Aucun changement en attente.</p>') +
+    '<div class="row"><a class="btn" href="#/ajouter">Ajouter une fiche</a><a class="btn ghost" href="#/panel">Panneau admin</a></div>' +
     '<div class="row"><button class="btn ghost" type="button" id="head-quit">Se déconnecter</button><a class="btn ghost" href="#/">Retour au site</a></div></div></div>';
 }
 document.addEventListener("submit", function (e) {
@@ -1605,7 +1614,7 @@ document.addEventListener("submit", function (e) {
   } else if (id === "headlogin") {
     e.preventDefault();
     var h = pwHash("head:" + $("#hpw").value);
-    if (CONFIG.HEAD_HASH && h === CONFIG.HEAD_HASH) { try { sessionStorage.setItem(HEADKEY, h); } catch (er) {} headDraft = configAdmins(); viewHead(); }
+    if (CONFIG.HEAD_HASH && h === CONFIG.HEAD_HASH) { loginAdmin(true, h); headDraft = configAdmins(); viewHead(); toast("Head admin : toutes les permissions"); }
     else { $("#hpw").value = ""; authError(e.target, "Mot de passe incorrect"); }
   } else if (id === "headadd") {
     e.preventDefault();
@@ -1628,7 +1637,7 @@ document.addEventListener("click", function (e) {
     headDraft.splice(i, 1); viewHead(); return;
   }
   if (e.target.id === "head-reset") { headDraft = configAdmins(); viewHead(); return; }
-  if (e.target.id === "head-quit") { try { sessionStorage.removeItem(HEADKEY); } catch (er) {} headDraft = null; viewHead(); }
+  if (e.target.id === "head-quit") { try { localStorage.removeItem("noir.admin"); } catch (er) {} headDraft = null; location.hash = "#/"; location.reload(); }
 });
 
 /* ===== Éditeur ===== */
@@ -1813,14 +1822,57 @@ function pickTv(id, old) {
   }).catch(function (e) { if (el) el.innerHTML = '<p class="note">' + esc(e.message) + '</p>'; });
 }
 
+/* ===== Propriété des liens : chaque admin ne supprime que les siens, le Head admin supprime tout ===== */
+function findUrl(arr, url) { for (var i = 0; i < (arr || []).length; i++) if (arr[i] && arr[i].url === url) return arr[i]; return null; }
+function mergeLinks(oldArr, newArr, st, fromFile) {
+  oldArr = oldArr || []; newArr = newArr || [];
+  var me = myId();
+  if (isHead()) {
+    newArr.forEach(function (n) { var o = findUrl(oldArr, n.url); n.by = n.by || (o && o.by) || me; });
+    return newArr;
+  }
+  var mine = [];
+  newArr.forEach(function (n) {
+    var o = findUrl(oldArr, n.url);
+    if (!o) { n.by = fromFile ? (n.by || me) : me; mine.push(n); }
+    else if (o.by === me) { n.by = me; mine.push(n); }
+  });
+  var foreign = oldArr.filter(function (o) { return o.by !== me; });
+  foreign.forEach(function (o) { if (!findUrl(newArr, o.url)) st.kept++; });
+  return foreign.concat(mine);
+}
+/* Applique la règle sur toute une fiche : les liens des autres admins sont remis, les nouveaux liens reçoivent ton identifiant. Renvoie le nombre de liens remis. */
+function mergeOwn(old, nw, fromFile) {
+  var st = { kept: 0 }; old = old || {};
+  nw.sources = mergeLinks(old.sources, nw.sources, st, fromFile);
+  nw.downloads = mergeLinks(old.downloads, nw.downloads, st, fromFile);
+  (nw.seasons || []).forEach(function (se) {
+    var os = ((old.seasons || []).filter(function (x) { return x.number === se.number; }))[0] || {};
+    se.downloads = mergeLinks(os.downloads, se.downloads, st, fromFile);
+    (se.episodes || []).forEach(function (ep) {
+      var oe = ((os.episodes || []).filter(function (x) { return x.number === ep.number; }))[0] || {};
+      ep.sources = mergeLinks(oe.sources, ep.sources, st, fromFile);
+      ep.downloads = mergeLinks(oe.downloads, ep.downloads, st, fromFile);
+    });
+  });
+  return st.kept;
+}
+function ficheLinks(f) {
+  var l = [].concat(f.sources || [], f.downloads || []);
+  (f.seasons || []).forEach(function (se) { l = l.concat(se.downloads || []); (se.episodes || []).forEach(function (ep) { l = l.concat(ep.sources || [], ep.downloads || []); }); });
+  return l;
+}
+function canDeleteFiche(f) { if (isHead()) return true; var me = myId(); return ficheLinks(f).every(function (l) { return l.by === me; }); }
+
 function saveDraft() {
   if (!draft.name.trim()) { toast("Ajoute au moins un titre"); return; }
   normalize(draft);
   var i = -1;
   db.forEach(function (x, k) { if (String(x.id) === String(draft.id)) i = k; });
+  var kept = mergeOwn(i > -1 ? db[i] : null, draft);
   if (i > -1) { if (draft.trend == null) draft.trend = db[i].trend; db[i] = draft; } else db.push(draft);
   persist();
-  toast("Fiche enregistrée");
+  toast(kept ? "Fiche enregistrée. " + kept + (kept > 1 ? " liens d'autres admins ont été conservés (tu ne peux supprimer que les tiens)." : " lien d'un autre admin a été conservé (tu ne peux supprimer que les tiens).") : "Fiche enregistrée");
   var id = draft.id; draft = null;
   location.hash = "#/serie/" + id;
 }
@@ -2100,6 +2152,8 @@ document.addEventListener("click", function (e) {
   }
   else if (t.dataset.src != null) { cur.i = +t.dataset.src; renderPlayer(); }
   else if (t.dataset.del != null) {
+    var fx = byId(t.dataset.del);
+    if (fx && !canDeleteFiche(fx)) { toast("Cette fiche contient des liens d'autres admins : seul le Head admin peut la supprimer."); return; }
     if (t.dataset.armed) { db = db.filter(function (x) { return String(x.id) !== t.dataset.del; }); persist(); toast("Fiche supprimée"); location.hash = "#/"; }
     else { t.dataset.armed = "1"; t.textContent = "Confirmer ?"; setTimeout(function () { if (t.isConnected) { delete t.dataset.armed; t.textContent = "Supprimer"; } }, 3000); }
   }
@@ -2250,6 +2304,7 @@ document.addEventListener("submit", function (e) {
     var pwv = $("#pw").value;
     var ph = pwHash(pwv);
     if (adminHashes().indexOf(ph) > -1) unlockToken(pwv).then(function () { loginAdmin(false, ph); });
+    else if (CONFIG.HEAD_HASH && pwHash("head:" + pwv) === CONFIG.HEAD_HASH) unlockToken(pwv).then(function () { loginAdmin(false, CONFIG.HEAD_HASH); });
     else { $("#pw").value = ""; authError(e.target, "Mot de passe incorrect"); }
   } else if (id === "setpw") {
     e.preventDefault();
@@ -2438,7 +2493,7 @@ $("#file").addEventListener("change", function () {
   r.onload = function () {
     try {
       var data = JSON.parse(r.result); if (data && !Array.isArray(data) && Array.isArray(data.series)) data = data.series; if (!Array.isArray(data)) throw 0;
-      data.forEach(function (s) { if (!s || !s.id || !s.name) return; normalize(s); var i = -1; db.forEach(function (x, k) { if (String(x.id) === String(s.id)) i = k; }); if (i > -1) { keepDl(s, db[i]); db[i] = s; } else db.push(s); });
+      data.forEach(function (s) { if (!s || !s.id || !s.name) return; normalize(s); var i = -1; db.forEach(function (x, k) { if (String(x.id) === String(s.id)) i = k; }); if (i > -1) { keepDl(s, db[i]); mergeOwn(db[i], s, true); db[i] = s; } else { mergeOwn(null, s, true); db.push(s); } });
       persist(); toast("Catalogue importé"); route(true);
     } catch (e) { toast("Fichier invalide"); }
   };
