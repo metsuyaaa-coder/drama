@@ -758,7 +758,15 @@
                   "by": "head"
                 }
               ],
-              "downloads": []
+              "downloads": [
+                {
+                  "name": "1FICHIER",
+                  "url": "https://1fichier.com/?lrrk5j55drnbredahieo",
+                  "size": "2.2 Go",
+                  "quality": "1080p (H.264)",
+                  "by": "head"
+                }
+              ]
             },
             {
               "number": 5,
@@ -840,7 +848,7 @@
       ],
       "original_language": "ko",
       "posterV": 2,
-      "updatedAt": 1792268187406
+      "updatedAt": 1792269011908
     },
     {
       "id": "278573",
