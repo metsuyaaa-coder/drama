@@ -6,7 +6,7 @@
     {
       "id": "293607",
       "type": "tv",
-      "name": "100 jours en espionne",
+      "name": "100 Days of Deception",
       "original_name": "100일의 거짓말",
       "year": "2026",
       "overview": "En quête de liberté, la meilleure pickpocket de Séoul infiltre le gouvernement colonial japonais pour lui dérober des secrets, mais tombe amoureuse du fils de sa cible.",
@@ -270,7 +270,11 @@
         "100일의 거짓말"
       ],
       "downloads": [],
-      "pop": 49.9822
+      "pop": 49.9822,
+      "origin_country": [
+        "KR"
+      ],
+      "original_language": "ko"
     },
     {
       "id": "275102",
@@ -482,12 +486,16 @@
         "스캔들"
       ],
       "downloads": [],
-      "pop": 82.1886
+      "pop": 82.1886,
+      "origin_country": [
+        "KR"
+      ],
+      "original_language": "ko"
     },
     {
       "id": "293610",
       "type": "tv",
-      "name": "Doctor X : Mafia en blouse blanche",
+      "name": "Doctor X: Mafia in White",
       "original_name": "닥터X: 하얀 마피아의 시대",
       "aka": [
         "Doctor X: Mafia in White",
@@ -740,7 +748,11 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "trend": 89
+      "trend": 89,
+      "origin_country": [
+        "KR"
+      ],
+      "original_language": "ko"
     },
     {
       "id": "278573",
@@ -978,7 +990,11 @@
         "21세기 대군부인"
       ],
       "downloads": [],
-      "pop": 89.3532
+      "pop": 89.3532,
+      "origin_country": [
+        "KR"
+      ],
+      "original_language": "ko"
     },
     {
       "id": "m1058424",
@@ -1109,7 +1125,7 @@
     {
       "id": "305644",
       "type": "tv",
-      "name": "Quatre mains, deux sonates",
+      "name": "Four Hands, Two Sonatas",
       "original_name": "포핸즈",
       "year": "2026",
       "overview": "Kang Bi-o, prodige du piano au lycée, excelle constamment en études et en virtuosité pianistique. Considéré comme une future icône de la musique classique, promis à un brillant avenir dans les plus grands concours internationaux, sa carrière bascule lorsqu'il rencontre un rival inattendu : Choi Jeong-yo. Pianiste au talent inné, Jeong-yo a renoncé à son don exceptionnel suite à une enfance difficile. Son admission soudaine au lycée des arts de Corée le met face à Bi-o, le pianiste même qui a ravivé sa passion pour le piano. Jeong-yo est alors contraint de se confronter à ce don qu'il avait autrefois abandonné, et une amitié se noue entre eux.",
@@ -1409,7 +1425,11 @@
         "Bốn Bàn Tay, Hai Bản Sonata",
         "포핸즈"
       ],
-      "downloads": []
+      "downloads": [],
+      "origin_country": [
+        "KR"
+      ],
+      "original_language": "ko"
     },
     {
       "id": "316197",
@@ -1650,12 +1670,16 @@
         "Погружаясь в тебя",
         "너에게 다이브"
       ],
-      "downloads": []
+      "downloads": [],
+      "origin_country": [
+        "KR"
+      ],
+      "original_language": "ko"
     },
     {
       "id": "314939",
       "type": "tv",
-      "name": "Un autre amour que le tien",
+      "name": "A Love Other Than Yours",
       "original_name": "너 말고 다른 연애",
       "year": "2026",
       "overview": "Une romance réaliste et touchante sur un couple qui, après dix ans de vie commune, voit sa relation confortable bouleversée par des sentiments inattendus.",
@@ -1977,12 +2001,16 @@
         "Not You, Another Love",
         "너 말고 다른 연애"
       ],
-      "downloads": []
+      "downloads": [],
+      "origin_country": [
+        "KR"
+      ],
+      "original_language": "ko"
     },
     {
       "id": "290193",
       "type": "tv",
-      "name": "Comme un rat",
+      "name": "Mousetrap",
       "original_name": "들쥐",
       "aka": [
         "Mousetrap",
@@ -2199,7 +2227,11 @@
         "VOSTFR",
         "VF"
       ],
-      "downloads": []
+      "downloads": [],
+      "origin_country": [
+        "KR"
+      ],
+      "original_language": "ko"
     },
     {
       "id": "296140",
@@ -2558,7 +2590,11 @@
       "langs": [
         "VOSTFR"
       ],
-      "downloads": []
+      "downloads": [],
+      "origin_country": [
+        "KR"
+      ],
+      "original_language": "ko"
     },
     {
       "id": "212204",
@@ -3099,12 +3135,16 @@
       "langs": [
         "VOSTFR"
       ],
-      "downloads": []
+      "downloads": [],
+      "origin_country": [
+        "KR"
+      ],
+      "original_language": "ko"
     },
     {
       "id": "218539",
       "type": "tv",
-      "name": "Mon démon",
+      "name": "My Demon",
       "original_name": "마이데몬",
       "aka": [
         "My Demon",
@@ -3549,12 +3589,16 @@
       "langs": [
         "VOSTFR"
       ],
-      "downloads": []
+      "downloads": [],
+      "origin_country": [
+        "KR"
+      ],
+      "original_language": "ko"
     },
     {
       "id": "276161",
       "type": "tv",
-      "name": "Que ça vous serve de leçon !",
+      "name": "Teach You a Lesson",
       "original_name": "Teach You a Lesson",
       "aka": [
         "Teach You a Lesson",
@@ -3772,7 +3816,11 @@
         "VOSTFR",
         "VF"
       ],
-      "downloads": []
+      "downloads": [],
+      "origin_country": [
+        "KR"
+      ],
+      "original_language": "ko"
     },
     {
       "id": "99966",
@@ -4032,7 +4080,11 @@
         "VOSTFR",
         "VF"
       ],
-      "downloads": []
+      "downloads": [],
+      "origin_country": [
+        "KR"
+      ],
+      "original_language": "ko"
     },
     {
       "id": "298008",
@@ -4243,7 +4295,11 @@
         "VOSTFR",
         "VF"
       ],
-      "downloads": []
+      "downloads": [],
+      "origin_country": [
+        "JP"
+      ],
+      "original_language": "ja"
     },
     {
       "id": "246473",
@@ -4457,12 +4513,16 @@
         "VOSTFR",
         "VF"
       ],
-      "downloads": []
+      "downloads": [],
+      "origin_country": [
+        "KR"
+      ],
+      "original_language": "ko"
     },
     {
       "id": "289423",
       "type": "tv",
-      "name": "Recharge mon Coeur",
+      "name": "Take Charge of My Heart",
       "original_name": "나를 충전해줘",
       "aka": [
         "Take Charge of My Heart",
@@ -4695,7 +4755,11 @@
         "VF",
         "VOSTFR"
       ],
-      "downloads": []
+      "downloads": [],
+      "origin_country": [
+        "KR"
+      ],
+      "original_language": "ko"
     }
   ]
 }
