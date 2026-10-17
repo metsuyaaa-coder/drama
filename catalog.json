@@ -4363,7 +4363,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/drjwGqDUVzGrw"
+                  "url": "https://vidara.to/e/drjwGqDUVzGrw",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -4376,7 +4377,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/pyezT0ZeaVzrV"
+                  "url": "https://vidara.to/e/pyezT0ZeaVzrV",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -4389,7 +4391,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/etifBhL0sBQQH"
+                  "url": "https://vidara.to/e/etifBhL0sBQQH",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -4402,7 +4405,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/x3oeNTfKSSPJX"
+                  "url": "https://vidara.to/e/x3oeNTfKSSPJX",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -4415,7 +4419,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/LNn3A8MaUvxzS"
+                  "url": "https://vidara.to/e/LNn3A8MaUvxzS",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -4428,7 +4433,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/io5OTJBO0dEBc"
+                  "url": "https://vidara.to/e/io5OTJBO0dEBc",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -4448,7 +4454,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/UQLfiglPL0MW7"
+                  "url": "https://vidara.to/e/UQLfiglPL0MW7",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -4461,7 +4468,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/BjCVWO8gFbKCk"
+                  "url": "https://vidara.to/e/BjCVWO8gFbKCk",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -4474,7 +4482,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/Eh8jOqNtRtHWM"
+                  "url": "https://vidara.to/e/Eh8jOqNtRtHWM",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -4484,7 +4493,13 @@
               "name": "The Beginning of the End",
               "overview": "Kitae sets a dangerous plan in motion as part of his relentless pursuit of power.",
               "air_date": "2026-09-16",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/Kqdtte2i17tND",
+                  "by": "head"
+                }
+              ],
               "downloads": []
             },
             {
@@ -4492,7 +4507,13 @@
               "name": "God's Will",
               "overview": "As Geonyoung closes in, the conflict between Kitae and Kihyun continues to escalate.",
               "air_date": "2026-09-23",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/aBZoGx9iSqPGG",
+                  "by": "head"
+                }
+              ],
               "downloads": []
             },
             {
@@ -4500,7 +4521,13 @@
               "name": "Made in Korea",
               "overview": "Kitae and Geonyoung each set their final plans in motion.",
               "air_date": "2026-09-23",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/2fmN4IYdt3I5H",
+                  "by": "head"
+                }
+              ],
               "downloads": []
             }
           ],
