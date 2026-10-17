@@ -1291,7 +1291,7 @@
       "rating": "9.2",
       "pop": 21.9789,
       "status": "Ended",
-      "poster": "https://image.tmdb.org/t/p/w500/a7p6htiJKx68USDAcilJ5rzKAWB.jpg",
+      "poster": "https://image.tmdb.org/t/p/original/eTzC7L3HgsNNBEkTpl9s3tVJUYv.jpg",
       "backdrop": "https://image.tmdb.org/t/p/original/fYL4I6cezb06BHhQlrNjNhy7jhf.jpg",
       "cast": [
         {
@@ -1659,7 +1659,7 @@
       ],
       "original_language": "ko",
       "posterV": 2,
-      "updatedAt": 1792265897249
+      "updatedAt": 1792274880052
     },
     {
       "id": "316197",
