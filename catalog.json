@@ -305,7 +305,7 @@
       ],
       "original_language": "ko",
       "posterV": 2,
-      "updatedAt": 1792265881514
+      "updatedAt": 1792265893510
     },
     {
       "id": "275102",
@@ -522,7 +522,8 @@
         "KR"
       ],
       "original_language": "ko",
-      "posterV": 2
+      "posterV": 2,
+      "updatedAt": 1792265894315
     },
     {
       "id": "293610",
@@ -552,6 +553,7 @@
         "ドクターX 〜白衣のマコィア〜",
         "DakteoX hayan mapiaui sidae",
         "닥터Ｘ",
+        "Doctora x 2026",
         "Доктор Икс",
         "닥터X: 하얀 마피아의 시대"
       ],
@@ -819,7 +821,7 @@
       ],
       "original_language": "ko",
       "posterV": 2,
-      "updatedAt": 1792265669451
+      "updatedAt": 1792265895132
     },
     {
       "id": "278573",
@@ -1134,7 +1136,8 @@
         "KR"
       ],
       "original_language": "ko",
-      "posterV": 2
+      "posterV": 2,
+      "updatedAt": 1792265895935
     },
     {
       "id": "m1058424",
@@ -1261,7 +1264,8 @@
           "quality": "1080p (H.265)"
         }
       ],
-      "posterV": 2
+      "posterV": 2,
+      "updatedAt": 1792265896410
     },
     {
       "id": "305644",
@@ -1643,7 +1647,8 @@
         "KR"
       ],
       "original_language": "ko",
-      "posterV": 2
+      "posterV": 2,
+      "updatedAt": 1792265897249
     },
     {
       "id": "316197",
@@ -1924,7 +1929,7 @@
       ],
       "original_language": "ko",
       "posterV": 2,
-      "updatedAt": 1792265684381
+      "updatedAt": 1792265898058
     },
     {
       "id": "314939",
@@ -2304,7 +2309,8 @@
         "VF"
       ],
       "downloads": [],
-      "posterV": 2
+      "posterV": 2,
+      "updatedAt": 1792265898938
     },
     {
       "id": "290193",
@@ -2586,7 +2592,8 @@
         "KR"
       ],
       "original_language": "ko",
-      "posterV": 2
+      "posterV": 2,
+      "updatedAt": 1792265899940
     },
     {
       "id": "296140",
@@ -2950,7 +2957,8 @@
         "KR"
       ],
       "original_language": "ko",
-      "posterV": 2
+      "posterV": 2,
+      "updatedAt": 1792265901282
     },
     {
       "id": "212204",
@@ -3496,7 +3504,8 @@
         "KR"
       ],
       "original_language": "ko",
-      "posterV": 2
+      "posterV": 2,
+      "updatedAt": 1792265902903
     },
     {
       "id": "218539",
@@ -3951,7 +3960,8 @@
         "KR"
       ],
       "original_language": "ko",
-      "posterV": 2
+      "posterV": 2,
+      "updatedAt": 1792265903961
     },
     {
       "id": "276161",
@@ -4179,7 +4189,8 @@
         "KR"
       ],
       "original_language": "ko",
-      "posterV": 2
+      "posterV": 2,
+      "updatedAt": 1792265904956
     },
     {
       "id": "99966",
@@ -4444,7 +4455,8 @@
         "KR"
       ],
       "original_language": "ko",
-      "posterV": 2
+      "posterV": 2,
+      "updatedAt": 1792265905961
     },
     {
       "id": "298008",
@@ -4668,7 +4680,8 @@
         "JP"
       ],
       "original_language": "ja",
-      "posterV": 2
+      "posterV": 2,
+      "updatedAt": 1792265906940
     },
     {
       "id": "246473",
@@ -4950,7 +4963,8 @@
         "KR"
       ],
       "original_language": "ko",
-      "posterV": 2
+      "posterV": 2,
+      "updatedAt": 1792265907913
     },
     {
       "id": "289423",
@@ -5194,7 +5208,8 @@
       ],
       "original_language": "ko",
       "posterV": 2,
-      "trend": 74
+      "trend": 74,
+      "updatedAt": 1792265908721
     },
     {
       "id": "300146",
@@ -5250,7 +5265,7 @@
             {
               "number": 1,
               "name": "Épisode 1",
-              "overview": "After discovering her lookalike, cruel heiress Wei Rao conspires to use the woman as a pawn when a sudden crisis forces an unwanted marriage.",
+              "overview": "Après avoir découvert son sosie, la cruelle héritière Wei Rao décide de l'utiliser comme pion lorsqu'une crise soudaine lui impose un mariage non désiré.",
               "air_date": "2026-10-16",
               "sources": [
                 {
@@ -5264,7 +5279,7 @@
             {
               "number": 2,
               "name": "Épisode 2",
-              "overview": "A-Chou agrees to marry Lu Zhuo in Wei Rao's place, but she warns her mother about the Wei family. Meanwhile, the true heiress takes on the name Jundai.",
+              "overview": "A-Chou accepte d'épouser Lu Zhuo à la place de Wei Rao, mais met sa mère en garde contre la famille Wei. Pendant ce temps, la véritable héritière prend le nom de Jundai.",
               "air_date": "2026-10-16",
               "sources": [
                 {
@@ -5278,7 +5293,7 @@
             {
               "number": 3,
               "name": "Épisode 3",
-              "overview": "After refusing to leave, the impostor Wei Rao makes a painful sacrifice to win Lu Zhuo's trust. Meanwhile, a calculated plot begins to unfold.",
+              "overview": "Après avoir refusé de partir, l'imposteur Wei Rao fait un sacrifice douloureux pour gagner la confiance de Lu Zhuo. Pendant ce temps, une machination dérape.",
               "air_date": "2026-10-16",
               "sources": [
                 {
@@ -5292,7 +5307,7 @@
             {
               "number": 4,
               "name": "Épisode 4",
-              "overview": "Wei Rao's maid helps her with a cover-up after Lu Zhuo nearly learns a lethal secret. A customary visit to the Wei family leads to a deadly setup.",
+              "overview": "La servante de Wei Rao l'aide à dissimuler des preuves après que Lu Zhuo a failli découvrir un secret mortel. Une visite traditionnelle chez les Wei mène à un piège fatal.",
               "air_date": "2026-10-16",
               "sources": [
                 {
@@ -5306,7 +5321,7 @@
             {
               "number": 5,
               "name": "Épisode 5",
-              "overview": "",
+              "overview": "Après avoir survécu à l'incendie de la bibliothèque, Wei Rao tente de cacher une lettre secrète. Lu Zhuo se méfie en remarquant ses mains calleuses.",
               "air_date": "2026-10-17",
               "sources": [],
               "downloads": []
@@ -5314,7 +5329,7 @@
             {
               "number": 6,
               "name": "Épisode 6",
-              "overview": "",
+              "overview": "Wei Rao est félicitée pour l'organisation d'un grand banquet d'anniversaire. Mais le danger plane sur sa demeure, tandis que Lu Zhuo prépare un complot secret avec des papillons.",
               "air_date": "2026-10-17",
               "sources": [],
               "downloads": []
@@ -5522,7 +5537,8 @@
       ],
       "downloads": [],
       "posterV": 2,
-      "trend": 91
+      "trend": 91,
+      "updatedAt": 1792265909511
     },
     {
       "id": "289690",
@@ -5862,7 +5878,8 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "posterV": 2
+      "posterV": 2,
+      "updatedAt": 1792265910312
     },
     {
       "id": "304452",
@@ -5889,7 +5906,7 @@
       "rating": "9.0",
       "pop": 53.6394,
       "status": "Returning Series",
-      "poster": "https://image.tmdb.org/t/p/original/nGSj4YtMOwP4cjGSD1fDlI6WLag.jpg",
+      "poster": "https://image.tmdb.org/t/p/w500/kH0dBgwoi2tb7YkOsPGTq18UVtc.jpg",
       "backdrop": "https://image.tmdb.org/t/p/original/vD84yLJVVd7cC2lKF8sEukQG2A3.jpg",
       "cast": [
         {
@@ -6295,7 +6312,9 @@
       "langs": [
         "VOSTFR"
       ],
-      "downloads": []
+      "downloads": [],
+      "posterV": 2,
+      "updatedAt": 1792265911163
     },
     {
       "id": "208336",
@@ -6640,7 +6659,7 @@
         "VF"
       ],
       "downloads": [],
-      "updatedAt": 1792264693562
+      "updatedAt": 1792265911902
     }
   ],
   "deletedLinks": [
