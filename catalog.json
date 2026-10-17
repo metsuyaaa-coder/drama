@@ -83,11 +83,13 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/2TgyEgZCFGobY"
+                  "url": "https://vidara.to/e/2TgyEgZCFGobY",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-vzlzv64p907n.html"
+                  "url": "https://uqload.vc/embed-vzlzv64p907n.html",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -101,7 +103,8 @@
                   "name": "1FICHIER",
                   "url": "https://1fichier.com/?xg1jsq8vmidbsuw2gdif",
                   "size": "2.8 Go",
-                  "quality": "1080p (H.264)"
+                  "quality": "1080p (H.264)",
+                  "by": "head"
                 }
               ]
             },
@@ -113,11 +116,13 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/5thkvKklZ5I2D"
+                  "url": "https://vidara.to/e/5thkvKklZ5I2D",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-z1zyz49djtuq.html"
+                  "url": "https://uqload.vc/embed-z1zyz49djtuq.html",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -131,7 +136,8 @@
                   "name": "1FICHIER",
                   "url": "https://1fichier.com/?871905qoy820g0cncdyi",
                   "size": "2.6 Go",
-                  "quality": "1080p (H.264)"
+                  "quality": "1080p (H.264)",
+                  "by": "head"
                 }
               ]
             },
@@ -279,7 +285,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "trend": 69,
+      "trend": 78,
       "aka": [
         "100 Days of Deception",
         "百日谎言",
@@ -640,11 +646,13 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/yxmRmsmX4zOOn"
+                  "url": "https://vidara.to/e/yxmRmsmX4zOOn",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-m1tmawcz7c7k.html"
+                  "url": "https://uqload.vc/embed-m1tmawcz7c7k.html",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -658,7 +666,8 @@
                   "name": "1FICHIER",
                   "url": "https://1fichier.com/?1qd8vda0u704nuwfzs2g",
                   "size": "2.32 Go",
-                  "quality": "1080p (H.264)"
+                  "quality": "1080p (H.264)",
+                  "by": "head"
                 }
               ]
             },
@@ -670,11 +679,13 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/X8HN8WRXjyREk"
+                  "url": "https://vidara.to/e/X8HN8WRXjyREk",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-cs61nhnp5yge.html"
+                  "url": "https://uqload.vc/embed-cs61nhnp5yge.html",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -688,7 +699,8 @@
                   "name": "1FICHIER",
                   "url": "https://1fichier.com/?xxzdrtttn7jbmkzlslaj",
                   "size": "2.3 Go",
-                  "quality": "1080p (H.264)"
+                  "quality": "1080p (H.264)",
+                  "by": "head"
                 }
               ]
             },
@@ -700,15 +712,18 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/09adi9vhA9U10"
+                  "url": "https://vidara.to/e/09adi9vhA9U10",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/1beitjsENq5T9"
+                  "url": "https://playmate.to/embed/1beitjsENq5T9",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-v6n8916hwstw.html"
+                  "url": "https://uqload.vc/embed-v6n8916hwstw.html",
+                  "by": "head"
                 }
               ],
               "downloads": [
@@ -716,14 +731,15 @@
                   "name": "1FICHIER",
                   "url": "https://1fichier.com/?453rfjul6t7nuvyie39a",
                   "size": "2.4 Go",
-                  "quality": "1080p (H.264)"
+                  "quality": "1080p (H.264)",
+                  "by": "head"
                 }
               ]
             },
             {
               "number": 4,
               "name": "Épisode 4",
-              "overview": "",
+              "overview": "After a new surgeon arrives at the hospital, Jang Hui-suk and Su-jeong keep a close eye on him. Meanwhile, a pharmaceutical rep suffers an emergency.",
               "air_date": "2026-10-17",
               "sources": [
                 {
@@ -734,6 +750,11 @@
                 {
                   "name": "PLAYMATE",
                   "url": "https://playmate.to/embed/Zd3XhWMuddNOj",
+                  "by": "head"
+                },
+                {
+                  "name": "UQLOAD",
+                  "url": "https://uqload.vc/embed-asi5ub6zw1cs.html",
                   "by": "head"
                 }
               ],
@@ -813,13 +834,13 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "trend": 89,
+      "trend": 88,
       "origin_country": [
         "KR"
       ],
       "original_language": "ko",
       "posterV": 2,
-      "updatedAt": 1792265895132
+      "updatedAt": 1792266612076
     },
     {
       "id": "278573",
@@ -5236,6 +5257,7 @@
       ],
       "original_language": "ko",
       "posterV": 2,
+      "trend": 74,
       "updatedAt": 1792266473969
     },
     {
@@ -5296,8 +5318,9 @@
               "air_date": "2026-10-16",
               "sources": [
                 {
-                  "name": "VIDMOLY 2",
-                  "url": "https://vidmoly.me/v/2yld09tdh2b7"
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.me/v/2yld09tdh2b7",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -5309,8 +5332,9 @@
               "air_date": "2026-10-16",
               "sources": [
                 {
-                  "name": "VIDMOLY 2",
-                  "url": "https://vidmoly.me/v/ftm3yk26ikx5"
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.me/v/ftm3yk26ikx5",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -5322,8 +5346,9 @@
               "air_date": "2026-10-16",
               "sources": [
                 {
-                  "name": "VIDMOLY 2",
-                  "url": "https://vidmoly.me/v/x3lw9r89bioi"
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.me/v/x3lw9r89bioi",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -5335,8 +5360,9 @@
               "air_date": "2026-10-16",
               "sources": [
                 {
-                  "name": "VIDMOLY 2",
-                  "url": "https://vidmoly.me/v/6ifc1l4tf216"
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.me/v/6ifc1l4tf216",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -5560,6 +5586,7 @@
       ],
       "downloads": [],
       "posterV": 2,
+      "trend": 91,
       "updatedAt": 1792265909511
     },
     {
@@ -6691,10 +6718,10 @@
     "300146\thttps://vidmoly.org/embed-6ifc1l4tf216.html"
   ],
   "deletedFiches": [],
+  "refreshAt": 1792266347639,
   "team": {
     "id": "208336",
     "text": "",
     "at": 1792265241111
-  },
-  "refreshAt": 1792266347639
+  }
 }
