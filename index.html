@@ -67,8 +67,8 @@ nav a:hover::after, nav a.on::after { transform: scaleX(1); }
 .btn.small { padding: 7px 14px; font-size: 12px; }
 /* boutons Télécharger : vert clair */
 .btn .dlic { width: 1.15em; height: 1.15em; flex: none; }
-.btn[data-dlopen], .btn[data-godl] { background: #86efac; border-color: #86efac; color: #052e16; }
-.btn[data-dlopen]:hover, .btn[data-godl]:hover { background: transparent; border-color: #86efac; color: #86efac; }
+.btn[data-dlopen], .btn[data-godl], .btn[data-reqdl] { background: #86efac; border-color: #86efac; color: #052e16; }
+.btn[data-dlopen]:hover, .btn[data-godl]:hover, .btn[data-reqdl]:hover { background: transparent; border-color: #86efac; color: #86efac; }
 .btn.danger { border-color: #555; color: var(--dim); background: transparent; }
 .btn.danger:hover { border-color: var(--fg); color: var(--fg); }
 
@@ -1097,12 +1097,14 @@ function todayKey() { var d = new Date(); return d.getFullYear() + "-" + (d.getM
 function reqToday() { var r = readJSON("noir.reqDay", null); return r && r.d === todayKey() ? (+r.n || 0) : 0; }
 function bumpReq() { try { localStorage.setItem("noir.reqDay", JSON.stringify({ d: todayKey(), n: reqToday() + 1 })); } catch (e) {} }
 var REQ_URL = "https://formsubmit.co/ajax/318f68b57ef527181c572ab6c865d64a";
-function viewRequest(pre) {
+function viewRequest(pre, kind) {
+  kind = kind === "dl" ? "dl" : kind === "both" ? "both" : "stream";
   var t = ""; try { t = decodeURIComponent(pre || ""); } catch (e) { t = pre || ""; }
   $("#app").innerHTML = '<div class="wrap"><form class="authbox" id="reqform" style="max-width:520px"><h1>Demander un titre</h1>' +
     '<p class="lead">Il manque une série ou un film ? Dis-le-moi, je l\'ajoute dès que possible. ' + REQ_MAX + ' demandes maximum par jour.</p>' +
     '<label class="f"><span>Ton pseudo</span><input type="text" name="pseudo" required maxlength="40" autocomplete="nickname"></label>' +
     '<label class="f"><span>Nom exact de la série ou du film</span><input type="text" name="titre" required maxlength="120" value="' + esc(t) + '"></label>' +
+    '<label class="f"><span>Ta demande</span><select name="type"><option value="stream"' + (kind === "stream" ? " selected" : "") + '>Streaming</option><option value="dl"' + (kind === "dl" ? " selected" : "") + '>Téléchargement</option><option value="both"' + (kind === "both" ? " selected" : "") + '>Les deux (streaming + téléchargement)</option></select></label>' +
     '<label class="f"><span>Date de sortie (ou année)</span><input type="text" name="date" required maxlength="40" placeholder="ex. 2024"></label>' +
     '<input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0">' +
     '<p class="note" id="autherr"></p><div class="row"><button class="btn" type="submit">Envoyer</button><a class="btn ghost" href="#/">Retour</a></div></form></div>';
@@ -1331,6 +1333,9 @@ function viewSerie(id) {
   if (viewSerie.last !== String(s.id)) dlMode = false;
   viewSerie.last = String(s.id);
   var showDl = !movie && dlOpen() && (hasDl(s) || dlAdmin());
+  var reqDl = '#/demande/' + encodeURIComponent(s.name || '') + '/dl';
+  var dlBtnMovie = movie && dlOpen() ? ((s.downloads || []).length ? dlLinks(s.downloads, "Télécharger", " ghost") : '<a class="btn ghost" data-reqdl="1" href="' + reqDl + '">' + DLICON + '<span>Télécharger</span></a>') : "";
+  var dlBtnSerie = !movie && dlOpen() ? (showDl ? '<button class="btn ghost" type="button" data-godl="1">' + DLICON + '<span>Télécharger</span></button>' : '<a class="btn ghost" data-reqdl="1" href="' + reqDl + '">' + DLICON + '<span>Télécharger</span></a>') : "";
   if (!showDl) dlMode = false;
   var seenMap = readSeen()[s.id] || {};
   function seenCount(se) { return (se.episodes || []).filter(function (ep) { return seenMap[epKey(se, ep)]; }).length; }
@@ -1349,7 +1354,7 @@ function viewSerie(id) {
     '<div><div class="tags">' + (langLabel(s) ? '<span class="lang">' + esc(langLabel(s)) + '</span>' : '') + (ongoing(s) ? '<span class="live">En cours</span>' : '') + (ne ? newBadge("Nouvel épisode") : '') + tags.map(function (t) { return "<span>" + esc(t) + "</span>"; }).join("") + '</div>' +
     '<h1>' + esc(s.name) + '</h1>' + (s.original_name && s.original_name !== s.name ? '<div class="orig">' + esc(s.original_name) + '</div>' : '<div class="orig"></div>') +
     '<p class="ov">' + esc(s.overview || "Pas de synopsis.") + '</p>' +
-    '<div class="row"><button class="btn" data-watch="' + esc(s.id) + '">' + PLAYICON + '<span>Regarder</span></button>' + (movie && dlOpen() ? dlLinks(s.downloads, "Télécharger", " ghost") : "") + (!movie && showDl ? '<button class="btn ghost" type="button" data-godl="1">' + DLICON + '<span>Télécharger</span></button>' : "") + '<button class="btn ghost' + (inList(s.id) ? " on" : "") + '" type="button" data-list="' + esc(s.id) + '">' + (inList(s.id) ? "✓ Dans ma liste" : "+ Ma liste") + '</button>' + (ADMIN ? '<a class="btn ghost" href="#/modifier/' + esc(s.id) + '">Modifier</a><button class="btn danger" data-del="' + esc(s.id) + '">Supprimer</button>' : '') + '</div>' + srcChips +
+    '<div class="row"><button class="btn" data-watch="' + esc(s.id) + '">' + PLAYICON + '<span>Regarder</span></button>' + dlBtnMovie + dlBtnSerie + '<button class="btn ghost' + (inList(s.id) ? " on" : "") + '" type="button" data-list="' + esc(s.id) + '">' + (inList(s.id) ? "✓ Dans ma liste" : "+ Ma liste") + '</button>' + (ADMIN ? '<a class="btn ghost" href="#/modifier/' + esc(s.id) + '">Modifier</a><button class="btn danger" data-del="' + esc(s.id) + '">Supprimer</button>' : '') + '</div>' + srcChips +
     ((s.cast || []).length ? '<h3 class="note" style="margin:32px 0 0;text-transform:uppercase;letter-spacing:.08em">Distribution</h3><div class="cast">' + s.cast.slice(0, 12).map(function (c) { return '<div><b>' + esc(c.name) + '</b><span>' + esc(c.character || "") + '</span></div>'; }).join("") + '</div>' : '') +
     '</div></div></section>';
   if (!movie && (s.seasons || []).length) {
@@ -1636,7 +1641,9 @@ function renderPlayer() {
   var s = cur.sources[cur.i], url = safeUrl(s.url);
   $("#ptitle").textContent = cur.title;
   $("#psub").textContent = cur.sub || "";
-  $("#pdl").innerHTML = dlOpen() ? dlLinks(cur.dl, "Télécharger", " ghost") : "";
+  var rq = "#/demande/" + encodeURIComponent(cur.title || "");
+  $("#pdl").innerHTML = dlOpen() ? ((cur.dl || []).length ? dlLinks(cur.dl, "Télécharger", " ghost") : '<a class="btn small ghost" data-reqdl="1" href="' + rq + '/dl">' + DLICON + '<span>Télécharger</span></a>') : "";
+  $("#pdemande").href = rq + "/stream"; $("#pdemande2").href = rq + "/dl";
   showTip(tipIdx);
   clearInterval(tipTimer); tipTimer = setInterval(function () { showTip(tipIdx + 1); }, 9000);
   $("#pl").style.display = cur.sources.length > 1 ? "flex" : "none";
@@ -1787,7 +1794,7 @@ function route(force) {
   else if (a === "series") { rerender = function () { viewList("Séries", function (s) { return !isMovie(s); }); }; rerender(); }
   else if (a === "films") { rerender = function () { viewList("Films", isMovie); }; rerender(); }
   else if (a === "ma-liste") { rerender = viewMyList; rerender(); }
-  else if (a === "demande") viewRequest(b);
+  else if (a === "demande") viewRequest(b, parts[3]);
   else if (a === "recherche") { curQ = b; rerender = function () { viewSearch(curQ); }; rerender(); }
   else if (a === "admin") viewLogin();
   else if (a === "motdepasse") viewSetPassword(false);
@@ -2022,7 +2029,7 @@ document.addEventListener("submit", function (e) {
     var titre = String(fd.get("titre") || "").trim();
     fetch(REQ_URL, { method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" }, body: JSON.stringify({
       _subject: "DramaByM : demande « " + titre + " »", _captcha: "false", _template: "table",
-      "Pseudo": String(fd.get("pseudo") || "").trim(), "Titre": titre, "Date de sortie": String(fd.get("date") || "").trim()
+      "Pseudo": String(fd.get("pseudo") || "").trim(), "Titre": titre, "Demande": ({ stream: "Streaming", dl: "Téléchargement", both: "Streaming + téléchargement" })[String(fd.get("type"))] || "Streaming", "Date de sortie": String(fd.get("date") || "").trim()
     }) }).then(function (r) {
       return r.json().catch(function () { return {}; }).then(function (j) { if (!r.ok || j.success === false || j.success === "false") throw new Error(String(j.message || "refusé par le service")); });
     }).then(function () {
@@ -2161,6 +2168,7 @@ $("#burger").addEventListener("click", function () {
 $("#pclose").addEventListener("click", closePlayer);
 $("#pdemande").addEventListener("click", function () { closePlayer(); });
 $("#pdemande2").addEventListener("click", function () { closePlayer(); });
+$("#pdl").addEventListener("click", function (e) { if (e.target.closest("[data-reqdl]")) closePlayer(); });
 $("#pprev").addEventListener("click", function () { if (cur.nav && cur.nav.prev) cur.nav.prev(); });
 $("#pnext").addEventListener("click", function () { if (cur.nav && cur.nav.next) { markCurSeen(); cur.nav.next(); } });
 $("#pfull").addEventListener("click", toggleFull);
