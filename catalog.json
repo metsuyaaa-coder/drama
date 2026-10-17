@@ -279,7 +279,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "trend": 69,
+      "trend": 74,
       "aka": [
         "100 Days of Deception",
         "百日谎言",
@@ -826,7 +826,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "trend": 89,
+      "trend": 90,
       "origin_country": [
         "KR"
       ],
@@ -1266,7 +1266,7 @@
         "Hopeu",
         "호프"
       ],
-      "trend": 100,
+      "trend": 97,
       "downloads": [
         {
           "name": "1FICHIER",
@@ -5249,7 +5249,8 @@
       ],
       "original_language": "ko",
       "posterV": 2,
-      "updatedAt": 1792267958988
+      "updatedAt": 1792267958988,
+      "trend": 76
     },
     {
       "id": "300146",
@@ -5573,7 +5574,8 @@
       ],
       "downloads": [],
       "posterV": 2,
-      "updatedAt": 1792266856315
+      "updatedAt": 1792266856315,
+      "trend": 82
     },
     {
       "id": "289690",
@@ -6349,7 +6351,8 @@
       ],
       "downloads": [],
       "posterV": 2,
-      "updatedAt": 1792266751792
+      "updatedAt": 1792266751792,
+      "trend": 64
     },
     {
       "id": "208336",
@@ -7176,7 +7179,193 @@
           "by": "head"
         }
       ],
-      "updatedAt": 1792271265545
+      "updatedAt": 1792271265545,
+      "trend": 69
+    },
+    {
+      "id": "307106",
+      "type": "tv",
+      "name": "Between Steps",
+      "original_name": "연애박사",
+      "origin_country": [
+        "KR"
+      ],
+      "original_language": "ko",
+      "aka": [
+        "Between Steps",
+        "恋爱博士",
+        "戀愛博士",
+        "Entre os Nossos Passos",
+        "Между стъпките",
+        "恋愛の博士課程",
+        "بين الخطوات",
+        "Між кроками",
+        "دکتر عشق",
+        "ก้าวรักทีละนิด",
+        "Между шагами",
+        "Entre pasos: En busca de un sueño",
+        "Romance Expert",
+        "Yeon Aebagsa",
+        "Love Doctor",
+        "Doctor of Love",
+        "연애박사"
+      ],
+      "year": "2026",
+      "overview": "L'histoire d'amour entre un homme, ancien nageur ayant perdu sa jambe gauche, et une femme qui, après avoir perdu ses repères en tant qu'interne en médecine, trouve une nouvelle voie en tant que jeune diplômée.",
+      "genres": [
+        "Drame",
+        "Comédie"
+      ],
+      "rating": "7.9",
+      "pop": 30.0688,
+      "status": "Returning Series",
+      "poster": "https://image.tmdb.org/t/p/w500/pGqcErS76y8bcvZZSFUefdZOg2x.jpg",
+      "posterV": 2,
+      "backdrop": "https://image.tmdb.org/t/p/original/wwSoLQrLyiXXUbRnZq1eWBbHaRR.jpg",
+      "cast": [
+        {
+          "name": "추영우",
+          "character": "Park Min-jae"
+        },
+        {
+          "name": "Kim So-hyun",
+          "character": "Lim You-jin"
+        }
+      ],
+      "seasons": [
+        {
+          "number": 1,
+          "name": "Saison 1",
+          "episodes": [
+            {
+              "number": 1,
+              "name": "Épisode 1",
+              "overview": "As Minjae seeks love, an unexpected incident reunites him with Youjin, a stranger he met before.",
+              "air_date": "2026-10-05",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-fc5in9ixpx6i.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 2,
+              "name": "Épisode 2",
+              "overview": "Youjin wants to go to grad school and asks Minjae for help. Will she make it into the robotics lab?",
+              "air_date": "2026-10-06",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-7bnseb4rx1is.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 3,
+              "name": "Épisode 3",
+              "overview": "Feeling out of place on her first day, Youjin clashes with Sejin and finally snaps at Minjae.",
+              "air_date": "2026-10-12",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-9yoeptdk418r.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 4,
+              "name": "Épisode 4",
+              "overview": "As rumors spread that Minjae was seen with a mysterious woman, a jealous Youjin makes a bold move.",
+              "air_date": "2026-10-13",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-ojc4on9ylm2p.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 5,
+              "name": "Épisode 5",
+              "overview": "Bonding over their shared pain, Minjae and Youjin quickly grow close. But when Youjin's brother, Youseong, senses something suspicious, he starts investigating. As Youjin draws closer, Minjae becomes frightened and starts questioning whether he has the right to love someone and whether he should continue their relationship. While Minjae keeps trying to pull away, Youjin boldly moves closer. On a rainy night, Minjae can no longer ignore Youjin's feelings or his own.",
+              "air_date": "2026-10-19",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 6,
+              "name": "Épisode 6",
+              "overview": "Minjae and Youjin finally start dating, but agree to keep their relationship a secret for now. However, their secret romance gets off to a rocky start when Sejin and Seohyun show up at Minjae's place all at once. With Minjae's first love, Seohyun, weighing on her mind, Youjin wants to make their relationship public and ends up telling Minjae's mother. But she shrinks under a series of pointed questions. From the very beginning of their relationship, the gap between Minjae and Youjin only grows.",
+              "air_date": "2026-10-20",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 7,
+              "name": "Épisode 7",
+              "overview": "Could this be Sejin's first love? Too bad his crush is Subin, the best friend of Youjin, his rival. When Minjae suggests they set the two up, Youjin feels slighted by the attention he gives Sejin. Her lighthearted prank to test Minjae's love ends up triggering his old insecurities. Meanwhile, bummed by an awkward first meeting with Subin, Sejin stumbles upon yet another unexpected scene.",
+              "air_date": "2026-10-26",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 8,
+              "name": "Épisode 8",
+              "overview": "",
+              "air_date": "2026-10-27",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 9,
+              "name": "Épisode 9",
+              "overview": "",
+              "air_date": "2026-11-02",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 10,
+              "name": "Épisode 10",
+              "overview": "",
+              "air_date": "2026-11-03",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 11,
+              "name": "Épisode 11",
+              "overview": "",
+              "air_date": "2026-11-09",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 12,
+              "name": "Épisode 12",
+              "overview": "",
+              "air_date": "2026-11-10",
+              "sources": [],
+              "downloads": []
+            }
+          ],
+          "downloads": []
+        }
+      ],
+      "sources": [],
+      "addedAt": 1792274445183,
+      "langs": [],
+      "downloads": [],
+      "updatedAt": 1792274500438
     }
   ],
   "deletedLinks": [
