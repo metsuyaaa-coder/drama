@@ -1937,6 +1937,7 @@ function saveDraft() {
   (draft.seasons || []).forEach(function (se) { (se.episodes || []).forEach(function (ep) { ep.sources = capSrc(ep.sources); }); });
   var i = -1;
   db.forEach(function (x, k) { if (String(x.id) === String(draft.id)) i = k; });
+  if (i > -1 && isHead()) noteRemovedLinks(db[i], draft);
   var kept = mergeOwn(i > -1 ? db[i] : null, draft);
   if (i > -1) { if (draft.trend == null) draft.trend = db[i].trend; db[i] = draft; } else { db.push(draft); tombDrop(draft.id); }
   persist();
@@ -2591,7 +2592,7 @@ $("#btn-export").addEventListener("click", function () {
   if (ghRepo() && ghToken()) {
     toast("Publication sur GitHub…");
     ghPublish(obj).then(function () {
-      tombSave([]);
+      tombSave([]); linkTombSave([]);
       toast("Publié sur GitHub ✓" + (priv ? " (liens de téléchargement retirés)" : "") + (CONFIG.GITHUB_REPO ? " Les visiteurs le voient dans quelques secondes." : " Visible après le redéploiement de GitHub Pages (environ 1 minute)."));
     }).catch(function (e) { download(); toast((e && e.message ? e.message : "Échec GitHub") + " : catalog.json téléchargé à la place"); });
     return;
@@ -2708,10 +2709,33 @@ function tombDrop(id) { var t = tombs(); id = String(id); if (t.indexOf(id) > -1
 
 /* Synchro admin : ajoute à ta copie locale les fiches, saisons, épisodes et liens publiés par les autres admins.
    Rien n'est retiré ni écrasé : tes modifications non publiées restent intactes. */
+/* Liens supprimés ici (même ceux d'un autre admin) : la synchro ne les remet pas tant que ce n'est pas publié */
+var DELLINKKEY = "noir.deletedlinks";
+function linkTombs() { var t = readJSON(DELLINKKEY, []); return Array.isArray(t) ? t : []; }
+function linkTombSave(t) { try { localStorage.setItem(DELLINKKEY, JSON.stringify(t)); } catch (e) {} }
+function allUrls(f) {
+  var out = [];
+  var add = function (a) { (a || []).forEach(function (x) { if (x && x.url) out.push(x.url); }); };
+  if (!f) return out;
+  add(f.sources); add(f.downloads);
+  (f.seasons || []).forEach(function (se) {
+    add(se.downloads);
+    (se.episodes || []).forEach(function (ep) { add(ep.sources); add(ep.downloads); });
+  });
+  return out;
+}
+function noteRemovedLinks(oldF, newF) {
+  var keep = {}; allUrls(newF).forEach(function (u) { keep[u] = 1; });
+  var gone = allUrls(oldF).filter(function (u) { return !keep[u]; });
+  if (!gone.length) return;
+  var t = linkTombs();
+  gone.forEach(function (u) { if (t.indexOf(u) < 0) t.push(u); });
+  linkTombSave(t);
+}
 function addMissingLinks(local, remote) {
   var me = myId(), ch = false;
   (remote || []).forEach(function (r) {
-    if (!r || !r.url || r.by === me || findUrl(local, r.url)) return;
+    if (!r || !r.url || r.by === me || findUrl(local, r.url) || linkTombs().indexOf(r.url) > -1) return;
     local.push(r); ch = true;
   });
   return ch;
