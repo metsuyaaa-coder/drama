@@ -1921,6 +1921,9 @@ function mergeOwn(old, nw, fromFile) {
       ep.downloads = mergeLinks(oe.downloads, ep.downloads, st, fromFile);
     });
   });
+  var lim = function (o) { if (o && o.sources && o.sources.length > MAX_SRC) { o.sources = o.sources.slice(0, MAX_SRC); st.capped = true; } };
+  lim(nw); (nw.seasons || []).forEach(function (se) { (se.episodes || []).forEach(lim); });
+  if (st.capped && Date.now() - lastCapWarn > 2500) { lastCapWarn = Date.now(); toast("Maximum " + MAX_SRC + " sources par épisode ou film : les sources en trop ont été retirées"); }
   return st.kept;
 }
 function ficheLinks(f) {
@@ -1937,8 +1940,10 @@ function saveDraft() {
   (draft.seasons || []).forEach(function (se) { (se.episodes || []).forEach(function (ep) { ep.sources = capSrc(ep.sources); }); });
   var i = -1;
   db.forEach(function (x, k) { if (String(x.id) === String(draft.id)) i = k; });
-  if (i > -1 && isHead()) noteRemovedLinks(db[i], draft);
   var kept = mergeOwn(i > -1 ? db[i] : null, draft);
+  if (i > -1) noteRemovedLinks(db[i], draft);   /* tout lien retiré (par n'importe quel admin) est mémorisé pour la publication */
+  var oldU = {}; allUrls(i > -1 ? db[i] : null).forEach(function (u) { oldU[u] = 1; });
+  allUrls(draft).forEach(function (u) { if (!oldU[u] && isLinkDead(draft.id, u)) reviveLink(draft.id, u); });   /* lien rajouté volontairement : on le ressort de la liste des supprimés */
   if (i > -1) { if (draft.trend == null) draft.trend = db[i].trend; db[i] = draft; } else { db.push(draft); tombDrop(draft.id); }
   persist();
   toast(kept ? "Fiche enregistrée. " + kept + (kept > 1 ? " liens d'autres admins ont été conservés (tu ne peux supprimer que les tiens)." : " lien d'un autre admin a été conservé (tu ne peux supprimer que les tiens).") : "Fiche enregistrée");
@@ -2547,7 +2552,17 @@ function ghPublish(obj, tried) {
   var gi = ghParse(ghRepo());
   if (!gi || !ghToken()) return Promise.reject(new Error("GitHub non lié"));
   var url = ghUrl(gi);
-  return fetch(url + "?ref=" + encodeURIComponent(gi.branch), { headers: ghHeaders(), cache: "no-store" }).then(function (r) {
+  /* 1) on lit les suppressions déjà publiées, 2) on les applique au catalogue qu'on s'apprête à envoyer (une vieille copie locale ne peut plus rien ressusciter) */
+  return fetch(url + "?ref=" + encodeURIComponent(gi.branch), { headers: ghHeaders({ Accept: "application/vnd.github.raw+json" }), cache: "no-store" }).then(function (r) {
+    if (r.status === 404) return {};
+    if (!r.ok) throw ghErr(r);
+    return r.json();
+  }).then(function (remote) {
+    var t = finalTombs({ links: (remote && remote.deletedLinks) || [], fiches: (remote && remote.deletedFiches) || [] });
+    if (obj.series) obj.series = pruneList(obj.series, t).list;
+    obj.deletedLinks = t.links; obj.deletedFiches = t.fiches;
+    return fetch(url + "?ref=" + encodeURIComponent(gi.branch), { headers: ghHeaders(), cache: "no-store" });
+  }).then(function (r) {
     if (r.status === 404) return null;
     if (!r.ok) throw ghErr(r);
     return r.json();
@@ -2587,12 +2602,15 @@ $("#btn-export").addEventListener("click", function () {
   var priv = SETTINGS.downloads === "private";
   var list = JSON.parse(JSON.stringify(db));
   if (priv) stripDl(list);
-  var obj = { settings: { downloads: SETTINGS.downloads }, series: list };
+  var tt = finalTombs(null);
+  var obj = { settings: { downloads: SETTINGS.downloads }, series: list, deletedLinks: tt.links, deletedFiches: tt.fiches };
   var download = function () { saveJson(obj, "catalog.json"); };
   if (ghRepo() && ghToken()) {
     toast("Publication sur GitHub…");
     ghPublish(obj).then(function () {
-      tombSave([]); linkTombSave([]);
+      rtombSave({ links: obj.deletedLinks || [], fiches: obj.deletedFiches || [] });
+      tombSave([]); linkTombSave([]); reviveClear();
+      var pp = pruneList(db, curTombs()); if (pp.changed) { db = pp.list; persist(); }
       toast("Publié sur GitHub ✓" + (priv ? " (liens de téléchargement retirés)" : "") + (CONFIG.GITHUB_REPO ? " Les visiteurs le voient dans quelques secondes." : " Visible après le redéploiement de GitHub Pages (environ 1 minute)."));
     }).catch(function (e) { download(); toast((e && e.message ? e.message : "Échec GitHub") + " : catalog.json téléchargé à la place"); });
     return;
@@ -2630,9 +2648,11 @@ function keepDl(n, o) {
   });
 }
 function importCatalogData(data, label) {
+  ingestRemoteTombs(data);
   if (data && !Array.isArray(data) && Array.isArray(data.series)) data = data.series;
   if (!Array.isArray(data)) throw 0;
   data.forEach(function (s) { if (!s || !s.id || !s.name) return; normalize(s); var i = -1; db.forEach(function (x, k) { if (String(x.id) === String(s.id)) i = k; }); if (i > -1) { keepDl(s, db[i]); mergeOwn(db[i], s, true); db[i] = s; } else { mergeOwn(null, s, true); db.push(s); tombDrop(s.id); } });
+  var pi = pruneList(db, curTombs()); db = pi.list;
   persist(); toast(label || "Catalogue importé"); route(true);
 }
 $("#btn-import").addEventListener("click", function () { $("#file").click(); });
@@ -2705,7 +2725,71 @@ var DELKEY = "noir.deleted";
 function tombs() { var t = readJSON(DELKEY, []); return Array.isArray(t) ? t : []; }
 function tombSave(t) { try { localStorage.setItem(DELKEY, JSON.stringify(t)); } catch (e) {} }
 function tombAdd(id) { var t = tombs(); id = String(id); if (t.indexOf(id) < 0) { t.push(id); tombSave(t); } }
-function tombDrop(id) { var t = tombs(); id = String(id); if (t.indexOf(id) > -1) tombSave(t.filter(function (x) { return x !== id; })); }
+function tombDrop(id) {
+  var t = tombs(); id = String(id);
+  if (t.indexOf(id) > -1) tombSave(t.filter(function (x) { return x !== id; }));
+  var r = rtomb(); if (r.fiches.indexOf(id) > -1) { r.fiches = r.fiches.filter(function (x) { return x !== id; }); rtombSave(r); reviveAdd("F" + id); }
+}
+
+/* Suppressions PARTAGÉES : elles sont publiées dans catalog.json (deletedLinks / deletedFiches).
+   Ainsi un autre admin qui rafraîchit ou publie avec une vieille copie locale ne ressuscite plus ce que le Head admin a supprimé. */
+var RTKEY = "noir.remoteTombs", REVKEY = "noir.revived";
+function rtomb() { var t = readJSON(RTKEY, null); return t && typeof t === "object" ? { links: t.links || [], fiches: (t.fiches || []).map(String) } : { links: [], fiches: [] }; }
+function rtombSave(t) { try { localStorage.setItem(RTKEY, JSON.stringify(t)); } catch (e) {} }
+function revived() { var t = readJSON(REVKEY, []); return Array.isArray(t) ? t : []; }
+function reviveAdd(k) { var r = revived(); if (r.indexOf(k) < 0) { r.push(k); try { localStorage.setItem(REVKEY, JSON.stringify(r)); } catch (e) {} } }
+function reviveClear() { try { localStorage.removeItem(REVKEY); } catch (e) {} }
+function uniq(a) { var o = {}, out = []; a.forEach(function (x) { if (!o[x]) { o[x] = 1; out.push(x); } }); return out; }
+function lkey(fid, url) { return String(fid) + "\t" + url; }
+function isRevivedEntry(e, rv) {
+  if (rv.indexOf(e) > -1) return true;
+  if (e.indexOf("\t") < 0) return rv.some(function (k) { return k.slice(-(e.length + 1)) === "\t" + e; });   /* ancien format : juste l'URL */
+  return false;
+}
+function allLinkTombs() { return uniq(linkTombs().concat(rtomb().links)); }
+function allFicheTombs() { return uniq(tombs().concat(rtomb().fiches)); }
+function curTombs() { return { links: allLinkTombs(), fiches: allFicheTombs() }; }
+function isLinkDead(fid, url, list) { list = list || allLinkTombs(); return list.indexOf(lkey(fid, url)) > -1 || list.indexOf(url) > -1; }
+function reviveLink(fid, url) {
+  var k = lkey(fid, url), keep = function (e) { return e !== k && e !== url; };
+  linkTombSave(linkTombs().filter(keep));
+  var r = rtomb(); r.links = r.links.filter(keep); rtombSave(r);
+  reviveAdd(k);
+}
+/* Tombes à publier = celles déjà en ligne + les miennes, moins ce que j'ai volontairement remis */
+function finalTombs(remote) {
+  remote = remote || {}; var rv = revived();
+  return {
+    links: uniq(linkTombs().concat(rtomb().links, remote.links || [])).filter(function (e) { return !isRevivedEntry(e, rv); }),
+    fiches: uniq(tombs().concat(rtomb().fiches, (remote.fiches || []).map(String))).filter(function (i) { return rv.indexOf("F" + i) < 0; })
+  };
+}
+function ingestRemoteTombs(data) {
+  if (!data || Array.isArray(data) || (!("deletedLinks" in data) && !("deletedFiches" in data))) return;
+  var rv = revived();
+  rtombSave({
+    links: (data.deletedLinks || []).filter(function (e) { return !isRevivedEntry(e, rv); }),
+    fiches: (data.deletedFiches || []).map(String).filter(function (i) { return rv.indexOf("F" + i) < 0; })
+  });
+}
+function pruneFiche(f, t) {
+  var ch = false;
+  var p = function (o, k) {
+    if (!o || !o[k]) return;
+    var n = o[k].filter(function (x) { return !(x && x.url && isLinkDead(f.id, x.url, t.links)); });
+    if (n.length !== o[k].length) { o[k] = n; ch = true; }
+  };
+  var cap = function (o) { if (o && o.sources && o.sources.length > MAX_SRC) { o.sources = o.sources.slice(0, MAX_SRC); ch = true; } };   /* maximum 3 sources par film / épisode */
+  p(f, "sources"); p(f, "downloads"); cap(f);
+  (f.seasons || []).forEach(function (se) { p(se, "downloads"); (se.episodes || []).forEach(function (ep) { p(ep, "sources"); p(ep, "downloads"); cap(ep); }); });
+  return ch;
+}
+function pruneList(list, t) {
+  var ch = false;
+  var out = list.filter(function (f) { if (t.fiches.indexOf(String(f.id)) > -1) { ch = true; return false; } return true; });
+  out.forEach(function (f) { if (pruneFiche(f, t)) ch = true; });
+  return { list: out, changed: ch };
+}
 
 /* Synchro admin : ajoute à ta copie locale les fiches, saisons, épisodes et liens publiés par les autres admins.
    Rien n'est retiré ni écrasé : tes modifications non publiées restent intactes. */
@@ -2729,38 +2813,52 @@ function noteRemovedLinks(oldF, newF) {
   var gone = allUrls(oldF).filter(function (u) { return !keep[u]; });
   if (!gone.length) return;
   var t = linkTombs();
-  gone.forEach(function (u) { if (t.indexOf(u) < 0) t.push(u); });
+  gone.forEach(function (u) { var k = lkey(oldF.id, u); if (t.indexOf(k) < 0) t.push(k); });
   linkTombSave(t);
 }
-function addMissingLinks(local, remote) {
-  var me = myId(), ch = false;
+function addMissingLinks(local, remote, fid) {
+  var me = myId(), ch = false, dead = allLinkTombs();
   (remote || []).forEach(function (r) {
-    if (!r || !r.url || r.by === me || findUrl(local, r.url) || linkTombs().indexOf(r.url) > -1) return;
+    if (!r || !r.url || r.by === me || findUrl(local, r.url) || isLinkDead(fid, r.url, dead)) return;
     local.push(r); ch = true;
   });
   return ch;
 }
+/* Sources d'un film / épisode : l'ordre publié passe en premier, puis les miennes pas encore publiées, le tout limité à 3 */
+function syncSources(local, remote, fid) {
+  var dead = allLinkTombs(), out = [];
+  (remote || []).forEach(function (r) {
+    if (!r || !r.url || isLinkDead(fid, r.url, dead) || findUrl(out, r.url)) return;
+    out.push(findUrl(local, r.url) || r);
+  });
+  (local || []).forEach(function (x) { if (x && x.url && !isLinkDead(fid, x.url, dead) && !findUrl(out, x.url)) out.push(x); });
+  out = out.slice(0, MAX_SRC);
+  var same = out.length === local.length && out.every(function (x, i) { return local[i] === x; });
+  if (same) return false;
+  local.length = 0; out.forEach(function (x) { local.push(x); });
+  return true;
+}
 function mergeFiche(l, r) {
-  var ch = false;
+  var ch = false, fid = l.id;
   /* affiche choisie avec la règle anglais / langue originale : elle remplace une ancienne affiche française */
   if (r.posterV >= 2 && !(l.posterV >= 2) && r.poster && r.poster !== l.poster) { l.poster = r.poster; l.posterV = r.posterV; ch = true; }
-  ch = addMissingLinks(l.sources, r.sources) || ch;
-  ch = addMissingLinks(l.downloads, r.downloads) || ch;
+  ch = syncSources(l.sources, r.sources, fid) || ch;
+  ch = addMissingLinks(l.downloads, r.downloads, fid) || ch;
   (r.seasons || []).forEach(function (rs) {
     var ls = null; (l.seasons || []).forEach(function (x) { if (x.number === rs.number) ls = x; });
     if (!ls) { (l.seasons = l.seasons || []).push(rs); ch = true; return; }
-    ch = addMissingLinks(ls.downloads, rs.downloads) || ch;
+    ch = addMissingLinks(ls.downloads, rs.downloads, fid) || ch;
     (rs.episodes || []).forEach(function (re) {
       var le = null; (ls.episodes || []).forEach(function (x) { if (x.number === re.number) le = x; });
       if (!le) { (ls.episodes = ls.episodes || []).push(re); ch = true; return; }
-      ch = addMissingLinks(le.sources, re.sources) || ch;
-      ch = addMissingLinks(le.downloads, re.downloads) || ch;
+      ch = syncSources(le.sources, re.sources, fid) || ch;
+      ch = addMissingLinks(le.downloads, re.downloads, fid) || ch;
     });
   });
   return ch;
 }
 function mergeRemote(data) {
-  var dead = tombs(), ch = false;
+  var dead = allFicheTombs(), ch = false;
   data.forEach(function (s) {
     if (!s || !s.id || !s.name || dead.indexOf(String(s.id)) > -1) return;
     var l = byId(s.id);
@@ -2771,6 +2869,7 @@ function mergeRemote(data) {
 function loadCatalog() {
   return fetchCatalogData().then(function (data) {
     var st = null;
+    if (ADMIN) ingestRemoteTombs(data);
     if (data && !Array.isArray(data) && Array.isArray(data.series)) { st = data.settings || null; data = data.series; }
     if (!Array.isArray(data)) return;
     data = data.map(normalize);
@@ -2779,7 +2878,12 @@ function loadCatalog() {
     else if (!db.length) {
       db = data; persist();
       if (!readJSON(SETKEY, null)) { SETTINGS.downloads = priv ? "private" : "public"; saveSettings(); }
-    } else if (mergeRemote(data)) persist();
+    } else {
+      var chg = mergeRemote(data);
+      var pr = pruneList(db, curTombs());   /* retire de ma copie locale ce qui a été supprimé en ligne */
+      if (pr.changed) { db = pr.list; chg = true; }
+      if (chg) persist();
+    }
   }).catch(function () {});
 }
 
