@@ -1,8 +1,6 @@
 {
   "settings": {
-    "downloads": "public",
-    "player": "vidara",
-    "playerAt": 1792266340167
+    "downloads": "public"
   },
   "series": [
     {
@@ -83,13 +81,11 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/2TgyEgZCFGobY",
-                  "by": "head"
+                  "url": "https://vidara.to/e/2TgyEgZCFGobY"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-vzlzv64p907n.html",
-                  "by": "head"
+                  "url": "https://uqload.vc/embed-vzlzv64p907n.html"
                 },
                 {
                   "name": "VIDMOLY",
@@ -103,8 +99,7 @@
                   "name": "1FICHIER",
                   "url": "https://1fichier.com/?xg1jsq8vmidbsuw2gdif",
                   "size": "2.8 Go",
-                  "quality": "1080p (H.264)",
-                  "by": "head"
+                  "quality": "1080p (H.264)"
                 }
               ]
             },
@@ -116,13 +111,11 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/5thkvKklZ5I2D",
-                  "by": "head"
+                  "url": "https://vidara.to/e/5thkvKklZ5I2D"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-z1zyz49djtuq.html",
-                  "by": "head"
+                  "url": "https://uqload.vc/embed-z1zyz49djtuq.html"
                 },
                 {
                   "name": "VIDMOLY",
@@ -136,8 +129,7 @@
                   "name": "1FICHIER",
                   "url": "https://1fichier.com/?871905qoy820g0cncdyi",
                   "size": "2.6 Go",
-                  "quality": "1080p (H.264)",
-                  "by": "head"
+                  "quality": "1080p (H.264)"
                 }
               ]
             },
@@ -285,7 +277,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "trend": 78,
+      "trend": 69,
       "aka": [
         "100 Days of Deception",
         "百日谎言",
@@ -729,7 +721,7 @@
             {
               "number": 4,
               "name": "Épisode 4",
-              "overview": "After a new surgeon arrives at the hospital, Jang Hui-suk and Su-jeong keep a close eye on him. Meanwhile, a pharmaceutical rep suffers an emergency.",
+              "overview": "",
               "air_date": "2026-10-17",
               "sources": [
                 {
@@ -819,7 +811,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "trend": 88,
+      "trend": 89,
       "origin_country": [
         "KR"
       ],
@@ -5055,6 +5047,12 @@
                 {
                   "name": "VIDARA",
                   "url": "https://vidara.to/e/xPxAg60z4HB6c"
+                },
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-5h3wmj2gml5o.html",
+                  "quality": "VIDARA https://vidara.to/e/xPxAg60z4HB6c",
+                  "by": "614d778ed0"
                 }
               ],
               "downloads": []
@@ -5068,6 +5066,12 @@
                 {
                   "name": "VIDARA",
                   "url": "https://vidara.to/e/6zWXxQkpTQfvl"
+                },
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-cgx7qfr09iat.html",
+                  "quality": "VIDARA https://vidara.to/e/6zWXxQkpTQfvl",
+                  "by": "614d778ed0"
                 }
               ],
               "downloads": []
@@ -5081,6 +5085,12 @@
                 {
                   "name": "VIDARA",
                   "url": "https://vidara.to/e/bUjVAavNS1ExI"
+                },
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-1cttngyhge9h.html",
+                  "quality": "VIDARA https://vidara.to/e/bUjVAavNS1ExI",
+                  "by": "614d778ed0"
                 }
               ],
               "downloads": []
@@ -5122,6 +5132,12 @@
                 {
                   "name": "VIDARA",
                   "url": "https://vidara.to/e/gX8tqAUo23Fvn"
+                },
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-76vnmuq52bne.html",
+                  "quality": "VIDARA https://vidara.to/e/gX8tqAUo23Fvn",
+                  "by": "614d778ed0"
                 }
               ],
               "downloads": []
@@ -5135,6 +5151,12 @@
                 {
                   "name": "VIDARA",
                   "url": "https://vidara.to/e/917weWRH9WdQD"
+                },
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-3kpgujr241gm.html",
+                  "quality": "VIDARA https://vidara.to/e/917weWRH9WdQD",
+                  "by": "614d778ed0"
                 }
               ],
               "downloads": []
@@ -5148,6 +5170,12 @@
                 {
                   "name": "VIDARA",
                   "url": "https://vidara.to/e/u4pQPYbeo8s4s"
+                },
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-a88c5f9d1s10.html",
+                  "quality": "VIDARA https://vidara.to/e/u4pQPYbeo8s4s",
+                  "by": "614d778ed0"
                 }
               ],
               "downloads": []
@@ -5161,6 +5189,12 @@
                 {
                   "name": "VIDARA",
                   "url": "https://vidara.to/e/Qtnkr2LO3ehTd"
+                },
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-08dev3x0ypv4.html",
+                  "quality": "VIDARA https://vidara.to/e/Qtnkr2LO3ehTd",
+                  "by": "614d778ed0"
                 }
               ],
               "downloads": []
@@ -5174,6 +5208,12 @@
                 {
                   "name": "VIDARA",
                   "url": "https://vidara.to/e/BtTjifRggwwTy"
+                },
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-mleq9dd8eqy7.html",
+                  "quality": "VIDARA https://vidara.to/e/BtTjifRggwwTy",
+                  "by": "614d778ed0"
                 }
               ],
               "downloads": []
@@ -5194,8 +5234,7 @@
       ],
       "original_language": "ko",
       "posterV": 2,
-      "trend": 74,
-      "updatedAt": 1792265908721
+      "updatedAt": 1792266473969
     },
     {
       "id": "300146",
@@ -5255,9 +5294,8 @@
               "air_date": "2026-10-16",
               "sources": [
                 {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.me/v/2yld09tdh2b7",
-                  "by": "head"
+                  "name": "VIDMOLY 2",
+                  "url": "https://vidmoly.me/v/2yld09tdh2b7"
                 }
               ],
               "downloads": []
@@ -5269,9 +5307,8 @@
               "air_date": "2026-10-16",
               "sources": [
                 {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.me/v/ftm3yk26ikx5",
-                  "by": "head"
+                  "name": "VIDMOLY 2",
+                  "url": "https://vidmoly.me/v/ftm3yk26ikx5"
                 }
               ],
               "downloads": []
@@ -5283,9 +5320,8 @@
               "air_date": "2026-10-16",
               "sources": [
                 {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.me/v/x3lw9r89bioi",
-                  "by": "head"
+                  "name": "VIDMOLY 2",
+                  "url": "https://vidmoly.me/v/x3lw9r89bioi"
                 }
               ],
               "downloads": []
@@ -5297,9 +5333,8 @@
               "air_date": "2026-10-16",
               "sources": [
                 {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.me/v/6ifc1l4tf216",
-                  "by": "head"
+                  "name": "VIDMOLY 2",
+                  "url": "https://vidmoly.me/v/6ifc1l4tf216"
                 }
               ],
               "downloads": []
@@ -5523,7 +5558,6 @@
       ],
       "downloads": [],
       "posterV": 2,
-      "trend": 91,
       "updatedAt": 1792265909511
     },
     {
@@ -6655,10 +6689,10 @@
     "300146\thttps://vidmoly.org/embed-6ifc1l4tf216.html"
   ],
   "deletedFiches": [],
-  "refreshAt": 1792266347639,
   "team": {
     "id": "208336",
     "text": "",
     "at": 1792265241111
-  }
+  },
+  "refreshAt": 1792266347639
 }
