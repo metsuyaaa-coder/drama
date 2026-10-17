@@ -2838,7 +2838,7 @@ function refreshAll() {
   if (!todo.length) { toast("Aucune fiche TMDB à mettre à jour"); return; }
   if (!window.confirm("Mettre à jour " + todo.length + " fiche" + (todo.length > 1 ? "s" : "") + " depuis TMDB ?\n\nTitre, synopsis, affiche, distribution, saisons et épisodes seront remplacés par les infos TMDB.\nTes sources, liens de téléchargement et langues sont conservés.")) return;
   refreshingAll = true;
-  var total = todo.length, i = 0, ok = 0, fails = [], aborted = "";
+  var total = todo.length, i = 0, ok = 0, posters = 0, fails = [], aborted = "";
   var show = function (msg) {
     var e = $("#refreshall-status"); if (e) e.textContent = msg;
     var b = $("#refreshall"); if (b) b.disabled = refreshingAll;
@@ -2848,6 +2848,7 @@ function refreshAll() {
     persist();
     var msg = ok + " fiche" + (ok > 1 ? "s" : "") + " mise" + (ok > 1 ? "s" : "") + " à jour sur " + total + ".";
     if (manual) msg += " " + manual + " fiche" + (manual > 1 ? "s" : "") + " ajoutée" + (manual > 1 ? "s" : "") + " à la main ignorée" + (manual > 1 ? "s" : "") + ".";
+    msg += " " + posters + " affiche" + (posters > 1 ? "s" : "") + " changée" + (posters > 1 ? "s" : "") + ".";
     if (aborted) msg += " Arrêt : " + aborted + ".";
     if (fails.length) msg += " Échec : " + fails.slice(0, 5).join(", ") + (fails.length > 5 ? " et " + (fails.length - 5) + " autre(s)" : "") + ".";
     if (ok) msg += " Clique sur « Publier » pour que les visiteurs voient les changements.";
@@ -2864,7 +2865,7 @@ function refreshAll() {
     show("Mise à jour " + i + " / " + total + " : " + s.name);
     tmdbFresh(s).then(function (fr) {
       var cur = byId(id), k = db.indexOf(cur);
-      if (k > -1) { db[k] = mergeFresh(cur, fr); ok++; if (ok % 10 === 0) persist(); }
+      if (k > -1) { db[k] = mergeFresh(cur, fr); if (db[k].poster !== cur.poster) posters++; ok++; if (ok % 10 === 0) persist(); }
     }).catch(function (e) {
       if (/401/.test(e.message)) { aborted = e.message; todo.length = 0; }
       else if (/404/.test(e.message)) fails.push(s.name + " (introuvable sur TMDB)");
