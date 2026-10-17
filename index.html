@@ -578,6 +578,28 @@ footer .wrap.about { display: grid; grid-template-columns: repeat(auto-fit, minm
   header.top nav a::after { display: none; }
   header.top nav a.on { color: var(--fg); }
 }
+
+/* Sélection de l'équipe */
+.team { padding-top: 8px; padding-bottom: 40px; }
+.teambox { position: relative; overflow: hidden; border: 1px solid var(--line); min-height: 320px; display: flex; align-items: flex-end; background: #0b0b0b; }
+.teambox .bg { position: absolute; inset: 0; background-size: cover; background-position: center 20%; opacity: .8; }
+.teambox::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(0,0,0,.88) 0%, rgba(0,0,0,.45) 55%, rgba(0,0,0,.1) 100%), linear-gradient(0deg, rgba(0,0,0,.6), transparent 55%); }
+.teambox .in { position: relative; z-index: 1; padding: 36px; max-width: 680px; }
+.tbadge { display: inline-block; background: #d9232d; color: #fff; font-family: var(--mono); font-size: 12px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; padding: 6px 12px; margin-bottom: 14px; }
+.teambox h2 { font-family: var(--display); font-weight: 900; font-size: clamp(28px, 5vw, 52px); line-height: 1; margin: 0 0 14px; text-wrap: balance; }
+.tchips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+.tchips span { font-family: var(--mono); font-size: 12px; padding: 5px 9px; border: 1px solid var(--line); background: rgba(0,0,0,.5); }
+.teambox p { max-width: 58ch; color: #d4d4d4; margin: 0 0 20px; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.teambox .row { display: flex; flex-wrap: wrap; gap: 10px; }
+.teambox.empty { min-height: 0; border-style: dashed; }
+.teambox.empty::after { display: none; }
+.teambox.empty .in { max-width: none; }
+.teambox.empty p { margin-bottom: 14px; }
+.teambox.edit .in { max-width: 560px; display: grid; gap: 12px; }
+.teambox.edit select, .teambox.edit textarea { width: 100%; background: #111; color: var(--fg); border: 1px solid var(--line); padding: 10px 12px; font: inherit; }
+.teambox.edit textarea { min-height: 90px; resize: vertical; }
+.teambox.edit label { display: grid; gap: 6px; font-family: var(--mono); font-size: 12px; color: var(--dim); text-transform: uppercase; letter-spacing: .06em; }
+@media (max-width: 700px) { .teambox { min-height: 280px; } .teambox .in { padding: 22px 18px; } }
 </style>
 </head>
 <body>
@@ -1203,6 +1225,53 @@ function startHero() {
   arm();
 }
 
+/* ===== Sélection de l'équipe (modifiable par le Head admin, publiée dans catalog.json > team) ===== */
+var TEAMKEY = "noir.team", TEAM = readJSON(TEAMKEY, null), teamEditing = false;
+function teamSave() { try { localStorage.setItem(TEAMKEY, JSON.stringify(TEAM)); } catch (e) {} }
+function adoptTeam(data) {
+  if (!data || Array.isArray(data) || !("team" in data)) return;
+  var r = data.team;
+  if (!r || typeof r !== "object") return;
+  if (!ADMIN || !TEAM || (+r.at || 0) >= (+TEAM.at || 0)) { TEAM = { id: String(r.id || ""), text: String(r.text || ""), at: +r.at || 0 }; teamSave(); }
+}
+function teamBlock() {
+  var head = isHead(), s = TEAM && TEAM.id ? byId(TEAM.id) : null;
+  if (!s && !head) return "";
+  var badge = '<span class="tbadge">🔥 La sélection de l\'équipe</span>';
+  if (head && teamEditing) {
+    var opts = sortedDb().slice().sort(function (a, b) { return String(a.name).localeCompare(String(b.name)); }).map(function (x) {
+      return '<option value="' + esc(x.id) + '"' + (TEAM && String(TEAM.id) === String(x.id) ? " selected" : "") + '>' + esc(x.name) + (x.year ? " (" + esc(x.year) + ")" : "") + (isMovie(x) ? " · film" : "") + '</option>';
+    }).join("");
+    return '<section class="wrap team"><div class="teambox edit"><div class="in">' + badge +
+      '<label>Titre mis en avant<select id="team-sel">' + opts + '</select></label>' +
+      '<label>Texte (facultatif, sinon le synopsis)<textarea id="team-txt" maxlength="400">' + esc(TEAM && TEAM.text || "") + '</textarea></label>' +
+      '<div class="row"><button class="btn" type="button" data-team="save">Enregistrer</button><button class="btn ghost" type="button" data-team="cancel">Annuler</button>' + (s ? '<button class="btn danger" type="button" data-team="remove">Retirer</button>' : '') + '</div></div></div></section>';
+  }
+  if (!s) return '<section class="wrap team"><div class="teambox empty"><div class="in">' + badge + '<p>Aucun titre mis en avant pour le moment.</p><div class="row"><button class="btn" type="button" data-team="edit">Choisir un titre</button></div></div></div></section>';
+  var chips = [];
+  if (s.rating) chips.push("★ " + s.rating + "/10");
+  chips = chips.concat((s.genres || []).slice(0, 3));
+  chips.push(isMovie(s) ? (s.runtime ? s.runtime + " min" : "Film") : "Série");
+  if (s.year) chips.push(s.year);
+  return '<section class="wrap team"><div class="teambox"><div class="bg" style="background-image:url(\'' + esc(hq(s.backdrop || s.poster)) + '\')"></div><div class="in">' + badge +
+    '<h2>' + esc(s.name) + '</h2><div class="tchips">' + chips.map(function (c) { return "<span>" + esc(c) + "</span>"; }).join("") + '</div>' +
+    '<p>' + esc((TEAM && TEAM.text) || s.overview || "") + '</p>' +
+    '<div class="row"><a class="btn" href="/serie/' + esc(s.id) + '">Voir la fiche</a>' + (head ? '<button class="btn ghost" type="button" data-team="edit">Modifier la sélection</button>' : '') + '</div></div></div></section>';
+}
+document.addEventListener("click", function (e) {
+  var b = e.target.closest("[data-team]"); if (!b || !isHead()) return;
+  var a = b.dataset.team;
+  if (a === "edit") { teamEditing = true; viewHome(); return; }
+  if (a === "cancel") { teamEditing = false; viewHome(); return; }
+  if (a === "remove") { TEAM = { id: "", text: "", at: Date.now() }; teamSave(); teamEditing = false; toast("Sélection retirée. Publie le catalogue pour l'appliquer à tout le monde."); viewHome(); return; }
+  if (a === "save") {
+    var sel = $("#team-sel"), tx = $("#team-txt");
+    TEAM = { id: sel ? sel.value : "", text: tx ? tx.value.trim() : "", at: Date.now() }; teamSave(); teamEditing = false;
+    toast("Sélection enregistrée. Clique sur « Publier » pour que tout le monde la voie.");
+    viewHome();
+  }
+});
+
 function viewHome() {
   clearInterval(heroTimer); heroTimer = null;
   var app = $("#app");
@@ -1229,6 +1298,7 @@ function viewHome() {
   if (newTv.length) html += rail("Nouvelles séries", newTv);
   html += rail("Derniers ajouts", list);
   if (tv.length && mv.length) html += rail("Séries", tv, "/series") + rail("Films", mv, "/films");
+  html += teamBlock();
   var ml = listItems();
   if (ml.length) html += rail("Ma liste", ml, "/ma-liste");
   $("#app").innerHTML = html;
@@ -2561,6 +2631,7 @@ function ghPublish(obj, tried) {
     var t = finalTombs({ links: (remote && remote.deletedLinks) || [], fiches: (remote && remote.deletedFiches) || [] });
     if (obj.series) obj.series = pruneList(obj.series, t).list;
     obj.deletedLinks = t.links; obj.deletedFiches = t.fiches;
+    if (remote && remote.team && (!TEAM || (+remote.team.at || 0) > (+TEAM.at || 0))) obj.team = remote.team; else if (TEAM) obj.team = TEAM;
     var rfa = Math.max(+(remote && remote.refreshAt) || 0, +readJSON(RFKEY, 0) || 0); if (rfa) obj.refreshAt = rfa;
     return fetch(url + "?ref=" + encodeURIComponent(gi.branch), { headers: ghHeaders(), cache: "no-store" });
   }).then(function (r) {
@@ -2606,6 +2677,7 @@ $("#btn-export").addEventListener("click", function () {
   var tt = finalTombs(null);
   var obj = { settings: { downloads: SETTINGS.downloads }, series: list, deletedLinks: tt.links, deletedFiches: tt.fiches };
   var rf0 = +readJSON(RFKEY, 0) || 0; if (rf0) obj.refreshAt = rf0;
+  if (TEAM) obj.team = TEAM;
   var download = function () { saveJson(obj, "catalog.json"); };
   if (ghRepo() && ghToken()) {
     toast("Publication sur GitHub…");
@@ -2782,7 +2854,7 @@ function checkRefreshSignal(data) {
   var at = +data.refreshAt || 0; if (!at) return false;
   var seen = readJSON(RFSEEN, null);
   if (seen != null && at <= +seen) return false;
-  if (draft) return false;   /* je suis en train d'éditer une fiche : on ne perd rien, on réessaie plus tard */
+  if (draft || teamEditing) return false;   /* je suis en train d'éditer une fiche : on ne perd rien, on réessaie plus tard */
   try { localStorage.setItem(RFSEEN, JSON.stringify(at)); } catch (e) {}
   if (seen == null) return false;
   toast("Mise à jour demandée par le Head admin : rechargement…");
@@ -2895,6 +2967,7 @@ function loadCatalog() {
   return fetchCatalogData().then(function (data) {
     var st = null;
     if (ADMIN) { ingestRemoteTombs(data); checkRefreshSignal(data); }
+    adoptTeam(data);
     if (data && !Array.isArray(data) && Array.isArray(data.series)) { st = data.settings || null; data = data.series; }
     if (!Array.isArray(data)) return;
     data = data.map(normalize);
@@ -3074,13 +3147,13 @@ loadCatalog().then(function () { route(true); backfillAka(); });
 /* Admins : on regarde le catalogue publié toutes les 60 s (et quand l'onglet redevient visible) pour récupérer suppressions, sources et signal de rafraîchissement */
 var polling = false;
 function pollCatalog() {
-  if (!ADMIN || polling || document.hidden || draft || refreshingAll) return;
+  if (!ADMIN || polling || document.hidden || draft || teamEditing || refreshingAll) return;
   polling = true;
-  var before = JSON.stringify(db);
+  var before = JSON.stringify([db, TEAM]);
   loadCatalog().then(function () {
     polling = false;
     var pl = $("#player");
-    if (!draft && !(pl && pl.open) && JSON.stringify(db) !== before) route(true);
+    if (!draft && !teamEditing && !(pl && pl.open) && JSON.stringify([db, TEAM]) !== before) route(true);
   }, function () { polling = false; });
 }
 setInterval(pollCatalog, 60000);
