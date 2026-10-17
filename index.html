@@ -1230,6 +1230,8 @@ function viewRequest(pre, kind) {
   $("#app").innerHTML = '<div class="wrap"><form class="authbox" id="reqform" style="max-width:520px"><h1>Demander un titre</h1>' +
     '<p class="lead">Il manque une série ou un film ? Dis-le-moi, je l\'ajoute dès que possible. ' + REQ_MAX + ' demandes maximum par jour.</p>' +
     '<label class="f"><span>Ton pseudo</span><input type="text" name="pseudo" required maxlength="40" autocomplete="nickname"></label>' +
+    '<label class="f"><span>Ton Discord (facultatif)</span><input type="text" name="discord" maxlength="40" placeholder="ex. pseudo ou pseudo#0000" autocomplete="off"></label>' +
+    '<p class="note" style="margin:-6px 0 0">Laisse ton pseudo Discord pour que je puisse te prévenir quand ton titre est ajouté.</p>' +
     '<label class="f"><span>Nom exact de la série ou du film</span><input type="text" name="titre" required maxlength="120" value="' + esc(t) + '"></label>' +
     '<label class="f"><span>Ta demande</span><select name="type"><option value="stream"' + (kind === "stream" ? " selected" : "") + '>Streaming</option><option value="dl"' + (kind === "dl" ? " selected" : "") + '>Téléchargement</option><option value="both"' + (kind === "both" ? " selected" : "") + '>Les deux (streaming + téléchargement)</option></select></label>' +
     '<label class="f"><span>Date de sortie (ou année)</span><input type="text" name="date" required maxlength="40" placeholder="ex. 2024"></label>' +
@@ -2332,7 +2334,7 @@ document.addEventListener("submit", function (e) {
     var titre = String(fd.get("titre") || "").trim();
     fetch(REQ_URL, { method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" }, body: JSON.stringify({
       _subject: "DramaByM : demande « " + titre + " »", _captcha: "false", _template: "table",
-      "Pseudo": String(fd.get("pseudo") || "").trim(), "Titre": titre, "Demande": ({ stream: "Streaming", dl: "Téléchargement", both: "Streaming + téléchargement" })[String(fd.get("type"))] || "Streaming", "Date de sortie": String(fd.get("date") || "").trim()
+      "Pseudo": String(fd.get("pseudo") || "").trim(), "Discord": String(fd.get("discord") || "").trim() || "non renseigné", "Titre": titre, "Demande": ({ stream: "Streaming", dl: "Téléchargement", both: "Streaming + téléchargement" })[String(fd.get("type"))] || "Streaming", "Date de sortie": String(fd.get("date") || "").trim()
     }) }).then(function (r) {
       return r.json().catch(function () { return {}; }).then(function (j) { if (!r.ok || j.success === false || j.success === "false") throw new Error(String(j.message || "refusé par le service")); });
     }).then(function () {
