@@ -1259,11 +1259,12 @@ document.addEventListener("click", function (e) {
   var a = b.dataset.team;
   if (a === "edit") { teamEditing = true; viewHome(); return; }
   if (a === "cancel") { teamEditing = false; viewHome(); return; }
-  if (a === "remove") { TEAM = { id: "", text: "", at: Date.now() }; teamSave(); teamEditing = false; toast("Sélection retirée. Publie le catalogue pour l'appliquer à tout le monde."); viewHome(); return; }
+  if (a === "remove") { TEAM = { id: "", text: "", at: Date.now() }; teamSave(); teamEditing = false; toast(autoSyncOn() ? "Sélection retirée." : "Sélection retirée. Publie le catalogue pour l'appliquer à tout le monde."); markDirty(); viewHome(); return; }
   if (a === "save") {
     var sel = $("#team-sel"), tx = $("#team-txt");
     TEAM = { id: sel ? sel.value : "", text: tx ? tx.value.trim() : "", at: Date.now() }; teamSave(); teamEditing = false;
-    toast("Sélection enregistrée. Clique sur « Publier » pour que tout le monde la voie.");
+    toast(autoSyncOn() ? "Sélection enregistrée." : "Sélection enregistrée. Clique sur « Publier » pour que tout le monde la voie.");
+    markDirty();
     viewHome();
   }
 });
@@ -1642,7 +1643,7 @@ function viewPanel() {
     '<div class="row"><button class="btn" type="button" id="refreshall"' + (refreshingAll || !nt ? ' disabled' : '') + '>Tout mettre à jour depuis TMDB</button></div>' +
     '<p class="note" id="refreshall-status" style="margin:0"></p></div>' +
     '<div style="display:grid;gap:12px"><h3 class="note" style="margin:0;text-transform:uppercase;letter-spacing:.08em">Catalogue</h3>' +
-    '<div class="row"><button class="btn" type="button" data-clickid="btn-export">Publier (catalog.json)</button><button class="btn ghost" type="button" id="btn-backup">Sauvegarde complète</button><button class="btn ghost" type="button" data-clickid="btn-import">Importer</button><button class="btn ghost" type="button" id="btn-pull">Récupérer depuis GitHub</button>' + (isHead() ? '<button class="btn ghost" type="button" id="btn-forcerefresh">Rafraîchir tous les admins</button>' : '') + '</div>' +
+    '<div class="row"><button class="btn" type="button" data-clickid="btn-export">Publier (catalog.json)</button><button class="btn ghost" type="button" id="btn-backup">Sauvegarde complète</button><button class="btn ghost" type="button" data-clickid="btn-import">Importer</button><button class="btn ghost" type="button" id="btn-pull">Récupérer depuis GitHub</button>' + '<button class="btn ghost" type="button" id="btn-autosync">Synchro auto : ' + (readJSON("noir.autosync", true) !== false ? 'ON' : 'OFF') + '</button>' + (isHead() ? '<button class="btn ghost" type="button" id="btn-forcerefresh">Rafraîchir tous les admins</button>' : '') + '</div>' +
     '<p class="note" style="margin:0">' + (ghRepo() && ghToken() ? 'GitHub lié (' + esc(ghRepo()) + ') : « Publier » envoie catalog.json directement sur le dépôt.' : 'Pour publier en un clic sans re-uploader le fichier, lie ton dépôt avec « GitHub ».') + '</p></div>' +
     '<div style="display:grid;gap:12px"><h3 class="note" style="margin:0;text-transform:uppercase;letter-spacing:.08em">Accès</h3>' +
     '<div class="row"><button class="btn ghost" type="button" data-clickid="btn-key">Clé TMDB</button><button class="btn ghost" type="button" data-clickid="btn-gh">GitHub</button><a class="btn ghost" href="/motdepasse">Mot de passe</a><button class="btn danger" type="button" data-clickid="btn-quit">Quitter le mode admin</button></div></div>' +
@@ -2002,6 +2003,7 @@ function canDeleteFiche(f) { if (isHead()) return true; var me = myId(); return 
 function saveDraft() {
   if (!draft.name.trim()) { toast("Ajoute au moins un titre"); return; }
   normalize(draft);
+  draft.updatedAt = Date.now();
   draft.sources = capSrc(draft.sources);
   (draft.seasons || []).forEach(function (se) { (se.episodes || []).forEach(function (ep) { ep.sources = capSrc(ep.sources); }); });
   var i = -1;
@@ -2014,6 +2016,7 @@ function saveDraft() {
   persist();
   toast(kept ? "Fiche enregistrée. " + kept + (kept > 1 ? " liens d'autres admins ont été conservés (tu ne peux supprimer que les tiens)." : " lien d'un autre admin a été conservé (tu ne peux supprimer que les tiens).") : "Fiche enregistrée");
   var id = draft.id; draft = null;
+  markDirty();
   go("/serie/" + id);
 }
 
@@ -2300,7 +2303,7 @@ document.addEventListener("click", function (e) {
   else if (t.dataset.del != null) {
     var fx = byId(t.dataset.del);
     if (fx && !canDeleteFiche(fx)) { toast("Cette fiche contient des liens d'autres admins : seul le Head admin peut la supprimer."); return; }
-    if (t.dataset.armed) { tombAdd(t.dataset.del); db = db.filter(function (x) { return String(x.id) !== t.dataset.del; }); persist(); toast("Fiche supprimée"); go("/"); }
+    if (t.dataset.armed) { tombAdd(t.dataset.del); db = db.filter(function (x) { return String(x.id) !== t.dataset.del; }); persist(); markDirty(); toast("Fiche supprimée"); go("/"); }
     else { t.dataset.armed = "1"; t.textContent = "Confirmer ?"; setTimeout(function () { if (t.isConnected) { delete t.dataset.armed; t.textContent = "Supprimer"; } }, 3000); }
   }
   else if (t.dataset.list != null) {
@@ -2625,7 +2628,16 @@ function ghPublish(obj, tried) {
     return r.json();
   }).then(function (remote) {
     var t = finalTombs({ links: (remote && remote.deletedLinks) || [], fiches: (remote && remote.deletedFiches) || [] });
-    if (obj.series) obj.series = pruneList(obj.series, t).list;
+    if (obj.series) {
+      /* le fichier envoyé = ma copie + tout ce que l'autre admin a publié entre-temps (fiches, saisons, épisodes, liens) */
+      var rs = Array.isArray(remote) ? remote : (remote && remote.series) || [];
+      rs.forEach(function (r) {
+        if (!r || !r.id || t.fiches.indexOf(String(r.id)) > -1) return;
+        var l = null; obj.series.forEach(function (x) { if (String(x.id) === String(r.id)) l = x; });
+        if (!l) obj.series.push(JSON.parse(JSON.stringify(r))); else mergeFiche(l, r);
+      });
+      obj.series = pruneList(obj.series, t).list;
+    }
     obj.deletedLinks = t.links; obj.deletedFiches = t.fiches;
     if (remote && remote.team && (!TEAM || (+remote.team.at || 0) > (+TEAM.at || 0))) obj.team = remote.team; else if (TEAM) obj.team = TEAM;
     var rfa = Math.max(+(remote && remote.refreshAt) || 0, +readJSON(RFKEY, 0) || 0); if (rfa) obj.refreshAt = rfa;
@@ -2639,7 +2651,7 @@ function ghPublish(obj, tried) {
     if (cur && cur.sha) body.sha = cur.sha;
     return fetch(url, { method: "PUT", headers: ghHeaders({ "Content-Type": "application/json" }), body: JSON.stringify(body) });
   }).then(function (r) {
-    if (!r.ok) { var e = ghErr(r); if ((r.status === 409 || r.status === 422) && !tried) return ghPublish(obj, true); throw e; }
+    if (!r.ok) { var e = ghErr(r); if ((r.status === 409 || r.status === 422) && (tried || 0) < 3) return ghPublish(obj, (tried || 0) + 1); throw e; }
     return r.json();
   });
 }
@@ -2666,7 +2678,7 @@ $("#btn-gh").addEventListener("click", function () {
   toast(ghToken() ? "GitHub lié : « Publier » envoie directement catalog.json" : "Dépôt enregistré, il manque le jeton");
   if (curPath() === "/panel") viewPanel();
 });
-$("#btn-export").addEventListener("click", function () {
+function buildCatalogObj() {
   var priv = SETTINGS.downloads === "private";
   var list = JSON.parse(JSON.stringify(db));
   if (priv) stripDl(list);
@@ -2674,13 +2686,34 @@ $("#btn-export").addEventListener("click", function () {
   var obj = { settings: { downloads: SETTINGS.downloads }, series: list, deletedLinks: tt.links, deletedFiches: tt.fiches };
   var rf0 = +readJSON(RFKEY, 0) || 0; if (rf0) obj.refreshAt = rf0;
   if (TEAM) obj.team = TEAM;
+  return obj;
+}
+function afterPublish(obj) {
+  rtombSave({ links: obj.deletedLinks || [], fiches: obj.deletedFiches || [] });
+  tombSave([]); linkTombSave([]); reviveClear();
+  var pp = pruneList(db, curTombs()); if (pp.changed) { db = pp.list; persist(); }
+}
+/* Synchro automatique : chaque enregistrement est envoyé sur GitHub (après fusion avec ce que l'autre admin a publié), et chaque admin relit le catalogue toutes les 30 s */
+function autoSyncOn() { return ADMIN && readJSON("noir.autosync", true) !== false && !!ghRepo() && !!ghToken(); }
+var syncTimer = null, syncBusy = false, syncAgain = false;
+function markDirty() { if (!autoSyncOn()) return; clearTimeout(syncTimer); syncTimer = setTimeout(runAutoSync, 2500); }
+function runAutoSync() {
+  if (syncBusy) { syncAgain = true; return; }
+  syncBusy = true;
+  var obj = buildCatalogObj();
+  ghPublish(obj).then(function () {
+    afterPublish(obj); syncBusy = false; toast("Synchronisé ✓");
+    if (syncAgain) { syncAgain = false; markDirty(); } else setTimeout(pollCatalog, 800);
+  }).catch(function (e) { syncBusy = false; toast("Synchro impossible (" + (e && e.message ? e.message : "GitHub") + ") : clique sur « Publier »"); });
+}
+$("#btn-export").addEventListener("click", function () {
+  var priv = SETTINGS.downloads === "private";
+  var obj = buildCatalogObj();
   var download = function () { saveJson(obj, "catalog.json"); };
   if (ghRepo() && ghToken()) {
     toast("Publication sur GitHub…");
     ghPublish(obj).then(function () {
-      rtombSave({ links: obj.deletedLinks || [], fiches: obj.deletedFiches || [] });
-      tombSave([]); linkTombSave([]); reviveClear();
-      var pp = pruneList(db, curTombs()); if (pp.changed) { db = pp.list; persist(); }
+      afterPublish(obj);
       toast("Publié sur GitHub ✓" + (priv ? " (liens de téléchargement retirés)" : "") + (CONFIG.GITHUB_REPO ? " Les visiteurs le voient dans quelques secondes." : " Visible après le redéploiement de GitHub Pages (environ 1 minute)."));
     }).catch(function (e) { download(); toast((e && e.message ? e.message : "Échec GitHub") + " : catalog.json téléchargé à la place"); });
     return;
@@ -2702,6 +2735,13 @@ document.addEventListener("click", function (e) {
   var c = e.target.closest("[data-clickid]");
   if (c) { var el = document.getElementById(c.dataset.clickid); if (el) el.click(); return; }
   if (e.target.id === "btn-pull") { ghPull(); return; }
+  if (e.target.id === "btn-autosync") {
+    var on = readJSON("noir.autosync", true) !== false;
+    try { localStorage.setItem("noir.autosync", JSON.stringify(!on)); } catch (er) {}
+    toast(!on ? (ghRepo() && ghToken() ? "Synchro auto activée : tes enregistrements sont publiés tout seuls" : "Synchro auto activée, mais lie d'abord GitHub") : "Synchro auto coupée : il faut cliquer sur « Publier »");
+    if (curPath() === "/panel") viewPanel();
+    return;
+  }
   if (e.target.id === "btn-forcerefresh") {
     if (!isHead()) return;
     if (!(ghRepo() && ghToken())) { toast("Lie d'abord GitHub : le signal passe par catalog.json"); return; }
@@ -2732,7 +2772,7 @@ function importCatalogData(data, label) {
   if (!Array.isArray(data)) throw 0;
   data.forEach(function (s) { if (!s || !s.id || !s.name) return; normalize(s); var i = -1; db.forEach(function (x, k) { if (String(x.id) === String(s.id)) i = k; }); if (i > -1) { keepDl(s, db[i]); mergeOwn(db[i], s, true); db[i] = s; } else { mergeOwn(null, s, true); db.push(s); tombDrop(s.id); } });
   var pi = pruneList(db, curTombs()); db = pi.list;
-  persist(); toast(label || "Catalogue importé"); route(true);
+  persist(); markDirty(); toast(label || "Catalogue importé"); route(true);
 }
 $("#btn-import").addEventListener("click", function () { $("#file").click(); });
 $("#file").addEventListener("change", function () {
@@ -2793,9 +2833,10 @@ function fetchCatalogData() {
       return r.json();
     });
   };
-  var gi = ghParse(CONFIG.GITHUB_REPO);
+  var gi = ghParse(CONFIG.GITHUB_REPO || (ADMIN ? ghRepo() : ""));
   if (!gi) return local();
-  return fetch(ghUrl(gi) + "?ref=" + encodeURIComponent(gi.branch), { headers: { Accept: "application/vnd.github.raw+json" }, cache: "no-store" })
+  var hd = ADMIN && ghToken() ? ghHeaders({ Accept: "application/vnd.github.raw+json" }) : { Accept: "application/vnd.github.raw+json" };
+  return fetch(ghUrl(gi) + "?ref=" + encodeURIComponent(gi.branch), { headers: hd, cache: "no-store" })
     .then(function (r) { if (!r.ok) throw new Error("github"); return r.json(); })
     .catch(local);
 }
@@ -2933,6 +2974,10 @@ function syncSources(local, remote, fid) {
 }
 function mergeFiche(l, r) {
   var ch = false, fid = l.id;
+  if ((+r.updatedAt || 0) > (+l.updatedAt || 0)) {   /* fiche modifiée plus récemment par l'autre admin : on prend ses infos (les liens se fusionnent plus bas) */
+    Object.keys(r).forEach(function (k) { if (k === "sources" || k === "downloads" || k === "seasons" || k === "trend") return; l[k] = r[k]; });
+    ch = true;
+  }
   /* affiche choisie avec la règle anglais / langue originale : elle remplace une ancienne affiche française */
   if (r.posterV >= 2 && !(l.posterV >= 2) && r.poster && r.poster !== l.poster) { l.poster = r.poster; l.posterV = r.posterV; ch = true; }
   ch = syncSources(l.sources, r.sources, fid) || ch;
@@ -3063,6 +3108,7 @@ function mergeFresh(old, fr) {
   var out = Object.assign({}, old);
   Object.keys(fr.fields).forEach(function (k) { if (filled(fr.fields[k])) out[k] = fr.fields[k]; });
   if (fr.seasons) out.seasons = mergeSeasons(old.seasons || [], fr.seasons);
+  out.updatedAt = Date.now();
   return normalize(out);
 }
 
@@ -3081,7 +3127,7 @@ function refreshAll() {
   };
   var finish = function () {
     refreshingAll = false;
-    persist();
+    persist(); markDirty();
     var msg = ok + " fiche" + (ok > 1 ? "s" : "") + " mise" + (ok > 1 ? "s" : "") + " à jour sur " + total + ".";
     if (manual) msg += " " + manual + " fiche" + (manual > 1 ? "s" : "") + " ajoutée" + (manual > 1 ? "s" : "") + " à la main ignorée" + (manual > 1 ? "s" : "") + ".";
     msg += " " + posters + " affiche" + (posters > 1 ? "s" : "") + " changée" + (posters > 1 ? "s" : "") + ".";
@@ -3152,7 +3198,7 @@ function pollCatalog() {
     if (!draft && !teamEditing && !(pl && pl.open) && JSON.stringify([db, TEAM]) !== before) route(true);
   }, function () { polling = false; });
 }
-setInterval(pollCatalog, 60000);
+setInterval(pollCatalog, 30000);
 document.addEventListener("visibilitychange", function () { if (!document.hidden) pollCatalog(); });
 try { if (!localStorage.getItem(WELKEY)) setTimeout(openWelcome, 700); } catch (e) {}
 </script>
