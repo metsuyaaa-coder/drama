@@ -4697,7 +4697,7 @@
       "rating": "8.2",
       "pop": 18.1467,
       "status": "Returning Series",
-      "poster": "https://image.tmdb.org/t/p/w500/2yEXTvaCPUe9In5MZJBLFwiq0NL.jpg",
+      "poster": "https://image.tmdb.org/t/p/original/2yi3gOIQt22NjJam1u5jqBa3GQ1.jpg",
       "backdrop": "https://image.tmdb.org/t/p/original/fRR6jHutlHuYxMeZp4cZfjgafzd.jpg",
       "cast": [
         {
@@ -4949,7 +4949,7 @@
       ],
       "original_language": "ko",
       "posterV": 2,
-      "updatedAt": 1792265907913
+      "updatedAt": 1792267466303
     },
     {
       "id": "289423",
