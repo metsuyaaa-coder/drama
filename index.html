@@ -987,7 +987,7 @@ function removeResume(id) {
 }
 function resumeWatch(id) {
   var s = byId(id), r = readResume()[id]; if (!s || !r) return;
-  if (isMovie(s)) { saveResume(s.id); play(s.sources, s.name, 0, "", null, s.downloads); } else playEp(s, r.si, r.n);
+  if (isMovie(s)) { saveResume(s.id); play(s.sources, s.name, defaultSrc(s.sources), "", null, s.downloads); } else playEp(s, r.si, r.n);
 }
 /* ===== Épisodes vus, nouveautés, ma liste (tout reste dans le navigateur) ===== */
 var SEENKEY = "noir.seen", LISTKEY = "noir.list", NEWDAYS = 7, NEWSERIESDAYS = 15;
@@ -1929,6 +1929,15 @@ function saveDraft() {
 /* ===== Lecteur ===== */
 var cur = { sources: [], i: 0, title: "" };
 
+/* Lecteur par défaut : la source « Playmate » si la fiche en a une, sinon la première */
+var PREFERRED = "playmate";
+function defaultSrc(sources) {
+  for (var i = 0; i < (sources || []).length; i++) {
+    var x = sources[i] || {};
+    if (String(x.name || "").toLowerCase().indexOf(PREFERRED) > -1 || String(x.url || "").toLowerCase().indexOf(PREFERRED) > -1) return i;
+  }
+  return 0;
+}
 function play(sources, title, idx, sub, nav, dls) {
   if (!sources || !sources.length) { toast("Aucune source sur cette fiche"); return; }
   cur = { sources: sources, i: idx || 0, title: title, sub: sub || "", nav: nav || null, dl: dls || [] };
@@ -1971,7 +1980,7 @@ function playEp(s, si, num) {
   if (k < 0) { toast("Cet épisode n'a pas de source"); return; }
   var c = flat[k], se = s.seasons[si], p = flat[k - 1], n = flat[k + 1];
   saveResume(s.id, si, c.ep.number);
-  play(c.ep.sources, s.name, 0, "Saison " + se.number + " · Épisode " + c.ep.number + (c.ep.name ? " : " + c.ep.name : ""), {
+  play(c.ep.sources, s.name, defaultSrc(c.ep.sources), "Saison " + se.number + " · Épisode " + c.ep.number + (c.ep.name ? " : " + c.ep.name : ""), {
     prev: p ? function () { playEp(s, p.si, p.ep.number); } : null,
     next: n ? function () { playEp(s, n.si, n.ep.number); } : null,
     eps: { s: s, si: si, num: c.ep.number }
@@ -2176,7 +2185,7 @@ document.addEventListener("click", function (e) {
   if (t.dataset.resume != null) { e.preventDefault(); resumeWatch(t.dataset.resume); }
   else if (t.dataset.watch != null) {
     var w = byId(t.dataset.watch); if (!w) return;
-    if (isMovie(w)) { saveResume(w.id); play(w.sources, w.name, 0, "", null, w.downloads); }
+    if (isMovie(w)) { saveResume(w.id); play(w.sources, w.name, defaultSrc(w.sources), "", null, w.downloads); }
     else if (!(w.seasons || []).length) toast("Cette fiche n'a pas encore d'épisodes");
     else if (curPath() === "/serie/" + w.id) {
       dlMode = false;
