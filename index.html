@@ -358,6 +358,8 @@ dialog#player:not(.wide) .pframe { margin-left: env(safe-area-inset-left, 0px); 
 .tbtn:hover { color: var(--fg); border-color: var(--dim); }
 .pbar .pl { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; min-width: 0; }
 .pbar .srcs { flex: 0 1 auto; }
+.pbar .pone { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; min-width: 0; font-size: 13px; color: var(--dim); }
+.pbar .pone a { color: var(--fg); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
 .pbar .pn { display: flex; gap: 8px; margin-left: auto; }
 .pbar .btn:disabled { opacity: .3; pointer-events: none; }
 dialog#player.wide .pbar { display: none; }
@@ -619,6 +621,8 @@ footer .wrap.about { display: grid; grid-template-columns: repeat(auto-fit, minm
   <div class="pbar" id="pbar">
     <div class="ptip" id="ptip"><button type="button" class="tbtn" id="tprev" aria-label="Conseil précédent">‹</button><p id="ttext" aria-live="polite"></p><button type="button" class="tbtn" id="tnext" aria-label="Conseil suivant">›</button><span id="tcount"></span></div>
     <div class="pl" id="pl"><span class="chiplbl">Serveur</span><span class="srcs" id="psrc"></span></div>
+    <div class="pone" id="pone" style="display:none"><span>Besoin d'une autre source ou celle-ci bug ?</span><a href="#/demande" id="pdemande">/demande</a></div>
+    <div class="pone" id="pone2" style="display:none"><span>Besoin d'un lien de téléchargement ?</span><a href="#/demande" id="pdemande2">/demande</a></div>
     <div class="pn" id="pnav"><button class="btn small ghost" id="pprev" type="button">Épisode précédent</button><button class="btn small ghost" id="peplist" type="button" aria-label="Liste des épisodes" title="Épisodes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="9" width="14" height="11" rx="1.5"/><path d="M7 5.5h12.5A1.5 1.5 0 0 1 21 7v9"/><path d="M11 2.5h8.5A1.5 1.5 0 0 1 21 4"/></svg><span>Épisodes</span></button><button class="btn small" id="pnext" type="button">Épisode suivant</button></div>
   </div>
   <div class="peps" id="peps" hidden role="dialog" aria-label="Liste des épisodes">
@@ -1636,6 +1640,8 @@ function renderPlayer() {
   showTip(tipIdx);
   clearInterval(tipTimer); tipTimer = setInterval(function () { showTip(tipIdx + 1); }, 9000);
   $("#pl").style.display = cur.sources.length > 1 ? "flex" : "none";
+  $("#pone").style.display = cur.sources.length <= 1 ? "flex" : "none";
+  $("#pone2").style.display = (dlOpen() && !(cur.dl || []).length) ? "flex" : "none";
   $("#pnav").style.display = cur.nav ? "flex" : "none";
   $("#peplist").style.display = (cur.nav && cur.nav.eps) ? "" : "none";
   $("#peps").hidden = true;
@@ -2153,6 +2159,8 @@ $("#burger").addEventListener("click", function () {
   this.setAttribute("aria-expanded", o ? "true" : "false");
 });
 $("#pclose").addEventListener("click", closePlayer);
+$("#pdemande").addEventListener("click", function () { closePlayer(); });
+$("#pdemande2").addEventListener("click", function () { closePlayer(); });
 $("#pprev").addEventListener("click", function () { if (cur.nav && cur.nav.prev) cur.nav.prev(); });
 $("#pnext").addEventListener("click", function () { if (cur.nav && cur.nav.next) { markCurSeen(); cur.nav.next(); } });
 $("#pfull").addEventListener("click", toggleFull);

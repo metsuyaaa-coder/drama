@@ -242,7 +242,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "trend": 80,
+      "trend": 69,
       "aka": [
         "100 Days of Deception",
         "百日谎言",
@@ -270,7 +270,7 @@
         "100일의 거짓말"
       ],
       "downloads": [],
-      "pop": 55.1294
+      "pop": 49.9822
     },
     {
       "id": "275102",
@@ -482,7 +482,7 @@
         "스캔들"
       ],
       "downloads": [],
-      "pop": 101.5735
+      "pop": 82.1886
     },
     {
       "id": "293610",
@@ -510,6 +510,7 @@
         "Bác sĩ X: Mafia Áo Trắng",
         "Ｘ医生",
         "ドクターX 〜白衣のマコィア〜",
+        "DakteoX hayan mapiaui sidae",
         "닥터Ｘ",
         "Доктор Икс",
         "닥터X: 하얀 마피아의 시대"
@@ -521,8 +522,8 @@
         "Drame",
         "Crime"
       ],
-      "rating": "9.0",
-      "pop": 96.5343,
+      "rating": "9.1",
+      "pop": 85.639,
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/w500/xYFTiwC7Tl0xOUFiVFUPWXHTHnr.jpg",
       "backdrop": "https://image.tmdb.org/t/p/original/mDYIV71RL3mkaW8IfSGNthuVB7l.jpg",
@@ -975,7 +976,7 @@
         "21세기 대군부인"
       ],
       "downloads": [],
-      "pop": 86.7822
+      "pop": 89.3532
     },
     {
       "id": "m1058424",
@@ -990,7 +991,7 @@
         "Action"
       ],
       "rating": "6.9",
-      "pop": 214.21,
+      "pop": 240.126,
       "status": "Released",
       "runtime": 160,
       "poster": "https://image.tmdb.org/t/p/w500/tGdFDoA9qyt0t6Qr9MFnOl8Z2Jz.jpg",
@@ -1093,7 +1094,7 @@
         "Hopeu",
         "호프"
       ],
-      "trend": 96,
+      "trend": 100,
       "downloads": [
         {
           "name": "1FICHIER",
@@ -1114,7 +1115,7 @@
         "Drame"
       ],
       "rating": "9.2",
-      "pop": 24.0746,
+      "pop": 21.9789,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/nzghhjtKVX1n7DIMhTuQrHqeXdQ.jpg",
       "backdrop": "https://image.tmdb.org/t/p/original/fYL4I6cezb06BHhQlrNjNhy7jhf.jpg",
@@ -1421,7 +1422,7 @@
         "Science-Fiction & Fantastique"
       ],
       "rating": "8.0",
-      "pop": 15.6473,
+      "pop": 15.0098,
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/w500/21pLXbvuyfgUaAhhxkuvoX1pAN1.jpg",
       "backdrop": "https://image.tmdb.org/t/p/original/fTlvgaOpBboy8O2q9d54hPSoBog.jpg",
@@ -1661,7 +1662,7 @@
         "Comédie"
       ],
       "rating": "6.3",
-      "pop": 40.2748,
+      "pop": 38.7696,
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/w500/lu3tuzFl4c6rx1WcoLOGZlkTjaw.jpg",
       "backdrop": "https://image.tmdb.org/t/p/original/moUjiEzpJVNZc7hyNRBbLPt0CPX.jpg",
@@ -2021,7 +2022,7 @@
         "Mystère"
       ],
       "rating": "8.1",
-      "pop": 16.5773,
+      "pop": 15.572,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/7J2jPfh45mOyXTiycPpfoiYQAfv.jpg",
       "backdrop": "https://image.tmdb.org/t/p/original/3bHz9dYSZ5XDxY0zDaBpYgUOhE2.jpg",
@@ -2235,7 +2236,7 @@
         "Drame"
       ],
       "rating": "8.2",
-      "pop": 11.616,
+      "pop": 11.1096,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/b5jBoSQ7CW1zDJURuctD30mATuO.jpg",
       "backdrop": "https://image.tmdb.org/t/p/original/eBD46F44qKGPZiRLffO4q3JF8Hc.jpg",
@@ -2596,7 +2597,7 @@
         "Drame"
       ],
       "rating": "8.8",
-      "pop": 18.1381,
+      "pop": 17.2039,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/fD1WFaH8Bo4g6SqAOwCQg3Ry6zv.jpg",
       "backdrop": "https://image.tmdb.org/t/p/original/efaMS00Fevc3fw2dbeP7rh22O6D.jpg",
@@ -3095,6 +3096,939 @@
       "addedAt": 1792185621329,
       "langs": [
         "VOSTFR"
+      ],
+      "downloads": []
+    },
+    {
+      "id": "218539",
+      "type": "tv",
+      "name": "Mon démon",
+      "original_name": "마이데몬",
+      "aka": [
+        "My Demon",
+        "与恶魔有约",
+        "MY DEMON ကိုယ့်ရဲ့ နတ်ဆိုးလေး - 2023",
+        "Мой демон",
+        "ปีศาจของฉัน",
+        "Romans z demonem",
+        "Chàng quỷ của tôi",
+        "Mi Adorable Demonio",
+        "與惡魔有約",
+        "Okouzlující démon",
+        "Meu Demônio Favorito",
+        "Moj voljeni demon",
+        "O Meu Demónio",
+        "Mon démon",
+        "Az elragadó démon",
+        "Γλυκέ μου Δαίμονα",
+        "Мій коханий демон",
+        "صفقتي مع الشيطان",
+        "השד הפרטי שלי",
+        "マイ・デーモン",
+        "Demonul șarmant",
+        "Менің әзәзілім",
+        "شیطان من",
+        "我的恶魔",
+        "Maidemon",
+        "마이 데몬",
+        "마이데몬",
+        "ကိုယ့်ရဲ့ နတ်ဆိုးလေး",
+        "我的惡魔",
+        "Mening iblisim"
+      ],
+      "year": "2023",
+      "overview": "Un démon sans pitié perd ses pouvoirs après s'être lié avec une héritière hautaine qui semble détenir la clé de son malheur... mais aussi celle de son cœur.",
+      "genres": [
+        "Drame",
+        "Comédie"
+      ],
+      "rating": "8.5",
+      "pop": 17.1417,
+      "status": "Ended",
+      "poster": "https://image.tmdb.org/t/p/w500/1NH1CiANp543WqFb0ColZiqRmhb.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/original/eSB0fD6CbNW3LT8Z55V07fmYFpo.jpg",
+      "cast": [
+        {
+          "name": "Kim You-jung",
+          "character": "Do Do-hee"
+        },
+        {
+          "name": "Song Kang",
+          "character": "Jeong Gu-won"
+        },
+        {
+          "name": "Lee Sang-yi",
+          "character": "Ju Seok-hoon"
+        },
+        {
+          "name": "Kim Hae-sook",
+          "character": "Ju Cheon-suk"
+        },
+        {
+          "name": "Jo Hye-joo",
+          "character": "Jin Ga-young"
+        },
+        {
+          "name": "Kim Tae-hun",
+          "character": "Noh Suk-min"
+        },
+        {
+          "name": "Jo Yeon-hee",
+          "character": "Kim Se-ra"
+        },
+        {
+          "name": "Lee Yoon-ji",
+          "character": "Noh Su-ahn"
+        },
+        {
+          "name": "Seo Jeong-yeon",
+          "character": "Shin Da-jeong"
+        },
+        {
+          "name": "Heo Jeong-do",
+          "character": "Park Bok-gyu"
+        },
+        {
+          "name": "Park Jin-woo",
+          "character": "Han Min-su"
+        },
+        {
+          "name": "Cha Chung-hwa",
+          "character": "Noh Suk-nyeo"
+        }
+      ],
+      "seasons": [
+        {
+          "number": 1,
+          "name": "Saison 1",
+          "episodes": [
+            {
+              "number": 1,
+              "name": "Épisode 1 : Une vie dans le brouillard",
+              "overview": "Un rendez-vous fortuit avec Jeong Gu-won perturbe Do Do-Hee. Plus tard, elle est victime d'une attaque et doit conclure un contrat pour être sauvée.",
+              "air_date": "2023-11-24",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/3ckAUwiYBrbHa"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/DzpNFHDEdU6Yk"
+                },
+                {
+                  "name": "UQLOAD",
+                  "url": "https://uqload.vc/embed-lscqan26fm94.html"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 2,
+              "name": "Épisode 2 : Il y a un démon dans le cœur de chacun",
+              "overview": "Gu-won a mystérieusement perdu ses pouvoirs et découvre que Do-hee est peut-être la clé qui lui permettra de les retrouver. Mais sa tentative se retourne contre lui.",
+              "air_date": "2023-11-25",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/Sul4fj11IC7WI"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/QyIS29wsYtruo"
+                },
+                {
+                  "name": "UQLOAD",
+                  "url": "https://uqload.vc/embed-c2cbw84muvsm.html"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 3,
+              "name": "Épisode 3 : Un pacte avec un démon",
+              "overview": "Après une nouvelle agression, Do-hee demande à Gu-won de la protéger, même si ce dernier lui a avoué être un démon. La jeune femme s'interroge sur le décès d'un proche.",
+              "air_date": "2023-12-01",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/MkgI3BoVO3lSl"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/0idmlTazj71pU"
+                },
+                {
+                  "name": "UQLOAD",
+                  "url": "https://uqload.vc/embed-pkf6vgeb5ph5.html"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 4,
+              "name": "Épisode 4 : Délicieux mais dangereux",
+              "overview": "Gu-won refuse la demande en mariage de Do-hee. Lorsque celle-ci lui demande plus tard d'enquêter sur la mort de Ju Cheon-suk, il est incapable d'utiliser ses pouvoirs.",
+              "air_date": "2023-12-02",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/vkZlITQNdZUr3"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/7KxAmQmKCTiMo"
+                },
+                {
+                  "name": "UQLOAD",
+                  "url": "https://uqload.vc/embed-m4ancdtfunwa.html"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 5,
+              "name": "Épisode 5 : Il n'y a que toi",
+              "overview": "Après un sauvetage théâtral, Gu-won et Do-hee développent des sentiments complexes l'un pour l'autre. Do-hee cherche un homme à épouser, ce qui irrite Gu-won.",
+              "air_date": "2023-12-08",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/cKtn78LBYbn7s"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/W6SuIlzZd26YN"
+                },
+                {
+                  "name": "UQLOAD",
+                  "url": "https://uqload.vc/embed-0pw6jyj5cd58.html"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 6,
+              "name": "Épisode 6 : La roue de la fortune",
+              "overview": "Après avoir été sauvée par Gu-won, Do-hee reçoit deux demandes en mariage. Elle choisit son futur mari et remarque un visage inquiétant le jour de ses noces.",
+              "air_date": "2023-12-09",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/Ec4uBR6ZpX9q4"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/lVhUa5bexcbqm"
+                },
+                {
+                  "name": "UQLOAD",
+                  "url": "https://uqload.vc/embed-yygetij29orb.html"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 7,
+              "name": "Épisode 7 : Des relations entachées",
+              "overview": "La cohabitation de Do-hee et Gu-won engendre quelques grincements de dents. Ju Seok-hoon commence à se douter que Gu-won n'est pas un vrai humain.",
+              "air_date": "2023-12-15",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/VMLOKzlZ2Xzss"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/4yTqKwsRpy9Ja"
+                },
+                {
+                  "name": "UQLOAD",
+                  "url": "https://uqload.vc/embed-auflb91of91p.html"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 8,
+              "name": "Épisode 8 : Un choix fatidique",
+              "overview": "Quand Gu-won est attaqué, Do-hee se précipite pour lui sauver la vie. Et alors que tout autour d'elle devient plus dangereux, elle fait un choix de carrière inattendu.",
+              "air_date": "2023-12-16",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/P5dpdMemhu5tU"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/oS4WcLaAnedTR"
+                },
+                {
+                  "name": "UQLOAD",
+                  "url": "https://uqload.vc/embed-0cuf002gogbg.html"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 9,
+              "name": "Épisode 9 : La vérité nue",
+              "overview": "Alors qu'il finit par concrétiser sa relation avec Do-hee, Gu-won se rend compte que ses pouvoirs commencent à changer. Et une ombre encore plus menaçante plane...",
+              "air_date": "2023-12-22",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/AIflJTBqF2iPe"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/GRvuj8j1e83LA"
+                },
+                {
+                  "name": "UQLOAD",
+                  "url": "https://uqload.vc/embed-zhnz9hahzgox.html"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 10,
+              "name": "Épisode 10 : Briser la coquille",
+              "overview": "Dès qu'il découvre son cruel destin, Gu-won cherche un autre moyen de sauver sa vie. Mais alors qu'il prépare un rituel essentiel avec Do-hee, elle est prise pour cible.",
+              "air_date": "2023-12-23",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/NAtR5XfA38ehU"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/DdBks1N7f2gnR"
+                },
+                {
+                  "name": "UQLOAD",
+                  "url": "https://uqload.vc/embed-4hjn17sbvphz.html"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 11,
+              "name": "Épisode 11 : Un paradis de mauvais augure",
+              "overview": "Après avoir sauvé Do-hee d'une mort certaine, Gu-won retrouve ses pouvoirs... mais ressent des effets secondaires. Pressés par le temps, nos héros enquêtent sur l'attaque.",
+              "air_date": "2024-01-05",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/c0XAuvm4UKf04"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/LBGzH1oFH4XBF"
+                },
+                {
+                  "name": "UQLOAD",
+                  "url": "https://uqload.vc/embed-mr53lzb2wv4b.html"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 12,
+              "name": "Épisode 12 : Le sauveur de la destruction",
+              "overview": "En rêvant de l'une de ses vies antérieures, Gu-won comprend son lien tragique avec Do-hee. L'annonce d'un décès renforce les soupçons du duo à l'égard de la famille Noh.",
+              "air_date": "2024-01-06",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/DBbcjHppiKDuE"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/Ii2ppYuOIB793"
+                },
+                {
+                  "name": "UQLOAD",
+                  "url": "https://uqload.vc/embed-o4pui445d4uc.html"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 13,
+              "name": "Épisode 13 : Le passé, le péché originel",
+              "overview": "Gu-won et Do-hee sont heureux, mais le jeune homme comprend que sa femme a été traumatisée. Le couple rejoint Noh Suk-min pour dîner, ignorant ses véritables intentions.",
+              "air_date": "2024-01-12",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/1xFDJKdNyFDpa"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/UkxvALmQLwkTn"
+                },
+                {
+                  "name": "UQLOAD",
+                  "url": "https://uqload.vc/embed-gj7zckfuar0v.html"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 14,
+              "name": "Épisode 14 : Notre enfer à nous",
+              "overview": "Gu-won vole au secours de Do-hee après une terrifiante confrontation avec Suk-min. Mais une révélation de Suk-min sur Cheon-suk plonge Do-hee dans une profonde confusion.",
+              "air_date": "2024-01-13",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/eOxbmLHM6C2Et"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/C5FpfMq106f8L"
+                },
+                {
+                  "name": "UQLOAD",
+                  "url": "https://uqload.vc/embed-u2wxcww2xe5d.html"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 15,
+              "name": "Épisode 15 : La fin du sort",
+              "overview": "Le corps de Suk-min reste introuvable, ce qui fait planer un doute inquiétant. Do-hee essaie d'étouffer ses sentiments après que Gu-won a disparu sans laisser de traces.",
+              "air_date": "2024-01-19",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/mARdT1RU3MwtK"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/MP1rXzizDwv93"
+                },
+                {
+                  "name": "UQLOAD",
+                  "url": "https://uqload.vc/embed-m2pti86gtlat.html"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 16,
+              "name": "Épisode 16 : Notre paradis à nous",
+              "overview": "Do-hee perd la tête après avoir perdu Gu-won. Prête à tout pour que son amour revienne à la vie, elle fait un vœu de Noël, que Noh Suk-nyeo entend.",
+              "air_date": "2024-01-20",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/BWkUZv0xvjMJt"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/sDXaYgFynngeq"
+                },
+                {
+                  "name": "UQLOAD",
+                  "url": "https://uqload.vc/embed-7ow5p688iih3.html"
+                }
+              ],
+              "downloads": []
+            }
+          ],
+          "downloads": []
+        }
+      ],
+      "sources": [],
+      "addedAt": 1792232610998,
+      "langs": [
+        "VOSTFR"
+      ],
+      "downloads": []
+    },
+    {
+      "id": "276161",
+      "type": "tv",
+      "name": "Que ça vous serve de leçon !",
+      "original_name": "Teach You a Lesson",
+      "aka": [
+        "Teach You a Lesson",
+        "鐵拳教育",
+        "铁拳教育",
+        "Aprendendo a Lição",
+        "อย่างนี้ต้องโดนสั่งสอน",
+        "Lezioni vere",
+        "Que ça vous serve de leçon !",
+        "Así aprenderás",
+        "Дам тобі науку",
+        "Bài học đáng đời",
+        "Vais Aprender a Lição",
+        "Θα Πάρεις το Μάθημά σου",
+        "Dam ci lekcję",
+        "סדרת חינוך",
+        "Истинное образование",
+        "Îți dăm o lecție",
+        "鉄槌教師",
+        "Móresre tanítalak",
+        "टीच यू अ लेसन",
+        "Que ça vous serve de leçon!",
+        "Naučit ću te pameti",
+        "My vás naučíme",
+        "سنلقّنكم درسًا",
+        "Научићу те памети",
+        "درس عبرت",
+        "ٹیچ یو آ لیسن",
+        "真教育",
+        "不良指导官",
+        "Chamgyoyuk",
+        "Ch'amgyoyuk",
+        "Пусть послужит вам уроком",
+        "سنلقنكم درسا",
+        "极权教师",
+        "True Education",
+        "Get Schooled",
+        "True Lessons",
+        "Teaching You a Lesson",
+        "Bài Học Nhớ Đời",
+        "Giáo Dục Chân Chính"
+      ],
+      "year": "2026",
+      "overview": "Quand il n'y a plus de respect à l'école, des inspecteurs d'un certain type viennent mettre de l'ordre en rappelant sans détour les principes de vie absents des manuels scolaires.",
+      "genres": [
+        "Action & Adventure",
+        "Drame",
+        "Comédie"
+      ],
+      "rating": "9.4",
+      "pop": 51.7272,
+      "status": "Ended",
+      "poster": "https://image.tmdb.org/t/p/w500/6FN0FAhkMeGmU3xAn4D1FmMJvtZ.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/original/vyG93jhmPL7tBIhRtCLa5mdBKob.jpg",
+      "cast": [
+        {
+          "name": "Kim Moo-yul",
+          "character": "Na Hwa-jin"
+        },
+        {
+          "name": "Lee Sung-min",
+          "character": "Choi Kang-seok"
+        },
+        {
+          "name": "Jin Ki-joo",
+          "character": "Im Han-rim"
+        },
+        {
+          "name": "피오",
+          "character": "Bong Geun-dae"
+        }
+      ],
+      "seasons": [
+        {
+          "number": 1,
+          "name": "Saison 1",
+          "episodes": [
+            {
+              "number": 1,
+              "name": "Épisode 1",
+              "overview": "L'inspecteur Na Hwa-jin se jette dans l'arène et reprend le contrôle d'une école tombée sous le joug de l'enfant gâté d'un puissant politicien pour lui donner une leçon.",
+              "air_date": "2026-06-05",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/7H73efrUeki3a"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 2,
+              "name": "Épisode 2",
+              "overview": "Assisté du discret Bong Geun-dae, Hwa-jin utilise ses talents d'agent spécial pour neutraliser un gang et protéger un élève qui veut simplement étudier.",
+              "air_date": "2026-06-05",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/qg4jGENPzfI1I"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 3,
+              "name": "Épisode 3",
+              "overview": "Quand une ado influenceuse répand des calomnies au sujet de ses profs, l'imprévisible inspectrice Im Han-rim entre en scène pour démêler le vrai du faux.",
+              "air_date": "2026-06-05",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/hKNgk20fSTywg"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 4,
+              "name": "Épisode 4",
+              "overview": "Attaqué politiquement, Choi Gang-seok défend le BDDE. L'équipe de Hwa-jin enquête dans un lycée d'élite sur l'agression mystérieuse d'un professeur respecté.",
+              "air_date": "2026-06-05",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/yTIt4U07g25Lk"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 5,
+              "name": "Épisode 5",
+              "overview": "Quand une institutrice craque sous la pression, Hwa-jin se glisse dans la peau du professeur remplaçant pour tenter de comprendre comment elle en est arrivée là.",
+              "air_date": "2026-06-05",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/FLxFsyXmre5tl"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 6,
+              "name": "Épisode 6",
+              "overview": "Quatre jeunes délinquants qui se croient au-dessus des lois reçoivent un rappel à l'ordre bien mérité quand l'équipe s'intéresse à leurs activités extrascolaires.",
+              "air_date": "2026-06-05",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/trjsmze7J0jAu"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 7,
+              "name": "Épisode 7",
+              "overview": "Geun-dae s'infiltre pour aider un père à retrouver son fils accro aux jeux d'argent. Pour discréditer politiquement le bureau, Hwang Gi-tae rend visite à un jeune détenu.",
+              "air_date": "2026-06-05",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/5vDG1M2638kFD"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 8,
+              "name": "Épisode 8",
+              "overview": "Quand un futur étudiant en médecine s'effondre en classe, Hwa-jin découvre que sa mère obsessionnelle lui donne des comprimés illicites… et qu'il ne s'agit pas d'un cas isolé.",
+              "air_date": "2026-06-05",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/518euYcRm6B2Q"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 9,
+              "name": "Épisode 9",
+              "overview": "Pour aider un élève à échapper à ses tortionnaires, Han-rim endosse une nouvelle identité afin de s'immiscer dans leur cercle. Le retour de Cho Gyu-cheol met le bureau en danger.",
+              "air_date": "2026-06-05",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/whybadNaqbxbW"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 10,
+              "name": "Épisode 10",
+              "overview": "Alors que la réputation du bureau est mise à mal, Hwa-jin et son équipe s'affranchissent des règles pour dévoiler une conspiration mortelle orchestrée par un gang d'élèves.",
+              "air_date": "2026-06-05",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/XqaWRzmmCWuuz"
+                }
+              ],
+              "downloads": []
+            }
+          ],
+          "downloads": []
+        }
+      ],
+      "sources": [],
+      "addedAt": 1792233785864,
+      "langs": [
+        "VOSTFR",
+        "VF"
+      ],
+      "downloads": []
+    },
+    {
+      "id": "99966",
+      "type": "tv",
+      "name": "All of Us Are Dead",
+      "original_name": "지금 우리 학교는",
+      "aka": [
+        "지금 우리 학교는",
+        "Estamos muertos",
+        "All of Us Are Dead",
+        "Усі ми мертві",
+        "Mindannyian halottak vagyunk",
+        "มัธยมซอมบี้",
+        "Ngôi Trường Xác Sống",
+        "Non siamo più vivi",
+        "Мы все мертвы",
+        "僵尸校园",
+        "Είμαστε Όλοι Νεκροί",
+        "殭屍校園",
+        "Všichni jsme mrtví",
+        "‏כולנו מתים",
+        "今、私たちの学校は...",
+        "كلّنا موتى",
+        "Waan Wada Dhimannay",
+        "Svi smo mrtvi",
+        "Suntem morți cu toții",
+        "ყველა ჩვენგანი მკვდარია",
+        "Mes visi mirę",
+        "همه ما مرده‌ایم",
+        "Jigeum Uri Hakgyoneun",
+        "Now my school"
+      ],
+      "year": "2022",
+      "overview": "Alors qu'un virus zombie décime tous les élèves d'un lycée, un groupe d'étudiants décide de s'enfermer dans l'enceinte de l'école pour tenter de survivre à l'épidémie.",
+      "genres": [
+        "Action & Adventure",
+        "Drame",
+        "Science-Fiction & Fantastique"
+      ],
+      "rating": "8.3",
+      "pop": 25.3377,
+      "status": "Returning Series",
+      "poster": "https://image.tmdb.org/t/p/w500/fMDHqrNAAnYjpdUzaxYkZ96E3u9.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/original/8hp2CuGnw1iP5dLBVMAPUv23swx.jpg",
+      "cast": [
+        {
+          "name": "Park Ji-hu",
+          "character": "Nam On-jo"
+        },
+        {
+          "name": "Yoon Chan-young",
+          "character": "Lee Cheong-san"
+        },
+        {
+          "name": "Cho Yi-hyun",
+          "character": "Choi Nam-ra"
+        },
+        {
+          "name": "Lomon",
+          "character": "Lee Su-hyeok"
+        },
+        {
+          "name": "Yoo In-soo",
+          "character": "Yoon Gwi-nam"
+        },
+        {
+          "name": "Yoomee Lee",
+          "character": "Lee Na-yeon"
+        },
+        {
+          "name": "Kim Byong-chul",
+          "character": "Lee Byeong-chan"
+        },
+        {
+          "name": "Lee Kyu-hyung",
+          "character": "Song Jae-ik"
+        },
+        {
+          "name": "Jeon Bae-soo",
+          "character": "Nam So-ju"
+        }
+      ],
+      "seasons": [
+        {
+          "number": 1,
+          "name": "Saison 1",
+          "episodes": [
+            {
+              "number": 1,
+              "name": "Épisode 1",
+              "overview": "Dans le labo de Lee Byeong-chan, une élève se fait mordre par une souris à première vue inoffensive. Peu après, le lycée devient le théâtre d'un véritable bain de sang.",
+              "air_date": "2022-01-28",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/eaTiMVK1sXXW6"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 2,
+              "name": "Épisode 2",
+              "overview": "Le nombre d'infectés explose. Pour survivre, Nam On-jo, Lee Cheong-san et d'autres rescapés se réfugient dans une salle de classe, mais leur repos est de courte durée.",
+              "air_date": "2022-01-28",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/xpac5Ve9eVJiL"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 3,
+              "name": "Épisode 3",
+              "overview": "Lee Na-yeon exige qu'un des élèves, griffé lors de l'attaque d'un zombie, soit exclu du groupe. En ville, le virus continue de faire des ravages.",
+              "air_date": "2022-01-28",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/k6gp6hArCq1L0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 4,
+              "name": "Épisode 4",
+              "overview": "Deux élèves s'aventurent jusqu'à la salle des professeurs pour trouver un téléphone portable. Byeong-chan transmet de précieuses informations à l'inspecteur Song Jae-ik.",
+              "air_date": "2022-01-28",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/zzrAG7qVEqyYR"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 5,
+              "name": "Épisode 5",
+              "overview": "La loi martiale est décrétée sur la ville. Quand Cheong-san est séparé du reste du groupe, On-jo propose d'utiliser un drone pour le retrouver.",
+              "air_date": "2022-01-28",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/6RXRr4dCCmHfQ"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 6,
+              "name": "Épisode 6",
+              "overview": "Remarquant que le son attire les zombies, le groupe dégage un passage pour Cheong-san, mais une nouvelle menace émerge. Nam So-ju s'échappe du camp de quarantaine.",
+              "air_date": "2022-01-28",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/B3ZMhmtC7bnhX"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 7,
+              "name": "Épisode 7",
+              "overview": "Les élèves doivent mettre en œuvre un plan des plus risqués pour quitter la salle de musique et atteindre le toit. De son côté, Jae-ik rencontre un problème.",
+              "air_date": "2022-01-28",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/ObWCLGZY4sgtL"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 8,
+              "name": "Épisode 8",
+              "overview": "Jae-ik et ses compagnons croisent la route d'une élève du lycée. Na-yeon trouve le courage de faire face à ses camarades. Les membres du groupe se confient leurs secrets.",
+              "air_date": "2022-01-28",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/VcAO93Q8LYH4b"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 9,
+              "name": "Épisode 9",
+              "overview": "Au camp, un événement inattendu permet aux militaires de mieux comprendre le virus. Un orage offre une couverture bienvenue au groupe, qui décide de continuer d'avancer.",
+              "air_date": "2022-01-28",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/MvYrKWr8lLgIQ"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 10,
+              "name": "Épisode 10",
+              "overview": "L'amphithéâtre se transforme vite en piège pour les deux équipes de survivants désormais réunies. Les images de Byeong-chan dévoilent une solution radicale à la crise.",
+              "air_date": "2022-01-28",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/u03jpqNetsudJ"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 11,
+              "name": "Épisode 11",
+              "overview": "Un protecteur inattendu dégage une issue aux membres du groupe, mais Yoon Gwi-nam les talonne toujours. Les soldats prennent une décision lourde de conséquences.",
+              "air_date": "2022-01-28",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/BW3aQrfEkBPFc"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 12,
+              "name": "Épisode 12",
+              "overview": "Les élèves arrivent au camp de quarantaine, tous affligés par une perte tragique. Quelques mois plus tard, ils s'accrochent à l'espoir d'un possible survivant.",
+              "air_date": "2022-01-28",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/HtPGIOHtH6aGn"
+                }
+              ],
+              "downloads": []
+            }
+          ],
+          "downloads": []
+        },
+        {
+          "number": 2,
+          "name": "Saison 2",
+          "episodes": [],
+          "downloads": []
+        }
+      ],
+      "sources": [],
+      "addedAt": 1792233896098,
+      "langs": [
+        "VOSTFR",
+        "VF"
       ],
       "downloads": []
     }
