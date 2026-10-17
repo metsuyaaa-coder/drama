@@ -914,6 +914,13 @@ function tmdb(path, params) {
     return r.json();
   });
 }
+/* Affiche : anglaise en priorité, sinon dans la langue originale du titre, sinon celle par défaut de TMDB */
+function bestPoster(t) {
+  var list = (t && t.images && t.images.posters) || [], i, ol = t && t.original_language;
+  for (i = 0; i < list.length; i++) if (list[i].iso_639_1 === "en") return list[i].file_path;
+  if (ol) for (i = 0; i < list.length; i++) if (list[i].iso_639_1 === ol) return list[i].file_path;
+  return t && t.poster_path;
+}
 function img(path, size) { return path ? IMG + size + path : ""; }
 
 function fmtDate(d) {
@@ -1795,14 +1802,14 @@ function afterPick() {
 
 function pickMovie(id, old) {
   var el = $("#editor"); if (el) el.innerHTML = '<p class="note">Chargement de la fiche…</p>';
-  tmdb("/movie/" + id, { append_to_response: "credits,translations,alternative_titles" }).then(withEnglish(true)).then(function (t) {
+  tmdb("/movie/" + id, { append_to_response: "credits,translations,alternative_titles,images", include_image_language: "en,ko,ja,zh,cn,th,vi,id,tl,hi,tr,es,fr,de,it,pt,ru,ar" }).then(withEnglish(true)).then(function (t) {
     draft = normalize({
       id: "m" + t.id, type: "movie", name: t.en_name || t.title || "", original_name: t.original_title || "", aka: akaFrom(t, true),
       year: (t.release_date || "").slice(0, 4), overview: t.overview || "",
       genres: (t.genres || []).map(function (g) { return g.name; }),
       rating: t.vote_average ? t.vote_average.toFixed(1) : "", pop: t.popularity || 0,
       status: t.status || "", runtime: t.runtime || "",
-      poster: img(t.poster_path, "w500"), backdrop: img(t.backdrop_path, "original"),
+      poster: img(bestPoster(t), "w500"), backdrop: img(t.backdrop_path, "original"),
       cast: ((t.credits && t.credits.cast) || []).slice(0, 12).map(function (c) { return { name: c.name, character: c.character }; }),
       seasons: [], sources: [], addedAt: Date.now()
     });
@@ -1822,7 +1829,7 @@ function pickMovie(id, old) {
 
 function pickTv(id, old) {
   var el = $("#editor"); if (el) el.innerHTML = '<p class="note">Chargement de la fiche…</p>';
-  tmdb("/tv/" + id, { append_to_response: "credits,translations,alternative_titles" }).then(withEnglish(false)).then(function (t) {
+  tmdb("/tv/" + id, { append_to_response: "credits,translations,alternative_titles,images", include_image_language: "en,ko,ja,zh,cn,th,vi,id,tl,hi,tr,es,fr,de,it,pt,ru,ar" }).then(withEnglish(false)).then(function (t) {
     var seasons = (t.seasons || []).filter(function (s) { return s.season_number > 0; });
     var one = function (s, lang) { return tmdb("/tv/" + id + "/season/" + s.season_number, { language: lang }).catch(function () { return { episodes: [] }; }); };
     return Promise.all(seasons.map(function (s) {
@@ -1843,7 +1850,7 @@ function pickTv(id, old) {
         year: (t.first_air_date || "").slice(0, 4), overview: t.overview || "",
         genres: (t.genres || []).map(function (g) { return g.name; }),
         rating: t.vote_average ? t.vote_average.toFixed(1) : "", pop: t.popularity || 0,
-        status: t.status || "", poster: img(t.poster_path, "w500"), backdrop: img(t.backdrop_path, "original"),
+        status: t.status || "", poster: img(bestPoster(t), "w500"), backdrop: img(t.backdrop_path, "original"),
         cast: ((t.credits && t.credits.cast) || []).slice(0, 12).map(function (c) { return { name: c.name, character: c.character }; }),
         seasons: seasons.map(function (s, i) {
           return { number: s.season_number, name: s.name, episodes: (full[i].episodes || []).map(function (e) { return { number: e.episode_number, name: e.name, overview: e.overview || "", air_date: e.air_date || "", sources: [] }; }) };
@@ -2752,19 +2759,19 @@ function tmdbFresh(s) {
     return {
       genres: (t.genres || []).map(function (g) { return g.name; }),
       rating: t.vote_average ? t.vote_average.toFixed(1) : "", pop: t.popularity || 0,
-      status: t.status || "", poster: img(t.poster_path, "w500"), backdrop: img(t.backdrop_path, "original"),
+      status: t.status || "", poster: img(bestPoster(t), "w500"), backdrop: img(t.backdrop_path, "original"),
       cast: ((t.credits && t.credits.cast) || []).slice(0, 12).map(function (c) { return { name: c.name, character: c.character }; })
     };
   };
   if (movie) {
-    return tmdb("/movie/" + id, { append_to_response: "credits,translations,alternative_titles" }).then(withEnglish(true)).then(function (t) {
+    return tmdb("/movie/" + id, { append_to_response: "credits,translations,alternative_titles,images", include_image_language: "en,ko,ja,zh,cn,th,vi,id,tl,hi,tr,es,fr,de,it,pt,ru,ar" }).then(withEnglish(true)).then(function (t) {
       var f = common(t);
       f.name = t.en_name || t.title || ""; f.original_name = t.original_title || ""; f.aka = akaFrom(t, true);
       f.year = (t.release_date || "").slice(0, 4); f.overview = t.overview || ""; f.runtime = t.runtime || "";
       return { fields: f };
     });
   }
-  return tmdb("/tv/" + id, { append_to_response: "credits,translations,alternative_titles" }).then(withEnglish(false)).then(function (t) {
+  return tmdb("/tv/" + id, { append_to_response: "credits,translations,alternative_titles,images", include_image_language: "en,ko,ja,zh,cn,th,vi,id,tl,hi,tr,es,fr,de,it,pt,ru,ar" }).then(withEnglish(false)).then(function (t) {
     var seasons = (t.seasons || []).filter(function (x) { return x.season_number > 0; });
     var one = function (x, lang) { return tmdb("/tv/" + id + "/season/" + x.season_number, { language: lang }).catch(function () { return { episodes: [] }; }); };
     return Promise.all(seasons.map(function (x) {
