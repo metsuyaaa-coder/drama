@@ -1,6 +1,5 @@
 {
   "rewrites": [
-    { "source": "/serie/:id", "destination": "/api/share?id=:id" },
-    { "source": "/((?!api/).*)", "destination": "/index.html" }
+    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
