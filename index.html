@@ -481,6 +481,9 @@ footer .wrap.about { display: grid; grid-template-columns: repeat(auto-fit, minm
 .tags .nov::before, .tags .nov + span::before { content: none !important; }
 /* badge « K-drama » (fiche) */
 .kd { display: inline-flex; align-items: center; font-family: var(--mono); font-weight: 700; text-transform: uppercase; letter-spacing: .06em; background: #fbcfe8; color: #500724; line-height: 1; white-space: nowrap; }
+.kd-J { background: #bfdbfe; color: #172554; }
+.kd-C { background: #fecaca; color: #450a0a; }
+.kd-T { background: #a7f3d0; color: #022c22; }
 .tags .kd { font-size: 12px; padding: 5px 8px; margin-right: 100%; }
 .tags .kd::before, .tags .kd + span::before { content: none !important; }
 .ep b .new { font-size: 10px; padding: 4px 6px; margin-left: 8px; vertical-align: middle; }
@@ -853,7 +856,7 @@ var STATUS = { "Returning Series": "En cours", "Ended": "Terminée", "Canceled":
 function statusFr(s) { return STATUS[s] || s || ""; }
 
 /* ===== Vues ===== */
-var filter = "", langFilter = "", dlFilter = false, newFilter = false, kdFilter = false, typeFilter = "", curQ = "", searchBack = "#/";
+var filter = "", langFilter = "", dlFilter = false, newFilter = false, kdFilter = "", typeFilter = "", curQ = "", searchBack = "#/";
 var rerender = null;
 var lastPage = null;
 var pendingScroll = false;
@@ -969,18 +972,27 @@ function newSeries(s) {
   if (age < 0 || age > NEWSERIESDAYS) return "";
   return ds.length > 1 && (max - min) / 864e5 <= 1 ? "Nouveau" : "Nouvelle série";
 }
-/* K-drama : série coréenne (titre original en hangul, ou pays KR / langue ko si la fiche les a),
-   hors animation, télé-réalité, talk-show, documentaire et actualités */
-function isKdrama(s) {
-  if (!s || isMovie(s)) return false;
-  var ko = /[\u1100-\u11FF\u3130-\u318F\uAC00-\uD7AF]/.test(String(s.original_name || "")) ||
-    String(s.original_language || "").toLowerCase() === "ko" ||
-    [].concat(s.origin_country || []).map(String).indexOf("KR") > -1;
-  if (!ko) return false;
+/* Drama asiatique : K (Corée), J (Japon), C (Chine), T (Taïwan).
+   1) pays d'origine TMDB si la fiche l'a (KR, JP, CN, TW), 2) sinon l'écriture du titre original :
+   hangul = K, kana = J, caractères chinois seuls = C. Hors films, animation, télé-réalité, talk-show,
+   documentaire et actualités. */
+var DRAMA = { K: "K-drama", J: "J-drama", C: "C-drama", T: "T-drama" };
+function dramaType(s) {
+  if (!s || isMovie(s)) return "";
   var bad = /animation|r[eé]alit|talk|documentaire|actualit|news|reality|documentary/i;
-  return !(s.genres || []).some(function (g) { return bad.test(String(g)); });
+  if ((s.genres || []).some(function (g) { return bad.test(String(g)); })) return "";
+  var cc = [].concat(s.origin_country || []).map(function (x) { return String(x).toUpperCase(); });
+  var map = { KR: "K", JP: "J", CN: "C", TW: "T" };
+  for (var i = 0; i < cc.length; i++) if (map[cc[i]]) return map[cc[i]];
+  var n = String(s.original_name || ""), lang = String(s.original_language || "").toLowerCase();
+  if (/[\u1100-\u11FF\u3130-\u318F\uAC00-\uD7AF]/.test(n) || lang === "ko") return "K";
+  if (/[\u3040-\u30FF]/.test(n) || lang === "ja") return "J";
+  if (/[\u4E00-\u9FFF]/.test(n) || lang === "zh") return "C";
+  return "";
 }
-function kdBadge(s) { return isKdrama(s) ? '<span class="kd">K-drama</span>' : ""; }
+function isKdrama(s) { return dramaType(s) === "K"; }
+function dramaTypes(list) { var seen = {}; list.forEach(function (s) { var d = dramaType(s); if (d) seen[d] = 1; }); return ["K", "J", "C", "T"].filter(function (d) { return seen[d]; }); }
+function kdBadge(s) { var d = dramaType(s); return d ? '<span class="kd kd-' + d + '">' + DRAMA[d] + '</span>' : ""; }
 function novBadge(s, above) {
   var l = newSeries(s); if (!l) return "";
   return '<span class="nov"' + (above != null ? ' style="top:' + (8 + 22 * above) + 'px"' : '') + '>' + esc(l) + '</span>';
@@ -1186,7 +1198,7 @@ function viewMyList() {
   $("#app").innerHTML = html + body + '</div>';
 }
 
-function newMatch(s) { return (!newFilter || !!newSeries(s)) && (!kdFilter || isKdrama(s)); }
+function newMatch(s) { return (!newFilter || !!newSeries(s)) && (!kdFilter || dramaType(s) === kdFilter); }
 function langMatch(s) { return !langFilter || (s.langs || []).indexOf(langFilter) > -1; }
 function langChips() {
   return '<div class="chips langchips"><span class="chiplbl">Langue</span><button class="chip' + (!langFilter ? " on" : "") + '" data-langf="">Toutes</button>' +
@@ -1198,15 +1210,15 @@ function viewList(title, pred) {
   list.forEach(function (s) { (s.genres || []).forEach(function (g) { genres[g] = 1; }); });
   var hasNew = title === "Séries" && list.some(function (s) { return newSeries(s); });
   if (!hasNew) newFilter = false;
-  var hasKd = title === "Séries" && list.some(isKdrama);
-  if (!hasKd) kdFilter = false;
+  var kdTypes = title === "Séries" ? dramaTypes(list) : [];
+  if (kdTypes.indexOf(kdFilter) < 0) kdFilter = "";
   var shown = list.filter(function (s) { return (!filter || (s.genres || []).indexOf(filter) > -1) && langMatch(s) && newMatch(s); });
   var html = '<div class="wrap listhead"><h1>' + esc(title) + '</h1><p class="note">' + list.length + (list.length > 1 ? " titres" : " titre") + '</p></div>';
   if (!list.length) { $("#app").innerHTML = html + emptyBox("Rien ici", "Aucun titre dans cette section pour l'instant.", '<a class="btn ghost" href="#/">Retour à l\'accueil</a>'); return; }
   html += '<div class="wrap"><div class="section-head" style="padding-block:24px 18px"><div class="chips">' +
     '<button class="chip' + (!filter ? " on" : "") + '" data-genre="">Tout</button>' +
     Object.keys(genres).sort().map(function (g) { return '<button class="chip' + (filter === g ? " on" : "") + '" data-genre="' + esc(g) + '">' + esc(g) + '</button>'; }).join("") +
-    '</div>' + langChips() + (hasNew ? '<div class="chips langchips"><span class="chiplbl">Nouveautés</span><button class="chip' + (!newFilter ? " on" : "") + '" data-newf="">Toutes</button><button class="chip' + (newFilter ? " on" : "") + '" data-newf="1">Nouvelles séries</button></div>' : '') + (hasKd ? '<div class="chips langchips"><span class="chiplbl">Catégorie</span><button class="chip' + (!kdFilter ? " on" : "") + '" data-kdf="">Toutes</button><button class="chip' + (kdFilter ? " on" : "") + '" data-kdf="1">K-drama</button></div>' : '') + '</div>' + (shown.length ? '<div class="grid">' + shown.map(card).join("") + '</div>' : '<p class="note" style="padding-bottom:48px">Aucun titre avec ces filtres.</p>') + '</div>';
+    '</div>' + langChips() + (hasNew ? '<div class="chips langchips"><span class="chiplbl">Nouveautés</span><button class="chip' + (!newFilter ? " on" : "") + '" data-newf="">Toutes</button><button class="chip' + (newFilter ? " on" : "") + '" data-newf="1">Nouvelles séries</button></div>' : '') + (kdTypes.length ? '<div class="chips langchips"><span class="chiplbl">Catégorie</span><button class="chip' + (!kdFilter ? " on" : "") + '" data-kdf="">Toutes</button>' + kdTypes.map(function (d) { return '<button class="chip' + (kdFilter === d ? " on" : "") + '" data-kdf="' + d + '">' + DRAMA[d] + '</button>'; }).join("") + '</div>' : '') + '</div>' + (shown.length ? '<div class="grid">' + shown.map(card).join("") + '</div>' : '<p class="note" style="padding-bottom:48px">Aucun titre avec ces filtres.</p>') + '</div>';
   $("#app").innerHTML = html;
 }
 
@@ -1245,8 +1257,8 @@ function viewSearch(q) {
   base.forEach(function (s) { (s.genres || []).forEach(function (g) { genres[g] = 1; }); });
   var hasNewS = base.some(function (s) { return newSeries(s); });
   if (!hasNewS) newFilter = false;
-  var hasKdS = base.some(isKdrama);
-  if (!hasKdS) kdFilter = false;
+  var kdTypesS = dramaTypes(base);
+  if (kdTypesS.indexOf(kdFilter) < 0) kdFilter = "";
   var found = base.filter(function (s) {
     return (!typeFilter || (typeFilter === "movie") === isMovie(s)) &&
       (!filter || (s.genres || []).indexOf(filter) > -1) && langMatch(s) && newMatch(s) && (!dlFilter || hasDl(s));
@@ -1264,7 +1276,7 @@ function viewSearch(q) {
     row("Langue", chip("data-langf", "", "Toutes", !langFilter) + ["VOSTFR", "VF"].map(function (L) { return chip("data-langf", L, L, langFilter === L); }).join("")) +
     (Object.keys(genres).length ? row("Genre", chip("data-genre", "", "Tout", !filter) + Object.keys(genres).sort().map(function (g) { return chip("data-genre", g, g, filter === g); }).join("")) : "") +
     (hasNewS ? row("Nouveautés", chip("data-newf", "", "Toutes", !newFilter) + chip("data-newf", "1", "Nouvelles séries", newFilter)) : "") +
-    (hasKdS ? row("Catégorie", chip("data-kdf", "", "Toutes", !kdFilter) + chip("data-kdf", "1", "K-drama", kdFilter)) : "") +
+    (kdTypesS.length ? row("Catégorie", chip("data-kdf", "", "Toutes", !kdFilter) + kdTypesS.map(function (d) { return chip("data-kdf", d, DRAMA[d], kdFilter === d); }).join("")) : "") +
     (canDl ? row("Téléchargement", chip("data-dlf", "", "Tous", !dlFilter) + chip("data-dlf", "1", "Avec lien", dlFilter)) : "");
   html += '<div class="wrap sres">' + filters + (found.length ? '<div class="grid" style="padding-top:28px">' + found.map(card).join("") + '</div>' : '<p class="note" style="padding:28px 0 48px">Aucun titre avec ces filtres.</p>') + '</div>';
   $("#app").innerHTML = html;
@@ -1634,7 +1646,7 @@ function pickTv(id, old) {
       });
     })).then(function (full) {
       draft = normalize({
-        id: String(t.id), type: "tv", name: t.name || "", original_name: t.original_name || "", aka: akaFrom(t, false),
+        id: String(t.id), type: "tv", name: t.name || "", original_name: t.original_name || "", origin_country: t.origin_country || [], original_language: t.original_language || "", aka: akaFrom(t, false),
         year: (t.first_air_date || "").slice(0, 4), overview: t.overview || "",
         genres: (t.genres || []).map(function (g) { return g.name; }),
         rating: t.vote_average ? t.vote_average.toFixed(1) : "", pop: t.popularity || 0,
@@ -1829,7 +1841,7 @@ function route(force) {
   if ((a === "ajouter" || a === "modifier" || a === "motdepasse" || a === "panel") && !ADMIN) { location.hash = "#/admin"; return; }
 
   var changed = force || a !== lastPage || a === "serie" || a === "modifier";
-  if (a !== lastPage) { filter = ""; langFilter = ""; dlFilter = false; newFilter = false; kdFilter = false; typeFilter = ""; listTab = "list"; }
+  if (a !== lastPage) { filter = ""; langFilter = ""; dlFilter = false; newFilter = false; kdFilter = ""; typeFilter = ""; listTab = "list"; }
   lastPage = a;
 
   var q = $("#q");
@@ -2003,7 +2015,7 @@ document.addEventListener("click", function (e) {
   else if (t.dataset.listtab != null) { listTab = t.dataset.listtab; if (rerender) rerender(); }
   else if (t.dataset.genre != null) { filter = t.dataset.genre; if (rerender) rerender(); }
   else if (t.dataset.langf != null) { langFilter = t.dataset.langf; if (rerender) rerender(); }
-  else if (t.dataset.kdf != null) { kdFilter = t.dataset.kdf === "1"; if (rerender) rerender(); }
+  else if (t.dataset.kdf != null) { kdFilter = t.dataset.kdf; if (rerender) rerender(); }
   else if (t.dataset.newf != null) { newFilter = t.dataset.newf === "1"; if (rerender) rerender(); }
   else if (t.dataset.dlf != null) { dlFilter = t.dataset.dlf === "1"; if (rerender) rerender(); }
   else if (t.dataset.typef != null) { typeFilter = t.dataset.typef; if (rerender) rerender(); }
@@ -2379,7 +2391,7 @@ function tmdbFresh(s) {
       });
     })).then(function (full) {
       var f = common(t);
-      f.name = t.name || ""; f.original_name = t.original_name || ""; f.aka = akaFrom(t, false);
+      f.name = t.name || ""; f.original_name = t.original_name || ""; f.origin_country = t.origin_country || []; f.original_language = t.original_language || ""; f.aka = akaFrom(t, false);
       f.year = (t.first_air_date || "").slice(0, 4); f.overview = t.overview || "";
       return {
         fields: f,
