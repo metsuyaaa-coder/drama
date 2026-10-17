@@ -474,6 +474,11 @@ footer .wrap.about { display: grid; grid-template-columns: repeat(auto-fit, minm
 .poster .lang + .live + .new { top: 52px; }
 .tags .new { font-size: 12px; padding: 5px 8px; margin-right: 100%; }
 .tags .new::before, .tags .new + span::before { content: none !important; }
+/* badge « Nouvelle série » / « Nouveau » (placé sous les autres badges) */
+.nov { display: inline-flex; align-items: center; font-family: var(--mono); font-weight: 700; text-transform: uppercase; letter-spacing: .06em; background: #fde68a; color: #422006; line-height: 1; white-space: nowrap; }
+.poster .nov { position: absolute; z-index: 1; left: 8px; font-size: 10px; padding: 4px 6px; }
+.tags .nov { font-size: 12px; padding: 5px 8px; margin-right: 100%; }
+.tags .nov::before, .tags .nov + span::before { content: none !important; }
 .ep b .new { font-size: 10px; padding: 4px 6px; margin-left: 8px; vertical-align: middle; }
 
 /* épisodes vus */
@@ -853,7 +858,7 @@ function card(s, i) {
   var meta = [s.type === "movie" ? "Film" : "", s.year, s.rating ? "★ " + s.rating : ""].filter(Boolean).join("  ·  ");
   return '<a class="card" style="--i:' + Math.min(i || 0, 14) + '" href="#/serie/' + esc(s.id) + '"><div class="poster">' +
     (s.poster ? '<img loading="lazy" src="' + esc(s.poster) + '" alt="' + esc(s.name) + '">' : '<div class="ph">' + esc(s.name.charAt(0)) + '</div>') +
-    (langLabel(s) ? '<span class="lang">' + esc(langLabel(s)) + '</span>' : '') + (ongoing(s) ? '<span class="live">En cours</span>' : '') + (newEpisode(s) ? newBadge("Nouvel ép.") : '') + '</div><div class="meta"><b>' + esc(s.name) + '</b><span>' + esc(meta) + '</span></div></a>';
+    (langLabel(s) ? '<span class="lang">' + esc(langLabel(s)) + '</span>' : '') + (ongoing(s) ? '<span class="live">En cours</span>' : '') + (newEpisode(s) ? newBadge("Nouvel ép.") : '') + novBadge(s, (langLabel(s) ? 1 : 0) + (ongoing(s) ? 1 : 0) + (newEpisode(s) ? 1 : 0)) + '</div><div class="meta"><b>' + esc(s.name) + '</b><span>' + esc(meta) + '</span></div></a>';
 }
 /* Langue : VOSTFR, VF ou VOSTFR + VF */
 /* Série toujours diffusée (jamais pour un film) */
@@ -906,7 +911,7 @@ function resumeWatch(id) {
   if (isMovie(s)) { saveResume(s.id); play(s.sources, s.name, 0, "", null, s.downloads); } else playEp(s, r.si, r.n);
 }
 /* ===== Épisodes vus, nouveautés, ma liste (tout reste dans le navigateur) ===== */
-var SEENKEY = "noir.seen", LISTKEY = "noir.list", NEWDAYS = 10;
+var SEENKEY = "noir.seen", LISTKEY = "noir.list", NEWDAYS = 7;
 function readSeen() { var v = readJSON(SEENKEY, {}); return v && typeof v === "object" && !Array.isArray(v) ? v : {}; }
 function epKey(se, ep) { return se.number + "x" + ep.number; }
 function isSeen(sid, se, ep) { var m = readSeen()[sid]; return !!(m && m[epKey(se, ep)]); }
@@ -943,6 +948,26 @@ function newEpisode(s) {
     });
   });
   return best;
+}
+/* Série qui vient de sortir (1er épisode il y a moins de NEWDAYS jours, au moins une source) :
+   « Nouveau » si tous les épisodes sortent en 1 jour (saison entière d'un coup), sinon « Nouvelle série » */
+function newSeries(s) {
+  if (!s || isMovie(s)) return "";
+  var ds = [], src = false;
+  (s.seasons || []).forEach(function (se) {
+    (se.episodes || []).forEach(function (ep) {
+      if (ep.air_date) { var t = new Date(ep.air_date + "T00:00:00").getTime(); if (!isNaN(t)) ds.push(t); }
+      if ((ep.sources || []).length) src = true;
+    });
+  });
+  if (!ds.length || !src) return "";
+  var min = Math.min.apply(null, ds), max = Math.max.apply(null, ds), age = (Date.now() - min) / 864e5;
+  if (age < 0 || age > NEWDAYS) return "";
+  return ds.length > 1 && (max - min) / 864e5 <= 1 ? "Nouveau" : "Nouvelle série";
+}
+function novBadge(s, above) {
+  var l = newSeries(s); if (!l) return "";
+  return '<span class="nov"' + (above != null ? ' style="top:' + (8 + 22 * above) + 'px"' : '') + '>' + esc(l) + '</span>';
 }
 function newBadge(label) { return '<span class="new"><i></i>' + esc(label) + '</span>'; }
 function readList() { var l = readJSON(LISTKEY, []); return Array.isArray(l) ? l.map(String) : []; }
@@ -1034,7 +1059,7 @@ function refreshTrending() {
 function hq(u) { return String(u || "").replace(/\/t\/p\/w\d+\//, "/t/p/original/"); }
 function heroSlide(h, on) {
   return '<div class="hslide' + (on ? " on" : "") + '"><div class="bg" style="background-image:url(\'' + esc(hq(h.backdrop || h.poster)) + '\')"></div><div class="wrap">' +
-    '<div class="tags">' + (langLabel(h) ? '<span class="lang">' + esc(langLabel(h)) + '</span>' : '') + (ongoing(h) ? '<span class="live">En cours</span>' : '') + (newEpisode(h) ? newBadge("Nouvel épisode") : '') + [isMovie(h) ? "Film" : "Série", h.year, (h.genres || []).slice(0, 3).join(" / ")].filter(Boolean).map(function (t) { return "<span>" + esc(t) + "</span>"; }).join("") + '</div>' +
+    '<div class="tags">' + (langLabel(h) ? '<span class="lang">' + esc(langLabel(h)) + '</span>' : '') + (ongoing(h) ? '<span class="live">En cours</span>' : '') + (newEpisode(h) ? newBadge("Nouvel épisode") : '') + novBadge(h) + [isMovie(h) ? "Film" : "Série", h.year, (h.genres || []).slice(0, 3).join(" / ")].filter(Boolean).map(function (t) { return "<span>" + esc(t) + "</span>"; }).join("") + '</div>' +
     '<h1>' + esc(h.name) + '</h1><p>' + esc(h.overview || "") + '</p>' +
     '<div class="row"><button class="btn" data-watch="' + esc(h.id) + '">' + PLAYICON + '<span>Regarder</span></button><a class="btn ghost" href="#/serie/' + esc(h.id) + '">Voir la fiche</a></div></div></div>';
 }
@@ -1351,7 +1376,7 @@ function viewSerie(id) {
   }
   var html = '<section class="detail"><div class="bg" style="background-image:url(\'' + esc(hq(s.backdrop || s.poster)) + '\')"></div><div class="wrap">' +
     '<div class="poster">' + (s.poster ? '<img src="' + esc(s.poster) + '" alt="' + esc(s.name) + '">' : '<div class="ph">' + esc(s.name.charAt(0)) + '</div>') + '</div>' +
-    '<div><div class="tags">' + (langLabel(s) ? '<span class="lang">' + esc(langLabel(s)) + '</span>' : '') + (ongoing(s) ? '<span class="live">En cours</span>' : '') + (ne ? newBadge("Nouvel épisode") : '') + tags.map(function (t) { return "<span>" + esc(t) + "</span>"; }).join("") + '</div>' +
+    '<div><div class="tags">' + (langLabel(s) ? '<span class="lang">' + esc(langLabel(s)) + '</span>' : '') + (ongoing(s) ? '<span class="live">En cours</span>' : '') + (ne ? newBadge("Nouvel épisode") : '') + novBadge(s) + tags.map(function (t) { return "<span>" + esc(t) + "</span>"; }).join("") + '</div>' +
     '<h1>' + esc(s.name) + '</h1>' + (s.original_name && s.original_name !== s.name ? '<div class="orig">' + esc(s.original_name) + '</div>' : '<div class="orig"></div>') +
     '<p class="ov">' + esc(s.overview || "Pas de synopsis.") + '</p>' +
     '<div class="row"><button class="btn" data-watch="' + esc(s.id) + '">' + PLAYICON + '<span>Regarder</span></button>' + dlBtnMovie + dlBtnSerie + '<button class="btn ghost' + (inList(s.id) ? " on" : "") + '" type="button" data-list="' + esc(s.id) + '">' + (inList(s.id) ? "✓ Dans ma liste" : "+ Ma liste") + '</button>' + (ADMIN ? '<a class="btn ghost" href="#/modifier/' + esc(s.id) + '">Modifier</a><button class="btn danger" data-del="' + esc(s.id) + '">Supprimer</button>' : '') + '</div>' + srcChips +
