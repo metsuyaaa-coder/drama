@@ -904,6 +904,16 @@ function textToSrc(text) {
   return numberDupes(out);
 }
 
+/* Maximum 3 sources par épisode ou par film (les liens de téléchargement ne sont pas concernés) */
+var MAX_SRC = 3, lastCapWarn = 0;
+function capSrc(arr) {
+  arr = arr || [];
+  if (arr.length > MAX_SRC) {
+    if (Date.now() - lastCapWarn > 2500) { lastCapWarn = Date.now(); toast("Maximum " + MAX_SRC + " sources par épisode ou film : les suivantes sont ignorées"); }
+    return arr.slice(0, MAX_SRC);
+  }
+  return arr;
+}
 function tmdb(path, params) {
   if (!getToken()) return Promise.reject(new Error("Clé TMDB manquante : clique sur « Clé TMDB » en bas de page et colle ton jeton"));
   var u = new URL(API + path);
@@ -1923,6 +1933,8 @@ function canDeleteFiche(f) { if (isHead()) return true; var me = myId(); return 
 function saveDraft() {
   if (!draft.name.trim()) { toast("Ajoute au moins un titre"); return; }
   normalize(draft);
+  draft.sources = capSrc(draft.sources);
+  (draft.seasons || []).forEach(function (se) { (se.episodes || []).forEach(function (ep) { ep.sources = capSrc(ep.sources); }); });
   var i = -1;
   db.forEach(function (x, k) { if (String(x.id) === String(draft.id)) i = k; });
   var kept = mergeOwn(i > -1 ? db[i] : null, draft);
@@ -2302,7 +2314,7 @@ document.addEventListener("click", function (e) {
         if (same) same.url = ns.url;
         else cur2.push(ns);
       });
-      ep.sources = numberDupes(cur2);
+      ep.sources = capSrc(numberDupes(cur2));
       done++;
     });
     keepOpen = si; renderEditor(); keepOpen = null;
@@ -2313,7 +2325,7 @@ document.addEventListener("click", function (e) {
     if (!tpls.length) { toast("Écris d'abord au moins un modèle de source"); return; }
     draft.seasons.forEach(function (sea) {
       sea.episodes.forEach(function (epi) {
-        epi.sources = tpls.map(function (x) { return { name: x.name, url: x.url.replace(/\{s\}/g, sea.number).replace(/\{e\}/g, epi.number) }; });
+        epi.sources = capSrc(tpls.map(function (x) { return { name: x.name, url: x.url.replace(/\{s\}/g, sea.number).replace(/\{e\}/g, epi.number) }; }));
       });
     });
     renderEditor(); toast("Sources remplies pour tous les épisodes");
@@ -2397,11 +2409,11 @@ document.addEventListener("input", function (e) {
     var f = t.dataset.f, val = t.value;
     if (f === "genres") draft.genres = val.split(",").map(function (x) { return x.trim(); }).filter(Boolean);
     else if (f === "cast") draft.cast = val.split("\n").map(function (l) { var p = l.split(/\s+[—-]\s+/); return p[0].trim() ? { name: p[0].trim(), character: (p[1] || "").trim() } : null; }).filter(Boolean);
-    else if (f === "sources") draft.sources = textToSrc(val);
+    else if (f === "sources") draft.sources = capSrc(textToSrc(val));
     else if (f === "downloads") draft.downloads = textToSrc(val);
     else draft[f] = val;
   } else if (t.dataset.s != null) {
-    draft.seasons[+t.dataset.s].episodes[+t.dataset.e].sources = textToSrc(t.value);
+    draft.seasons[+t.dataset.s].episodes[+t.dataset.e].sources = capSrc(textToSrc(t.value));
   } else if (t.dataset.dlseason != null) {
     draft.seasons[+t.dataset.dlseason].downloads = textToSrc(t.value);
   } else if (t.dataset.dls != null) {
