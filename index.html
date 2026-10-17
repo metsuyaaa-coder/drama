@@ -662,7 +662,8 @@ footer .wrap.about { display: grid; grid-template-columns: repeat(auto-fit, minm
 /* ===== Configuration ===== */
 var CONFIG = {
   TOKEN: "",       /* jeton TMDB : à coller via « Clé TMDB » en mode admin */
-  ADMIN_HASH: "",  /* empreinte du mot de passe admin, affichée après sa création */
+  ADMIN_HASH: "9265112ed1c7bd17b961005cdbd1a9747aec5636a1c0fb51d107b18ce38bc071",  /* empreinte du mot de passe admin (fixe, personne ne peut en créer un autre) */
+  TOKEN_ENC: "",   /* jeton TMDB chiffré avec ton mot de passe : se débloque tout seul à la connexion admin */
   LANG: "fr-FR"
 };
 var API = "https://api.themoviedb.org/3";
@@ -765,6 +766,29 @@ function setPreview(on) {
 function persist() { try { localStorage.setItem(STORE, JSON.stringify(db)); } catch (e) { toast("Stockage plein ou bloqué par le navigateur"); } }
 function getToken() { try { return localStorage.getItem(KEYSTORE) || CONFIG.TOKEN; } catch (e) { return CONFIG.TOKEN; } }
 
+/* Jeton TMDB chiffré (AES-GCM, clé dérivée du mot de passe admin) : on le colle une fois dans CONFIG.TOKEN_ENC,
+   et il se débloque tout seul à chaque connexion admin, sur n'importe quel appareil. Personne d'autre ne peut le lire. */
+function b64e(buf) { var a = new Uint8Array(buf), t = ""; for (var i = 0; i < a.length; i++) t += String.fromCharCode(a[i]); return btoa(t); }
+function b64d(t) { var x = atob(t), a = new Uint8Array(x.length); for (var i = 0; i < x.length; i++) a[i] = x.charCodeAt(i); return a; }
+function deriveKey(pw, salt) {
+  return crypto.subtle.importKey("raw", new TextEncoder().encode(pw), "PBKDF2", false, ["deriveKey"]).then(function (k) {
+    return crypto.subtle.deriveKey({ name: "PBKDF2", salt: salt, iterations: 150000, hash: "SHA-256" }, k, { name: "AES-GCM", length: 256 }, false, ["encrypt", "decrypt"]);
+  });
+}
+function encToken(tok, pw) {
+  var salt = crypto.getRandomValues(new Uint8Array(16)), iv = crypto.getRandomValues(new Uint8Array(12));
+  return deriveKey(pw, salt).then(function (k) { return crypto.subtle.encrypt({ name: "AES-GCM", iv: iv }, k, new TextEncoder().encode(tok)); }).then(function (ct) {
+    var out = new Uint8Array(28 + ct.byteLength); out.set(salt, 0); out.set(iv, 16); out.set(new Uint8Array(ct), 28); return b64e(out);
+  });
+}
+function decToken(blob, pw) {
+  var a = b64d(blob);
+  return deriveKey(pw, a.slice(0, 16)).then(function (k) { return crypto.subtle.decrypt({ name: "AES-GCM", iv: a.slice(16, 28) }, k, a.slice(28)); }).then(function (b) { return new TextDecoder().decode(b); });
+}
+function unlockToken(pw) {
+  if (!CONFIG.TOKEN_ENC || !window.crypto || !crypto.subtle) return Promise.resolve();
+  return decToken(CONFIG.TOKEN_ENC, pw).then(function (t) { try { localStorage.setItem(KEYSTORE, t); } catch (e) {} }).catch(function () {});
+}
 function loginAdmin(stay) {
   try { localStorage.setItem("noir.admin", "true"); } catch (e) {}
   var local = readJSON(STORE, []).map(normalize);
@@ -1479,7 +1503,10 @@ function viewPanel() {
 /* ===== Connexion et mot de passe ===== */
 function viewLogin() {
   if (ADMIN) { location.hash = "#/"; return; }
-  if (!savedHash()) { viewSetPassword(true); return; }
+  if (!savedHash()) {
+    $("#app").innerHTML = '<div class="wrap"><div class="authbox"><h1>Admin</h1><p class="lead">L\'accès admin n\'est pas configuré sur ce site.</p><div class="row"><a class="btn" href="#/">Retour</a></div></div></div>';
+    return;
+  }
   $("#app").innerHTML = '<div class="wrap"><form class="authbox" id="login"><h1>Admin</h1><p class="lead">Entre ton mot de passe pour ajouter ou modifier des fiches.</p>' +
     '<label class="f"><span>Mot de passe</span><input type="password" id="pw" autocomplete="current-password"></label><p class="note" id="autherr"></p>' +
     '<div class="row"><button class="btn" type="submit">Entrer</button><a class="btn ghost" href="#/">Retour</a></div></form></div>';
@@ -2119,10 +2146,12 @@ document.addEventListener("submit", function (e) {
     });
   } else if (id === "login") {
     e.preventDefault();
-    if (pwHash($("#pw").value) === savedHash()) loginAdmin();
+    var pwv = $("#pw").value;
+    if (pwHash(pwv) === savedHash()) unlockToken(pwv).then(function () { loginAdmin(); });
     else { $("#pw").value = ""; authError(e.target, "Mot de passe incorrect"); }
   } else if (id === "setpw") {
     e.preventDefault();
+    if (!ADMIN) return;
     var p1 = $("#pw1").value, p2 = $("#pw2").value;
     if (p1.length < 6) { authError(e.target, "6 caractères minimum"); return; }
     if (p1 !== p2) { authError(e.target, "Les deux mots de passe sont différents"); return; }
@@ -2316,7 +2345,19 @@ $("#file").addEventListener("change", function () {
 });
 $("#btn-key").addEventListener("click", function () {
   var k = window.prompt("Colle ton jeton TMDB");
-  if (k && k.trim()) { try { localStorage.setItem(KEYSTORE, k.trim()); toast("Clé enregistrée"); } catch (e) {} }
+  if (!k || !k.trim()) return;
+  k = k.trim();
+  try { localStorage.setItem(KEYSTORE, k); toast("Clé enregistrée sur ce navigateur"); } catch (e) {}
+  if (!window.crypto || !crypto.subtle) return;
+  var p = window.prompt("Pour que le site retienne la clé sur tous tes appareils, retape ton mot de passe admin (ou annule).");
+  if (!p) return;
+  if (pwHash(p) !== savedHash()) { toast("Mot de passe incorrect, la clé reste seulement sur ce navigateur"); return; }
+  encToken(k, p).then(function (blob) {
+    $("#app").innerHTML = '<div class="wrap"><div class="authbox"><h1>Clé TMDB retenue</h1>' +
+      '<p class="lead">Colle cette ligne dans le fichier index.html, dans CONFIG (à la place de la ligne TOKEN_ENC existante), puis remets le fichier en ligne. Ensuite la clé se débloque toute seule quand tu te connectes en admin, sur n\'importe quel appareil. Elle est chiffrée : personne ne peut la lire.</p>' +
+      '<pre class="code" id="hashline">TOKEN_ENC: "' + esc(blob) + '",</pre>' +
+      '<div class="row"><button class="btn ghost" type="button" id="copyhash">Copier la ligne</button><a class="btn" href="#/">Continuer</a></div></div></div>';
+  }).catch(function () { toast("Impossible de chiffrer la clé ici (ouvre le site en https)"); });
 });
 $("#btn-quit").addEventListener("click", function () {
   try { localStorage.removeItem("noir.admin"); } catch (e) {}
