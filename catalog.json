@@ -242,7 +242,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "trend": 69,
+      "trend": 78,
       "aka": [
         "100 Days of Deception",
         "百日谎言",
@@ -750,7 +750,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "trend": 89,
+      "trend": 88,
       "origin_country": [
         "KR"
       ],
@@ -4899,7 +4899,8 @@
         "KR"
       ],
       "original_language": "ko",
-      "posterV": 2
+      "posterV": 2,
+      "trend": 74
     },
     {
       "id": "300146",
@@ -4962,10 +4963,6 @@
                   "name": "VIDMOLY",
                   "url": "https://vidmoly.org/embed-2yld09tdh2b7.html",
                   "by": "614d778ed0"
-                },
-                {
-                  "name": "VIDMOLY 2",
-                  "url": "https://vidmoly.me/v/2yld09tdh2b7"
                 }
               ],
               "downloads": []
@@ -4980,10 +4977,6 @@
                   "name": "VIDMOLY 2",
                   "url": "https://vidmoly.org/embed-ftm3yk26ikx5.html",
                   "by": "614d778ed0"
-                },
-                {
-                  "name": "VIDMOLY 2",
-                  "url": "https://vidmoly.me/v/ftm3yk26ikx5"
                 }
               ],
               "downloads": []
@@ -4998,10 +4991,6 @@
                   "name": "VIDMOLY 2",
                   "url": "https://vidmoly.org/embed-x3lw9r89bioi.html",
                   "by": "614d778ed0"
-                },
-                {
-                  "name": "VIDMOLY 2",
-                  "url": "https://vidmoly.me/v/x3lw9r89bioi"
                 }
               ],
               "downloads": []
@@ -5016,10 +5005,6 @@
                   "name": "VIDMOLY 2",
                   "url": "https://vidmoly.org/embed-6ifc1l4tf216.html",
                   "by": "614d778ed0"
-                },
-                {
-                  "name": "VIDMOLY 2",
-                  "url": "https://vidmoly.me/v/6ifc1l4tf216"
                 }
               ],
               "downloads": []
@@ -5242,7 +5227,8 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "posterV": 2
+      "posterV": 2,
+      "trend": 91
     },
     {
       "id": "289690",
