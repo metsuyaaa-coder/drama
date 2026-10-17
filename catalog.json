@@ -736,7 +736,9 @@
       ],
       "sources": [],
       "addedAt": 1792018030964,
-      "langs": [],
+      "langs": [
+        "VOSTFR"
+      ],
       "downloads": [],
       "trend": 89
     },
@@ -4454,6 +4456,244 @@
       "langs": [
         "VOSTFR",
         "VF"
+      ],
+      "downloads": []
+    },
+    {
+      "id": "289423",
+      "type": "tv",
+      "name": "Recharge mon Coeur",
+      "original_name": "나를 충전해줘",
+      "aka": [
+        "Take Charge of My Heart",
+        "恋爱充电中",
+        "Um Choque de Amor",
+        "Живи моє серце",
+        "حبك يشحن قلبي",
+        "戀愛充電中",
+        "Napuni moje srce",
+        "Postarej se o mé srdce",
+        "Φορτισμένος Έρωτας",
+        "הטענה הדדית",
+        "टेक चार्ज ऑफ़ माय हार्ट",
+        "Érzelmi töltés",
+        "ハートにチャージして",
+        "Moje serce bije tylko przy tobie",
+        "De Coração Cheio",
+        "Iubire electrizantă",
+        "La chispa del amor",
+        "ชาร์จรัก สปาร์กเลิฟ",
+        "Nạp Đầy Trái Tim",
+        "Fammi battere il cuore",
+        "Поеми контрол над сърцето ми",
+        "Recharge mon Coeur",
+        "Заряди меня",
+        "Подзаряди меня",
+        "請為我充電",
+        "Charge Me",
+        "Charge Me Up",
+        "Xem Nạp đầy trái tim",
+        "나를 충전해줘"
+      ],
+      "year": "2026",
+      "overview": "Un héritier d’entreprise doté d’un cœur artificiel rencontre une femme littéralement électrique. Ils concluent un marché qui fait battre son cœur, et pas seulement au sens propre.",
+      "genres": [
+        "Science-Fiction & Fantastique",
+        "Comédie"
+      ],
+      "rating": "8.7",
+      "pop": 125.0672,
+      "status": "Ended",
+      "poster": "https://image.tmdb.org/t/p/w500/p5UJ0xS2NVmqtUfy9i0DMIJ1Lf3.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/original/rN9xHDp83kZ3cOr82JR1b4rFIFk.jpg",
+      "cast": [
+        {
+          "name": "Kim Young-kwang",
+          "character": "Baek Ho-rang"
+        },
+        {
+          "name": "Chae Soo-bin",
+          "character": "Na Bo-bae"
+        },
+        {
+          "name": "차우민",
+          "character": "Ji Eun-ho"
+        }
+      ],
+      "seasons": [
+        {
+          "number": 1,
+          "name": "Saison 1",
+          "episodes": [
+            {
+              "number": 1,
+              "name": "Épisode 1",
+              "overview": "Na Bo-bae est une scénariste en difficulté… et une femme électrique au sens strict. Un jour, elle croise Baek Ho-rang, la première personne immunisée contre ses décharges.",
+              "air_date": "2026-10-09",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/V6ytpBcYLAalG"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/C7a8bjqOqiWwJ"
+                },
+                {
+                  "name": "UQLOAD",
+                  "url": "https://uqload.vc/embed-gau8o46ekbec.html"
+                }
+              ],
+              "downloads": [
+                {
+                  "name": "1FICHIER",
+                  "url": "https://1fichier.com/?57vr6kyc5obiqi1iung5",
+                  "size": "4 Go",
+                  "quality": "1080p (H.264)"
+                }
+              ]
+            },
+            {
+              "number": 2,
+              "name": "Épisode 2",
+              "overview": "Quand Ho-rang comprend que les pouvoirs de Bo-bae pourraient faire fonctionner la batterie de son pacemaker, il tente de lui faire une offre qu'elle ne peut pas refuser.",
+              "air_date": "2026-10-09",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/xPxAg60z4HB6c"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 3,
+              "name": "Épisode 3",
+              "overview": "Ho-rang et Bo-bae deviennent colocataires et officialisent leur arrangement. Leur premier rendez-vous doit aider Bo-bae à avancer dans sa liste de choses romantiques à faire.",
+              "air_date": "2026-10-09",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/6zWXxQkpTQfvl"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 4,
+              "name": "Épisode 4",
+              "overview": "Bo-bae devient l'assistante personnelle de Ho-rang. Après un déjeuner d'anniversaire tendu avec sa famille, Ho-rang est touché par la surprise toute simple de Bo-bae.",
+              "air_date": "2026-10-09",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/bUjVAavNS1ExI"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 5,
+              "name": "Épisode 5",
+              "overview": "Han Seol-hee vient demander Ho-rang en mariage, mais il lui fait comprendre qu'il n'est pas intéressé. Pendant ce temps, Ji Eun-ho tente de se rapprocher de Bo-bae.",
+              "air_date": "2026-10-09",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/bPIEw2upU4y5D"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/N5JWm3mmxB3lV"
+                },
+                {
+                  "name": "UQLOAD",
+                  "url": "https://uqload.vc/embed-6b5zvifq8te2.html"
+                }
+              ],
+              "downloads": [
+                {
+                  "name": "1FICHIER",
+                  "url": "https://1fichier.com/?ypvj0b9h03fqb7fjgh2z",
+                  "size": "3.9 Go",
+                  "quality": "1080p (H.264)"
+                }
+              ]
+            },
+            {
+              "number": 6,
+              "name": "Épisode 6",
+              "overview": "Bo-bae impressionne par ses talents d'écriture, mais sa complicité avec Eun-ho rend Ho-rang jaloux. Eun-ho fait alors un aveu audacieux.",
+              "air_date": "2026-10-09",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/gX8tqAUo23Fvn"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 7,
+              "name": "Épisode 7",
+              "overview": "Craignant de mettre encore en danger quelqu'un à qui elle tient, Bo-bae garde ses distances avec Ho-rang. Les manigances de Do-yoon et Seol-hee atteignent leur paroxysme.",
+              "air_date": "2026-10-09",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/917weWRH9WdQD"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 8,
+              "name": "Épisode 8",
+              "overview": "Bo-bae et Ho-rang commencent enfin à sortir ensemble. Ce dernier prépare l'annonce de sa succession, mais le jour de l'événement, Bo-bae reste introuvable.",
+              "air_date": "2026-10-09",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/u4pQPYbeo8s4s"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 9,
+              "name": "Épisode 9",
+              "overview": "Ho-rang s'effondre et se retrouve en grand danger, jusqu'à ce que Bo-bae arrive in extremis. Mais elle découvre bientôt la vérité sur les risques liés à ses pouvoirs.",
+              "air_date": "2026-10-09",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/Qtnkr2LO3ehTd"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 10,
+              "name": "Épisode 10",
+              "overview": "Bo-bae apprend que ses pouvoirs ont peut-être disparu. Elle se demande alors ce que cela signifie pour elle et pour son avenir avec Ho-rang. Aura-t-elle droit à son happy end ?",
+              "air_date": "2026-10-09",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/BtTjifRggwwTy"
+                }
+              ],
+              "downloads": []
+            }
+          ],
+          "downloads": []
+        }
+      ],
+      "sources": [],
+      "addedAt": 1792235344508,
+      "langs": [
+        "VF",
+        "VOSTFR"
       ],
       "downloads": []
     }

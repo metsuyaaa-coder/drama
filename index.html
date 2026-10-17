@@ -856,7 +856,7 @@ var STATUS = { "Returning Series": "En cours", "Ended": "Terminée", "Canceled":
 function statusFr(s) { return STATUS[s] || s || ""; }
 
 /* ===== Vues ===== */
-var filter = "", langFilter = "", dlFilter = false, newFilter = false, kdFilter = "", typeFilter = "", curQ = "", searchBack = "#/";
+var filter = "", langFilter = "", dlFilter = false, newFilter = "", kdFilter = "", typeFilter = "", curQ = "", searchBack = "#/";
 var rerender = null;
 var lastPage = null;
 var pendingScroll = false;
@@ -1198,7 +1198,15 @@ function viewMyList() {
   $("#app").innerHTML = html + body + '</div>';
 }
 
-function newMatch(s) { return (!newFilter || !!newSeries(s)) && (!kdFilter || dramaType(s) === kdFilter); }
+/* Filtre nouveautés : "" (tout) | "serie" (nouvelles séries) | "ep" (nouveaux épisodes) */
+function newOptions(list) {
+  var o = [];
+  if (list.some(function (s) { return newSeries(s); })) o.push("serie");
+  if (list.some(function (s) { return newEpisode(s); })) o.push("ep");
+  return o;
+}
+var NEWLBL = { serie: "Nouvelles séries", ep: "Nouveaux épisodes" };
+function newMatch(s) { return (!newFilter || (newFilter === "serie" ? !!newSeries(s) : !!newEpisode(s))) && (!kdFilter || dramaType(s) === kdFilter); }
 function langMatch(s) { return !langFilter || (s.langs || []).indexOf(langFilter) > -1; }
 function langChips() {
   return '<div class="chips langchips"><span class="chiplbl">Langue</span><button class="chip' + (!langFilter ? " on" : "") + '" data-langf="">Toutes</button>' +
@@ -1208,8 +1216,8 @@ function viewList(title, pred) {
   var list = sortedDb().filter(pred);
   var genres = {};
   list.forEach(function (s) { (s.genres || []).forEach(function (g) { genres[g] = 1; }); });
-  var hasNew = title === "Séries" && list.some(function (s) { return newSeries(s); });
-  if (!hasNew) newFilter = false;
+  var newOpts = title === "Séries" ? newOptions(list) : [];
+  if (newOpts.indexOf(newFilter) < 0) newFilter = "";
   var kdTypes = title === "Séries" ? dramaTypes(list) : [];
   if (kdTypes.indexOf(kdFilter) < 0) kdFilter = "";
   var shown = list.filter(function (s) { return (!filter || (s.genres || []).indexOf(filter) > -1) && langMatch(s) && newMatch(s); });
@@ -1218,7 +1226,7 @@ function viewList(title, pred) {
   html += '<div class="wrap"><div class="section-head" style="padding-block:24px 18px"><div class="chips">' +
     '<button class="chip' + (!filter ? " on" : "") + '" data-genre="">Tout</button>' +
     Object.keys(genres).sort().map(function (g) { return '<button class="chip' + (filter === g ? " on" : "") + '" data-genre="' + esc(g) + '">' + esc(g) + '</button>'; }).join("") +
-    '</div>' + langChips() + (hasNew ? '<div class="chips langchips"><span class="chiplbl">Nouveautés</span><button class="chip' + (!newFilter ? " on" : "") + '" data-newf="">Toutes</button><button class="chip' + (newFilter ? " on" : "") + '" data-newf="1">Nouvelles séries</button></div>' : '') + (kdTypes.length ? '<div class="chips langchips"><span class="chiplbl">Catégorie</span><button class="chip' + (!kdFilter ? " on" : "") + '" data-kdf="">Toutes</button>' + kdTypes.map(function (d) { return '<button class="chip' + (kdFilter === d ? " on" : "") + '" data-kdf="' + d + '">' + DRAMA[d] + '</button>'; }).join("") + '</div>' : '') + '</div>' + (shown.length ? '<div class="grid">' + shown.map(card).join("") + '</div>' : '<p class="note" style="padding-bottom:48px">Aucun titre avec ces filtres.</p>') + '</div>';
+    '</div>' + langChips() + (newOpts.length ? '<div class="chips langchips"><span class="chiplbl">Nouveautés</span><button class="chip' + (!newFilter ? " on" : "") + '" data-newf="">Toutes</button>' + newOpts.map(function (o) { return '<button class="chip' + (newFilter === o ? " on" : "") + '" data-newf="' + o + '">' + NEWLBL[o] + '</button>'; }).join("") + '</div>' : '') + (kdTypes.length ? '<div class="chips langchips"><span class="chiplbl">Catégorie</span><button class="chip' + (!kdFilter ? " on" : "") + '" data-kdf="">Toutes</button>' + kdTypes.map(function (d) { return '<button class="chip' + (kdFilter === d ? " on" : "") + '" data-kdf="' + d + '">' + DRAMA[d] + '</button>'; }).join("") + '</div>' : '') + '</div>' + (shown.length ? '<div class="grid">' + shown.map(card).join("") + '</div>' : '<p class="note" style="padding-bottom:48px">Aucun titre avec ces filtres.</p>') + '</div>';
   $("#app").innerHTML = html;
 }
 
@@ -1255,8 +1263,8 @@ function viewSearch(q) {
   if (!canDl) dlFilter = false;
   var genres = {};
   base.forEach(function (s) { (s.genres || []).forEach(function (g) { genres[g] = 1; }); });
-  var hasNewS = base.some(function (s) { return newSeries(s); });
-  if (!hasNewS) newFilter = false;
+  var newOptsS = newOptions(base);
+  if (newOptsS.indexOf(newFilter) < 0) newFilter = "";
   var kdTypesS = dramaTypes(base);
   if (kdTypesS.indexOf(kdFilter) < 0) kdFilter = "";
   var found = base.filter(function (s) {
@@ -1275,7 +1283,7 @@ function viewSearch(q) {
     row("Type", chip("data-typef", "", "Tout", !typeFilter) + chip("data-typef", "tv", "Séries", typeFilter === "tv") + chip("data-typef", "movie", "Films", typeFilter === "movie")) +
     row("Langue", chip("data-langf", "", "Toutes", !langFilter) + ["VOSTFR", "VF"].map(function (L) { return chip("data-langf", L, L, langFilter === L); }).join("")) +
     (Object.keys(genres).length ? row("Genre", chip("data-genre", "", "Tout", !filter) + Object.keys(genres).sort().map(function (g) { return chip("data-genre", g, g, filter === g); }).join("")) : "") +
-    (hasNewS ? row("Nouveautés", chip("data-newf", "", "Toutes", !newFilter) + chip("data-newf", "1", "Nouvelles séries", newFilter)) : "") +
+    (newOptsS.length ? row("Nouveautés", chip("data-newf", "", "Toutes", !newFilter) + newOptsS.map(function (o) { return chip("data-newf", o, NEWLBL[o], newFilter === o); }).join("")) : "") +
     (kdTypesS.length ? row("Catégorie", chip("data-kdf", "", "Toutes", !kdFilter) + kdTypesS.map(function (d) { return chip("data-kdf", d, DRAMA[d], kdFilter === d); }).join("")) : "") +
     (canDl ? row("Téléchargement", chip("data-dlf", "", "Tous", !dlFilter) + chip("data-dlf", "1", "Avec lien", dlFilter)) : "");
   html += '<div class="wrap sres">' + filters + (found.length ? '<div class="grid" style="padding-top:28px">' + found.map(card).join("") + '</div>' : '<p class="note" style="padding:28px 0 48px">Aucun titre avec ces filtres.</p>') + '</div>';
@@ -1841,7 +1849,7 @@ function route(force) {
   if ((a === "ajouter" || a === "modifier" || a === "motdepasse" || a === "panel") && !ADMIN) { location.hash = "#/admin"; return; }
 
   var changed = force || a !== lastPage || a === "serie" || a === "modifier";
-  if (a !== lastPage) { filter = ""; langFilter = ""; dlFilter = false; newFilter = false; kdFilter = ""; typeFilter = ""; listTab = "list"; }
+  if (a !== lastPage) { filter = ""; langFilter = ""; dlFilter = false; newFilter = ""; kdFilter = ""; typeFilter = ""; listTab = "list"; }
   lastPage = a;
 
   var q = $("#q");
@@ -2016,7 +2024,7 @@ document.addEventListener("click", function (e) {
   else if (t.dataset.genre != null) { filter = t.dataset.genre; if (rerender) rerender(); }
   else if (t.dataset.langf != null) { langFilter = t.dataset.langf; if (rerender) rerender(); }
   else if (t.dataset.kdf != null) { kdFilter = t.dataset.kdf; if (rerender) rerender(); }
-  else if (t.dataset.newf != null) { newFilter = t.dataset.newf === "1"; if (rerender) rerender(); }
+  else if (t.dataset.newf != null) { newFilter = t.dataset.newf; if (rerender) rerender(); }
   else if (t.dataset.dlf != null) { dlFilter = t.dataset.dlf === "1"; if (rerender) rerender(); }
   else if (t.dataset.typef != null) { typeFilter = t.dataset.typef; if (rerender) rerender(); }
   else if (t.dataset.pick != null) pick(t.dataset.pick);
