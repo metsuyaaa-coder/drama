@@ -511,6 +511,7 @@ footer .wrap.about { display: grid; grid-template-columns: repeat(auto-fit, minm
 .dlad p b { color: var(--fg); }
 .dlad .btn { width: 100%; }
 .dlad .btn[disabled] { opacity: .5; cursor: wait; }
+#refreshall:disabled { opacity: .5; cursor: wait; }
 .dlbtns .btn { flex: 1; text-align: center; justify-content: center; }
 @keyframes dlfade { from { opacity: 0; } to { opacity: 1; } }
 @keyframes dlpop { from { opacity: 0; transform: translateY(18px) scale(.94); } to { opacity: 1; transform: none; } }
@@ -1372,6 +1373,7 @@ function scrollSeasons() {
 function viewPanel() {
   var priv = SETTINGS.downloads === "private";
   var n = db.filter(hasDl).length;
+  var nt = db.filter(isTmdbFiche).length;
   $("#app").innerHTML = '<div class="wrap"><div class="authbox" style="max-width:560px"><h1>Panneau admin</h1>' +
     '<p class="lead">Réglages du site. Pour que les visiteurs les voient, clique ensuite sur « Publier » et remets catalog.json en ligne.</p>' +
     '<div style="display:grid;gap:12px"><h3 class="note" style="margin:0;text-transform:uppercase;letter-spacing:.08em">Téléchargements</h3>' +
@@ -1380,6 +1382,10 @@ function viewPanel() {
     '<p class="note" style="margin:0">' + (priv
       ? 'Privé : seul toi (en mode admin) vois les boutons et l\'onglet Télécharger. À la publication, les liens sont retirés de catalog.json, donc personne ne peut les lire dans le fichier. Ils restent sur ce navigateur : fais une sauvegarde complète.'
       : 'Public : tous les visiteurs voient les boutons et l\'onglet Télécharger sur les fiches qui ont des liens.') + '</p><div class="row"><button class="btn ghost small" type="button" data-preview="1">Voir comme un visiteur</button></div></div>' +
+    '<div style="display:grid;gap:12px"><h3 class="note" style="margin:0;text-transform:uppercase;letter-spacing:.08em">Fiches TMDB</h3>' +
+    '<p class="note" style="margin:0">' + nt + (nt > 1 ? ' fiches viennent' : ' fiche vient') + ' de TMDB. Le bouton remet à jour les infos, les affiches, les saisons et les nouveaux épisodes. Tes sources, liens de téléchargement et langues sont conservés.</p>' +
+    '<div class="row"><button class="btn" type="button" id="refreshall"' + (refreshingAll || !nt ? ' disabled' : '') + '>Tout mettre à jour depuis TMDB</button></div>' +
+    '<p class="note" id="refreshall-status" style="margin:0"></p></div>' +
     '<div style="display:grid;gap:12px"><h3 class="note" style="margin:0;text-transform:uppercase;letter-spacing:.08em">Catalogue</h3>' +
     '<div class="row"><button class="btn" type="button" data-clickid="btn-export">Publier (catalog.json)</button><button class="btn ghost" type="button" id="btn-backup">Sauvegarde complète</button><button class="btn ghost" type="button" data-clickid="btn-import">Importer</button></div></div>' +
     '<div style="display:grid;gap:12px"><h3 class="note" style="margin:0;text-transform:uppercase;letter-spacing:.08em">Accès</h3>' +
@@ -1851,7 +1857,7 @@ document.addEventListener("click", function (e) {
   if (nav && nav.getAttribute("href") === (location.hash || "#/")) { e.preventDefault(); route(true); return; }
   var rd = e.target.closest("[data-resumedel]");
   if (rd) { e.preventDefault(); e.stopPropagation(); removeResume(rd.dataset.resumedel); viewHome(); return; }
-  var t = e.target.closest("[data-resume],[data-watch],[data-movsrc],[data-playep],[data-src],[data-del],[data-list],[data-listtab],[data-seen],[data-seenseason],[data-genre],[data-langf],[data-dlf],[data-typef],[data-pick],[data-bulk],[data-dlbulk],[data-dltab],#save,#applytpl,#manual,#manualfilm,#refresh,#copyhash");
+  var t = e.target.closest("[data-resume],[data-watch],[data-movsrc],[data-playep],[data-src],[data-del],[data-list],[data-listtab],[data-seen],[data-seenseason],[data-genre],[data-langf],[data-dlf],[data-typef],[data-pick],[data-bulk],[data-dlbulk],[data-dltab],#save,#applytpl,#refreshall,#manual,#manualfilm,#refresh,#copyhash");
   if (!t) return;
   if (t.dataset.resume != null) { e.preventDefault(); resumeWatch(t.dataset.resume); }
   else if (t.dataset.watch != null) {
@@ -1934,6 +1940,7 @@ document.addEventListener("click", function (e) {
   else if (t.dataset.typef != null) { typeFilter = t.dataset.typef; if (rerender) rerender(); }
   else if (t.dataset.pick != null) pick(t.dataset.pick);
   else if (t.id === "save") saveDraft();
+  else if (t.id === "refreshall") refreshAll();
   else if (t.id === "refresh") pick((draft.type === "movie" ? "movie|" + String(draft.id).replace(/^m/, "") : "tv|" + draft.id), draft);
   else if (t.id === "manual") { draft = blank("tv"); renderEditor(); }
   else if (t.id === "manualfilm") { draft = blank("movie"); renderEditor(); }
@@ -2255,6 +2262,135 @@ function loadCatalog() {
       if (!readJSON(SETKEY, null)) { SETTINGS.downloads = priv ? "private" : "public"; saveSettings(); }
     }
   }).catch(function () {});
+}
+
+/* Admin : met à jour toutes les fiches venant de TMDB (infos, affiches, distribution, saisons, épisodes).
+   Gardés tels quels : sources, liens de téléchargement, langues, date d'ajout, score tendance,
+   ainsi que les saisons et épisodes ajoutés à la main qui ont des sources ou des liens. */
+var refreshingAll = false;
+function isTmdbFiche(s) { return isMovie(s) ? /^m\d+$/.test(String(s.id)) : /^\d+$/.test(String(s.id)); }
+function filled(v) { return Array.isArray(v) ? v.length > 0 : (v !== "" && v != null && v !== 0); }
+function hasContent(x) { return !!((x.sources && x.sources.length) || (x.downloads && x.downloads.length)); }
+
+function tmdbFresh(s) {
+  var movie = isMovie(s), id = String(s.id).replace(/^m/, "");
+  var common = function (t) {
+    return {
+      genres: (t.genres || []).map(function (g) { return g.name; }),
+      rating: t.vote_average ? t.vote_average.toFixed(1) : "", pop: t.popularity || 0,
+      status: t.status || "", poster: img(t.poster_path, "w500"), backdrop: img(t.backdrop_path, "original"),
+      cast: ((t.credits && t.credits.cast) || []).slice(0, 12).map(function (c) { return { name: c.name, character: c.character }; })
+    };
+  };
+  if (movie) {
+    return tmdb("/movie/" + id, { append_to_response: "credits,translations,alternative_titles" }).then(function (t) {
+      var f = common(t);
+      f.name = t.title || ""; f.original_name = t.original_title || ""; f.aka = akaFrom(t, true);
+      f.year = (t.release_date || "").slice(0, 4); f.overview = t.overview || ""; f.runtime = t.runtime || "";
+      return { fields: f };
+    });
+  }
+  return tmdb("/tv/" + id, { append_to_response: "credits,translations,alternative_titles" }).then(function (t) {
+    var seasons = (t.seasons || []).filter(function (x) { return x.season_number > 0; });
+    var one = function (x, lang) { return tmdb("/tv/" + id + "/season/" + x.season_number, { language: lang }).catch(function () { return { episodes: [] }; }); };
+    return Promise.all(seasons.map(function (x) {
+      return Promise.all([one(x, CONFIG.LANG), one(x, "en-US")]).then(function (r) {
+        var en = {};
+        (r[1].episodes || []).forEach(function (e) { en[e.episode_number] = e; });
+        (r[0].episodes || []).forEach(function (e) {
+          var generic = !e.name || /^(épisode|episode)\s*\d+$/i.test(e.name.trim());
+          var alt = en[e.episode_number];
+          if (generic && alt && alt.name && !/^episode\s*\d+$/i.test(alt.name.trim())) e.name = alt.name;
+          if (!e.overview && alt && alt.overview) e.overview = alt.overview;
+        });
+        return r[0];
+      });
+    })).then(function (full) {
+      var f = common(t);
+      f.name = t.name || ""; f.original_name = t.original_name || ""; f.aka = akaFrom(t, false);
+      f.year = (t.first_air_date || "").slice(0, 4); f.overview = t.overview || "";
+      return {
+        fields: f,
+        seasons: seasons.map(function (x, i) {
+          return { number: x.season_number, name: x.name, episodes: (full[i].episodes || []).map(function (e) { return { number: e.episode_number, name: e.name, overview: e.overview || "", air_date: e.air_date || "", sources: [] }; }) };
+        })
+      };
+    });
+  });
+}
+
+function mergeSeasons(oldS, newS) {
+  var out = newS.map(function (ns) {
+    var os = oldS.filter(function (x) { return x.number === ns.number; })[0] || {};
+    var oeps = os.episodes || [], eps;
+    if (!ns.episodes.length && oeps.length) eps = oeps.slice();   /* TMDB n'a rien renvoyé : on ne touche pas aux épisodes */
+    else {
+      eps = ns.episodes.map(function (ne) {
+        var oe = oeps.filter(function (x) { return x.number === ne.number; })[0];
+        return oe ? Object.assign({}, oe, { name: ne.name || oe.name, overview: ne.overview || oe.overview || "", air_date: ne.air_date || oe.air_date || "" }) : ne;
+      });
+      oeps.forEach(function (oe) {
+        if (hasContent(oe) && !ns.episodes.some(function (ne) { return ne.number === oe.number; })) eps.push(oe);
+      });
+    }
+    eps.sort(function (a, b) { return a.number - b.number; });
+    return Object.assign({}, os, { number: ns.number, name: ns.name || os.name, episodes: eps });
+  });
+  oldS.forEach(function (os) {
+    if (!newS.some(function (ns) { return ns.number === os.number; }) && (hasContent(os) || (os.episodes || []).some(hasContent))) out.push(os);
+  });
+  out.sort(function (a, b) { return a.number - b.number; });
+  return out;
+}
+function mergeFresh(old, fr) {
+  var out = Object.assign({}, old);
+  Object.keys(fr.fields).forEach(function (k) { if (filled(fr.fields[k])) out[k] = fr.fields[k]; });
+  if (fr.seasons) out.seasons = mergeSeasons(old.seasons || [], fr.seasons);
+  return normalize(out);
+}
+
+function refreshAll() {
+  if (refreshingAll) return;
+  if (!getToken()) { toast("Clé TMDB manquante : ajoute-la d'abord avec « Clé TMDB »"); return; }
+  var todo = db.filter(isTmdbFiche).map(function (s) { return String(s.id); });
+  var manual = db.length - todo.length;
+  if (!todo.length) { toast("Aucune fiche TMDB à mettre à jour"); return; }
+  if (!window.confirm("Mettre à jour " + todo.length + " fiche" + (todo.length > 1 ? "s" : "") + " depuis TMDB ?\n\nTitre, synopsis, affiche, distribution, saisons et épisodes seront remplacés par les infos TMDB.\nTes sources, liens de téléchargement et langues sont conservés.")) return;
+  refreshingAll = true;
+  var total = todo.length, i = 0, ok = 0, fails = [], aborted = "";
+  var show = function (msg) {
+    var e = $("#refreshall-status"); if (e) e.textContent = msg;
+    var b = $("#refreshall"); if (b) b.disabled = refreshingAll;
+  };
+  var finish = function () {
+    refreshingAll = false;
+    persist();
+    var msg = ok + " fiche" + (ok > 1 ? "s" : "") + " mise" + (ok > 1 ? "s" : "") + " à jour sur " + total + ".";
+    if (manual) msg += " " + manual + " fiche" + (manual > 1 ? "s" : "") + " ajoutée" + (manual > 1 ? "s" : "") + " à la main ignorée" + (manual > 1 ? "s" : "") + ".";
+    if (aborted) msg += " Arrêt : " + aborted + ".";
+    if (fails.length) msg += " Échec : " + fails.slice(0, 5).join(", ") + (fails.length > 5 ? " et " + (fails.length - 5) + " autre(s)" : "") + ".";
+    if (ok) msg += " Clique sur « Publier » pour que les visiteurs voient les changements.";
+    show(msg);
+    toast(ok + " fiche" + (ok > 1 ? "s" : "") + " mise" + (ok > 1 ? "s" : "") + " à jour");
+    if ((location.hash || "#/") === "#/") viewHome();
+  };
+  (function next() {
+    var id = todo.shift();
+    if (!id) { finish(); return; }
+    var s = byId(id);
+    if (!s) { setTimeout(next, 0); return; }
+    i++;
+    show("Mise à jour " + i + " / " + total + " : " + s.name);
+    tmdbFresh(s).then(function (fr) {
+      var cur = byId(id), k = db.indexOf(cur);
+      if (k > -1) { db[k] = mergeFresh(cur, fr); ok++; if (ok % 10 === 0) persist(); }
+    }).catch(function (e) {
+      if (/401/.test(e.message)) { aborted = e.message; todo.length = 0; }
+      else if (/404/.test(e.message)) fails.push(s.name + " (introuvable sur TMDB)");
+      else fails.push(s.name);
+    }).then(function () { setTimeout(next, 120); });
+  })();
+  show("Mise à jour 0 / " + total + "…");
 }
 
 /* Admin : ajoute les titres multilingues aux fiches déjà au catalogue (une seule fois par fiche) */
