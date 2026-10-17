@@ -2088,6 +2088,27 @@ function renderPlayer() {
   $("#psrc").innerHTML = cur.sources.length > 1 ? cur.sources.map(function (x, k) {
     return '<button type="button" class="chip' + (k === cur.i ? " on" : "") + '" data-src="' + k + '">' + esc(x.name) + '</button>';
   }).join("") : "";
+  watchSource();
+}
+/* Si le serveur ne répond pas du tout (l'iframe ne finit jamais de charger), on passe tout seul à la source suivante.
+   Limite : le navigateur interdit de regarder ce qui se passe dans un lecteur d'un autre site, donc une vidéo supprimée ou un lecteur qui affiche une erreur ne peuvent pas être détectés. */
+var watchTimer = null, watchToken = 0, WATCH_MS = 20000;
+function watchSource() {
+  clearTimeout(watchTimer);
+  var tok = ++watchToken;
+  if (!cur.sources || cur.sources.length < 2) return;
+  cur.tried = cur.tried || {}; cur.tried[cur.i] = 1;
+  var fr = document.querySelector("#pstage iframe"); if (!fr) return;
+  fr.addEventListener("load", function () { if (tok === watchToken) clearTimeout(watchTimer); });
+  watchTimer = setTimeout(function () {
+    var pl = $("#player");
+    if (tok !== watchToken || !pl || !pl.open) return;
+    var n = cur.sources.length, nxt = -1;
+    for (var k = 1; k < n; k++) { var j = (cur.i + k) % n; if (!cur.tried[j]) { nxt = j; break; } }
+    if (nxt < 0) { toast("Aucun serveur ne répond pour l'instant, réessaie plus tard"); return; }
+    toast("Ce serveur ne répond pas, passage à " + (cur.sources[nxt].name || "la source suivante"));
+    cur.i = nxt; renderPlayer();
+  }, WATCH_MS);
 }
 /* Lit un épisode et prépare « précédent / suivant » parmi les épisodes qui ont une source */
 function playEp(s, si, num) {
@@ -2610,7 +2631,7 @@ $("#pfull").addEventListener("click", toggleFull);
 document.addEventListener("fullscreenchange", function () { if (!$("#player").classList.contains("wide")) $("#pfull").textContent = document.fullscreenElement ? "Quitter le plein écran" : "Plein écran"; syncFs(); });
 document.addEventListener("webkitfullscreenchange", function () { if (!$("#player").classList.contains("wide")) $("#pfull").textContent = document.webkitFullscreenElement ? "Quitter le plein écran" : "Plein écran"; syncFs(); });
 $("#player").addEventListener("click", function (e) { if (e.target === this) closePlayer(); });
-$("#player").addEventListener("close", function () { closeEps(); clearInterval(tipTimer); document.documentElement.classList.remove("lock"); $("#pstage").innerHTML = ""; syncFs(); });
+$("#player").addEventListener("close", function () { watchToken++; clearTimeout(watchTimer); closeEps(); clearInterval(tipTimer); document.documentElement.classList.remove("lock"); $("#pstage").innerHTML = ""; syncFs(); });
 
 /* Fichier publié : en mode privé, les liens de téléchargement en sont retirés */
 function stripDl(list) {
