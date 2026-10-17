@@ -7366,6 +7366,206 @@
       "langs": [],
       "downloads": [],
       "updatedAt": 1792274500438
+    },
+    {
+      "id": "311648",
+      "type": "tv",
+      "name": "Make Me Tingle",
+      "original_name": "내가 떨릴 수 있게",
+      "origin_country": [
+        "KR"
+      ],
+      "original_language": "ko",
+      "aka": [
+        "Make Me Tingle",
+        "心动制造所",
+        "心動製造所",
+        "เสียวนัก เดี๋ยวรักเข้าให้",
+        "私を震えさせて",
+        "Накарай ме да настръхна",
+        "أشعرني بالسعادة",
+        "让我心动",
+        "Make Me Tremble",
+        "내가 떨릴 수 있게"
+      ],
+      "year": "2026",
+      "overview": "Yeon-su a grandi dans une famille conservatrice, où la courtoisie et la discipline priment sur tout, ce qui lui a quelque peu compliqué la découverte de sa véritable personnalité. Un jour, elle se retrouve impliquée dans une entreprise spécialisée dans les jouets érotiques et fait la connaissance de Dokgo Dal, qui lui ouvre les portes d’un tout autre univers. Alors que leur amour s’épanouit, Yeon-su découvre non seulement ses émotions, mais prend également conscience de l’importance du désir physique, ce qui l’amène à atteindre une véritable maturité.",
+      "genres": [
+        "Drame",
+        "Comédie"
+      ],
+      "rating": "",
+      "pop": 14.6539,
+      "status": "Returning Series",
+      "poster": "https://image.tmdb.org/t/p/w500/e4MlbtE02So4D5DJy197DbiAxqs.jpg",
+      "posterV": 2,
+      "backdrop": "https://image.tmdb.org/t/p/original/voAufY8Jv3AVfG15sxY5H6XWFKr.jpg",
+      "cast": [
+        {
+          "name": "남지현",
+          "character": "Gong Yeon-su"
+        },
+        {
+          "name": "김재영",
+          "character": "Dokgo Dal"
+        },
+        {
+          "name": "박소진",
+          "character": "Jin Se-ra"
+        },
+        {
+          "name": "김신비",
+          "character": "Gong Nam-su"
+        },
+        {
+          "name": "소아린",
+          "character": "Kang Si-eun"
+        },
+        {
+          "name": "강태주",
+          "character": "Yoon Ji-oh"
+        },
+        {
+          "name": "Byeon Chang-Yeol",
+          "character": "Field leader"
+        },
+        {
+          "name": "Park Cho-eun",
+          "character": "SR Planning staff"
+        },
+        {
+          "name": "조아라",
+          "character": ""
+        },
+        {
+          "name": "Lee Chang-min",
+          "character": ""
+        },
+        {
+          "name": "Seong Seung-ha",
+          "character": "Dong-woo"
+        }
+      ],
+      "seasons": [
+        {
+          "number": 1,
+          "name": "Saison 1",
+          "episodes": [
+            {
+              "number": 1,
+              "name": "Épisode 1",
+              "overview": "Conservative marketer Yeon-su takes on a former blind date as a new client.",
+              "air_date": "2026-10-15",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-jqrxl4snb2q0.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 2,
+              "name": "Épisode 2",
+              "overview": "Marketer Yeon-su clashes with her new client, Dal.",
+              "air_date": "2026-10-15",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-qh9xjp9g0qmh.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 3,
+              "name": "Épisode 3",
+              "overview": "A heated argument over love leads to an unexpected move by Dal, leaving a confused Yeon-su reeling.",
+              "air_date": "2026-10-15",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-zy5gavca2zb1.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 4,
+              "name": "Épisode 4",
+              "overview": "Yeon-su's event idea takes shape. Meanwhile, Dal shocks her family with an overly blunt remark.",
+              "air_date": "2026-10-15",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-59rjp2nkoe65.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 5,
+              "name": "Épisode 5",
+              "overview": "",
+              "air_date": "2026-10-22",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 6,
+              "name": "Épisode 6",
+              "overview": "",
+              "air_date": "2026-10-22",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 7,
+              "name": "Épisode 7",
+              "overview": "",
+              "air_date": "2026-10-29",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 8,
+              "name": "Épisode 8",
+              "overview": "",
+              "air_date": "2026-10-29",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 9,
+              "name": "Épisode 9",
+              "overview": "",
+              "air_date": "2026-11-05",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 10,
+              "name": "Épisode 10",
+              "overview": "",
+              "air_date": "2026-11-05",
+              "sources": [],
+              "downloads": []
+            }
+          ],
+          "downloads": []
+        }
+      ],
+      "sources": [],
+      "addedAt": 1792275901025,
+      "langs": [
+        "VOSTFR"
+      ],
+      "downloads": [],
+      "updatedAt": 1792275999101
     }
   ],
   "deletedLinks": [
