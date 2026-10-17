@@ -81,11 +81,13 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/2TgyEgZCFGobY"
+                  "url": "https://vidara.to/e/2TgyEgZCFGobY",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-vzlzv64p907n.html"
+                  "url": "https://uqload.vc/embed-vzlzv64p907n.html",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -99,7 +101,8 @@
                   "name": "1FICHIER",
                   "url": "https://1fichier.com/?xg1jsq8vmidbsuw2gdif",
                   "size": "2.8 Go",
-                  "quality": "1080p (H.264)"
+                  "quality": "1080p (H.264)",
+                  "by": "head"
                 }
               ]
             },
@@ -111,11 +114,13 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/5thkvKklZ5I2D"
+                  "url": "https://vidara.to/e/5thkvKklZ5I2D",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-z1zyz49djtuq.html"
+                  "url": "https://uqload.vc/embed-z1zyz49djtuq.html",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -129,7 +134,8 @@
                   "name": "1FICHIER",
                   "url": "https://1fichier.com/?871905qoy820g0cncdyi",
                   "size": "2.6 Go",
-                  "quality": "1080p (H.264)"
+                  "quality": "1080p (H.264)",
+                  "by": "head"
                 }
               ]
             },
@@ -138,7 +144,23 @@
               "name": "Épisode 3",
               "overview": "",
               "air_date": "2026-10-17",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/vmyx4WkyejVsn",
+                  "by": "head"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/mQGMbiAd5P6dO",
+                  "by": "head"
+                },
+                {
+                  "name": "UQLOAD",
+                  "url": "https://uqload.vc/embed-mdpa6rirw3rb.html",
+                  "by": "head"
+                }
+              ],
               "downloads": []
             },
             {
@@ -254,7 +276,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "trend": 69,
+      "trend": 78,
       "aka": [
         "100 Days of Deception",
         "百日谎言",
@@ -287,7 +309,8 @@
         "KR"
       ],
       "original_language": "ko",
-      "posterV": 2
+      "posterV": 2,
+      "updatedAt": 1792266076373
     },
     {
       "id": "275102",
@@ -301,7 +324,7 @@
       ],
       "rating": "6.8",
       "status": "Ended",
-      "poster": "https://image.tmdb.org/t/p/original/pJsIzlTjmx07ilwEkl0cglrMVa1.jpg",
+      "poster": "https://image.tmdb.org/t/p/w500/4TU0PcHBIl0wPW5B6aVRGExOnHE.jpg",
       "backdrop": "https://image.tmdb.org/t/p/original/uc1p1PEbEMpdIHqnU9TESNC6Jhp.jpg",
       "cast": [
         {
@@ -504,7 +527,8 @@
         "KR"
       ],
       "original_language": "ko",
-      "posterV": 2
+      "posterV": 2,
+      "updatedAt": 1792265894315
     },
     {
       "id": "293610",
@@ -534,6 +558,7 @@
         "ドクターX 〜白衣のマコィア〜",
         "DakteoX hayan mapiaui sidae",
         "닥터Ｘ",
+        "Doctora x 2026",
         "Доктор Икс",
         "닥터X: 하얀 마피아의 시대"
       ],
@@ -547,7 +572,7 @@
       "rating": "9.1",
       "pop": 85.639,
       "status": "Returning Series",
-      "poster": "https://image.tmdb.org/t/p/original/u0DrgmScTheIyCVEaeDKQ3sagLu.jpg",
+      "poster": "https://image.tmdb.org/t/p/w500/nDDVzQfv95PGwj9nV2fJvUrkcvU.jpg",
       "backdrop": "https://image.tmdb.org/t/p/original/mDYIV71RL3mkaW8IfSGNthuVB7l.jpg",
       "cast": [
         {
@@ -612,11 +637,13 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/yxmRmsmX4zOOn"
+                  "url": "https://vidara.to/e/yxmRmsmX4zOOn",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-m1tmawcz7c7k.html"
+                  "url": "https://uqload.vc/embed-m1tmawcz7c7k.html",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -630,7 +657,8 @@
                   "name": "1FICHIER",
                   "url": "https://1fichier.com/?1qd8vda0u704nuwfzs2g",
                   "size": "2.32 Go",
-                  "quality": "1080p (H.264)"
+                  "quality": "1080p (H.264)",
+                  "by": "head"
                 }
               ]
             },
@@ -642,11 +670,13 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/X8HN8WRXjyREk"
+                  "url": "https://vidara.to/e/X8HN8WRXjyREk",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-cs61nhnp5yge.html"
+                  "url": "https://uqload.vc/embed-cs61nhnp5yge.html",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -660,7 +690,8 @@
                   "name": "1FICHIER",
                   "url": "https://1fichier.com/?xxzdrtttn7jbmkzlslaj",
                   "size": "2.3 Go",
-                  "quality": "1080p (H.264)"
+                  "quality": "1080p (H.264)",
+                  "by": "head"
                 }
               ]
             },
@@ -672,21 +703,18 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/09adi9vhA9U10"
+                  "url": "https://vidara.to/e/09adi9vhA9U10",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/1beitjsENq5T9"
+                  "url": "https://playmate.to/embed/1beitjsENq5T9",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-v6n8916hwstw.html"
-                },
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-lbcj5itc7iag.html",
-                  "quality": "VIDARA https://vidara.to/e/09adi9vhA9U10",
-                  "by": "614d778ed0"
+                  "url": "https://uqload.vc/embed-v6n8916hwstw.html",
+                  "by": "head"
                 }
               ],
               "downloads": [
@@ -694,16 +722,28 @@
                   "name": "1FICHIER",
                   "url": "https://1fichier.com/?453rfjul6t7nuvyie39a",
                   "size": "2.4 Go",
-                  "quality": "1080p (H.264)"
+                  "quality": "1080p (H.264)",
+                  "by": "head"
                 }
               ]
             },
             {
               "number": 4,
               "name": "Épisode 4",
-              "overview": "",
+              "overview": "After a new surgeon arrives at the hospital, Jang Hui-suk and Su-jeong keep a close eye on him. Meanwhile, a pharmaceutical rep suffers an emergency.",
               "air_date": "2026-10-17",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/4rS4NM3f3wkk5",
+                  "by": "head"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/Zd3XhWMuddNOj",
+                  "by": "head"
+                }
+              ],
               "downloads": []
             },
             {
@@ -780,12 +820,13 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "trend": 89,
+      "trend": 88,
       "origin_country": [
         "KR"
       ],
       "original_language": "ko",
-      "posterV": 2
+      "posterV": 2,
+      "updatedAt": 1792265895132
     },
     {
       "id": "278573",
@@ -800,7 +841,7 @@
       ],
       "rating": "9.0",
       "status": "Ended",
-      "poster": "https://image.tmdb.org/t/p/original/tbEvQSQZh9bXDpcMelEKDzh9ZBD.jpg",
+      "poster": "https://image.tmdb.org/t/p/w500/ocXkHSslrSWMz2ZJGl5MjF6dQr3.jpg",
       "backdrop": "https://image.tmdb.org/t/p/original/6ekykPwvAywJRjFEnUoCFWTO9O3.jpg",
       "cast": [
         {
@@ -1100,7 +1141,8 @@
         "KR"
       ],
       "original_language": "ko",
-      "posterV": 2
+      "posterV": 2,
+      "updatedAt": 1792265895935
     },
     {
       "id": "m1058424",
@@ -1227,7 +1269,8 @@
           "quality": "1080p (H.265)"
         }
       ],
-      "posterV": 2
+      "posterV": 2,
+      "updatedAt": 1792265896410
     },
     {
       "id": "305644",
@@ -1242,7 +1285,7 @@
       "rating": "9.2",
       "pop": 21.9789,
       "status": "Ended",
-      "poster": "https://image.tmdb.org/t/p/original/eTzC7L3HgsNNBEkTpl9s3tVJUYv.jpg",
+      "poster": "https://image.tmdb.org/t/p/w500/a7p6htiJKx68USDAcilJ5rzKAWB.jpg",
       "backdrop": "https://image.tmdb.org/t/p/original/fYL4I6cezb06BHhQlrNjNhy7jhf.jpg",
       "cast": [
         {
@@ -1609,7 +1652,8 @@
         "KR"
       ],
       "original_language": "ko",
-      "posterV": 2
+      "posterV": 2,
+      "updatedAt": 1792265897249
     },
     {
       "id": "316197",
@@ -1626,7 +1670,7 @@
       "rating": "8.0",
       "pop": 15.0098,
       "status": "Returning Series",
-      "poster": "https://image.tmdb.org/t/p/original/vIf6bJs9oi5BfNAiAu9CG45cXC7.jpg",
+      "poster": "https://image.tmdb.org/t/p/w500/6OAuQOGqjYY1JXbkTlWz4Mm2Kmi.jpg",
       "backdrop": "https://image.tmdb.org/t/p/original/fTlvgaOpBboy8O2q9d54hPSoBog.jpg",
       "cast": [
         {
@@ -1659,21 +1703,18 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/5YXxZiybnWGFQ"
+                  "url": "https://vidara.to/e/5YXxZiybnWGFQ",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/OUMCEnlPAqzMU"
+                  "url": "https://playmate.to/embed/OUMCEnlPAqzMU",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-c49jps70wbmu.html"
-                },
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-8vyqwi9ydtol.html",
-                  "quality": "VIDARA https://vidara.to/e/5YXxZiybnWGFQ",
-                  "by": "614d778ed0"
+                  "url": "https://uqload.vc/embed-c49jps70wbmu.html",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -1686,21 +1727,18 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/G7RAaPCAZqPIV"
+                  "url": "https://vidara.to/e/G7RAaPCAZqPIV",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/OBPx6KJaAQbkS"
+                  "url": "https://playmate.to/embed/OBPx6KJaAQbkS",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-l5pewc05t1xp.html"
-                },
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-vfupeswcjpd5.html",
-                  "quality": "VIDARA https://vidara.to/e/G7RAaPCAZqPIV",
-                  "by": "614d778ed0"
+                  "url": "https://uqload.vc/embed-l5pewc05t1xp.html",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -1713,21 +1751,18 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/YVAMUlgvZT9Sn"
+                  "url": "https://vidara.to/e/YVAMUlgvZT9Sn",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/HRRG2TzLutO17"
+                  "url": "https://playmate.to/embed/HRRG2TzLutO17",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-y5dwrdf5g0j1.html"
-                },
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-z5un28ztgfkp.html",
-                  "quality": "VIDARA https://vidara.to/e/YVAMUlgvZT9Sn",
-                  "by": "614d778ed0"
+                  "url": "https://uqload.vc/embed-y5dwrdf5g0j1.html",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -1740,21 +1775,18 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/9y8cAiISS2MT3"
+                  "url": "https://vidara.to/e/9y8cAiISS2MT3",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/rvl5l1ggDZ8xl"
+                  "url": "https://playmate.to/embed/rvl5l1ggDZ8xl",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-1m73oweb3xx7.html"
-                },
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-gauquvt99h3c.html",
-                  "quality": "VIDARA https://vidara.to/e/9y8cAiISS2MT3",
-                  "by": "614d778ed0"
+                  "url": "https://uqload.vc/embed-1m73oweb3xx7.html",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -1767,21 +1799,18 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/nQdHtHc3D14Au"
+                  "url": "https://vidara.to/e/nQdHtHc3D14Au",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/x8WdVygQYIU6c"
+                  "url": "https://playmate.to/embed/x8WdVygQYIU6c",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-yxc47s2v5p7c.html"
-                },
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-x5ph47uxnflz.html",
-                  "quality": "VIDARA https://vidara.to/e/nQdHtHc3D14Au",
-                  "by": "614d778ed0"
+                  "url": "https://uqload.vc/embed-yxc47s2v5p7c.html",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -1794,21 +1823,18 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/hs5DmaOKYRpji"
+                  "url": "https://vidara.to/e/hs5DmaOKYRpji",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/GlVKFE0c6DpEo"
+                  "url": "https://playmate.to/embed/GlVKFE0c6DpEo",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-logymxhaafxc.html"
-                },
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-jghqzo4dz1od.html",
-                  "quality": "VIDARA https://vidara.to/e/hs5DmaOKYRpji",
-                  "by": "614d778ed0"
+                  "url": "https://uqload.vc/embed-logymxhaafxc.html",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -1818,7 +1844,23 @@
               "name": "Épisode 7",
               "overview": "",
               "air_date": "2026-10-17",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/fBS5xJTbQ87lQ",
+                  "by": "head"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/iApU59UdVDeH9",
+                  "by": "head"
+                },
+                {
+                  "name": "UQLOAD",
+                  "url": "https://uqload.vc/embed-odogxqrqgeol.html",
+                  "by": "head"
+                }
+              ],
               "downloads": []
             },
             {
@@ -1891,7 +1933,8 @@
         "KR"
       ],
       "original_language": "ko",
-      "posterV": 2
+      "posterV": 2,
+      "updatedAt": 1792265898058
     },
     {
       "id": "314939",
@@ -2271,7 +2314,8 @@
         "VF"
       ],
       "downloads": [],
-      "posterV": 2
+      "posterV": 2,
+      "updatedAt": 1792265898938
     },
     {
       "id": "290193",
@@ -2553,7 +2597,8 @@
         "KR"
       ],
       "original_language": "ko",
-      "posterV": 2
+      "posterV": 2,
+      "updatedAt": 1792265899940
     },
     {
       "id": "296140",
@@ -2668,12 +2713,6 @@
                 {
                   "name": "UQLOAD",
                   "url": "https://uqload.vc/embed-5lew37brg8r6.html"
-                },
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-frueoetwgusd.html",
-                  "quality": "VIDARA https://vidara.to/e/DsUFfC8SaMz92",
-                  "by": "614d778ed0"
                 }
               ],
               "downloads": []
@@ -2695,12 +2734,6 @@
                 {
                   "name": "UQLOAD",
                   "url": "https://uqload.vc/embed-f3ciqd9luuht.html"
-                },
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-653g6t2tiikr.html",
-                  "quality": "VIDARA https://vidara.to/e/BOzp4HWpecTMN",
-                  "by": "614d778ed0"
                 }
               ],
               "downloads": []
@@ -2722,12 +2755,6 @@
                 {
                   "name": "UQLOAD",
                   "url": "https://uqload.vc/embed-gq3ndc4ohvz1.html"
-                },
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-y0tw7sgc4ccc.html",
-                  "quality": "VIDARA https://vidara.to/e/l0Cu1TJoIpWsu",
-                  "by": "614d778ed0"
                 }
               ],
               "downloads": []
@@ -2749,12 +2776,6 @@
                 {
                   "name": "UQLOAD",
                   "url": "https://uqload.vc/embed-4cj9lgbhicxp.html"
-                },
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-970gvn3whpha.html",
-                  "quality": "VIDARA https://vidara.to/e/jxJf5HYr8jttm",
-                  "by": "614d778ed0"
                 }
               ],
               "downloads": []
@@ -2776,12 +2797,6 @@
                 {
                   "name": "UQLOAD",
                   "url": "https://uqload.vc/embed-h2qre1nqompb.html"
-                },
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-fxpo8fc8ysa0.html",
-                  "quality": "VIDARA https://vidara.to/e/iB6lsVBk2l1TQ",
-                  "by": "614d778ed0"
                 }
               ],
               "downloads": []
@@ -2803,12 +2818,6 @@
                 {
                   "name": "UQLOAD",
                   "url": "https://uqload.vc/embed-yoke9und8u7a.html"
-                },
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-0al7fezk976a.html",
-                  "quality": "VIDARA https://vidara.to/e/JtovdTElvavMQ",
-                  "by": "614d778ed0"
                 }
               ],
               "downloads": []
@@ -2830,12 +2839,6 @@
                 {
                   "name": "UQLOAD",
                   "url": "https://uqload.vc/embed-edwqqesvnlee.html"
-                },
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-f1sw19bikrlc.html",
-                  "quality": "VIDARA https://vidara.to/e/XtqLHEw1Hyo52",
-                  "by": "614d778ed0"
                 }
               ],
               "downloads": []
@@ -2857,12 +2860,6 @@
                 {
                   "name": "UQLOAD",
                   "url": "https://uqload.vc/embed-tzopl1fw19zc.html"
-                },
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-7y0gmlao92jj.html",
-                  "quality": "VIDARA https://vidara.to/e/ALmZYFwmgNa99",
-                  "by": "614d778ed0"
                 }
               ],
               "downloads": []
@@ -2884,12 +2881,6 @@
                 {
                   "name": "UQLOAD",
                   "url": "https://uqload.vc/embed-0g8au3yzkfz0.html"
-                },
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-af51kmmcr8ii.html",
-                  "quality": "VIDARA https://vidara.to/e/VQaCoqxYkB0e1",
-                  "by": "614d778ed0"
                 }
               ],
               "downloads": []
@@ -2911,12 +2902,6 @@
                 {
                   "name": "UQLOAD",
                   "url": "https://uqload.vc/embed-cbqzntu1lcfy.html"
-                },
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-6vjgef06aytb.html",
-                  "quality": "VIDARA https://vidara.to/e/qes3cIQOYHyTE",
-                  "by": "614d778ed0"
                 }
               ],
               "downloads": []
@@ -2938,12 +2923,6 @@
                 {
                   "name": "UQLOAD",
                   "url": "https://uqload.vc/embed-ajrffr4ie0wj.html"
-                },
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-83yye61pv6t6.html",
-                  "quality": "VIDARA https://vidara.to/e/IlTWfviMCdKWw",
-                  "by": "614d778ed0"
                 }
               ],
               "downloads": []
@@ -2965,12 +2944,6 @@
                 {
                   "name": "UQLOAD",
                   "url": "https://uqload.vc/embed-iv05rz9sn9v6.html"
-                },
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-0jqq05zy8fza.html",
-                  "quality": "VIDARA https://vidara.to/e/q7g5FsXIXmfcj",
-                  "by": "614d778ed0"
                 }
               ],
               "downloads": []
@@ -2989,7 +2962,8 @@
         "KR"
       ],
       "original_language": "ko",
-      "posterV": 2
+      "posterV": 2,
+      "updatedAt": 1792265901282
     },
     {
       "id": "212204",
@@ -3535,7 +3509,8 @@
         "KR"
       ],
       "original_language": "ko",
-      "posterV": 2
+      "posterV": 2,
+      "updatedAt": 1792265902903
     },
     {
       "id": "218539",
@@ -3990,7 +3965,8 @@
         "KR"
       ],
       "original_language": "ko",
-      "posterV": 2
+      "posterV": 2,
+      "updatedAt": 1792265903961
     },
     {
       "id": "276161",
@@ -4218,7 +4194,8 @@
         "KR"
       ],
       "original_language": "ko",
-      "posterV": 2
+      "posterV": 2,
+      "updatedAt": 1792265904956
     },
     {
       "id": "99966",
@@ -4483,7 +4460,8 @@
         "KR"
       ],
       "original_language": "ko",
-      "posterV": 2
+      "posterV": 2,
+      "updatedAt": 1792265905961
     },
     {
       "id": "298008",
@@ -4707,7 +4685,8 @@
         "JP"
       ],
       "original_language": "ja",
-      "posterV": 2
+      "posterV": 2,
+      "updatedAt": 1792265906940
     },
     {
       "id": "246473",
@@ -4738,7 +4717,7 @@
       "rating": "8.2",
       "pop": 18.1467,
       "status": "Returning Series",
-      "poster": "https://image.tmdb.org/t/p/original/2yi3gOIQt22NjJam1u5jqBa3GQ1.jpg",
+      "poster": "https://image.tmdb.org/t/p/w500/2yEXTvaCPUe9In5MZJBLFwiq0NL.jpg",
       "backdrop": "https://image.tmdb.org/t/p/original/fRR6jHutlHuYxMeZp4cZfjgafzd.jpg",
       "cast": [
         {
@@ -4989,7 +4968,8 @@
         "KR"
       ],
       "original_language": "ko",
-      "posterV": 2
+      "posterV": 2,
+      "updatedAt": 1792265907913
     },
     {
       "id": "289423",
@@ -5232,7 +5212,9 @@
         "KR"
       ],
       "original_language": "ko",
-      "posterV": 2
+      "posterV": 2,
+      "trend": 74,
+      "updatedAt": 1792265908721
     },
     {
       "id": "300146",
@@ -5268,7 +5250,7 @@
       "rating": "9.0",
       "pop": 32.6668,
       "status": "Returning Series",
-      "poster": "https://image.tmdb.org/t/p/original/6Pw78I4inl8CESM4GZMyQTGobph.jpg",
+      "poster": "https://image.tmdb.org/t/p/w500/cE9Og0lCCRCP2RArarzJXmu6xEB.jpg",
       "backdrop": "https://image.tmdb.org/t/p/original/YndvGwqwroUDVltBWmnOuTvJke.jpg",
       "cast": [
         {
@@ -5288,17 +5270,13 @@
             {
               "number": 1,
               "name": "Épisode 1",
-              "overview": "After discovering her lookalike, cruel heiress Wei Rao conspires to use the woman as a pawn when a sudden crisis forces an unwanted marriage.",
+              "overview": "Après avoir découvert son sosie, la cruelle héritière Wei Rao décide de l'utiliser comme pion lorsqu'une crise soudaine lui impose un mariage non désiré.",
               "air_date": "2026-10-16",
               "sources": [
                 {
-                  "name": "VIDMOLY 2",
-                  "url": "https://vidmoly.me/v/2yld09tdh2b7"
-                },
-                {
-                  "name": "VIDMOLY 2",
-                  "url": "https://vidmoly.org/embed-2yld09tdh2b7.html",
-                  "by": "614d778ed0"
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.me/v/2yld09tdh2b7",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -5306,17 +5284,13 @@
             {
               "number": 2,
               "name": "Épisode 2",
-              "overview": "A-Chou agrees to marry Lu Zhuo in Wei Rao's place, but she warns her mother about the Wei family. Meanwhile, the true heiress takes on the name Jundai.",
+              "overview": "A-Chou accepte d'épouser Lu Zhuo à la place de Wei Rao, mais met sa mère en garde contre la famille Wei. Pendant ce temps, la véritable héritière prend le nom de Jundai.",
               "air_date": "2026-10-16",
               "sources": [
                 {
-                  "name": "VIDMOLY 2",
-                  "url": "https://vidmoly.me/v/ftm3yk26ikx5"
-                },
-                {
-                  "name": "VIDMOLY 2",
-                  "url": "https://vidmoly.org/embed-ftm3yk26ikx5.html",
-                  "by": "614d778ed0"
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.me/v/ftm3yk26ikx5",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -5324,17 +5298,13 @@
             {
               "number": 3,
               "name": "Épisode 3",
-              "overview": "After refusing to leave, the impostor Wei Rao makes a painful sacrifice to win Lu Zhuo's trust. Meanwhile, a calculated plot begins to unfold.",
+              "overview": "Après avoir refusé de partir, l'imposteur Wei Rao fait un sacrifice douloureux pour gagner la confiance de Lu Zhuo. Pendant ce temps, une machination dérape.",
               "air_date": "2026-10-16",
               "sources": [
                 {
-                  "name": "VIDMOLY 2",
-                  "url": "https://vidmoly.me/v/x3lw9r89bioi"
-                },
-                {
-                  "name": "VIDMOLY 2",
-                  "url": "https://vidmoly.org/embed-x3lw9r89bioi.html",
-                  "by": "614d778ed0"
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.me/v/x3lw9r89bioi",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -5342,17 +5312,13 @@
             {
               "number": 4,
               "name": "Épisode 4",
-              "overview": "Wei Rao's maid helps her with a cover-up after Lu Zhuo nearly learns a lethal secret. A customary visit to the Wei family leads to a deadly setup.",
+              "overview": "La servante de Wei Rao l'aide à dissimuler des preuves après que Lu Zhuo a failli découvrir un secret mortel. Une visite traditionnelle chez les Wei mène à un piège fatal.",
               "air_date": "2026-10-16",
               "sources": [
                 {
-                  "name": "VIDMOLY 2",
-                  "url": "https://vidmoly.me/v/6ifc1l4tf216"
-                },
-                {
-                  "name": "VIDMOLY 2",
-                  "url": "https://vidmoly.org/embed-6ifc1l4tf216.html",
-                  "by": "614d778ed0"
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.me/v/6ifc1l4tf216",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -5360,7 +5326,7 @@
             {
               "number": 5,
               "name": "Épisode 5",
-              "overview": "",
+              "overview": "Après avoir survécu à l'incendie de la bibliothèque, Wei Rao tente de cacher une lettre secrète. Lu Zhuo se méfie en remarquant ses mains calleuses.",
               "air_date": "2026-10-17",
               "sources": [],
               "downloads": []
@@ -5368,7 +5334,7 @@
             {
               "number": 6,
               "name": "Épisode 6",
-              "overview": "",
+              "overview": "Wei Rao est félicitée pour l'organisation d'un grand banquet d'anniversaire. Mais le danger plane sur sa demeure, tandis que Lu Zhuo prépare un complot secret avec des papillons.",
               "air_date": "2026-10-17",
               "sources": [],
               "downloads": []
@@ -5575,7 +5541,9 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "posterV": 2
+      "posterV": 2,
+      "trend": 91,
+      "updatedAt": 1792265909511
     },
     {
       "id": "289690",
@@ -5915,7 +5883,8 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "posterV": 2
+      "posterV": 2,
+      "updatedAt": 1792265910312
     },
     {
       "id": "304452",
@@ -5942,7 +5911,7 @@
       "rating": "9.0",
       "pop": 53.6394,
       "status": "Returning Series",
-      "poster": "https://image.tmdb.org/t/p/original/nGSj4YtMOwP4cjGSD1fDlI6WLag.jpg",
+      "poster": "https://image.tmdb.org/t/p/w500/kH0dBgwoi2tb7YkOsPGTq18UVtc.jpg",
       "backdrop": "https://image.tmdb.org/t/p/original/vD84yLJVVd7cC2lKF8sEukQG2A3.jpg",
       "cast": [
         {
@@ -6348,7 +6317,367 @@
       "langs": [
         "VOSTFR"
       ],
-      "downloads": []
+      "downloads": [],
+      "posterV": 2,
+      "updatedAt": 1792265911163
+    },
+    {
+      "id": "208336",
+      "type": "tv",
+      "name": "Revenge of Others",
+      "original_name": "3인칭 복수",
+      "origin_country": [
+        "KR"
+      ],
+      "original_language": "ko",
+      "aka": [
+        "3인칭 복수",
+        "انتقام سوم شخص",
+        "Revenge of Others",
+        "Pomsta druhých",
+        "代理リベンジ",
+        "Em Busca de Vingança",
+        "Η Εκδίκηση των Άλλων",
+        "La Vengadora",
+        "La venganza de los otros",
+        "L'école de la vengeance",
+        "Mások bosszúja",
+        "In cerca di vendetta",
+        "W szale zemsty",
+        "Vingança dos Outros",
+        "Răzbunare Pentru Alții",
+        "Pomsta tých druhých",
+        "第三人稱復仇",
+        "第三人称复仇",
+        "Sự Trả Thù Của Người Thứ Ba",
+        "الانتقام من الآخرين",
+        "Месть от третьего лица",
+        "נקמה של אחרים",
+        "נקמתם של אחרים",
+        "נקמות של אחרים",
+        "3inching Bogsu",
+        "Third Person Revenge"
+      ],
+      "year": "2022",
+      "overview": "Un garçon fait une chute mortelle à l'école, mais Ok Chanmi ne croit pas que son frère jumeau, Park Wonseok, se soit suicidé. Chanmi intègre l'école de son frère, le lycée Yongtan, et rencontre Ji Sooheon, qui a été témoin de la mort de son frère. Un \"héros\", qui venge les élèves malmenés, apparaît au lycée Yongtan. Chanmi pense qu'il y a peut-être un lien avec son frère et se met à la recherche de ce héros.",
+      "genres": [
+        "Drame",
+        "Mystère"
+      ],
+      "rating": "8.2",
+      "pop": 10.7976,
+      "status": "Ended",
+      "poster": "https://image.tmdb.org/t/p/w500/ccej6D8J81DDJWqhP7OG6PA6xcl.jpg",
+      "posterV": 2,
+      "backdrop": "https://image.tmdb.org/t/p/original/zbzldNycqQy1O9gP5vwJf9HECwk.jpg",
+      "cast": [
+        {
+          "name": "신예은",
+          "character": "Ok Chan-mi"
+        },
+        {
+          "name": "Lomon",
+          "character": "Ji Soo-heon"
+        },
+        {
+          "name": "서지훈",
+          "character": "Seok Jae-beom"
+        },
+        {
+          "name": "채상우",
+          "character": "Ki Oh-seong"
+        },
+        {
+          "name": "이수민",
+          "character": "Gook Ji-hyun"
+        },
+        {
+          "name": "Chung Su-bin",
+          "character": "Tae So-yeon"
+        },
+        {
+          "name": "Ju-Ryoung Kim",
+          "character": "Jin So-jeong"
+        },
+        {
+          "name": "우연",
+          "character": "Hong Ah-jung"
+        },
+        {
+          "name": "Jin Ho-eun",
+          "character": "Sa Joong-kyung"
+        },
+        {
+          "name": "연오",
+          "character": "Lim Seung-woo"
+        },
+        {
+          "name": "옥진욱",
+          "character": "Ma Nak-joon"
+        },
+        {
+          "name": "강율",
+          "character": "Park Won-seok / Ok Chan-kyu"
+        }
+      ],
+      "seasons": [
+        {
+          "number": 1,
+          "name": "Saison 1",
+          "episodes": [
+            {
+              "number": 1,
+              "name": "Épisode 1",
+              "overview": "Ok Chanmi, qui a grandi dans un orphelinat de Busan, apprend que son frère jumeau, Park Wonseok, qui a été adopté à Séoul, s'est suicidé. Chanmi ne croit pas que Wonseok se soit suicidé, et pense que le coupable est toujours à l'école. Cependant, comme ni la police ni les parents adoptifs de Wonseok ne la croient, Chanmi décide de prendre les choses en main.",
+              "air_date": "2022-11-09",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/JpkxadOZAfQL0",
+                  "by": "head"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/J6qn2xUgdsV3z",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 2,
+              "name": "Épisode 2",
+              "overview": "Hong Ahjung, la petite amie de Park Wonseok, tombe sur Sooheon et récupère son téléphone. Elle regarde les SMS d'Ok Chanmi. Sooheon se méfie de la prétendue méconnaissance de Chanmi à l'égard de Park Wonseok. Pendant ce temps, Chanmi cherche des réponses auprès de Im Somi, et découvre un Wonseok très différent du portrait de Somi.",
+              "air_date": "2022-11-09",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/I6cvFd1f4Zo27",
+                  "by": "head"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/RIL8NmlyxApWC",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 3,
+              "name": "Épisode 3",
+              "overview": "Sooheon croise Chanmi sur le chemin du retour après avoir puni Sa Jungkyung, et craint d'être découvert. Sa Jungkyung abandonne l'école, et les élèves saluent le punisseur comme un \"héros\". La police enquête sur l'affaire d'agression et les preuves convergent vers Sooheon. Chanmi soupçonne que Wonseok a été puni par le héros et commence à suivre Sooheon.",
+              "air_date": "2022-11-16",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/dP2ObuADXvIDb",
+                  "by": "head"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/XjyfBWUlho93l",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 4,
+              "name": "Épisode 4",
+              "overview": "Un complot vise à expulser Chanmi du lycée de Yongtan. Sooheon conseille à Chanmi de retourner dans son école d'origine avant que les choses n'empirent. Jaebum examine la vidéosurveillance pour trouver l'agresseur de Chanmi, mais cela ne fait qu'accroître la confusion. Pendant ce temps, Chanmi trouve une deuxième note dans son casier.",
+              "air_date": "2022-11-16",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/o2bSlqww9ZioC",
+                  "by": "head"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/rdShDSF9h03uy",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 5,
+              "name": "Épisode 5",
+              "overview": "L'affaire Park Wonseok est reclassée en affaire de meurtre et la police lance une enquête à part entière. Les élèves identifient différentes personnes comme suspects lors de leurs entretiens. Chanmi apprend le mensonge de Wonseok lors d'une conversation avec Ahjung. Elle part sur les traces de Wonseok et rencontre Kwon Sejin, un garçon qui a quitté le lycée de Yongtan l'année précédente.",
+              "air_date": "2022-11-23",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/Qn2uVCIBX46yf",
+                  "by": "head"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/VNR7vJ8GkPdaQ",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 6,
+              "name": "Épisode 6",
+              "overview": "Ju Hyukgun est mort. La police rapproche l'affaire de celle du club de photographie et soupçonne Sooheon d'être le coupable. Kwon Sejin rend visite à Chanmi et lui raconte ce dont il a été témoin le jour de la mort de Wonseok. La rumeur se répand dans l'école que Chanmi et Wonseok sont jumeaux. Chanmi prend les choses en main afin de venger son frère.",
+              "air_date": "2022-11-23",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/enNOqK0yvuyTT",
+                  "by": "head"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/yz72xRnGzgkqC",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 7,
+              "name": "Épisode 7",
+              "overview": "Après la fusillade à Busan, Sooheon se cache. Alors que la police se rapproche, Soyeon s'inquiète pour Sooheon. Osung remet à Jaebum une enveloppe qui contient une partie de mémoire que Jaebum ne veut pas croire. Pendant ce temps, un invité indésirable se présente à la maison de Chanmi et Sooheon. En apprenant qu'ils vivent ensemble, il prévoit de mettre Chanmi en danger.",
+              "air_date": "2022-11-30",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/65Ae8Wg1N1U1H",
+                  "by": "head"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/tm4Yn6BXbFgMW",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 8,
+              "name": "Épisode 8",
+              "overview": "Le sifflement de train entendu lors d'un appel téléphonique de Park Wonseok convainc Chanmi et Sooheon qu'Osung est le coupable. Pendant ce temps, la police obtient des preuves concluantes sur le site d'Inno Motors. Sooheon a besoin d'argent et tente de trouver du travail, mais Soyeon s'y oppose. Ahjung prend une décision difficile.",
+              "air_date": "2022-11-30",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/IagEVuCxFiAs4",
+                  "by": "head"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/6BkyC4Jo5t758",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 9,
+              "name": "Épisode 9",
+              "overview": "Chanmi est troublée lorsqu'elle voit les photos polaroïd que Sooheon a volées dans la chambre d'Osung. Il y a des photos de Wonseok, Kwon Sejin, Gi Osung et Seok Jaebum ensemble. Chanmi rend visite à Jaebum pour découvrir la vérité, mais il ne se souvient pas. Pendant ce temps, Sa Jungkyung continue de tourmenter Min Seoha pour trouver le \"héros\" qui l'a lynché. Ahjung fait le lien entre le père de Min Seoha et Sooheon, mais cela s'avère être un piège.",
+              "air_date": "2022-12-07",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/P7gX9YZKzqImX",
+                  "by": "head"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/1Vrih2T0A1hcE",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 10,
+              "name": "Épisode 10",
+              "overview": "Le plan d'Osung pour attraper Sooheon échoue et il est coincé par la police qui s'est déployée après avoir regardé la diffusion en direct. Jaebum pense que quelqu'un est entré dans sa chambre et y disperse des objets. Chanmi et Jaebum mettent en place un piège pour sonder Gi Osung, mais ils découvrent une vérité choquante.",
+              "air_date": "2022-12-07",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/pw3jiHnizzk4H",
+                  "by": "head"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/vkhnd69LX4LGB",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 11,
+              "name": "Épisode 11",
+              "overview": "Chanmi et Sooheon se retrouvent et renouvellent leurs sentiments réciproques. Ils retournent chez eux, où une nouvelle crise les attend. Jaebum retrouve la mémoire et est submergé par un sentiment de trahison. Pendant ce temps, Osung rend visite à son père et lui révèle la clé de tous les événements passés et futurs.",
+              "air_date": "2022-12-14",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/PN7kEdnknQOBJ",
+                  "by": "head"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/dWYGNpEXNlir8",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 12,
+              "name": "Épisode 12",
+              "overview": "Sooheon poursuit Jaebum et découvre le téléphone de Park Wonseok sur lui, mais Jaebum disparaît. La police trouve le dernier pistolet fumant qui désigne le vrai criminel, et dépose un mandat d'arrêt. Chanmi est choquée que Jaebum, en qui elle avait confiance, soit suspect. Chanmi n'a plus qu'une balle. L'heure de la vengeance a enfin sonné.",
+              "air_date": "2022-12-14",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/dCiuk5jFiiOlW",
+                  "by": "head"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/yKsEtw1V7yfDi",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            }
+          ],
+          "downloads": []
+        }
+      ],
+      "sources": [],
+      "addedAt": 1792264118461,
+      "langs": [
+        "VOSTFR",
+        "VF"
+      ],
+      "downloads": [],
+      "updatedAt": 1792265911902
     }
-  ]
+  ],
+  "deletedLinks": [
+    "300146\thttps://vidmoly.org/embed-2yld09tdh2b7.html",
+    "300146\thttps://vidmoly.org/embed-ftm3yk26ikx5.html",
+    "300146\thttps://vidmoly.org/embed-x3lw9r89bioi.html",
+    "300146\thttps://vidmoly.org/embed-6ifc1l4tf216.html"
+  ],
+  "deletedFiches": [],
+  "refreshAt": 1792265889101,
+  "team": {
+    "id": "208336",
+    "text": "",
+    "at": 1792265241111
+  }
 }
