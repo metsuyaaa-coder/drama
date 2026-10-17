@@ -4968,13 +4968,9 @@
               "air_date": "2026-10-16",
               "sources": [
                 {
-                  "name": "VIDMOLY 2",
-                  "url": "https://vidmoly.me/v/2yld09tdh2b7"
-                },
-                {
                   "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-2yld09tdh2b7.html",
-                  "by": "614d778ed0"
+                  "url": "https://vidmoly.me/v/2yld09tdh2b7",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -4986,13 +4982,9 @@
               "air_date": "2026-10-16",
               "sources": [
                 {
-                  "name": "VIDMOLY 2",
-                  "url": "https://vidmoly.me/v/ftm3yk26ikx5"
-                },
-                {
                   "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-ftm3yk26ikx5.html",
-                  "by": "614d778ed0"
+                  "url": "https://vidmoly.me/v/ftm3yk26ikx5",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -5004,13 +4996,9 @@
               "air_date": "2026-10-16",
               "sources": [
                 {
-                  "name": "VIDMOLY 2",
-                  "url": "https://vidmoly.me/v/x3lw9r89bioi"
-                },
-                {
                   "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-x3lw9r89bioi.html",
-                  "by": "614d778ed0"
+                  "url": "https://vidmoly.me/v/x3lw9r89bioi",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -5022,13 +5010,9 @@
               "air_date": "2026-10-16",
               "sources": [
                 {
-                  "name": "VIDMOLY 2",
-                  "url": "https://vidmoly.me/v/6ifc1l4tf216"
-                },
-                {
                   "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-6ifc1l4tf216.html",
-                  "by": "614d778ed0"
+                  "url": "https://vidmoly.me/v/6ifc1l4tf216",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -6028,6 +6012,11 @@
       "downloads": []
     }
   ],
-  "deletedLinks": [],
+  "deletedLinks": [
+    "300146\thttps://vidmoly.org/embed-2yld09tdh2b7.html",
+    "300146\thttps://vidmoly.org/embed-ftm3yk26ikx5.html",
+    "300146\thttps://vidmoly.org/embed-x3lw9r89bioi.html",
+    "300146\thttps://vidmoly.org/embed-6ifc1l4tf216.html"
+  ],
   "deletedFiches": []
 }
