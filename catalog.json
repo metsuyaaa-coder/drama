@@ -17,7 +17,7 @@
       "rating": "9.0",
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/w500/wf7l8ZfGGkOKcQGF3Htt5DDhBxD.jpg",
-      "backdrop": "https://image.tmdb.org/t/p/w1280/3SvKCITqMtjgPIhFBjRc4yTAc4H.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/original/3SvKCITqMtjgPIhFBjRc4yTAc4H.jpg",
       "cast": [
         {
           "name": "Kim You-jung",
@@ -269,7 +269,8 @@
         "100 Days of Lies",
         "100일의 거짓말"
       ],
-      "downloads": []
+      "downloads": [],
+      "pop": 55.1294
     },
     {
       "id": "275102",
@@ -284,7 +285,7 @@
       "rating": "6.8",
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/8ra17h8Z3NX14qdWaOKn0scURJR.jpg",
-      "backdrop": "https://image.tmdb.org/t/p/w1280/uc1p1PEbEMpdIHqnU9TESNC6Jhp.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/original/uc1p1PEbEMpdIHqnU9TESNC6Jhp.jpg",
       "cast": [
         {
           "name": "Son Ye-jin",
@@ -480,13 +481,39 @@
         "丑闻",
         "스캔들"
       ],
-      "downloads": []
+      "downloads": [],
+      "pop": 101.5735
     },
     {
       "id": "293610",
       "type": "tv",
       "name": "Doctor X : Mafia en blouse blanche",
       "original_name": "닥터X: 하얀 마피아의 시대",
+      "aka": [
+        "Doctor X: Mafia in White",
+        "ドクターX ～白衣のマフィア～",
+        "Doctor X：白色黑手党时代",
+        "Doctor X：白色黑手黨時代",
+        "Доктор X: Мафия в бяло",
+        "Doctor X: A Máfia do Jaleco Branco",
+        "ด็อกเตอร์เอ็กซ์",
+        "الدكتورة إكس",
+        "Doctor X Mafia in White",
+        "Доктор Икс: Эпоха белой мафии",
+        "Doktorka X",
+        "Doctor X : Mafia en blouse blanche",
+        "דוקטור X",
+        "Doctor X: Mafia în alb",
+        "Доктор X",
+        "Doctor X",
+        "Doctor X: A Máfia das Batas Brancas",
+        "Bác sĩ X: Mafia Áo Trắng",
+        "Ｘ医生",
+        "ドクターX 〜白衣のマコィア〜",
+        "닥터Ｘ",
+        "Доктор Икс",
+        "닥터X: 하얀 마피아의 시대"
+      ],
       "year": "2026",
       "overview": "Kye Su-Jeong, une brillante chirurgienne, est affectée à l'hôpital universitaire de Guseo pour pourvoir un poste vacant en chirurgie. Elle y fait ses preuves grâce à son talent et met en lumière les absurdités du milieu médical. Elle se lie d'amitié avec Bu Seung-Kwon, le directeur de l'hôpital, et l'interne Park Tae-Kyeong",
       "genres": [
@@ -494,10 +521,11 @@
         "Drame",
         "Crime"
       ],
-      "rating": "8.9",
+      "rating": "9.0",
+      "pop": 96.5343,
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/w500/xYFTiwC7Tl0xOUFiVFUPWXHTHnr.jpg",
-      "backdrop": "https://image.tmdb.org/t/p/w1280/mDYIV71RL3mkaW8IfSGNthuVB7l.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/original/mDYIV71RL3mkaW8IfSGNthuVB7l.jpg",
       "cast": [
         {
           "name": "Kim Ji-won",
@@ -604,7 +632,7 @@
             {
               "number": 3,
               "name": "Épisode 3",
-              "overview": "",
+              "overview": "The hospital staff grow suspicious of Su-jeong's past. When a cleaner suddenly collapses, Su-jeong must make a decision as no surgeon is available.",
               "air_date": "2026-10-16",
               "sources": [
                 {
@@ -707,36 +735,9 @@
       ],
       "sources": [],
       "addedAt": 1792018030964,
-      "langs": [
-        "VOSTFR"
-      ],
-      "trend": 89,
-      "aka": [
-        "Doctor X: Mafia in White",
-        "ドクターX ～白衣のマフィア～",
-        "Doctor X：白色黑手党时代",
-        "Doctor X：白色黑手黨時代",
-        "Доктор X: Мафия в бяло",
-        "Doctor X: A Máfia do Jaleco Branco",
-        "ด็อกเตอร์เอ็กซ์",
-        "الدكتورة إكس",
-        "Doctor X Mafia in White",
-        "Доктор Икс: Эпоха белой мафии",
-        "Doktorka X",
-        "Doctor X : Mafia en blouse blanche",
-        "דוקטור X",
-        "Doctor X: Mafia în alb",
-        "Доктор X",
-        "Doctor X",
-        "Doctor X: A Máfia das Batas Brancas",
-        "Bác sĩ X: Mafia Áo Trắng",
-        "Ｘ医生",
-        "ドクターX 〜白衣のマコィア〜",
-        "닥터Ｘ",
-        "Доктор Икс",
-        "닥터X: 하얀 마피아의 시대"
-      ],
-      "downloads": []
+      "langs": [],
+      "downloads": [],
+      "trend": 89
     },
     {
       "id": "278573",
@@ -752,7 +753,7 @@
       "rating": "9.0",
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/z6on6DbEKpE9gOr8lvjj3xebGtd.jpg",
-      "backdrop": "https://image.tmdb.org/t/p/w1280/6ekykPwvAywJRjFEnUoCFWTO9O3.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/original/6ekykPwvAywJRjFEnUoCFWTO9O3.jpg",
       "cast": [
         {
           "name": "IU",
@@ -973,7 +974,8 @@
         "Wife of a 21st Century Prince",
         "21세기 대군부인"
       ],
-      "downloads": []
+      "downloads": [],
+      "pop": 86.7822
     },
     {
       "id": "m1058424",
@@ -987,12 +989,12 @@
         "Mystère",
         "Action"
       ],
-      "rating": "7.2",
-      "pop": 191.1737,
+      "rating": "6.9",
+      "pop": 214.21,
       "status": "Released",
       "runtime": 160,
       "poster": "https://image.tmdb.org/t/p/w500/tGdFDoA9qyt0t6Qr9MFnOl8Z2Jz.jpg",
-      "backdrop": "https://image.tmdb.org/t/p/w1280/xBcKnWJHodUpvzUVIWTuNMnvEwl.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/original/ujUwzNV8ZkOzZonvhhHsc9KOKDf.jpg",
       "cast": [
         {
           "name": "Hwang Jung-min",
@@ -1083,10 +1085,11 @@
         "Ümid",
         "Hope: Atacul final",
         "امید",
+        "Espoir",
+        "Nádej",
         "湖浦港",
         "ចម្បាំងបង្ហូរឈាមអវសានលោក",
         "הופ",
-        "Espoir",
         "Hopeu",
         "호프"
       ],
@@ -1111,10 +1114,10 @@
         "Drame"
       ],
       "rating": "9.2",
-      "pop": 25.0528,
+      "pop": 24.0746,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/nzghhjtKVX1n7DIMhTuQrHqeXdQ.jpg",
-      "backdrop": "https://image.tmdb.org/t/p/w1280/fYL4I6cezb06BHhQlrNjNhy7jhf.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/original/fYL4I6cezb06BHhQlrNjNhy7jhf.jpg",
       "cast": [
         {
           "name": "Song Kang",
@@ -1418,10 +1421,10 @@
         "Science-Fiction & Fantastique"
       ],
       "rating": "8.0",
-      "pop": 16.9127,
+      "pop": 15.6473,
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/w500/21pLXbvuyfgUaAhhxkuvoX1pAN1.jpg",
-      "backdrop": "https://image.tmdb.org/t/p/w1280/jseW3HucgNjN2CwJa3MiOlF4xMO.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/original/fTlvgaOpBboy8O2q9d54hPSoBog.jpg",
       "cast": [
         {
           "name": "보나",
@@ -1658,7 +1661,7 @@
         "Comédie"
       ],
       "rating": "6.3",
-      "pop": 41.154,
+      "pop": 40.2748,
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/w500/lu3tuzFl4c6rx1WcoLOGZlkTjaw.jpg",
       "backdrop": "https://image.tmdb.org/t/p/original/moUjiEzpJVNZc7hyNRBbLPt0CPX.jpg",
@@ -2018,7 +2021,7 @@
         "Mystère"
       ],
       "rating": "8.1",
-      "pop": 16.7832,
+      "pop": 16.5773,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/7J2jPfh45mOyXTiycPpfoiYQAfv.jpg",
       "backdrop": "https://image.tmdb.org/t/p/original/3bHz9dYSZ5XDxY0zDaBpYgUOhE2.jpg",
@@ -2232,7 +2235,7 @@
         "Drame"
       ],
       "rating": "8.2",
-      "pop": 11.4831,
+      "pop": 11.616,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/b5jBoSQ7CW1zDJURuctD30mATuO.jpg",
       "backdrop": "https://image.tmdb.org/t/p/original/eBD46F44qKGPZiRLffO4q3JF8Hc.jpg",
