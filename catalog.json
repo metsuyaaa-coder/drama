@@ -6330,6 +6330,10 @@
       "origin_country": [
         "CN"
       ],
+      "networks": [
+        "Hunan Television",
+        "Mango TV"
+      ],
       "original_language": "zh",
       "aka": [
         "The Lament of Autumn",
@@ -6348,6 +6352,7 @@
       "pop": 63.0421,
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/original/nGSj4YtMOwP4cjGSD1fDlI6WLag.jpg",
+      "posterV": 2,
       "backdrop": "https://image.tmdb.org/t/p/original/vD84yLJVVd7cC2lKF8sEukQG2A3.jpg",
       "cast": [
         {
@@ -6762,17 +6767,11 @@
       ],
       "sources": [],
       "addedAt": 1792257731153,
-      "langs": [
-        "VOSTFR"
-      ],
+      "langs": [],
       "downloads": [],
-      "posterV": 2,
-      "updatedAt": 1792350905750,
-      "trend": 69,
-      "networks": [
-        "Hunan Television",
-        "Mango TV"
-      ]
+      "posterCustom": true,
+      "updatedAt": 1792351147454,
+      "trend": 69
     },
     {
       "id": "208336",
@@ -19870,6 +19869,15 @@
     "at": 1792336665257
   },
   "journal": [
+    {
+      "k": "mve7lgi6ighy9",
+      "t": 1792351147470,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "304452",
+      "n": "The Lament of Autumn",
+      "d": ""
+    },
     {
       "k": "mve7hnsvr8q67",
       "t": 1792350970303,
