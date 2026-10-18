@@ -285,6 +285,7 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: 14px 24px; align-items: cent
 footer .links { display: flex; flex-wrap: wrap; gap: 8px 20px; }
 footer button, footer a { background: none; border: 0; padding: 0; cursor: pointer; color: var(--dim); text-decoration: underline; text-underline-offset: 3px; transition: color .2s; }
 footer button:hover, footer a:hover { color: var(--fg); }
+footer .copy { max-width: 1280px; margin: 28px auto 0; padding: 20px max(16px, env(safe-area-inset-right, 0px)) 0 max(16px, env(safe-area-inset-left, 0px)); border-top: 1px solid var(--line); text-align: center; font-size: 13px; color: var(--dim); }
 
 .admin-only { display: none !important; }
 body.admin .admin-only { display: revert !important; }
@@ -811,6 +812,7 @@ footer .wrap.about { display: grid; grid-template-columns: repeat(auto-fit, minm
       <div class="mail"><span>PayPal : makroum.mohamed.mahdi@gmail.com</span><button type="button" class="btn small ghost" data-copy="makroum.mohamed.mahdi@gmail.com">Copier</button></div>
     </div>
   </div>
+  <p class="copy">© 2026 DramaByM. Tous droits réservés.</p>
 </footer>
 
 <dialog id="player">
