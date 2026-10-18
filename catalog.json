@@ -91,11 +91,13 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/2TgyEgZCFGobY"
+                  "url": "https://vidara.to/e/2TgyEgZCFGobY",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-vzlzv64p907n.html"
+                  "url": "https://uqload.vc/embed-vzlzv64p907n.html",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
@@ -113,7 +115,8 @@
                   "name": "1FICHIER",
                   "url": "https://1fichier.com/?xg1jsq8vmidbsuw2gdif",
                   "size": "2.8 Go",
-                  "quality": "1080p (H.264)"
+                  "quality": "1080p (H.264)",
+                  "by": "head"
                 }
               ]
             },
@@ -125,15 +128,18 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/5thkvKklZ5I2D"
+                  "url": "https://vidara.to/e/5thkvKklZ5I2D",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-z1zyz49djtuq.html"
+                  "url": "https://uqload.vc/embed-z1zyz49djtuq.html",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
                   "url": "https://vidmoly.org/embed-d573thqo6iom.html",
+                  "quality": "VIDARA https://vidara.to/e/5thkvKklZ5I2D",
                   "by": "614d778ed0"
                 },
                 {
@@ -147,7 +153,8 @@
                   "name": "1FICHIER",
                   "url": "https://1fichier.com/?871905qoy820g0cncdyi",
                   "size": "2.6 Go",
-                  "quality": "1080p (H.264)"
+                  "quality": "1080p (H.264)",
+                  "by": "head"
                 }
               ]
             },
@@ -661,11 +668,13 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/yxmRmsmX4zOOn"
+                  "url": "https://vidara.to/e/yxmRmsmX4zOOn",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-m1tmawcz7c7k.html"
+                  "url": "https://uqload.vc/embed-m1tmawcz7c7k.html",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -679,7 +688,8 @@
                   "name": "1FICHIER",
                   "url": "https://1fichier.com/?1qd8vda0u704nuwfzs2g",
                   "size": "2.32 Go",
-                  "quality": "1080p (H.264)"
+                  "quality": "1080p (H.264)",
+                  "by": "head"
                 }
               ]
             },
@@ -691,11 +701,13 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/X8HN8WRXjyREk"
+                  "url": "https://vidara.to/e/X8HN8WRXjyREk",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-cs61nhnp5yge.html"
+                  "url": "https://uqload.vc/embed-cs61nhnp5yge.html",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -709,7 +721,8 @@
                   "name": "1FICHIER",
                   "url": "https://1fichier.com/?xxzdrtttn7jbmkzlslaj",
                   "size": "2.3 Go",
-                  "quality": "1080p (H.264)"
+                  "quality": "1080p (H.264)",
+                  "by": "head"
                 }
               ]
             },
@@ -721,15 +734,18 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/09adi9vhA9U10"
+                  "url": "https://vidara.to/e/09adi9vhA9U10",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/1beitjsENq5T9"
+                  "url": "https://playmate.to/embed/1beitjsENq5T9",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-v6n8916hwstw.html"
+                  "url": "https://uqload.vc/embed-v6n8916hwstw.html",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -743,14 +759,15 @@
                   "name": "1FICHIER",
                   "url": "https://1fichier.com/?453rfjul6t7nuvyie39a",
                   "size": "2.4 Go",
-                  "quality": "1080p (H.264)"
+                  "quality": "1080p (H.264)",
+                  "by": "head"
                 }
               ]
             },
             {
               "number": 4,
               "name": "Épisode 4",
-              "overview": "",
+              "overview": "After a new surgeon arrives at the hospital, Jang Hui-suk and Su-jeong keep a close eye on him. Meanwhile, a pharmaceutical rep suffers an emergency.",
               "air_date": "2026-10-17",
               "sources": [
                 {
@@ -1001,7 +1018,7 @@
                 {
                   "name": "VIDMOLY",
                   "url": "https://vidmoly.org/embed-vqajh2l8o3b1.html",
-                  "quality": "https://vidmoly.org/embed-vqajh2l8o3b1.html",
+                  "quality": "VIDARA https://vidara.to/e/K1PgGFz1ZalgO",
                   "by": "614d778ed0"
                 }
               ],
@@ -1255,11 +1272,13 @@
       "sources": [
         {
           "name": "VIDARA (VFQ)",
-          "url": "https://vidara.to/e/BzHQVFDTYsM7q"
+          "url": "https://vidara.to/e/BzHQVFDTYsM7q",
+          "by": "head"
         },
         {
           "name": "UQLOAD",
-          "url": "https://uqload.vc/embed-bauoh90lty4u.html"
+          "url": "https://uqload.vc/embed-bauoh90lty4u.html",
+          "by": "head"
         },
         {
           "name": "PLAYMATE",
@@ -1310,7 +1329,8 @@
           "name": "1FICHIER",
           "url": "https://1fichier.com/?mrcpz2qu52dc3uqfg0gt&af=5010551",
           "size": "5.5 Go",
-          "quality": "1080p (H.265)"
+          "quality": "1080p (H.265)",
+          "by": "head"
         }
       ],
       "posterV": 2,
@@ -5304,6 +5324,7 @@
                 {
                   "name": "VIDMOLY",
                   "url": "https://vidmoly.org/embed-5h3wmj2gml5o.html",
+                  "quality": "VIDARA https://vidara.to/e/xPxAg60z4HB6c",
                   "by": "614d778ed0"
                 }
               ],
@@ -5322,6 +5343,7 @@
                 {
                   "name": "VIDMOLY",
                   "url": "https://vidmoly.org/embed-cgx7qfr09iat.html",
+                  "quality": "VIDARA https://vidara.to/e/6zWXxQkpTQfvl",
                   "by": "614d778ed0"
                 }
               ],
@@ -5340,6 +5362,7 @@
                 {
                   "name": "VIDMOLY",
                   "url": "https://vidmoly.org/embed-1cttngyhge9h.html",
+                  "quality": "VIDARA https://vidara.to/e/bUjVAavNS1ExI",
                   "by": "614d778ed0"
                 }
               ],
@@ -5391,6 +5414,7 @@
                 {
                   "name": "VIDMOLY",
                   "url": "https://vidmoly.org/embed-76vnmuq52bne.html",
+                  "quality": "VIDARA https://vidara.to/e/gX8tqAUo23Fvn",
                   "by": "614d778ed0"
                 }
               ],
@@ -5409,6 +5433,7 @@
                 {
                   "name": "VIDMOLY",
                   "url": "https://vidmoly.org/embed-3kpgujr241gm.html",
+                  "quality": "VIDARA https://vidara.to/e/917weWRH9WdQD",
                   "by": "614d778ed0"
                 }
               ],
@@ -5427,6 +5452,7 @@
                 {
                   "name": "VIDMOLY",
                   "url": "https://vidmoly.org/embed-a88c5f9d1s10.html",
+                  "quality": "VIDARA https://vidara.to/e/u4pQPYbeo8s4s",
                   "by": "614d778ed0"
                 }
               ],
@@ -5445,6 +5471,7 @@
                 {
                   "name": "VIDMOLY",
                   "url": "https://vidmoly.org/embed-08dev3x0ypv4.html",
+                  "quality": "VIDARA https://vidara.to/e/Qtnkr2LO3ehTd",
                   "by": "614d778ed0"
                 }
               ],
@@ -5463,6 +5490,7 @@
                 {
                   "name": "VIDMOLY",
                   "url": "https://vidmoly.org/embed-mleq9dd8eqy7.html",
+                  "quality": "VIDARA https://vidara.to/e/BtTjifRggwwTy",
                   "by": "614d778ed0"
                 }
               ],
@@ -5484,8 +5512,8 @@
       ],
       "original_language": "ko",
       "posterV": 2,
-      "updatedAt": 1792330100458,
-      "trend": 70
+      "trend": 70,
+      "updatedAt": 1792330100458
     },
     {
       "id": "300146",
@@ -5545,8 +5573,9 @@
               "air_date": "2026-10-16",
               "sources": [
                 {
-                  "name": "VIDMOLY 2",
-                  "url": "https://vidmoly.me/v/2yld09tdh2b7"
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.me/v/2yld09tdh2b7",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -5558,8 +5587,9 @@
               "air_date": "2026-10-16",
               "sources": [
                 {
-                  "name": "VIDMOLY 2",
-                  "url": "https://vidmoly.me/v/ftm3yk26ikx5"
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.me/v/ftm3yk26ikx5",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -5571,8 +5601,9 @@
               "air_date": "2026-10-16",
               "sources": [
                 {
-                  "name": "VIDMOLY 2",
-                  "url": "https://vidmoly.me/v/x3lw9r89bioi"
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.me/v/x3lw9r89bioi",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -5584,8 +5615,9 @@
               "air_date": "2026-10-16",
               "sources": [
                 {
-                  "name": "VIDMOLY 2",
-                  "url": "https://vidmoly.me/v/6ifc1l4tf216"
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.me/v/6ifc1l4tf216",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -5821,8 +5853,8 @@
       ],
       "downloads": [],
       "posterV": 2,
-      "updatedAt": 1792278921688,
-      "trend": 89
+      "trend": 89,
+      "updatedAt": 1792278921688
     },
     {
       "id": "289690",
@@ -6733,14 +6765,7 @@
                   "by": "head"
                 }
               ],
-              "downloads": [
-                {
-                  "name": "1FICHIER",
-                  "url": "https://1fichier.com/?564zs4ikr4ksb133ko08",
-                  "quality": "1080p (H.264)",
-                  "by": "head"
-                }
-              ]
+              "downloads": []
             },
             {
               "number": 2,
@@ -6764,14 +6789,7 @@
                   "by": "head"
                 }
               ],
-              "downloads": [
-                {
-                  "name": "1FICHIER",
-                  "url": "https://1fichier.com/?wz1a2k096pn86xdivsqr",
-                  "quality": "1080p (H.264)",
-                  "by": "head"
-                }
-              ]
+              "downloads": []
             },
             {
               "number": 3,
@@ -6795,14 +6813,7 @@
                   "by": "head"
                 }
               ],
-              "downloads": [
-                {
-                  "name": "1FICHIER",
-                  "url": "https://1fichier.com/?vahu12kbtjmqcb79xu34",
-                  "quality": "1080p (H.264)",
-                  "by": "head"
-                }
-              ]
+              "downloads": []
             },
             {
               "number": 4,
@@ -6826,14 +6837,7 @@
                   "by": "head"
                 }
               ],
-              "downloads": [
-                {
-                  "name": "1FICHIER",
-                  "url": "https://1fichier.com/?7s1n5465t9jzi7c7qpfm",
-                  "quality": "1080p (H.264)",
-                  "by": "head"
-                }
-              ]
+              "downloads": []
             },
             {
               "number": 5,
@@ -6857,14 +6861,7 @@
                   "by": "head"
                 }
               ],
-              "downloads": [
-                {
-                  "name": "1FICHIER",
-                  "url": "https://1fichier.com/?oxre9xipiw1m7pcpk9wy",
-                  "quality": "1080p (H.264)",
-                  "by": "head"
-                }
-              ]
+              "downloads": []
             },
             {
               "number": 6,
@@ -6888,14 +6885,7 @@
                   "by": "head"
                 }
               ],
-              "downloads": [
-                {
-                  "name": "1FICHIER",
-                  "url": "https://1fichier.com/?7kuq8hsaeige5u577loa",
-                  "quality": "1080p (H.264)",
-                  "by": "head"
-                }
-              ]
+              "downloads": []
             },
             {
               "number": 7,
@@ -6943,14 +6933,7 @@
                   "by": "head"
                 }
               ],
-              "downloads": [
-                {
-                  "name": "1FICHIER",
-                  "url": "https://1fichier.com/?pfm6oybjyhf0e070uge5",
-                  "quality": "1080p (H.264)",
-                  "by": "head"
-                }
-              ]
+              "downloads": []
             },
             {
               "number": 9,
@@ -6974,14 +6957,7 @@
                   "by": "head"
                 }
               ],
-              "downloads": [
-                {
-                  "name": "1FICHIER",
-                  "url": "https://1fichier.com/?y3gvza0iyyj81upwu2hx",
-                  "quality": "1080p (H.264)",
-                  "by": "head"
-                }
-              ]
+              "downloads": []
             },
             {
               "number": 10,
@@ -7005,14 +6981,7 @@
                   "by": "head"
                 }
               ],
-              "downloads": [
-                {
-                  "name": "1FICHIER",
-                  "url": "https://1fichier.com/?80v7qfqceso4f98dun00",
-                  "quality": "1080p (H.264)",
-                  "by": "head"
-                }
-              ]
+              "downloads": []
             },
             {
               "number": 11,
@@ -7036,14 +7005,7 @@
                   "by": "head"
                 }
               ],
-              "downloads": [
-                {
-                  "name": "1FICHIER",
-                  "url": "https://1fichier.com/?py5r06rmn8ccdvb40hf4",
-                  "quality": "1080p (H.264)",
-                  "by": "head"
-                }
-              ]
+              "downloads": []
             },
             {
               "number": 12,
@@ -7067,14 +7029,7 @@
                   "by": "head"
                 }
               ],
-              "downloads": [
-                {
-                  "name": "1FICHIER",
-                  "url": "https://1fichier.com/?6ynz08nf2yit2ov110f5",
-                  "quality": "1080p (H.264)",
-                  "by": "head"
-                }
-              ]
+              "downloads": []
             }
           ],
           "downloads": []
@@ -8439,6 +8394,11 @@
                   "name": "VIDARA",
                   "url": "https://vidara.to/e/EsajoFUcBuZPm",
                   "by": "head"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/j70RTLLdVHAO4",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -8457,6 +8417,11 @@
                 {
                   "name": "VIDARA",
                   "url": "https://vidara.to/e/1aa36HG4ruPfP",
+                  "by": "head"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/e9LPAkmfgnNNo",
                   "by": "head"
                 }
               ],
@@ -8477,6 +8442,11 @@
                   "name": "VIDARA",
                   "url": "https://vidara.to/e/09YhJ5tgX4gfH",
                   "by": "head"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/QkRDyjTdHTfy6",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -8495,6 +8465,11 @@
                 {
                   "name": "VIDARA",
                   "url": "https://vidara.to/e/yDgBApqhl96GM",
+                  "by": "head"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/A2C0IDX7RvoFz",
                   "by": "head"
                 }
               ],
@@ -8515,6 +8490,11 @@
                   "name": "VIDARA",
                   "url": "https://vidara.to/e/IHUZcHE6J8EJ4",
                   "by": "head"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/RWgvd9Ep2PJdY",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -8533,6 +8513,11 @@
                 {
                   "name": "VIDARA",
                   "url": "https://vidara.to/e/gx0v4VyPJ6ZuU",
+                  "by": "head"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/qDjX7m5iOmeJY",
                   "by": "head"
                 }
               ],
@@ -8553,6 +8538,11 @@
                   "name": "VIDARA",
                   "url": "https://vidara.to/e/O6cjB0lwoci4l",
                   "by": "head"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/kJtRLFxrXdfpJ",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -8571,6 +8561,11 @@
                 {
                   "name": "VIDARA",
                   "url": "https://vidara.to/e/2OdOAMJAlnZ2K",
+                  "by": "head"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/KIASlybESxOlw",
                   "by": "head"
                 }
               ],
@@ -8591,6 +8586,11 @@
                   "name": "VIDARA",
                   "url": "https://vidara.to/e/5jpzF42PNWZJz",
                   "by": "head"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/GIYbjgTamUCFj",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -8609,6 +8609,11 @@
                 {
                   "name": "VIDARA",
                   "url": "https://vidara.to/e/at4Na2QwR33g0",
+                  "by": "head"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/gGwubaNG9utMg",
                   "by": "head"
                 }
               ],
@@ -8629,6 +8634,11 @@
                   "name": "VIDARA",
                   "url": "https://vidara.to/e/tX8Yk0ZRHg7UK",
                   "by": "head"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/6TdwBxJXjrOqK",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -8648,6 +8658,11 @@
                   "name": "VIDARA",
                   "url": "https://vidara.to/e/hLyreUIKF9Uk9",
                   "by": "head"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/tXBlvORNz7eEP",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -8662,7 +8677,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792329113854
+      "updatedAt": 1792330553005
     },
     {
       "id": "294095",
@@ -18890,10 +18905,10 @@
     "300146\thttps://vidmoly.org/embed-6ifc1l4tf216.html"
   ],
   "deletedFiches": [],
+  "refreshAt": 1792323877753,
   "team": {
     "id": "285838",
     "text": "",
     "at": 1792329379375
-  },
-  "refreshAt": 1792323877753
+  }
 }
