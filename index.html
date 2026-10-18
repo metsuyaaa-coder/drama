@@ -309,6 +309,14 @@ dialog#player[open]::backdrop { animation: fadeIn .3s ease both; }
 .pframe { aspect-ratio: 16 / 9; background: #050505; position: relative; overflow: hidden; }
 .pstage { position: absolute; inset: 0; transform-origin: center center; }
 .pstage iframe { width: 100%; height: 100%; border: 0; display: block; }
+.pload { position: absolute; inset: 0; z-index: 3; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; background: radial-gradient(ellipse at center, #111 0%, #000 70%); opacity: 0; visibility: hidden; pointer-events: none; transition: opacity .35s, visibility .35s; }
+.pload.on { opacity: 1; visibility: visible; }
+.pspin { width: 46px; height: 46px; border: 3px solid #262626; border-top-color: #fff; border-radius: 50%; animation: pspin .8s linear infinite; }
+.plbl { font-family: var(--mono); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--dim); }
+.pslow { pointer-events: auto; animation: tipIn .35s ease both; }
+.pslow[hidden] { display: none; }
+@keyframes pspin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .pspin { animation-duration: 2.4s; } }
 .fsbar, .fswake { display: none; }
 .pframe.fsui .fsbar { display: flex; align-items: center; gap: 6px; position: absolute; z-index: 6; top: calc(12px + env(safe-area-inset-top, 0px)); left: 50%; transform: translate(-50%, -10px); background: rgba(0,0,0,.82); border: 1px solid var(--line); padding: 6px 8px 6px 12px; opacity: 0; pointer-events: none; transition: opacity .25s, transform .3s var(--ease); backdrop-filter: blur(6px); }
 .pframe.fsui.bar .fsbar { opacity: 1; transform: translate(-50%, 0); pointer-events: auto; }
@@ -433,6 +441,7 @@ dialog#player:not(.wide) .pframe { margin-left: env(safe-area-inset-left, 0px); 
 .ptip .tbody { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; line-height: 1.4; }
 .ptip #tlbl { color: var(--c); font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; transition: color .3s; }
 .ptip p { margin: 0; color: #cfcfcf; animation: tipIn .35s ease both; }
+.ptip b { color: var(--fg); font-family: var(--mono); font-size: 11px; padding: 1px 5px; border: 1px solid var(--line); background: #111; }
 .ptip a { color: var(--fg); text-decoration: underline; text-underline-offset: 3px; }
 .ptip .tnav { flex: 0 0 auto; display: flex; align-items: center; gap: 8px; }
 .ptip .tdots { display: flex; gap: 5px; }
@@ -1052,10 +1061,11 @@ footer .wrap.about { display: grid; grid-template-columns: repeat(auto-fit, minm
   <div class="phead">
     <button class="btn small ghost" id="pclose" type="button">Retour</button>
     <div class="pt"><b id="ptitle"></b><small id="psub"></small></div>
-    <span class="row"><span id="pdl" style="display:contents"></span><button class="btn small ghost" id="pfull" type="button">Plein écran</button><a id="pext" class="btn small ghost" target="_blank" rel="noopener">Nouvel onglet</a></span>
+    <span class="row"><span id="pdl" style="display:contents"></span><button class="btn small ghost" id="preload" type="button" title="Recharger le lecteur (R)">Recharger</button><button class="btn small ghost" id="pfull" type="button">Plein écran</button><a id="pext" class="btn small ghost" target="_blank" rel="noopener">Nouvel onglet</a></span>
   </div>
   <div class="pframe" id="pframe">
     <div class="pstage" id="pstage"></div>
+    <div class="pload" id="pload"><div class="pspin"></div><div class="plbl" id="plbl">Chargement…</div><button type="button" class="btn small ghost pslow" id="pslow" hidden>Ça rame ? Essayer un autre serveur</button></div>
     <div class="fswake" id="fswake"></div>
     <div class="fsbar" id="fsbar" role="group" aria-label="Format de la vidéo"><span>Format</span><button type="button" data-fit="normal">Normal</button><button type="button" data-fit="zoom">Zoom</button><button type="button" data-fit="stretch">Étirer</button></div>
   </div>
@@ -3260,6 +3270,7 @@ function renderPlayer() {
   $("#pnext").disabled = !(cur.nav && cur.nav.next);
   $("#pext").href = url;
   $("#pstage").innerHTML = '<iframe src="' + esc(url) + '" allowfullscreen webkitallowfullscreen mozallowfullscreen allow="autoplay; fullscreen; picture-in-picture; encrypted-media"></iframe>';
+  loadingUi();
   var many = cur.sources.length > 3;
   refreshReport();
   $("#psrc").className = "srcs" + (many ? " many" : "");
@@ -3268,6 +3279,34 @@ function renderPlayer() {
   }).join("") : "";
   watchSource();
 }
+/* Écran de chargement + bouton « ça rame ? » après 7 s */
+var slowTimer = null;
+function loadingUi() {
+  var o = $("#pload"), fr = document.querySelector("#pstage iframe"); if (!o || !fr) return;
+  clearTimeout(slowTimer);
+  $("#plbl").textContent = "Chargement · " + String((cur.sources[cur.i] || {}).name || "serveur");
+  $("#pslow").hidden = true; o.classList.add("on");
+  slowTimer = setTimeout(function () { if (o.classList.contains("on")) $("#pslow").hidden = !(cur.sources.length > 1); }, 7000);
+  fr.addEventListener("load", function () { clearTimeout(slowTimer); o.classList.remove("on"); });
+}
+function nextServer() {
+  var n = (cur.sources || []).length; if (n < 2) return;
+  cur.i = (cur.i + 1) % n; renderPlayer();
+  toast("Serveur : " + (cur.sources[cur.i].name || cur.i + 1));
+}
+$("#pslow").addEventListener("click", nextServer);
+$("#preload").addEventListener("click", function () { renderPlayer(); });
+/* Raccourcis clavier (quand le lecteur est ouvert) */
+document.addEventListener("keydown", function (e) {
+  var d = $("#player"); if (!d || !d.open || e.ctrlKey || e.metaKey || e.altKey) return;
+  var t = e.target, tag = t && t.tagName; if (tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT" || (t && t.isContentEditable)) return;
+  var k = String(e.key).toLowerCase();
+  if (k === "f") { e.preventDefault(); toggleFull(); }
+  else if (k === "r") { e.preventDefault(); renderPlayer(); }
+  else if (k === "s") { e.preventDefault(); nextServer(); }
+  else if (k === "n") { var b = $("#pnext"); if (b && !b.disabled) b.click(); }
+  else if (k === "p") { var c = $("#pprev"); if (c && !c.disabled) c.click(); }
+});
 /* Si le serveur ne répond pas du tout (l'iframe ne finit jamais de charger), on passe tout seul à la source suivante.
    Limite : le navigateur interdit de regarder ce qui se passe dans un lecteur d'un autre site, donc une vidéo supprimée ou un lecteur qui affiche une erreur ne peuvent pas être détectés. */
 var watchTimer = null, watchToken = 0, WATCH_MS = 20000;
@@ -3315,6 +3354,7 @@ var TIP_ICO = {
   server: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><path d="M6 6h.01M6 18h.01"/></svg>',
   shield: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>',
   fit: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3M21 8V5a2 2 0 0 0-2-2h-3M3 16v3a2 2 0 0 0 2 2h3M16 21h3a2 2 0 0 0 2-2v-3"/></svg>',
+  keys: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M6 8h.01M10 8h.01M14 8h.01M18 8h.01M8 12h.01M12 12h.01M16 12h.01M7 16h10"/></svg>',
   list: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg>'
 };
 function tipList() {
@@ -3323,6 +3363,7 @@ function tipList() {
   if (cur.sources && cur.sources.length > 1) t.push({ ico: "server", c: "#fcd34d", l: "Astuce", h: "Si le lecteur bug ou ne démarre pas, essaie un autre serveur en bas à gauche." });
   t.push({ ico: "shield", c: "#fb923c", l: "Marre des pubs ?", h: 'Installe <a href="https://brave.com/" target="_blank" rel="noopener">Brave</a>, un navigateur qui bloque les pubs.' });
   t.push({ ico: "fit", c: "#c4b5fd", l: "Bandes noires ?", h: "Passe en plein écran, puis choisis Zoom ou Étirer dans la barre Format." });
+  if (window.matchMedia && matchMedia("(pointer:fine)").matches) t.push({ ico: "keys", c: "#f9a8d4", l: "Raccourcis", h: "<b>F</b> plein écran, <b>R</b> recharger" + (cur.sources.length > 1 ? ", <b>S</b> changer de serveur" : "") + (cur.nav ? ", <b>N</b> / <b>P</b> épisode suivant / précédent." : ".") });
   if (cur.nav && cur.nav.eps) t.push({ ico: "list", c: "#86efac", l: "Épisodes", h: "Utilise le bouton Épisodes pour sauter à un autre épisode ou une autre saison." });
   return t;
 }
