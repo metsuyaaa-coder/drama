@@ -317,6 +317,15 @@ dialog#player[open]::backdrop { animation: fadeIn .3s ease both; }
 .pslow[hidden] { display: none; }
 @keyframes pspin { to { transform: rotate(360deg); } }
 @media (prefers-reduced-motion: reduce) { .pspin { animation-duration: 2.4s; } }
+.hbtn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; }
+.hbtn .hi { width: 16px; height: 16px; flex: 0 0 auto; }
+.hbtn .fi { display: inline-flex; }
+@media (max-width: 720px) {
+  dialog#player .phead .row { justify-content: flex-end; }
+  dialog#player .phead .row .btn { flex: 0 0 auto; width: 42px; min-height: 40px; padding: 0; display: inline-flex; align-items: center; justify-content: center; }
+  dialog#player .phead .row .btn > span:not(.fi), dialog#player .phead .row .btn > .lbl { display: none; }
+  dialog#player .phead .row .btn svg { width: 18px; height: 18px; margin: 0; }
+}
 .fsbar, .fswake { display: none; }
 .pframe.fsui .fsbar { display: flex; align-items: center; gap: 6px; position: absolute; z-index: 6; top: calc(12px + env(safe-area-inset-top, 0px)); left: 50%; transform: translate(-50%, -10px); background: rgba(0,0,0,.82); border: 1px solid var(--line); padding: 6px 8px 6px 12px; opacity: 0; pointer-events: none; transition: opacity .25s, transform .3s var(--ease); backdrop-filter: blur(6px); }
 .pframe.fsui.bar .fsbar { opacity: 1; transform: translate(-50%, 0); pointer-events: auto; }
@@ -1080,7 +1089,7 @@ footer .wrap.about { display: grid; grid-template-columns: repeat(auto-fit, minm
   <div class="phead">
     <button class="btn small ghost" id="pclose" type="button">Retour</button>
     <div class="pt"><b id="ptitle"></b><small id="psub"></small></div>
-    <span class="row"><span id="pdl" style="display:contents"></span><button class="btn small ghost" id="preload" type="button" title="Recharger le lecteur (R)">Recharger</button><button class="btn small ghost" id="pfull" type="button">Plein écran</button><a id="pext" class="btn small ghost" target="_blank" rel="noopener">Nouvel onglet</a></span>
+    <span class="row"><span id="pdl" style="display:contents"></span><button class="btn small ghost hbtn" id="preload" type="button" title="Recharger le lecteur (R)" aria-label="Recharger"><svg class="hi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg><span>Recharger</span></button><button class="btn small ghost hbtn" id="pfull" type="button" title="Plein écran (F)" aria-label="Plein écran"><span class="fi"><svg class="hi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3H5a2 2 0 0 0-2 2v3M21 8V5a2 2 0 0 0-2-2h-3M3 16v3a2 2 0 0 0 2 2h3M16 21h3a2 2 0 0 0 2-2v-3"/></svg></span><span class="lbl">Plein écran</span></button><a id="pext" class="btn small ghost hbtn" target="_blank" rel="noopener" title="Ouvrir dans un nouvel onglet" aria-label="Nouvel onglet"><svg class="hi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg><span>Nouvel onglet</span></a></span>
   </div>
   <div class="pframe" id="pframe">
     <div class="pstage" id="pstage"></div>
@@ -3265,7 +3274,7 @@ function play(sources, title, idx, sub, nav, dls) {
   var dlg = $("#player");
   renderPlayer();
   dlg.classList.remove("wide");
-  $("#pfull").textContent = "Plein écran";
+  setFullLbl(false);
   document.documentElement.classList.add("lock");
   if (dlg.showModal) { if (!dlg.open) dlg.showModal(); } else dlg.setAttribute("open", "");
 }
@@ -3275,6 +3284,7 @@ function renderPlayer() {
   $("#psub").textContent = cur.sub || "";
   var rq = "/demande/" + encodeURIComponent(cur.title || "");
   $("#pdl").innerHTML = dlOpen() ? ((cur.dl || []).length ? dlLinks(cur.dl, "Télécharger", " ghost") : '<a class="btn small ghost" data-reqdl="1" href="' + rq + '/dl">' + DLICON + '<span>Télécharger</span></a>') : "";
+  Array.prototype.forEach.call(document.querySelectorAll("#pdl .btn"), function (b) { var n = b.dataset.dlname || "Télécharger"; b.title = n; b.setAttribute("aria-label", n); });
   $("#pdemande").href = rq + "/stream"; $("#pdemande2").href = rq + "/dl";
   /* Sur Playmate / Vidara / Uqload, l'astuce langue s'affiche en premier à chaque changement de serveur */
   var lp = langPlayer();
@@ -3478,13 +3488,20 @@ function closePlayer() {
   $("#pstage").innerHTML = ""; d.classList.remove("wide"); syncFs();
   if (d.close) d.close(); else d.removeAttribute("open");
 }
+var FS_SVG = function (d) { return '<svg class="hi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + d + '</svg>'; };
+function setFullLbl(on) {
+  var b = $("#pfull"), t = on ? "Quitter le plein écran" : "Plein écran";
+  b.querySelector(".lbl").textContent = t;
+  b.querySelector(".fi").innerHTML = FS_SVG(on ? '<path d="M8 3v3a2 2 0 0 1-2 2H3M21 8h-3a2 2 0 0 1-2-2V3M3 16h3a2 2 0 0 1 2 2v3M16 21v-3a2 2 0 0 1 2-2h3"/>' : '<path d="M8 3H5a2 2 0 0 0-2 2v3M21 8V5a2 2 0 0 0-2-2h-3M3 16v3a2 2 0 0 0 2 2h3M16 21h3a2 2 0 0 0 2-2v-3"/>');
+  b.setAttribute("aria-label", t); b.title = t + " (F)";
+}
 function toggleFull() {
   var d = $("#player"), b = $("#pfull"), f = $("#pframe");
   var fsEl = document.fullscreenElement || document.webkitFullscreenElement;
   if (fsEl) { (document.exitFullscreen || document.webkitExitFullscreen).call(document); return; }
-  if (d.classList.contains("wide")) { d.classList.remove("wide"); b.textContent = "Plein écran"; syncFs(); return; }
+  if (d.classList.contains("wide")) { d.classList.remove("wide"); setFullLbl(false); syncFs(); return; }
   var req = f.requestFullscreen || f.webkitRequestFullscreen;
-  var fallback = function () { d.classList.add("wide"); b.textContent = "Quitter le plein écran"; syncFs(); };
+  var fallback = function () { d.classList.add("wide"); setFullLbl(true); syncFs(); };
   if (!req) { fallback(); return; }
   try {
     var p = req.call(f);
@@ -4221,8 +4238,8 @@ $("#pdl").addEventListener("click", function (e) { if (e.target.closest("[data-r
 $("#pprev").addEventListener("click", function () { if (cur.nav && cur.nav.prev) cur.nav.prev(); });
 $("#pnext").addEventListener("click", function () { if (cur.nav && cur.nav.next) { markCurSeen(); cur.nav.next(); } });
 $("#pfull").addEventListener("click", toggleFull);
-document.addEventListener("fullscreenchange", function () { if (!$("#player").classList.contains("wide")) $("#pfull").textContent = document.fullscreenElement ? "Quitter le plein écran" : "Plein écran"; syncFs(); });
-document.addEventListener("webkitfullscreenchange", function () { if (!$("#player").classList.contains("wide")) $("#pfull").textContent = document.webkitFullscreenElement ? "Quitter le plein écran" : "Plein écran"; syncFs(); });
+document.addEventListener("fullscreenchange", function () { if (!$("#player").classList.contains("wide")) setFullLbl(!!document.fullscreenElement); syncFs(); });
+document.addEventListener("webkitfullscreenchange", function () { if (!$("#player").classList.contains("wide")) setFullLbl(!!document.webkitFullscreenElement); syncFs(); });
 $("#player").addEventListener("click", function (e) { if (e.target === this) closePlayer(); });
 $("#player").addEventListener("close", function () { watchToken++; clearTimeout(watchTimer); closeEps(); clearInterval(tipTimer); document.documentElement.classList.remove("lock"); $("#pstage").innerHTML = ""; syncFs(); });
 
