@@ -8131,7 +8131,15 @@
                   "by": "head"
                 }
               ],
-              "downloads": []
+              "downloads": [
+                {
+                  "name": "1FICHIER",
+                  "url": "https://1fichier.com/?n1k2ugkkwtuuz8iqke3k",
+                  "size": "1.9Go",
+                  "quality": "1080p (H.264)",
+                  "by": "head"
+                }
+              ]
             },
             {
               "number": 2,
@@ -8160,7 +8168,15 @@
                   "by": "head"
                 }
               ],
-              "downloads": []
+              "downloads": [
+                {
+                  "name": "1FICHIER",
+                  "url": "https://1fichier.com/?476jbxibajfbtglhduad",
+                  "size": "1.75Go",
+                  "quality": "1080p (H.264)",
+                  "by": "head"
+                }
+              ]
             },
             {
               "number": 3,
@@ -8189,7 +8205,15 @@
                   "by": "head"
                 }
               ],
-              "downloads": []
+              "downloads": [
+                {
+                  "name": "1FICHIER",
+                  "url": "https://1fichier.com/?h3opi0syvflyd1ggwdxi",
+                  "size": "1.8Go",
+                  "quality": "1080p (H.264)",
+                  "by": "head"
+                }
+              ]
             },
             {
               "number": 4,
@@ -8263,7 +8287,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792356330881,
+      "updatedAt": 1792356448276,
       "trend": 72,
       "networks": [
         "TVING"
@@ -20129,12 +20153,12 @@
   "journal": [
     {
       "k": "mveaok1xhwifh",
-      "t": 1792356330885,
+      "t": 1792356448279,
       "b": "head",
       "a": "edit",
       "i": "311648",
       "n": "Make Me Tingle",
-      "d": "sources 4 → 13"
+      "d": "téléchargements 0 → 3"
     },
     {
       "k": "mve952c7bgpas",
