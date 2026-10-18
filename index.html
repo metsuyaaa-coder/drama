@@ -235,8 +235,10 @@ details.season summary .sm { display: flex; align-items: center; gap: 16px; }
 details.season summary .sm::after { content: "+"; font-family: var(--mono); font-size: 22px; font-weight: 400; transition: transform .3s var(--ease); }
 details.season[open] summary .sm::after { transform: rotate(45deg); }
 details.season summary i { font-style: normal; font-family: var(--mono); font-size: 12px; color: var(--dim); letter-spacing: .06em; }
-.seasontabs { display: flex; gap: 8px; overflow-x: auto; padding: 0 0 16px; scrollbar-width: thin; }
-.seasontabs .chip { flex: 0 0 auto; white-space: nowrap; }
+.seasonpick { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; padding: 0 0 16px; }
+.seasonpick .seasonall { display: none; }
+.seasonpick.open .seasonall { display: flex; }
+.seasonpick .seasontog .sl { font-family: var(--display); font-weight: 700; font-size: 16px; letter-spacing: .04em; }
 .seasons.multi details.season { display: none; }
 .seasons.multi details.season.cur { display: block; border-bottom: 1px solid var(--line); }
 .seasons.multi details.season summary { pointer-events: none; cursor: default; padding-left: 0; }
@@ -2317,7 +2319,7 @@ function viewSerie(id) {
   if (!movie && (s.seasons || []).length) {
     var multi = s.seasons.length > 1, si = (seasonSel.id === String(s.id) && seasonSel.i < s.seasons.length) ? seasonSel.i : 0;
     seasonSel = { id: String(s.id), i: si };
-    html += '<div class="wrap seasons' + (dlMode ? ' dlmode' : '') + (multi ? ' multi' : '') + '" id="seasons"><div class="section-head"><h2>Épisodes</h2>' + (showDl ? '<div class="tabs" role="tablist"><button type="button" class="tab' + (dlMode ? '' : ' on') + '" role="tab" data-dltab="watch">Regarder</button><button type="button" class="tab' + (dlMode ? ' on' : '') + '" role="tab" data-dltab="dl">Télécharger</button></div>' : '') + '</div>' + (multi ? '<div class="seasontabs" role="tablist">' + s.seasons.map(function (se, i) { return '<button type="button" class="chip' + (i === si ? ' on' : '') + '" role="tab" aria-selected="' + (i === si ? 'true' : 'false') + '" data-seasontab="' + i + '">' + esc(se.name || "Saison " + se.number) + '</button>'; }).join("") + '</div>' : '') + (dlAdmin() && !hasDl(s) ? '<p class="note dlonly">Aucun lien de téléchargement pour l\'instant. Ajoute-en avec « Modifier ».</p>' : '') + s.seasons.map(function (se, i) {
+    html += '<div class="wrap seasons' + (dlMode ? ' dlmode' : '') + (multi ? ' multi' : '') + '" id="seasons"><div class="section-head"><h2>Épisodes</h2>' + (showDl ? '<div class="tabs" role="tablist"><button type="button" class="tab' + (dlMode ? '' : ' on') + '" role="tab" data-dltab="watch">Regarder</button><button type="button" class="tab' + (dlMode ? ' on' : '') + '" role="tab" data-dltab="dl">Télécharger</button></div>' : '') + '</div>' + (multi ? '<div class="seasonpick"><button type="button" class="chip plattab seasontog" data-seasonopen="1" aria-expanded="false"><span class="sl">' + esc(s.seasons[si].name || "Saison " + s.seasons[si].number) + '</span><i class="caret" aria-hidden="true"></i></button><div class="platall seasonall" role="tablist">' + s.seasons.map(function (se, i) { return '<button type="button" class="chip' + (i === si ? ' on' : '') + '" role="tab" aria-selected="' + (i === si ? 'true' : 'false') + '" data-seasontab="' + i + '">' + esc(se.name || "Saison " + se.number) + '</button>'; }).join("") + '</div></div>' : '') + (dlAdmin() && !hasDl(s) ? '<p class="note dlonly">Aucun lien de téléchargement pour l\'instant. Ajoute-en avec « Modifier ».</p>' : '') + s.seasons.map(function (se, i) {
       return '<details class="season' + (multi && i === si ? ' cur' : '') + '"' + ((multi ? i === si : i === 0) ? " open" : "") + '><summary' + (multi ? ' tabindex="-1"' : '') + '><span>' + esc(se.name || "Saison " + se.number) + '</span><span class="sm"><i>' + (se.episodes || []).length + ' ÉPISODES' + (seenCount(se) ? ' · ' + seenCount(se) + ' VUS' : '') + '</i></span></summary>' +
         '<div class="seasonbar"><button type="button" class="btn small ghost" data-seenseason="' + esc(s.id) + '|' + i + '">' + (seenCount(se) === (se.episodes || []).length && seenCount(se) ? "Tout marquer non vu" : "Tout marquer comme vu") + '</button></div>' +
         (dlOpen() && (se.downloads || []).length ? '<div class="dlbar">' + dlLinks(se.downloads, "Télécharger toute la saison") + '</div>' : '') +
@@ -3401,7 +3403,7 @@ document.addEventListener("click", function (e) {
   if (st) { var sb = st.closest(".srcs"), so = sb.classList.toggle("open"); st.setAttribute("aria-expanded", so ? "true" : "false"); return; }
   var rd = e.target.closest("[data-resumedel]");
   if (rd) { e.preventDefault(); e.stopPropagation(); removeResume(rd.dataset.resumedel); viewHome(); return; }
-  var t = e.target.closest("[data-resume],[data-watch],[data-movsrc],[data-playep],[data-src],[data-del],[data-list],[data-listtab],[data-seen],[data-seenseason],[data-genre],[data-langf],[data-newf],[data-kdf],[data-platf],[data-platopen],[data-seasontab],[data-dlf],[data-typef],[data-pick],[data-bulk],[data-dlbulk],[data-dltab],#save,#applytpl,#refreshall,#manual,#manualfilm,#refresh,#copyhash");
+  var t = e.target.closest("[data-resume],[data-watch],[data-movsrc],[data-playep],[data-src],[data-del],[data-list],[data-listtab],[data-seen],[data-seenseason],[data-genre],[data-langf],[data-newf],[data-kdf],[data-platf],[data-platopen],[data-seasonopen],[data-seasontab],[data-dlf],[data-typef],[data-pick],[data-bulk],[data-dlbulk],[data-dltab],#save,#applytpl,#refreshall,#manual,#manualfilm,#refresh,#copyhash");
   if (!t) return;
   if (t.dataset.resume != null) { e.preventDefault(); resumeWatch(t.dataset.resume); }
   else if (t.dataset.watch != null) {
@@ -3483,9 +3485,15 @@ document.addEventListener("click", function (e) {
   else if (t.dataset.genre != null) { filter = t.dataset.genre; if (rerender) rerender(); }
   else if (t.dataset.langf != null) { langFilter = t.dataset.langf; if (rerender) rerender(); }
   else if (t.dataset.kdf != null) { kdFilter = t.dataset.kdf; if (rerender) rerender(); }
+  else if (t.dataset.seasonopen != null) {
+    var sp = t.closest(".seasonpick"), so = sp.classList.toggle("open");
+    t.classList.toggle("open", so); t.setAttribute("aria-expanded", so ? "true" : "false");
+  }
   else if (t.dataset.seasontab != null) {
     var sti = parseInt(t.dataset.seasontab, 10); seasonSel.i = sti;
-    document.querySelectorAll(".seasontabs .chip").forEach(function (b, k) { b.classList.toggle("on", k === sti); b.setAttribute("aria-selected", k === sti ? "true" : "false"); });
+    var spk = t.closest(".seasonpick");
+    spk.querySelectorAll(".seasonall .chip").forEach(function (b, k) { b.classList.toggle("on", k === sti); b.setAttribute("aria-selected", k === sti ? "true" : "false"); });
+    var tg = spk.querySelector(".seasontog"); tg.querySelector(".sl").textContent = t.textContent; tg.classList.remove("open"); tg.setAttribute("aria-expanded", "false"); spk.classList.remove("open");
     document.querySelectorAll("details.season").forEach(function (d, k) { d.classList.toggle("cur", k === sti); d.open = k === sti; });
   }
   else if (t.dataset.platopen != null) { platOpen = !platOpen; if (rerender) rerender(); }
