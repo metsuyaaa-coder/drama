@@ -63,13 +63,15 @@ module.exports = async function (req, res) {
     var link = httpUrl(b.url);
     if (!title || !link) { res.status(400).json({ error: "signalement incomplet" }); return; }
     var sub = clean(b.sub, 100);
+    var video = b.reason === "video"; /* "dead" (serveur mort, par défaut) ou "video" (la vidéo ne marche pas) */
     var fields2 = [
+      { name: "Problème", value: video ? "La vidéo ne marche pas" : "Serveur mort", inline: true },
       { name: "Serveur", value: clean(b.source, 60) || "?", inline: true },
       { name: "Lien", value: "<" + link + ">" }
     ];
     var page = httpUrl(b.page);
     try { if (page && new URL(page).host === host) fields2.push({ name: "Fiche sur le site", value: "<" + page + ">" }); } catch (e) {}
-    embed = { title: "Lien mort signalé", description: "**" + title + "**" + (sub ? " · " + sub : ""), color: 0xe5484d, fields: fields2, footer: { text: "DramaByM" }, timestamp: new Date().toISOString() };
+    embed = { title: video ? "Vidéo qui ne marche pas" : "Serveur mort signalé", description: "**" + title + "**" + (sub ? " · " + sub : ""), color: video ? 0xf5a524 : 0xe5484d, fields: fields2, footer: { text: "DramaByM" }, timestamp: new Date().toISOString() };
   }
 
   try {
