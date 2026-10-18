@@ -16625,6 +16625,232 @@
       ],
       "downloads": [],
       "updatedAt": 1792291301180
+    },
+    {
+      "id": "322570",
+      "type": "tv",
+      "name": "Until the T-Shirt Dries",
+      "original_name": "Tシャツが乾くまで",
+      "origin_country": [
+        "JP"
+      ],
+      "original_language": "ja",
+      "aka": [
+        "Until the T-Shirt Dries",
+        "直到T恤干透",
+        "Tシャツが乾くまで",
+        "直到T恤乾了為止",
+        "T셔츠가 마를 때까지",
+        "ก่อนความสุขจะจางหาย",
+        "Até a Camiseta Secar",
+        "Đến Khi Áo Phông Khô",
+        "Hasta que la camiseta se seque",
+        "直到T恤干了为止",
+        "T-shirt ga Kawaku made",
+        "티셔츠가 마를 때까지"
+      ],
+      "year": "2026",
+      "overview": "",
+      "genres": [
+        "Drame",
+        "Mystère"
+      ],
+      "rating": "5.5",
+      "pop": 11.9946,
+      "status": "Ended",
+      "poster": "https://image.tmdb.org/t/p/w500/xVZvNASRqY91hD09g1cXHpErhGX.jpg",
+      "posterV": 2,
+      "backdrop": "https://image.tmdb.org/t/p/original/j9rHrq3mz0hHchk3EJksCco9LJW.jpg",
+      "cast": [
+        {
+          "name": "Yu Aoi",
+          "character": "Sakiko Seo"
+        },
+        {
+          "name": "中島歩",
+          "character": "Itsuki Sonoda"
+        },
+        {
+          "name": "高橋文哉",
+          "character": "Naoto Yano"
+        },
+        {
+          "name": "夏帆",
+          "character": "Azusa Sonoda"
+        },
+        {
+          "name": "松山ケンイチ",
+          "character": "Mitsuru Seo"
+        },
+        {
+          "name": "久保田薫",
+          "character": "Sho Sonoda"
+        },
+        {
+          "name": "臼田あさ美",
+          "character": "Chizuru Oida"
+        },
+        {
+          "name": "Lily Franky",
+          "character": "Koji Miyauchi"
+        }
+      ],
+      "seasons": [
+        {
+          "number": 1,
+          "name": "Saison 1",
+          "episodes": [
+            {
+              "number": 1,
+              "name": "Until I Found Out the Secret.",
+              "overview": "A sudden accident shatters the everyday happiness two couples had always taken for granted — and exposes a secret one of them kept hidden for years.",
+              "air_date": "2026-07-10",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-owq6myv2aw08.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 2,
+              "name": "The Smell of the Third Friday",
+              "overview": "Itsuki reveals he saw Azusa and Mitsuru together on \"the third Friday.\" Sakiko wants to believe her husband, but begins investigating their secret.",
+              "air_date": "2026-07-17",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-e4oythxjhdtd.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 3,
+              "name": "What I'm Not Good At",
+              "overview": "As their investigation stalls, Sakiko and Itsuki bond over shared frustration. A call from the police leads them to retrace Mitsuru and Azusa's steps.",
+              "air_date": "2026-07-24",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-rq2bdzgh6hni.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 4,
+              "name": "Poor Man",
+              "overview": "The discovery of two sets of tickets forces Sakiko and Itsuki to confront the possibility of an affair. Sakiko then finds a new clue on Mitsuru's phone.",
+              "air_date": "2026-07-31",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-61827hf18384.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 5,
+              "name": "If You Don't Bother Anyone",
+              "overview": "Sakiko follows Mitsuru's trail all the way to Nagano, while an unexpected guest from Azusa's childhood pays Itsuki a visit.",
+              "air_date": "2026-08-07",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-2c3xhxxwtqjh.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 6,
+              "name": "What's the Evidence?",
+              "overview": "A sudden return brings Sakiko, Itsuki and a familiar face together for the first time. As truths emerge, Sakiko reflects on her life with Mitsuru.",
+              "air_date": "2026-08-14",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-zb1997nq8ix8.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 7,
+              "name": "Meet On the Third Friday",
+              "overview": "A familiar face challenges Sakiko and Itsuki to define their relationship, as the truth about Mitsuru and Azusa's third Friday meetings unravels.",
+              "air_date": "2026-08-21",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-p7iwsvvji30q.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 8,
+              "name": "Escape and Snooping",
+              "overview": "Sakiko doesn't return after learning the truth. Worried, Mitsuru gathers her friends at a café, hoping to learn more about the side of her he never knew.",
+              "air_date": "2026-08-28",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-9dy8h9785ini.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 9,
+              "name": "What I Couldn't Say",
+              "overview": "Sakiko enjoys time with a man and his children by the sea, while a troubled Mitsuru learns his wife was a very different person before they met.",
+              "air_date": "2026-09-04",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-zdipubm7uo36.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 10,
+              "name": "The Unnamed Relationship",
+              "overview": "Mitsuru treads carefully, but Sakiko's fears of losing him again take over. She opens up to Itsuki as all three choose the paths their lives will take.",
+              "air_date": "2026-09-11",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-slrry1stxqeg.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            }
+          ],
+          "downloads": []
+        }
+      ],
+      "sources": [],
+      "addedAt": 1792291373375,
+      "langs": [
+        "VOSTFR"
+      ],
+      "downloads": [],
+      "updatedAt": 1792291542527
     }
   ],
   "deletedLinks": [
