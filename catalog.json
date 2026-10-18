@@ -5682,7 +5682,11 @@
                 {
                   "name": "VIDMOLY",
                   "url": "https://vidmoly.org/embed-2yld09tdh2b7.html",
-                  "quality": "https://vidara.to/e/j0c7P2SjI6SJO",
+                  "by": "614d778ed0"
+                },
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/j0c7P2SjI6SJO",
                   "by": "614d778ed0"
                 }
               ],
@@ -5973,7 +5977,7 @@
       ],
       "downloads": [],
       "posterV": 2,
-      "updatedAt": 1792365207873,
+      "updatedAt": 1792365288124,
       "trend": 84,
       "networks": [
         "CCTV-8",
@@ -19943,12 +19947,12 @@
   "journal": [
     {
       "k": "mvefytl0tztw4",
-      "t": 1792365207876,
+      "t": 1792365288128,
       "b": "614d778ed0",
       "a": "edit",
       "i": "300146",
       "n": "Where the Mask Ends",
-      "d": ""
+      "d": "sources 8 → 9"
     },
     {
       "k": "mveaok1xhwifh",
