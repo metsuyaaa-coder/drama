@@ -593,6 +593,33 @@ button.more { background: none; border: 0; padding: 0; cursor: pointer; }
   html.standalone .bar { bottom: calc(62px + env(safe-area-inset-bottom, 0px)); }
 }
 
+/* petit onglet « Demande » : faire une demande ou voir les demandes en cours */
+.reqmenu { position: fixed; inset: 0; z-index: 95; }
+.reqmenu[hidden] { display: none; }
+.rm-back { position: absolute; inset: 0; background: rgba(0,0,0,.55); backdrop-filter: blur(3px); opacity: 0; transition: opacity .25s ease; }
+.reqmenu.show .rm-back { opacity: 1; }
+.rm-card { position: absolute; width: 340px; background: #0a0a0a; border: 1px solid #3a3a3a; box-shadow: 0 24px 60px rgba(0,0,0,.7); overflow: hidden; opacity: 0; transform: translateY(-10px) scale(.94); transform-origin: 30px -10px; filter: blur(6px); transition: opacity .22s ease, transform .4s cubic-bezier(.2,.9,.3,1.25), filter .3s ease; }
+.reqmenu.show .rm-card { opacity: 1; transform: none; filter: none; }
+.rm-card::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 2px; background: linear-gradient(90deg, transparent, #fff, transparent); transform: translateX(-100%); }
+.reqmenu.show .rm-card::before { animation: rmsweep .9s .1s ease-out both; }
+@keyframes rmsweep { to { transform: translateX(100%); } }
+.rm-title { font-family: var(--mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--dim); padding: 16px 18px 12px; }
+.rm-opt { display: flex; align-items: center; gap: 14px; padding: 14px 18px; border-top: 1px solid var(--line); transition: background .25s; -webkit-tap-highlight-color: transparent; }
+.reqmenu.show .rm-opt { animation: rmitem .45s calc(120ms + var(--i, 0) * 80ms) var(--ease) both; }
+@keyframes rmitem { from { opacity: 0; transform: translateX(-14px); } to { opacity: 1; transform: none; } }
+.rm-opt .ic { width: 40px; height: 40px; flex: none; display: grid; place-items: center; border: 1px solid var(--line); transition: background .25s, color .25s, border-color .25s, transform .35s cubic-bezier(.2,.9,.3,1.4); }
+.rm-opt .ic svg { width: 20px; height: 20px; }
+.rm-opt b { display: block; font-family: var(--display); font-weight: 700; font-size: 20px; letter-spacing: .03em; text-transform: uppercase; line-height: 1.1; }
+.rm-opt small { display: block; margin-top: 3px; font-size: 12px; color: var(--dim); }
+.rm-opt .ar { margin-left: auto; font-family: var(--mono); font-size: 18px; opacity: .5; transition: transform .3s var(--ease), opacity .3s; }
+.rm-opt:hover, .rm-opt:focus-visible { background: #141414; }
+.rm-opt:hover .ic, .rm-opt:focus-visible .ic { background: var(--fg); color: var(--bg); border-color: var(--fg); transform: rotate(-8deg) scale(1.08); }
+.rm-opt:hover .ar, .rm-opt:focus-visible .ar { transform: translateX(5px); opacity: 1; }
+@media (max-width: 720px) {
+  .rm-card { left: 0 !important; right: 0; top: auto !important; bottom: 0; width: auto !important; border-width: 1px 0 0; padding-bottom: env(safe-area-inset-bottom, 0px); transform: translateY(100%); transform-origin: bottom; filter: none; }
+  .reqmenu.show .rm-card { transform: none; }
+}
+@media (prefers-reduced-motion: reduce) { .rm-card, .rm-back { transition: opacity .15s; transform: none !important; filter: none; } .reqmenu.show .rm-opt, .reqmenu.show .rm-card::before { animation: none; } }
 /* plateformes et demandes */
 /* plateformes : le nom s'écrit dans le style de la marque (pas de logo) */
 .wm { display: inline-block; font-family: var(--display); font-weight: 900; letter-spacing: .05em; text-transform: uppercase; line-height: 1; white-space: nowrap; color: var(--pc, var(--fg)); }
@@ -871,6 +898,15 @@ footer .wrap.about { display: grid; grid-template-columns: repeat(auto-fit, minm
   <a href="/calendrier" data-nav="nav-cal"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M7 2h2v2h6V2h2v2h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2zM5 10v10h14V10z"/></svg><span>Calendrier</span></a>
   <a href="/ma-liste" data-nav="nav-list"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"/></svg><span>Ma liste</span></a>
 </nav>
+
+<div class="reqmenu" id="reqmenu" hidden role="dialog" aria-label="Demandes">
+  <div class="rm-back"></div>
+  <div class="rm-card">
+    <div class="rm-title">Demande</div>
+    <a class="rm-opt" href="/demande" style="--i:0"><span class="ic"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11 4h2v7h7v2h-7v7h-2v-7H4v-2h7z"/></svg></span><span><b>Faire une demande</b><small>Un titre manque ? Demande-le.</small></span><span class="ar" aria-hidden="true">→</span></a>
+    <a class="rm-opt" href="/demandes" style="--i:1"><span class="ic"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 5h2v2H4zm4 0h12v2H8zM4 11h2v2H4zm4 0h12v2H8zM4 17h2v2H4zm4 0h12v2H8z"/></svg></span><span><b>Demandes en cours</b><small>Où en sont les titres demandés.</small></span><span class="ar" aria-hidden="true">→</span></a>
+  </div>
+</div>
 
 
 <footer>
@@ -4399,6 +4435,38 @@ document.addEventListener("click", function (e) {
   e.preventDefault();
   if (h === curPath()) route(true); else go(h);
 });
+/* ===== Onglet « Demande » : choisir entre faire une demande et voir les demandes en cours ===== */
+var rm = $("#reqmenu"), rmBtn = $("#nav-req"), rmTimer;
+rmBtn.setAttribute("aria-haspopup", "dialog"); rmBtn.setAttribute("aria-expanded", "false");
+function rmOpen() {
+  clearTimeout(rmTimer);
+  $("header.top").classList.remove("open"); $("#burger").setAttribute("aria-expanded", "false");
+  var card = rm.querySelector(".rm-card");
+  rm.hidden = false;
+  if (window.matchMedia("(min-width: 721px)").matches) {
+    var r = rmBtn.getBoundingClientRect(), w = Math.min(340, window.innerWidth - 24);
+    card.style.width = w + "px";
+    card.style.left = Math.max(12, Math.min(r.left, window.innerWidth - w - 12)) + "px";
+    card.style.top = (r.bottom + 12) + "px";
+  } else { card.style.left = card.style.top = card.style.width = ""; }
+  void rm.offsetWidth;
+  rm.classList.add("show");
+  rmBtn.setAttribute("aria-expanded", "true");
+}
+function rmClose() {
+  if (rm.hidden || !rm.classList.contains("show")) return;
+  rm.classList.remove("show");
+  rmBtn.setAttribute("aria-expanded", "false");
+  rmTimer = setTimeout(function () { rm.hidden = true; }, 300);
+}
+document.addEventListener("click", function (e) {
+  if (e.button || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+  if (e.target.closest("#nav-req")) { e.preventDefault(); e.stopPropagation(); if (rm.classList.contains("show")) rmClose(); else rmOpen(); return; }
+  if (rm.classList.contains("show") && (!e.target.closest(".rm-card") || e.target.closest(".rm-opt"))) rmClose();
+}, true);
+document.addEventListener("keydown", function (e) { if (e.key === "Escape") rmClose(); });
+window.addEventListener("resize", rmClose);
+window.addEventListener("popstate", rmClose);
 /* Version du site : les admins qui ont encore une ancienne page en cache la rechargent automatiquement */
 var BUILD = "2026-10-18-journal";
 function checkBuild() {
