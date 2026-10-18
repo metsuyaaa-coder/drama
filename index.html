@@ -590,6 +590,14 @@ button.more { background: none; border: 0; padding: 0; cursor: pointer; }
 /* plateformes et demandes */
 /* plateformes : le nom s'écrit dans le style de la marque (pas de logo) */
 .wm { display: inline-block; font-family: var(--display); font-weight: 900; letter-spacing: .05em; text-transform: uppercase; line-height: 1; white-space: nowrap; color: var(--pc, var(--fg)); }
+.platrow { flex-direction: column; align-items: flex-start; gap: 8px; }
+.platall { display: flex; flex-wrap: wrap; gap: 8px; width: 100%; animation: platin .2s ease-out; }
+@keyframes platin { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: none; } }
+.chip.plattab { display: inline-flex; align-items: center; gap: 10px; }
+.chip.plattab.has, .chip.plattab.open { color: var(--fg); border-color: var(--dim); }
+.chip.plattab .platcur .wm { font-size: 15px; }
+.chip.plattab .caret { width: 6px; height: 6px; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: translateY(-2px) rotate(45deg); transition: transform .2s; }
+.chip.plattab.open .caret { transform: translateY(1px) rotate(-135deg); }
 .chip.pchip { padding: 6px 14px; display: inline-flex; align-items: center; min-height: 34px; }
 .chip.pchip .wm { font-size: 18px; }
 .chip.pchip:hover { border-color: var(--pc, var(--dim)); }
@@ -1272,7 +1280,7 @@ var STATUS = { "Returning Series": "En cours", "Ended": "Terminée", "Canceled":
 function statusFr(s) { return STATUS[s] || s || ""; }
 
 /* ===== Vues ===== */
-var filter = "", langFilter = "", dlFilter = false, newFilter = "", kdFilter = "", platFilter = "", typeFilter = "", curQ = "", searchBack = "/";
+var filter = "", langFilter = "", dlFilter = false, newFilter = "", kdFilter = "", platFilter = "", platOpen = false, typeFilter = "", curQ = "", searchBack = "/";
 var rerender = null;
 var lastPage = null;
 var pendingScroll = false;
@@ -1989,7 +1997,10 @@ function platChip(name) {
 }
 function platRow(plats) {
   if (!plats.length) return "";
-  return '<div class="chips langchips"><span class="chiplbl">Plateforme</span><button type="button" class="chip' + (!platFilter ? " on" : "") + '" data-platf="">Toutes</button>' + plats.map(platChip).join("") + '</div>';
+  var cur = platFilter ? platMark(platBrand(platFilter)) : "";
+  var tog = '<button type="button" class="chip plattab' + (platOpen ? " open" : "") + (platFilter ? " has" : "") + '" data-platopen="1" aria-expanded="' + (platOpen ? "true" : "false") + '"><span>Plateformes</span>' + (cur ? '<span class="platcur">' + cur + '</span>' : '') + '<i class="caret" aria-hidden="true"></i></button>';
+  return '<div class="chips langchips platrow">' + tog +
+    (platOpen ? '<div class="platall"><button type="button" class="chip' + (!platFilter ? " on" : "") + '" data-platf="">Toutes</button>' + plats.map(platChip).join("") + '</div>' : '') + '</div>';
 }
 function newMatch(s) { return (!newFilter || (newFilter === "serie" ? !!newSeries(s) : !!newEpisode(s))) && (!kdFilter || dramaType(s) === kdFilter) && (!platFilter || platNames(s).indexOf(platFilter) > -1); }
 function langMatch(s) { return !langFilter || (s.langs || []).indexOf(langFilter) > -1; }
@@ -3242,7 +3253,7 @@ function route(force) {
   if ((a === "ajouter" || a === "modifier" || a === "motdepasse" || a === "panel") && !ADMIN) { go("/admin", true); return; }
 
   var changed = force || a !== lastPage || a === "serie" || a === "modifier" || a === "acteur";
-  if (a !== lastPage) { filter = ""; langFilter = ""; dlFilter = false; newFilter = ""; kdFilter = ""; platFilter = ""; typeFilter = ""; listTab = "list"; calWeek = 0; calType = ""; }
+  if (a !== lastPage) { filter = ""; langFilter = ""; dlFilter = false; newFilter = ""; kdFilter = ""; platFilter = ""; platOpen = false; typeFilter = ""; listTab = "list"; calWeek = 0; calType = ""; }
   lastPage = a;
 
   var q = $("#q");
@@ -3346,7 +3357,7 @@ document.addEventListener("click", function (e) {
   if (st) { var sb = st.closest(".srcs"), so = sb.classList.toggle("open"); st.setAttribute("aria-expanded", so ? "true" : "false"); return; }
   var rd = e.target.closest("[data-resumedel]");
   if (rd) { e.preventDefault(); e.stopPropagation(); removeResume(rd.dataset.resumedel); viewHome(); return; }
-  var t = e.target.closest("[data-resume],[data-watch],[data-movsrc],[data-playep],[data-src],[data-del],[data-list],[data-listtab],[data-seen],[data-seenseason],[data-genre],[data-langf],[data-newf],[data-kdf],[data-platf],[data-dlf],[data-typef],[data-pick],[data-bulk],[data-dlbulk],[data-dltab],#save,#applytpl,#refreshall,#manual,#manualfilm,#refresh,#copyhash");
+  var t = e.target.closest("[data-resume],[data-watch],[data-movsrc],[data-playep],[data-src],[data-del],[data-list],[data-listtab],[data-seen],[data-seenseason],[data-genre],[data-langf],[data-newf],[data-kdf],[data-platf],[data-platopen],[data-dlf],[data-typef],[data-pick],[data-bulk],[data-dlbulk],[data-dltab],#save,#applytpl,#refreshall,#manual,#manualfilm,#refresh,#copyhash");
   if (!t) return;
   if (t.dataset.resume != null) { e.preventDefault(); resumeWatch(t.dataset.resume); }
   else if (t.dataset.watch != null) {
@@ -3428,6 +3439,7 @@ document.addEventListener("click", function (e) {
   else if (t.dataset.genre != null) { filter = t.dataset.genre; if (rerender) rerender(); }
   else if (t.dataset.langf != null) { langFilter = t.dataset.langf; if (rerender) rerender(); }
   else if (t.dataset.kdf != null) { kdFilter = t.dataset.kdf; if (rerender) rerender(); }
+  else if (t.dataset.platopen != null) { platOpen = !platOpen; if (rerender) rerender(); }
   else if (t.dataset.platf != null) { platFilter = t.dataset.platf; if (rerender) rerender(); }
   else if (t.dataset.newf != null) { newFilter = t.dataset.newf; if (rerender) rerender(); }
   else if (t.dataset.dlf != null) { dlFilter = t.dataset.dlf === "1"; if (rerender) rerender(); }
