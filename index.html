@@ -560,9 +560,6 @@ button.more { background: none; border: 0; padding: 0; cursor: pointer; }
 .pwa .ptag { justify-self: start; font-family: var(--mono); font-size: 10px; letter-spacing: .08em; text-transform: uppercase; background: var(--fg); color: var(--bg); padding: 3px 6px; line-height: 1; }
 .pwa h3 { margin: 0; font-family: var(--display); font-weight: 900; font-size: 24px; line-height: 1; text-transform: uppercase; }
 .pwa p { grid-column: 1 / -1; margin: 6px 0 0; color: #cfcfcf; font-size: 14px; }
-.pwa .pf { grid-column: 1 / -1; list-style: none; margin: 6px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
-.pwa .pf li { border: 1px solid var(--line); padding: 4px 8px; font-family: var(--mono); font-size: 11px; letter-spacing: .04em; color: var(--dim); }
-.pwa .pf li::before { content: "✓"; margin-right: 6px; color: var(--fg); }
 .pwa .row { grid-column: 1 / -1; display: flex; gap: 8px; margin-top: 10px; }
 .pwa .row .btn svg { width: 16px; height: 16px; flex: none; }
 .pwa .px { position: absolute; top: 8px; right: 8px; width: 32px; height: 32px; display: grid; place-items: center; background: none; border: 0; color: var(--dim); font-size: 24px; line-height: 1; cursor: pointer; }
@@ -842,9 +839,8 @@ footer .wrap.about { display: grid; grid-template-columns: repeat(auto-fit, minm
 </dialog>
 <aside class="pwa" id="pwa" role="dialog" aria-labelledby="pwa-t" hidden>
   <span class="pi"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M7 2h10a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm4 4v6.2L8.7 10 7.3 11.4 12 16l4.7-4.6L15.3 10 13 12.2V6zM9 18v1.5h6V18z"/></svg></span>
-  <div class="pt"><span class="ptag">Application gratuite</span><h3 id="pwa-t">Installe DramaByM</h3></div>
-  <p id="pwa-p">Garde tes dramas sous la main : ouvre le site en un tap depuis ton écran d'accueil, comme une vraie appli.</p>
-  <ul class="pf"><li>Plus rapide</li><li>Plein écran</li><li>Ma liste à portée de main</li></ul>
+  <div class="pt"><span class="ptag">Application web</span><h3 id="pwa-t">Installe DramaByM</h3></div>
+  <p id="pwa-p">Une application web simple, qui s'ouvre directement depuis ton écran d'accueil et qui apporte des améliorations visuelles.</p>
   <div class="row"><button type="button" class="btn small" id="pwa-go"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11 3h2v9l3-3 1.4 1.4L12 16l-5.4-5.6L8 9l3 3zM5 19h14v2H5z"/></svg><span>Installer</span></button><button type="button" class="btn small ghost" id="pwa-later">Plus tard</button></div>
   <button type="button" class="px" id="pwa-x" aria-label="Fermer">&times;</button>
 </aside>
@@ -3461,7 +3457,7 @@ var pwaBox = $("#pwa"), pwaClosed = false;
 function pwaShow() {
   if (pwaClosed || isStandalone || !(deferredInstall || isIOS)) return;
   if ($("#welcome").open) return;
-  if (!deferredInstall && isIOS) { $("#pwa-p").textContent = "Touche le bouton Partager de Safari, puis « Sur l'écran d'accueil » pour ajouter DramaByM comme une vraie appli."; $("#pwa-go").hidden = true; }
+  if (!deferredInstall && isIOS) { $("#pwa-p").textContent = "Touche le bouton Partager de Safari, puis « Sur l'écran d'accueil » pour ajouter l'application web DramaByM à ton écran d'accueil."; $("#pwa-go").hidden = true; }
   pwaBox.hidden = false;
 }
 function pwaHide() { pwaClosed = true; pwaBox.hidden = true; }
