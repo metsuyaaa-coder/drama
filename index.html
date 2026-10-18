@@ -189,6 +189,32 @@ label.f > span.lbl, .f > span.lbl { display: block; font-family: var(--mono); fo
 .cast div { padding: 10px 0; border-bottom: 1px solid var(--line); min-width: 0; }
 .cast b { display: block; font-weight: 500; font-size: 14px; }
 .cast span { font-size: 13px; color: var(--dim); }
+.castlink { display: block; }
+.castlink:hover b { text-decoration: underline; text-underline-offset: 3px; }
+/* page acteur */
+.actor { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 36px; padding-block: 44px 40px; align-items: start; }
+.actphoto { aspect-ratio: 2 / 3; background: var(--panel); border: 1px solid var(--line); overflow: hidden; position: relative; }
+.actphoto img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.actphoto .ph { position: absolute; inset: 0; display: grid; place-items: center; font-family: var(--display); font-size: 88px; font-weight: 900; color: #2a2a2a; }
+.actmain { min-width: 0; }
+.actor h1 { font-family: var(--display); font-weight: 900; font-size: clamp(38px, 6vw, 72px); line-height: .95; text-transform: uppercase; margin: 14px 0 6px; overflow-wrap: anywhere; }
+.actnative { margin: 0 0 6px; font-size: 18px; color: var(--dim); letter-spacing: .04em; }
+.actnative:empty { display: none; }
+.actmain .note { margin: 0; }
+.actfacts { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 8px 20px; margin: 22px 0 0; font-size: 14px; }
+.actfacts dt { font-family: var(--mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--dim); padding-top: 3px; }
+.actfacts dd { margin: 0; }
+.actfacts a { text-decoration: underline; text-underline-offset: 3px; }
+.actbio { margin: 22px 0 0; max-width: 70ch; line-height: 1.65; color: #cfcfcf; white-space: pre-line; }
+.actbio.clamp { display: -webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical; overflow: hidden; }
+.actmore { margin-top: 8px; font-size: 13px; }
+.acard .role { display: block; padding-top: 3px; font-size: 12px; color: var(--dim); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+@media (max-width: 720px) {
+  .actor { grid-template-columns: 112px minmax(0, 1fr); gap: 16px; padding-block: 24px 28px; }
+  .actphoto .ph { font-size: 44px; }
+  .actor h1 { margin-top: 10px; }
+  .actbio { grid-column: 1 / -1; }
+}
 .seasons { padding-bottom: 72px; scroll-margin-top: 72px; }
 details.season { border-top: 1px solid var(--line); }
 details.season:last-child { border-bottom: 1px solid var(--line); }
@@ -2055,7 +2081,7 @@ function viewSerie(id) {
     '<h1>' + esc(s.name) + '</h1>' + (s.original_name && s.original_name !== s.name ? '<div class="orig">' + esc(s.original_name) + '</div>' : '<div class="orig"></div>') +
     '<p class="ov">' + esc(s.overview || "Pas de synopsis.") + '</p>' +
     '<div class="row"><button class="btn" data-watch="' + esc(s.id) + '">' + PLAYICON + '<span>Regarder</span></button>' + dlBtnMovie + dlBtnSerie + '<button class="btn ghost' + (inList(s.id) ? " on" : "") + '" type="button" data-list="' + esc(s.id) + '">' + (inList(s.id) ? "✓ Dans ma liste" : "+ Ma liste") + '</button>' + (ADMIN ? '<a class="btn ghost" href="/modifier/' + esc(s.id) + '">Modifier</a>' + (canDeleteFiche(s) ? '<button class="btn danger" data-del="' + esc(s.id) + '">Supprimer</button>' : '') : '') + '</div>' + srcChips +
-    ((s.cast || []).length ? '<h3 class="note" style="margin:32px 0 0;text-transform:uppercase;letter-spacing:.08em">Distribution</h3><div class="cast">' + s.cast.slice(0, 12).map(function (c) { return '<div><b>' + esc(c.name) + '</b><span>' + esc(c.character || "") + '</span></div>'; }).join("") + '</div>' : '') +
+    ((s.cast || []).length ? '<h3 class="note" style="margin:32px 0 0;text-transform:uppercase;letter-spacing:.08em">Distribution</h3><div class="cast">' + s.cast.slice(0, 12).map(function (c) { return '<div><a class="castlink" href="/acteur/' + encodeURIComponent(c.name) + '" title="Voir tous ses titres"><b>' + esc(c.name) + '</b></a><span>' + esc(c.character || "") + '</span></div>'; }).join("") + '</div>' : '') +
     '</div></div></section>';
   if (!movie && (s.seasons || []).length) {
     html += '<div class="wrap seasons' + (dlMode ? ' dlmode' : '') + '" id="seasons"><div class="section-head"><h2>Épisodes</h2>' + (showDl ? '<div class="tabs" role="tablist"><button type="button" class="tab' + (dlMode ? '' : ' on') + '" role="tab" data-dltab="watch">Regarder</button><button type="button" class="tab' + (dlMode ? ' on' : '') + '" role="tab" data-dltab="dl">Télécharger</button></div>' : '') + '</div>' + (dlAdmin() && !hasDl(s) ? '<p class="note dlonly">Aucun lien de téléchargement pour l\'instant. Ajoute-en avec « Modifier ».</p>' : '') + s.seasons.map(function (se, i) {
@@ -2951,17 +2977,92 @@ document.addEventListener("click", function (e) {
 });
 
 /* ===== Routage ===== */
+/* ===== Page acteur : ses titres du catalogue + fiche TMDB (photo, naissance…) via /api/person ===== */
+var curActor = "", personCache = {};
+function actorTitles(name) {
+  var key = fold(name);
+  return db.filter(function (s) { return (s.cast || []).some(function (c) { return c && fold(c.name) === key; }); })
+    .sort(function (a, b) { return (parseInt(b.year, 10) || 0) - (parseInt(a.year, 10) || 0); });
+}
+function actorEntry(s, key) {
+  return (s.cast || []).filter(function (c) { return c && fold(c.name) === key; })[0] || {};
+}
+function frDate(iso) {
+  var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso || ""); if (!m) return "";
+  return new Date(+m[1], +m[2] - 1, +m[3], 12).toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric" });
+}
+function ageOf(birth, until) {
+  var b = /^(\d{4})-(\d{2})-(\d{2})$/.exec(birth || ""); if (!b) return null;
+  var u = /^(\d{4})-(\d{2})-(\d{2})$/.exec(until || ""), y, mo, d, now = new Date();
+  if (u) { y = +u[1]; mo = +u[2]; d = +u[3]; } else { y = now.getFullYear(); mo = now.getMonth() + 1; d = now.getDate(); }
+  var age = y - +b[1]; if (mo < +b[2] || (mo === +b[2] && d < +b[3])) age--;
+  return age >= 0 && age < 130 ? age : null;
+}
+function fillActor(p, key) {
+  var box = $("#actinfo"); if (curActor !== key || !box) return;
+  if (p.photo) $("#actphoto").innerHTML = '<img src="' + esc(IMG + "w342" + p.photo) + '" alt="' + esc(p.name || "") + '">';
+  var nat = $("#actnative"); if (nat) nat.textContent = p.native || "";
+  var rows = [], a1 = ageOf(p.birthday, p.deathday), fem = p.gender === 1;
+  if (p.birthday) rows.push([fem ? "Née le" : "Né le", esc(frDate(p.birthday)) + (!p.deathday && a1 != null ? " · " + a1 + " ans" : "")]);
+  if (p.deathday) rows.push([fem ? "Décédée le" : "Décédé le", esc(frDate(p.deathday)) + (a1 != null ? " · " + a1 + " ans" : "")]);
+  if (p.place) rows.push(["Lieu", esc(p.place)]);
+  if (p.department) rows.push(["Métier", esc(p.department === "Acting" ? (fem ? "Actrice" : "Acteur") : p.department)]);
+  if (p.id) rows.push(["TMDB", '<a href="https://www.themoviedb.org/person/' + esc(p.id) + '" target="_blank" rel="noopener noreferrer">Voir le profil</a>']);
+  var long = (p.bio || "").length > 330;
+  box.innerHTML = (rows.length ? '<dl class="actfacts">' + rows.map(function (r) { return '<dt>' + r[0] + '</dt><dd>' + r[1] + '</dd>'; }).join("") + '</dl>' : "") +
+    (p.bio ? '<p class="actbio' + (long ? " clamp" : "") + '" id="actbio">' + esc(p.bio) + '</p>' + (long ? '<button type="button" class="btn small ghost actmore" data-actmore>Lire la suite</button>' : "") : "");
+}
+function loadPerson(key, items) {
+  var hit = personCache[key];
+  if (!hit) { try { hit = JSON.parse(sessionStorage.getItem("noir.person." + key) || "null"); } catch (e) { hit = null; } }
+  if (hit && hit.id) { personCache[key] = hit; fillActor(hit, key); return; }
+  var shown = actorEntry(items[0], key).name || "";
+  var titles = []; items.slice(0, 6).forEach(function (s) { titles.push(s.original_name || s.name); if (s.original_name && s.name) titles.push(s.name); });
+  fetch("/api/person?name=" + encodeURIComponent(shown) + "&language=" + encodeURIComponent(CONFIG.LANG || "fr-FR") + "&titles=" + encodeURIComponent(titles.join("|")))
+    .then(function (r) { if (!r.ok) throw new Error("x"); return r.json(); })
+    .then(function (p) {
+      if (!p || !p.id) throw new Error("x");
+      personCache[key] = p; try { sessionStorage.setItem("noir.person." + key, JSON.stringify(p)); } catch (e) {}
+      fillActor(p, key);
+    })
+    .catch(function () { if (curActor === key && $("#actinfo")) $("#actinfo").innerHTML = ""; });
+}
+function viewActor(name) {
+  var key = fold(name); curActor = key;
+  var items = actorTitles(name);
+  if (!items.length) { $("#app").innerHTML = emptyBox(esc(name || "Acteur"), "Aucun titre du catalogue avec cet acteur pour l'instant.", '<a class="btn" href="/">Retour à l\'accueil</a>'); return; }
+  var shown = actorEntry(items[0], key).name || name;
+  var films = items.filter(isMovie).length, series = items.length - films;
+  var count = items.length + (items.length > 1 ? " titres" : " titre") + " au catalogue" + (films && series ? " · " + series + (series > 1 ? " séries" : " série") + " · " + films + (films > 1 ? " films" : " film") : "");
+  $("#app").innerHTML =
+    '<div class="wrap actor"><div class="actphoto" id="actphoto"><div class="ph">' + esc(shown.charAt(0)) + '</div></div>' +
+    '<div class="actmain"><button type="button" class="btn small ghost" data-actback>‹ Retour</button>' +
+    '<h1>' + esc(shown) + '</h1><p class="actnative" id="actnative"></p><p class="note">' + esc(count) + '</p>' +
+    '<div id="actinfo"><div class="sk sk-l" style="margin-top:22px"></div><div class="sk sk-l s"></div></div></div></div>' +
+    '<div class="wrap"><div class="section-head"><h2>Dans le catalogue</h2></div><div class="grid" style="padding-top:8px">' +
+    items.map(function (s, i) {
+      var role = actorEntry(s, key).character;
+      return '<div class="acard">' + card(s, i) + (role ? '<span class="role">' + esc(role) + '</span>' : '') + '</div>';
+    }).join("") + '</div></div>';
+  loadPerson(key, items);
+}
+document.addEventListener("click", function (e) {
+  if (e.target.closest("[data-actback]")) { e.preventDefault(); if (history.length > 1) history.back(); else go("/"); return; }
+  var m = e.target.closest("[data-actmore]");
+  if (m) { var bio = $("#actbio"); if (bio) { var open = bio.classList.toggle("clamp"); m.textContent = open ? "Lire la suite" : "Réduire"; } }
+});
+
 var NAVMAP = { "": "nav-home", series: "nav-series", films: "nav-films", ajouter: "nav-add", modifier: "nav-add", panel: "nav-panel", "ma-liste": "nav-list", calendrier: "nav-cal", demande: "nav-req", demandes: "nav-req" };
 
 function route(force) {
   force = force === true;
   var parts = curPath().split("/");
   var a = (parts[1] || "").toLowerCase(), b = parts[2] || "";
-  if (a === "recherche") { try { b = decodeURIComponent(parts.slice(2).join("/")); } catch (e) { b = parts.slice(2).join("/"); } }
+  if (a === "recherche" || a === "acteur") { try { b = decodeURIComponent(parts.slice(2).join("/")); } catch (e) { b = parts.slice(2).join("/"); } }
 
   if ((a === "ajouter" || a === "modifier" || a === "motdepasse" || a === "panel") && !ADMIN) { go("/admin", true); return; }
 
-  var changed = force || a !== lastPage || a === "serie" || a === "modifier";
+  var changed = force || a !== lastPage || a === "serie" || a === "modifier" || a === "acteur";
   if (a !== lastPage) { filter = ""; langFilter = ""; dlFilter = false; newFilter = ""; kdFilter = ""; platFilter = ""; typeFilter = ""; listTab = "list"; calWeek = 0; calType = ""; }
   lastPage = a;
 
@@ -2982,6 +3083,7 @@ function route(force) {
   else if (a === "films") { rerender = function () { viewList("Films", isMovie); }; rerender(); }
   else if (a === "ma-liste") { rerender = viewMyList; rerender(); }
   else if (a === "calendrier") { rerender = viewCalendar; rerender(); }
+  else if (a === "acteur") { rerender = function () { viewActor(b); }; rerender(); }
   else if (a === "demande") viewRequest(b, parts[3]);
   else if (a === "demandes") { rerender = viewRequests; rerender(); }
   else if (a === "recherche") { curQ = b; rerender = function () { viewSearch(curQ); }; rerender(); }
