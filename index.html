@@ -894,6 +894,42 @@ footer .wrap.about { display: grid; grid-template-columns: repeat(auto-fit, minm
 @keyframes annIn { from { opacity: 0; transform: translateY(-12px); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) { .ann { animation: none; } }
 @media (prefers-reduced-motion: reduce) { .btn[data-list] .spark { display: none; } }
+
+/* fenêtre de téléchargement, version refaite : étiquette, titre, tuiles (qualité / taille / hébergeur), étapes, lien */
+.dlmodal { place-items: center; }
+.dlcard { max-width: 520px; padding: 22px 24px 24px; background: #070707; border: 1px solid #3a3a3a; border-top: 2px solid #86efac; box-shadow: 0 30px 80px rgba(0,0,0,.8); }
+.dlhead { display: flex; align-items: center; margin: 0 40px 14px 0; }
+.dltag { display: inline-flex; align-items: center; gap: 7px; font-family: var(--mono); font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; background: #86efac; color: #052e16; padding: 5px 8px; line-height: 1; }
+.dltag .dlic { width: 14px; height: 14px; }
+.dlcard h3 { margin: 0 0 18px; font-family: var(--display); font-weight: 900; font-size: clamp(26px, 5vw, 34px); line-height: 1; text-transform: uppercase; letter-spacing: .02em; text-wrap: balance; overflow-wrap: anywhere; }
+.dlmeta { display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 8px; margin-bottom: 18px; }
+.dlmeta .dlt { border: 1px solid var(--line); background: var(--panel); padding: 10px 12px; min-width: 0; }
+.dlmeta .dlt i { display: block; font-style: normal; font-family: var(--mono); font-size: 10px; font-weight: 400; letter-spacing: .1em; text-transform: uppercase; color: var(--dim); margin-bottom: 4px; }
+.dlmeta .dlt b { display: block; font-size: 16px; font-weight: 700; overflow-wrap: anywhere; }
+.dlsteps { list-style: none; margin: 0 0 16px; padding: 0; display: flex; gap: 8px; }
+.dlsteps li { flex: 1; display: flex; align-items: center; gap: 10px; padding: 9px 12px; border: 1px solid var(--line); color: var(--dim); font-family: var(--mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; transition: color .25s, border-color .25s; }
+.dlsteps li i { flex: none; width: 20px; height: 20px; display: grid; place-items: center; border: 1px solid currentColor; font-style: normal; font-size: 11px; }
+.dlsteps li.on { color: var(--fg); border-color: var(--fg); }
+.dlsteps li.done { color: #86efac; border-color: rgba(134,239,172,.4); }
+.dlad { display: grid; gap: 14px; padding: 18px; border: 1px dashed #555; margin-bottom: 0; }
+.dlad .adt { display: flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 700; }
+.dlad .adt svg { width: 18px; height: 18px; flex: none; }
+.dlad p { margin: 0; }
+.dllink { margin-bottom: 12px; padding: 14px; background: var(--panel); font-family: var(--mono); font-size: 12px; color: #cfcfcf; }
+.dlbtns { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.dlbtns[hidden] { display: none; }
+#dlm-open { background: #86efac; border-color: #86efac; color: #052e16; }
+#dlm-open:hover { background: transparent; color: #86efac; }
+#dlm-open .dlic { width: 1.1em; height: 1.1em; }
+.dlfoot { margin: 14px 0 0; font-size: 12px; line-height: 1.5; color: var(--dim); }
+@keyframes dlsheet { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: none; } }
+@media (max-width: 720px) {
+  .dlmodal { place-items: end stretch; padding: 0; }
+  .dlcard { max-width: none; border-left: 0; border-right: 0; border-bottom: 0; padding: 20px 16px calc(20px + env(safe-area-inset-bottom, 0px)); max-height: 92vh; max-height: 92dvh; overflow-y: auto; }
+  .dlmodal:not([hidden]) .dlcard { animation: dlsheet .32s var(--ease); }
+  .dlbtns { grid-template-columns: 1fr; }
+  .dlsteps li { padding: 9px 10px; }
+}
 </style>
 <!-- Visites du site : Vercel Web Analytics, sans cookie ni base de données. Ne fait rien tant que tu ne l'actives pas dans Vercel (onglet Analytics). -->
 <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
@@ -2427,20 +2463,35 @@ document.addEventListener("click", function (e) {
 (function () {
   var box = document.createElement("div");
   box.className = "dlmodal"; box.id = "dlmodal"; box.hidden = true;
-  box.innerHTML = '<div class="dlcard" role="dialog" aria-modal="true" aria-labelledby="dlm-t"><button type="button" class="dlx" id="dlm-x" aria-label="Fermer">×</button><h3 id="dlm-t"></h3><div class="dlmeta" id="dlm-meta"></div><div class="dlad" id="dlm-ad"><p><b>Une pub va s\'ouvrir.</b> Ne clique sur rien dans la pub : ferme-la simplement pour revenir ici et débloquer le lien. C\'est ce qui permet de garder le site gratuit, merci !</p><button type="button" class="btn" id="dlm-adgo">Voir la pub pour débloquer</button></div><div class="dllink" id="dlm-url" hidden></div><div class="dlbtns" id="dlm-btns" hidden><button type="button" class="btn" id="dlm-copy">Copier le lien</button><a class="btn ghost" id="dlm-open" target="_blank" rel="noopener noreferrer">Ouvrir</a></div></div>';
+  box.innerHTML = '<div class="dlcard" role="dialog" aria-modal="true" aria-labelledby="dlm-t">' +
+    '<button type="button" class="dlx" id="dlm-x" aria-label="Fermer">×</button>' +
+    '<div class="dlhead"><span class="dltag">' + DLICON + 'Téléchargement</span></div>' +
+    '<h3 id="dlm-t"></h3><div class="dlmeta" id="dlm-meta"></div>' +
+    '<ol class="dlsteps" id="dlm-steps"><li class="on"><i>1</i><span>Débloquer</span></li><li><i>2</i><span>Télécharger</span></li></ol>' +
+    '<div class="dlad" id="dlm-ad"><div class="adt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="1.5"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><b>Débloque le lien en un clic</b></div>' +
+    '<p>Une pub s\'ouvre dans un nouvel onglet : ne clique sur rien, ferme-la simplement pour revenir ici. C\'est ce qui permet de garder le site gratuit, merci !</p>' +
+    '<button type="button" class="btn" id="dlm-adgo">Voir la pub pour débloquer</button></div>' +
+    '<div class="dllink" id="dlm-url" hidden></div>' +
+    '<div class="dlbtns" id="dlm-btns" hidden><a class="btn" id="dlm-open" target="_blank" rel="noopener noreferrer">' + DLICON + '<span>Ouvrir le lien</span></a><button type="button" class="btn ghost" id="dlm-copy">Copier le lien</button></div>' +
+    '<p class="dlfoot">Le lien s\'ouvre sur le site de l\'hébergeur. Si le téléchargement ne démarre pas, copie le lien et colle-le dans ton navigateur.</p></div>';
   document.body.appendChild(box);
   var AD_URL = "https://exteriorsingularsharply.com/vi505s58ib?key=27027f4e669d53db2f88ab994262ff92";
   var waiting = false, leftAt = 0, adTimer = 0, backT = 0, realUrl = "";
+  function setStep(n) {
+    var li = box.querySelectorAll("#dlm-steps li"); if (li.length < 2) return;
+    li[0].className = n === 1 ? "on" : "done"; li[0].firstChild.textContent = n === 1 ? "1" : "✓";
+    li[1].className = n === 2 ? "on" : "";
+  }
   function lock() {
     waiting = false; leftAt = 0; clearTimeout(adTimer); clearTimeout(backT); backT = 0;
     $("#dlm-ad").hidden = false; $("#dlm-url").hidden = true; $("#dlm-btns").hidden = true;
-    $("#dlm-url").textContent = ""; $("#dlm-open").removeAttribute("href");
+    $("#dlm-url").textContent = ""; $("#dlm-open").removeAttribute("href"); setStep(1);
     var g = $("#dlm-adgo"); g.disabled = false; g.textContent = "Voir la pub pour débloquer";
   }
   function unlock() {
     waiting = false; clearTimeout(adTimer);
     $("#dlm-url").textContent = realUrl; $("#dlm-open").href = realUrl;
-    $("#dlm-ad").hidden = true; $("#dlm-url").hidden = false; $("#dlm-btns").hidden = false;
+    $("#dlm-ad").hidden = true; $("#dlm-url").hidden = false; $("#dlm-btns").hidden = false; setStep(2);
     toast("Lien débloqué, merci !");
   }
   /* Dès que le visiteur est parti vers la pub puis revient (focus, onglet visible, ou n'importe quel geste sur la page), on débloque.
@@ -2470,9 +2521,11 @@ document.addEventListener("click", function (e) {
     var b = e.target.closest("[data-dlopen]");
     if (b) {
       $("#dlm-t").textContent = b.dataset.dlname;
+      var tile = function (l, v) { return '<div class="dlt"><i>' + l + '</i><b>' + esc(v) + '</b></div>'; };
       var meta = [];
-      if (b.dataset.dlq) meta.push("<span><i>Qualité</i>" + esc(b.dataset.dlq) + "</span>");
-      if (b.dataset.dlsize) meta.push("<span><i>Taille</i>" + esc(b.dataset.dlsize) + "</span>");
+      if (b.dataset.dlq) meta.push(tile("Qualité", b.dataset.dlq));
+      if (b.dataset.dlsize) meta.push(tile("Taille", b.dataset.dlsize));
+      meta.push(tile("Hébergeur", hostName(b.dataset.dlurl)));
       $("#dlm-meta").innerHTML = meta.join(""); $("#dlm-meta").hidden = !meta.length;
       realUrl = b.dataset.dlurl;
       box.dataset.url = realUrl;
@@ -2496,7 +2549,7 @@ document.addEventListener("click", function (e) {
     }
     if (e.target === box || e.target.id === "dlm-x") close();
     else if (e.target.id === "dlm-copy") copy(box.dataset.url).then(function () { toast("Lien copié"); var cb = $("#dlm-copy"); cb.textContent = "Copié ✓"; cb.classList.add("ok"); clearTimeout(cb.t); cb.t = setTimeout(function () { cb.textContent = "Copier le lien"; cb.classList.remove("ok"); }, 1600); }, function () { toast("Copie impossible, sélectionne le lien à la main"); });
-    else if (e.target.id === "dlm-open") setTimeout(close, 100);
+    else if (e.target.closest("#dlm-open")) setTimeout(close, 100);
   });
   document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !box.hidden) close(); });
 })();
@@ -4723,7 +4776,7 @@ document.addEventListener("keydown", function (e) { if (e.key === "Escape") rmCl
 window.addEventListener("resize", rmClose);
 window.addEventListener("popstate", rmClose);
 /* Version du site : les admins qui ont encore une ancienne page en cache la rechargent automatiquement */
-var BUILD = "2026-10-18-vidmoly";
+var BUILD = "2026-10-18-dlmodal";
 function checkBuild() {
   if (!ADMIN || draft || teamEditing || heroEditing) return;
   fetch(location.href, { cache: "reload" }).then(function (r) { return r.text(); }).then(function (t) {
