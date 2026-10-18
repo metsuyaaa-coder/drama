@@ -459,6 +459,7 @@ dialog#player::-webkit-scrollbar { display: none; }
 .card:hover .rdel, .card .rdel:focus-visible { opacity: 1; }
 .card .rdel:hover { background: #000; }
 @media (hover: none) { .card .poster .rdel { opacity: 1; } }
+button.more { background: none; border: 0; padding: 0; cursor: pointer; }
 .card .poster .rtag { position: absolute; z-index: 1; left: 0; right: 0; bottom: 0; padding: 7px 10px; background: var(--fg); color: var(--bg); font-weight: 700; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; }
 
 /* message d'accueil */
@@ -1035,6 +1036,9 @@ function removeResume(id) {
   var r = readResume(); delete r[id];
   try { localStorage.setItem(RESUMEKEY, JSON.stringify(r)); } catch (e) {}
 }
+function clearResume() {
+  try { localStorage.removeItem(RESUMEKEY); } catch (e) {}
+}
 function resumeWatch(id) {
   var s = byId(id), r = readResume()[id]; if (!s || !r) return;
   if (isMovie(s)) { saveResume(s.id); play(s.sources, s.name, defaultSrc(s.sources), "", null, s.downloads); } else playEp(s, r.si, r.n);
@@ -1163,8 +1167,8 @@ function refreshSeen(s) {
   }
 }
 
-function rail(title, list, href, fn) {
-  return '<section class="wrap rail-sec"><div class="section-head"><h2>' + esc(title) + '</h2>' + (href ? '<a class="more" href="' + href + '">Tout voir</a>' : '') + '</div><div class="railwrap"><div class="rail">' + list.slice(0, 14).map(fn || card).join("") + '</div>' + arrows("data-rail") + '</div></section>';
+function rail(title, list, href, fn, extra) {
+  return '<section class="wrap rail-sec"><div class="section-head"><h2>' + esc(title) + '</h2>' + (href ? '<a class="more" href="' + href + '">Tout voir</a>' : '') + (extra || '') + '</div><div class="railwrap"><div class="rail">' + list.slice(0, 14).map(fn || card).join("") + '</div>' + arrows("data-rail") + '</div></section>';
 }
 
 function emptyBox(title, text, btn) {
@@ -1297,7 +1301,7 @@ function viewHome() {
   var html = '<section class="hero">' + picks.map(function (h, k) { return heroSlide(h, k === 0); }).join("") +
     (picks.length > 1 ? '<div class="hdots">' + picks.map(function (h, k) { return '<button type="button" data-i="' + k + '" class="' + (k === 0 ? "on" : "") + '" aria-label="Diapositive ' + (k + 1) + '"></button>'; }).join("") + '</div>' : '') + '</section>';
   var rs = resumeList();
-  if (rs.length) html += rail("Reprendre", rs, "", resumeCard);
+  if (rs.length) html += rail("Reprendre", rs, "", resumeCard, '<button type="button" class="more" data-resumeclear>Tout effacer</button>');
   var fresh = tv.filter(function (s) { return newEpisode(s); }).sort(function (a, b) {
     var da = newEpisode(a).ep.air_date, db = newEpisode(b).ep.air_date;
     return da < db ? 1 : da > db ? -1 : (b.addedAt || 0) - (a.addedAt || 0);
@@ -2477,6 +2481,11 @@ document.addEventListener("click", function (e) { if (!e.target.closest(".search
 
 /* ===== Événements ===== */
 document.addEventListener("click", function (e) {
+  if (e.target.closest("[data-resumeclear]")) {
+    e.preventDefault();
+    if (window.confirm("Effacer tout l'historique « Reprendre » ?\n\nLes films et séries en cours disparaîtront de cette liste. Tes épisodes vus et ta liste ne sont pas touchés.")) { clearResume(); viewHome(); toast("Historique effacé"); }
+    return;
+  }
   var rd = e.target.closest("[data-resumedel]");
   if (rd) { e.preventDefault(); e.stopPropagation(); removeResume(rd.dataset.resumedel); viewHome(); return; }
   var t = e.target.closest("[data-resume],[data-watch],[data-movsrc],[data-playep],[data-src],[data-del],[data-list],[data-listtab],[data-seen],[data-seenseason],[data-genre],[data-langf],[data-newf],[data-kdf],[data-dlf],[data-typef],[data-pick],[data-bulk],[data-dlbulk],[data-dltab],#save,#applytpl,#refreshall,#manual,#manualfilm,#refresh,#copyhash");
