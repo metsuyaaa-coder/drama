@@ -235,6 +235,12 @@ details.season summary .sm { display: flex; align-items: center; gap: 16px; }
 details.season summary .sm::after { content: "+"; font-family: var(--mono); font-size: 22px; font-weight: 400; transition: transform .3s var(--ease); }
 details.season[open] summary .sm::after { transform: rotate(45deg); }
 details.season summary i { font-style: normal; font-family: var(--mono); font-size: 12px; color: var(--dim); letter-spacing: .06em; }
+.seasontabs { display: flex; gap: 8px; overflow-x: auto; padding: 0 0 16px; scrollbar-width: thin; }
+.seasontabs .chip { flex: 0 0 auto; white-space: nowrap; }
+.seasons.multi details.season { display: none; }
+.seasons.multi details.season.cur { display: block; border-bottom: 1px solid var(--line); }
+.seasons.multi details.season summary { pointer-events: none; cursor: default; padding-left: 0; }
+.seasons.multi details.season summary .sm::after { content: none; }
 .ep { display: grid; grid-template-columns: 44px minmax(0, 1fr) auto; gap: 16px; align-items: start; padding: 14px 0; border-top: 1px solid var(--line); }
 details.season[open] .ep { animation: riseIn .45s var(--ease) both; animation-delay: calc(var(--k, 0) * 35ms); }
 .ep .n { font-family: var(--mono); color: var(--dim); font-size: 13px; padding-top: 3px; }
@@ -1280,7 +1286,7 @@ var STATUS = { "Returning Series": "En cours", "Ended": "Terminée", "Canceled":
 function statusFr(s) { return STATUS[s] || s || ""; }
 
 /* ===== Vues ===== */
-var filter = "", langFilter = "", dlFilter = false, newFilter = "", kdFilter = "", platFilter = "", platOpen = false, typeFilter = "", curQ = "", searchBack = "/";
+var filter = "", langFilter = "", dlFilter = false, newFilter = "", kdFilter = "", platFilter = "", platOpen = false, seasonSel = { id: "", i: 0 }, typeFilter = "", curQ = "", searchBack = "/";
 var rerender = null;
 var lastPage = null;
 var pendingScroll = false;
@@ -2273,8 +2279,10 @@ function viewSerie(id) {
     ((s.cast || []).length ? '<h3 class="note" style="margin:32px 0 0;text-transform:uppercase;letter-spacing:.08em">Distribution</h3><div class="cast">' + s.cast.slice(0, 12).map(function (c) { return '<div><a class="castlink" href="/acteur/' + encodeURIComponent(c.name) + '" title="Voir tous ses titres"><b>' + esc(c.name) + '</b></a><span>' + esc(c.character || "") + '</span></div>'; }).join("") + '</div>' : '') +
     '</div></div></section>';
   if (!movie && (s.seasons || []).length) {
-    html += '<div class="wrap seasons' + (dlMode ? ' dlmode' : '') + '" id="seasons"><div class="section-head"><h2>Épisodes</h2>' + (showDl ? '<div class="tabs" role="tablist"><button type="button" class="tab' + (dlMode ? '' : ' on') + '" role="tab" data-dltab="watch">Regarder</button><button type="button" class="tab' + (dlMode ? ' on' : '') + '" role="tab" data-dltab="dl">Télécharger</button></div>' : '') + '</div>' + (dlAdmin() && !hasDl(s) ? '<p class="note dlonly">Aucun lien de téléchargement pour l\'instant. Ajoute-en avec « Modifier ».</p>' : '') + s.seasons.map(function (se, i) {
-      return '<details class="season"' + (i === 0 ? " open" : "") + '><summary><span>' + esc(se.name || "Saison " + se.number) + '</span><span class="sm"><i>' + (se.episodes || []).length + ' ÉPISODES' + (seenCount(se) ? ' · ' + seenCount(se) + ' VUS' : '') + '</i></span></summary>' +
+    var multi = s.seasons.length > 1, si = (seasonSel.id === String(s.id) && seasonSel.i < s.seasons.length) ? seasonSel.i : 0;
+    seasonSel = { id: String(s.id), i: si };
+    html += '<div class="wrap seasons' + (dlMode ? ' dlmode' : '') + (multi ? ' multi' : '') + '" id="seasons"><div class="section-head"><h2>Épisodes</h2>' + (showDl ? '<div class="tabs" role="tablist"><button type="button" class="tab' + (dlMode ? '' : ' on') + '" role="tab" data-dltab="watch">Regarder</button><button type="button" class="tab' + (dlMode ? ' on' : '') + '" role="tab" data-dltab="dl">Télécharger</button></div>' : '') + '</div>' + (multi ? '<div class="seasontabs" role="tablist">' + s.seasons.map(function (se, i) { return '<button type="button" class="chip' + (i === si ? ' on' : '') + '" role="tab" aria-selected="' + (i === si ? 'true' : 'false') + '" data-seasontab="' + i + '">' + esc(se.name || "Saison " + se.number) + '</button>'; }).join("") + '</div>' : '') + (dlAdmin() && !hasDl(s) ? '<p class="note dlonly">Aucun lien de téléchargement pour l\'instant. Ajoute-en avec « Modifier ».</p>' : '') + s.seasons.map(function (se, i) {
+      return '<details class="season' + (multi && i === si ? ' cur' : '') + '"' + ((multi ? i === si : i === 0) ? " open" : "") + '><summary' + (multi ? ' tabindex="-1"' : '') + '><span>' + esc(se.name || "Saison " + se.number) + '</span><span class="sm"><i>' + (se.episodes || []).length + ' ÉPISODES' + (seenCount(se) ? ' · ' + seenCount(se) + ' VUS' : '') + '</i></span></summary>' +
         '<div class="seasonbar"><button type="button" class="btn small ghost" data-seenseason="' + esc(s.id) + '|' + i + '">' + (seenCount(se) === (se.episodes || []).length && seenCount(se) ? "Tout marquer non vu" : "Tout marquer comme vu") + '</button></div>' +
         (dlOpen() && (se.downloads || []).length ? '<div class="dlbar">' + dlLinks(se.downloads, "Télécharger toute la saison") + '</div>' : '') +
         (se.episodes || []).map(function (ep, k) {
@@ -3357,7 +3365,7 @@ document.addEventListener("click", function (e) {
   if (st) { var sb = st.closest(".srcs"), so = sb.classList.toggle("open"); st.setAttribute("aria-expanded", so ? "true" : "false"); return; }
   var rd = e.target.closest("[data-resumedel]");
   if (rd) { e.preventDefault(); e.stopPropagation(); removeResume(rd.dataset.resumedel); viewHome(); return; }
-  var t = e.target.closest("[data-resume],[data-watch],[data-movsrc],[data-playep],[data-src],[data-del],[data-list],[data-listtab],[data-seen],[data-seenseason],[data-genre],[data-langf],[data-newf],[data-kdf],[data-platf],[data-platopen],[data-dlf],[data-typef],[data-pick],[data-bulk],[data-dlbulk],[data-dltab],#save,#applytpl,#refreshall,#manual,#manualfilm,#refresh,#copyhash");
+  var t = e.target.closest("[data-resume],[data-watch],[data-movsrc],[data-playep],[data-src],[data-del],[data-list],[data-listtab],[data-seen],[data-seenseason],[data-genre],[data-langf],[data-newf],[data-kdf],[data-platf],[data-platopen],[data-seasontab],[data-dlf],[data-typef],[data-pick],[data-bulk],[data-dlbulk],[data-dltab],#save,#applytpl,#refreshall,#manual,#manualfilm,#refresh,#copyhash");
   if (!t) return;
   if (t.dataset.resume != null) { e.preventDefault(); resumeWatch(t.dataset.resume); }
   else if (t.dataset.watch != null) {
@@ -3439,6 +3447,11 @@ document.addEventListener("click", function (e) {
   else if (t.dataset.genre != null) { filter = t.dataset.genre; if (rerender) rerender(); }
   else if (t.dataset.langf != null) { langFilter = t.dataset.langf; if (rerender) rerender(); }
   else if (t.dataset.kdf != null) { kdFilter = t.dataset.kdf; if (rerender) rerender(); }
+  else if (t.dataset.seasontab != null) {
+    var sti = parseInt(t.dataset.seasontab, 10); seasonSel.i = sti;
+    document.querySelectorAll(".seasontabs .chip").forEach(function (b, k) { b.classList.toggle("on", k === sti); b.setAttribute("aria-selected", k === sti ? "true" : "false"); });
+    document.querySelectorAll("details.season").forEach(function (d, k) { d.classList.toggle("cur", k === sti); d.open = k === sti; });
+  }
   else if (t.dataset.platopen != null) { platOpen = !platOpen; if (rerender) rerender(); }
   else if (t.dataset.platf != null) { platFilter = t.dataset.platf; platOpen = false; if (rerender) rerender(); }
   else if (t.dataset.newf != null) { newFilter = t.dataset.newf; if (rerender) rerender(); }
