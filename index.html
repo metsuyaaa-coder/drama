@@ -444,7 +444,7 @@ dialog#player .phead { flex-wrap: nowrap; gap: 16px; padding: max(10px, env(safe
 dialog#player .pframe { flex: 1; min-height: 0; aspect-ratio: auto; background: #000; }
 dialog#player:not(.wide) .pframe { margin-left: env(safe-area-inset-left, 0px); margin-right: env(safe-area-inset-right, 0px); }
 .pbar { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px 24px; padding: 12px max(16px, env(safe-area-inset-right, 0px)) calc(12px + env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px)); border-top: 1px solid var(--line); background: #050505; }
-.pbar .ptip { --c: #fff; position: relative; flex: 0 0 100%; display: flex; align-items: center; gap: 12px; padding: 10px 12px; min-height: 58px; overflow: hidden; background: #0b0b0b; border: 1px solid var(--line); border-left: 3px solid var(--c); font-size: 13px; color: var(--dim); transition: border-color .3s; }
+.pbar .ptip { --c: var(--fg); position: relative; flex: 0 0 100%; display: flex; align-items: center; gap: 12px; padding: 10px 12px; min-height: 58px; overflow: hidden; background: #0b0b0b; border: 1px solid var(--line); border-left: 3px solid var(--c); font-size: 13px; color: var(--dim); transition: border-color .3s; }
 .ptip .tico { flex: 0 0 auto; width: 36px; height: 36px; display: grid; place-items: center; color: var(--c); background: color-mix(in srgb, var(--c) 14%, transparent); border: 1px solid color-mix(in srgb, var(--c) 35%, transparent); transition: color .3s, background .3s, border-color .3s; }
 .ptip .tico svg { width: 19px; height: 19px; }
 .ptip .tbody { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; line-height: 1.4; }
@@ -3433,19 +3433,18 @@ var TIP_ICO = {
 };
 function tipList() {
   var t = [];
-  if (langPlayer()) t.push({ ico: "lang", c: "#7dd3fc", l: "Astuce langue", h: "Pour changer de langue ou voir s'il y en a une autre, clique sur le petit bouton engrenage puis sur le bouton casque." });
-  if (cur.sources && cur.sources.length > 1) t.push({ ico: "server", c: "#fcd34d", l: "Astuce", h: "Si le lecteur bug ou ne démarre pas, essaie un autre serveur en bas à gauche." });
-  t.push({ ico: "shield", c: "#fb923c", l: "Marre des pubs ?", h: 'Installe <a href="https://brave.com/" target="_blank" rel="noopener">Brave</a>, un navigateur qui bloque les pubs.' });
-  t.push({ ico: "fit", c: "#c4b5fd", l: "Bandes noires ?", h: "Passe en plein écran, puis choisis Zoom ou Étirer dans la barre Format." });
-  if (window.matchMedia && matchMedia("(pointer:fine)").matches) t.push({ ico: "keys", c: "#f9a8d4", l: "Raccourcis", h: "<b>F</b> plein écran, <b>R</b> recharger" + (cur.sources.length > 1 ? ", <b>S</b> changer de serveur" : "") + (cur.nav ? ", <b>N</b> / <b>P</b> épisode suivant / précédent" + (cur.nav.eps ? ", <b>E</b> liste des épisodes." : ".") : ".") });
-  if (cur.nav && cur.nav.eps) t.push({ ico: "list", c: "#86efac", l: "Épisodes", h: "Utilise le bouton Épisodes pour sauter à un autre épisode ou une autre saison." });
+  if (langPlayer()) t.push({ ico: "lang", l: "Astuce langue", h: "Pour changer de langue ou voir s'il y en a une autre, clique sur le petit bouton engrenage puis sur le bouton casque." });
+  if (cur.sources && cur.sources.length > 1) t.push({ ico: "server", l: "Astuce", h: "Si le lecteur bug ou ne démarre pas, essaie un autre serveur en bas à gauche." });
+  t.push({ ico: "shield", l: "Marre des pubs ?", h: 'Installe <a href="https://brave.com/" target="_blank" rel="noopener">Brave</a>, un navigateur qui bloque les pubs.' });
+  t.push({ ico: "fit", l: "Bandes noires ?", h: "Passe en plein écran, puis choisis Zoom ou Étirer dans la barre Format." });
+  if (window.matchMedia && matchMedia("(pointer:fine)").matches) t.push({ ico: "keys", l: "Raccourcis", h: "<b>F</b> plein écran, <b>R</b> recharger" + (cur.sources.length > 1 ? ", <b>S</b> changer de serveur" : "") + (cur.nav ? ", <b>N</b> / <b>P</b> épisode suivant / précédent" + (cur.nav.eps ? ", <b>E</b> liste des épisodes." : ".") : ".") });
+  if (cur.nav && cur.nav.eps) t.push({ ico: "list", l: "Épisodes", h: "Utilise le bouton Épisodes pour sauter à un autre épisode ou une autre saison." });
   return t;
 }
 function showTip(n) {
   var t = tipList();
   tipIdx = (n + t.length) % t.length;
   var x = t[tipIdx], box = $("#ptip");
-  box.style.setProperty("--c", x.c);
   $("#tico").innerHTML = TIP_ICO[x.ico];
   $("#tlbl").textContent = x.l;
   var p = $("#ttext"); p.innerHTML = x.h;
