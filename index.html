@@ -78,7 +78,7 @@ nav a svg { width: 16px; height: 16px; flex: none; }
 nav a::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: var(--fg); transform: scaleX(0); transform-origin: left; transition: transform .3s var(--ease); }
 nav a:hover, nav a.on { color: var(--fg); }
 nav a:hover::after, nav a.on::after { transform: scaleX(1); }
-.search { margin-left: auto; margin-right: 36px; position: relative; width: min(300px, 40vw); transition: width .3s var(--ease); }
+.search { margin-left: auto; margin-right: 90px; position: relative; width: min(300px, 40vw); transition: width .3s var(--ease); }
 .search:focus-within { width: min(380px, 46vw); }
 .search::before { content: ""; position: absolute; z-index: 1; left: 14px; top: 50%; width: 16px; height: 16px; transform: translateY(-50%); background: var(--dim); pointer-events: none; transition: background .25s; -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.6' stroke-linecap='round'%3E%3Ccircle cx='10.5' cy='10.5' r='6.5'/%3E%3Cpath d='M15.5 15.5 21 21'/%3E%3C/svg%3E") center / contain no-repeat; mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.6' stroke-linecap='round'%3E%3Ccircle cx='10.5' cy='10.5' r='6.5'/%3E%3Cpath d='M15.5 15.5 21 21'/%3E%3C/svg%3E") center / contain no-repeat; }
 .search:focus-within::before { background: var(--fg); }
@@ -288,6 +288,8 @@ footer button:hover, footer a:hover { color: var(--fg); }
 
 .admin-only { display: none !important; }
 body.admin .admin-only { display: revert !important; }
+body.admin nav a.admin-only { display: inline-flex !important; }
+@media (min-width: 721px) { header.top nav { margin-left: 32px; } }
 
 .toast { position: fixed; left: 50%; bottom: calc(24px + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%) translateY(20px); background: var(--fg); color: var(--bg); padding: 10px 20px; font-size: 14px; font-weight: 500; opacity: 0; pointer-events: none; transition: .25s; z-index: 50; max-width: 90vw; }
 .toast.show { opacity: 1; transform: translateX(-50%); }
