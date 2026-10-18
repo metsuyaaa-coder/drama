@@ -1129,6 +1129,7 @@ function normalize(s) {
   if (!Array.isArray(s.sources)) s.sources = [];
   if (!Array.isArray(s.langs)) s.langs = [];
   if (!Array.isArray(s.downloads)) s.downloads = [];
+  fixSrcList(s.sources);
   autoNameAll(s.sources);
   autoNameAll(s.downloads);
   if (s.type === "movie" && !s.sources.length && s.link) s.sources = [{ name: hostName(s.link), url: s.link }];
@@ -1140,6 +1141,7 @@ function normalize(s) {
       autoNameAll(ep.downloads);
       if (!Array.isArray(ep.sources)) ep.sources = [];
       if (!ep.sources.length && ep.link) ep.sources = [{ name: hostName(ep.link), url: ep.link }];
+      fixSrcList(ep.sources);
       autoNameAll(ep.sources);
       delete ep.link;
     });
@@ -1220,6 +1222,21 @@ function toast(m) { var t = $("#toast"); t.textContent = m; t.classList.add("sho
 function byId(id) { return db.filter(function (x) { return String(x.id) === String(id); })[0]; }
 function safeUrl(u) { return /^https?:\/\//i.test(String(u || "").trim()) ? String(u).trim() : "about:blank"; }
 
+/* Vidmoly : tous les liens (vidmoly.to, .net, .me, /w/xxx, /xxx, embed-xxx.html…) sont ramenés à https://vidmoly.org/embed-ID.html, nommés VIDMOLY */
+function isVidmoly(url) { return /^https?:\/\/(?:[\w-]+\.)*vidmoly\.[a-z]+\//i.test(String(url || "").trim()); }
+function fixVidmoly(url) {
+  var m = String(url || "").trim().match(/^https?:\/\/(?:[\w-]+\.)*vidmoly\.[a-z]+\/([^?#]*)/i);
+  if (!m) return url;
+  var id = (m[1].split("/").filter(Boolean).pop() || "").replace(/\.html?$/i, "").replace(/^embed-/i, "").replace(/-\d+x\d+$/, "");
+  return /^[a-z0-9]{6,}$/i.test(id) ? "https://vidmoly.org/embed-" + id + ".html" : url;
+}
+function fixSrcList(arr) {
+  (arr || []).forEach(function (x) {
+    if (!x || !x.url || !isVidmoly(x.url)) return;
+    x.url = fixVidmoly(x.url); x.name = "VIDMOLY";
+  });
+  return arr;
+}
 /* Nom automatique d'une source : le domaine sans extension, en majuscules (uqload.vc -> UQLOAD) */
 function hostName(url) {
   try {
@@ -1304,8 +1321,8 @@ function textToSrc(text) {
   String(text || "").split("\n").forEach(function (line) {
     line = line.trim(); if (!line) return;
     var m = line.match(/https?:\/\/[^\s|]+/); if (!m) return;
-    var url = m[0];
-    var name = line.slice(0, m.index).replace(/[|\s]+$/, "").trim();
+    var url = fixVidmoly(m[0]);
+    var name = isVidmoly(url) ? "VIDMOLY" : line.slice(0, m.index).replace(/[|\s]+$/, "").trim();
     var o = { name: name || hostName(url), url: url };
     var meta = parseMeta(line.slice(m.index + url.length));
     if (meta.size) o.size = meta.size;
@@ -3728,7 +3745,7 @@ document.addEventListener("click", function (e) {
       var ep = eps[first + k]; if (!ep) return;
       var urls = line.match(/https?:\/\/[^\s;]+/g) || [];
       if (!urls.length) return;
-      var news = urls.length === 1 ? textToSrc(line) : urls.map(function (u) { return { name: hostName(u), url: u }; });
+      var news = urls.length === 1 ? textToSrc(line) : urls.map(function (u) { u = fixVidmoly(u); return { name: hostName(u), url: u }; });
       var cur2 = ep.sources || [];
       news.forEach(function (ns) {
         if (cur2.some(function (o) { return o.url === ns.url; })) return;
@@ -3862,6 +3879,7 @@ document.addEventListener("input", function (e) {
 document.addEventListener("focusout", function (e) {
   var t = e.target;
   if (!draft || !t || t.tagName !== "TEXTAREA") return;
+  if (t.dataset.f === "sources" || t.dataset.s != null) { var o2 = textToSrc(t.value); if (o2.length) { var tx = srcToText(o2); if (tx !== t.value) t.value = tx; } return; }
   if (!(t.dataset.f === "downloads" || t.dataset.dlseason != null || t.dataset.dls != null)) return;
   var out = t.value.split("\n").map(tidySrcLine).join("\n");
   if (out !== t.value) t.value = out;
@@ -4004,6 +4022,7 @@ function ghPublish(obj, tried, opts) {
       /* le fichier envoyé = ma copie + tout ce que l'autre admin a publié entre-temps (fiches, saisons, épisodes, liens) */
       var rs = Array.isArray(remote) ? remote : (remote && remote.series) || [];
       rs.forEach(function (r) {
+        if (r && r.id) normalize(r);
         if (!r || !r.id || t.fiches.indexOf(String(r.id)) > -1) return;
         var l = null; obj.series.forEach(function (x) { if (String(x.id) === String(r.id)) l = x; });
         if (!l) obj.series.push(JSON.parse(JSON.stringify(r))); else mergeFiche(l, r);
@@ -4704,7 +4723,7 @@ document.addEventListener("keydown", function (e) { if (e.key === "Escape") rmCl
 window.addEventListener("resize", rmClose);
 window.addEventListener("popstate", rmClose);
 /* Version du site : les admins qui ont encore une ancienne page en cache la rechargent automatiquement */
-var BUILD = "2026-10-18-annonce";
+var BUILD = "2026-10-18-vidmoly";
 function checkBuild() {
   if (!ADMIN || draft || teamEditing || heroEditing) return;
   fetch(location.href, { cache: "reload" }).then(function (r) { return r.text(); }).then(function (t) {
