@@ -377,6 +377,8 @@ html.noanim *, html.noanim *::before, html.noanim *::after { animation: none !im
 .spanel > .row { padding: 14px 20px; border-top: 1px solid var(--line); }
 .spanel.soon { border-style: dashed; }
 .spanel.soon .note { padding-bottom: 18px; }
+#count { display: inline-flex; align-items: center; gap: 8px; font-family: var(--mono); font-size: 12px; font-weight: 700; letter-spacing: .1em; }
+#count svg { width: 16px; height: 16px; flex: none; }
 footer .flist { list-style: none; margin: 0; padding: 0; }
 footer .flist li::before { content: "- "; }
 footer .copy { max-width: 1280px; margin: 28px auto 0; padding: 20px max(16px, env(safe-area-inset-right, 0px)) 0 max(16px, env(safe-area-inset-left, 0px)); border-top: 1px solid var(--line); text-align: center; font-size: 13px; color: var(--dim); }
@@ -1109,7 +1111,7 @@ footer .wrap.about { display: grid; grid-template-columns: repeat(auto-fit, minm
 
 <footer>
   <div class="wrap">
-    <span id="count">0 fiche</span>
+    <span id="count">0 FICHE</span>
     <div class="links">
       <button id="btn-info" type="button">Infos du site</button>
       <button id="btn-install" type="button" hidden>Installer l'application</button>
@@ -4002,7 +4004,7 @@ function route(force) {
   if (a === "serie") { var it = byId(b); navId = it && isMovie(it) ? "nav-films" : "nav-series"; }
   document.querySelectorAll("nav a").forEach(function (x) { x.classList.toggle("on", (x.id || x.dataset.nav) === navId); });
   var sb = $("#setbtn"); if (sb) sb.classList.toggle("on", a === "parametres");
-  $("#count").textContent = db.length + (db.length > 1 ? " fiches" : " fiche");
+  $("#count").innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg><span>' + db.length + (db.length > 1 ? " FICHES" : " FICHE") + '</span>';
 
   rerender = null;
   if (a === "serie") viewSerie(b);
