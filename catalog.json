@@ -15150,6 +15150,228 @@
       ],
       "downloads": [],
       "updatedAt": 1792288352767
+    },
+    {
+      "id": "311844",
+      "type": "tv",
+      "name": "Salvation, Swallowed by the Nest",
+      "original_name": "救い、巣喰われ",
+      "origin_country": [
+        "JP"
+      ],
+      "original_language": "ja",
+      "aka": [
+        "Salvation, Swallowed by the Nest",
+        "乞救之噬，覆食殆尽",
+        "乞救之噬，覆食殆盡",
+        "Sukui, Sukuware",
+        "Devoured by Love",
+        "Saved, Then Devoured",
+        "救い、巣喰われ"
+      ],
+      "year": "2026",
+      "overview": "",
+      "genres": [
+        "Drame"
+      ],
+      "rating": "0.5",
+      "pop": 4.341,
+      "status": "Ended",
+      "poster": "https://image.tmdb.org/t/p/w500/7mKYQWgTDe0Zf13FXn8QYxPf18r.jpg",
+      "posterV": 2,
+      "backdrop": "https://image.tmdb.org/t/p/original/lOl4dO21w67WdGyOS6cK5ASL6MF.jpg",
+      "cast": [
+        {
+          "name": "NOA",
+          "character": "Chiaki Hosho"
+        },
+        {
+          "name": "阪口珠美",
+          "character": "Ama Minase"
+        },
+        {
+          "name": "Akune Haruse",
+          "character": "Kairi Asakura"
+        },
+        {
+          "name": "坪倉由幸",
+          "character": "Suzui"
+        },
+        {
+          "name": "若月佑美",
+          "character": "Seira"
+        },
+        {
+          "name": "八村倫太郎",
+          "character": "Rintaro Hachimura"
+        },
+        {
+          "name": "上原あまね",
+          "character": "Anna Saotome"
+        },
+        {
+          "name": "向井怜衣",
+          "character": "Miho"
+        },
+        {
+          "name": "田中幸太朗",
+          "character": "Tanuma"
+        },
+        {
+          "name": "青島心",
+          "character": "Rin"
+        },
+        {
+          "name": "鈴木秀脩",
+          "character": "Shiki Motomiya"
+        },
+        {
+          "name": "遊井亮子",
+          "character": "Natsumi Hosho"
+        }
+      ],
+      "seasons": [
+        {
+          "number": 1,
+          "name": "Saison 1",
+          "episodes": [
+            {
+              "number": 1,
+              "name": "The Worst Encounter and the Best Trap",
+              "overview": "",
+              "air_date": "2026-02-12",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-7fwbvmsfi0ua.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 2,
+              "name": "Irresistible Attraction",
+              "overview": "",
+              "air_date": "2026-02-19",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-l4qhc38a3wj4.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 3,
+              "name": "Épisode 3",
+              "overview": "",
+              "air_date": "2026-02-26",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-kvadxbyoc4ws.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 4,
+              "name": "Épisode 4",
+              "overview": "",
+              "air_date": "2026-03-05",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-9vgupypgze1h.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 5,
+              "name": "Épisode 5",
+              "overview": "",
+              "air_date": "2026-03-12",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-zv0ivgw6duec.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 6,
+              "name": "Épisode 6",
+              "overview": "",
+              "air_date": "2026-03-19",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-h3pb7y9cpuhr.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 7,
+              "name": "Épisode 7",
+              "overview": "",
+              "air_date": "2026-03-26",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-adxozlar9ad0.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 8,
+              "name": "Épisode 8",
+              "overview": "",
+              "air_date": "2026-04-02",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-cgx538pfv1gy.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 9,
+              "name": "Épisode 9",
+              "overview": "",
+              "air_date": "2026-04-09",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-viv7tb6qvsj2.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            }
+          ],
+          "downloads": []
+        }
+      ],
+      "sources": [],
+      "addedAt": 1792288668404,
+      "langs": [
+        "VOSTFR"
+      ],
+      "downloads": [],
+      "updatedAt": 1792289143595
     }
   ],
   "deletedLinks": [
