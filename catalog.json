@@ -1262,11 +1262,18 @@
       "sources": [
         {
           "name": "VIDARA (VFQ)",
-          "url": "https://vidara.to/e/BzHQVFDTYsM7q"
+          "url": "https://vidara.to/e/BzHQVFDTYsM7q",
+          "by": "head"
         },
         {
           "name": "UQLOAD",
-          "url": "https://uqload.vc/embed-bauoh90lty4u.html"
+          "url": "https://uqload.vc/embed-bauoh90lty4u.html",
+          "by": "head"
+        },
+        {
+          "name": "PLAYMATE",
+          "url": "https://playmate.to/embed/1Qbd88wah0M10",
+          "by": "head"
         }
       ],
       "addedAt": 1792082586790,
@@ -1312,11 +1319,12 @@
           "name": "1FICHIER",
           "url": "https://1fichier.com/?mrcpz2qu52dc3uqfg0gt&af=5010551",
           "size": "5.5 Go",
-          "quality": "1080p (H.265)"
+          "quality": "1080p (H.265)",
+          "by": "head"
         }
       ],
       "posterV": 2,
-      "updatedAt": 1792265896410
+      "updatedAt": 1792324307081
     },
     {
       "id": "305644",
