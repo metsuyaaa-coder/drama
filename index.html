@@ -1136,6 +1136,15 @@ footer #btn-install:hover { background: transparent; color: var(--fg); }
 footer #btn-install[hidden] { display: none; }
 footer #btn-install svg { width: 18px; height: 18px; flex: none; }
 footer .about .flist li, footer .about p.dev { font-weight: 500; }
+/* barre du lecteur : tout le rectangle « Besoin d'une autre source / d'un lien » est cliquable, et les rectangles se rangent du plus grand au plus petit */
+.pbar .ptip { order: -2; }
+.pbar .pl { order: -1; }
+.pbar .pn { order: 10; }
+#pone, #pone2 { position: relative; cursor: pointer; transition: background .2s, color .2s; }
+#pone:hover, #pone2:hover { background: var(--fg); color: var(--bg); }
+#pone:hover > svg, #pone2:hover > svg, #pone:hover a, #pone2:hover a { color: var(--bg); }
+#pone:focus-within, #pone2:focus-within { outline: 2px solid var(--fg); outline-offset: 3px; }
+#pdemande::after, #pdemande2::after { content: ""; position: absolute; inset: 0; }
 </style>
 <!-- Visites du site : Vercel Web Analytics, sans cookie ni base de données. Ne fait rien tant que tu ne l'actives pas dans Vercel (onglet Analytics). -->
 <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
@@ -2585,6 +2594,7 @@ function reportedAlready() {
 function paintReport(sent) {
   var box = $("#prep"); if (!box) return;
   box.innerHTML = sent ? '<span class="repok">✓ Signalement envoyé</span>' : REPORT_HTML;
+  sortPbar();
 }
 function refreshReport() { paintReport(reportedAlready()); }
 
@@ -3798,6 +3808,16 @@ function play(sources, title, idx, sub, nav, dls) {
   document.documentElement.classList.add("lock");
   if (dlg.showModal) { if (!dlg.open) dlg.showModal(); } else dlg.setAttribute("open", "");
 }
+/* Range les rectangles de la barre du lecteur (autre source, signaler, lien de téléchargement) du plus large au plus étroit */
+function sortPbar() {
+  var boxes = ["pone", "pone2", "prep"].map(function (id) { return $("#" + id); }).filter(function (b) { return b && b.style.display !== "none" && b.offsetWidth > 0; });
+  boxes.sort(function (a, b) { return b.offsetWidth - a.offsetWidth; });
+  boxes.forEach(function (b, i) { var o = String(i + 1); if (b.style.order !== o) b.style.order = o; });
+}
+(function () {
+  var bar = $("#pbar"); if (!bar) return;
+  if (window.ResizeObserver) new ResizeObserver(function () { sortPbar(); }).observe(bar); else window.addEventListener("resize", sortPbar);
+})();
 function renderPlayer() {
   var s = cur.sources[cur.i], url = safeUrl(s.url);
   $("#ptitle").textContent = cur.title;
@@ -3819,6 +3839,7 @@ function renderPlayer() {
   $("#peps").hidden = true;
   $("#pprev").disabled = !(cur.nav && cur.nav.prev);
   $("#pnext").disabled = !(cur.nav && cur.nav.next);
+  sortPbar();
   $("#pstage").innerHTML = '<iframe src="' + esc(url) + '" allowfullscreen webkitallowfullscreen mozallowfullscreen allow="autoplay; fullscreen; picture-in-picture; encrypted-media"></iframe>';
   loadingUi();
   var many = cur.sources.length > 1;
