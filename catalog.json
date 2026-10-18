@@ -15872,6 +15872,181 @@
       ],
       "downloads": [],
       "updatedAt": 1792290174777
+    },
+    {
+      "id": "325063",
+      "type": "tv",
+      "name": "My Cold Coworker Obsessively Loves Me",
+      "original_name": "ドライな同期の溺愛癖",
+      "origin_country": [
+        "JP"
+      ],
+      "original_language": "ja",
+      "aka": [
+        "My Cold Coworker Obsessively Loves Me",
+        "결벽증 동기의 망상익애",
+        "冷淡同期的溺爱癖",
+        "冷淡同期的溺愛癖",
+        "Dryna Doki no Dekiai Heki",
+        "ドライな同期の溺愛癖"
+      ],
+      "year": "2026",
+      "overview": "",
+      "genres": [
+        "Drame"
+      ],
+      "rating": "",
+      "pop": 3.7679,
+      "status": "Returning Series",
+      "poster": "https://image.tmdb.org/t/p/original/sAOEypaK8zSIP5a1Vlk7yLbaiIK.jpg",
+      "posterV": 2,
+      "backdrop": "https://image.tmdb.org/t/p/original/6oCCGi56rrSYNKIqfbrRxFEweBk.jpg",
+      "cast": [
+        {
+          "name": "ゆいかれん",
+          "character": "Ayame Hanazawa"
+        },
+        {
+          "name": "藤林泰也",
+          "character": "Sui Miyajima"
+        },
+        {
+          "name": "小栗有以",
+          "character": "Kanako Himemiya"
+        },
+        {
+          "name": "京典和玖",
+          "character": "Takuya Hashimoto"
+        }
+      ],
+      "seasons": [
+        {
+          "number": 1,
+          "name": "Saison 1",
+          "episodes": [
+            {
+              "number": 1,
+              "name": "Épisode 1",
+              "overview": "",
+              "air_date": "2026-07-09",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-tp02x04io7zy.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 2,
+              "name": "Épisode 2",
+              "overview": "",
+              "air_date": "2026-07-16",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-951lpseov1ei.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 3,
+              "name": "Épisode 3",
+              "overview": "",
+              "air_date": "2026-07-23",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-ge4xzqovvh31.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 4,
+              "name": "Épisode 4",
+              "overview": "",
+              "air_date": "2026-07-30",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-sl4cu2b22ktt.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 5,
+              "name": "Épisode 5",
+              "overview": "",
+              "air_date": "2026-08-06",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-rv9pk37aczvw.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 6,
+              "name": "Épisode 6",
+              "overview": "",
+              "air_date": "2026-08-13",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-x16xixsga7ss.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 7,
+              "name": "Épisode 7",
+              "overview": "",
+              "air_date": "2026-08-20",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-x16xixsga7ss.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 8,
+              "name": "Épisode 8",
+              "overview": "",
+              "air_date": "2026-08-27",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-76uavjzjm992.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            }
+          ],
+          "downloads": []
+        }
+      ],
+      "sources": [],
+      "addedAt": 1792290493044,
+      "langs": [
+        "VOSTFR"
+      ],
+      "downloads": [],
+      "updatedAt": 1792290626866
     }
   ],
   "deletedLinks": [
