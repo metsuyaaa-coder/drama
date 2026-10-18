@@ -431,6 +431,26 @@ dialog#player:not(.wide) .pframe { margin-left: env(safe-area-inset-left, 0px); 
 }
 .pbar .pone { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; min-width: 0; font-size: 13px; color: var(--dim); }
 .pbar .pone a { color: var(--fg); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+.rbtn { display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border: 1px solid var(--fg); background: transparent; color: var(--fg); font: inherit; font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; cursor: pointer; border-radius: 0; transition: background .2s, color .2s; }
+.rbtn:hover { background: var(--fg); color: var(--bg); }
+.rbtn svg { width: 15px; height: 15px; flex: none; }
+.pbar .pone .repok { display: inline-flex; align-items: center; gap: 6px; padding: 8px 12px; border: 1px solid #86efac; color: #86efac; font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+/* fenêtre de signalement */
+dialog#reportdlg { width: min(460px, 94vw); padding: 0; border: 1px solid var(--line); background: #000; color: var(--fg); }
+dialog#reportdlg[open] { animation: dialogIn .3s var(--ease) both; }
+dialog#reportdlg::backdrop { background: rgba(0,0,0,.85); }
+.rbox h2 { font-size: clamp(30px, 7vw, 42px); }
+.rbox .what { font-family: var(--mono); font-size: 12px; letter-spacing: .04em; color: var(--dim); overflow-wrap: anywhere; }
+.ropts { display: grid; gap: 10px; }
+.ropt { display: flex; gap: 14px; align-items: flex-start; width: 100%; padding: 14px; text-align: left; border: 1px solid var(--line); background: var(--panel); color: var(--fg); font: inherit; cursor: pointer; border-radius: 0; transition: border-color .2s, background .2s; }
+.ropt:hover:not(:disabled) { border-color: var(--fg); background: #111; }
+.ropt:disabled { opacity: .5; cursor: wait; }
+.ropt svg { width: 22px; height: 22px; flex: none; margin-top: 2px; }
+.ropt b { display: block; font-size: 14px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; }
+.ropt small { display: block; margin-top: 3px; font-size: 13px; color: var(--dim); }
+.rbox .rpmsg { min-height: 1.3em; font-size: 14px; }
+.rbox .rpmsg.ok { color: #86efac; font-weight: 700; }
+.rbox .rpmsg.err { color: #ff8a8a; }
 .pbar .pn { display: flex; gap: 8px; margin-left: auto; }
 .pbar .btn:disabled { opacity: .3; pointer-events: none; }
 dialog#player.wide .pbar { display: none; }
@@ -876,7 +896,7 @@ footer .wrap.about { display: grid; grid-template-columns: repeat(auto-fit, minm
     <div class="ptip" id="ptip"><button type="button" class="tbtn" id="tprev" aria-label="Conseil précédent">‹</button><p id="ttext" aria-live="polite"></p><button type="button" class="tbtn" id="tnext" aria-label="Conseil suivant">›</button><span id="tcount"></span></div>
     <div class="pl" id="pl"><span class="chiplbl">Serveur</span><span class="srcs" id="psrc"></span></div>
     <div class="pone" id="pone" style="display:none"><span>Besoin d'une autre source ou celle-ci bug ?</span><a href="/demande" id="pdemande">/demande</a></div>
-    <div class="pone" id="prep"><span>Ce serveur ne marche pas ?</span><a href="#" id="preport">Signaler le lien mort</a></div>
+    <div class="pone" id="prep"><button type="button" id="preport" class="rbtn"><span>Signaler</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21V4"/><path d="M5 4h13l-2.5 4.5L18 13H5"/></svg></button></div>
     <div class="pone" id="pone2" style="display:none"><span>Besoin d'un lien de téléchargement ?</span><a href="/demande" id="pdemande2">/demande</a></div>
     <div class="pn" id="pnav"><button class="btn small ghost" id="pprev" type="button">Épisode précédent</button><button class="btn small ghost" id="peplist" type="button" aria-label="Liste des épisodes" title="Épisodes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="9" width="14" height="11" rx="1.5"/><path d="M7 5.5h12.5A1.5 1.5 0 0 1 21 7v9"/><path d="M11 2.5h8.5A1.5 1.5 0 0 1 21 4"/></svg><span>Épisodes</span></button><button class="btn small" id="pnext" type="button">Épisode suivant</button></div>
   </div>
@@ -904,6 +924,19 @@ footer .wrap.about { display: grid; grid-template-columns: repeat(auto-fit, minm
     <p>Une suggestion, un bug ou envie de contribuer ? N’hésitez pas à me contacter sur Discord !</p>
     <div class="contact"><span>Discord</span><b>meyriuu.</b><button type="button" class="btn small ghost" data-copy="meyriuu.">Copier</button></div>
     <button class="btn" id="welcome-ok" type="button">Compris</button>
+  </div>
+</dialog>
+<dialog id="reportdlg" aria-labelledby="rptitle">
+  <div class="wbox rbox">
+    <h2 id="rptitle">Signaler</h2>
+    <p>Quel est le problème ?</p>
+    <p class="what" id="rpwhat"></p>
+    <div class="ropts" id="rpopts">
+      <button type="button" class="ropt" data-reason="dead"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="6" rx="1"/><rect x="3" y="14" width="18" height="6" rx="1"/><path d="M7 7h.01M7 17h.01"/></svg><span><b>Serveur mort</b><small>Le lecteur ne charge pas ou la page n'existe plus.</small></span></button>
+      <button type="button" class="ropt" data-reason="video"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="M10 9.5v5l4.5-2.5z"/></svg><span><b>La vidéo ne marche pas</b><small>Le lecteur s'ouvre, mais la vidéo ne se lance pas ou plante.</small></span></button>
+    </div>
+    <p class="rpmsg" id="rpmsg" role="status"></p>
+    <button type="button" class="btn ghost" id="rpcancel">Annuler</button>
   </div>
 </dialog>
 <div class="toast" id="toast" role="status"></div>
@@ -1586,20 +1619,64 @@ function notifyDiscord(payload) {
     .then(function (r) { return r.ok; }, function () { return false; });
 }
 /* Signaler un lien mort : une fois par lien et par appareil (24 h), 10 signalements par jour maximum */
-function reportDead() {
+var REPORT_HTML = '<button type="button" id="preport" class="rbtn"><span>Signaler</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21V4"/><path d="M5 4h13l-2.5 4.5L18 13H5"/></svg></button>';
+function reportKey() {
+  var s = cur.sources && cur.sources[cur.i];
+  return s ? (cur.title || "") + "|" + (cur.sub || "") + "|" + s.url : "";
+}
+function reportedAlready() {
+  var key = reportKey(), seen = readJSON("noir.reported", {});
+  return !!key && !!seen[key] && Date.now() - seen[key] < 86400000;
+}
+/* Barre du lecteur : bouton SIGNALER, ou « envoyé » si ce lien a déjà été signalé */
+function paintReport(sent) {
+  var box = $("#prep"); if (!box) return;
+  box.innerHTML = sent ? '<span class="repok">✓ Signalement envoyé</span>' : REPORT_HTML;
+}
+function refreshReport() { paintReport(reportedAlready()); }
+
+/* Fenêtre « Quel est le problème ? » : serveur mort ou vidéo qui ne marche pas */
+var reporting = false;
+function reportMsg(t, cls) { var m = $("#rpmsg"); m.textContent = t || ""; m.className = "rpmsg" + (cls ? " " + cls : ""); }
+function openReport() {
   var s = cur.sources && cur.sources[cur.i]; if (!s) return;
-  var key = (cur.title || "") + "|" + (cur.sub || "") + "|" + s.url, now = Date.now(), seen = readJSON("noir.reported", {}), n = 0;
-  Object.keys(seen).forEach(function (k) { if (now - seen[k] > 86400000) delete seen[k]; else n++; });
-  if (seen[key]) { toast("Tu as déjà signalé ce lien, merci !"); return; }
-  if (n >= 10) { toast("Limite de signalements atteinte pour aujourd'hui"); return; }
-  notifyDiscord({ kind: "deadlink", title: cur.title || "", sub: cur.sub || "", source: s.name || "", url: s.url || "", page: location.href }).then(function (ok) {
-    if (!ok) { toast("Impossible d'envoyer le signalement pour l'instant"); return; }
-    seen[key] = Date.now(); try { localStorage.setItem("noir.reported", JSON.stringify(seen)); } catch (e) {}
-    toast("Merci, le lien est signalé !");
+  if (reportedAlready()) { paintReport(true); return; }
+  var seen = readJSON("noir.reported", {}), now = Date.now(), n = 0;
+  Object.keys(seen).forEach(function (k) { if (now - seen[k] <= 86400000) n++; });
+  var d = $("#reportdlg");
+  $("#rpwhat").textContent = (cur.title || "") + (cur.sub ? " · " + cur.sub : "") + " · " + (s.name || "Serveur");
+  $("#rpopts").hidden = false; $("#rpcancel").textContent = "Annuler";
+  Array.prototype.forEach.call(document.querySelectorAll("#rpopts .ropt"), function (b) { b.disabled = n >= 10; });
+  reportMsg(n >= 10 ? "Limite de signalements atteinte pour aujourd'hui." : "", n >= 10 ? "err" : "");
+  if (d.showModal && !d.open) d.showModal();
+}
+function sendReport(reason) {
+  var s = cur.sources && cur.sources[cur.i]; if (!s || reporting) return;
+  var key = reportKey();
+  reporting = true; reportMsg("Envoi du signalement…");
+  Array.prototype.forEach.call(document.querySelectorAll("#rpopts .ropt"), function (b) { b.disabled = true; });
+  notifyDiscord({ kind: "deadlink", reason: reason === "video" ? "video" : "dead", title: cur.title || "", sub: cur.sub || "", source: s.name || "", url: s.url || "", page: location.href }).then(function (ok) {
+    reporting = false;
+    if (!ok) {
+      reportMsg("Envoi impossible pour l'instant, réessaie dans un instant.", "err");
+      Array.prototype.forEach.call(document.querySelectorAll("#rpopts .ropt"), function (b) { b.disabled = false; });
+      return;
+    }
+    var seen = readJSON("noir.reported", {}); seen[key] = Date.now();
+    try { localStorage.setItem("noir.reported", JSON.stringify(seen)); } catch (e) {}
+    $("#rpopts").hidden = true; $("#rpcancel").textContent = "Fermer";
+    reportMsg("✓ Signalement envoyé, merci !", "ok");
+    if (reportKey() === key) paintReport(true);
+    setTimeout(function () { var d = $("#reportdlg"); if (d.open) d.close(); }, 1800);
   });
 }
+$("#reportdlg").addEventListener("click", function (e) {
+  var o = e.target.closest(".ropt");
+  if (o && !o.disabled) { sendReport(o.dataset.reason); return; }
+  if (e.target === this || e.target.closest("#rpcancel")) this.close();
+});
 document.addEventListener("click", function (e) {
-  if (e.target.closest("#preport")) { e.preventDefault(); reportDead(); }
+  if (e.target.closest("#preport")) { e.preventDefault(); openReport(); }
 });
 function viewRequest(pre, kind) {
   kind = kind === "dl" ? "dl" : kind === "both" ? "both" : "stream";
@@ -2717,6 +2794,7 @@ function renderPlayer() {
   $("#pext").href = url;
   $("#pstage").innerHTML = '<iframe src="' + esc(url) + '" allowfullscreen webkitallowfullscreen mozallowfullscreen allow="autoplay; fullscreen; picture-in-picture; encrypted-media"></iframe>';
   var many = cur.sources.length > 3;
+  refreshReport();
   $("#psrc").className = "srcs" + (many ? " many" : "");
   $("#psrc").innerHTML = cur.sources.length > 1 ? (many ? '<button type="button" class="srctoggle" data-srctoggle aria-expanded="false" aria-label="Changer de serveur"><span class="nm">' + esc((cur.sources[cur.i] || {}).name || "") + '</span><span class="cnt">' + (cur.i + 1) + '/' + cur.sources.length + '</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>' : '') + cur.sources.map(function (x, k) {
     return '<button type="button" class="chip' + (k === cur.i ? " on" : "") + '" data-src="' + k + '">' + esc(x.name) + '</button>';
