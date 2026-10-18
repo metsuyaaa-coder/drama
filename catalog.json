@@ -11104,6 +11104,218 @@
       ],
       "downloads": [],
       "updatedAt": 1792283764084
+    },
+    {
+      "id": "315007",
+      "type": "tv",
+      "name": "Love in Sync",
+      "original_name": "공감세포",
+      "origin_country": [
+        "KR"
+      ],
+      "original_language": "ko",
+      "aka": [
+        "共感细胞",
+        "Love in Sync",
+        "Amor en sincronía",
+        "Amor em Sintonia",
+        "共感細胞",
+        "恋する共感細胞",
+        "ใจเชื่อมรัก",
+        "على نبض واحد",
+        "Зеркальные нейроны",
+        "אהבה בסנכרון",
+        "共鸣细胞",
+        "Un sueño contigo",
+        "Gonggamsepo",
+        "Клетки эмпатии",
+        "حب مُنسجم",
+        "Empathy Cells",
+        "공감세포"
+      ],
+      "year": "2026",
+      "overview": "Yoo Ji-An est une femme qui rejette l'empathie, tandis que Cha Eun Hwan est un homme qui en est accablé.\n\nLorsqu'ils commencent à partager leurs émotions l'un avec l'autre à la suite d'un phénomène inattendu,\n\nils se lancent dans un parcours d'apprentissage.",
+      "genres": [
+        "Drame",
+        "Comédie",
+        "Science-Fiction & Fantastique"
+      ],
+      "rating": "6.6",
+      "pop": 5.805,
+      "status": "Ended",
+      "poster": "https://image.tmdb.org/t/p/w500/iLf17aFCx2ESajFp1oyb03fmzNp.jpg",
+      "posterV": 2,
+      "backdrop": "https://image.tmdb.org/t/p/original/ykYenWf8y5YqyZFkDdmVeKczTMl.jpg",
+      "cast": [
+        {
+          "name": "엘",
+          "character": "Cha Eun-hwan"
+        },
+        {
+          "name": "Kang Min-ah",
+          "character": "Yu Ji-an"
+        },
+        {
+          "name": "권소현",
+          "character": "Han Yi-jin"
+        },
+        {
+          "name": "신우겸",
+          "character": "Dong-kyung"
+        },
+        {
+          "name": "차민지",
+          "character": "Cha Song-hwan"
+        },
+        {
+          "name": "강필준",
+          "character": "Do-hoon"
+        },
+        {
+          "name": "김다혜",
+          "character": "Hyun-jⅰ"
+        },
+        {
+          "name": "옥윤중",
+          "character": "Manager Kim"
+        },
+        {
+          "name": "장성원",
+          "character": "Teacher Lee"
+        },
+        {
+          "name": "김이현",
+          "character": "Lee Young-ji"
+        }
+      ],
+      "seasons": [
+        {
+          "number": 1,
+          "name": "Saison 1",
+          "episodes": [
+            {
+              "number": 1,
+              "name": "First Encounter",
+              "overview": "Top star Jian seeks out counselor Eunhwan, only to confront a forgotten past during their session.",
+              "air_date": "2026-07-04",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-g4e4hvpfpfmg.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 2,
+              "name": "Ji-an’s Downfall",
+              "overview": "Disgraced Jian meets broken counselor Eunhwan. Soon after, she begins hearing a strange voice.",
+              "air_date": "2026-07-05",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-6xxv7v417uz3.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 3,
+              "name": "Attempt To Comeback",
+              "overview": "Jian and Eunhwan become neighbors. One day, Jian discovers the emotions he has long kept buried.",
+              "air_date": "2026-07-11",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-zxmznzdlb1ik.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 4,
+              "name": "Proposal To Eun-hwan",
+              "overview": "Jian, changed by new emotions, gains attention and makes an unexpected proposal to Eunhwan.",
+              "air_date": "2026-07-12",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-7cz8akatd9e5.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 5,
+              "name": "New Manager",
+              "overview": "By Eunhwan, Jian begins acting again. But when she falls once more, he makes a shocking declaration.",
+              "air_date": "2026-07-18",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-2x0qznxeq5nk.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 6,
+              "name": "Audition",
+              "overview": "As the two uncover a hidden secret, a connection tied to a past accident begins to surface.",
+              "air_date": "2026-07-19",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-1o9whmfkeqpz.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 7,
+              "name": "Reveals The Truth",
+              "overview": "The two finally confirm each other's feelings. But another incident hits Jian.",
+              "air_date": "2026-07-25",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-yxo4lfeovhl1.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 8,
+              "name": "Disappearance",
+              "overview": "A buried truth tears them apart, forcing Jian and Eunhwan to face their true feelings.",
+              "air_date": "2026-07-26",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-lstvbviobyyb.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            }
+          ],
+          "downloads": []
+        }
+      ],
+      "sources": [],
+      "addedAt": 1792283881812,
+      "langs": [
+        "VOSTFR"
+      ],
+      "downloads": [],
+      "updatedAt": 1792283981971
     }
   ],
   "deletedLinks": [
