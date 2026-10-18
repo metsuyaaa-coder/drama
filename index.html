@@ -1325,7 +1325,6 @@ function viewRequest(pre, kind) {
   var t = ""; try { t = decodeURIComponent(pre || ""); } catch (e) { t = pre || ""; }
   $("#app").innerHTML = '<div class="wrap"><form class="authbox" id="reqform" style="max-width:520px"><h1>Demander un titre</h1>' +
     '<p class="lead">Il manque une série ou un film ? Dis-le-moi, je l\'ajoute dès que possible. ' + REQ_MAX + ' demandes maximum par jour.</p>' +
-    '<label class="f"><span>Ton pseudo</span><input type="text" name="pseudo" required maxlength="40" autocomplete="nickname"></label>' +
     '<label class="f"><span>Ton Discord (facultatif)</span><input type="text" name="discord" maxlength="40" placeholder="ex. pseudo ou pseudo#0000" autocomplete="off"></label>' +
     '<p class="note" style="margin:-6px 0 0">Laisse ton pseudo Discord pour que je puisse te prévenir quand ton titre est ajouté.</p>' +
     '<div class="rqwrap"><label class="f"><span>Nom de la série ou du film</span><input type="text" name="titre" id="reqtitre" required maxlength="120" value="' + esc(t) + '" autocomplete="off" placeholder="Tape un titre, dans n\'importe quelle langue" role="combobox" aria-expanded="false" aria-controls="reqsugg" aria-autocomplete="list"></label><div class="sugg tsug" id="reqsugg" role="listbox" hidden></div></div>' +
@@ -2610,7 +2609,7 @@ document.addEventListener("submit", function (e) {
     var titre = String(fd.get("titre") || "").trim();
     fetch(REQ_URL, { method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" }, body: JSON.stringify({
       _subject: "DramaByM : demande « " + titre + " »", _captcha: "false", _template: "table",
-      "Pseudo": String(fd.get("pseudo") || "").trim(), "Discord": String(fd.get("discord") || "").trim() || "non renseigné", "Titre": titre, "Demande": ({ stream: "Streaming", dl: "Téléchargement", both: "Streaming + téléchargement" })[String(fd.get("type"))] || "Streaming", "Date de sortie": String(fd.get("date") || "").trim(),
+      "Discord": String(fd.get("discord") || "").trim() || "non renseigné", "Titre": titre, "Demande": ({ stream: "Streaming", dl: "Téléchargement", both: "Streaming + téléchargement" })[String(fd.get("type"))] || "Streaming", "Date de sortie": String(fd.get("date") || "").trim(),
       "Type": reqSel.media === "movie" ? "Film" : "Série", "Titre anglais": reqSel.en || "", "Titre original": reqSel.orig || "",
       "Lien TMDB": "https://www.themoviedb.org/" + (reqSel.media === "movie" ? "movie/" : "tv/") + reqSel.id
     }) }).then(function (r) {
