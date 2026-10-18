@@ -18210,6 +18210,151 @@
       ],
       "downloads": [],
       "updatedAt": 1792292814815
+    },
+    {
+      "id": "334323",
+      "type": "tv",
+      "name": "Welcome back, First love.",
+      "original_name": "おかえり、初恋。",
+      "origin_country": [
+        "JP"
+      ],
+      "original_language": "ja",
+      "aka": [
+        "Welcome back, First love.",
+        "歡迎回來，初戀。",
+        "欢迎回来，初恋。",
+        "おかえり、初恋。"
+      ],
+      "year": "2026",
+      "overview": "",
+      "genres": [
+        "Drame"
+      ],
+      "rating": "",
+      "pop": 2.6475,
+      "status": "Returning Series",
+      "poster": "https://image.tmdb.org/t/p/w500/gZ7dPo58d30aAJ05RtqrgTEFmhs.jpg",
+      "posterV": 2,
+      "backdrop": "https://image.tmdb.org/t/p/original/jb5b3OUZwer2bj26F1UVEtRLtBZ.jpg",
+      "cast": [
+        {
+          "name": "Kouhei Higuchi",
+          "character": "Ryosuke Taguchi"
+        },
+        {
+          "name": "林芽亜里",
+          "character": "Shiori Yamane"
+        }
+      ],
+      "seasons": [
+        {
+          "number": 1,
+          "name": "Saison 1",
+          "episodes": [
+            {
+              "number": 1,
+              "name": "Épisode 1",
+              "overview": "",
+              "air_date": "2026-10-08",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-7z2mj2exd2xf.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 2,
+              "name": "Épisode 2",
+              "overview": "",
+              "air_date": "2026-10-15",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-5n6momoib50q.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 3,
+              "name": "Épisode 3",
+              "overview": "",
+              "air_date": "2026-10-22",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 4,
+              "name": "Épisode 4",
+              "overview": "",
+              "air_date": "2026-10-29",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 5,
+              "name": "Épisode 5",
+              "overview": "",
+              "air_date": "2026-11-05",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 6,
+              "name": "Épisode 6",
+              "overview": "",
+              "air_date": "2026-11-12",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 7,
+              "name": "Épisode 7",
+              "overview": "",
+              "air_date": "2026-11-19",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 8,
+              "name": "Épisode 8",
+              "overview": "",
+              "air_date": "2026-11-26",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 9,
+              "name": "Épisode 9",
+              "overview": "",
+              "air_date": "2026-12-03",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 10,
+              "name": "Épisode 10",
+              "overview": "",
+              "air_date": "2026-12-10",
+              "sources": [],
+              "downloads": []
+            }
+          ],
+          "downloads": []
+        }
+      ],
+      "sources": [],
+      "addedAt": 1792292864280,
+      "langs": [
+        "VOSTFR"
+      ],
+      "downloads": [],
+      "updatedAt": 1792292893092
     }
   ],
   "deletedLinks": [
