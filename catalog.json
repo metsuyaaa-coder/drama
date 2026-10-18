@@ -2421,7 +2421,15 @@
                   "by": "head"
                 }
               ],
-              "downloads": []
+              "downloads": [
+                {
+                  "name": "1FICHIER",
+                  "url": "https://1fichier.com/?ea6q95z2t5a6m64n3gul",
+                  "size": "3.1Go",
+                  "quality": "1080p (H.264)",
+                  "by": "head"
+                }
+              ]
             },
             {
               "number": 11,
@@ -2465,7 +2473,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792336790079
+      "updatedAt": 1792337216560
     },
     {
       "id": "290193",
