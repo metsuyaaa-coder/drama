@@ -1738,6 +1738,29 @@
       "type": "tv",
       "name": "Dive into You",
       "original_name": "너에게 다이브",
+      "origin_country": [
+        "KR"
+      ],
+      "networks": [
+        "Channel A"
+      ],
+      "original_language": "ko",
+      "aka": [
+        "再次奔向你",
+        "Dive into You",
+        "De volta para você",
+        "向你跳水",
+        "Volveré Por Ti",
+        "君へダイブ",
+        "Потопете се в себе си",
+        "ดิ่งลึกสู่ใจเธอ",
+        "الغوص في حبك",
+        "Погружение к тебе",
+        "向你Dive",
+        "潜入你心",
+        "Погружаясь в тебя",
+        "너에게 다이브"
+      ],
       "year": "2026",
       "overview": "Une actrice et son frère jumeau voyagent dans le temps – et échangent leurs corps – pour sauver la vie de leur ami.",
       "genres": [
@@ -1745,11 +1768,12 @@
         "Drame",
         "Science-Fiction & Fantastique"
       ],
-      "rating": "8.0",
-      "pop": 15.0098,
+      "rating": "9.0",
+      "pop": 14.7223,
       "status": "Returning Series",
-      "poster": "https://image.tmdb.org/t/p/original/vIf6bJs9oi5BfNAiAu9CG45cXC7.jpg",
-      "backdrop": "https://image.tmdb.org/t/p/original/fTlvgaOpBboy8O2q9d54hPSoBog.jpg",
+      "poster": "https://image.tmdb.org/t/p/w500/6OAuQOGqjYY1JXbkTlWz4Mm2Kmi.jpg",
+      "posterV": 2,
+      "backdrop": "https://image.tmdb.org/t/p/original/jseW3HucgNjN2CwJa3MiOlF4xMO.jpg",
       "cast": [
         {
           "name": "보나",
@@ -1955,7 +1979,7 @@
             {
               "number": 7,
               "name": "Épisode 7",
-              "overview": "",
+              "overview": "Someone who knows the secret of time travel deliberately hid the camcorder. The twins’ investigation points to Hyeong-won.",
               "air_date": "2026-10-17",
               "sources": [
                 {
@@ -2041,29 +2065,8 @@
       "langs": [
         "VOSTFR"
       ],
-      "aka": [
-        "再次奔向你",
-        "Dive into You",
-        "De volta para você",
-        "向你跳水",
-        "Volveré Por Ti",
-        "君へダイブ",
-        "Потопете се в себе си",
-        "ดิ่งลึกสู่ใจเธอ",
-        "الغوص في حبك",
-        "Погружение к тебе",
-        "向你Dive",
-        "潜入你心",
-        "Погружаясь в тебя",
-        "너에게 다이브"
-      ],
       "downloads": [],
-      "origin_country": [
-        "KR"
-      ],
-      "original_language": "ko",
-      "posterV": 2,
-      "updatedAt": 1792339341870
+      "updatedAt": 1792339898006
     },
     {
       "id": "314939",
