@@ -18355,6 +18355,192 @@
       ],
       "downloads": [],
       "updatedAt": 1792292893092
+    },
+    {
+      "id": "288328",
+      "type": "tv",
+      "name": "Light the Dark",
+      "original_name": "把黑夜点燃",
+      "origin_country": [
+        "CN"
+      ],
+      "original_language": "zh",
+      "aka": [
+        "Light the Dark",
+        "把黑夜點燃",
+        "จุดประกายในราตรี",
+        "Разпали нощта",
+        "把黑夜点燃"
+      ],
+      "year": "2026",
+      "overview": "Dans la ville côtière de Fogang, la vie paisible d'une famille travaillant pour la compagnie pétrolière d'État bascule brutalement après une mystérieuse explosion de gaz en 1997. Des années plus tard, en 2001, une nouvelle explosion survient et pousse Chen Shan à rouvrir l'enquête pour faire la lumière sur la tragédie qui a détruit les siens. En traquant les indices, il découvre avec stupeur que l'homme qu'il soupçonnait depuis toujours est devenu un homme d'affaires influent... et s'est marié avec sa propre sœur ! Pris au piège entre liens familiaux et secrets d'État, Chen Shan doit démêler un vaste réseau de conspirations et de trahisons pour faire éclater la vérité. Ce thriller criminel intense et sombre suit ainsi sa quête de justice obstinée pour \"éclairer les ténèbres\" du passé.",
+      "genres": [
+        "Mystère"
+      ],
+      "rating": "8.5",
+      "pop": 15.6403,
+      "status": "Returning Series",
+      "poster": "https://image.tmdb.org/t/p/original/t69nmUrT8G4HQ452nLDzkZujEDj.jpg",
+      "posterV": 2,
+      "backdrop": "https://image.tmdb.org/t/p/original/q48icceyDIuAZC9wL66ZEQF03oj.jpg",
+      "cast": [
+        {
+          "name": "蒋欣",
+          "character": "Chen Ying"
+        },
+        {
+          "name": "陈哲远",
+          "character": "Chen Shan"
+        }
+      ],
+      "seasons": [
+        {
+          "number": 1,
+          "name": "Saison 1",
+          "episodes": [
+            {
+              "number": 1,
+              "name": "Épisode 1",
+              "overview": "",
+              "air_date": "2026-10-15",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-fmjllm4qns94.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 2,
+              "name": "Épisode 2",
+              "overview": "",
+              "air_date": "2026-10-15",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-wl4m2zqz6997.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 3,
+              "name": "Épisode 3",
+              "overview": "",
+              "air_date": "2026-10-15",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-qwhjj81ny1e8.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 4,
+              "name": "Épisode 4",
+              "overview": "",
+              "air_date": "2026-10-16",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-8erbsxh62lsg.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 5,
+              "name": "Épisode 5",
+              "overview": "",
+              "air_date": "2026-10-16",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-kmh7z2cdac3f.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 6,
+              "name": "Épisode 6",
+              "overview": "",
+              "air_date": "2026-10-17",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-c780q1ibg8p9.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 7,
+              "name": "Épisode 7",
+              "overview": "",
+              "air_date": "2026-10-18",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 8,
+              "name": "Épisode 8",
+              "overview": "",
+              "air_date": "2026-10-19",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 9,
+              "name": "Épisode 9",
+              "overview": "",
+              "air_date": "2026-10-20",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 10,
+              "name": "Épisode 10",
+              "overview": "",
+              "air_date": "2026-10-20",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 11,
+              "name": "Épisode 11",
+              "overview": "",
+              "air_date": "2026-10-20",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 12,
+              "name": "Épisode 12",
+              "overview": "",
+              "air_date": "2026-10-20",
+              "sources": [],
+              "downloads": []
+            }
+          ],
+          "downloads": []
+        }
+      ],
+      "sources": [],
+      "addedAt": 1792293058280,
+      "langs": [
+        "VOSTFR"
+      ],
+      "downloads": [],
+      "updatedAt": 1792293168783
     }
   ],
   "deletedLinks": [
