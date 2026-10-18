@@ -1324,10 +1324,10 @@ function viewRequest(pre, kind) {
   kind = kind === "dl" ? "dl" : kind === "both" ? "both" : "stream";
   var t = ""; try { t = decodeURIComponent(pre || ""); } catch (e) { t = pre || ""; }
   $("#app").innerHTML = '<div class="wrap"><form class="authbox" id="reqform" style="max-width:520px"><h1>Demander un titre</h1>' +
-    '<p class="lead">Il manque une série ou un film ? Dis-le-moi, je l\'ajoute dès que possible. ' + REQ_MAX + ' demandes maximum par jour.</p>' +
+    '<p class="lead">Il manque un drama ou un film (coréen, chinois, japonais ou thaï) ? Dis-le-moi, je l\'ajoute dès que possible. ' + REQ_MAX + ' demandes maximum par jour.</p>' +
     '<label class="f"><span>Ton Discord (facultatif)</span><input type="text" name="discord" maxlength="40" placeholder="ex. pseudo ou pseudo#0000" autocomplete="off"></label>' +
     '<p class="note" style="margin:-6px 0 0">Laisse ton pseudo Discord pour que je puisse te prévenir quand ton titre est ajouté.</p>' +
-    '<div class="rqwrap"><label class="f"><span>Nom de la série ou du film</span><input type="text" name="titre" id="reqtitre" required maxlength="120" value="' + esc(t) + '" autocomplete="off" placeholder="Tape un titre, dans n\'importe quelle langue" role="combobox" aria-expanded="false" aria-controls="reqsugg" aria-autocomplete="list"></label><div class="sugg tsug" id="reqsugg" role="listbox" hidden></div></div>' +
+    '<div class="rqwrap"><label class="f"><span>Nom du drama ou du film</span><input type="text" name="titre" id="reqtitre" required maxlength="120" value="' + esc(t) + '" autocomplete="off" placeholder="Tape le titre, dans n\'importe quelle langue" role="combobox" aria-expanded="false" aria-controls="reqsugg" aria-autocomplete="list"></label><div class="sugg tsug" id="reqsugg" role="listbox" hidden></div></div>' +
     '<p class="note" id="reqok">Choisis ton titre dans la liste proposée par TMDB pour pouvoir envoyer la demande.</p>' +
     '<label class="f"><span>Ta demande</span><select name="type"><option value="stream"' + (kind === "stream" ? " selected" : "") + '>Streaming</option><option value="dl"' + (kind === "dl" ? " selected" : "") + '>Téléchargement</option><option value="both"' + (kind === "both" ? " selected" : "") + '>Les deux (streaming + téléchargement)</option></select></label>' +
     '<label class="f"><span>Date de sortie (ou année)</span><input type="text" name="date" class="auto" readonly maxlength="40" placeholder="Rempli automatiquement"></label>' +
@@ -1361,6 +1361,12 @@ function reqFetch(q, lang) {
   p.catch(function () { delete reqCache[key]; });
   return p;
 }
+/* Seuls les dramas et films coréens, chinois, japonais et thaïlandais (hors animation, documentaires, télé-réalité et talk-shows) */
+var REQ_ORIGINS = { ko: "Corée", zh: "Chine", cn: "Chine (cantonais)", ja: "Japon", th: "Thaïlande" };
+var REQ_BAD_GENRES = [16, 99, 10763, 10764, 10767];
+function reqKeep(x) {
+  return (x.media_type === "tv" || x.media_type === "movie") && !!REQ_ORIGINS[x.original_language] && !(x.genre_ids || []).some(function (g) { return REQ_BAD_GENRES.indexOf(g) > -1; });
+}
 function reqSearch(q) {
   var langs = reqLangs();
   return Promise.all(langs.map(function (l, i) {
@@ -1368,13 +1374,13 @@ function reqSearch(q) {
   })).then(function (lists) {
     var en = {};
     (lists[1] || []).forEach(function (x) { en[x.media_type + x.id] = x; });
-    return lists[0].filter(function (x) { return x.media_type === "tv" || x.media_type === "movie"; }).slice(0, 8).map(function (x) {
+    return lists[0].filter(reqKeep).slice(0, 8).map(function (x) {
       var movie = x.media_type === "movie", e = en[x.media_type + x.id] || {};
       var title = String((movie ? x.title : x.name) || "").trim();
       var eng = String((movie ? e.title : e.name) || "").trim();
       var orig = String((movie ? x.original_title : x.original_name) || "").trim();
       var d = (movie ? x.release_date : x.first_air_date) || "";
-      return { id: x.id, media: x.media_type, title: title, en: eng && eng !== title ? eng : "", orig: orig && orig !== title && orig !== eng ? orig : "", year: d.slice(0, 4), poster: x.poster_path || "" };
+      return { id: x.id, media: x.media_type, title: title, en: eng && eng !== title ? eng : "", orig: orig && orig !== title && orig !== eng ? orig : "", year: d.slice(0, 4), poster: x.poster_path || "", origin: REQ_ORIGINS[x.original_language] || "" };
     }).filter(function (x) { return x.title; });
   });
 }
@@ -1389,9 +1395,9 @@ function reqSuggest(q, focus) {
   reqSearch(q).then(function (items) {
     if (my !== reqSeq || !$("#reqtitre")) return;
     reqItems = items;
-    if (!items.length) { box.innerHTML = '<p class="sgn">Aucun résultat sur TMDB. Essaie un autre titre (original, anglais, romanisé…).</p>'; return; }
+    if (!items.length) { box.innerHTML = '<p class="sgn">Aucun drama ou film coréen, chinois, japonais ou thaï trouvé. Essaie un autre titre (original, anglais, romanisé…).</p>'; return; }
     box.innerHTML = items.map(function (x, i) {
-      var sub = [x.media === "movie" ? "Film" : "Série", x.year, x.en ? "EN : " + x.en : "", x.orig].filter(Boolean).join(" · ");
+      var sub = [x.media === "movie" ? "Film" : "Série", x.origin, x.year, x.en ? "EN : " + x.en : "", x.orig].filter(Boolean).join(" · ");
       return '<button type="button" class="sg" role="option" data-reqpick="' + i + '"><span class="sgp">' + (x.poster ? '<img src="' + esc(IMG + "w92" + x.poster) + '" alt="">' : "") + '</span><span class="sgt"><b>' + esc(x.title) + '</b><small>' + esc(sub) + '</small></span></button>';
     }).join("");
   }).catch(function () {
@@ -2610,7 +2616,7 @@ document.addEventListener("submit", function (e) {
     fetch(REQ_URL, { method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" }, body: JSON.stringify({
       _subject: "DramaByM : demande « " + titre + " »", _captcha: "false", _template: "table",
       "Discord": String(fd.get("discord") || "").trim() || "non renseigné", "Titre": titre, "Demande": ({ stream: "Streaming", dl: "Téléchargement", both: "Streaming + téléchargement" })[String(fd.get("type"))] || "Streaming", "Date de sortie": String(fd.get("date") || "").trim(),
-      "Type": reqSel.media === "movie" ? "Film" : "Série", "Titre anglais": reqSel.en || "", "Titre original": reqSel.orig || "",
+      "Type": reqSel.media === "movie" ? "Film" : "Série", "Origine": reqSel.origin || "", "Titre anglais": reqSel.en || "", "Titre original": reqSel.orig || "",
       "Lien TMDB": "https://www.themoviedb.org/" + (reqSel.media === "movie" ? "movie/" : "tv/") + reqSel.id
     }) }).then(function (r) {
       return r.json().catch(function () { return {}; }).then(function (j) { if (!r.ok || j.success === false || j.success === "false") throw new Error(String(j.message || "refusé par le service")); });
