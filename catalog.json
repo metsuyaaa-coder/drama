@@ -5623,7 +5623,13 @@
               "name": "Épisode 7",
               "overview": "",
               "air_date": "2026-10-18",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-bhugx915dqcd.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -5631,7 +5637,13 @@
               "name": "Épisode 8",
               "overview": "",
               "air_date": "2026-10-18",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-3hhib22j6hag.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -5821,7 +5833,7 @@
       ],
       "downloads": [],
       "posterV": 2,
-      "updatedAt": 1792278921688,
+      "updatedAt": 1792332176414,
       "trend": 89
     },
     {
