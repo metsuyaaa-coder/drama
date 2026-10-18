@@ -490,6 +490,44 @@ dialog#player::-webkit-scrollbar { display: none; }
 button.more { background: none; border: 0; padding: 0; cursor: pointer; }
 .card .poster .rtag { position: absolute; z-index: 1; left: 0; right: 0; bottom: 0; padding: 7px 10px; background: var(--fg); color: var(--bg); font-weight: 700; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; }
 
+/* écrans de chargement : cartes grises animées */
+.sk { background: linear-gradient(100deg, #0d0d0d 30%, #1c1c1c 50%, #0d0d0d 70%) 0 0 / 250% 100%; animation: skShine 1.4s linear infinite; border-radius: 0; }
+@keyframes skShine { from { background-position: 100% 0; } to { background-position: -100% 0; } }
+.sk-hero { height: clamp(260px, 46vh, 460px); border-bottom: 1px solid var(--line); }
+.sk-h { width: 180px; height: 26px; margin: 28px 0 16px; }
+.sk-h.big { width: 240px; height: 40px; margin: 32px 0 20px; }
+.sk-rail { display: flex; gap: 16px; overflow: hidden; }
+.skc { flex: 0 0 168px; min-width: 0; display: grid; gap: 8px; align-content: start; }
+.grid .skc { flex: none; }
+.skc .poster { border-color: transparent; }
+.sk-l { height: 12px; width: 85%; }
+.sk-l.s { width: 50%; }
+.sk-row { height: 74px; margin-bottom: 8px; }
+.sk-detail { display: grid; grid-template-columns: minmax(0, 260px) minmax(0, 1fr); gap: 28px; padding-block: 40px; }
+.sk-detail .skposter { aspect-ratio: 2 / 3; }
+.sk-col { display: grid; gap: 14px; align-content: start; }
+.sk-col .sk-l { width: 100%; height: 14px; }
+.sk-col .sk-l.t { width: 60%; height: 38px; }
+.sk-col .sk-l.s { width: 40%; }
+.sk-col .sk-btn { width: 160px; height: 44px; }
+@media (max-width: 720px) { .sk-detail { grid-template-columns: minmax(0, 1fr); } .sk-detail .skposter { max-width: 220px; } .skc { flex-basis: 140px; } }
+@media (prefers-reduced-motion: reduce) { .sk { animation: none; } }
+
+/* barre d'onglets du bas : seulement dans l'appli installée, sur mobile */
+.tabbar { display: none; }
+@media (max-width: 720px) {
+  html.standalone body { padding-bottom: calc(62px + env(safe-area-inset-bottom, 0px)); }
+  html.standalone .tabbar { display: flex; position: fixed; z-index: 25; left: 0; right: 0; bottom: 0; gap: 0; padding: 0 env(safe-area-inset-right, 0px) env(safe-area-inset-bottom, 0px) env(safe-area-inset-left, 0px); background: rgba(0,0,0,.96); backdrop-filter: blur(10px); border-top: 1px solid var(--line); font-size: 10px; letter-spacing: .06em; text-transform: uppercase; }
+  .tabbar a { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px; padding: 9px 2px 8px; color: var(--dim); position: relative; transition: color .2s; -webkit-tap-highlight-color: transparent; }
+  .tabbar a::after { content: ""; position: absolute; left: 28%; right: 28%; top: -1px; bottom: auto; height: 2px; background: var(--fg); transform: scaleX(0); transition: transform .25s var(--ease); }
+  .tabbar a.on { color: var(--fg); }
+  .tabbar a.on::after { transform: scaleX(1); }
+  .tabbar a svg { width: 22px; height: 22px; }
+  .tabbar a span { line-height: 1; white-space: nowrap; }
+  html.standalone .toast { bottom: calc(80px + env(safe-area-inset-bottom, 0px)); }
+  html.standalone .bar { bottom: calc(62px + env(safe-area-inset-bottom, 0px)); }
+}
+
 /* proposition d'installer l'appli (même style que le message d'accueil) */
 .pwa { position: fixed; z-index: 30; right: 20px; bottom: calc(20px + env(safe-area-inset-bottom, 0px)); width: min(400px, calc(100vw - 24px)); background: #000; color: var(--fg); border: 1px solid var(--line); padding: 18px 44px 18px 18px; display: grid; grid-template-columns: auto 1fr; gap: 6px 14px; align-items: start; animation: dialogIn .3s var(--ease) both; }
 .pwa[hidden] { display: none; }
@@ -705,6 +743,13 @@ footer .wrap.about { display: grid; grid-template-columns: repeat(auto-fit, minm
 </header>
 
 <main id="app"></main>
+<nav class="tabbar" id="tabbar" aria-label="Navigation de l'appli">
+  <a href="/" data-nav="nav-home"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.6 1.8 11.6h3.2V21h5.5v-6h3V21H19v-9.4h3.2z"/></svg><span>Accueil</span></a>
+  <a href="/series" data-nav="nav-series"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8.3 2.3 12 6l3.7-3.7 1.4 1.4L14.8 6H20a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h5.2L6.9 3.7z"/></svg><span>Séries</span></a>
+  <a href="/calendrier" data-nav="nav-cal"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M7 2h2v2h6V2h2v2h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2zM5 10v10h14V10z"/></svg><span>Calendrier</span></a>
+  <a href="/ma-liste" data-nav="nav-list"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"/></svg><span>Ma liste</span></a>
+</nav>
+
 
 <footer>
   <div class="wrap">
@@ -2589,7 +2634,7 @@ function route(force) {
 
   var navId = NAVMAP[a];
   if (a === "serie") { var it = byId(b); navId = it && isMovie(it) ? "nav-films" : "nav-series"; }
-  document.querySelectorAll("nav a").forEach(function (x) { x.classList.toggle("on", x.id === navId); });
+  document.querySelectorAll("nav a").forEach(function (x) { x.classList.toggle("on", (x.id || x.dataset.nav) === navId); });
   $("#count").textContent = db.length + (db.length > 1 ? " fiches" : " fiche");
 
   rerender = null;
@@ -3271,6 +3316,7 @@ $("#btn-info").addEventListener("click", openWelcome);
 /* Installer le site comme une application (Chrome, Edge, Android : bouton direct ; iPhone/iPad : explication) */
 var deferredInstall = null, btnInstall = $("#btn-install");
 var isStandalone = (window.matchMedia && window.matchMedia("(display-mode: standalone)").matches) || navigator.standalone === true;
+if (isStandalone) document.documentElement.classList.add("standalone");
 var isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
 function showInstall(on) { if (btnInstall) btnInstall.hidden = !on; }
 if (!isStandalone) {
@@ -3691,7 +3737,16 @@ function checkBuild() {
   }).catch(function () {});
 }
 document.body.classList.toggle("admin", ADMIN);
-$("#app").innerHTML = '<div class="wrap"><p class="note" style="padding:48px 0">Chargement…</p></div>';
+/* Écran de chargement : cartes grises animées, selon la page ouverte */
+function skeletonHTML() {
+  var p = curPath(), card = '<div class="skc"><div class="poster sk"></div><div class="sk sk-l"></div><div class="sk sk-l s"></div></div>';
+  var many = function (n) { return new Array(n + 1).join(card); }, open = '<div role="status" aria-busy="true" aria-label="Chargement">', close = '</div>';
+  if (p === "/") return open + '<div class="sk sk-hero"></div><div class="wrap"><div class="sk sk-h"></div><div class="sk-rail">' + many(8) + '</div><div class="sk sk-h"></div><div class="sk-rail">' + many(8) + '</div></div>' + close;
+  if (p === "/calendrier") return open + '<div class="wrap"><div class="sk sk-h big"></div>' + new Array(6).join('<div class="sk sk-row"></div>') + '</div>' + close;
+  if (p.indexOf("/serie/") === 0) return open + '<div class="wrap sk-detail"><div class="sk skposter"></div><div class="sk-col"><div class="sk sk-l t"></div><div class="sk sk-l s"></div><div class="sk sk-l"></div><div class="sk sk-l"></div><div class="sk sk-l"></div><div class="sk sk-btn"></div></div></div>' + close;
+  return open + '<div class="wrap"><div class="sk sk-h big"></div><div class="grid">' + many(12) + '</div></div>' + close;
+}
+$("#app").innerHTML = skeletonHTML();
 loadCatalog().then(function () { route(true); backfillAka(); checkBuild(); });
 /* Admins : on regarde le catalogue publié toutes les 60 s (et quand l'onglet redevient visible) pour récupérer suppressions, sources et signal de rafraîchissement */
 var polling = false;
