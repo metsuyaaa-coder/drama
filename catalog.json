@@ -13359,6 +13359,285 @@
       ],
       "downloads": [],
       "updatedAt": 1792286195071
+    },
+    {
+      "id": "297640",
+      "type": "tv",
+      "name": "Filing for Love",
+      "original_name": "은밀한 감사",
+      "origin_country": [
+        "KR"
+      ],
+      "original_language": "ko",
+      "aka": [
+        "Filing for Love",
+        "隐秘的监察",
+        "Arquivando o Amor",
+        "秘戀稽核中",
+        "秘密の監査 -Filing for Love-",
+        "ยื่นคำร้องฉบับเลิฟ",
+        "التقديم من أجل الحب",
+        "Тайный аудит",
+        "Amore sotto processo",
+        "درخواست برای عشق",
+        "Prijava za ljubav",
+        "Amor Bajo Auditoría",
+        "Thanh Tra Bí Mật",
+        "Заявление за любов",
+        "אהבה בניגוד עניינים",
+        "隱袐的監察",
+        "秘恋稽核中",
+        "Secret Audit",
+        "Secret Gratitude",
+        "Secret Appreciation",
+        "은밀한 감사"
+      ],
+      "year": "2026",
+      "overview": "Noh Ki-jun s'impose comme la figure de proue de l'équipe d'audit interne, notamment après avoir mis au jour une affaire de corruption au sein de la direction. Cependant, son ascension tant attendue se transforme en chute libre lorsque l'énigmatique et redoutable Joo In-ah, la nouvelle responsable des audits le rétrograde. Alors qu'il reçoit une information anonymes à propos d'une liaison de sa supérieure, il décide d'enquêter.",
+      "genres": [
+        "Comédie",
+        "Drame"
+      ],
+      "rating": "8.1",
+      "pop": 14.6339,
+      "status": "Ended",
+      "poster": "https://image.tmdb.org/t/p/w500/5dgTRxtP5g07RSH5LEOl367Fuwi.jpg",
+      "posterV": 2,
+      "backdrop": "https://image.tmdb.org/t/p/original/xrzle63zw2MduVGmTFeKNXKqUla.jpg",
+      "cast": [
+        {
+          "name": "Shin Hye-sun",
+          "character": "Joo In-ah"
+        },
+        {
+          "name": "공명",
+          "character": "Noh Ki-jun"
+        },
+        {
+          "name": "김재욱",
+          "character": "Jeon Jae-yeol"
+        },
+        {
+          "name": "홍화연",
+          "character": "Park Ah-jung"
+        },
+        {
+          "name": "오대환",
+          "character": "Mu Kwang-il"
+        },
+        {
+          "name": "장인섭",
+          "character": "Cha Seong-tae"
+        },
+        {
+          "name": "박주희",
+          "character": "Pyeon Hae-young"
+        },
+        {
+          "name": "이광희",
+          "character": "Baek Hyun-kyu"
+        },
+        {
+          "name": "Sim Su-bin",
+          "character": "Yoon Da-ye"
+        },
+        {
+          "name": "배재성",
+          "character": "Seong Du-gi"
+        },
+        {
+          "name": "엄준기",
+          "character": "An Min-su"
+        },
+        {
+          "name": "Kang Sang-jun",
+          "character": "Jeon Seong-yeol"
+        }
+      ],
+      "seasons": [
+        {
+          "number": 1,
+          "name": "Saison 1",
+          "episodes": [
+            {
+              "number": 1,
+              "name": "Up & Down",
+              "overview": "In-a demotes Ki-jun as she becomes the new Director of the Audit Office at HAEMU GROUP.",
+              "air_date": "2026-04-25",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-i3xealvwljel.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 2,
+              "name": "I Am The Best",
+              "overview": "Ki-jun's first case takes a dark turn and escalates into a sudden raid.",
+              "air_date": "2026-04-26",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-zbdpqtaear4e.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 3,
+              "name": "A Woman With A Twist",
+              "overview": "With incriminating evidence in hand, Ki-jun plots his revenge against In-a.",
+              "air_date": "2026-05-02",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-st8xupbn5cjv.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 4,
+              "name": "Playing With Fire",
+              "overview": "Things get complicated as Ki-jun and In-a go on a business trip together.",
+              "air_date": "2026-05-03",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-mk88fbj5zrqb.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 5,
+              "name": "Heart Burn",
+              "overview": "An unspoken tension takes a toll on In-a and Ki-jun's professional relationship.",
+              "air_date": "2026-05-09",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-khhut247u76q.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 6,
+              "name": "Can’t You",
+              "overview": "Ki-jun and In-a join forces to investigate a suspicious accident.",
+              "air_date": "2026-05-10",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-bj52x47qv8x2.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 7,
+              "name": "To Her Lover",
+              "overview": "An anonymous report regarding Jae-yeol comes to light.",
+              "air_date": "2026-05-16",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-ysjaouok8oup.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 8,
+              "name": "Desire & Hope",
+              "overview": "Ki-jun uncovers the truth about Jae-yeol and In-a's past.",
+              "air_date": "2026-05-17",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-pcbykv5fp0ad.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 9,
+              "name": "Love Dive",
+              "overview": "Ki-jun and In-a begin an under-the-radar office romance.",
+              "air_date": "2026-05-23",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-9i2mk0177dcs.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 10,
+              "name": "Irreversible",
+              "overview": "As In-a's past comes back to haunt her, Ki-jun steps in to protect her.",
+              "air_date": "2026-05-24",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-9m7k0eepirqq.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 11,
+              "name": "Hot Issue",
+              "overview": "Ki-jun finds himself dragged back into a previous investigation.",
+              "air_date": "2026-05-30",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-jboi7d8161gn.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 12,
+              "name": "Because I Love You",
+              "overview": "With the fate of the company at stake, Ki-jun and In-a's relationship hangs in the balance.",
+              "air_date": "2026-05-31",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-p4fs9z3y385s.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            }
+          ],
+          "downloads": []
+        }
+      ],
+      "sources": [],
+      "addedAt": 1792286325318,
+      "langs": [
+        "VOSTFR"
+      ],
+      "downloads": [],
+      "updatedAt": 1792286493088
     }
   ],
   "deletedLinks": [
