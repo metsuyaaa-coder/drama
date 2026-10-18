@@ -13638,6 +13638,333 @@
       ],
       "downloads": [],
       "updatedAt": 1792286493088
+    },
+    {
+      "id": "281010",
+      "type": "tv",
+      "name": "Phantom Lawyer",
+      "original_name": "신이랑 법률사무소",
+      "origin_country": [
+        "KR"
+      ],
+      "original_language": "ko",
+      "aka": [
+        "Phantom Lawyer",
+        "神與律師事務所",
+        "神与律师事务所",
+        "قضايا الأرواح",
+        "Luật Sư Bóng Ma",
+        "Advogado Fantasma",
+        "คู่หูทนาย คลายคดีวิญญาณ",
+        "Адвокат призраков",
+        "シン・イラン法律事務所 〜真実は、あの世からやってくる！？～",
+        "وکیل شبح",
+        "Defensores de Fantasmas",
+        "Призрачният адвокат",
+        "עורך דין רפאים",
+        "Sin-i-rang Beom-nyul-sa-mu-so",
+        "Shinyirang Beobryulsamuso",
+        "God and the Law Firm",
+        "Shin I-rang Law Office",
+        "Văn Phòng Luật Sư Shin Rang",
+        "신이랑 법률사무소"
+      ],
+      "year": "2026",
+      "overview": "Un avocat timide qui se met soudainement à voir les fantômes fait équipe avec un avocat d'élite au caractère froid, et ensemble, ils prennent en charge des clients surnaturels dont les affaires inachevées révèlent des vérités enfouies.",
+      "genres": [
+        "Drame",
+        "Science-Fiction & Fantastique",
+        "Mystère",
+        "Comédie"
+      ],
+      "rating": "7.7",
+      "pop": 13.2547,
+      "status": "Ended",
+      "poster": "https://image.tmdb.org/t/p/w500/afLKnB1yzh28YbpbB5Z5xragMf.jpg",
+      "posterV": 2,
+      "backdrop": "https://image.tmdb.org/t/p/original/p98XiePTvNrXegxyKc6n46UJD85.jpg",
+      "cast": [
+        {
+          "name": "Yoo Yeon-seok",
+          "character": "Shin I-rang"
+        },
+        {
+          "name": "Esom",
+          "character": "Han Na-hyun"
+        },
+        {
+          "name": "Jeon Seok-ho",
+          "character": "Yoon Bong-su"
+        },
+        {
+          "name": "Kim Kyung-nam",
+          "character": "Yang Do-kyung"
+        },
+        {
+          "name": "Choi Gwang-il",
+          "character": "Yang Byung-il"
+        },
+        {
+          "name": "Kim Mi-kyung",
+          "character": "Park Gyeong-hwa"
+        },
+        {
+          "name": "손여은",
+          "character": "Shin Sa-rang"
+        },
+        {
+          "name": "Jung Seung-kil",
+          "character": "Priest Matthew"
+        },
+        {
+          "name": "연제형",
+          "character": "Kim Hyun-woo"
+        },
+        {
+          "name": "황현정",
+          "character": "Han Na-hyun (teen)"
+        }
+      ],
+      "seasons": [
+        {
+          "number": 1,
+          "name": "Saison 1",
+          "episodes": [
+            {
+              "number": 1,
+              "name": "A Haunted Law Office",
+              "overview": "Rejected by law firms, Shin I-rang rents an eerie old office and lands his first job: a medical malpractice case for a ghost and his grieving wife.",
+              "air_date": "2026-03-13",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-ukx02cknyecf.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 2,
+              "name": "An Unholy Alliance",
+              "overview": "After ghostly client Lee Gang-pung possesses him, I-rang reconsiders their arrangement — until a crisis renews his conviction.",
+              "air_date": "2026-03-14",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-03pi79k3r32u.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 3,
+              "name": "Death Of High School Girl",
+              "overview": "The ghost of a teenage girl haunts I-rang in his office, demanding he acknowledge her existence and find out who she was.",
+              "air_date": "2026-03-20",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-qz3k8h0rmizk.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 4,
+              "name": "Harmony of the Dead",
+              "overview": "I-rang vows to reveal the true perpetrator behind Su-a's case. With this in mind, he enters a temporary alliance with his lawyer nemesis, Na-hyun.",
+              "air_date": "2026-03-21",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-4btqeebngbp2.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 5,
+              "name": "Guilty Or Innocent?",
+              "overview": "I-rang's new case involves a gifted scientist who died at the hands of his wife. The wife's defense lawyer turns out to be none other than Na-hyun.",
+              "air_date": "2026-03-27",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-d8x0tcnsh8z3.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 6,
+              "name": "New Suspect",
+              "overview": "Mistakenly linked to a murder, I-rang must race against time to solve the case and prove his innocence.",
+              "air_date": "2026-03-28",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-ohfzhv4bvtke.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 7,
+              "name": "Na-hyun's Past",
+              "overview": "When I-rang loses his ability to see ghosts and Na-hyun suffers a career setback, the two cross paths again at the courthouse.",
+              "air_date": "2026-04-03",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-qj9e6tc9iz94.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 8,
+              "name": "I-rang Meets So-hyun",
+              "overview": "A possessed I-rang acts out at a crime scene and gets arrested. While locked up, he discovers the identity of the ghost who caused his outburst.",
+              "air_date": "2026-04-04",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-dgyd49jy72m0.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 9,
+              "name": "Na-hyun's Family",
+              "overview": "Na-hyun spends precious time with her sister thanks to I-rang. But her emotional wounds deepen behind the facade of a happy family reunion.",
+              "air_date": "2026-04-10",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-vgklu9sf16ah.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 10,
+              "name": "The Secret Of I-rang's Old Friend",
+              "overview": "I-rang and Na-hyun officially launch their partnership. On their first day, a vegetable vendor arrives at their office seeking legal help.",
+              "air_date": "2026-04-11",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-nemcy4ze27at.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 11,
+              "name": "Seon-hwa's Past",
+              "overview": "Attorney Yang Do-kyung complicates Na-hyun's case. I-rang and his partner bond and uncover crucial evidence that couldturn the trial in their favor.",
+              "air_date": "2026-04-17",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-pihyl9wtaewe.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 12,
+              "name": "The Missing Child",
+              "overview": "I-rang discovers the tragic truth behind a child's death. Meanwhile, Do-kyung seethes with jealousy as he realizes Na-hyun's heart belongs to another.",
+              "air_date": "2026-04-18",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-0q57rc2il8dr.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 13,
+              "name": "The Truth Revealed",
+              "overview": "After a violent encounter leaves I-rang in a critical state, a desperate Na-hyun confesses a secret as she stands by his side.",
+              "air_date": "2026-04-24",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-vij5ql75fjgf.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 14,
+              "name": "The Past Of My Father",
+              "overview": "The ghost of I-rang's father appears, unaware of the heartache he caused his son. Can they find a way to overcome their painful past?",
+              "air_date": "2026-04-25",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-jmi62y94a4vj.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 15,
+              "name": "The Truth Of Gi-jung's Death",
+              "overview": "As l-rang learns a shocking truth from his father, Do-kyung adds pressure and pushes him toward a breaking point.",
+              "air_date": "2026-05-01",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-yvifdgy0ipaq.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 16,
+              "name": "The Final Confrontation",
+              "overview": "To solve his father's case, I-rang secures a key piece of evidence. But when a new threat jeopardizes his findings, he makes a dangerous gamble.",
+              "air_date": "2026-05-02",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-fdpk7v4zbjr4.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            }
+          ],
+          "downloads": []
+        }
+      ],
+      "sources": [],
+      "addedAt": 1792286620982,
+      "langs": [
+        "VOSTFR"
+      ],
+      "downloads": [],
+      "updatedAt": 1792286830510
     }
   ],
   "deletedLinks": [
