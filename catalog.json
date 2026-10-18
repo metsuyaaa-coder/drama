@@ -13965,6 +13965,302 @@
       ],
       "downloads": [],
       "updatedAt": 1792286830510
+    },
+    {
+      "id": "303143",
+      "type": "tv",
+      "name": "My Royal Nemesis",
+      "original_name": "멋진 신세계",
+      "origin_country": [
+        "KR"
+      ],
+      "original_language": "ko",
+      "aka": [
+        "My Royal Nemesis",
+        "我的王室死对头",
+        "Kẻ Thù Hoàng Gia Của Tôi",
+        "La mia nobile nemica",
+        "ศัตรูหัวใจ นางร้ายวังหลวง",
+        "Моя королівська суперниця",
+        "Mi némesis con aires de realeza",
+        "我的王室死對頭",
+        "Дивный новый мир",
+        "غريمة من البلاط الملكي",
+        "Rivala mea regală",
+        "دشمن سلطنتی من",
+        "Benim Asil Düşmanım",
+        "האויבת המלכותית שלי",
+        "Mój królewski wróg",
+        "Η Βασιλική μου Νέμεσις",
+        "Моят кралски враг",
+        "美丽新世界",
+        "帅气新世界",
+        "Meotjin Shinsegye",
+        "Meot-jin-sin-se-gye",
+        "Wonderful New World",
+        "Brave New World",
+        "Wicked World",
+        "멋진 신세계"
+      ],
+      "year": "2026",
+      "overview": "Condamnée à mourir à l'ère Joseon, une méchante se réveille dans le Séoul moderne et rencontre un héritier sans pitié qui pourrait être sa dernière chance de réécrire son destin.",
+      "genres": [
+        "Drame",
+        "Comédie",
+        "Science-Fiction & Fantastique"
+      ],
+      "rating": "8.7",
+      "pop": 14.755,
+      "status": "Ended",
+      "poster": "https://image.tmdb.org/t/p/w500/rYLQbyIvbEd0lF84iXrx7CbPcBB.jpg",
+      "posterV": 2,
+      "backdrop": "https://image.tmdb.org/t/p/original/p1ntnKJwn1URGv1xpU6NN33Y11O.jpg",
+      "cast": [
+        {
+          "name": "Im Ji-yeon",
+          "character": "Shin Seo-ri / Kang Dan-sim"
+        },
+        {
+          "name": "Heo Nam-jun",
+          "character": "Cha Se-gye / Yi Hyeon"
+        },
+        {
+          "name": "Jang Seung-jo",
+          "character": "Choi Mun-do / King An-jeong"
+        },
+        {
+          "name": "Kim Min-seok",
+          "character": "Bae Gwang-nam"
+        },
+        {
+          "name": "Lee Se-hee",
+          "character": "Yoon Ji-hyo"
+        },
+        {
+          "name": "Yoon Byung-hee",
+          "character": "Son Jae-han"
+        },
+        {
+          "name": "윤주상",
+          "character": "Cha Dal-su"
+        },
+        {
+          "name": "Chae Seo-an",
+          "character": "Mo Tae-hee"
+        }
+      ],
+      "seasons": [
+        {
+          "number": 1,
+          "name": "Saison 1",
+          "episodes": [
+            {
+              "number": 1,
+              "name": "L'Enchanteresse et la Bête",
+              "overview": "Condamnée à mort par empoisonnement, la concubine royale Kang Dan-sim voit sa vie s'achever avant de se réveiller dans un tout autre monde : celui de la Corée d'aujourd'hui.",
+              "air_date": "2026-05-08",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-ppzqm6rhvpfe.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 2,
+              "name": "Un guide pour optimiser son destin",
+              "overview": "Dan-sim essaie de s'adapter à son nouvel environnement, mais son comportement étrange attire l'attention de Cha Se-gye, un riche héritier… qui lui fait alors une proposition.",
+              "air_date": "2026-05-09",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-vd727hsr32eo.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 3,
+              "name": "Une toute nouvelle réalité",
+              "overview": "Se-gye se rend compte qu'il ne peut s'empêcher de penser à Shin Seo-ri, surtout lorsqu'un rêve étrange fait naître en lui des sentiments inhabituels.",
+              "air_date": "2026-05-15",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-3dmd5g6704l5.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 4,
+              "name": "Au-delà de l'entendement",
+              "overview": "Dan-sim en apprend davantage sur le passé de Seo-ri. Alors qu'elle passe plus de temps avec Se-gye, des signaux dissonants les poussent à mettre leurs sentiments à l'épreuve.",
+              "air_date": "2026-05-16",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-bc7yt5syyoz1.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 5,
+              "name": "Le Fruit défendu",
+              "overview": "Troublé par le comportement de Seo-ri, Se-gye met tout en œuvre pour conquérir son cœur. Seo-ri doit quant à elle gérer une partenaire agaçante et des tensions sur le plateau.",
+              "air_date": "2026-05-22",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-cpytkozel2av.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 6,
+              "name": "Une nuit de magie",
+              "overview": "Seo-ri et Se-gye s'envolent pour Jeju, mais Se-gye se retrouve dans une situation d'urgence. Plus tard, Seo-ri disparaît et Se-gye, fou d'inquiétude, part à sa recherche.",
+              "air_date": "2026-05-23",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-mdb721hm0ibl.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 7,
+              "name": "La face cachée de la lune",
+              "overview": "Les sentiments de Seo-ri envers Se-gye grandissent, mais sont remis en question quand Mo Tae-hee revendique également Se-gye. Soudainement, Se-gye a des ennuis.",
+              "air_date": "2026-05-29",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-ln2d41e0oe4q.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 8,
+              "name": "Au diable ce monde",
+              "overview": "Tae-hee annonce ses fiançailles à Se-gye à la presse, irritant Se-gye et alimentant la jalousie de Seo-ri. Choi Mun-do menace Seo-ri avec une demande.",
+              "air_date": "2026-05-30",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-n28h6qzi452j.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 9,
+              "name": "Un premier amour",
+              "overview": "Se-gye affronte Seo-ri au sujet de son identité – qui est Dan-sim? Seo-ri doit faire face à son passé et prendre une décision quant à sa relation avec Se-gye.",
+              "air_date": "2026-06-05",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-2szu8f4p3315.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 10,
+              "name": "Espoir, désespoir et désir",
+              "overview": "Le lien entre Seo-ri et Dan-sim est révélé. Se-gye et Dan-sim officialisent leur relation. Un Mun-do furieux prend des mesures extrêmes pour se venger.",
+              "air_date": "2026-06-06",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-kc52it9qhj76.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 11,
+              "name": "Sur le chemin caché",
+              "overview": "Dan-sim se réveille à l'époque Joseon et cherche à regagner le présent, pendant que Se-gye subit les retombées des manigances de Mun-do.",
+              "air_date": "2026-06-12",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-wap9dv19wrz6.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 12,
+              "name": "Rattraper le temps perdu",
+              "overview": "Les univers de Dan-sim et Seo-ri s'entrechoquent. Se-gye emmène Dan-sim chez quelqu'un qui lui est cher, et elle lui avoue qu'il ne leur reste plus beaucoup de temps.",
+              "air_date": "2026-06-13",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-olyhxhtvz4tc.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 13,
+              "name": "Coup du sort",
+              "overview": "La santé de la grand-mère de Seo-ri se détériore. Plus tard, Dan-sim fait face à un cruel ultimatum... qui met en péril son avenir avec Se-gye.",
+              "air_date": "2026-06-19",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-99tvtnuwclk0.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 14,
+              "name": "My Royal Nemesis",
+              "overview": "La décision de Dan-sim la renvoie à l'époque Joseon, tandis que Se-gye reste seul et inconsolable dans le monde moderne. Le destin leur permettra-t-il de se retrouver malgré tout?",
+              "air_date": "2026-06-20",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-lokig8pehks1.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            }
+          ],
+          "downloads": []
+        }
+      ],
+      "sources": [],
+      "addedAt": 1792286938298,
+      "langs": [
+        "VOSTFR"
+      ],
+      "downloads": [],
+      "updatedAt": 1792287131678
     }
   ],
   "deletedLinks": [
