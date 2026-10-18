@@ -1646,7 +1646,7 @@ document.addEventListener("change", function (e) {
   if (sel && isHead()) heroDraft[+sel.dataset.i] = sel.value;
 });
 
-/* ===== Sélection de l'équipe (modifiable par le Head admin, publiée dans catalog.json > team) =====
+/* ===== Sélection de l'équipe (modifiable par le Head admin, publiée dans catalog.json > team) ===== */
 var TEAMKEY = "noir.team", TEAM = readJSON(TEAMKEY, null), teamEditing = false;
 function teamSave() { try { localStorage.setItem(TEAMKEY, JSON.stringify(TEAM)); } catch (e) {} }
 function adoptTeam(data) {
