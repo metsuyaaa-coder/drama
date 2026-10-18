@@ -2022,7 +2022,14 @@
                   "by": "head"
                 }
               ],
-              "downloads": []
+              "downloads": [
+                {
+                  "name": "1FICHIER",
+                  "url": "https://1fichier.com/?eotret37jcq58tvr7xp8",
+                  "quality": "1080p (H.264)",
+                  "by": "head"
+                }
+              ]
             },
             {
               "number": 9,
@@ -2066,7 +2073,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792339898006
+      "updatedAt": 1792340083691
     },
     {
       "id": "314939",
