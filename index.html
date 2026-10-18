@@ -1131,6 +1131,10 @@ footer .wrap.about { display: grid; grid-template-columns: repeat(auto-fit, minm
 #btn-info { display: inline-flex; align-items: center; gap: 7px; font-weight: 700; color: var(--fg); letter-spacing: .04em; }
 #btn-info svg { width: 16px; height: 16px; flex: none; }
 .about .btn svg { width: 18px; height: 18px; flex: none; }
+footer #btn-install { background: var(--fg); color: var(--bg); border: 1px solid var(--fg); padding: 11px 22px; text-decoration: none; }
+footer #btn-install:hover { background: transparent; color: var(--fg); }
+footer #btn-install[hidden] { display: none; }
+footer #btn-install svg { width: 18px; height: 18px; flex: none; }
 </style>
 <!-- Visites du site : Vercel Web Analytics, sans cookie ni base de données. Ne fait rien tant que tu ne l'actives pas dans Vercel (onglet Analytics). -->
 <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
@@ -1186,7 +1190,7 @@ footer .wrap.about { display: grid; grid-template-columns: repeat(auto-fit, minm
     <span id="count">0 FICHE</span>
     <div class="links">
       <button id="btn-info" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg><span>INFOS DU SITE</span></button>
-      <button id="btn-install" type="button" hidden>Installer l'application</button>
+      <button id="btn-install" class="btn" type="button" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg><span>Installer l'application</span></button>
       <button id="btn-export" type="button" class="admin-only">Publier (catalog.json)</button>
       <button id="btn-import" type="button" class="admin-only">Importer</button>
       <button id="btn-key" type="button" class="admin-only">Clé TMDB</button>
