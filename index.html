@@ -829,7 +829,7 @@ var db = ADMIN ? readJSON(STORE, []).map(normalize) : [];
 /* Réglages du site (téléchargement public ou privé). Les visiteurs les lisent dans catalog.json ; l'admin les garde sur son navigateur. */
 var SETKEY = "noir.settings";
 var SETTINGS = { downloads: "public" };
-if (ADMIN) { var _st = readJSON(SETKEY, null); if (_st && _st.downloads === "private") SETTINGS.downloads = "private"; if (_st && "player" in _st) { SETTINGS.player = _st.player; SETTINGS.playerAt = +_st.playerAt || 0; } }
+if (ADMIN) { var _st = readJSON(SETKEY, null); if (_st && _st.downloads === "private") SETTINGS.downloads = "private"; if (_st && "player" in _st) { SETTINGS.player = _st.player; SETTINGS.playerAt = +_st.playerAt || 0; } if (_st && Array.isArray(_st.order)) { SETTINGS.order = _st.order; SETTINGS.orderAt = +_st.orderAt || 0; } }
 function saveSettings() { try { localStorage.setItem(SETKEY, JSON.stringify(SETTINGS)); } catch (e) {} }
 var PREVIEW = false;
 function dlAdmin() { return ADMIN && !PREVIEW; }
@@ -937,8 +937,8 @@ function textToSrc(text) {
   return numberDupes(out);
 }
 
-/* Maximum 3 sources par épisode ou par film (les liens de téléchargement ne sont pas concernés) */
-var MAX_SRC = 3, lastCapWarn = 0;
+/* Maximum 4 sources par épisode ou par film (les liens de téléchargement ne sont pas concernés) */
+var MAX_SRC = 4, lastCapWarn = 0;
 function capSrc(arr) {
   arr = arr || [];
   if (arr.length > MAX_SRC) {
@@ -2160,6 +2160,7 @@ var PREFERRED = "playmate";
 /* Lecteur par défaut pour tout le monde : choisi par le Head admin (settings.player dans catalog.json). Vide = première source de la liste. */
 function defaultPlayer() { return SETTINGS.player == null ? PREFERRED : String(SETTINGS.player); }
 function defaultSrc(sources) {
+  if (hasOrder()) { var k = (sources || []).indexOf(orderSources(sources)[0]); return k < 0 ? 0 : k; }
   var P = defaultPlayer().toLowerCase().trim();
   if (!P) return 0;
   for (var i = 0; i < (sources || []).length; i++) {
@@ -2169,27 +2170,51 @@ function defaultSrc(sources) {
   return 0;
 }
 function adoptPlayer(st) {
-  if (!st || !("player" in st)) return;
-  if (!ADMIN || (+st.playerAt || 0) >= (+SETTINGS.playerAt || 0)) { SETTINGS.player = st.player; SETTINGS.playerAt = +st.playerAt || 0; if (ADMIN) saveSettings(); }
+  if (!st) return;
+  if ("player" in st && (!ADMIN || (+st.playerAt || 0) >= (+SETTINGS.playerAt || 0))) { SETTINGS.player = st.player; SETTINGS.playerAt = +st.playerAt || 0; if (ADMIN) saveSettings(); }
+  if (Array.isArray(st.order) && (!ADMIN || (+st.orderAt || 0) >= (+SETTINGS.orderAt || 0))) { SETTINGS.order = st.order; SETTINGS.orderAt = +st.orderAt || 0; if (ADMIN) saveSettings(); }
+}
+/* Ordre des sources choisi par le Head admin : 1re, 2e, 3e, 4e… (les serveurs absents de la liste passent après) */
+function srcKey(x) { return String(x && x.name || "").replace(/\s+\d+$/, "").trim().toLowerCase(); }
+function hasOrder() { return Array.isArray(SETTINGS.order) && SETTINGS.order.length > 0; }
+function orderSources(sources) {
+  sources = sources || [];
+  if (!hasOrder() || sources.length < 2) return sources;
+  var o = SETTINGS.order, n = o.length;
+  return sources.map(function (x, i) { var r = o.indexOf(srcKey(x)); return { x: x, i: i, r: r < 0 ? n : r }; })
+    .sort(function (a, b) { return (a.r - b.r) || (a.i - b.i); })
+    .map(function (z) { return z.x; });
 }
 function playerCounts() {
   var m = {}, add = function (a) { (a || []).forEach(function (x) { var n = String(x && x.name || "").replace(/\s+\d+$/, "").trim().toLowerCase(); if (n) m[n] = (m[n] || 0) + 1; }); };
   db.forEach(function (f) { add(f.sources); (f.seasons || []).forEach(function (se) { (se.episodes || []).forEach(function (ep) { add(ep.sources); }); }); });
   return m;
 }
+function srcRowsHtml(names, m) {
+  return names.map(function (n, k) {
+    return '<div class="srcrow" data-name="' + esc(n) + '" style="display:flex;align-items:center;gap:10px;border:1px solid var(--line);padding:8px 12px">' +
+      '<b class="srcn" style="font-family:var(--mono);width:22px;color:var(--dim)">' + (k + 1) + '</b>' +
+      '<span style="flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis">' + esc(n.toUpperCase()) + ' <small class="note">(' + (m[n] || 0) + ' source' + ((m[n] || 0) > 1 ? "s" : "") + ')</small></span>' +
+      '<button class="btn ghost small" type="button" data-srcup aria-label="Monter">&uarr;</button>' +
+      '<button class="btn ghost small" type="button" data-srcdown aria-label="Descendre">&darr;</button></div>';
+  }).join("");
+}
 function playerSection() {
   if (!isHead()) return "";
-  var m = playerCounts(), cur0 = SETTINGS.player == null ? PREFERRED : String(SETTINGS.player).toLowerCase();
-  if (cur0 && m[cur0] == null) m[cur0] = 0;
-  var names = Object.keys(m).sort(function (a, b) { return (m[b] - m[a]) || (a < b ? -1 : 1); });
-  var opts = '<option value="__auto__"' + (!cur0 ? " selected" : "") + '>Automatique (première source de la liste)</option>' +
-    names.map(function (n) { return '<option value="' + esc(n) + '"' + (n === cur0 ? " selected" : "") + '>' + esc(n.toUpperCase()) + ' (' + m[n] + ' source' + (m[n] > 1 ? "s" : "") + ')</option>'; }).join("");
-  return '<div style="display:grid;gap:12px"><h3 class="note" style="margin:0;text-transform:uppercase;letter-spacing:.08em">Lecteur par défaut</h3>' +
-    '<div class="row"><select id="def-player" style="background:var(--bg);color:var(--fg);border:1px solid var(--line);border-radius:0;padding:10px 12px;min-width:260px">' + opts + '</select><button class="btn" type="button" id="def-player-save">Appliquer à tout le monde</button></div>' +
-    '<p class="note" style="margin:0">C\'est le serveur qui se lance en premier pour tous les visiteurs et admins. S\'il n\'existe pas sur un film ou un épisode, c\'est la première source qui est prise. Chacun peut toujours changer de serveur dans le lecteur.</p></div>';
+  var m = playerCounts(), names = [];
+  if (hasOrder()) SETTINGS.order.forEach(function (n) { if (names.indexOf(n) < 0) { names.push(n); if (m[n] == null) m[n] = 0; } });
+  else { var d = String(defaultPlayer() || "").toLowerCase(); if (d) { names.push(d); if (m[d] == null) m[d] = 0; } }
+  Object.keys(m).sort(function (a, b) { return (m[b] - m[a]) || (a < b ? -1 : 1); }).forEach(function (n) { if (names.indexOf(n) < 0) names.push(n); });
+  return '<div style="display:grid;gap:12px"><h3 class="note" style="margin:0;text-transform:uppercase;letter-spacing:.08em">Ordre des sources</h3>' +
+    '<div id="srclist" style="display:grid;gap:6px;max-width:520px">' + (names.length ? srcRowsHtml(names, m) : '<p class="note" style="margin:0">Aucune source dans le catalogue pour l\'instant.</p>') + '</div>' +
+    '<div class="row"><button class="btn" type="button" id="src-order-save">Appliquer à tout le monde</button><button class="btn ghost" type="button" id="src-order-reset">Réinitialiser</button></div>' +
+    '<p class="note" style="margin:0">Classe les serveurs avec les flèches : le n°1 se lance en premier et apparaît en premier dans le lecteur, puis le n°2, le n°3, le n°4. Si un film ou un épisode n\'a pas un serveur, on passe au suivant. Chacun peut toujours changer de serveur dans le lecteur.</p></div>';
 }
 function play(sources, title, idx, sub, nav, dls) {
   if (!sources || !sources.length) { toast("Aucune source sur cette fiche"); return; }
+  var picked = sources[idx || 0];
+  sources = orderSources(sources);
+  idx = Math.max(0, sources.indexOf(picked));
   cur = { sources: sources, i: idx || 0, title: title, sub: sub || "", nav: nav || null, dl: dls || [] };
   var dlg = $("#player");
   renderPlayer();
@@ -2823,6 +2848,7 @@ function ghPublish(obj, tried) {
     if (remote && remote.team && (!TEAM || (+remote.team.at || 0) > (+TEAM.at || 0))) obj.team = remote.team; else if (TEAM) obj.team = TEAM;
     var rps = remote && remote.settings;
     if (rps && "player" in rps && (+rps.playerAt || 0) > (+SETTINGS.playerAt || 0) && obj.settings) { obj.settings.player = rps.player; obj.settings.playerAt = rps.playerAt; }
+    if (rps && Array.isArray(rps.order) && (+rps.orderAt || 0) > (+SETTINGS.orderAt || 0) && obj.settings) { obj.settings.order = rps.order; obj.settings.orderAt = rps.orderAt; }
     var rfa = Math.max(+(remote && remote.refreshAt) || 0, +readJSON(RFKEY, 0) || 0); if (rfa) obj.refreshAt = rfa;
     return fetch(url + "?ref=" + encodeURIComponent(gi.branch), { headers: ghHeaders(), cache: "no-store" });
   }).then(function (r) {
@@ -2868,6 +2894,7 @@ function buildCatalogObj() {
   var tt = finalTombs(null);
   var obj = { settings: { downloads: SETTINGS.downloads }, series: list, deletedLinks: tt.links, deletedFiches: tt.fiches };
   if (SETTINGS.player != null) { obj.settings.player = SETTINGS.player; obj.settings.playerAt = SETTINGS.playerAt || 0; }
+  if (Array.isArray(SETTINGS.order)) { obj.settings.order = SETTINGS.order; obj.settings.orderAt = SETTINGS.orderAt || 0; }
   var rf0 = +readJSON(RFKEY, 0) || 0; if (rf0) obj.refreshAt = rf0;
   if (TEAM) obj.team = TEAM;
   return obj;
@@ -2919,6 +2946,28 @@ document.addEventListener("click", function (e) {
   var c = e.target.closest("[data-clickid]");
   if (c) { var el = document.getElementById(c.dataset.clickid); if (el) el.click(); return; }
   if (e.target.id === "btn-pull") { ghPull(); return; }
+  var mv = e.target.closest("[data-srcup],[data-srcdown]");
+  if (mv) {
+    if (!isHead()) return;
+    var row = mv.closest(".srcrow"), lst = row && row.parentNode; if (!lst) return;
+    if (mv.hasAttribute("data-srcup")) { if (row.previousElementSibling) lst.insertBefore(row, row.previousElementSibling); }
+    else if (row.nextElementSibling) lst.insertBefore(row.nextElementSibling, row);
+    Array.prototype.forEach.call(lst.querySelectorAll(".srcn"), function (b, k) { b.textContent = k + 1; });
+    return;
+  }
+  if (e.target.id === "src-order-save") {
+    if (!isHead()) return;
+    SETTINGS.order = Array.prototype.map.call(document.querySelectorAll("#srclist .srcrow"), function (r) { return r.dataset.name; });
+    SETTINGS.orderAt = Date.now(); saveSettings();
+    toast(autoSyncOn() ? "Ordre des sources enregistré pour tout le monde" : "Ordre des sources enregistré. Clique sur « Publier » pour l'appliquer à tout le monde.");
+    markDirty(); return;
+  }
+  if (e.target.id === "src-order-reset") {
+    if (!isHead()) return;
+    SETTINGS.order = []; SETTINGS.orderAt = Date.now(); saveSettings();
+    toast(autoSyncOn() ? "Ordre réinitialisé pour tout le monde" : "Ordre réinitialisé. Clique sur « Publier » pour l'appliquer.");
+    markDirty(); if (curPath() === "/panel") viewPanel(); return;
+  }
   if (e.target.id === "def-player-save") {
     if (!isHead()) return;
     var sel = $("#def-player"); if (!sel) return;
@@ -3104,7 +3153,7 @@ function pruneFiche(f, t) {
     var n = o[k].filter(function (x) { return !(x && x.url && isLinkDead(f.id, x.url, t.links)); });
     if (n.length !== o[k].length) { o[k] = n; ch = true; }
   };
-  var cap = function (o) { if (o && o.sources && o.sources.length > MAX_SRC) { o.sources = o.sources.slice(0, MAX_SRC); ch = true; } };   /* maximum 3 sources par film / épisode */
+  var cap = function (o) { if (o && o.sources && o.sources.length > MAX_SRC) { o.sources = o.sources.slice(0, MAX_SRC); ch = true; } };   /* maximum 4 sources par film / épisode */
   p(f, "sources"); p(f, "downloads"); cap(f);
   (f.seasons || []).forEach(function (se) { p(se, "downloads"); (se.episodes || []).forEach(function (ep) { p(ep, "sources"); p(ep, "downloads"); cap(ep); }); });
   return ch;
