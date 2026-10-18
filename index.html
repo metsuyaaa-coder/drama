@@ -1481,6 +1481,14 @@ document.addEventListener("click", function (e) {
   }
 });
 
+/* ordre aléatoire de la rangée « Séries » : change à chaque ouverture du site, mais reste stable quand l'accueil se redessine */
+var shufKey = {};
+function shuffleStable(arr) {
+  return arr.slice().sort(function (a, b) {
+    var ka = shufKey[a.id] = shufKey[a.id] || Math.random(), kb = shufKey[b.id] = shufKey[b.id] || Math.random();
+    return ka - kb;
+  });
+}
 function viewHome() {
   clearInterval(heroTimer); heroTimer = null;
   var app = $("#app");
@@ -1506,8 +1514,8 @@ function viewHome() {
   var newTv = tv.filter(function (s) { return newSeries(s); });
   if (newTv.length) html += rail("Nouvelles séries", newTv);
   html += rail("Derniers ajouts", list);
-  if (tv.length && mv.length) html += rail("Séries", tv, "/series") + rail("Films", mv, "/films");
   html += teamBlock();
+  if (tv.length && mv.length) html += rail("Séries", shuffleStable(tv), "/series") + rail("Films", mv, "/films");
   var ml = listItems();
   if (ml.length) html += rail("Ma liste", ml, "/ma-liste");
   $("#app").innerHTML = html;
