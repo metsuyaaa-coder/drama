@@ -377,6 +377,18 @@ dialog#player:not(.wide) .pframe { margin-left: env(safe-area-inset-left, 0px); 
 .tbtn:hover { color: var(--fg); border-color: var(--dim); }
 .pbar .pl { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; min-width: 0; }
 .pbar .srcs { flex: 0 1 auto; }
+/* Mobile, plus de 3 serveurs : un seul bouton qui déroule la liste */
+.srctoggle { display: none; }
+@media (max-width: 720px) {
+  .pbar .pl .srcs.many { flex: 1 0 100%; }
+  .srcs.many .srctoggle { display: flex; align-items: center; justify-content: space-between; gap: 10px; width: 100%; padding: 10px 12px; border: 1px solid var(--fg); background: transparent; color: var(--fg); font-size: 12px; text-transform: uppercase; letter-spacing: .07em; cursor: pointer; border-radius: 0; text-align: left; }
+  .srctoggle .nm { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-weight: 700; }
+  .srctoggle .cnt { font-family: var(--mono); color: var(--dim); }
+  .srctoggle svg { width: 14px; height: 14px; flex: none; transition: transform .25s var(--ease); }
+  .srctoggle[aria-expanded="true"] svg { transform: rotate(180deg); }
+  .srcs.many:not(.open) .chip { display: none; }
+  .srcs.many.open .chip { flex: 1 1 calc(50% - 6px); padding: 10px 12px; text-align: left; }
+}
 .pbar .pone { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; min-width: 0; font-size: 13px; color: var(--dim); }
 .pbar .pone a { color: var(--fg); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
 .pbar .pn { display: flex; gap: 8px; margin-left: auto; }
@@ -2299,7 +2311,9 @@ function renderPlayer() {
   $("#pnext").disabled = !(cur.nav && cur.nav.next);
   $("#pext").href = url;
   $("#pstage").innerHTML = '<iframe src="' + esc(url) + '" allowfullscreen webkitallowfullscreen mozallowfullscreen allow="autoplay; fullscreen; picture-in-picture; encrypted-media"></iframe>';
-  $("#psrc").innerHTML = cur.sources.length > 1 ? cur.sources.map(function (x, k) {
+  var many = cur.sources.length > 3;
+  $("#psrc").className = "srcs" + (many ? " many" : "");
+  $("#psrc").innerHTML = cur.sources.length > 1 ? (many ? '<button type="button" class="srctoggle" data-srctoggle aria-expanded="false" aria-label="Changer de serveur"><span class="nm">' + esc((cur.sources[cur.i] || {}).name || "") + '</span><span class="cnt">' + (cur.i + 1) + '/' + cur.sources.length + '</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>' : '') + cur.sources.map(function (x, k) {
     return '<button type="button" class="chip' + (k === cur.i ? " on" : "") + '" data-src="' + k + '">' + esc(x.name) + '</button>';
   }).join("") : "";
   watchSource();
@@ -2536,6 +2550,8 @@ document.addEventListener("click", function (e) {
     if (window.confirm("Effacer tout l'historique « Reprendre » ?\n\nLes films et séries en cours disparaîtront de cette liste. Tes épisodes vus et ta liste ne sont pas touchés.")) { clearResume(); viewHome(); toast("Historique effacé"); }
     return;
   }
+  var st = e.target.closest("[data-srctoggle]");
+  if (st) { var sb = st.closest(".srcs"), so = sb.classList.toggle("open"); st.setAttribute("aria-expanded", so ? "true" : "false"); return; }
   var rd = e.target.closest("[data-resumedel]");
   if (rd) { e.preventDefault(); e.stopPropagation(); removeResume(rd.dataset.resumedel); viewHome(); return; }
   var t = e.target.closest("[data-resume],[data-watch],[data-movsrc],[data-playep],[data-src],[data-del],[data-list],[data-listtab],[data-seen],[data-seenseason],[data-genre],[data-langf],[data-newf],[data-kdf],[data-dlf],[data-typef],[data-pick],[data-bulk],[data-dlbulk],[data-dltab],#save,#applytpl,#refreshall,#manual,#manualfilm,#refresh,#copyhash");
