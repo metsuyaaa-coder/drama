@@ -6378,7 +6378,13 @@
               "name": "Épisode 12",
               "overview": "",
               "air_date": "2026-10-16",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-3fr020xr9xxz.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -6616,7 +6622,7 @@
       ],
       "downloads": [],
       "posterV": 2,
-      "updatedAt": 1792279091206,
+      "updatedAt": 1792332420330,
       "trend": 65
     },
     {
