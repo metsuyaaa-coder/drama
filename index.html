@@ -25,6 +25,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://image.tmdb.org">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Big+Shoulders+Display:wght@700;900&family=Hanken+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 /* Concept : interface noir et blanc, seules les affiches gardent leurs couleurs */
@@ -930,6 +931,25 @@ footer .wrap.about { display: grid; grid-template-columns: repeat(auto-fit, minm
   .dlbtns { grid-template-columns: 1fr; }
   .dlsteps li { padding: 9px 10px; }
 }
+
+/* chargement du profil acteur : puzzle qui s'assemble */
+.pzl { display: flex; align-items: center; gap: 18px; padding: 22px 0 6px; }
+.pzl svg { flex: none; width: 84px; height: 84px; overflow: visible; }
+.pzp { fill: #fff; stroke: #000; stroke-width: 1.4; stroke-linejoin: round; transform-box: fill-box; transform-origin: center; animation: pzfly 2.8s cubic-bezier(.2, .9, .3, 1) infinite both; }
+.pz-b { fill: #bdbdbd; animation-delay: .12s; }
+.pz-c { fill: #8c8c8c; animation-delay: .24s; }
+.pz-d { fill: #86efac; animation-delay: .36s; }
+@keyframes pzfly {
+  0% { opacity: 0; transform: translate(var(--dx), var(--dy)) rotate(var(--r)) scale(.6); }
+  20% { opacity: 1; }
+  42% { opacity: 1; transform: none; }
+  49% { transform: scale(1.08); }
+  56% { transform: none; }
+  84% { opacity: 1; transform: none; }
+  100% { opacity: 0; transform: translate(var(--dx), var(--dy)) rotate(var(--r)) scale(.6); }
+}
+.pzt b { display: block; font-weight: 700; font-size: 15px; }
+.pzt small { display: block; margin-top: 2px; font-family: var(--mono); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--dim); }
 </style>
 <!-- Visites du site : Vercel Web Analytics, sans cookie ni base de données. Ne fait rien tant que tu ne l'actives pas dans Vercel (onglet Analytics). -->
 <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
@@ -3521,20 +3541,80 @@ function fillActor(p, key) {
   box.innerHTML = (rows.length ? '<dl class="actfacts">' + rows.map(function (r) { return '<dt>' + r[0] + '</dt><dd>' + r[1] + '</dd>'; }).join("") + '</dl>' : "") +
     (p.bio ? '<p class="actbio' + (long ? " clamp" : "") + '" id="actbio">' + esc(p.bio) + '</p>' + (long ? '<button type="button" class="btn small ghost actmore" data-actmore>Lire la suite</button>' : "") : "");
 }
-function loadPerson(key, items) {
+/* Profil acteur : cache durable (14 jours, 60 acteurs max), requête partagée et préchargée dès qu'on survole ou touche le nom */
+var PERSONTTL = 14 * 86400000, PERSONIDX = "noir.personIdx", PERSONMAX = 60, personWait = {}, personFail = {};
+function personCached(key) {
   var hit = personCache[key];
-  if (!hit) { try { hit = JSON.parse(sessionStorage.getItem("noir.person." + key) || "null"); } catch (e) { hit = null; } }
-  if (hit && hit.id) { personCache[key] = hit; fillActor(hit, key); return; }
+  if (!hit) { try { var o = JSON.parse(localStorage.getItem("noir.person." + key) || "null"); if (o && o.p && o.p.id && Date.now() - o.t < PERSONTTL) hit = o.p; } catch (e) {} }
+  if (hit && hit.id) { personCache[key] = hit; return hit; }
+  return null;
+}
+function personStore(key, p) {
+  try {
+    var q = Object.assign({}, p); if (q.bio) q.bio = String(q.bio).slice(0, 2500);
+    localStorage.setItem("noir.person." + key, JSON.stringify({ t: Date.now(), p: q }));
+    var idx = readJSON(PERSONIDX, []); if (!Array.isArray(idx)) idx = [];
+    idx = idx.filter(function (k) { return k !== key; }); idx.push(key);
+    while (idx.length > PERSONMAX) localStorage.removeItem("noir.person." + idx.shift());
+    localStorage.setItem(PERSONIDX, JSON.stringify(idx));
+  } catch (e) {}
+}
+function personFetch(key, items) {
+  var c = personCached(key); if (c) return Promise.resolve(c);
+  if (personWait[key]) return personWait[key];
   var shown = actorEntry(items[0], key).name || "";
   var titles = []; items.slice(0, 6).forEach(function (s) { titles.push(s.original_name || s.name); if (s.original_name && s.name) titles.push(s.name); });
-  fetch("/api/person?name=" + encodeURIComponent(shown) + "&language=" + encodeURIComponent(CONFIG.LANG || "fr-FR") + "&titles=" + encodeURIComponent(titles.join("|")))
+  var pr = fetch("/api/person?name=" + encodeURIComponent(shown) + "&language=" + encodeURIComponent(CONFIG.LANG || "fr-FR") + "&titles=" + encodeURIComponent(titles.join("|")))
     .then(function (r) { if (!r.ok) throw new Error("x"); return r.json(); })
     .then(function (p) {
       if (!p || !p.id) throw new Error("x");
-      personCache[key] = p; try { sessionStorage.setItem("noir.person." + key, JSON.stringify(p)); } catch (e) {}
-      fillActor(p, key);
-    })
+      personCache[key] = p; personStore(key, p); delete personWait[key]; return p;
+    }, function (e) { delete personWait[key]; personFail[key] = Date.now(); throw e; });
+  personWait[key] = pr;
+  return pr;
+}
+function loadPerson(key, items) {
+  var c = personCached(key);
+  if (c) { fillActor(c, key); return; }
+  personFetch(key, items).then(function (p) { fillActor(p, key); })
     .catch(function () { if (curActor === key && $("#actinfo")) $("#actinfo").innerHTML = ""; });
+}
+function prefetchActor(el) {
+  var a = el && el.closest ? el.closest("a[href^='/acteur/']") : null; if (!a) return;
+  var m = /^\/acteur\/(.+)$/.exec(a.getAttribute("href") || ""), name;
+  if (!m) return;
+  try { name = decodeURIComponent(m[1]); } catch (e) { return; }
+  var key = fold(name), items = actorTitles(name);
+  if (!items.length || personCached(key) || (personFail[key] && Date.now() - personFail[key] < 30000)) return;
+  personFetch(key, items).catch(function () {});
+}
+document.addEventListener("mouseover", function (e) { prefetchActor(e.target); });
+document.addEventListener("touchstart", function (e) { prefetchActor(e.target); }, { passive: true });
+document.addEventListener("focusin", function (e) { prefetchActor(e.target); });
+/* petit puzzle 2 x 2 : les quatre pièces glissent, s'emboîtent, puis recommencent */
+function puzzleHTML() {
+  var S = 40, R = 7;
+  function piece(x, y, tp, rt, bt, lf) {
+    var h = S / 2, d = "M" + x + " " + y;
+    var arc = function (v, x2, y2) { return " A" + R + " " + R + " 0 0 " + (v > 0 ? 1 : 0) + " " + x2 + " " + y2; };
+    if (tp) d += " H" + (x + h - R) + arc(tp, x + h + R, y);
+    d += " H" + (x + S);
+    if (rt) d += " V" + (y + h - R) + arc(rt, x + S, y + h + R);
+    d += " V" + (y + S);
+    if (bt) d += " H" + (x + h + R) + arc(bt, x + h - R, y + S);
+    d += " H" + x;
+    if (lf) d += " V" + (y + h + R) + arc(lf, x, y + h - R);
+    return d + " Z";
+  }
+  var P = [
+    ["a", 0, 0, 0, 1, 1, 0, -34, -30, -28],
+    ["b", S, 0, 0, 0, -1, -1, 34, -30, 24],
+    ["c", 0, S, -1, 1, 0, 0, -34, 30, 22],
+    ["d", S, S, 1, 0, 0, -1, 34, 30, -26]
+  ];
+  return '<div class="pzl" role="status" aria-label="Chargement du profil"><svg viewBox="-10 -10 100 100" aria-hidden="true">' + P.map(function (q) {
+    return '<path class="pzp pz-' + q[0] + '" style="--dx:' + q[7] + 'px;--dy:' + q[8] + 'px;--r:' + q[9] + 'deg" d="' + piece(q[1], q[2], q[3], q[4], q[5], q[6]) + '"/>';
+  }).join("") + '</svg><div class="pzt"><b>Chargement du profil</b><small>Photo, biographie, naissance…</small></div></div>';
 }
 function viewActor(name) {
   var key = fold(name); curActor = key;
@@ -3547,7 +3627,7 @@ function viewActor(name) {
     '<div class="wrap actor"><div class="actphoto" id="actphoto"><div class="ph">' + esc(shown.charAt(0)) + '</div></div>' +
     '<div class="actmain"><button type="button" class="btn small ghost" data-actback>‹ Retour</button>' +
     '<h1>' + esc(shown) + '</h1><p class="actnative" id="actnative"></p><p class="note">' + esc(count) + '</p>' +
-    '<div id="actinfo"><div class="sk sk-l" style="margin-top:22px"></div><div class="sk sk-l s"></div></div></div></div>' +
+    '<div id="actinfo">' + puzzleHTML() + '</div></div></div>' +
     '<div class="wrap"><div class="section-head"><h2>Dans le catalogue</h2></div><div class="grid" style="padding-top:8px">' +
     items.map(function (s, i) {
       var role = actorEntry(s, key).character;
@@ -4776,7 +4856,7 @@ document.addEventListener("keydown", function (e) { if (e.key === "Escape") rmCl
 window.addEventListener("resize", rmClose);
 window.addEventListener("popstate", rmClose);
 /* Version du site : les admins qui ont encore une ancienne page en cache la rechargent automatiquement */
-var BUILD = "2026-10-18-dlmodal";
+var BUILD = "2026-10-18-acteur";
 function checkBuild() {
   if (!ADMIN || draft || teamEditing || heroEditing) return;
   fetch(location.href, { cache: "reload" }).then(function (r) { return r.text(); }).then(function (t) {
