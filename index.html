@@ -353,6 +353,7 @@ footer button:hover, footer a:hover { color: var(--fg); }
 .setbtn.on { color: var(--bg); background: var(--fg); border-color: var(--fg); }
 @media (max-width: 720px) { .setbtn { display: none; } }
 @media (min-width: 721px) { #nav-set { display: none; } .search { margin-right: 14px; } }
+html.notips #ptip { display: none !important; }
 html.noanim *, html.noanim *::before, html.noanim *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 /* page Paramètres */
 .sset { display: grid; gap: 24px; padding-top: 24px; padding-bottom: 80px; }
@@ -2095,10 +2096,10 @@ function shuffleStable(arr) {
 var PREFKEY = "noir.prefs";
 var PREFS = (function () {
   var p = readJSON(PREFKEY, {}); if (!p || typeof p !== "object" || Array.isArray(p)) p = {};
-  return { noanim: !!p.noanim, rememberPlayer: !!p.rememberPlayer, lastPlayer: String(p.lastPlayer || ""), order: Array.isArray(p.order) ? p.order.filter(function (x) { return typeof x === "string"; }) : [] };
+  return { noanim: !!p.noanim, hideTips: !!p.hideTips, rememberPlayer: !!p.rememberPlayer, lastPlayer: String(p.lastPlayer || ""), order: Array.isArray(p.order) ? p.order.filter(function (x) { return typeof x === "string"; }) : [] };
 })();
 function savePrefs() { try { localStorage.setItem(PREFKEY, JSON.stringify(PREFS)); } catch (e) { toast("Stockage plein ou bloqué par le navigateur"); } }
-function applyPrefs() { document.documentElement.classList.toggle("noanim", PREFS.noanim); }
+function applyPrefs() { document.documentElement.classList.toggle("noanim", PREFS.noanim); document.documentElement.classList.toggle("notips", PREFS.hideTips); }
 applyPrefs();
 function rememberServer() {
   if (!PREFS.rememberPlayer) return;
@@ -2132,9 +2133,12 @@ function viewSettings() {
   $("#app").innerHTML = '<div class="wrap listhead sethead"><h1>Paramètres</h1><p class="note">Ces réglages sont enregistrés sur cet appareil.</p></div><div class="wrap sset">' +
     '<section class="spanel">' +
       switchRow("noanim", "Désactiver toutes les animations", "Coupe les animations et les transitions du site.", PREFS.noanim) +
+      switchRow("hideTips", "Cacher le carrousel d'astuces", "Masque les astuces en bas du lecteur.", PREFS.hideTips) +
       switchRow("rememberPlayer", "Se souvenir du dernier lecteur", "Relance directement le serveur choisi en dernier, quand il est disponible sur le titre.", PREFS.rememberPlayer) +
     '</section>' +
     '<section class="spanel"><h2 class="sh">Ordre des catégories</h2><p class="note">Change l\'ordre des rangées de la page d\'accueil avec les flèches.</p><div id="catlist">' + catRowsHtml() + '</div><div class="row"><button type="button" class="btn ghost small" data-catreset>Réinitialiser</button></div></section>' +
+    '<section class="spanel"><h2 class="sh">Mes données</h2><p class="note">Ta liste, tes épisodes vus, ta reprise de lecture et tes réglages sont enregistrés sur cet appareil. Exporte-les pour les retrouver sur un autre appareil.</p><div class="row"><button type="button" class="btn small" data-dexport>Exporter</button><button type="button" class="btn ghost small" data-dimport>Importer</button><input type="file" id="dfile" accept="application/json,.json" hidden></div></section>' +
+    '<section class="spanel"><h2 class="sh">Réinitialiser mon compte</h2><p class="note">Efface ta liste, tes épisodes vus, ta reprise de lecture et tes réglages sur cet appareil. Impossible à annuler : pense à exporter avant.</p><div class="row"><button type="button" class="btn ghost small" data-dreset>Réinitialiser</button></div></section>' +
     '<section class="spanel soon"><h2 class="sh">Bientôt</h2><p class="note">D\'autres paramètres arrivent bientôt.</p></section></div>';
 }
 document.addEventListener("click", function (e) {
@@ -2158,6 +2162,54 @@ document.addEventListener("click", function (e) {
   if (e.target.closest("[data-catreset]")) { PREFS.order = []; savePrefs(); $("#catlist").innerHTML = catRowsHtml(); toast("Ordre réinitialisé"); }
 });
 
+var USER_KEYS = ["noir.seen", "noir.list", "noir.resume", "noir.prefs", "noir.fit"];
+function exportData() {
+  var out = { app: "dramabym", v: 1, at: new Date().toISOString(), data: {} };
+  USER_KEYS.forEach(function (k) { try { var v = localStorage.getItem(k); if (v != null) out.data[k] = v; } catch (e) {} });
+  var a = document.createElement("a");
+  a.href = URL.createObjectURL(new Blob([JSON.stringify(out, null, 2)], { type: "application/json" }));
+  a.download = "dramabym-donnees.json";
+  document.body.appendChild(a); a.click();
+  setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 500);
+  toast("Données exportées");
+}
+function importData(file) {
+  var r = new FileReader();
+  r.onload = function () {
+    var o; try { o = JSON.parse(r.result); } catch (e) { toast("Fichier invalide"); return; }
+    if (!o || o.app !== "dramabym" || !o.data || typeof o.data !== "object") { toast("Ce fichier n'est pas une sauvegarde DramaByM"); return; }
+    var n = 0;
+    USER_KEYS.forEach(function (k) {
+      var v = o.data[k]; if (typeof v !== "string") return;
+      if (k !== "noir.fit") { try { JSON.parse(v); } catch (e) { return; } }
+      try { localStorage.setItem(k, v); n++; } catch (e) {}
+    });
+    if (!n) { toast("Rien à importer dans ce fichier"); return; }
+    toast("Données importées, rechargement…");
+    setTimeout(function () { location.replace("/parametres"); }, 700);
+  };
+  r.readAsText(file);
+}
+var resetTimer = null;
+document.addEventListener("change", function (e) {
+  if (e.target && e.target.id === "dfile" && e.target.files && e.target.files[0]) { importData(e.target.files[0]); e.target.value = ""; }
+});
+document.addEventListener("click", function (e) {
+  if (e.target.closest("[data-dexport]")) { exportData(); return; }
+  if (e.target.closest("[data-dimport]")) { var f = $("#dfile"); if (f) f.click(); return; }
+  var rb = e.target.closest("[data-dreset]");
+  if (rb) {
+    if (rb.dataset.armed) {
+      clearTimeout(resetTimer);
+      USER_KEYS.forEach(function (k) { try { localStorage.removeItem(k); } catch (x) {} });
+      toast("Compte réinitialisé");
+      setTimeout(function () { location.replace("/"); }, 600);
+    } else {
+      rb.dataset.armed = "1"; rb.textContent = "Confirmer (clique encore)";
+      resetTimer = setTimeout(function () { delete rb.dataset.armed; rb.textContent = "Réinitialiser"; }, 4000);
+    }
+  }
+});
 function viewHome() {
   clearInterval(heroTimer); heroTimer = null;
   var app = $("#app");
