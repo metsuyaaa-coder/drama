@@ -64,7 +64,7 @@ img { max-width: 100%; display: block; }
 
 /* en-tête */
 header.top { position: sticky; top: 0; z-index: 20; padding-top: env(safe-area-inset-top, 0px); background: rgba(0,0,0,.92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
-header.top .wrap { display: flex; align-items: center; gap: 24px; min-height: 64px; }
+header.top .wrap { display: flex; align-items: center; gap: 24px; min-height: 64px; max-width: none; margin: 0; padding-left: max(24px, env(safe-area-inset-left, 0px)); padding-right: max(24px, env(safe-area-inset-right, 0px)); }
 .logo { font-family: var(--display); font-weight: 900; font-size: 32px; letter-spacing: .04em; text-transform: uppercase; line-height: 1; transition: opacity .2s; }
 .logo:hover { opacity: .7; }
 nav { display: flex; gap: 20px; font-size: 14px; letter-spacing: .08em; text-transform: uppercase; color: var(--dim); }
@@ -485,24 +485,6 @@ dialog#player::-webkit-scrollbar { display: none; }
 button.more { background: none; border: 0; padding: 0; cursor: pointer; }
 .card .poster .rtag { position: absolute; z-index: 1; left: 0; right: 0; bottom: 0; padding: 7px 10px; background: var(--fg); color: var(--bg); font-weight: 700; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; }
 
-/* menu latéral (PC) : mêmes pages que le menu du haut, qu'il remplace sur grand écran */
-.side { display: none; }
-@media (min-width: 1100px) {
-  body { padding-left: 230px; }
-  header.top nav#mainnav { display: none; }
-  .side { display: flex; flex-direction: column; gap: 4px; position: fixed; z-index: 15; left: 0; top: 65px; bottom: 0; width: 230px; padding: 20px 12px 24px; background: #000; border-right: 1px solid var(--line); overflow-y: auto; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; }
-  .side .sidelbl { font-family: var(--mono); font-size: 11px; color: var(--dim); padding: 0 14px 8px; }
-  .side .sidegap { flex: 1; min-height: 16px; }
-  .side a, .side button { display: flex; align-items: center; gap: 14px; width: 100%; padding: 12px 14px; border: 1px solid transparent; background: none; color: var(--dim); font: inherit; letter-spacing: inherit; text-transform: inherit; text-align: left; cursor: pointer; transition: color .2s, background .2s, border-color .2s; }
-  .side a::after { display: none; }
-  .side a:hover, .side button:hover { color: var(--fg); background: var(--panel); }
-  .side a.on { background: var(--fg); color: var(--bg); font-weight: 700; }
-  .side a.on:hover { background: var(--fg); color: var(--bg); }
-  .side button[hidden] { display: none; }
-  .side svg { width: 20px; height: 20px; flex: none; }
-  .side a svg, .side button svg { margin: 0; }
-}
-
 /* proposition d'installer l'appli (même style que le message d'accueil) */
 .pwa { position: fixed; z-index: 30; right: 20px; bottom: calc(20px + env(safe-area-inset-bottom, 0px)); width: min(400px, calc(100vw - 24px)); background: #000; color: var(--fg); border: 1px solid var(--line); padding: 18px 44px 18px 18px; display: grid; grid-template-columns: auto 1fr; gap: 6px 14px; align-items: start; animation: dialogIn .3s var(--ease) both; }
 .pwa[hidden] { display: none; }
@@ -716,21 +698,6 @@ footer .wrap.about { display: grid; grid-template-columns: repeat(auto-fit, minm
     <div class="search"><input id="q" type="text" placeholder="Rechercher un titre" autocomplete="off" aria-label="Rechercher dans le catalogue"><div class="sugg" id="sugg" hidden></div></div>
   </div>
 </header>
-
-<nav class="side" id="sidenav" aria-label="Menu principal">
-  <span class="sidelbl">Menu</span>
-    <a href="/" data-nav="nav-home"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.6 1.8 11.6h3.2V21h5.5v-6h3V21H19v-9.4h3.2z"/></svg><span>Accueil</span></a>
-    <a href="/series" data-nav="nav-series"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8.3 2.3 12 6l3.7-3.7 1.4 1.4L14.8 6H20a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h5.2L6.9 3.7z"/></svg><span>Séries</span></a>
-    <a href="/films" data-nav="nav-films"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M4 3h16a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zM5 5v2h2V5zm0 4v2h2V9zm0 4v2h2v-2zm0 4v2h2v-2zM17 5v2h2V5zm0 4v2h2V9zm0 4v2h2v-2zm0 4v2h2v-2zM9 5v14h6V5z"/></svg><span>Films</span></a>
-    <a href="/calendrier" data-nav="nav-cal"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M7 2h2v2h6V2h2v2h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2zM5 10v10h14V10z"/></svg><span>Calendrier</span></a>
-    <a href="/ma-liste" data-nav="nav-list"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"/></svg><span>Ma liste</span></a>
-    <a href="/demande" data-nav="nav-req"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1 5h-2v4H7v2h4v4h2v-4h4v-2h-4z"/></svg><span>Demande</span></a>
-    <a href="/ajouter" data-nav="nav-add" class="admin-only"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11 4h2v7h7v2h-7v7h-2v-7H4v-2h7z"/></svg><span>Ajouter</span></a>
-    <a href="/panel" data-nav="nav-panel" class="admin-only"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 1 3 5v6c0 5.500 3.800 10.700 9 12 5.200-1.300 9-6.500 9-12V5z"/></svg><span>Admin</span></a>
-  <span class="sidegap"></span>
-  <button type="button" id="side-install" hidden><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11 3h2v9l3-3 1.4 1.4L12 16l-5.4-5.6L8 9l3 3zM5 19h14v2H5z"/></svg><span>Installer l'appli</span></button>
-  <button type="button" id="side-info"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm-1 5h2v2h-2zm0 4h2v6h-2z"/></svg><span>Infos du site</span></button>
-</nav>
 
 <main id="app"></main>
 
@@ -2617,7 +2584,7 @@ function route(force) {
 
   var navId = NAVMAP[a];
   if (a === "serie") { var it = byId(b); navId = it && isMovie(it) ? "nav-films" : "nav-series"; }
-  document.querySelectorAll("nav a").forEach(function (x) { x.classList.toggle("on", (x.id || x.dataset.nav) === navId); });
+  document.querySelectorAll("nav a").forEach(function (x) { x.classList.toggle("on", x.id === navId); });
   $("#count").textContent = db.length + (db.length > 1 ? " fiches" : " fiche");
 
   rerender = null;
@@ -3295,14 +3262,12 @@ $("#welcome-ok").addEventListener("click", closeWelcome);
 $("#welcome").addEventListener("click", function (e) { if (e.target === this || e.target.closest("a[href]")) closeWelcome(); });
 $("#welcome").addEventListener("close", function () { try { localStorage.setItem(WELKEY, "1"); } catch (e) {} });
 $("#btn-info").addEventListener("click", openWelcome);
-$("#side-info").addEventListener("click", openWelcome);
-$("#side-install").addEventListener("click", function () { if (btnInstall) btnInstall.click(); });
 
 /* Installer le site comme une application (Chrome, Edge, Android : bouton direct ; iPhone/iPad : explication) */
 var deferredInstall = null, btnInstall = $("#btn-install");
 var isStandalone = (window.matchMedia && window.matchMedia("(display-mode: standalone)").matches) || navigator.standalone === true;
 var isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
-function showInstall(on) { if (btnInstall) btnInstall.hidden = !on; var si = $("#side-install"); if (si) si.hidden = !on; }
+function showInstall(on) { if (btnInstall) btnInstall.hidden = !on; }
 if (!isStandalone) {
   if (isIOS) showInstall(true);
   window.addEventListener("beforeinstallprompt", function (e) { e.preventDefault(); deferredInstall = e; showInstall(true); });
