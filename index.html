@@ -355,7 +355,9 @@ footer button:hover, footer a:hover { color: var(--fg); }
 @media (min-width: 721px) { #nav-set { display: none; } .search { margin-right: 14px; } }
 html.noanim *, html.noanim *::before, html.noanim *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 /* page Paramètres */
-.sset { display: grid; gap: 24px; max-width: 760px; padding-bottom: 80px; }
+.sset { display: grid; gap: 24px; padding-top: 24px; padding-bottom: 80px; }
+.sset > .spanel { max-width: 760px; }
+.listhead.sethead { padding-top: 16px; }
 .spanel { border: 1px solid var(--line); background: #050505; }
 .spanel .sh { margin: 0; padding: 18px 20px 4px; font-family: var(--display); font-weight: 700; font-size: 22px; text-transform: uppercase; letter-spacing: .03em; }
 .spanel > .note { margin: 0; padding: 0 20px 14px; }
@@ -2121,7 +2123,7 @@ function switchRow(id, title, desc, on) {
   return '<div class="srow"><div><b>' + esc(title) + '</b><small>' + esc(desc) + '</small></div><button type="button" class="sw' + (on ? " on" : "") + '" role="switch" aria-checked="' + (on ? "true" : "false") + '" aria-label="' + esc(title) + '" data-pref="' + id + '"><i></i></button></div>';
 }
 function viewSettings() {
-  $("#app").innerHTML = '<div class="wrap listhead"><h1>Paramètres</h1><p class="note">Ces réglages sont enregistrés sur cet appareil.</p></div><div class="wrap sset">' +
+  $("#app").innerHTML = '<div class="wrap listhead sethead"><h1>Paramètres</h1><p class="note">Ces réglages sont enregistrés sur cet appareil.</p></div><div class="wrap sset">' +
     '<section class="spanel">' +
       switchRow("noanim", "Désactiver toutes les animations", "Coupe les animations et les transitions du site.", PREFS.noanim) +
       switchRow("rememberPlayer", "Se souvenir du dernier lecteur", "Relance directement le serveur choisi en dernier, quand il est disponible sur le titre.", PREFS.rememberPlayer) +
