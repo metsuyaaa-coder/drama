@@ -14875,6 +14875,281 @@
       ],
       "downloads": [],
       "updatedAt": 1792288057870
+    },
+    {
+      "id": "289424",
+      "type": "tv",
+      "name": "We Are All Trying Here",
+      "original_name": "모두가 자신의 무가치함과 싸우고 있다",
+      "origin_country": [
+        "KR"
+      ],
+      "original_language": "ko",
+      "aka": [
+        "We Are All Trying Here",
+        "努力克服自卑的我们",
+        "A Gente Tenta",
+        "誰だって無価値な自分と闘っている",
+        "努力克服自卑的我們",
+        "Il nostro meglio",
+        "เราต่างพยายามสุดใจ",
+        "Ми всі тут стараємося",
+        "معا نحاول",
+        "Hacemos lo que podemos",
+        "Cuộc Chiến Trong Chúng Ta",
+        "Încercăm și noi",
+        "De notre mieux",
+        "Каждый борется со своей собственной никчёмностью",
+        "ما همه داریم تلاش می‌کنیم",
+        "כולנו משתדלים",
+        "Όλοι Εδώ Προσπαθούμε",
+        "모두가 자신의 무가치함과 싸우고 있다"
+      ],
+      "year": "2026",
+      "overview": "Un réalisateur, qui cherche en vain à percer depuis 20 ans, touche le fond… jusqu'au jour où il rencontre une productrice débordée qui l'aide à retrouver l'estime de soi.",
+      "genres": [
+        "Drame"
+      ],
+      "rating": "8.6",
+      "pop": 12.652,
+      "status": "Ended",
+      "poster": "https://image.tmdb.org/t/p/original/c2jswCrMoqDEBEXwSAlrCWtXdfZ.jpg",
+      "posterV": 2,
+      "backdrop": "https://image.tmdb.org/t/p/original/4ZXZi107TbfBJFGT4cnqbavQIoc.jpg",
+      "cast": [
+        {
+          "name": "Koo Kyo-hwan",
+          "character": "Hwang Dong-man"
+        },
+        {
+          "name": "Go Youn-jung",
+          "character": "Byeon Eun-a"
+        },
+        {
+          "name": "Oh Jung-se",
+          "character": "Park Kyeong-se"
+        },
+        {
+          "name": "Kang Mal-geum",
+          "character": "Ko Hye-jin"
+        },
+        {
+          "name": "Park Hae-joon",
+          "character": "Hwang Jin-man"
+        },
+        {
+          "name": "Bae Jong-ok",
+          "character": "Oh Jeong-hee"
+        },
+        {
+          "name": "Han Seon-hwa",
+          "character": "Jang Mi-ran"
+        },
+        {
+          "name": "최원영",
+          "character": "Choi Dong-hyeon"
+        },
+        {
+          "name": "Jeon Bae-soo",
+          "character": "Park Yeong-soo"
+        },
+        {
+          "name": "Sim Hee-seop",
+          "character": "Lee Jun-hwan"
+        },
+        {
+          "name": "박예니",
+          "character": "Choi Hyo-jin"
+        },
+        {
+          "name": "배명진",
+          "character": "Lee Gi-ri"
+        }
+      ],
+      "seasons": [
+        {
+          "number": 1,
+          "name": "Saison 1",
+          "episodes": [
+            {
+              "number": 1,
+              "name": "Épisode 1",
+              "overview": "After 20 years trying to make his debut film, Hwang Dong-man flails through life, irritating his director friends — until one day he meets Byeon Eun-a.",
+              "air_date": "2026-04-18",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-4o98tw5ub3oa.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 2,
+              "name": "Épisode 2",
+              "overview": "While Dong-man deals with rock bottom, Ko Hye-jin delivers devastating news. Meanwhile, Eun-a seeks counseling as she struggles at work.",
+              "air_date": "2026-04-19",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-ss3phunpt7oj.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 3,
+              "name": "Épisode 3",
+              "overview": "Dong-man slowly grows closer to Eun-a. Later, he makes an enemy of Park Gyeong-se — whose film opens to negative critical reception.",
+              "air_date": "2026-04-25",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-u70y8f6ghreu.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 4,
+              "name": "Épisode 4",
+              "overview": "Gyeong-se sets his revenge against Dong-man in motion — playing dirty. Meanwhile, Eun-a faces mounting hostility and pressure at work.",
+              "air_date": "2026-04-26",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-cl6v5tnv8z3h.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 5,
+              "name": "Épisode 5",
+              "overview": "Tired of enduring contempt from his peers, Dong-man confronts Gyeong-se. He later chastises Ma Jae-yeong over his relationship with Eun-a.",
+              "air_date": "2026-05-02",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-evenli34cr40.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 6,
+              "name": "Épisode 6",
+              "overview": "Dong-man rushes to share a meal with Eun-a — but is met with a surprise. Later, Eun-a receives a phone call that stops her in her tracks.",
+              "air_date": "2026-05-03",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-igvbzjymuffq.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 7,
+              "name": "Épisode 7",
+              "overview": "As Dong-man and Eun-a's bond deepens, they both make decisions about their scripts. Eun-a and Oh Jeong-hui finally come face-to-face in a tense moment.",
+              "air_date": "2026-05-09",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-osi0xeskobll.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 8,
+              "name": "Épisode 8",
+              "overview": "When Dong-man learns that Jae-yeong is about to begin filming, he becomes consumed by envy. Meanwhile, Eun-a decides to confront Jeong-hui directly.",
+              "air_date": "2026-05-10",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-ml0fo2dedz43.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 9,
+              "name": "Épisode 9",
+              "overview": "Just as Dong-man is about to debut, his fears haunt him — but Eun-a offers her brand of support. Meanwhile, Eun-a's secret script garners interest.",
+              "air_date": "2026-05-16",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-0xzh1axzr9mh.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 10,
+              "name": "Épisode 10",
+              "overview": "Desperate to cast Noh Kang-sik, Dong-man takes matters into his own hands. Meanwhile, Eun-a grows uneasy as Jeong-hui involves herself in her project.",
+              "air_date": "2026-05-17",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-ain5hxei680e.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 11,
+              "name": "Épisode 11",
+              "overview": "An envious man seeks inner peace while feeling isolated in a world where others seem to always succeed.",
+              "air_date": "2026-05-23",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-8mmxdq5q8z2l.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 12,
+              "name": "Épisode 12",
+              "overview": "Eun-a takes a bold step forward in resilience. As Dong-man grows increasingly impatient with production timing, will he finally release his film?",
+              "air_date": "2026-05-24",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-634ezu5jlns3.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            }
+          ],
+          "downloads": []
+        }
+      ],
+      "sources": [],
+      "addedAt": 1792288185485,
+      "langs": [
+        "VOSTFR"
+      ],
+      "downloads": [],
+      "updatedAt": 1792288352767
     }
   ],
   "deletedLinks": [
