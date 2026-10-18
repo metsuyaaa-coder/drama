@@ -2025,6 +2025,9 @@
       "origin_country": [
         "KR"
       ],
+      "networks": [
+        "KBS2"
+      ],
       "original_language": "ko",
       "aka": [
         "不是你的恋爱",
@@ -2064,6 +2067,7 @@
       "pop": 40.8795,
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/w500/iKgdhgBPi1cCRRqsUgaxUDRuFP6.jpg",
+      "posterV": 2,
       "backdrop": "https://image.tmdb.org/t/p/original/moUjiEzpJVNZc7hyNRBbLPt0CPX.jpg",
       "cast": [
         {
@@ -2354,8 +2358,8 @@
             },
             {
               "number": 9,
-              "name": "Épisode 9",
-              "overview": "",
+              "name": "Do You Remember When We Fell in Love?",
+              "overview": "Mi-do tells her family she is quitting directing. Meanwhile, she and Namgung begin dating other people. As soon as they do, Su-a makes a bold move while Tae-seung takes a provocative step.",
               "air_date": "2026-10-17",
               "sources": [
                 {
@@ -2450,8 +2454,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "posterV": 2,
-      "updatedAt": 1792336252506
+      "updatedAt": 1792336385960
     },
     {
       "id": "290193",
