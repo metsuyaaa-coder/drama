@@ -837,6 +837,7 @@ footer .wrap.about { display: grid; grid-template-columns: repeat(auto-fit, minm
     <div class="ptip" id="ptip"><button type="button" class="tbtn" id="tprev" aria-label="Conseil précédent">‹</button><p id="ttext" aria-live="polite"></p><button type="button" class="tbtn" id="tnext" aria-label="Conseil suivant">›</button><span id="tcount"></span></div>
     <div class="pl" id="pl"><span class="chiplbl">Serveur</span><span class="srcs" id="psrc"></span></div>
     <div class="pone" id="pone" style="display:none"><span>Besoin d'une autre source ou celle-ci bug ?</span><a href="/demande" id="pdemande">/demande</a></div>
+    <div class="pone" id="prep"><span>Ce serveur ne marche pas ?</span><a href="#" id="preport">Signaler le lien mort</a></div>
     <div class="pone" id="pone2" style="display:none"><span>Besoin d'un lien de téléchargement ?</span><a href="/demande" id="pdemande2">/demande</a></div>
     <div class="pn" id="pnav"><button class="btn small ghost" id="pprev" type="button">Épisode précédent</button><button class="btn small ghost" id="peplist" type="button" aria-label="Liste des épisodes" title="Épisodes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="9" width="14" height="11" rx="1.5"/><path d="M7 5.5h12.5A1.5 1.5 0 0 1 21 7v9"/><path d="M11 2.5h8.5A1.5 1.5 0 0 1 21 4"/></svg><span>Épisodes</span></button><button class="btn small" id="pnext" type="button">Épisode suivant</button></div>
   </div>
@@ -1539,6 +1540,28 @@ function todayKey() { var d = new Date(); return d.getFullYear() + "-" + (d.getM
 function reqToday() { var r = readJSON("noir.reqDay", null); return r && r.d === todayKey() ? (+r.n || 0) : 0; }
 function bumpReq() { try { localStorage.setItem("noir.reqDay", JSON.stringify({ d: todayKey(), n: reqToday() + 1 })); } catch (e) {} }
 var REQ_URL = "https://formsubmit.co/ajax/318f68b57ef527181c572ab6c865d64a";
+/* Notifications Discord : le site appelle /api/notify (api/notify.js), qui garde l'adresse du webhook secrète. Aucune base de données. */
+var NOTIFY_URL = "/api/notify";
+function notifyDiscord(payload) {
+  return fetch(NOTIFY_URL, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload), keepalive: true })
+    .then(function (r) { return r.ok; }, function () { return false; });
+}
+/* Signaler un lien mort : une fois par lien et par appareil (24 h), 10 signalements par jour maximum */
+function reportDead() {
+  var s = cur.sources && cur.sources[cur.i]; if (!s) return;
+  var key = (cur.title || "") + "|" + (cur.sub || "") + "|" + s.url, now = Date.now(), seen = readJSON("noir.reported", {}), n = 0;
+  Object.keys(seen).forEach(function (k) { if (now - seen[k] > 86400000) delete seen[k]; else n++; });
+  if (seen[key]) { toast("Tu as déjà signalé ce lien, merci !"); return; }
+  if (n >= 10) { toast("Limite de signalements atteinte pour aujourd'hui"); return; }
+  notifyDiscord({ kind: "deadlink", title: cur.title || "", sub: cur.sub || "", source: s.name || "", url: s.url || "", page: location.href }).then(function (ok) {
+    if (!ok) { toast("Impossible d'envoyer le signalement pour l'instant"); return; }
+    seen[key] = Date.now(); try { localStorage.setItem("noir.reported", JSON.stringify(seen)); } catch (e) {}
+    toast("Merci, le lien est signalé !");
+  });
+}
+document.addEventListener("click", function (e) {
+  if (e.target.closest("#preport")) { e.preventDefault(); reportDead(); }
+});
 function viewRequest(pre, kind) {
   kind = kind === "dl" ? "dl" : kind === "both" ? "both" : "stream";
   var t = ""; try { t = decodeURIComponent(pre || ""); } catch (e) { t = pre || ""; }
@@ -3068,13 +3091,18 @@ document.addEventListener("submit", function (e) {
     if (!reqSel || String(fd.get("titre") || "").trim() !== reqSel.fill) { authError(rf, "Choisis ton titre dans la liste TMDB avant d'envoyer la demande."); var ti = $("#reqtitre"); if (ti) { ti.focus(); reqSuggest(ti.value, true); } return; }
     var rb = rf.querySelector("button[type=submit]"); rb.disabled = true; rb.textContent = "Envoi…";
     var titre = String(fd.get("titre") || "").trim();
-    fetch(REQ_URL, { method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" }, body: JSON.stringify({
+    var emailErr = null;
+    var mailP = fetch(REQ_URL, { method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" }, body: JSON.stringify({
       _subject: "DramaByM : demande « " + titre + " »", _captcha: "false", _template: "table",
       "Discord": String(fd.get("discord") || "").trim() || "non renseigné", "Titre": titre, "Demande": ({ stream: "Streaming", dl: "Téléchargement", both: "Streaming + téléchargement" })[String(fd.get("type"))] || "Streaming", "Date de sortie": String(fd.get("date") || "").trim(),
       "Type": reqSel.media === "movie" ? "Film" : "Série", "Origine": reqSel.origin || "", "Titre anglais": reqSel.en || "", "Titre original": reqSel.orig || "",
       "Lien TMDB": "https://www.themoviedb.org/" + (reqSel.media === "movie" ? "movie/" : "tv/") + reqSel.id
     }) }).then(function (r) {
       return r.json().catch(function () { return {}; }).then(function (j) { if (!r.ok || j.success === false || j.success === "false") throw new Error(String(j.message || "refusé par le service")); });
+    }).then(function () { return true; }, function (err) { emailErr = err; return false; });
+    var discP = notifyDiscord({ kind: "request", titre: titre, media: reqSel.media, tmdbId: reqSel.id, date: String(fd.get("date") || "").trim(), origin: reqSel.origin || "", en: reqSel.en || "", orig: reqSel.orig || "", poster: reqSel.poster || "", demande: String(fd.get("type") || "stream"), discord: String(fd.get("discord") || "").trim() });
+    Promise.all([mailP, discP]).then(function (ok) {
+      if (!ok[0] && !ok[1]) throw emailErr || new Error("réessaie dans un moment.");
     }).then(function () {
       try { localStorage.setItem("noir.reqAt", String(Date.now())); } catch (er) {}
       bumpReq();
