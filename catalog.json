@@ -16411,6 +16411,220 @@
       ],
       "downloads": [],
       "updatedAt": 1792291081966
+    },
+    {
+      "id": "300710",
+      "type": "tv",
+      "name": "Whether or Not",
+      "original_name": "できても、できなくても",
+      "origin_country": [
+        "JP"
+      ],
+      "original_language": "ja",
+      "aka": [
+        "Whether or Not",
+        "成与不成",
+        "Puedas o no",
+        "即使能夠，也無妨不能",
+        "Voce Consegue ou Não?",
+        "能做，也做不了",
+        "做得成，做不成",
+        "Dekitemo Dekinakutemo",
+        "できても、できなくても"
+      ],
+      "year": "2025",
+      "overview": "",
+      "genres": [
+        "Drame"
+      ],
+      "rating": "5.0",
+      "pop": 2.6502,
+      "status": "Ended",
+      "poster": "https://image.tmdb.org/t/p/w500/4FlQ5JdJLMLOrPo14KN4EZu3uuI.jpg",
+      "posterV": 2,
+      "backdrop": "https://image.tmdb.org/t/p/original/88CtwpB8x6GWwrTH71UiKMtUwCa.jpg",
+      "cast": [
+        {
+          "name": "宇垣美里",
+          "character": "Sui Mono"
+        },
+        {
+          "name": "山中柔太朗",
+          "character": "Mao Tsukidome"
+        },
+        {
+          "name": "樋口日奈",
+          "character": ""
+        },
+        {
+          "name": "大原梓",
+          "character": ""
+        },
+        {
+          "name": "鶴嶋乃愛",
+          "character": ""
+        },
+        {
+          "name": "Shibuya Kento",
+          "character": ""
+        }
+      ],
+      "seasons": [
+        {
+          "number": 1,
+          "name": "Saison 1",
+          "episodes": [
+            {
+              "number": 1,
+              "name": "Épisode 1",
+              "overview": "",
+              "air_date": "2025-10-10",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-zurbktr6q8el.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 2,
+              "name": "Épisode 2",
+              "overview": "",
+              "air_date": "2025-10-17",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-sjc15n7pz9j7.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 3,
+              "name": "Épisode 3",
+              "overview": "",
+              "air_date": "2025-10-24",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-4qfk8mbuzl0e.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 4,
+              "name": "Épisode 4",
+              "overview": "",
+              "air_date": "2025-10-31",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-4q0x2tw6ypzz.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 5,
+              "name": "Épisode 5",
+              "overview": "",
+              "air_date": "2025-11-07",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-sqyxotbuchds.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 6,
+              "name": "Épisode 6",
+              "overview": "",
+              "air_date": "2025-11-14",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-iq2jao0hyqdk.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 7,
+              "name": "Épisode 7",
+              "overview": "",
+              "air_date": "2025-11-21",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-w3322x8ony67.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 8,
+              "name": "Épisode 8",
+              "overview": "",
+              "air_date": "2025-11-28",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-ducq1gzhbfe1.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 9,
+              "name": "Épisode 9",
+              "overview": "",
+              "air_date": "2025-12-05",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-ukcdf8oq8kgg.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 10,
+              "name": "Épisode 10",
+              "overview": "",
+              "air_date": "2025-12-12",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-o6h15rmxa9ul.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            }
+          ],
+          "downloads": []
+        }
+      ],
+      "sources": [],
+      "addedAt": 1792291150587,
+      "langs": [
+        "VOSTFR"
+      ],
+      "downloads": [],
+      "updatedAt": 1792291301180
     }
   ],
   "deletedLinks": [
