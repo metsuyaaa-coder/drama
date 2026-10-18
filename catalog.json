@@ -14261,6 +14261,183 @@
       ],
       "downloads": [],
       "updatedAt": 1792287131678
+    },
+    {
+      "id": "319600",
+      "type": "tv",
+      "name": "Azure Spring",
+      "original_name": "아주르 스프링",
+      "origin_country": [
+        "KR"
+      ],
+      "original_language": "ko",
+      "aka": [
+        "蔚蓝之春",
+        "Azure Spring",
+        "Primavera Azul",
+        "蔚藍之春",
+        "คลื่นสีคราม",
+        "الربيع الأزرق",
+        "Xanh Chạm Đáy Trời",
+        "بهار لاجوردی",
+        "Лазурная весна",
+        "אביב תכול",
+        "아주르스프링",
+        "아주르 스프링"
+      ],
+      "year": "2026",
+      "overview": "Deux personnes enlisées dans leur vie se lancent dans la plongée haenyeo, trouvant guérison et nouveau sens dans la mer alors qu'elles affrontent ensemble leur passé et leurs peurs.",
+      "genres": [
+        "Drame"
+      ],
+      "rating": "6.7",
+      "pop": 6.0506,
+      "status": "Ended",
+      "poster": "https://image.tmdb.org/t/p/original/2ruZE7wFQlnEMcb020zMbH41oBL.jpg",
+      "posterV": 2,
+      "backdrop": "https://image.tmdb.org/t/p/original/gLRdw3GkinA9k6GFvG8OKZh56Kv.jpg",
+      "cast": [
+        {
+          "name": "YERI",
+          "character": "Seo Anna"
+        },
+        {
+          "name": "Kang Sang-jun",
+          "character": "Yoon Deok-hyun"
+        },
+        {
+          "name": "Ko Joo-hee",
+          "character": "Baek Soo-jeong"
+        },
+        {
+          "name": "Jung Hyun Min",
+          "character": "Jeong Ki-tae"
+        },
+        {
+          "name": "Kim Won-sik",
+          "character": ""
+        },
+        {
+          "name": "Seo Jeong-yeon",
+          "character": ""
+        },
+        {
+          "name": "Choi Nak Won",
+          "character": ""
+        },
+        {
+          "name": "정민성",
+          "character": ""
+        },
+        {
+          "name": "이소윤",
+          "character": ""
+        },
+        {
+          "name": "Kim Ji-yoo",
+          "character": ""
+        }
+      ],
+      "seasons": [
+        {
+          "number": 1,
+          "name": "Saison 1",
+          "episodes": [
+            {
+              "number": 1,
+              "name": "Make It Or Break It",
+              "overview": "After injury and setbacks, former swimmer Anna returns to her hometown. Sharing a home with the unfamiliar Deok-hyun and reconnecting with an old friend, she finds her once-stalled life quietly beginning to move again.",
+              "air_date": "2026-05-11",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-98cke9q319c4.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 2,
+              "name": "Troublemaker Cat",
+              "overview": "Anna sets out to learn diving from Deok-hyun, a Diver. As she confronts the sea's unforgiving nature, she's pushed beyond her limits. Amid the struggle, a subtle new rhythm begins to form between them, growing with each challenge they face together.",
+              "air_date": "2026-05-12",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-g1yelh66w18o.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 3,
+              "name": "The Timing",
+              "overview": "The diving lessons begin in earnest, and though still clumsy, Anna pushes forward one step at a time. As she struggles to find her rhythm in the water, Deok-hyun guides her with a quiet, steady presence, seemingly indifferent yet gently attentive. Between them, an unspoken shift begins to surface, and the air around them starts to feel just a little different.",
+              "air_date": "2026-05-18",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-tko0u4dk8rfp.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 4,
+              "name": "Secret Of The Deep Sea",
+              "overview": "Back in her hometown, the afterglow of Anna's first dive still lingers in the air. As she and Deok-hyun grow closer through shared time in the sea, an unexpected sense of comfort begins to form between them. But just as things start to settle, unsettling rumors about Deok-hyun resurface, quietly disrupting the calm rhythm of their once peaceful days.",
+              "air_date": "2026-05-19",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-i91op55ivfwh.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 5,
+              "name": "How To Determine The End",
+              "overview": "Anna uncovers a secret that should never surface, while Deok-hyun is forced to face a past he can no longer turn away from. As they confront their own limits, both are tested on whether they can find the courage to begin again.",
+              "air_date": "2026-05-25",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-c5wgnnh70vwz.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 6,
+              "name": "Azure Spring",
+              "overview": "Despite a typhoon and a canceled competition, Anna and Deok-hyun continue forward with their friends, refusing to give up. On the ever-changing sea, where nothing can be predicted, each of them is forced to face their own limits and find a way to move forward again in their own way.",
+              "air_date": "2026-05-26",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-6aji4w3ogh57.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            }
+          ],
+          "downloads": []
+        }
+      ],
+      "sources": [],
+      "addedAt": 1792287249082,
+      "langs": [
+        "VOSTFR"
+      ],
+      "downloads": [],
+      "updatedAt": 1792287389871
     }
   ],
   "deletedLinks": [
