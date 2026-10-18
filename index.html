@@ -427,12 +427,25 @@ dialog#player .phead { flex-wrap: nowrap; gap: 16px; padding: max(10px, env(safe
 dialog#player .pframe { flex: 1; min-height: 0; aspect-ratio: auto; background: #000; }
 dialog#player:not(.wide) .pframe { margin-left: env(safe-area-inset-left, 0px); margin-right: env(safe-area-inset-right, 0px); }
 .pbar { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px 24px; padding: 12px max(16px, env(safe-area-inset-right, 0px)) calc(12px + env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px)); border-top: 1px solid var(--line); background: #050505; }
-.pbar .ptip { flex: 0 0 100%; display: flex; align-items: center; gap: 10px; font-size: 13px; color: var(--dim); min-height: 34px; }
-.ptip p { margin: 0; flex: 1; min-width: 0; animation: fadeIn .35s ease both; }
-.ptip b { color: var(--fg); font-weight: 700; margin-right: 6px; }
+.pbar .ptip { --c: #fff; position: relative; flex: 0 0 100%; display: flex; align-items: center; gap: 12px; padding: 10px 12px; min-height: 58px; overflow: hidden; background: #0b0b0b; border: 1px solid var(--line); border-left: 3px solid var(--c); font-size: 13px; color: var(--dim); transition: border-color .3s; }
+.ptip .tico { flex: 0 0 auto; width: 36px; height: 36px; display: grid; place-items: center; color: var(--c); background: color-mix(in srgb, var(--c) 14%, transparent); border: 1px solid color-mix(in srgb, var(--c) 35%, transparent); transition: color .3s, background .3s, border-color .3s; }
+.ptip .tico svg { width: 19px; height: 19px; }
+.ptip .tbody { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; line-height: 1.4; }
+.ptip #tlbl { color: var(--c); font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; transition: color .3s; }
+.ptip p { margin: 0; color: #cfcfcf; animation: tipIn .35s ease both; }
 .ptip a { color: var(--fg); text-decoration: underline; text-underline-offset: 3px; }
-.ptip #tcount { font-family: var(--mono); font-size: 11px; }
-.tbtn { flex: 0 0 auto; width: 32px; height: 32px; display: grid; place-items: center; background: transparent; border: 1px solid var(--line); color: var(--dim); font-size: 20px; line-height: 1; cursor: pointer; border-radius: 0; transition: color .2s, border-color .2s; }
+.ptip .tnav { flex: 0 0 auto; display: flex; align-items: center; gap: 8px; }
+.ptip .tdots { display: flex; gap: 5px; }
+.ptip .tdots i { width: 6px; height: 6px; border-radius: 50%; background: var(--line); transition: background .25s, transform .25s; }
+.ptip .tdots i.on { background: var(--c); transform: scale(1.35); }
+.ptip .tprog { position: absolute; left: 0; bottom: 0; height: 2px; width: 100%; background: var(--c); opacity: .7; transform-origin: left; transform: scaleX(0); }
+.ptip .tprog.run { animation: tipProg 9s linear forwards; }
+@keyframes tipIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+@keyframes tipProg { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@media (prefers-reduced-motion: reduce) { .ptip p { animation: none; } .ptip .tprog.run { animation: none; } }
+@media (max-width: 600px) { .ptip .tdots { display: none; } .pbar .ptip { gap: 10px; padding: 9px 10px; } .ptip .tico { width: 32px; height: 32px; } }
+.tbtn { flex: 0 0 auto; width: 30px; height: 30px; display: grid; place-items: center; background: transparent; border: 1px solid var(--line); color: var(--dim); cursor: pointer; border-radius: 0; transition: color .2s, border-color .2s; }
+.tbtn svg { width: 16px; height: 16px; }
 .tbtn:hover { color: var(--fg); border-color: var(--dim); }
 .pbar .pl { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; min-width: 0; }
 .pbar .srcs { flex: 0 1 auto; }
@@ -1047,7 +1060,7 @@ footer .wrap.about { display: grid; grid-template-columns: repeat(auto-fit, minm
     <div class="fsbar" id="fsbar" role="group" aria-label="Format de la vidéo"><span>Format</span><button type="button" data-fit="normal">Normal</button><button type="button" data-fit="zoom">Zoom</button><button type="button" data-fit="stretch">Étirer</button></div>
   </div>
   <div class="pbar" id="pbar">
-    <div class="ptip" id="ptip"><button type="button" class="tbtn" id="tprev" aria-label="Conseil précédent">‹</button><p id="ttext" aria-live="polite"></p><button type="button" class="tbtn" id="tnext" aria-label="Conseil suivant">›</button><span id="tcount"></span></div>
+    <div class="ptip" id="ptip"><span class="tico" id="tico" aria-hidden="true"></span><div class="tbody"><small id="tlbl"></small><p id="ttext" aria-live="polite"></p></div><div class="tnav"><button type="button" class="tbtn" id="tprev" aria-label="Conseil précédent"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button><span class="tdots" id="tdots" aria-hidden="true"></span><button type="button" class="tbtn" id="tnext" aria-label="Conseil suivant"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button></div><i class="tprog" id="tprog"></i></div>
     <div class="pl" id="pl"><span class="chiplbl">Serveur</span><span class="srcs" id="psrc"></span></div>
     <div class="pone" id="pone" style="display:none"><span>Besoin d'une autre source ou celle-ci bug ?</span><a href="/demande" id="pdemande">/demande</a></div>
     <div class="pone" id="prep"><button type="button" id="preport" class="rbtn"><span>Signaler</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21V4"/><path d="M5 4h13l-2.5 4.5L18 13H5"/></svg></button></div>
@@ -3297,19 +3310,33 @@ function langPlayer() {
   var x = (cur.sources || [])[cur.i] || {}, h = (String(x.name || "") + " " + String(x.url || "")).toLowerCase();
   return /playmate|vidara|uqload/.test(h);
 }
+var TIP_ICO = {
+  lang: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"/></svg>',
+  server: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><path d="M6 6h.01M6 18h.01"/></svg>',
+  shield: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>',
+  fit: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3M21 8V5a2 2 0 0 0-2-2h-3M3 16v3a2 2 0 0 0 2 2h3M16 21h3a2 2 0 0 0 2-2v-3"/></svg>',
+  list: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg>'
+};
 function tipList() {
   var t = [];
-  if (langPlayer()) t.push("<b>Astuce langue</b> Pour changer de langue ou voir s'il y en a une autre, clique sur le petit bouton engrenage puis sur le bouton casque.");
-  if (cur.sources && cur.sources.length > 1) t.push("<b>Astuce</b> Si le lecteur bug ou ne démarre pas, essaie un autre serveur en bas à gauche.");
-  t.push('<b>Marre des pubs ?</b> Installe <a href="https://brave.com/" target="_blank" rel="noopener">Brave</a>, un navigateur qui bloque les pubs.');
-  t.push("<b>Bandes noires ?</b> Passe en plein écran, puis choisis Zoom ou Étirer dans la barre Format.");
+  if (langPlayer()) t.push({ ico: "lang", c: "#7dd3fc", l: "Astuce langue", h: "Pour changer de langue ou voir s'il y en a une autre, clique sur le petit bouton engrenage puis sur le bouton casque." });
+  if (cur.sources && cur.sources.length > 1) t.push({ ico: "server", c: "#fcd34d", l: "Astuce", h: "Si le lecteur bug ou ne démarre pas, essaie un autre serveur en bas à gauche." });
+  t.push({ ico: "shield", c: "#fb923c", l: "Marre des pubs ?", h: 'Installe <a href="https://brave.com/" target="_blank" rel="noopener">Brave</a>, un navigateur qui bloque les pubs.' });
+  t.push({ ico: "fit", c: "#c4b5fd", l: "Bandes noires ?", h: "Passe en plein écran, puis choisis Zoom ou Étirer dans la barre Format." });
+  if (cur.nav && cur.nav.eps) t.push({ ico: "list", c: "#86efac", l: "Épisodes", h: "Utilise le bouton Épisodes pour sauter à un autre épisode ou une autre saison." });
   return t;
 }
 function showTip(n) {
   var t = tipList();
   tipIdx = (n + t.length) % t.length;
-  $("#ttext").innerHTML = t[tipIdx];
-  $("#tcount").textContent = (tipIdx + 1) + "/" + t.length;
+  var x = t[tipIdx], box = $("#ptip");
+  box.style.setProperty("--c", x.c);
+  $("#tico").innerHTML = TIP_ICO[x.ico];
+  $("#tlbl").textContent = x.l;
+  var p = $("#ttext"); p.innerHTML = x.h;
+  p.style.animation = "none"; void p.offsetWidth; p.style.animation = "";
+  $("#tdots").innerHTML = t.map(function (_, k) { return "<i" + (k === tipIdx ? ' class="on"' : "") + "></i>"; }).join("");
+  var g = $("#tprog"); g.classList.remove("run"); void g.offsetWidth; g.classList.add("run");
 }
 function stepTip(d) { showTip(tipIdx + d); clearInterval(tipTimer); tipTimer = setInterval(function () { showTip(tipIdx + 1); }, 9000); }
 $("#tprev").addEventListener("click", function () { stepTip(-1); });
