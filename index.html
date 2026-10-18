@@ -485,6 +485,18 @@ dialog#player::-webkit-scrollbar { display: none; }
 button.more { background: none; border: 0; padding: 0; cursor: pointer; }
 .card .poster .rtag { position: absolute; z-index: 1; left: 0; right: 0; bottom: 0; padding: 7px 10px; background: var(--fg); color: var(--bg); font-weight: 700; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; }
 
+/* proposition d'installer l'appli (même style que le message d'accueil) */
+.pwa { position: fixed; z-index: 30; right: 20px; bottom: calc(20px + env(safe-area-inset-bottom, 0px)); width: min(400px, calc(100vw - 24px)); background: #000; color: var(--fg); border: 1px solid var(--line); padding: 18px 44px 18px 18px; display: grid; grid-template-columns: auto 1fr; gap: 6px 14px; align-items: start; animation: dialogIn .3s var(--ease) both; }
+.pwa[hidden] { display: none; }
+.pwa .pi { width: 44px; height: 44px; display: grid; place-items: center; background: var(--fg); color: var(--bg); }
+.pwa .pi svg { width: 24px; height: 24px; }
+.pwa h3 { margin: 0; font-family: var(--display); font-weight: 900; font-size: 22px; line-height: 1; text-transform: uppercase; align-self: center; }
+.pwa p { grid-column: 1 / -1; margin: 4px 0 0; color: #cfcfcf; font-size: 14px; }
+.pwa .row { grid-column: 1 / -1; display: flex; gap: 8px; margin-top: 8px; }
+.pwa .px { position: absolute; top: 8px; right: 8px; width: 32px; height: 32px; display: grid; place-items: center; background: none; border: 0; color: var(--dim); font-size: 24px; line-height: 1; cursor: pointer; }
+.pwa .px:hover { color: var(--fg); }
+@media (max-width: 720px) { .pwa { right: 12px; left: 12px; width: auto; bottom: calc(12px + env(safe-area-inset-bottom, 0px)); } }
+
 /* message d'accueil */
 dialog#welcome { width: min(520px, 94vw); padding: 0; border: 1px solid var(--line); background: #000; color: var(--fg); }
 dialog#welcome[open] { animation: dialogIn .3s var(--ease) both; }
@@ -747,6 +759,13 @@ footer .wrap.about { display: grid; grid-template-columns: repeat(auto-fit, minm
     <div class="el" id="pepsl"></div>
   </div>
 </dialog>
+<aside class="pwa" id="pwa" role="dialog" aria-labelledby="pwa-t" hidden>
+  <span class="pi"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M7 2h10a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm4 4v6.2L8.7 10 7.3 11.4 12 16l4.7-4.600L15.300 10 13 12.200V6zM9 18v1.500h6V18z"/></svg></span>
+  <h3 id="pwa-t">Installer l'appli</h3>
+  <p id="pwa-p">Ajoute DramaByM à ton écran d'accueil pour l'ouvrir comme une vraie appli, plus vite et en plein écran.</p>
+  <div class="row"><button type="button" class="btn small" id="pwa-go">Installer</button></div>
+  <button type="button" class="px" id="pwa-x" aria-label="Fermer">&times;</button>
+</aside>
 <dialog id="welcome" aria-labelledby="wtitle">
   <div class="wbox">
     <span class="beta">Bêta</span>
@@ -3262,6 +3281,23 @@ if (!isStandalone) {
   });
 }
 window.addEventListener("appinstalled", function () { deferredInstall = null; showInstall(false); toast("Application installée"); });
+/* Bandeau « Installer l'appli » : après le message d'accueil, fermable avec la croix (revient dans 7 jours) */
+var PWAKEY = "noir.pwa.dismiss", pwaBox = $("#pwa");
+function pwaDismissed() { try { var t = +localStorage.getItem(PWAKEY) || 0; return Date.now() - t < 7 * 864e5; } catch (e) { return false; } }
+function pwaShow() {
+  if (isStandalone || pwaDismissed() || !(deferredInstall || isIOS)) return;
+  if ($("#welcome").open) return;
+  if (!deferredInstall && isIOS) { $("#pwa-p").textContent = "Touche le bouton Partager de Safari, puis « Sur l'écran d'accueil » pour l'ajouter comme une appli."; $("#pwa-go").hidden = true; }
+  pwaBox.hidden = false;
+}
+function pwaHide(remember) { pwaBox.hidden = true; if (remember) { try { localStorage.setItem(PWAKEY, String(Date.now())); } catch (e) {} } }
+$("#pwa-x").addEventListener("click", function () { pwaHide(true); });
+$("#pwa-go").addEventListener("click", function () { if (btnInstall) btnInstall.click(); pwaHide(false); });
+$("#welcome").addEventListener("close", function () { setTimeout(pwaShow, 600); });
+window.addEventListener("beforeinstallprompt", function () { setTimeout(pwaShow, 1500); });
+window.addEventListener("appinstalled", function () { pwaHide(false); });
+setTimeout(pwaShow, 2500);
+
 document.addEventListener("click", function (e) {
   var b = e.target.closest("[data-copy]"); if (!b) return;
   var txt = b.dataset.copy;
