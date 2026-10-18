@@ -18,6 +18,39 @@
       "type": "tv",
       "name": "100 Days of Deception",
       "original_name": "100일의 거짓말",
+      "origin_country": [
+        "KR"
+      ],
+      "networks": [
+        "tvN"
+      ],
+      "original_language": "ko",
+      "aka": [
+        "100 Days of Deception",
+        "百日谎言",
+        "100 Dias de Mentiras",
+        "百日謊言",
+        "100 дни на измама",
+        "100 днів омани",
+        "100 ימים של ריגול",
+        "100 วันปฏิบัติการลวง",
+        "100 días de engaño",
+        "100 de zile de minciuni",
+        "100 Ngày Lừa Dối",
+        "100 dni oszustwa",
+        "100日の嘘",
+        "مئة يوم من الخداع 100",
+        "100 jours en espionne",
+        "100 дней лжи",
+        "百日的谎言",
+        "100ilui Geojitmal",
+        "100-il-ui Geo-jit-mal",
+        "Baekilui Geojinmal",
+        "Hundred Days of Lies",
+        "Hundred Days of Deception",
+        "100 Days of Lies",
+        "100일의 거짓말"
+      ],
       "year": "2026",
       "overview": "En quête de liberté, la meilleure pickpocket de Séoul infiltre le gouvernement colonial japonais pour lui dérober des secrets, mais tombe amoureuse du fils de sa cible.",
       "genres": [
@@ -25,8 +58,10 @@
         "Drame"
       ],
       "rating": "9.0",
+      "pop": 45.9,
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/w500/bZHEU42QynnMrHUWK1Hhvj2cdPA.jpg",
+      "posterV": 2,
       "backdrop": "https://image.tmdb.org/t/p/original/3SvKCITqMtjgPIhFBjRc4yTAc4H.jpg",
       "cast": [
         {
@@ -86,16 +121,18 @@
             {
               "number": 1,
               "name": "Épisode 1",
-              "overview": "Pickpocket Lee Ga-gyeong has just one goal — to flee colonial Joseon. But she soon ends up unexpectedly entangled with the Korean independence movement.",
+              "overview": "Pickpocket Lee Ga-kyung has just one goal — to flee colonial Joseon. But she soon ends up unexpectedly entangled with the Korean independence movement.",
               "air_date": "2026-10-10",
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/2TgyEgZCFGobY"
+                  "url": "https://vidara.to/e/2TgyEgZCFGobY",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-vzlzv64p907n.html"
+                  "url": "https://uqload.vc/embed-vzlzv64p907n.html",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
@@ -113,27 +150,31 @@
                   "name": "1FICHIER",
                   "url": "https://1fichier.com/?xg1jsq8vmidbsuw2gdif",
                   "size": "2.8 Go",
-                  "quality": "1080p (H.264)"
+                  "quality": "1080p (H.264)",
+                  "by": "head"
                 }
               ]
             },
             {
               "number": 2,
               "name": "Épisode 2",
-              "overview": "Ga-gyeong's language skills shock Yoo Philip and Yoo So-ran. Meanwhile, Kim Tae-ung's insistence that Ga-gyeong return his wallet raises her suspicions.",
+              "overview": "Ga-kyung's language skills shock Yoo Philip and Yoo So-ran. Meanwhile, Kim Tae-ung's insistence that Ga-kyung return his wallet raises her suspicions.",
               "air_date": "2026-10-11",
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/5thkvKklZ5I2D"
+                  "url": "https://vidara.to/e/5thkvKklZ5I2D",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-z1zyz49djtuq.html"
+                  "url": "https://uqload.vc/embed-z1zyz49djtuq.html",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
                   "url": "https://vidmoly.org/embed-d573thqo6iom.html",
+                  "quality": "VIDARA https://vidara.to/e/5thkvKklZ5I2D",
                   "by": "614d778ed0"
                 },
                 {
@@ -147,14 +188,15 @@
                   "name": "1FICHIER",
                   "url": "https://1fichier.com/?871905qoy820g0cncdyi",
                   "size": "2.6 Go",
-                  "quality": "1080p (H.264)"
+                  "quality": "1080p (H.264)",
+                  "by": "head"
                 }
               ]
             },
             {
               "number": 3,
               "name": "Épisode 3",
-              "overview": "",
+              "overview": "Despite Ga-kyung's initial reservations about So-ran, the two join hands. On her first day at work undercover, Ga-kyung meets a familiar face.",
               "air_date": "2026-10-17",
               "sources": [
                 {
@@ -182,7 +224,8 @@
                 {
                   "name": "1FICHIER",
                   "url": "https://1fichier.com/?abhv2ccz9gh3cktnl4rd",
-                  "quality": "100p (H.264) 2.7",
+                  "size": "2.7Go",
+                  "quality": "1080p (H.264)",
                   "by": "head"
                 }
               ]
@@ -190,7 +233,7 @@
             {
               "number": 4,
               "name": "Épisode 4",
-              "overview": "",
+              "overview": "Tae-ung remains suspicious of Ga-kyung, but also strangely captivated — or even charmed? Meanwhile, the Gugukdan start making big plans.",
               "air_date": "2026-10-18",
               "sources": [
                 {
@@ -324,44 +367,9 @@
       "langs": [
         "VOSTFR"
       ],
-      "trend": 76,
-      "aka": [
-        "100 Days of Deception",
-        "百日谎言",
-        "100 Dias de Mentiras",
-        "百日謊言",
-        "100 дни на измама",
-        "100 днів омани",
-        "100 ימים של ריגול",
-        "100 วันปฏิบัติการลวง",
-        "100 días de engaño",
-        "100 de zile de minciuni",
-        "100 Ngày Lừa Dối",
-        "100 dni oszustwa",
-        "100日の嘘",
-        "مئة يوم من الخداع 100",
-        "100 jours en espionne",
-        "100 дней лжи",
-        "百日的谎言",
-        "100ilui Geojitmal",
-        "100-il-ui Geo-jit-mal",
-        "Baekilui Geojinmal",
-        "Hundred Days of Lies",
-        "Hundred Days of Deception",
-        "100 Days of Lies",
-        "100일의 거짓말"
-      ],
       "downloads": [],
-      "pop": 45.9,
-      "origin_country": [
-        "KR"
-      ],
-      "original_language": "ko",
-      "posterV": 2,
-      "updatedAt": 1792340129715,
-      "networks": [
-        "tvN"
-      ]
+      "updatedAt": 1792342543929,
+      "trend": 76
     },
     {
       "id": "275102",
@@ -573,13 +581,16 @@
         "스캔들"
       ],
       "downloads": [],
-      "pop": 82.1886,
+      "pop": 71.8022,
       "origin_country": [
         "KR"
       ],
       "original_language": "ko",
       "posterV": 2,
-      "updatedAt": 1792274961096
+      "updatedAt": 1792342544738,
+      "networks": [
+        "Netflix"
+      ]
     },
     {
       "id": "293610",
@@ -605,6 +616,7 @@
         "Doctor X",
         "Doctor X: A Máfia das Batas Brancas",
         "Bác sĩ X: Mafia Áo Trắng",
+        "Doctora X",
         "Ｘ医生",
         "ドクターX 〜白衣のマコィア〜",
         "DakteoX hayan mapiaui sidae",
@@ -620,8 +632,8 @@
         "Drame",
         "Crime"
       ],
-      "rating": "9.1",
-      "pop": 85.639,
+      "rating": "9.2",
+      "pop": 75.7737,
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/original/u0DrgmScTheIyCVEaeDKQ3sagLu.jpg",
       "backdrop": "https://image.tmdb.org/t/p/original/mDYIV71RL3mkaW8IfSGNthuVB7l.jpg",
@@ -688,11 +700,13 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/yxmRmsmX4zOOn"
+                  "url": "https://vidara.to/e/yxmRmsmX4zOOn",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-m1tmawcz7c7k.html"
+                  "url": "https://uqload.vc/embed-m1tmawcz7c7k.html",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -706,7 +720,8 @@
                   "name": "1FICHIER",
                   "url": "https://1fichier.com/?1qd8vda0u704nuwfzs2g",
                   "size": "2.32 Go",
-                  "quality": "1080p (H.264)"
+                  "quality": "1080p (H.264)",
+                  "by": "head"
                 }
               ]
             },
@@ -718,11 +733,13 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/X8HN8WRXjyREk"
+                  "url": "https://vidara.to/e/X8HN8WRXjyREk",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-cs61nhnp5yge.html"
+                  "url": "https://uqload.vc/embed-cs61nhnp5yge.html",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -736,7 +753,8 @@
                   "name": "1FICHIER",
                   "url": "https://1fichier.com/?xxzdrtttn7jbmkzlslaj",
                   "size": "2.3 Go",
-                  "quality": "1080p (H.264)"
+                  "quality": "1080p (H.264)",
+                  "by": "head"
                 }
               ]
             },
@@ -748,15 +766,18 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/09adi9vhA9U10"
+                  "url": "https://vidara.to/e/09adi9vhA9U10",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/1beitjsENq5T9"
+                  "url": "https://playmate.to/embed/1beitjsENq5T9",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-v6n8916hwstw.html"
+                  "url": "https://uqload.vc/embed-v6n8916hwstw.html",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -770,14 +791,15 @@
                   "name": "1FICHIER",
                   "url": "https://1fichier.com/?453rfjul6t7nuvyie39a",
                   "size": "2.4 Go",
-                  "quality": "1080p (H.264)"
+                  "quality": "1080p (H.264)",
+                  "by": "head"
                 }
               ]
             },
             {
               "number": 4,
               "name": "Épisode 4",
-              "overview": "",
+              "overview": "After a new surgeon arrives at the hospital, Jang Hui-suk and Su-jeong keep a close eye on him. Meanwhile, a pharmaceutical rep suffers an emergency.",
               "air_date": "2026-10-17",
               "sources": [
                 {
@@ -885,13 +907,16 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "trend": 84,
+      "trend": 82,
       "origin_country": [
         "KR"
       ],
       "original_language": "ko",
       "posterV": 2,
-      "updatedAt": 1792326601879
+      "updatedAt": 1792342545567,
+      "networks": [
+        "SBS"
+      ]
     },
     {
       "id": "278573",
@@ -1028,7 +1053,7 @@
                 {
                   "name": "VIDMOLY",
                   "url": "https://vidmoly.org/embed-vqajh2l8o3b1.html",
-                  "quality": "https://vidmoly.org/embed-vqajh2l8o3b1.html",
+                  "quality": "VIDARA https://vidara.to/e/K1PgGFz1ZalgO",
                   "by": "614d778ed0"
                 }
               ],
@@ -1201,14 +1226,17 @@
         "21세기 대군부인"
       ],
       "downloads": [],
-      "pop": 89.3532,
+      "pop": 67.3767,
       "origin_country": [
         "KR"
       ],
       "original_language": "ko",
       "posterV": 2,
-      "updatedAt": 1792329428877,
-      "posterCustom": true
+      "updatedAt": 1792342546433,
+      "posterCustom": true,
+      "networks": [
+        "MBC"
+      ]
     },
     {
       "id": "m1058424",
@@ -1223,7 +1251,7 @@
         "Action"
       ],
       "rating": "6.9",
-      "pop": 240.126,
+      "pop": 294.6518,
       "status": "Released",
       "runtime": 160,
       "poster": "https://image.tmdb.org/t/p/w500/qW1m7bcsRb2lo8xG2v0p4mARyH8.jpg",
@@ -1282,11 +1310,13 @@
       "sources": [
         {
           "name": "VIDARA (VFQ)",
-          "url": "https://vidara.to/e/BzHQVFDTYsM7q"
+          "url": "https://vidara.to/e/BzHQVFDTYsM7q",
+          "by": "head"
         },
         {
           "name": "UQLOAD",
-          "url": "https://uqload.vc/embed-bauoh90lty4u.html"
+          "url": "https://uqload.vc/embed-bauoh90lty4u.html",
+          "by": "head"
         },
         {
           "name": "PLAYMATE",
@@ -1329,19 +1359,21 @@
         "ចម្បាំងបង្ហូរឈាមអវសានលោក",
         "הופ",
         "Hopeu",
+        "Lootuse sadam",
         "호프"
       ],
-      "trend": 100,
+      "trend": 99,
       "downloads": [
         {
           "name": "1FICHIER",
           "url": "https://1fichier.com/?mrcpz2qu52dc3uqfg0gt&af=5010551",
           "size": "5.5 Go",
-          "quality": "1080p (H.265)"
+          "quality": "1080p (H.265)",
+          "by": "head"
         }
       ],
       "posterV": 2,
-      "updatedAt": 1792324307081
+      "updatedAt": 1792342546927
     },
     {
       "id": "305644",
@@ -1349,12 +1381,12 @@
       "name": "Four Hands, Two Sonatas",
       "original_name": "포핸즈",
       "year": "2026",
-      "overview": "Kang Bi-o, prodige du piano au lycée, excelle constamment en études et en virtuosité pianistique. Considéré comme une future icône de la musique classique, promis à un brillant avenir dans les plus grands concours internationaux, sa carrière bascule lorsqu'il rencontre un rival inattendu : Choi Jeong-yo. Pianiste au talent inné, Jeong-yo a renoncé à son don exceptionnel suite à une enfance difficile. Son admission soudaine au lycée des arts de Corée le met face à Bi-o, le pianiste même qui a ravivé sa passion pour le piano. Jeong-yo est alors contraint de se confronter à ce don qu'il avait autrefois abandonné, et une amitié se noue entre eux.",
+      "overview": "Quand deux jeunes pianistes issus de mondes radicalement opposés se rencontrent dans un prestigieux lycée spécialisé en musique, les mélodies de leurs vies s'accordent intimement.",
       "genres": [
         "Drame"
       ],
       "rating": "9.2",
-      "pop": 21.9789,
+      "pop": 20.8593,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/eTzC7L3HgsNNBEkTpl9s3tVJUYv.jpg",
       "backdrop": "https://image.tmdb.org/t/p/original/fYL4I6cezb06BHhQlrNjNhy7jhf.jpg",
@@ -1411,12 +1443,12 @@
       "seasons": [
         {
           "number": 1,
-          "name": "Saison 1",
+          "name": "Mini-série",
           "episodes": [
             {
               "number": 1,
               "name": "Épisode 1",
-              "overview": "Kang Pi-o is known around school as an unrivaled talent — until he meets the mysterious Choi Jeong-yo and realizes he may have finally met his match.",
+              "overview": "Au lycée, Kang Pi-o est réputé pour son talent inégalé, mais sa rencontre avec le mystérieux Choi Jeong-yo lui fait comprendre qu'il a peut-être enfin trouvé un rival à sa hauteur.",
               "air_date": "2026-08-29",
               "sources": [
                 {
@@ -1439,7 +1471,7 @@
             {
               "number": 2,
               "name": "Épisode 2",
-              "overview": "With Jeong-yo now his classmate, a bitter Pi-o keeps his distance. But when the two are tasked with a joint performance, Pi-o finds himself warming up.",
+              "overview": "Maintenant que Jeong-yo est son camarade de classe, Pi-o, amer, garde ses distances. Mais quand ils doivent se produire ensemble, Pi-o se montre peu à peu moins hostile.",
               "air_date": "2026-08-30",
               "sources": [
                 {
@@ -1462,7 +1494,7 @@
             {
               "number": 3,
               "name": "Épisode 3",
-              "overview": "When crisis strikes right before the joint stage, Pi-o improvises a fix — only to wonder if it was a mistake when Jeong-yo's skills outshine his own.",
+              "overview": "Un incident survient juste avant le concert. Pi-o improvise une solution, mais se demande s'il a vraiment bien fait lorsque le talent de Jeong-yo éclipse le sien.",
               "air_date": "2026-09-05",
               "sources": [
                 {
@@ -1485,7 +1517,7 @@
             {
               "number": 4,
               "name": "Épisode 4",
-              "overview": "With Pi-o determined to reclaim his love for music, Jeong-yo shows Pi-o how to have fun on the piano. Jeong-yo's family troubles catch up to him.",
+              "overview": "Pi-o est déterminé à retrouver son amour pour la musique et Jeong-yo lui montre comment prendre du plaisir au piano. Jeong-yo se fait rattraper par ses problèmes familiaux.",
               "air_date": "2026-09-06",
               "sources": [
                 {
@@ -1508,7 +1540,7 @@
             {
               "number": 5,
               "name": "Épisode 5",
-              "overview": "Intent on proving himself, Pi-o joins the Prague Harmonie International Competition and asks Jeong-yo to join too. Pi-o's obsessive practice takes a toll.",
+              "overview": "Déterminé à faire ses preuves, Pi-o s'inscrit à un concours et demande à Jeong-yo de l'accompagner. Les entraînements obsessionnels de Pi-o finissent par avoir des conséquences.",
               "air_date": "2026-09-12",
               "sources": [
                 {
@@ -1531,7 +1563,7 @@
             {
               "number": 6,
               "name": "Épisode 6",
-              "overview": "Years later, Pi-o is successful and world-renowned — but miserable. Hong Jae-in tries to let Pi-o know how she feels. Pi-o hunts down news of Jeong-yo.",
+              "overview": "Des années plus tard, Pi-o est célèbre dans le monde entier, mais malheureux. Alors que Hong Jae-in veut lui avouer ses sentiments, il cherche à avoir des nouvelles de Jeong-yo.",
               "air_date": "2026-09-13",
               "sources": [
                 {
@@ -1554,7 +1586,7 @@
             {
               "number": 7,
               "name": "Épisode 7",
-              "overview": "Pi-o finds himself stuck deep in a slump, but can't seem to overcome his fears alone. Later, a familiar face suggests collaborating on a performance.",
+              "overview": "Pi-o traverse une mauvaise passe et ne parvient pas à surmonter seul ses peurs. Plus tard, un visage familier lui propose de jouer à ses côtés.",
               "air_date": "2026-09-19",
               "sources": [
                 {
@@ -1577,7 +1609,7 @@
             {
               "number": 8,
               "name": "Épisode 8",
-              "overview": "Pi-o faces increasing pressure to do the joint performance, but his issues with the piano only get worse. Jeong-yo finally steps in to help.",
+              "overview": "Alors que Pi-o subit une pression croissante pour accepter de jouer en duo, ses difficultés au piano ne font qu'empirer. Jeong-yo finit par intervenir pour l'aider.",
               "air_date": "2026-09-20",
               "sources": [
                 {
@@ -1600,7 +1632,7 @@
             {
               "number": 9,
               "name": "Épisode 9",
-              "overview": "Pi-o learns the shocking truth behind Jeong-yo's kidnapping. Jeong-yo asks for Pi-o's help with a piano piece, but his harsh words leave Pi-o rattled.",
+              "overview": "Pi-o découvre la vérité choquante derrière l'enlèvement de Jeong-yo. Ce dernier sollicite son aide pour un morceau de piano, mais le critique durement, ce qui déstabilise Pi-o.",
               "air_date": "2026-09-26",
               "sources": [
                 {
@@ -1623,7 +1655,7 @@
             {
               "number": 10,
               "name": "Épisode 10",
-              "overview": "Pi-o realizes Jeong-yo has been hiding a huge secret. With everything revealed, Jeong-yo turns even more cruel, and Pi-o falls deeper into despair.",
+              "overview": "Pi-o découvre que Jeong-yo lui cache un lourd secret. Une fois la vérité révélée, Jeong-yo se montre encore plus cruel, et Pi-o sombre un peu plus dans le désespoir.",
               "air_date": "2026-09-27",
               "sources": [
                 {
@@ -1646,7 +1678,7 @@
             {
               "number": 11,
               "name": "Épisode 11",
-              "overview": "As the Korean Symphony’s 80th anniversary concert begins, Jeong-yo and Pi-o face a turning point — but when the performance ends, only one person remains on stage.",
+              "overview": "Jeong-yo est surpris par le changement d'attitude soudain de Pi-o. Plus tard, quand le concert touche à sa fin, quelqu'un décide d'occuper le devant de la scène.",
               "air_date": "2026-10-03",
               "sources": [
                 {
@@ -1669,7 +1701,7 @@
             {
               "number": 12,
               "name": "Épisode 12",
-              "overview": "After painful losses, Pi-o considers leaving music behind, but Jeong-yo shares his final feelings as their last four-hands performance begins.",
+              "overview": "Pi-o décide de tourner le dos à la musique, mais Jeong-yo tente de le faire changer d'avis avec un ultime cadeau. Comment vont-ils mettre un point d'orgue à leur histoire ?",
               "air_date": "2026-10-04",
               "sources": [
                 {
@@ -1724,13 +1756,39 @@
       ],
       "original_language": "ko",
       "posterV": 2,
-      "updatedAt": 1792274880052
+      "updatedAt": 1792342547779,
+      "networks": [
+        "tvN"
+      ]
     },
     {
       "id": "316197",
       "type": "tv",
       "name": "Dive into You",
       "original_name": "너에게 다이브",
+      "origin_country": [
+        "KR"
+      ],
+      "networks": [
+        "Channel A"
+      ],
+      "original_language": "ko",
+      "aka": [
+        "再次奔向你",
+        "Dive into You",
+        "De volta para você",
+        "向你跳水",
+        "Volveré Por Ti",
+        "君へダイブ",
+        "Потопете се в себе си",
+        "ดิ่งลึกสู่ใจเธอ",
+        "الغوص في حبك",
+        "Погружение к тебе",
+        "向你Dive",
+        "潜入你心",
+        "Погружаясь в тебя",
+        "너에게 다이브"
+      ],
       "year": "2026",
       "overview": "Une actrice et son frère jumeau voyagent dans le temps – et échangent leurs corps – pour sauver la vie de leur ami.",
       "genres": [
@@ -1742,6 +1800,7 @@
       "pop": 14.7223,
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/w500/6OAuQOGqjYY1JXbkTlWz4Mm2Kmi.jpg",
+      "posterV": 2,
       "backdrop": "https://image.tmdb.org/t/p/original/jseW3HucgNjN2CwJa3MiOlF4xMO.jpg",
       "cast": [
         {
@@ -1774,15 +1833,18 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/5YXxZiybnWGFQ"
+                  "url": "https://vidara.to/e/5YXxZiybnWGFQ",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/OUMCEnlPAqzMU"
+                  "url": "https://playmate.to/embed/OUMCEnlPAqzMU",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-c49jps70wbmu.html"
+                  "url": "https://uqload.vc/embed-c49jps70wbmu.html",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -1801,15 +1863,18 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/G7RAaPCAZqPIV"
+                  "url": "https://vidara.to/e/G7RAaPCAZqPIV",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/OBPx6KJaAQbkS"
+                  "url": "https://playmate.to/embed/OBPx6KJaAQbkS",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-l5pewc05t1xp.html"
+                  "url": "https://uqload.vc/embed-l5pewc05t1xp.html",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -1828,15 +1893,18 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/YVAMUlgvZT9Sn"
+                  "url": "https://vidara.to/e/YVAMUlgvZT9Sn",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/HRRG2TzLutO17"
+                  "url": "https://playmate.to/embed/HRRG2TzLutO17",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-y5dwrdf5g0j1.html"
+                  "url": "https://uqload.vc/embed-y5dwrdf5g0j1.html",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -1855,15 +1923,18 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/9y8cAiISS2MT3"
+                  "url": "https://vidara.to/e/9y8cAiISS2MT3",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/rvl5l1ggDZ8xl"
+                  "url": "https://playmate.to/embed/rvl5l1ggDZ8xl",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-1m73oweb3xx7.html"
+                  "url": "https://uqload.vc/embed-1m73oweb3xx7.html",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -1882,15 +1953,18 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/nQdHtHc3D14Au"
+                  "url": "https://vidara.to/e/nQdHtHc3D14Au",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/x8WdVygQYIU6c"
+                  "url": "https://playmate.to/embed/x8WdVygQYIU6c",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-yxc47s2v5p7c.html"
+                  "url": "https://uqload.vc/embed-yxc47s2v5p7c.html",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -1909,15 +1983,18 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/hs5DmaOKYRpji"
+                  "url": "https://vidara.to/e/hs5DmaOKYRpji",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/GlVKFE0c6DpEo"
+                  "url": "https://playmate.to/embed/GlVKFE0c6DpEo",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-logymxhaafxc.html"
+                  "url": "https://uqload.vc/embed-logymxhaafxc.html",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -1930,7 +2007,7 @@
             {
               "number": 7,
               "name": "Épisode 7",
-              "overview": "",
+              "overview": "Someone who knows the secret of time travel deliberately hid the camcorder. The twins’ investigation points to Hyeong-won.",
               "air_date": "2026-10-17",
               "sources": [
                 {
@@ -2033,32 +2110,8 @@
       "langs": [
         "VOSTFR"
       ],
-      "aka": [
-        "再次奔向你",
-        "Dive into You",
-        "De volta para você",
-        "向你跳水",
-        "Volveré Por Ti",
-        "君へダイブ",
-        "Потопете се в себе си",
-        "ดิ่งลึกสู่ใจเธอ",
-        "الغوص في حبك",
-        "Погружение к тебе",
-        "向你Dive",
-        "潜入你心",
-        "Погружаясь в тебя",
-        "너에게 다이브"
-      ],
       "downloads": [],
-      "origin_country": [
-        "KR"
-      ],
-      "original_language": "ko",
-      "posterV": 2,
-      "updatedAt": 1792341396862,
-      "networks": [
-        "Channel A"
-      ]
+      "updatedAt": 1792342548288
     },
     {
       "id": "314939",
@@ -2067,6 +2120,9 @@
       "original_name": "너 말고 다른 연애",
       "origin_country": [
         "KR"
+      ],
+      "networks": [
+        "KBS2"
       ],
       "original_language": "ko",
       "aka": [
@@ -2107,6 +2163,7 @@
       "pop": 40.8795,
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/w500/iKgdhgBPi1cCRRqsUgaxUDRuFP6.jpg",
+      "posterV": 2,
       "backdrop": "https://image.tmdb.org/t/p/original/moUjiEzpJVNZc7hyNRBbLPt0CPX.jpg",
       "cast": [
         {
@@ -2397,8 +2454,8 @@
             },
             {
               "number": 9,
-              "name": "Épisode 9",
-              "overview": "",
+              "name": "Do You Remember When We Fell in Love?",
+              "overview": "Mi-do tells her family she is quitting directing. Meanwhile, she and Namgung begin dating other people. As soon as they do, Su-a makes a bold move while Tae-seung takes a provocative step.",
               "air_date": "2026-10-17",
               "sources": [
                 {
@@ -2511,11 +2568,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "posterV": 2,
-      "updatedAt": 1792341615509,
-      "networks": [
-        "KBS2"
-      ]
+      "updatedAt": 1792342548992
     },
     {
       "id": "290193",
@@ -2562,7 +2615,7 @@
         "Mystère"
       ],
       "rating": "8.1",
-      "pop": 15.572,
+      "pop": 15.3124,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/2mwgHfOyrFrmvozjFoEXHRdfGhv.jpg",
       "backdrop": "https://image.tmdb.org/t/p/original/3bHz9dYSZ5XDxY0zDaBpYgUOhE2.jpg",
@@ -2803,7 +2856,10 @@
       ],
       "original_language": "ko",
       "posterV": 2,
-      "updatedAt": 1792328139831
+      "updatedAt": 1792342549959,
+      "networks": [
+        "Netflix"
+      ]
     },
     {
       "id": "296140",
@@ -2842,7 +2898,7 @@
         "Drame"
       ],
       "rating": "8.2",
-      "pop": 11.1096,
+      "pop": 10.9889,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/A4Y4xlDHS4xi2WI9265vRyIYLoo.jpg",
       "backdrop": "https://image.tmdb.org/t/p/original/eBD46F44qKGPZiRLffO4q3JF8Hc.jpg",
@@ -3229,7 +3285,10 @@
       ],
       "original_language": "ko",
       "posterV": 2,
-      "updatedAt": 1792328608932
+      "updatedAt": 1792342550800,
+      "networks": [
+        "tvN"
+      ]
     },
     {
       "id": "212204",
@@ -3270,7 +3329,7 @@
         "Drame"
       ],
       "rating": "8.8",
-      "pop": 17.2039,
+      "pop": 16.2681,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/bwTzW1wTgUxUOQruhT8DvinUYgR.jpg",
       "backdrop": "https://image.tmdb.org/t/p/original/efaMS00Fevc3fw2dbeP7rh22O6D.jpg",
@@ -3776,7 +3835,10 @@
       ],
       "original_language": "ko",
       "posterV": 2,
-      "updatedAt": 1792265902903
+      "updatedAt": 1792342551640,
+      "networks": [
+        "tvN"
+      ]
     },
     {
       "id": "218539",
@@ -3822,7 +3884,7 @@
         "Comédie"
       ],
       "rating": "8.5",
-      "pop": 17.1417,
+      "pop": 17.1382,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/xBnscv5BrJREKVSvh0le61y4KDk.jpg",
       "backdrop": "https://image.tmdb.org/t/p/original/eSB0fD6CbNW3LT8Z55V07fmYFpo.jpg",
@@ -4232,7 +4294,10 @@
       ],
       "original_language": "ko",
       "posterV": 2,
-      "updatedAt": 1792265903961
+      "updatedAt": 1792342552461,
+      "networks": [
+        "SBS"
+      ]
     },
     {
       "id": "276161",
@@ -4288,7 +4353,7 @@
         "Comédie"
       ],
       "rating": "9.4",
-      "pop": 51.7272,
+      "pop": 52.2456,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/fMECSPrTmRClSViMsXFYmiYIcWP.jpg",
       "backdrop": "https://image.tmdb.org/t/p/original/vyG93jhmPL7tBIhRtCLa5mdBKob.jpg",
@@ -4511,7 +4576,10 @@
       ],
       "original_language": "ko",
       "posterV": 2,
-      "updatedAt": 1792329811474
+      "updatedAt": 1792342553305,
+      "networks": [
+        "Netflix"
+      ]
     },
     {
       "id": "99966",
@@ -4552,7 +4620,7 @@
         "Science-Fiction & Fantastique"
       ],
       "rating": "8.3",
-      "pop": 25.3377,
+      "pop": 25.6073,
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/w500/pTEFqAjLd5YTsMD6NSUxV6Dq7A6.jpg",
       "backdrop": "https://image.tmdb.org/t/p/original/8hp2CuGnw1iP5dLBVMAPUv23swx.jpg",
@@ -4777,7 +4845,10 @@
       ],
       "original_language": "ko",
       "posterV": 2,
-      "updatedAt": 1792265905961
+      "updatedAt": 1792342554143,
+      "networks": [
+        "Netflix"
+      ]
     },
     {
       "id": "298008",
@@ -4815,7 +4886,7 @@
         "Drame"
       ],
       "rating": "7.6",
-      "pop": 14.7026,
+      "pop": 14.9095,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/u0mCeqVvQW2HEfrRy1we9UklsQd.jpg",
       "backdrop": "https://image.tmdb.org/t/p/original/mIjERiWlnDzQWHTcZdtucLmTCeO.jpg",
@@ -5002,7 +5073,10 @@
       ],
       "original_language": "ja",
       "posterV": 2,
-      "updatedAt": 1792265906940
+      "updatedAt": 1792342555642,
+      "networks": [
+        "Netflix"
+      ]
     },
     {
       "id": "246473",
@@ -5031,7 +5105,7 @@
         "Drame"
       ],
       "rating": "8.2",
-      "pop": 18.1467,
+      "pop": 17.6649,
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/original/2yi3gOIQt22NjJam1u5jqBa3GQ1.jpg",
       "backdrop": "https://image.tmdb.org/t/p/original/fRR6jHutlHuYxMeZp4cZfjgafzd.jpg",
@@ -5285,7 +5359,10 @@
       ],
       "original_language": "ko",
       "posterV": 2,
-      "updatedAt": 1792267466303
+      "updatedAt": 1792342556517,
+      "networks": [
+        "Disney+"
+      ]
     },
     {
       "id": "289423",
@@ -5329,8 +5406,8 @@
         "Science-Fiction & Fantastique",
         "Comédie"
       ],
-      "rating": "8.7",
-      "pop": 125.0672,
+      "rating": "8.8",
+      "pop": 106.063,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/ecRrKGXfflZmDZBD4irdkybClT.jpg",
       "backdrop": "https://image.tmdb.org/t/p/original/rN9xHDp83kZ3cOr82JR1b4rFIFk.jpg",
@@ -5399,6 +5476,7 @@
                 {
                   "name": "VIDMOLY",
                   "url": "https://vidmoly.org/embed-5h3wmj2gml5o.html",
+                  "quality": "VIDARA https://vidara.to/e/xPxAg60z4HB6c",
                   "by": "614d778ed0"
                 }
               ],
@@ -5417,6 +5495,7 @@
                 {
                   "name": "VIDMOLY",
                   "url": "https://vidmoly.org/embed-cgx7qfr09iat.html",
+                  "quality": "VIDARA https://vidara.to/e/6zWXxQkpTQfvl",
                   "by": "614d778ed0"
                 }
               ],
@@ -5435,6 +5514,7 @@
                 {
                   "name": "VIDMOLY",
                   "url": "https://vidmoly.org/embed-1cttngyhge9h.html",
+                  "quality": "VIDARA https://vidara.to/e/bUjVAavNS1ExI",
                   "by": "614d778ed0"
                 }
               ],
@@ -5486,6 +5566,7 @@
                 {
                   "name": "VIDMOLY",
                   "url": "https://vidmoly.org/embed-76vnmuq52bne.html",
+                  "quality": "VIDARA https://vidara.to/e/gX8tqAUo23Fvn",
                   "by": "614d778ed0"
                 }
               ],
@@ -5504,6 +5585,7 @@
                 {
                   "name": "VIDMOLY",
                   "url": "https://vidmoly.org/embed-3kpgujr241gm.html",
+                  "quality": "VIDARA https://vidara.to/e/917weWRH9WdQD",
                   "by": "614d778ed0"
                 }
               ],
@@ -5522,6 +5604,7 @@
                 {
                   "name": "VIDMOLY",
                   "url": "https://vidmoly.org/embed-a88c5f9d1s10.html",
+                  "quality": "VIDARA https://vidara.to/e/u4pQPYbeo8s4s",
                   "by": "614d778ed0"
                 }
               ],
@@ -5540,6 +5623,7 @@
                 {
                   "name": "VIDMOLY",
                   "url": "https://vidmoly.org/embed-08dev3x0ypv4.html",
+                  "quality": "VIDARA https://vidara.to/e/Qtnkr2LO3ehTd",
                   "by": "614d778ed0"
                 }
               ],
@@ -5558,6 +5642,7 @@
                 {
                   "name": "VIDMOLY",
                   "url": "https://vidmoly.org/embed-mleq9dd8eqy7.html",
+                  "quality": "VIDARA https://vidara.to/e/BtTjifRggwwTy",
                   "by": "614d778ed0"
                 }
               ],
@@ -5579,8 +5664,11 @@
       ],
       "original_language": "ko",
       "posterV": 2,
-      "updatedAt": 1792330100458,
-      "trend": 70
+      "trend": 68,
+      "updatedAt": 1792342557517,
+      "networks": [
+        "Netflix"
+      ]
     },
     {
       "id": "300146",
@@ -5604,6 +5692,7 @@
         "Sous le masque",
         "Където маската пада",
         "嫁金釵",
+        "زفاف الدبوس الذهبي",
         "Jia Jin Chai",
         "Transfer Gold Hairpin",
         "嫁金钗"
@@ -5614,10 +5703,10 @@
         "Drame"
       ],
       "rating": "9.0",
-      "pop": 32.6668,
+      "pop": 47.6326,
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/original/6Pw78I4inl8CESM4GZMyQTGobph.jpg",
-      "backdrop": "https://image.tmdb.org/t/p/original/YndvGwqwroUDVltBWmnOuTvJke.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/original/oagkprEWVF8EDyGMoQlTQajbsWH.jpg",
       "cast": [
         {
           "name": "Tian Xiwei",
@@ -5636,12 +5725,13 @@
             {
               "number": 1,
               "name": "Épisode 1",
-              "overview": "After discovering her lookalike, cruel heiress Wei Rao conspires to use the woman as a pawn when a sudden crisis forces an unwanted marriage.",
+              "overview": "Après avoir découvert son sosie, la cruelle héritière Wei Rao décide de l'utiliser comme pion lorsqu'une crise soudaine lui impose un mariage non désiré.",
               "air_date": "2026-10-16",
               "sources": [
                 {
-                  "name": "VIDMOLY 2",
-                  "url": "https://vidmoly.me/v/2yld09tdh2b7"
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.me/v/2yld09tdh2b7",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -5649,12 +5739,13 @@
             {
               "number": 2,
               "name": "Épisode 2",
-              "overview": "A-Chou agrees to marry Lu Zhuo in Wei Rao's place, but she warns her mother about the Wei family. Meanwhile, the true heiress takes on the name Jundai.",
+              "overview": "A-Chou accepte d'épouser Lu Zhuo à la place de Wei Rao, mais met sa mère en garde contre la famille Wei. Pendant ce temps, la véritable héritière prend le nom de Jundai.",
               "air_date": "2026-10-16",
               "sources": [
                 {
-                  "name": "VIDMOLY 2",
-                  "url": "https://vidmoly.me/v/ftm3yk26ikx5"
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.me/v/ftm3yk26ikx5",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -5662,12 +5753,13 @@
             {
               "number": 3,
               "name": "Épisode 3",
-              "overview": "After refusing to leave, the impostor Wei Rao makes a painful sacrifice to win Lu Zhuo's trust. Meanwhile, a calculated plot begins to unfold.",
+              "overview": "Après avoir refusé de partir, l'imposteur Wei Rao fait un sacrifice douloureux pour gagner la confiance de Lu Zhuo. Pendant ce temps, une machination dérape.",
               "air_date": "2026-10-16",
               "sources": [
                 {
-                  "name": "VIDMOLY 2",
-                  "url": "https://vidmoly.me/v/x3lw9r89bioi"
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.me/v/x3lw9r89bioi",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -5675,12 +5767,13 @@
             {
               "number": 4,
               "name": "Épisode 4",
-              "overview": "Wei Rao's maid helps her with a cover-up after Lu Zhuo nearly learns a lethal secret. A customary visit to the Wei family leads to a deadly setup.",
+              "overview": "La servante de Wei Rao l'aide à dissimuler des preuves après que Lu Zhuo a failli découvrir un secret mortel. Une visite traditionnelle chez les Wei mène à un piège fatal.",
               "air_date": "2026-10-16",
               "sources": [
                 {
-                  "name": "VIDMOLY 2",
-                  "url": "https://vidmoly.me/v/6ifc1l4tf216"
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.me/v/6ifc1l4tf216",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -5688,7 +5781,7 @@
             {
               "number": 5,
               "name": "Épisode 5",
-              "overview": "",
+              "overview": "Après avoir survécu à l'incendie de la bibliothèque, Wei Rao tente de cacher une lettre secrète. Lu Zhuo se méfie en remarquant ses mains calleuses.",
               "air_date": "2026-10-17",
               "sources": [
                 {
@@ -5702,7 +5795,7 @@
             {
               "number": 6,
               "name": "Épisode 6",
-              "overview": "",
+              "overview": "Wei Rao est félicitée pour l'organisation d'un grand banquet d'anniversaire. Mais le danger plane sur sa demeure, tandis que Lu Zhuo prépare un complot secret avec des papillons.",
               "air_date": "2026-10-17",
               "sources": [
                 {
@@ -5716,7 +5809,7 @@
             {
               "number": 7,
               "name": "Épisode 7",
-              "overview": "",
+              "overview": "While performing at the banquet, Wei Rao faces hidden threats from all sides, but her sharp wits turn a dangerous trap back on her enemies.",
               "air_date": "2026-10-18",
               "sources": [
                 {
@@ -5730,7 +5823,7 @@
             {
               "number": 8,
               "name": "Épisode 8",
-              "overview": "",
+              "overview": "Driven by jealousy, Lu Zhuo makes a pact with Wei Rao. Meanwhile, Wei Rao's long-sought reunion with her brother draws dangerous attention from Han Liao.",
               "air_date": "2026-10-18",
               "sources": [
                 {
@@ -5928,8 +6021,12 @@
       ],
       "downloads": [],
       "posterV": 2,
-      "updatedAt": 1792332176414,
-      "trend": 89
+      "trend": 84,
+      "updatedAt": 1792342558526,
+      "networks": [
+        "CCTV-8",
+        "Youku"
+      ]
     },
     {
       "id": "289690",
@@ -5960,7 +6057,7 @@
         "Science-Fiction & Fantastique"
       ],
       "rating": "7.1",
-      "pop": 6.2847,
+      "pop": 6.1836,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/3hsCoGDAceyh1FnFHHLkozPNlSS.jpg",
       "backdrop": "https://image.tmdb.org/t/p/original/SYzF7EFhhKTspLDzogpel2HHDl.jpg",
@@ -6270,7 +6367,11 @@
       ],
       "downloads": [],
       "posterV": 2,
-      "updatedAt": 1792265910312
+      "updatedAt": 1792342559712,
+      "networks": [
+        "Lifetime",
+        "U+ Mobile TV"
+      ]
     },
     {
       "id": "304452",
@@ -6295,7 +6396,7 @@
         "Drame"
       ],
       "rating": "9.0",
-      "pop": 53.6394,
+      "pop": 63.0421,
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/original/nGSj4YtMOwP4cjGSD1fDlI6WLag.jpg",
       "backdrop": "https://image.tmdb.org/t/p/original/vD84yLJVVd7cC2lKF8sEukQG2A3.jpg",
@@ -6717,8 +6818,12 @@
       ],
       "downloads": [],
       "posterV": 2,
-      "updatedAt": 1792332420330,
-      "trend": 65
+      "updatedAt": 1792342560657,
+      "trend": 69,
+      "networks": [
+        "Hunan Television",
+        "Mango TV"
+      ]
     },
     {
       "id": "208336",
@@ -6764,7 +6869,7 @@
         "Mystère"
       ],
       "rating": "8.2",
-      "pop": 10.7976,
+      "pop": 10.8297,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/ccej6D8J81DDJWqhP7OG6PA6xcl.jpg",
       "posterV": 2,
@@ -6846,14 +6951,7 @@
                   "by": "head"
                 }
               ],
-              "downloads": [
-                {
-                  "name": "1FICHIER",
-                  "url": "https://1fichier.com/?564zs4ikr4ksb133ko08",
-                  "quality": "1080p (H.264)",
-                  "by": "head"
-                }
-              ]
+              "downloads": []
             },
             {
               "number": 2,
@@ -6877,14 +6975,7 @@
                   "by": "head"
                 }
               ],
-              "downloads": [
-                {
-                  "name": "1FICHIER",
-                  "url": "https://1fichier.com/?wz1a2k096pn86xdivsqr",
-                  "quality": "1080p (H.264)",
-                  "by": "head"
-                }
-              ]
+              "downloads": []
             },
             {
               "number": 3,
@@ -6908,14 +6999,7 @@
                   "by": "head"
                 }
               ],
-              "downloads": [
-                {
-                  "name": "1FICHIER",
-                  "url": "https://1fichier.com/?vahu12kbtjmqcb79xu34",
-                  "quality": "1080p (H.264)",
-                  "by": "head"
-                }
-              ]
+              "downloads": []
             },
             {
               "number": 4,
@@ -6939,14 +7023,7 @@
                   "by": "head"
                 }
               ],
-              "downloads": [
-                {
-                  "name": "1FICHIER",
-                  "url": "https://1fichier.com/?7s1n5465t9jzi7c7qpfm",
-                  "quality": "1080p (H.264)",
-                  "by": "head"
-                }
-              ]
+              "downloads": []
             },
             {
               "number": 5,
@@ -6970,14 +7047,7 @@
                   "by": "head"
                 }
               ],
-              "downloads": [
-                {
-                  "name": "1FICHIER",
-                  "url": "https://1fichier.com/?oxre9xipiw1m7pcpk9wy",
-                  "quality": "1080p (H.264)",
-                  "by": "head"
-                }
-              ]
+              "downloads": []
             },
             {
               "number": 6,
@@ -7001,14 +7071,7 @@
                   "by": "head"
                 }
               ],
-              "downloads": [
-                {
-                  "name": "1FICHIER",
-                  "url": "https://1fichier.com/?7kuq8hsaeige5u577loa",
-                  "quality": "1080p (H.264)",
-                  "by": "head"
-                }
-              ]
+              "downloads": []
             },
             {
               "number": 7,
@@ -7056,14 +7119,7 @@
                   "by": "head"
                 }
               ],
-              "downloads": [
-                {
-                  "name": "1FICHIER",
-                  "url": "https://1fichier.com/?pfm6oybjyhf0e070uge5",
-                  "quality": "1080p (H.264)",
-                  "by": "head"
-                }
-              ]
+              "downloads": []
             },
             {
               "number": 9,
@@ -7087,14 +7143,7 @@
                   "by": "head"
                 }
               ],
-              "downloads": [
-                {
-                  "name": "1FICHIER",
-                  "url": "https://1fichier.com/?y3gvza0iyyj81upwu2hx",
-                  "quality": "1080p (H.264)",
-                  "by": "head"
-                }
-              ]
+              "downloads": []
             },
             {
               "number": 10,
@@ -7118,14 +7167,7 @@
                   "by": "head"
                 }
               ],
-              "downloads": [
-                {
-                  "name": "1FICHIER",
-                  "url": "https://1fichier.com/?80v7qfqceso4f98dun00",
-                  "quality": "1080p (H.264)",
-                  "by": "head"
-                }
-              ]
+              "downloads": []
             },
             {
               "number": 11,
@@ -7149,14 +7191,7 @@
                   "by": "head"
                 }
               ],
-              "downloads": [
-                {
-                  "name": "1FICHIER",
-                  "url": "https://1fichier.com/?py5r06rmn8ccdvb40hf4",
-                  "quality": "1080p (H.264)",
-                  "by": "head"
-                }
-              ]
+              "downloads": []
             },
             {
               "number": 12,
@@ -7180,14 +7215,7 @@
                   "by": "head"
                 }
               ],
-              "downloads": [
-                {
-                  "name": "1FICHIER",
-                  "url": "https://1fichier.com/?6ynz08nf2yit2ov110f5",
-                  "quality": "1080p (H.264)",
-                  "by": "head"
-                }
-              ]
+              "downloads": []
             }
           ],
           "downloads": []
@@ -7200,7 +7228,10 @@
         "VF"
       ],
       "downloads": [],
-      "updatedAt": 1792324076458
+      "updatedAt": 1792342561556,
+      "networks": [
+        "Disney+"
+      ]
     },
     {
       "id": "305551",
@@ -7224,6 +7255,7 @@
         "Ljubav među jagodama",
         "Ягодная любовь",
         "موسم الفراولة",
+        "Chuyện Tình Mùa Dâu",
         "爱上草莓的季节",
         "메리베리러브",
         "Веселая ягодная любовь",
@@ -7236,7 +7268,7 @@
         "Drame"
       ],
       "rating": "9.6",
-      "pop": 47.1633,
+      "pop": 43.2591,
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/w500/av7wQdYaicBCCUFQ6jRlm9ylZx4.jpg",
       "posterV": 2,
@@ -7419,7 +7451,10 @@
         "VF"
       ],
       "downloads": [],
-      "updatedAt": 1792321567320
+      "updatedAt": 1792342562458,
+      "networks": [
+        "Nippon TV"
+      ]
     },
     {
       "id": "m1375646",
@@ -7463,7 +7498,7 @@
         "Science-Fiction"
       ],
       "rating": "8.1",
-      "pop": 81.1771,
+      "pop": 82.0776,
       "status": "Released",
       "runtime": 123,
       "poster": "https://image.tmdb.org/t/p/w500/tN799oUR0f1gUKDYdMNrDaY7I51.jpg",
@@ -7550,8 +7585,8 @@
           "by": "head"
         }
       ],
-      "updatedAt": 1792271265545,
-      "trend": 70
+      "updatedAt": 1792342562979,
+      "trend": 59
     },
     {
       "id": "307106",
@@ -7588,7 +7623,7 @@
         "Comédie"
       ],
       "rating": "7.9",
-      "pop": 30.0688,
+      "pop": 28.9967,
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/w500/pGqcErS76y8bcvZZSFUefdZOg2x.jpg",
       "posterV": 2,
@@ -7738,7 +7773,10 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792276100850
+      "updatedAt": 1792342563853,
+      "networks": [
+        "ENA"
+      ]
     },
     {
       "id": "311648",
@@ -7768,7 +7806,7 @@
         "Comédie"
       ],
       "rating": "",
-      "pop": 14.6539,
+      "pop": 13.3539,
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/w500/e4MlbtE02So4D5DJy197DbiAxqs.jpg",
       "posterV": 2,
@@ -7938,8 +7976,11 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792275999101,
-      "trend": 53
+      "updatedAt": 1792342564691,
+      "trend": 72,
+      "networks": [
+        "TVING"
+      ]
     },
     {
       "id": "294636",
@@ -7972,7 +8013,7 @@
         "Drame"
       ],
       "rating": "7.6",
-      "pop": 18.6357,
+      "pop": 18.9735,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/hub0e50sPTkEH8FKhJmXCW60xVl.jpg",
       "posterV": 2,
@@ -8174,7 +8215,10 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792278078942
+      "updatedAt": 1792342565533,
+      "networks": [
+        "TVING"
+      ]
     },
     {
       "id": "276470",
@@ -8204,7 +8248,7 @@
         "Familial"
       ],
       "rating": "6.0",
-      "pop": 5.0789,
+      "pop": 4.3769,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/9JaeSxCUS7XWPb6ta6KmRDct6xh.jpg",
       "posterV": 2,
@@ -8430,7 +8474,10 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792278045145
+      "updatedAt": 1792342566561,
+      "networks": [
+        "KBS Drama"
+      ]
     },
     {
       "id": "291496",
@@ -8477,7 +8524,7 @@
         "Comédie"
       ],
       "rating": "8.8",
-      "pop": 36.005,
+      "pop": 36.1864,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/xQwpGhQC6v01IRTbn5DV0WusXuZ.jpg",
       "posterV": 2,
@@ -8991,7 +9038,10 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792333870785
+      "updatedAt": 1792342567600,
+      "networks": [
+        "Netflix"
+      ]
     },
     {
       "id": "294095",
@@ -9030,7 +9080,7 @@
         "Crime"
       ],
       "rating": "8.3",
-      "pop": 19.5545,
+      "pop": 18.6215,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/t735IT5vH3vSjm63EusFVg5HEqd.jpg",
       "posterV": 2,
@@ -9292,7 +9342,10 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792280726692
+      "updatedAt": 1792342568613,
+      "networks": [
+        "MBC"
+      ]
     },
     {
       "id": "301418",
@@ -9328,7 +9381,7 @@
         "Drame"
       ],
       "rating": "8.3",
-      "pop": 7.2843,
+      "pop": 7.4113,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/k1uOMMHv0o9xPJuxh0q28nqN83Y.jpg",
       "posterV": 2,
@@ -9486,7 +9539,10 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792281016158
+      "updatedAt": 1792342569588,
+      "networks": [
+        "Coupang Play"
+      ]
     },
     {
       "id": "298610",
@@ -9534,7 +9590,7 @@
         "Drame"
       ],
       "rating": "8.7",
-      "pop": 14.0019,
+      "pop": 14.9014,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/cGpfU5zWci552BFDfrby8iRCAPu.jpg",
       "posterV": 2,
@@ -9752,7 +9808,10 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792281412311
+      "updatedAt": 1792342570725,
+      "networks": [
+        "tvN"
+      ]
     },
     {
       "id": "279323",
@@ -9798,7 +9857,7 @@
         "Drame"
       ],
       "rating": "8.1",
-      "pop": 11.4735,
+      "pop": 11.4143,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/jbQsa0W9JbHypYSZmgB1lKxGzL5.jpg",
       "posterV": 2,
@@ -9948,7 +10007,10 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792281670946
+      "updatedAt": 1792342571693,
+      "networks": [
+        "Netflix"
+      ]
     },
     {
       "id": "292121",
@@ -9982,7 +10044,7 @@
         "Drame"
       ],
       "rating": "8.2",
-      "pop": 14.0158,
+      "pop": 14.7338,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/4buHiyaXkkzIdFDu66GOhvXEqbK.jpg",
       "posterV": 2,
@@ -10212,7 +10274,10 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792281938434
+      "updatedAt": 1792342572656,
+      "networks": [
+        "ENA"
+      ]
     },
     {
       "id": "300954",
@@ -10251,7 +10316,7 @@
         "Mystère"
       ],
       "rating": "8.8",
-      "pop": 7.1433,
+      "pop": 7.5142,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/z74qJEf1MRsEEIKFgbeyBAHmJXg.jpg",
       "posterV": 2,
@@ -10481,7 +10546,10 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792282183165
+      "updatedAt": 1792342573593,
+      "networks": [
+        "KBS2"
+      ]
     },
     {
       "id": "300727",
@@ -10525,7 +10593,7 @@
         "Crime"
       ],
       "rating": "8.5",
-      "pop": 15.5835,
+      "pop": 15.1695,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/qFxbrHvNq5tn9SCBq3aKPgaGfyO.jpg",
       "posterV": 2,
@@ -10759,7 +10827,10 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792282642831
+      "updatedAt": 1792342574654,
+      "networks": [
+        "JTBC"
+      ]
     },
     {
       "id": "287011",
@@ -10802,7 +10873,7 @@
         "Drame"
       ],
       "rating": "8.4",
-      "pop": 11.8059,
+      "pop": 12.9878,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/bcnneY1DWQzmwfvsuhGGnwv9KYD.jpg",
       "posterV": 2,
@@ -11036,7 +11107,10 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792282841469
+      "updatedAt": 1792342575575,
+      "networks": [
+        "SBS"
+      ]
     },
     {
       "id": "289763",
@@ -11089,7 +11163,7 @@
         "Drame"
       ],
       "rating": "8.9",
-      "pop": 19.4319,
+      "pop": 18.1419,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/30P3ySNo0m0xNhHQMXzpmquLwxa.jpg",
       "posterV": 2,
@@ -11323,7 +11397,10 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792283137057
+      "updatedAt": 1792342576538,
+      "networks": [
+        "tvN"
+      ]
     },
     {
       "id": "299365",
@@ -11355,7 +11432,7 @@
         "Science-Fiction & Fantastique"
       ],
       "rating": "8.2",
-      "pop": 12.7423,
+      "pop": 12.4415,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/kPHv37XVpyWCsae3gtHujw1wPyW.jpg",
       "posterV": 2,
@@ -11593,7 +11670,10 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792283431948
+      "updatedAt": 1792342577459,
+      "networks": [
+        "JTBC"
+      ]
     },
     {
       "id": "286360",
@@ -11637,7 +11717,7 @@
         "Drame"
       ],
       "rating": "7.9",
-      "pop": 10.354,
+      "pop": 9.8669,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/4HsHVDD4K3IWr6jmTL5bIkM7qPV.jpg",
       "posterV": 2,
@@ -11771,7 +11851,10 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792283764084
+      "updatedAt": 1792342578358,
+      "networks": [
+        "Netflix"
+      ]
     },
     {
       "id": "315007",
@@ -11983,7 +12066,11 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792283981971
+      "updatedAt": 1792342579281,
+      "networks": [
+        "Lifetime",
+        "U+ Mobile TV"
+      ]
     },
     {
       "id": "301412",
@@ -12015,7 +12102,7 @@
         "Comédie"
       ],
       "rating": "9.3",
-      "pop": 13.0799,
+      "pop": 13.3582,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/cBiwrUwUNNYXTc5xrDEQWcMqftd.jpg",
       "posterV": 2,
@@ -12233,7 +12320,10 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792284244943
+      "updatedAt": 1792342580271,
+      "networks": [
+        "ENA"
+      ]
     },
     {
       "id": "287009",
@@ -12277,7 +12367,7 @@
         "Drame"
       ],
       "rating": "8.2",
-      "pop": 11.9398,
+      "pop": 12.1035,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/zwEYhe03vN1rbjF8Bsf9Dng0W8e.jpg",
       "posterV": 2,
@@ -12491,7 +12581,10 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792284487493
+      "updatedAt": 1792342581208,
+      "networks": [
+        "ENA"
+      ]
     },
     {
       "id": "296206",
@@ -12543,7 +12636,7 @@
         "Drame"
       ],
       "rating": "8.5",
-      "pop": 49.7321,
+      "pop": 48.6395,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/mxa7YxVln3Rwnd2Va82PoclTznj.jpg",
       "posterV": 2,
@@ -12737,7 +12830,10 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792284796414
+      "updatedAt": 1792342582144,
+      "networks": [
+        "SBS"
+      ]
     },
     {
       "id": "233833",
@@ -12770,7 +12866,7 @@
         "Familial"
       ],
       "rating": "8.1",
-      "pop": 8.2592,
+      "pop": 10.1326,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/dc4YYEMeoiYLas0ao5UZugXeSSo.jpg",
       "posterV": 2,
@@ -13008,7 +13104,10 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792285084259
+      "updatedAt": 1792342583036,
+      "networks": [
+        "MBC"
+      ]
     },
     {
       "id": "314784",
@@ -13049,7 +13148,7 @@
         "Comédie"
       ],
       "rating": "8.8",
-      "pop": 27.8215,
+      "pop": 27.5944,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/wY4rhPE90jJ4bp1JZOFY0MeRJQX.jpg",
       "posterV": 2,
@@ -13315,7 +13414,10 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792285450051
+      "updatedAt": 1792342583950,
+      "networks": [
+        "Coupang Play"
+      ]
     },
     {
       "id": "259837",
@@ -13362,7 +13464,7 @@
         "Drame"
       ],
       "rating": "8.8",
-      "pop": 26.2279,
+      "pop": 23.4682,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/jj7AYkz2OLRDL1wfJmjTXyWQ5I4.jpg",
       "posterV": 2,
@@ -13532,7 +13634,10 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792285646335
+      "updatedAt": 1792342584823,
+      "networks": [
+        "Netflix"
+      ]
     },
     {
       "id": "295509",
@@ -13574,7 +13679,7 @@
         "Drame"
       ],
       "rating": "8.6",
-      "pop": 15.9879,
+      "pop": 15.965,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/avO54r6aVZxS61XSUqJjWo58t1x.jpg",
       "posterV": 2,
@@ -13812,7 +13917,10 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792285910272
+      "updatedAt": 1792342585691,
+      "networks": [
+        "tvN"
+      ]
     },
     {
       "id": "285838",
@@ -13860,7 +13968,7 @@
         "Drame"
       ],
       "rating": "8.0",
-      "pop": 40.8147,
+      "pop": 37.8112,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/oldJKLaDBPLDQBdXvdNTLCEehUI.jpg",
       "posterV": 2,
@@ -14026,7 +14134,10 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792286195071
+      "updatedAt": 1792342586536,
+      "networks": [
+        "Netflix"
+      ]
     },
     {
       "id": "297640",
@@ -14305,7 +14416,10 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792286493088
+      "updatedAt": 1792342587380,
+      "networks": [
+        "tvN"
+      ]
     },
     {
       "id": "281010",
@@ -14346,7 +14460,7 @@
         "Comédie"
       ],
       "rating": "7.7",
-      "pop": 13.2547,
+      "pop": 12.2362,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/afLKnB1yzh28YbpbB5Z5xragMf.jpg",
       "posterV": 2,
@@ -14632,7 +14746,10 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792286830510
+      "updatedAt": 1792342588247,
+      "networks": [
+        "SBS"
+      ]
     },
     {
       "id": "303143",
@@ -14678,7 +14795,7 @@
         "Science-Fiction & Fantastique"
       ],
       "rating": "8.7",
-      "pop": 14.755,
+      "pop": 15.8982,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/uxEN0pfh5OCSjIvV4GGXDVtjIuR.jpg",
       "posterV": 2,
@@ -14928,7 +15045,10 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792287466025
+      "updatedAt": 1792342589407,
+      "networks": [
+        "SBS"
+      ]
     },
     {
       "id": "319600",
@@ -14959,7 +15079,7 @@
         "Drame"
       ],
       "rating": "6.7",
-      "pop": 6.0506,
+      "pop": 5.91,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/aWWBq5tA2En7bxlTKh8XpCGJUFz.jpg",
       "posterV": 2,
@@ -15105,8 +15225,11 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792342172099,
-      "posterCustom": true
+      "updatedAt": 1792342590341,
+      "posterCustom": true,
+      "networks": [
+        "MBN Plus"
+      ]
     },
     {
       "id": "284000",
@@ -15310,7 +15433,10 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792287663783
+      "updatedAt": 1792342591251,
+      "networks": [
+        "wavve"
+      ]
     },
     {
       "id": "278113",
@@ -15353,7 +15479,7 @@
         "Mystère"
       ],
       "rating": "7.8",
-      "pop": 16.0255,
+      "pop": 14.4862,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/ixBHQ96ryMa8Q0uIOFdUCjqRyy8.jpg",
       "posterV": 2,
@@ -15543,7 +15669,10 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792288057870
+      "updatedAt": 1792342592162,
+      "networks": [
+        "Disney+"
+      ]
     },
     {
       "id": "289424",
@@ -15580,7 +15709,7 @@
         "Drame"
       ],
       "rating": "8.6",
-      "pop": 12.652,
+      "pop": 12.3866,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/c2jswCrMoqDEBEXwSAlrCWtXdfZ.jpg",
       "posterV": 2,
@@ -15818,7 +15947,10 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792288352767
+      "updatedAt": 1792342593093,
+      "networks": [
+        "JTBC"
+      ]
     },
     {
       "id": "311844",
@@ -15844,7 +15976,7 @@
         "Drame"
       ],
       "rating": "0.5",
-      "pop": 4.341,
+      "pop": 4.608,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/7mKYQWgTDe0Zf13FXn8QYxPf18r.jpg",
       "posterV": 2,
@@ -16040,7 +16172,10 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792289143595
+      "updatedAt": 1792342594049,
+      "networks": [
+        "MBS"
+      ]
     },
     {
       "id": "317415",
@@ -16213,7 +16348,10 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792289856826
+      "updatedAt": 1792342594983,
+      "networks": [
+        "CBC"
+      ]
     },
     {
       "id": "319077",
@@ -16242,7 +16380,7 @@
         "Comédie"
       ],
       "rating": "4.0",
-      "pop": 4.8055,
+      "pop": 4.6242,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/wc9IbG1FkxzGGSkrP3kxUDpt2Ls.jpg",
       "posterV": 2,
@@ -16540,7 +16678,10 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792290174777
+      "updatedAt": 1792342595898,
+      "networks": [
+        "ABEMA"
+      ]
     },
     {
       "id": "325063",
@@ -16715,7 +16856,10 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792290626866
+      "updatedAt": 1792342596781,
+      "networks": [
+        "BS TV Tokyo"
+      ]
     },
     {
       "id": "317787",
@@ -16914,7 +17058,10 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792290941740
+      "updatedAt": 1792342597735,
+      "networks": [
+        "MBS"
+      ]
     },
     {
       "id": "323264",
@@ -17079,7 +17226,10 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792291081966
+      "updatedAt": 1792342598648,
+      "networks": [
+        "MBS"
+      ]
     },
     {
       "id": "300710",
@@ -17107,7 +17257,7 @@
         "Drame"
       ],
       "rating": "5.0",
-      "pop": 2.6502,
+      "pop": 2.8746,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/4FlQ5JdJLMLOrPo14KN4EZu3uuI.jpg",
       "posterV": 2,
@@ -17293,7 +17443,10 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792291301180
+      "updatedAt": 1792342599551,
+      "networks": [
+        "TV Tokyo"
+      ]
     },
     {
       "id": "322570",
@@ -17519,7 +17672,10 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792291542527
+      "updatedAt": 1792342600537,
+      "networks": [
+        "TBS"
+      ]
     },
     {
       "id": "326063",
@@ -17761,7 +17917,10 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792291864221
+      "updatedAt": 1792342601489,
+      "networks": [
+        "Nippon TV"
+      ]
     },
     {
       "id": "312493",
@@ -17803,7 +17962,7 @@
         "Action & Adventure"
       ],
       "rating": "8.0",
-      "pop": 8.7469,
+      "pop": 8.9866,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/kllmJ1DdzuRszNNwFFu0M7V55Fg.jpg",
       "posterV": 2,
@@ -17957,7 +18116,10 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792292040390
+      "updatedAt": 1792342602448,
+      "networks": [
+        "Netflix"
+      ]
     },
     {
       "id": "209459",
@@ -17989,7 +18151,7 @@
         "Comédie"
       ],
       "rating": "7.7",
-      "pop": 5.5224,
+      "pop": 5.3429,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/d78INqowmEx6DeoqqtE9UZakFTz.jpg",
       "posterV": 2,
@@ -18199,7 +18361,10 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792292283239
+      "updatedAt": 1792342603355,
+      "networks": [
+        "TBS"
+      ]
     },
     {
       "id": "311871",
@@ -18231,7 +18396,7 @@
         "Crime"
       ],
       "rating": "6.9",
-      "pop": 5.7264,
+      "pop": 5.9636,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/69MPQL5lEcmI3x82tgCSVUZGha.jpg",
       "posterV": 2,
@@ -18437,7 +18602,10 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792292517724
+      "updatedAt": 1792342604316,
+      "networks": [
+        "TBS"
+      ]
     },
     {
       "id": "300529",
@@ -18678,7 +18846,10 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792292713756
+      "updatedAt": 1792342605248,
+      "networks": [
+        "Netflix"
+      ]
     },
     {
       "id": "320513",
@@ -18878,7 +19049,11 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792292814815
+      "updatedAt": 1792342606133,
+      "networks": [
+        "Fuji TV",
+        "Channel A"
+      ]
     },
     {
       "id": "334323",
@@ -18901,7 +19076,7 @@
         "Drame"
       ],
       "rating": "",
-      "pop": 2.6475,
+      "pop": 2.3499,
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/w500/gZ7dPo58d30aAJ05RtqrgTEFmhs.jpg",
       "posterV": 2,
@@ -19023,7 +19198,10 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792292893092
+      "updatedAt": 1792342607019,
+      "networks": [
+        "MBS"
+      ]
     },
     {
       "id": "288328",
@@ -19047,7 +19225,7 @@
         "Mystère"
       ],
       "rating": "8.5",
-      "pop": 15.6403,
+      "pop": 15.2996,
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/original/t69nmUrT8G4HQ452nLDzkZujEDj.jpg",
       "posterV": 2,
@@ -19215,7 +19393,10 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792331741256
+      "updatedAt": 1792342607884,
+      "networks": [
+        "iQiyi"
+      ]
     },
     {
       "id": "215072",
@@ -19562,7 +19743,10 @@
       ],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1792334907462
+      "updatedAt": 1792342608910,
+      "networks": [
+        "Disney+"
+      ]
     }
   ],
   "deletedLinks": [
@@ -19573,6 +19757,7 @@
     "300146\thttps://vidmoly.org/embed-6ifc1l4tf216.html"
   ],
   "deletedFiches": [],
+  "refreshAt": 1792323877753,
   "team": {
     "id": "293607",
     "text": "",
@@ -19594,6 +19779,5 @@
       }
     ],
     "at": 1792336665257
-  },
-  "refreshAt": 1792323877753
+  }
 }
