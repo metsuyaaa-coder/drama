@@ -9852,6 +9852,284 @@
       ],
       "downloads": [],
       "updatedAt": 1792282183165
+    },
+    {
+      "id": "300727",
+      "type": "tv",
+      "name": "The Apartment Job",
+      "original_name": "아파트",
+      "origin_country": [
+        "KR"
+      ],
+      "original_language": "ko",
+      "aka": [
+        "The Apartment Job",
+        "公寓黑风暴",
+        "El Complejo De Apartamentos",
+        "公寓黑風暴",
+        "マンションのお仕事",
+        "Robota we wspólnocie",
+        "Ремонтний фонд",
+        "ท่านประธานกำมะลอ",
+        "Κομπίνα στην Πολυκατοικία",
+        "Phi Vụ Chung Cư",
+        "דירת החלומות",
+        "مهمة في مجمع سكني",
+        "Квартирная работа",
+        "Syndic de choc",
+        "Az álomlakás",
+        "Sarilhos no Condomínio",
+        "شغل آپارتمان",
+        "Predstavnik stanara",
+        "公寓",
+        "Apateu",
+        "Квартира",
+        "Квартирный вопрос",
+        "아파트"
+      ],
+      "year": "2026",
+      "overview": "Un ancien gangster se présente à la présidence de l'association des résidents d'un immeuble afin de mettre la main sur l'argent caché de la copropriété. Cependant, il découvre involontairement la corruption qui règne au sein du complexe. Au fil de ses investigations, il devient peu à peu un héros local.",
+      "genres": [
+        "Drame",
+        "Comédie",
+        "Crime"
+      ],
+      "rating": "8.5",
+      "pop": 15.5835,
+      "status": "Ended",
+      "poster": "https://image.tmdb.org/t/p/w500/qFxbrHvNq5tn9SCBq3aKPgaGfyO.jpg",
+      "posterV": 2,
+      "backdrop": "https://image.tmdb.org/t/p/original/stJcZWrpfT2DjY0K261Q2FpxUkS.jpg",
+      "cast": [
+        {
+          "name": "Ji Seong",
+          "character": "Park Hae-kang"
+        },
+        {
+          "name": "Ha Yoon-kyung",
+          "character": "Kang Ha-ri"
+        },
+        {
+          "name": "Moon So-ri",
+          "character": "Jang Sook-jin"
+        },
+        {
+          "name": "Park Byung-eun",
+          "character": "Lee Chung-won"
+        },
+        {
+          "name": "Jung Soon-won",
+          "character": "Gyeong-nam"
+        },
+        {
+          "name": "Hwang Hee",
+          "character": "Je-gil"
+        },
+        {
+          "name": "김규원",
+          "character": "Big Guy"
+        },
+        {
+          "name": "Kim Won-hae",
+          "character": "Hwang In-sik (Lizard)"
+        },
+        {
+          "name": "Jung Seung-kil",
+          "character": "Choi Young-jae"
+        },
+        {
+          "name": "Ryu Hyun-kyung",
+          "character": "Kang Ha-jeong"
+        },
+        {
+          "name": "노정현",
+          "character": "General Manager Kim"
+        }
+      ],
+      "seasons": [
+        {
+          "number": 1,
+          "name": "Saison 1",
+          "episodes": [
+            {
+              "number": 1,
+              "name": "Épisode 1",
+              "overview": "Desperate to raise a fortune, Park Hae-kang tries every scheme imaginable. But when he still comes up short, a tip leads him to an apartment complex.",
+              "air_date": "2026-07-11",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-7kp864hncfpl.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 2,
+              "name": "Épisode 2",
+              "overview": "After discovering the apartment's reserve fund, Hae-kang sets out to steal it. But first, he must somehow win the election to join the association.",
+              "air_date": "2026-07-12",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-801w43h1jjz9.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 3,
+              "name": "Épisode 3",
+              "overview": "Hae-kang enters a tight and competitive election. While a nosy opponent tries to sway voters, he spots a unique opportunity to win over the residents.",
+              "air_date": "2026-07-18",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-po4szsftpjgv.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 4,
+              "name": "Épisode 4",
+              "overview": "After winning the election, Hae-kang aims for the presidency. But when his gangster past is exposed, a new subway entrance becomes his lifeline.",
+              "air_date": "2026-07-19",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-aogzo6q8mcgx.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 5,
+              "name": "Épisode 5",
+              "overview": "Having finally reached his goal, Hae-kang prepares to disappear without a trace. But when he heads to the bank to claim the cash, everything unravels.",
+              "air_date": "2026-07-25",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-8ibdu6np1l57.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 6,
+              "name": "Épisode 6",
+              "overview": "With Jang Suk-jin on their tail, Hae-kang and Kang Ha-ri scramble to keep their secret safe. Soon, they launch a crusade to find the missing funds.",
+              "air_date": "2026-07-26",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-w8lcedesg3cd.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 7,
+              "name": "Épisode 7",
+              "overview": "Lee Chung-won watches Hae-kang's every move, including his push to raise maintenance dues. Ha-ri struggles with the guilt of deceiving her sister.",
+              "air_date": "2026-08-01",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-82jmizceq358.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 8,
+              "name": "Épisode 8",
+              "overview": "Conflict erupts between owners and rental tenants after outsiders are caught using the sauna, forcing Hae-kang to find a way to bridge the divide.",
+              "air_date": "2026-08-02",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-x2pdlnbqdsn3.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 9,
+              "name": "Épisode 9",
+              "overview": "Chung-won orders Hae-kang to deliver the ledger, putting Ha-ri's sister in danger. When Hae-kang reveals the truth to Ha-ri, she grapples with betrayal.",
+              "air_date": "2026-08-08",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-s7otnka0fnlg.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 10,
+              "name": "Épisode 10",
+              "overview": "Police arrest Hae-kang after accusing him of stealing the repair fund. But to get back at Chung-won, Hae-kang returns with a strategic counterattack.",
+              "air_date": "2026-08-09",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-dtxzcvkoanic.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 11,
+              "name": "Épisode 11",
+              "overview": "A tragedy drives Hae-kang to take down Chung-won, who moves ahead with his new development. He joins forces with Suk-jin to uncover the embezzled funds.",
+              "air_date": "2026-08-15",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-3y0j9a6ngds8.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 12,
+              "name": "Épisode 12",
+              "overview": "Despite setbacks, Hae-kang sets his endgame in motion to bring down Chung-won once and for all. Will justice finally come to the apartment complex?",
+              "air_date": "2026-08-16",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-jtts9asbjp3u.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            }
+          ],
+          "downloads": []
+        }
+      ],
+      "sources": [],
+      "addedAt": 1792282294673,
+      "langs": [
+        "VOSTFR"
+      ],
+      "downloads": [],
+      "updatedAt": 1792282642831
     }
   ],
   "deletedLinks": [
