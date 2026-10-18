@@ -11566,6 +11566,264 @@
       ],
       "downloads": [],
       "updatedAt": 1792284244943
+    },
+    {
+      "id": "287009",
+      "type": "tv",
+      "name": "Doctor on the Edge",
+      "original_name": "닥터 섬보이",
+      "origin_country": [
+        "KR"
+      ],
+      "original_language": "ko",
+      "aka": [
+        "Doctor on the Edge",
+        "医到孤岛爱上你",
+        "醫到孤島愛上你",
+        "Doctor al borde del amor",
+        "Doutor à Beira do Amor",
+        "孤島のエリートドクター",
+        "หมอติดเกาะรักติดเธอ",
+        "طبيب على حافة الهاوية",
+        "Стойкий доктор",
+        "دکتر در حاشیه",
+        "Bác Sĩ Đảo Hoang",
+        "El médico del fin del mundo",
+        "רופא על הקצה",
+        "死撑医生",
+        "死守医生",
+        "존버닥터",
+        "Dakteo Seomboi",
+        "Jonber Doctor",
+        "Endurance Doctor",
+        "Doctor Jonbeo",
+        "Doctor Seomboy",
+        "The Last-Stand Doctor",
+        "The Persevering Doctor",
+        "닥터 섬보이"
+      ],
+      "year": "2026",
+      "overview": "Do Jiui, chirurgien plasticien, est promis à un brillant avenir, lorsqu'une affectation comme médecin de santé publique sur l'île isolée de Pyeondongdo vient bouleverser sa vie. Pour Jiui, cet endroit perdu au milieu de l'océan est plus qu'un simple exil. Hanté par un traumatisme, la mer est pour lui une source de terreur, une prison à ciel ouvert. Entre les habitants indiscrets et les insectes qui l'assaillent de toutes parts, la vie sur l'île est un véritable enfer pour ce citadin. C'est là qu'il rencontre l'infirmière mystérieuse, Yuk Hari. Derrière un doux sourire lourd de secrets, elle semble toujours là lorsque la phobie de Jiui refait surface. Alors que leurs chemins ne cessent de se croiser, Jiui parviendra-t-il à surmonter ses peurs et à quitter l'île ?",
+      "genres": [
+        "Comédie",
+        "Drame"
+      ],
+      "rating": "8.2",
+      "pop": 11.9398,
+      "status": "Ended",
+      "poster": "https://image.tmdb.org/t/p/w500/zwEYhe03vN1rbjF8Bsf9Dng0W8e.jpg",
+      "posterV": 2,
+      "backdrop": "https://image.tmdb.org/t/p/original/7KpvkMnbRsyrAlnrZpbnEWC42AE.jpg",
+      "cast": [
+        {
+          "name": "Lee Jae-wook",
+          "character": "Do Ji-ui"
+        },
+        {
+          "name": "신예은",
+          "character": "Yuk Ha-ri"
+        },
+        {
+          "name": "홍민기",
+          "character": "Hyeon Chi-yeon"
+        },
+        {
+          "name": "Lee Soo-kyung",
+          "character": "Um Jung-seon"
+        },
+        {
+          "name": "김윤우",
+          "character": "Yong Ju-cheon"
+        },
+        {
+          "name": "주인영",
+          "character": "Hwang Shin-hye"
+        }
+      ],
+      "seasons": [
+        {
+          "number": 1,
+          "name": "Saison 1",
+          "episodes": [
+            {
+              "number": 1,
+              "name": "The Doctor Sent to the Island",
+              "overview": "Dreading his post, Do Jiui arrives on Pyeondongdo, meets Yuk Hari, and begins harsh island life.",
+              "air_date": "2026-06-01",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-np5zgfll9bzm.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 2,
+              "name": "The Woman Who Crosses the Line",
+              "overview": "Do Jiui meets the mysterious nurse Yuk Hari, and their line-crossing house calls begin.",
+              "air_date": "2026-06-02",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-nplmc9hqhujp.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 3,
+              "name": "Getting Through Another Day",
+              "overview": "The village chief makes Jiui an outcast. Meanwhile, Hari and Chiyeon are stranded overnight.",
+              "air_date": "2026-06-08",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-vdkrwwfiqm0f.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 4,
+              "name": "A Notorious Woman, a Pathetic Man",
+              "overview": "Jiui is shaken by Hari's past and rumors, and a storm-hit emergency leaves him paralyzed by trauma.",
+              "air_date": "2026-06-09",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-pr3hnv1as9k8.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 5,
+              "name": "Pyeondong Scandal",
+              "overview": "Hari nurses Jiui amidst hospital gossip. Meanwhile, on Pyeondongdo, Mija is in critical condition.",
+              "air_date": "2026-06-15",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-spz5ojgny1rm.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 6,
+              "name": "An Unspeakable Secret",
+              "overview": "Jiui and Hari's relationship is tested by Mija as the county governor schemes over Deokhwa's rescue.",
+              "air_date": "2026-06-16",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-i49xf0wtprsj.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 7,
+              "name": "Words Left Unsaid",
+              "overview": "Torn between love and hurt, Jiui and the hurt Hari drift apart, and Mija's condition worsens.",
+              "air_date": "2026-06-22",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-i7arq80728ff.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 8,
+              "name": "I Can't Do It. I Can't Ignore You.",
+              "overview": "Grieving her grandma, a downpour forces Hari to live with Jiui. Amid mix emotions, a secret emerges.",
+              "air_date": "2026-06-23",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-1r6bgs10d4sx.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 9,
+              "name": "Courage to Forgive",
+              "overview": "Jiui and Hari confirm their feelings, illness spreads on Jineondo, and a man appears before Jucheon.",
+              "air_date": "2026-06-29",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-ndzmg621nty7.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 10,
+              "name": "It's Not Okay",
+              "overview": "A crash shatters Jiui. As his first love Hwayeong returns, Hari must decide whether to let him go.",
+              "air_date": "2026-06-30",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-v4wpzl1nzjk0.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 11,
+              "name": "Reconciliation, Healing, And...",
+              "overview": "Amid a confession and a breakup ahead, a misdiagnosed case returns, and Jiui stands at a crossroads.",
+              "air_date": "2026-07-06",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-v9cpm1eepp7m.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 12,
+              "name": "If I Just Tough It Out, Things Will Work Out Somehow!",
+              "overview": "The governor's risky deal could save the public health center. Will Jiui resist or compromise?",
+              "air_date": "2026-07-07",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-h3nlgzxzp964.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            }
+          ],
+          "downloads": []
+        }
+      ],
+      "sources": [],
+      "addedAt": 1792284335953,
+      "langs": [
+        "VOSTFR"
+      ],
+      "downloads": [],
+      "updatedAt": 1792284487493
     }
   ],
   "deletedLinks": [
