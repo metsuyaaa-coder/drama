@@ -14438,6 +14438,210 @@
       ],
       "downloads": [],
       "updatedAt": 1792287389871
+    },
+    {
+      "id": "284000",
+      "type": "tv",
+      "name": "Reverse",
+      "original_name": "리버스",
+      "origin_country": [
+        "KR"
+      ],
+      "original_language": "ko",
+      "aka": [
+        "리버스",
+        "Reverse",
+        "逆转",
+        "逆轉",
+        "จิตไม่ลืมแค้น",
+        "يعكس",
+        "Kẻ Thù Chung Giường",
+        "معکوس",
+        "Преобръщане",
+        "リバース"
+      ],
+      "year": "2026",
+      "overview": "",
+      "genres": [
+        "Mystère",
+        "Drame"
+      ],
+      "rating": "6.3",
+      "pop": 6.494,
+      "status": "Ended",
+      "poster": "https://image.tmdb.org/t/p/w500/AuOpTRzztBKq0fAagGxc2tGexNO.jpg",
+      "posterV": 2,
+      "backdrop": "https://image.tmdb.org/t/p/original/sJ4BOkTcAm3iH7UPaIkW3v5mjxa.jpg",
+      "cast": [
+        {
+          "name": "Seo Ji-hye",
+          "character": "Myo-jin"
+        },
+        {
+          "name": "Go Soo",
+          "character": "Jun-ho"
+        },
+        {
+          "name": "김재경",
+          "character": "Hee-su"
+        },
+        {
+          "name": "구성환",
+          "character": "Jae-yong"
+        },
+        {
+          "name": "심형탁",
+          "character": "Detective Woo"
+        },
+        {
+          "name": "이현경",
+          "character": "Dr. Jung"
+        },
+        {
+          "name": "김민",
+          "character": "Hae-gwang"
+        },
+        {
+          "name": "Im Won-hee",
+          "character": "Sang-ho"
+        },
+        {
+          "name": "안내상",
+          "character": "Oh Sang-il"
+        },
+        {
+          "name": "윤해빈",
+          "character": "Myo-jin (young)"
+        }
+      ],
+      "seasons": [
+        {
+          "number": 1,
+          "name": "Saison 1",
+          "episodes": [
+            {
+              "number": 1,
+              "name": "The Accident",
+              "overview": "Myo Jin loses all her memories due to a major traffic accident. She can’t remember what caused the accident, where she lives, or even the name of her fiancé, Jun Ho. Sometimes fragments of memory come back, and she even sees someone burning. In the end, Myo Jin announces that she’s done waiting for her memories to return.",
+              "air_date": "2026-04-17",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-jniinmk85jao.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 2,
+              "name": "Distrust",
+              "overview": "Myo Jin sees the initial “H” on a painting hanging on the wall and is reminded of Hee Soo. She immediately sets out to find Hee Soo and discovers that the two of them were very close. When she asks Jun Ho what kind of friend Hee Soo was, he somehow avoids giving a clear answer. Meanwhile, Jun Ho has Ria stay at the house to keep an eye on Myo Jin.",
+              "air_date": "2026-04-17",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-m83dh4w0h4o4.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 3,
+              "name": "The Chase",
+              "overview": "Myo Jin recalls how she first met Jun Ho and realises she has inflicted an irreparable wound on Hee Soo and that Jun Ho lied to her. Sang Ho tracks Lee Jong Su down. Myo Jin follows Lee Jong Su with Sang Ho to figure out what he has on Hee Soo. She finds out the shocking truth.",
+              "air_date": "2026-04-24",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-gz726h0vy2zv.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 4,
+              "name": "Caught",
+              "overview": "After going through Lee Jong Su’s phone, Myo Jin realises he wasn’t just after Hee Soo’s money. Myo Jin meets Wang Gi Cheol in person and asks him to tell her what he knows about her. Gi Cheol shares what happened to Myo Jin’s parents and why he was sent to prison.",
+              "air_date": "2026-04-24",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-0fl8xt1yf4ih.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 5,
+              "name": "Kidnapping",
+              "overview": "Myo Jin gets kidnapped, but Jun Ho manages to bring her home safely. Gi Cheol finds out that he has terminal pancreatic cancer and that he only has three months to live. Woo Sik brings the guys who kidnapped him to Myo Jin and Jun Ho’s house, so that they can get the money they want from Ria and Jun Ho. Meanwhile, Sang Ho goes to meet Lee Jong Ju at the hospital.",
+              "air_date": "2026-05-01",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-2wo8p87syhn6.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 6,
+              "name": "Descent Into Darkness",
+              "overview": "After overhearing Ria’s phone call with Jun Ho, Myo Jin runs away from home. Jun Ho tells CEO Oh that he dropped out of the competition out of conscience as an architect, but CEO Oh doesn’t believe him. Meanwhile, Jun Ho learns from his doctor friend that Myo Jin is getting better fast, but Jun Ho stops his friend from giving Myo Jin any better treatment.",
+              "air_date": "2026-05-01",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-je4lacplb57t.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 7,
+              "name": "The Hunt",
+              "overview": "Detective Woo finds an important piece of evidence regarding the villa murder case. Myo Jin regains her memory and realises who killed her parents. Details about what happened on the day Myo Jin’s parents passed away come to light. Meanwhile, Gi Cheol decides to end things for Myo Jin.",
+              "air_date": "2026-05-08",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-5ngi6rg7917q.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 8,
+              "name": "The Revenge",
+              "overview": "Myo Jin learns that memories are part of the past and that you can’t change what’s already happened. She learns that the memory will haunt her until the day she dies, but she executes her plans nonetheless. Despite her mixed feelings toward Hee Soo, she carries out her revenge.",
+              "air_date": "2026-05-08",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-0eqa1vnvd0wj.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            }
+          ],
+          "downloads": []
+        }
+      ],
+      "sources": [],
+      "addedAt": 1792287560050,
+      "langs": [
+        "VOSTFR"
+      ],
+      "downloads": [],
+      "updatedAt": 1792287663783
     }
   ],
   "deletedLinks": [
