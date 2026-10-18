@@ -68,7 +68,13 @@ header.top .wrap { display: flex; align-items: center; gap: 24px; min-height: 64
 .logo { font-family: var(--display); font-weight: 900; font-size: 32px; letter-spacing: .04em; text-transform: uppercase; line-height: 1; transition: opacity .2s; }
 .logo:hover { opacity: .7; }
 nav { display: flex; gap: 20px; font-size: 14px; letter-spacing: .08em; text-transform: uppercase; color: var(--dim); }
-nav a { position: relative; padding: 4px 0; transition: color .2s; }
+nav a { position: relative; padding: 4px 0; display: inline-flex; align-items: center; gap: 7px; transition: color .2s; }
+nav a svg { width: 16px; height: 16px; flex: none; }
+.chip .fl { display: inline-flex; align-items: center; justify-content: center; width: 18px; height: 18px; margin-right: 8px; border-radius: 4px; background: currentColor; font-family: var(--mono); font-size: 10px; font-weight: 700; line-height: 1; vertical-align: -3px; }
+.chip .fl b { color: var(--bg); font: inherit; }
+.chip.on .fl { background: var(--bg); }
+.chip.on .fl b { color: var(--fg); }
+.chip svg.gl { width: 16px; height: 16px; margin-right: 8px; vertical-align: -3px; }
 nav a::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: var(--fg); transform: scaleX(0); transform-origin: left; transition: transform .3s var(--ease); }
 nav a:hover, nav a.on { color: var(--fg); }
 nav a:hover::after, nav a.on::after { transform: scaleX(1); }
@@ -628,6 +634,37 @@ footer .wrap.about { display: grid; grid-template-columns: repeat(auto-fit, minm
 .teambox.edit textarea { min-height: 90px; resize: vertical; }
 .teambox.edit label { display: grid; gap: 6px; font-family: var(--mono); font-size: 12px; color: var(--dim); text-transform: uppercase; letter-spacing: .06em; }
 @media (max-width: 700px) { .teambox { min-height: 260px; } .teambox .in { padding: 22px 16px; } }
+/* calendrier des K-dramas */
+.calbar { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; padding-block: 24px 8px; }
+/* écrans moyens : texte + icône gardés, un peu plus serrés pour laisser de la place à la recherche */
+@media (min-width: 721px) and (max-width: 1000px) {
+  nav { gap: 12px; font-size: 12px; letter-spacing: .04em; }
+  nav a { gap: 5px; }
+  nav a svg { width: 15px; height: 15px; }
+}
+.calbar .btn:disabled { opacity: .3; pointer-events: none; }
+.calbar .calrange { font-family: var(--mono); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--dim); margin-left: auto; }
+.calday { border-top: 1px solid var(--line); padding-block: 18px 6px; display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 8px 24px; }
+.calday:last-child { border-bottom: 1px solid var(--line); }
+.calday h3 { margin: 0; font-family: var(--display); font-weight: 700; font-size: 24px; text-transform: uppercase; letter-spacing: .03em; line-height: 1.1; }
+.calday h3 small { display: block; font-family: var(--mono); font-weight: 500; font-size: 11px; letter-spacing: .08em; color: var(--dim); margin-top: 4px; }
+.calday.today h3::before { content: "Aujourd'hui"; display: inline-block; font-family: var(--mono); font-weight: 700; font-size: 10px; letter-spacing: .06em; text-transform: uppercase; background: var(--fg); color: var(--bg); padding: 4px 6px; margin-bottom: 6px; line-height: 1; }
+.calday.today h3 { display: block; }
+.calday .none { margin: 0; color: var(--dim); font-size: 14px; padding-bottom: 12px; }
+.calrows { display: grid; gap: 8px; padding-bottom: 12px; }
+.calrow { display: grid; grid-template-columns: 48px minmax(0, 1fr) auto; align-items: center; gap: 14px; border: 1px solid var(--line); padding: 8px; transition: border-color .2s, background .2s; }
+.calrow:hover { border-color: var(--dim); background: var(--panel); }
+.calrow .cp { width: 48px; aspect-ratio: 2 / 3; background: var(--panel); overflow: hidden; }
+.calrow .cp img { width: 100%; height: 100%; object-fit: cover; }
+.calrow .ct { min-width: 0; }
+.calrow .ct b { display: block; font-weight: 700; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.calrow .ct span { display: block; font-family: var(--mono); font-size: 12px; color: var(--dim); }
+.calrow .ok { font-family: var(--mono); font-size: 10px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; background: #86efac; color: #052e16; padding: 4px 6px; line-height: 1; white-space: nowrap; }
+@media (max-width: 720px) {
+  .calday { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+  .calday h3 { font-size: 22px; }
+  .calbar .calrange { margin-left: 0; flex: 1 0 100%; }
+}
 </style>
 </head>
 <body>
@@ -637,11 +674,12 @@ footer .wrap.about { display: grid; grid-template-columns: repeat(auto-fit, minm
     <a class="logo" href="/">DramaByM</a>
     <button class="burger" id="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mainnav"><svg class="b" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 8h14M5 12h14M5 16h14"/></svg><svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
     <nav id="mainnav">
-      <a href="/" id="nav-home">Accueil</a>
-      <a href="/series" id="nav-series">Séries</a>
-      <a href="/films" id="nav-films">Films</a>
-      <a href="/ma-liste" id="nav-list">Ma liste</a>
-      <a href="/demande" id="nav-req">Demande</a>
+      <a href="/" id="nav-home" title="Accueil" aria-label="Accueil"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.6 1.8 11.6h3.2V21h5.5v-6h3V21H19v-9.4h3.2z"/></svg><span class="nl">Accueil</span></a>
+      <a href="/series" id="nav-series" title="Séries" aria-label="Séries"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8.3 2.3 12 6l3.7-3.7 1.4 1.4L14.8 6H20a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h5.2L6.9 3.7z"/></svg><span class="nl">Séries</span></a>
+      <a href="/films" id="nav-films" title="Films" aria-label="Films"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M4 3h16a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zM5 5v2h2V5zm0 4v2h2V9zm0 4v2h2v-2zm0 4v2h2v-2zM17 5v2h2V5zm0 4v2h2V9zm0 4v2h2v-2zm0 4v2h2v-2zM9 5v14h6V5z"/></svg><span class="nl">Films</span></a>
+      <a href="/calendrier" id="nav-cal" title="Calendrier" aria-label="Calendrier"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M7 2h2v2h6V2h2v2h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2zM5 10v10h14V10z"/></svg><span class="nl">Calendrier</span></a>
+      <a href="/ma-liste" id="nav-list" title="Ma liste" aria-label="Ma liste"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"/></svg><span class="nl">Ma liste</span></a>
+      <a href="/demande" id="nav-req" title="Demande" aria-label="Demande"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1 5h-2v4H7v2h4v4h2v-4h4v-2h-4z"/></svg><span class="nl">Demande</span></a>
       <a href="/ajouter" id="nav-add" class="admin-only">Ajouter</a>
       <a href="/panel" id="nav-panel" class="admin-only">Admin</a>
     </nav>
@@ -1170,11 +1208,12 @@ function dramaType(s) {
   var bad = /animation|r[eé]alit|talk|documentaire|actualit|news|reality|documentary/i;
   if ((s.genres || []).some(function (g) { return bad.test(String(g)); })) return "";
   var cc = [].concat(s.origin_country || []).map(function (x) { return String(x).toUpperCase(); });
-  var map = { KR: "K", JP: "J", CN: "C", TW: "T" };
+  var map = { KR: "K", JP: "J", CN: "C", TW: "T", TH: "T" };
   for (var i = 0; i < cc.length; i++) if (map[cc[i]]) return map[cc[i]];
   var n = String(s.original_name || ""), lang = String(s.original_language || "").toLowerCase();
   if (/[\u1100-\u11FF\u3130-\u318F\uAC00-\uD7AF]/.test(n) || lang === "ko") return "K";
   if (/[\u3040-\u30FF]/.test(n) || lang === "ja") return "J";
+  if (/[\u0E00-\u0E7F]/.test(n) || lang === "th") return "T";
   if (/[\u4E00-\u9FFF]/.test(n) || lang === "zh") return "C";
   return "";
 }
@@ -2441,8 +2480,70 @@ function toggleFull() {
   } catch (e) { fallback(); }
 }
 
+/* ===== Calendrier des dramas (K, C, J, T) : sorties d'épisodes, semaine par semaine (dates TMDB des fiches) ===== */
+var calWeek = 0, calType = "";
+function isoDate(d) { return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0"); }
+function calRanges(nums) {
+  nums = nums.slice().sort(function (a, b) { return a - b; });
+  var out = [], i = 0;
+  while (i < nums.length) {
+    var j = i; while (j + 1 < nums.length && nums[j + 1] === nums[j] + 1) j++;
+    out.push(j > i ? nums[i] + "–" + nums[j] : String(nums[i])); i = j + 1;
+  }
+  return out.join(", ");
+}
+function viewCalendar() {
+  var allDr = db.filter(function (s) { return !!dramaType(s); });
+  if (!allDr.length) { $("#app").innerHTML = emptyBox("Calendrier", "Aucun drama au catalogue pour l'instant."); return; }
+  var calTypes = ["K", "C", "J", "T"];
+  if (calTypes.indexOf(calType) < 0) calType = "";
+  var kd = allDr.filter(function (s) { return !calType || dramaType(s) === calType; });
+  var now = new Date(), today = isoDate(now);
+  var mon = new Date(now.getFullYear(), now.getMonth(), now.getDate() + calWeek * 7 - ((now.getDay() + 6) % 7), 12);
+  var days = [], i;
+  for (i = 0; i < 7; i++) days.push(new Date(mon.getFullYear(), mon.getMonth(), mon.getDate() + i, 12));
+  var first = isoDate(days[0]), last = isoDate(days[6]), by = {};
+  kd.forEach(function (s) {
+    (s.seasons || []).forEach(function (se) {
+      (se.episodes || []).forEach(function (ep) {
+        var d = String(ep.air_date || ""); if (d < first || d > last) return;
+        var key = d + "|" + s.id + "|" + se.number, g = by[key];
+        if (!g) g = by[key] = { date: d, s: s, se: se, nums: [], ok: false };
+        g.nums.push(ep.number); if ((ep.sources || []).length) g.ok = true;
+      });
+    });
+  });
+  var groups = Object.keys(by).map(function (k) { return by[k]; });
+  var fmt = function (d, o) { return d.toLocaleDateString("fr-FR", o); };
+  var cap = function (t) { return t.charAt(0).toUpperCase() + t.slice(1); };
+  var html = '<div class="wrap listhead"><h1>Calendrier</h1><p class="note">Sorties des dramas asiatiques · dates fournies par TMDB, elles peuvent changer</p></div>' +
+    '<div class="wrap"><div class="calbar"><button type="button" class="btn small ghost" data-calweek="-1">‹ Précédente</button>' +
+    '<button type="button" class="btn small ghost" data-calweek="0"' + (calWeek === 0 ? " disabled" : "") + '>Aujourd\'hui</button>' +
+    '<button type="button" class="btn small ghost" data-calweek="1">Suivante ›</button>' +
+    '<span class="calrange">' + esc(fmt(days[0], { day: "numeric", month: "long" }) + " – " + fmt(days[6], { day: "numeric", month: "long" })) + '</span></div>' +
+    ('<div class="chips langchips" style="padding-block:8px 18px"><span class="chiplbl">Catégorie</span><button type="button" class="chip' + (!calType ? " on" : "") + '" data-caltype=""><svg class="gl" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zM4.1 11h3.2c.1-2 .5-3.8 1.1-5.2A8 8 0 0 0 4.1 11zm0 2a8 8 0 0 0 4.3 5.2c-.6-1.4-1-3.2-1.1-5.2zM9.3 11h5.4c-.2-2.6-1.2-4.6-2.700-5.600C10.500 6.400 9.500 8.400 9.300 11zm0 2c.2 2.600 1.200 4.600 2.700 5.600 1.500-1 2.500-3 2.700-5.600zm7.400-2h3.200a8 8 0 0 0-4.300-5.200c.6 1.400 1 3.200 1.100 5.200zm0 2c-.1 2-.5 3.800-1.100 5.200a8 8 0 0 0 4.300-5.200z"/></svg>Tous</button>' + calTypes.map(function (d) { return '<button type="button" class="chip' + (calType === d ? " on" : "") + '" data-caltype="' + d + '">' + '<span class="fl"><b>' + d + '</b></span>' + DRAMA[d] + '</button>'; }).join("") + '</div>');
+  html += days.map(function (d) {
+    var iso = isoDate(d), list = groups.filter(function (g) { return g.date === iso; });
+    list.sort(function (a, b) { return String(a.s.name).localeCompare(String(b.s.name), "fr"); });
+    return '<section class="calday' + (iso === today ? " today" : "") + '"><h3>' + esc(cap(fmt(d, { weekday: "long" }))) + '<small>' + esc(fmt(d, { day: "numeric", month: "long" })) + '</small></h3>' +
+      (list.length ? '<div class="calrows">' + list.map(function (g) {
+        var many = g.nums.length > 1;
+        return '<a class="calrow" href="/serie/' + esc(g.s.id) + '"><span class="cp">' + (g.s.poster ? '<img loading="lazy" src="' + esc(g.s.poster) + '" alt="">' : '') + '</span>' +
+          '<span class="ct"><b>' + esc(g.s.name) + '</b><span>' + (calType ? '' : DRAMA[dramaType(g.s)] + ' · ') + 'Saison ' + esc(g.se.number) + ' · Épisode' + (many ? "s " : " ") + esc(calRanges(g.nums)) + '</span></span>' +
+          (g.ok ? '<span class="ok">Disponible</span>' : '') + '</a>';
+      }).join("") + '</div>' : '<p class="none">Aucune sortie</p>') + '</section>';
+  }).join("") + '</div>';
+  $("#app").innerHTML = html + '<div class="wrap"><p class="note" style="padding:18px 0 48px">' + (groups.length ? groups.length + (groups.length > 1 ? " sorties" : " sortie") + " cette semaine." : "Rien de prévu cette semaine" + (calType ? " pour les " + DRAMA[calType] + "s" : "") + ".") + '</p></div>';
+}
+document.addEventListener("click", function (e) {
+  var ct = e.target.closest("[data-caltype]");
+  if (ct) { e.preventDefault(); calType = ct.dataset.caltype; viewCalendar(); return; }
+  var b = e.target.closest("[data-calweek]"); if (!b || b.disabled) return;
+  e.preventDefault(); calWeek = b.dataset.calweek === "0" ? 0 : calWeek + (+b.dataset.calweek); viewCalendar(); window.scrollTo(0, 0);
+});
+
 /* ===== Routage ===== */
-var NAVMAP = { "": "nav-home", series: "nav-series", films: "nav-films", ajouter: "nav-add", modifier: "nav-add", panel: "nav-panel", "ma-liste": "nav-list", demande: "nav-req" };
+var NAVMAP = { "": "nav-home", series: "nav-series", films: "nav-films", ajouter: "nav-add", modifier: "nav-add", panel: "nav-panel", "ma-liste": "nav-list", calendrier: "nav-cal", demande: "nav-req" };
 
 function route(force) {
   force = force === true;
@@ -2453,7 +2554,7 @@ function route(force) {
   if ((a === "ajouter" || a === "modifier" || a === "motdepasse" || a === "panel") && !ADMIN) { go("/admin", true); return; }
 
   var changed = force || a !== lastPage || a === "serie" || a === "modifier";
-  if (a !== lastPage) { filter = ""; langFilter = ""; dlFilter = false; newFilter = ""; kdFilter = ""; typeFilter = ""; listTab = "list"; }
+  if (a !== lastPage) { filter = ""; langFilter = ""; dlFilter = false; newFilter = ""; kdFilter = ""; typeFilter = ""; listTab = "list"; calWeek = 0; calType = ""; }
   lastPage = a;
 
   var q = $("#q");
@@ -2472,6 +2573,7 @@ function route(force) {
   else if (a === "series") { rerender = function () { viewList("Séries", function (s) { return !isMovie(s); }); }; rerender(); }
   else if (a === "films") { rerender = function () { viewList("Films", isMovie); }; rerender(); }
   else if (a === "ma-liste") { rerender = viewMyList; rerender(); }
+  else if (a === "calendrier") { rerender = viewCalendar; rerender(); }
   else if (a === "demande") viewRequest(b, parts[3]);
   else if (a === "recherche") { curQ = b; rerender = function () { viewSearch(curQ); }; rerender(); }
   else if (a === "admin") viewLogin();
