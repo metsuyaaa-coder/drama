@@ -19453,7 +19453,20 @@
     "at": 1792329379375
   },
   "requests": {
-    "items": [],
-    "at": 1792334398243
+    "items": [
+      {
+        "id": "rmvdyz1yh",
+        "title": "Queen of Darkness",
+        "status": "wait",
+        "votes": 1,
+        "tmdb": 284929,
+        "media": "tv",
+        "year": "2025",
+        "poster": "/xOaNlT8cr8tM8dBYF3tRq22Y9y5.jpg",
+        "origin": "Chine",
+        "en": ""
+      }
+    ],
+    "at": 1792336665257
   }
 }
