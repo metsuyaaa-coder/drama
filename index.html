@@ -18,6 +18,11 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://dramabym.vercel.app/dbm.png?v=2">
 <meta name="theme-color" content="#000000">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="DramaByM">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Hanken+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -639,6 +644,7 @@ footer .wrap.about { display: grid; grid-template-columns: repeat(auto-fit, minm
     <span id="count">0 fiche</span>
     <div class="links">
       <button id="btn-info" type="button">Infos du site</button>
+      <button id="btn-install" type="button" hidden>Installer l'application</button>
       <button id="btn-export" type="button" class="admin-only">Publier (catalog.json)</button>
       <button id="btn-import" type="button" class="admin-only">Importer</button>
       <button id="btn-key" type="button" class="admin-only">Clé TMDB</button>
@@ -3119,6 +3125,25 @@ $("#welcome-ok").addEventListener("click", closeWelcome);
 $("#welcome").addEventListener("click", function (e) { if (e.target === this || e.target.closest("a[href]")) closeWelcome(); });
 $("#welcome").addEventListener("close", function () { try { localStorage.setItem(WELKEY, "1"); } catch (e) {} });
 $("#btn-info").addEventListener("click", openWelcome);
+
+/* Installer le site comme une application (Chrome, Edge, Android : bouton direct ; iPhone/iPad : explication) */
+var deferredInstall = null, btnInstall = $("#btn-install");
+var isStandalone = (window.matchMedia && window.matchMedia("(display-mode: standalone)").matches) || navigator.standalone === true;
+var isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+function showInstall(on) { if (btnInstall) btnInstall.hidden = !on; }
+if (!isStandalone) {
+  if (isIOS) showInstall(true);
+  window.addEventListener("beforeinstallprompt", function (e) { e.preventDefault(); deferredInstall = e; showInstall(true); });
+  btnInstall.addEventListener("click", function () {
+    if (deferredInstall) {
+      deferredInstall.prompt();
+      deferredInstall.userChoice.then(function () { deferredInstall = null; showInstall(false); });
+    } else if (isIOS) {
+      window.alert("Pour installer DramaByM sur iPhone ou iPad :\n\n1. Ouvre le site dans Safari\n2. Touche le bouton Partager\n3. Choisis « Sur l'écran d'accueil »");
+    }
+  });
+}
+window.addEventListener("appinstalled", function () { deferredInstall = null; showInstall(false); toast("Application installée"); });
 document.addEventListener("click", function (e) {
   var b = e.target.closest("[data-copy]"); if (!b) return;
   var txt = b.dataset.copy;
