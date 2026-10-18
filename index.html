@@ -2064,9 +2064,33 @@ function viewSerie(id) {
         }).join("") + '</details>';
     }).join("") + '</div>';
   }
+  var sim = similarTo(s, 12);
+  if (sim.length) html += rail("Titres similaires", sim, "", card);
   app.innerHTML = html;
 }
 
+/* Titres similaires : classés avec les fiches du catalogue (genres, pays, plateforme, acteurs, type, année). Rien n'est stocké. */
+function similarTo(s, n) {
+  var g = {}, c = {}, nw = {}, ac = {};
+  (s.genres || []).forEach(function (x) { g[x] = 1; });
+  [].concat(s.origin_country || []).forEach(function (x) { c[String(x).toUpperCase()] = 1; });
+  platNames(s).forEach(function (x) { nw[x] = 1; });
+  (s.cast || []).slice(0, 8).forEach(function (x) { if (x && x.name) ac[x.name] = 1; });
+  var yr = parseInt(s.year, 10) || 0, mv = isMovie(s);
+  return db.filter(function (o) { return String(o.id) !== String(s.id); }).map(function (o) {
+    var sc = 0;
+    (o.genres || []).forEach(function (x) { if (g[x]) sc += 2; });
+    [].concat(o.origin_country || []).forEach(function (x) { if (c[String(x).toUpperCase()]) sc += 3; });
+    platNames(o).forEach(function (x) { if (nw[x]) sc += 2; });
+    (o.cast || []).slice(0, 8).forEach(function (x) { if (x && ac[x.name]) sc += 4; });
+    if (isMovie(o) === mv) sc += 1;
+    var oy = parseInt(o.year, 10) || 0;
+    if (yr && oy && Math.abs(yr - oy) <= 3) sc += 1;
+    return { o: o, sc: sc };
+  }).filter(function (x) { return x.sc >= 4; })
+    .sort(function (a, b) { return b.sc - a.sc || (b.o.addedAt || 0) - (a.o.addedAt || 0); })
+    .slice(0, n || 12).map(function (x) { return x.o; });
+}
 function scrollSeasons() {
   var el = $("#seasons");
   if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -3991,7 +4015,7 @@ document.addEventListener("click", function (e) {
   if (h === curPath()) route(true); else go(h);
 });
 /* Version du site : les admins qui ont encore une ancienne page en cache la rechargent automatiquement */
-var BUILD = "2026-10-18-stats-b";
+var BUILD = "2026-10-18-similar";
 function checkBuild() {
   if (!ADMIN || draft || teamEditing) return;
   fetch(location.href, { cache: "reload" }).then(function (r) { return r.text(); }).then(function (t) {
