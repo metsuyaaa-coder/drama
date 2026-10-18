@@ -17531,6 +17531,244 @@
       ],
       "downloads": [],
       "updatedAt": 1792292283239
+    },
+    {
+      "id": "311871",
+      "type": "tv",
+      "name": "TAGUSARI bros.",
+      "original_name": "田鎖ブラザーズ",
+      "origin_country": [
+        "JP"
+      ],
+      "original_language": "ja",
+      "aka": [
+        "TAGUSARI bros.",
+        "田锁兄弟",
+        "สองพี่น้องทากุซาริ ไขปมคดีปริศนา",
+        "田鎖兄弟",
+        "타구사리 브라더스",
+        "Os Irmãos Tagusari",
+        "Frații Tagusari",
+        "Los hermanos Tagusari",
+        "Anh Em Nhà Tagusari",
+        "Tagusari Bros",
+        "Tagusari Brothers",
+        "田鎖ブラザーズ"
+      ],
+      "year": "2026",
+      "overview": "Deux frères rejoignent la police pour élucider le meurtre de leurs parents, car l'affaire est sur le point d'expirer quelques jours avant que le Japon n'abolisse la prescription.",
+      "genres": [
+        "Mystère",
+        "Crime"
+      ],
+      "rating": "6.9",
+      "pop": 5.7264,
+      "status": "Ended",
+      "poster": "https://image.tmdb.org/t/p/w500/69MPQL5lEcmI3x82tgCSVUZGha.jpg",
+      "posterV": 2,
+      "backdrop": "https://image.tmdb.org/t/p/original/cwRWWqXzZmxdKCsLjsne56gVj94.jpg",
+      "cast": [
+        {
+          "name": "Masaki Okada",
+          "character": "Makoto Tagusari"
+        },
+        {
+          "name": "Shōta Sometani",
+          "character": "Minoru Tagusari"
+        },
+        {
+          "name": "中条あやみ",
+          "character": "Shiori Kudo"
+        },
+        {
+          "name": "井川遥",
+          "character": "Haruko Ashikaga"
+        },
+        {
+          "name": "宮近海斗",
+          "character": "Naoki Ishizaka"
+        },
+        {
+          "name": "岸谷五朗",
+          "character": "Shunta Koike"
+        },
+        {
+          "name": "山中崇",
+          "character": "Yukiteru Mogi"
+        },
+        {
+          "name": "仙道敦子",
+          "character": "Fumi Karashima"
+        },
+        {
+          "name": "長江英和",
+          "character": "Sadao Karashima"
+        },
+        {
+          "name": "赤間麻里子",
+          "character": "Megumi Takeuchi"
+        },
+        {
+          "name": "内田慈",
+          "character": "Chika Kiritani"
+        }
+      ],
+      "seasons": [
+        {
+          "number": 1,
+          "name": "Saison 1",
+          "episodes": [
+            {
+              "number": 1,
+              "name": "Épisode 1",
+              "overview": "Makoto Tagusari, a determined detective, and his younger brother Minoru, a forensic medical examiner, are bound by a tragic past—the brutal murder of their parents years earlier; as the statute of limitations on the case expires just days before its abolition, the brothers are left without justice, pushing them to pursue the truth on their own while working within the system, as the first episode sets the stage for their quest to uncover the culprit behind the long-unsolved family murder.",
+              "air_date": "2026-04-17",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-jin2lbnbfp2p.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 2,
+              "name": "Épisode 2",
+              "overview": "Haruko’s investigation into a specific murder case uncovers that the victim was living under a false identity, which shifts the motive toward a potential revenge killing. This revelation complicates the case for the Tagusari brothers as they track the suspect, Nogami, leading to a series of shocking truths about the victim's past.",
+              "air_date": "2026-04-24",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-g4r0wng3kp5m.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 3,
+              "name": "Épisode 3",
+              "overview": "The brothers find their parents' suspected killer comatose in a hospital.  As they investigate an arson-murder case, Minoru uncovers key evidence.",
+              "air_date": "2026-05-01",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-b5ewk6ea08up.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 4,
+              "name": "Épisode 4",
+              "overview": "Makoto and Minoru find a key and a cryptic note among Tsuda's belongings. Meanwhile, the hunt for a fugitive takes a grim and unexpected turn.",
+              "air_date": "2026-05-08",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-zhmvfhyuboaj.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 5,
+              "name": "Épisode 5",
+              "overview": "A hidden handgun leaves Makoto and Minoru facing difficult questions, and a bizarre confession leads police into an increasingly baffling investigation.",
+              "air_date": "2026-05-15",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-3zl1s3dflkc6.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 6,
+              "name": "Épisode 6",
+              "overview": "The handgun leads Makoto and Minoru to their father's factory — and a possible link to the yakuza. A fatal car accident reveals foul play.",
+              "air_date": "2026-05-22",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-51mw7rwsr9mo.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 7,
+              "name": "Épisode 7",
+              "overview": "Minoru investigates a suspicious death and hunts for Tsuda's missing notebook as Makoto's ties to a city welfare counselor raise red flags.",
+              "air_date": "2026-05-29",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-3kry6exbkgy3.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 8,
+              "name": "Épisode 8",
+              "overview": "Makoto and Minoru restore Tsuda's notebook, but Koike seizes it. Makoto confronts him — and the identity of their parents' killer begins to surface.",
+              "air_date": "2026-06-05",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-r8n67dccuv40.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 9,
+              "name": "Épisode 9",
+              "overview": "After a shocking discovery, the Karashimas flee and a devastated Minoru shuts down. Makoto steps up to track them, suspecting someone aided their escape.",
+              "air_date": "2026-06-12",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.me/v/qaro8c3243uj",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 10,
+              "name": "Épisode 10",
+              "overview": "The truth behind their parents' 31-year-old murder is finally revealed — but as Minoru reaches a breaking point, the brothers face an impossible choice.",
+              "air_date": "2026-06-19",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-jk2qzsur7jej.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            }
+          ],
+          "downloads": []
+        }
+      ],
+      "sources": [],
+      "addedAt": 1792292393899,
+      "langs": [
+        "VOSTFR"
+      ],
+      "downloads": [],
+      "updatedAt": 1792292517724
     }
   ],
   "deletedLinks": [
