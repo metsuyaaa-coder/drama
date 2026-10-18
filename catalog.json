@@ -16246,6 +16246,171 @@
       ],
       "downloads": [],
       "updatedAt": 1792290941740
+    },
+    {
+      "id": "323264",
+      "type": "tv",
+      "name": "Let's End Our Friendship Now",
+      "original_name": "今から、親友やめようか。",
+      "origin_country": [
+        "JP"
+      ],
+      "original_language": "ja",
+      "aka": [
+        "Let's End Our Friendship Now",
+        "¿Y si dejamos de ser mejores amigos a partir de ahora?",
+        "Vamos Terminar Nossa Amizade Agora",
+        "지금부터, 절친 그만둘까",
+        "从现在开始，不做朋友了吧。",
+        "今から、親友やめようか。"
+      ],
+      "year": "2026",
+      "overview": "",
+      "genres": [
+        "Drame"
+      ],
+      "rating": "8.0",
+      "pop": 1.9115,
+      "status": "Returning Series",
+      "poster": "https://image.tmdb.org/t/p/w500/9ACz4RNhdAH1sZjW2x8OnWuUsqS.jpg",
+      "posterV": 2,
+      "backdrop": "https://image.tmdb.org/t/p/original/tGH6KZB1bGeJaIz9ZiSPLxbck22.jpg",
+      "cast": [
+        {
+          "name": "岡本夏美",
+          "character": "Himari Shibasaki"
+        },
+        {
+          "name": "沢村玲",
+          "character": "Kazumi Hojo"
+        },
+        {
+          "name": "井内悠陽",
+          "character": "Shogo Nihei"
+        },
+        {
+          "name": "古田愛理",
+          "character": "Riko Ando"
+        },
+        {
+          "name": "Hikari Kuroki",
+          "character": "Konomi Teramoto"
+        }
+      ],
+      "seasons": [
+        {
+          "number": 1,
+          "name": "Saison 1",
+          "episodes": [
+            {
+              "number": 1,
+              "name": "Épisode 1",
+              "overview": "",
+              "air_date": "2026-06-26",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-f88rgba4gjdk.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 2,
+              "name": "Épisode 2",
+              "overview": "",
+              "air_date": "2026-07-03",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-ci3qb28umyj9.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 3,
+              "name": "Épisode 3",
+              "overview": "",
+              "air_date": "2026-07-10",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-mro91sgjormz.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 4,
+              "name": "Épisode 4",
+              "overview": "",
+              "air_date": "2026-07-17",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-p0zegmth00zj.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 5,
+              "name": "Épisode 5",
+              "overview": "",
+              "air_date": "2026-07-24",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-mro91sgjormz.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 6,
+              "name": "Épisode 6",
+              "overview": "",
+              "air_date": "2026-07-31",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-4z3qtjqr1r4d.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 7,
+              "name": "Épisode 7",
+              "overview": "",
+              "air_date": "2026-08-07",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-0ilnhp90i3cd.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            }
+          ],
+          "downloads": []
+        }
+      ],
+      "sources": [],
+      "addedAt": 1792290991138,
+      "langs": [
+        "VOSTFR"
+      ],
+      "downloads": [],
+      "updatedAt": 1792291081966
     }
   ],
   "deletedLinks": [
