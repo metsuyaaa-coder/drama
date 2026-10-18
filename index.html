@@ -868,6 +868,32 @@ footer .wrap.about { display: grid; grid-template-columns: repeat(auto-fit, minm
   .calday h3 { font-size: 22px; }
   .calbar .calrange { margin-left: 0; flex: 1 0 100%; }
 }
+
+/* animation « + Ma liste » : petit rebond, onde et étincelles quand on ajoute un titre */
+.btn[data-list] { position: relative; }
+.btn[data-list].pop { animation: listpop .6s cubic-bezier(.2, .9, .3, 1.4); }
+.btn[data-list].pop::after { content: ""; position: absolute; inset: -1px; border: 2px solid var(--fg); pointer-events: none; animation: listring .6s ease-out forwards; }
+.btn[data-list] .spark { position: absolute; left: 50%; top: 50%; width: 5px; height: 5px; border-radius: 50%; background: var(--fg); pointer-events: none; animation: listspark .6s ease-out forwards; }
+@keyframes listpop { 0% { transform: scale(1); } 30% { transform: scale(.92); } 60% { transform: scale(1.07); } 100% { transform: scale(1); } }
+@keyframes listring { from { opacity: .9; transform: scale(1); } to { opacity: 0; transform: scale(1.3, 1.9); } }
+@keyframes listspark { from { opacity: 1; transform: translate(-50%, -50%) rotate(var(--a)) translateX(8px); } to { opacity: 0; transform: translate(-50%, -50%) rotate(var(--a)) translateX(52px); } }
+
+/* bandeau d'annonce (modifiable depuis /panel) */
+.ann { position: relative; z-index: 21; display: flex; align-items: center; gap: 14px; padding: max(10px, env(safe-area-inset-top, 0px)) max(12px, env(safe-area-inset-right, 0px)) 10px max(16px, env(safe-area-inset-left, 0px)); background: var(--fg); color: var(--bg); font-size: 14px; line-height: 1.4; animation: annIn .4s var(--ease) both; }
+.ann[hidden] { display: none; }
+.ann .atag { flex: none; font-family: var(--mono); font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; background: var(--bg); color: var(--fg); padding: 4px 6px; line-height: 1; }
+.ann .atx { flex: 1; min-width: 0; overflow-wrap: anywhere; }
+.ann .atx a { font-weight: 700; text-decoration: underline; text-underline-offset: 3px; margin-left: 8px; white-space: nowrap; }
+.ann .ax { flex: none; width: 32px; height: 32px; display: grid; place-items: center; background: none; border: 0; color: inherit; font-size: 24px; line-height: 1; cursor: pointer; opacity: .65; transition: opacity .2s, transform .2s; }
+.ann .ax:hover { opacity: 1; transform: rotate(90deg); }
+.ann.k-new { background: #86efac; color: #052e16; }
+.ann.k-new .atag { background: #052e16; color: #86efac; }
+.ann.k-maint { background: #fde68a; color: #422006; }
+.ann.k-maint .atag { background: #422006; color: #fde68a; }
+.ann.prev { animation: none; border: 1px solid var(--line); padding: 10px 12px; }
+@keyframes annIn { from { opacity: 0; transform: translateY(-12px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .ann { animation: none; } }
+@media (prefers-reduced-motion: reduce) { .btn[data-list] .spark { display: none; } }
 </style>
 <!-- Visites du site : Vercel Web Analytics, sans cookie ni base de données. Ne fait rien tant que tu ne l'actives pas dans Vercel (onglet Analytics). -->
 <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
@@ -875,6 +901,7 @@ footer .wrap.about { display: grid; grid-template-columns: repeat(auto-fit, minm
 </head>
 <body>
 
+<div class="ann" id="announce" hidden role="region" aria-label="Annonce"></div>
 <header class="top">
   <div class="wrap">
     <a class="logo" href="/">DramaByM</a>
@@ -1698,6 +1725,174 @@ document.addEventListener("click", function (e) {
   }
 });
 
+/* ===== Annonce en haut du site : modifiable depuis /panel, publiée dans catalog.json > announce ===== */
+var ANNKEY = "noir.announce", ANNSEEN = "noir.announceClosed", ANN = readJSON(ANNKEY, null);
+var ANNKINDS = { info: "Info", "new": "Nouveauté", maint: "Maintenance" };
+function annSave() { try { localStorage.setItem(ANNKEY, JSON.stringify(ANN)); } catch (e) {} }
+function annClosed() { try { return localStorage.getItem(ANNSEEN) || ""; } catch (e) { return ""; } }
+function annSafeLink(u) { u = String(u || "").trim(); return /^https?:\/\//i.test(u) || /^\/(?!\/)/.test(u) ? u : ""; }
+function annInner(a, closable) {
+  var l = annSafeLink(a.link), ext = /^https?:/i.test(l);
+  return '<span class="atag">' + esc(ANNKINDS[a.kind] || "Info") + '</span><span class="atx">' + esc(a.text) +
+    (l ? '<a href="' + esc(l) + '"' + (ext ? ' target="_blank" rel="noopener noreferrer"' : '') + '>' + esc(a.label || "En savoir plus") + '</a>' : '') + '</span>' +
+    (closable ? '<button type="button" class="ax" data-annclose aria-label="Fermer l\'annonce">&times;</button>' : '');
+}
+function paintAnnounce() {
+  var el = $("#announce"); if (!el) return;
+  var a = ANN, show = !!(a && a.on && a.text && a.id !== annClosed());
+  if (!show) { el.hidden = true; el.innerHTML = ""; el.className = "ann"; el.dataset.sig = ""; return; }
+  var sig = [a.id, a.kind, a.text, a.link, a.label].join("|");
+  if (el.dataset.sig === sig && !el.hidden) return;
+  el.dataset.sig = sig; el.className = "ann k-" + a.kind; el.innerHTML = annInner(a, true); el.hidden = false;
+}
+function adoptAnnounce(data) {
+  var r = data && !Array.isArray(data) ? data.announce : null;
+  if (r && typeof r === "object") {
+    if (!ADMIN || !ANN || (+r.at || 0) >= (+ANN.at || 0)) {
+      ANN = { on: !!r.on, text: String(r.text || "").slice(0, 300), kind: Object.prototype.hasOwnProperty.call(ANNKINDS, r.kind) ? r.kind : "info", link: String(r.link || "").slice(0, 300), label: String(r.label || "").slice(0, 40), id: String(r.id || ""), at: +r.at || 0 };
+      annSave();
+    }
+  } else if (!ADMIN) ANN = null;
+  paintAnnounce();
+}
+function readAnnFields() {
+  var v = function (id) { var x = $("#" + id); return x ? x.value.trim() : ""; };
+  var k = v("ann-kind");
+  return { text: v("ann-text").slice(0, 300), kind: Object.prototype.hasOwnProperty.call(ANNKINDS, k) ? k : "info", link: v("ann-link"), label: v("ann-label").slice(0, 40) };
+}
+function annPreview() {
+  var el = $("#ann-prev"); if (!el) return;
+  var f = readAnnFields();
+  if (!f.text) { el.hidden = true; return; }
+  el.className = "ann prev k-" + f.kind; el.innerHTML = annInner(f, false); el.hidden = false;
+}
+function annSection() {
+  var a = ANN || { on: false, text: "", kind: "info", link: "", label: "" }, live = !!(a.on && a.text);
+  var opts = Object.keys(ANNKINDS).map(function (k) { return '<option value="' + k + '"' + (a.kind === k ? " selected" : "") + '>' + esc(ANNKINDS[k]) + '</option>'; }).join("");
+  return '<div style="display:grid;gap:12px"><h3 class="note" style="margin:0;text-transform:uppercase;letter-spacing:.08em">Annonce du site</h3>' +
+    '<p class="note" style="margin:0">Bandeau tout en haut du site (nouvelle saison, maintenance, nouveau serveur…). Les visiteurs peuvent le fermer ; il revient s\'il est mis à jour ou réaffiché. Statut actuel : <b>' + (live ? "affichée" : "masquée") + '</b>.</p>' +
+    '<label class="f"><span>Message (300 caractères maximum)</span><textarea id="ann-text" maxlength="300" style="min-height:80px" placeholder="Ex. La saison 2 de … est disponible !">' + esc(a.text) + '</textarea></label>' +
+    '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px">' +
+    '<label class="f"><span>Type</span><select id="ann-kind">' + opts + '</select></label>' +
+    '<label class="f"><span>Lien (facultatif)</span><input type="text" id="ann-link" maxlength="300" placeholder="/serie/123 ou https://…" value="' + esc(a.link || "") + '"></label>' +
+    '<label class="f"><span>Texte du lien</span><input type="text" id="ann-label" maxlength="40" placeholder="En savoir plus" value="' + esc(a.label || "") + '"></label></div>' +
+    '<p class="note" style="margin:0">Aperçu :</p><div class="ann prev" id="ann-prev" hidden></div>' +
+    '<div class="row"><button class="btn" type="button" data-ann="publish">' + (live ? "Mettre à jour" : "Afficher l'annonce") + '</button>' + (live ? '<button class="btn ghost" type="button" data-ann="hide">Masquer</button>' : '') + '</div></div>';
+}
+document.addEventListener("input", function (e) { if (e.target.id && e.target.id.indexOf("ann-") === 0) annPreview(); });
+document.addEventListener("click", function (e) {
+  if (e.target.closest("[data-annclose]")) {
+    try { localStorage.setItem(ANNSEEN, ANN ? ANN.id : ""); } catch (er) {}
+    paintAnnounce(); return;
+  }
+  var b = e.target.closest("[data-ann]"); if (!b || !ADMIN) return;
+  var act = b.dataset.ann, f = readAnnFields(), cur = ANN || {};
+  if (act === "publish" && !f.text) { toast("Écris un message pour l'annonce."); return; }
+  if (f.link && !annSafeLink(f.link)) { toast("Le lien doit commencer par https:// ou par /"); return; }
+  ANN = { on: act === "publish", text: f.text, kind: f.kind, link: f.link, label: f.label, id: act === "publish" ? String(Date.now()) : (cur.id || ""), at: Date.now() };
+  annSave(); paintAnnounce();
+  toast(act === "publish" ? (autoSyncOn() ? "Annonce affichée." : "Annonce enregistrée. Clique sur « Publier » pour que tout le monde la voie.") : (autoSyncOn() ? "Annonce masquée." : "Annonce masquée. Clique sur « Publier » pour l'appliquer."));
+  markDirty(); viewPanel();
+});
+
+/* ===== Sauvegardes : copie de catalog.json dans backups/ du dépôt GitHub avant chaque publication ===== */
+var BKDIR = "backups", BKMAX = 30, BKGAP = 10 * 60000, BKKEY = "noir.lastBackup";
+function bkDirUrl(gi) { return "https://api.github.com/repos/" + gi.repo + "/contents/" + BKDIR; }
+function bkStamp(d) { var z = function (n) { return (n < 10 ? "0" : "") + n; }; return d.getFullYear() + "-" + z(d.getMonth() + 1) + "-" + z(d.getDate()) + "_" + z(d.getHours()) + "-" + z(d.getMinutes()) + "-" + z(d.getSeconds()); }
+function bkLabel(name) {
+  var m = /^catalog-(\d{4})-(\d{2})-(\d{2})_(\d{2})-(\d{2})/.exec(name);
+  return m ? m[3] + "/" + m[2] + "/" + m[1] + " " + m[4] + ":" + m[5] : name;
+}
+function bkList(gi) {
+  return fetch(bkDirUrl(gi) + "?ref=" + encodeURIComponent(gi.branch), { headers: ghHeaders(), cache: "no-store" }).then(function (r) {
+    if (r.status === 404) return [];
+    if (!r.ok) throw ghErr(r);
+    return r.json();
+  }).then(function (a) {
+    return (Array.isArray(a) ? a : []).filter(function (f) { return /^catalog-.*\.json$/.test(f.name); }).sort(function (x, y) { return x.name < y.name ? 1 : -1; });
+  });
+}
+function bkPrune(gi) {
+  bkList(gi).then(function (l) {
+    return l.slice(BKMAX).reduce(function (p, f) {
+      return p.then(function () { return fetch(bkDirUrl(gi) + "/" + f.name, { method: "DELETE", headers: ghHeaders({ "Content-Type": "application/json" }), body: JSON.stringify({ message: "Nettoyage des anciennes sauvegardes", sha: f.sha, branch: gi.branch }) }); });
+    }, Promise.resolve());
+  }).catch(function () {});
+}
+/* src = le catalog.json actuellement en ligne, juste avant qu'on l'écrase. Synchro auto : au plus une copie toutes les 10 min ; clic sur « Publier » : toujours. */
+function ghBackup(gi, src, tried, opts) {
+  if (tried || !src) return Promise.resolve();
+  var n = Array.isArray(src) ? src.length : (src.series ? src.series.length : 0);
+  if (!n) return Promise.resolve();
+  if (!(opts && opts.manual) && Date.now() - (+readJSON(BKKEY, 0) || 0) < BKGAP) return Promise.resolve();
+  var name = "catalog-" + bkStamp(new Date()) + "-" + myId() + ".json";
+  var body = { message: "Sauvegarde avant publication (" + myId() + ")", content: btoa(unescape(encodeURIComponent(JSON.stringify(src, null, 2)))), branch: gi.branch };
+  return fetch(bkDirUrl(gi) + "/" + name, { method: "PUT", headers: ghHeaders({ "Content-Type": "application/json" }), body: JSON.stringify(body) }).then(function (r) {
+    if (!r.ok) throw ghErr(r);
+    try { localStorage.setItem(BKKEY, String(Date.now())); } catch (e) {}
+    bkPrune(gi);
+  }).catch(function () { toast("Sauvegarde avant publication impossible : la publication continue"); });
+}
+function bkSection() {
+  if (!isHead()) return "";
+  return '<div style="display:grid;gap:12px"><h3 class="note" style="margin:0;text-transform:uppercase;letter-spacing:.08em">Sauvegardes</h3>' +
+    '<p class="note" style="margin:0">Avant chaque publication, la version en ligne de catalog.json est copiée dans le dossier backups/ du dépôt (toujours quand tu cliques sur « Publier », au plus une toutes les 10 min en synchro auto). Les ' + BKMAX + ' dernières sont gardées.</p>' +
+    '<div id="bk-box"><p class="note" style="margin:0">Chargement…</p></div></div>';
+}
+function bkRender() {
+  var box = $("#bk-box"); if (!box) return;
+  var gi = ghParse(ghRepo());
+  if (!gi || !ghToken()) { box.innerHTML = '<p class="note" style="margin:0">Lie ton dépôt avec « GitHub » pour activer les sauvegardes.</p>'; return; }
+  bkList(gi).then(function (l) {
+    var b = $("#bk-box"); if (!b) return;
+    b.innerHTML = l.length ? '<div class="jlist">' + l.slice(0, 10).map(function (f) {
+      return '<div class="jrow" style="align-items:center"><span class="jt">' + esc(bkLabel(f.name)) + '</span><span class="jb" style="flex:1"><small>' + esc(f.name) + '</small></span><button type="button" class="btn small ghost" data-bkrestore="' + esc(f.name) + '">Restaurer</button></div>';
+    }).join("") + '</div>' : '<p class="note" style="margin:0">Aucune sauvegarde pour l\'instant : la première sera créée à la prochaine publication.</p>';
+  }).catch(function (e) { var b = $("#bk-box"); if (b) b.innerHTML = '<p class="note" style="margin:0">Impossible de lister les sauvegardes (' + esc(e && e.message ? e.message : "GitHub") + ').</p>'; });
+}
+function bkRestore(gi, name) {
+  var raw = ghHeaders({ Accept: "application/vnd.github.raw+json" }), main = ghUrl(gi) + "?ref=" + encodeURIComponent(gi.branch);
+  return Promise.all([
+    fetch(bkDirUrl(gi) + "/" + encodeURIComponent(name) + "?ref=" + encodeURIComponent(gi.branch), { headers: raw, cache: "no-store" }),
+    fetch(main, { headers: raw, cache: "no-store" }),
+    fetch(main, { headers: ghHeaders(), cache: "no-store" })
+  ]).then(function (rs) {
+    if (!rs[0].ok) throw ghErr(rs[0]);
+    return Promise.all([rs[0].json(), rs[1].ok ? rs[1].json() : {}, rs[2].ok ? rs[2].json() : null]);
+  }).then(function (x) {
+    var obj = Array.isArray(x[0]) ? { series: x[0] } : x[0], current = x[1], cur = x[2];
+    if (!obj || !Array.isArray(obj.series)) throw new Error("Sauvegarde illisible");
+    var curList = Array.isArray(current) ? current : (current && current.series) || [];
+    return ghBackup(gi, current, 0, { manual: true }).then(function () {
+      var keep = {}, gone = [];
+      obj.series.forEach(function (f) { if (f && f.id != null) keep[String(f.id)] = 1; });
+      curList.concat(db).forEach(function (f) { if (f && f.id != null && !keep[String(f.id)]) gone.push(String(f.id)); });
+      obj.deletedFiches = uniq((obj.deletedFiches || []).map(String).concat(gone));
+      obj.refreshAt = Date.now();
+      var body = { message: "Restauration de " + name + " (" + myId() + ")", content: btoa(unescape(encodeURIComponent(JSON.stringify(obj, null, 2)))), branch: gi.branch };
+      if (cur && cur.sha) body.sha = cur.sha;
+      return fetch(ghUrl(gi), { method: "PUT", headers: ghHeaders({ "Content-Type": "application/json" }), body: JSON.stringify(body) }).then(function (r) { if (!r.ok) throw ghErr(r); return obj; });
+    });
+  });
+}
+document.addEventListener("click", function (e) {
+  var b = e.target.closest("[data-bkrestore]"); if (!b || !isHead()) return;
+  var name = b.dataset.bkrestore, gi = ghParse(ghRepo()); if (!gi || !ghToken()) return;
+  if (!window.confirm("Restaurer « " + name + " » ?\n\nLe catalogue en ligne sera remplacé par cette copie (l'état actuel est sauvegardé juste avant). Les fiches ajoutées depuis sont retirées, et les autres admins rechargent leur page automatiquement.")) return;
+  b.disabled = true; toast("Restauration…");
+  bkRestore(gi, name).then(function (obj) {
+    var old = {}; db.forEach(function (f) { old[String(f.id)] = f; });
+    db = obj.series.map(normalize);
+    db.forEach(function (f) { var o = old[String(f.id)]; if (o) keepDl(f, o); });
+    tombSave([]); linkTombSave([]); reviveClear();
+    rtombSave({ links: obj.deletedLinks || [], fiches: (obj.deletedFiches || []).map(String) });
+    persist();
+    try { localStorage.setItem(RFSEEN, JSON.stringify(obj.refreshAt)); localStorage.setItem(RFKEY, JSON.stringify(obj.refreshAt)); } catch (er) {}
+    toast("Sauvegarde restaurée ✓");
+    if (curPath() === "/panel") viewPanel();
+  }).catch(function (er) { b.disabled = false; toast("Restauration impossible : " + (er && er.message ? er.message : "erreur")); });
+});
+
 /* ordre aléatoire de la rangée « Séries » : change à chaque ouverture du site, mais reste stable quand l'accueil se redessine */
 var shufKey = {};
 function shuffleStable(arr) {
@@ -2487,10 +2682,13 @@ function viewPanel() {
     '<div class="row"><button class="btn" type="button" data-clickid="btn-export">Publier (catalog.json)</button><button class="btn ghost" type="button" id="btn-backup">Sauvegarde complète</button><button class="btn ghost" type="button" data-clickid="btn-import">Importer</button><button class="btn ghost" type="button" id="btn-pull">Récupérer depuis GitHub</button>' + '<button class="btn ghost" type="button" id="btn-autosync">Synchro auto : ' + (readJSON("noir.autosync", true) !== false ? 'ON' : 'OFF') + '</button>' + (isHead() ? '<button class="btn ghost" type="button" id="btn-forcerefresh">Rafraîchir tous les admins</button>' : '') + '</div>' +
     '<p class="note" style="margin:0">Version du site : ' + esc(BUILD) + ' · ' + MAX_SRC + ' sources maximum par film ou épisode.</p>' +
     '<p class="note" style="margin:0">' + (ghRepo() && ghToken() ? 'GitHub lié (' + esc(ghRepo()) + ') : « Publier » envoie catalog.json directement sur le dépôt.' : 'Pour publier en un clic sans re-uploader le fichier, lie ton dépôt avec « GitHub ».') + '</p></div>' +
+    annSection() +
+    bkSection() +
     playerSection() +
     '<div style="display:grid;gap:12px"><h3 class="note" style="margin:0;text-transform:uppercase;letter-spacing:.08em">Accès</h3>' +
     '<div class="row"><button class="btn ghost" type="button" data-clickid="btn-key">Clé TMDB</button><button class="btn ghost" type="button" data-clickid="btn-gh">GitHub</button><a class="btn ghost" href="/motdepasse">Mot de passe</a><button class="btn danger" type="button" data-clickid="btn-quit">Quitter le mode admin</button></div></div>' +
     '</div></div>';
+  bkRender(); annPreview();
 }
 
 /* ===== Connexion et mot de passe ===== */
@@ -3445,6 +3643,7 @@ document.addEventListener("click", function (e) {
     var listOn = toggleList(t.dataset.list);
     t.textContent = listOn ? "✓ Dans ma liste" : "+ Ma liste";
     t.classList.toggle("on", listOn);
+    if (listOn) popList(t);
     toast(listOn ? "Ajouté à ma liste" : "Retiré de ma liste");
   }
   else if (t.dataset.seen != null) {
@@ -3555,6 +3754,12 @@ document.addEventListener("click", function (e) {
   }
 });
 
+/* petit effet quand on ajoute à « Ma liste » : rebond, onde et étincelles */
+function popList(b) {
+  b.classList.remove("pop"); void b.offsetWidth; b.classList.add("pop");
+  for (var k = 0; k < 8; k++) { var sp = document.createElement("i"); sp.className = "spark"; sp.style.setProperty("--a", (k * 45) + "deg"); b.appendChild(sp); }
+  setTimeout(function () { b.classList.remove("pop"); Array.prototype.forEach.call(b.querySelectorAll(".spark"), function (x) { x.remove(); }); }, 750);
+}
 function selectNode(n) { try { var r = document.createRange(); r.selectNodeContents(n); var s = window.getSelection(); s.removeAllRanges(); s.addRange(r); } catch (e) {} }
 
 function authError(form, msg) {
@@ -3782,16 +3987,18 @@ function ghHeaders(extra) {
   Object.keys(extra || {}).forEach(function (k) { h[k] = extra[k]; });
   return h;
 }
-function ghPublish(obj, tried) {
+function ghPublish(obj, tried, opts) {
   var gi = ghParse(ghRepo());
   if (!gi || !ghToken()) return Promise.reject(new Error("GitHub non lié"));
   var url = ghUrl(gi);
+  var backupSrc = null;
   /* 1) on lit les suppressions déjà publiées, 2) on les applique au catalogue qu'on s'apprête à envoyer (une vieille copie locale ne peut plus rien ressusciter) */
   return fetch(url + "?ref=" + encodeURIComponent(gi.branch), { headers: ghHeaders({ Accept: "application/vnd.github.raw+json" }), cache: "no-store" }).then(function (r) {
     if (r.status === 404) return {};
     if (!r.ok) throw ghErr(r);
     return r.json();
   }).then(function (remote) {
+    backupSrc = remote;
     var t = finalTombs({ links: (remote && remote.deletedLinks) || [], fiches: (remote && remote.deletedFiches) || [] });
     if (obj.series) {
       /* le fichier envoyé = ma copie + tout ce que l'autre admin a publié entre-temps (fiches, saisons, épisodes, liens) */
@@ -3806,6 +4013,7 @@ function ghPublish(obj, tried) {
     obj.deletedLinks = t.links; obj.deletedFiches = t.fiches;
     if (remote && remote.team && (!TEAM || (+remote.team.at || 0) > (+TEAM.at || 0))) obj.team = remote.team; else if (TEAM) obj.team = TEAM;
     if (remote && remote.hero && Array.isArray(remote.hero.ids) && (!HERO || (+remote.hero.at || 0) > (+HERO.at || 0))) obj.hero = remote.hero; else if (HERO) obj.hero = HERO;
+    if (remote && remote.announce && typeof remote.announce === "object" && (!ANN || (+remote.announce.at || 0) > (+ANN.at || 0))) obj.announce = remote.announce; else if (ANN) obj.announce = ANN;
     if (remote && remote.requests && (+remote.requests.at || 0) > (+REQS.at || 0)) obj.requests = remote.requests; else if (REQS.at) obj.requests = REQS;
     var rps = remote && remote.settings;
     if (rps && "player" in rps && (+rps.playerAt || 0) > (+SETTINGS.playerAt || 0) && obj.settings) { obj.settings.player = rps.player; obj.settings.playerAt = rps.playerAt; }
@@ -3818,11 +4026,13 @@ function ghPublish(obj, tried) {
     if (!r.ok) throw ghErr(r);
     return r.json();
   }).then(function (cur) {
+    return ghBackup(gi, backupSrc, tried, opts).then(function () { return cur; });
+  }).then(function (cur) {
     var body = { message: "Mise à jour du catalogue (" + myId() + ")", content: btoa(unescape(encodeURIComponent(JSON.stringify(obj, null, 2)))), branch: gi.branch };
     if (cur && cur.sha) body.sha = cur.sha;
     return fetch(url, { method: "PUT", headers: ghHeaders({ "Content-Type": "application/json" }), body: JSON.stringify(body) });
   }).then(function (r) {
-    if (!r.ok) { var e = ghErr(r); if ((r.status === 409 || r.status === 422) && (tried || 0) < 3) return ghPublish(obj, (tried || 0) + 1); throw e; }
+    if (!r.ok) { var e = ghErr(r); if ((r.status === 409 || r.status === 422) && (tried || 0) < 3) return ghPublish(obj, (tried || 0) + 1, opts); throw e; }
     return r.json();
   });
 }
@@ -3860,6 +4070,7 @@ function buildCatalogObj() {
   var rf0 = +readJSON(RFKEY, 0) || 0; if (rf0) obj.refreshAt = rf0;
   if (TEAM) obj.team = TEAM;
   if (HERO) obj.hero = HERO;
+  if (ANN) obj.announce = ANN;
   if (REQS.at) obj.requests = REQS;
   var jl = journalList(); if (jl.length) obj.journal = jl;
   return obj;
@@ -3888,7 +4099,7 @@ $("#btn-export").addEventListener("click", function () {
   var download = function () { saveJson(obj, "catalog.json"); };
   if (ghRepo() && ghToken()) {
     toast("Publication sur GitHub…");
-    ghPublish(obj).then(function () {
+    ghPublish(obj, 0, { manual: true }).then(function () {
       afterPublish(obj);
       toast("Publié sur GitHub ✓" + (priv ? " (liens de téléchargement retirés)" : "") + (CONFIG.GITHUB_REPO ? " Les visiteurs le voient dans quelques secondes." : " Visible après le redéploiement de GitHub Pages (environ 1 minute)."));
     }).catch(function (e) { download(); toast((e && e.message ? e.message : "Échec GitHub") + " : catalog.json téléchargé à la place"); });
@@ -4251,7 +4462,7 @@ function loadCatalog() {
   return fetchCatalogData().then(function (data) {
     var st = null;
     if (ADMIN) { ingestRemoteTombs(data); checkRefreshSignal(data); }
-    adoptTeam(data); adoptHero(data); adoptReqs(data);
+    adoptTeam(data); adoptHero(data); adoptReqs(data); adoptAnnounce(data);
     if (data && !Array.isArray(data) && Array.isArray(data.series)) { st = data.settings || null; data = data.series; }
     if (!Array.isArray(data)) return;
     data = data.map(normalize);
@@ -4493,7 +4704,7 @@ document.addEventListener("keydown", function (e) { if (e.key === "Escape") rmCl
 window.addEventListener("resize", rmClose);
 window.addEventListener("popstate", rmClose);
 /* Version du site : les admins qui ont encore une ancienne page en cache la rechargent automatiquement */
-var BUILD = "2026-10-18-journal";
+var BUILD = "2026-10-18-annonce";
 function checkBuild() {
   if (!ADMIN || draft || teamEditing || heroEditing) return;
   fetch(location.href, { cache: "reload" }).then(function (r) { return r.text(); }).then(function (t) {
@@ -4516,17 +4727,18 @@ function skeletonHTML() {
   return open + '<div class="wrap"><div class="sk sk-h big"></div><div class="grid">' + many(12) + '</div></div>' + close;
 }
 $("#app").innerHTML = skeletonHTML();
+paintAnnounce();
 loadCatalog().then(function () { route(true); backfillAka(); backfillNetworks(); checkBuild(); });
 /* Admins : on regarde le catalogue publié toutes les 60 s (et quand l'onglet redevient visible) pour récupérer suppressions, sources et signal de rafraîchissement */
 var polling = false;
 function pollCatalog() {
   if (!ADMIN || polling || document.hidden || draft || teamEditing || heroEditing || refreshingAll) return;
   polling = true;
-  var before = JSON.stringify([db, TEAM, HERO]);
+  var before = JSON.stringify([db, TEAM, HERO, ANN]);
   loadCatalog().then(function () {
     polling = false;
     var pl = $("#player");
-    if (!draft && !teamEditing && !heroEditing && !(pl && pl.open) && JSON.stringify([db, TEAM, HERO]) !== before) route(true);
+    if (!draft && !teamEditing && !heroEditing && !(pl && pl.open) && JSON.stringify([db, TEAM, HERO, ANN]) !== before) route(true);
   }, function () { polling = false; });
 }
 setInterval(pollCatalog, 30000);
