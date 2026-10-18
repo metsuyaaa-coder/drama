@@ -538,6 +538,12 @@ button.more { background: none; border: 0; padding: 0; cursor: pointer; }
 .chip.pchip .wm { font-size: 18px; }
 .chip.pchip:hover { border-color: var(--pc, var(--dim)); }
 .chip.pchip.on { background: #151515; border-color: var(--pc, var(--fg)); box-shadow: inset 0 0 0 1px var(--pc, var(--fg)); }
+.jlist { border: 1px solid var(--line); max-height: 340px; overflow-y: auto; }
+.jrow { display: flex; gap: 12px; padding: 8px 12px; border-bottom: 1px solid var(--line); font-size: 13px; }
+.jrow:last-child { border-bottom: 0; }
+.jrow .jt { font-family: var(--mono); font-size: 11px; color: var(--dim); white-space: nowrap; padding-top: 2px; }
+.jrow .jb { min-width: 0; overflow-wrap: anywhere; }
+.jrow .jb small { color: var(--dim); }
 .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(104px, 1fr)); gap: 8px; }
 .stat { border: 1px solid var(--line); padding: 10px 12px; }
 .stat b { display: block; font-family: var(--display); font-weight: 900; font-size: 30px; line-height: 1; }
@@ -2097,6 +2103,71 @@ function scrollSeasons() {
 }
 
 /* ===== Panneau admin ===== */
+/* ===== Journal des modifications (visible par le Head admin) : chaque ajout, modification ou suppression est noté,
+   puis voyage avec catalog.json comme le reste. Aucun service externe. ===== */
+var JKEY = "noir.journal", JMAX = 300, JDAYS = 60, JACTS = { add: 1, edit: 1, del: 1, tmdb: 1 }, journalShown = 30;
+function journalList() { var a = readJSON(JKEY, []); return Array.isArray(a) ? a : []; }
+function journalSave(a) {
+  var min = Date.now() - JDAYS * 86400000;
+  a = a.filter(function (e) { return e && e.k && (+e.t || 0) > min; }).sort(function (x, y) { return y.t - x.t; }).slice(0, JMAX);
+  try { localStorage.setItem(JKEY, JSON.stringify(a)); } catch (e) {}
+  return a;
+}
+function journalAdd(act, id, name, detail) {
+  if (!ADMIN) return;
+  var a = journalList(), now = Date.now(), me = myId(), dup = null;
+  if (act === "edit") a.forEach(function (e) { if (!dup && e.a === "edit" && e.b === me && String(e.i) === String(id) && now - e.t < 600000) dup = e; });
+  if (dup) { dup.t = now; dup.n = String(name || "").slice(0, 80); if (detail) dup.d = String(detail).slice(0, 120); }
+  else a.push({ k: now.toString(36) + Math.random().toString(36).slice(2, 7), t: now, b: me, a: act, i: String(id || ""), n: String(name || "").slice(0, 80), d: String(detail || "").slice(0, 120) });
+  journalSave(a);
+}
+function journalMerge(remote) {
+  if (!Array.isArray(remote) || !remote.length) return;
+  var a = journalList(), idx = {}, ch = false;
+  a.forEach(function (e, n) { idx[e.k] = n; });
+  remote.forEach(function (r) {
+    if (!r || !JACTS[r.a] || !/^[a-z0-9]{3,20}$/.test(String(r.k))) return;
+    var e = { k: String(r.k), t: +r.t || 0, b: String(r.b || "").slice(0, 12), a: r.a, i: String(r.i || "").slice(0, 40), n: String(r.n || "").slice(0, 80), d: String(r.d || "").slice(0, 120) };
+    if (idx[e.k] == null) { idx[e.k] = a.push(e) - 1; ch = true; } else if (e.t > (+a[idx[e.k]].t || 0)) { a[idx[e.k]] = e; ch = true; }
+  });
+  if (ch) journalSave(a);
+}
+function journalIngest(data) { if (ADMIN && data && !Array.isArray(data)) journalMerge(data.journal); }
+function journalCounts(f) {
+  var src = (f.sources || []).length, dl = (f.downloads || []).length, ep = 0;
+  (f.seasons || []).forEach(function (se) { dl += (se.downloads || []).length; (se.episodes || []).forEach(function (e) { ep++; src += (e.sources || []).length; dl += (e.downloads || []).length; }); });
+  return { src: src, dl: dl, ep: ep };
+}
+function journalDiff(o, n) {
+  var a = journalCounts(o), b = journalCounts(n), p = [];
+  if (a.ep !== b.ep) p.push("épisodes " + a.ep + " → " + b.ep);
+  if (a.src !== b.src) p.push("sources " + a.src + " → " + b.src);
+  if (a.dl !== b.dl) p.push("téléchargements " + a.dl + " → " + b.dl);
+  if (o.poster !== n.poster) p.push("affiche");
+  return p.join(", ");
+}
+function sameFiche(a, b) { return JSON.stringify(Object.assign({}, a, { updatedAt: 0 })) === JSON.stringify(Object.assign({}, b, { updatedAt: 0 })); }
+function adminLabel(b) {
+  if (b === "head") return "Head admin";
+  var f = null; (CONFIG.ADMINS || []).forEach(function (a) { if (a && a.hash && a.hash.slice(0, 10) === b) f = a; });
+  return f ? String(f.name || "Admin") : "Admin " + String(b || "?").slice(0, 4);
+}
+function journalSection() {
+  if (!isHead()) return "";
+  var a = journalList(), AL = { add: "a ajouté", edit: "a modifié", del: "a supprimé", tmdb: "a mis à jour depuis TMDB" };
+  function fmt(t) { var d = new Date(t), z = function (n) { return (n < 10 ? "0" : "") + n; }; return z(d.getDate()) + "/" + z(d.getMonth() + 1) + " " + z(d.getHours()) + ":" + z(d.getMinutes()); }
+  var rows = a.slice(0, journalShown).map(function (e) {
+    return '<div class="jrow"><span class="jt">' + fmt(e.t) + '</span><span class="jb">' + esc(adminLabel(e.b)) + ' ' + AL[e.a] + ' <b>' + esc(e.n) + '</b>' + (e.d ? ' <small>(' + esc(e.d) + ')</small>' : '') + '</span></div>';
+  }).join("");
+  return '<div style="display:grid;gap:12px"><h3 class="note" style="margin:0;text-transform:uppercase;letter-spacing:.08em">Journal des modifications</h3>' +
+    (rows ? '<div class="jlist">' + rows + '</div>' : '<p class="note" style="margin:0">Rien pour l\'instant : les prochains ajouts, modifications et suppressions apparaîtront ici.</p>') +
+    (a.length > journalShown ? '<div class="row"><button class="btn ghost small" type="button" id="journal-more">Voir plus</button></div>' : '') +
+    '<p class="note" style="margin:0">Garde les ' + JDAYS + ' derniers jours (' + JMAX + ' entrées maximum). Les actions des autres admins arrivent à la synchro.</p></div>';
+}
+document.addEventListener("click", function (e) {
+  if (e.target.id === "journal-more") { journalShown += 30; if (curPath() === "/panel") viewPanel(); }
+});
+
 /* Statistiques du catalogue : calculées à partir des fiches, sans aucun service externe */
 function statsSection() {
   var H = '<h3 class="note" style="margin:0;text-transform:uppercase;letter-spacing:.08em">';
@@ -2141,7 +2212,7 @@ function viewPanel() {
     '<p class="note" style="margin:0">' + (priv
       ? 'Privé : seul toi (en mode admin) vois les boutons et l\'onglet Télécharger. À la publication, les liens sont retirés de catalog.json, donc personne ne peut les lire dans le fichier. Ils restent sur ce navigateur : fais une sauvegarde complète.'
       : 'Public : tous les visiteurs voient les boutons et l\'onglet Télécharger sur les fiches qui ont des liens.') + '</p><div class="row"><button class="btn ghost small" type="button" data-preview="1">Voir comme un visiteur</button></div></div>' +
-    (isHead() ? statsSection() : '') +
+    (isHead() ? statsSection() + journalSection() : '') +
     '<div style="display:grid;gap:12px"><h3 class="note" style="margin:0;text-transform:uppercase;letter-spacing:.08em">Fiches TMDB</h3>' +
     '<p class="note" style="margin:0">' + nt + (nt > 1 ? ' fiches viennent' : ' fiche vient') + ' de TMDB. Le bouton remet à jour les infos, les affiches, les saisons et les nouveaux épisodes. Tes sources, liens de téléchargement et langues sont conservés.</p>' +
     '<div class="row"><button class="btn" type="button" id="refreshall"' + (refreshingAll || !nt ? ' disabled' : '') + '>Tout mettre à jour depuis TMDB</button></div>' +
@@ -2520,8 +2591,10 @@ function saveDraft() {
   if (i > -1) noteRemovedLinks(db[i], draft);   /* tout lien retiré (par n'importe quel admin) est mémorisé pour la publication */
   var oldU = {}; allUrls(i > -1 ? db[i] : null).forEach(function (u) { oldU[u] = 1; });
   allUrls(draft).forEach(function (u) { if (!oldU[u] && isLinkDead(draft.id, u)) reviveLink(draft.id, u); });   /* lien rajouté volontairement : on le ressort de la liste des supprimés */
+  var jOld = i > -1 ? db[i] : null;
   if (i > -1) { if (draft.trend == null) draft.trend = db[i].trend; db[i] = draft; } else { db.push(draft); tombDrop(draft.id); }
   persist();
+  if (!jOld) journalAdd("add", draft.id, draft.name, ""); else if (!sameFiche(jOld, draft)) journalAdd("edit", draft.id, draft.name, journalDiff(jOld, draft));
   toast(kept ? "Fiche enregistrée. " + kept + (kept > 1 ? " liens d'autres admins ont été conservés (tu ne peux supprimer que les tiens)." : " lien d'un autre admin a été conservé (tu ne peux supprimer que les tiens).") : "Fiche enregistrée");
   var id = draft.id; draft = null;
   markDirty();
@@ -3022,7 +3095,7 @@ document.addEventListener("click", function (e) {
   else if (t.dataset.del != null) {
     var fx = byId(t.dataset.del);
     if (fx && !canDeleteFiche(fx)) { toast("Cette fiche contient des liens d'autres admins : seul le Head admin peut la supprimer."); return; }
-    if (t.dataset.armed) { tombAdd(t.dataset.del); db = db.filter(function (x) { return String(x.id) !== t.dataset.del; }); persist(); markDirty(); toast("Fiche supprimée"); go("/"); }
+    if (t.dataset.armed) { journalAdd("del", t.dataset.del, fx ? fx.name : ""); tombAdd(t.dataset.del); db = db.filter(function (x) { return String(x.id) !== t.dataset.del; }); persist(); markDirty(); toast("Fiche supprimée"); go("/"); }
     else { t.dataset.armed = "1"; t.textContent = "Confirmer ?"; setTimeout(function () { if (t.isConnected) { delete t.dataset.armed; t.textContent = "Supprimer"; } }, 3000); }
   }
   else if (t.dataset.list != null) {
@@ -3381,6 +3454,7 @@ function ghPublish(obj, tried) {
     var rps = remote && remote.settings;
     if (rps && "player" in rps && (+rps.playerAt || 0) > (+SETTINGS.playerAt || 0) && obj.settings) { obj.settings.player = rps.player; obj.settings.playerAt = rps.playerAt; }
     if (rps && Array.isArray(rps.order) && (+rps.orderAt || 0) > (+SETTINGS.orderAt || 0) && obj.settings) { obj.settings.order = rps.order; obj.settings.orderAt = rps.orderAt; }
+    if (remote && !Array.isArray(remote) && remote.journal) { journalMerge(remote.journal); var jm = journalList(); if (jm.length) obj.journal = jm; }
     var rfa = Math.max(+(remote && remote.refreshAt) || 0, +readJSON(RFKEY, 0) || 0); if (rfa) obj.refreshAt = rfa;
     return fetch(url + "?ref=" + encodeURIComponent(gi.branch), { headers: ghHeaders(), cache: "no-store" });
   }).then(function (r) {
@@ -3430,6 +3504,7 @@ function buildCatalogObj() {
   var rf0 = +readJSON(RFKEY, 0) || 0; if (rf0) obj.refreshAt = rf0;
   if (TEAM) obj.team = TEAM;
   if (REQS.at) obj.requests = REQS;
+  var jl = journalList(); if (jl.length) obj.journal = jl;
   return obj;
 }
 function afterPublish(obj) {
@@ -3709,6 +3784,7 @@ function checkRefreshSignal(data) {
   return true;
 }
 function ingestRemoteTombs(data) {
+  journalIngest(data);
   if (!data || Array.isArray(data) || (!("deletedLinks" in data) && !("deletedFiches" in data))) return;
   var rv = revived();
   rtombSave({
@@ -3942,6 +4018,7 @@ function refreshAll() {
   };
   var finish = function () {
     refreshingAll = false;
+    if (ok) journalAdd("tmdb", "", "Toutes les fiches", ok + " fiche" + (ok > 1 ? "s" : ""));
     persist(); markDirty();
     var msg = ok + " fiche" + (ok > 1 ? "s" : "") + " mise" + (ok > 1 ? "s" : "") + " à jour sur " + total + ".";
     if (manual) msg += " " + manual + " fiche" + (manual > 1 ? "s" : "") + " ajoutée" + (manual > 1 ? "s" : "") + " à la main ignorée" + (manual > 1 ? "s" : "") + ".";
@@ -4015,7 +4092,7 @@ document.addEventListener("click", function (e) {
   if (h === curPath()) route(true); else go(h);
 });
 /* Version du site : les admins qui ont encore une ancienne page en cache la rechargent automatiquement */
-var BUILD = "2026-10-18-similar";
+var BUILD = "2026-10-18-journal";
 function checkBuild() {
   if (!ADMIN || draft || teamEditing) return;
   fetch(location.href, { cache: "reload" }).then(function (r) { return r.text(); }).then(function (t) {
