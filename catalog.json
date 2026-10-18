@@ -18010,6 +18010,206 @@
       ],
       "downloads": [],
       "updatedAt": 1792292713756
+    },
+    {
+      "id": "320513",
+      "type": "tv",
+      "name": "kiDnap GAME",
+      "original_name": "kiDnap GAME",
+      "origin_country": [
+        "HK",
+        "JP",
+        "KR"
+      ],
+      "original_language": "ja",
+      "aka": [
+        "kiDnap GAME",
+        "키드냅 게임",
+        "绑架游戏",
+        "綁架遊戲 kiDnap GAME",
+        "Trò Chơi Bắt Cóc",
+        "لعبة الاختطاف",
+        "Kiddo Nappu Gēmu",
+        "キッドナップ ゲーム"
+      ],
+      "year": "2026",
+      "overview": "",
+      "genres": [
+        "Crime",
+        "Drame"
+      ],
+      "rating": "",
+      "pop": 12.3596,
+      "status": "Returning Series",
+      "poster": "https://image.tmdb.org/t/p/w500/tjbKBHKqFLDdqscv3aVMVpmkGxj.jpg",
+      "posterV": 2,
+      "backdrop": "https://image.tmdb.org/t/p/original/f2XoQ4503j04kyPFIA6qqweZaRE.jpg",
+      "cast": [
+        {
+          "name": "坂口健太郎",
+          "character": "Toshiro Niide"
+        },
+        {
+          "name": "Lee Joon-gi",
+          "character": "Han Ki-joo"
+        },
+        {
+          "name": "柯佳嬿",
+          "character": "Christina"
+        },
+        {
+          "name": "Carrie Wong",
+          "character": "Janice"
+        },
+        {
+          "name": "笠松将",
+          "character": "Haruki Urushibara"
+        },
+        {
+          "name": "Joel Torre",
+          "character": "Miguel"
+        },
+        {
+          "name": "นฤภรกมล ฉายแสง",
+          "character": "Ayun"
+        },
+        {
+          "name": "満島真之介",
+          "character": "Higa Kuranosuke"
+        },
+        {
+          "name": "邱士縉",
+          "character": "Andy"
+        },
+        {
+          "name": "桜井ユキ",
+          "character": "Niide Saori"
+        },
+        {
+          "name": "岡崎紗絵",
+          "character": "Akina Isobe"
+        },
+        {
+          "name": "尾野真千子",
+          "character": "Uemura Sonomi"
+        }
+      ],
+      "seasons": [
+        {
+          "number": 1,
+          "name": "Saison 1",
+          "episodes": [
+            {
+              "number": 1,
+              "name": "Mysterious Message",
+              "overview": "Detective Toshiro Niide is a straightforward man with a strong sense of justice. To arrest a criminal, he disregards danger and sometimes acts in ways that seem reckless. Whenever he is on the verge of being consumed by anger, he is guided by the words of his wife, Saori: \"Show me kindness rather than anger. That is the right thing for you to do.\" Niide and six others whose loved ones have been taken, each receive a mysterious message on their phones: \"You have been entered in the kiDnap GAME.\"",
+              "air_date": "2026-10-06",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-7kon45gviu2g.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 2,
+              "name": "The Mission",
+              "overview": "The game has finally begun. Toshiro Niide receives his mission: \"Apprehend the mastermind behind the kidnappings.\" Determined to save Saori, Niide pursues the case on his own. Evading the Special Investigation Team (SIT), which has placed him under surveillance as a suspect, he gathers information from Sonomi Uemura, the owner of the food truck Saori frequents, and news reporter Akina Isobe. Yet the kidnappers' motives and objectives remain elusive.",
+              "air_date": "2026-10-13",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-5bmmihh0hcgi.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 3,
+              "name": "Épisode 3",
+              "overview": "",
+              "air_date": "2026-10-20",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 4,
+              "name": "Épisode 4",
+              "overview": "",
+              "air_date": "2026-10-27",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 5,
+              "name": "Épisode 5",
+              "overview": "",
+              "air_date": "2026-11-03",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 6,
+              "name": "Épisode 6",
+              "overview": "",
+              "air_date": "2026-11-10",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 7,
+              "name": "Épisode 7",
+              "overview": "",
+              "air_date": "2026-11-17",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 8,
+              "name": "Épisode 8",
+              "overview": "",
+              "air_date": "2026-11-24",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 9,
+              "name": "Épisode 9",
+              "overview": "",
+              "air_date": "2026-12-01",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 10,
+              "name": "Épisode 10",
+              "overview": "",
+              "air_date": "2026-12-08",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 11,
+              "name": "Épisode 11",
+              "overview": "",
+              "air_date": "2026-12-15",
+              "sources": [],
+              "downloads": []
+            }
+          ],
+          "downloads": []
+        }
+      ],
+      "sources": [],
+      "addedAt": 1792292778470,
+      "langs": [
+        "VOSTFR"
+      ],
+      "downloads": [],
+      "updatedAt": 1792292814815
     }
   ],
   "deletedLinks": [
