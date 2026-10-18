@@ -14961,7 +14961,7 @@
       "rating": "6.7",
       "pop": 6.0506,
       "status": "Ended",
-      "poster": "https://image.tmdb.org/t/p/original/2ruZE7wFQlnEMcb020zMbH41oBL.jpg",
+      "poster": "https://image.tmdb.org/t/p/original/aWWBq5tA2En7bxlTKh8XpCGJUFz.jpg",
       "posterV": 2,
       "backdrop": "https://image.tmdb.org/t/p/original/gLRdw3GkinA9k6GFvG8OKZh56Kv.jpg",
       "cast": [
@@ -15105,7 +15105,8 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792287389871
+      "updatedAt": 1792342172099,
+      "posterCustom": true
     },
     {
       "id": "284000",
