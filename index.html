@@ -3440,7 +3440,7 @@ document.addEventListener("click", function (e) {
   else if (t.dataset.langf != null) { langFilter = t.dataset.langf; if (rerender) rerender(); }
   else if (t.dataset.kdf != null) { kdFilter = t.dataset.kdf; if (rerender) rerender(); }
   else if (t.dataset.platopen != null) { platOpen = !platOpen; if (rerender) rerender(); }
-  else if (t.dataset.platf != null) { platFilter = t.dataset.platf; if (rerender) rerender(); }
+  else if (t.dataset.platf != null) { platFilter = t.dataset.platf; platOpen = false; if (rerender) rerender(); }
   else if (t.dataset.newf != null) { newFilter = t.dataset.newf; if (rerender) rerender(); }
   else if (t.dataset.dlf != null) { dlFilter = t.dataset.dlf === "1"; if (rerender) rerender(); }
   else if (t.dataset.typef != null) { typeFilter = t.dataset.typef; if (rerender) rerender(); }
