@@ -1063,6 +1063,71 @@ footer .wrap.about { display: grid; grid-template-columns: repeat(auto-fit, minm
 }
 .pzt b { display: block; font-weight: 700; font-size: 15px; }
 .pzt small { display: block; margin-top: 2px; font-family: var(--mono); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--dim); }
+
+/* ===== Notifications : cloche dans l'en-tête, boîte déroulante, bouton de la fiche ===== */
+.notifwrap { position: relative; flex: 0 0 auto; }
+.nbell { position: relative; display: grid; place-items: center; width: 44px; height: 44px; padding: 0; background: transparent; border: 1px solid var(--line); border-radius: 0; color: var(--dim); cursor: pointer; transition: color .2s, border-color .2s, background .2s; }
+.nbell svg { width: 20px; height: 20px; }
+.nbell:hover { color: var(--fg); border-color: var(--dim); }
+.nbell.on { color: var(--bg); background: var(--fg); border-color: var(--fg); }
+.nbell .nbadge { position: absolute; top: -7px; right: -7px; min-width: 18px; height: 18px; padding: 0 5px; display: grid; place-items: center; background: var(--fg); color: var(--bg); border: 2px solid var(--bg); font-family: var(--mono); font-size: 10px; font-weight: 700; line-height: 1; }
+.nbell.on .nbadge { background: var(--bg); color: var(--fg); border-color: var(--fg); }
+.nbell .nbadge[hidden] { display: none; }
+.nbox { position: absolute; z-index: 30; top: calc(100% + 12px); right: 0; width: min(400px, calc(100vw - 24px)); max-height: min(560px, calc(100vh - 110px)); display: flex; flex-direction: column; background: var(--bg); border: 1px solid var(--fg); box-shadow: 0 18px 50px rgba(0,0,0,.7); animation: dialogIn .22s var(--ease) both; }
+.nbox[hidden] { display: none; }
+.nbox .nh { display: flex; align-items: center; gap: 10px; padding: 14px 16px; border-bottom: 1px solid var(--line); }
+.nbox .nh h2 { margin: 0; flex: 1; font-family: var(--display); font-weight: 900; font-size: 22px; letter-spacing: .04em; text-transform: uppercase; line-height: 1; }
+.nbox .nh button { display: inline-flex; align-items: center; gap: 6px; background: none; border: 1px solid var(--line); padding: 6px 10px; font-size: 12px; color: var(--dim); cursor: pointer; transition: color .2s, border-color .2s; }
+.nbox .nh button:hover { color: var(--fg); border-color: var(--fg); }
+.nbox .nh button svg { width: 15px; height: 15px; flex: none; }
+.nbox .nl2 { overflow-y: auto; overscroll-behavior: contain; }
+.nitem { position: relative; display: grid; grid-template-columns: 38px minmax(0, 1fr) auto; gap: 12px; align-items: start; padding: 14px 16px; border-bottom: 1px solid var(--line); color: var(--fg); transition: background .2s; }
+.nitem:last-child { border-bottom: 0; }
+.nitem.lk:hover { background: var(--panel); }
+.nitem .nstretch { position: absolute; inset: 0; z-index: 1; }
+.nitem .nx, .nitem .nt .nlink { position: relative; z-index: 2; }
+.nitem.unread { background: var(--panel); }
+.nitem.unread::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--fg); }
+.nitem .ni { width: 38px; height: 38px; display: grid; place-items: center; border: 1px solid var(--line); color: var(--fg); }
+.nitem .ni svg { width: 18px; height: 18px; }
+.nitem .nt { min-width: 0; }
+.nitem .nt b { display: block; font-weight: 700; line-height: 1.3; overflow-wrap: anywhere; }
+.nitem .nt p { margin: 3px 0 0; color: #c4c4c4; font-size: 14px; line-height: 1.45; overflow-wrap: anywhere; }
+.nitem .nt small { display: block; margin-top: 6px; font-family: var(--mono); font-size: 11px; color: var(--dim); letter-spacing: .04em; }
+.nitem .nt .nlink { display: inline-block; margin-top: 6px; font-size: 13px; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+.nitem .nx { background: none; border: 0; color: var(--dim); width: 28px; height: 28px; display: grid; place-items: center; cursor: pointer; opacity: .6; transition: opacity .2s, color .2s; }
+.nitem .nx:hover { opacity: 1; color: var(--fg); }
+.nitem .nx svg { width: 15px; height: 15px; }
+.nempty { display: grid; justify-items: center; gap: 8px; padding: 36px 24px 40px; text-align: center; color: var(--dim); }
+.nempty svg { width: 34px; height: 34px; color: var(--dim); }
+.nempty b { color: var(--fg); font-weight: 700; }
+.nempty p { margin: 0; font-size: 14px; max-width: 280px; }
+.nbox .nf { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 10px 16px; border-top: 1px solid var(--line); font-family: var(--mono); font-size: 11px; color: var(--dim); letter-spacing: .04em; }
+.nbox .nf button { background: none; border: 0; padding: 0; font: inherit; color: inherit; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+.nbox .nf button:hover { color: var(--fg); }
+/* bouton « Notifier pour un nouvel épisode » (fiche) */
+.btn[data-notify] svg { width: 1.2em; height: 1.2em; flex: none; }
+.btn[data-notify].on .off, .btn[data-notify]:not(.on) .onl { display: none; }
+@media (min-width: 721px) { .search { margin-right: 0; width: clamp(190px, 23vw, 360px); flex-shrink: 1; min-width: 0; } nav a { white-space: nowrap; } }
+@media (min-width: 721px) and (max-width: 1000px) { header.top .wrap { gap: 14px; } .nbell { width: 40px; height: 40px; } }
+@media (max-width: 720px) {
+  .notifwrap { order: 1; margin-left: auto; position: static; }
+  .burger { order: 2; margin-left: 0 !important; }
+  .hero .row .btn[data-notify], .detail .row .btn[data-notify] { flex: 1 1 100%; }
+  .nbox { left: 12px; right: 12px; width: auto; top: 100%; margin-top: 6px; max-height: calc(100vh - 140px); }
+}
+/* envoi d'infos (Head admin) */
+.hsend { display: grid; gap: 12px; }
+.hsend .hl { display: flex; align-items: center; gap: 8px; }
+.hsend .hl svg, .hsent .hl svg { width: 18px; height: 18px; flex: none; }
+.hsent { display: grid; gap: 4px; }
+.hsent .hrow { display: grid; grid-template-columns: 34px minmax(0, 1fr) auto; gap: 12px; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--line); }
+.hsend .btn svg, .hsent .hrow .btn svg { width: 16px; height: 16px; flex: none; }
+.hsent .hrow .btn { white-space: nowrap; }
+.hsent .hrow .ni { width: 34px; height: 34px; display: grid; place-items: center; border: 1px solid var(--line); }
+.hsent .hrow .ni svg { width: 16px; height: 16px; }
+.hsent .hrow b { display: block; overflow-wrap: anywhere; }
+.hsent .hrow span { display: block; font-size: 13px; color: var(--dim); overflow-wrap: anywhere; }
 </style>
 <!-- Visites du site : Vercel Web Analytics, sans cookie ni base de données. Ne fait rien tant que tu ne l'actives pas dans Vercel (onglet Analytics). -->
 <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
@@ -1087,6 +1152,10 @@ footer .wrap.about { display: grid; grid-template-columns: repeat(auto-fit, minm
       <a href="/panel" id="nav-panel" class="admin-only" title="Admin" aria-label="Admin"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 1 3 5v6c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V5z"/></svg><span class="nl">Admin</span></a>
     </nav>
     <div class="search"><input id="q" type="text" placeholder="Rechercher un titre..." autocomplete="off" aria-label="Rechercher dans le catalogue"><div class="sugg" id="sugg" hidden></div></div>
+    <div class="notifwrap" id="notifwrap">
+      <button class="nbell" id="notifbtn" type="button" title="Notifications" aria-label="Notifications" aria-haspopup="dialog" aria-expanded="false" aria-controls="nbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg><span class="nbadge" id="nbadge" hidden>0</span></button>
+      <div class="nbox" id="nbox" hidden role="dialog" aria-label="Notifications"></div>
+    </div>
     <a class="setbtn" id="setbtn" href="/parametres" title="Paramètres" aria-label="Paramètres"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></a>
   </div>
 </header>
@@ -1987,6 +2056,242 @@ document.addEventListener("click", function (e) {
   markDirty(); viewPanel();
 });
 
+/* ===== Notifications : cloche de l'en-tête + « Notifier pour un nouvel épisode » (fiche) + infos envoyées par le Head admin =====
+   Rien n'est stocké sur un serveur :
+   - le suivi des séries et les notifications d'épisode restent sur l'appareil du visiteur ;
+   - une notification d'épisode part quand un LIEN (source) apparaît sur un épisode que le visiteur n'avait pas encore (la date de sortie ne compte pas) ;
+   - les infos du Head admin voyagent dans catalog.json > inbox, comme l'annonce. */
+var NSUBKEY = "noir.notif.subs", NITEMKEY = "noir.notif.items", NREADKEY = "noir.notif.read", NGONEKEY = "noir.notif.gone", NSINCEKEY = "noir.notif.since", INBOXKEY = "noir.inbox";
+var INBOX = readJSON(INBOXKEY, null) || { at: 0, items: [] };
+if (!INBOX || !Array.isArray(INBOX.items)) INBOX = { at: 0, items: [] };
+var NICONS = {
+  "bell": '<path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/>',
+  "bell-ring": '<path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M22 8c0-2.3-.8-4.3-2-6"/><path d="M2 8c0-2.3.8-4.3 2-6"/>',
+  "bell-off": '<path d="M8.7 3A6 6 0 0 1 18 8a21.3 21.3 0 0 0 .6 5"/><path d="M17 17H3s3-2 3-9a4.67 4.67 0 0 1 .3-1.7"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/><path d="m2 2 20 20"/>',
+  "checks": '<path d="M18 6 7 17l-5-5"/><path d="m22 10-7.5 7.5L13 16"/>',
+  "tv": '<rect x="2" y="7" width="20" height="15" rx="2"/><path d="m17 2-5 5-5-5"/>',
+  "info": '<circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/>',
+  "sparkles": '<path d="M9.9 15.5A2 2 0 0 0 8.5 14.1l-6.1-1.6a.5.5 0 0 1 0-1l6.1-1.6A2 2 0 0 0 9.9 8.5l1.6-6.1a.5.5 0 0 1 1 0l1.6 6.1a2 2 0 0 0 1.4 1.4l6.1 1.6a.5.5 0 0 1 0 1l-6.1 1.6a2 2 0 0 0-1.4 1.4l-1.6 6.1a.5.5 0 0 1-1 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/>',
+  "wrench": '<path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.8-3.8a6 6 0 0 1-7.9 7.9l-6.9 6.9a2.1 2.1 0 0 1-3-3l6.9-6.9a6 6 0 0 1 7.9-7.9z"/>',
+  "megaphone": '<path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/>',
+  "send": '<path d="m22 2-7 20-4-9-9-4z"/><path d="M22 2 11 13"/>',
+  "trash": '<path d="M3 6h18"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>',
+  "x": '<path d="M18 6 6 18"/><path d="m6 6 12 12"/>'
+};
+var NKIND = { info: "info", "new": "sparkles", maint: "wrench" };
+function nsvg(name, cls) { return '<svg' + (cls ? ' class="' + cls + '"' : '') + ' viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + (NICONS[name] || "") + '</svg>'; }
+function nSave(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
+function nArr(k) { var a = readJSON(k, []); return Array.isArray(a) ? a : []; }
+function nSubs() { var o = readJSON(NSUBKEY, {}); return o && typeof o === "object" && !Array.isArray(o) ? o : {}; }
+var NSINCE = (function () { var t = +readJSON(NSINCEKEY, 0) || 0; if (!t) { t = Date.now(); nSave(NSINCEKEY, t); } return t; })();
+
+/* suivi d'une série */
+function nIsSub(id) { return !!nSubs()[String(id)]; }
+function nLinked(s) {
+  var k = [];
+  (s.seasons || []).forEach(function (se) { (se.episodes || []).forEach(function (ep) { if ((ep.sources || []).length) k.push(epKey(se, ep)); }); });
+  return k;
+}
+function nToggleSub(id) {
+  var subs = nSubs(), k = String(id), s = byId(id);
+  if (subs[k]) { delete subs[k]; nSave(NSUBKEY, subs); return false; }
+  subs[k] = { known: s ? nLinked(s) : [], at: Date.now() };   /* photo de ce qui a déjà un lien : seuls les liens posés ensuite préviennent */
+  nSave(NSUBKEY, subs);
+  return true;
+}
+function nTextOf(n) {
+  var e = n.eps || [];
+  if (e.length === 1) { var p = String(e[0]).split("x"); return (+p[0] === 0 ? "Épisode spécial " : "Saison " + p[0] + " · Épisode ") + p[1] + " : un lien vient d'être ajouté."; }
+  return e.length + " nouveaux épisodes ont un lien.";
+}
+function nSystemNotify(n) {
+  try {
+    if (!document.hidden || !("Notification" in window) || Notification.permission !== "granted") return;
+    var nn = new Notification(n.name, { body: nTextOf(n), tag: n.id });
+    nn.onclick = function () { window.focus(); go("/serie/" + n.sid); nn.close(); };
+  } catch (e) {}
+}
+function nAskPermission() { try { if ("Notification" in window && Notification.permission === "default") Notification.requestPermission(); } catch (e) {} }
+/* compare les liens actuels de chaque série suivie avec ce que le visiteur connaît déjà */
+function notifScan() {
+  var subs = nSubs(), items = nArr(NITEMKEY), changed = false, fresh = [];
+  Object.keys(subs).forEach(function (id) {
+    var s = byId(id); if (!s || isMovie(s)) return;
+    var cur = nLinked(s), known = Array.isArray(subs[id].known) ? subs[id].known : [];
+    var add = cur.filter(function (k) { return known.indexOf(k) < 0; });
+    if (!add.length) return;
+    subs[id].known = known.concat(add); changed = true;
+    var n = { id: "ep:" + id + ":" + Date.now(), kind: "episode", sid: String(id), name: s.name, eps: add.slice(0, 60), at: Date.now(), read: false };
+    items.unshift(n); fresh.push(n);
+  });
+  if (changed) { nSave(NSUBKEY, subs); nSave(NITEMKEY, items.slice(0, 60)); }
+  fresh.forEach(nSystemNotify);
+}
+
+/* infos envoyées par le Head admin (catalog.json > inbox) */
+function nCleanMsg(m) {
+  if (!m || typeof m !== "object" || !m.id) return null;
+  return { id: String(m.id).slice(0, 40), kind: Object.prototype.hasOwnProperty.call(ANNKINDS, m.kind) ? m.kind : "info", title: String(m.title || "").slice(0, 80), text: String(m.text || "").slice(0, 400), link: String(m.link || "").slice(0, 300), label: String(m.label || "").slice(0, 40), at: +m.at || 0 };
+}
+function adoptInbox(data) {
+  var r = data && !Array.isArray(data) ? data.inbox : null;
+  if (r && Array.isArray(r.items)) {
+    if (!ADMIN || !INBOX.at || (+r.at || 0) >= (+INBOX.at || 0)) {
+      INBOX = { at: +r.at || 0, items: r.items.map(nCleanMsg).filter(Boolean).slice(0, 30) };
+      nSave(INBOXKEY, INBOX);
+    }
+  } else if (!ADMIN) { INBOX = { at: 0, items: [] }; nSave(INBOXKEY, INBOX); }
+}
+function nMsgs() {
+  var gone = nArr(NGONEKEY), old = Date.now() - 30 * 864e5;
+  return (INBOX.items || []).filter(function (m) { return gone.indexOf(m.id) < 0 && (!m.at || m.at > old); });
+}
+function nAll() {
+  var rd = nArr(NREADKEY), list = nArr(NITEMKEY).map(function (n) { return { type: "ep", id: n.id, at: n.at || 0, read: !!n.read, n: n }; });
+  nMsgs().forEach(function (m) { list.push({ type: "msg", id: m.id, at: m.at || 0, read: rd.indexOf(m.id) > -1 || (m.at || 0) < NSINCE, m: m }); });
+  list.sort(function (a, b) { return b.at - a.at; });
+  return list;
+}
+function nAgo(t) {
+  if (!t) return "";
+  var m = Math.round(Math.max(0, Date.now() - t) / 60000);
+  if (m < 1) return "à l'instant";
+  if (m < 60) return "il y a " + m + " min";
+  var h = Math.round(m / 60); if (h < 24) return "il y a " + h + " h";
+  var j = Math.round(h / 24); if (j < 8) return "il y a " + j + " j";
+  try { return new Date(t).toLocaleDateString("fr-FR", { day: "numeric", month: "short" }); } catch (e) { return ""; }
+}
+function nItemHTML(x) {
+  var rm = '<button type="button" class="nx" data-nrm="' + esc(x.id) + '" aria-label="Supprimer la notification" title="Supprimer">' + nsvg("x") + '</button>';
+  if (x.type === "ep") {
+    var n = x.n;
+    return '<div class="nitem lk' + (x.read ? "" : " unread") + '"><span class="ni">' + nsvg("tv") + '</span><span class="nt"><b>' + esc(n.name) + '</b><p>' + esc(nTextOf(n)) + '</p><small>' + esc(nAgo(n.at)) + '</small></span>' + rm +
+      '<a class="nstretch" href="/serie/' + esc(n.sid) + '" data-nopen="' + esc(x.id) + '" aria-label="' + esc(n.name + " : ouvrir la fiche") + '"></a></div>';
+  }
+  var m = x.m, l = annSafeLink(m.link), ext = /^https?:/i.test(l);
+  return '<div class="nitem' + (x.read ? "" : " unread") + '" data-nmsg="' + esc(x.id) + '"><span class="ni">' + nsvg(NKIND[m.kind] || "info") + '</span><span class="nt"><b>' + esc(m.title || ANNKINDS[m.kind] || "Info") + '</b><p>' + esc(m.text) + '</p>' +
+    (l ? '<a class="nlink" href="' + esc(l) + '"' + (ext ? ' target="_blank" rel="noopener noreferrer"' : '') + ' data-nopen="' + esc(x.id) + '">' + esc(m.label || "En savoir plus") + '</a>' : '') +
+    '<small>' + esc(nAgo(m.at)) + '</small></span>' + rm + '</div>';
+}
+function nRenderBox(list) {
+  var box = $("#nbox"); if (!box) return;
+  list = list || nAll();
+  var un = list.filter(function (x) { return !x.read; }).length, subs = Object.keys(nSubs()).length;
+  box.innerHTML = '<div class="nh"><h2>Notifications</h2>' + (un ? '<button type="button" data-nreadall>' + nsvg("checks") + 'Tout lire</button>' : '') + '</div>' +
+    (list.length ? '<div class="nl2">' + list.map(nItemHTML).join("") + '</div>'
+      : '<div class="nempty">' + nsvg("bell-off") + '<b>Rien pour l\'instant</b><p>Sur la fiche d\'une série, touche « Notifier pour un nouvel épisode » : tu seras prévenu ici dès qu\'un lien est posté.</p></div>') +
+    '<div class="nf"><span>' + subs + (subs > 1 ? " séries suivies" : " série suivie") + '</span>' + (list.length ? '<button type="button" data-nclear>Tout effacer</button>' : '') + '</div>';
+}
+function notifPaint() {
+  var list = nAll(), un = list.filter(function (x) { return !x.read; }).length;
+  var b = $("#nbadge"); if (b) { b.hidden = !un; b.textContent = un > 9 ? "9+" : String(un); }
+  var bell = $("#notifbtn"); if (bell) bell.setAttribute("aria-label", un ? "Notifications (" + un + (un > 1 ? " non lues)" : " non lue)") : "Notifications");
+  var box = $("#nbox"); if (box && !box.hidden) nRenderBox(list);
+}
+function notifRefresh() { try { notifScan(); } catch (e) {} notifPaint(); }
+function nMarkRead(id) {
+  var items = nArr(NITEMKEY), hit = false;
+  items.forEach(function (n) { if (n.id === id && !n.read) { n.read = true; hit = true; } });
+  if (hit) nSave(NITEMKEY, items);
+  var rd = nArr(NREADKEY); if (rd.indexOf(id) < 0 && (INBOX.items || []).some(function (m) { return m.id === id; })) { rd.push(id); nSave(NREADKEY, rd.slice(-100)); }
+}
+function nMarkAllRead() {
+  var items = nArr(NITEMKEY); items.forEach(function (n) { n.read = true; }); nSave(NITEMKEY, items);
+  var rd = nArr(NREADKEY); nMsgs().forEach(function (m) { if (rd.indexOf(m.id) < 0) rd.push(m.id); }); nSave(NREADKEY, rd.slice(-100));
+}
+function nOpen(on) {
+  var box = $("#nbox"), btn = $("#notifbtn"); if (!box || !btn || on === !box.hidden) return;
+  box.hidden = !on; btn.classList.toggle("on", on); btn.setAttribute("aria-expanded", on ? "true" : "false");
+  if (on) nRenderBox(); else { nMarkAllRead(); notifPaint(); }
+}
+function notifBtnHTML(s) {
+  var on = nIsSub(s.id);
+  return '<button class="btn ghost' + (on ? " on" : "") + '" type="button" data-notify="' + esc(s.id) + '" aria-pressed="' + (on ? "true" : "false") + '">' + nsvg("bell", "off") + nsvg("bell-ring", "onl") + '<span>' + (on ? "Notifications activées" : "Notifier pour un nouvel épisode") + '</span></button>';
+}
+document.addEventListener("click", function (e) {
+  var t = e.target;
+  var nb = t.closest("[data-notify]");
+  if (nb) {
+    var on = nToggleSub(nb.dataset.notify);
+    nb.classList.toggle("on", on); nb.setAttribute("aria-pressed", on ? "true" : "false");
+    nb.querySelector("span").textContent = on ? "Notifications activées" : "Notifier pour un nouvel épisode";
+    if (on) { nAskPermission(); toast("C'est noté : tu seras prévenu dès qu'un lien est posté pour un nouvel épisode."); } else toast("Notifications désactivées pour cette série.");
+    notifPaint(); return;
+  }
+  if (t.closest("#notifbtn")) { $("header.top").classList.remove("open"); $("#burger").setAttribute("aria-expanded", "false"); nOpen($("#nbox").hidden); return; }
+  var box = $("#nbox"); if (!box || box.hidden) return;
+  if (!t.closest("#notifwrap")) { nOpen(false); return; }
+  if (t.closest("[data-nreadall]")) { nMarkAllRead(); notifPaint(); return; }
+  var rm = t.closest("[data-nrm]");
+  if (rm) {
+    var id = rm.dataset.nrm;
+    if (id.indexOf("ep:") === 0) nSave(NITEMKEY, nArr(NITEMKEY).filter(function (n) { return n.id !== id; }));
+    else { var g = nArr(NGONEKEY); if (g.indexOf(id) < 0) g.push(id); nSave(NGONEKEY, g.slice(-100)); }
+    notifPaint(); return;
+  }
+  if (t.closest("[data-nclear]")) {
+    nSave(NITEMKEY, []);
+    var g2 = nArr(NGONEKEY); (INBOX.items || []).forEach(function (m) { if (g2.indexOf(m.id) < 0) g2.push(m.id); }); nSave(NGONEKEY, g2.slice(-100));
+    notifPaint(); return;
+  }
+  var op = t.closest("[data-nopen]");
+  if (op) { nMarkRead(op.dataset.nopen); nOpen(false); return; }
+  var it = t.closest("[data-nmsg]"); if (it) { nMarkRead(it.dataset.nmsg); it.classList.remove("unread"); }
+});
+document.addEventListener("keydown", function (e) {
+  if (e.key !== "Escape") return;
+  var box = $("#nbox"); if (box && !box.hidden) { nOpen(false); var b = $("#notifbtn"); if (b) b.focus(); }
+});
+/* Visiteurs : s'ils suivent des séries, on relit le catalogue de temps en temps pour les prévenir sans qu'ils rechargent la page */
+var nPolling = false, nLastPoll = Date.now();
+function notifPoll() {
+  if (ADMIN || nPolling || document.hidden || !Object.keys(nSubs()).length || Date.now() - nLastPoll < 60000) return;
+  nPolling = true; nLastPoll = Date.now();
+  loadCatalog().then(function () { nPolling = false; }, function () { nPolling = false; });
+}
+setInterval(notifPoll, 180000);
+document.addEventListener("visibilitychange", function () { if (!document.hidden) notifPoll(); });
+
+/* Head admin : envoyer une info dans la boîte de notifications de tout le monde */
+function inboxSection() {
+  var opts = Object.keys(ANNKINDS).map(function (k) { return '<option value="' + k + '">' + esc(ANNKINDS[k]) + '</option>'; }).join("");
+  var items = INBOX.items || [];
+  var sent = items.length ? items.map(function (m) {
+    return '<div class="hrow"><span class="ni">' + nsvg(NKIND[m.kind] || "info") + '</span><div><b>' + esc(m.title || ANNKINDS[m.kind] || "Info") + '</b><span>' + esc(m.text) + (m.at ? ' · ' + esc(nAgo(m.at)) : '') + '</span></div>' +
+      '<button class="btn danger small" type="button" data-inboxdel="' + esc(m.id) + '" title="Retirer pour tout le monde">' + nsvg("trash") + '<span>Retirer</span></button></div>';
+  }).join("") : '<p class="note" style="margin:0">Aucune info envoyée pour l\'instant.</p>';
+  return '<form id="inboxsend" class="hsend"><h3 class="note hl" style="margin:0;text-transform:uppercase;letter-spacing:.08em">' + nsvg("megaphone") + 'Envoyer une info (cloche)</h3>' +
+    '<p class="note" style="margin:0">Le message arrive dans la boîte de notifications de tous les visiteurs, à côté de Paramètres. Les épisodes, eux, préviennent tout seuls ceux qui ont activé « Notifier pour un nouvel épisode ».</p>' +
+    '<label class="f"><span>Titre (facultatif)</span><input type="text" id="in-title" maxlength="80" autocomplete="off" placeholder="Ex. Nouveau serveur"></label>' +
+    '<label class="f"><span>Message (400 caractères maximum)</span><textarea id="in-text" maxlength="400" style="min-height:80px" placeholder="Ex. La saison 2 arrive ce week-end."></textarea></label>' +
+    '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px"><label class="f"><span>Type</span><select id="in-kind">' + opts + '</select></label>' +
+    '<label class="f"><span>Lien (facultatif)</span><input type="text" id="in-link" maxlength="300" autocomplete="off" placeholder="/serie/123 ou https://…"></label>' +
+    '<label class="f"><span>Texte du lien</span><input type="text" id="in-label" maxlength="40" autocomplete="off" placeholder="En savoir plus"></label></div>' +
+    '<div class="row"><button class="btn" type="submit">' + nsvg("send") + '<span>Envoyer</span></button></div>' +
+    '<div class="hsent"><h3 class="note hl" style="margin:10px 0 0;text-transform:uppercase;letter-spacing:.08em">Déjà envoyées (' + items.length + ')</h3>' + sent + '</div></form>';
+}
+document.addEventListener("submit", function (e) {
+  if (e.target.id !== "inboxsend") return;
+  e.preventDefault();
+  if (!headOk()) return;
+  var v = function (id) { return e.target.querySelector("#" + id).value.trim(); };
+  var text = v("in-text"), link = v("in-link");
+  if (!text) { toast("Écris un message à envoyer."); return; }
+  if (link && !annSafeLink(link)) { toast("Le lien doit commencer par https:// ou par /"); return; }
+  var now = Date.now(), m = nCleanMsg({ id: String(now), kind: v("in-kind"), title: v("in-title"), text: text, link: link, label: v("in-label"), at: now });
+  INBOX = { at: now, items: [m].concat(INBOX.items || []).slice(0, 30) };
+  nSave(INBOXKEY, INBOX); notifPaint();
+  toast(autoSyncOn() ? "Info envoyée." : "Info enregistrée. Clique sur « Publier » pour que tout le monde la reçoive.");
+  markDirty(); viewHead();
+});
+document.addEventListener("click", function (e) {
+  var d = e.target.closest("[data-inboxdel]"); if (!d || !headOk()) return;
+  if (!window.confirm("Retirer cette info pour tout le monde ?")) return;
+  var now = Date.now();
+  INBOX = { at: now, items: (INBOX.items || []).filter(function (m) { return m.id !== d.dataset.inboxdel; }) };
+  nSave(INBOXKEY, INBOX); notifPaint(); markDirty(); viewHead();
+});
+
 /* ===== Sauvegardes : copie de catalog.json dans backups/ du dépôt GitHub avant chaque publication ===== */
 var BKDIR = "backups", BKMAX = 30, BKGAP = 10 * 60000, BKKEY = "noir.lastBackup";
 function bkDirUrl(gi) { return "https://api.github.com/repos/" + gi.repo + "/contents/" + BKDIR; }
@@ -2858,7 +3163,7 @@ function viewSerie(id) {
     '<div>' + (platBrands(s).length ? '<div class="plats"><span class="plbl">Diffusé sur</span>' + platBrands(s).map(platMark).join("") + '</div>' : '') + '<div class="tags">' + (langLabel(s) ? '<span class="lang">' + esc(langLabel(s)) + '</span>' : '') + (ongoing(s) ? '<span class="live">En cours</span>' : '') + (ne ? newBadge("Nouvel épisode") : '') + novBadge(s) + kdBadge(s) + tags.map(function (t) { return "<span>" + esc(t) + "</span>"; }).join("") + '</div>' +
     '<h1>' + esc(s.name) + '</h1>' + (s.original_name && s.original_name !== s.name ? '<div class="orig">' + esc(s.original_name) + '</div>' : '<div class="orig"></div>') +
     '<p class="ov">' + esc(s.overview || "Pas de synopsis.") + '</p>' +
-    '<div class="row"><button class="btn" data-watch="' + esc(s.id) + '">' + PLAYICON + '<span>Regarder</span></button>' + dlBtnMovie + dlBtnSerie + '<button class="btn ghost' + (inList(s.id) ? " on" : "") + '" type="button" data-list="' + esc(s.id) + '">' + (inList(s.id) ? "✓ Dans ma liste" : "+ Ma liste") + '</button>' + (ADMIN ? '<a class="btn ghost" href="/modifier/' + esc(s.id) + '">Modifier</a>' + (canDeleteFiche(s) ? '<button class="btn danger" data-del="' + esc(s.id) + '">Supprimer</button>' : '') : '') + '</div>' + srcChips +
+    '<div class="row"><button class="btn" data-watch="' + esc(s.id) + '">' + PLAYICON + '<span>Regarder</span></button>' + dlBtnMovie + dlBtnSerie + '<button class="btn ghost' + (inList(s.id) ? " on" : "") + '" type="button" data-list="' + esc(s.id) + '">' + (inList(s.id) ? "✓ Dans ma liste" : "+ Ma liste") + '</button>' + (movie ? '' : notifBtnHTML(s)) + (ADMIN ? '<a class="btn ghost" href="/modifier/' + esc(s.id) + '">Modifier</a>' + (canDeleteFiche(s) ? '<button class="btn danger" data-del="' + esc(s.id) + '">Supprimer</button>' : '') : '') + '</div>' + srcChips +
     ((s.cast || []).length ? '<h3 class="note" style="margin:32px 0 0;text-transform:uppercase;letter-spacing:.08em">Distribution</h3><div class="cast">' + s.cast.slice(0, 12).map(function (c) { return '<div><a class="castlink" href="/acteur/' + encodeURIComponent(c.name) + '" title="Voir tous ses titres"><b>' + esc(c.name) + '</b></a><span>' + esc(c.character || "") + '</span></div>'; }).join("") + '</div>' : '') +
     '</div></div></section>';
   if (!movie && (s.seasons || []).length) {
@@ -3119,6 +3424,7 @@ function viewHead() {
     (changed
       ? '<div style="display:grid;gap:12px"><h3 class="note" style="margin:0;text-transform:uppercase;letter-spacing:.08em">À publier</h3><p class="note" style="margin:0">Remplace les lignes ADMIN_HASH et ADMINS dans CONFIG (index.html) par celles-ci, puis remets le fichier en ligne.</p><pre class="code" id="hashline">' + esc(adminsLine(headDraft)) + '</pre><div class="row"><button class="btn" type="button" id="copyhash">Copier les lignes</button><button class="btn ghost" type="button" id="head-reset">Annuler les changements</button></div></div>'
       : '<p class="note">Aucun changement en attente.</p>') +
+    inboxSection() +
     '<div class="row"><a class="btn" href="/ajouter">Ajouter une fiche</a><a class="btn ghost" href="/panel">Panneau admin</a></div>' +
     '<div class="row"><button class="btn ghost" type="button" id="head-quit">Se déconnecter</button><a class="btn ghost" href="/">Retour au site</a></div></div></div>';
 }
@@ -4507,6 +4813,7 @@ function ghPublish(obj, tried, opts) {
     if (remote && remote.team && (!TEAM || (+remote.team.at || 0) > (+TEAM.at || 0))) obj.team = remote.team; else if (TEAM) obj.team = TEAM;
     if (remote && remote.hero && Array.isArray(remote.hero.ids) && (!HERO || (+remote.hero.at || 0) > (+HERO.at || 0))) obj.hero = remote.hero; else if (HERO) obj.hero = HERO;
     if (remote && remote.announce && typeof remote.announce === "object" && (!ANN || (+remote.announce.at || 0) > (+ANN.at || 0))) obj.announce = remote.announce; else if (ANN) obj.announce = ANN;
+    if (remote && remote.inbox && Array.isArray(remote.inbox.items) && (+remote.inbox.at || 0) > (+INBOX.at || 0)) obj.inbox = remote.inbox; else if (INBOX && INBOX.at) obj.inbox = INBOX;
     if (remote && remote.requests && (+remote.requests.at || 0) > (+REQS.at || 0)) obj.requests = remote.requests; else if (REQS.at) obj.requests = REQS;
     var rps = remote && remote.settings;
     if (rps && "player" in rps && (+rps.playerAt || 0) > (+SETTINGS.playerAt || 0) && obj.settings) { obj.settings.player = rps.player; obj.settings.playerAt = rps.playerAt; }
@@ -4564,6 +4871,7 @@ function buildCatalogObj() {
   if (TEAM) obj.team = TEAM;
   if (HERO) obj.hero = HERO;
   if (ANN) obj.announce = ANN;
+  if (INBOX && INBOX.at) obj.inbox = INBOX;
   if (REQS.at) obj.requests = REQS;
   var jl = journalList(); if (jl.length) obj.journal = jl;
   return obj;
@@ -4951,11 +5259,12 @@ function mergeRemote(data) {
   });
   return ch;
 }
-function loadCatalog() {
+function loadCatalog() { return loadCatalogCore().then(notifRefresh, notifRefresh); }
+function loadCatalogCore() {
   return fetchCatalogData().then(function (data) {
     var st = null;
     if (ADMIN) { ingestRemoteTombs(data); checkRefreshSignal(data); }
-    adoptTeam(data); adoptHero(data); adoptReqs(data); adoptAnnounce(data);
+    adoptTeam(data); adoptHero(data); adoptReqs(data); adoptAnnounce(data); adoptInbox(data);
     if (data && !Array.isArray(data) && Array.isArray(data.series)) { st = data.settings || null; data = data.series; }
     if (!Array.isArray(data)) return;
     data = data.map(normalize);
@@ -5220,18 +5529,18 @@ function skeletonHTML() {
   return open + '<div class="wrap"><div class="sk sk-h big"></div><div class="grid">' + many(12) + '</div></div>' + close;
 }
 $("#app").innerHTML = skeletonHTML();
-paintAnnounce();
+paintAnnounce(); notifPaint();
 loadCatalog().then(function () { route(true); backfillAka(); backfillNetworks(); checkBuild(); });
 /* Admins : on regarde le catalogue publié toutes les 60 s (et quand l'onglet redevient visible) pour récupérer suppressions, sources et signal de rafraîchissement */
 var polling = false;
 function pollCatalog() {
   if (!ADMIN || polling || document.hidden || draft || teamEditing || heroEditing || refreshingAll) return;
   polling = true;
-  var before = JSON.stringify([db, TEAM, HERO, ANN]);
+  var before = JSON.stringify([db, TEAM, HERO, ANN, INBOX]);
   loadCatalog().then(function () {
     polling = false;
     var pl = $("#player");
-    if (!draft && !teamEditing && !heroEditing && !(pl && pl.open) && JSON.stringify([db, TEAM, HERO, ANN]) !== before) route(true);
+    if (!draft && !teamEditing && !heroEditing && !(pl && pl.open) && JSON.stringify([db, TEAM, HERO, ANN, INBOX]) !== before) route(true);
   }, function () { polling = false; });
 }
 setInterval(pollCatalog, 30000);
