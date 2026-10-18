@@ -199,7 +199,13 @@
               "name": "Épisode 4",
               "overview": "",
               "air_date": "2026-10-18",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/IgzAQVOZUErsD",
+                  "by": "head"
+                }
+              ],
               "downloads": []
             },
             {
@@ -341,7 +347,7 @@
       ],
       "original_language": "ko",
       "posterV": 2,
-      "updatedAt": 1792324368963
+      "updatedAt": 1792336745024
     },
     {
       "id": "275102",
