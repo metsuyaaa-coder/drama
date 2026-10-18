@@ -9319,6 +9319,270 @@
       ],
       "downloads": [],
       "updatedAt": 1792281670946
+    },
+    {
+      "id": "292121",
+      "type": "tv",
+      "name": "The Scarecrow",
+      "original_name": "허수아비",
+      "origin_country": [
+        "KR"
+      ],
+      "original_language": "ko",
+      "aka": [
+        "The Scarecrow",
+        "稻草人",
+        "O Espantalho",
+        "الفزّاعة",
+        "Bù Nhìn Bóng Đêm",
+        "หุ่นลวงเชือด",
+        "Пугало",
+        "مترسک",
+        "El caso del Espantapájaros",
+        "Опудало",
+        "הדחליל",
+        "かかし",
+        "허수아비"
+      ],
+      "year": "2026",
+      "overview": "Un policier acharné et un procureur idéaliste, anciens camarades de classe au lycée, se retrouvent alors qu'ils enquêtent sur une affaire de meurtres en série à l'échelle nationale, ce qui les entraîne à la fois dans une traque périlleuse et dans un passé personnel non résolu.",
+      "genres": [
+        "Crime",
+        "Mystère",
+        "Drame"
+      ],
+      "rating": "8.2",
+      "pop": 14.0158,
+      "status": "Ended",
+      "poster": "https://image.tmdb.org/t/p/w500/4buHiyaXkkzIdFDu66GOhvXEqbK.jpg",
+      "posterV": 2,
+      "backdrop": "https://image.tmdb.org/t/p/original/dfLjomSCGwjDe1fQy1QZBHNqgDS.jpg",
+      "cast": [
+        {
+          "name": "Park Hae-soo",
+          "character": "Kang Tae-ju"
+        },
+        {
+          "name": "이희준",
+          "character": "Cha Si-young"
+        },
+        {
+          "name": "곽선영",
+          "character": "Seo Ji-won"
+        },
+        {
+          "name": "서지혜",
+          "character": "Kang Soon-young"
+        },
+        {
+          "name": "송건희",
+          "character": "Lee Ki-bum / Cha Young-beom"
+        },
+        {
+          "name": "정문성",
+          "character": "Lee Ki-hwan"
+        },
+        {
+          "name": "백현진",
+          "character": "Kim Man-chun"
+        },
+        {
+          "name": "Yoo Seung-mok",
+          "character": "Cha Mu-jin"
+        },
+        {
+          "name": "이석형",
+          "character": "Woon-hee"
+        },
+        {
+          "name": "Kim Hwan-hee",
+          "character": "Min-ji"
+        }
+      ],
+      "seasons": [
+        {
+          "number": 1,
+          "name": "Saison 1",
+          "episodes": [
+            {
+              "number": 1,
+              "name": "Tae-ju’s Comeback To Kangseong",
+              "overview": "After his superior is arrested, Kang Tae-ju is reassigned and returns to his hometown of Kangseong following a demotion. On his first day working at the local office, he learns from his coworkers that a former convict connected to one of his past cases has been brutally assaulted.",
+              "air_date": "2026-04-20",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-m890xpjuh347.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 2,
+              "name": "Female Reporter In Police Operation",
+              "overview": "Following a tense and uneasy reunion with Si-young, Tae-ju throws himself back into the hunt for the serial killer. As the investigation intensifies, a determined reporter named Ji-won becomes involved, joining the effort to track down the murderer.",
+              "air_date": "2026-04-21",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-26fjgrlv6vaa.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 3,
+              "name": "The Emergence Of New Victim",
+              "overview": "After Tae-ju assaults the county governor's nephew in retaliation for Soon-young's attack, he faces the serious threat of losing his position. Meanwhile, a victim's testimony leads him to a troubling discovery",
+              "air_date": "2026-04-27",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-34e6fwu21ded.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 4,
+              "name": "The Doubt Toward Gi-beom",
+              "overview": "Reeling from the death of Min-ji, who had placed her trust in him, Tae-ju seeks out Si-young and proposes that they work together to capture the serial killer. His return sparks tension and debate among his colleagues, but Tae-ju remains single-minded, determined to continue the hunt.",
+              "air_date": "2026-04-28",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-d3lb6sr66qx9.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 5,
+              "name": "Gi-beom’s Missing",
+              "overview": "As suspicion tightens around Gi-beom, evidence seems to seal his guilt. However, more evidence proves to contradict the timeline. As Tae-ju digs deeper, suspicion shifts toward someone with close access.",
+              "air_date": "2026-05-04",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-gsrjxui6tfrc.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 6,
+              "name": "The Handbag That Leads To A Suspicious Man",
+              "overview": "Doubt grows over Lee Gi-beom's guilt as his confession is exposed as coerced through illegal detention and abuse. Tae-ju confronts corruption within the investigation while Ji-won uncovers new leads.",
+              "air_date": "2026-05-05",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-7iz3f3p0n83f.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 7,
+              "name": "Another Suspect",
+              "overview": "Doubts grow over Lee Gi-beom's confession as Tae-ju uncovers corruption, illegal detention, and a cover-up. Suspicion shifts to Im Seok-man, while new evidence reignites the hunt for the real serial killer.",
+              "air_date": "2026-05-11",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-kg4vufyf2343.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 8,
+              "name": "Soon-young's Disappearance",
+              "overview": "Im Seok-man is forced into a false confession during a police reenactment, while authorities declare the case solved. Tae-ju grows suspicious and starts uncovering corruption behind the investigation and Gi-beom's death.",
+              "air_date": "2026-05-12",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-7al2fg0ikl85.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 9,
+              "name": "The Killing Is Not Over",
+              "overview": "As buried secrets resurface, Tae-ju begins uncovering a terrifying truth behind the serial killer case everyone believed was solved. A hidden child, suspicious police involvement, and growing distrust push the investigation into darker territory, forcing the team to question everything they thought they knew.",
+              "air_date": "2026-05-18",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-a1ihbktisfmy.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 10,
+              "name": "The Conspiracy About Hye-jin’s Body",
+              "overview": "Tae-ju gets closer to exposing the truth as shocking connections between past victims and the police begin to surface. Trust inside the team starts to crack, while a dangerous suspect makes a bold move that puts everyone at risk. With time running out, the investigation spirals toward an explosive confrontation.",
+              "air_date": "2026-05-19",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-bd5jqdq73q06.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 11,
+              "name": "The Emergence Of Yeong-beom",
+              "overview": "A tragic accident pushes Tae-ju to make a desperate choice as hidden family ties and painful secrets resurface. While Soonyoung fights for her life, old wounds, guilt, and power struggles threaten to destroy everyone connected to the past.",
+              "air_date": "2026-05-25",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-vmbltm4p591h.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 12,
+              "name": "The Result Of Seok-man’s Retrial",
+              "overview": "In the emotional finale, long-buried truths finally come to light as Tae-ju and Soon-young face the consequences of the past. With betrayal, sacrifice, and grief reaching their peak, the final confrontation forces everyone to choose between revenge and forgiveness - leading to a heartbreaking but unforgettable ending.",
+              "air_date": "2026-05-26",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-0fkon0vnzi71.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            }
+          ],
+          "downloads": []
+        }
+      ],
+      "sources": [],
+      "addedAt": 1792281725488,
+      "langs": [
+        "VOSTFR"
+      ],
+      "downloads": [],
+      "updatedAt": 1792281938434
     }
   ],
   "deletedLinks": [
