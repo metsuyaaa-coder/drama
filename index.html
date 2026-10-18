@@ -25,7 +25,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Hanken+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Big+Shoulders+Display:wght@700;900&family=Hanken+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 /* Concept : interface noir et blanc, seules les affiches gardent leurs couleurs */
 :root {
@@ -532,8 +532,15 @@ button.more { background: none; border: 0; padding: 0; cursor: pointer; }
 }
 
 /* plateformes et demandes */
-.pchip { font-family: var(--display); font-weight: 700; letter-spacing: .04em; text-transform: uppercase; font-size: 15px; }
-.pchip.pb { font-weight: 900; letter-spacing: .06em; }
+/* plateformes : le nom s'écrit dans le style de la marque (pas de logo) */
+.wm { display: inline-block; font-family: var(--display); font-weight: 900; letter-spacing: .05em; text-transform: uppercase; line-height: 1; white-space: nowrap; color: var(--pc, var(--fg)); }
+.chip.pchip { padding: 6px 14px; display: inline-flex; align-items: center; min-height: 34px; }
+.chip.pchip .wm { font-size: 18px; }
+.chip.pchip:hover { border-color: var(--pc, var(--dim)); }
+.chip.pchip.on { background: #151515; border-color: var(--pc, var(--fg)); box-shadow: inset 0 0 0 1px var(--pc, var(--fg)); }
+.plats { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 20px; margin-bottom: 12px; }
+.plats .plbl { font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: var(--dim); }
+.plats .wm { font-size: 26px; }
 .rqh { font-family: var(--display); font-weight: 700; font-size: 24px; text-transform: uppercase; letter-spacing: .03em; margin: 28px 0 12px; }
 .rqrow { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; border: 1px solid var(--line); padding: 12px 14px; margin-bottom: 8px; }
 .rqt { flex: 1 1 200px; min-width: 0; }
@@ -1708,17 +1715,68 @@ function newOptions(list) {
   return o;
 }
 var NEWLBL = { serie: "Nouvelles séries", ep: "Nouveaux épisodes" };
-/* Plateformes (TMDB « networks ») : le nom s'écrit dans le style de la marque, sans logo officiel */
-var PLAT = { netflix: ["#e50914", "#fff", 1], viki: ["#00a0e9", "#fff"], tving: ["#ff153c", "#fff", 1], "disney+": ["#113ccf", "#fff"], "prime video": ["#00a8e1", "#fff"], "apple tv+": ["#fff", "#000"], iqiyi: ["#00be06", "#fff"], wetv: ["#ff6a00", "#fff"], viu: ["#ffc400", "#000", 1], tvn: ["#e5002b", "#fff", 1], jtbc: ["#2a5db0", "#fff", 1], kbs: ["#1b64c8", "#fff"], sbs: ["#e60012", "#fff"], mbc: ["#2b7de9", "#fff"] };
+/* Plateformes d'origine (TMDB « networks ») : le nom s'écrit dans le style de la marque, sans logo officiel.
+   Plusieurs noms TMDB d'une même marque (KBS1, KBS2…) sont regroupés sous un seul filtre. */
+var BR_BEBAS = "font-family:'Bebas Neue',Impact,'Arial Narrow',sans-serif;font-weight:400;letter-spacing:.08em;";
+var BR_SOFT = "font-family:var(--body);text-transform:none;";
+var BRANDS = [
+  { n: "Netflix", re: /^netflix/i, c: "#e50914", css: BR_BEBAS + "font-size:1.15em;" },
+  { n: "Viki", re: /viki/i, c: "#1fb6ff", css: BR_SOFT + "text-transform:lowercase;font-weight:800;letter-spacing:-.02em;" },
+  { n: "TVING", re: /^tving/i, c: "#ff153c", css: "font-weight:900;letter-spacing:.14em;" },
+  { n: "Disney+", re: /^disney/i, c: "#4f7cff", css: BR_SOFT + "font-style:italic;font-weight:700;letter-spacing:.01em;" },
+  { n: "Prime Video", re: /^(amazon|prime video)/i, c: "#00a8e1", css: BR_SOFT + "text-transform:lowercase;font-weight:800;letter-spacing:-.01em;" },
+  { n: "Apple TV+", re: /^apple tv/i, c: "#ffffff", css: BR_SOFT + "font-weight:600;letter-spacing:-.01em;" },
+  { n: "iQIYI", re: /^iqiyi|^iq\.com/i, c: "#00d10a", css: BR_SOFT + "text-transform:lowercase;font-weight:800;letter-spacing:-.02em;" },
+  { n: "WeTV", re: /^we ?tv/i, c: "#ff7a1a", css: BR_SOFT + "font-weight:800;letter-spacing:-.01em;" },
+  { n: "Tencent Video", re: /^tencent/i, c: "#20b2ff", css: BR_SOFT + "font-weight:700;" },
+  { n: "Youku", re: /^youku/i, c: "#22b8ff", css: BR_SOFT + "font-weight:800;letter-spacing:-.01em;" },
+  { n: "Mango TV", re: /^mango/i, c: "#ffa31a", css: BR_SOFT + "font-weight:800;" },
+  { n: "Bilibili", re: /^bilibili/i, c: "#fb7299", css: BR_SOFT + "font-weight:800;" },
+  { n: "Viu", re: /^viu/i, c: "#ffc400", css: BR_SOFT + "text-transform:lowercase;font-weight:900;letter-spacing:-.02em;font-size:1.1em;" },
+  { n: "Wavve", re: /^wavve/i, c: "#1e6bff", css: BR_SOFT + "text-transform:lowercase;font-weight:800;" },
+  { n: "Coupang Play", re: /^coupang/i, c: "#e8402a", css: BR_SOFT + "font-weight:800;" },
+  { n: "Hulu", re: /^hulu/i, c: "#1ce783", css: BR_SOFT + "text-transform:lowercase;font-weight:800;letter-spacing:-.02em;" },
+  { n: "tvN", re: /^tvn\b/i, c: "#ff2d4f", css: "text-transform:none;font-weight:900;letter-spacing:.02em;" },
+  { n: "JTBC", re: /^jtbc/i, c: "#5b8def", css: "font-weight:900;letter-spacing:.1em;" },
+  { n: "ENA", re: /^ena$/i, c: "#c9a3ff", css: "font-weight:900;letter-spacing:.14em;" },
+  { n: "KBS", re: /^kbs/i, c: "#3d83ee", css: "font-weight:900;letter-spacing:.1em;" },
+  { n: "MBC", re: /^mbc/i, c: "#4a90f2", css: "font-weight:900;letter-spacing:.1em;" },
+  { n: "SBS", re: /^sbs/i, c: "#ff3b3b", css: "font-weight:900;letter-spacing:.1em;" },
+  { n: "Fuji TV", re: /^fuji/i, c: "#ffd23f", css: BR_SOFT + "font-weight:800;" },
+  { n: "TBS", re: /^tbs/i, c: "#4fa3ff", css: "font-weight:900;letter-spacing:.12em;" },
+  { n: "NTV", re: /^(ntv|nippon tv)/i, c: "#ff8a3d", css: "font-weight:900;letter-spacing:.12em;" },
+  { n: "TV Asahi", re: /^tv asahi/i, c: "#ff4d6d", css: BR_SOFT + "font-weight:800;" },
+  { n: "Hunan TV", re: /^hunan/i, c: "#ffb020", css: BR_SOFT + "font-weight:800;" },
+  { n: "GMM 25", re: /^gmm/i, c: "#ff4fa0", css: "font-weight:900;letter-spacing:.1em;" },
+  { n: "Channel 3", re: /^(thai )?channel 3|^ch3/i, c: "#ffd23f", css: BR_SOFT + "font-weight:800;" },
+  { n: "One31", re: /^one ?31/i, c: "#35c8ff", css: BR_SOFT + "font-weight:800;" },
+  { n: "Thai PBS", re: /^thai ?pbs/i, c: "#35d07f", css: "font-weight:900;letter-spacing:.08em;" }
+];
+function platBrand(raw) {
+  raw = String(raw || "").trim();
+  for (var i = 0; i < BRANDS.length; i++) if (BRANDS[i].re.test(raw)) return BRANDS[i];
+  return { n: raw, c: "", css: "font-weight:700;letter-spacing:.06em;" };
+}
+function platBrands(s) {
+  var out = [], seen = {};
+  ((s && s.networks) || []).forEach(function (r) { var b = platBrand(r); if (b.n && !seen[b.n]) { seen[b.n] = 1; out.push(b); } });
+  return out;
+}
+function platNames(s) { return platBrands(s).map(function (b) { return b.n; }); }
+function platMark(b) { return '<span class="wm" style="' + (b.c ? "color:" + b.c + ";" : "") + b.css + '">' + esc(b.n) + '</span>'; }
 function platOptions(list) {
-  var n = {}; list.forEach(function (s) { (s.networks || []).forEach(function (x) { n[x] = (n[x] || 0) + 1; }); });
-  return Object.keys(n).sort(function (a, b) { return n[b] - n[a] || a.localeCompare(b); }).slice(0, 10);
+  var n = {}; list.forEach(function (s) { platNames(s).forEach(function (x) { n[x] = (n[x] || 0) + 1; }); });
+  return Object.keys(n).sort(function (a, b) { return n[b] - n[a] || a.localeCompare(b); }).slice(0, 14);
 }
 function platChip(name) {
-  var st = PLAT[name.toLowerCase()], on = platFilter === name, css = st ? (on ? "background:" + st[0] + ";border-color:" + st[0] + ";color:" + st[1] : "color:" + st[0]) : "";
-  return '<button class="chip pchip' + (on ? " on" : "") + (st && st[2] ? " pb" : "") + '" style="' + css + '" data-platf="' + esc(name) + '">' + esc(name) + '</button>';
+  var b = platBrand(name), on = platFilter === name;
+  return '<button type="button" class="chip pchip' + (on ? " on" : "") + '" style="' + (b.c ? "--pc:" + b.c : "") + '" data-platf="' + esc(name) + '" aria-pressed="' + (on ? "true" : "false") + '">' + platMark(b) + '</button>';
 }
-function newMatch(s) { return (!newFilter || (newFilter === "serie" ? !!newSeries(s) : !!newEpisode(s))) && (!kdFilter || dramaType(s) === kdFilter) && (!platFilter || (s.networks || []).indexOf(platFilter) > -1); }
+function platRow(plats) {
+  if (!plats.length) return "";
+  return '<div class="chips langchips"><span class="chiplbl">Plateforme</span><button type="button" class="chip' + (!platFilter ? " on" : "") + '" data-platf="">Toutes</button>' + plats.map(platChip).join("") + '</div>';
+}
+function newMatch(s) { return (!newFilter || (newFilter === "serie" ? !!newSeries(s) : !!newEpisode(s))) && (!kdFilter || dramaType(s) === kdFilter) && (!platFilter || platNames(s).indexOf(platFilter) > -1); }
 function langMatch(s) { return !langFilter || (s.langs || []).indexOf(langFilter) > -1; }
 function langChips() {
   return '<div class="chips langchips"><span class="chiplbl">Langue</span><button class="chip' + (!langFilter ? " on" : "") + '" data-langf="">Toutes</button>' +
@@ -1740,7 +1798,7 @@ function viewList(title, pred) {
   html += '<div class="wrap"><div class="section-head" style="padding-block:24px 18px"><div class="chips">' +
     '<button class="chip' + (!filter ? " on" : "") + '" data-genre="">Tout</button>' +
     Object.keys(genres).sort().map(function (g) { return '<button class="chip' + (filter === g ? " on" : "") + '" data-genre="' + esc(g) + '">' + esc(g) + '</button>'; }).join("") +
-    '</div>' + langChips() + (newOpts.length ? '<div class="chips langchips"><span class="chiplbl">Nouveautés</span><button class="chip' + (!newFilter ? " on" : "") + '" data-newf="">Toutes</button>' + newOpts.map(function (o) { return '<button class="chip' + (newFilter === o ? " on" : "") + '" data-newf="' + o + '">' + NEWLBL[o] + '</button>'; }).join("") + '</div>' : '') + (kdTypes.length ? '<div class="chips langchips"><span class="chiplbl">Catégorie</span><button class="chip' + (!kdFilter ? " on" : "") + '" data-kdf="">Toutes</button>' + kdTypes.map(function (d) { return '<button class="chip' + (kdFilter === d ? " on" : "") + '" data-kdf="' + d + '">' + DRAMA[d] + '</button>'; }).join("") + '</div>' : '') + (plats.length ? '<div class="chips langchips"><span class="chiplbl">Plateforme</span><button class="chip' + (!platFilter ? " on" : "") + '" data-platf="">Toutes</button>' + plats.map(platChip).join("") + '</div>' : '') + '</div>' + (shown.length ? '<div class="grid">' + shown.map(card).join("") + '</div>' : '<p class="note" style="padding-bottom:48px">Aucun titre avec ces filtres.</p>') + '</div>';
+    '</div>' + langChips() + (newOpts.length ? '<div class="chips langchips"><span class="chiplbl">Nouveautés</span><button class="chip' + (!newFilter ? " on" : "") + '" data-newf="">Toutes</button>' + newOpts.map(function (o) { return '<button class="chip' + (newFilter === o ? " on" : "") + '" data-newf="' + o + '">' + NEWLBL[o] + '</button>'; }).join("") + '</div>' : '') + (kdTypes.length ? '<div class="chips langchips"><span class="chiplbl">Catégorie</span><button class="chip' + (!kdFilter ? " on" : "") + '" data-kdf="">Toutes</button>' + kdTypes.map(function (d) { return '<button class="chip' + (kdFilter === d ? " on" : "") + '" data-kdf="' + d + '">' + DRAMA[d] + '</button>'; }).join("") + '</div>' : '') + platRow(plats) + '</div>' + (shown.length ? '<div class="grid">' + shown.map(card).join("") + '</div>' : '<p class="note" style="padding-bottom:48px">Aucun titre avec ces filtres.</p>') + '</div>';
   $("#app").innerHTML = html;
 }
 
@@ -1796,6 +1854,8 @@ function viewSearch(q) {
   if (newOptsS.indexOf(newFilter) < 0) newFilter = "";
   var kdTypesS = dramaTypes(base);
   if (kdTypesS.indexOf(kdFilter) < 0) kdFilter = "";
+  var platsS = platOptions(base);
+  if (platsS.indexOf(platFilter) < 0) platFilter = "";
   var found = base.filter(function (s) {
     return (!typeFilter || (typeFilter === "movie") === isMovie(s)) &&
       (!filter || (s.genres || []).indexOf(filter) > -1) && langMatch(s) && newMatch(s) && (!dlFilter || hasDl(s));
@@ -1814,6 +1874,7 @@ function viewSearch(q) {
     (Object.keys(genres).length ? row("Genre", chip("data-genre", "", "Tout", !filter) + Object.keys(genres).sort().map(function (g) { return chip("data-genre", g, g, filter === g); }).join("")) : "") +
     (newOptsS.length ? row("Nouveautés", chip("data-newf", "", "Toutes", !newFilter) + newOptsS.map(function (o) { return chip("data-newf", o, NEWLBL[o], newFilter === o); }).join("")) : "") +
     (kdTypesS.length ? row("Catégorie", chip("data-kdf", "", "Toutes", !kdFilter) + kdTypesS.map(function (d) { return chip("data-kdf", d, DRAMA[d], kdFilter === d); }).join("")) : "") +
+    platRow(platsS) +
     (canDl ? row("Téléchargement", chip("data-dlf", "", "Tous", !dlFilter) + chip("data-dlf", "1", "Avec lien", dlFilter)) : "");
   html += '<div class="wrap sres">' + filters + (found.length ? '<div class="grid" style="padding-top:28px">' + found.map(card).join("") + '</div>' : '<p class="note" style="padding:28px 0 48px">Aucun titre avec ces filtres.</p>') + '</div>';
   $("#app").innerHTML = html;
@@ -1954,7 +2015,7 @@ function viewSerie(id) {
   }
   var html = '<section class="detail"><div class="bg" style="background-image:url(\'' + esc(hq(s.backdrop || s.poster)) + '\')"></div><div class="wrap">' +
     '<div class="poster">' + (s.poster ? '<img src="' + esc(s.poster) + '" alt="' + esc(s.name) + '">' : '<div class="ph">' + esc(s.name.charAt(0)) + '</div>') + '</div>' +
-    '<div><div class="tags">' + (langLabel(s) ? '<span class="lang">' + esc(langLabel(s)) + '</span>' : '') + (ongoing(s) ? '<span class="live">En cours</span>' : '') + (ne ? newBadge("Nouvel épisode") : '') + novBadge(s) + kdBadge(s) + tags.map(function (t) { return "<span>" + esc(t) + "</span>"; }).join("") + '</div>' +
+    '<div>' + (platBrands(s).length ? '<div class="plats"><span class="plbl">Diffusé sur</span>' + platBrands(s).slice(0, 3).map(platMark).join("") + '</div>' : '') + '<div class="tags">' + (langLabel(s) ? '<span class="lang">' + esc(langLabel(s)) + '</span>' : '') + (ongoing(s) ? '<span class="live">En cours</span>' : '') + (ne ? newBadge("Nouvel épisode") : '') + novBadge(s) + kdBadge(s) + tags.map(function (t) { return "<span>" + esc(t) + "</span>"; }).join("") + '</div>' +
     '<h1>' + esc(s.name) + '</h1>' + (s.original_name && s.original_name !== s.name ? '<div class="orig">' + esc(s.original_name) + '</div>' : '<div class="orig"></div>') +
     '<p class="ov">' + esc(s.overview || "Pas de synopsis.") + '</p>' +
     '<div class="row"><button class="btn" data-watch="' + esc(s.id) + '">' + PLAYICON + '<span>Regarder</span></button>' + dlBtnMovie + dlBtnSerie + '<button class="btn ghost' + (inList(s.id) ? " on" : "") + '" type="button" data-list="' + esc(s.id) + '">' + (inList(s.id) ? "✓ Dans ma liste" : "+ Ma liste") + '</button>' + (ADMIN ? '<a class="btn ghost" href="/modifier/' + esc(s.id) + '">Modifier</a>' + (canDeleteFiche(s) ? '<button class="btn danger" data-del="' + esc(s.id) + '">Supprimer</button>' : '') : '') + '</div>' + srcChips +
@@ -2844,7 +2905,7 @@ document.addEventListener("click", function (e) {
   if (st) { var sb = st.closest(".srcs"), so = sb.classList.toggle("open"); st.setAttribute("aria-expanded", so ? "true" : "false"); return; }
   var rd = e.target.closest("[data-resumedel]");
   if (rd) { e.preventDefault(); e.stopPropagation(); removeResume(rd.dataset.resumedel); viewHome(); return; }
-  var t = e.target.closest("[data-resume],[data-watch],[data-movsrc],[data-playep],[data-src],[data-del],[data-list],[data-listtab],[data-seen],[data-seenseason],[data-genre],[data-langf],[data-newf],[data-kdf],[data-dlf],[data-typef],[data-pick],[data-bulk],[data-dlbulk],[data-dltab],#save,#applytpl,#refreshall,#manual,#manualfilm,#refresh,#copyhash");
+  var t = e.target.closest("[data-resume],[data-watch],[data-movsrc],[data-playep],[data-src],[data-del],[data-list],[data-listtab],[data-seen],[data-seenseason],[data-genre],[data-langf],[data-newf],[data-kdf],[data-platf],[data-dlf],[data-typef],[data-pick],[data-bulk],[data-dlbulk],[data-dltab],#save,#applytpl,#refreshall,#manual,#manualfilm,#refresh,#copyhash");
   if (!t) return;
   if (t.dataset.resume != null) { e.preventDefault(); resumeWatch(t.dataset.resume); }
   else if (t.dataset.watch != null) {
