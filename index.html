@@ -507,12 +507,31 @@ dialog#player.wide .pbar { display: none; }
 .peps .es::-webkit-scrollbar { display: none; }
 .peps .es .chip { flex: 0 0 auto; white-space: nowrap; }
 .peps .el { position: relative; flex: 1; min-height: 0; overflow-y: auto; overscroll-behavior: contain; padding-bottom: env(safe-area-inset-bottom, 0px); scrollbar-width: thin; scrollbar-color: #333 transparent; }
-.epi { display: flex; align-items: baseline; gap: 14px; width: 100%; text-align: left; background: transparent; border: 0; border-bottom: 1px solid var(--line); padding: 12px max(16px, env(safe-area-inset-right, 0px)) 12px 16px; color: var(--fg); cursor: pointer; border-radius: 0; transition: background .2s, color .2s; }
+.epi { display: flex; align-items: center; gap: 14px; width: 100%; text-align: left; background: transparent; border: 0; border-bottom: 1px solid var(--line); padding: 12px max(16px, env(safe-area-inset-right, 0px)) 12px 16px; color: var(--fg); cursor: pointer; border-radius: 0; transition: background .2s, color .2s; }
 .epi:hover { background: #151515; }
 .epi .en { flex: 0 0 auto; min-width: 2.2ch; font-family: var(--mono); font-size: 12px; color: var(--dim); }
 .epi .et { flex: 1; min-width: 0; font-size: 14px; }
 .epi .ec { flex: 0 0 auto; font-family: var(--mono); font-size: 10px; letter-spacing: .06em; text-transform: uppercase; }
 .epi.on { background: var(--fg); color: var(--bg); }
+.peps .eht { display: flex; flex-direction: column; min-width: 0; line-height: 1.2; }
+.peps .eht small { color: var(--dim); font-size: 12px; font-family: var(--mono); letter-spacing: .04em; }
+.eprog { flex: 0 0 auto; height: 3px; background: var(--line); }
+.eprog > i { display: block; height: 100%; width: 0; background: #86efac; transition: width .45s var(--ease); }
+.peps .es .chip small { font-family: var(--mono); font-size: 10px; opacity: .6; margin-left: 6px; }
+.peps .ef { flex: 0 0 auto; padding: 10px 16px; border-bottom: 1px solid var(--line); }
+.peps .ef[hidden] { display: none; }
+.peps .ef input { width: 100%; box-sizing: border-box; background: #0b0b0b; border: 1px solid var(--line); color: var(--fg); padding: 9px 12px; font: inherit; font-size: 13px; border-radius: 0; outline: 0; transition: border-color .2s; }
+.peps .ef input:focus { border-color: var(--dim); }
+.epi .ei { flex: 0 0 auto; width: 30px; height: 30px; display: grid; place-items: center; border: 1px solid var(--line); font-family: var(--mono); font-size: 12px; color: var(--dim); transition: color .2s, border-color .2s, background .2s; }
+.epi .ei svg { width: 14px; height: 14px; }
+.epi.seen .ei { color: #86efac; border-color: color-mix(in srgb, #86efac 40%, transparent); background: color-mix(in srgb, #86efac 10%, transparent); }
+.epi.on .ei { color: var(--bg); border-color: var(--bg); background: transparent; }
+.epi.next { box-shadow: inset 3px 0 0 #7dd3fc; }
+.epi.next .ei { color: #7dd3fc; border-color: #7dd3fc; }
+.epi.next .ec { color: #7dd3fc; }
+.epi.on .ec { font-weight: 700; }
+.peps .el .epi { animation: tipIn .3s ease both; }
+@media (prefers-reduced-motion: reduce) { .peps .el .epi { animation: none; } }
 .epi.on .en { color: #444; }
 dialog#player.wide { display: flex; }
 
@@ -1078,8 +1097,10 @@ footer .wrap.about { display: grid; grid-template-columns: repeat(auto-fit, minm
     <div class="pn" id="pnav"><button class="btn small ghost" id="pprev" type="button">Épisode précédent</button><button class="btn small ghost" id="peplist" type="button" aria-label="Liste des épisodes" title="Épisodes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="9" width="14" height="11" rx="1.5"/><path d="M7 5.5h12.5A1.5 1.5 0 0 1 21 7v9"/><path d="M11 2.5h8.5A1.5 1.5 0 0 1 21 4"/></svg><span>Épisodes</span></button><button class="btn small" id="pnext" type="button">Épisode suivant</button></div>
   </div>
   <div class="peps" id="peps" hidden role="dialog" aria-label="Liste des épisodes">
-    <div class="eh"><b>Épisodes</b><button class="btn small ghost" id="pepsx" type="button">Fermer</button></div>
+    <div class="eh"><div class="eht"><b>Épisodes</b><small id="pepsub"></small></div><button class="btn small ghost" id="pepsx" type="button">Fermer</button></div>
+    <div class="eprog"><i id="eprogf"></i></div>
     <div class="es" id="pepss"></div>
+    <div class="ef" id="pepsf" hidden><input id="pepsq" type="search" placeholder="Chercher un épisode (n° ou titre)" autocomplete="off" aria-label="Chercher un épisode"></div>
     <div class="el" id="pepsl"></div>
   </div>
 </dialog>
@@ -3304,6 +3325,7 @@ document.addEventListener("keydown", function (e) {
   if (k === "f") { e.preventDefault(); toggleFull(); }
   else if (k === "r") { e.preventDefault(); renderPlayer(); }
   else if (k === "s") { e.preventDefault(); nextServer(); }
+  else if (k === "e" && d && cur.nav && cur.nav.eps) { e.preventDefault(); if ($("#peps").hidden) openEps(); else closeEps(); }
   else if (k === "n") { var b = $("#pnext"); if (b && !b.disabled) b.click(); }
   else if (k === "p") { var c = $("#pprev"); if (c && !c.disabled) c.click(); }
 });
@@ -3363,7 +3385,7 @@ function tipList() {
   if (cur.sources && cur.sources.length > 1) t.push({ ico: "server", c: "#fcd34d", l: "Astuce", h: "Si le lecteur bug ou ne démarre pas, essaie un autre serveur en bas à gauche." });
   t.push({ ico: "shield", c: "#fb923c", l: "Marre des pubs ?", h: 'Installe <a href="https://brave.com/" target="_blank" rel="noopener">Brave</a>, un navigateur qui bloque les pubs.' });
   t.push({ ico: "fit", c: "#c4b5fd", l: "Bandes noires ?", h: "Passe en plein écran, puis choisis Zoom ou Étirer dans la barre Format." });
-  if (window.matchMedia && matchMedia("(pointer:fine)").matches) t.push({ ico: "keys", c: "#f9a8d4", l: "Raccourcis", h: "<b>F</b> plein écran, <b>R</b> recharger" + (cur.sources.length > 1 ? ", <b>S</b> changer de serveur" : "") + (cur.nav ? ", <b>N</b> / <b>P</b> épisode suivant / précédent." : ".") });
+  if (window.matchMedia && matchMedia("(pointer:fine)").matches) t.push({ ico: "keys", c: "#f9a8d4", l: "Raccourcis", h: "<b>F</b> plein écran, <b>R</b> recharger" + (cur.sources.length > 1 ? ", <b>S</b> changer de serveur" : "") + (cur.nav ? ", <b>N</b> / <b>P</b> épisode suivant / précédent" + (cur.nav.eps ? ", <b>E</b> liste des épisodes." : ".") : ".") });
   if (cur.nav && cur.nav.eps) t.push({ ico: "list", c: "#86efac", l: "Épisodes", h: "Utilise le bouton Épisodes pour sauter à un autre épisode ou une autre saison." });
   return t;
 }
@@ -3393,35 +3415,53 @@ function epsData() {
   });
   return { n: n, list: list };
 }
+var epsQuery = "";
+var EP_CHECK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>';
+var EP_PLAY = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4l13 8-13 8z"/></svg>';
 function renderEps() {
   var d = epsData(); if (!d) return;
   var sel = d.list.filter(function (x) { return x.i === epsSeason; })[0] || d.list[0];
   if (!sel) { $("#pepss").innerHTML = ""; $("#pepsl").innerHTML = '<p class="note" style="padding:16px">Aucun épisode disponible.</p>'; return; }
   epsSeason = sel.i;
+  var seenMap = readSeen()[d.n.s.id] || {};
+  var seenIn = function (x) { return x.eps.filter(function (ep) { return !!seenMap[epKey(x.se, ep)]; }).length; };
   $("#pepss").innerHTML = d.list.length > 1 ? d.list.map(function (x) {
-    return '<button type="button" class="chip' + (x.i === sel.i ? " on" : "") + '" data-esn="' + x.i + '">Saison ' + esc(x.se.number) + '</button>';
+    var n = seenIn(x);
+    return '<button type="button" class="chip' + (x.i === sel.i ? " on" : "") + '" data-esn="' + x.i + '">Saison ' + esc(x.se.number) + '<small>' + (n ? n + "/" : "") + x.eps.length + '</small></button>';
   }).join("") : "";
   $("#pepss").style.display = d.list.length > 1 ? "" : "none";
-  $("#pepsl").innerHTML = sel.eps.map(function (ep) {
-    var on = sel.i === d.n.si && String(ep.number) === String(d.n.num);
-    var sv = !!(readSeen()[d.n.s.id] || {})[epKey(sel.se, ep)];
-    return '<button type="button" class="epi' + (on ? " on" : "") + (sv ? " seen" : "") + '" data-eps="' + sel.i + '|' + esc(ep.number) + '"><span class="en">' + esc(ep.number) + '</span><span class="et">' + esc(ep.name || ("Épisode " + ep.number)) + '</span>' + (on ? '<span class="ec">En lecture</span>' : sv ? '<span class="ec">Vu</span>' : "") + '</button>';
+  var sn = seenIn(sel);
+  $("#pepsub").textContent = "Saison " + sel.se.number + " · " + sn + "/" + sel.eps.length + " vu" + (sn > 1 ? "s" : "");
+  $("#eprogf").style.width = Math.round(100 * sn / sel.eps.length) + "%";
+  var big = sel.eps.length > 12;
+  $("#pepsf").hidden = !big;
+  var q = big ? epsQuery.trim().toLowerCase() : "";
+  var onIdx = -1;
+  sel.eps.forEach(function (ep, k) { if (sel.i === d.n.si && String(ep.number) === String(d.n.num)) onIdx = k; });
+  var nextIdx = -1;
+  if (onIdx > -1) for (var k = onIdx + 1; k < sel.eps.length; k++) { if (!seenMap[epKey(sel.se, sel.eps[k])]) { nextIdx = k; break; } }
+  var rows = sel.eps.map(function (ep, k) {
+    if (q && String(ep.number).toLowerCase() !== q && String(ep.name || "").toLowerCase().indexOf(q) < 0 && String(ep.number).toLowerCase().indexOf(q) !== 0) return "";
+    var on = k === onIdx, sv = !!seenMap[epKey(sel.se, ep)], nx = k === nextIdx;
+    return '<button type="button" class="epi' + (on ? " on" : "") + (sv ? " seen" : "") + (nx ? " next" : "") + '" data-eps="' + sel.i + '|' + esc(ep.number) + '"><span class="ei">' + (on ? EP_PLAY : sv ? EP_CHECK : esc(ep.number)) + '</span><span class="et">' + esc(ep.name || ("Épisode " + ep.number)) + '</span>' + (on ? '<span class="ec">En lecture</span>' : nx ? '<span class="ec">À suivre</span>' : sv ? '<span class="ec">Vu</span>' : "") + '</button>';
   }).join("");
+  $("#pepsl").innerHTML = rows || '<p class="note" style="padding:16px">Aucun épisode ne correspond.</p>';
   var onEl = $("#pepsl").querySelector(".epi.on");
-  if (onEl) $("#pepsl").scrollTop = Math.max(0, onEl.offsetTop - $("#pepsl").clientHeight / 2 + onEl.offsetHeight / 2);
+  if (onEl && !q) $("#pepsl").scrollTop = Math.max(0, onEl.offsetTop - $("#pepsl").clientHeight / 2 + onEl.offsetHeight / 2);
 }
 function openEps() {
   var d = epsData(); if (!d) return;
-  epsSeason = d.n.si;
+  epsSeason = d.n.si; epsQuery = ""; $("#pepsq").value = "";
   $("#peps").hidden = false;
   renderEps();
 }
 function closeEps() { $("#peps").hidden = true; }
 $("#peplist").addEventListener("click", function () { if ($("#peps").hidden) openEps(); else closeEps(); });
 $("#pepsx").addEventListener("click", closeEps);
+$("#pepsq").addEventListener("input", function () { epsQuery = this.value; renderEps(); });
 $("#peps").addEventListener("click", function (e) {
   var c = e.target.closest("[data-esn]");
-  if (c) { epsSeason = parseInt(c.dataset.esn, 10); renderEps(); return; }
+  if (c) { epsSeason = parseInt(c.dataset.esn, 10); epsQuery = ""; $("#pepsq").value = ""; renderEps(); return; }
   var b = e.target.closest("[data-eps]");
   if (!b) return;
   var p = b.dataset.eps.split("|"), d = epsData(); if (!d) return;
