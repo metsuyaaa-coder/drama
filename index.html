@@ -78,9 +78,13 @@ nav a svg { width: 16px; height: 16px; flex: none; }
 nav a::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: var(--fg); transform: scaleX(0); transform-origin: left; transition: transform .3s var(--ease); }
 nav a:hover, nav a.on { color: var(--fg); }
 nav a:hover::after, nav a.on::after { transform: scaleX(1); }
-.search { margin-left: auto; position: relative; width: min(280px, 40vw); }
-.search input { width: 100%; background: transparent; border: 0; border-bottom: 1px solid var(--line); padding: 8px 0; outline: none; font-size: 14px; transition: border-color .25s; }
-.search input:focus { border-bottom-color: var(--fg); }
+.search { margin-left: auto; position: relative; width: min(300px, 40vw); transition: width .3s var(--ease); }
+.search:focus-within { width: min(380px, 46vw); }
+.search::before { content: ""; position: absolute; z-index: 1; left: 14px; top: 50%; width: 16px; height: 16px; transform: translateY(-50%); background: var(--dim); pointer-events: none; transition: background .25s; -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.6' stroke-linecap='round'%3E%3Ccircle cx='10.5' cy='10.5' r='6.5'/%3E%3Cpath d='M15.5 15.5 21 21'/%3E%3C/svg%3E") center / contain no-repeat; mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.6' stroke-linecap='round'%3E%3Ccircle cx='10.5' cy='10.5' r='6.5'/%3E%3Cpath d='M15.5 15.5 21 21'/%3E%3C/svg%3E") center / contain no-repeat; }
+.search:focus-within::before { background: var(--fg); }
+.search input { width: 100%; background: var(--panel); border: 1px solid var(--line); padding: 10px 14px 10px 40px; outline: none; font-size: 14px; letter-spacing: .02em; transition: border-color .25s, background .25s, box-shadow .25s; }
+.search input:hover { border-color: #3a3a3a; }
+.search input:focus { border-color: var(--fg); background: #000; box-shadow: 0 0 0 3px rgba(255,255,255,.08); }
 .search input::placeholder { color: var(--dim); }
 
 /* boutons */
@@ -295,7 +299,8 @@ body.admin .admin-only { display: revert !important; }
   nav { margin-left: auto; gap: 18px; font-size: 12px; }
   nav a { padding: 8px 0; }
   .search { order: 3; flex: 1 0 100%; width: 100%; margin-left: 0; }
-  .search input { font-size: 16px; padding: 10px 12px; border: 1px solid var(--line); background: var(--panel); }
+  .search input { font-size: 16px; padding: 12px 14px 12px 42px; }
+  .search:focus-within { width: 100%; }
   .search input:focus { border-color: var(--fg); }
 
   /* boutons plus faciles à toucher */
