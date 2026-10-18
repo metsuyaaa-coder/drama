@@ -919,20 +919,64 @@ function srcToText(arr) {
     return s.name + " | " + s.url + (s.quality ? " " + s.quality : "") + (s.size ? " " + s.size : "");
   }).join("\n");
 }
+/* Qualité et taille : on tape vite, ça se met en forme tout seul
+   « 1080 264 » → « 1080p (H.264) »   ·   « 2go-3.5go » → « 2Go - 3.5Go »   ·   « vostfr » → « VOSTFR », « multi » → « MULTI » */
+var SZUN = { ko: "Ko", mo: "Mo", go: "Go", to: "To", kb: "KB", mb: "MB", gb: "GB", tb: "TB" };
+var SZNUM = "\\d+(?:[.,]\\d+)?", SZU = "(?:ko|mo|go|to|kb|mb|gb|tb)";
+var SZRANGE = new RegExp("(^|[^\\w.,])(" + SZNUM + ")\\s*(" + SZU + ")?\\s*[-\u2013\u2014]\\s*(" + SZNUM + ")\\s*(" + SZU + ")\\b", "i");
+var SZONE = new RegExp("(" + SZNUM + ")\\s*(" + SZU + ")\\b", "i");
+var RESLIST = [240, 360, 480, 540, 576, 720, 1080, 1440, 2160, 4320];
+function normQuality(q) {
+  var res = "", codec = "", rest = " " + String(q || "") + " ";
+  rest = rest.replace(/(^|\s)(\d{3,4})p?(?=\s)/gi, function (all, pre, n) {
+    if (res || RESLIST.indexOf(+n) < 0) return all;
+    res = n + "p"; return pre;
+  });
+  rest = rest.replace(/(^|\s)(4k|uhd)(?=\s)/gi, function (all, pre) { if (res) return all; res = "4K"; return pre; });
+  rest = rest.replace(/(^|\s)\(?\s*(?:(?:h\.?|x)(26[45])|(26[45])|(hevc)|(avc)|(av1))\s*\)?(?=\s)/gi, function (all, pre, a, b, hevc, avc, av1) {
+    if (codec) return all;
+    var n = a || b;
+    codec = hevc ? "H.265" : avc ? "H.264" : av1 ? "AV1" : (n === "265" ? "H.265" : "H.264");
+    return pre;
+  });
+  rest = rest.replace(/(^|\s)(vostfr|vost|vff|vfq|vfi|vf|vo|multi)(?=\s)/gi, function (all, pre, w) { return pre + w.toUpperCase(); });
+  rest = rest.replace(/\s+/g, " ").trim();
+  var head = res && codec ? res + " (" + codec + ")" : (res || codec);
+  return (head + (head && rest ? " " : "") + rest).trim();
+}
+/* Ce qui suit le lien : taille et qualité, ordre libre */
+function parseMeta(after) {
+  after = " " + String(after || "").replace(/\|/g, " ") + " ";
+  var o = {}, sz = after.match(SZRANGE);
+  if (sz) {
+    o.size = sz[2] + SZUN[(sz[3] || sz[5]).toLowerCase()] + " - " + sz[4] + SZUN[sz[5].toLowerCase()];
+    after = after.replace(sz[0], " ");
+  } else if ((sz = after.match(SZONE))) {
+    o.size = sz[1] + SZUN[sz[2].toLowerCase()];
+    after = after.replace(sz[0], " ");
+  }
+  var q = normQuality(after);
+  if (q) o.quality = q;
+  return o;
+}
+/* Réécrit une ligne « Nom | lien 1080 264 2go-3.5go » avec la qualité et la taille mises en forme */
+function tidySrcLine(line) {
+  var m = line.match(/https?:\/\/[^\s|]+/); if (!m) return line;
+  var end = m.index + m[0].length, meta = parseMeta(line.slice(end));
+  return line.slice(0, end) + (meta.quality ? " " + meta.quality : "") + (meta.size ? " " + meta.size : "");
+}
 /* Une ligne : "Nom | lien 1080p 35go" (Nom, qualité et taille facultatifs, ordre libre après le lien) */
 function textToSrc(text) {
-  var out = [], UN = { ko: "Ko", mo: "Mo", go: "Go", to: "To", kb: "KB", mb: "MB", gb: "GB", tb: "TB" };
+  var out = [];
   String(text || "").split("\n").forEach(function (line) {
     line = line.trim(); if (!line) return;
     var m = line.match(/https?:\/\/[^\s|]+/); if (!m) return;
     var url = m[0];
     var name = line.slice(0, m.index).replace(/[|\s]+$/, "").trim();
-    var after = line.slice(m.index + url.length).replace(/\|/g, " ");
     var o = { name: name || hostName(url), url: url };
-    var sz = after.match(/(\d+(?:[.,]\d+)?)\s*(ko|mo|go|to|kb|mb|gb|tb)\b/i);
-    if (sz) { o.size = sz[1] + " " + UN[sz[2].toLowerCase()]; after = after.replace(sz[0], " "); }
-    var q = after.replace(/\s+/g, " ").trim();
-    if (q) o.quality = q;
+    var meta = parseMeta(line.slice(m.index + url.length));
+    if (meta.size) o.size = meta.size;
+    if (meta.quality) o.quality = meta.quality;
     out.push(o);
   });
   return numberDupes(out);
@@ -1972,7 +2016,7 @@ function renderEditor() {
     dlEdit = '<label class="f"><span>Liens de téléchargement du film (1fichier)</span><textarea class="srcbox" data-f="downloads" placeholder="1fichier | https://1fichier.com/?xxxxxxxx 1080p 2,1go">' + esc(srcToText(d.downloads)) + '</textarea></label>' +
       '<p class="note">Un lien par ligne, au format Nom | lien. Sans nom, il prend celui du site (ex. 1FICHIER).</p>';
   } else if ((d.seasons || []).length) {
-    dlEdit = '<p class="note">Colle le lien 1fichier de la saison entière, et/ou un lien par épisode. Écris simplement : Nom | lien 1080p 1,4go (la qualité et la taille se mettent juste après le lien, séparées par des espaces, et sont facultatives). Les visiteurs les voient dans l\'onglet « Télécharger » de la fiche.</p>' +
+    dlEdit = '<p class="note">Colle le lien 1fichier de la saison entière, et/ou un lien par épisode. Écris simplement : Nom | lien 1080p 1,4go (la qualité et la taille se mettent juste après le lien, séparées par des espaces, et sont facultatives). Raccourcis : « 1080 264 » devient « 1080p (H.264) » « 2go-3.5go » devient « 2Go - 3.5Go », « vostfr » devient « VOSTFR » et « multi » devient « MULTI ». Les visiteurs les voient dans l\'onglet « Télécharger » de la fiche.</p>' +
       d.seasons.map(function (se, i) {
         var eps = se.episodes || [], filled = eps.filter(function (e) { return (e.downloads || []).length; }).length;
         return '<details class="epedit"' + (keepOpenDl === i ? " open" : "") + '><summary>' + esc(se.name || "Saison " + se.number) + '<i>' + ((se.downloads || []).length ? "pack ✓ · " : "") + filled + "/" + eps.length + ' avec lien</i></summary>' +
@@ -2714,6 +2758,15 @@ document.addEventListener("input", function (e) {
   }
 });
 
+
+/* Quand on quitte un champ de téléchargement, la qualité et la taille sont mises en forme dans le champ */
+document.addEventListener("focusout", function (e) {
+  var t = e.target;
+  if (!draft || !t || t.tagName !== "TEXTAREA") return;
+  if (!(t.dataset.f === "downloads" || t.dataset.dlseason != null || t.dataset.dls != null)) return;
+  var out = t.value.split("\n").map(tidySrcLine).join("\n");
+  if (out !== t.value) t.value = out;
+});
 
 /* ===== Plein écran : réglage du format (Normal / Zoom / Étirer), barre visible 5 s ===== */
 var FITKEY = "noir.fit", fitMode = "normal", barTimer = null, fsOn = false;
