@@ -2038,7 +2038,7 @@ function platNames(s) { return platBrands(s).map(function (b) { return b.n; }); 
 function platMark(b) { return '<span class="wm" style="' + (b.c ? "color:" + b.c + ";" : "") + b.css + '">' + esc(b.n) + '</span>'; }
 function platOptions(list) {
   var n = {}; list.forEach(function (s) { platNames(s).forEach(function (x) { n[x] = (n[x] || 0) + 1; }); });
-  return Object.keys(n).sort(function (a, b) { return n[b] - n[a] || a.localeCompare(b); }).slice(0, 14);
+  return Object.keys(n).sort(function (a, b) { return n[b] - n[a] || a.localeCompare(b); });
 }
 function platChip(name) {
   var b = platBrand(name), on = platFilter === name;
@@ -2315,7 +2315,7 @@ function viewSerie(id) {
   }
   var html = '<section class="detail"><div class="bg" style="background-image:url(\'' + esc(hq(s.backdrop || s.poster)) + '\')"></div><div class="wrap">' +
     '<div class="poster">' + (s.poster ? '<img src="' + esc(s.poster) + '" alt="' + esc(s.name) + '">' : '<div class="ph">' + esc(s.name.charAt(0)) + '</div>') + '</div>' +
-    '<div>' + (platBrands(s).length ? '<div class="plats"><span class="plbl">Diffusé sur</span>' + platBrands(s).slice(0, 3).map(platMark).join("") + '</div>' : '') + '<div class="tags">' + (langLabel(s) ? '<span class="lang">' + esc(langLabel(s)) + '</span>' : '') + (ongoing(s) ? '<span class="live">En cours</span>' : '') + (ne ? newBadge("Nouvel épisode") : '') + novBadge(s) + kdBadge(s) + tags.map(function (t) { return "<span>" + esc(t) + "</span>"; }).join("") + '</div>' +
+    '<div>' + (platBrands(s).length ? '<div class="plats"><span class="plbl">Diffusé sur</span>' + platBrands(s).map(platMark).join("") + '</div>' : '') + '<div class="tags">' + (langLabel(s) ? '<span class="lang">' + esc(langLabel(s)) + '</span>' : '') + (ongoing(s) ? '<span class="live">En cours</span>' : '') + (ne ? newBadge("Nouvel épisode") : '') + novBadge(s) + kdBadge(s) + tags.map(function (t) { return "<span>" + esc(t) + "</span>"; }).join("") + '</div>' +
     '<h1>' + esc(s.name) + '</h1>' + (s.original_name && s.original_name !== s.name ? '<div class="orig">' + esc(s.original_name) + '</div>' : '<div class="orig"></div>') +
     '<p class="ov">' + esc(s.overview || "Pas de synopsis.") + '</p>' +
     '<div class="row"><button class="btn" data-watch="' + esc(s.id) + '">' + PLAYICON + '<span>Regarder</span></button>' + dlBtnMovie + dlBtnSerie + '<button class="btn ghost' + (inList(s.id) ? " on" : "") + '" type="button" data-list="' + esc(s.id) + '">' + (inList(s.id) ? "✓ Dans ma liste" : "+ Ma liste") + '</button>' + (ADMIN ? '<a class="btn ghost" href="/modifier/' + esc(s.id) + '">Modifier</a>' + (canDeleteFiche(s) ? '<button class="btn danger" data-del="' + esc(s.id) + '">Supprimer</button>' : '') : '') + '</div>' + srcChips +
@@ -4426,15 +4426,27 @@ function backfillAka() {
 /* Admin : ajoute la plateforme d'origine (TMDB « networks ») aux séries déjà au catalogue, une seule fois par fiche */
 function backfillNetworks() {
   if (!ADMIN || !getToken()) return;
-  var todo = db.filter(function (s) { return !isMovie(s) && !Array.isArray(s.networks) && /^\d+$/.test(String(s.id)); });
-  if (!todo.length) return;
-  var done = 0;
+  var NETSYNC = "noir.netsync.v2", fullSync = !readJSON(NETSYNC, false);
+  /* une fois : on relit les plateformes de TOUTES les séries TMDB (les listes enregistrées plus tôt peuvent être incomplètes) */
+  var todo = db.filter(function (s) { return !isMovie(s) && /^\d+$/.test(String(s.id)) && (fullSync || !Array.isArray(s.networks)); });
+  if (!todo.length) { if (fullSync) { try { localStorage.setItem(NETSYNC, "true"); } catch (e) {} } return; }
+  var done = 0, changed = 0, failed = false;
   (function next() {
     var s = todo.shift();
-    if (!s) { if (done) { persist(); markDirty(); toast("Plateforme ajoutée sur " + done + " série(s) : clique sur « Publier » pour que les visiteurs la voient"); if (/^\/series/.test(curPath())) route(true); } return; }
+    if (!s) {
+      if (!failed) { try { localStorage.setItem(NETSYNC, "true"); } catch (e) {} }
+      if (done) { persist(); }
+      if (changed) { markDirty(); toast("Plateformes mises à jour sur " + changed + " série(s) : clique sur « Publier » pour que les visiteurs les voient"); }
+      if (done && /^\/series/.test(curPath())) route(true);
+      return;
+    }
     tmdb("/tv/" + s.id, {})
-      .then(function (t) { s.networks = (t.networks || []).map(function (n) { return n.name; }).filter(Boolean); done++; })
-      .catch(function (e) { if (/404/.test(e.message)) { s.networks = []; done++; } })
+      .then(function (t) {
+        var nw = (t.networks || []).map(function (n) { return n.name; }).filter(Boolean);
+        if (JSON.stringify(nw) !== JSON.stringify(s.networks || null)) { s.networks = nw; changed++; }
+        done++;
+      })
+      .catch(function (e) { if (/404/.test(e.message)) { if (!Array.isArray(s.networks)) { s.networks = []; changed++; } done++; } else failed = true; })
       .then(function () { setTimeout(next, 150); });
   })();
 }
