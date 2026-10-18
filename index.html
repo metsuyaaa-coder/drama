@@ -189,6 +189,16 @@ label.f > span.lbl, .f > span.lbl { display: block; font-family: var(--mono); fo
 .cast div { padding: 10px 0; border-bottom: 1px solid var(--line); min-width: 0; }
 .cast b { display: block; font-weight: 500; font-size: 14px; }
 .cast span { font-size: 13px; color: var(--dim); }
+/* acteurs dans les résultats de recherche */
+.actres { padding-top: 26px; }
+.actres h3 { margin: 0 0 12px; font-weight: 400; text-transform: uppercase; letter-spacing: .08em; }
+.actchips { display: flex; flex-wrap: wrap; gap: 10px; }
+.actchip { display: flex; align-items: center; gap: 12px; max-width: 100%; padding: 8px 16px 8px 8px; border: 1px solid var(--line); background: var(--panel); transition: border-color .2s, background .2s; }
+.actchip:hover { border-color: var(--fg); background: #111; }
+.actchip .ai { flex: none; width: 40px; height: 40px; display: grid; place-items: center; border: 1px solid var(--line); background: #000; font-family: var(--display); font-weight: 900; font-size: 20px; }
+.actchip .at { min-width: 0; }
+.actchip .at b { display: block; font-weight: 500; font-size: 15px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.actchip .at small { font-family: var(--mono); font-size: 11px; color: var(--dim); }
 .castlink { display: block; }
 .castlink:hover b { text-decoration: underline; text-underline-offset: 3px; }
 /* page acteur */
@@ -778,6 +788,10 @@ footer .wrap.about { display: grid; grid-template-columns: repeat(auto-fit, minm
 .teambox.edit .tags { margin-bottom: 0; }
 .teambox.edit select, .teambox.edit textarea { width: 100%; background: var(--bg); color: var(--fg); border: 1px solid var(--line); border-radius: 0; padding: 10px 12px; }
 .teambox.edit textarea { min-height: 90px; resize: vertical; }
+.heroedit-btn { position: absolute; top: 16px; right: 16px; z-index: 5; }
+.herorow { display: grid; grid-template-columns: 22px minmax(0, 1fr) auto auto auto; gap: 8px; align-items: center; }
+.herorow .n { font-family: var(--mono); font-size: 12px; color: var(--dim); }
+.herorow .btn:disabled { opacity: .3; pointer-events: none; }
 .teambox.edit label { display: grid; gap: 6px; font-family: var(--mono); font-size: 12px; color: var(--dim); text-transform: uppercase; letter-spacing: .06em; }
 @media (max-width: 700px) { .teambox { min-height: 260px; } .teambox .in { padding: 22px 16px; } }
 /* calendrier des K-dramas */
@@ -1520,7 +1534,69 @@ function startHero() {
   arm();
 }
 
-/* ===== Sélection de l'équipe (modifiable par le Head admin, publiée dans catalog.json > team) ===== */
+/* ===== Carrousel de l'accueil : le Head admin choisit les fiches et leur ordre (publié dans catalog.json > hero) ===== */
+var HEROKEY = "noir.hero", HERO = readJSON(HEROKEY, null), heroEditing = false, heroDraft = [], HERO_MAX = 6;
+function heroSave() { try { localStorage.setItem(HEROKEY, JSON.stringify(HERO)); } catch (e) {} }
+function adoptHero(data) {
+  if (!data || Array.isArray(data) || !("hero" in data)) return;
+  var r = data.hero;
+  if (!r || typeof r !== "object" || !Array.isArray(r.ids)) return;
+  if (!ADMIN || !HERO || (+r.at || 0) >= (+HERO.at || 0)) { HERO = { ids: r.ids.map(String).slice(0, HERO_MAX), at: +r.at || 0 }; heroSave(); }
+}
+/* Fiches du carrousel : celles choisies par le Head admin (si elles existent encore), sinon les plus populaires */
+function heroPicks() {
+  var out = [];
+  ((HERO && HERO.ids) || []).forEach(function (id) { var s = byId(id); if (s && out.indexOf(s) < 0) out.push(s); });
+  return out.length ? out : popularPicks(4);
+}
+function heroEditor() {
+  var all = sortedDb().slice().sort(function (a, b) { return String(a.name).localeCompare(String(b.name)); });
+  var opts = function (sel) {
+    return all.map(function (x) { return '<option value="' + esc(x.id) + '"' + (String(sel) === String(x.id) ? " selected" : "") + '>' + esc(x.name) + (x.year ? " (" + esc(x.year) + ")" : "") + (isMovie(x) ? " · film" : "") + '</option>'; }).join("");
+  };
+  var n = heroDraft.length;
+  var rows = heroDraft.map(function (id, i) {
+    return '<div class="herorow"><span class="n">' + (i + 1) + '</span><select class="hero-sel" data-i="' + i + '" aria-label="Titre ' + (i + 1) + '">' + opts(id) + '</select>' +
+      '<button type="button" class="btn small ghost" data-hero="up" data-i="' + i + '"' + (i === 0 ? " disabled" : "") + ' aria-label="Monter">↑</button>' +
+      '<button type="button" class="btn small ghost" data-hero="down" data-i="' + i + '"' + (i === n - 1 ? " disabled" : "") + ' aria-label="Descendre">↓</button>' +
+      '<button type="button" class="btn small danger" data-hero="rm" data-i="' + i + '"' + (n <= 1 ? " disabled" : "") + ' aria-label="Retirer">✕</button></div>';
+  }).join("");
+  return '<section class="wrap team"><div class="teambox edit heroedit"><div class="in"><div class="tags"><span class="lang">Carrousel de l\'accueil</span></div>' +
+    '<p class="note" style="margin:0">Choisis les titres du carrousel et leur ordre (' + HERO_MAX + ' maximum). « Mode automatique » remet les titres les plus populaires du moment.</p>' + rows +
+    (n < HERO_MAX ? '<div class="row"><button type="button" class="btn ghost" data-hero="add">+ Ajouter un titre</button></div>' : '') +
+    '<div class="row"><button class="btn" type="button" data-hero="save">Enregistrer</button><button class="btn ghost" type="button" data-hero="cancel">Annuler</button><button class="btn ghost" type="button" data-hero="auto">Mode automatique</button></div></div></div></section>';
+}
+document.addEventListener("click", function (e) {
+  var b = e.target.closest("[data-hero]"); if (!b || !isHead()) return;
+  var a = b.dataset.hero, i = +b.dataset.i, t;
+  if (a === "edit") { heroDraft = heroPicks().map(function (s) { return String(s.id); }); heroEditing = true; viewHome(); return; }
+  if (a === "cancel") { heroEditing = false; viewHome(); return; }
+  if (a === "add") {
+    var free = sortedDb().filter(function (x) { return heroDraft.indexOf(String(x.id)) < 0; })[0];
+    if (free && heroDraft.length < HERO_MAX) heroDraft.push(String(free.id));
+    viewHome(); return;
+  }
+  if (a === "rm") { if (heroDraft.length > 1) heroDraft.splice(i, 1); viewHome(); return; }
+  if (a === "up" && i > 0) { t = heroDraft[i - 1]; heroDraft[i - 1] = heroDraft[i]; heroDraft[i] = t; viewHome(); return; }
+  if (a === "down" && i < heroDraft.length - 1) { t = heroDraft[i + 1]; heroDraft[i + 1] = heroDraft[i]; heroDraft[i] = t; viewHome(); return; }
+  if (a === "auto") {
+    HERO = { ids: [], at: Date.now() }; heroSave(); heroEditing = false;
+    toast(autoSyncOn() ? "Carrousel remis en automatique." : "Carrousel remis en automatique. Clique sur « Publier » pour l'appliquer à tout le monde.");
+    markDirty(); viewHome(); return;
+  }
+  if (a === "save") {
+    var ids = []; heroDraft.forEach(function (id) { if (ids.indexOf(id) < 0 && byId(id)) ids.push(id); });
+    HERO = { ids: ids, at: Date.now() }; heroSave(); heroEditing = false;
+    toast(autoSyncOn() ? "Carrousel enregistré." : "Carrousel enregistré. Clique sur « Publier » pour que tout le monde le voie.");
+    markDirty(); viewHome();
+  }
+});
+document.addEventListener("change", function (e) {
+  var sel = e.target.closest && e.target.closest(".hero-sel");
+  if (sel && isHead()) heroDraft[+sel.dataset.i] = sel.value;
+});
+
+/* ===== Sélection de l'équipe (modifiable par le Head admin, publiée dans catalog.json > team) =====
 var TEAMKEY = "noir.team", TEAM = readJSON(TEAMKEY, null), teamEditing = false;
 function teamSave() { try { localStorage.setItem(TEAMKEY, JSON.stringify(TEAM)); } catch (e) {} }
 function adoptTeam(data) {
@@ -1585,9 +1661,9 @@ function viewHome() {
   var list = sortedDb();
   var tv = list.filter(function (s) { return !isMovie(s); });
   var mv = list.filter(isMovie);
-  var picks = popularPicks(4);
-  var html = '<section class="hero">' + picks.map(function (h, k) { return heroSlide(h, k === 0); }).join("") +
-    (picks.length > 1 ? '<div class="hdots">' + picks.map(function (h, k) { return '<button type="button" data-i="' + k + '" class="' + (k === 0 ? "on" : "") + '" aria-label="Diapositive ' + (k + 1) + '"></button>'; }).join("") + '</div>' : '') + '</section>';
+  var picks = heroPicks();
+  var html = heroEditing && isHead() ? heroEditor() : '<section class="hero">' + picks.map(function (h, k) { return heroSlide(h, k === 0); }).join("") +
+    (picks.length > 1 ? '<div class="hdots">' + picks.map(function (h, k) { return '<button type="button" data-i="' + k + '" class="' + (k === 0 ? "on" : "") + '" aria-label="Diapositive ' + (k + 1) + '"></button>'; }).join("") + '</div>' : '') + (isHead() ? '<button type="button" class="btn small heroedit-btn" data-hero="edit">Modifier le carrousel</button>' : '') + '</section>';
   var rs = resumeList();
   if (rs.length) html += rail("Reprendre", rs, "", resumeCard, '<button type="button" class="more" data-resumeclear>Tout effacer</button>');
   var fresh = tv.filter(function (s) { return newEpisode(s); }).sort(function (a, b) {
@@ -1981,6 +2057,25 @@ function akaFrom(t, movie) {
   return out;
 }
 
+/* Acteurs de la distribution dont le nom correspond à la recherche */
+function actorMatches(needle) {
+  if (!needle || needle.length < 2) return [];
+  var map = {};
+  db.forEach(function (s) {
+    (s.cast || []).forEach(function (c) {
+      if (!c || !c.name) return;
+      var k = fold(c.name); if (k.indexOf(needle) < 0) return;
+      var e = map[k] || (map[k] = { name: c.name, n: 0 }); e.n++;
+    });
+  });
+  return Object.keys(map).map(function (k) { return map[k]; }).sort(function (a, b) { return b.n - a.n || a.name.localeCompare(b.name, "fr"); }).slice(0, 8);
+}
+function actorsBlock(list) {
+  if (!list.length) return "";
+  return '<div class="wrap actres"><h3 class="note">Acteurs</h3><div class="actchips">' + list.map(function (a) {
+    return '<a class="actchip" href="/acteur/' + encodeURIComponent(a.name) + '"><span class="ai">' + esc(a.name.charAt(0)) + '</span><span class="at"><b>' + esc(a.name) + '</b><small>' + a.n + (a.n > 1 ? " titres" : " titre") + '</small></span></a>';
+  }).join("") + '</div></div>';
+}
 function viewSearch(q) {
   q = q || "";
   var needle = fold(q) || q.trim().toLowerCase();
@@ -2001,6 +2096,12 @@ function viewSearch(q) {
   });
   var html = '<div class="wrap listhead"><h1>Recherche</h1><p class="note">' + found.length + (found.length > 1 ? " résultats" : " résultat") + (q.trim() ? ' pour « ' + esc(q.trim()) + ' »' : '') + '</p>' +
     '<a class="btn small ghost" style="margin-top:14px" href="' + esc(searchBack) + '">Fermer la recherche</a></div>';
+  var actors = actorMatches(needle);
+  html += actorsBlock(actors);
+  if (needle && !base.length && actors.length) {
+    $("#app").innerHTML = html + '<div class="wrap"><p class="note" style="padding:22px 0 48px">Aucun titre ne correspond à ces mots. <a href="/demande/' + encodeURIComponent(q.trim()) + '" style="text-decoration:underline;text-underline-offset:3px">Demander ce titre</a></p></div>';
+    return;
+  }
   if (needle && !base.length) {
     $("#app").innerHTML = html + emptyBox("Rien trouvé", "Aucun titre ne correspond. Essaie un autre mot, ou demande-le-moi.", '<div class="row"><a class="btn" href="/demande/' + encodeURIComponent(q.trim()) + '">Demander ce titre</a><a class="btn ghost" href="/">Retour à l\'accueil</a></div>');
     return;
@@ -3630,6 +3731,7 @@ function ghPublish(obj, tried) {
     }
     obj.deletedLinks = t.links; obj.deletedFiches = t.fiches;
     if (remote && remote.team && (!TEAM || (+remote.team.at || 0) > (+TEAM.at || 0))) obj.team = remote.team; else if (TEAM) obj.team = TEAM;
+    if (remote && remote.hero && Array.isArray(remote.hero.ids) && (!HERO || (+remote.hero.at || 0) > (+HERO.at || 0))) obj.hero = remote.hero; else if (HERO) obj.hero = HERO;
     if (remote && remote.requests && (+remote.requests.at || 0) > (+REQS.at || 0)) obj.requests = remote.requests; else if (REQS.at) obj.requests = REQS;
     var rps = remote && remote.settings;
     if (rps && "player" in rps && (+rps.playerAt || 0) > (+SETTINGS.playerAt || 0) && obj.settings) { obj.settings.player = rps.player; obj.settings.playerAt = rps.playerAt; }
@@ -3683,6 +3785,7 @@ function buildCatalogObj() {
   if (Array.isArray(SETTINGS.order)) { obj.settings.order = SETTINGS.order; obj.settings.orderAt = SETTINGS.orderAt || 0; }
   var rf0 = +readJSON(RFKEY, 0) || 0; if (rf0) obj.refreshAt = rf0;
   if (TEAM) obj.team = TEAM;
+  if (HERO) obj.hero = HERO;
   if (REQS.at) obj.requests = REQS;
   var jl = journalList(); if (jl.length) obj.journal = jl;
   return obj;
@@ -3956,7 +4059,7 @@ function checkRefreshSignal(data) {
   var at = +data.refreshAt || 0; if (!at) return false;
   var seen = readJSON(RFSEEN, null);
   if (seen != null && at <= +seen) return false;
-  if (draft || teamEditing) return false;   /* je suis en train d'éditer une fiche : on ne perd rien, on réessaie plus tard */
+  if (draft || teamEditing || heroEditing) return false;   /* je suis en train d'éditer une fiche : on ne perd rien, on réessaie plus tard */
   try { localStorage.setItem(RFSEEN, JSON.stringify(at)); } catch (e) {}
   if (seen == null) return false;
   toast("Mise à jour demandée par le Head admin : rechargement…");
@@ -4074,7 +4177,7 @@ function loadCatalog() {
   return fetchCatalogData().then(function (data) {
     var st = null;
     if (ADMIN) { ingestRemoteTombs(data); checkRefreshSignal(data); }
-    adoptTeam(data); adoptReqs(data);
+    adoptTeam(data); adoptHero(data); adoptReqs(data);
     if (data && !Array.isArray(data) && Array.isArray(data.series)) { st = data.settings || null; data = data.series; }
     if (!Array.isArray(data)) return;
     data = data.map(normalize);
@@ -4274,7 +4377,7 @@ document.addEventListener("click", function (e) {
 /* Version du site : les admins qui ont encore une ancienne page en cache la rechargent automatiquement */
 var BUILD = "2026-10-18-journal";
 function checkBuild() {
-  if (!ADMIN || draft || teamEditing) return;
+  if (!ADMIN || draft || teamEditing || heroEditing) return;
   fetch(location.href, { cache: "reload" }).then(function (r) { return r.text(); }).then(function (t) {
     var m = t.match(/var BUILD = "([^"]+)"/);
     if (!m || m[1] === BUILD) return;
@@ -4299,13 +4402,13 @@ loadCatalog().then(function () { route(true); backfillAka(); backfillNetworks();
 /* Admins : on regarde le catalogue publié toutes les 60 s (et quand l'onglet redevient visible) pour récupérer suppressions, sources et signal de rafraîchissement */
 var polling = false;
 function pollCatalog() {
-  if (!ADMIN || polling || document.hidden || draft || teamEditing || refreshingAll) return;
+  if (!ADMIN || polling || document.hidden || draft || teamEditing || heroEditing || refreshingAll) return;
   polling = true;
-  var before = JSON.stringify([db, TEAM]);
+  var before = JSON.stringify([db, TEAM, HERO]);
   loadCatalog().then(function () {
     polling = false;
     var pl = $("#player");
-    if (!draft && !teamEditing && !(pl && pl.open) && JSON.stringify([db, TEAM]) !== before) route(true);
+    if (!draft && !teamEditing && !heroEditing && !(pl && pl.open) && JSON.stringify([db, TEAM, HERO]) !== before) route(true);
   }, function () { polling = false; });
 }
 setInterval(pollCatalog, 30000);
