@@ -11316,6 +11316,256 @@
       ],
       "downloads": [],
       "updatedAt": 1792283981971
+    },
+    {
+      "id": "301412",
+      "type": "tv",
+      "name": "Dream to You",
+      "original_name": "그대에게 드림",
+      "origin_country": [
+        "KR"
+      ],
+      "original_language": "ko",
+      "aka": [
+        "Dream to You",
+        "给你梦想",
+        "Un sueño contigo",
+        "給你夢想",
+        "Um Sonho até Você",
+        "เติมฝันในใจเธอ",
+        "أحلم بك",
+        "Мечтаю о тебе",
+        "君へと続く僕のドリーム",
+        "חלום בשבילך",
+        "Geudaeege Deulim",
+        "그대에게 드림"
+      ],
+      "year": "2026",
+      "overview": "Rêvant de devenir cinéaste, une lycéenne passionnée délaisse toutes ses obligations pour réaliser des courts-métrages, inspirant ainsi un camarade de classe studieux mais dépourvu de passion. Leur profonde complicité finit par se transformer en histoire d’amour, mais ils sont brutalement séparés lorsque le jeune homme est contraint de partir vivre à l’étranger. Des années plus tard, alors qu’ils ont tous deux atteint la trentaine, leurs vies se sont complètement inversées : elle est devenue une journaliste de télévision désabusée et en difficulté, tandis que lui s’est imposé comme un réalisateur primé. Lorsqu’une rencontre fortuite les réunit soudainement, il décide de l’aider à retrouver l’étincelle qu’elle a perdue. Mais elle nourrit toujours un profond ressentiment envers lui, à cause de sa disparition soudaine des années auparavant.",
+      "genres": [
+        "Drame",
+        "Comédie"
+      ],
+      "rating": "9.3",
+      "pop": 13.0799,
+      "status": "Ended",
+      "poster": "https://image.tmdb.org/t/p/w500/cBiwrUwUNNYXTc5xrDEQWcMqftd.jpg",
+      "posterV": 2,
+      "backdrop": "https://image.tmdb.org/t/p/original/5AhL7NKa8UC6QOyzKiDohUM9VYT.jpg",
+      "cast": [
+        {
+          "name": "Hwang In-youp",
+          "character": "Woo Su-bin"
+        },
+        {
+          "name": "Lee Hye-ri",
+          "character": "Joo Yi-jae"
+        },
+        {
+          "name": "백성철",
+          "character": "Shim Yu-geon"
+        },
+        {
+          "name": "Lee Yul-eum",
+          "character": "Oh Ha-na"
+        },
+        {
+          "name": "이상엽",
+          "character": "Seo In-wook"
+        },
+        {
+          "name": "Park Ji-young",
+          "character": "An Su-hui"
+        },
+        {
+          "name": "이지민",
+          "character": "Chae Sa-rang"
+        }
+      ],
+      "seasons": [
+        {
+          "number": 1,
+          "name": "Saison 1",
+          "episodes": [
+            {
+              "number": 1,
+              "name": "Su-bin’s Return",
+              "overview": "Woo Su-bin, a new director, wins an award at an international film festival. During his acceptance speech, he thanks his first love for giving him a dream. After the festival, he visits Korea to meet his first love, Joo Yi-jae, who wanted to become a director but works as a reporter.",
+              "air_date": "2026-07-13",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-sp7yubbfeji2.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 2,
+              "name": "Their Past And Present",
+              "overview": "During their senior year of high school, Yi-jae is an aspiring amateur filmmaker. Su-bin also decides to become a director after helping Yi-jae and spending time with her. Although Yi-jae wins an award at a youth film festival, her family fails to show up.",
+              "air_date": "2026-07-14",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-cqx5thwr0hwt.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 3,
+              "name": "A New Bond And A Broken Bond",
+              "overview": "Yi-jae travels to her hometown to meet and cast Su-bin. As they spend time together, they share a deep conversation about their past. However, when Su-bin reveals his hidden history, Yi-jae responds with sarcasm, finding him pathetic.",
+              "air_date": "2026-07-20",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-hrno8b0aczio.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 4,
+              "name": "The Contract",
+              "overview": "After mulling it over, Yi-jae finally makes a contract with Su-bin, and they move to Bunam to write the script for Gyeongseong Love Song. Working together, Yi-jae’s feelings towards him begin to grow despite herself. Meanwhile, Ha-na protects Yu-geon from Sang-yeon.",
+              "air_date": "2026-07-21",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-n8u1tvajkcqq.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 5,
+              "name": "The Truth",
+              "overview": "After spending a night with Sa-rang, In-wook decides to appear on her show because he wants to keep the relationship with her. Yu-geon saves Ha-na from people putting her down, and they open up about their inner wounds and dreams. Meanwhile, Su-bin and Yi-jae’s relationship grows steadily as their work goes well.",
+              "air_date": "2026-07-27",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-r9jm871o4nkc.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 6,
+              "name": "The Pre-Production Of Gyeongseong Love Song",
+              "overview": "Su-bin tries to help Yi-jae in every way after learning about her accident. Therefore, when pre-production for Gyeongseong Love Song begins, Su-bin goes on location scouting and Yi-jae stays indoors for the script meeting. However, it makes Yi-jae feel like she is not approved by the crew because of Su-bin’s overprotection.",
+              "air_date": "2026-07-28",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-oxhbora7ms2a.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 7,
+              "name": "Ha-na’s Decision",
+              "overview": "Su-bin and Yi-jae reunite to work together on a new project. Upon learning that Yu-geon is now working alongside Soo-hee, Su-bin can't hide a hint of disappointment, while Yi-jae reacts in a way no one expects. Meanwhile, Ha-na is hurt when Yu-geon begins to distance himself from her.",
+              "air_date": "2026-08-03",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-l3ntb9ssvyyq.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 8,
+              "name": "Chaos During Filming On Set",
+              "overview": "Filming for Su-bin and Yi-jae’s movie finally begins, but chaos erupts when Soo-hee suddenly shows up on set and causes a scene. The situation escalates to the point where replacing the male lead is even brought up. Meanwhile, Ha-na gives up her rebellion against Soo-hee and decides to renew her contract with her.",
+              "air_date": "2026-08-04",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-fiijqljzeg8j.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 9,
+              "name": "A Connection That Goes Way Back",
+              "overview": "Su-bin gets extremely jealous when Seong-moo appears on set and shows how close he is to Yi-jae. The Gyeongseong Love Song crew decides to go on a retreat, and Seong-moo joins as well. From dodgeball to grilling meat, the competition between Su-bin and Seong-moo gets fierce.",
+              "air_date": "2026-08-10",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-l9haw4p79fgj.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 10,
+              "name": "Confronting The Truth",
+              "overview": "News breaks that Su-bin is Ha-na's half-sibling, and reporters flock to the filming location. Due to the scandal, Yi-jae has to handle the movie shoot all by herself. However, the production comes to a halt due to investment issues.",
+              "air_date": "2026-08-11",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-9rm9b403fhiu.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 11,
+              "name": "Achieving One’s Dream",
+              "overview": "Su-bin tells Yi-jae that he’ll drop out of the movie production so that it can proceed smoothly. Yi-jae convinces CEO Ahn to reconsider firing Su-bin. Yi-jae wants to study film abroad, but she struggles to tell Su-bin about it.",
+              "air_date": "2026-08-17",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-fi7huyzra7i4.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 12,
+              "name": "The End Of A Love Like War",
+              "overview": "Yi-jae leaves for Montreal to study film in greater depth. Su-bin goes to the airport to stop her, but he misses her. Gyeongseong Love Song gets released successfully, but Su-bin can’t help but feel empty.",
+              "air_date": "2026-08-18",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-95x2arjaxjen.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            }
+          ],
+          "downloads": []
+        }
+      ],
+      "sources": [],
+      "addedAt": 1792284103018,
+      "langs": [
+        "VOSTFR"
+      ],
+      "downloads": [],
+      "updatedAt": 1792284244943
     }
   ],
   "deletedLinks": [
