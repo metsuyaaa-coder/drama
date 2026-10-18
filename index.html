@@ -3018,7 +3018,7 @@ function pickMovie(id, old) {
       rating: t.vote_average ? t.vote_average.toFixed(1) : "", pop: t.popularity || 0,
       status: t.status || "", runtime: t.runtime || "",
       poster: img(bestPoster(t), "w500"), posterV: 2, backdrop: img(t.backdrop_path, "original"),
-      cast: ((t.credits && t.credits.cast) || []).slice(0, 12).map(function (c) { return { name: c.name, character: c.character }; }),
+      cast: ((t.credits && t.credits.cast) || []).slice(0, 12).map(function (c) { return { name: c.name, character: c.character, id: c.id }; }),
       seasons: [], sources: [], addedAt: Date.now()
     });
     if (old) {
@@ -3060,7 +3060,7 @@ function pickTv(id, old) {
         genres: (t.genres || []).map(function (g) { return g.name; }),
         rating: t.vote_average ? t.vote_average.toFixed(1) : "", pop: t.popularity || 0,
         status: t.status || "", poster: img(bestPoster(t), "w500"), posterV: 2, backdrop: img(t.backdrop_path, "original"),
-        cast: ((t.credits && t.credits.cast) || []).slice(0, 12).map(function (c) { return { name: c.name, character: c.character }; }),
+        cast: ((t.credits && t.credits.cast) || []).slice(0, 12).map(function (c) { return { name: c.name, character: c.character, id: c.id }; }),
         seasons: seasons.map(function (s, i) {
           return { number: s.season_number, name: s.name, episodes: (full[i].episodes || []).map(function (e) { return { number: e.episode_number, name: e.name, overview: e.overview || "", air_date: e.air_date || "", sources: [] }; }) };
         }),
@@ -3232,6 +3232,9 @@ function renderPlayer() {
   var rq = "/demande/" + encodeURIComponent(cur.title || "");
   $("#pdl").innerHTML = dlOpen() ? ((cur.dl || []).length ? dlLinks(cur.dl, "Télécharger", " ghost") : '<a class="btn small ghost" data-reqdl="1" href="' + rq + '/dl">' + DLICON + '<span>Télécharger</span></a>') : "";
   $("#pdemande").href = rq + "/stream"; $("#pdemande2").href = rq + "/dl";
+  /* Sur Playmate / Vidara / Uqload, l'astuce langue s'affiche en premier à chaque changement de serveur */
+  var lp = langPlayer();
+  if (cur.langTip !== lp) { cur.langTip = lp; if (lp) tipIdx = 0; }
   showTip(tipIdx);
   clearInterval(tipTimer); tipTimer = setInterval(function () { showTip(tipIdx + 1); }, 9000);
   $("#pl").style.display = cur.sources.length > 1 ? "flex" : "none";
@@ -3289,8 +3292,14 @@ function playEp(s, si, num) {
 }
 /* Conseils du lecteur, en carrousel */
 var tipIdx = 0, tipTimer = null;
+/* Lecteurs qui ont un bouton engrenage + casque pour la langue */
+function langPlayer() {
+  var x = (cur.sources || [])[cur.i] || {}, h = (String(x.name || "") + " " + String(x.url || "")).toLowerCase();
+  return /playmate|vidara|uqload/.test(h);
+}
 function tipList() {
   var t = [];
+  if (langPlayer()) t.push("<b>Astuce langue</b> Pour changer de langue ou voir s'il y en a une autre, clique sur le petit bouton engrenage puis sur le bouton casque.");
   if (cur.sources && cur.sources.length > 1) t.push("<b>Astuce</b> Si le lecteur bug ou ne démarre pas, essaie un autre serveur en bas à gauche.");
   t.push('<b>Marre des pubs ?</b> Installe <a href="https://brave.com/" target="_blank" rel="noopener">Brave</a>, un navigateur qui bloque les pubs.');
   t.push("<b>Bandes noires ?</b> Passe en plein écran, puis choisis Zoom ou Étirer dans la barre Format.");
@@ -3562,9 +3571,10 @@ function personStore(key, p) {
 function personFetch(key, items) {
   var c = personCached(key); if (c) return Promise.resolve(c);
   if (personWait[key]) return personWait[key];
-  var shown = actorEntry(items[0], key).name || "";
+  var shown = actorEntry(items[0], key).name || "", pid = "";
+  items.forEach(function (it) { var e = actorEntry(it, key); if (!pid && e && e.id) pid = e.id; });
   var titles = []; items.slice(0, 6).forEach(function (s) { titles.push(s.original_name || s.name); if (s.original_name && s.name) titles.push(s.name); });
-  var pr = fetch("/api/person?name=" + encodeURIComponent(shown) + "&language=" + encodeURIComponent(CONFIG.LANG || "fr-FR") + "&titles=" + encodeURIComponent(titles.join("|")))
+  var pr = fetch("/api/person?name=" + encodeURIComponent(shown) + "&language=" + encodeURIComponent(CONFIG.LANG || "fr-FR") + "&titles=" + encodeURIComponent(titles.join("|")) + (pid ? "&id=" + encodeURIComponent(pid) : ""))
     .then(function (r) { if (!r.ok) throw new Error("x"); return r.json(); })
     .then(function (p) {
       if (!p || !p.id) throw new Error("x");
@@ -3994,7 +4004,7 @@ document.addEventListener("input", function (e) {
   if (t.dataset.f) {
     var f = t.dataset.f, val = t.value;
     if (f === "genres") draft.genres = val.split(",").map(function (x) { return x.trim(); }).filter(Boolean);
-    else if (f === "cast") draft.cast = val.split("\n").map(function (l) { var p = l.split(/\s+[—-]\s+/); return p[0].trim() ? { name: p[0].trim(), character: (p[1] || "").trim() } : null; }).filter(Boolean);
+    else if (f === "cast") { var oldIds = {}; (draft.cast || []).forEach(function (c) { if (c && c.id) oldIds[c.name] = c.id; }); draft.cast = val.split("\n").map(function (l) { var p = l.split(/\s+[—-]\s+/), nm = p[0].trim(); if (!nm) return null; var o = { name: nm, character: (p[1] || "").trim() }; if (oldIds[nm]) o.id = oldIds[nm]; return o; }).filter(Boolean); }
     else if (f === "sources") draft.sources = capSrc(textToSrc(val));
     else if (f === "downloads") draft.downloads = textToSrc(val);
     else { draft[f] = val; if (f === "poster") draft.posterCustom = !!val.trim(); }
@@ -4650,7 +4660,7 @@ function tmdbFresh(s) {
       genres: (t.genres || []).map(function (g) { return g.name; }),
       rating: t.vote_average ? t.vote_average.toFixed(1) : "", pop: t.popularity || 0,
       status: t.status || "", poster: img(bestPoster(t), "w500"), posterV: 2, backdrop: img(t.backdrop_path, "original"),
-      cast: ((t.credits && t.credits.cast) || []).slice(0, 12).map(function (c) { return { name: c.name, character: c.character }; })
+      cast: ((t.credits && t.credits.cast) || []).slice(0, 12).map(function (c) { return { name: c.name, character: c.character, id: c.id }; })
     };
   };
   if (movie) {
@@ -4856,7 +4866,7 @@ document.addEventListener("keydown", function (e) { if (e.key === "Escape") rmCl
 window.addEventListener("resize", rmClose);
 window.addEventListener("popstate", rmClose);
 /* Version du site : les admins qui ont encore une ancienne page en cache la rechargent automatiquement */
-var BUILD = "2026-10-18-acteur";
+var BUILD = "2026-10-18-acteur2";
 function checkBuild() {
   if (!ADMIN || draft || teamEditing || heroEditing) return;
   fetch(location.href, { cache: "reload" }).then(function (r) { return r.text(); }).then(function (t) {
