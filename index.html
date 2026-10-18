@@ -2028,6 +2028,7 @@ function pickMovie(id, old) {
       draft.downloads = old.downloads || [];
       draft.langs = old.langs || [];
       draft.addedAt = old.addedAt || draft.addedAt;
+      if (customPoster(old)) { draft.poster = old.poster; draft.posterV = old.posterV; draft.posterCustom = true; }
       toast("Fiche mise à jour, tes sources sont conservées");
     } else {
       var prev = byId(draft.id);
@@ -2069,6 +2070,7 @@ function pickTv(id, old) {
       });
       if (old) {
         draft.addedAt = old.addedAt || draft.addedAt;
+        if (customPoster(old)) { draft.poster = old.poster; draft.posterV = old.posterV; draft.posterCustom = true; }
         draft.seasons.forEach(function (se) {
           var os = (old.seasons || []).filter(function (x) { return x.number === se.number; })[0];
           if (!os) return;
@@ -2692,7 +2694,7 @@ document.addEventListener("input", function (e) {
     else if (f === "cast") draft.cast = val.split("\n").map(function (l) { var p = l.split(/\s+[—-]\s+/); return p[0].trim() ? { name: p[0].trim(), character: (p[1] || "").trim() } : null; }).filter(Boolean);
     else if (f === "sources") draft.sources = capSrc(textToSrc(val));
     else if (f === "downloads") draft.downloads = textToSrc(val);
-    else draft[f] = val;
+    else { draft[f] = val; if (f === "poster") draft.posterCustom = !!val.trim(); }
   } else if (t.dataset.s != null) {
     draft.seasons[+t.dataset.s].episodes[+t.dataset.e].sources = capSrc(textToSrc(t.value));
   } else if (t.dataset.dlseason != null) {
@@ -3219,7 +3221,7 @@ function mergeFiche(l, r) {
     ch = true;
   }
   /* affiche choisie avec la règle anglais / langue originale : elle remplace une ancienne affiche française */
-  if (r.posterV >= 2 && !(l.posterV >= 2) && r.poster && r.poster !== l.poster) { l.poster = r.poster; l.posterV = r.posterV; ch = true; }
+  if (r.posterV >= 2 && !(l.posterV >= 2) && r.poster && r.poster !== l.poster && !customPoster(l)) { l.poster = r.poster; l.posterV = r.posterV; ch = true; }
   ch = syncSources(l.sources, r.sources, fid) || ch;
   ch = addMissingLinks(l.downloads, r.downloads, fid) || ch;
   (r.seasons || []).forEach(function (rs) {
@@ -3272,6 +3274,8 @@ function loadCatalog() {
    ainsi que les saisons et épisodes ajoutés à la main qui ont des sources ou des liens. */
 var refreshingAll = false;
 function isTmdbFiche(s) { return isMovie(s) ? /^m\d+$/.test(String(s.id)) : /^\d+$/.test(String(s.id)); }
+/* Affiche modifiée à la main : cochée dans l'éditeur, ou lien qui ne vient pas de TMDB. TMDB ne doit jamais la remplacer. */
+function customPoster(s) { return !!s && (s.posterCustom === true || (!!s.poster && String(s.poster).indexOf(IMG) !== 0)); }
 function filled(v) { return Array.isArray(v) ? v.length > 0 : (v !== "" && v != null && v !== 0); }
 function hasContent(x) { return !!((x.sources && x.sources.length) || (x.downloads && x.downloads.length)); }
 
@@ -3345,9 +3349,10 @@ function mergeSeasons(oldS, newS) {
   out.sort(function (a, b) { return a.number - b.number; });
   return out;
 }
-function mergeFresh(old, fr) {
+function mergeFresh(old, fr, keepAll) {
   var out = Object.assign({}, old);
-  Object.keys(fr.fields).forEach(function (k) { if (filled(fr.fields[k])) out[k] = fr.fields[k]; });
+  var keepPoster = keepAll ? !!old.poster : customPoster(old);
+  Object.keys(fr.fields).forEach(function (k) { if (keepPoster && (k === "poster" || k === "posterV")) return; if (filled(fr.fields[k])) out[k] = fr.fields[k]; });
   if (fr.seasons) out.seasons = mergeSeasons(old.seasons || [], fr.seasons);
   out.updatedAt = Date.now();
   return normalize(out);
@@ -3359,7 +3364,8 @@ function refreshAll() {
   var todo = db.filter(isTmdbFiche).map(function (s) { return String(s.id); });
   var manual = db.length - todo.length;
   if (!todo.length) { toast("Aucune fiche TMDB à mettre à jour"); return; }
-  if (!window.confirm("Mettre à jour " + todo.length + " fiche" + (todo.length > 1 ? "s" : "") + " depuis TMDB ?\n\nTitre, synopsis, affiche, distribution, saisons et épisodes seront remplacés par les infos TMDB.\nTes sources, liens de téléchargement et langues sont conservés.")) return;
+  if (!window.confirm("Mettre à jour " + todo.length + " fiche" + (todo.length > 1 ? "s" : "") + " depuis TMDB ?\n\nTitre, synopsis, affiche, distribution, saisons et épisodes seront remplacés par les infos TMDB.\nTes sources, liens de téléchargement, langues et affiches modifiées à la main sont conservés.")) return;
+  var keepAllPosters = window.confirm("Garder toutes les affiches actuelles ?\n\nOK : aucune affiche n'est touchée (recommandé si tu en as changé à la main).\nAnnuler : TMDB remplace les affiches, sauf celles que tu as modifiées à la main avec un lien hors TMDB.");
   refreshingAll = true;
   var total = todo.length, i = 0, ok = 0, posters = 0, fails = [], aborted = "";
   var show = function (msg) {
@@ -3388,7 +3394,7 @@ function refreshAll() {
     show("Mise à jour " + i + " / " + total + " : " + s.name);
     tmdbFresh(s).then(function (fr) {
       var cur = byId(id), k = db.indexOf(cur);
-      if (k > -1) { db[k] = mergeFresh(cur, fr); if (db[k].poster !== cur.poster) posters++; ok++; if (ok % 10 === 0) persist(); }
+      if (k > -1) { db[k] = mergeFresh(cur, fr, keepAllPosters); if (db[k].poster !== cur.poster) posters++; ok++; if (ok % 10 === 0) persist(); }
     }).catch(function (e) {
       if (/401/.test(e.message)) { aborted = e.message; todo.length = 0; }
       else if (/404/.test(e.message)) fails.push(s.name + " (introuvable sur TMDB)");
