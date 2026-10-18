@@ -799,11 +799,34 @@ footer .wrap.about { display: grid; grid-template-columns: repeat(auto-fit, minm
 .tab + .tab { border-left: 1px solid var(--line); }
 .tab:hover { color: var(--fg); }
 .tab.on { background: var(--fg); color: var(--bg); }
-.dlbar, .dlonly, .ep .dlact { display: none; }
+.dlbar, .dlonly, .ep .dlact, .dlstat { display: none; }
 .seasons.dlmode .seasonbar, .seasons.dlmode .ep .act { display: none; }
 .seasons.dlmode .dlbar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; padding: 0 0 14px; }
 .seasons.dlmode .dlonly { display: block; padding-bottom: 14px; }
 .seasons.dlmode .ep .dlact { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
+/* ===== fiche : épisodes & téléchargement ===== */
+.sprog { height: 3px; background: var(--line); margin: 0 0 14px; }
+.sprog i { display: block; height: 100%; width: 0; background: #86efac; transition: width .45s var(--ease); }
+.seasons.dlmode .sprog { display: none; }
+.ep { padding-left: 12px; padding-right: 12px; transition: background .2s; }
+@media (hover: hover) { .ep:hover { background: #0a0a0a; } }
+.ep .n { font-size: 15px; font-weight: 700; }
+.ep small:not(.d) { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; cursor: pointer; line-height: 1.5; }
+.ep small:not(.d).open { -webkit-line-clamp: unset; display: block; }
+.ep.next { box-shadow: inset 3px 0 0 #7dd3fc; background: linear-gradient(90deg, rgba(125,211,252,.08), transparent 55%); }
+.ep.next .n { color: #7dd3fc; }
+.ep.next b::after { content: "À suivre"; margin-left: 8px; padding: 3px 6px; font-family: var(--mono); font-size: 10px; letter-spacing: .08em; text-transform: uppercase; color: #082f49; background: #7dd3fc; vertical-align: middle; }
+.ep .act .off { padding: 5px 8px; border: 1px dashed #333; }
+.seenbtn { display: inline-flex; align-items: center; gap: 6px; }
+.seenbtn .dlic { width: 14px; height: 14px; }
+.seenbtn.on { background: transparent; color: #86efac; border-color: color-mix(in srgb, #86efac 45%, transparent); }
+.seenbtn.on:hover { background: transparent; color: #86efac; }
+.dlm { margin-left: 4px; padding: 2px 6px; font-family: var(--mono); font-size: 10px; letter-spacing: .04em; background: rgba(5,46,22,.14); }
+.seasons.dlmode .dlstat { display: flex; align-items: center; gap: 8px; padding: 0 0 12px; font-family: var(--mono); font-size: 12px; letter-spacing: .04em; color: var(--dim); }
+.dlstat i { width: 8px; height: 8px; border-radius: 50%; background: #444; }
+.dlstat i.all { background: #86efac; } .dlstat i.part { background: #fcd34d; }
+.seasons.dlmode .dlbar { padding: 12px; margin-bottom: 14px; border: 1px solid color-mix(in srgb, #86efac 35%, transparent); background: color-mix(in srgb, #86efac 6%, transparent); }
+.seasons.dlmode .ep .dlact .off { font-size: 11px; }
 .epi.seen .et { color: var(--dim); }
 .epi.seen.on .et { color: var(--bg); }
 /* fenêtre de téléchargement */
@@ -1640,7 +1663,7 @@ function listItems() { return readList().map(function (id) { return byId(id); })
 /* Met à jour la fiche en place après un changement « vu », sans tout redessiner */
 function refreshSeen(s) {
   var seen = readSeen()[s.id] || {};
-  var blocks = document.querySelectorAll("details.season");
+  var blocks = document.querySelectorAll("details.season"), nk = nextUp(s, seen);
   (s.seasons || []).forEach(function (se, i) {
     var d = blocks[i]; if (!d) return;
     var rows = d.querySelectorAll(".ep"), cnt = 0, all = true, eps = se.episodes || [];
@@ -1650,11 +1673,13 @@ function refreshSeen(s) {
       var row = rows[k]; if (!row) return;
       row.classList.toggle("seen", on);
       var b = row.querySelector(".seenbtn");
-      if (b) { b.textContent = on ? "Vu ✓" : "Marquer vu"; b.classList.toggle("on", on); }
+      if (b) { b.innerHTML = seenBtnInner(on); b.classList.toggle("on", on); }
+      row.classList.toggle("next", nk === i + "|" + k);
       var title = row.querySelector("b"), nb = title && title.querySelector(".new"), fresh = !on && isRecent(ep.air_date);
       if (nb && !fresh) nb.remove();
       else if (!nb && fresh && title) title.insertAdjacentHTML("beforeend", " " + newBadge("Nouveau"));
     });
+    var pg = d.querySelector(".sprog i"); if (pg) pg.style.width = Math.round(100 * cnt / Math.max(1, eps.length)) + "%";
     var im = d.querySelector("summary i");
     if (im) im.textContent = eps.length + " ÉPISODES" + (cnt ? " · " + cnt + " VUS" : "");
     var sb = d.querySelector("[data-seenseason]");
@@ -2512,11 +2537,27 @@ function hasDl(s) {
 }
 var PLAYICON = '<svg class="dlic" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12.5-7.5a1 1 0 0 0 0-1.72L8.5 3.64A1 1 0 0 0 7 4.5z"/></svg>';
 var DLICON = '<svg class="dlic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>';
-function dlLinks(arr, label, cls) {
+/* Fiche : prochain épisode à voir, bouton « vu », stats de téléchargement */
+function nextUp(s, seen) {
+  var any = false, k; for (k in seen) if (seen[k]) { any = true; break; }
+  if (!any) return null;
+  var ss = s.seasons || [];
+  for (var i = 0; i < ss.length; i++) { var eps = ss[i].episodes || []; for (var j = 0; j < eps.length; j++) if ((eps[j].sources || []).length && !seen[epKey(ss[i], eps[j])]) return i + "|" + j; }
+  return null;
+}
+function seenBtnInner(on) {
+  return (on ? '<svg class="dlic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>' : '<svg class="dlic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>') + '<span>' + (on ? "Vu" : "Marquer vu") + '</span>';
+}
+function dlStat(se) {
+  var eps = se.episodes || [], n = eps.filter(function (e) { return (e.downloads || []).length; }).length;
+  return '<div class="dlstat"><i class="' + (n === eps.length && n ? "all" : n ? "part" : "none") + '"></i>' + n + '/' + eps.length + ' épisode' + (eps.length > 1 ? 's' : '') + ' avec lien de téléchargement</div>';
+}
+document.addEventListener("click", function (e) { var t = e.target.closest && e.target.closest(".ep small:not(.d)"); if (t) t.classList.toggle("open"); });
+function dlLinks(arr, label, cls, meta) {
   arr = arr || [];
   return arr.map(function (x) {
     var full = label + (arr.length > 1 ? " · " + x.name : "");
-    return '<button type="button" class="btn small' + (cls || "") + '" data-dlopen="1" data-dlname="' + esc(full) + '" data-dlurl="' + esc(safeUrl(x.url)) + '" data-dlq="' + esc(x.quality || "") + '" data-dlsize="' + esc(x.size || "") + '">' + DLICON + '<span>' + esc(full) + '</span></button>';
+    return '<button type="button" class="btn small' + (cls || "") + '" data-dlopen="1" data-dlname="' + esc(full) + '" data-dlurl="' + esc(safeUrl(x.url)) + '" data-dlq="' + esc(x.quality || "") + '" data-dlsize="' + esc(x.size || "") + '">' + DLICON + '<span>' + esc(full) + '</span>' + (meta && (x.quality || x.size) ? '<span class="dlm">' + esc([x.quality, x.size].filter(Boolean).join(" · ")) + '</span>' : "") + '</button>';
   }).join("");
 }
 
@@ -2660,17 +2701,20 @@ function viewSerie(id) {
     ((s.cast || []).length ? '<h3 class="note" style="margin:32px 0 0;text-transform:uppercase;letter-spacing:.08em">Distribution</h3><div class="cast">' + s.cast.slice(0, 12).map(function (c) { return '<div><a class="castlink" href="/acteur/' + encodeURIComponent(c.name) + '" title="Voir tous ses titres"><b>' + esc(c.name) + '</b></a><span>' + esc(c.character || "") + '</span></div>'; }).join("") + '</div>' : '') +
     '</div></div></section>';
   if (!movie && (s.seasons || []).length) {
+    var nextKey = nextUp(s, seenMap);
     var multi = s.seasons.length > 1, si = (seasonSel.id === String(s.id) && seasonSel.i < s.seasons.length) ? seasonSel.i : 0;
     seasonSel = { id: String(s.id), i: si };
     html += '<div class="wrap seasons' + (dlMode ? ' dlmode' : '') + (multi ? ' multi' : '') + '" id="seasons"><div class="section-head"><h2>Épisodes</h2>' + (showDl ? '<div class="tabs" role="tablist"><button type="button" class="tab' + (dlMode ? '' : ' on') + '" role="tab" data-dltab="watch">Regarder</button><button type="button" class="tab' + (dlMode ? ' on' : '') + '" role="tab" data-dltab="dl">Télécharger</button></div>' : '') + '</div>' + (multi ? '<div class="seasonpick"><button type="button" class="chip plattab seasontog" data-seasonopen="1" aria-expanded="false"><span class="sl">' + esc(s.seasons[si].name || "Saison " + s.seasons[si].number) + '</span><i class="caret" aria-hidden="true"></i></button><div class="platall seasonall" role="tablist">' + s.seasons.map(function (se, i) { return '<button type="button" class="chip' + (i === si ? ' on' : '') + '" role="tab" aria-selected="' + (i === si ? 'true' : 'false') + '" data-seasontab="' + i + '">' + esc(se.name || "Saison " + se.number) + '</button>'; }).join("") + '</div></div>' : '') + (dlAdmin() && !hasDl(s) ? '<p class="note dlonly">Aucun lien de téléchargement pour l\'instant. Ajoute-en avec « Modifier ».</p>' : '') + s.seasons.map(function (se, i) {
       return '<details class="season' + (multi && i === si ? ' cur' : '') + '"' + ((multi ? i === si : i === 0) ? " open" : "") + '><summary' + (multi ? ' tabindex="-1"' : '') + '><span>' + esc(se.name || "Saison " + se.number) + '</span><span class="sm"><i>' + (se.episodes || []).length + ' ÉPISODES' + (seenCount(se) ? ' · ' + seenCount(se) + ' VUS' : '') + '</i></span></summary>' +
+        '<div class="sprog"><i style="width:' + Math.round(100 * seenCount(se) / Math.max(1, (se.episodes || []).length)) + '%"></i></div>' +
         '<div class="seasonbar"><button type="button" class="btn small ghost" data-seenseason="' + esc(s.id) + '|' + i + '">' + (seenCount(se) === (se.episodes || []).length && seenCount(se) ? "Tout marquer non vu" : "Tout marquer comme vu") + '</button></div>' +
-        (dlOpen() && (se.downloads || []).length ? '<div class="dlbar">' + dlLinks(se.downloads, "Télécharger toute la saison") + '</div>' : '') +
+        (dlOpen() ? dlStat(se) : '') +
+        (dlOpen() && (se.downloads || []).length ? '<div class="dlbar">' + dlLinks(se.downloads, "Télécharger toute la saison", "", true) + '</div>' : '') +
         (se.episodes || []).map(function (ep, k) {
           var n = (ep.sources || []).length, seen = !!seenMap[epKey(se, ep)], fresh = !seen && isRecent(ep.air_date);
-          return '<div class="ep' + (seen ? " seen" : "") + '" style="--k:' + Math.min(k, 12) + '"><span class="n">' + String(ep.number).padStart(2, "0") + '</span><div><b>' + esc(ep.name || "Épisode " + ep.number) + (fresh ? " " + newBadge("Nouveau") : "") + '</b>' + (ep.air_date ? '<small class="d">' + esc(fmtDate(ep.air_date)) + '</small>' : '') + (ep.overview ? '<small>' + esc(ep.overview) + '</small>' : '') + '</div>' +
-            '<div class="act">' + (n ? '<button class="btn small" data-playep="' + esc(s.id) + '|' + i + '|' + esc(ep.number) + '">' + PLAYICON + '<span>Lire</span></button>' + (n > 1 ? '<span class="off">' + n + ' sources</span>' : '') : '<span class="off">Sans source</span>') + '<button type="button" class="btn small ghost seenbtn' + (seen ? " on" : "") + '" data-seen="' + esc(s.id) + '|' + i + '|' + esc(ep.number) + '">' + (seen ? "Vu ✓" : "Marquer vu") + '</button></div>' +
-            (dlOpen() ? '<div class="dlact">' + ((ep.downloads || []).length ? dlLinks(ep.downloads, "Télécharger") : '<span class="off">Pas de lien</span>') + '</div>' : '') + '</div>';
+          return '<div class="ep' + (seen ? " seen" : "") + (nextKey === i + "|" + k ? " next" : "") + '" style="--k:' + Math.min(k, 12) + '"><span class="n">' + String(ep.number).padStart(2, "0") + '</span><div><b>' + esc(ep.name || "Épisode " + ep.number) + (fresh ? " " + newBadge("Nouveau") : "") + '</b>' + (ep.air_date ? '<small class="d">' + esc(fmtDate(ep.air_date)) + '</small>' : '') + (ep.overview ? '<small>' + esc(ep.overview) + '</small>' : '') + '</div>' +
+            '<div class="act">' + (n ? '<button class="btn small" data-playep="' + esc(s.id) + '|' + i + '|' + esc(ep.number) + '">' + PLAYICON + '<span>Lire</span></button>' + (n > 1 ? '<span class="off">' + n + ' sources</span>' : '') : '<span class="off">Sans source</span>') + '<button type="button" class="btn small ghost seenbtn' + (seen ? " on" : "") + '" data-seen="' + esc(s.id) + '|' + i + '|' + esc(ep.number) + '">' + seenBtnInner(seen) + '</button></div>' +
+            (dlOpen() ? '<div class="dlact">' + ((ep.downloads || []).length ? dlLinks(ep.downloads, "Télécharger", "", true) : '<span class="off">Pas de lien</span>') + '</div>' : '') + '</div>';
         }).join("") + '</details>';
     }).join("") + '</div>';
   }
