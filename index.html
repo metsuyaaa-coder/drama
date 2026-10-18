@@ -456,10 +456,11 @@ dialog#player:not(.wide) .pframe { margin-left: env(safe-area-inset-left, 0px); 
 .ptip .tdots { display: flex; gap: 5px; }
 .ptip .tdots i { width: 6px; height: 6px; border-radius: 50%; background: var(--line); transition: background .25s, transform .25s; }
 .ptip .tdots i.on { background: var(--c); transform: scale(1.35); }
-.ptip .tprog { position: absolute; left: 0; bottom: 0; height: 2px; width: 100%; background: var(--c); opacity: .7; transform-origin: left; transform: scaleX(0); }
+.ptip .tprog { position: absolute; left: 0; bottom: 0; height: 2px; width: 0; background: linear-gradient(90deg, rgba(255,255,255,.15), rgba(255,255,255,.75) 70%, #fff); box-shadow: 0 0 6px 1px rgba(255,255,255,.55), 0 0 16px 2px rgba(255,255,255,.22); }
+.ptip .tprog::after { content: ""; position: absolute; right: -1px; top: -2px; width: 14px; height: 6px; background: radial-gradient(ellipse at center, #fff 0%, rgba(255,255,255,.6) 35%, transparent 72%); filter: blur(.6px); }
 .ptip .tprog.run { animation: tipProg 9s linear forwards; }
 @keyframes tipIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
-@keyframes tipProg { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@keyframes tipProg { from { width: 0; } to { width: 100%; } }
 @media (prefers-reduced-motion: reduce) { .ptip p { animation: none; } .ptip .tprog.run { animation: none; } }
 @media (max-width: 600px) { .ptip .tdots { display: none; } .pbar .ptip { gap: 10px; padding: 9px 10px; } .ptip .tico { width: 32px; height: 32px; } }
 .tbtn { flex: 0 0 auto; width: 30px; height: 30px; display: grid; place-items: center; background: transparent; border: 1px solid var(--line); color: var(--dim); cursor: pointer; border-radius: 0; transition: color .2s, border-color .2s; }
