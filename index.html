@@ -538,6 +538,10 @@ button.more { background: none; border: 0; padding: 0; cursor: pointer; }
 .chip.pchip .wm { font-size: 18px; }
 .chip.pchip:hover { border-color: var(--pc, var(--dim)); }
 .chip.pchip.on { background: #151515; border-color: var(--pc, var(--fg)); box-shadow: inset 0 0 0 1px var(--pc, var(--fg)); }
+.stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(104px, 1fr)); gap: 8px; }
+.stat { border: 1px solid var(--line); padding: 10px 12px; }
+.stat b { display: block; font-family: var(--display); font-weight: 900; font-size: 30px; line-height: 1; }
+.stat span { font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: var(--dim); }
 .plats { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 20px; margin-bottom: 12px; }
 .plats .plbl { font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: var(--dim); }
 .plats .wm { font-size: 26px; }
@@ -756,6 +760,9 @@ footer .wrap.about { display: grid; grid-template-columns: repeat(auto-fit, minm
   .calbar .calrange { margin-left: 0; flex: 1 0 100%; }
 }
 </style>
+<!-- Visites du site : Vercel Web Analytics, sans cookie ni base de données. Ne fait rien tant que tu ne l'actives pas dans Vercel (onglet Analytics). -->
+<script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+<script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
 
@@ -2066,6 +2073,38 @@ function scrollSeasons() {
 }
 
 /* ===== Panneau admin ===== */
+/* Statistiques du catalogue : calculées à partir des fiches, sans aucun service externe */
+function statsSection() {
+  var H = '<h3 class="note" style="margin:0;text-transform:uppercase;letter-spacing:.08em">';
+  var series = db.filter(function (x) { return !isMovie(x); }), films = db.filter(isMovie);
+  var seasons = 0, eps = 0, epNo = 0, src = 0, filmNo = 0, week = Date.now() - 7 * 86400000;
+  series.forEach(function (x) { (x.seasons || []).forEach(function (se) { seasons++; (se.episodes || []).forEach(function (ep) { eps++; var k = (ep.sources || []).length; src += k; if (!k) epNo++; }); }); });
+  films.forEach(function (x) { var k = (x.sources || []).length; src += k; if (!k) filmNo++; });
+  var added = db.filter(function (x) { return (x.addedAt || 0) > week; }).length;
+  var noPoster = db.filter(function (x) { return !x.poster; }).length;
+  var noPlat = series.filter(function (x) { return /^\d+$/.test(String(x.id)) && Array.isArray(x.networks) && !x.networks.length; }).length;
+  var noOv = db.filter(function (x) { return !String(x.overview || "").trim(); }).length;
+  function top(map, label, n) {
+    var k = Object.keys(map).sort(function (a, b) { return map[b] - map[a] || (a < b ? -1 : 1); }).slice(0, n || 5);
+    return k.length ? '<p class="note" style="margin:0"><b>' + label + ' :</b> ' + k.map(function (x) { return esc(x) + ' (' + map[x] + ')'; }).join(' · ') + '</p>' : '';
+  }
+  var g = {}, pl = {}, cat = {}, sv = {}, pc = playerCounts();
+  db.forEach(function (x) { (x.genres || []).forEach(function (n) { g[n] = (g[n] || 0) + 1; }); });
+  series.forEach(function (x) { platNames(x).forEach(function (n) { pl[n] = (pl[n] || 0) + 1; }); var d = dramaType(x); if (d) cat[DRAMA[d]] = (cat[DRAMA[d]] || 0) + 1; });
+  Object.keys(pc).forEach(function (n) { sv[n.toUpperCase()] = pc[n]; });
+  function box(v, l) { return '<div class="stat"><b>' + v + '</b><span>' + l + '</span></div>'; }
+  var todo = [];
+  if (epNo) todo.push(epNo + (epNo > 1 ? ' épisodes sans source' : ' épisode sans source'));
+  if (filmNo) todo.push(filmNo + (filmNo > 1 ? ' films sans source' : ' film sans source'));
+  if (noPoster) todo.push(noPoster + (noPoster > 1 ? ' fiches sans affiche' : ' fiche sans affiche'));
+  if (noOv) todo.push(noOv + (noOv > 1 ? ' fiches sans synopsis' : ' fiche sans synopsis'));
+  if (noPlat) todo.push(noPlat + (noPlat > 1 ? ' séries sans plateforme' : ' série sans plateforme'));
+  return '<div style="display:grid;gap:12px">' + H + 'Statistiques</h3>' +
+    '<div class="stat-grid">' + box(series.length, 'Séries') + box(films.length, 'Films') + box(eps, 'Épisodes') + box(src, 'Sources') + box(added, 'Ajoutés (7 j)') + '</div>' +
+    '<p class="note" style="margin:0">' + (todo.length ? '<b>À compléter :</b> ' + todo.join(' · ') + '.' : 'Rien à compléter : toutes les fiches ont leurs sources, affiche et synopsis.') + '</p>' +
+    top(cat, 'Catégories') + top(pl, 'Plateformes') + top(g, 'Genres') + top(sv, 'Serveurs') +
+    '<p class="note" style="margin:0">Les visites (pages les plus vues, pays, appareils) se consultent dans Vercel : ton projet, onglet « Analytics ».</p></div>';
+}
 function viewPanel() {
   var priv = SETTINGS.downloads === "private";
   var n = db.filter(hasDl).length;
@@ -2078,6 +2117,7 @@ function viewPanel() {
     '<p class="note" style="margin:0">' + (priv
       ? 'Privé : seul toi (en mode admin) vois les boutons et l\'onglet Télécharger. À la publication, les liens sont retirés de catalog.json, donc personne ne peut les lire dans le fichier. Ils restent sur ce navigateur : fais une sauvegarde complète.'
       : 'Public : tous les visiteurs voient les boutons et l\'onglet Télécharger sur les fiches qui ont des liens.') + '</p><div class="row"><button class="btn ghost small" type="button" data-preview="1">Voir comme un visiteur</button></div></div>' +
+    (isHead() ? statsSection() : '') +
     '<div style="display:grid;gap:12px"><h3 class="note" style="margin:0;text-transform:uppercase;letter-spacing:.08em">Fiches TMDB</h3>' +
     '<p class="note" style="margin:0">' + nt + (nt > 1 ? ' fiches viennent' : ' fiche vient') + ' de TMDB. Le bouton remet à jour les infos, les affiches, les saisons et les nouveaux épisodes. Tes sources, liens de téléchargement et langues sont conservés.</p>' +
     '<div class="row"><button class="btn" type="button" id="refreshall"' + (refreshingAll || !nt ? ' disabled' : '') + '>Tout mettre à jour depuis TMDB</button></div>' +
@@ -3925,6 +3965,22 @@ function backfillAka() {
   })();
 }
 
+/* Admin : ajoute la plateforme d'origine (TMDB « networks ») aux séries déjà au catalogue, une seule fois par fiche */
+function backfillNetworks() {
+  if (!ADMIN || !getToken()) return;
+  var todo = db.filter(function (s) { return !isMovie(s) && !Array.isArray(s.networks) && /^\d+$/.test(String(s.id)); });
+  if (!todo.length) return;
+  var done = 0;
+  (function next() {
+    var s = todo.shift();
+    if (!s) { if (done) { persist(); markDirty(); toast("Plateforme ajoutée sur " + done + " série(s) : clique sur « Publier » pour que les visiteurs la voient"); if (/^\/series/.test(curPath())) route(true); } return; }
+    tmdb("/tv/" + s.id, {})
+      .then(function (t) { s.networks = (t.networks || []).map(function (n) { return n.name; }).filter(Boolean); done++; })
+      .catch(function (e) { if (/404/.test(e.message)) { s.networks = []; done++; } })
+      .then(function () { setTimeout(next, 150); });
+  })();
+}
+
 document.addEventListener("click", function (e) {
   if (e.defaultPrevented || e.button || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
   var a = e.target.closest("a[href^='/']");
@@ -3935,7 +3991,7 @@ document.addEventListener("click", function (e) {
   if (h === curPath()) route(true); else go(h);
 });
 /* Version du site : les admins qui ont encore une ancienne page en cache la rechargent automatiquement */
-var BUILD = "2026-10-18-4src";
+var BUILD = "2026-10-18-stats-b";
 function checkBuild() {
   if (!ADMIN || draft || teamEditing) return;
   fetch(location.href, { cache: "reload" }).then(function (r) { return r.text(); }).then(function (t) {
@@ -3958,7 +4014,7 @@ function skeletonHTML() {
   return open + '<div class="wrap"><div class="sk sk-h big"></div><div class="grid">' + many(12) + '</div></div>' + close;
 }
 $("#app").innerHTML = skeletonHTML();
-loadCatalog().then(function () { route(true); backfillAka(); checkBuild(); });
+loadCatalog().then(function () { route(true); backfillAka(); backfillNetworks(); checkBuild(); });
 /* Admins : on regarde le catalogue publié toutes les 60 s (et quand l'onglet redevient visible) pour récupérer suppressions, sources et signal de rafraîchissement */
 var polling = false;
 function pollCatalog() {
