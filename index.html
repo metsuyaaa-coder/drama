@@ -1776,6 +1776,7 @@ function viewPanel() {
     '<p class="note" id="refreshall-status" style="margin:0"></p></div>' +
     '<div style="display:grid;gap:12px"><h3 class="note" style="margin:0;text-transform:uppercase;letter-spacing:.08em">Catalogue</h3>' +
     '<div class="row"><button class="btn" type="button" data-clickid="btn-export">Publier (catalog.json)</button><button class="btn ghost" type="button" id="btn-backup">Sauvegarde complète</button><button class="btn ghost" type="button" data-clickid="btn-import">Importer</button><button class="btn ghost" type="button" id="btn-pull">Récupérer depuis GitHub</button>' + '<button class="btn ghost" type="button" id="btn-autosync">Synchro auto : ' + (readJSON("noir.autosync", true) !== false ? 'ON' : 'OFF') + '</button>' + (isHead() ? '<button class="btn ghost" type="button" id="btn-forcerefresh">Rafraîchir tous les admins</button>' : '') + '</div>' +
+    '<p class="note" style="margin:0">Version du site : ' + esc(BUILD) + ' · ' + MAX_SRC + ' sources maximum par film ou épisode.</p>' +
     '<p class="note" style="margin:0">' + (ghRepo() && ghToken() ? 'GitHub lié (' + esc(ghRepo()) + ') : « Publier » envoie catalog.json directement sur le dépôt.' : 'Pour publier en un clic sans re-uploader le fichier, lie ton dépôt avec « GitHub ».') + '</p></div>' +
     playerSection() +
     '<div style="display:grid;gap:12px"><h3 class="note" style="margin:0;text-transform:uppercase;letter-spacing:.08em">Accès</h3>' +
@@ -3430,9 +3431,22 @@ document.addEventListener("click", function (e) {
   e.preventDefault();
   if (h === curPath()) route(true); else go(h);
 });
+/* Version du site : les admins qui ont encore une ancienne page en cache la rechargent automatiquement */
+var BUILD = "2026-10-18-4src";
+function checkBuild() {
+  if (!ADMIN || draft || teamEditing) return;
+  fetch(location.href, { cache: "reload" }).then(function (r) { return r.text(); }).then(function (t) {
+    var m = t.match(/var BUILD = "([^"]+)"/);
+    if (!m || m[1] === BUILD) return;
+    var tried = ""; try { tried = sessionStorage.getItem("noir.buildTry") || ""; sessionStorage.setItem("noir.buildTry", m[1]); } catch (e) {}
+    if (tried === m[1]) return;
+    toast("Nouvelle version du site : rechargement…");
+    setTimeout(function () { location.reload(); }, 1200);
+  }).catch(function () {});
+}
 document.body.classList.toggle("admin", ADMIN);
 $("#app").innerHTML = '<div class="wrap"><p class="note" style="padding:48px 0">Chargement…</p></div>';
-loadCatalog().then(function () { route(true); backfillAka(); });
+loadCatalog().then(function () { route(true); backfillAka(); checkBuild(); });
 /* Admins : on regarde le catalogue publié toutes les 60 s (et quand l'onglet redevient visible) pour récupérer suppressions, sources et signal de rafraîchissement */
 var polling = false;
 function pollCatalog() {
