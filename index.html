@@ -571,7 +571,6 @@ input[readonly].auto { color: var(--dim); cursor: not-allowed; }
   .sugg { left: 0; right: 0; width: auto; }
   dialog#player .phead { gap: 8px; }
   .phead .pt b { font-size: 19px; }
-  #pext { display: none; }
   .pbar .pn { width: 100%; }
   .pbar .pn .btn { flex: 1 1 0; }
   .pbar .pn #peplist { flex: 0 0 auto; padding-inline: 14px; }
@@ -1112,7 +1111,7 @@ footer .wrap.about { display: grid; grid-template-columns: repeat(auto-fit, minm
   <div class="phead">
     <button class="btn small ghost" id="pclose" type="button">Retour</button>
     <div class="pt"><b id="ptitle"></b><small id="psub"></small></div>
-    <span class="row"><span id="pdl" style="display:contents"></span><button class="btn small ghost hbtn" id="preload" type="button" title="Recharger le lecteur (R)" aria-label="Recharger"><svg class="hi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg><span>Recharger</span></button><button class="btn small ghost hbtn" id="pfull" type="button" title="Plein écran (F)" aria-label="Plein écran"><span class="fi"><svg class="hi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3H5a2 2 0 0 0-2 2v3M21 8V5a2 2 0 0 0-2-2h-3M3 16v3a2 2 0 0 0 2 2h3M16 21h3a2 2 0 0 0 2-2v-3"/></svg></span><span class="lbl">Plein écran</span></button><a id="pext" class="btn small ghost hbtn" target="_blank" rel="noopener" title="Ouvrir dans un nouvel onglet" aria-label="Nouvel onglet"><svg class="hi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg><span>Nouvel onglet</span></a></span>
+    <span class="row"><span id="pdl" style="display:contents"></span><button class="btn small ghost hbtn" id="preload" type="button" title="Recharger le lecteur (R)" aria-label="Recharger"><svg class="hi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg><span>Recharger</span></button><button class="btn small ghost hbtn" id="pfull" type="button" title="Plein écran (F)" aria-label="Plein écran"><span class="fi"><svg class="hi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3H5a2 2 0 0 0-2 2v3M21 8V5a2 2 0 0 0-2-2h-3M3 16v3a2 2 0 0 0 2 2h3M16 21h3a2 2 0 0 0 2-2v-3"/></svg></span><span class="lbl">Plein écran</span></button></span>
   </div>
   <div class="pframe" id="pframe">
     <div class="pstage" id="pstage"></div>
@@ -3343,7 +3342,6 @@ function renderPlayer() {
   $("#peps").hidden = true;
   $("#pprev").disabled = !(cur.nav && cur.nav.prev);
   $("#pnext").disabled = !(cur.nav && cur.nav.next);
-  $("#pext").href = url;
   $("#pstage").innerHTML = '<iframe src="' + esc(url) + '" allowfullscreen webkitallowfullscreen mozallowfullscreen allow="autoplay; fullscreen; picture-in-picture; encrypted-media"></iframe>';
   loadingUi();
   var many = cur.sources.length > 3;
