@@ -1744,6 +1744,51 @@ body { overflow-x: hidden; max-width: 100%; position: relative; }
 .dlchoices .btn { width: 100%; justify-content: flex-start; flex-wrap: wrap; gap: 8px 10px; padding: 14px 16px; font-size: 14px; text-align: left; }
 .dlchoices .btn .dlm { margin-left: auto; }
 @media (max-width: 720px) { #dlchoose { place-items: end stretch; padding: 0; } #dlchoose .dlcard { max-width: none; border-left: 0; border-right: 0; border-bottom: 0; padding: 20px 16px calc(20px + env(safe-area-inset-bottom, 0px)); max-height: 92dvh; overflow-y: auto; } }
+
+/* ===== statut des serveurs ===== */
+#btn-info, #btn-stat { display: inline-flex; align-items: center; gap: 7px; font-weight: 700; color: var(--fg); letter-spacing: .04em; font-size: inherit; }
+#btn-stat { text-decoration: none; font-family: inherit; text-transform: uppercase; }
+#btn-stat svg { width: 16px; height: 16px; flex: none; }
+#btn-stat:hover span { text-decoration: underline; text-underline-offset: 4px; }
+#strot { --ok: #86efac; --slow: #fde68a; --down: #f87171; --maint: #7dd3fc; }
+.s-up { --c: #86efac; } .s-slow { --c: #fde68a; } .s-down { --c: #f87171; } .s-maint { --c: #7dd3fc; }
+.stdot { width: 10px; height: 10px; border-radius: 50%; background: var(--c); flex: none; box-shadow: 0 0 0 4px color-mix(in srgb, var(--c) 18%, transparent); }
+.stdot.big { width: 14px; height: 14px; }
+.s-up .stdot { animation: stpulse 2.4s ease-in-out infinite; }
+.s-down .stdot { animation: stpulse 1.1s ease-in-out infinite; }
+@keyframes stpulse { 50% { box-shadow: 0 0 0 7px color-mix(in srgb, var(--c) 6%, transparent); } }
+.stpill { display: inline-flex; align-items: center; padding: 4px 7px; border: 1px solid var(--c); color: var(--c); font-family: var(--mono); font-size: 10px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; line-height: 1; white-space: nowrap; }
+.stban { display: flex; align-items: center; gap: 16px; padding: 20px 22px; border: 1px solid var(--c); background: color-mix(in srgb, var(--c) 8%, var(--panel)); margin-bottom: 30px; animation: riseIn .6s var(--ease) both; }
+.stban b { display: block; font-family: var(--display); font-weight: 900; font-size: clamp(24px, 4vw, 34px); text-transform: uppercase; line-height: 1; margin-bottom: 4px; }
+.stban small { color: var(--dim); }
+.stban .stlast { margin-left: auto; font-family: var(--mono); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--dim); text-align: right; }
+.sth { display: flex; align-items: center; gap: 10px; margin: 0 0 14px; font-family: var(--mono); font-size: 12px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: var(--dim); }
+.sth svg { width: 16px; height: 16px; }
+.stgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; margin-bottom: 34px; }
+.stc { display: grid; gap: 10px; align-content: start; padding: 18px; border: 1px solid var(--line); background: var(--panel); border-top: 2px solid var(--c); min-width: 0; transition: transform .3s var(--ease), border-color .3s; animation: riseIn .55s calc(var(--i, 0) * 60ms) var(--ease) both; }
+.stc:hover { transform: translateY(-3px); border-color: var(--c); }
+.sttop { display: flex; align-items: center; gap: 10px; min-width: 0; }
+.sttop b { font-family: var(--display); font-weight: 900; font-size: 28px; line-height: 1; text-transform: uppercase; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.sttop .stpill { margin-left: auto; }
+.stkind { display: inline-flex; align-items: center; gap: 6px; font-family: var(--mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--dim); }
+.stkind svg { width: 12px; height: 12px; }
+.stnote { margin: 0; min-height: 2.8em; color: var(--fg); overflow-wrap: anywhere; }
+.stfoot { font-family: var(--mono); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--dim); padding-top: 10px; border-top: 1px dashed var(--line); }
+.stinp { width: 100%; box-sizing: border-box; padding: 9px 10px; background: var(--bg); border: 1px solid var(--line); color: var(--fg); font-size: 13px; border-radius: 0; }
+.stinp:focus { outline: 0; border-color: var(--fg); }
+.stlog { list-style: none; margin: 0; padding: 0; border-left: 1px solid var(--line); margin-left: 6px; }
+.stlog li { position: relative; display: grid; grid-template-columns: 130px 1fr; gap: 6px 18px; padding: 0 0 22px 24px; animation: riseIn .5s calc(var(--i, 0) * 45ms) var(--ease) both; }
+.stlog li > .stdot { position: absolute; left: -6px; top: 3px; width: 11px; height: 11px; }
+.stlog time { font-family: var(--mono); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--dim); padding-top: 3px; }
+.stlog li div { min-width: 0; }
+.stlog b { font-family: var(--display); font-weight: 900; font-size: 22px; text-transform: uppercase; margin-right: 10px; vertical-align: middle; }
+.stlog p { margin: 6px 0 0; color: var(--dim); overflow-wrap: anywhere; }
+@media (max-width: 720px) {
+  .stban { flex-wrap: wrap; padding: 16px; } .stban .stlast { margin-left: 0; text-align: left; width: 100%; }
+  .stgrid { grid-template-columns: 1fr; }
+  .stlog li { grid-template-columns: 1fr; padding-left: 20px; }
+}
+@media (prefers-reduced-motion: reduce) { .s-up .stdot, .s-down .stdot { animation: none; } }
 </style>
 <!-- Visites du site : Vercel Web Analytics, sans cookie ni base de données. Ne fait rien tant que tu ne l'actives pas dans Vercel (onglet Analytics). -->
 <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
@@ -1799,6 +1844,7 @@ body { overflow-x: hidden; max-width: 100%; position: relative; }
     <span id="count">0 FICHE</span>
     <div class="links">
       <button id="btn-info" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg><span>INFOS DU SITE</span></button>
+      <a id="btn-stat" href="/statut"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="6" rx="1.5"/><rect x="3" y="14" width="18" height="6" rx="1.5"/><path d="M7 7h.01M7 17h.01"/></svg><span>STATUT DES SERVEURS</span></a>
       <button id="btn-install" class="btn" type="button" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg><span>Installer l'application</span></button>
       <button id="btn-export" type="button" class="btn admin-only"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15V4"/><path d="m7.5 8.5 4.5-4.5 4.5 4.5"/><path d="M5 20h14"/></svg><span>Publier le catalogue</span></button>
       <button id="btn-volet" type="button" class="btn ghost admin-only" aria-haspopup="dialog" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h9M17 7h3"/><path d="M4 17h3M11 17h9"/><path d="M15 4.5v5M9 14.5v5"/></svg><span>Volet admin</span></button>
@@ -5575,6 +5621,128 @@ document.addEventListener("click", function (e) {
   REQS.at = Date.now(); reqSave(); viewRequests(); toast(autoSyncOn() ? "Enregistré." : "Enregistré. Clique sur « Publier » pour que tout le monde le voie."); markDirty();
 });
 
+/* ===== Statut des serveurs hébergeurs : tenu à la main par l'admin, publié dans catalog.json (comme les demandes) ===== */
+var STATKEY = "noir.hosts", STAT = readJSON(STATKEY, null) || { items: [], log: [], at: 0 };
+if (!Array.isArray(STAT.items)) STAT.items = [];
+if (!Array.isArray(STAT.log)) STAT.log = [];
+function statSave() { try { localStorage.setItem(STATKEY, JSON.stringify(STAT)); } catch (e) {} }
+var STHOSTS = [
+  { id: "uqload", name: "Uqload", kind: "stream" }, { id: "vidara", name: "Vidara", kind: "stream" }, { id: "playmate", name: "Playmate", kind: "stream" },
+  { id: "1fichier", name: "1fichier", kind: "dl" }, { id: "gofile", name: "Gofile", kind: "dl" }
+];
+var STSTATES = { up: "Opérationnel", slow: "Ralenti", down: "En panne", maint: "Maintenance" };
+var STSHORT = { up: "OK", slow: "Lent", down: "Panne", maint: "Maint." };
+var STKIND = { stream: "Streaming", dl: "Téléchargement" };
+var stTab = "now";
+function adoptStat(data) {
+  var r = data && !Array.isArray(data) ? data.hosts : null;
+  if (!r || !Array.isArray(r.items)) return;
+  if (!ADMIN || (+r.at || 0) >= (+STAT.at || 0)) {
+    STAT = { items: r.items, log: Array.isArray(r.log) ? r.log.slice(0, 40) : [], at: +r.at || 0 };
+    statSave();
+    if ($("#strot")) stPaint(false);
+  }
+}
+function stState(h) { var x = STAT.items.filter(function (i) { return i.id === h.id; })[0] || {}; return { state: STSTATES[x.state] ? x.state : "up", note: String(x.note || ""), at: +x.at || 0 }; }
+function stAgo(t) {
+  if (!t) return "";
+  var m = Math.round((Date.now() - t) / 60000);
+  if (m < 1) return "à l'instant";
+  if (m < 60) return "il y a " + m + " min";
+  var h = Math.round(m / 60); if (h < 24) return "il y a " + h + " h";
+  var d = Math.round(h / 24); return "il y a " + d + (d > 1 ? " jours" : " jour");
+}
+function stDate(t) { return new Date(t).toLocaleString("fr-FR", { day: "2-digit", month: "short", hour: "2-digit", minute: "2-digit" }); }
+function stCard(h, i) {
+  var x = stState(h), id = esc(h.id);
+  var ic = h.kind === "dl" ? DLICON : PLAYICON;
+  var c = '<div class="stc s-' + x.state + '" style="--i:' + i + '"><div class="sttop"><span class="stdot" aria-hidden="true"></span><b>' + esc(h.name) + '</b><span class="stpill">' + STSTATES[x.state] + '</span></div>' +
+    '<div class="stkind">' + ic + esc(STKIND[h.kind]) + '</div>' +
+    '<p class="stnote">' + (x.note ? esc(x.note) : (x.state === "up" ? "Aucun problème signalé." : "Aucun détail pour l'instant.")) + '</p>' +
+    '<div class="stfoot">' + (x.at ? "Mis à jour " + stAgo(x.at) : "Pas de mise à jour récente") + '</div>';
+  if (ADMIN) {
+    c += '<div class="rqadm"><div class="rqseg" role="group" aria-label="État de ' + esc(h.name) + '">' + Object.keys(STSTATES).map(function (k) {
+      return '<button type="button" title="' + STSTATES[k] + '" data-st="set" data-id="' + id + '" data-s="' + k + '" aria-pressed="' + (x.state === k) + '">' + STSHORT[k] + '</button>';
+    }).join("") + '</div><input type="text" class="stinp" data-stnote="' + id + '" maxlength="140" placeholder="Petit message (facultatif)" value="' + esc(x.note) + '" aria-label="Message pour ' + esc(h.name) + '"></div>';
+  }
+  return c + '</div>';
+}
+function stBanner() {
+  var bad = STHOSTS.filter(function (h) { return stState(h).state !== "up"; }), worst = "up";
+  bad.forEach(function (h) { var s = stState(h).state; if (s === "down" || (s === "slow" && worst !== "down") || (s === "maint" && worst === "up")) worst = s; });
+  var t = !bad.length ? "Tous les serveurs fonctionnent" : bad.length === 1 ? "1 serveur a un souci" : bad.length + " serveurs ont un souci";
+  var sub = !bad.length ? "Si un lien ne marche pas, essaie un autre hébergeur ou signale-le." : "Pas de panique : essaie un autre serveur en attendant le retour à la normale.";
+  var last = STAT.at ? "Dernière mise à jour " + stAgo(STAT.at) : "";
+  return '<div class="stban s-' + worst + '"><span class="stdot big" aria-hidden="true"></span><div><b>' + t + '</b><small>' + sub + '</small></div><span class="stlast">' + last + '</span></div>';
+}
+function stLogHTML() {
+  var L = STAT.log || [];
+  if (!L.length) return '<div class="mlempty">' + RQCLOCK.replace("<svg ", '<svg class="mlei" ') + '<h3>Aucun incident noté</h3><p>Les pannes et les retours à la normale des hébergeurs apparaîtront ici.</p></div>';
+  return '<ol class="stlog">' + L.map(function (e, i) {
+    var st = STSTATES[e.state] ? e.state : "up";
+    return '<li class="s-' + st + '" style="--i:' + Math.min(i, 14) + '"><time>' + esc(stDate(e.t)) + '</time><span class="stdot" aria-hidden="true"></span><div><b>' + esc(e.name || "") + '</b><span class="stpill">' + STSTATES[st] + '</span>' + (e.note ? '<p>' + esc(e.note) + '</p>' : "") + '</div></li>';
+  }).join("") + '</ol>' + (ADMIN ? '<div class="row" style="padding:18px 0 0"><button type="button" class="btn small ghost danger" data-st="clearlog">Vider l\'historique</button></div>' : "");
+}
+function stPaint(swap) {
+  var body = $("#stbody"); if (!body) return;
+  var nbad = STHOSTS.filter(function (h) { return stState(h).state !== "up"; }).length;
+  body.className = swap ? "mlswap" : ""; if (swap) { void body.offsetWidth; body.className = "mlswap"; }
+  if (stTab === "log") body.innerHTML = stLogHTML();
+  else {
+    var n = 0;
+    body.innerHTML = stBanner() + ["stream", "dl"].map(function (k) {
+      return '<h2 class="sth">' + (k === "dl" ? DLICON : PLAYICON) + STKIND[k] + '</h2><div class="stgrid">' + STHOSTS.filter(function (h) { return h.kind === k; }).map(function (h) { return stCard(h, n++); }).join("") + '</div>';
+    }).join("");
+  }
+  var box = $("#sttabs"); box.dataset.i = stTab === "log" ? 1 : 0;
+  [["now", nbad || STHOSTS.length], ["log", (STAT.log || []).length]].forEach(function (q) {
+    var b = box.querySelector('[data-sttab="' + q[0] + '"]'), on = q[0] === stTab;
+    b.classList.toggle("on", on); b.setAttribute("aria-selected", on ? "true" : "false"); b.querySelector("b").textContent = q[1];
+  });
+  box.querySelector('[data-sttab="now"] .l').textContent = nbad ? "Problèmes" : "Serveurs";
+}
+function viewStatus() {
+  if ($("#strot")) { stPaint(false); return; }
+  var PULSE = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="6" rx="1.5"/><rect x="3" y="14" width="18" height="6" rx="1.5"/><path d="M7 7h.01M7 17h.01"/><path d="M12 7h5M12 17h5"/></svg>';
+  var tabs = [["now", PULSE, "Serveurs"], ["log", RQCLOCK, "Historique"]].map(function (t) {
+    return '<button type="button" class="mlt" role="tab" aria-selected="false" data-sttab="' + t[0] + '">' + t[1] + '<b>0</b><span class="l">' + t[2] + '</span></button>';
+  }).join("");
+  $("#app").innerHTML = '<div id="strot"><div class="mlhero"><div class="wrap">' +
+    '<div class="mltitle">' + PULSE.replace("<svg ", '<svg class="mllogo" ') + '<div><h1>Statut des serveurs</h1><p class="note">L\'état des hébergeurs de streaming et de téléchargement, mis à jour à la main</p></div></div>' +
+    '<div class="mltabs two" id="sttabs" data-i="0" role="tablist"><span class="mlind"></span>' + tabs + '</div></div></div>' +
+    '<div class="wrap"><div id="stbody" style="padding-top:26px"></div>' +
+    '<div class="row" style="padding:28px 0 72px"><a class="btn" href="/demande/">Signaler un problème</a><a class="btn ghost" href="/">Retour</a></div></div></div>';
+  stPaint(false);
+}
+document.addEventListener("click", function (e) {
+  var b = e.target.closest ? e.target.closest("[data-sttab]") : null; if (!b || !$("#strot")) return;
+  if (b.dataset.sttab === stTab) return;
+  stTab = b.dataset.sttab; stPaint(true);
+});
+function stCommit(h, state, note) {
+  var x = STAT.items.filter(function (i) { return i.id === h.id; })[0];
+  if (!x) { x = { id: h.id }; STAT.items.push(x); }
+  var before = { state: STSTATES[x.state] ? x.state : "up", note: x.note || "" };
+  if (before.state === state && before.note === note) return false;
+  x.state = state; x.note = note; x.at = Date.now();
+  STAT.log.unshift({ t: x.at, id: h.id, name: h.name, state: state, note: note });
+  STAT.log = STAT.log.slice(0, 40);
+  STAT.at = x.at; statSave(); markDirty();
+  return true;
+}
+document.addEventListener("click", function (e) {
+  var b = e.target.closest ? e.target.closest("[data-st]") : null; if (!b || !ADMIN || !$("#strot")) return;
+  if (b.dataset.st === "clearlog") { if (!confirm("Vider tout l'historique ?")) return; STAT.log = []; STAT.at = Date.now(); statSave(); markDirty(); stPaint(false); toast("Historique vidé."); return; }
+  var h = STHOSTS.filter(function (z) { return z.id === b.dataset.id; })[0]; if (!h || !STSTATES[b.dataset.s]) return;
+  var inp = document.querySelector('[data-stnote="' + h.id + '"]');
+  if (stCommit(h, b.dataset.s, inp ? inp.value.trim().slice(0, 140) : stState(h).note)) { stPaint(false); toast(autoSyncOn() ? "Enregistré." : "Enregistré. Clique sur « Publier » pour que tout le monde le voie."); }
+});
+document.addEventListener("change", function (e) {
+  var t = e.target; if (!t.dataset || t.dataset.stnote == null || !ADMIN) return;
+  var h = STHOSTS.filter(function (z) { return z.id === t.dataset.stnote; })[0]; if (!h) return;
+  if (stCommit(h, stState(h).state, t.value.trim().slice(0, 140))) { stPaint(false); toast(autoSyncOn() ? "Enregistré." : "Enregistré. Clique sur « Publier » pour que tout le monde le voie."); }
+});
+
 /* ===== Routage ===== */
 /* ===== Page acteur : ses titres du catalogue + fiche TMDB (photo, naissance…) via /api/person ===== */
 var curActor = "", personCache = {};
@@ -5712,7 +5880,7 @@ document.addEventListener("click", function (e) {
   if (m) { var bio = $("#actbio"); if (bio) { var open = bio.classList.toggle("clamp"); m.textContent = open ? "Lire la suite" : "Réduire"; } }
 });
 
-var NAVMAP = { "": "nav-home", series: "nav-series", films: "nav-films", ajouter: "nav-add", modifier: "nav-add", panel: "nav-panel", "ma-liste": "nav-list", calendrier: "nav-cal", demande: "nav-req", demandes: "nav-req", parametres: "nav-set" };
+var NAVMAP = { "": "nav-home", series: "nav-series", films: "nav-films", ajouter: "nav-add", modifier: "nav-add", panel: "nav-panel", "ma-liste": "nav-list", calendrier: "nav-cal", demande: "nav-req", demandes: "nav-req", statut: "nav-stat", parametres: "nav-set" };
 
 function route(force) {
   force = force === true;
@@ -5747,6 +5915,7 @@ function route(force) {
   else if (a === "acteur") { rerender = function () { viewActor(b); }; rerender(); }
   else if (a === "demande") viewRequest(b, parts[3]);
   else if (a === "demandes") { rerender = viewRequests; rerender(); }
+  else if (a === "statut") { rerender = viewStatus; rerender(); }
   else if (a === "recherche") { curQ = b; rerender = function () { viewSearch(curQ); }; rerender(); }
   else if (a === "admin") viewLogin();
   else if (a === "headadmin") viewHead();
@@ -6242,6 +6411,7 @@ function ghPublish(obj, tried, opts) {
     if (remote && remote.announce && typeof remote.announce === "object" && (!ANN || (+remote.announce.at || 0) > (+ANN.at || 0))) obj.announce = remote.announce; else if (ANN) obj.announce = ANN;
     if (remote && remote.inbox && Array.isArray(remote.inbox.items) && (+remote.inbox.at || 0) > (+INBOX.at || 0)) obj.inbox = remote.inbox; else if (INBOX && INBOX.at) obj.inbox = INBOX;
     if (remote && remote.requests && (+remote.requests.at || 0) > (+REQS.at || 0)) obj.requests = remote.requests; else if (REQS.at) obj.requests = REQS;
+    if (remote && remote.hosts && (+remote.hosts.at || 0) > (+STAT.at || 0)) obj.hosts = remote.hosts; else if (STAT.at) obj.hosts = STAT;
     var rps = remote && remote.settings;
     if (rps && "player" in rps && (+rps.playerAt || 0) > (+SETTINGS.playerAt || 0) && obj.settings) { obj.settings.player = rps.player; obj.settings.playerAt = rps.playerAt; }
     if (rps && Array.isArray(rps.order) && (+rps.orderAt || 0) > (+SETTINGS.orderAt || 0) && obj.settings) { obj.settings.order = rps.order; obj.settings.orderAt = rps.orderAt; }
@@ -6302,6 +6472,7 @@ function buildCatalogObj() {
   if (ANN) obj.announce = ANN;
   if (INBOX && INBOX.at) obj.inbox = INBOX;
   if (REQS.at) obj.requests = REQS;
+  if (STAT.at) obj.hosts = STAT;
   var jl = journalList(); if (jl.length) obj.journal = jl;
   return obj;
 }
@@ -6725,7 +6896,7 @@ function loadCatalogCore() {
   return fetchCatalogData().then(function (data) {
     var st = null;
     if (ADMIN) { ingestRemoteTombs(data); checkRefreshSignal(data); }
-    adoptTeam(data); adoptHero(data); adoptReqs(data); adoptAnnounce(data); adoptInbox(data);
+    adoptTeam(data); adoptHero(data); adoptReqs(data); adoptStat(data); adoptAnnounce(data); adoptInbox(data);
     if (data && !Array.isArray(data) && Array.isArray(data.series)) { st = data.settings || null; data = data.series; }
     if (!Array.isArray(data)) return;
     data = data.map(normalize);
@@ -6985,6 +7156,7 @@ function skeletonHTML() {
   var p = curPath(), card = '<div class="skc"><div class="poster sk"></div><div class="sk sk-l"></div><div class="sk sk-l s"></div></div>';
   var many = function (n) { return new Array(n + 1).join(card); }, open = '<div role="status" aria-busy="true" aria-label="Chargement">', close = '</div>';
   if (p === "/") return open + '<div class="sk sk-hero"></div><div class="wrap"><div class="sk sk-h"></div><div class="sk-rail">' + many(8) + '</div><div class="sk sk-h"></div><div class="sk-rail">' + many(8) + '</div></div>' + close;
+  if (p === "/statut") return open + '<div class="wrap"><div class="sk sk-h big"></div><div class="sk sk-row"></div><div class="grid">' + many(3) + '</div></div>' + close;
   if (p === "/calendrier") return open + '<div class="wrap"><div class="sk sk-h big"></div>' + new Array(6).join('<div class="sk sk-row"></div>') + '</div>' + close;
   if (p.indexOf("/serie/") === 0) return open + '<div class="wrap sk-detail"><div class="sk skposter"></div><div class="sk-col"><div class="sk sk-l t"></div><div class="sk sk-l s"></div><div class="sk sk-l"></div><div class="sk sk-l"></div><div class="sk sk-l"></div><div class="sk sk-btn"></div></div></div>' + close;
   return open + '<div class="wrap"><div class="sk sk-h big"></div><div class="grid">' + many(12) + '</div></div>' + close;
