@@ -6316,7 +6316,13 @@
               "name": "Épisode 13",
               "overview": "",
               "air_date": "2026-10-17",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-g3cia06tz5jk.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -6324,7 +6330,13 @@
               "name": "Épisode 14",
               "overview": "",
               "air_date": "2026-10-18",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-03hs5lq8179j.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -6544,7 +6556,7 @@
       "langs": [],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1792425672530,
+      "updatedAt": 1792449178767,
       "trend": 65
     },
     {
@@ -24125,6 +24137,15 @@
     "at": 1792443044783
   },
   "journal": [
+    {
+      "k": "mvftylylp5dmw",
+      "t": 1792449178797,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "304452",
+      "n": "The Lament of Autumn",
+      "d": "sources 12 → 14"
+    },
     {
       "k": "mvftk378jjtuz",
       "t": 1792448501300,
