@@ -1256,6 +1256,48 @@ footer .about .flist li, footer .about p.dev { font-weight: 500; }
   .mlsum { margin-left: 0; flex: 1 1 100%; }
   .mlgrid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 12px; }
 }
+/* ===== Recherche (refonte) + highlight lumineux ===== */
+@property --hl { syntax: "<angle>"; inherits: false; initial-value: 0deg; }
+@keyframes hlspin { to { --hl: 360deg; } }
+.hlbox { position: relative; }
+.hlbox::before, .hlbox::after {
+  content: ""; position: absolute; inset: -1px; padding: 1px; pointer-events: none; z-index: 3;
+  background: conic-gradient(from var(--hl), transparent 0 86%, rgba(255, 255, 255, .22) 93%, #fff 99%, transparent 100%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); mask-composite: exclude;
+  animation: hlspin 6s linear infinite;
+}
+.hlbox::after { inset: -2px; padding: 3px; filter: blur(6px); opacity: .75; }
+/* volet Plateformes */
+.platall.hlbox { box-sizing: border-box; padding: 16px; margin-top: 4px; background: var(--panel); border: 1px solid var(--line); }
+.platall .chip { animation: cardIn .4s var(--ease) backwards; animation-delay: calc(var(--k, 0) * 22ms); }
+/* page Faire une demande */
+#reqform.rqcard { padding: 34px 30px 38px; margin-block: 44px 80px; gap: 16px; background: var(--panel); border: 1px solid var(--line); }
+.rqcard > * { animation: riseIn .55s var(--ease) backwards; }
+.rqcard > :nth-child(2) { animation-delay: .05s; } .rqcard > :nth-child(3) { animation-delay: .1s; } .rqcard > :nth-child(4) { animation-delay: .15s; }
+.rqcard > :nth-child(5) { animation-delay: .2s; } .rqcard > :nth-child(6) { animation-delay: .25s; } .rqcard > :nth-child(7) { animation-delay: .3s; }
+.rqcard > :nth-child(8) { animation-delay: .35s; } .rqcard > :nth-child(9) { animation-delay: .4s; } .rqcard > :nth-child(10) { animation-delay: .45s; }
+.rqcard .rqwrap { z-index: 5; }
+.rqhead { display: flex; align-items: center; gap: 16px; }
+.rqcard h1 { font-size: clamp(34px, 6vw, 52px); }
+.rqlogo { width: 54px; height: 54px; flex: none; }
+.rqlogo path { stroke-dasharray: 90; stroke-dashoffset: 90; animation: mldraw 1.1s .1s var(--ease) forwards; }
+.rqlogo .sp { stroke: #7dd3fc; fill: #7dd3fc; fill-opacity: 0; stroke-dasharray: 40; stroke-dashoffset: 40; animation: mldraw .8s .8s var(--ease) forwards, mlspark 3.2s 1.8s ease-in-out infinite; transform-origin: 4px 5.2px; }
+.rqcard input:focus, .rqcard select:focus { box-shadow: 0 0 0 3px rgba(255, 255, 255, .08); }
+@media (max-width: 560px) { #reqform.rqcard { padding: 24px 18px 28px; margin-block: 24px 56px; } .rqlogo { width: 42px; height: 42px; } }
+/* page Recherche */
+#srroot { padding-bottom: 72px; }
+.srnote .srq { color: var(--fg); }
+#sract:empty { display: none; }
+#sract .actres { padding-top: 4px; }
+.actchip { animation: cardIn .45s var(--ease) backwards; animation-delay: calc(var(--k, 0) * 50ms); transition: border-color .2s, background .2s, transform .25s var(--ease); }
+.actchip:hover { transform: translateY(-2px); }
+.actchip:hover .ai { background: var(--fg); color: var(--bg); }
+.actchip .ai { transition: background .25s, color .25s; }
+#srbody .mlempty .btn { display: inline-flex; align-items: center; gap: 8px; }
+#srbody .mlempty .btn svg { width: 16px; height: 16px; }
+#srbody .mlempty .row { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+#srclose { white-space: nowrap; }
 /* ===== Séries / Films : compléments au style Ma liste ===== */
 .lsf { display: grid; gap: 0; padding-bottom: 24px; }
 .lsf.intro { animation: riseIn .6s .2s var(--ease) both; }
@@ -2888,7 +2930,7 @@ document.addEventListener("click", function (e) {
 function viewRequest(pre, kind) {
   kind = kind === "dl" ? "dl" : kind === "both" ? "both" : "stream";
   var t = ""; try { t = decodeURIComponent(pre || ""); } catch (e) { t = pre || ""; }
-  $("#app").innerHTML = '<div class="wrap"><form class="authbox" id="reqform" style="max-width:520px"><h1>Demander un titre</h1>' +
+  $("#app").innerHTML = '<div class="wrap"><form class="authbox rqcard hlbox" id="reqform" style="max-width:520px"><div class="rqhead"><svg class="rqlogo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="90" d="M21 3 10.5 13.5"/><path pathLength="90" d="M21 3l-6.5 18-4-7.5L3 9.5z"/><path class="sp" pathLength="40" style="transform-origin:4px 5.2px" d="m4 3 .6 1.4 1.4.6-1.4.6L4 7l-.6-1.4L2 5l1.4-.6z"/></svg><h1>Demander un titre</h1></div>' +
     '<p class="lead">Il manque un drama ou un film (coréen, chinois, japonais ou thaï) ? Dis-le-moi, je l\'ajoute dès que possible. ' + REQ_MAX + ' demandes maximum par jour.</p>' +
     '<label class="f"><span>Ton Discord (facultatif)</span><input type="text" name="discord" maxlength="40" placeholder="ex. pseudo ou pseudo#0000" autocomplete="off"></label>' +
     '<p class="note" style="margin:-6px 0 0">Laisse ton pseudo Discord pour que je puisse te prévenir quand ton titre est ajouté.</p>' +
@@ -3222,16 +3264,16 @@ function platOptions(list) {
   var n = {}; list.forEach(function (s) { platNames(s).forEach(function (x) { n[x] = (n[x] || 0) + 1; }); });
   return Object.keys(n).sort(function (a, b) { return n[b] - n[a] || a.localeCompare(b); });
 }
-function platChip(name) {
+function platChip(name, i) {
   var b = platBrand(name), on = platFilter === name;
-  return '<button type="button" class="chip pchip' + (on ? " on" : "") + '" style="' + (b.c ? "--pc:" + b.c : "") + '" data-platf="' + esc(name) + '" aria-pressed="' + (on ? "true" : "false") + '">' + platMark(b) + '</button>';
+  return '<button type="button" class="chip pchip' + (on ? " on" : "") + '" style="' + (b.c ? "--pc:" + b.c + ";" : "") + "--k:" + Math.min(i || 0, 24) + '" data-platf="' + esc(name) + '" aria-pressed="' + (on ? "true" : "false") + '">' + platMark(b) + '</button>';
 }
 function platRow(plats) {
   if (!plats.length) return "";
   var cur = platFilter ? platMark(platBrand(platFilter)) : "";
   var tog = '<button type="button" class="chip plattab' + (platOpen ? " open" : "") + (platFilter ? " has" : "") + '" data-platopen="1" aria-expanded="' + (platOpen ? "true" : "false") + '"><span>Plateformes</span>' + (cur ? '<span class="platcur">' + cur + '</span>' : '') + '<i class="caret" aria-hidden="true"></i></button>';
   return '<div class="chips langchips platrow">' + tog +
-    (platOpen ? '<div class="platall"><button type="button" class="chip' + (!platFilter ? " on" : "") + '" data-platf="">Toutes</button>' + plats.map(platChip).join("") + '</div>' : '') + '</div>';
+    (platOpen ? '<div class="platall hlbox"><button type="button" class="chip' + (!platFilter ? " on" : "") + '" data-platf="">Toutes</button>' + plats.map(platChip).join("") + '</div>' : '') + '</div>';
 }
 function newMatch(s) { return (!newFilter || (newFilter === "serie" ? !!newSeries(s) : !!newEpisode(s))) && (!kdFilter || dramaType(s) === kdFilter) && (!platFilter || platNames(s).indexOf(platFilter) > -1); }
 function langMatch(s) { return !langFilter || (s.langs || []).indexOf(langFilter) > -1; }
@@ -3264,10 +3306,10 @@ function lsSorted(arr) {
   else if (lsSort === "rating") a.sort(function (x, y) { return (parseFloat(y.rating) || 0) - (parseFloat(x.rating) || 0); });
   return a;
 }
-function lsCard(s, i) {
+function lsCard(s, i, tag) {
   var id = esc(s.id), mv = isMovie(s), pr = mv ? null : mlProgress(s);
   var nse = (s.seasons || []).length;
-  var meta = [s.year, s.rating ? "★ " + s.rating : "", !mv && nse ? nse + (nse > 1 ? " saisons" : " saison") : ""].filter(Boolean).join("  ·  ");
+  var meta = [tag === "type" ? (mv ? "Film" : "Série") : "", s.year, s.rating ? "★ " + s.rating : "", !mv && nse ? nse + (nse > 1 ? " saisons" : " saison") : ""].filter(Boolean).join("  ·  ");
   var pb = mv ? [] : platBrands(s);
   var on = inList(s.id);
   return '<div class="mlc" style="--i:' + Math.min(i || 0, 14) + '"><div class="poster"><a class="mlhit" href="/serie/' + id + '" aria-label="' + esc(s.name) + '"></a>' +
@@ -3354,7 +3396,7 @@ document.addEventListener("input", function (e) {
   if (e.target && e.target.id === "lsq" && lsCtx) { lsQuery = e.target.value; lsRenderBody(lsList(), true, false); }
 });
 document.addEventListener("click", function (e) {
-  var t = e.target.closest ? e.target.closest("[data-lssort],[data-lsbm],[data-lsreset]") : null; if (!t || !lsCtx) return;
+  var t = e.target.closest ? e.target.closest("[data-lssort],[data-lsbm],[data-lsreset]") : null; if (!t || (!lsCtx && !t.dataset.lsbm)) return;
   if (t.dataset.lssort) {
     lsSort = t.dataset.lssort;
     Array.prototype.forEach.call(document.querySelectorAll("[data-lssort]"), function (b) { b.classList.toggle("on", b === t); });
@@ -3427,9 +3469,60 @@ function actorMatches(needle) {
 }
 function actorsBlock(list) {
   if (!list.length) return "";
-  return '<div class="wrap actres"><h3 class="note">Acteurs</h3><div class="actchips">' + list.map(function (a) {
-    return '<a class="actchip" href="/acteur/' + encodeURIComponent(a.name) + '"><span class="ai">' + esc(a.name.charAt(0)) + '</span><span class="at"><b>' + esc(a.name) + '</b><small>' + a.n + (a.n > 1 ? " titres" : " titre") + '</small></span></a>';
+  return '<div class="wrap actres"><h3 class="note">Acteurs</h3><div class="actchips">' + list.map(function (a, i) {
+    return '<a class="actchip" style="--k:' + Math.min(i, 12) + '" href="/acteur/' + encodeURIComponent(a.name) + '"><span class="ai">' + esc(a.name.charAt(0)) + '</span><span class="at"><b>' + esc(a.name) + '</b><small>' + a.n + (a.n > 1 ? " titres" : " titre") + '</small></span></a>';
   }).join("") + '</div></div>';
+}
+/* ===== Recherche (refonte) : même style que Ma liste / Séries (en-tête animé, onglets coulissants, tri, cartes) ===== */
+NICONS.srtv = '<rect x="3" y="6" width="18" height="13" rx="2"/><path d="m8 2.5 4 3.5 4-3.5"/>';
+NICONS.srfilm = '<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 4v16M17 4v16M3 9h4M3 15h4M17 9h4M17 15h4"/>';
+var srSort = "rel", srSig = null;
+var SRTABS = [["", "Tout", "grid"], ["tv", "Séries", "srtv"], ["movie", "Films", "srfilm"]];
+var SRSORTS = [["rel", "Pertinence"], ["recent", "Récents"], ["az", "A–Z"], ["year", "Année"], ["rating", "Note"]];
+var SRLOGO = '<path pathLength="90" d="M10.5 4a6.5 6.5 0 1 1 0 13 6.5 6.5 0 0 1 0-13z"/><path pathLength="90" d="m15.4 15.4 5.6 5.6"/><path class="sp" pathLength="40" style="transform-origin:10.5px 10.5px" d="m10.5 7.4.7 1.8 1.9.3-1.4 1.3.4 1.9-1.6-.9-1.6.9.4-1.9L7.9 9.5l1.9-.3z"/>';
+function srRank(s, n) {
+  if (!n) return 0;
+  var names = [s.name, s.original_name].concat(Array.isArray(s.aka) ? s.aka : []), best = 3;
+  for (var i = 0; i < names.length; i++) {
+    var f = fold(names[i]); if (!f) continue;
+    if (f === n) return 0;
+    if (f.indexOf(n) === 0) best = Math.min(best, 1);
+    else if (i < 2 && f.indexOf(n) > -1) best = Math.min(best, 2);
+  }
+  return best;
+}
+function srSorted(arr, needle) {
+  var a = arr.slice(), mode = srSort;
+  if (mode === "rel" && !needle) mode = "recent";
+  if (mode === "rel") {
+    var r = {}; a.forEach(function (s) { r[s.id] = srRank(s, needle); });
+    a = a.map(function (s, i) { return { s: s, i: i }; }).sort(function (x, y) { return (r[x.s.id] - r[y.s.id]) || (x.i - y.i); }).map(function (x) { return x.s; });
+  }
+  else if (mode === "az") a.sort(function (x, y) { return String(x.name).localeCompare(String(y.name), "fr"); });
+  else if (mode === "year") a.sort(function (x, y) { return (parseInt(y.year, 10) || 0) - (parseInt(x.year, 10) || 0); });
+  else if (mode === "rating") a.sort(function (x, y) { return (parseFloat(y.rating) || 0) - (parseFloat(x.rating) || 0); });
+  return a;
+}
+function srOther(s) { return (!filter || (s.genres || []).indexOf(filter) > -1) && langMatch(s) && newMatch(s) && (!dlFilter || hasDl(s)); }
+function srChip(attr, val, label, on) { return '<button type="button" class="chip' + (on ? " on" : "") + '" ' + attr + '="' + esc(val) + '">' + esc(label) + '</button>'; }
+function srRow(label, items) { return '<div class="chips langchips"><span class="chiplbl">' + label + '</span>' + items + '</div>'; }
+function srFilters(o) {
+  return srRow("Langue", srChip("data-langf", "", "Toutes", !langFilter) + ["VOSTFR", "VF"].map(function (L) { return srChip("data-langf", L, L, langFilter === L); }).join("")) +
+    (o.genres.length ? srRow("Genre", srChip("data-genre", "", "Tout", !filter) + o.genres.map(function (g) { return srChip("data-genre", g, g, filter === g); }).join("")) : "") +
+    (o.newOpts.length ? srRow("Nouveautés", srChip("data-newf", "", "Toutes", !newFilter) + o.newOpts.map(function (x) { return srChip("data-newf", x, NEWLBL[x], newFilter === x); }).join("")) : "") +
+    (o.kd.length ? srRow("Catégorie", srChip("data-kdf", "", "Toutes", !kdFilter) + o.kd.map(function (d) { return srChip("data-kdf", d, DRAMA[d], kdFilter === d); }).join("")) : "") +
+    platRow(o.plats) +
+    (o.canDl ? srRow("Téléchargement", srChip("data-dlf", "", "Tous", !dlFilter) + srChip("data-dlf", "1", "Avec lien", dlFilter)) : "");
+}
+function srBuild() {
+  var tabs = SRTABS.map(function (t) { return '<button type="button" class="mlt" role="tab" aria-selected="false" data-typef="' + t[0] + '">' + nsvg(t[2]) + '<b data-n="">0</b><span class="l">' + t[1] + '</span></button>'; }).join("");
+  var sorts = SRSORTS.map(function (x) { return '<button type="button" data-srsort="' + x[0] + '" class="' + (srSort === x[0] ? "on" : "") + '">' + x[1] + '</button>'; }).join("");
+  $("#app").innerHTML = '<div id="srroot"><div class="mlhero"><div class="wrap">' +
+    '<div class="mltitle"><svg class="mllogo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + SRLOGO + '</svg>' +
+    '<div><h1>Recherche</h1><p class="note srnote" id="srnote"></p></div></div>' +
+    '<div class="mltabs" id="srtabs" data-i="0" role="tablist"><span class="mlind"></span>' + tabs + '</div></div></div>' +
+    '<div id="sract"></div><div class="wrap"><div class="mltools"><div class="mlsort" role="group" aria-label="Trier">' + sorts + '</div><span class="mlsum" id="srsum"></span>' +
+    '<a class="btn small ghost" id="srclose" href="/">Fermer la recherche</a></div><div class="lsf intro" id="srf"></div><div id="srbody"></div></div></div>';
 }
 function viewSearch(q) {
   q = q || "";
@@ -3439,41 +3532,52 @@ function viewSearch(q) {
   if (!canDl) dlFilter = false;
   var genres = {};
   base.forEach(function (s) { (s.genres || []).forEach(function (g) { genres[g] = 1; }); });
-  var newOptsS = newOptions(base);
-  if (newOptsS.indexOf(newFilter) < 0) newFilter = "";
-  var kdTypesS = dramaTypes(base);
-  if (kdTypesS.indexOf(kdFilter) < 0) kdFilter = "";
-  var platsS = platOptions(base);
-  if (platsS.indexOf(platFilter) < 0) platFilter = "";
-  var found = base.filter(function (s) {
-    return (!typeFilter || (typeFilter === "movie") === isMovie(s)) &&
-      (!filter || (s.genres || []).indexOf(filter) > -1) && langMatch(s) && newMatch(s) && (!dlFilter || hasDl(s));
-  });
-  var html = '<div class="wrap listhead"><h1>Recherche</h1><p class="note">' + found.length + (found.length > 1 ? " résultats" : " résultat") + (q.trim() ? ' pour « ' + esc(q.trim()) + ' »' : '') + '</p>' +
-    '<a class="btn small ghost" style="margin-top:14px" href="' + esc(searchBack) + '">Fermer la recherche</a></div>';
+  if (filter) genres[filter] = 1;
+  var newOpts = newOptions(base); if (newOpts.indexOf(newFilter) < 0) newFilter = "";
+  var kd = dramaTypes(base); if (kd.indexOf(kdFilter) < 0) kdFilter = "";
+  var plats = platOptions(base); if (plats.indexOf(platFilter) < 0) platFilter = "";
+  var pool = base.filter(srOther), counts = [pool.length, 0, 0];
+  pool.forEach(function (s) { counts[isMovie(s) ? 2 : 1]++; });
+  var found = srSorted(pool.filter(function (s) { return !typeFilter || (typeFilter === "movie") === isMovie(s); }), needle);
+  var sig = [typeFilter, filter, langFilter, newFilter, kdFilter, platFilter, dlFilter, srSort].join("|");
+  var fresh = !$("#srroot");
+  var swap = !fresh && srSig !== null && sig !== srSig;
+  srSig = sig;
+  if (fresh) srBuild();
   var actors = actorMatches(needle);
-  html += actorsBlock(actors);
-  if (needle && !base.length && actors.length) {
-    $("#app").innerHTML = html + '<div class="wrap"><p class="note" style="padding:22px 0 48px">Aucun titre ne correspond à ces mots. <a href="/demande/' + encodeURIComponent(q.trim()) + '" style="text-decoration:underline;text-underline-offset:3px">Demander ce titre</a></p></div>';
-    return;
+  $("#srnote").innerHTML = found.length + (found.length > 1 ? " résultats" : " résultat") + (q.trim() ? ' pour <span class="srq">« ' + esc(q.trim()) + ' »</span>' : " au catalogue");
+  var box = $("#srtabs"), idx = 0;
+  SRTABS.forEach(function (t, k) {
+    var b = box.querySelector('[data-typef="' + t[0] + '"]'); if (!b) return;
+    var on = t[0] === typeFilter; if (on) idx = k;
+    b.classList.toggle("on", on); b.setAttribute("aria-selected", on ? "true" : "false");
+    var c = b.querySelector("b");
+    if (c && c.dataset.n !== String(counts[k])) { c.dataset.n = counts[k]; mlCount(c, counts[k], fresh); }
+  });
+  box.dataset.i = idx;
+  var f = $("#srf"); if (!fresh) f.classList.remove("intro");
+  f.innerHTML = base.length ? srFilters({ genres: Object.keys(genres).sort(), newOpts: newOpts, kd: kd, plats: plats, canDl: canDl }) : "";
+  $("#sract").innerHTML = actorsBlock(actors);
+  $("#srsum").textContent = found.length + (found.length > 1 ? " titres" : " titre");
+  $("#srclose").setAttribute("href", searchBack);
+  Array.prototype.forEach.call(document.querySelectorAll("[data-srsort]"), function (b) { b.classList.toggle("on", b.dataset.srsort === srSort); });
+  var body = $("#srbody");
+  body.className = swap ? "mlswap" : "";
+  if (swap) { void body.offsetWidth; body.className = "mlswap"; }
+  if (found.length) body.innerHTML = '<div class="mlgrid' + (fresh || swap ? "" : " still") + '">' + found.map(function (s, i) { return lsCard(s, i, "type"); }).join("") + '</div>';
+  else if (needle && !base.length) {
+    body.innerHTML = '<div class="mlempty">' + nsvg("search", "mlei") + '<h3>Rien trouvé</h3><p>' + (actors.length ? "Aucun titre ne correspond à ces mots, mais des acteurs correspondent juste au-dessus." : "Aucun titre ne correspond. Essaie un autre mot, ou demande-le-moi.") + '</p>' +
+      '<div class="row"><a class="btn" href="/demande/' + encodeURIComponent(q.trim()) + '">Demander ce titre</a><a class="btn ghost" href="/">Retour à l\'accueil</a></div></div>';
+  } else {
+    body.innerHTML = '<div class="mlempty">' + nsvg("search", "mlei") + '<h3>Aucun résultat</h3><p>Aucun titre ne correspond à ces filtres.</p><button type="button" class="btn ghost" data-srreset="1">' + nsvg("reset") + '<span>Réinitialiser les filtres</span></button></div>';
   }
-  if (needle && !base.length) {
-    $("#app").innerHTML = html + emptyBox("Rien trouvé", "Aucun titre ne correspond. Essaie un autre mot, ou demande-le-moi.", '<div class="row"><a class="btn" href="/demande/' + encodeURIComponent(q.trim()) + '">Demander ce titre</a><a class="btn ghost" href="/">Retour à l\'accueil</a></div>');
-    return;
-  }
-  function chip(attr, val, label, on) { return '<button class="chip' + (on ? " on" : "") + '" ' + attr + '="' + esc(val) + '">' + esc(label) + '</button>'; }
-  function row(label, items) { return '<div class="chips langchips"><span class="chiplbl">' + label + '</span>' + items + '</div>'; }
-  var filters =
-    row("Type", chip("data-typef", "", "Tout", !typeFilter) + chip("data-typef", "tv", "Séries", typeFilter === "tv") + chip("data-typef", "movie", "Films", typeFilter === "movie")) +
-    row("Langue", chip("data-langf", "", "Toutes", !langFilter) + ["VOSTFR", "VF"].map(function (L) { return chip("data-langf", L, L, langFilter === L); }).join("")) +
-    (Object.keys(genres).length ? row("Genre", chip("data-genre", "", "Tout", !filter) + Object.keys(genres).sort().map(function (g) { return chip("data-genre", g, g, filter === g); }).join("")) : "") +
-    (newOptsS.length ? row("Nouveautés", chip("data-newf", "", "Toutes", !newFilter) + newOptsS.map(function (o) { return chip("data-newf", o, NEWLBL[o], newFilter === o); }).join("")) : "") +
-    (kdTypesS.length ? row("Catégorie", chip("data-kdf", "", "Toutes", !kdFilter) + kdTypesS.map(function (d) { return chip("data-kdf", d, DRAMA[d], kdFilter === d); }).join("")) : "") +
-    platRow(platsS) +
-    (canDl ? row("Téléchargement", chip("data-dlf", "", "Tous", !dlFilter) + chip("data-dlf", "1", "Avec lien", dlFilter)) : "");
-  html += '<div class="wrap sres">' + filters + (found.length ? '<div class="grid" style="padding-top:28px">' + found.map(card).join("") + '</div>' : '<p class="note" style="padding:28px 0 48px">Aucun titre avec ces filtres.</p>') + '</div>';
-  $("#app").innerHTML = html;
 }
+document.addEventListener("click", function (e) {
+  var t = e.target.closest ? e.target.closest("[data-srsort],[data-srreset]") : null; if (!t || !$("#srroot")) return;
+  if (t.dataset.srsort) { srSort = t.dataset.srsort; viewSearch(curQ); return; }
+  filter = langFilter = newFilter = kdFilter = platFilter = ""; typeFilter = ""; dlFilter = false; platOpen = false;
+  viewSearch(curQ);
+});
 
 /* Téléchargement : liens 1fichier ajoutés par l'admin (film, saison entière, épisode) */
 var dlMode = false;
