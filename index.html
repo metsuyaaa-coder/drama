@@ -1724,6 +1724,20 @@ details.season summary i { padding: 5px 9px; border: 1px solid var(--line); font
   .ep .n { width: 42px; height: 42px; font-size: 20px; }
   .seasonpick .seasonall .chip { padding: 11px 16px; font-size: 16px; }
 }
+
+/* ===== fix mobile : plus de débordement horizontal / dézoom auto sur la page épisodes ===== */
+html { overflow-x: hidden; max-width: 100%; }
+@supports (overflow: clip) { html { overflow-x: clip; } }
+body { overflow-x: hidden; max-width: 100%; position: relative; }
+@supports (overflow: clip) { body { overflow-x: clip; } }
+.seasons, .seasons .ep, .seasons .ep > div { min-width: 0; max-width: 100%; }
+.seasons .ep .act, .seasons .ep .dlact { min-width: 0; max-width: 100%; }
+.seasons .ep .dlact .btn, .seasons .dlbar .btn { min-width: 0; max-width: 100%; flex-wrap: wrap; text-align: left; }
+.seasons .ep .dlact .btn > span:not(.dlm), .seasons .dlbar .btn > span:not(.dlm) { min-width: 0; overflow-wrap: anywhere; }
+@media (max-width: 720px) {
+  .seasons .ep .dlact { flex-direction: column; align-items: stretch; }
+  .seasons .ep .dlact .btn { width: 100%; justify-content: flex-start; }
+}
 </style>
 <!-- Visites du site : Vercel Web Analytics, sans cookie ni base de données. Ne fait rien tant que tu ne l'actives pas dans Vercel (onglet Analytics). -->
 <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
