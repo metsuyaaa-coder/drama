@@ -20335,6 +20335,330 @@
       ],
       "downloads": [],
       "updatedAt": 1792366151412
+    },
+    {
+      "id": "126035",
+      "type": "tv",
+      "name": "Nevertheless,",
+      "original_name": "알고있지만,",
+      "origin_country": [
+        "KR"
+      ],
+      "networks": [
+        "JTBC"
+      ],
+      "original_language": "ko",
+      "aka": [
+        "Nevertheless,",
+        "알고있지만,",
+        "Yine de,",
+        "Apesar de Tudo, Amor",
+        "Aun así",
+        "無法抗拒的他",
+        "无法抗拒的他",
+        "Я знаю, но...",
+        "Nevertheless",
+        "Dẫu Biết",
+        "אהבה, למרות הכל",
+        "Nicméně",
+        "Mindazonáltal",
+        "Cu toate acestea",
+        "Nevertheless: รักนี้ห้ามไม่ได้",
+        "Ωστόσο",
+        "わかっていても",
+        "با این وجود",
+        "І все-таки",
+        "虽然我知道",
+        "با این حال",
+        "Algoitjiman",
+        "Тем не менее",
+        "Так или иначе",
+        "Я знаю, но",
+        "รักนี้ห้ามไม่ได้",
+        "เนเวอร์เดอะเลส: รักนี้ห้ามไม่ได้",
+        "Buna Rağmen",
+        "Yine de",
+        "I Know But"
+      ],
+      "year": "2021",
+      "overview": "Le charme enivrant d'un camarade de son école d'art entraîne une jeune fille qui ne croit pas à l'amour dans une relation amis-amants.",
+      "genres": [
+        "Drame"
+      ],
+      "rating": "7.3",
+      "pop": 7.6888,
+      "status": "Ended",
+      "poster": "https://image.tmdb.org/t/p/w500/pWIcIhpQibR1eDU0As4HRZeb8EL.jpg",
+      "posterV": 2,
+      "backdrop": "https://image.tmdb.org/t/p/original/cPLtnxTlFpCIyH6AkGNuGCluvY1.jpg",
+      "cast": [
+        {
+          "name": "Han So-hee",
+          "character": "Yoo Na-bi",
+          "id": 2112859
+        },
+        {
+          "name": "Song Kang",
+          "character": "Park Jae-eon",
+          "id": 1878952
+        },
+        {
+          "name": "Chae Jong-hyeop",
+          "character": "Yang Do-hyeok",
+          "id": 2934419
+        },
+        {
+          "name": "Lee Yul-eum",
+          "character": "Yoon Seol-a",
+          "id": 1467384
+        },
+        {
+          "name": "Yang Hye-ji",
+          "character": "Oh Bit-na",
+          "id": 1671448
+        },
+        {
+          "name": "Kim Kang-bin",
+          "character": "Nam Gyu-hyun",
+          "id": 3008522
+        },
+        {
+          "name": "Lee Ho-jung",
+          "character": "Yoon Sol",
+          "id": 2265560
+        },
+        {
+          "name": "Yoon Seo-ah",
+          "character": "Seo Ji-wan",
+          "id": 3129872
+        },
+        {
+          "name": "Jeong Jae-kwang",
+          "character": "Ahn Kyeong-joon",
+          "id": 2298157
+        },
+        {
+          "name": "Han Eu-ddeum",
+          "character": "Jo Min-young",
+          "id": 3221236
+        },
+        {
+          "name": "이승협",
+          "character": "Jung Joo-hyuk",
+          "id": 2208473
+        },
+        {
+          "name": "서혜원",
+          "character": "Jang Se-young",
+          "id": 2285866
+        }
+      ],
+      "seasons": [
+        {
+          "number": 1,
+          "name": "Saison 1",
+          "episodes": [
+            {
+              "number": 1,
+              "name": "There’s No Such Thing as Fate. Nevertheless,",
+              "overview": "Days after a heart-fluttering encounter with a charming man, Yu Na-bi bumps into him again. This time, she's formally introduced to Park Jae-eon.",
+              "air_date": "2021-06-19",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/HfyBT1sbY0Uzi",
+                  "by": "head"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/YnbcLePPaO5I2",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 2,
+              "name": "It's Not Only Me. Nevertheless,",
+              "overview": "As Na-bi wonders whether Jae-eon only acts friendly toward her or also to other girls, she has a racy dream about the two of them in bed.",
+              "air_date": "2021-06-26",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/hR8FYmCnarNLR",
+                  "by": "head"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/vg1HuBtGNwOTe",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 3,
+              "name": "It Has Already Begun. Nevertheless,",
+              "overview": "A cold, some jealousy and a slight misunderstanding drive Na-bi and Jae-eon further apart before bringing them closer than ever before.",
+              "air_date": "2021-07-03",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/Tu25MhXUJa5Ay",
+                  "by": "head"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/mXebWwdbQz55A",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 4,
+              "name": "I Know It Isn't Love. Nevertheless,",
+              "overview": "Na-bi's attraction to Jae-eon is enough to momentarily quiet her concerns about their intimate relationship — until a rude awakening sets in.",
+              "air_date": "2021-07-10",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/0bduZPsxSYV0y",
+                  "by": "head"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/D8ZaSzZ4zesVd",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 5,
+              "name": "I Know Nothing Will Change. Nevertheless,",
+              "overview": "Sick of Jae-eon's ways, Na-bi ends things with him. Oh Bit-na makes a drunken confession. Yun Seol-a approaches Na-bi on campus.",
+              "air_date": "2021-07-17",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/m6GtZK7A4sSLq",
+                  "by": "head"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/2NWHPSPxefhZ1",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 6,
+              "name": "There's No Such Thing as Love. Nevertheless,",
+              "overview": "Na-bi visits her hometown, where she helps out in her aunt's studio and enjoys the outdoors with Yang Do-hyeok. Jae-eon feels Na-bi's absence.",
+              "air_date": "2021-07-24",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/n5vADsNrBzaVV",
+                  "by": "head"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/nAN8mzMBfJD7Q",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 7,
+              "name": "I Know There's No Turning Back. Nevertheless,",
+              "overview": "The students arrive at the guesthouse for a group retreat. Na-bi tries to keep a distance from Jae-eon, who keeps his eye on her and Do-hyeok.",
+              "air_date": "2021-07-31",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/t7m8VRjbBNDYI",
+                  "by": "head"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/iuTSGiXm9zExe",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 8,
+              "name": "I Know It's a Lie. Nevertheless,",
+              "overview": "Do-hyeok surprises his childhood crush with a sweet confession. Na-bi visits a gallery with Jae-eon. Yun Sol gets honest about her feelings for Seo Ji-wan.",
+              "air_date": "2021-08-07",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/RmOF7SIoov6Ym",
+                  "by": "head"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/JtSj3CiIJ6dN0",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 9,
+              "name": "I Know It's Over. Nevertheless,",
+              "overview": "Afraid to lose Na-bi, Do-hyeok shows up in front of her building — only to see Jae-eon by her side. Sol allays Ji-wan's fears about their relationship.",
+              "air_date": "2021-08-14",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/YCjI3bcBYFlEu",
+                  "by": "head"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/eRPILVlReaIVr",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 10,
+              "name": "Nevertheless, I Still…",
+              "overview": "Na-bi scrambles to recreate her sculpture days before the exhibit. Staying true to his word, Jae-eon bids farewell to his butterflies.",
+              "air_date": "2021-08-21",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/ctcy7mhRjdr6s",
+                  "by": "head"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/pMUojcZnvbzWa",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            }
+          ],
+          "downloads": []
+        }
+      ],
+      "sources": [],
+      "addedAt": 1792370351127,
+      "langs": [
+        "VOSTFR"
+      ],
+      "downloads": [],
+      "updatedAt": 1792370449521
     }
   ],
   "deletedLinks": [
@@ -20388,6 +20712,15 @@
     "at": 1792336665257
   },
   "journal": [
+    {
+      "k": "mvej362ex6xey",
+      "t": 1792370449526,
+      "b": "head",
+      "a": "add",
+      "i": "126035",
+      "n": "Nevertheless,",
+      "d": ""
+    },
     {
       "k": "mvehw1u1unb27",
       "t": 1792368437833,
