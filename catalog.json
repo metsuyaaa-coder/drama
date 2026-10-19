@@ -21293,6 +21293,506 @@
       ],
       "downloads": [],
       "updatedAt": 1792377535252
+    },
+    {
+      "id": "288603",
+      "type": "tv",
+      "name": "Never-Ending Summer",
+      "original_name": "炽夏",
+      "origin_country": [
+        "CN"
+      ],
+      "networks": [
+        "Hunan Television",
+        "Mango TV"
+      ],
+      "original_language": "zh",
+      "aka": [
+        "Never-Ending Summer",
+        "ฤดูร้อนนิรันดร์",
+        "Mùa Hè Nồng Nhiệt",
+        "치하 : 뜨거운 여름",
+        "Verão Sem Fim",
+        "熾夏",
+        "Never ending summer",
+        "Пылающее лето",
+        "Xi Feng Xiang Wan",
+        "坠落",
+        "西风向晚",
+        "Chi Xia",
+        "炽夏"
+      ],
+      "year": "2026",
+      "overview": "",
+      "genres": [
+        "Drame"
+      ],
+      "rating": "8.0",
+      "pop": 11.1675,
+      "status": "Ended",
+      "poster": "https://image.tmdb.org/t/p/original/51x3GY7o07PqLgCN0UIJVHHzgCO.jpg",
+      "posterV": 2,
+      "backdrop": "https://image.tmdb.org/t/p/original/h1bGO8w5hyn22DGNv0MOZKTog1X.jpg",
+      "cast": [
+        {
+          "name": "包上恩",
+          "character": "Zhou Wan",
+          "id": 3590388
+        },
+        {
+          "name": "周柯宇",
+          "character": "Lu Xixiao",
+          "id": 2986719
+        },
+        {
+          "name": "赵英博",
+          "character": "Jiang Yan",
+          "id": 2174694
+        },
+        {
+          "name": "徐媛屹娜",
+          "character": "Gu Meng",
+          "id": 5469591
+        },
+        {
+          "name": "柯淳",
+          "character": "Luo He",
+          "id": 5364130
+        },
+        {
+          "name": "Fu Weilun",
+          "character": "Jiang Fan",
+          "id": 3065225
+        },
+        {
+          "name": "杨淇源",
+          "character": "He Wenhui",
+          "id": 5421924
+        }
+      ],
+      "seasons": [
+        {
+          "number": 1,
+          "name": "Saison 1",
+          "episodes": [
+            {
+              "number": 1,
+              "name": "Épisode 1",
+              "overview": "When his teacher confiscates his motorcycle, unruly Lu Xixiao must learn from top student Zhou Wan and rank among the 1,000 best pupils to get it back.",
+              "air_date": "2026-06-16",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-v97sxw12bsa4.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 2,
+              "name": "Épisode 2",
+              "overview": "As her grandmother's medical bills mount, Wan faces pressure from a petty criminal over her father's debts and offers to tutor Xixiao for extra cash.",
+              "air_date": "2026-06-16",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-hayo77k92pq5.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 3,
+              "name": "Épisode 3",
+              "overview": "As they grow closer, Wan and Xixiao embark on a mission to give a group of unwanted goldfish a better home.",
+              "air_date": "2026-06-16",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-pfgdlykv08ac.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 4,
+              "name": "Épisode 4",
+              "overview": "Guo Xiangling confronts Wan and offers to cover her grandmother's medical bills if she cuts ties with Xixiao.",
+              "air_date": "2026-06-16",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-f4e3k4ysfwir.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 5,
+              "name": "Épisode 5",
+              "overview": "Wan's grandmother collapses on the day of the college entrance exam while Xixiao gets some unwanted news about his mother's house.",
+              "air_date": "2026-06-17",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-24law644h43t.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 6,
+              "name": "Épisode 6",
+              "overview": "Wan discovers the truth about her father's life insurance policy while Xixiao strikes a bargain to protect his mother's home.",
+              "air_date": "2026-06-17",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-uql4c0vxw7r8.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 7,
+              "name": "Épisode 7",
+              "overview": "At the Lu family banquet, Wan seeks Xiangling's help to save her grandmother, while Xixiao clashes with his family over his dream of studying art abroad.",
+              "air_date": "2026-06-18",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-9x9g67qw8hgl.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 8,
+              "name": "Épisode 8",
+              "overview": "After moving into the Lu family home, Wan nurses a sick Xixiao and helps him break through his creative block by organizing a children's puppet show.",
+              "air_date": "2026-06-18",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-119by5oidtau.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 9,
+              "name": "Épisode 9",
+              "overview": "Wan and Xixiao spend a carefree day at an amusement park and help Jiang Fan express his feelings for Gu Meng.",
+              "air_date": "2026-06-19",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-d5k5mlq15odi.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 10,
+              "name": "Épisode 10",
+              "overview": "Wan struggles to raise money for her grandmother's surgery and turns to her landlord for help, while Xixiao challenges Luo He to a basketball showdown.",
+              "air_date": "2026-06-20",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-jtpghwvw6skn.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 11,
+              "name": "Épisode 11",
+              "overview": "After Wan suffers an injury, Xixiao finally learns the extent of her financial struggles and uncovers the truth about her grandmother's medical bills.",
+              "air_date": "2026-06-21",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-qaro70ebzhyc.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 12,
+              "name": "Épisode 12",
+              "overview": "After Wan races to find Xixiao before he leaves the country, the pair reunite and join forces for an unexpected rooftop rescue.",
+              "air_date": "2026-06-22",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-j4cnit26gu2m.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 13,
+              "name": "Épisode 13",
+              "overview": "Just as Xixiao asks Wan to take their relationship to the next level, a sudden tragedy strikes, threatening their newfound happiness.",
+              "air_date": "2026-06-22",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-iye38v8oy6zg.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 14,
+              "name": "Épisode 14",
+              "overview": "After saying goodbye at a crowded funeral hall, Wan returns home in the throes of grief and narrowly avoids a tragic accident.",
+              "air_date": "2026-06-23",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-29pxjpjyqtzw.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 15,
+              "name": "Épisode 15",
+              "overview": "Xixiao fulfills Wan's wish by winning her a bicycle at an arcade, deeply moving her, while Luo He, feeling betrayed, targets her in retaliation.",
+              "air_date": "2026-06-23",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-1h0r0g9ppp8b.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 16,
+              "name": "Épisode 16",
+              "overview": "Family secrets erupt at Xiangling's wedding as Wan and Xixiao fight to stay together despite growing pressure to keep them apart.",
+              "air_date": "2026-06-24",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-g0hmcdawv6v9.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 17,
+              "name": "Épisode 17",
+              "overview": "After pulling off a clever escape, Wan and Xixiao flee north to see the snow, but mounting financial troubles threaten their dream of a fresh start.",
+              "air_date": "2026-06-24",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-6kvwb6rhcolj.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 18,
+              "name": "Épisode 18",
+              "overview": "Wan and Xixiao briefly return to Pingchuan before crafting another escape, while Xixiao's father demands his loyalty over the shareholding dispute.",
+              "air_date": "2026-06-25",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-p9k4mt32qun5.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 19,
+              "name": "Épisode 19",
+              "overview": "When Luo He kidnaps Wan, Xixiao rescues her in a violent scuffle, leaving him badly injured. In the hospital, his grandfather forces Wan to leave.",
+              "air_date": "2026-06-25",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-a5uh6hq6jhex.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 20,
+              "name": "Épisode 20",
+              "overview": "At the hospital, Wan listens to Xixiao talk about his life plans and shocks him by initiating a painful conversation about their relationship.",
+              "air_date": "2026-06-26",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-vatsqfsg2yht.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 21,
+              "name": "Épisode 21",
+              "overview": "After Wan starts working for the Lanyue Group, she revisits Yangming High School and has an emotional encounter with Xixiao.",
+              "air_date": "2026-06-27",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-o3qnestp8k0a.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 22,
+              "name": "Épisode 22",
+              "overview": "Wan and Xixiao share tender moments before they face off in the Lanyue resort bidding war, where each reveals secrets that force the other to fight back.",
+              "air_date": "2026-06-28",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-tdq8cz69r9pr.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 23,
+              "name": "Épisode 23",
+              "overview": "After winning the bid, Xixiao works through his feelings, while Wan uses the evidence she has against Zhongyue to join Dingshang.",
+              "air_date": "2026-06-29",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-hh4wwl4nsv5i.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 24,
+              "name": "Épisode 24",
+              "overview": "Forced to live together, Wan and Xixiao navigate the simmering tension between them, while Xixiao's jealousy continues to grow.",
+              "air_date": "2026-06-29",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-rtjptdx54k4i.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 25,
+              "name": "Épisode 25",
+              "overview": "While working on the Lanyue project, Wan faces harassment from the boss of a partner company, and Xixiao steps in to expose him.",
+              "air_date": "2026-06-30",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-4mkuatw7wnh4.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 26,
+              "name": "Épisode 26",
+              "overview": "Jiang Fan's birthday party stirs old memories for Wan, leading her and Xixiao to admit their feelings for each other.",
+              "air_date": "2026-06-30",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-fck5rbvdpkku.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 27,
+              "name": "Épisode 27",
+              "overview": "As their romance deepens, Wan and Xixiao use business negotiations as an excuse to date, and Wan reveals some upsetting secrets about her past.",
+              "air_date": "2026-06-30",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-io0nrj2td220.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 28,
+              "name": "Épisode 28",
+              "overview": "Xixiao and Yan rush to the rescue after factory manager Wang abducts Wan, and new evidence exposes Zhongyue's long-hidden wrongdoings.",
+              "air_date": "2026-06-30",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-0f7cdzwlgj3x.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 29,
+              "name": "Épisode 29",
+              "overview": "After Wan and Xixiao cement their relationship, they reminisce about their earliest memories of each other and the 10 years they spent apart.",
+              "air_date": "2026-06-30",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-99d9ahfzukqe.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            }
+          ],
+          "downloads": []
+        }
+      ],
+      "sources": [],
+      "addedAt": 1792378297593,
+      "langs": [
+        "VOSTFR"
+      ],
+      "downloads": [],
+      "posterCustom": true,
+      "updatedAt": 1792378961482
     }
   ],
   "deletedLinks": [
@@ -21345,6 +21845,15 @@
     "at": 1792336665257
   },
   "journal": [
+    {
+      "k": "mveo5lymyvonw",
+      "t": 1792378961518,
+      "b": "614d778ed0",
+      "a": "add",
+      "i": "288603",
+      "n": "Never-Ending Summer",
+      "d": ""
+    },
     {
       "k": "mvenb1h35jtaa",
       "t": 1792377535287,
