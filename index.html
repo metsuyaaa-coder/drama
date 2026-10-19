@@ -97,8 +97,8 @@ nav a:hover::after, nav a.on::after { transform: scaleX(1); }
 .btn.small { padding: 7px 14px; font-size: 12px; }
 /* boutons Télécharger : vert clair */
 .btn .dlic { width: 1.15em; height: 1.15em; flex: none; }
-.btn[data-dlopen], .btn[data-godl], .btn[data-reqdl] { background: #86efac; border-color: #86efac; color: #052e16; }
-.btn[data-dlopen]:hover, .btn[data-godl]:hover, .btn[data-reqdl]:hover { background: transparent; border-color: #86efac; color: #86efac; }
+.btn[data-dlopen], .btn[data-godl], .btn[data-reqdl], .btn[data-dlchoose] { background: #86efac; border-color: #86efac; color: #052e16; }
+.btn[data-dlopen]:hover, .btn[data-godl]:hover, .btn[data-reqdl]:hover, .btn[data-dlchoose]:hover { background: transparent; border-color: #86efac; color: #86efac; }
 .btn.danger { border-color: #555; color: var(--dim); background: transparent; }
 .btn.danger:hover { border-color: var(--fg); color: var(--fg); }
 
@@ -1738,6 +1738,12 @@ body { overflow-x: hidden; max-width: 100%; position: relative; }
   .seasons .ep .dlact { flex-direction: column; align-items: stretch; }
   .seasons .ep .dlact .btn { width: 100%; justify-content: flex-start; }
 }
+
+/* fenêtre de choix du lien de téléchargement */
+.dlchoices { display: grid; gap: 10px; margin-bottom: 14px; }
+.dlchoices .btn { width: 100%; justify-content: flex-start; flex-wrap: wrap; gap: 8px 10px; padding: 14px 16px; font-size: 14px; text-align: left; }
+.dlchoices .btn .dlm { margin-left: auto; }
+@media (max-width: 720px) { #dlchoose { place-items: end stretch; padding: 0; } #dlchoose .dlcard { max-width: none; border-left: 0; border-right: 0; border-bottom: 0; padding: 20px 16px calc(20px + env(safe-area-inset-bottom, 0px)); max-height: 92dvh; overflow-y: auto; } }
 </style>
 <!-- Visites du site : Vercel Web Analytics, sans cookie ni base de données. Ne fait rien tant que tu ne l'actives pas dans Vercel (onglet Analytics). -->
 <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
@@ -4044,6 +4050,38 @@ function dlLinks(arr, label, cls, meta) {
     return '<button type="button" class="btn small' + (cls || "") + '" data-dlopen="1" data-dlname="' + esc(full) + '" data-dlurl="' + esc(safeUrl(x.url)) + '" data-dlq="' + esc(x.quality || "") + '" data-dlsize="' + esc(x.size || "") + '">' + DLICON + '<span>' + esc(full) + '</span>' + (meta && (x.quality || x.size) ? '<span class="dlm">' + esc([x.quality, x.size].filter(Boolean).join(" · ")) + '</span>' : "") + '</button>';
   }).join("");
 }
+/* un seul bouton « Télécharger » quand il y a plusieurs liens : le choix se fait dans une petite fenêtre */
+function dlButtons(arr, label, cls) {
+  arr = arr || [];
+  if (arr.length < 2) return dlLinks(arr, label, cls);
+  var data = arr.map(function (x) { return { name: x.name, url: x.url, quality: x.quality, size: x.size }; });
+  return '<button type="button" class="btn small' + (cls || "") + '" data-dlchoose="' + esc(JSON.stringify(data)) + '" data-dlname="' + esc(label) + '">' + DLICON + '<span>' + esc(label) + '</span></button>';
+}
+(function () {
+  var box = document.createElement("div");
+  box.className = "dlmodal"; box.id = "dlchoose"; box.hidden = true;
+  box.innerHTML = '<div class="dlcard" role="dialog" aria-modal="true" aria-labelledby="dlc-t">' +
+    '<button type="button" class="dlx" id="dlc-x" aria-label="Fermer">×</button>' +
+    '<div class="dlhead"><span class="dltag">' + DLICON + 'Téléchargement</span></div>' +
+    '<h3 id="dlc-t">Choisis ton lien</h3><div class="dlchoices" id="dlc-list"></div>' +
+    '<p class="dlfoot">Les liens mènent vers des hébergeurs différents : prends celui qui marche le mieux pour toi.</p></div>';
+  document.body.appendChild(box);
+  function close() { box.hidden = true; }
+  document.addEventListener("click", function (e) {
+    var b = e.target.closest("[data-dlchoose]");
+    if (b) {
+      var arr = []; try { arr = JSON.parse(b.getAttribute("data-dlchoose")) || []; } catch (x) {}
+      $("#dlc-list").innerHTML = dlLinks(arr, "Télécharger", "", true);
+      (document.querySelector("dialog#player[open]") || document.body).appendChild(box);
+      box.hidden = false;
+      var f = box.querySelector("[data-dlopen]"); if (f) f.focus();
+      return;
+    }
+    if (e.target === box || e.target.id === "dlc-x") close();
+    else if (e.target.closest("#dlc-list [data-dlopen]")) close();
+  });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !box.hidden) { close(); e.stopPropagation(); } }, true);
+})();
 
 document.addEventListener("click", function (e) {
   if (!e.target.closest("[data-godl]")) return;
@@ -4163,7 +4201,7 @@ function viewSerie(id) {
   viewSerie.last = String(s.id);
   var showDl = !movie && dlOpen() && (hasDl(s) || dlAdmin());
   var reqDl = '/demande/' + encodeURIComponent(s.name || '') + '/dl';
-  var dlBtnMovie = movie && dlOpen() ? ((s.downloads || []).length ? dlLinks(s.downloads, "Télécharger", " ghost") : '<a class="btn ghost" data-reqdl="1" href="' + reqDl + '">' + DLICON + '<span>Télécharger</span></a>') : "";
+  var dlBtnMovie = movie && dlOpen() ? ((s.downloads || []).length ? dlButtons(s.downloads, "Télécharger", " ghost") : '<a class="btn ghost" data-reqdl="1" href="' + reqDl + '">' + DLICON + '<span>Télécharger</span></a>') : "";
   var dlBtnSerie = !movie && dlOpen() ? (showDl ? '<button class="btn ghost" type="button" data-godl="1">' + DLICON + '<span>Télécharger</span></button>' : '<a class="btn ghost" data-reqdl="1" href="' + reqDl + '">' + DLICON + '<span>Télécharger</span></a>') : "";
   if (!showDl) dlMode = false;
   var seenMap = readSeen()[s.id] || {};
@@ -5041,7 +5079,7 @@ function renderPlayer() {
   $("#ptitle").textContent = cur.title;
   $("#psub").textContent = cur.sub || "";
   var rq = "/demande/" + encodeURIComponent(cur.title || "");
-  $("#pdl").innerHTML = dlOpen() ? ((cur.dl || []).length ? dlLinks(cur.dl, "Télécharger", " ghost") : '<a class="btn small ghost" data-reqdl="1" href="' + rq + '/dl">' + DLICON + '<span>Télécharger</span></a>') : "";
+  $("#pdl").innerHTML = dlOpen() ? ((cur.dl || []).length ? dlButtons(cur.dl, "Télécharger", " ghost") : '<a class="btn small ghost" data-reqdl="1" href="' + rq + '/dl">' + DLICON + '<span>Télécharger</span></a>') : "";
   Array.prototype.forEach.call(document.querySelectorAll("#pdl .btn"), function (b) { var n = b.dataset.dlname || "Télécharger"; b.title = n; b.setAttribute("aria-label", n); });
   $("#pdemande").href = rq + "/stream"; $("#pdemande2").href = rq + "/dl";
   /* Sur Playmate / Vidara / Uqload, l'astuce langue s'affiche en premier à chaque changement de serveur */
