@@ -1789,6 +1789,14 @@ body { overflow-x: hidden; max-width: 100%; position: relative; }
   .stlog li { grid-template-columns: 1fr; padding-left: 20px; }
 }
 @media (prefers-reduced-motion: reduce) { .s-up .stdot, .s-down .stdot { animation: none; } }
+
+/* boutons Lire et Marquer vu des épisodes : deux fois plus larges */
+.seasons .ep .act .btn.eplay[data-playep] { min-width: 300px; min-height: 54px; }
+.seasons .ep .act .btn.seenbtn { min-width: 300px; min-height: 48px; justify-content: center; }
+@media (max-width: 720px) {
+  .seasons .ep .act .btn.eplay[data-playep], .seasons .ep .act .btn.seenbtn { flex: 1 1 100%; width: 100%; min-width: 0; justify-content: center; }
+  .seasons .ep .act .btn.seenbtn { min-height: 52px; }
+}
 </style>
 <!-- Visites du site : Vercel Web Analytics, sans cookie ni base de données. Ne fait rien tant que tu ne l'actives pas dans Vercel (onglet Analytics). -->
 <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
