@@ -24136,6 +24136,13 @@
                   "size": "2.9Go",
                   "quality": "1080p (H.264) VOSTFR",
                   "by": "head"
+                },
+                {
+                  "name": "GOFILE",
+                  "url": "https://gofile.io/d/WQs3yRH2",
+                  "size": "2.9Go",
+                  "quality": "1080p (H.264) VOSTFR",
+                  "by": "head"
                 }
               ]
             },
@@ -24237,7 +24244,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792441076195,
+      "updatedAt": 1792443150618,
       "trend": 89
     }
   ],
@@ -24309,6 +24316,15 @@
     "at": 1792443044783
   },
   "journal": [
+    {
+      "k": "mvfqdelbnrss3",
+      "t": 1792443150623,
+      "b": "head",
+      "a": "edit",
+      "i": "303745",
+      "n": "Love in Disguise",
+      "d": "téléchargements 1 → 2"
+    },
     {
       "k": "mvfprns1ytp61",
       "t": 1792442136097,
