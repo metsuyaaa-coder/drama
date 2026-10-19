@@ -1256,6 +1256,22 @@ footer .about .flist li, footer .about p.dev { font-weight: 500; }
   .mlsum { margin-left: 0; flex: 1 1 100%; }
   .mlgrid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 12px; }
 }
+/* ===== Séries / Films : compléments au style Ma liste ===== */
+.lsf { display: grid; gap: 0; padding-bottom: 24px; }
+.lsf.intro { animation: riseIn .6s .2s var(--ease) both; }
+.lsf:empty { display: none; }
+.lsgenres { gap: 8px; }
+.lsplat { position: absolute; z-index: 3; left: 8px; bottom: 12px; max-width: calc(100% - 60px); padding: 3px 8px; background: rgba(0, 0, 0, .72); border: 1px solid rgba(255, 255, 255, .14); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); font-size: 11px; line-height: 1.25; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; pointer-events: none; transition: transform .3s var(--ease); }
+.mlc:hover .lsplat { transform: translateY(-2px); }
+.mlb.bm { top: 8px; right: 8px; }
+.mlb.bm.on { background: #fff; color: #000; border-color: #fff; }
+.mlb.bm.on svg { fill: currentColor; }
+.mlb.bm.pop { animation: listpop .5s var(--ease); }
+@media (hover: hover) { .mlb.bm.on { opacity: 1; transform: none; } }
+#lsbody .mlempty .btn { display: inline-flex; align-items: center; gap: 8px; }
+#lsbody .mlempty .btn svg { width: 16px; height: 16px; }
+@media (max-width: 560px) { .mlsort button { padding: 10px 11px; } }
+@media (prefers-reduced-motion: reduce) { .lsf.intro, .mlb.bm.pop { animation: none; } }
 @media (prefers-reduced-motion: reduce) {
   .mlhero::before, .mlhero::after, .mlbell::after, .mlbell svg, .mlempty .mlei, .mllogo .sp { animation: none; }
   .mllogo path { animation: none; stroke-dashoffset: 0; }
@@ -3223,25 +3239,138 @@ function langChips() {
   return '<div class="chips langchips"><span class="chiplbl">Langue</span><button class="chip' + (!langFilter ? " on" : "") + '" data-langf="">Toutes</button>' +
     ["VOSTFR", "VF"].map(function (L) { return '<button class="chip' + (langFilter === L ? " on" : "") + '" data-langf="' + L + '">' + L + '</button>'; }).join("") + '</div>';
 }
-function viewList(title, pred) {
-  var list = sortedDb().filter(pred);
+/* ===== Séries / Films (refonte) : même style que Ma liste (en-tête animé, onglets coulissants, recherche, tri, cartes) ===== */
+NICONS.grid = '<rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/>';
+NICONS.subs = '<rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="M7 11h3M13 11h4M7 15h5M15 15h2"/>';
+NICONS.mic = '<rect x="9" y="2.5" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3.5"/>';
+NICONS.reset = '<path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/>';
+var lsQuery = "", lsSort = "recent", lsCtx = null;
+var LSTABS = [["", "Tout", "grid"], ["VOSTFR", "VOSTFR", "subs"], ["VF", "VF", "mic"]];
+var LSLOGO = {
+  "Séries": '<path pathLength="90" d="M4.5 7h15a2 2 0 0 1 2 2v9.5a2 2 0 0 1-2 2h-15a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2z"/><path pathLength="90" d="m8 2.5 4 4.5 4-4.5"/><path class="sp" pathLength="40" style="transform-origin:12.8px 13.8px" d="m10.3 10.9 5 2.9-5 2.9z"/>',
+  "Films": '<path pathLength="90" d="M3.5 10V6.5a1 1 0 0 1 1-1h15a1 1 0 0 1 1 1V10"/><path pathLength="90" d="M3.5 10h17v9.5a1 1 0 0 1-1 1h-15a1 1 0 0 1-1-1z"/><path pathLength="90" d="m8 5.5-2 4.5M13 5.5l-2 4.5M18 5.5l-2 4.5"/><path class="sp" pathLength="40" style="transform-origin:12px 15.5px" d="m12 12.3.9 2 2.1.3-1.5 1.5.4 2.1-1.9-1-1.9 1 .4-2.1L9 14.6l2.1-.3z"/>'
+};
+function lsList() { return sortedDb().filter(lsCtx.pred); }
+function lsMatch(s) {
+  if (filter && (s.genres || []).indexOf(filter) < 0) return false;
+  if (!langMatch(s) || !newMatch(s)) return false;
+  var q = fold(lsQuery); if (q && !titleMatch(s, q)) return false;
+  return true;
+}
+function lsSorted(arr) {
+  var a = arr.slice();
+  if (lsSort === "az") a.sort(function (x, y) { return String(x.name).localeCompare(String(y.name), "fr"); });
+  else if (lsSort === "year") a.sort(function (x, y) { return (parseInt(y.year, 10) || 0) - (parseInt(x.year, 10) || 0); });
+  else if (lsSort === "rating") a.sort(function (x, y) { return (parseFloat(y.rating) || 0) - (parseFloat(x.rating) || 0); });
+  return a;
+}
+function lsCard(s, i) {
+  var id = esc(s.id), mv = isMovie(s), pr = mv ? null : mlProgress(s);
+  var nse = (s.seasons || []).length;
+  var meta = [s.year, s.rating ? "★ " + s.rating : "", !mv && nse ? nse + (nse > 1 ? " saisons" : " saison") : ""].filter(Boolean).join("  ·  ");
+  var pb = mv ? [] : platBrands(s);
+  var on = inList(s.id);
+  return '<div class="mlc" style="--i:' + Math.min(i || 0, 14) + '"><div class="poster"><a class="mlhit" href="/serie/' + id + '" aria-label="' + esc(s.name) + '"></a>' +
+    (s.poster ? '<img loading="lazy" src="' + esc(s.poster) + '" alt="">' : '<div class="ph">' + esc(String(s.name).charAt(0)) + '</div>') +
+    (langLabel(s) ? '<span class="lang">' + esc(langLabel(s)) + '</span>' : '') + (newEpisode(s) ? newBadge("Nouvel ép.") : '') +
+    (pb.length ? '<span class="lsplat">' + platMark(pb[0]) + '</span>' : '') +
+    (pr && pr.n ? '<span class="mlbar"><i style="--p:' + pr.p.toFixed(3) + '"></i></span>' : '') +
+    '<button type="button" class="mlb bm' + (on ? ' on' : '') + '" data-lsbm="' + id + '" aria-pressed="' + (on ? 'true' : 'false') + '" aria-label="' + (on ? 'Retirer de ma liste' : 'Ajouter à ma liste') + '" title="' + (on ? 'Retirer de ma liste' : 'Ajouter à ma liste') + '">' + nsvg("bookmark") + '</button></div>' +
+    '<a class="mlmeta" href="/serie/' + id + '"><b>' + esc(s.name) + '</b><span>' + esc(meta) + '</span>' + (pr && pr.n ? '<em>' + pr.n + ' / ' + pr.t + ' vus</em>' : '') + '</a></div>';
+}
+function lsFilters(list, title) {
   var genres = {};
-  list.forEach(function (s) { (s.genres || []).forEach(function (g) { genres[g] = 1; }); });
+  list.forEach(function (x) { (x.genres || []).forEach(function (g) { genres[g] = 1; }); });
+  var series = title === "Séries";
+  var newOpts = series ? newOptions(list) : [], kdTypes = series ? dramaTypes(list) : [], plats = series ? platOptions(list) : [];
+  var gk = Object.keys(genres).sort();
+  return '<div class="chips lsgenres"><button class="chip' + (!filter ? " on" : "") + '" data-genre="">Tout</button>' +
+    gk.map(function (g) { return '<button class="chip' + (filter === g ? " on" : "") + '" data-genre="' + esc(g) + '">' + esc(g) + '</button>'; }).join("") + '</div>' +
+    (newOpts.length ? '<div class="chips langchips"><span class="chiplbl">Nouveautés</span><button class="chip' + (!newFilter ? " on" : "") + '" data-newf="">Toutes</button>' + newOpts.map(function (o) { return '<button class="chip' + (newFilter === o ? " on" : "") + '" data-newf="' + o + '">' + NEWLBL[o] + '</button>'; }).join("") + '</div>' : '') +
+    (kdTypes.length ? '<div class="chips langchips"><span class="chiplbl">Catégorie</span><button class="chip' + (!kdFilter ? " on" : "") + '" data-kdf="">Toutes</button>' + kdTypes.map(function (d) { return '<button class="chip' + (kdFilter === d ? " on" : "") + '" data-kdf="' + d + '">' + DRAMA[d] + '</button>'; }).join("") + '</div>' : '') +
+    platRow(plats);
+}
+function lsSetTabs(list, animate) {
+  var box = $("#lstabs"); if (!box) return;
+  var idx = 0; LSTABS.forEach(function (t, k) { if (t[0] === langFilter) idx = k; });
+  box.dataset.i = idx;
+  LSTABS.forEach(function (t, k) {
+    var b = box.querySelector('[data-langf="' + t[0] + '"]'); if (!b) return;
+    var on = k === idx; b.classList.toggle("on", on); b.setAttribute("aria-selected", on ? "true" : "false");
+    var n = list.filter(function (x) { return !t[0] || (x.langs || []).indexOf(t[0]) > -1; }).length, c = b.querySelector("b");
+    if (c && c.dataset.n !== String(n)) { c.dataset.n = n; mlCount(c, n, animate); }
+  });
+}
+function lsRenderBody(list, still, swap) {
+  var body = $("#lsbody"); if (!body) return;
+  var arr = lsSorted(list.filter(lsMatch)), sum = $("#lssum");
+  body.className = swap ? "mlswap" : "";
+  if (swap) { void body.offsetWidth; body.className = "mlswap"; }
+  if (arr.length) body.innerHTML = '<div class="mlgrid' + (still ? ' still' : '') + '">' + arr.map(lsCard).join("") + '</div>';
+  else {
+    var filtered = !!(lsQuery.trim() || filter || langFilter || newFilter || kdFilter || platFilter);
+    body.innerHTML = '<div class="mlempty">' + nsvg("search", "mlei") + '<h3>Aucun résultat</h3><p>' + (filtered ? 'Aucun titre ne correspond à ces filtres.' : 'Aucun titre dans cette section pour l\'instant.') + '</p>' + (filtered ? '<button type="button" class="btn ghost" data-lsreset="1">' + nsvg("reset") + '<span>Réinitialiser les filtres</span></button>' : '') + '</div>';
+  }
+  if (sum) sum.textContent = arr.length + (arr.length > 1 ? " titres" : " titre");
+}
+function lsBuild(title, list) {
+  lsQuery = "";
+  var tabs = LSTABS.map(function (t, k) {
+    return '<button type="button" class="mlt' + (t[0] === langFilter ? ' on' : '') + '" role="tab" aria-selected="' + (t[0] === langFilter ? 'true' : 'false') + '" data-langf="' + t[0] + '">' + nsvg(t[2]) + '<b data-n="">0</b><span class="l">' + t[1] + '</span></button>';
+  }).join("");
+  var sorts = [["recent", "Récents"], ["az", "A–Z"], ["year", "Année"], ["rating", "Note"]].map(function (x) { return '<button type="button" data-lssort="' + x[0] + '" class="' + (lsSort === x[0] ? 'on' : '') + '">' + x[1] + '</button>'; }).join("");
+  $("#app").innerHTML = '<div id="lsroot" data-t="' + esc(title) + '"><div class="mlhero"><div class="wrap">' +
+    '<div class="mltitle"><svg class="mllogo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + (LSLOGO[title] || LSLOGO["Séries"]) + '</svg>' +
+    '<div><h1>' + esc(title) + '</h1><p class="note" id="lsnote"></p></div></div>' +
+    '<div class="mltabs" id="lstabs" data-i="0" role="tablist"><span class="mlind"></span>' + tabs + '</div></div></div>' +
+    '<div class="wrap"><div class="mltools"><label class="mlsearch">' + nsvg("search") + '<input id="lsq" type="search" placeholder="Rechercher dans ' + esc(title.toLowerCase()) + '" autocomplete="off" aria-label="Rechercher"></label>' +
+    '<div class="mlsort" role="group" aria-label="Trier">' + sorts + '</div><span class="mlsum" id="lssum"></span></div>' +
+    '<div class="lsf intro" id="lsf"></div><div id="lsbody"></div></div></div>';
+  lsPatch(list, true, false);
+}
+function lsPatch(list, animate, swap) {
+  var title = lsCtx.title;
   var newOpts = title === "Séries" ? newOptions(list) : [];
   if (newOpts.indexOf(newFilter) < 0) newFilter = "";
-  var kdTypes = title === "Séries" ? dramaTypes(list) : [];
-  if (kdTypes.indexOf(kdFilter) < 0) kdFilter = "";
+  var kd = title === "Séries" ? dramaTypes(list) : [];
+  if (kd.indexOf(kdFilter) < 0) kdFilter = "";
   var plats = title === "Séries" ? platOptions(list) : [];
   if (plats.indexOf(platFilter) < 0) platFilter = "";
-  var shown = list.filter(function (s) { return (!filter || (s.genres || []).indexOf(filter) > -1) && langMatch(s) && newMatch(s); });
-  var html = '<div class="wrap listhead"><h1>' + esc(title) + '</h1><p class="note">' + list.length + (list.length > 1 ? " titres" : " titre") + '</p></div>';
-  if (!list.length) { $("#app").innerHTML = html + emptyBox("Rien ici", "Aucun titre dans cette section pour l'instant.", '<a class="btn ghost" href="/">Retour à l\'accueil</a>'); return; }
-  html += '<div class="wrap"><div class="section-head" style="padding-block:24px 18px"><div class="chips">' +
-    '<button class="chip' + (!filter ? " on" : "") + '" data-genre="">Tout</button>' +
-    Object.keys(genres).sort().map(function (g) { return '<button class="chip' + (filter === g ? " on" : "") + '" data-genre="' + esc(g) + '">' + esc(g) + '</button>'; }).join("") +
-    '</div>' + langChips() + (newOpts.length ? '<div class="chips langchips"><span class="chiplbl">Nouveautés</span><button class="chip' + (!newFilter ? " on" : "") + '" data-newf="">Toutes</button>' + newOpts.map(function (o) { return '<button class="chip' + (newFilter === o ? " on" : "") + '" data-newf="' + o + '">' + NEWLBL[o] + '</button>'; }).join("") + '</div>' : '') + (kdTypes.length ? '<div class="chips langchips"><span class="chiplbl">Catégorie</span><button class="chip' + (!kdFilter ? " on" : "") + '" data-kdf="">Toutes</button>' + kdTypes.map(function (d) { return '<button class="chip' + (kdFilter === d ? " on" : "") + '" data-kdf="' + d + '">' + DRAMA[d] + '</button>'; }).join("") + '</div>' : '') + platRow(plats) + '</div>' + (shown.length ? '<div class="grid">' + shown.map(card).join("") + '</div>' : '<p class="note" style="padding-bottom:48px">Aucun titre avec ces filtres.</p>') + '</div>';
-  $("#app").innerHTML = html;
+  var note = $("#lsnote"); if (note) note.textContent = list.length + (list.length > 1 ? " titres" : " titre");
+  lsSetTabs(list, animate);
+  var f = $("#lsf"); if (f) { if (!animate) f.classList.remove("intro"); f.innerHTML = lsFilters(list, title); }
+  var q = $("#lsq"); if (q && q.value !== lsQuery) q.value = lsQuery;
+  Array.prototype.forEach.call(document.querySelectorAll("[data-lssort]"), function (b) { b.classList.toggle("on", b.dataset.lssort === lsSort); });
+  lsRenderBody(list, !swap && !animate, swap);
 }
+function viewList(title, pred) {
+  lsCtx = { title: title, pred: pred };
+  var list = lsList();
+  if (!list.length) { $("#app").innerHTML = '<div class="wrap listhead"><h1>' + esc(title) + '</h1><p class="note">0 titre</p></div>' + emptyBox("Rien ici", "Aucun titre dans cette section pour l'instant.", '<a class="btn ghost" href="/">Retour à l\'accueil</a>'); return; }
+  var root = $("#lsroot");
+  if (root && root.dataset.t === title) lsPatch(list, false, true); else lsBuild(title, list);
+}
+document.addEventListener("input", function (e) {
+  if (e.target && e.target.id === "lsq" && lsCtx) { lsQuery = e.target.value; lsRenderBody(lsList(), true, false); }
+});
+document.addEventListener("click", function (e) {
+  var t = e.target.closest ? e.target.closest("[data-lssort],[data-lsbm],[data-lsreset]") : null; if (!t || !lsCtx) return;
+  if (t.dataset.lssort) {
+    lsSort = t.dataset.lssort;
+    Array.prototype.forEach.call(document.querySelectorAll("[data-lssort]"), function (b) { b.classList.toggle("on", b === t); });
+    lsRenderBody(lsList(), false, true); return;
+  }
+  if (t.dataset.lsreset) {
+    filter = langFilter = newFilter = kdFilter = platFilter = ""; lsQuery = ""; platOpen = false;
+    lsPatch(lsList(), false, true); return;
+  }
+  e.preventDefault();
+  var on = toggleList(t.dataset.lsbm);
+  t.classList.toggle("on", on); t.setAttribute("aria-pressed", on ? "true" : "false");
+  t.title = on ? "Retirer de ma liste" : "Ajouter à ma liste"; t.setAttribute("aria-label", t.title);
+  t.classList.remove("pop"); void t.offsetWidth; t.classList.add("pop");
+  toast(on ? "Ajouté à ma liste" : "Retiré de ma liste");
+});
 
 /* Recherche multilingue : on ignore la casse, les accents et la ponctuation, et on compare
    avec le titre, le titre original et tous les titres alternatifs / traductions de TMDB (champ aka) */
@@ -6046,7 +6175,7 @@ document.addEventListener("keydown", function (e) { if (e.key === "Escape") rmCl
 window.addEventListener("resize", rmClose);
 window.addEventListener("popstate", rmClose);
 /* Version du site : les admins qui ont encore une ancienne page en cache la rechargent automatiquement */
-var BUILD = "2026-10-19-calendrier";
+var BUILD = "2026-10-19-catalogue";
 function checkBuild() {
   if (!ADMIN || draft || teamEditing || heroEditing) return;
   fetch(location.href, { cache: "reload" }).then(function (r) { return r.text(); }).then(function (t) {
