@@ -20954,10 +20954,11 @@
       "sources": [],
       "addedAt": 1792370990935,
       "langs": [
-        "VOSTFR"
+        "VOSTFR",
+        "VF"
       ],
       "downloads": [],
-      "updatedAt": 1792370996710
+      "updatedAt": 1792371011878
     }
   ],
   "deletedLinks": [
@@ -21011,6 +21012,15 @@
     "at": 1792336665257
   },
   "journal": [
+    {
+      "k": "mvejf7ze1dry2",
+      "t": 1792371011882,
+      "b": "head",
+      "a": "edit",
+      "i": "273977",
+      "n": "The Art of Sarah",
+      "d": ""
+    },
     {
       "k": "mvejewa27ww5z",
       "t": 1792370996714,
