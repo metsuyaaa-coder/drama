@@ -355,7 +355,45 @@ footer button:hover, footer a:hover { color: var(--fg); }
 @media (min-width: 721px) { #nav-set { display: none; } .search { margin-right: 14px; } }
 html.notips #ptip { display: none !important; }
 html.noanim *, html.noanim *::before, html.noanim *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
-/* page Paramètres */
+/* sans animations : tout s'affiche normalement, directement dans son état final (les logos « dessinés » restaient invisibles) */
+html.noanim .mllogo path, html.noanim .mllogo rect, html.noanim .rqlogo path { stroke-dashoffset: 0 !important; }
+html.noanim .hlbox::before, html.noanim .hlbox::after, html.noanim .mlbell::after { display: none !important; }
+/* badges des affiches cachés depuis les paramètres (la fiche n'est pas touchée) */
+html.hb-lang .poster .lang, html.hb-live .poster .live, html.hb-new .poster .new, html.hb-nov .poster .nov { display: none !important; }
+
+/* ===== Paramètres (refonte, même style que Ma liste / Calendrier) ===== */
+#setroot { padding-bottom: 72px; }
+.stbody { display: grid; gap: 30px; max-width: 760px; padding-block: 26px 0; }
+.stsec { display: grid; gap: 10px; }
+.stlbl { display: flex; align-items: center; gap: 12px; font-family: var(--mono); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--dim); }
+.stlbl::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+.stnote { margin: 0 0 4px; color: var(--dim); font-size: 14px; line-height: 1.5; max-width: 62ch; }
+.stcard { display: flex; align-items: center; gap: 16px; padding: 14px 16px; border: 1px solid var(--line); background: transparent; animation: cardIn .5s var(--ease) both; animation-delay: calc(var(--i, 0) * 50ms); transition: border-color .25s, background .25s, transform .3s var(--ease); }
+.stcard:hover { border-color: var(--fg); background: var(--panel); transform: translateX(5px); }
+.stcard .sti { flex: none; width: 46px; height: 46px; display: grid; place-items: center; border: 1px solid var(--line); color: var(--dim); transition: background .25s, color .25s, border-color .25s; }
+.stcard .sti svg { width: 21px; height: 21px; }
+.stcard:hover .sti { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+.stcard .stt { flex: 1; min-width: 0; }
+.stcard .stt b { display: block; font-size: 15px; line-height: 1.25; }
+.stcard .stt small { display: block; margin-top: 3px; color: var(--dim); font-size: 13px; line-height: 1.45; }
+.stcard .btn { flex: none; }
+.stbody .spanel { background: transparent; }
+.stbody .spanel.soon { border-style: dashed; }
+.stbadge { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 18px; align-items: start; }
+.stpvbox { position: sticky; top: 90px; }
+.stpv { width: 150px; background: linear-gradient(160deg, #1b1b1b, #070707 70%); display: grid; place-items: end start; }
+.stpv .stpvt { padding: 10px; font-family: var(--mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--dim); }
+.stlist { display: grid; gap: 10px; }
+.stbtns { display: flex; flex-wrap: wrap; gap: 10px; padding-top: 4px; }
+@media (max-width: 720px) {
+  .stcard { padding: 12px; gap: 12px; }
+  .stcard:hover { transform: none; }
+  .stcard .sti { width: 40px; height: 40px; }
+  .stbadge { grid-template-columns: minmax(0, 1fr); }
+  .stpvbox { position: static; }
+}
+@media (prefers-reduced-motion: reduce) { .stcard { animation: none; } }
+/* page Paramètres (ancienne) */
 .sset { display: grid; gap: 24px; padding-top: 24px; padding-bottom: 80px; }
 .sset > .spanel { max-width: 760px; }
 .listhead.sethead { padding-top: 16px; }
@@ -2707,10 +2745,35 @@ function shuffleStable(arr) {
 var PREFKEY = "noir.prefs";
 var PREFS = (function () {
   var p = readJSON(PREFKEY, {}); if (!p || typeof p !== "object" || Array.isArray(p)) p = {};
-  return { noanim: !!p.noanim, hideTips: !!p.hideTips, rememberPlayer: !!p.rememberPlayer, lastPlayer: String(p.lastPlayer || ""), order: Array.isArray(p.order) ? p.order.filter(function (x) { return typeof x === "string"; }) : [] };
+  return { noanim: !!p.noanim, hideTips: !!p.hideTips, hideLang: !!p.hideLang, hideLive: !!p.hideLive, hideNew: !!p.hideNew, hideNov: !!p.hideNov, rememberPlayer: !!p.rememberPlayer, lastPlayer: String(p.lastPlayer || ""), order: Array.isArray(p.order) ? p.order.filter(function (x) { return typeof x === "string"; }) : [] };
 })();
 function savePrefs() { try { localStorage.setItem(PREFKEY, JSON.stringify(PREFS)); } catch (e) { toast("Stockage plein ou bloqué par le navigateur"); } }
-function applyPrefs() { document.documentElement.classList.toggle("noanim", PREFS.noanim); document.documentElement.classList.toggle("notips", PREFS.hideTips); }
+function applyPrefs() {
+  var c = document.documentElement.classList;
+  c.toggle("noanim", PREFS.noanim); c.toggle("notips", PREFS.hideTips);
+  c.toggle("hb-lang", PREFS.hideLang); c.toggle("hb-live", PREFS.hideLive); c.toggle("hb-new", PREFS.hideNew); c.toggle("hb-nov", PREFS.hideNov);
+}
+/* badges des affiches : quand certains sont cachés, les autres remontent (pas de trou) */
+var BADGE_PREFS = [["hideLang", "lang"], ["hideLive", "live"], ["hideNew", "new"], ["hideNov", "nov"]];
+function badgesHidden() { return BADGE_PREFS.some(function (b) { return PREFS[b[0]]; }); }
+function restackBadges(root, force) {
+  if (!force && !badgesHidden()) return;
+  var sig = BADGE_PREFS.map(function (b) { return PREFS[b[0]] ? 1 : 0; }).join("");
+  (root || document).querySelectorAll(".poster").forEach(function (pst) {
+    if (!force && pst.dataset.hb === sig) return;
+    var k = 0;
+    BADGE_PREFS.forEach(function (b) {
+      var el = pst.querySelector("." + b[1]); if (!el || PREFS[b[0]]) return;
+      el.style.top = (8 + 22 * k) + "px"; el.style.left = "8px"; el.style.right = "auto"; k++;
+    });
+    pst.dataset.hb = sig;
+  });
+}
+(function () {
+  var q = false;
+  function run() { q = false; restackBadges(); }
+  new MutationObserver(function () { if (!q && badgesHidden()) { q = true; requestAnimationFrame(run); } }).observe(document.documentElement, { childList: true, subtree: true });
+})();
 applyPrefs();
 function rememberServer() {
   if (!PREFS.rememberPlayer) return;
@@ -2737,21 +2800,104 @@ function catRowsHtml() {
       '<button type="button" class="btn ghost small" data-catmove="down" aria-label="Descendre"' + (k === o.length - 1 ? " disabled" : "") + '>&darr;</button></div>';
   }).join("");
 }
-function switchRow(id, title, desc, on) {
-  return '<div class="srow"><div><b>' + esc(title) + '</b><small>' + esc(desc) + '</small></div><button type="button" class="sw' + (on ? " on" : "") + '" role="switch" aria-checked="' + (on ? "true" : "false") + '" aria-label="' + esc(title) + '" data-pref="' + id + '"><i></i></button></div>';
+var setTab = "general";
+var SETTABS = ["general", "badges", "data"], SETLABEL = { general: "Général", badges: "Badges", data: "Données" };
+function stSvg(inner) { return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + inner + '</svg>'; }
+var ST_ICO = {
+  zap: '<path d="M13 2 4 14h7l-1 8 9-12h-7z"/>',
+  bulb: '<path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10.5c.7.7 1 1.4 1 2.5h6c0-1.1.3-1.8 1-2.5A6 6 0 0 0 12 3z"/>',
+  play: '<path d="M7 4v16l13-8z"/>',
+  lang: '<path d="M4 5h16v11H9l-5 4z"/>',
+  spark: '<path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/>',
+  live: '<circle cx="12" cy="12" r="2"/><path d="M16.2 7.8a6 6 0 0 1 0 8.4M7.8 16.2a6 6 0 0 1 0-8.4"/>',
+  star: '<path d="m12 3 2.6 5.6 6 .8-4.4 4.2 1.1 6L12 16.7l-5.3 2.9 1.1-6L3.4 9.4l6-.8z"/>',
+  up: '<path d="M12 15V3M7 8l5-5 5 5M4 21h16"/>',
+  down: '<path d="M12 3v12M7 10l5 5 5-5M4 21h16"/>',
+  reset: '<path d="M3 12a9 9 0 1 0 3-6.7M3 4v5h5"/>'
+};
+var ST_TABICO = {
+  general: '<path d="M4 6h8M16 6h4M4 12h4M12 12h8M4 18h10M18 18h2"/><circle cx="14" cy="6" r="2"/><circle cx="10" cy="12" r="2"/><circle cx="16" cy="18" r="2"/>',
+  badges: '<path d="M3 12V4a1 1 0 0 1 1-1h8l9 9-9 9z"/><circle cx="8" cy="8" r="1.4"/>',
+  data: '<ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/>'
+};
+function stSwitch(id, title, desc, on, ico, i) {
+  return '<div class="stcard" style="--i:' + i + '"><span class="sti">' + stSvg(ST_ICO[ico]) + '</span><div class="stt"><b>' + esc(title) + '</b><small>' + esc(desc) + '</small></div>' +
+    '<button type="button" class="sw' + (on ? " on" : "") + '" role="switch" aria-checked="' + (on ? "true" : "false") + '" aria-label="' + esc(title) + '" data-pref="' + id + '"><i></i></button></div>';
+}
+function stAction(ico, title, desc, attr, label, ghost, i) {
+  return '<div class="stcard" style="--i:' + i + '"><span class="sti">' + stSvg(ST_ICO[ico]) + '</span><div class="stt"><b>' + esc(title) + '</b><small>' + esc(desc) + '</small></div>' +
+    '<button type="button" class="btn small' + (ghost ? " ghost" : "") + '" ' + attr + '>' + esc(label) + '</button></div>';
+}
+function stCount(t) {
+  if (t === "general") return ["noanim", "hideTips", "rememberPlayer"].filter(function (k) { return PREFS[k]; }).length;
+  if (t === "badges") return BADGE_PREFS.filter(function (b) { return PREFS[b[0]]; }).length;
+  return USER_KEYS.filter(function (k) { try { return localStorage.getItem(k) != null; } catch (e) { return false; } }).length;
+}
+function stBody(t) {
+  if (t === "badges") {
+    return '<div class="stsec"><div class="stlbl">Badges sur les affiches</div>' +
+      '<p class="stnote">Ça ne touche que les affiches (accueil, séries, films, ma liste, recherche…). Sur la fiche d\'un titre, les badges restent affichés.</p>' +
+      '<div class="stbadge"><div class="stpvbox"><div class="poster stpv"><span class="lang">VOSTFR</span><span class="live">En cours</span><span class="new"><i></i>Nouvel ép.</span><span class="nov">Nouveau</span><span class="stpvt">Aperçu</span></div></div>' +
+      '<div class="stlist">' +
+        stSwitch("hideLang", "Cacher le badge VOSTFR / VF", "Le badge de langue en haut de l\'affiche.", PREFS.hideLang, "lang", 0) +
+        stSwitch("hideNew", "Cacher le badge Nouvel ép.", "Le badge qui prévient d\'un nouvel épisode à voir.", PREFS.hideNew, "spark", 1) +
+        stSwitch("hideLive", "Cacher le badge En cours", "Le badge des séries encore en cours de diffusion.", PREFS.hideLive, "live", 2) +
+        stSwitch("hideNov", "Cacher le badge Nouvelle série / Nouveau", "Le badge jaune des titres tout juste ajoutés.", PREFS.hideNov, "star", 3) +
+      '</div></div>' +
+      '<div class="stbtns"><button type="button" class="btn small" data-badgeall="1">Tout cacher</button><button type="button" class="btn ghost small" data-badgeall="0">Tout afficher</button></div></div>';
+  }
+  if (t === "data") {
+    return '<div class="stsec"><div class="stlbl">Sauvegarde</div>' +
+      '<p class="stnote">Ta liste, tes épisodes vus, ta reprise de lecture et tes réglages sont enregistrés sur cet appareil. Exporte-les pour les retrouver sur un autre appareil.</p>' +
+      stAction("up", "Exporter mes données", "Télécharge un fichier de sauvegarde.", "data-dexport", "Exporter", false, 0) +
+      stAction("down", "Importer mes données", "Restaure une sauvegarde exportée avant.", "data-dimport", "Importer", true, 1) +
+      '<input type="file" id="dfile" accept="application/json,.json" hidden></div>' +
+      '<div class="stsec"><div class="stlbl">Zone sensible</div>' +
+      stAction("reset", "Réinitialiser mon compte", "Efface ta liste, tes épisodes vus, ta reprise de lecture et tes réglages sur cet appareil. Impossible à annuler : pense à exporter avant.", "data-dreset", "Réinitialiser", true, 0) + '</div>';
+  }
+  return '<div class="stsec"><div class="stlbl">Confort</div>' +
+    stSwitch("noanim", "Désactiver toutes les animations", "Tout s\'affiche normalement, mais sans mouvement ni transition.", PREFS.noanim, "zap", 0) +
+    stSwitch("hideTips", "Cacher le carrousel d\'astuces", "Masque les astuces en bas du lecteur.", PREFS.hideTips, "bulb", 1) +
+    stSwitch("rememberPlayer", "Se souvenir du dernier lecteur", "Relance directement le serveur choisi en dernier, quand il est disponible sur le titre.", PREFS.rememberPlayer, "play", 2) + '</div>' +
+    '<div class="stsec"><div class="stlbl">Page d\'accueil</div><p class="stnote">Change l\'ordre des rangées de la page d\'accueil avec les flèches.</p>' +
+    '<div class="spanel"><div id="catlist">' + catRowsHtml() + '</div><div class="row"><button type="button" class="btn ghost small" data-catreset>Réinitialiser</button></div></div></div>' +
+    '<div class="spanel soon"><p class="note" style="margin:0;padding:16px 20px">D\'autres paramètres arrivent bientôt.</p></div>';
+}
+function stRefresh() {
+  SETTABS.forEach(function (k) { var b = document.querySelector('#settabs [data-settab="' + k + '"] b'); if (b) b.textContent = stCount(k); });
+  var pv = document.querySelector(".stpv"); if (pv) restackBadges(pv.parentNode, true);
 }
 function viewSettings() {
-  $("#app").innerHTML = '<div class="wrap listhead sethead"><h1>Paramètres</h1><p class="note">Ces réglages sont enregistrés sur cet appareil.</p></div><div class="wrap sset">' +
-    '<section class="spanel">' +
-      switchRow("noanim", "Désactiver toutes les animations", "Coupe les animations et les transitions du site.", PREFS.noanim) +
-      switchRow("hideTips", "Cacher le carrousel d'astuces", "Masque les astuces en bas du lecteur.", PREFS.hideTips) +
-      switchRow("rememberPlayer", "Se souvenir du dernier lecteur", "Relance directement le serveur choisi en dernier, quand il est disponible sur le titre.", PREFS.rememberPlayer) +
-    '</section>' +
-    '<section class="spanel"><h2 class="sh">Ordre des catégories</h2><p class="note">Change l\'ordre des rangées de la page d\'accueil avec les flèches.</p><div id="catlist">' + catRowsHtml() + '</div><div class="row"><button type="button" class="btn ghost small" data-catreset>Réinitialiser</button></div></section>' +
-    '<section class="spanel"><h2 class="sh">Mes données</h2><p class="note">Ta liste, tes épisodes vus, ta reprise de lecture et tes réglages sont enregistrés sur cet appareil. Exporte-les pour les retrouver sur un autre appareil.</p><div class="row"><button type="button" class="btn small" data-dexport>Exporter</button><button type="button" class="btn ghost small" data-dimport>Importer</button><input type="file" id="dfile" accept="application/json,.json" hidden></div></section>' +
-    '<section class="spanel"><h2 class="sh">Réinitialiser mon compte</h2><p class="note">Efface ta liste, tes épisodes vus, ta reprise de lecture et tes réglages sur cet appareil. Impossible à annuler : pense à exporter avant.</p><div class="row"><button type="button" class="btn ghost small" data-dreset>Réinitialiser</button></div></section>' +
-    '<section class="spanel soon"><h2 class="sh">Bientôt</h2><p class="note">D\'autres paramètres arrivent bientôt.</p></section></div>';
+  var tabs = SETTABS.map(function (k) {
+    return '<button type="button" class="mlt' + (k === setTab ? " on" : "") + '" role="tab" aria-selected="' + (k === setTab ? "true" : "false") + '" data-settab="' + k + '">' + stSvg(ST_TABICO[k]) + '<b>' + stCount(k) + '</b><span class="l">' + SETLABEL[k] + '</span></button>';
+  }).join("");
+  $("#app").innerHTML = '<div id="setroot"><div class="mlhero"><div class="wrap">' +
+    '<div class="mltitle"><svg class="mllogo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h9M17 7h3"/><path d="M4 17h3M11 17h9"/><path class="sp" d="M15 4.5v5M9 14.5v5"/></svg>' +
+    '<div><h1>Paramètres</h1><p class="note">Enregistrés sur cet appareil</p></div></div>' +
+    '<div class="mltabs" id="settabs" data-i="' + SETTABS.indexOf(setTab) + '" role="tablist"><span class="mlind"></span>' + tabs + '</div></div></div>' +
+    '<div class="wrap"><div class="stbody" id="setbody">' + stBody(setTab) + '</div></div></div>';
+  stRefresh();
 }
+document.addEventListener("click", function (e) {
+  var t = e.target.closest ? e.target.closest("[data-settab]") : null;
+  if (t && $("#setroot") && t.dataset.settab !== setTab) {
+    setTab = t.dataset.settab;
+    var box = $("#settabs"); box.dataset.i = SETTABS.indexOf(setTab);
+    box.querySelectorAll(".mlt").forEach(function (b) { var on = b.dataset.settab === setTab; b.classList.toggle("on", on); b.setAttribute("aria-selected", on ? "true" : "false"); });
+    var body = $("#setbody"); body.innerHTML = stBody(setTab);
+    body.classList.remove("mlswap"); void body.offsetWidth; body.classList.add("mlswap");
+    stRefresh();
+    return;
+  }
+  var a = e.target.closest ? e.target.closest("[data-badgeall]") : null;
+  if (a) {
+    var v = a.dataset.badgeall === "1";
+    BADGE_PREFS.forEach(function (b) { PREFS[b[0]] = v; });
+    savePrefs(); applyPrefs();
+    document.querySelectorAll("[data-pref]").forEach(function (sw) { var on = !!PREFS[sw.dataset.pref]; sw.classList.toggle("on", on); sw.setAttribute("aria-checked", on ? "true" : "false"); });
+    stRefresh(); restackBadges();
+  }
+});
 document.addEventListener("click", function (e) {
   var sw = e.target.closest("[data-pref]");
   if (sw) {
@@ -2759,6 +2905,7 @@ document.addEventListener("click", function (e) {
     if (k === "rememberPlayer" && !PREFS[k]) PREFS.lastPlayer = "";
     savePrefs(); applyPrefs();
     sw.classList.toggle("on", !!PREFS[k]); sw.setAttribute("aria-checked", PREFS[k] ? "true" : "false");
+    stRefresh(); restackBadges();
     return;
   }
   var mv = e.target.closest("[data-catmove]");
