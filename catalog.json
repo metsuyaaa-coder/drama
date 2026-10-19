@@ -20739,6 +20739,225 @@
       ],
       "downloads": [],
       "updatedAt": 1792370865710
+    },
+    {
+      "id": "273977",
+      "type": "tv",
+      "name": "The Art of Sarah",
+      "original_name": "레이디 두아",
+      "origin_country": [
+        "KR"
+      ],
+      "networks": [
+        "Netflix"
+      ],
+      "original_language": "ko",
+      "aka": [
+        "The Art of Sarah",
+        "莎拉的真伪人生",
+        "A Arte de Sarah",
+        "莎拉的真偽人生",
+        "El arte de parecer Sarah",
+        "El arte de Sarah",
+        "Sarah: Maestria życia",
+        "サラ・キムという女",
+        "Мистецтво Сари",
+        "ซาราห์ เริ่ดลวงโลก",
+        "Sarino umijeće",
+        "Nghệ Thuật Lừa Dối Của Sarah",
+        "Iluze jménem Sarah",
+        "فنون سارا",
+        "L'art d'être Sarah",
+        "האומנות של שרה",
+        "द आर्ट ऑफ़ सारा",
+        "Η Τέχνη της Σάρα",
+        "A sokoldalú Sarah Kim",
+        "Мастерство Сары",
+        "Изкуството на Сара",
+        "Lady Doir",
+        "Lady Dua",
+        "Reidi Dua",
+        "Искусство Сары",
+        "레이디 두아"
+      ],
+      "year": "2026",
+      "overview": "Un corps retrouvé au beau milieu de la ville. Une marque de luxe en pleine ascension. Un détective examine chaque détail du récit confus d'une femme. Que s'est-il vraiment passé  ?",
+      "genres": [
+        "Crime",
+        "Mystère",
+        "Drame"
+      ],
+      "rating": "7.5",
+      "pop": 17.9125,
+      "status": "Ended",
+      "poster": "https://image.tmdb.org/t/p/w500/8hZqZB4DAC1Ebzbk80zc0H80SNa.jpg",
+      "posterV": 2,
+      "backdrop": "https://image.tmdb.org/t/p/original/uLYp6qxGNzDlDtBOAlDbfcf4QgO.jpg",
+      "cast": [
+        {
+          "name": "Shin Hye-sun",
+          "character": "Sarah Kim",
+          "id": 1523579
+        },
+        {
+          "name": "Lee Jun-hyuk",
+          "character": "Park Mu-gyeong",
+          "id": 1254630
+        },
+        {
+          "name": "박보경",
+          "character": "Jeong Yeo-jin",
+          "id": 3555452
+        },
+        {
+          "name": "Jung Da-bin",
+          "character": "Woo Hyo-eun",
+          "id": 1605872
+        },
+        {
+          "name": "신현승",
+          "character": "Hyun Jae-hyun",
+          "id": 2496608
+        },
+        {
+          "name": "Bae Jong-ok",
+          "character": "Choi Chae-u",
+          "id": 1094648
+        },
+        {
+          "name": "김재원",
+          "character": "Kang Ji-hwon",
+          "id": 3244773
+        }
+      ],
+      "seasons": [
+        {
+          "number": 1,
+          "name": "Mini-série",
+          "episodes": [
+            {
+              "number": 1,
+              "name": "Victime X",
+              "overview": "Sarah Kim est retrouvée morte. Jeong Yeo-jin raconte ses souvenirs de cette femme énigmatique à l'inspecteur Park Mu-gyeong, qui flaire quelque chose de louche.",
+              "air_date": "2026-02-13",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/CMtxGJi9tzjU8",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 2,
+              "name": "Sarah Kim",
+              "overview": "En interrogeant Woo Hyo-eun, Mu-gyeong découvre que sa \"Sarah Kim\" n'a rien à voir avec celle dont les autres se souviennent. Boudoir n'en devient que plus louche encore.",
+              "air_date": "2026-02-13",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/zTVuIKMBrEJ5N",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 3,
+              "name": "Mok Ga-hui",
+              "overview": "L'ancienne identité de Sarah refait surface sous les traits d'une femme sans le sou et assoiffée de luxe, qui ne reculera devant rien pour atteindre son but.",
+              "air_date": "2026-02-13",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/21OS9pgVZQt1f",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 4,
+              "name": "Kim Eun-jae",
+              "overview": "Alors que Mu-gyeong interroge Kang Ji-hwon sur sa relation avec Sarah, une histoire complexe émerge peu à peu et remonte jusqu'à l'influent Hong Seong-sin.",
+              "air_date": "2026-02-13",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/aPHaCs7jkUPe6",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 5,
+              "name": "Boudoir",
+              "overview": "En quête de preuves pour faire tomber Sarah, Mu-gyeong s'apprête à médiatiser l'affaire. Mais chaque nouvelle facette de \"Sarah Kim\" lui complique de plus en plus la tâche.",
+              "air_date": "2026-02-13",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/EQ3g9Pf9Kds4b",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 6,
+              "name": "Personne non identifiée",
+              "overview": "Pris dans une course contre la montre, Mu-gyeong veut inculper Sarah pour meurtre et mise sur l'aide de Choi Chae-u, quitte à en payer le prix.",
+              "air_date": "2026-02-13",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/GQ3kFnEQ3SHZw",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 7,
+              "name": "Kim Mi-jeong",
+              "overview": "Mu-gyeong tente de déstabiliser Sarah en menaçant ce qu'elle chérit le plus : la réputation de Boudoir. Acculée, Sarah introduit un nouveau nom dans l'affaire.",
+              "air_date": "2026-02-13",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/JMezuOPbkOjdH",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 8,
+              "name": "The Art of Sarah",
+              "overview": "Le temps presse et Sarah se bat pour sauver tout ce qu'elle a construit, tandis que Mu-gyeong traque les failles de son récit mouvant dans l'espoir de découvrir enfin la vérité.",
+              "air_date": "2026-02-13",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/wYqaVH1oA2r5f",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            }
+          ],
+          "downloads": []
+        }
+      ],
+      "sources": [],
+      "addedAt": 1792370990935,
+      "langs": [
+        "VOSTFR"
+      ],
+      "downloads": [],
+      "updatedAt": 1792370996710
     }
   ],
   "deletedLinks": [
@@ -20792,6 +21011,15 @@
     "at": 1792336665257
   },
   "journal": [
+    {
+      "k": "mvejewa27ww5z",
+      "t": 1792370996714,
+      "b": "head",
+      "a": "add",
+      "i": "273977",
+      "n": "The Art of Sarah",
+      "d": ""
+    },
     {
       "k": "mvejc377goeui",
       "t": 1792370865715,
