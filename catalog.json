@@ -20599,7 +20599,7 @@
       "rating": "7.5",
       "pop": 17.9125,
       "status": "Ended",
-      "poster": "https://image.tmdb.org/t/p/w500/8hZqZB4DAC1Ebzbk80zc0H80SNa.jpg",
+      "poster": "https://image.tmdb.org/t/p/original/nP2PRGSmLdbZtQtoXPPppcDAsNw.jpg",
       "posterV": 2,
       "backdrop": "https://image.tmdb.org/t/p/original/uLYp6qxGNzDlDtBOAlDbfcf4QgO.jpg",
       "cast": [
@@ -20767,7 +20767,8 @@
         "VF"
       ],
       "downloads": [],
-      "updatedAt": 1792371011878
+      "updatedAt": 1792376506801,
+      "posterCustom": true
     },
     {
       "id": "286198",
@@ -21106,6 +21107,15 @@
     "at": 1792336665257
   },
   "journal": [
+    {
+      "k": "mvemozwnsknhp",
+      "t": 1792376506823,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "273977",
+      "n": "The Art of Sarah",
+      "d": "affiche"
+    },
     {
       "k": "mvemjxsfcgnt9",
       "t": 1792376270799,
