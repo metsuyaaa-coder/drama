@@ -7848,7 +7848,18 @@
               "name": "Épisode 5",
               "overview": "Bonding over their shared pain, Minjae and Youjin quickly grow close. But when Youjin's brother, Youseong, senses something suspicious, he starts investigating. As Youjin draws closer, Minjae becomes frightened and starts questioning whether he has the right to love someone and whether he should continue their relationship. While Minjae keeps trying to pull away, Youjin boldly moves closer. On a rainy night, Minjae can no longer ignore Youjin's feelings or his own.",
               "air_date": "2026-10-19",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/DnpisokJyxSVE",
+                  "by": "head"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/5L5UvFH87w2Bd",
+                  "by": "head"
+                }
+              ],
               "downloads": []
             },
             {
@@ -7917,7 +7928,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792423649559,
+      "updatedAt": 1792424024665,
       "networks": [
         "ENA"
       ]
@@ -24008,12 +24019,12 @@
   "journal": [
     {
       "k": "mvfeiq9hltscx",
-      "t": 1792423649563,
+      "t": 1792424024668,
       "b": "head",
       "a": "edit",
       "i": "307106",
       "n": "Between Steps",
-      "d": "sources 12 → 16"
+      "d": "sources 16 → 18"
     },
     {
       "k": "mvfe4dee30qcb",
