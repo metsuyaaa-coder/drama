@@ -1710,7 +1710,9 @@ var db = ADMIN ? readJSON(STORE, []).map(normalize) : [];
 /* Réglages du site (téléchargement public ou privé). Les visiteurs les lisent dans catalog.json ; l'admin les garde sur son navigateur. */
 var SETKEY = "noir.settings";
 var SETTINGS = { downloads: "public" };
-if (ADMIN) { var _st = readJSON(SETKEY, null); if (_st && _st.downloads === "private") SETTINGS.downloads = "private"; if (_st && "player" in _st) { SETTINGS.player = _st.player; SETTINGS.playerAt = +_st.playerAt || 0; } if (_st && Array.isArray(_st.order)) { SETTINGS.order = _st.order; SETTINGS.orderAt = +_st.orderAt || 0; } }
+if (ADMIN) { var _st = readJSON(SETKEY, null); if (_st && _st.downloads === "private") SETTINGS.downloads = "private"; if (_st && "player" in _st) { SETTINGS.player = _st.player; SETTINGS.playerAt = +_st.playerAt || 0; } if (_st && Array.isArray(_st.order)) { SETTINGS.order = _st.order; SETTINGS.orderAt = +_st.orderAt || 0; } if (_st && _st.ads === "off") { SETTINGS.ads = "off"; SETTINGS.adsAt = +_st.adsAt || 0; } else if (_st && +_st.adsAt) { SETTINGS.adsAt = +_st.adsAt; } }
+/* Pub avant téléchargement : activée par défaut, le Head admin peut la couper (settings.ads dans catalog.json) */
+function adsOn() { return SETTINGS.ads !== "off"; }
 function saveSettings() { try { localStorage.setItem(SETKEY, JSON.stringify(SETTINGS)); } catch (e) {} }
 var PREVIEW = false;
 function dlAdmin() { return ADMIN && !PREVIEW; }
@@ -3655,11 +3657,11 @@ document.addEventListener("click", function (e) {
     $("#dlm-url").textContent = ""; $("#dlm-open").removeAttribute("href"); setStep(1);
     var g = $("#dlm-adgo"); g.disabled = false; g.textContent = "Voir la pub pour débloquer";
   }
-  function unlock() {
+  function unlock(quiet) {
     waiting = false; clearTimeout(adTimer);
     $("#dlm-url").textContent = realUrl; $("#dlm-open").href = realUrl;
     $("#dlm-ad").hidden = true; $("#dlm-url").hidden = false; $("#dlm-btns").hidden = false; setStep(2);
-    toast("Lien débloqué, merci !");
+    if (!quiet) toast("Lien débloqué, merci !");
   }
   /* Dès que le visiteur est parti vers la pub puis revient (focus, onglet visible, ou n'importe quel geste sur la page), on débloque.
      Même un retour très rapide débloque : on attend juste 1 s depuis le départ, au lieu de rester bloqué. */
@@ -3699,7 +3701,9 @@ document.addEventListener("click", function (e) {
       lock();
       /* si le lecteur est ouvert, la fenêtre doit être dedans pour passer au-dessus */
       (document.querySelector("dialog#player[open]") || document.body).appendChild(box);
-      box.hidden = false; $("#dlm-adgo").focus();
+      box.hidden = false;
+      if (!adsOn()) { unlock(true); var ob = $("#dlm-open"); if (ob) ob.focus(); return; }
+      $("#dlm-adgo").focus();
       return;
     }
     if (e.target.id === "dlm-adgo") {
@@ -3996,6 +4000,14 @@ function statsSection() {
     top(cat, 'Catégories') + top(pl, 'Plateformes') + top(g, 'Genres') + top(sv, 'Serveurs') +
     '<p class="note" style="margin:0">Les visites (pages les plus vues, pays, appareils) se consultent dans Vercel : ton projet, onglet « Analytics ».</p></div>';
 }
+function adsSection() {
+  var on = adsOn();
+  return '<div style="display:grid;gap:12px"><h3 class="note" style="margin:0;text-transform:uppercase;letter-spacing:.08em">Pub avant téléchargement</h3>' +
+    '<div class="tabs" role="tablist" style="justify-self:start"><button type="button" class="tab' + (on ? ' on' : '') + '" role="tab" aria-selected="' + (on ? 'true' : 'false') + '" data-setads="on">Activée</button><button type="button" class="tab' + (on ? '' : ' on') + '" role="tab" aria-selected="' + (on ? 'false' : 'true') + '" data-setads="off">Désactivée</button></div>' +
+    '<p class="note" style="margin:0">' + (on
+      ? 'Activée : le visiteur voit la pub (nouvel onglet) avant d\'obtenir le lien de téléchargement.'
+      : 'Désactivée : le lien de téléchargement s\'affiche directement, sans pub.') + ' Réservé au Head admin.</p></div>';
+}
 function viewPanel() {
   var priv = SETTINGS.downloads === "private";
   var n = db.filter(hasDl).length;
@@ -4008,6 +4020,7 @@ function viewPanel() {
     '<p class="note" style="margin:0">' + (priv
       ? 'Privé : seul toi (en mode admin) vois les boutons et l\'onglet Télécharger. À la publication, les liens sont retirés de catalog.json, donc personne ne peut les lire dans le fichier. Ils restent sur ce navigateur : fais une sauvegarde complète.'
       : 'Public : tous les visiteurs voient les boutons et l\'onglet Télécharger sur les fiches qui ont des liens.') + '</p><div class="row"><button class="btn ghost small" type="button" data-preview="1">Voir comme un visiteur</button></div></div>' +
+    (isHead() ? adsSection() : '') +
     (isHead() ? statsSection() + journalSection() + linksSection() : '') +
     '<div style="display:grid;gap:12px"><h3 class="note" style="margin:0;text-transform:uppercase;letter-spacing:.08em">Fiches TMDB</h3>' +
     '<p class="note" style="margin:0">' + nt + (nt > 1 ? ' fiches viennent' : ' fiche vient') + ' de TMDB. Le bouton remet à jour les infos, les affiches, les saisons et les nouveaux épisodes. Tes sources, liens de téléchargement et langues sont conservés.</p>' +
@@ -4422,6 +4435,7 @@ function adoptPlayer(st) {
   if (!st) return;
   if ("player" in st && (!ADMIN || (+st.playerAt || 0) >= (+SETTINGS.playerAt || 0))) { SETTINGS.player = st.player; SETTINGS.playerAt = +st.playerAt || 0; if (ADMIN) saveSettings(); }
   if (Array.isArray(st.order) && (!ADMIN || (+st.orderAt || 0) >= (+SETTINGS.orderAt || 0))) { SETTINGS.order = st.order; SETTINGS.orderAt = +st.orderAt || 0; if (ADMIN) saveSettings(); }
+  if (!ADMIN || (+st.adsAt || 0) >= (+SETTINGS.adsAt || 0)) { SETTINGS.ads = st.ads === "off" ? "off" : "on"; SETTINGS.adsAt = +st.adsAt || 0; if (ADMIN) saveSettings(); }
 }
 /* Ordre des sources choisi par le Head admin : 1re, 2e, 3e, 4e… (les serveurs absents de la liste passent après) */
 function srcKey(x) { return String(x && x.name || "").replace(/\s+\d+$/, "").trim().toLowerCase(); }
@@ -5591,6 +5605,7 @@ function ghPublish(obj, tried, opts) {
     var rps = remote && remote.settings;
     if (rps && "player" in rps && (+rps.playerAt || 0) > (+SETTINGS.playerAt || 0) && obj.settings) { obj.settings.player = rps.player; obj.settings.playerAt = rps.playerAt; }
     if (rps && Array.isArray(rps.order) && (+rps.orderAt || 0) > (+SETTINGS.orderAt || 0) && obj.settings) { obj.settings.order = rps.order; obj.settings.orderAt = rps.orderAt; }
+    if (rps && (+rps.adsAt || 0) > (+SETTINGS.adsAt || 0) && obj.settings) { obj.settings.ads = rps.ads === "off" ? "off" : "on"; obj.settings.adsAt = rps.adsAt; }
     if (remote && !Array.isArray(remote) && remote.journal) { journalMerge(remote.journal); var jm = journalList(); if (jm.length) obj.journal = jm; }
     var rfa = Math.max(+(remote && remote.refreshAt) || 0, +readJSON(RFKEY, 0) || 0); if (rfa) obj.refreshAt = rfa;
     return fetch(url + "?ref=" + encodeURIComponent(gi.branch), { headers: ghHeaders(), cache: "no-store" });
@@ -5640,6 +5655,7 @@ function buildCatalogObj() {
   var obj = { settings: { downloads: SETTINGS.downloads }, series: list, deletedLinks: tt.links, deletedFiches: tt.fiches };
   if (SETTINGS.player != null) { obj.settings.player = SETTINGS.player; obj.settings.playerAt = SETTINGS.playerAt || 0; }
   if (Array.isArray(SETTINGS.order)) { obj.settings.order = SETTINGS.order; obj.settings.orderAt = SETTINGS.orderAt || 0; }
+  if (SETTINGS.adsAt) { obj.settings.ads = adsOn() ? "on" : "off"; obj.settings.adsAt = SETTINGS.adsAt; }
   var rf0 = +readJSON(RFKEY, 0) || 0; if (rf0) obj.refreshAt = rf0;
   if (TEAM) obj.team = TEAM;
   if (HERO) obj.hero = HERO;
@@ -5690,6 +5706,13 @@ document.addEventListener("click", function (e) {
     saveSettings(); viewPanel();
     toast("Téléchargements : " + (SETTINGS.downloads === "private" ? "privé" : "public") + ". Publie le catalogue pour l'appliquer aux visiteurs.");
     return;
+  }
+  var ta = e.target.closest("[data-setads]");
+  if (ta) {
+    if (!isHead()) return;
+    SETTINGS.ads = ta.dataset.setads === "off" ? "off" : "on"; SETTINGS.adsAt = Date.now(); saveSettings(); viewPanel();
+    toast("Pub : " + (adsOn() ? "activée" : "désactivée") + (autoSyncOn() ? " pour tout le monde" : ". Clique sur « Publier » pour l'appliquer aux visiteurs."));
+    markDirty(); return;
   }
   if (e.target.closest("[data-preview]")) { setPreview(true); go("/"); route(true); return; }
   if (e.target.id === "preview-quit") { setPreview(false); go("/panel"); route(true); return; }
