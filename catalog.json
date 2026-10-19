@@ -5687,13 +5687,13 @@
               "air_date": "2026-10-16",
               "sources": [
                 {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-2yld09tdh2b7.html",
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/v/j0c7P2SjI6SJO",
                   "by": "614d778ed0"
                 },
                 {
-                  "name": "VIDARA",
-                  "url": "https://vidara.to/v/j0c7P2SjI6SJO",
+                  "name": "VIDMOLY",
+                  "url": "https://vidara.to/e/j0c7P2SjI6SJO",
                   "by": "614d778ed0"
                 }
               ],
@@ -5984,7 +5984,7 @@
       ],
       "downloads": [],
       "posterV": 2,
-      "updatedAt": 1792408085803,
+      "updatedAt": 1792408198160,
       "trend": 91,
       "networks": [
         "CCTV-8",
@@ -22418,8 +22418,8 @@
     }
   ],
   "deletedLinks": [
+    "300146\thttps://vidmoly.org/embed-2yld09tdh2b7.html",
     "288603\thttps://vidara.to/v/j0c7P2SjI6SJO",
-    "300146\thttps://vidara.to/e/j0c7P2SjI6SJO",
     "293607\thttps://vidmoly.me/v/su5gbvv2ux4n",
     "300146\thttps://vidmoly.me/v/2yld09tdh2b7",
     "300146\thttps://vidmoly.me/v/ftm3yk26ikx5",
@@ -22470,7 +22470,7 @@
   "journal": [
     {
       "k": "mvf5hueqdak4p",
-      "t": 1792408085810,
+      "t": 1792408198165,
       "b": "614d778ed0",
       "a": "edit",
       "i": "300146",
