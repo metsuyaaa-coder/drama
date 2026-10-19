@@ -1797,6 +1797,15 @@ body { overflow-x: hidden; max-width: 100%; position: relative; }
   .seasons .ep .act .btn.eplay[data-playep], .seasons .ep .act .btn.seenbtn { flex: 1 1 100%; width: 100%; min-width: 0; justify-content: center; }
   .seasons .ep .act .btn.seenbtn { min-height: 52px; }
 }
+
+.stx { margin-left: 6px; width: 26px; height: 26px; padding: 0; display: grid; place-items: center; flex: none; background: transparent; border: 1px solid var(--line); color: var(--dim); font-size: 18px; line-height: 1; border-radius: 0; cursor: pointer; transition: color .2s, border-color .2s, background .2s; }
+.stx:hover { color: #f87171; border-color: #f87171; }
+.stmasked { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; padding-top: 12px; font-family: var(--mono); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--dim); }
+.stmasked:empty { display: none; }
+.stchip { display: inline-flex; align-items: center; gap: 6px; padding: 6px 9px; background: transparent; border: 1px dashed #444; color: var(--fg); font: inherit; border-radius: 0; cursor: pointer; transition: border-color .2s, color .2s; }
+.stchip i { font-style: normal; color: #86efac; }
+.stchip:hover { border-color: #86efac; }
+#stadmin[hidden] { display: none; }
 </style>
 <!-- Visites du site : Vercel Web Analytics, sans cookie ni base de données. Ne fait rien tant que tu ne l'actives pas dans Vercel (onglet Analytics). -->
 <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
@@ -5629,24 +5638,47 @@ document.addEventListener("click", function (e) {
   REQS.at = Date.now(); reqSave(); viewRequests(); toast(autoSyncOn() ? "Enregistré." : "Enregistré. Clique sur « Publier » pour que tout le monde le voie."); markDirty();
 });
 
-/* ===== Statut des serveurs hébergeurs : tenu à la main par l'admin, publié dans catalog.json (comme les demandes) ===== */
-var STATKEY = "noir.hosts", STAT = readJSON(STATKEY, null) || { items: [], log: [], at: 0 };
-if (!Array.isArray(STAT.items)) STAT.items = [];
-if (!Array.isArray(STAT.log)) STAT.log = [];
+/* ===== Statut des serveurs hébergeurs : liste automatique d'après le catalogue + serveurs ajoutés / masqués par l'admin, publié dans catalog.json ===== */
+var STATKEY = "noir.hosts", STAT = readJSON(STATKEY, null) || { items: [], log: [], extra: [], hidden: [], at: 0 };
+["items", "log", "extra", "hidden"].forEach(function (k) { if (!Array.isArray(STAT[k])) STAT[k] = []; });
 function statSave() { try { localStorage.setItem(STATKEY, JSON.stringify(STAT)); } catch (e) {} }
-var STHOSTS = [
-  { id: "uqload", name: "Uqload", kind: "stream" }, { id: "vidara", name: "Vidara", kind: "stream" }, { id: "playmate", name: "Playmate", kind: "stream" },
-  { id: "1fichier", name: "1fichier", kind: "dl" }, { id: "gofile", name: "Gofile", kind: "dl" }
-];
 var STSTATES = { up: "Opérationnel", slow: "Ralenti", down: "En panne", maint: "Maintenance" };
 var STSHORT = { up: "OK", slow: "Lent", down: "Panne", maint: "Maint." };
-var STKIND = { stream: "Streaming", dl: "Téléchargement" };
+var STKIND = { stream: "Streaming", dl: "Téléchargement", both: "Streaming et téléchargement" };
+var STNAMES = { uqload: "Uqload", vidara: "Vidara", playmate: "Playmate", "1fichier": "1fichier", gofile: "Gofile" };
 var stTab = "now";
+function stSlug(n) { return String(n || "").toLowerCase().replace(/[^a-z0-9]+/g, ""); }
+function stNice(n) { var k = stSlug(n); if (STNAMES[k]) return STNAMES[k]; n = String(n || "").trim().toLowerCase(); return n.charAt(0).toUpperCase() + n.slice(1); }
+/* tous les hébergeurs utilisés dans le catalogue : liens de streaming et de téléchargement des fiches, saisons et épisodes */
+function stDetect() {
+  var found = {};
+  function add(list, kind) {
+    (list || []).forEach(function (x) {
+      if (!x) return;
+      var raw = x.url ? hostName(x.url) : String(x.name || "").replace(/ \d+$/, ""), id = stSlug(raw);
+      if (!id || id === "source") return;
+      var f = found[id] || (found[id] = { id: id, name: stNice(raw), stream: false, dl: false }); f[kind] = true;
+    });
+  }
+  (db || []).forEach(function (s) {
+    add(s.sources, "stream"); add(s.downloads, "dl");
+    (s.seasons || []).forEach(function (se) { add(se.downloads, "dl"); (se.episodes || []).forEach(function (ep) { add(ep.sources, "stream"); add(ep.downloads, "dl"); }); });
+  });
+  return found;
+}
+function stAll() {
+  var f = stDetect(), out = {};
+  Object.keys(f).forEach(function (id) { var x = f[id]; out[id] = { id: id, name: x.name, kind: x.stream && x.dl ? "both" : x.dl ? "dl" : "stream", auto: true }; });
+  STAT.extra.forEach(function (x) { if (x && x.id) out[x.id] = { id: x.id, name: x.name || stNice(x.id), kind: STKIND[x.kind] ? x.kind : "stream", auto: false }; });
+  var order = { stream: 0, dl: 1, both: 2 };
+  return Object.keys(out).map(function (k) { return out[k]; }).sort(function (a, b) { return order[a.kind] - order[b.kind] || a.name.localeCompare(b.name); });
+}
+function stList() { return stAll().filter(function (h) { return STAT.hidden.indexOf(h.id) < 0; }); }
 function adoptStat(data) {
   var r = data && !Array.isArray(data) ? data.hosts : null;
   if (!r || !Array.isArray(r.items)) return;
   if (!ADMIN || (+r.at || 0) >= (+STAT.at || 0)) {
-    STAT = { items: r.items, log: Array.isArray(r.log) ? r.log.slice(0, 40) : [], at: +r.at || 0 };
+    STAT = { items: r.items, log: Array.isArray(r.log) ? r.log.slice(0, 40) : [], extra: Array.isArray(r.extra) ? r.extra.slice(0, 60) : [], hidden: Array.isArray(r.hidden) ? r.hidden.slice(0, 100) : [], at: +r.at || 0 };
     statSave();
     if ($("#strot")) stPaint(false);
   }
@@ -5661,11 +5693,12 @@ function stAgo(t) {
   var d = Math.round(h / 24); return "il y a " + d + (d > 1 ? " jours" : " jour");
 }
 function stDate(t) { return new Date(t).toLocaleString("fr-FR", { day: "2-digit", month: "short", hour: "2-digit", minute: "2-digit" }); }
+function stIcon(kind) { return kind === "stream" ? PLAYICON : DLICON; }
 function stCard(h, i) {
   var x = stState(h), id = esc(h.id);
-  var ic = h.kind === "dl" ? DLICON : PLAYICON;
-  var c = '<div class="stc s-' + x.state + '" style="--i:' + i + '"><div class="sttop"><span class="stdot" aria-hidden="true"></span><b>' + esc(h.name) + '</b><span class="stpill">' + STSTATES[x.state] + '</span></div>' +
-    '<div class="stkind">' + ic + esc(STKIND[h.kind]) + '</div>' +
+  var c = '<div class="stc s-' + x.state + '" style="--i:' + Math.min(i, 14) + '"><div class="sttop"><span class="stdot" aria-hidden="true"></span><b>' + esc(h.name) + '</b><span class="stpill">' + STSTATES[x.state] + '</span>' +
+    (ADMIN ? '<button type="button" class="stx" data-st="del" data-id="' + id + '" title="' + (h.auto ? "Masquer ce serveur" : "Supprimer ce serveur") + '" aria-label="' + (h.auto ? "Masquer " : "Supprimer ") + esc(h.name) + '">&times;</button>' : "") + '</div>' +
+    '<div class="stkind">' + stIcon(h.kind) + esc(STKIND[h.kind]) + '</div>' +
     '<p class="stnote">' + (x.note ? esc(x.note) : (x.state === "up" ? "Aucun problème signalé." : "Aucun détail pour l'instant.")) + '</p>' +
     '<div class="stfoot">' + (x.at ? "Mis à jour " + stAgo(x.at) : "Pas de mise à jour récente") + '</div>';
   if (ADMIN) {
@@ -5675,10 +5708,10 @@ function stCard(h, i) {
   }
   return c + '</div>';
 }
-function stBanner() {
-  var bad = STHOSTS.filter(function (h) { return stState(h).state !== "up"; }), worst = "up";
+function stBanner(list) {
+  var bad = list.filter(function (h) { return stState(h).state !== "up"; }), worst = "up";
   bad.forEach(function (h) { var s = stState(h).state; if (s === "down" || (s === "slow" && worst !== "down") || (s === "maint" && worst === "up")) worst = s; });
-  var t = !bad.length ? "Tous les serveurs fonctionnent" : bad.length === 1 ? "1 serveur a un souci" : bad.length + " serveurs ont un souci";
+  var t = !list.length ? "Aucun serveur dans la liste" : !bad.length ? "Tous les serveurs fonctionnent" : bad.length === 1 ? "1 serveur a un souci" : bad.length + " serveurs ont un souci";
   var sub = !bad.length ? "Si un lien ne marche pas, essaie un autre hébergeur ou signale-le." : "Pas de panique : essaie un autre serveur en attendant le retour à la normale.";
   var last = STAT.at ? "Dernière mise à jour " + stAgo(STAT.at) : "";
   return '<div class="stban s-' + worst + '"><span class="stdot big" aria-hidden="true"></span><div><b>' + t + '</b><small>' + sub + '</small></div><span class="stlast">' + last + '</span></div>';
@@ -5693,17 +5726,23 @@ function stLogHTML() {
 }
 function stPaint(swap) {
   var body = $("#stbody"); if (!body) return;
-  var nbad = STHOSTS.filter(function (h) { return stState(h).state !== "up"; }).length;
+  var list = stList(), nbad = list.filter(function (h) { return stState(h).state !== "up"; }).length;
   body.className = swap ? "mlswap" : ""; if (swap) { void body.offsetWidth; body.className = "mlswap"; }
   if (stTab === "log") body.innerHTML = stLogHTML();
   else {
     var n = 0;
-    body.innerHTML = stBanner() + ["stream", "dl"].map(function (k) {
-      return '<h2 class="sth">' + (k === "dl" ? DLICON : PLAYICON) + STKIND[k] + '</h2><div class="stgrid">' + STHOSTS.filter(function (h) { return h.kind === k; }).map(function (h) { return stCard(h, n++); }).join("") + '</div>';
+    body.innerHTML = stBanner(list) + ["stream", "dl", "both"].map(function (k) {
+      var g = list.filter(function (h) { return h.kind === k; });
+      return g.length ? '<h2 class="sth">' + stIcon(k) + STKIND[k] + '</h2><div class="stgrid">' + g.map(function (h) { return stCard(h, n++); }).join("") + '</div>' : "";
     }).join("");
   }
+  var adm = $("#stadmin"); if (adm) {
+    adm.hidden = stTab === "log";
+    var masked = stAll().filter(function (h) { return STAT.hidden.indexOf(h.id) > -1; });
+    $("#stmasked").innerHTML = masked.length ? '<span>Masqués :</span>' + masked.map(function (h) { return '<button type="button" class="stchip" data-st="restore" data-id="' + esc(h.id) + '" title="Réafficher">' + esc(h.name) + ' <i>+</i></button>'; }).join("") : "";
+  }
   var box = $("#sttabs"); box.dataset.i = stTab === "log" ? 1 : 0;
-  [["now", nbad || STHOSTS.length], ["log", (STAT.log || []).length]].forEach(function (q) {
+  [["now", nbad || list.length], ["log", (STAT.log || []).length]].forEach(function (q) {
     var b = box.querySelector('[data-sttab="' + q[0] + '"]'), on = q[0] === stTab;
     b.classList.toggle("on", on); b.setAttribute("aria-selected", on ? "true" : "false"); b.querySelector("b").textContent = q[1];
   });
@@ -5716,9 +5755,11 @@ function viewStatus() {
     return '<button type="button" class="mlt" role="tab" aria-selected="false" data-sttab="' + t[0] + '">' + t[1] + '<b>0</b><span class="l">' + t[2] + '</span></button>';
   }).join("");
   $("#app").innerHTML = '<div id="strot"><div class="mlhero"><div class="wrap">' +
-    '<div class="mltitle">' + PULSE.replace("<svg ", '<svg class="mllogo" ') + '<div><h1>Statut des serveurs</h1><p class="note">L\'état des hébergeurs de streaming et de téléchargement, mis à jour à la main</p></div></div>' +
+    '<div class="mltitle">' + PULSE.replace("<svg ", '<svg class="mllogo" ') + '<div><h1>Statut des serveurs</h1><p class="note">L\'état de tous les hébergeurs du site, en streaming et en téléchargement</p></div></div>' +
     '<div class="mltabs two" id="sttabs" data-i="0" role="tablist"><span class="mlind"></span>' + tabs + '</div></div></div>' +
-    '<div class="wrap"><div id="stbody" style="padding-top:26px"></div>' +
+    '<div class="wrap">' +
+    (ADMIN ? '<div id="stadmin"><div class="rqaddwrap"><div class="rqadd"><input type="text" id="st-n" maxlength="30" placeholder="Ajouter un serveur (ex. Mixdrop)" autocomplete="off" aria-label="Nom du serveur"><select id="st-k" aria-label="Type de serveur"><option value="stream">Streaming</option><option value="dl">Téléchargement</option><option value="both">Les deux</option></select><button type="button" class="btn small" data-st="add">Ajouter</button></div></div><div class="stmasked" id="stmasked"></div></div>' : "") +
+    '<div id="stbody" style="padding-top:26px"></div>' +
     '<div class="row" style="padding:28px 0 72px"><a class="btn" href="/demande/">Signaler un problème</a><a class="btn ghost" href="/">Retour</a></div></div></div>';
   stPaint(false);
 }
@@ -5727,6 +5768,7 @@ document.addEventListener("click", function (e) {
   if (b.dataset.sttab === stTab) return;
   stTab = b.dataset.sttab; stPaint(true);
 });
+function stDone(msg) { STAT.at = Date.now(); statSave(); markDirty(); stPaint(false); toast(msg + (autoSyncOn() ? "" : " Clique sur « Publier » pour que tout le monde le voie.")); }
 function stCommit(h, state, note) {
   var x = STAT.items.filter(function (i) { return i.id === h.id; })[0];
   if (!x) { x = { id: h.id }; STAT.items.push(x); }
@@ -5738,17 +5780,41 @@ function stCommit(h, state, note) {
   STAT.at = x.at; statSave(); markDirty();
   return true;
 }
+function stAdd() {
+  var inp = $("#st-n"), name = ((inp && inp.value) || "").trim().slice(0, 30), id = stSlug(name);
+  if (!id) { toast("Écris le nom du serveur."); return; }
+  var kind = ($("#st-k") || {}).value; if (!STKIND[kind]) kind = "stream";
+  if (STAT.hidden.indexOf(id) > -1) { STAT.hidden = STAT.hidden.filter(function (z) { return z !== id; }); }
+  else if (stList().some(function (h) { return h.id === id; })) { toast("Ce serveur est déjà dans la liste."); return; }
+  else STAT.extra.push({ id: id, name: name, kind: kind });
+  if (inp) inp.value = "";
+  stDone("Serveur ajouté.");
+}
 document.addEventListener("click", function (e) {
   var b = e.target.closest ? e.target.closest("[data-st]") : null; if (!b || !ADMIN || !$("#strot")) return;
-  if (b.dataset.st === "clearlog") { if (!confirm("Vider tout l'historique ?")) return; STAT.log = []; STAT.at = Date.now(); statSave(); markDirty(); stPaint(false); toast("Historique vidé."); return; }
-  var h = STHOSTS.filter(function (z) { return z.id === b.dataset.id; })[0]; if (!h || !STSTATES[b.dataset.s]) return;
-  var inp = document.querySelector('[data-stnote="' + h.id + '"]');
-  if (stCommit(h, b.dataset.s, inp ? inp.value.trim().slice(0, 140) : stState(h).note)) { stPaint(false); toast(autoSyncOn() ? "Enregistré." : "Enregistré. Clique sur « Publier » pour que tout le monde le voie."); }
+  var k = b.dataset.st;
+  if (k === "clearlog") { if (!confirm("Vider tout l'historique ?")) return; STAT.log = []; stDone("Historique vidé."); return; }
+  if (k === "add") { stAdd(); return; }
+  var h = stAll().filter(function (z) { return z.id === b.dataset.id; })[0];
+  if (k === "restore") { STAT.hidden = STAT.hidden.filter(function (z) { return z !== b.dataset.id; }); stDone("Serveur réaffiché."); return; }
+  if (!h) return;
+  if (k === "del") {
+    if (h.auto) { if (STAT.hidden.indexOf(h.id) < 0) STAT.hidden.push(h.id); }
+    STAT.extra = STAT.extra.filter(function (z) { return z.id !== h.id; });
+    STAT.items = STAT.items.filter(function (z) { return z.id !== h.id; });
+    stDone(h.auto ? "Serveur masqué." : "Serveur supprimé.");
+    return;
+  }
+  if (k === "set" && STSTATES[b.dataset.s]) {
+    var inp = document.querySelector('[data-stnote="' + h.id + '"]');
+    if (stCommit(h, b.dataset.s, inp ? inp.value.trim().slice(0, 140) : stState(h).note)) stDone("Enregistré.");
+  }
 });
+document.addEventListener("keydown", function (e) { if (e.key === "Enter" && e.target.id === "st-n" && ADMIN) { e.preventDefault(); stAdd(); } });
 document.addEventListener("change", function (e) {
   var t = e.target; if (!t.dataset || t.dataset.stnote == null || !ADMIN) return;
-  var h = STHOSTS.filter(function (z) { return z.id === t.dataset.stnote; })[0]; if (!h) return;
-  if (stCommit(h, stState(h).state, t.value.trim().slice(0, 140))) { stPaint(false); toast(autoSyncOn() ? "Enregistré." : "Enregistré. Clique sur « Publier » pour que tout le monde le voie."); }
+  var h = stAll().filter(function (z) { return z.id === t.dataset.stnote; })[0]; if (!h) return;
+  if (stCommit(h, stState(h).state, t.value.trim().slice(0, 140))) stDone("Enregistré.");
 });
 
 /* ===== Routage ===== */
