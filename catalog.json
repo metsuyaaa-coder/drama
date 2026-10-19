@@ -23975,6 +23975,244 @@
       "downloads": [],
       "posterCustom": true,
       "updatedAt": 1792422573779
+    },
+    {
+      "id": "303745",
+      "type": "tv",
+      "name": "Love in Disguise",
+      "original_name": "나의 유죄인간",
+      "origin_country": [
+        "KR"
+      ],
+      "networks": [
+        "tvN"
+      ],
+      "original_language": "ko",
+      "aka": [
+        "Love in Disguise",
+        "我的有罪之人",
+        "Amor Disfarçado",
+        "Szerelem álruhában",
+        "Любов под прикритие",
+        "Un amor infiltrado",
+        "Undercover-Liebe",
+        "L'amour sous couverture",
+        "Amore sotto copertura",
+        "Miłość pod przykrywką",
+        "Iubire sub acoperire",
+        "Kılık Değiştiren Aşk",
+        "Láska v přestrojení",
+        "Μυστικός Έρωτας",
+        "حب متنكر",
+        "लव इन डिस्गाइज़",
+        "รักต้องสงสัย",
+        "罪深いあなた",
+        "偽裝戀愛",
+        "Кохання під прикриттям",
+        "为什么不知道我是女人？",
+        "나의 유죄인간",
+        "여자인 걸 왜 모르지?",
+        "My Guilty Man"
+      ],
+      "year": "2026",
+      "overview": "Yoon Yi-jun, successeur du groupe Taekang, est le principal suspect d'un terrible meurtre. Pour découvrir la vérité, l'inspectrice Kang Jae-hee s'infiltre auprès de lui en se faisant passer pour son secrétaire. Mais plus elle se rapproche de la vérité, plus ils se rapprochent l'un de l'autre. Entre Jae-hee sous couverture et Yi-jun qui cache un secret, pourront-ils s'avouer leurs sentiments ?",
+      "genres": [
+        "Comédie",
+        "Drame",
+        "Crime",
+        "Action & Adventure"
+      ],
+      "rating": "",
+      "pop": 17.9818,
+      "status": "Returning Series",
+      "poster": "https://image.tmdb.org/t/p/w500/kSAXIAovLC4z7Wp2Hy8oqLmpkox.jpg",
+      "posterV": 2,
+      "backdrop": "https://image.tmdb.org/t/p/original/32g5MD6eHPAZ5NAgkNAURb4eupm.jpg",
+      "cast": [
+        {
+          "name": "Si-wan Yim",
+          "character": "Yoon Yi-jun",
+          "id": 1296713
+        },
+        {
+          "name": "Seorina",
+          "character": "Kang Jae-hee",
+          "id": 1761412
+        },
+        {
+          "name": "Kim Jung-hyun",
+          "character": "Kim Si-hyeon",
+          "id": 1619435
+        },
+        {
+          "name": "연우",
+          "character": "Lee Hye-jung",
+          "id": 1875826
+        },
+        {
+          "name": "류승수",
+          "character": "Kang Seok-goo",
+          "id": 1243892
+        },
+        {
+          "name": "Park Jun-myun",
+          "character": "Jo Sook-ja",
+          "id": 123810
+        },
+        {
+          "name": "정한설",
+          "character": "Assistant Jeong Da-woon",
+          "id": 4011178
+        },
+        {
+          "name": "Kim Do-yoon",
+          "character": "Park Min-hwan",
+          "id": 1793046
+        },
+        {
+          "name": "정유민",
+          "character": "Han Eun-yeong",
+          "id": 2123187
+        },
+        {
+          "name": "김인권",
+          "character": "Park Bong",
+          "id": 115904
+        },
+        {
+          "name": "김기방",
+          "character": "Jeong Wan-gu",
+          "id": 141151
+        },
+        {
+          "name": "남해준",
+          "character": "Kim Seok-jin",
+          "id": 6149275
+        }
+      ],
+      "seasons": [
+        {
+          "number": 1,
+          "name": "Saison 1",
+          "episodes": [
+            {
+              "number": 1,
+              "name": "Épisode 1",
+              "overview": "",
+              "air_date": "2026-10-19",
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/SMzDM5xzhlDQv",
+                  "by": "head"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/CY9OAa71cL4ly",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 2,
+              "name": "Épisode 2",
+              "overview": "",
+              "air_date": "2026-10-20",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 3,
+              "name": "Épisode 3",
+              "overview": "",
+              "air_date": "2026-10-26",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 4,
+              "name": "Épisode 4",
+              "overview": "",
+              "air_date": "2026-10-27",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 5,
+              "name": "Épisode 5",
+              "overview": "",
+              "air_date": "2026-11-02",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 6,
+              "name": "Épisode 6",
+              "overview": "",
+              "air_date": "2026-11-03",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 7,
+              "name": "Épisode 7",
+              "overview": "",
+              "air_date": "2026-11-09",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 8,
+              "name": "Épisode 8",
+              "overview": "",
+              "air_date": "2026-11-10",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 9,
+              "name": "Épisode 9",
+              "overview": "",
+              "air_date": "2026-11-16",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 10,
+              "name": "Épisode 10",
+              "overview": "",
+              "air_date": "2026-11-17",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 11,
+              "name": "Épisode 11",
+              "overview": "",
+              "air_date": "2026-11-23",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 12,
+              "name": "Épisode 12",
+              "overview": "",
+              "air_date": "2026-11-24",
+              "sources": [],
+              "downloads": []
+            }
+          ],
+          "downloads": []
+        }
+      ],
+      "sources": [],
+      "addedAt": 1792425599441,
+      "langs": [
+        "VOSTFR"
+      ],
+      "downloads": [],
+      "updatedAt": 1792425630334
     }
   ],
   "deletedLinks": [
@@ -24042,6 +24280,15 @@
     "at": 1792425510327
   },
   "journal": [
+    {
+      "k": "mvffxvuq4hw6l",
+      "t": 1792425630338,
+      "b": "head",
+      "a": "add",
+      "i": "303745",
+      "n": "Love in Disguise",
+      "d": ""
+    },
     {
       "k": "mvfffbjqmzxo2",
       "t": 1792424782411,
