@@ -526,6 +526,57 @@ footer .copy { max-width: 1280px; margin: 28px auto 0; padding: 20px max(16px, e
 @media (max-width: 480px) { .pnseg { grid-template-columns: minmax(0, 1fr); } }
 @media (prefers-reduced-motion: reduce) { .pnc, .pnquick, .pntabs, .pnbar i { animation: none; } }
 
+/* ===== Bouton Lire des épisodes (refonte) ===== */
+.ep .act .btn.eplay[data-playep] { position: relative; display: inline-flex; align-items: stretch; gap: 0; padding: 0; min-width: 150px; min-height: 50px; overflow: hidden; font-size: 15px; letter-spacing: .12em; }
+.ep .act .btn.eplay .pi { flex: none; width: 50px; display: grid; place-items: center; background: var(--bg); color: var(--fg); transition: background .25s, color .25s, transform .3s var(--ease); }
+.ep .act .btn.eplay .pi svg { width: 18px; height: 18px; margin-left: 2px; transition: transform .3s var(--ease); }
+.ep .act .btn.eplay .t { flex: 1; display: flex; align-items: center; justify-content: center; padding: 0 24px; }
+.ep .act .btn.eplay:hover .pi { background: var(--fg); color: var(--bg); }
+.ep .act .btn.eplay:hover .pi svg { transform: scale(1.2); }
+.ep.next .act .btn.eplay { background: #7dd3fc; border-color: #7dd3fc; color: #082f49; }
+.ep.next .act .btn.eplay .pi { background: #082f49; color: #7dd3fc; }
+.ep.next .act .btn.eplay:hover { background: transparent; color: #7dd3fc; }
+.ep.next .act .btn.eplay:hover .pi { background: #7dd3fc; color: #082f49; }
+@media (max-width: 720px) { .ep .act .btn.eplay[data-playep] { flex: 1 1 auto; min-height: 52px; } }
+
+/* ===== Pied de page : boutons admin + volet ===== */
+body.admin .btn.admin-only { display: inline-flex !important; }
+footer .links .btn { text-decoration: none; padding: 11px 22px; }
+footer .links .btn svg { width: 18px; height: 18px; flex: none; }
+footer .links .btn:not(.ghost) { color: var(--bg); }
+footer .links .btn:not(.ghost):hover { color: var(--fg); }
+footer .links .btn.ghost { color: var(--fg); }
+footer .links .btn.ghost:hover { color: var(--bg); }
+.volet { position: fixed; inset: 0; z-index: 96; }
+.volet[hidden] { display: none; }
+.vo-back { position: absolute; inset: 0; background: rgba(0, 0, 0, .6); backdrop-filter: blur(3px); opacity: 0; transition: opacity .3s ease; }
+.volet.show .vo-back { opacity: 1; }
+.vo-panel { position: absolute; top: 0; right: 0; bottom: 0; width: min(400px, 100%); display: flex; flex-direction: column; background: #0a0a0a; border-left: 1px solid #3a3a3a; box-shadow: -24px 0 60px rgba(0, 0, 0, .7); transform: translateX(100%); transition: transform .4s var(--ease); padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+.volet.show .vo-panel { transform: none; }
+.vo-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 20px 20px 16px; border-bottom: 1px solid var(--line); }
+.vo-head b { display: block; font-family: var(--display); font-weight: 900; font-size: 30px; letter-spacing: .03em; text-transform: uppercase; line-height: 1; }
+.vo-head small { display: block; margin-top: 4px; font-family: var(--mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--dim); }
+.vo-x { flex: none; width: 40px; height: 40px; display: grid; place-items: center; background: transparent; border: 1px solid var(--line); border-radius: 0; color: var(--dim); font-size: 22px; line-height: 1; cursor: pointer; transition: background .2s, color .2s, border-color .2s; }
+.vo-x:hover { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+.vo-list { flex: 1; overflow-y: auto; display: grid; align-content: start; gap: 8px; padding: 16px 20px 24px; }
+.vo-lbl { margin: 8px 0 0; font-family: var(--mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--dim); }
+.vo-item { display: flex; align-items: center; gap: 14px; width: 100%; padding: 12px 14px; background: transparent; border: 1px solid var(--line); border-radius: 0; color: var(--fg); text-align: left; text-decoration: none; cursor: pointer; transition: border-color .25s, background .25s, transform .3s var(--ease); }
+.vo-item[hidden] { display: none; }
+.vo-item:hover { border-color: var(--fg); background: var(--panel); transform: translateX(4px); }
+.vo-item .ic { flex: none; width: 42px; height: 42px; display: grid; place-items: center; border: 1px solid var(--line); color: var(--dim); transition: background .25s, color .25s, border-color .25s; }
+.vo-item .ic svg { width: 20px; height: 20px; }
+.vo-item:hover .ic { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+.vo-item .tx { flex: 1; min-width: 0; }
+.vo-item .tx b { display: block; font-size: 15px; line-height: 1.25; }
+.vo-item .tx small { display: block; margin-top: 2px; color: var(--dim); font-size: 12px; line-height: 1.4; }
+.vo-item .ar { flex: none; color: var(--dim); transition: transform .25s var(--ease), color .25s; }
+.vo-item:hover .ar { transform: translateX(3px); color: var(--fg); }
+.vo-item.danger { border-color: #3a3a3a; }
+.vo-item.danger .tx b { color: var(--dim); }
+.vo-item.danger:hover .tx b { color: var(--fg); }
+.volet.show .vo-item { animation: rmitem .45s calc(120ms + var(--i, 0) * 60ms) var(--ease) both; }
+@media (prefers-reduced-motion: reduce) { .vo-panel, .vo-back { transition: opacity .15s; } .volet.show .vo-item { animation: none; } }
+
 .admin-only { display: none !important; }
 body.admin .admin-only { display: revert !important; }
 body.admin nav a.admin-only { display: inline-flex !important; }
@@ -1729,13 +1780,8 @@ details.season summary i { padding: 5px 9px; border: 1px solid var(--line); font
     <div class="links">
       <button id="btn-info" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg><span>INFOS DU SITE</span></button>
       <button id="btn-install" class="btn" type="button" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg><span>Installer l'application</span></button>
-      <button id="btn-export" type="button" class="admin-only">Publier (catalog.json)</button>
-      <button id="btn-import" type="button" class="admin-only">Importer</button>
-      <button id="btn-key" type="button" class="admin-only">Clé TMDB</button>
-      <button id="btn-gh" type="button" class="admin-only">GitHub</button>
-      <a href="/panel" class="admin-only">Panneau admin</a>
-      <a href="/motdepasse" class="admin-only">Mot de passe</a>
-      <button id="btn-quit" type="button" class="admin-only">Quitter le mode admin</button>
+      <button id="btn-export" type="button" class="btn admin-only"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15V4"/><path d="m7.5 8.5 4.5-4.5 4.5 4.5"/><path d="M5 20h14"/></svg><span>Publier le catalogue</span></button>
+      <button id="btn-volet" type="button" class="btn ghost admin-only" aria-haspopup="dialog" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h9M17 7h3"/><path d="M4 17h3M11 17h9"/><path d="M15 4.5v5M9 14.5v5"/></svg><span>Volet admin</span></button>
     </div>
     <input id="file" type="file" accept="application/json" hidden>
   </div>
@@ -1762,6 +1808,25 @@ details.season summary i { padding: 5px 9px; border: 1px solid var(--line); font
   </div>
   <p class="copy">© 2026 DramaByM. Tous droits réservés.</p>
 </footer>
+
+<div class="volet" id="volet" hidden role="dialog" aria-label="Volet admin">
+  <div class="vo-back" data-voletclose></div>
+  <aside class="vo-panel">
+    <div class="vo-head"><div><b>Volet admin</b><small>Clés, accès et réglages</small></div><button type="button" class="vo-x" data-voletclose aria-label="Fermer">&times;</button></div>
+    <div class="vo-list">
+      <p class="vo-lbl">Catalogue</p>
+      <a class="vo-item" href="/panel" data-voletclose style="--i:0"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4.5 6v5.5c0 4.6 3.1 8.2 7.5 9.5 4.4-1.3 7.5-4.9 7.5-9.5V6z"/></svg></span><span class="tx"><b>Panneau admin</b><small>Stats, réglages et journal</small></span><span class="ar" aria-hidden="true">→</span></a>
+      <button id="btn-import" type="button" class="vo-item" style="--i:1"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7.5 10.5 4.5 4.5 4.5-4.5"/><path d="M5 19.5h14"/></svg></span><span class="tx"><b>Importer</b><small>Charger un fichier catalog.json</small></span><span class="ar" aria-hidden="true">→</span></button>
+      <p class="vo-lbl">Connexions</p>
+      <button id="btn-key" type="button" class="vo-item" style="--i:2"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="15" r="3.5"/><path d="M10.5 12.5 20 3M16 7l3 3M13.5 9.5l2 2"/></svg></span><span class="tx"><b>Clé TMDB</b><small>Jeton pour les infos et affiches</small></span><span class="ar" aria-hidden="true">→</span></button>
+      <button id="btn-gh" type="button" class="vo-item" style="--i:3"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 8-4 4 4 4M16 8l4 4-4 4M13.5 5 10.5 19"/></svg></span><span class="tx"><b>GitHub</b><small>Dépôt et jeton pour publier en un clic</small></span><span class="ar" aria-hidden="true">→</span></button>
+      <p class="vo-lbl">Compte</p>
+      <a class="vo-item" href="/motdepasse" data-voletclose style="--i:4"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10.5" width="14" height="9.5" rx="1"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"/></svg></span><span class="tx"><b>Mot de passe</b><small>Changer ou consulter l'accès admin</small></span><span class="ar" aria-hidden="true">→</span></a>
+      <a class="vo-item" id="vo-head" href="/headadmin" data-voletclose hidden style="--i:5"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 8 4.5 4L12 5l3.5 7L20 8l-1.5 11h-13z"/></svg></span><span class="tx"><b>Gérer les admins</b><small>Réservé au Head admin</small></span><span class="ar" aria-hidden="true">→</span></a>
+      <button id="btn-quit" type="button" class="vo-item danger" style="--i:6"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 4H5.5v16H10M15 8l4 4-4 4M19 12H9"/></svg></span><span class="tx"><b>Quitter le mode admin</b><small>Se déconnecter de ce navigateur</small></span><span class="ar" aria-hidden="true">→</span></button>
+    </div>
+  </aside>
+</div>
 
 <dialog id="player">
   <div class="phead">
@@ -4123,7 +4188,7 @@ function viewSerie(id) {
         (se.episodes || []).map(function (ep, k) {
           var n = (ep.sources || []).length, seen = !!seenMap[epKey(se, ep)], fresh = !seen && isRecent(ep.air_date);
           return '<div class="ep' + (seen ? " seen" : "") + (nextKey === i + "|" + k ? " next" : "") + '" style="--k:' + Math.min(k, 12) + '"><span class="n">' + String(ep.number).padStart(2, "0") + '</span><div><b>' + esc(ep.name || "Épisode " + ep.number) + (fresh ? " " + newBadge("Nouveau") : "") + '</b>' + (ep.air_date ? '<small class="d">' + esc(fmtDate(ep.air_date)) + '</small>' : '') + (ep.overview ? '<small>' + esc(ep.overview) + '</small>' : '') + '</div>' +
-            '<div class="act">' + (n ? '<button class="btn small" data-playep="' + esc(s.id) + '|' + i + '|' + esc(ep.number) + '">' + PLAYICON + '<span>Lire</span></button>' + (n > 1 ? '<span class="off">' + n + ' sources</span>' : '') : '<span class="off">Sans source</span>') + '<button type="button" class="btn small ghost seenbtn' + (seen ? " on" : "") + '" data-seen="' + esc(s.id) + '|' + i + '|' + esc(ep.number) + '">' + seenBtnInner(seen) + '</button></div>' +
+            '<div class="act">' + (n ? '<button class="btn small eplay" data-playep="' + esc(s.id) + '|' + i + '|' + esc(ep.number) + '"><span class="pi">' + PLAYICON + '</span><span class="t">Lire</span></button>' + (n > 1 && isHead() ? '<span class="off">' + n + ' sources</span>' : '') : '<span class="off">Sans source</span>') + '<button type="button" class="btn small ghost seenbtn' + (seen ? " on" : "") + '" data-seen="' + esc(s.id) + '|' + i + '|' + esc(ep.number) + '">' + seenBtnInner(seen) + '</button></div>' +
             (dlOpen() ? '<div class="dlact">' + ((ep.downloads || []).length ? dlLinks(ep.downloads, "Télécharger", "", true) : '<span class="off">Pas de lien</span>') + '</div>' : '') + '</div>';
         }).join("") + '</details>';
     }).join("") + '</div>';
@@ -6341,6 +6406,31 @@ $("#btn-quit").addEventListener("click", function () {
   try { localStorage.removeItem("noir.admin"); } catch (e) {}
   location.href = "/";
 });
+
+/* ===== Volet admin (pied de page) : ouvre / ferme le panneau latéral ===== */
+(function () {
+  var vo = $("#volet"), btn = $("#btn-volet"), timer;
+  if (!vo || !btn) return;
+  function open() {
+    if (!ADMIN) return;
+    clearTimeout(timer);
+    var h = $("#vo-head"); if (h) h.hidden = !isHead();
+    vo.hidden = false; void vo.offsetWidth; vo.classList.add("show");
+    btn.setAttribute("aria-expanded", "true");
+    document.documentElement.classList.add("lock");
+  }
+  function close() {
+    if (vo.hidden) return;
+    vo.classList.remove("show"); btn.setAttribute("aria-expanded", "false");
+    document.documentElement.classList.remove("lock");
+    timer = setTimeout(function () { vo.hidden = true; }, 380);
+  }
+  btn.addEventListener("click", open);
+  vo.addEventListener("click", function (e) {
+    if (e.target.closest("[data-voletclose]") || e.target.closest(".vo-item")) close();
+  });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") close(); });
+})();
 
 /* ===== Message d'accueil et copie ===== */
 var WELKEY = "noir.welcome";
