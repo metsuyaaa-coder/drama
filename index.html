@@ -421,6 +421,111 @@ footer .flist { list-style: none; margin: 0; padding: 0; }
 footer .flist li::before { content: "\2022  "; }
 footer .copy { max-width: 1280px; margin: 28px auto 0; padding: 20px max(16px, env(safe-area-inset-right, 0px)) 0 max(16px, env(safe-area-inset-left, 0px)); border-top: 1px solid var(--line); text-align: center; font-size: 13px; color: var(--dim); }
 
+/* ===== Panneau admin (refonte, même style que Paramètres / Ma liste / Calendrier) ===== */
+#panroot { padding-bottom: 72px; }
+.pnl button > *, .pnl .btn > * { pointer-events: none; }
+.pnl .btn svg { width: 16px; height: 16px; flex: none; }
+.pnquick { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 0 0 24px; animation: riseIn .6s .1s var(--ease) both; }
+.pnrole { display: inline-flex; align-items: center; gap: 8px; margin-left: auto; padding: 6px 12px; border: 1px solid var(--line); font-family: var(--mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--dim); }
+.pnrole svg { width: 14px; height: 14px; }
+.pnrole.head { border-color: #7dd3fc; color: #7dd3fc; }
+.pnsync { display: inline-flex; align-items: center; gap: 8px; font-family: var(--mono); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--dim); }
+.pnsync i { width: 8px; height: 8px; border-radius: 50%; background: #555; }
+.pnsync.on i { background: #86efac; box-shadow: 0 0 0 4px rgba(134, 239, 172, .15); }
+.pntabs { --n: 3; --i: 0; position: relative; display: grid; grid-template-columns: repeat(var(--n), minmax(0, 1fr)); max-width: 920px; border: 1px solid var(--line); animation: riseIn .6s .12s var(--ease) both; }
+.pnind { position: absolute; top: 0; bottom: 0; left: 0; width: calc(100% / var(--n)); background: var(--fg); transform: translateX(calc(var(--i) * 100%)); transition: transform .45s var(--ease); z-index: 0; }
+.pnt { position: relative; z-index: 1; display: flex; align-items: center; gap: 10px; min-width: 0; padding: 15px 14px; background: transparent; border: 0; border-left: 1px solid var(--line); border-radius: 0; color: var(--dim); cursor: pointer; text-align: left; transition: color .3s; }
+.pnt:first-of-type { border-left: 0; }
+.pnt svg { width: 24px; height: 24px; flex: none; transition: transform .4s var(--ease); }
+.pnt:hover svg { transform: scale(1.12) rotate(-6deg); }
+.pnt .l { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-family: var(--display); font-weight: 700; font-size: 18px; letter-spacing: .02em; text-transform: uppercase; line-height: 1; }
+.pnt em { position: absolute; top: 6px; right: 8px; font-style: normal; font-family: var(--mono); font-size: 10px; line-height: 1; opacity: .7; }
+.pnt.on { color: var(--bg); }
+.pnt:not(.on):hover { color: var(--fg); }
+.pnbody { display: grid; gap: 18px; max-width: 920px; padding-block: 26px 0; }
+.pnc { display: grid; border: 1px solid var(--line); animation: cardIn .5s var(--ease) both; animation-delay: calc(var(--i, 0) * 50ms); transition: border-color .25s; }
+.pnc:hover { border-color: #3a3a3a; }
+.pnc > * { min-width: 0; }
+.pnch { display: flex; align-items: center; gap: 14px; padding: 16px 20px; border-bottom: 1px solid var(--line); }
+.pnci { flex: none; width: 44px; height: 44px; display: grid; place-items: center; border: 1px solid var(--line); color: var(--dim); transition: background .25s, color .25s, border-color .25s; }
+.pnci svg { width: 21px; height: 21px; }
+.pnc:hover .pnci { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+.pnct { min-width: 0; }
+.pnct b { display: block; font-family: var(--display); font-weight: 700; font-size: 22px; letter-spacing: .03em; text-transform: uppercase; line-height: 1.1; }
+.pnct small b { display: inline; font: inherit; font-weight: 700; letter-spacing: 0; text-transform: none; color: var(--fg); }
+.pnct small { display: block; margin-top: 3px; color: var(--dim); font-size: 13px; line-height: 1.45; }
+.pncb { display: grid; gap: 14px; padding: 18px 20px 20px; }
+.pncb > .note, .pncb .note { margin: 0; }
+.pncbi { display: grid; gap: 14px; }
+.pnpill { display: inline-block; margin-left: 10px; padding: 2px 8px; vertical-align: 3px; border: 1px solid var(--line); font-family: var(--mono); font-size: 10px; font-weight: 400; letter-spacing: .08em; color: var(--dim); }
+.pnpill.on { border-color: #86efac; color: #86efac; }
+.pnkv { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 10px; }
+.pnkv > div { display: grid; gap: 2px; padding: 10px 12px; border: 1px solid var(--line); }
+.pnkv span { font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: var(--dim); }
+.pnkv b { font-size: 14px; overflow-wrap: anywhere; }
+.pnseg { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.pnopt { display: flex; align-items: center; gap: 12px; padding: 14px 16px; text-align: left; background: transparent; border: 1px solid var(--line); border-radius: 0; color: var(--dim); cursor: pointer; transition: background .25s, color .25s, border-color .25s, transform .15s; }
+.pnopt:active { transform: scale(.98); }
+.pnopt svg { width: 22px; height: 22px; flex: none; }
+.pnopt b { display: block; font-size: 14px; letter-spacing: .06em; text-transform: uppercase; color: inherit; }
+.pnopt small { display: block; margin-top: 2px; font-size: 12px; line-height: 1.35; color: inherit; opacity: .75; }
+.pnopt:hover { border-color: var(--fg); color: var(--fg); }
+.pnopt.on { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+.pn3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; }
+.pnstats { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px; }
+.pnst { display: grid; gap: 6px; padding: 14px 14px 12px; border: 1px solid var(--line); transition: border-color .25s, background .25s, transform .3s var(--ease); }
+.pnst:hover { border-color: var(--fg); background: var(--panel); transform: translateY(-3px); }
+.pnst svg { width: 18px; height: 18px; color: var(--dim); transition: color .25s; }
+.pnst:hover svg { color: #7dd3fc; }
+.pnst b { font-family: var(--display); font-weight: 900; font-size: 40px; line-height: 1; }
+.pnst span { font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: var(--dim); }
+.pnhl { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+.pnhl b { font-family: var(--display); font-weight: 900; font-size: 44px; line-height: 1; }
+.pnhl span { font-family: var(--mono); font-size: 12px; color: var(--dim); }
+@keyframes pnfill { from { width: 0; } }
+.pnbar { height: 6px; background: var(--line); overflow: hidden; }
+.pnbar i { display: block; height: 100%; background: var(--fg); animation: pnfill .9s var(--ease) both; }
+.pntodo { display: flex; flex-wrap: wrap; gap: 8px; }
+.pntd { display: inline-flex; align-items: center; gap: 8px; padding: 7px 12px; border: 1px solid var(--line); font-size: 13px; color: var(--dim); }
+.pntd svg { width: 14px; height: 14px; flex: none; color: var(--fg); }
+.pntops { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 12px; }
+.pntop { display: grid; gap: 10px; align-content: start; padding: 14px; border: 1px solid var(--line); }
+.pntop h4 { display: flex; align-items: center; gap: 8px; margin: 0; font-family: var(--mono); font-size: 11px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase; color: var(--dim); }
+.pntop h4 svg { width: 14px; height: 14px; }
+.pnbr { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 10px; font-size: 13px; }
+.pnbr > span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.pnbr em { font-style: normal; font-family: var(--mono); color: var(--dim); }
+.pnbr .pnbar { grid-column: 1 / -1; height: 4px; }
+.pnrecent { border: 1px solid var(--line); }
+.pnrec { display: flex; align-items: center; gap: 12px; padding: 9px 12px; border-bottom: 1px solid var(--line); transition: background .2s; }
+.pnrec:last-child { border-bottom: 0; }
+.pnrec:hover { background: var(--panel); }
+.pnrec .pi { flex: none; width: 34px; height: 50px; background: #111 center / cover no-repeat; }
+.pnrec .pt { flex: 1; min-width: 0; }
+.pnrec .pt b { display: block; font-size: 14px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.pnrec .pt small { display: block; color: var(--dim); font-family: var(--mono); font-size: 11px; }
+.pnrec svg { flex: none; width: 16px; height: 16px; color: var(--dim); }
+.pnl .jrow { align-items: center; padding: 10px 14px; }
+.pnl .jic { flex: none; width: 26px; height: 26px; display: grid; place-items: center; border: 1px solid var(--line); color: var(--dim); }
+.pnl .jic svg { width: 14px; height: 14px; }
+.pnl .jlist { max-height: 380px; }
+.pnl .srcrow { display: flex; align-items: center; gap: 12px; padding: 10px 14px; border: 1px solid var(--line); transition: border-color .2s, background .2s; }
+.pnl .srcrow:hover { border-color: var(--fg); background: var(--panel); }
+.pnl .srcn { width: 22px; font-family: var(--mono); color: var(--dim); }
+.pnl .srcnm { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+.pnsrc { display: grid; gap: 6px; max-width: 560px; }
+@media (max-width: 720px) {
+  .pnt { flex-direction: column; justify-content: center; gap: 4px; padding: 12px 4px; text-align: center; }
+  .pnt .l { font-size: 13px; letter-spacing: .02em; max-width: 100%; }
+  .pnt em { display: none; }
+  .pnrole { margin-left: 0; }
+  .pnch { padding: 14px 14px; }
+  .pncb { padding: 16px 14px 18px; }
+  .pnst b { font-size: 34px; }
+}
+@media (max-width: 480px) { .pnseg { grid-template-columns: minmax(0, 1fr); } }
+@media (prefers-reduced-motion: reduce) { .pnc, .pnquick, .pntabs, .pnbar i { animation: none; } }
+
 .admin-only { display: none !important; }
 body.admin .admin-only { display: revert !important; }
 body.admin nav a.admin-only { display: inline-flex !important; }
@@ -2473,15 +2578,14 @@ function annPreview() {
 function annSection() {
   var a = ANN || { on: false, text: "", kind: "info", link: "", label: "" }, live = !!(a.on && a.text);
   var opts = Object.keys(ANNKINDS).map(function (k) { return '<option value="' + k + '"' + (a.kind === k ? " selected" : "") + '>' + esc(ANNKINDS[k]) + '</option>'; }).join("");
-  return '<div style="display:grid;gap:12px"><h3 class="note" style="margin:0;text-transform:uppercase;letter-spacing:.08em">Annonce du site</h3>' +
-    '<p class="note" style="margin:0">Bandeau tout en haut du site (nouvelle saison, maintenance, nouveau serveur…). Les visiteurs peuvent le fermer ; il revient s\'il est mis à jour ou réaffiché. Statut actuel : <b>' + (live ? "affichée" : "masquée") + '</b>.</p>' +
+  return pnCard("mega", "Annonce du site" + pnPill(live, "Affichée", "Masquée"), 'Bandeau tout en haut du site (nouvelle saison, maintenance, nouveau serveur…). Les visiteurs peuvent le fermer ; il revient s\'il est mis à jour ou réaffiché. Statut actuel : <b>' + (live ? "affichée" : "masquée") + '</b>.',
     '<label class="f"><span>Message (300 caractères maximum)</span><textarea id="ann-text" maxlength="300" style="min-height:80px" placeholder="Ex. La saison 2 de … est disponible !">' + esc(a.text) + '</textarea></label>' +
-    '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px">' +
+    '<div class="pn3">' +
     '<label class="f"><span>Type</span><select id="ann-kind">' + opts + '</select></label>' +
     '<label class="f"><span>Lien (facultatif)</span><input type="text" id="ann-link" maxlength="300" placeholder="/serie/123 ou https://…" value="' + esc(a.link || "") + '"></label>' +
     '<label class="f"><span>Texte du lien</span><input type="text" id="ann-label" maxlength="40" placeholder="En savoir plus" value="' + esc(a.label || "") + '"></label></div>' +
-    '<p class="note" style="margin:0">Aperçu :</p><div class="ann prev" id="ann-prev" hidden></div>' +
-    '<div class="row"><button class="btn" type="button" data-ann="publish">' + (live ? "Mettre à jour" : "Afficher l'annonce") + '</button>' + (live ? '<button class="btn ghost" type="button" data-ann="hide">Masquer</button>' : '') + '</div></div>';
+    '<p class="note">Aperçu :</p><div class="ann prev" id="ann-prev" hidden></div>' +
+    '<div class="row"><button class="btn" type="button" data-ann="publish">' + pnIco("mega") + '<span>' + (live ? "Mettre à jour" : "Afficher l'annonce") + '</span></button>' + (live ? '<button class="btn ghost" type="button" data-ann="hide">' + pnIco("lock") + '<span>Masquer</span></button>' : '') + '</div>', 3);
 }
 document.addEventListener("input", function (e) { if (e.target.id && e.target.id.indexOf("ann-") === 0) annPreview(); });
 document.addEventListener("click", function (e) {
@@ -2775,9 +2879,8 @@ function ghBackup(gi, src, tried, opts) {
 }
 function bkSection() {
   if (!isHead()) return "";
-  return '<div style="display:grid;gap:12px"><h3 class="note" style="margin:0;text-transform:uppercase;letter-spacing:.08em">Sauvegardes</h3>' +
-    '<p class="note" style="margin:0">Avant chaque publication, la version en ligne de catalog.json est copiée dans le dossier backups/ du dépôt (toujours quand tu cliques sur « Publier », au plus une toutes les 10 min en synchro auto). Les ' + BKMAX + ' dernières sont gardées.</p>' +
-    '<div id="bk-box"><p class="note" style="margin:0">Chargement…</p></div></div>';
+  return pnCard("db", "Sauvegardes", 'Avant chaque publication, la version en ligne de catalog.json est copiée dans le dossier backups/ du dépôt (toujours quand tu cliques sur « Publier », au plus une toutes les 10 min en synchro auto). Les ' + BKMAX + ' dernières sont gardées.',
+    '<div id="bk-box"><p class="note">Chargement…</p></div>', 2);
 }
 function bkRender() {
   var box = $("#bk-box"); if (!box) return;
@@ -4110,15 +4213,17 @@ function adminLabel(b) {
 }
 function journalSection() {
   if (!isHead()) return "";
-  var a = journalList(), AL = { add: "a ajouté", edit: "a modifié", del: "a supprimé", tmdb: "a mis à jour depuis TMDB" };
+  var a = journalList(), AL = { add: "a ajouté", edit: "a modifié", del: "a supprimé", tmdb: "a mis à jour depuis TMDB" }, AI = { add: "plus", edit: "edit", del: "trash", tmdb: "refresh" };
   function fmt(t) { var d = new Date(t), z = function (n) { return (n < 10 ? "0" : "") + n; }; return z(d.getDate()) + "/" + z(d.getMonth() + 1) + " " + z(d.getHours()) + ":" + z(d.getMinutes()); }
+  var cnt = { add: 0, edit: 0, del: 0, tmdb: 0 };
+  a.forEach(function (e) { if (cnt[e.a] != null) cnt[e.a]++; });
   var rows = a.slice(0, journalShown).map(function (e) {
-    return '<div class="jrow"><span class="jt">' + fmt(e.t) + '</span><span class="jb">' + esc(adminLabel(e.b)) + ' ' + AL[e.a] + ' <b>' + esc(e.n) + '</b>' + (e.d ? ' <small>(' + esc(e.d) + ')</small>' : '') + '</span></div>';
+    return '<div class="jrow"><span class="jic">' + pnIco(AI[e.a] || "pulse") + '</span><span class="jt">' + fmt(e.t) + '</span><span class="jb">' + esc(adminLabel(e.b)) + ' ' + AL[e.a] + ' <b>' + esc(e.n) + '</b>' + (e.d ? ' <small>(' + esc(e.d) + ')</small>' : '') + '</span></div>';
   }).join("");
-  return '<div style="display:grid;gap:12px"><h3 class="note" style="margin:0;text-transform:uppercase;letter-spacing:.08em">Journal des modifications</h3>' +
-    (rows ? '<div class="jlist">' + rows + '</div>' : '<p class="note" style="margin:0">Rien pour l\'instant : les prochains ajouts, modifications et suppressions apparaîtront ici.</p>') +
-    (a.length > journalShown ? '<div class="row"><button class="btn ghost small" type="button" id="journal-more">Voir plus</button></div>' : '') +
-    '<p class="note" style="margin:0">Garde les ' + JDAYS + ' derniers jours (' + JMAX + ' entrées maximum). Les actions des autres admins arrivent à la synchro.</p></div>';
+  var chips = a.length ? '<div class="pntodo"><span class="pntd">' + pnIco("plus") + cnt.add + ' ajout' + (cnt.add > 1 ? 's' : '') + '</span><span class="pntd">' + pnIco("edit") + cnt.edit + ' modification' + (cnt.edit > 1 ? 's' : '') + '</span><span class="pntd">' + pnIco("trash") + cnt.del + ' suppression' + (cnt.del > 1 ? 's' : '') + '</span><span class="pntd">' + pnIco("refresh") + cnt.tmdb + ' mise' + (cnt.tmdb > 1 ? 's' : '') + ' à jour TMDB</span></div>' : '';
+  return pnCard("pulse", "Journal des modifications", "Garde les " + JDAYS + " derniers jours (" + JMAX + " entrées maximum). Les actions des autres admins arrivent à la synchro.",
+    chips + (rows ? '<div class="jlist">' + rows + '</div>' : '<p class="note">Rien pour l\'instant : les prochains ajouts, modifications et suppressions apparaîtront ici.</p>') +
+    (a.length > journalShown ? '<div class="row"><button class="btn ghost small" type="button" id="journal-more">Voir plus</button></div>' : ''), 0);
 }
 document.addEventListener("click", function (e) {
   if (e.target.id === "journal-more") { journalShown += 30; if (curPath() === "/panel") viewPanel(); }
@@ -4171,9 +4276,7 @@ function lkRender() {
   var list = rows.slice(0, LK.shown).map(function (e, i) {
     return '<div class="lkrow"><span class="lkh">' + esc(e.host) + (e.kind === "dl" ? ' · DL' : '') + '</span><span class="lkb"><b>' + esc(e.f.name) + '</b> <small>' + esc(e.where) + ' · ' + esc(lkWho(e.by)) + '</small></span><button class="btn ghost small" type="button" data-lkdel="' + i + '" aria-label="Supprimer ce lien">Supprimer</button></div>';
   }).join("");
-  el.innerHTML = '<h3 class="note" style="margin:0;text-transform:uppercase;letter-spacing:.08em">Liens par admin</h3>' +
-    '<p class="note" style="margin:0">Qui a ajouté quoi, par hébergeur. Les suppressions sont publiées avec catalog.json : les autres admins ne les voient plus revenir.</p>' +
-    '<div class="lksel">' + selBy + selHost + selKind + '</div>' + matHtml +
+  el.innerHTML = '<div class="lksel">' + selBy + selHost + selKind + '</div>' + matHtml +
     '<div class="row"><button class="btn danger" type="button" id="lkdelall"' + (can ? '' : ' disabled') + '>Supprimer les ' + rows.length + ' liens' + esc(scope) + '</button></div>' +
     (can ? '' : '<p class="note" style="margin:0">Choisis un admin ou un hébergeur pour pouvoir tout supprimer d\'un coup.</p>') +
     (list ? '<div class="jlist">' + list + '</div>' : '') +
@@ -4217,11 +4320,50 @@ document.addEventListener("change", function (e) {
   var t = e.target; if (!t || !t.dataset || !t.dataset.lkf || !$("#lksec")) return;
   LK[t.dataset.lkf] = t.value; LK.shown = 40; lkRender();
 });
-function linksSection() { return isHead() ? '<div id="lksec" style="display:grid;gap:12px"></div>' : ""; }
+function linksSection() { return isHead() ? pnCard("link", "Liens par admin", "Qui a ajouté quoi, par hébergeur. Les suppressions sont publiées avec catalog.json : les autres admins ne les voient plus revenir.", '<div id="lksec" class="pncbi"></div>', 1) : ""; }
+
+/* ===== Panneau admin : refonte visuelle (mêmes boutons, mêmes identifiants, mêmes permissions) ===== */
+var PNI = {
+  grid: '<rect x="4" y="4" width="7" height="7"/><rect x="13" y="4" width="7" height="7"/><rect x="4" y="13" width="7" height="7"/><rect x="13" y="13" width="7" height="7"/>',
+  film: '<rect x="3.5" y="4" width="17" height="16" rx="1"/><path d="M8 4v16M16 4v16M3.5 9h4.5M3.5 15h4.5M16 9h4.5M16 15h4.5"/>',
+  tv: '<rect x="3" y="5.5" width="18" height="12" rx="1"/><path d="M8 21h8M12 17.5V21"/>',
+  globe: '<circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.6 2.6 3.6 5.4 3.6 8.5s-1 5.9-3.6 8.5c-2.6-2.6-3.6-5.4-3.6-8.5s1-5.9 3.6-8.5z"/>',
+  pulse: '<path d="M3 12h4l2.5-6 4 12 2.5-6H21"/>',
+  key: '<circle cx="8" cy="15" r="3.5"/><path d="M10.5 12.5 20 3M16 7l3 3M13.5 9.5l2 2"/>',
+  dl: '<path d="M12 4v11M7.5 10.5 12 15l4.5-4.5M5 19.5h14"/>',
+  up: '<path d="M12 15V4M7.5 8.5 12 4l4.5 4.5M5 19.5h14"/>',
+  plus: '<path d="M12 5v14M5 12h14"/>',
+  eye: '<path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="2.8"/>',
+  lock: '<rect x="5" y="10.5" width="14" height="9.5" rx="1"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"/>',
+  unlock: '<rect x="5" y="10.5" width="14" height="9.5" rx="1"/><path d="M8 10.5V8a4 4 0 0 1 7.6-1.7"/>',
+  mega: '<path d="M4 10v4h3l7 4V6L7 10H4zM17.5 9.5a4 4 0 0 1 0 5"/>',
+  db: '<ellipse cx="12" cy="6" rx="7.5" ry="2.8"/><path d="M4.5 6v12c0 1.5 3.4 2.8 7.5 2.8s7.5-1.3 7.5-2.8V6M4.5 12c0 1.5 3.4 2.8 7.5 2.8s7.5-1.3 7.5-2.8"/>',
+  list: '<path d="M8 6h12M8 12h12M8 18h12M4 6h.01M4 12h.01M4 18h.01"/>',
+  link: '<path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/>',
+  chart: '<path d="M4 20V10M10 20V4M16 20v-7M21 20H3"/>',
+  user: '<circle cx="12" cy="8.5" r="3.8"/><path d="M4.5 20c.8-3.8 3.8-6 7.5-6s6.7 2.2 7.5 6"/>',
+  refresh: '<path d="M20 11a8 8 0 0 0-14.3-4M4 5v3.5h3.5M4 13a8 8 0 0 0 14.3 4M20 19v-3.5h-3.5"/>',
+  check: '<path d="m5 12.5 4.5 4.5L19 7.5"/>',
+  alert: '<path d="M12 4 3 19.5h18zM12 10v4.5M12 17v.01"/>',
+  edit: '<path d="M4 20h4L19 9l-4-4L4 16zM13.5 6.5l4 4"/>',
+  trash: '<path d="M5 7h14M10 7V4.5h4V7M7 7l1 12.5h8L17 7M10.5 11v5M13.5 11v5"/>',
+  server: '<rect x="4" y="4" width="16" height="6.5" rx="1"/><rect x="4" y="13.5" width="16" height="6.5" rx="1"/><path d="M7.5 7.25h.01M7.5 16.75h.01"/>',
+  code: '<path d="m8 8-4 4 4 4M16 8l4 4-4 4M13.5 5 10.5 19"/>',
+  logout: '<path d="M10 4H5.5v16H10M15 8l4 4-4 4M19 12H9"/>',
+  clock: '<circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/>',
+  spark: '<path d="M12 3.5 14 10l6.5 2-6.5 2-2 6.5-2-6.5-6.5-2L10 10z"/>',
+  crown: '<path d="m4 8 4.5 4L12 5l3.5 7L20 8l-1.5 11h-13z"/>',
+  chev: '<path d="m9 6 6 6-6 6"/>'
+};
+function pnIco(k) { return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + (PNI[k] || "") + '</svg>'; }
+function pnCard(ico, title, desc, body, idx) {
+  return '<div class="pnc" style="--i:' + (idx || 0) + '"><div class="pnch"><span class="pnci">' + pnIco(ico) + '</span><div class="pnct"><b>' + title + '</b>' + (desc ? '<small>' + desc + '</small>' : '') + '</div></div><div class="pncb">' + body + '</div></div>';
+}
+function pnPill(on, a, b) { return '<span class="pnpill' + (on ? ' on' : '') + '">' + (on ? a : b) + '</span>'; }
+function pnKv(rows) { return '<div class="pnkv">' + rows.map(function (r) { return '<div><span>' + r[0] + '</span><b>' + r[1] + '</b></div>'; }).join("") + '</div>'; }
 
 /* Statistiques du catalogue : calculées à partir des fiches, sans aucun service externe */
 function statsSection() {
-  var H = '<h3 class="note" style="margin:0;text-transform:uppercase;letter-spacing:.08em">';
   var series = db.filter(function (x) { return !isMovie(x); }), films = db.filter(isMovie);
   var seasons = 0, eps = 0, epNo = 0, src = 0, filmNo = 0, week = Date.now() - 7 * 86400000;
   series.forEach(function (x) { (x.seasons || []).forEach(function (se) { seasons++; (se.episodes || []).forEach(function (ep) { eps++; var k = (ep.sources || []).length; src += k; if (!k) epNo++; }); }); });
@@ -4230,65 +4372,134 @@ function statsSection() {
   var noPoster = db.filter(function (x) { return !x.poster; }).length;
   var noPlat = series.filter(function (x) { return /^\d+$/.test(String(x.id)) && Array.isArray(x.networks) && !x.networks.length; }).length;
   var noOv = db.filter(function (x) { return !String(x.overview || "").trim(); }).length;
-  function top(map, label, n) {
-    var k = Object.keys(map).sort(function (a, b) { return map[b] - map[a] || (a < b ? -1 : 1); }).slice(0, n || 5);
-    return k.length ? '<p class="note" style="margin:0"><b>' + label + ' :</b> ' + k.map(function (x) { return esc(x) + ' (' + map[x] + ')'; }).join(' · ') + '</p>' : '';
+  var complete = 0;
+  db.forEach(function (x) {
+    var ok = !!x.poster && !!String(x.overview || "").trim();
+    if (ok) ok = isMovie(x) ? (x.sources || []).length > 0 : (x.seasons || []).every(function (se) { return (se.episodes || []).every(function (ep) { return (ep.sources || []).length > 0; }); });
+    if (ok) complete++;
+  });
+  var pct = db.length ? Math.round(complete * 100 / db.length) : 0;
+  function bars(map, label, ico) {
+    var k = Object.keys(map).sort(function (a, b) { return map[b] - map[a] || (a < b ? -1 : 1); }).slice(0, 5);
+    if (!k.length) return "";
+    var mx = map[k[0]] || 1;
+    return '<div class="pntop"><h4>' + pnIco(ico) + label + '</h4>' + k.map(function (x) {
+      return '<div class="pnbr"><span>' + esc(x) + '</span><em>' + map[x] + '</em><div class="pnbar"><i style="width:' + Math.max(4, Math.round(map[x] * 100 / mx)) + '%"></i></div></div>';
+    }).join("") + '</div>';
   }
   var g = {}, pl = {}, cat = {}, sv = {}, pc = playerCounts();
   db.forEach(function (x) { (x.genres || []).forEach(function (n) { g[n] = (g[n] || 0) + 1; }); });
   series.forEach(function (x) { platNames(x).forEach(function (n) { pl[n] = (pl[n] || 0) + 1; }); var d = dramaType(x); if (d) cat[DRAMA[d]] = (cat[DRAMA[d]] || 0) + 1; });
   Object.keys(pc).forEach(function (n) { sv[n.toUpperCase()] = pc[n]; });
-  function box(v, l) { return '<div class="stat"><b>' + v + '</b><span>' + l + '</span></div>'; }
+  function box(ico, v, l) { return '<div class="pnst">' + pnIco(ico) + '<b>' + v + '</b><span>' + l + '</span></div>'; }
+  function td(ico, txt) { return '<span class="pntd">' + pnIco(ico) + txt + '</span>'; }
   var todo = [];
-  if (epNo) todo.push(epNo + (epNo > 1 ? ' épisodes sans source' : ' épisode sans source'));
-  if (filmNo) todo.push(filmNo + (filmNo > 1 ? ' films sans source' : ' film sans source'));
-  if (noPoster) todo.push(noPoster + (noPoster > 1 ? ' fiches sans affiche' : ' fiche sans affiche'));
-  if (noOv) todo.push(noOv + (noOv > 1 ? ' fiches sans synopsis' : ' fiche sans synopsis'));
-  if (noPlat) todo.push(noPlat + (noPlat > 1 ? ' séries sans plateforme' : ' série sans plateforme'));
-  return '<div style="display:grid;gap:12px">' + H + 'Statistiques</h3>' +
-    '<div class="stat-grid">' + box(series.length, 'Séries') + box(films.length, 'Films') + box(eps, 'Épisodes') + box(src, 'Sources') + box(added, 'Ajoutés (7 j)') + '</div>' +
-    '<p class="note" style="margin:0">' + (todo.length ? '<b>À compléter :</b> ' + todo.join(' · ') + '.' : 'Rien à compléter : toutes les fiches ont leurs sources, affiche et synopsis.') + '</p>' +
-    top(cat, 'Catégories') + top(pl, 'Plateformes') + top(g, 'Genres') + top(sv, 'Serveurs') +
-    '<p class="note" style="margin:0">Les visites (pages les plus vues, pays, appareils) se consultent dans Vercel : ton projet, onglet « Analytics ».</p></div>';
+  if (epNo) todo.push(td("alert", epNo + (epNo > 1 ? ' épisodes sans source' : ' épisode sans source')));
+  if (filmNo) todo.push(td("alert", filmNo + (filmNo > 1 ? ' films sans source' : ' film sans source')));
+  if (noPoster) todo.push(td("alert", noPoster + (noPoster > 1 ? ' fiches sans affiche' : ' fiche sans affiche')));
+  if (noOv) todo.push(td("alert", noOv + (noOv > 1 ? ' fiches sans synopsis' : ' fiche sans synopsis')));
+  if (noPlat) todo.push(td("alert", noPlat + (noPlat > 1 ? ' séries sans plateforme' : ' série sans plateforme')));
+  var recent = db.filter(function (x) { return x.addedAt; }).sort(function (a, b) { return (b.addedAt || 0) - (a.addedAt || 0); }).slice(0, 5);
+  var recentHtml = recent.length ? '<div class="pnrecent">' + recent.map(function (x) {
+    var p = x.poster ? (/^(https?:|data:)/.test(String(x.poster)) ? x.poster : img(x.poster, "w92")) : "";
+    return '<a class="pnrec" href="/serie/' + esc(x.id) + '"><span class="pi"' + (p ? ' style="background-image:url(\'' + esc(p) + '\')"' : '') + '></span><span class="pt"><b>' + esc(x.name) + '</b><small>' + (isMovie(x) ? 'Film' : 'Série') + (typeof nAgo === "function" ? ' · ' + esc(nAgo(x.addedAt)) : '') + '</small></span>' + pnIco("chev") + '</a>';
+  }).join("") + '</div>' : '<p class="note">Aucune fiche récente.</p>';
+  return pnCard("chart", "Statistiques", "Calculées à partir des fiches, sans aucun service externe.",
+      '<div class="pnstats">' + box("tv", series.length, "Séries") + box("film", films.length, "Films") + box("list", eps, "Épisodes") + box("link", src, "Sources") + box("plus", added, "Ajoutés (7 j)") + '</div>', 0) +
+    pnCard("check", "Santé du catalogue", "Fiches avec affiche, synopsis et au moins une source partout.",
+      '<div class="pnhl"><b>' + pct + ' %</b><span>' + complete + ' / ' + db.length + ' fiche' + (db.length > 1 ? 's' : '') + ' complète' + (complete > 1 ? 's' : '') + '</span></div>' +
+      '<div class="pnbar"><i style="width:' + pct + '%"></i></div>' +
+      '<div class="pntodo">' + (todo.length ? todo.join("") : td("check", "Rien à compléter : toutes les fiches ont leurs sources, affiche et synopsis.")) + '</div>', 1) +
+    pnCard("globe", "Répartition", "Top 5 par catégorie, plateforme, genre et serveur.",
+      '<div class="pntops">' + bars(cat, "Catégories", "tv") + bars(pl, "Plateformes", "globe") + bars(g, "Genres", "film") + bars(sv, "Serveurs", "server") + '</div>' +
+      '<p class="note">Les visites (pages les plus vues, pays, appareils) se consultent dans Vercel : ton projet, onglet « Analytics ».</p>', 2) +
+    pnCard("clock", "Derniers ajouts", "Les 5 fiches ajoutées le plus récemment.", recentHtml, 3);
 }
 function adsSection() {
   var on = adsOn();
-  return '<div style="display:grid;gap:12px"><h3 class="note" style="margin:0;text-transform:uppercase;letter-spacing:.08em">Pub avant téléchargement</h3>' +
-    '<div class="tabs" role="tablist" style="justify-self:start"><button type="button" class="tab' + (on ? ' on' : '') + '" role="tab" aria-selected="' + (on ? 'true' : 'false') + '" data-setads="on">Activée</button><button type="button" class="tab' + (on ? '' : ' on') + '" role="tab" aria-selected="' + (on ? 'false' : 'true') + '" data-setads="off">Désactivée</button></div>' +
-    '<p class="note" style="margin:0">' + (on
+  return pnCard("mega", "Pub avant téléchargement" + pnPill(on, "Activée", "Désactivée"), "Réservé au Head admin.",
+    '<div class="pnseg" role="tablist"><button type="button" class="pnopt' + (on ? ' on' : '') + '" role="tab" aria-selected="' + (on ? 'true' : 'false') + '" data-setads="on">' + pnIco("check") + '<span><b>Activée</b><small>Pub avant le lien</small></span></button><button type="button" class="pnopt' + (on ? '' : ' on') + '" role="tab" aria-selected="' + (on ? 'false' : 'true') + '" data-setads="off">' + pnIco("lock") + '<span><b>Désactivée</b><small>Lien direct</small></span></button></div>' +
+    '<p class="note">' + (on
       ? 'Activée : le visiteur voit la pub (nouvel onglet) avant d\'obtenir le lien de téléchargement.'
-      : 'Désactivée : le lien de téléchargement s\'affiche directement, sans pub.') + ' Réservé au Head admin.</p></div>';
+      : 'Désactivée : le lien de téléchargement s\'affiche directement, sans pub.') + '</p>', 2);
 }
+
+/* Onglets du panneau : le Head admin voit tout, les autres admins ne voient que leurs onglets */
+var panTab = "";
+function panTabList() {
+  var l = [];
+  if (isHead()) l.push(["stats", "Aperçu", "grid", db.length]);
+  l.push(["cat", "Catalogue", "film", 0]);
+  l.push(["site", "Site", "globe", 0]);
+  if (isHead()) l.push(["act", "Activité", "pulse", journalList().length]);
+  l.push(["acc", "Accès", "key", 0]);
+  return l;
+}
+function panBody(tab) {
+  var priv = SETTINGS.downloads === "private", head = isHead();
+  var n = db.filter(hasDl).length, nt = db.filter(isTmdbFiche).length;
+  var linked = !!(ghRepo() && ghToken()), autoOn = readJSON("noir.autosync", true) !== false;
+  if (tab === "stats" && head) return statsSection();
+  if (tab === "cat") {
+    return pnCard("up", "Publication", "Envoie le catalogue aux visiteurs. " + (linked ? 'GitHub lié (' + esc(ghRepo()) + ') : « Publier » envoie catalog.json directement sur le dépôt.' : 'Pour publier en un clic sans re-uploader le fichier, lie ton dépôt avec « GitHub ».'),
+        pnKv([["Fiches", db.length], ["Fiches TMDB", nt], ["Avec téléchargement", n], ["Version du site", esc(BUILD)]]) +
+        '<div class="row"><button class="btn" type="button" data-clickid="btn-export">' + pnIco("up") + '<span>Publier (catalog.json)</span></button><button class="btn ghost" type="button" id="btn-backup">' + pnIco("db") + '<span>Sauvegarde complète</span></button><button class="btn ghost" type="button" data-clickid="btn-import">' + pnIco("dl") + '<span>Importer</span></button><button class="btn ghost" type="button" id="btn-pull">' + pnIco("refresh") + '<span>Récupérer depuis GitHub</span></button></div>' +
+        '<div class="row"><button class="btn ghost" type="button" id="btn-autosync">' + pnIco("refresh") + '<span>Synchro auto : ' + (autoOn ? 'ON' : 'OFF') + '</span></button>' + (head ? '<button class="btn ghost" type="button" id="btn-forcerefresh">' + pnIco("user") + '<span>Rafraîchir tous les admins</span></button>' : '') + '</div>' +
+        '<p class="note">' + MAX_SRC + ' sources maximum par film ou épisode.</p>', 0) +
+      pnCard("refresh", "Fiches TMDB", nt + (nt > 1 ? ' fiches viennent' : ' fiche vient') + ' de TMDB. Le bouton remet à jour les infos, les affiches, les saisons et les nouveaux épisodes. Tes sources, liens de téléchargement et langues sont conservés.',
+        '<div class="row"><button class="btn" type="button" id="refreshall"' + (refreshingAll || !nt ? ' disabled' : '') + '>Tout mettre à jour depuis TMDB</button></div>' +
+        '<p class="note" id="refreshall-status"></p>', 1) +
+      (head ? bkSection() : '');
+  }
+  if (tab === "site") {
+    return pnCard("dl", "Téléchargements" + pnPill(!priv, "Public", "Privé"), n + (n > 1 ? ' fiches ont' : ' fiche a') + ' des liens de téléchargement.',
+        '<div class="pnseg" role="tablist"><button type="button" class="pnopt' + (priv ? '' : ' on') + '" role="tab" aria-selected="' + (priv ? 'false' : 'true') + '" data-setdl="public">' + pnIco("unlock") + '<span><b>Public</b><small>Visible par tous</small></span></button><button type="button" class="pnopt' + (priv ? ' on' : '') + '" role="tab" aria-selected="' + (priv ? 'true' : 'false') + '" data-setdl="private">' + pnIco("lock") + '<span><b>Privé</b><small>Réservé aux admins</small></span></button></div>' +
+        '<p class="note">' + (priv
+          ? 'Privé : seul toi (en mode admin) vois les boutons et l\'onglet Télécharger. À la publication, les liens sont retirés de catalog.json, donc personne ne peut les lire dans le fichier. Ils restent sur ce navigateur : fais une sauvegarde complète.'
+          : 'Public : tous les visiteurs voient les boutons et l\'onglet Télécharger sur les fiches qui ont des liens.') + '</p>' +
+        '<div class="row"><button class="btn ghost small" type="button" data-preview="1">' + pnIco("eye") + '<span>Voir comme un visiteur</span></button></div>', 0) +
+      (head ? adsSection() : '') +
+      annSection() +
+      playerSection();
+  }
+  if (tab === "act" && head) return journalSection() + linksSection();
+  /* Accès */
+  var me = head ? "Head admin" : adminLabel(myId());
+  return pnCard(head ? "crown" : "user", "Compte" + pnPill(head, "Head admin", "Admin"), head ? 'Tu as toutes les permissions sur les fiches, les liens et les réglages.' : 'Certaines sections (aperçu, activité, sauvegardes, pub, ordre des sources) sont réservées au Head admin.',
+        pnKv([["Connecté en tant que", esc(me)], ["Rôle", head ? "Head admin" : "Admin"]].concat(head ? [["Admins", configAdmins().length]] : [])), 0) +
+    pnCard("key", "Connexions", "Clé TMDB, dépôt GitHub et mot de passe.",
+        pnKv([["Clé TMDB", getToken() ? "Configurée" : "Manquante"], ["GitHub", linked ? esc(ghRepo()) : "Non lié"], ["Synchro auto", (autoSyncOn() ? "Active" : "Inactive")]]) +
+        '<div class="row"><button class="btn ghost" type="button" data-clickid="btn-key">' + pnIco("key") + '<span>Clé TMDB</span></button><button class="btn ghost" type="button" data-clickid="btn-gh">' + pnIco("code") + '<span>GitHub</span></button><a class="btn ghost" href="/motdepasse">' + pnIco("lock") + '<span>Mot de passe</span></a>' + (head ? '<a class="btn ghost" href="/headadmin">' + pnIco("crown") + '<span>Gérer les admins</span></a>' : '') + '<button class="btn danger" type="button" data-clickid="btn-quit">' + pnIco("logout") + '<span>Quitter le mode admin</span></button></div>', 1);
+}
+function panAfter() { bkRender(); annPreview(); lkRender(); }
 function viewPanel() {
-  var priv = SETTINGS.downloads === "private";
-  var n = db.filter(hasDl).length;
-  var nt = db.filter(isTmdbFiche).length;
-  $("#app").innerHTML = '<div class="wrap"><div class="authbox" style="max-width:560px"><h1>Panneau admin</h1>' +
-    '<p class="lead">Réglages du site. Pour que les visiteurs les voient, clique ensuite sur « Publier » et remets catalog.json en ligne.</p>' +
-    '<div style="display:grid;gap:12px"><h3 class="note" style="margin:0;text-transform:uppercase;letter-spacing:.08em">Téléchargements</h3>' +
-    '<p class="note" style="margin:0">' + n + (n > 1 ? ' fiches ont' : ' fiche a') + ' des liens de téléchargement.</p>' +
-    '<div class="tabs" role="tablist" style="justify-self:start"><button type="button" class="tab' + (priv ? '' : ' on') + '" role="tab" aria-selected="' + (priv ? 'false' : 'true') + '" data-setdl="public">Public</button><button type="button" class="tab' + (priv ? ' on' : '') + '" role="tab" aria-selected="' + (priv ? 'true' : 'false') + '" data-setdl="private">Privé</button></div>' +
-    '<p class="note" style="margin:0">' + (priv
-      ? 'Privé : seul toi (en mode admin) vois les boutons et l\'onglet Télécharger. À la publication, les liens sont retirés de catalog.json, donc personne ne peut les lire dans le fichier. Ils restent sur ce navigateur : fais une sauvegarde complète.'
-      : 'Public : tous les visiteurs voient les boutons et l\'onglet Télécharger sur les fiches qui ont des liens.') + '</p><div class="row"><button class="btn ghost small" type="button" data-preview="1">Voir comme un visiteur</button></div></div>' +
-    (isHead() ? adsSection() : '') +
-    (isHead() ? statsSection() + journalSection() + linksSection() : '') +
-    '<div style="display:grid;gap:12px"><h3 class="note" style="margin:0;text-transform:uppercase;letter-spacing:.08em">Fiches TMDB</h3>' +
-    '<p class="note" style="margin:0">' + nt + (nt > 1 ? ' fiches viennent' : ' fiche vient') + ' de TMDB. Le bouton remet à jour les infos, les affiches, les saisons et les nouveaux épisodes. Tes sources, liens de téléchargement et langues sont conservés.</p>' +
-    '<div class="row"><button class="btn" type="button" id="refreshall"' + (refreshingAll || !nt ? ' disabled' : '') + '>Tout mettre à jour depuis TMDB</button></div>' +
-    '<p class="note" id="refreshall-status" style="margin:0"></p></div>' +
-    '<div style="display:grid;gap:12px"><h3 class="note" style="margin:0;text-transform:uppercase;letter-spacing:.08em">Catalogue</h3>' +
-    '<div class="row"><button class="btn" type="button" data-clickid="btn-export">Publier (catalog.json)</button><button class="btn ghost" type="button" id="btn-backup">Sauvegarde complète</button><button class="btn ghost" type="button" data-clickid="btn-import">Importer</button><button class="btn ghost" type="button" id="btn-pull">Récupérer depuis GitHub</button>' + '<button class="btn ghost" type="button" id="btn-autosync">Synchro auto : ' + (readJSON("noir.autosync", true) !== false ? 'ON' : 'OFF') + '</button>' + (isHead() ? '<button class="btn ghost" type="button" id="btn-forcerefresh">Rafraîchir tous les admins</button>' : '') + '</div>' +
-    '<p class="note" style="margin:0">Version du site : ' + esc(BUILD) + ' · ' + MAX_SRC + ' sources maximum par film ou épisode.</p>' +
-    '<p class="note" style="margin:0">' + (ghRepo() && ghToken() ? 'GitHub lié (' + esc(ghRepo()) + ') : « Publier » envoie catalog.json directement sur le dépôt.' : 'Pour publier en un clic sans re-uploader le fichier, lie ton dépôt avec « GitHub ».') + '</p></div>' +
-    annSection() +
-    bkSection() +
-    playerSection() +
-    '<div style="display:grid;gap:12px"><h3 class="note" style="margin:0;text-transform:uppercase;letter-spacing:.08em">Accès</h3>' +
-    '<div class="row"><button class="btn ghost" type="button" data-clickid="btn-key">Clé TMDB</button><button class="btn ghost" type="button" data-clickid="btn-gh">GitHub</button><a class="btn ghost" href="/motdepasse">Mot de passe</a><button class="btn danger" type="button" data-clickid="btn-quit">Quitter le mode admin</button></div></div>' +
-    '</div></div>';
-  bkRender(); annPreview(); lkRender();
+  var tabs = panTabList(), keys = tabs.map(function (t) { return t[0]; });
+  if (keys.indexOf(panTab) < 0) panTab = keys[0];
+  var head = isHead(), sync = autoSyncOn();
+  var th = tabs.map(function (t) {
+    var on = t[0] === panTab;
+    return '<button type="button" class="pnt' + (on ? ' on' : '') + '" role="tab" aria-selected="' + (on ? 'true' : 'false') + '" data-pantab="' + t[0] + '">' + pnIco(t[2]) + '<span class="l">' + t[1] + '</span>' + (t[3] ? '<em>' + t[3] + '</em>' : '') + '</button>';
+  }).join("");
+  $("#app").innerHTML = '<div id="panroot" class="pnl"><div class="mlhero"><div class="wrap">' +
+    '<div class="mltitle"><svg class="mllogo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4.5 6v5.5c0 4.6 3.1 8.2 7.5 9.5 4.4-1.3 7.5-4.9 7.5-9.5V6z"/><path class="sp" d="M9.5 12.2l1.8 1.8 3.4-3.6"/></svg>' +
+    '<div><h1>Panneau admin</h1><p class="note">Réglages du site. Pour que les visiteurs les voient, clique ensuite sur « Publier » et remets catalog.json en ligne.</p></div></div>' +
+    '<div class="pnquick"><a class="btn" href="/ajouter">' + pnIco("plus") + '<span>Ajouter une fiche</span></a><button class="btn ghost" type="button" data-clickid="btn-export">' + pnIco("up") + '<span>Publier</span></button><button class="btn ghost" type="button" data-preview="1">' + pnIco("eye") + '<span>Voir comme un visiteur</span></button>' +
+    '<span class="pnrole' + (head ? ' head' : '') + '">' + pnIco(head ? "crown" : "user") + esc(head ? "Head admin" : adminLabel(myId())) + '</span><span class="pnsync' + (sync ? ' on' : '') + '"><i></i>Synchro auto ' + (sync ? 'active' : 'inactive') + '</span></div>' +
+    '<div class="pntabs" id="pantabs" role="tablist" style="--n:' + tabs.length + ';--i:' + keys.indexOf(panTab) + '"><span class="pnind"></span>' + th + '</div></div></div>' +
+    '<div class="wrap"><div class="pnbody" id="panbody">' + panBody(panTab) + '</div></div></div>';
+  panAfter();
 }
+document.addEventListener("click", function (e) {
+  var t = e.target.closest ? e.target.closest("[data-pantab]") : null;
+  if (!t || !$("#panroot") || t.dataset.pantab === panTab) return;
+  panTab = t.dataset.pantab;
+  var box = $("#pantabs"), keys = panTabList().map(function (x) { return x[0]; });
+  box.style.setProperty("--i", keys.indexOf(panTab));
+  box.querySelectorAll(".pnt").forEach(function (b) { var on = b.dataset.pantab === panTab; b.classList.toggle("on", on); b.setAttribute("aria-selected", on ? "true" : "false"); });
+  var body = $("#panbody"); body.innerHTML = panBody(panTab);
+  body.classList.remove("mlswap"); void body.offsetWidth; body.classList.add("mlswap");
+  panAfter();
+});
 
 /* ===== Connexion et mot de passe ===== */
 function viewLogin() {
@@ -4706,9 +4917,9 @@ function playerCounts() {
 }
 function srcRowsHtml(names, m) {
   return names.map(function (n, k) {
-    return '<div class="srcrow" data-name="' + esc(n) + '" style="display:flex;align-items:center;gap:10px;border:1px solid var(--line);padding:8px 12px">' +
-      '<b class="srcn" style="font-family:var(--mono);width:22px;color:var(--dim)">' + (k + 1) + '</b>' +
-      '<span style="flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis">' + esc(n.toUpperCase()) + ' <small class="note">(' + (m[n] || 0) + ' source' + ((m[n] || 0) > 1 ? "s" : "") + ')</small></span>' +
+    return '<div class="srcrow" data-name="' + esc(n) + '">' +
+      '<b class="srcn">' + (k + 1) + '</b>' +
+      '<span class="srcnm">' + esc(n.toUpperCase()) + ' <small class="note">(' + (m[n] || 0) + ' source' + ((m[n] || 0) > 1 ? "s" : "") + ')</small></span>' +
       '<button class="btn ghost small" type="button" data-srcup aria-label="Monter">&uarr;</button>' +
       '<button class="btn ghost small" type="button" data-srcdown aria-label="Descendre">&darr;</button></div>';
   }).join("");
@@ -4719,10 +4930,9 @@ function playerSection() {
   if (hasOrder()) SETTINGS.order.forEach(function (n) { if (names.indexOf(n) < 0) { names.push(n); if (m[n] == null) m[n] = 0; } });
   else { var d = String(defaultPlayer() || "").toLowerCase(); if (d) { names.push(d); if (m[d] == null) m[d] = 0; } }
   Object.keys(m).sort(function (a, b) { return (m[b] - m[a]) || (a < b ? -1 : 1); }).forEach(function (n) { if (names.indexOf(n) < 0) names.push(n); });
-  return '<div style="display:grid;gap:12px"><h3 class="note" style="margin:0;text-transform:uppercase;letter-spacing:.08em">Ordre des sources</h3>' +
-    '<div id="srclist" style="display:grid;gap:6px;max-width:520px">' + (names.length ? srcRowsHtml(names, m) : '<p class="note" style="margin:0">Aucune source dans le catalogue pour l\'instant.</p>') + '</div>' +
-    '<div class="row"><button class="btn" type="button" id="src-order-save">Appliquer à tout le monde</button><button class="btn ghost" type="button" id="src-order-reset">Réinitialiser</button></div>' +
-    '<p class="note" style="margin:0">Classe les serveurs avec les flèches : le n°1 se lance en premier et apparaît en premier dans le lecteur, puis le n°2, le n°3, le n°4. Si un film ou un épisode n\'a pas un serveur, on passe au suivant. Chacun peut toujours changer de serveur dans le lecteur.</p></div>';
+  return pnCard("list", "Ordre des sources", 'Classe les serveurs avec les flèches : le n°1 se lance en premier et apparaît en premier dans le lecteur, puis le n°2, le n°3, le n°4. Si un film ou un épisode n\'a pas un serveur, on passe au suivant. Chacun peut toujours changer de serveur dans le lecteur.',
+    '<div id="srclist" class="pnsrc">' + (names.length ? srcRowsHtml(names, m) : '<p class="note">Aucune source dans le catalogue pour l\'instant.</p>') + '</div>' +
+    '<div class="row"><button class="btn" type="button" id="src-order-save">Appliquer à tout le monde</button><button class="btn ghost" type="button" id="src-order-reset">Réinitialiser</button></div>', 4);
 }
 function play(sources, title, idx, sub, nav, dls) {
   if (!sources || !sources.length) { toast("Aucune source sur cette fiche"); return; }
