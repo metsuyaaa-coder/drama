@@ -1468,6 +1468,70 @@ footer .about .flist li, footer .about p.dev { font-weight: 500; }
   .pbar #prep { padding: 0; }
   .pbar #prep .rbtn, .pbar #prep .repok { width: 100%; justify-content: center; padding: 14px 16px; }
 }
+
+/* ===== Liens de téléchargement : plusieurs hébergeurs, une ligne par lien ===== */
+.dle { display: grid; gap: 8px; }
+.dlrows { display: grid; gap: 8px; }
+.dler { display: grid; grid-template-columns: 104px minmax(0, 1fr) 128px 92px 40px; gap: 8px; align-items: center; }
+.dlh { height: 42px; display: flex; align-items: center; justify-content: center; padding: 0 8px; border: 1px solid var(--line); font-family: var(--mono); font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--dim); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; transition: background .2s, color .2s, border-color .2s; }
+.dlh.ok { background: #86efac; border-color: #86efac; color: #052e16; }
+.dler input { min-width: 0; padding: 10px; font-family: var(--mono); font-size: 12px; }
+.dlrm { height: 42px; border: 1px solid var(--line); background: transparent; color: var(--dim); font-size: 20px; line-height: 1; cursor: pointer; border-radius: 0; transition: color .2s, border-color .2s; }
+.dlrm:hover { color: var(--fg); border-color: var(--fg); }
+.dleadd { justify-self: start; }
+.dlmode { display: flex; gap: 10px; align-items: flex-start; font-size: 13px; color: var(--dim); cursor: pointer; }
+.dlmode input { width: auto; margin-top: 3px; accent-color: #86efac; }
+@media (max-width: 720px) {
+  .dler { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) 40px; }
+  .dler .dlh { grid-column: 1 / -1; height: 28px; justify-content: flex-start; }
+  .dler .dl-u { grid-column: 1 / -1; }
+}
+
+/* ===== Demandes en cours, refonte ===== */
+.rqtop { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px 24px; margin: 26px 0 18px; }
+.rqtabs { display: flex; border: 1px solid var(--line); }
+.rqtabs button { display: inline-flex; align-items: baseline; gap: 10px; padding: 10px 18px; border: 0; background: transparent; color: var(--dim); font-family: var(--display); font-weight: 700; font-size: 20px; letter-spacing: .04em; text-transform: uppercase; cursor: pointer; border-radius: 0; transition: color .2s, background .2s; }
+.rqtabs button + button { border-left: 1px solid var(--line); }
+.rqtabs button b { font-family: var(--mono); font-size: 12px; font-weight: 500; }
+.rqtabs button:hover { color: var(--fg); }
+.rqtabs button.on { background: var(--fg); color: var(--bg); }
+.rqfil { display: flex; flex-wrap: wrap; gap: 8px; }
+.rqfil .chip { display: inline-flex; align-items: center; }
+.rqfil .chip svg { width: 13px; height: 13px; margin-right: 7px; flex: none; }
+.rqfil .chip.dlc.on { background: #86efac; border-color: #86efac; color: #052e16; }
+.rqgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 420px), 1fr)); gap: 12px; padding-bottom: 8px; }
+.rqc { display: grid; grid-template-columns: 72px minmax(0, 1fr); gap: 12px 16px; align-content: start; padding: 14px; border: 1px solid var(--line); background: var(--panel); }
+.rqc .rqp { width: 72px; border: 1px solid var(--line); display: grid; place-items: center; }
+.rqph { font-family: var(--display); font-weight: 900; font-size: 34px; color: var(--dim); }
+.rqm { min-width: 0; display: flex; flex-direction: column; gap: 8px; }
+.rqm h3 { margin: 0; font-family: var(--display); font-weight: 900; font-size: 26px; line-height: 1; letter-spacing: .02em; text-transform: uppercase; overflow-wrap: anywhere; }
+.rqsub { margin: 0; font-size: 12px; color: var(--dim); overflow-wrap: anywhere; }
+.rqbadges { display: flex; flex-wrap: wrap; gap: 6px; }
+.rqk { display: inline-flex; align-items: center; gap: 6px; padding: 4px 8px; border: 1px solid #555; font-family: var(--mono); font-size: 11px; line-height: 1; }
+.rqk svg { width: 12px; height: 12px; flex: none; }
+.rqk.d { border-color: rgba(134,239,172,.5); color: #86efac; }
+.rqk.none { border-style: dashed; color: var(--dim); }
+.rqv { height: 3px; background: var(--line); }
+.rqv i { display: block; height: 100%; background: var(--fg); }
+.rqn { font-family: var(--mono); font-size: 12px; color: var(--dim); }
+.rqact { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: auto; padding-top: 4px; }
+.rqadm { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; padding-top: 12px; border-top: 1px dashed var(--line); }
+.rqseg { display: inline-flex; border: 1px solid var(--line); }
+.rqseg button { padding: 6px 10px; border: 0; background: transparent; color: var(--dim); font-size: 12px; cursor: pointer; border-radius: 0; transition: color .2s, background .2s; }
+.rqseg button + button { border-left: 1px solid var(--line); }
+.rqseg button:hover { color: var(--fg); }
+.rqseg button[aria-pressed=true] { background: var(--fg); color: var(--bg); }
+.rqseg button[data-k=dl][aria-pressed=true] { background: #86efac; color: #052e16; }
+.rqempty { padding: 44px 16px; border: 1px dashed var(--line); text-align: center; color: var(--dim); }
+.rqempty b { display: block; margin-bottom: 4px; color: var(--fg); font-family: var(--display); font-size: 24px; letter-spacing: .03em; text-transform: uppercase; }
+.rqadd select { width: auto; }
+@media (max-width: 720px) {
+  .rqc { grid-template-columns: 56px minmax(0, 1fr); gap: 10px 12px; padding: 12px; }
+  .rqc .rqp { width: 56px; }
+  .rqm h3 { font-size: 22px; }
+  .rqtabs { width: 100%; }
+  .rqtabs button { flex: 1; justify-content: center; padding: 10px 8px; }
+}
 </style>
 <!-- Visites du site : Vercel Web Analytics, sans cookie ni base de données. Ne fait rien tant que tu ne l'actives pas dans Vercel (onglet Analytics). -->
 <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
@@ -1916,6 +1980,80 @@ function textToSrc(text) {
   });
   return numberDupes(out);
 }
+
+/* Éditeur de liens de téléchargement : une ligne par lien (1fichier, Gofile, Pixeldrain…), l'hébergeur est détecté tout seul */
+function dlRowHtml(x) {
+  x = x || {};
+  var h = x.url ? hostName(x.url) : "";
+  var custom = x.name && x.url && String(x.name).replace(/ \d+$/, "") !== h ? ' data-name="' + esc(x.name) + '"' : "";
+  return '<div class="dler"' + custom + '><span class="dlh' + (h ? " ok" : "") + '" title="Hébergeur détecté">' + esc(h || "?") + '</span>' +
+    '<input type="url" class="dl-u" placeholder="Colle le lien ici (https://…)" value="' + esc(x.url || "") + '" aria-label="Lien de téléchargement" autocomplete="off" spellcheck="false">' +
+    '<input type="text" class="dl-q" placeholder="Qualité" value="' + esc(x.quality || "") + '" aria-label="Qualité">' +
+    '<input type="text" class="dl-s" placeholder="Taille" value="' + esc(x.size || "") + '" aria-label="Taille">' +
+    '<button type="button" class="dlrm" data-dlrm="1" aria-label="Retirer ce lien">&times;</button></div>';
+}
+function dlEditor(arr, key) {
+  var rows = (arr && arr.length ? arr : [null]).map(dlRowHtml).join("");
+  return '<div class="dle" data-dle="' + esc(key) + '"><div class="dlrows">' + rows + '</div>' +
+    '<button type="button" class="btn small ghost dleadd" data-dladd="1">+ Ajouter un lien</button></div>';
+}
+function dlCollect(box) {
+  var out = [];
+  box.querySelectorAll(".dler").forEach(function (r) {
+    var u = r.querySelector(".dl-u").value.trim(); if (!/^https?:\/\//i.test(u)) return;
+    var o = { name: r.dataset.name || hostName(u), url: u };
+    var q = normQuality(r.querySelector(".dl-q").value), sz = parseMeta(r.querySelector(".dl-s").value).size;
+    if (q) o.quality = q;
+    if (sz) o.size = sz;
+    out.push(o);
+  });
+  return numberDupes(out);
+}
+function dlSync(box) {
+  if (!draft) return;
+  var key = box.dataset.dle, arr = dlCollect(box);
+  if (key === "movie") draft.downloads = arr;
+  else if (/^s\d+$/.test(key) && draft.seasons && draft.seasons[+key.slice(1)]) draft.seasons[+key.slice(1)].downloads = arr;
+}
+function dlBadge(row) {
+  var u = row.querySelector(".dl-u").value.trim(), b = row.querySelector(".dlh"), ok = /^https?:\/\//i.test(u);
+  b.textContent = ok ? hostName(u) : "?"; b.classList.toggle("ok", ok);
+  if (row.dataset.name && !ok) delete row.dataset.name;
+}
+document.addEventListener("input", function (e) {
+  var t = e.target, box = t && t.closest ? t.closest(".dle") : null; if (!box) return;
+  var row = t.closest(".dler");
+  if (t.classList.contains("dl-u")) {
+    var urls = t.value.match(/https?:\/\/[^\s;,|]+/g) || [];
+    if (urls.length > 1) {
+      t.value = urls[0];
+      for (var k = urls.length - 1; k >= 1; k--) row.insertAdjacentHTML("afterend", dlRowHtml({ url: urls[k] }));
+      toast(urls.length + " liens ajoutés");
+    }
+    delete row.dataset.name;
+    box.querySelectorAll(".dler").forEach(dlBadge);
+  }
+  dlSync(box);
+});
+document.addEventListener("focusout", function (e) {
+  var t = e.target; if (!t || !t.classList || !t.closest || !t.closest(".dle")) return;
+  if (t.classList.contains("dl-q")) { var q = normQuality(t.value); if (q !== t.value) t.value = q; }
+  else if (t.classList.contains("dl-s")) { var sz = parseMeta(t.value).size; if (sz && sz !== t.value) t.value = sz; }
+  else return;
+  dlSync(t.closest(".dle"));
+});
+document.addEventListener("click", function (e) {
+  var add = e.target.closest && e.target.closest("[data-dladd]"), rm = e.target.closest && e.target.closest("[data-dlrm]");
+  if (add) {
+    var box = add.closest(".dle"); box.querySelector(".dlrows").insertAdjacentHTML("beforeend", dlRowHtml());
+    var rows = box.querySelectorAll(".dler"); rows[rows.length - 1].querySelector(".dl-u").focus();
+  } else if (rm) {
+    var row = rm.closest(".dler"), bx = row.closest(".dle");
+    if (bx.querySelectorAll(".dler").length > 1) row.remove();
+    else { row.querySelectorAll("input").forEach(function (i) { i.value = ""; }); delete row.dataset.name; dlBadge(row); }
+    dlSync(bx);
+  }
+});
 
 /* Maximum 4 sources par épisode ou par film (les liens de téléchargement ne sont pas concernés) */
 var MAX_SRC = 4, lastCapWarn = 0;
@@ -4368,15 +4506,16 @@ function renderEditor() {
   }
   var dlEdit;
   if (movie) {
-    dlEdit = '<label class="f"><span>Liens de téléchargement du film (1fichier)</span><textarea class="srcbox" data-f="downloads" placeholder="1fichier | https://1fichier.com/?xxxxxxxx 1080p 2,1go">' + esc(srcToText(d.downloads)) + '</textarea></label>' +
-      '<p class="note">Un lien par ligne, au format Nom | lien. Sans nom, il prend celui du site (ex. 1FICHIER).</p>';
+    dlEdit = '<div class="f"><span class="lbl">Liens de téléchargement du film</span>' + dlEditor(d.downloads, "movie") + '</div>' +
+      '<p class="note">Ajoute autant de liens que tu veux : 1fichier, Gofile, Pixeldrain, Mega… Le nom de l\'hébergeur est détecté tout seul. La qualité et la taille sont facultatives (« 1080 264 » devient « 1080p (H.264) », « 2go » devient « 2Go »).</p>';
   } else if ((d.seasons || []).length) {
-    dlEdit = '<p class="note">Colle le lien 1fichier de la saison entière, et/ou un lien par épisode. Écris simplement : Nom | lien 1080p 1,4go (la qualité et la taille se mettent juste après le lien, séparées par des espaces, et sont facultatives). Raccourcis : « 1080 264 » devient « 1080p (H.264) » « 2go-3.5go » devient « 2Go - 3.5Go », « vostfr » devient « VOSTFR » et « multi » devient « MULTI ». Les visiteurs les voient dans l\'onglet « Télécharger » de la fiche.</p>' +
+    dlEdit = '<p class="note">Ajoute autant de liens que tu veux (1fichier, Gofile, Pixeldrain…) : pour la saison entière, une ligne par lien ; pour un épisode, un lien par ligne. Écris simplement : Nom | lien 1080p 1,4go (la qualité et la taille se mettent juste après le lien, séparées par des espaces, et sont facultatives). Raccourcis : « 1080 264 » devient « 1080p (H.264) » « 2go-3.5go » devient « 2Go - 3.5Go », « vostfr » devient « VOSTFR » et « multi » devient « MULTI ». Les visiteurs les voient dans l\'onglet « Télécharger » de la fiche.</p>' +
       d.seasons.map(function (se, i) {
         var eps = se.episodes || [], filled = eps.filter(function (e) { return (e.downloads || []).length; }).length;
         return '<details class="epedit"' + (keepOpenDl === i ? " open" : "") + '><summary>' + esc(se.name || "Saison " + se.number) + '<i>' + ((se.downloads || []).length ? "pack ✓ · " : "") + filled + "/" + eps.length + ' avec lien</i></summary>' +
-          '<div class="bulk"><label class="f"><span>Lien de la saison entière (pack)</span><textarea class="srcbox" style="min-height:60px" data-dlseason="' + i + '" placeholder="1fichier | https://1fichier.com/dir/xxxxxxxx 1080p 25go">' + esc(srcToText(se.downloads)) + '</textarea></label></div>' +
-          '<div class="bulk"><label class="f"><span>Ajout en masse : un lien par épisode, un par ligne, dans l\'ordre (remplace les liens existants de ces épisodes)</span><textarea data-dlbulkta="' + i + '" placeholder="https://1fichier.com/?aaaa&#10;https://1fichier.com/?bbbb&#10;https://1fichier.com/?cccc"></textarea></label>' +
+          '<div class="bulk"><div class="f"><span class="lbl">Liens de la saison entière (pack)</span>' + dlEditor(se.downloads, "s" + i) + '</div></div>' +
+          '<div class="bulk"><label class="f"><span>Ajout en masse : un lien par épisode, un par ligne, dans l\'ordre (plusieurs liens possibles sur la même ligne, séparés par un espace)</span><textarea data-dlbulkta="' + i + '" placeholder="https://1fichier.com/?aaaa&#10;https://1fichier.com/?bbbb&#10;https://1fichier.com/?cccc"></textarea></label>' +
+          '<label class="dlmode"><input type="checkbox" data-dlbulkadd="' + i + '" checked><span>Ajouter aux liens déjà présents (pratique pour mettre 1fichier, puis Gofile sur les mêmes épisodes). Décoche pour remplacer.</span></label>' +
           '<div class="bulkrow"><label class="f"><span>À partir de l\'épisode</span><input type="number" min="1" value="1" data-dlbulkfrom="' + i + '"></label><button class="btn ghost" type="button" data-dlbulk="' + i + '">Remplir la saison</button></div></div>' +
           eps.map(function (ep, j) {
             return '<div class="eprow"><span class="n">' + String(ep.number).padStart(2, "0") + '</span><span class="t">' + esc(ep.name || "") + '</span><textarea data-dls="' + i + '" data-dle="' + j + '" placeholder="Nom | lien 1080p 2go (un par ligne)" aria-label="Téléchargement saison ' + esc(se.number) + ' épisode ' + esc(ep.number) + '">' + esc(srcToText(ep.downloads)) + '</textarea></div>';
@@ -5025,23 +5164,58 @@ function adoptReqs(data) {
   if (!ADMIN || (+r.at || 0) >= (+REQS.at || 0)) { REQS = { items: r.items, at: +r.at || 0 }; reqSave(); }
 }
 function reqFind(title) { var t = String(title).trim().toLowerCase(); return db.filter(function (s) { return String(s.name).trim().toLowerCase() === t; })[0]; }
-function reqRow(x) {
-  var done = x.status === "done", f = done ? (byId(x.sid) || reqFind(x.title)) : null, v = +x.votes || 0;
-  var meta = [x.media === "movie" ? "Film" : x.media === "tv" ? "Série" : "", x.origin, x.year].filter(Boolean).join(" · ");
-  return '<div class="rqrow"><span class="rqp">' + (x.poster ? '<img loading="lazy" src="' + esc(IMG + "w154" + x.poster) + '" alt="">' : '') + '</span><div class="rqt"><b>' + esc(x.title) + '</b>' + (meta ? '<small>' + esc(meta) + (x.en ? ' · EN : ' + esc(x.en) : '') + '</small>' : '') + '<span>' + (v > 0 ? "Demandé " + v + " fois" : "En attente") + '</span></div>' +
-    '<span class="rqs ' + (done ? "ok" : "wait") + '">' + (done ? "Ajouté" : "En attente") + '</span>' +
-    (done ? (f ? '<a class="btn small" href="/serie/' + esc(f.id) + '">Voir</a>' : '') : '<a class="btn small ghost" href="/demande/' + encodeURIComponent(x.title) + '">Je le veux aussi</a>') +
-    (ADMIN ? '<span class="rqa"><button type="button" class="btn small ghost" data-rq="plus" data-i="' + esc(x.id) + '">+1</button><button type="button" class="btn small ghost" data-rq="toggle" data-i="' + esc(x.id) + '">' + (done ? "Remettre en attente" : "Marquer ajouté") + '</button><button type="button" class="btn small danger" data-rq="del" data-i="' + esc(x.id) + '" aria-label="Supprimer">&times;</button></span>' : '') + '</div>';
+/* Type de demande : streaming, téléchargement ou les deux (vide = pas encore précisé) */
+var RQKIND = { stream: "Streaming", dl: "Téléchargement", both: "Les deux" }, rqTab = "wait", rqKindF = "";
+function reqKind(x) { return x && RQKIND[x.kind] ? x.kind : ""; }
+function reqMatch(x, k) { var q = reqKind(x); return !k || q === k || q === "both"; }
+function reqBadges(x) {
+  var q = reqKind(x);
+  if (!q) return ADMIN ? '<span class="rqk none">Type non précisé</span>' : "";
+  return (q !== "dl" ? '<span class="rqk">' + PLAYICON + 'Streaming</span>' : "") + (q !== "stream" ? '<span class="rqk d">' + DLICON + 'Téléchargement</span>' : "");
+}
+function reqRow(x, max) {
+  var done = x.status === "done", f = done ? (byId(x.sid) || reqFind(x.title)) : null, v = +x.votes || 0, q = reqKind(x), id = esc(x.id);
+  var meta = [x.media === "movie" ? "Film" : x.media === "tv" ? "Série" : "", x.origin, x.year, x.en ? "EN : " + x.en : ""].filter(Boolean).join(" · ");
+  var pct = max > 0 && v > 0 ? Math.max(6, Math.round(v / max * 100)) : 0;
+  var want = "/demande/" + encodeURIComponent(x.title) + (q === "stream" || q === "dl" ? "/" + q : "");
+  var h = '<article class="rqc' + (done ? " done" : "") + '"><span class="rqp">' + (x.poster ? '<img loading="lazy" src="' + esc(IMG + "w154" + x.poster) + '" alt="">' : '<b class="rqph">' + esc(String(x.title || "?").trim().charAt(0).toUpperCase()) + '</b>') + '</span><div class="rqm"><h3>' + esc(x.title) + '</h3>' +
+    (meta ? '<p class="rqsub">' + esc(meta) + '</p>' : "") +
+    '<div class="rqbadges">' + (done ? '<span class="rqs ok">Ajouté</span>' : "") + reqBadges(x) + '</div>' +
+    (done ? "" : '<div class="rqv" aria-hidden="true"><i style="width:' + pct + '%"></i></div><span class="rqn">' + (v > 0 ? v + (v > 1 ? " demandes" : " demande") : "En attente") + '</span>') +
+    '<div class="rqact">' + (done ? (f ? '<a class="btn small" href="/serie/' + esc(f.id) + '">Voir</a>' : "") : '<a class="btn small ghost" href="' + want + '">Je le veux aussi</a>') + '</div></div>';
+  if (ADMIN) {
+    h += '<div class="rqadm"><span class="rqseg" role="group" aria-label="Type de demande">' + ["stream", "dl", "both"].map(function (k) {
+      return '<button type="button" data-rq="kind" data-k="' + k + '" data-i="' + id + '" aria-pressed="' + (q === k) + '">' + RQKIND[k] + '</button>';
+    }).join("") + '</span>' +
+      '<button type="button" class="btn small ghost" data-rq="plus" data-i="' + id + '">+1</button>' +
+      '<button type="button" class="btn small ghost" data-rq="toggle" data-i="' + id + '">' + (done ? "Remettre en attente" : "Marquer ajouté") + '</button>' +
+      '<button type="button" class="btn small danger" data-rq="del" data-i="' + id + '" aria-label="Supprimer">&times;</button></div>';
+  }
+  return h + '</article>';
 }
 function viewRequests() {
   var it = REQS.items, wait = it.filter(function (x) { return x.status !== "done"; }).sort(function (a, b) { return (+b.votes || 0) - (+a.votes || 0); }), done = it.filter(function (x) { return x.status === "done"; }).reverse();
-  var html = '<div class="wrap listhead"><h1>Demandes</h1><p class="note">Les titres demandés et où ils en sont. Liste mise à jour à la main. Plus un titre est demandé, plus il passe vite.</p></div><div class="wrap rqwrap2">' +
-    (ADMIN ? '<div class="rqadd"><div class="rqsearch"><input type="text" id="rq-t" placeholder="Chercher sur TMDB (ou écrire un titre)" maxlength="120" autocomplete="off" aria-label="Titre demandé"><div class="sugg tsug" id="rq-sugg" hidden></div></div><input type="number" id="rq-n" min="1" value="1" aria-label="Nombre de demandes"><button type="button" class="btn small" data-rq="add">Ajouter</button></div>' : '') +
-    '<h2 class="rqh">En attente (' + wait.length + ')</h2>' + (wait.length ? wait.map(reqRow).join("") : '<p class="note">Aucune demande en attente.</p>') +
-    '<h2 class="rqh">Ajoutés (' + done.length + ')</h2>' + (done.length ? done.map(reqRow).join("") : '<p class="note">Rien pour l\'instant.</p>') +
+  var list = (rqTab === "done" ? done : wait).filter(function (x) { return reqMatch(x, rqKindF); });
+  var max = wait.reduce(function (m, x) { return Math.max(m, +x.votes || 0); }, 0);
+  var chip = function (k, label, ic, cls) { return '<button type="button" class="chip' + (cls ? " " + cls : "") + (rqKindF === k ? " on" : "") + '" data-rqf="' + k + '" aria-pressed="' + (rqKindF === k) + '">' + (ic || "") + label + '</button>'; };
+  var empty = rqKindF ? "Aucune demande de ce type pour l'instant." : (rqTab === "done" ? "Rien n'a encore été ajouté depuis une demande." : "Aucune demande en attente.");
+  var html = '<div class="wrap listhead"><h1>Demandes</h1><p class="note">Les titres demandés, en streaming ou en téléchargement, et où ils en sont. Liste mise à jour à la main : plus un titre est demandé, plus il passe vite.</p></div><div class="wrap rqwrap2">' +
+    (ADMIN ? '<div class="rqadd"><div class="rqsearch"><input type="text" id="rq-t" placeholder="Chercher sur TMDB (ou écrire un titre)" maxlength="120" autocomplete="off" aria-label="Titre demandé"><div class="sugg tsug" id="rq-sugg" hidden></div></div>' +
+      '<select id="rq-k" aria-label="Type de demande"><option value="stream">Streaming</option><option value="dl">Téléchargement</option><option value="both">Les deux</option></select>' +
+      '<input type="number" id="rq-n" min="1" value="1" aria-label="Nombre de demandes"><button type="button" class="btn small" data-rq="add">Ajouter</button></div>' : "") +
+    '<div class="rqtop"><div class="rqtabs" role="tablist">' +
+      '<button type="button" role="tab" class="' + (rqTab === "wait" ? "on" : "") + '" aria-selected="' + (rqTab === "wait") + '" data-rqtab="wait">En attente <b>' + wait.length + '</b></button>' +
+      '<button type="button" role="tab" class="' + (rqTab === "done" ? "on" : "") + '" aria-selected="' + (rqTab === "done") + '" data-rqtab="done">Ajoutés <b>' + done.length + '</b></button></div>' +
+      '<div class="rqfil" role="group" aria-label="Filtrer par type">' + chip("", "Tout") + chip("stream", "Streaming", PLAYICON) + chip("dl", "Téléchargement", DLICON, "dlc") + '</div></div>' +
+    (list.length ? '<div class="rqgrid">' + list.map(function (x) { return reqRow(x, max); }).join("") + '</div>' : '<div class="rqempty"><b>Rien ici</b>' + empty + '</div>') +
     '<div class="row" style="padding:28px 0 48px"><a class="btn" href="/demande">Faire une demande</a><a class="btn ghost" href="/">Retour</a></div></div>';
   $("#app").innerHTML = html;
 }
+document.addEventListener("click", function (e) {
+  var b = e.target.closest("[data-rqtab],[data-rqf]"); if (!b) return;
+  if (b.dataset.rqtab != null) rqTab = b.dataset.rqtab; else rqKindF = b.dataset.rqf;
+  viewRequests();
+});
 var rqSel = null, rqPicks = [], rqSeq = 0, rqTimer = 0;
 document.addEventListener("input", function (e) {
   if (e.target.id !== "rq-t") return;
@@ -5072,10 +5246,12 @@ document.addEventListener("click", function (e) {
     var t = ($("#rq-t").value || "").trim(); if (!t) { toast("Écris un titre."); return; }
     var pk = rqSel && rqSel.title === t ? rqSel : null;
     var same = REQS.items.filter(function (r) { return pk && r.tmdb ? String(r.tmdb) === String(pk.id) && r.media === pk.media : r.title.toLowerCase() === t.toLowerCase(); })[0], n = Math.max(1, +$("#rq-n").value || 1);
-    if (same) same.votes = (+same.votes || 0) + n;
-    else REQS.items.push({ id: "r" + Date.now().toString(36), title: t, status: "wait", votes: n, tmdb: pk ? pk.id : "", media: pk ? pk.media : "", year: pk ? pk.year : "", poster: pk ? pk.poster : "", origin: pk ? pk.origin : "", en: pk ? pk.en : "" });
+    var nk = ($("#rq-k") || {}).value || "stream";
+    if (same) { same.votes = (+same.votes || 0) + n; same.kind = reqKind(same) && reqKind(same) !== nk ? "both" : nk; }
+    else REQS.items.push({ id: "r" + Date.now().toString(36), title: t, status: "wait", kind: nk, votes: n, tmdb: pk ? pk.id : "", media: pk ? pk.media : "", year: pk ? pk.year : "", poster: pk ? pk.poster : "", origin: pk ? pk.origin : "", en: pk ? pk.en : "" });
     rqSel = null; rqPicks = [];
   } else if (!x) return;
+  else if (k === "kind") x.kind = RQKIND[b.dataset.k] ? b.dataset.k : "";
   else if (k === "plus") x.votes = (+x.votes || 0) + 1;
   else if (k === "toggle") { x.status = x.status === "done" ? "wait" : "done"; var f = reqFind(x.title); if (f) x.sid = f.id; }
   else if (k === "del") REQS.items = REQS.items.filter(function (r) { return r.id !== id; });
@@ -5404,12 +5580,14 @@ document.addEventListener("click", function (e) {
     if (!dlines.length) { toast("Colle d'abord un lien par ligne"); return; }
     var deps = draft.seasons[di].episodes, dstart = Math.max(1, parseInt(dfrom.value, 10) || 1), dfirst = deps.length;
     for (var dq = 0; dq < deps.length; dq++) { if (+deps[dq].number >= dstart) { dfirst = dq; break; } }
-    var ddone = 0;
+    var ddone = 0, dAdd = !!(document.querySelector('[data-dlbulkadd="' + di + '"]') || {}).checked;
     dlines.forEach(function (line, k) {
       var ep = deps[dfirst + k]; if (!ep) return;
       var urls = line.match(/https?:\/\/[^\s;]+/g) || [];
       if (!urls.length) return;
-      ep.downloads = urls.length === 1 ? textToSrc(line) : numberDupes(urls.map(function (u) { return { name: hostName(u), url: u }; }));
+      var nl = urls.length === 1 ? textToSrc(line) : numberDupes(urls.map(function (u) { return { name: hostName(u), url: u }; }));
+      if (dAdd) { var cur = (ep.downloads || []).slice(); nl.forEach(function (n) { if (!cur.some(function (c) { return c.url === n.url; })) cur.push(n); }); ep.downloads = numberDupes(cur); }
+      else ep.downloads = nl;
       ddone++;
     });
     keepOpenDl = di; renderEditor(); keepOpenDl = null;
