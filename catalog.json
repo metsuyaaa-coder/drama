@@ -25588,37 +25588,8 @@
         "at": 1792454008892
       }
     ],
-    "log": [
-      {
-        "t": 1792454008892,
-        "id": "vidara",
-        "name": "Vidara",
-        "state": "up",
-        "note": ""
-      },
-      {
-        "t": 1792454003810,
-        "id": "vidara",
-        "name": "Vidara",
-        "state": "slow",
-        "note": ""
-      },
-      {
-        "t": 1792454001799,
-        "id": "uqload",
-        "name": "Uqload",
-        "state": "up",
-        "note": ""
-      },
-      {
-        "t": 1792454000610,
-        "id": "uqload",
-        "name": "Uqload",
-        "state": "slow",
-        "note": ""
-      }
-    ],
-    "at": 1792454008892
+    "log": [],
+    "at": 1792454020694
   },
   "journal": [
     {
