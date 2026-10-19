@@ -59,7 +59,7 @@
         "Action & Adventure",
         "Drame"
       ],
-      "rating": "9.0",
+      "rating": "9.3",
       "pop": 40.18,
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/w500/bZHEU42QynnMrHUWK1Hhvj2cdPA.jpg",
@@ -387,7 +387,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792413107662,
+      "updatedAt": 1792425654588,
       "trend": 82
     },
     {
@@ -626,7 +626,7 @@
       ],
       "original_language": "ko",
       "posterV": 2,
-      "updatedAt": 1792413108547,
+      "updatedAt": 1792425655442,
       "networks": [
         "Netflix"
       ]
@@ -964,7 +964,7 @@
       ],
       "original_language": "ko",
       "posterV": 2,
-      "updatedAt": 1792413109379,
+      "updatedAt": 1792425656451,
       "networks": [
         "SBS"
       ]
@@ -1301,7 +1301,7 @@
       ],
       "original_language": "ko",
       "posterV": 2,
-      "updatedAt": 1792413110223,
+      "updatedAt": 1792425657363,
       "posterCustom": true,
       "networks": [
         "MBC"
@@ -1454,7 +1454,7 @@
         }
       ],
       "posterV": 2,
-      "updatedAt": 1792413110736
+      "updatedAt": 1792425657942
     },
     {
       "id": "305644",
@@ -1873,7 +1873,7 @@
       ],
       "original_language": "ko",
       "posterV": 2,
-      "updatedAt": 1792413111601,
+      "updatedAt": 1792425659452,
       "networks": [
         "tvN"
       ]
@@ -2232,7 +2232,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792413112469,
+      "updatedAt": 1792425660272,
       "trend": 0
     },
     {
@@ -2652,7 +2652,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792413113301,
+      "updatedAt": 1792425661324,
       "trend": 0
     },
     {
@@ -2957,7 +2957,7 @@
       ],
       "original_language": "ko",
       "posterV": 2,
-      "updatedAt": 1792413114184,
+      "updatedAt": 1792425662310,
       "networks": [
         "Netflix"
       ]
@@ -3434,7 +3434,7 @@
       ],
       "original_language": "ko",
       "posterV": 2,
-      "updatedAt": 1792413115059,
+      "updatedAt": 1792425663254,
       "networks": [
         "tvN"
       ]
@@ -4060,7 +4060,7 @@
       ],
       "original_language": "ko",
       "posterV": 2,
-      "updatedAt": 1792413115991,
+      "updatedAt": 1792425664468,
       "networks": [
         "tvN"
       ]
@@ -4579,7 +4579,7 @@
       ],
       "original_language": "ko",
       "posterV": 2,
-      "updatedAt": 1792413116855,
+      "updatedAt": 1792425665510,
       "networks": [
         "SBS"
       ]
@@ -4875,7 +4875,7 @@
       ],
       "original_language": "ko",
       "posterV": 2,
-      "updatedAt": 1792413117967,
+      "updatedAt": 1792425666419,
       "networks": [
         "Netflix"
       ]
@@ -5165,7 +5165,7 @@
       ],
       "original_language": "ko",
       "posterV": 2,
-      "updatedAt": 1792413118890,
+      "updatedAt": 1792425667516,
       "networks": [
         "Netflix"
       ]
@@ -5405,7 +5405,7 @@
       ],
       "original_language": "ja",
       "posterV": 2,
-      "updatedAt": 1792413119786,
+      "updatedAt": 1792425668508,
       "networks": [
         "Netflix"
       ]
@@ -5695,7 +5695,7 @@
       ],
       "original_language": "ko",
       "posterV": 2,
-      "updatedAt": 1792413120810,
+      "updatedAt": 1792425669455,
       "networks": [
         "Disney+"
       ]
@@ -6021,7 +6021,7 @@
       "original_language": "ko",
       "posterV": 2,
       "trend": 63,
-      "updatedAt": 1792413121925,
+      "updatedAt": 1792425670319,
       "networks": [
         "Netflix"
       ]
@@ -6375,7 +6375,7 @@
       ],
       "downloads": [],
       "posterV": 2,
-      "updatedAt": 1792413122816,
+      "updatedAt": 1792425671300,
       "networks": [
         "Lifetime",
         "U+ Mobile TV"
@@ -6581,8 +6581,8 @@
             },
             {
               "number": 12,
-              "name": "Épisode 12",
-              "overview": "",
+              "name": "Reforming the Army",
+              "overview": "On his deathbed, the limping soldier reveals the whereabouts of the stolen goods. When Yu Changxuan rushes to the scene, he finds that the gold has already been moved, leading him to conclude that someone was protecting Feng Sanli.",
               "air_date": "2026-10-16",
               "sources": [
                 {
@@ -6595,16 +6595,16 @@
             },
             {
               "number": 13,
-              "name": "Épisode 13",
-              "overview": "",
+              "name": "Divide",
+              "overview": "Gu Ruitong leads his troops in storming through the door and takes Jiang Xueting into custody on charges of stealing military secrets and defecting to the enemy.",
               "air_date": "2026-10-17",
               "sources": [],
               "downloads": []
             },
             {
               "number": 14,
-              "name": "Épisode 14",
-              "overview": "",
+              "name": "Unrequited Love",
+              "overview": "Yu Changxuan confronts Jiang Xueting in prison, questioning how he can truly care for Ye Pingjun while secretly working as a spy and still planning to marry her.",
               "air_date": "2026-10-18",
               "sources": [],
               "downloads": []
@@ -6826,7 +6826,7 @@
       "langs": [],
       "downloads": [],
       "posterV": 2,
-      "updatedAt": 1792413123722,
+      "updatedAt": 1792425672530,
       "trend": 72,
       "networks": [
         "Hunan Television",
@@ -7249,7 +7249,7 @@
         "VF"
       ],
       "downloads": [],
-      "updatedAt": 1792413124664,
+      "updatedAt": 1792425673263,
       "networks": [
         "Disney+"
       ]
@@ -7482,7 +7482,7 @@
         "VF"
       ],
       "downloads": [],
-      "updatedAt": 1792413125556,
+      "updatedAt": 1792425674455,
       "networks": [
         "Nippon TV"
       ],
@@ -7634,7 +7634,7 @@
           "by": "head"
         }
       ],
-      "updatedAt": 1792413945514,
+      "updatedAt": 1792425674972,
       "trend": 64,
       "posterCustom": true
     },
@@ -7941,7 +7941,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792424782407,
+      "updatedAt": 1792425676450,
       "networks": [
         "ENA"
       ]
@@ -8248,7 +8248,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792413127864,
+      "updatedAt": 1792425677496,
       "trend": 64,
       "networks": [
         "TVING"
@@ -8497,7 +8497,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792413128758,
+      "updatedAt": 1792425678413,
       "networks": [
         "TVING"
       ]
@@ -8765,7 +8765,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792413129737,
+      "updatedAt": 1792425679422,
       "networks": [
         "KBS Drama"
       ]
@@ -9341,7 +9341,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792413130868,
+      "updatedAt": 1792425680413,
       "networks": [
         "Netflix"
       ]
@@ -9656,7 +9656,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792413131894,
+      "updatedAt": 1792425681382,
       "networks": [
         "MBC"
       ]
@@ -9859,7 +9859,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792413132831,
+      "updatedAt": 1792425682367,
       "networks": [
         "Coupang Play"
       ]
@@ -10135,7 +10135,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792413133867,
+      "updatedAt": 1792425683292,
       "networks": [
         "tvN"
       ]
@@ -10338,7 +10338,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792413134798,
+      "updatedAt": 1792425684481,
       "networks": [
         "Netflix"
       ]
@@ -10615,7 +10615,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792413135728,
+      "updatedAt": 1792425685697,
       "networks": [
         "ENA"
       ]
@@ -10897,7 +10897,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792413136656,
+      "updatedAt": 1792425686434,
       "networks": [
         "KBS2"
       ]
@@ -11189,7 +11189,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792413137602,
+      "updatedAt": 1792425687155,
       "networks": [
         "JTBC"
       ]
@@ -11480,7 +11480,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792413138494,
+      "updatedAt": 1792425687981,
       "networks": [
         "SBS"
       ]
@@ -11781,7 +11781,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792413139480,
+      "updatedAt": 1792425689102,
       "networks": [
         "tvN"
       ]
@@ -12066,7 +12066,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792413140358,
+      "updatedAt": 1792425689906,
       "networks": [
         "JTBC"
       ]
@@ -12254,7 +12254,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792413141272,
+      "updatedAt": 1792425690848,
       "networks": [
         "Netflix"
       ]
@@ -12479,7 +12479,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792413142333,
+      "updatedAt": 1792425691695,
       "networks": [
         "Lifetime",
         "U+ Mobile TV"
@@ -12740,7 +12740,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792413143448,
+      "updatedAt": 1792425692630,
       "networks": [
         "ENA"
       ]
@@ -13007,7 +13007,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792413144457,
+      "updatedAt": 1792425693498,
       "networks": [
         "ENA"
       ]
@@ -13264,7 +13264,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792413145461,
+      "updatedAt": 1792425694428,
       "networks": [
         "SBS"
       ]
@@ -13550,7 +13550,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792413146474,
+      "updatedAt": 1792425695343,
       "networks": [
         "MBC"
       ]
@@ -13865,7 +13865,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792413147424,
+      "updatedAt": 1792425696199,
       "networks": [
         "Coupang Play"
       ]
@@ -14135,7 +14135,7 @@
         "VF"
       ],
       "downloads": [],
-      "updatedAt": 1792413148341,
+      "updatedAt": 1792425697230,
       "networks": [
         "Netflix"
       ]
@@ -14430,7 +14430,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792413149266,
+      "updatedAt": 1792425698008,
       "networks": [
         "tvN"
       ]
@@ -14655,7 +14655,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792413150183,
+      "updatedAt": 1792425698765,
       "networks": [
         "Netflix"
       ]
@@ -14949,7 +14949,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792413151071,
+      "updatedAt": 1792425699535,
       "networks": [
         "tvN"
       ]
@@ -15289,7 +15289,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792413152019,
+      "updatedAt": 1792425700373,
       "networks": [
         "SBS"
       ]
@@ -15596,7 +15596,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792413152969,
+      "updatedAt": 1792425701148,
       "networks": [
         "SBS"
       ]
@@ -15786,7 +15786,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792413153872,
+      "updatedAt": 1792425701862,
       "posterCustom": true,
       "networks": [
         "MBN Plus"
@@ -16004,7 +16004,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792413154741,
+      "updatedAt": 1792425702757,
       "networks": [
         "wavve"
       ]
@@ -16247,7 +16247,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792413155661,
+      "updatedAt": 1792425703597,
       "networks": [
         "Disney+"
       ]
@@ -16537,7 +16537,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792413156637,
+      "updatedAt": 1792425704330,
       "networks": [
         "JTBC"
       ]
@@ -16774,7 +16774,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792413158507,
+      "updatedAt": 1792425705061,
       "networks": [
         "MBS"
       ]
@@ -16954,7 +16954,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792413159459,
+      "updatedAt": 1792425705778,
       "networks": [
         "CBC"
       ]
@@ -17290,7 +17290,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792413160465,
+      "updatedAt": 1792425706570,
       "networks": [
         "ABEMA"
       ]
@@ -17472,7 +17472,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792413161480,
+      "updatedAt": 1792425707348,
       "networks": [
         "BS TV Tokyo"
       ]
@@ -17680,7 +17680,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792413162813,
+      "updatedAt": 1792425708102,
       "networks": [
         "MBS"
       ]
@@ -17853,7 +17853,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792413164494,
+      "updatedAt": 1792425708839,
       "networks": [
         "MBS"
       ]
@@ -18076,7 +18076,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792413165471,
+      "updatedAt": 1792425709637,
       "networks": [
         "TV Tokyo"
       ]
@@ -18313,7 +18313,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792413166544,
+      "updatedAt": 1792425710350,
       "networks": [
         "TBS"
       ]
@@ -18570,7 +18570,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792413167513,
+      "updatedAt": 1792425711259,
       "networks": [
         "Nippon TV"
       ]
@@ -18781,7 +18781,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792413168468,
+      "updatedAt": 1792425712259,
       "networks": [
         "Netflix"
       ]
@@ -19038,7 +19038,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792413169388,
+      "updatedAt": 1792425713174,
       "networks": [
         "TBS"
       ]
@@ -19290,7 +19290,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792413170372,
+      "updatedAt": 1792425714053,
       "networks": [
         "TBS"
       ]
@@ -19546,7 +19546,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792413171316,
+      "updatedAt": 1792425715082,
       "networks": [
         "Netflix"
       ]
@@ -19761,7 +19761,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792413172498,
+      "updatedAt": 1792425716005,
       "networks": [
         "Fuji TV",
         "Channel A"
@@ -19912,7 +19912,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792413173439,
+      "updatedAt": 1792425717053,
       "networks": [
         "MBS"
       ]
@@ -20109,7 +20109,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792413174420,
+      "updatedAt": 1792425717820,
       "networks": [
         "iQiyi"
       ]
@@ -20469,7 +20469,7 @@
       ],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1792413175592,
+      "updatedAt": 1792425718772,
       "networks": [
         "Disney+"
       ]
@@ -20705,7 +20705,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792413177472
+      "updatedAt": 1792425719682
     },
     {
       "id": "126035",
@@ -21159,7 +21159,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792413178414
+      "updatedAt": 1792425720465
     },
     {
       "id": "273977",
@@ -21379,7 +21379,7 @@
         "VF"
       ],
       "downloads": [],
-      "updatedAt": 1792413179352,
+      "updatedAt": 1792425721406,
       "posterCustom": true
     },
     {
@@ -21666,7 +21666,7 @@
       ],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1792413180548
+      "updatedAt": 1792425722157
     },
     {
       "id": "233221",
@@ -21904,7 +21904,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792413181535
+      "updatedAt": 1792425723128
     },
     {
       "id": "288603",
@@ -22404,7 +22404,7 @@
       ],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1792413182573
+      "updatedAt": 1792425724168
     },
     {
       "id": "289139",
@@ -22985,7 +22985,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792413183604
+      "updatedAt": 1792425725070
     },
     {
       "id": "300146",
@@ -23031,7 +23031,7 @@
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/original/6Pw78I4inl8CESM4GZMyQTGobph.jpg",
       "posterV": 2,
-      "backdrop": "https://image.tmdb.org/t/p/original/oagkprEWVF8EDyGMoQlTQajbsWH.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/original/YndvGwqwroUDVltBWmnOuTvJke.jpg",
       "cast": [
         {
           "name": "Tian Xiwei",
@@ -23348,7 +23348,7 @@
       ],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1792413184620
+      "updatedAt": 1792425726058
     },
     {
       "id": "128995",
@@ -23974,7 +23974,7 @@
       ],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1792422573779
+      "updatedAt": 1792425727097
     },
     {
       "id": "303745",
@@ -24212,7 +24212,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792425630334
+      "updatedAt": 1792425727237
     }
   ],
   "deletedLinks": [
@@ -24280,6 +24280,15 @@
     "at": 1792425510327
   },
   "journal": [
+    {
+      "k": "mvffzypqykp4h",
+      "t": 1792425727358,
+      "b": "head",
+      "a": "tmdb",
+      "i": "",
+      "n": "Toutes les fiches",
+      "d": "81 fiches"
+    },
     {
       "k": "mvffxvuq4hw6l",
       "t": 1792425630338,
