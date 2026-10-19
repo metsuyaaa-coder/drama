@@ -24930,9 +24930,22 @@
         "poster": "/uGm1PzEAe6MOceGfL6gE14tTiSf.jpg",
         "origin": "Japon",
         "en": ""
+      },
+      {
+        "id": "rmvfvuden",
+        "title": "In Your Radiant Season",
+        "status": "wait",
+        "kind": "dl",
+        "votes": 1,
+        "tmdb": 233833,
+        "media": "tv",
+        "year": "2026",
+        "poster": "/3WUjyogsPQTusZtgNW86oFj9Njd.jpg",
+        "origin": "Corée",
+        "en": ""
       }
     ],
-    "at": 1792452323781
+    "at": 1792452340319
   },
   "journal": [
     {
