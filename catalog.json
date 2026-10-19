@@ -23883,10 +23883,12 @@
       ],
       "sources": [],
       "addedAt": 1792415939552,
-      "langs": [],
+      "langs": [
+        "VOSTFR"
+      ],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1792417001093
+      "updatedAt": 1792422573779
     }
   ],
   "deletedLinks": [
@@ -23942,6 +23944,15 @@
     "at": 1792336665257
   },
   "journal": [
+    {
+      "k": "mvfe4dee30qcb",
+      "t": 1792422573782,
+      "b": "head",
+      "a": "edit",
+      "i": "128995",
+      "n": "Yumi's Cells",
+      "d": ""
+    },
     {
       "k": "mvfdn685u9ptg",
       "t": 1792421771333,
