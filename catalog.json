@@ -5972,11 +5972,6 @@
                   "name": "VIDMOLY",
                   "url": "https://vidmoly.org/embed-2yld09tdh2b7.html",
                   "by": "614d778ed0"
-                },
-                {
-                  "name": "VIDARA",
-                  "url": "https://vidara.to/e/j0c7P2SjI6SJO",
-                  "by": "614d778ed0"
                 }
               ],
               "downloads": []
@@ -6267,7 +6262,7 @@
       "downloads": [],
       "posterV": 2,
       "trend": 85,
-      "updatedAt": 1792365288124,
+      "updatedAt": 1792368437830,
       "networks": [
         "CCTV-8",
         "Youku"
@@ -20343,6 +20338,7 @@
     }
   ],
   "deletedLinks": [
+    "300146\thttps://vidara.to/e/j0c7P2SjI6SJO",
     "293607\thttps://vidmoly.me/v/su5gbvv2ux4n",
     "300146\thttps://vidmoly.me/v/2yld09tdh2b7",
     "300146\thttps://vidmoly.me/v/ftm3yk26ikx5",
@@ -20392,6 +20388,15 @@
     "at": 1792336665257
   },
   "journal": [
+    {
+      "k": "mvehw1u1unb27",
+      "t": 1792368437833,
+      "b": "head",
+      "a": "edit",
+      "i": "300146",
+      "n": "Where the Mask Ends",
+      "d": "sources 9 → 8"
+    },
     {
       "k": "mvegj1mfnju5j",
       "t": 1792366151415,
