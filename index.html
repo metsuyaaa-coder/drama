@@ -1145,6 +1145,19 @@ footer .about .flist li, footer .about p.dev { font-weight: 500; }
 #pone:hover > svg, #pone2:hover > svg, #pone:hover a, #pone2:hover a { color: var(--bg); }
 #pone:focus-within, #pone2:focus-within { outline: 2px solid var(--fg); outline-offset: 3px; }
 #pdemande::after, #pdemande2::after { content: ""; position: absolute; inset: 0; }
+.lksel { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 8px; }
+.lksel select { width: 100%; padding: 10px 12px; background: var(--bg); border: 1px solid var(--line); color: var(--fg); border-radius: 0; font-size: 13px; }
+.lkhost { display: grid; gap: 6px; padding: 8px 12px; border-bottom: 1px solid var(--line); font-size: 13px; }
+.lkhost:last-child { border-bottom: 0; }
+.lkhost > b { font-family: var(--mono); font-size: 12px; letter-spacing: .06em; }
+.lkchips { display: flex; flex-wrap: wrap; gap: 6px; }
+.lkchip { border: 1px solid var(--line); background: transparent; padding: 3px 9px; font-size: 12px; cursor: pointer; border-radius: 0; }
+.lkchip:hover { border-color: var(--fg); }
+.lkrow { display: flex; align-items: center; gap: 10px; padding: 8px 12px; border-bottom: 1px solid var(--line); font-size: 13px; }
+.lkrow:last-child { border-bottom: 0; }
+.lkrow .lkh { font-family: var(--mono); font-size: 11px; color: var(--dim); min-width: 74px; }
+.lkrow .lkb { flex: 1; min-width: 0; overflow-wrap: anywhere; }
+.lkrow .lkb small { color: var(--dim); }
 /* PC : serveurs sur leur ligne, puis les rectangles (autre source, signaler, lien de téléchargement) étirés au max et tous de la même taille */
 @media (min-width: 721px) {
   .pbar .pl { flex: 1 0 100%; }
@@ -3324,6 +3337,101 @@ document.addEventListener("click", function (e) {
   if (e.target.id === "journal-more") { journalShown += 30; if (curPath() === "/panel") viewPanel(); }
 });
 
+
+/* ===== Liens par admin (Head admin) : qui a ajouté quoi, par hébergeur ; suppression en un clic, synchronisée comme les autres suppressions de liens ===== */
+var LK = { by: "*", host: "*", kind: "*", shown: 40 }, LKROWS = [];
+function lkCollect() {
+  var out = [];
+  db.forEach(function (f) {
+    function add(arr, kind, where) { (arr || []).forEach(function (l) { if (l && l.url) out.push({ f: f, l: l, arr: arr, kind: kind, where: where, by: l.by || "", host: hostName(l.url) }); }); }
+    add(f.sources, "src", isMovie(f) ? "Film" : "Série"); add(f.downloads, "dl", isMovie(f) ? "Film" : "Série");
+    (f.seasons || []).forEach(function (se) {
+      add(se.downloads, "dl", "Saison " + se.number);
+      (se.episodes || []).forEach(function (ep) { var w = "S" + se.number + " É" + ep.number; add(ep.sources, "src", w); add(ep.downloads, "dl", w); });
+    });
+  });
+  return out;
+}
+function lkWho(b) { return b ? adminLabel(b) : "Sans auteur (ancien lien)"; }
+function lkMatch(e, skip) {
+  return (skip === "by" || LK.by === "*" || e.by === LK.by) && (skip === "host" || LK.host === "*" || e.host === LK.host) && (LK.kind === "*" || e.kind === LK.kind);
+}
+function lkRender() {
+  var el = $("#lksec"); if (!el || !isHead()) return;
+  var all = lkCollect(), byC = {}, hostC = {};
+  all.forEach(function (e) { if (lkMatch(e, "by")) { /* compteurs admins selon hébergeur/type choisis */ byC[e.by] = (byC[e.by] || 0) + 1; } if (lkMatch(e, "host")) hostC[e.host] = (hostC[e.host] || 0) + 1; });
+  var rows = all.filter(function (e) { return lkMatch(e); }).sort(function (a, b) { return a.host < b.host ? -1 : a.host > b.host ? 1 : String(a.f.name).localeCompare(String(b.f.name)); });
+  LKROWS = rows;
+  var tot = 0; Object.keys(byC).forEach(function (k) { tot += byC[k]; });
+  var byKeys = Object.keys(byC).sort(function (a, b) { return byC[b] - byC[a]; });
+  if (LK.by !== "*" && byKeys.indexOf(LK.by) < 0) byKeys.push(LK.by);
+  var hostKeys = Object.keys(hostC).sort(function (a, b) { return hostC[b] - hostC[a] || (a < b ? -1 : 1); });
+  if (LK.host !== "*" && hostKeys.indexOf(LK.host) < 0) hostKeys.push(LK.host);
+  var selBy = '<select data-lkf="by" aria-label="Admin"><option value="*">Tous les admins (' + tot + ')</option>' + byKeys.map(function (k) { return '<option value="' + esc(k) + '"' + (LK.by === k ? ' selected' : '') + '>' + esc(lkWho(k)) + ' (' + (byC[k] || 0) + ')</option>'; }).join("") + '</select>';
+  var selHost = '<select data-lkf="host" aria-label="Hébergeur"><option value="*">Tous les hébergeurs</option>' + hostKeys.map(function (k) { return '<option value="' + esc(k) + '"' + (LK.host === k ? ' selected' : '') + '>' + esc(k) + ' (' + (hostC[k] || 0) + ')</option>'; }).join("") + '</select>';
+  var selKind = '<select data-lkf="kind" aria-label="Type"><option value="*">Sources et téléchargements</option><option value="src"' + (LK.kind === "src" ? ' selected' : '') + '>Sources (lecture)</option><option value="dl"' + (LK.kind === "dl" ? ' selected' : '') + '>Téléchargements</option></select>';
+  /* tableau hébergeur → qui a ajouté combien (selon admin/type choisis) */
+  var mat = {};
+  all.forEach(function (e) { if (!lkMatch(e, "host")) return; var m = mat[e.host] || (mat[e.host] = { n: 0, by: {} }); m.n++; m.by[e.by] = (m.by[e.by] || 0) + 1; });
+  var mk = Object.keys(mat).sort(function (a, b) { return mat[b].n - mat[a].n || (a < b ? -1 : 1); });
+  var matHtml = mk.length ? '<div class="jlist">' + mk.map(function (h) {
+    return '<div class="lkhost"><b>' + esc(h) + ' · ' + mat[h].n + '</b><div class="lkchips">' + Object.keys(mat[h].by).sort(function (a, b) { return mat[h].by[b] - mat[h].by[a]; }).map(function (k) {
+      return '<button type="button" class="lkchip" data-lkchip="1" data-by="' + esc(k) + '" data-host="' + esc(h) + '">' + esc(lkWho(k)) + ' : ' + mat[h].by[k] + '</button>';
+    }).join("") + '</div></div>';
+  }).join("") + '</div>' : '<p class="note" style="margin:0">Aucun lien pour ce filtre.</p>';
+  var can = rows.length && (LK.by !== "*" || LK.host !== "*");
+  var scope = (LK.by !== "*" ? ' de ' + lkWho(LK.by) : '') + (LK.host !== "*" ? ' (' + LK.host + ')' : '');
+  var list = rows.slice(0, LK.shown).map(function (e, i) {
+    return '<div class="lkrow"><span class="lkh">' + esc(e.host) + (e.kind === "dl" ? ' · DL' : '') + '</span><span class="lkb"><b>' + esc(e.f.name) + '</b> <small>' + esc(e.where) + ' · ' + esc(lkWho(e.by)) + '</small></span><button class="btn ghost small" type="button" data-lkdel="' + i + '" aria-label="Supprimer ce lien">Supprimer</button></div>';
+  }).join("");
+  el.innerHTML = '<h3 class="note" style="margin:0;text-transform:uppercase;letter-spacing:.08em">Liens par admin</h3>' +
+    '<p class="note" style="margin:0">Qui a ajouté quoi, par hébergeur. Les suppressions sont publiées avec catalog.json : les autres admins ne les voient plus revenir.</p>' +
+    '<div class="lksel">' + selBy + selHost + selKind + '</div>' + matHtml +
+    '<div class="row"><button class="btn danger" type="button" id="lkdelall"' + (can ? '' : ' disabled') + '>Supprimer les ' + rows.length + ' liens' + esc(scope) + '</button></div>' +
+    (can ? '' : '<p class="note" style="margin:0">Choisis un admin ou un hébergeur pour pouvoir tout supprimer d\'un coup.</p>') +
+    (list ? '<div class="jlist">' + list + '</div>' : '') +
+    (rows.length > LK.shown ? '<div class="row"><button class="btn ghost small" type="button" id="lkmore">Voir plus (' + (rows.length - LK.shown) + ')</button></div>' : '');
+}
+function lkRemove(entries, label) {
+  if (!isHead()) return 0;   /* réservé au Head admin */
+  var byF = {}, n = 0;
+  entries.forEach(function (e) { var k = String(e.f.id); (byF[k] = byF[k] || { f: e.f, old: JSON.parse(JSON.stringify(e.f)), list: [] }).list.push(e); });
+  Object.keys(byF).forEach(function (k) {
+    var g = byF[k];
+    g.list.forEach(function (e) { var i = e.arr.indexOf(e.l); if (i > -1) { e.arr.splice(i, 1); n++; } });
+    noteRemovedLinks(g.old, g.f);   /* mémorisé pour la publication : tous les admins le recevront */
+    g.f.updatedAt = Date.now();
+  });
+  if (n) { persist(); journalAdd("del", "", label || (n + " lien" + (n > 1 ? "s" : "")), ""); markDirty(); }
+  return n;
+}
+document.addEventListener("click", function (e) {
+  var t = e.target; if (!t || !t.closest) return; t = t.closest("button"); if (!t || !isHead() || !$("#lksec") || !$("#lksec").contains(t)) return;
+  if (t.dataset.lkchip) { LK.by = t.dataset.by; LK.host = t.dataset.host; LK.shown = 40; lkRender(); }
+  else if (t.id === "lkmore") { LK.shown += 40; lkRender(); }
+  else if (t.dataset.lkdel != null) {
+    var r = LKROWS[+t.dataset.lkdel]; if (!r) return;
+    var n = lkRemove([r], "lien " + r.host + " de " + r.f.name + " (" + lkWho(r.by) + ")");
+    toast(n ? "Lien supprimé" : "Lien introuvable"); lkRender();
+  }
+  else if (t.id === "lkdelall") {
+    if (t.disabled) return;
+    var rows = LKROWS.slice();
+    if (t.dataset.armed) {
+      var m = lkRemove(rows, rows.length + " lien" + (rows.length > 1 ? "s" : "") + (LK.by !== "*" ? " de " + lkWho(LK.by) : "") + (LK.host !== "*" ? " (" + LK.host + ")" : ""));
+      toast(m + (m > 1 ? " liens supprimés" : " lien supprimé") + (autoSyncOn() ? "" : " : clique sur « Publier » pour synchroniser")); lkRender();
+    } else {
+      var old = t.textContent; t.dataset.armed = "1"; t.textContent = "Confirmer : supprimer " + rows.length + " lien" + (rows.length > 1 ? "s" : "") + " ?";
+      setTimeout(function () { if (t.isConnected && t.dataset.armed) { delete t.dataset.armed; t.textContent = old; } }, 4000);
+    }
+  }
+});
+document.addEventListener("change", function (e) {
+  var t = e.target; if (!t || !t.dataset || !t.dataset.lkf || !$("#lksec")) return;
+  LK[t.dataset.lkf] = t.value; LK.shown = 40; lkRender();
+});
+function linksSection() { return isHead() ? '<div id="lksec" style="display:grid;gap:12px"></div>' : ""; }
+
 /* Statistiques du catalogue : calculées à partir des fiches, sans aucun service externe */
 function statsSection() {
   var H = '<h3 class="note" style="margin:0;text-transform:uppercase;letter-spacing:.08em">';
@@ -3368,7 +3476,7 @@ function viewPanel() {
     '<p class="note" style="margin:0">' + (priv
       ? 'Privé : seul toi (en mode admin) vois les boutons et l\'onglet Télécharger. À la publication, les liens sont retirés de catalog.json, donc personne ne peut les lire dans le fichier. Ils restent sur ce navigateur : fais une sauvegarde complète.'
       : 'Public : tous les visiteurs voient les boutons et l\'onglet Télécharger sur les fiches qui ont des liens.') + '</p><div class="row"><button class="btn ghost small" type="button" data-preview="1">Voir comme un visiteur</button></div></div>' +
-    (isHead() ? statsSection() + journalSection() : '') +
+    (isHead() ? statsSection() + journalSection() + linksSection() : '') +
     '<div style="display:grid;gap:12px"><h3 class="note" style="margin:0;text-transform:uppercase;letter-spacing:.08em">Fiches TMDB</h3>' +
     '<p class="note" style="margin:0">' + nt + (nt > 1 ? ' fiches viennent' : ' fiche vient') + ' de TMDB. Le bouton remet à jour les infos, les affiches, les saisons et les nouveaux épisodes. Tes sources, liens de téléchargement et langues sont conservés.</p>' +
     '<div class="row"><button class="btn" type="button" id="refreshall"' + (refreshingAll || !nt ? ' disabled' : '') + '>Tout mettre à jour depuis TMDB</button></div>' +
@@ -3383,7 +3491,7 @@ function viewPanel() {
     '<div style="display:grid;gap:12px"><h3 class="note" style="margin:0;text-transform:uppercase;letter-spacing:.08em">Accès</h3>' +
     '<div class="row"><button class="btn ghost" type="button" data-clickid="btn-key">Clé TMDB</button><button class="btn ghost" type="button" data-clickid="btn-gh">GitHub</button><a class="btn ghost" href="/motdepasse">Mot de passe</a><button class="btn danger" type="button" data-clickid="btn-quit">Quitter le mode admin</button></div></div>' +
     '</div></div>';
-  bkRender(); annPreview();
+  bkRender(); annPreview(); lkRender();
 }
 
 /* ===== Connexion et mot de passe ===== */
@@ -5560,7 +5668,7 @@ document.addEventListener("keydown", function (e) { if (e.key === "Escape") rmCl
 window.addEventListener("resize", rmClose);
 window.addEventListener("popstate", rmClose);
 /* Version du site : les admins qui ont encore une ancienne page en cache la rechargent automatiquement */
-var BUILD = "2026-10-18-acteur2";
+var BUILD = "2026-10-19-liens";
 function checkBuild() {
   if (!ADMIN || draft || teamEditing || heroEditing) return;
   fetch(location.href, { cache: "reload" }).then(function (r) { return r.text(); }).then(function (t) {
