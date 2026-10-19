@@ -21055,6 +21055,244 @@
       "downloads": [],
       "posterCustom": true,
       "updatedAt": 1792376270775
+    },
+    {
+      "id": "233221",
+      "type": "tv",
+      "name": "Oh My Ghost Clients",
+      "original_name": "노무사 노무진",
+      "origin_country": [
+        "KR"
+      ],
+      "networks": [
+        "MBC"
+      ],
+      "original_language": "ko",
+      "aka": [
+        "노무사 노무진",
+        "Oh My Ghost Clients",
+        "Meus Clientes Fantasmas",
+        "劳务师卢武镇",
+        "محامي الأشباح",
+        "勞務師盧武鎮",
+        "Thân Chủ Ma Của Tôi",
+        "ให้ตายเถอะ ลูกความผี",
+        "Мои призрачные клиенты",
+        "¡Oh, mis clientes fantasmas!",
+        "اوه موکل های روحی من",
+        "Oh mis clientes fantasmas",
+        "Мої клієнти привиди",
+        "Labor Attorney Roh Mu-jin",
+        "The Laborer Roh Moo-jin",
+        "Labor Attorney No Moo-jin"
+      ],
+      "year": "2025",
+      "overview": "",
+      "genres": [
+        "Comédie",
+        "Mystère",
+        "Science-Fiction & Fantastique",
+        "Drame"
+      ],
+      "rating": "8.1",
+      "pop": 7.05,
+      "status": "Ended",
+      "poster": "https://image.tmdb.org/t/p/w500/ysc63ghJEM5mXBd9qWEgB0ohWTy.jpg",
+      "posterV": 2,
+      "backdrop": "https://image.tmdb.org/t/p/original/ttJ2Wqvh22RQdMjLoVouSgdaDBW.jpg",
+      "cast": [
+        {
+          "name": "Park Soo-oh",
+          "character": "Lee Min-Uk",
+          "id": 1649086
+        },
+        {
+          "name": "Jung Kyung-ho",
+          "character": "Noh Mu-jin",
+          "id": 79578
+        },
+        {
+          "name": "Seorina",
+          "character": "Na Hee-ju",
+          "id": 1761412
+        },
+        {
+          "name": "Cha Hak-yeon",
+          "character": "Ko Gyeon-wu",
+          "id": 1512481
+        },
+        {
+          "name": "Tang Joon-sang",
+          "character": "",
+          "id": 2123570
+        },
+        {
+          "name": "유선호",
+          "character": "Yun-jae",
+          "id": 1894261
+        },
+        {
+          "name": "강혜원",
+          "character": "",
+          "id": 2359299
+        }
+      ],
+      "seasons": [
+        {
+          "number": 1,
+          "name": "Saison 1",
+          "episodes": [
+            {
+              "number": 1,
+              "name": "Licensed To Fight",
+              "overview": "After a failed cryptocurrency gamble, Mu-jin finds himself jobless, broke, and separated from his wife. Urged by a friend, he studies and passes the labour attorney exam. With no clients and heavy pressure to succeed, he opens a tiny office but still struggles to pay the rent. However, an idea from Hee-ju starts to get the ball rolling.",
+              "air_date": "2025-05-30",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-1suephcvux3v.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 2,
+              "name": "A Ghost's Grudge",
+              "overview": "After a near-death experience, Mu-jin strikes a strange deal with a mysterious figure named Bo-sal. But in return, he begins to see terrifying ghosts with grudges. Haunted by the spirit of Min-uk, Mu-jin gets pushed to investigate the unsafe factory where Min-uk died. Gyeon-woo goes undercover as a new hire and meets Nimal, a migrant worker afraid to speak out, but as the truth surfaces, the team is exposed and forced into a desperate retreat.",
+              "air_date": "2025-05-31",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-8yapbn8j6twp.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 3,
+              "name": "Possessed By Vengence",
+              "overview": "To his shock, Mu-jin still encounters vengeful spirits and is even more stunned by the fine print in his six-month contract. His next case involves Cho Eun-young, a nurse consumed by revenge. Not only does she terrify him, but she also takes control of his body, unleashing chaos in the hospital as she hunts down those responsible for her death.",
+              "air_date": "2025-06-06",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-hth61qtduxh7.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 4,
+              "name": "Behind Hospital Walls",
+              "overview": "Mu-jin and his team look for evidence to reclassify Nurse Cho Eun-young's suicide as an industrial accident, aiming to hold the hospital accountable for covering up suspected workplace bullying and medical malpractice. However, with Mu-jin blacklisted from the hospital, it falls to Gyeon-woo to infiltrate the facility and locate the one piece of evidence Mu-jin remembers seeing while possessed.",
+              "air_date": "2025-06-07",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-dea4k8h1focu.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 5,
+              "name": "The Unjust Test",
+              "overview": "Mu-jin's father suspects his mother of having an affair and asks him to investigate. When Mu-jin visits, he encounters a ghost, a close friend of his mother, seeking justice. Following his mother to her university, Mu-jin uncovers a mysterious test that may explain the ghost's tragic death.",
+              "air_date": "2025-06-13",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-258n3va6w5su.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 6,
+              "name": "Union Power",
+              "overview": "With the protest shut down by police, Mu-jin and the workers regroup to form a union, vowing to fight to the end. However, when the university refuses to meet their demands, they have no choice but to go on strike. Just as the situation begins to look hopeful, they encounter unexpected backlash from students, prompting them to question the very cause for which they have been fighting.",
+              "air_date": "2025-06-14",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-lyuqstydp6k1.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 7,
+              "name": "Yoon-jae's Collapse",
+              "overview": "Mu-jin encounters the restless spirit of Yoon-jae in a hospital and discovers that Yoon-jae collapsed because of exploitative working conditions at a foreign-owned supermarket. With Yoon-jae in a coma, Mu-jin seeks institutional support and tangible evidence of employer negligence and must also convince Yoon-jae's spirit not to surrender to despair.",
+              "air_date": "2025-06-20",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-s817z6dw2dgw.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 8,
+              "name": "Factory Fire",
+              "overview": "When things look to be slowing down for Mu-jin and his team, a fire in a factory takes the lives of factory workers who all show up before him looking for help. As Mu-jin uncovers the extent of the factory's willful disregard for fire safety regulations, he realizes that the true source of the negligence lies with a more powerful entity, Myungeum Constructions. Determined to hold those truly accountable, Mu-jin seeks out the factory's figurehead for more answers.",
+              "air_date": "2025-06-21",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-4jsh5b02y1x7.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 9,
+              "name": "The Flash Drive Chase",
+              "overview": "The flash drive and the witness vanish, leaving Mu-jin's case in shambles. Though morale is low, he resolves to keep fighting for the eight victims of the Buguk Warehouse fire. With Myungeum Constructions closing in and Mu-jin restrained, Hee-ju and Gyeon-woo race to recover the evidence. Will Mu-jin's final move be enough to turn the tide?",
+              "air_date": "2025-06-27",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-hurx1kausl8l.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 10,
+              "name": "The Crumbling Truth",
+              "overview": "Mu-jin's push for a confession from President Kim puts everyone inside the poorly built Myungeum Tech Plaza in danger. As the structure begins to collapse, Assemblywoman Moon finally confronts the deadly consequences of cutting corners and vows to hold President Kim accountable. When a fire breaks out and all exits are sealed, President Kim is brought to his knees and forced to sign a contract for a second chance at life with the burning man in jeans.",
+              "air_date": "2025-06-28",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-jprm4him3lqz.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            }
+          ],
+          "downloads": []
+        }
+      ],
+      "sources": [],
+      "addedAt": 1792377143434,
+      "langs": [
+        "VOSTFR"
+      ],
+      "downloads": [],
+      "updatedAt": 1792377535252
     }
   ],
   "deletedLinks": [
@@ -21107,6 +21345,15 @@
     "at": 1792336665257
   },
   "journal": [
+    {
+      "k": "mvenb1h35jtaa",
+      "t": 1792377535287,
+      "b": "614d778ed0",
+      "a": "add",
+      "i": "233221",
+      "n": "Oh My Ghost Clients",
+      "d": ""
+    },
     {
       "k": "mvemozwnsknhp",
       "t": 1792376506823,
