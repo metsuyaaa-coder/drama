@@ -4281,22 +4281,35 @@ function renderPlayer() {
   }).join("") : "";
   watchSource();
 }
-/* Écran de chargement + bouton « ça rame ? » après 7 s */
-var slowTimer = null;
+/* Écran de chargement : bouton « ça rame ? » après 7 s, et filet de sécurité à 20 s pour ne jamais tourner à l'infini */
+var slowTimer = null, hardTimer = null;
+function stopLoading() {
+  clearTimeout(slowTimer); clearTimeout(hardTimer);
+  var o = $("#pload"); if (o) o.classList.remove("on");
+}
 function loadingUi() {
   var o = $("#pload"), fr = document.querySelector("#pstage iframe"); if (!o || !fr) return;
-  clearTimeout(slowTimer);
+  clearTimeout(slowTimer); clearTimeout(hardTimer);
+  var many = cur.sources.length > 1;
   $("#plbl").textContent = "Chargement · " + String((cur.sources[cur.i] || {}).name || "serveur");
+  $("#pslow").textContent = many ? "Ça rame ? Essayer un autre serveur" : "Ça rame ? Réessayer";
   $("#pslow").hidden = true; o.classList.add("on");
-  slowTimer = setTimeout(function () { if (o.classList.contains("on")) $("#pslow").hidden = !(cur.sources.length > 1); }, 7000);
-  fr.addEventListener("load", function () { clearTimeout(slowTimer); o.classList.remove("on"); });
+  slowTimer = setTimeout(function () { if (o.classList.contains("on")) $("#pslow").hidden = false; }, 7000);
+  /* Certains hébergeurs ne déclenchent jamais « load » (redirections, pubs) : on libère l'écran au bout de 20 s */
+  hardTimer = setTimeout(function () {
+    if (!o.classList.contains("on")) return;
+    o.classList.remove("on");
+    toast("Toujours rien ? Essaie « Recharger » ou change de serveur");
+  }, 20000);
+  fr.addEventListener("load", stopLoading);
+  fr.addEventListener("error", function () { $("#pslow").hidden = false; });
 }
 function nextServer() {
   var n = (cur.sources || []).length; if (n < 2) return;
   cur.i = (cur.i + 1) % n; rememberServer(); renderPlayer();
   toast("Serveur : " + (cur.sources[cur.i].name || cur.i + 1));
 }
-$("#pslow").addEventListener("click", nextServer);
+$("#pslow").addEventListener("click", function () { if ((cur.sources || []).length > 1) nextServer(); else renderPlayer(); });
 $("#preload").addEventListener("click", function () { renderPlayer(); });
 /* Raccourcis clavier (quand le lecteur est ouvert) */
 document.addEventListener("keydown", function (e) {
@@ -4325,7 +4338,7 @@ function watchSource() {
     if (tok !== watchToken || !pl || !pl.open) return;
     var n = cur.sources.length, nxt = -1;
     for (var k = 1; k < n; k++) { var j = (cur.i + k) % n; if (!cur.tried[j]) { nxt = j; break; } }
-    if (nxt < 0) { toast("Aucun serveur ne répond pour l'instant, réessaie plus tard"); return; }
+    if (nxt < 0) { stopLoading(); cur.tried = {}; toast("Aucun serveur ne répond pour l'instant, réessaie plus tard"); return; }
     toast("Ce serveur ne répond pas, passage à " + (cur.sources[nxt].name || "la source suivante"));
     cur.i = nxt; renderPlayer();
   }, WATCH_MS);
@@ -5280,7 +5293,7 @@ $("#pfull").addEventListener("click", toggleFull);
 document.addEventListener("fullscreenchange", function () { if (!$("#player").classList.contains("wide")) setFullLbl(!!document.fullscreenElement); syncFs(); });
 document.addEventListener("webkitfullscreenchange", function () { if (!$("#player").classList.contains("wide")) setFullLbl(!!document.webkitFullscreenElement); syncFs(); });
 $("#player").addEventListener("click", function (e) { if (e.target === this) closePlayer(); });
-$("#player").addEventListener("close", function () { watchToken++; clearTimeout(watchTimer); closeEps(); clearInterval(tipTimer); document.documentElement.classList.remove("lock"); $("#pstage").innerHTML = ""; syncFs(); });
+$("#player").addEventListener("close", function () { watchToken++; clearTimeout(watchTimer); stopLoading(); closeEps(); clearInterval(tipTimer); document.documentElement.classList.remove("lock"); $("#pstage").innerHTML = ""; syncFs(); });
 
 /* Fichier publié : en mode privé, les liens de téléchargement en sont retirés */
 function stripDl(list) {
