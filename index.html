@@ -1495,6 +1495,79 @@ footer .about .flist li, footer .about p.dev { font-weight: 500; }
 .rqaddwrap { padding-top: 24px; }
 .rqaddwrap .rqadd { padding-top: 0; }
 .rqadd select { width: auto; }
+
+/* ===== Fiche : saisons, épisodes, téléchargement (même habillage que Ma liste et Séries) ===== */
+.seasons { padding-bottom: 72px; }
+.sehero { position: relative; isolation: isolate; padding: 40px 0 22px; }
+.sehero::before { content: ""; position: absolute; z-index: -1; width: 440px; height: 440px; left: -150px; top: -240px; border-radius: 50%; pointer-events: none; background: radial-gradient(closest-side, rgba(125, 211, 252, .15), transparent); animation: mlfloat 15s ease-in-out infinite alternate; }
+.seasons.dlmode .sehero::before { background: radial-gradient(closest-side, rgba(134, 239, 172, .14), transparent); }
+.sehero .mltitle { margin-bottom: 22px; }
+.sehero .mltitle h2 { margin: 0 0 6px; font-family: var(--display); font-weight: 900; font-size: clamp(36px, 5.5vw, 60px); line-height: .95; text-transform: uppercase; animation: riseIn .6s var(--ease) both; }
+.sehero .mllogo { width: clamp(38px, 5.2vw, 56px); height: clamp(38px, 5.2vw, 56px); }
+.seasons.dlmode .sehero .mllogo .sp { stroke: #86efac; fill: #86efac; }
+.sehero .mltabs.two { max-width: 460px; }
+.sehero .mlt svg { width: 26px; height: 26px; }
+.seasons.dlmode .sehero .mltabs .mlind { transform: translateX(100%); background: #86efac; }
+.seasons.dlmode .sehero .mlt.on { color: #052e16; }
+
+.seasonpick { padding: 0 0 18px; animation: riseIn .55s .1s var(--ease) both; }
+.seasonpick .seasontog { display: none; }
+.seasonpick .seasonall, .seasonpick.open .seasonall { display: flex; flex-wrap: nowrap; gap: 0; width: auto; max-width: 100%; overflow-x: auto; scrollbar-width: none; border: 1px solid var(--line); animation: none; }
+.seasonpick .seasonall::-webkit-scrollbar { display: none; }
+.seasonpick .seasonall .chip { flex: none; padding: 12px 22px; border: 0; border-left: 1px solid var(--line); font-family: var(--display); font-weight: 700; font-size: 18px; letter-spacing: .05em; animation: none; }
+.seasonpick .seasonall .chip:first-child { border-left: 0; }
+.seasonpick .seasonall .chip.on { background: var(--fg); color: var(--bg); }
+.seasons.dlmode .seasonpick .seasonall .chip.on { background: #86efac; color: #052e16; }
+
+details.season, details.season:last-child { border: 0; }
+.seasons.multi details.season.cur { border: 0; }
+.seasons details.season summary, .seasons.multi details.season summary { padding: 16px 18px; background: var(--panel); border: 1px solid var(--line); font-size: 28px; line-height: 1.1; transition: background .2s, border-color .2s; }
+.seasons details.season summary:hover { padding-left: 18px; border-color: #3a3a3a; }
+.seasons.multi details.season summary:hover { border-color: var(--line); }
+details.season summary i { padding: 5px 9px; border: 1px solid var(--line); font-size: 11px; }
+.sprog { height: 4px; margin: 0 0 14px; background: var(--line); }
+.sprog i { transform-origin: left; animation: mlfill .9s .25s var(--ease) both; }
+.seasonbar { display: flex; padding: 0 0 14px; }
+
+.ep { grid-template-columns: 52px minmax(0, 1fr) auto; gap: 8px 18px; align-items: center; padding: 14px 16px; margin-bottom: 8px; border: 1px solid var(--line); border-top: 1px solid var(--line); transition: background .2s, border-color .25s; }
+@media (hover: hover) { .ep:hover { background: var(--panel); border-color: #444; } }
+.ep .n { width: 52px; height: 52px; display: grid; place-items: center; padding: 0; border: 1px solid var(--line); font-family: var(--display); font-weight: 900; font-size: 24px; line-height: 1; color: var(--dim); transition: background .25s, color .25s, border-color .25s; }
+@media (hover: hover) { .ep:hover .n { background: var(--fg); color: var(--bg); border-color: var(--fg); } }
+.ep.seen .n { color: #86efac; border-color: rgba(134, 239, 172, .45); }
+.ep.seen > div:nth-child(2) b { color: var(--dim); }
+.ep.next { border-color: rgba(125, 211, 252, .55); }
+.ep.next .n { color: #082f49; background: #7dd3fc; border-color: #7dd3fc; }
+.ep.next:hover .n { color: #082f49; background: #7dd3fc; border-color: #7dd3fc; }
+.ep > div:nth-child(2) b { font-size: 16px; }
+.ep small.d { display: inline-block; margin: 4px 0 6px; padding: 3px 7px; border: 1px solid var(--line); }
+.seasons.dlmode .ep:hover { border-color: rgba(134, 239, 172, .55); }
+.seasons.dlmode .ep:hover .n { background: #86efac; color: #052e16; border-color: #86efac; }
+.seasons.dlmode .ep.next { border-color: var(--line); }
+.seasons.dlmode .ep.next .n { color: var(--dim); background: none; border-color: var(--line); }
+.seasons.dlmode .ep.next:hover .n { background: #86efac; color: #052e16; border-color: #86efac; }
+.seasons.dlmode .ep .dlact, .seasons.dlmode .dlbar, .seasons.dlmode .dlstat { animation: riseIn .4s var(--ease) both; }
+.seasons:not(.dlmode) .ep .act { animation: fadeIn .35s both; }
+
+.seasons.dlmode .dlbar { align-items: center; padding: 14px 16px; margin-bottom: 14px; border: 1px solid rgba(134, 239, 172, .4); background: rgba(134, 239, 172, .06); }
+.dlbl { display: inline-flex; align-items: center; gap: 8px; margin-right: 6px; font-family: var(--mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: #86efac; }
+.dlbl svg { width: 16px; height: 16px; flex: none; }
+.seasons.dlmode .dlstat { display: flex; align-items: center; gap: 12px; padding: 0 0 14px; }
+.dlstat .dlpg { flex: 0 1 220px; height: 4px; background: var(--line); }
+.dlstat .dlpg i { display: block; width: 0; height: 100%; border-radius: 0; background: #86efac; transform-origin: left; animation: mlfill .9s .2s var(--ease) both; }
+.dlstat .dlpg.part i { background: #fcd34d; }
+.seasons.dlmode .dlonly { padding: 14px 16px; border: 1px dashed var(--line); }
+
+@media (max-width: 720px) {
+  .seasons { padding-bottom: 48px; }
+  .sehero { padding: 28px 0 18px; }
+  .sehero .mltitle { margin-bottom: 18px; gap: 14px; }
+  .sehero .mltabs.two { max-width: none; }
+  .seasons details.season summary, .seasons.multi details.season summary { padding: 14px; font-size: 22px; }
+  .seasons details.season summary:hover { padding-left: 14px; }
+  .ep { grid-template-columns: 42px minmax(0, 1fr); gap: 4px 12px; padding: 12px; }
+  .ep .n { width: 42px; height: 42px; font-size: 20px; }
+  .seasonpick .seasonall .chip { padding: 11px 16px; font-size: 16px; }
+}
 </style>
 <!-- Visites du site : Vercel Web Analytics, sans cookie ni base de données. Ne fait rien tant que tu ne l'actives pas dans Vercel (onglet Analytics). -->
 <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
@@ -3778,8 +3851,8 @@ function seenBtnInner(on) {
   return (on ? '<svg class="dlic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>' : '<svg class="dlic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>') + '<span>' + (on ? "Vu" : "Marquer vu") + '</span>';
 }
 function dlStat(se) {
-  var eps = se.episodes || [], n = eps.filter(function (e) { return (e.downloads || []).length; }).length;
-  return '<div class="dlstat"><i class="' + (n === eps.length && n ? "all" : n ? "part" : "none") + '"></i>' + n + '/' + eps.length + ' épisode' + (eps.length > 1 ? 's' : '') + ' avec lien de téléchargement</div>';
+  var eps = se.episodes || [], n = eps.filter(function (e) { return (e.downloads || []).length; }).length, p = eps.length ? Math.round(100 * n / eps.length) : 0;
+  return '<div class="dlstat"><span class="dlpg' + (n && n < eps.length ? " part" : "") + '"><i style="width:' + p + '%"></i></span><span>' + n + '/' + eps.length + ' épisode' + (eps.length > 1 ? 's' : '') + ' avec lien de téléchargement</span></div>';
 }
 document.addEventListener("click", function (e) { var t = e.target.closest && e.target.closest(".ep small:not(.d)"); if (t) t.classList.toggle("open"); });
 function dlLinks(arr, label, cls, meta) {
@@ -3932,15 +4005,18 @@ function viewSerie(id) {
     ((s.cast || []).length ? '<h3 class="note" style="margin:32px 0 0;text-transform:uppercase;letter-spacing:.08em">Distribution</h3><div class="cast">' + s.cast.slice(0, 12).map(function (c) { return '<div><a class="castlink" href="/acteur/' + encodeURIComponent(c.name) + '" title="Voir tous ses titres"><b>' + esc(c.name) + '</b></a><span>' + esc(c.character || "") + '</span></div>'; }).join("") + '</div>' : '') +
     '</div></div></section>';
   if (!movie && (s.seasons || []).length) {
-    var nextKey = nextUp(s, seenMap);
+    var nextKey = nextUp(s, seenMap), allEps = 0, seenN = 0, srcN = 0, dlN = 0;
+    s.seasons.forEach(function (se) { (se.episodes || []).forEach(function (ep) { allEps++; if (seenMap[epKey(se, ep)]) seenN++; if ((ep.sources || []).length) srcN++; if ((ep.downloads || []).length) dlN++; }); });
     var multi = s.seasons.length > 1, si = (seasonSel.id === String(s.id) && seasonSel.i < s.seasons.length) ? seasonSel.i : 0;
     seasonSel = { id: String(s.id), i: si };
-    html += '<div class="wrap seasons' + (dlMode ? ' dlmode' : '') + (multi ? ' multi' : '') + '" id="seasons"><div class="section-head"><h2>Épisodes</h2>' + (showDl ? '<div class="tabs" role="tablist"><button type="button" class="tab' + (dlMode ? '' : ' on') + '" role="tab" data-dltab="watch">Regarder</button><button type="button" class="tab' + (dlMode ? ' on' : '') + '" role="tab" data-dltab="dl">Télécharger</button></div>' : '') + '</div>' + (multi ? '<div class="seasonpick"><button type="button" class="chip plattab seasontog" data-seasonopen="1" aria-expanded="false"><span class="sl">' + esc(s.seasons[si].name || "Saison " + s.seasons[si].number) + '</span><i class="caret" aria-hidden="true"></i></button><div class="platall seasonall" role="tablist">' + s.seasons.map(function (se, i) { return '<button type="button" class="chip' + (i === si ? ' on' : '') + '" role="tab" aria-selected="' + (i === si ? 'true' : 'false') + '" data-seasontab="' + i + '">' + esc(se.name || "Saison " + se.number) + '</button>'; }).join("") + '</div></div>' : '') + (dlAdmin() && !hasDl(s) ? '<p class="note dlonly">Aucun lien de téléchargement pour l\'instant. Ajoute-en avec « Modifier ».</p>' : '') + s.seasons.map(function (se, i) {
+    html += '<div class="wrap seasons' + (dlMode ? ' dlmode' : '') + (multi ? ' multi' : '') + '" id="seasons"><div class="sehero"><div class="mltitle"><svg class="mllogo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="m8 3 4 4 4-4"/><path class="sp" style="transform-origin:19px 3px" d="m19 .6.6 1.4 1.4.6-1.4.6-.6 1.4-.6-1.4L17 2.6l1.4-.6z"/></svg>' +
+      '<div><h2>Épisodes</h2><p class="note">' + allEps + (allEps > 1 ? ' épisodes' : ' épisode') + ' · ' + s.seasons.length + (s.seasons.length > 1 ? ' saisons' : ' saison') + (seenN ? ' · ' + seenN + ' vu' + (seenN > 1 ? 's' : '') : '') + '</p></div></div>' +
+      (showDl ? '<div class="mltabs two" role="tablist"><span class="mlind"></span><button type="button" class="mlt' + (dlMode ? '' : ' on') + '" role="tab" aria-selected="' + (dlMode ? 'false' : 'true') + '" data-dltab="watch">' + PLAYICON + '<b data-to="' + srcN + '">0</b><span class="l">Regarder</span></button><button type="button" class="mlt' + (dlMode ? ' on' : '') + '" role="tab" aria-selected="' + (dlMode ? 'true' : 'false') + '" data-dltab="dl">' + DLICON + '<b data-to="' + dlN + '">0</b><span class="l">Télécharger</span></button></div>' : '') + '</div>' + (multi ? '<div class="seasonpick"><button type="button" class="chip plattab seasontog" data-seasonopen="1" aria-expanded="false"><span class="sl">' + esc(s.seasons[si].name || "Saison " + s.seasons[si].number) + '</span><i class="caret" aria-hidden="true"></i></button><div class="platall seasonall" role="tablist">' + s.seasons.map(function (se, i) { return '<button type="button" class="chip' + (i === si ? ' on' : '') + '" role="tab" aria-selected="' + (i === si ? 'true' : 'false') + '" data-seasontab="' + i + '">' + esc(se.name || "Saison " + se.number) + '</button>'; }).join("") + '</div></div>' : '') + (dlAdmin() && !hasDl(s) ? '<p class="note dlonly">Aucun lien de téléchargement pour l\'instant. Ajoute-en avec « Modifier ».</p>' : '') + s.seasons.map(function (se, i) {
       return '<details class="season' + (multi && i === si ? ' cur' : '') + '"' + ((multi ? i === si : i === 0) ? " open" : "") + '><summary' + (multi ? ' tabindex="-1"' : '') + '><span>' + esc(se.name || "Saison " + se.number) + '</span><span class="sm"><i>' + (se.episodes || []).length + ' ÉPISODES' + (seenCount(se) ? ' · ' + seenCount(se) + ' VUS' : '') + '</i></span></summary>' +
         '<div class="sprog"><i style="width:' + Math.round(100 * seenCount(se) / Math.max(1, (se.episodes || []).length)) + '%"></i></div>' +
         '<div class="seasonbar"><button type="button" class="btn small ghost" data-seenseason="' + esc(s.id) + '|' + i + '">' + (seenCount(se) === (se.episodes || []).length && seenCount(se) ? "Tout marquer non vu" : "Tout marquer comme vu") + '</button></div>' +
         (dlOpen() ? dlStat(se) : '') +
-        (dlOpen() && (se.downloads || []).length ? '<div class="dlbar">' + dlLinks(se.downloads, "Télécharger toute la saison", "", true) + '</div>' : '') +
+        (dlOpen() && (se.downloads || []).length ? '<div class="dlbar"><span class="dlbl">' + DLICON + 'Pack saison</span>' + dlLinks(se.downloads, "Télécharger toute la saison", "", true) + '</div>' : '') +
         (se.episodes || []).map(function (ep, k) {
           var n = (ep.sources || []).length, seen = !!seenMap[epKey(se, ep)], fresh = !seen && isRecent(ep.air_date);
           return '<div class="ep' + (seen ? " seen" : "") + (nextKey === i + "|" + k ? " next" : "") + '" style="--k:' + Math.min(k, 12) + '"><span class="n">' + String(ep.number).padStart(2, "0") + '</span><div><b>' + esc(ep.name || "Épisode " + ep.number) + (fresh ? " " + newBadge("Nouveau") : "") + '</b>' + (ep.air_date ? '<small class="d">' + esc(fmtDate(ep.air_date)) + '</small>' : '') + (ep.overview ? '<small>' + esc(ep.overview) + '</small>' : '') + '</div>' +
@@ -3952,6 +4028,7 @@ function viewSerie(id) {
   var sim = similarTo(s, 12);
   if (sim.length) html += rail("Titres similaires", sim, "", card);
   app.innerHTML = html;
+  Array.prototype.forEach.call(document.querySelectorAll(".sehero .mlt b[data-to]"), function (b) { mlCount(b, b.dataset.to, true); });
 }
 
 /* Titres similaires : classés avec les fiches du catalogue (genres, pays, plateforme, acteurs, type, année). Rien n'est stocké. */
