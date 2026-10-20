@@ -28828,7 +28828,7 @@
     "at": 1792350125541
   },
   "inbox": {
-    "at": 1792536195350,
+    "at": 1792539388187,
     "items": [
       {
         "id": "1792535062335",
@@ -28837,7 +28837,7 @@
         "text": "Bandes Annonces & Nouveaux Thèmes..  \n             **Ouvrir**",
         "link": "",
         "label": "",
-        "badge": "",
+        "badge": "Nouveautés",
         "body": "## Nouveautés sur DramaByM !\n\n**🎬 Bandes-annonces**\n• Un bouton « ▶ Bande-annonce » apparaît sur les fiches, juste au-dessus du titre\n• Un lecteur fait maison : les commandes s'affichent au survol, avec barre de progression, volume et plein écran\n• Raccourcis clavier : Espace (lecture/pause), ← → (±5 secondes), M (son), F (plein écran)\n• Quand il y a plusieurs vidéos (bande-annonce, teaser), des vignettes permettent de passer de l'une à l'autre\n\n**🎨 Thèmes**\n• Va dans Paramètres > Général > Apparence\n• 4 choix : Noir (le classique), Clair, Rouge & noir, Bleu & blanc\n• Ton choix est gardé sur ton appareil",
         "close": "",
         "at": 1792535062335
