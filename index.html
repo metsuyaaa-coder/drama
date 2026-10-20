@@ -6946,7 +6946,7 @@ function tmdbFresh(s) {
   });
 }
 
-function mergeSeasons(oldS, newS) {
+function mergeSeasons(oldS, newS, keepOv) {
   var out = newS.map(function (ns) {
     var os = oldS.filter(function (x) { return x.number === ns.number; })[0] || {};
     var oeps = os.episodes || [], eps;
@@ -6954,7 +6954,7 @@ function mergeSeasons(oldS, newS) {
     else {
       eps = ns.episodes.map(function (ne) {
         var oe = oeps.filter(function (x) { return x.number === ne.number; })[0];
-        return oe ? Object.assign({}, oe, { name: ne.name || oe.name, overview: ne.overview || oe.overview || "", air_date: ne.air_date || oe.air_date || "" }) : ne;
+        return oe ? Object.assign({}, oe, { name: ne.name || oe.name, overview: keepOv ? (oe.overview || ne.overview || "") : (ne.overview || oe.overview || ""), air_date: ne.air_date || oe.air_date || "" }) : ne;
       });
       oeps.forEach(function (oe) {
         if (hasContent(oe) && !ns.episodes.some(function (ne) { return ne.number === oe.number; })) eps.push(oe);
@@ -6969,11 +6969,11 @@ function mergeSeasons(oldS, newS) {
   out.sort(function (a, b) { return a.number - b.number; });
   return out;
 }
-function mergeFresh(old, fr, keepAll) {
+function mergeFresh(old, fr, keepAll, keepOv) {
   var out = Object.assign({}, old);
   var keepPoster = keepAll ? !!old.poster : customPoster(old);
-  Object.keys(fr.fields).forEach(function (k) { if (keepPoster && (k === "poster" || k === "posterV")) return; if (filled(fr.fields[k])) out[k] = fr.fields[k]; });
-  if (fr.seasons) out.seasons = mergeSeasons(old.seasons || [], fr.seasons);
+  Object.keys(fr.fields).forEach(function (k) { if (keepPoster && (k === "poster" || k === "posterV")) return; if (keepOv && k === "overview" && filled(old.overview)) return; if (filled(fr.fields[k])) out[k] = fr.fields[k]; });
+  if (fr.seasons) out.seasons = mergeSeasons(old.seasons || [], fr.seasons, keepOv);
   out.updatedAt = Date.now();
   return normalize(out);
 }
@@ -6984,8 +6984,9 @@ function refreshAll() {
   var todo = db.filter(isTmdbFiche).map(function (s) { return String(s.id); });
   var manual = db.length - todo.length;
   if (!todo.length) { toast("Aucune fiche TMDB à mettre à jour"); return; }
-  if (!window.confirm("Mettre à jour " + todo.length + " fiche" + (todo.length > 1 ? "s" : "") + " depuis TMDB ?\n\nTitre, synopsis, affiche, distribution, saisons et épisodes seront remplacés par les infos TMDB.\nTes sources, liens de téléchargement, langues et affiches modifiées à la main sont conservés.")) return;
+  if (!window.confirm("Mettre à jour " + todo.length + " fiche" + (todo.length > 1 ? "s" : "") + " depuis TMDB ?\n\nTitre, affiche, distribution, saisons et épisodes seront remplacés par les infos TMDB.\nTes sources, liens de téléchargement, langues et affiches modifiées à la main sont conservés.")) return;
   var keepAllPosters = window.confirm("Garder toutes les affiches actuelles ?\n\nOK : aucune affiche n'est touchée (recommandé si tu en as changé à la main).\nAnnuler : TMDB remplace les affiches, sauf celles que tu as modifiées à la main avec un lien hors TMDB.");
+  var keepOverviews = !window.confirm("Remplacer aussi les synopsis ?\n\nOK : les synopsis (séries, films et épisodes) sont remplacés par ceux de TMDB.\nAnnuler : tes synopsis actuels sont gardés (un synopsis vide est quand même rempli).");
   refreshingAll = true;
   var total = todo.length, i = 0, ok = 0, posters = 0, fails = [], aborted = "";
   var show = function (msg) {
@@ -7015,7 +7016,7 @@ function refreshAll() {
     show("Mise à jour " + i + " / " + total + " : " + s.name);
     tmdbFresh(s).then(function (fr) {
       var cur = byId(id), k = db.indexOf(cur);
-      if (k > -1) { db[k] = mergeFresh(cur, fr, keepAllPosters); if (db[k].poster !== cur.poster) posters++; ok++; if (ok % 10 === 0) persist(); }
+      if (k > -1) { db[k] = mergeFresh(cur, fr, keepAllPosters, keepOverviews); if (db[k].poster !== cur.poster) posters++; ok++; if (ok % 10 === 0) persist(); }
     }).catch(function (e) {
       if (/401/.test(e.message)) { aborted = e.message; todo.length = 0; }
       else if (/404/.test(e.message)) fails.push(s.name + " (introuvable sur TMDB)");
