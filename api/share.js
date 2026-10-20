@@ -8,7 +8,7 @@ const IMAGE_PAR_DEFAUT = "/dbm.png?v=2";
 
 /* ===== Textes des pages (modifie-les ici comme tu veux) ===== */
 const PAGES = {
-  "/":            { titre: "DramaByM", desc: "Bienvenue sur DramaByM ! Retrouve ton répertoire de dramas, séries et films à regarder en streaming ou à télécharger, avec les nouveaux épisodes à jour." },
+  "/":            { titre: "DramaByM", desc: "Ton répertoire de dramas, séries et films à regarder en streaming ou à télécharger, avec les nouveaux épisodes toujours à jour." },
   "/series":      { titre: "Séries · DramaByM", desc: "Toutes les séries et dramas du répertoire DramaByM : filtre par langue, plateforme ou genre et lance ton prochain épisode." },
   "/films":       { titre: "Films · DramaByM", desc: "Tous les films du répertoire DramaByM, à regarder en streaming ou à télécharger." },
   "/calendrier":  { titre: "Calendrier · DramaByM", desc: "Les prochains épisodes de la semaine : ne rate aucune sortie de tes dramas préférés." },
@@ -16,6 +16,17 @@ const PAGES = {
   "/demande":     { titre: "Faire une demande · DramaByM", desc: "Il manque un titre au répertoire ? Demande-le ici, en streaming ou en téléchargement, et il sera ajouté dès que possible." },
   "/demandes":    { titre: "Demandes en cours · DramaByM", desc: "Les titres demandés par la communauté, en streaming ou en téléchargement, et où ils en sont. Plus un titre est demandé, plus il passe vite." },
   "/parametres":  { titre: "Paramètres · DramaByM", desc: "Règle ton expérience sur DramaByM : langue, lecteur, notifications et affichage." }
+};
+/* ===== Bannières par page (fichiers à la racine du projet) ===== */
+const IMAGES = {
+  "/": "/dbm-accueil.png?v=1",
+  "/series": "/dbm-series.png?v=1",
+  "/films": "/dbm-films.png?v=1",
+  "/calendrier": "/dbm-calendrier.png?v=1",
+  "/ma-liste": "/dbm-ma-liste.png?v=1",
+  "/demande": "/dbm-demande.png?v=1",
+  "/demandes": "/dbm-demandes.png?v=1",
+  "/parametres": "/dbm-parametres.png?v=1"
 };
 const TEXTE_RECHERCHE = (q) => ({ titre: "« " + q + " » · DramaByM", desc: "Résultats de recherche pour « " + q + " » dans le répertoire DramaByM." });
 const TEXTE_ACTEUR = (n) => ({ titre: n + " · DramaByM", desc: "Les titres avec " + n + " disponibles sur DramaByM." });
@@ -110,6 +121,8 @@ module.exports = async (req, res) => {
     else if (racine === "/acteur" && reste) page = TEXTE_ACTEUR(coupe(reste, 60));
     else if (racine === "/demande" && reste) page = PAGES["/demande"];
 
+    const cle = (racine === "/demande" && reste) ? "/demande" : chemin.toLowerCase();
+    if (IMAGES[cle]) { base.image = origine + IMAGES[cle]; base.defaut = true; }
     return reponse(injecte(html, Object.assign(base, page || PAGES["/"])));
   } catch (e) {
     return reponse(html);   // en cas de souci : ton index.html d'origine, inchangé
