@@ -10,12 +10,16 @@
 <link rel="apple-touch-icon" href="favicon.png?v=2">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="DramaByM">
+<meta name="description" content="Ton répertoire de dramas, séries et films à regarder en streaming ou à télécharger, avec les nouveaux épisodes toujours à jour.">
 <meta property="og:title" content="DramaByM">
+<meta property="og:description" content="Ton répertoire de dramas, séries et films à regarder en streaming ou à télécharger, avec les nouveaux épisodes toujours à jour.">
 <meta property="og:url" content="https://dramabym.vercel.app/">
 <meta property="og:image" content="https://dramabym.vercel.app/dbm.png?v=2">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="DramaByM">
+<meta name="twitter:description" content="Ton répertoire de dramas, séries et films à regarder en streaming ou à télécharger, avec les nouveaux épisodes toujours à jour.">
 <meta name="twitter:image" content="https://dramabym.vercel.app/dbm.png?v=2">
 <meta name="theme-color" content="#000000">
 <link rel="manifest" href="manifest.webmanifest">
@@ -576,6 +580,28 @@ footer .links .btn.ghost:hover { color: var(--bg); }
 .vo-item.danger:hover .tx b { color: var(--fg); }
 .volet.show .vo-item { animation: rmitem .45s calc(120ms + var(--i, 0) * 60ms) var(--ease) both; }
 @media (prefers-reduced-motion: reduce) { .vo-panel, .vo-back { transition: opacity .15s; } .volet.show .vo-item { animation: none; } }
+
+/* ===== Bouton Partager des fiches ===== */
+.btn.share { position: relative; overflow: visible; }
+.btn.share svg { width: 18px; height: 18px; flex: none; }
+.btn.share .shok { display: none; }
+.btn.share .shic .c { transform-box: fill-box; transform-origin: center; }
+.btn.share.go .shic .c { animation: shnode .55s var(--ease) both; }
+.btn.share.go .shic .c:nth-of-type(2) { animation-delay: .08s; }
+.btn.share.go .shic .c:nth-of-type(3) { animation-delay: .16s; }
+@keyframes shnode { 0% { transform: scale(1); } 40% { transform: scale(1.7); } 100% { transform: scale(1); } }
+.btn.share::after { content: ""; position: absolute; inset: -1px; border: 1px solid #7dd3fc; opacity: 0; pointer-events: none; }
+.btn.share.go::after { animation: shring .8s ease-out; }
+@keyframes shring { 0% { opacity: .9; transform: scale(1); } 100% { opacity: 0; transform: scale(1.3, 1.9); } }
+.btn.share.ok { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+.btn.share.ok .shic { display: none; }
+.btn.share.ok .shok { display: block; animation: shpop .5s var(--ease) both; }
+@keyframes shpop { 0% { transform: scale(.3) rotate(-25deg); opacity: 0; } 60% { transform: scale(1.3) rotate(6deg); opacity: 1; } 100% { transform: none; } }
+.shp { position: absolute; left: 50%; top: 50%; width: 5px; height: 5px; background: #7dd3fc; pointer-events: none; transform: translate(-50%, -50%); animation: shp .75s ease-out forwards; }
+.shp:nth-child(3n) { background: #86efac; }
+.shp:nth-child(3n+1) { background: var(--fg); }
+@keyframes shp { to { transform: translate(calc(-50% + var(--x)), calc(-50% + var(--y))) rotate(200deg) scale(.2); opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .btn.share.go .shic .c, .btn.share.go::after, .shp, .btn.share.ok .shok { animation: none; } .shp { display: none; } }
 
 .admin-only { display: none !important; }
 body.admin .admin-only { display: revert !important; }
@@ -4221,7 +4247,7 @@ function viewSerie(id) {
     '<div>' + (platBrands(s).length ? '<div class="plats"><span class="plbl">Diffusé sur</span>' + platBrands(s).map(platMark).join("") + '</div>' : '') + '<div class="tags">' + (langLabel(s) ? '<span class="lang">' + esc(langLabel(s)) + '</span>' : '') + (ongoing(s) ? '<span class="live">En cours</span>' : '') + (ne ? newBadge("Nouvel épisode") : '') + novBadge(s) + kdBadge(s) + tags.map(function (t) { return "<span>" + esc(t) + "</span>"; }).join("") + '</div>' +
     '<h1>' + esc(s.name) + '</h1>' + (s.original_name && s.original_name !== s.name ? '<div class="orig">' + esc(s.original_name) + '</div>' : '<div class="orig"></div>') +
     '<p class="ov">' + esc(s.overview || "Pas de synopsis.") + '</p>' +
-    '<div class="row"><button class="btn" data-watch="' + esc(s.id) + '">' + PLAYICON + '<span>Regarder</span></button>' + dlBtnMovie + dlBtnSerie + '<button class="btn ghost' + (inList(s.id) ? " on" : "") + '" type="button" data-list="' + esc(s.id) + '">' + (inList(s.id) ? "✓ Dans ma liste" : "+ Ma liste") + '</button>' + (movie ? '' : notifBtnHTML(s)) + (ADMIN ? '<a class="btn ghost" href="/modifier/' + esc(s.id) + '">Modifier</a>' + (canDeleteFiche(s) ? '<button class="btn danger" data-del="' + esc(s.id) + '">Supprimer</button>' : '') : '') + '</div>' + srcChips +
+    '<div class="row"><button class="btn" data-watch="' + esc(s.id) + '">' + PLAYICON + '<span>Regarder</span></button>' + dlBtnMovie + dlBtnSerie + '<button class="btn ghost' + (inList(s.id) ? " on" : "") + '" type="button" data-list="' + esc(s.id) + '">' + (inList(s.id) ? "✓ Dans ma liste" : "+ Ma liste") + '</button>' + shareBtn(s) + (movie ? '' : notifBtnHTML(s)) + (ADMIN ? '<a class="btn ghost" href="/modifier/' + esc(s.id) + '">Modifier</a>' + (canDeleteFiche(s) ? '<button class="btn danger" data-del="' + esc(s.id) + '">Supprimer</button>' : '') : '') + '</div>' + srcChips +
     ((s.cast || []).length ? '<h3 class="note" style="margin:32px 0 0;text-transform:uppercase;letter-spacing:.08em">Distribution</h3><div class="cast">' + s.cast.slice(0, 12).map(function (c) { return '<div><a class="castlink" href="/acteur/' + encodeURIComponent(c.name) + '" title="Voir tous ses titres"><b>' + esc(c.name) + '</b></a><span>' + esc(c.character || "") + '</span></div>'; }).join("") + '</div>' : '') +
     '</div></div></section>';
   if (!movie && (s.seasons || []).length) {
@@ -4248,6 +4274,7 @@ function viewSerie(id) {
   var sim = similarTo(s, 12);
   if (sim.length) html += rail("Titres similaires", sim, "", card);
   app.innerHTML = html;
+  document.title = s.name + " · DramaByM";
   Array.prototype.forEach.call(document.querySelectorAll(".sehero .mlt b[data-to]"), function (b) { mlCount(b, b.dataset.to, true); });
 }
 
@@ -5714,6 +5741,53 @@ document.addEventListener("click", function (e) {
 
 var NAVMAP = { "": "nav-home", series: "nav-series", films: "nav-films", ajouter: "nav-add", modifier: "nav-add", panel: "nav-panel", "ma-liste": "nav-list", calendrier: "nav-cal", demande: "nav-req", demandes: "nav-req", parametres: "nav-set" };
 
+/* ===== Partager une fiche (feuille de partage du téléphone, sinon copie du lien) ===== */
+var SHICON = '<svg class="shic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle class="c" cx="18" cy="5" r="2.6"/><circle class="c" cx="6" cy="12" r="2.6"/><circle class="c" cx="18" cy="19" r="2.6"/><path d="m8.3 10.8 7.4-4.4M8.3 13.2l7.4 4.4"/></svg><svg class="shok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>';
+function shareBtn(s) { return '<button class="btn ghost share" type="button" data-share="' + esc(s.id) + '">' + SHICON + '<span>Partager</span></button>'; }
+function shareBurst(b) {
+  if (window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  for (var i = 0; i < 12; i++) {
+    var p = document.createElement("i"), a = (i / 12) * Math.PI * 2 + Math.random() * .4, d = 34 + Math.random() * 30;
+    p.className = "shp"; p.style.setProperty("--x", Math.round(Math.cos(a) * d) + "px"); p.style.setProperty("--y", Math.round(Math.sin(a) * d) + "px");
+    b.appendChild(p); setTimeout(function (n) { return function () { n.remove(); }; }(p), 900);
+  }
+}
+function shareDone(b, label) {
+  var sp = b.querySelector("span"), old = b.dataset.lbl || sp.textContent;
+  b.dataset.lbl = old; sp.textContent = label;
+  b.classList.remove("go"); void b.offsetWidth; b.classList.add("go", "ok"); shareBurst(b);
+  clearTimeout(b._t); b._t = setTimeout(function () { b.classList.remove("go", "ok"); sp.textContent = old; }, 2300);
+}
+function shareCopy(txt) {
+  if (navigator.clipboard && navigator.clipboard.writeText) return navigator.clipboard.writeText(txt);
+  return new Promise(function (res, rej) {
+    var ta = document.createElement("textarea"); ta.value = txt; ta.style.position = "fixed"; ta.style.opacity = "0";
+    document.body.appendChild(ta); ta.select();
+    try { document.execCommand("copy") ? res() : rej(); } catch (e) { rej(e); }
+    ta.remove();
+  });
+}
+document.addEventListener("click", function (e) {
+  var b = e.target.closest("[data-share]"); if (!b) return;
+  var s = byId(b.dataset.share); if (!s) return;
+  var url = location.origin + "/serie/" + encodeURIComponent(s.id);
+  var data = { title: s.name + (s.year ? " (" + s.year + ")" : "") + " · DramaByM", text: "Regarde " + s.name + " sur DramaByM", url: url };
+  var copy = function () { shareCopy(url).then(function () { shareDone(b, "Lien copié"); toast("Lien copié ✓"); }, function () { toast(url); }); };
+  var touch = window.matchMedia && matchMedia("(pointer: coarse)").matches;
+  if (navigator.share && touch) navigator.share(data).then(function () { shareDone(b, "Partagé !"); }, function (err) { if (!err || err.name !== "AbortError") copy(); });
+  else copy();
+});
+
+/* ===== Titre de l'onglet du navigateur selon la page ===== */
+var PAGETITLES = { series: "Séries", films: "Films", "ma-liste": "Ma liste", calendrier: "Calendrier", demande: "Faire une demande", demandes: "Demandes en cours", parametres: "Paramètres", admin: "Connexion admin", panel: "Panneau admin", headadmin: "Head admin", ajouter: "Ajouter une fiche", motdepasse: "Mot de passe" };
+function pageTitle(a, b) {
+  var s;
+  if (a === "serie") { s = byId(b); return s ? s.name + " · DramaByM" : "DramaByM"; }
+  if (a === "modifier") { s = byId(b); return (s ? "Modifier " + s.name : "Modifier une fiche") + " · DramaByM"; }
+  if ((a === "recherche" || a === "acteur") && b) return (a === "recherche" ? "« " + b + " »" : b) + " · DramaByM";
+  return PAGETITLES[a] ? PAGETITLES[a] + " · DramaByM" : "DramaByM";
+}
+
 function route(force) {
   force = force === true;
   var parts = curPath().split("/");
@@ -5756,6 +5830,7 @@ function route(force) {
   else if (a === "modifier") viewEditor(b);
   else if (a === "parametres") viewSettings();
   else viewHome();
+  document.title = pageTitle(a, b);
 
   if (changed) {
     window.scrollTo(0, 0);
