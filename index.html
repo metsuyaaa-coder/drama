@@ -5315,7 +5315,7 @@ function toggleFull() {
   if (!req) { fallback(); return; }
   try {
     var p = req.call(f);
-    if (p && p.catch) p.catch(fallback);
+    if (p && p.then) p.then(function () { if (inFullscreen()) lockLandscape(); }, fallback);
   } catch (e) { fallback(); }
 }
 
@@ -6098,40 +6098,28 @@ var FITKEY = "noir.fit", fitMode = "normal", barTimer = null, fsOn = false;
 try { var sf = localStorage.getItem(FITKEY); if (sf === "zoom" || sf === "stretch") fitMode = sf; } catch (e) {}
 
 function fsElement() { return document.fullscreenElement || document.webkitFullscreenElement || null; }
-/* vrai si le cadre OU le lecteur à l'intérieur de l'iframe (son propre bouton plein écran) est en plein écran */
+function wideOn() { return $("#player").classList.contains("wide"); }
+/* notre plein écran : le cadre (#pframe) ou le mode « wide » de secours */
 function inFullscreen() {
-  var fsEl = fsElement(), fr = $("#pframe");
-  return !!(fsEl && (fsEl === fr || fr.contains(fsEl))) || $("#player").classList.contains("wide");
+  var fsEl = fsElement();
+  return !!(fsEl && fsEl === $("#pframe")) || wideOn();
 }
-/* Après la sortie du plein écran, le lecteur dans l'iframe garde parfois la taille d'avant (image écrasée) :
-   on remet le cadre à plat et on secoue légèrement l'iframe pour qu'il recalcule sa taille. */
+/* Après la sortie du plein écran (le nôtre OU celui du lecteur dans l'iframe), le lecteur garde parfois la taille
+   d'avant et l'image est écrasée. On remet le cadre à plat puis on fait varier la taille de l'iframe de quelques
+   pixels, plusieurs fois, pour forcer le lecteur à recalculer sa taille. */
 function refreshFrame() {
-  var fr = document.querySelector("#pstage iframe"); if (!fr) return;
-  [50, 300, 800].forEach(function (ms) {
+  [60, 250, 600, 1200, 2200].forEach(function (ms) {
     setTimeout(function () {
-      if (inFullscreen()) return;
+      if (fsElement() || wideOn()) return;
       var f = document.querySelector("#pstage iframe"); if (!f) return;
       $("#pstage").style.transform = "";
-      f.style.height = "calc(100% - 1px)";
-      requestAnimationFrame(function () {
-        f.style.height = "";
+      f.style.width = "calc(100% - 3px)"; f.style.height = "calc(100% - 3px)";
+      void f.offsetWidth;
+      setTimeout(function () {
+        f.style.width = ""; f.style.height = "";
         try { window.dispatchEvent(new Event("resize")); } catch (e) {}
-      });
+      }, 90);
     }, ms);
-  });
-}
-/* L'iframe est cross-origin : on ne peut pas toucher à la vidéo, on étire donc l'iframe entière.
-   On suppose une vidéo 16:9 (cas normal) qui laisse des bandes noires dans l'iframe. */
-function applyFit() {
-  var st = $("#pstage"), fr = $("#pframe");
-  var on = inFullscreen(), W = fr.clientWidth, H = fr.clientHeight, r = 16 / 9, sx = 1, sy = 1;
-  if (on && W && H && fitMode !== "normal") {
-    if (W / H >= r) { sx = W / (H * r); sy = fitMode === "zoom" ? sx : 1; }
-    else { sy = H / (W / r); sx = fitMode === "zoom" ? sy : 1; }
-  }
-  st.style.transform = (sx === 1 && sy === 1) ? "" : "scale(" + sx.toFixed(4) + "," + sy.toFixed(4) + ")";
-  Array.prototype.forEach.call(document.querySelectorAll("#fsbar [data-fit]"), function (b) {
-    var o = b.dataset.fit === fitMode; b.classList.toggle("on", o); b.setAttribute("aria-pressed", o ? "true" : "false");
   });
 }
 function hideBar() {
@@ -6163,15 +6151,21 @@ function unlockOrientation() {
     try { var o = window.screen && screen.orientation; if (o && o.unlock) o.unlock(); } catch (e) {}
   }, 400);
 }
+var anyFsPrev = false;
 function syncFs() {
+  var any = !!fsElement() || wideOn();
+  var leaving = anyFsPrev && !any;
+  anyFsPrev = any;
   var on = inFullscreen() && $("#player").open !== false;
   var fr = $("#pframe");
-  if (on === fsOn) { applyFit(); return; }
-  fsOn = on;
-  fr.classList.toggle("fsui", on);
-  if (on) lockLandscape(); else { unlockOrientation(); refreshFrame(); }
-  applyFit();
-  if (on) showBar(); else { clearTimeout(barTimer); fr.classList.remove("bar"); }
+  if (on !== fsOn) {
+    fsOn = on;
+    fr.classList.toggle("fsui", on);
+    if (on) lockLandscape(); else unlockOrientation();
+    applyFit();
+    if (on) showBar(); else { clearTimeout(barTimer); fr.classList.remove("bar"); }
+  } else applyFit();
+  if (leaving) refreshFrame();
 }
 $("#fsbar").addEventListener("click", function (e) {
   var b = e.target.closest("[data-fit]"); if (!b) return;
@@ -6207,10 +6201,11 @@ $("#pfull").addEventListener("click", toggleFull);
 var fsEvTimer = null;
 function onFsChange() {
   clearTimeout(fsEvTimer);
-  fsEvTimer = setTimeout(function () {
-    if (!$("#player").classList.contains("wide")) setFullLbl(inFullscreen());
+  var run = function () {
+    if (!wideOn()) setFullLbl(!!fsElement());
     syncFs();
-  }, 80);
+  };
+  if (fsElement()) run(); else fsEvTimer = setTimeout(run, 80);
 }
 document.addEventListener("fullscreenchange", onFsChange);
 document.addEventListener("webkitfullscreenchange", onFsChange);
