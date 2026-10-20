@@ -1975,6 +1975,15 @@ html[data-theme="light"] img, html[data-theme="light"] video, html[data-theme="l
 html[data-theme="light"] [style*="background-image"], html[data-theme="light"] .thprev, html[data-theme="light"] dialog#player, html[data-theme="light"] .tvm { filter: invert(1) hue-rotate(180deg); }
 html[data-theme="light"] dialog#player img, html[data-theme="light"] dialog#player video, html[data-theme="light"] dialog#player iframe, html[data-theme="light"] dialog#player canvas, html[data-theme="light"] dialog#player [style*="background-image"],
 html[data-theme="light"] .tvm img, html[data-theme="light"] .tvm iframe, html[data-theme="light"] .tvm [style*="background-image"] { filter: none; }
+/* Clair : l'affiche entière (image + badges + boutons du survol) est remise à l'endroit d'un bloc.
+   Avant, seule l'image l'était, et le survol (brightness) écrasait ce filtre : l'affiche passait en négatif. */
+html[data-theme="light"] .poster { filter: invert(1) hue-rotate(180deg); border-color: rgba(0,0,0,.16); }
+html[data-theme="light"] .poster img, html[data-theme="light"] .poster [style*="background-image"] { filter: none; }
+html[data-theme="light"] .card:hover .poster img { filter: brightness(.78); }
+html[data-theme="light"] .card:hover .poster, html[data-theme="light"] .mlc:hover .poster { border-color: rgba(0,0,0,.45); box-shadow: 0 14px 30px rgba(0,0,0,.28); }
+/* Clair : le voile sur les images (carrousel, fiche) est plus léger pour ne pas délaver l'image */
+html[data-theme="light"] .hslide::after, html[data-theme="light"] .teambox::after { background: linear-gradient(to top, var(--bg) 4%, rgba(0,0,0,.1) 60%, rgba(0,0,0,.38)); }
+html[data-theme="light"] .detail::after { background: linear-gradient(to top, var(--bg) 2%, rgba(0,0,0,.2)); }
 .thgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
 .thopt { display: grid; gap: 10px; padding: 10px 10px 12px; border: 1px solid var(--line); background: transparent; color: var(--fg); text-align: left; cursor: pointer; border-radius: 0; transition: border-color .2s, background .2s; }
 .thopt:hover { border-color: var(--dim); }
