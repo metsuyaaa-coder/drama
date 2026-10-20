@@ -26200,7 +26200,7 @@
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/oRGXEzC98Xna3Cnl4CnDEw6OLYB.jpg",
       "posterV": 2,
-      "backdrop": "https://media.themoviedb.org/t/p/w533_and_h300_face/j7LlVxiIMqxT75ttQ3SuIN2VYKs.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/original/tlAZ3g7EzHqWj0Yn6SXVAdFfAcE.jpg",
       "cast": [
         {
           "name": "宋威龙",
@@ -26720,8 +26720,8 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792532080724,
-      "posterCustom": true
+      "posterCustom": true,
+      "updatedAt": 1792532091021
     },
     {
       "id": "285415",
@@ -27272,7 +27272,7 @@
   "journal": [
     {
       "k": "mvh7athqlj6r7",
-      "t": 1792532080729,
+      "t": 1792532091026,
       "b": "head",
       "a": "edit",
       "i": "251600",
