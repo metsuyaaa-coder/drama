@@ -7901,7 +7901,13 @@
               "name": "Épisode 6",
               "overview": "Minjae and Youjin finally start dating, but agree to keep their relationship a secret for now. However, their secret romance gets off to a rocky start when Sejin and Seohyun show up at Minjae's place all at once. With Minjae's first love, Seohyun, weighing on her mind, Youjin wants to make their relationship public and ends up telling Minjae's mother. But she shrinks under a series of pointed questions. From the very beginning of their relationship, the gap between Minjae and Youjin only grows.",
               "air_date": "2026-10-20",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/B7pxaluwPGGU6",
+                  "by": "head"
+                }
+              ],
               "downloads": []
             },
             {
@@ -7962,7 +7968,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792504132957,
+      "updatedAt": 1792521013863,
       "networks": [
         "ENA"
       ],
@@ -27203,6 +27209,15 @@
     "at": 1792452351145
   },
   "journal": [
+    {
+      "k": "mvh0qa98fn74s",
+      "t": 1792521013868,
+      "b": "head",
+      "a": "edit",
+      "i": "307106",
+      "n": "Between Steps",
+      "d": "sources 20 → 21"
+    },
     {
       "k": "mvh0bfd64p4tt",
       "t": 1792520372120,
