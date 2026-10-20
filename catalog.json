@@ -170,7 +170,7 @@
             {
               "number": 3,
               "name": "Épisode 3",
-              "overview": "",
+              "overview": "Despite Ga-kyung's initial reservations about So-ran, the two join hands. On her first day at work undercover, Ga-kyung meets a familiar face.",
               "air_date": "2026-10-17",
               "sources": [
                 {
@@ -206,7 +206,7 @@
             {
               "number": 4,
               "name": "Épisode 4",
-              "overview": "",
+              "overview": "Tae-ung remains suspicious of Ga-kyung, but also strangely captivated — or even charmed? Meanwhile, the Gugukdan start making big plans.",
               "air_date": "2026-10-18",
               "sources": [
                 {
@@ -379,7 +379,7 @@
         "KR"
       ],
       "original_language": "ko",
-      "updatedAt": 1792532925676,
+      "updatedAt": 1792533145999,
       "networks": [
         "tvN"
       ]
@@ -612,7 +612,7 @@
         "KR"
       ],
       "original_language": "ko",
-      "updatedAt": 1792532927020,
+      "updatedAt": 1792533152728,
       "networks": [
         "Netflix"
       ]
@@ -826,7 +826,7 @@
             {
               "number": 4,
               "name": "Épisode 4",
-              "overview": "",
+              "overview": "After a new surgeon arrives at the hospital, Jang Hui-suk and Su-jeong keep a close eye on him. Meanwhile, a pharmaceutical rep suffers an emergency.",
               "air_date": "2026-10-17",
               "sources": [
                 {
@@ -940,7 +940,7 @@
         "KR"
       ],
       "original_language": "ko",
-      "updatedAt": 1792532928040,
+      "updatedAt": 1792533153761,
       "networks": [
         "SBS"
       ]
@@ -1265,7 +1265,7 @@
         "KR"
       ],
       "original_language": "ko",
-      "updatedAt": 1792532928977,
+      "updatedAt": 1792533154734,
       "posterCustom": true,
       "networks": [
         "MBC"
@@ -1416,7 +1416,7 @@
         }
       ],
       "posterV": 2,
-      "updatedAt": 1792532929485
+      "updatedAt": 1792533155303
     },
     {
       "id": "305644",
@@ -1498,7 +1498,7 @@
       "seasons": [
         {
           "number": 1,
-          "name": "Saison 1",
+          "name": "Mini-série",
           "episodes": [
             {
               "number": 1,
@@ -1811,7 +1811,7 @@
         "KR"
       ],
       "original_language": "ko",
-      "updatedAt": 1792532930420,
+      "updatedAt": 1792533156316,
       "networks": [
         "tvN"
       ]
@@ -2024,7 +2024,7 @@
             {
               "number": 7,
               "name": "Épisode 7",
-              "overview": "",
+              "overview": "Someone who knows the secret of time travel deliberately hid the camcorder. The twins’ investigation points to Hyeong-won.",
               "air_date": "2026-10-17",
               "sources": [
                 {
@@ -2053,7 +2053,7 @@
             {
               "number": 8,
               "name": "Épisode 8",
-              "overview": "",
+              "overview": "The twins return to 2026, where Woo-jae has become an actor and turns his back on Ha-na. Meanwhile, Ha-na receives a mysterious screenplay.",
               "air_date": "2026-10-18",
               "sources": [
                 {
@@ -2149,7 +2149,7 @@
         "KR"
       ],
       "original_language": "ko",
-      "updatedAt": 1792532931368,
+      "updatedAt": 1792533157740,
       "networks": [
         "Channel A"
       ],
@@ -2398,8 +2398,8 @@
             },
             {
               "number": 9,
-              "name": "Épisode 9",
-              "overview": "",
+              "name": "Do You Remember When We Fell in Love?",
+              "overview": "Mi-do tells her family she is quitting directing. Meanwhile, she and Namgung begin dating other people. As soon as they do, Su-a makes a bold move while Tae-seung takes a provocative step.",
               "air_date": "2026-10-17",
               "sources": [
                 {
@@ -2435,8 +2435,8 @@
             },
             {
               "number": 10,
-              "name": "Épisode 10",
-              "overview": "",
+              "name": "What Do Our Scars Look Like?",
+              "overview": "Namgung and Mi-do keep up the pretense of being a couple in front of their families. Sol's arrival stirs Namgung's past, while Mi-do confides a long-held secret to Tae-seung.",
               "air_date": "2026-10-18",
               "sources": [
                 {
@@ -2545,7 +2545,7 @@
         "KR"
       ],
       "original_language": "ko",
-      "updatedAt": 1792532932313,
+      "updatedAt": 1792533160335,
       "trend": 0,
       "networks": [
         "KBS2"
@@ -2843,7 +2843,7 @@
         "KR"
       ],
       "original_language": "ko",
-      "updatedAt": 1792532933233,
+      "updatedAt": 1792533161252,
       "networks": [
         "Netflix"
       ]
@@ -3284,7 +3284,7 @@
         "KR"
       ],
       "original_language": "ko",
-      "updatedAt": 1792532934153,
+      "updatedAt": 1792533162124,
       "networks": [
         "tvN"
       ]
@@ -3846,7 +3846,7 @@
         "KR"
       ],
       "original_language": "ko",
-      "updatedAt": 1792504122481,
+      "updatedAt": 1792533163196,
       "networks": [
         "tvN"
       ]
@@ -4317,7 +4317,7 @@
         "KR"
       ],
       "original_language": "ko",
-      "updatedAt": 1792504123292,
+      "updatedAt": 1792533164115,
       "networks": [
         "SBS"
       ]
@@ -4603,7 +4603,7 @@
         "KR"
       ],
       "original_language": "ko",
-      "updatedAt": 1792504124219,
+      "updatedAt": 1792533165150,
       "networks": [
         "Netflix"
       ]
@@ -4881,7 +4881,7 @@
         "KR"
       ],
       "original_language": "ko",
-      "updatedAt": 1792504125128,
+      "updatedAt": 1792533171583,
       "networks": [
         "Netflix"
       ]
@@ -5113,7 +5113,7 @@
         "JP"
       ],
       "original_language": "ja",
-      "updatedAt": 1792504126051,
+      "updatedAt": 1792533175226,
       "networks": [
         "Netflix"
       ]
@@ -5394,7 +5394,7 @@
         "KR"
       ],
       "original_language": "ko",
-      "updatedAt": 1792504127202,
+      "updatedAt": 1792533176246,
       "networks": [
         "Disney+"
       ]
@@ -5704,7 +5704,7 @@
         "KR"
       ],
       "original_language": "ko",
-      "updatedAt": 1792504128216,
+      "updatedAt": 1792533177265,
       "networks": [
         "Netflix"
       ]
@@ -5822,7 +5822,7 @@
             {
               "number": 5,
               "name": "Épisode 5",
-              "overview": "",
+              "overview": "Après avoir survécu à l'incendie de la bibliothèque, Wei Rao tente de cacher une lettre secrète. Lu Zhuo se méfie en remarquant ses mains calleuses.",
               "air_date": "2026-10-17",
               "sources": [
                 {
@@ -5836,7 +5836,7 @@
             {
               "number": 6,
               "name": "Épisode 6",
-              "overview": "",
+              "overview": "Wei Rao est félicitée pour l'organisation d'un grand banquet d'anniversaire. Mais le danger plane sur sa demeure, tandis que Lu Zhuo prépare un complot secret avec des papillons.",
               "air_date": "2026-10-17",
               "sources": [
                 {
@@ -5850,7 +5850,7 @@
             {
               "number": 7,
               "name": "Épisode 7",
-              "overview": "",
+              "overview": "En pleine représentation au banquet, Wei Rao est assaillie de menaces cachées. Mais grâce à sa vivacité d'esprit, elle retourne un dangereux piège contre ses ennemis.",
               "air_date": "2026-10-18",
               "sources": [
                 {
@@ -5864,7 +5864,7 @@
             {
               "number": 8,
               "name": "Épisode 8",
-              "overview": "",
+              "overview": "Poussé par la jalousie, Lu Zhuo conclut un pacte avec Wei Rao. Les retrouvailles de celle-ci avec son frère attirent dangereusement l'attention de Han Liao.",
               "air_date": "2026-10-18",
               "sources": [
                 {
@@ -5878,7 +5878,7 @@
             {
               "number": 9,
               "name": "Épisode 9",
-              "overview": "",
+              "overview": "Acculée par un rival impitoyable, Wei Rao joue son va-tout sur un coup de bluff et doit s'en remettre à un complice incertain pour garder son passé enfoui.",
               "air_date": "2026-10-19",
               "sources": [
                 {
@@ -5892,7 +5892,7 @@
             {
               "number": 10,
               "name": "Épisode 10",
-              "overview": "",
+              "overview": "Wei Rao transforme un ordre impérial en humiliation pour Han Liao. Suite à un acte de défi symbolique, elle se retrouve toutefois isolée face à des soldats rebelles hostiles.",
               "air_date": "2026-10-19",
               "sources": [
                 {
@@ -5906,7 +5906,7 @@
             {
               "number": 11,
               "name": "Épisode 11",
-              "overview": "",
+              "overview": "En grand danger face aux élites de la cour, Wei Rao reçoit l'aide cruciale de Lu Zhuo, mais une convocation impériale soudaine met son secret en péril.",
               "air_date": "2026-10-20",
               "sources": [
                 {
@@ -5920,7 +5920,7 @@
             {
               "number": 12,
               "name": "Épisode 12",
-              "overview": "",
+              "overview": "Face à l'ultimatum mortel de Consort Li, Wei Rao gagne du temps tandis que ses rivaux recourent au meurtre et que Han Liao attise la révolte.",
               "air_date": "2026-10-20",
               "sources": [
                 {
@@ -6086,7 +6086,7 @@
       ],
       "downloads": [],
       "posterV": 2,
-      "updatedAt": 1792530118593,
+      "updatedAt": 1792533178221,
       "trend": 94,
       "networks": [
         "CCTV-8",
@@ -6443,7 +6443,7 @@
       ],
       "downloads": [],
       "posterV": 2,
-      "updatedAt": 1792504129056,
+      "updatedAt": 1792533179205,
       "networks": [
         "Lifetime",
         "U+ Mobile TV"
@@ -6593,8 +6593,8 @@
             },
             {
               "number": 8,
-              "name": "Épisode 8",
-              "overview": "",
+              "name": "Rival",
+              "overview": "Jiang Xueting joins the Yu Army as a translator after being hired by Yu Changxuan. Li Boren notices that Yu Changxuan already knew that Jiang Xueting is Ye Pingjun's boyfriend. He is sure that Yu Changxuan is serious about going after Ye Pingjun this time.",
               "air_date": "2026-10-14",
               "sources": [
                 {
@@ -6607,8 +6607,8 @@
             },
             {
               "number": 9,
-              "name": "Épisode 9",
-              "overview": "",
+              "name": "Stealing Confidential Files",
+              "overview": "Jiang Xueting sneaks into the archives during his overtime shift. He manages to steal a list of the names of deceased individuals from the mining incident. That is why Jiang Xueting returns to the country in advance and tries to join the Yu Army.",
               "air_date": "2026-10-15",
               "sources": [
                 {
@@ -6621,8 +6621,8 @@
             },
             {
               "number": 10,
-              "name": "Épisode 10",
-              "overview": "",
+              "name": "Building the Arsenal",
+              "overview": "Yu Changxuan reveals the plans he has been plotting all along within the army, building Yu Army's own arsenal on Changping Mountain, but his plan is rejected by the old generals.",
               "air_date": "2026-10-15",
               "sources": [
                 {
@@ -6635,8 +6635,8 @@
             },
             {
               "number": 11,
-              "name": "Épisode 11",
-              "overview": "",
+              "name": "The Yu Army in Crisis",
+              "overview": "An article exposing how Feng Sanli forced soldiers to work in a mine where they died in a disaster sparks outrage across Nanhuai, plunging the Yu Army into scandal.",
               "air_date": "2026-10-16",
               "sources": [
                 {
@@ -6649,8 +6649,8 @@
             },
             {
               "number": 12,
-              "name": "Épisode 12",
-              "overview": "",
+              "name": "Reforming the Army",
+              "overview": "On his deathbed, the limping soldier reveals the whereabouts of the stolen goods. When Yu Changxuan rushes to the scene, he finds that the gold has already been moved, leading him to conclude that someone was protecting Feng Sanli.",
               "air_date": "2026-10-16",
               "sources": [
                 {
@@ -6663,8 +6663,8 @@
             },
             {
               "number": 13,
-              "name": "Épisode 13",
-              "overview": "",
+              "name": "Divide",
+              "overview": "Gu Ruitong leads his troops in storming through the door and takes Jiang Xueting into custody on charges of stealing military secrets and defecting to the enemy.",
               "air_date": "2026-10-17",
               "sources": [
                 {
@@ -6677,8 +6677,8 @@
             },
             {
               "number": 14,
-              "name": "Épisode 14",
-              "overview": "",
+              "name": "Unrequited Love",
+              "overview": "Yu Changxuan confronts Jiang Xueting in prison, questioning how he can truly care for Ye Pingjun while secretly working as a spy and still planning to marry her.",
               "air_date": "2026-10-18",
               "sources": [
                 {
@@ -6693,7 +6693,7 @@
               "number": 15,
               "name": "Épisode 15",
               "overview": "",
-              "air_date": "",
+              "air_date": "2026-10-19",
               "sources": [],
               "downloads": []
             },
@@ -6701,7 +6701,7 @@
               "number": 16,
               "name": "Épisode 16",
               "overview": "",
-              "air_date": "",
+              "air_date": "2026-10-20",
               "sources": [],
               "downloads": []
             },
@@ -6709,7 +6709,7 @@
               "number": 17,
               "name": "Épisode 17",
               "overview": "",
-              "air_date": "",
+              "air_date": "2026-10-20",
               "sources": [],
               "downloads": []
             },
@@ -6717,7 +6717,7 @@
               "number": 18,
               "name": "Épisode 18",
               "overview": "",
-              "air_date": "",
+              "air_date": "2026-10-21",
               "sources": [],
               "downloads": []
             },
@@ -6725,7 +6725,7 @@
               "number": 19,
               "name": "Épisode 19",
               "overview": "",
-              "air_date": "",
+              "air_date": "2026-10-21",
               "sources": [],
               "downloads": []
             },
@@ -6733,7 +6733,7 @@
               "number": 20,
               "name": "Épisode 20",
               "overview": "",
-              "air_date": "",
+              "air_date": "2026-10-22",
               "sources": [],
               "downloads": []
             },
@@ -6741,7 +6741,7 @@
               "number": 21,
               "name": "Épisode 21",
               "overview": "",
-              "air_date": "",
+              "air_date": "2026-10-22",
               "sources": [],
               "downloads": []
             },
@@ -6749,7 +6749,7 @@
               "number": 22,
               "name": "Épisode 22",
               "overview": "",
-              "air_date": "",
+              "air_date": "2026-10-23",
               "sources": [],
               "downloads": []
             },
@@ -6757,7 +6757,7 @@
               "number": 23,
               "name": "Épisode 23",
               "overview": "",
-              "air_date": "",
+              "air_date": "2026-10-24",
               "sources": [],
               "downloads": []
             },
@@ -6765,7 +6765,7 @@
               "number": 24,
               "name": "Épisode 24",
               "overview": "",
-              "air_date": "",
+              "air_date": "2026-10-25",
               "sources": [],
               "downloads": []
             },
@@ -6908,7 +6908,7 @@
       ],
       "downloads": [],
       "posterV": 2,
-      "updatedAt": 1792504129890,
+      "updatedAt": 1792533180304,
       "trend": 61,
       "networks": [
         "Hunan Television",
@@ -7408,7 +7408,7 @@
         "VF"
       ],
       "downloads": [],
-      "updatedAt": 1792504130767,
+      "updatedAt": 1792533181336,
       "networks": [
         "Disney+"
       ]
@@ -7641,7 +7641,7 @@
         "VF"
       ],
       "downloads": [],
-      "updatedAt": 1792504131603,
+      "updatedAt": 1792533182373,
       "trend": 0,
       "networks": [
         "Nippon TV"
@@ -7793,7 +7793,7 @@
           "by": "head"
         }
       ],
-      "updatedAt": 1792504132126,
+      "updatedAt": 1792533182893,
       "trend": 51,
       "posterCustom": true
     },
@@ -8087,7 +8087,7 @@
             {
               "number": 8,
               "name": "Épisode 8",
-              "overview": "",
+              "overview": "When Youseong finds out about Youjin and Minjae, he opposes their relationship. But this time, Minjae refuses to back down, confronting Youseong and declaring that he will not give up on Youjin. Meanwhile, Sejin discovers their secret and challenges Youjin to a bet: the loser must leave the lab. If Minjae finds out, it is game over. A dangerous showdown between Youjin and Sejin begins.",
               "air_date": "2026-10-27",
               "sources": [],
               "downloads": []
@@ -8134,7 +8134,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792525103500,
+      "updatedAt": 1792533183910,
       "networks": [
         "ENA"
       ],
@@ -8443,7 +8443,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792504133825,
+      "updatedAt": 1792533184931,
       "trend": 46,
       "networks": [
         "TVING"
@@ -8692,7 +8692,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792504134669,
+      "updatedAt": 1792533185988,
       "networks": [
         "TVING"
       ]
@@ -8960,7 +8960,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792504135612,
+      "updatedAt": 1792533186988,
       "networks": [
         "KBS Drama"
       ]
@@ -9536,7 +9536,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792504136633,
+      "updatedAt": 1792533187978,
       "networks": [
         "Netflix"
       ]
@@ -9851,7 +9851,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792504138525,
+      "updatedAt": 1792533188979,
       "networks": [
         "MBC"
       ]
@@ -10054,7 +10054,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792504139451,
+      "updatedAt": 1792533189982,
       "networks": [
         "Coupang Play"
       ]
@@ -10330,7 +10330,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792504140490,
+      "updatedAt": 1792533190954,
       "networks": [
         "tvN"
       ]
@@ -10533,7 +10533,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792504141426,
+      "updatedAt": 1792533192080,
       "networks": [
         "Netflix"
       ]
@@ -10810,7 +10810,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792504142498,
+      "updatedAt": 1792533193043,
       "networks": [
         "ENA"
       ]
@@ -11092,7 +11092,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792504143588,
+      "updatedAt": 1792533194132,
       "networks": [
         "KBS2"
       ]
@@ -11384,7 +11384,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792504144576,
+      "updatedAt": 1792533195188,
       "networks": [
         "JTBC"
       ]
@@ -11675,7 +11675,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792504145470,
+      "updatedAt": 1792533196207,
       "networks": [
         "SBS"
       ]
@@ -11976,7 +11976,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792504146484,
+      "updatedAt": 1792533197253,
       "networks": [
         "tvN"
       ]
@@ -12261,7 +12261,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792504147474,
+      "updatedAt": 1792533198214,
       "networks": [
         "JTBC"
       ]
@@ -12449,7 +12449,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792504148461,
+      "updatedAt": 1792533199427,
       "networks": [
         "Netflix"
       ]
@@ -12674,7 +12674,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792504149480,
+      "updatedAt": 1792533200547,
       "networks": [
         "Lifetime",
         "U+ Mobile TV"
@@ -12935,7 +12935,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792504150484,
+      "updatedAt": 1792533201674,
       "networks": [
         "ENA"
       ]
@@ -13202,7 +13202,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792504151469,
+      "updatedAt": 1792533202699,
       "networks": [
         "ENA"
       ]
@@ -13459,7 +13459,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792504152497,
+      "updatedAt": 1792533203905,
       "networks": [
         "SBS"
       ]
@@ -13745,7 +13745,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792504153420,
+      "updatedAt": 1792533205011,
       "networks": [
         "MBC"
       ]
@@ -14060,7 +14060,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792504154466,
+      "updatedAt": 1792533206003,
       "networks": [
         "Coupang Play"
       ]
@@ -14330,7 +14330,7 @@
         "VF"
       ],
       "downloads": [],
-      "updatedAt": 1792504155429,
+      "updatedAt": 1792533206952,
       "networks": [
         "Netflix"
       ]
@@ -14625,7 +14625,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792504156458,
+      "updatedAt": 1792533208054,
       "networks": [
         "tvN"
       ]
@@ -14850,7 +14850,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792504157461,
+      "updatedAt": 1792533209029,
       "networks": [
         "Netflix"
       ]
@@ -15144,7 +15144,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792504158418,
+      "updatedAt": 1792533209997,
       "networks": [
         "tvN"
       ]
@@ -15484,7 +15484,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792504159466,
+      "updatedAt": 1792533211117,
       "networks": [
         "SBS"
       ]
@@ -15791,7 +15791,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792504160673,
+      "updatedAt": 1792533212236,
       "networks": [
         "SBS"
       ]
@@ -15981,7 +15981,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792504162459,
+      "updatedAt": 1792533213189,
       "posterCustom": true,
       "networks": [
         "MBN Plus"
@@ -16199,7 +16199,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792504163497,
+      "updatedAt": 1792533214143,
       "networks": [
         "wavve"
       ]
@@ -16442,7 +16442,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792504164519,
+      "updatedAt": 1792533215266,
       "networks": [
         "Disney+"
       ]
@@ -16732,7 +16732,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792504165502,
+      "updatedAt": 1792533216306,
       "networks": [
         "JTBC"
       ]
@@ -16969,7 +16969,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792504166415,
+      "updatedAt": 1792533217415,
       "networks": [
         "MBS"
       ]
@@ -17149,7 +17149,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792504167482,
+      "updatedAt": 1792533218811,
       "networks": [
         "CBC"
       ]
@@ -17485,7 +17485,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792504168430,
+      "updatedAt": 1792533219752,
       "networks": [
         "ABEMA"
       ]
@@ -17667,7 +17667,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792504169437,
+      "updatedAt": 1792533220913,
       "networks": [
         "BS TV Tokyo"
       ]
@@ -17875,7 +17875,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792504170470,
+      "updatedAt": 1792533221874,
       "networks": [
         "MBS"
       ]
@@ -18048,7 +18048,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792504171443,
+      "updatedAt": 1792533223017,
       "networks": [
         "MBS"
       ]
@@ -18271,7 +18271,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792504172436,
+      "updatedAt": 1792533224238,
       "networks": [
         "TV Tokyo"
       ]
@@ -18508,7 +18508,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792504173493,
+      "updatedAt": 1792533225259,
       "networks": [
         "TBS"
       ]
@@ -18765,7 +18765,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792504174538,
+      "updatedAt": 1792533226374,
       "networks": [
         "Nippon TV"
       ]
@@ -18976,7 +18976,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792504175527,
+      "updatedAt": 1792533227436,
       "networks": [
         "Netflix"
       ]
@@ -19233,7 +19233,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792504176493,
+      "updatedAt": 1792533228458,
       "networks": [
         "TBS"
       ]
@@ -19485,7 +19485,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792504177492,
+      "updatedAt": 1792533229611,
       "networks": [
         "TBS"
       ]
@@ -19741,7 +19741,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792504178477,
+      "updatedAt": 1792533230639,
       "networks": [
         "Netflix"
       ]
@@ -19876,8 +19876,8 @@
             },
             {
               "number": 3,
-              "name": "Épisode 3",
-              "overview": "",
+              "name": "Only One Will Survive",
+              "overview": "With help from Akina Isobe, Toshiro Niide continues investigating the game's participants across Asia while evading the Special Investigation Team (SIT). He reaches out to them through social media, seeking their cooperation in solving the case. But the rules are clear: \"Only one will survive.\" Determined to save their loved ones, the other participants ignore his appeal.",
               "air_date": "2026-10-20",
               "sources": [
                 {
@@ -19962,7 +19962,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792530528318,
+      "updatedAt": 1792533231739,
       "networks": [
         "Fuji TV",
         "Channel A"
@@ -20125,7 +20125,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792504180429,
+      "updatedAt": 1792533232715,
       "networks": [
         "MBS"
       ]
@@ -20352,7 +20352,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792532818440,
+      "updatedAt": 1792533233512,
       "networks": [
         "iQiyi"
       ],
@@ -20392,8 +20392,8 @@
         "杀人者的购物中心2",
         "دوکانێک بۆ بکوژەکان",
         "مرکز خرید قاتلان",
-        "Killerdeului Shoppingmall",
         "The Killer's Shopping Mall",
+        "Killerdeului Shoppingmall",
         "Sarinjaui Syopingmol",
         "ဦီးဦး ဒုံဝုတို့ ဆိုင်",
         "လူသတ်သမားတွေရဲ့ ဆိုင်",
@@ -20713,7 +20713,7 @@
       ],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1792504182609,
+      "updatedAt": 1792533234622,
       "networks": [
         "Disney+"
       ]
@@ -20949,7 +20949,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792504184442
+      "updatedAt": 1792533235600
     },
     {
       "id": "126035",
@@ -21403,7 +21403,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792504185429
+      "updatedAt": 1792533236701
     },
     {
       "id": "273977",
@@ -21623,7 +21623,7 @@
         "VF"
       ],
       "downloads": [],
-      "updatedAt": 1792506169983,
+      "updatedAt": 1792533237665,
       "posterCustom": true
     },
     {
@@ -21910,7 +21910,7 @@
       ],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1792504187405
+      "updatedAt": 1792533238779
     },
     {
       "id": "233221",
@@ -22148,7 +22148,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792504188459
+      "updatedAt": 1792533239816
     },
     {
       "id": "288603",
@@ -22648,7 +22648,7 @@
       ],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1792504189693
+      "updatedAt": 1792533240948
     },
     {
       "id": "289139",
@@ -23229,7 +23229,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792504191618
+      "updatedAt": 1792533241980
     },
     {
       "id": "128995",
@@ -23855,7 +23855,7 @@
       ],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1792504194550
+      "updatedAt": 1792533243046
     },
     {
       "id": "303745",
@@ -23979,7 +23979,7 @@
             {
               "number": 1,
               "name": "Épisode 1",
-              "overview": "",
+              "overview": "Taekang Group's successor, Yoon Yi-jun, is suspected of murdering his secretary, but the group's power and lack of evidence impede the investigation. To find key evidence, special forces-turned-detective Kang Jae-hee applies to be his secretary, not as a woman but as a man! She manages to get the job, but Yi-jun doesn't let his guard down. Jae-hee risks getting exposed on her first day at work.",
               "air_date": "2026-10-19",
               "sources": [
                 {
@@ -24023,7 +24023,7 @@
             {
               "number": 2,
               "name": "Épisode 2",
-              "overview": "",
+              "overview": "Kang Jae-hee's double life begins. She's Yoon Yi-jun's secretary by day and a detective by night. Yi-jun keeps testing her, but Jae-hee relentlessly keeps an eye on him and searches for the missing phone. She plans to infiltrate the room that's banned from entering, but Yi-jun doesn't let his guard down easily. Their relationship takes a strange turn through unexpected physical contact.",
               "air_date": "2026-10-20",
               "sources": [
                 {
@@ -24149,7 +24149,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792531690683,
+      "updatedAt": 1792533244079,
       "trend": 85
     },
     {
@@ -24724,7 +24724,7 @@
       ],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1792504196352
+      "updatedAt": 1792533245211
     },
     {
       "id": "280822",
@@ -25337,7 +25337,7 @@
       ],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1792504197221
+      "updatedAt": 1792533246328
     },
     {
       "id": "286506",
@@ -25946,7 +25946,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792504198079
+      "updatedAt": 1792533247353
     },
     {
       "id": "251600",
@@ -26505,7 +26505,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792532091021,
+      "updatedAt": 1792533248237,
       "posterCustom": true
     },
     {
@@ -26917,7 +26917,7 @@
       ],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1792507412398
+      "updatedAt": 1792533249250
     }
   ],
   "deletedLinks": [
@@ -27069,6 +27069,15 @@
     "at": 1792533000003
   },
   "journal": [
+    {
+      "k": "mvh80j8eg4n52",
+      "t": 1792533249374,
+      "b": "614d778ed0",
+      "a": "tmdb",
+      "i": "",
+      "n": "Toutes les fiches",
+      "d": "86 fiches"
+    },
     {
       "k": "mvh7mwvwqck5w",
       "t": 1792532818454,
