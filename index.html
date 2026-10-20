@@ -5303,9 +5303,7 @@ function setFullLbl(on) {
   b.querySelector(".fi").innerHTML = FS_SVG(on ? '<path d="M8 3v3a2 2 0 0 1-2 2H3M21 8h-3a2 2 0 0 1-2-2V3M3 16h3a2 2 0 0 1 2 2v3M16 21v-3a2 2 0 0 1 2-2h3"/>' : '<path d="M8 3H5a2 2 0 0 0-2 2v3M21 8V5a2 2 0 0 0-2-2h-3M3 16v3a2 2 0 0 0 2 2h3M16 21h3a2 2 0 0 0 2-2v-3"/>');
   b.setAttribute("aria-label", t); b.title = t + " (F)";
 }
-var lastFsToggle = 0;
 function toggleFull() {
-  var now = Date.now(); if (now - lastFsToggle < 700) return; lastFsToggle = now;
   var d = $("#player"), b = $("#pfull"), f = $("#pframe");
   var fsEl = document.fullscreenElement || document.webkitFullscreenElement;
   if (fsEl) { (document.exitFullscreen || document.webkitExitFullscreen).call(document); return; }
@@ -5315,7 +5313,7 @@ function toggleFull() {
   if (!req) { fallback(); return; }
   try {
     var p = req.call(f);
-    if (p && p.then) p.then(function () { if (inFullscreen()) lockLandscape(); }, fallback);
+    if (p && p.catch) p.catch(fallback);
   } catch (e) { fallback(); }
 }
 
@@ -6097,29 +6095,22 @@ document.addEventListener("focusout", function (e) {
 var FITKEY = "noir.fit", fitMode = "normal", barTimer = null, fsOn = false;
 try { var sf = localStorage.getItem(FITKEY); if (sf === "zoom" || sf === "stretch") fitMode = sf; } catch (e) {}
 
-function fsElement() { return document.fullscreenElement || document.webkitFullscreenElement || null; }
-function wideOn() { return $("#player").classList.contains("wide"); }
-/* notre plein écran : le cadre (#pframe) ou le mode « wide » de secours */
 function inFullscreen() {
-  var fsEl = fsElement();
-  return !!(fsEl && fsEl === $("#pframe")) || wideOn();
+  var fsEl = document.fullscreenElement || document.webkitFullscreenElement;
+  return !!(fsEl && fsEl === $("#pframe")) || $("#player").classList.contains("wide");
 }
-/* Après la sortie du plein écran (le nôtre OU celui du lecteur dans l'iframe), le lecteur garde parfois la taille
-   d'avant et l'image est écrasée. On remet le cadre à plat puis on fait varier la taille de l'iframe de quelques
-   pixels, plusieurs fois, pour forcer le lecteur à recalculer sa taille. */
-function refreshFrame() {
-  [60, 250, 600, 1200, 2200].forEach(function (ms) {
-    setTimeout(function () {
-      if (fsElement() || wideOn()) return;
-      var f = document.querySelector("#pstage iframe"); if (!f) return;
-      $("#pstage").style.transform = "";
-      f.style.width = "calc(100% - 3px)"; f.style.height = "calc(100% - 3px)";
-      void f.offsetWidth;
-      setTimeout(function () {
-        f.style.width = ""; f.style.height = "";
-        try { window.dispatchEvent(new Event("resize")); } catch (e) {}
-      }, 90);
-    }, ms);
+/* L'iframe est cross-origin : on ne peut pas toucher à la vidéo, on étire donc l'iframe entière.
+   On suppose une vidéo 16:9 (cas normal) qui laisse des bandes noires dans l'iframe. */
+function applyFit() {
+  var st = $("#pstage"), fr = $("#pframe");
+  var on = inFullscreen(), W = fr.clientWidth, H = fr.clientHeight, r = 16 / 9, sx = 1, sy = 1;
+  if (on && W && H && fitMode !== "normal") {
+    if (W / H >= r) { sx = W / (H * r); sy = fitMode === "zoom" ? sx : 1; }
+    else { sy = H / (W / r); sx = fitMode === "zoom" ? sy : 1; }
+  }
+  st.style.transform = (sx === 1 && sy === 1) ? "" : "scale(" + sx.toFixed(4) + "," + sy.toFixed(4) + ")";
+  Array.prototype.forEach.call(document.querySelectorAll("#fsbar [data-fit]"), function (b) {
+    var o = b.dataset.fit === fitMode; b.classList.toggle("on", o); b.setAttribute("aria-pressed", o ? "true" : "false");
   });
 }
 function hideBar() {
@@ -6136,36 +6127,24 @@ function showBar() {
 }
 /* rotation auto : on passe en paysage en entrant en plein écran, et on rend la main en sortant
    (l'API n'est pas dispo partout, ex. iPhone/Safari : on ignore alors sans erreur) */
-var unlockTimer = null;
 function lockLandscape() {
-  clearTimeout(unlockTimer);
   try {
     var o = window.screen && screen.orientation;
     if (o && o.lock) { var p = o.lock("landscape"); if (p && p.catch) p.catch(function () {}); }
   } catch (e) {}
 }
 function unlockOrientation() {
-  clearTimeout(unlockTimer);
-  unlockTimer = setTimeout(function () {
-    if (fsElement() || inFullscreen()) return;
-    try { var o = window.screen && screen.orientation; if (o && o.unlock) o.unlock(); } catch (e) {}
-  }, 400);
+  try { var o = window.screen && screen.orientation; if (o && o.unlock) o.unlock(); } catch (e) {}
 }
-var anyFsPrev = false;
 function syncFs() {
-  var any = !!fsElement() || wideOn();
-  var leaving = anyFsPrev && !any;
-  anyFsPrev = any;
   var on = inFullscreen() && $("#player").open !== false;
   var fr = $("#pframe");
-  if (on !== fsOn) {
-    fsOn = on;
-    fr.classList.toggle("fsui", on);
-    if (on) lockLandscape(); else unlockOrientation();
-    applyFit();
-    if (on) showBar(); else { clearTimeout(barTimer); fr.classList.remove("bar"); }
-  } else applyFit();
-  if (leaving) refreshFrame();
+  if (on === fsOn) { applyFit(); return; }
+  fsOn = on;
+  fr.classList.toggle("fsui", on);
+  if (on) lockLandscape(); else unlockOrientation();
+  applyFit();
+  if (on) showBar(); else { clearTimeout(barTimer); fr.classList.remove("bar"); }
 }
 $("#fsbar").addEventListener("click", function (e) {
   var b = e.target.closest("[data-fit]"); if (!b) return;
@@ -6198,17 +6177,8 @@ $("#pdl").addEventListener("click", function (e) { if (e.target.closest("[data-r
 $("#pprev").addEventListener("click", function () { if (cur.nav && cur.nav.prev) cur.nav.prev(); });
 $("#pnext").addEventListener("click", function () { if (cur.nav && cur.nav.next) { markCurSeen(); cur.nav.next(); } });
 $("#pfull").addEventListener("click", toggleFull);
-var fsEvTimer = null;
-function onFsChange() {
-  clearTimeout(fsEvTimer);
-  var run = function () {
-    if (!wideOn()) setFullLbl(!!fsElement());
-    syncFs();
-  };
-  if (fsElement()) run(); else fsEvTimer = setTimeout(run, 80);
-}
-document.addEventListener("fullscreenchange", onFsChange);
-document.addEventListener("webkitfullscreenchange", onFsChange);
+document.addEventListener("fullscreenchange", function () { if (!$("#player").classList.contains("wide")) setFullLbl(!!document.fullscreenElement); syncFs(); });
+document.addEventListener("webkitfullscreenchange", function () { if (!$("#player").classList.contains("wide")) setFullLbl(!!document.webkitFullscreenElement); syncFs(); });
 $("#player").addEventListener("click", function (e) { if (e.target === this) closePlayer(); });
 $("#player").addEventListener("close", function () { watchToken++; clearTimeout(watchTimer); stopLoading(); closeEps(); clearInterval(tipTimer); document.documentElement.classList.remove("lock"); $("#pstage").innerHTML = ""; syncFs(); });
 
