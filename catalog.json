@@ -19785,6 +19785,9 @@
       "origin_country": [
         "CN"
       ],
+      "networks": [
+        "iQiyi"
+      ],
       "original_language": "zh",
       "aka": [
         "Light the Dark",
@@ -19800,8 +19803,8 @@
       ],
       "rating": "8.5",
       "pop": 16.8492,
-      "status": "Returning Series",
-      "poster": "https://image.tmdb.org/t/p/original/t69nmUrT8G4HQ452nLDzkZujEDj.jpg",
+      "status": "Ended",
+      "poster": "https://image.tmdb.org/t/p/w500/hsyigO4PBiY1c9VznC3Di4AFTRe.jpg",
       "posterV": 2,
       "backdrop": "https://image.tmdb.org/t/p/original/q48icceyDIuAZC9wL66ZEQF03oj.jpg",
       "cast": [
@@ -19999,10 +20002,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792532613873,
-      "networks": [
-        "iQiyi"
-      ]
+      "updatedAt": 1792532676790
     },
     {
       "id": "215072",
@@ -27091,12 +27091,12 @@
   "journal": [
     {
       "k": "mvh7mwvwqck5w",
-      "t": 1792532613884,
+      "t": 1792532676800,
       "b": "614d778ed0",
       "a": "edit",
       "i": "288328",
       "n": "Light the Dark",
-      "d": "sources 8 → 12"
+      "d": "affiche"
     },
     {
       "k": "mvh7athqlj6r7",
