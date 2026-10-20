@@ -1860,6 +1860,14 @@ body { overflow-x: hidden; max-width: 100%; position: relative; }
 #stadmin[hidden] { display: none; }
 
 .stfoot { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+
+/* ===== Transfert par code ===== */
+.codebox { display: grid; gap: 10px; padding: 16px 20px; margin-top: 12px; }
+.codebox[hidden] { display: none; }
+.codebox textarea { width: 100%; box-sizing: border-box; min-height: 96px; padding: 10px 12px; background: var(--bg); border: 1px solid var(--line); color: var(--fg); font-family: var(--mono); font-size: 12px; line-height: 1.5; word-break: break-all; border-radius: 0; resize: vertical; }
+.codebox textarea:focus { outline: 0; border-color: var(--fg); }
+.codemsg { min-height: 1.4em; margin: 0; font-size: 13px; color: var(--dim); }
+.codemsg.ok { color: #86efac; font-weight: 700; } .codemsg.err { color: #f87171; }
 </style>
 <!-- Visites du site : Vercel Web Analytics, sans cookie ni base de données. Ne fait rien tant que tu ne l'actives pas dans Vercel (onglet Analytics). -->
 <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
@@ -3254,7 +3262,12 @@ function stBody(t) {
       '<div class="stbtns"><button type="button" class="btn small" data-badgeall="1">Tout cacher</button><button type="button" class="btn ghost small" data-badgeall="0">Tout afficher</button></div></div>';
   }
   if (t === "data") {
-    return '<div class="stsec"><div class="stlbl">Sauvegarde</div>' +
+    return '<div class="stsec"><div class="stlbl">Transfert par code</div>' +
+      '<p class="stnote">Passe ta liste, tes épisodes vus, ta reprise de lecture et tes séries suivies sur un autre appareil : génère un code ici, copie-le, puis colle-le dans « Entrer un code » sur l\'autre appareil. Rien n\'est envoyé sur un serveur. Les données de l\'autre appareil sont ajoutées aux tiennes, jamais effacées.</p>' +
+      stAction("up", "Générer mon code", "Crée un code à copier.", "data-codegen", "Générer", false, 0) +
+      stAction("down", "Entrer un code", "Colle un code reçu depuis un autre appareil.", "data-codeuse", "Entrer", true, 1) +
+      '<div class="spanel codebox" id="codebox" hidden><textarea id="codetxt" spellcheck="false" autocomplete="off" autocapitalize="off" aria-label="Code de transfert"></textarea><p class="codemsg" id="codemsg" role="status"></p><div class="row"><button type="button" class="btn small" id="codego"></button><button type="button" class="btn ghost small" data-codeclose>Fermer</button></div></div></div>' +
+      '<div class="stsec"><div class="stlbl">Sauvegarde</div>' +
       '<p class="stnote">Ta liste, tes épisodes vus, ta reprise de lecture et tes réglages sont enregistrés sur cet appareil. Exporte-les pour les retrouver sur un autre appareil.</p>' +
       stAction("up", "Exporter mes données", "Télécharge un fichier de sauvegarde.", "data-dexport", "Exporter", false, 0) +
       stAction("down", "Importer mes données", "Restaure une sauvegarde exportée avant.", "data-dimport", "Importer", true, 1) +
@@ -3374,6 +3387,132 @@ document.addEventListener("click", function (e) {
       resetTimer = setTimeout(function () { delete rb.dataset.armed; rb.textContent = "Réinitialiser"; }, 4000);
     }
   }
+});
+/* ===== Transfert par code : liste, épisodes vus, reprise et suivis dans un texte à copier-coller (rien n'est envoyé sur un serveur) ===== */
+var CODE_SID = /^[\w.-]{1,40}$/, CODE_BAD = /^(__proto__|constructor|prototype)$/, CODE_EK = /^\d{1,3}x\d{1,4}$/;
+function codeB64(bytes) {
+  var s = "", i;
+  for (i = 0; i < bytes.length; i += 8192) s += String.fromCharCode.apply(null, bytes.subarray(i, i + 8192));
+  return btoa(s).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+}
+function codeBytes(t) {
+  t = t.replace(/-/g, "+").replace(/_/g, "/"); while (t.length % 4) t += "=";
+  var s = atob(t), b = new Uint8Array(s.length), i;
+  for (i = 0; i < s.length; i++) b[i] = s.charCodeAt(i);
+  return b;
+}
+function codePipe(bytes, Ctor, max) {
+  var rd = new Blob([bytes]).stream().pipeThrough(new Ctor("deflate-raw")).getReader(), parts = [], total = 0;
+  function step() {
+    return rd.read().then(function (r) {
+      if (r.done) { var out = new Uint8Array(total), p = 0; parts.forEach(function (c) { out.set(c, p); p += c.length; }); return out; }
+      total += r.value.length;
+      if (max && total > max) { rd.cancel(); throw new Error("big"); }
+      parts.push(r.value); return step();
+    });
+  }
+  return step();
+}
+function codeMake() {
+  var o = { app: "dramabym", v: 1, l: readList(), s: readSeen(), r: readResume(), n: nSubs() };
+  var raw = new TextEncoder().encode(JSON.stringify(o)), plain = function () { return "DBM0-" + codeB64(raw); };
+  if (window.CompressionStream && window.Blob && Blob.prototype.stream) return codePipe(raw, CompressionStream, 0).then(function (z) { return "DBM1-" + codeB64(z); }, plain);
+  return Promise.resolve(plain());
+}
+function codeRead(text) {
+  var m = String(text || "").replace(/\s+/g, "").match(/DBM([01])-([A-Za-z0-9_-]+)/);
+  if (!m || m[2].length > 400000) return Promise.reject(new Error("bad"));
+  var bytes; try { bytes = codeBytes(m[2]); } catch (e) { return Promise.reject(new Error("bad")); }
+  var p = m[1] === "1" ? (window.DecompressionStream && Blob.prototype.stream ? codePipe(bytes, DecompressionStream, 3e6) : Promise.reject(new Error("nodec"))) : Promise.resolve(bytes);
+  return p.then(function (u) {
+    var o = JSON.parse(new TextDecoder().decode(u));
+    if (!o || o.app !== "dramabym") throw new Error("bad");
+    return o;
+  });
+}
+/* on ne garde que ce qui a la bonne forme : un code collé ne peut rien glisser d'autre dans le navigateur */
+function codeClean(o) {
+  var out = { l: [], s: {}, r: {}, n: {} }, tot = 0;
+  (Array.isArray(o.l) ? o.l : []).slice(0, 5000).forEach(function (x) { x = String(x); if (CODE_SID.test(x) && !CODE_BAD.test(x) && out.l.indexOf(x) < 0) out.l.push(x); });
+  if (o.s && typeof o.s === "object") Object.keys(o.s).slice(0, 5000).forEach(function (sid) {
+    var m = o.s[sid]; if (!CODE_SID.test(sid) || CODE_BAD.test(sid) || !m || typeof m !== "object") return;
+    var k = {}; Object.keys(m).slice(0, 3000).forEach(function (e) { if (CODE_EK.test(e) && tot++ < 60000) k[e] = 1; });
+    if (Object.keys(k).length) out.s[sid] = k;
+  });
+  if (o.r && typeof o.r === "object") Object.keys(o.r).slice(0, 5000).forEach(function (sid) {
+    var v = o.r[sid]; if (!CODE_SID.test(sid) || CODE_BAD.test(sid) || !v || typeof v !== "object") return;
+    var si = v.si == null ? null : parseInt(v.si, 10), n = v.n == null ? null : String(v.n);
+    if ((si != null && !(si >= 0 && si < 1000)) || (n != null && !/^\d{1,4}$/.test(n))) return;
+    out.r[sid] = { si: si, n: v.n == null ? null : (typeof v.n === "number" ? v.n : n), at: +v.at > 0 ? +v.at : 0 };
+  });
+  if (o.n && typeof o.n === "object") Object.keys(o.n).slice(0, 5000).forEach(function (sid) {
+    var v = o.n[sid]; if (!CODE_SID.test(sid) || CODE_BAD.test(sid) || !v || typeof v !== "object") return;
+    var kn = (Array.isArray(v.known) ? v.known : []).slice(0, 3000).map(String).filter(function (e) { return CODE_EK.test(e); });
+    out.n[sid] = { known: kn, at: +v.at > 0 ? +v.at : 0 };
+  });
+  return out;
+}
+/* fusion : on ajoute ce qui manque, on n'efface rien (reprise : la plus récente gagne) */
+function codeApply(c) {
+  var cnt = { l: 0, s: 0, r: 0, n: 0 };
+  var l = readList(); c.l.forEach(function (id) { if (l.indexOf(id) < 0) { l.push(id); cnt.l++; } });
+  var s = readSeen(); Object.keys(c.s).forEach(function (sid) {
+    var m = s[sid] && typeof s[sid] === "object" ? s[sid] : {};
+    Object.keys(c.s[sid]).forEach(function (k) { if (!m[k]) { m[k] = 1; cnt.s++; } });
+    s[sid] = m;
+  });
+  var r = readResume(); Object.keys(c.r).forEach(function (sid) { var cu = r[sid]; if (!cu || (+cu.at || 0) < c.r[sid].at) { r[sid] = c.r[sid]; cnt.r++; } });
+  var n = nSubs(); Object.keys(c.n).forEach(function (sid) { if (!n[sid]) { n[sid] = c.n[sid]; cnt.n++; } });
+  try {
+    localStorage.setItem(LISTKEY, JSON.stringify(l)); localStorage.setItem(SEENKEY, JSON.stringify(s));
+    localStorage.setItem(RESUMEKEY, JSON.stringify(r)); localStorage.setItem(NSUBKEY, JSON.stringify(n));
+  } catch (e) { return null; }
+  return cnt;
+}
+var codeMode = "";
+function codeMsg(t, c) { var m = $("#codemsg"); if (m) { m.textContent = t || ""; m.className = "codemsg" + (c ? " " + c : ""); } }
+function codeOpen(mode) {
+  var box = $("#codebox"), ta = $("#codetxt"), go = $("#codego"); if (!box || !ta || !go) return;
+  codeMode = mode; box.hidden = false; codeMsg("");
+  if (mode === "gen") {
+    ta.readOnly = true; ta.value = ""; ta.placeholder = "Création du code…"; go.textContent = "Copier"; go.disabled = true;
+    codeMake().then(function (code) {
+      ta.value = code; go.disabled = false;
+      codeMsg(readList().length + " titre(s) dans ta liste, " + Object.keys(readSeen()).length + " série(s) avec épisodes vus. Copie ce code, puis colle-le sur l'autre appareil.");
+    });
+  } else {
+    ta.readOnly = false; ta.value = ""; ta.placeholder = "Colle ton code ici (il commence par DBM1-)"; go.textContent = "Importer"; go.disabled = false; ta.focus();
+  }
+}
+function codeCopy(txt) {
+  if (navigator.clipboard && navigator.clipboard.writeText) return navigator.clipboard.writeText(txt);
+  return new Promise(function (res, rej) {
+    var ta = $("#codetxt"); ta.select();
+    try { document.execCommand("copy") ? res() : rej(); } catch (e) { rej(e); }
+  });
+}
+document.addEventListener("click", function (e) {
+  if (!e.target.closest) return;
+  if (e.target.closest("[data-codegen]")) { codeOpen("gen"); return; }
+  if (e.target.closest("[data-codeuse]")) { codeOpen("use"); return; }
+  if (e.target.closest("[data-codeclose]")) { var b = $("#codebox"); if (b) b.hidden = true; codeMode = ""; return; }
+  if (!e.target.closest("#codego")) return;
+  var ta = $("#codetxt"); if (!ta) return;
+  if (codeMode === "gen") {
+    codeCopy(ta.value).then(function () { codeMsg("✓ Code copié. Colle-le dans « Entrer un code » sur l'autre appareil.", "ok"); toast("Code copié ✓"); }, function () { ta.select(); codeMsg("Copie impossible ici : sélectionne le code et copie-le à la main.", "err"); });
+    return;
+  }
+  if (!ta.value.trim()) { codeMsg("Colle d'abord ton code.", "err"); return; }
+  codeRead(ta.value).then(function (o) {
+    var cnt = codeApply(codeClean(o));
+    if (!cnt) { codeMsg("Stockage plein ou bloqué par le navigateur.", "err"); return; }
+    if (!(cnt.l + cnt.s + cnt.r + cnt.n)) { codeMsg("Rien de nouveau : tout ce que contient ce code est déjà sur cet appareil.", "ok"); return; }
+    ta.value = "";
+    codeMsg("✓ Ajouté : " + cnt.l + " titre(s) à ta liste, " + cnt.s + " épisode(s) vu(s), " + cnt.r + " reprise(s), " + cnt.n + " série(s) suivie(s).", "ok");
+    toast("Données ajoutées ✓"); stRefresh();
+  }, function (err) {
+    codeMsg(err && err.message === "nodec" ? "Ce navigateur est trop ancien pour lire ce code. Mets-le à jour ou utilise l'export par fichier." : err && err.message === "big" ? "Ce code est trop volumineux." : "Code invalide : vérifie qu'il est complet (il commence par DBM1- ou DBM0-).", "err");
+  });
 });
 function viewHome() {
   clearInterval(heroTimer); heroTimer = null;
