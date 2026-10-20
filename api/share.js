@@ -64,6 +64,30 @@ async function lire(url, ms) {
   finally { clearTimeout(t); }
 }
 
+/* ===== Bannière avec texte anglais (titre / logo en anglais) =====
+   On interroge TMDB (images de la fiche, langue « en » uniquement) et on prend la meilleure bannière.
+   Il faut ton jeton TMDB dans une variable d'environnement Vercel : TMDB_TOKEN (jeton « Lecture API » commençant par eyJ…, ou clé API v3).
+   Pas de jeton, pas d'image anglaise, ou erreur : on garde la bannière habituelle de la fiche. */
+const JETON_TMDB = () => process.env.TMDB_TOKEN || process.env.TMDB_API_TOKEN || process.env.TMDB_READ_TOKEN || process.env.TMDB_ACCESS_TOKEN || process.env.TMDB_BEARER || process.env.TMDB_API_KEY || process.env.TMDB_KEY || "";
+async function banniereAnglaise(s) {
+  const jeton = String(JETON_TMDB()).trim();
+  const m = String(s.id).match(/^(m)?(\d{1,8})$/);          // série = « 12345 », film = « m12345 »
+  if (!jeton || !m) return "";
+  let url = "https://api.themoviedb.org/3/" + (m[1] ? "movie" : "tv") + "/" + m[2] + "/images?include_image_language=en";
+  const headers = { accept: "application/json" };
+  if (jeton.length > 60) headers.Authorization = "Bearer " + jeton; else url += "&api_key=" + encodeURIComponent(jeton);
+  const c = new AbortController(); const t = setTimeout(() => c.abort(), 3000);
+  try {
+    const r = await fetch(url, { signal: c.signal, headers });
+    if (!r.ok) return "";
+    const d = await r.json();
+    const liste = ((d && d.backdrops) || []).filter((b) => b && b.iso_639_1 === "en" && b.file_path && (b.width || 0) >= 1000);
+    liste.sort((a, b) => (b.vote_average || 0) - (a.vote_average || 0) || (b.vote_count || 0) - (a.vote_count || 0));
+    return liste.length ? "https://image.tmdb.org/t/p/w1280" + liste[0].file_path : "";
+  } catch (e) { return ""; }
+  finally { clearTimeout(t); }
+}
+
 function balises(o) {
   const L = [
     '<title>' + esc(o.titre) + '</title>',
@@ -128,7 +152,8 @@ module.exports = async (req, res) => {
       const s = liste.filter((x) => String(x.id) === String(reste))[0];
       if (s && s.name) {
         const film = s.type === "movie";
-        const img = hq(s.backdrop || s.poster);
+        const en = await banniereAnglaise(s);                 // bannière avec texte anglais si TMDB en a une
+        const img = en || hq(s.backdrop || s.poster);
         const infos = infosFiche(s);
         const syn = coupe(infos + " — " + (propre(s.overview) || ("Regarde " + s.name + " sur DramaByM.")), 250);
         return reponse(injecte(html, Object.assign(base, {
