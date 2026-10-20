@@ -21,6 +21,39 @@
       "type": "tv",
       "name": "100 Days of Deception",
       "original_name": "100일의 거짓말",
+      "origin_country": [
+        "KR"
+      ],
+      "networks": [
+        "tvN"
+      ],
+      "original_language": "ko",
+      "aka": [
+        "100 Days of Deception",
+        "百日谎言",
+        "100 Dias de Mentiras",
+        "百日謊言",
+        "100 дни на измама",
+        "100 днів омани",
+        "100 ימים של ריגול",
+        "100 วันปฏิบัติการลวง",
+        "100 días de engaño",
+        "100 de zile de minciuni",
+        "100 Ngày Lừa Dối",
+        "100 dni oszustwa",
+        "100日の嘘",
+        "مئة يوم من الخداع 100",
+        "100 jours en espionne",
+        "100 дней лжи",
+        "百日的谎言",
+        "100ilui Geojitmal",
+        "100-il-ui Geo-jit-mal",
+        "Baekilui Geojinmal",
+        "Hundred Days of Lies",
+        "Hundred Days of Deception",
+        "100 Days of Lies",
+        "100일의 거짓말"
+      ],
       "year": "2026",
       "overview": "En quête de liberté, la meilleure pickpocket de Séoul infiltre le gouvernement colonial japonais pour lui dérober des secrets, mais tombe amoureuse du fils de sa cible.",
       "genres": [
@@ -28,8 +61,10 @@
         "Drame"
       ],
       "rating": "8.4",
+      "pop": 34.6443,
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/w500/bZHEU42QynnMrHUWK1Hhvj2cdPA.jpg",
+      "posterV": 2,
       "backdrop": "https://image.tmdb.org/t/p/original/3SvKCITqMtjgPIhFBjRc4yTAc4H.jpg",
       "cast": [
         {
@@ -101,7 +136,7 @@
             {
               "number": 1,
               "name": "Épisode 1",
-              "overview": "Pickpocket Lee Ga-gyeong has just one goal — to flee colonial Joseon. But she soon ends up unexpectedly entangled with the Korean independence movement.",
+              "overview": "Pickpocket Lee Ga-kyung has just one goal — to flee colonial Joseon. But she soon ends up unexpectedly entangled with the Korean independence movement.",
               "air_date": "2026-10-10",
               "sources": [
                 {
@@ -135,7 +170,7 @@
             {
               "number": 2,
               "name": "Épisode 2",
-              "overview": "Ga-gyeong's language skills shock Yoo Philip and Yoo So-ran. Meanwhile, Kim Tae-ung's insistence that Ga-gyeong return his wallet raises her suspicions.",
+              "overview": "Ga-kyung's language skills shock Yoo Philip and Yoo So-ran. Meanwhile, Kim Tae-ung's insistence that Ga-kyung return his wallet raises her suspicions.",
               "air_date": "2026-10-11",
               "sources": [
                 {
@@ -149,7 +184,6 @@
                 {
                   "name": "VIDMOLY",
                   "url": "https://vidmoly.org/embed-d573thqo6iom.html",
-                  "quality": "VIDARA https://vidara.to/e/5thkvKklZ5I2D",
                   "by": "614d778ed0"
                 },
                 {
@@ -345,44 +379,9 @@
       "langs": [
         "VOSTFR"
       ],
-      "trend": 62,
-      "aka": [
-        "100 Days of Deception",
-        "百日谎言",
-        "100 Dias de Mentiras",
-        "百日謊言",
-        "100 дни на измама",
-        "100 днів омани",
-        "100 ימים של ריגול",
-        "100 วันปฏิบัติการลวง",
-        "100 días de engaño",
-        "100 de zile de minciuni",
-        "100 Ngày Lừa Dối",
-        "100 dni oszustwa",
-        "100日の嘘",
-        "مئة يوم من الخداع 100",
-        "100 jours en espionne",
-        "100 дней лжи",
-        "百日的谎言",
-        "100ilui Geojitmal",
-        "100-il-ui Geo-jit-mal",
-        "Baekilui Geojinmal",
-        "Hundred Days of Lies",
-        "Hundred Days of Deception",
-        "100 Days of Lies",
-        "100일의 거짓말"
-      ],
       "downloads": [],
-      "pop": 34.6443,
-      "posterV": 2,
-      "origin_country": [
-        "KR"
-      ],
-      "original_language": "ko",
       "updatedAt": 1792533145999,
-      "networks": [
-        "tvN"
-      ]
+      "trend": 0
     },
     {
       "id": "275102",
@@ -607,11 +606,11 @@
       ],
       "downloads": [],
       "pop": 52.6244,
-      "posterV": 2,
       "origin_country": [
         "KR"
       ],
       "original_language": "ko",
+      "posterV": 2,
       "updatedAt": 1792533152728,
       "networks": [
         "Netflix"
@@ -934,12 +933,12 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "trend": 82,
-      "posterV": 2,
+      "trend": 69,
       "origin_country": [
         "KR"
       ],
       "original_language": "ko",
+      "posterV": 2,
       "updatedAt": 1792533153761,
       "networks": [
         "SBS"
@@ -1086,7 +1085,7 @@
                 {
                   "name": "VIDMOLY",
                   "url": "https://vidmoly.org/embed-vqajh2l8o3b1.html",
-                  "quality": "VIDARA https://vidara.to/e/K1PgGFz1ZalgO",
+                  "quality": "https://vidmoly.org/embed-vqajh2l8o3b1.html",
                   "by": "614d778ed0"
                 }
               ],
@@ -1260,11 +1259,11 @@
       ],
       "downloads": [],
       "pop": 43.7547,
-      "posterV": 2,
       "origin_country": [
         "KR"
       ],
       "original_language": "ko",
+      "posterV": 2,
       "updatedAt": 1792533154734,
       "posterCustom": true,
       "networks": [
@@ -1406,7 +1405,7 @@
         "Lootuse sadam",
         "호프"
       ],
-      "trend": 99,
+      "trend": 100,
       "downloads": [
         {
           "name": "1FICHIER",
@@ -1503,7 +1502,7 @@
             {
               "number": 1,
               "name": "Épisode 1",
-              "overview": "Kang Pi-o is known around school as an unrivaled talent — until he meets the mysterious Choi Jeong-yo and realizes he may have finally met his match.",
+              "overview": "Au lycée, Kang Pi-o est réputé pour son talent inégalé, mais sa rencontre avec le mystérieux Choi Jeong-yo lui fait comprendre qu'il a peut-être enfin trouvé un rival à sa hauteur.",
               "air_date": "2026-08-29",
               "sources": [
                 {
@@ -1526,7 +1525,7 @@
             {
               "number": 2,
               "name": "Épisode 2",
-              "overview": "With Jeong-yo now his classmate, a bitter Pi-o keeps his distance. But when the two are tasked with a joint performance, Pi-o finds himself warming up.",
+              "overview": "Maintenant que Jeong-yo est son camarade de classe, Pi-o, amer, garde ses distances. Mais quand ils doivent se produire ensemble, Pi-o se montre peu à peu moins hostile.",
               "air_date": "2026-08-30",
               "sources": [
                 {
@@ -1549,7 +1548,7 @@
             {
               "number": 3,
               "name": "Épisode 3",
-              "overview": "When crisis strikes right before the joint stage, Pi-o improvises a fix — only to wonder if it was a mistake when Jeong-yo's skills outshine his own.",
+              "overview": "Un incident survient juste avant le concert. Pi-o improvise une solution, mais se demande s'il a vraiment bien fait lorsque le talent de Jeong-yo éclipse le sien.",
               "air_date": "2026-09-05",
               "sources": [
                 {
@@ -1572,7 +1571,7 @@
             {
               "number": 4,
               "name": "Épisode 4",
-              "overview": "With Pi-o determined to reclaim his love for music, Jeong-yo shows Pi-o how to have fun on the piano. Jeong-yo's family troubles catch up to him.",
+              "overview": "Pi-o est déterminé à retrouver son amour pour la musique et Jeong-yo lui montre comment prendre du plaisir au piano. Jeong-yo se fait rattraper par ses problèmes familiaux.",
               "air_date": "2026-09-06",
               "sources": [
                 {
@@ -1595,7 +1594,7 @@
             {
               "number": 5,
               "name": "Épisode 5",
-              "overview": "Intent on proving himself, Pi-o joins the Prague Harmonie International Competition and asks Jeong-yo to join too. Pi-o's obsessive practice takes a toll.",
+              "overview": "Déterminé à faire ses preuves, Pi-o s'inscrit à un concours et demande à Jeong-yo de l'accompagner. Les entraînements obsessionnels de Pi-o finissent par avoir des conséquences.",
               "air_date": "2026-09-12",
               "sources": [
                 {
@@ -1618,7 +1617,7 @@
             {
               "number": 6,
               "name": "Épisode 6",
-              "overview": "Years later, Pi-o is successful and world-renowned — but miserable. Hong Jae-in tries to let Pi-o know how she feels. Pi-o hunts down news of Jeong-yo.",
+              "overview": "Des années plus tard, Pi-o est célèbre dans le monde entier, mais malheureux. Alors que Hong Jae-in veut lui avouer ses sentiments, il cherche à avoir des nouvelles de Jeong-yo.",
               "air_date": "2026-09-13",
               "sources": [
                 {
@@ -1641,7 +1640,7 @@
             {
               "number": 7,
               "name": "Épisode 7",
-              "overview": "Pi-o finds himself stuck deep in a slump, but can't seem to overcome his fears alone. Later, a familiar face suggests collaborating on a performance.",
+              "overview": "Pi-o traverse une mauvaise passe et ne parvient pas à surmonter seul ses peurs. Plus tard, un visage familier lui propose de jouer à ses côtés.",
               "air_date": "2026-09-19",
               "sources": [
                 {
@@ -1664,7 +1663,7 @@
             {
               "number": 8,
               "name": "Épisode 8",
-              "overview": "Pi-o faces increasing pressure to do the joint performance, but his issues with the piano only get worse. Jeong-yo finally steps in to help.",
+              "overview": "Alors que Pi-o subit une pression croissante pour accepter de jouer en duo, ses difficultés au piano ne font qu'empirer. Jeong-yo finit par intervenir pour l'aider.",
               "air_date": "2026-09-20",
               "sources": [
                 {
@@ -1687,7 +1686,7 @@
             {
               "number": 9,
               "name": "Épisode 9",
-              "overview": "Pi-o learns the shocking truth behind Jeong-yo's kidnapping. Jeong-yo asks for Pi-o's help with a piano piece, but his harsh words leave Pi-o rattled.",
+              "overview": "Pi-o découvre la vérité choquante derrière l'enlèvement de Jeong-yo. Ce dernier sollicite son aide pour un morceau de piano, mais le critique durement, ce qui déstabilise Pi-o.",
               "air_date": "2026-09-26",
               "sources": [
                 {
@@ -1710,7 +1709,7 @@
             {
               "number": 10,
               "name": "Épisode 10",
-              "overview": "Pi-o realizes Jeong-yo has been hiding a huge secret. With everything revealed, Jeong-yo turns even more cruel, and Pi-o falls deeper into despair.",
+              "overview": "Pi-o découvre que Jeong-yo lui cache un lourd secret. Une fois la vérité révélée, Jeong-yo se montre encore plus cruel, et Pi-o sombre un peu plus dans le désespoir.",
               "air_date": "2026-09-27",
               "sources": [
                 {
@@ -1733,7 +1732,7 @@
             {
               "number": 11,
               "name": "Épisode 11",
-              "overview": "As the Korean Symphony’s 80th anniversary concert begins, Jeong-yo and Pi-o face a turning point — but when the performance ends, only one person remains on stage.",
+              "overview": "Jeong-yo est surpris par le changement d'attitude soudain de Pi-o. Plus tard, quand le concert touche à sa fin, quelqu'un décide d'occuper le devant de la scène.",
               "air_date": "2026-10-03",
               "sources": [
                 {
@@ -1756,7 +1755,7 @@
             {
               "number": 12,
               "name": "Épisode 12",
-              "overview": "After painful losses, Pi-o considers leaving music behind, but Jeong-yo shares his final feelings as their last four-hands performance begins.",
+              "overview": "Pi-o décide de tourner le dos à la musique, mais Jeong-yo tente de le faire changer d'avis avec un ultime cadeau. Comment vont-ils mettre un point d'orgue à leur histoire ?",
               "air_date": "2026-10-04",
               "sources": [
                 {
@@ -1806,11 +1805,11 @@
         "포핸즈"
       ],
       "downloads": [],
-      "posterV": 2,
       "origin_country": [
         "KR"
       ],
       "original_language": "ko",
+      "posterV": 2,
       "updatedAt": 1792533156316,
       "networks": [
         "tvN"
@@ -2053,7 +2052,7 @@
             {
               "number": 8,
               "name": "Épisode 8",
-              "overview": "The twins return to 2026, where Woo-jae has become an actor and turns his back on Ha-na. Meanwhile, Ha-na receives a mysterious screenplay.",
+              "overview": "",
               "air_date": "2026-10-18",
               "sources": [
                 {
@@ -2144,11 +2143,11 @@
         "너에게 다이브"
       ],
       "downloads": [],
-      "posterV": 2,
       "origin_country": [
         "KR"
       ],
       "original_language": "ko",
+      "posterV": 2,
       "updatedAt": 1792533157740,
       "networks": [
         "Channel A"
@@ -2160,6 +2159,38 @@
       "type": "tv",
       "name": "A Love Other Than Yours",
       "original_name": "너 말고 다른 연애",
+      "origin_country": [
+        "KR"
+      ],
+      "original_language": "ko",
+      "aka": [
+        "不是你的恋爱",
+        "Um Amor Diferente do Seu",
+        "A Love Other Than Yours",
+        "Кохання, але не з тобою/ Кохання поза нами",
+        "Eine andere Liebe als deine",
+        "Un amor distinto al tuyo",
+        "Un autre amour que le tien",
+        "Un amore diverso dal tuo",
+        "Másféle szerelem",
+        "Miłość inna niż ty",
+        "O iubire alta decât a ta",
+        "Senden Başka Bir Aşk",
+        "Láska jiná než tvá",
+        "Μια Αγάπη Διαφορετική από τη Δική σου",
+        "حُبٌّ آخَر غَير حُبِّك",
+        "अ लव अदर देन योर्स",
+        "เมื่อหัวใจมีใครอีกคน",
+        "あなたとは違う恋愛",
+        "除了你之外的戀愛",
+        "Любовь, но не с тобой",
+        "除了你之外的恋爱",
+        "君以外の恋愛",
+        "Neo Malgo Dareun Yeonae",
+        "不是和你談的戀愛",
+        "Not You, Another Love",
+        "너 말고 다른 연애"
+      ],
       "year": "2026",
       "overview": "Une romance réaliste et touchante sur un couple qui, après dix ans de vie commune, voit sa relation confortable bouleversée par des sentiments inattendus.",
       "genres": [
@@ -2196,15 +2227,18 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/hbnOPoWNxJrp0"
+                  "url": "https://vidara.to/e/hbnOPoWNxJrp0",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/8hPXJmRQQaTTC"
+                  "url": "https://playmate.to/embed/8hPXJmRQQaTTC",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-lu6fpdz9205l.html"
+                  "url": "https://uqload.vc/embed-lu6fpdz9205l.html",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -2222,15 +2256,18 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/bC6TJm3DgbbKe"
+                  "url": "https://vidara.to/e/bC6TJm3DgbbKe",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/bQOJsvf2M7Rc2"
+                  "url": "https://playmate.to/embed/bQOJsvf2M7Rc2",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-fuxcci4g5jjg.html"
+                  "url": "https://uqload.vc/embed-fuxcci4g5jjg.html",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -2248,15 +2285,18 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/IZtGFoRm8TH8n"
+                  "url": "https://vidara.to/e/IZtGFoRm8TH8n",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/RfPzcR4oIHMU0"
+                  "url": "https://playmate.to/embed/RfPzcR4oIHMU0",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-pv2u7h8v5bj3.html"
+                  "url": "https://uqload.vc/embed-pv2u7h8v5bj3.html",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -2274,15 +2314,18 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/sUjzbTLyZ1dYM"
+                  "url": "https://vidara.to/e/sUjzbTLyZ1dYM",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/J6jceidU6vKVS"
+                  "url": "https://playmate.to/embed/J6jceidU6vKVS",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-e0od46ai4l1v.html"
+                  "url": "https://uqload.vc/embed-e0od46ai4l1v.html",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -2300,15 +2343,18 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/EDj2DpUmfm0vz"
+                  "url": "https://vidara.to/e/EDj2DpUmfm0vz",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/TlxrUpqHsskXb"
+                  "url": "https://playmate.to/embed/TlxrUpqHsskXb",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-t7rabjjuvupp.html"
+                  "url": "https://uqload.vc/embed-t7rabjjuvupp.html",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -2326,15 +2372,18 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/cwy4ONBhR27hF"
+                  "url": "https://vidara.to/e/cwy4ONBhR27hF",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/qXDCwnEd0FuBO"
+                  "url": "https://playmate.to/embed/qXDCwnEd0FuBO",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-fr4qcr0y3rz3.html"
+                  "url": "https://uqload.vc/embed-fr4qcr0y3rz3.html",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -2352,15 +2401,18 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/yNeh8FwYpAdbY"
+                  "url": "https://vidara.to/e/yNeh8FwYpAdbY",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/ysHmvhnEFX3G5"
+                  "url": "https://playmate.to/embed/ysHmvhnEFX3G5",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-eagin2y2p6nr.html"
+                  "url": "https://uqload.vc/embed-eagin2y2p6nr.html",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -2378,15 +2430,18 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/B4ChfZOi4AilX"
+                  "url": "https://vidara.to/e/B4ChfZOi4AilX",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/X8tlikfJLKOhR"
+                  "url": "https://playmate.to/embed/X8tlikfJLKOhR",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-rrm24ry2h8p3.html"
+                  "url": "https://uqload.vc/embed-rrm24ry2h8p3.html",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -2511,45 +2566,13 @@
       "langs": [
         "VOSTFR"
       ],
-      "aka": [
-        "不是你的恋爱",
-        "Um Amor Diferente do Seu",
-        "A Love Other Than Yours",
-        "Кохання, але не з тобою/ Кохання поза нами",
-        "Eine andere Liebe als deine",
-        "Un amor distinto al tuyo",
-        "Un autre amour que le tien",
-        "Un amore diverso dal tuo",
-        "Másféle szerelem",
-        "Miłość inna niż ty",
-        "O iubire alta decât a ta",
-        "Senden Başka Bir Aşk",
-        "Láska jiná než tvá",
-        "Μια Αγάπη Διαφορετική από τη Δική σου",
-        "حُبٌّ آخَر غَير حُبِّك",
-        "अ लव अदर देन योर्स",
-        "เมื่อหัวใจมีใครอีกคน",
-        "あなたとは違う恋愛",
-        "除了你之外的戀愛",
-        "Любовь, но не с тобой",
-        "除了你之外的恋爱",
-        "君以外の恋愛",
-        "Neo Malgo Dareun Yeonae",
-        "不是和你談的戀愛",
-        "Not You, Another Love",
-        "너 말고 다른 연애"
-      ],
       "downloads": [],
       "posterV": 2,
-      "origin_country": [
-        "KR"
-      ],
-      "original_language": "ko",
       "updatedAt": 1792533160335,
-      "trend": 0,
       "networks": [
         "KBS2"
-      ]
+      ],
+      "trend": 0
     },
     {
       "id": "290193",
@@ -2838,11 +2861,11 @@
         "VF"
       ],
       "downloads": [],
-      "posterV": 2,
       "origin_country": [
         "KR"
       ],
       "original_language": "ko",
+      "posterV": 2,
       "updatedAt": 1792533161252,
       "networks": [
         "Netflix"
@@ -3279,11 +3302,11 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "posterV": 2,
       "origin_country": [
         "KR"
       ],
       "original_language": "ko",
+      "posterV": 2,
       "updatedAt": 1792533162124,
       "networks": [
         "tvN"
@@ -3841,11 +3864,11 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "posterV": 2,
       "origin_country": [
         "KR"
       ],
       "original_language": "ko",
+      "posterV": 2,
       "updatedAt": 1792533163196,
       "networks": [
         "tvN"
@@ -4312,11 +4335,11 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "posterV": 2,
       "origin_country": [
         "KR"
       ],
       "original_language": "ko",
+      "posterV": 2,
       "updatedAt": 1792533164115,
       "networks": [
         "SBS"
@@ -4598,11 +4621,11 @@
         "VF"
       ],
       "downloads": [],
-      "posterV": 2,
       "origin_country": [
         "KR"
       ],
       "original_language": "ko",
+      "posterV": 2,
       "updatedAt": 1792533165150,
       "networks": [
         "Netflix"
@@ -4876,11 +4899,11 @@
         "VF"
       ],
       "downloads": [],
-      "posterV": 2,
       "origin_country": [
         "KR"
       ],
       "original_language": "ko",
+      "posterV": 2,
       "updatedAt": 1792533171583,
       "networks": [
         "Netflix"
@@ -5001,7 +5024,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/mp3IkH93GCYvN"
+                  "url": "https://vidara.to/e/mp3IkH93GCYvN",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -5014,7 +5038,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/qdN7B275Ic9Se"
+                  "url": "https://vidara.to/e/qdN7B275Ic9Se",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -5027,7 +5052,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/6dpwAECh2o6Ll"
+                  "url": "https://vidara.to/e/6dpwAECh2o6Ll",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -5040,7 +5066,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/5tO7CYOBn7luP"
+                  "url": "https://vidara.to/e/5tO7CYOBn7luP",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -5053,7 +5080,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/z8YqmV5X1qbJW"
+                  "url": "https://vidara.to/e/z8YqmV5X1qbJW",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -5066,7 +5094,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/Av4SEMxKd8bRg"
+                  "url": "https://vidara.to/e/Av4SEMxKd8bRg",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -5079,7 +5108,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/lNvdUFH0JxyEN"
+                  "url": "https://vidara.to/e/lNvdUFH0JxyEN",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -5092,7 +5122,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/jHFlIqMhXT0M4"
+                  "url": "https://vidara.to/e/jHFlIqMhXT0M4",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -5108,11 +5139,11 @@
         "VF"
       ],
       "downloads": [],
-      "posterV": 2,
       "origin_country": [
         "JP"
       ],
       "original_language": "ja",
+      "posterV": 2,
       "updatedAt": 1792533175226,
       "networks": [
         "Netflix"
@@ -5184,7 +5215,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/drjwGqDUVzGrw"
+                  "url": "https://vidara.to/e/drjwGqDUVzGrw",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -5197,7 +5229,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/pyezT0ZeaVzrV"
+                  "url": "https://vidara.to/e/pyezT0ZeaVzrV",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -5210,7 +5243,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/etifBhL0sBQQH"
+                  "url": "https://vidara.to/e/etifBhL0sBQQH",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -5223,7 +5257,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/x3oeNTfKSSPJX"
+                  "url": "https://vidara.to/e/x3oeNTfKSSPJX",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -5236,7 +5271,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/LNn3A8MaUvxzS"
+                  "url": "https://vidara.to/e/LNn3A8MaUvxzS",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -5249,7 +5285,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/io5OTJBO0dEBc"
+                  "url": "https://vidara.to/e/io5OTJBO0dEBc",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -5269,7 +5306,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/UQLfiglPL0MW7"
+                  "url": "https://vidara.to/e/UQLfiglPL0MW7",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -5288,7 +5326,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/BjCVWO8gFbKCk"
+                  "url": "https://vidara.to/e/BjCVWO8gFbKCk",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -5307,7 +5346,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/Eh8jOqNtRtHWM"
+                  "url": "https://vidara.to/e/Eh8jOqNtRtHWM",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -5389,11 +5429,11 @@
         "VF"
       ],
       "downloads": [],
-      "posterV": 2,
       "origin_country": [
         "KR"
       ],
       "original_language": "ko",
+      "posterV": 2,
       "updatedAt": 1792533176246,
       "networks": [
         "Disney+"
@@ -5515,7 +5555,6 @@
                 {
                   "name": "VIDMOLY",
                   "url": "https://vidmoly.org/embed-5h3wmj2gml5o.html",
-                  "quality": "VIDARA https://vidara.to/e/xPxAg60z4HB6c",
                   "by": "614d778ed0"
                 }
               ],
@@ -5534,7 +5573,6 @@
                 {
                   "name": "VIDMOLY",
                   "url": "https://vidmoly.org/embed-cgx7qfr09iat.html",
-                  "quality": "VIDARA https://vidara.to/e/6zWXxQkpTQfvl",
                   "by": "614d778ed0"
                 }
               ],
@@ -5553,7 +5591,6 @@
                 {
                   "name": "VIDMOLY",
                   "url": "https://vidmoly.org/embed-1cttngyhge9h.html",
-                  "quality": "VIDARA https://vidara.to/e/bUjVAavNS1ExI",
                   "by": "614d778ed0"
                 }
               ],
@@ -5605,7 +5642,6 @@
                 {
                   "name": "VIDMOLY",
                   "url": "https://vidmoly.org/embed-76vnmuq52bne.html",
-                  "quality": "VIDARA https://vidara.to/e/gX8tqAUo23Fvn",
                   "by": "614d778ed0"
                 }
               ],
@@ -5624,7 +5660,6 @@
                 {
                   "name": "VIDMOLY",
                   "url": "https://vidmoly.org/embed-3kpgujr241gm.html",
-                  "quality": "VIDARA https://vidara.to/e/917weWRH9WdQD",
                   "by": "614d778ed0"
                 }
               ],
@@ -5643,7 +5678,6 @@
                 {
                   "name": "VIDMOLY",
                   "url": "https://vidmoly.org/embed-a88c5f9d1s10.html",
-                  "quality": "VIDARA https://vidara.to/e/u4pQPYbeo8s4s",
                   "by": "614d778ed0"
                 }
               ],
@@ -5662,7 +5696,6 @@
                 {
                   "name": "VIDMOLY",
                   "url": "https://vidmoly.org/embed-08dev3x0ypv4.html",
-                  "quality": "VIDARA https://vidara.to/e/Qtnkr2LO3ehTd",
                   "by": "614d778ed0"
                 }
               ],
@@ -5681,7 +5714,6 @@
                 {
                   "name": "VIDMOLY",
                   "url": "https://vidmoly.org/embed-mleq9dd8eqy7.html",
-                  "quality": "VIDARA https://vidara.to/e/BtTjifRggwwTy",
                   "by": "614d778ed0"
                 }
               ],
@@ -5698,401 +5730,16 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "trend": 44,
-      "posterV": 2,
       "origin_country": [
         "KR"
       ],
       "original_language": "ko",
+      "posterV": 2,
       "updatedAt": 1792533177265,
+      "trend": 60,
       "networks": [
         "Netflix"
       ]
-    },
-    {
-      "id": "300146",
-      "type": "tv",
-      "name": "Where the Mask Ends",
-      "original_name": "嫁金钗",
-      "origin_country": [
-        "CN"
-      ],
-      "original_language": "zh",
-      "aka": [
-        "Where the Mask Ends",
-        "Замуж благодаря золотой заколке",
-        "Gả Kim Thoa",
-        "ปลดหน้ากาก",
-        "Batas Akhir Sebuah Topeng",
-        "Donde termina la máscara",
-        "Di Mana Topeng Berakhir",
-        "Onde A Máscara Termina",
-        "가금채",
-        "Sous le masque",
-        "Където маската пада",
-        "嫁金釵",
-        "زفاف الدبوس الذهبي",
-        "Где маске престају",
-        "Kde končí maska",
-        "Jia Jin Chai",
-        "Женитьба на золотой шпильке",
-        "Maske Düştüğünde",
-        "Transfer Gold Hairpin",
-        "嫁金钗"
-      ],
-      "year": "2026",
-      "overview": "Wei Rao, jeune femme noble, est obligée de se marier avec le prince Lu Zuo, alors que celui-ci est dans le coma et proche de la mort. Elle force alors Ah Chou, une jeune fille ordinaire dont la seule caractéristique est sa ressemblance frappante avec Wei Rao, à prendre sa place au mariage. Mais Lu Zuo se réveille précisément le jour des noces... Ah Chou doit maintenant faire face à Wei Rao, qui veut récupérer sa place, à Lu Zuo, qui la prend pour cette vipère de Wei Rao, mais aussi à toute la demeure du prince qui est pleine de pièges et de complots.",
-      "genres": [
-        "Drame"
-      ],
-      "rating": "9.0",
-      "pop": 62.7969,
-      "status": "Returning Series",
-      "poster": "https://image.tmdb.org/t/p/original/6Pw78I4inl8CESM4GZMyQTGobph.jpg",
-      "backdrop": "https://image.tmdb.org/t/p/original/YndvGwqwroUDVltBWmnOuTvJke.jpg",
-      "cast": [
-        {
-          "name": "Tian Xiwei",
-          "character": "Wei Rao / Jundai / A Chou",
-          "id": 2430198
-        },
-        {
-          "name": "Yan An",
-          "character": "Lu Zhuo",
-          "id": 2040132
-        }
-      ],
-      "seasons": [
-        {
-          "number": 1,
-          "name": "Saison 1",
-          "episodes": [
-            {
-              "number": 1,
-              "name": "Épisode 1",
-              "overview": "After discovering her lookalike, cruel heiress Wei Rao conspires to use the woman as a pawn when a sudden crisis forces an unwanted marriage.",
-              "air_date": "2026-10-16",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-2yld09tdh2b7.html"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 2,
-              "name": "Épisode 2",
-              "overview": "A-Chou agrees to marry Lu Zhuo in Wei Rao's place, but she warns her mother about the Wei family. Meanwhile, the true heiress takes on the name Jundai.",
-              "air_date": "2026-10-16",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-ftm3yk26ikx5.html"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 3,
-              "name": "Épisode 3",
-              "overview": "After refusing to leave, the impostor Wei Rao makes a painful sacrifice to win Lu Zhuo's trust. Meanwhile, a calculated plot begins to unfold.",
-              "air_date": "2026-10-16",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-x3lw9r89bioi.html"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 4,
-              "name": "Épisode 4",
-              "overview": "Wei Rao's maid helps her with a cover-up after Lu Zhuo nearly learns a lethal secret. A customary visit to the Wei family leads to a deadly setup.",
-              "air_date": "2026-10-16",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-6ifc1l4tf216.html"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 5,
-              "name": "Épisode 5",
-              "overview": "Après avoir survécu à l'incendie de la bibliothèque, Wei Rao tente de cacher une lettre secrète. Lu Zhuo se méfie en remarquant ses mains calleuses.",
-              "air_date": "2026-10-17",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-xcbor8t9dv4h.html",
-                  "by": "614d778ed0"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 6,
-              "name": "Épisode 6",
-              "overview": "Wei Rao est félicitée pour l'organisation d'un grand banquet d'anniversaire. Mais le danger plane sur sa demeure, tandis que Lu Zhuo prépare un complot secret avec des papillons.",
-              "air_date": "2026-10-17",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-zmr0tzd11iag.html",
-                  "by": "614d778ed0"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 7,
-              "name": "Épisode 7",
-              "overview": "En pleine représentation au banquet, Wei Rao est assaillie de menaces cachées. Mais grâce à sa vivacité d'esprit, elle retourne un dangereux piège contre ses ennemis.",
-              "air_date": "2026-10-18",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-bhugx915dqcd.html",
-                  "by": "614d778ed0"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 8,
-              "name": "Épisode 8",
-              "overview": "Poussé par la jalousie, Lu Zhuo conclut un pacte avec Wei Rao. Les retrouvailles de celle-ci avec son frère attirent dangereusement l'attention de Han Liao.",
-              "air_date": "2026-10-18",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-3hhib22j6hag.html",
-                  "by": "614d778ed0"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 9,
-              "name": "Épisode 9",
-              "overview": "Acculée par un rival impitoyable, Wei Rao joue son va-tout sur un coup de bluff et doit s'en remettre à un complice incertain pour garder son passé enfoui.",
-              "air_date": "2026-10-19",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-9p7npb10m6a6.html",
-                  "by": "614d778ed0"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 10,
-              "name": "Épisode 10",
-              "overview": "Wei Rao transforme un ordre impérial en humiliation pour Han Liao. Suite à un acte de défi symbolique, elle se retrouve toutefois isolée face à des soldats rebelles hostiles.",
-              "air_date": "2026-10-19",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-u0j2mq2vxvvx.html",
-                  "by": "614d778ed0"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 11,
-              "name": "Épisode 11",
-              "overview": "En grand danger face aux élites de la cour, Wei Rao reçoit l'aide cruciale de Lu Zhuo, mais une convocation impériale soudaine met son secret en péril.",
-              "air_date": "2026-10-20",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-y3orrq7ffba1.html",
-                  "by": "614d778ed0"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 12,
-              "name": "Épisode 12",
-              "overview": "Face à l'ultimatum mortel de Consort Li, Wei Rao gagne du temps tandis que ses rivaux recourent au meurtre et que Han Liao attise la révolte.",
-              "air_date": "2026-10-20",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-5r5l4lpqv35l.html",
-                  "by": "614d778ed0"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 13,
-              "name": "Épisode 13",
-              "overview": "",
-              "air_date": "2026-10-21",
-              "sources": [],
-              "downloads": []
-            },
-            {
-              "number": 14,
-              "name": "Épisode 14",
-              "overview": "",
-              "air_date": "2026-10-21",
-              "sources": [],
-              "downloads": []
-            },
-            {
-              "number": 15,
-              "name": "Épisode 15",
-              "overview": "",
-              "air_date": "",
-              "sources": [],
-              "downloads": []
-            },
-            {
-              "number": 16,
-              "name": "Épisode 16",
-              "overview": "",
-              "air_date": "",
-              "sources": [],
-              "downloads": []
-            },
-            {
-              "number": 17,
-              "name": "Épisode 17",
-              "overview": "",
-              "air_date": "",
-              "sources": [],
-              "downloads": []
-            },
-            {
-              "number": 18,
-              "name": "Épisode 18",
-              "overview": "",
-              "air_date": "",
-              "sources": [],
-              "downloads": []
-            },
-            {
-              "number": 19,
-              "name": "Épisode 19",
-              "overview": "",
-              "air_date": "",
-              "sources": [],
-              "downloads": []
-            },
-            {
-              "number": 20,
-              "name": "Épisode 20",
-              "overview": "",
-              "air_date": "",
-              "sources": [],
-              "downloads": []
-            },
-            {
-              "number": 21,
-              "name": "Épisode 21",
-              "overview": "",
-              "air_date": "",
-              "sources": [],
-              "downloads": []
-            },
-            {
-              "number": 22,
-              "name": "Épisode 22",
-              "overview": "",
-              "air_date": "",
-              "sources": [],
-              "downloads": []
-            },
-            {
-              "number": 23,
-              "name": "Épisode 23",
-              "overview": "",
-              "air_date": "",
-              "sources": [],
-              "downloads": []
-            },
-            {
-              "number": 24,
-              "name": "Épisode 24",
-              "overview": "",
-              "air_date": "",
-              "sources": [],
-              "downloads": []
-            },
-            {
-              "number": 25,
-              "name": "Épisode 25",
-              "overview": "",
-              "air_date": "",
-              "sources": [],
-              "downloads": []
-            },
-            {
-              "number": 26,
-              "name": "Épisode 26",
-              "overview": "",
-              "air_date": "",
-              "sources": [],
-              "downloads": []
-            },
-            {
-              "number": 27,
-              "name": "Épisode 27",
-              "overview": "",
-              "air_date": "",
-              "sources": [],
-              "downloads": []
-            },
-            {
-              "number": 28,
-              "name": "Épisode 28",
-              "overview": "",
-              "air_date": "",
-              "sources": [],
-              "downloads": []
-            },
-            {
-              "number": 29,
-              "name": "Épisode 29",
-              "overview": "",
-              "air_date": "",
-              "sources": [],
-              "downloads": []
-            },
-            {
-              "number": 30,
-              "name": "Épisode 30",
-              "overview": "",
-              "air_date": "",
-              "sources": [],
-              "downloads": []
-            }
-          ],
-          "downloads": []
-        }
-      ],
-      "sources": [],
-      "addedAt": 1792409035721,
-      "langs": [
-        "VOSTFR"
-      ],
-      "downloads": [],
-      "posterV": 2,
-      "updatedAt": 1792533178221,
-      "trend": 94,
-      "networks": [
-        "CCTV-8",
-        "Youku"
-      ],
-      "posterCustom": true
     },
     {
       "id": "289690",
@@ -6457,6 +6104,10 @@
       "origin_country": [
         "CN"
       ],
+      "networks": [
+        "Hunan Television",
+        "Mango TV"
+      ],
       "original_language": "zh",
       "aka": [
         "The Lament of Autumn",
@@ -6475,6 +6126,7 @@
       "pop": 62.009,
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/original/nGSj4YtMOwP4cjGSD1fDlI6WLag.jpg",
+      "posterV": 2,
       "backdrop": "https://image.tmdb.org/t/p/original/vD84yLJVVd7cC2lKF8sEukQG2A3.jpg",
       "cast": [
         {
@@ -6593,8 +6245,8 @@
             },
             {
               "number": 8,
-              "name": "Rival",
-              "overview": "Jiang Xueting joins the Yu Army as a translator after being hired by Yu Changxuan. Li Boren notices that Yu Changxuan already knew that Jiang Xueting is Ye Pingjun's boyfriend. He is sure that Yu Changxuan is serious about going after Ye Pingjun this time.",
+              "name": "Épisode 8",
+              "overview": "",
               "air_date": "2026-10-14",
               "sources": [
                 {
@@ -6607,8 +6259,8 @@
             },
             {
               "number": 9,
-              "name": "Stealing Confidential Files",
-              "overview": "Jiang Xueting sneaks into the archives during his overtime shift. He manages to steal a list of the names of deceased individuals from the mining incident. That is why Jiang Xueting returns to the country in advance and tries to join the Yu Army.",
+              "name": "Épisode 9",
+              "overview": "",
               "air_date": "2026-10-15",
               "sources": [
                 {
@@ -6621,8 +6273,8 @@
             },
             {
               "number": 10,
-              "name": "Building the Arsenal",
-              "overview": "Yu Changxuan reveals the plans he has been plotting all along within the army, building Yu Army's own arsenal on Changping Mountain, but his plan is rejected by the old generals.",
+              "name": "Épisode 10",
+              "overview": "",
               "air_date": "2026-10-15",
               "sources": [
                 {
@@ -6635,8 +6287,8 @@
             },
             {
               "number": 11,
-              "name": "The Yu Army in Crisis",
-              "overview": "An article exposing how Feng Sanli forced soldiers to work in a mine where they died in a disaster sparks outrage across Nanhuai, plunging the Yu Army into scandal.",
+              "name": "Épisode 11",
+              "overview": "",
               "air_date": "2026-10-16",
               "sources": [
                 {
@@ -6649,8 +6301,8 @@
             },
             {
               "number": 12,
-              "name": "Reforming the Army",
-              "overview": "On his deathbed, the limping soldier reveals the whereabouts of the stolen goods. When Yu Changxuan rushes to the scene, he finds that the gold has already been moved, leading him to conclude that someone was protecting Feng Sanli.",
+              "name": "Épisode 12",
+              "overview": "",
               "air_date": "2026-10-16",
               "sources": [
                 {
@@ -6663,8 +6315,8 @@
             },
             {
               "number": 13,
-              "name": "Divide",
-              "overview": "Gu Ruitong leads his troops in storming through the door and takes Jiang Xueting into custody on charges of stealing military secrets and defecting to the enemy.",
+              "name": "Épisode 13",
+              "overview": "",
               "air_date": "2026-10-17",
               "sources": [
                 {
@@ -6677,8 +6329,8 @@
             },
             {
               "number": 14,
-              "name": "Unrequited Love",
-              "overview": "Yu Changxuan confronts Jiang Xueting in prison, questioning how he can truly care for Ye Pingjun while secretly working as a spy and still planning to marry her.",
+              "name": "Épisode 14",
+              "overview": "",
               "air_date": "2026-10-18",
               "sources": [
                 {
@@ -6693,23 +6345,35 @@
               "number": 15,
               "name": "Épisode 15",
               "overview": "",
-              "air_date": "2026-10-19",
-              "sources": [],
+              "air_date": "",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-zdfzp48z7hms.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
               "number": 16,
               "name": "Épisode 16",
               "overview": "",
-              "air_date": "2026-10-20",
-              "sources": [],
+              "air_date": "",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-gftg1ekst9h0.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
               "number": 17,
               "name": "Épisode 17",
               "overview": "",
-              "air_date": "2026-10-20",
+              "air_date": "",
               "sources": [],
               "downloads": []
             },
@@ -6717,7 +6381,7 @@
               "number": 18,
               "name": "Épisode 18",
               "overview": "",
-              "air_date": "2026-10-21",
+              "air_date": "",
               "sources": [],
               "downloads": []
             },
@@ -6725,7 +6389,7 @@
               "number": 19,
               "name": "Épisode 19",
               "overview": "",
-              "air_date": "2026-10-21",
+              "air_date": "",
               "sources": [],
               "downloads": []
             },
@@ -6733,7 +6397,7 @@
               "number": 20,
               "name": "Épisode 20",
               "overview": "",
-              "air_date": "2026-10-22",
+              "air_date": "",
               "sources": [],
               "downloads": []
             },
@@ -6741,7 +6405,7 @@
               "number": 21,
               "name": "Épisode 21",
               "overview": "",
-              "air_date": "2026-10-22",
+              "air_date": "",
               "sources": [],
               "downloads": []
             },
@@ -6749,7 +6413,7 @@
               "number": 22,
               "name": "Épisode 22",
               "overview": "",
-              "air_date": "2026-10-23",
+              "air_date": "",
               "sources": [],
               "downloads": []
             },
@@ -6757,7 +6421,7 @@
               "number": 23,
               "name": "Épisode 23",
               "overview": "",
-              "air_date": "2026-10-24",
+              "air_date": "",
               "sources": [],
               "downloads": []
             },
@@ -6765,7 +6429,7 @@
               "number": 24,
               "name": "Épisode 24",
               "overview": "",
-              "air_date": "2026-10-25",
+              "air_date": "",
               "sources": [],
               "downloads": []
             },
@@ -6907,14 +6571,9 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "posterV": 2,
-      "updatedAt": 1792533180304,
-      "trend": 61,
-      "networks": [
-        "Hunan Television",
-        "Mango TV"
-      ],
-      "posterCustom": true
+      "posterCustom": true,
+      "updatedAt": 1792533601397,
+      "trend": 56
     },
     {
       "id": "208336",
@@ -7642,10 +7301,10 @@
       ],
       "downloads": [],
       "updatedAt": 1792533182373,
-      "trend": 0,
       "networks": [
         "Nippon TV"
-      ]
+      ],
+      "trend": 52
     },
     {
       "id": "m1375646",
@@ -7794,7 +7453,7 @@
         }
       ],
       "updatedAt": 1792533182893,
-      "trend": 51,
+      "trend": 50,
       "posterCustom": true
     },
     {
@@ -8087,7 +7746,7 @@
             {
               "number": 8,
               "name": "Épisode 8",
-              "overview": "When Youseong finds out about Youjin and Minjae, he opposes their relationship. But this time, Minjae refuses to back down, confronting Youseong and declaring that he will not give up on Youjin. Meanwhile, Sejin discovers their secret and challenges Youjin to a bet: the loser must leave the lab. If Minjae finds out, it is game over. A dangerous showdown between Youjin and Sejin begins.",
+              "overview": "",
               "air_date": "2026-10-27",
               "sources": [],
               "downloads": []
@@ -8138,7 +7797,7 @@
       "networks": [
         "ENA"
       ],
-      "trend": 75
+      "trend": 47
     },
     {
       "id": "311648",
@@ -8444,7 +8103,7 @@
       ],
       "downloads": [],
       "updatedAt": 1792533184931,
-      "trend": 46,
+      "trend": 0,
       "networks": [
         "TVING"
       ]
@@ -19876,8 +19535,8 @@
             },
             {
               "number": 3,
-              "name": "Only One Will Survive",
-              "overview": "With help from Akina Isobe, Toshiro Niide continues investigating the game's participants across Asia while evading the Special Investigation Team (SIT). He reaches out to them through social media, seeking their cooperation in solving the case. But the rules are clear: \"Only one will survive.\" Determined to save their loved ones, the other participants ignore his appeal.",
+              "name": "Épisode 3",
+              "overview": "",
               "air_date": "2026-10-20",
               "sources": [
                 {
@@ -20138,6 +19797,9 @@
       "origin_country": [
         "CN"
       ],
+      "networks": [
+        "iQiyi"
+      ],
       "original_language": "zh",
       "aka": [
         "Light the Dark",
@@ -20353,9 +20015,6 @@
       ],
       "downloads": [],
       "updatedAt": 1792533233512,
-      "networks": [
-        "iQiyi"
-      ],
       "posterCustom": true
     },
     {
@@ -23232,6 +22891,395 @@
       "updatedAt": 1792533241980
     },
     {
+      "id": "300146",
+      "type": "tv",
+      "name": "Where the Mask Ends",
+      "original_name": "嫁金钗",
+      "origin_country": [
+        "CN"
+      ],
+      "networks": [
+        "CCTV-8",
+        "Youku"
+      ],
+      "original_language": "zh",
+      "aka": [
+        "Where the Mask Ends",
+        "Замуж благодаря золотой заколке",
+        "Gả Kim Thoa",
+        "ปลดหน้ากาก",
+        "Batas Akhir Sebuah Topeng",
+        "Donde termina la máscara",
+        "Di Mana Topeng Berakhir",
+        "Onde A Máscara Termina",
+        "가금채",
+        "Sous le masque",
+        "Където маската пада",
+        "嫁金釵",
+        "زفاف الدبوس الذهبي",
+        "Где маске престају",
+        "Kde končí maska",
+        "Jia Jin Chai",
+        "Женитьба на золотой шпильке",
+        "Maske Düştüğünde",
+        "Transfer Gold Hairpin",
+        "嫁金钗"
+      ],
+      "year": "2026",
+      "overview": "Wei Rao, jeune femme noble, est obligée de se marier avec le prince Lu Zuo, alors que celui-ci est dans le coma et proche de la mort. Elle force alors Ah Chou, une jeune fille ordinaire dont la seule caractéristique est sa ressemblance frappante avec Wei Rao, à prendre sa place au mariage. Mais Lu Zuo se réveille précisément le jour des noces... Ah Chou doit maintenant faire face à Wei Rao, qui veut récupérer sa place, à Lu Zuo, qui la prend pour cette vipère de Wei Rao, mais aussi à toute la demeure du prince qui est pleine de pièges et de complots.",
+      "genres": [
+        "Drame"
+      ],
+      "rating": "9.0",
+      "pop": 62.7969,
+      "status": "Returning Series",
+      "poster": "https://image.tmdb.org/t/p/original/6Pw78I4inl8CESM4GZMyQTGobph.jpg",
+      "posterV": 2,
+      "backdrop": "https://image.tmdb.org/t/p/original/YndvGwqwroUDVltBWmnOuTvJke.jpg",
+      "cast": [
+        {
+          "name": "Tian Xiwei",
+          "character": "Wei Rao / Jundai / A Chou",
+          "id": 2430198
+        },
+        {
+          "name": "Yan An",
+          "character": "Lu Zhuo",
+          "id": 2040132
+        }
+      ],
+      "seasons": [
+        {
+          "number": 1,
+          "name": "Saison 1",
+          "episodes": [
+            {
+              "number": 1,
+              "name": "Épisode 1",
+              "overview": "Après avoir découvert son sosie, la cruelle héritière Wei Rao décide de l'utiliser comme pion lorsqu'une crise soudaine lui impose un mariage non désiré.",
+              "air_date": "2026-10-16",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-2yld09tdh2b7.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 2,
+              "name": "Épisode 2",
+              "overview": "A-Chou accepte d'épouser Lu Zhuo à la place de Wei Rao, mais met sa mère en garde contre la famille Wei. Pendant ce temps, la véritable héritière prend le nom de Jundai.",
+              "air_date": "2026-10-16",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-ftm3yk26ikx5.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 3,
+              "name": "Épisode 3",
+              "overview": "Après avoir refusé de partir, l'imposteur Wei Rao fait un sacrifice douloureux pour gagner la confiance de Lu Zhuo. Pendant ce temps, une machination dérape.",
+              "air_date": "2026-10-16",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-x3lw9r89bioi.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 4,
+              "name": "Épisode 4",
+              "overview": "La servante de Wei Rao l'aide à dissimuler des preuves après que Lu Zhuo a failli découvrir un secret mortel. Une visite traditionnelle chez les Wei mène à un piège fatal.",
+              "air_date": "2026-10-16",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-6ifc1l4tf216.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 5,
+              "name": "Épisode 5",
+              "overview": "Après avoir survécu à l'incendie de la bibliothèque, Wei Rao tente de cacher une lettre secrète. Lu Zhuo se méfie en remarquant ses mains calleuses.",
+              "air_date": "2026-10-17",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-xcbor8t9dv4h.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 6,
+              "name": "Épisode 6",
+              "overview": "Wei Rao est félicitée pour l'organisation d'un grand banquet d'anniversaire. Mais le danger plane sur sa demeure, tandis que Lu Zhuo prépare un complot secret avec des papillons.",
+              "air_date": "2026-10-17",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-zmr0tzd11iag.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 7,
+              "name": "Épisode 7",
+              "overview": "En pleine représentation au banquet, Wei Rao est assaillie de menaces cachées. Mais grâce à sa vivacité d'esprit, elle retourne un dangereux piège contre ses ennemis.",
+              "air_date": "2026-10-18",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-bhugx915dqcd.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 8,
+              "name": "Épisode 8",
+              "overview": "Poussé par la jalousie, Lu Zhuo conclut un pacte avec Wei Rao. Les retrouvailles de celle-ci avec son frère attirent dangereusement l'attention de Han Liao.",
+              "air_date": "2026-10-18",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-3hhib22j6hag.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 9,
+              "name": "Épisode 9",
+              "overview": "A ruthless rival corners Wei Rao into a desperate bluff, leaving her dependent on a risky co-conspirator to keep her past safely buried.",
+              "air_date": "2026-10-19",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-9p7npb10m6a6.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 10,
+              "name": "Épisode 10",
+              "overview": "Wei Rao turns an imperial order into a humiliation for Han Liao, but a symbolic act of defiance leaves her isolated when rebel soldiers strike.",
+              "air_date": "2026-10-19",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-u0j2mq2vxvvx.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 11,
+              "name": "Épisode 11",
+              "overview": "",
+              "air_date": "2026-10-20",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-y3orrq7ffba1.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 12,
+              "name": "Épisode 12",
+              "overview": "",
+              "air_date": "2026-10-20",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-5r5l4lpqv35l.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 13,
+              "name": "Épisode 13",
+              "overview": "",
+              "air_date": "2026-10-21",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 14,
+              "name": "Épisode 14",
+              "overview": "",
+              "air_date": "2026-10-21",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 15,
+              "name": "Épisode 15",
+              "overview": "",
+              "air_date": "",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 16,
+              "name": "Épisode 16",
+              "overview": "",
+              "air_date": "",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 17,
+              "name": "Épisode 17",
+              "overview": "",
+              "air_date": "",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 18,
+              "name": "Épisode 18",
+              "overview": "",
+              "air_date": "",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 19,
+              "name": "Épisode 19",
+              "overview": "",
+              "air_date": "",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 20,
+              "name": "Épisode 20",
+              "overview": "",
+              "air_date": "",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 21,
+              "name": "Épisode 21",
+              "overview": "",
+              "air_date": "",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 22,
+              "name": "Épisode 22",
+              "overview": "",
+              "air_date": "",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 23,
+              "name": "Épisode 23",
+              "overview": "",
+              "air_date": "",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 24,
+              "name": "Épisode 24",
+              "overview": "",
+              "air_date": "",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 25,
+              "name": "Épisode 25",
+              "overview": "",
+              "air_date": "",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 26,
+              "name": "Épisode 26",
+              "overview": "",
+              "air_date": "",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 27,
+              "name": "Épisode 27",
+              "overview": "",
+              "air_date": "",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 28,
+              "name": "Épisode 28",
+              "overview": "",
+              "air_date": "",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 29,
+              "name": "Épisode 29",
+              "overview": "",
+              "air_date": "",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 30,
+              "name": "Épisode 30",
+              "overview": "",
+              "air_date": "",
+              "sources": [],
+              "downloads": []
+            }
+          ],
+          "downloads": []
+        }
+      ],
+      "sources": [],
+      "addedAt": 1792409035721,
+      "langs": [
+        "VOSTFR"
+      ],
+      "downloads": [],
+      "posterCustom": true,
+      "updatedAt": 1792533178221,
+      "trend": 96
+    },
+    {
       "id": "128995",
       "type": "tv",
       "name": "Yumi's Cells",
@@ -23979,7 +24027,7 @@
             {
               "number": 1,
               "name": "Épisode 1",
-              "overview": "Taekang Group's successor, Yoon Yi-jun, is suspected of murdering his secretary, but the group's power and lack of evidence impede the investigation. To find key evidence, special forces-turned-detective Kang Jae-hee applies to be his secretary, not as a woman but as a man! She manages to get the job, but Yi-jun doesn't let his guard down. Jae-hee risks getting exposed on her first day at work.",
+              "overview": "",
               "air_date": "2026-10-19",
               "sources": [
                 {
@@ -24023,7 +24071,7 @@
             {
               "number": 2,
               "name": "Épisode 2",
-              "overview": "Kang Jae-hee's double life begins. She's Yoon Yi-jun's secretary by day and a detective by night. Yi-jun keeps testing her, but Jae-hee relentlessly keeps an eye on him and searches for the missing phone. She plans to infiltrate the room that's banned from entering, but Yi-jun doesn't let his guard down easily. Their relationship takes a strange turn through unexpected physical contact.",
+              "overview": "",
               "air_date": "2026-10-20",
               "sources": [
                 {
@@ -24150,7 +24198,7 @@
       ],
       "downloads": [],
       "updatedAt": 1792533244079,
-      "trend": 85
+      "trend": 53
     },
     {
       "id": "278577",
@@ -27069,6 +27117,15 @@
     "at": 1792533000003
   },
   "journal": [
+    {
+      "k": "mvh882v126fil",
+      "t": 1792533601405,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "304452",
+      "n": "The Lament of Autumn",
+      "d": "sources 14 → 16"
+    },
     {
       "k": "mvh80j8eg4n52",
       "t": 1792533249374,
