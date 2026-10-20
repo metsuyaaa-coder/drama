@@ -1806,6 +1806,24 @@ body { overflow-x: hidden; max-width: 100%; position: relative; }
 .stchip i { font-style: normal; color: #86efac; }
 .stchip:hover { border-color: #86efac; }
 #stadmin[hidden] { display: none; }
+
+.stfoot { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.strep { padding: 5px 8px; background: transparent; border: 1px solid var(--line); color: var(--dim); font-family: var(--mono); font-size: 10px; letter-spacing: .08em; text-transform: uppercase; border-radius: 0; cursor: pointer; transition: color .2s, border-color .2s; }
+.strep:hover { color: var(--fg); border-color: var(--fg); }
+#stissue .dlcard { max-height: 92dvh; overflow-y: auto; }
+.sif { display: grid; gap: 8px; margin-bottom: 16px; }
+.sil { margin: 0; font-family: var(--mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--dim); }
+.sil em { font-style: normal; opacity: .7; }
+.siopts { display: flex; flex-wrap: wrap; gap: 8px; }
+.siopts.col { display: grid; }
+.siopt { padding: 10px 14px; background: transparent; border: 1px solid var(--line); color: var(--fg); font: inherit; font-size: 13px; text-align: left; border-radius: 0; cursor: pointer; transition: background .2s, color .2s, border-color .2s; }
+.siopt:hover { border-color: var(--fg); }
+.siopt[aria-pressed="true"] { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+#stissue input[type=text], #stissue textarea { width: 100%; box-sizing: border-box; padding: 10px 12px; background: var(--bg); border: 1px solid var(--line); color: var(--fg); font: inherit; font-size: 14px; border-radius: 0; resize: vertical; }
+#stissue input[type=text]:focus, #stissue textarea:focus { outline: 0; border-color: var(--fg); }
+.simsg { min-height: 1.4em; margin: 0 0 10px; font-size: 13px; color: var(--dim); }
+.simsg.ok { color: #86efac; font-weight: 700; } .simsg.err { color: #f87171; }
+@media (max-width: 720px) { #stissue { place-items: end stretch; padding: 0; } #stissue .dlcard { max-width: none; border-left: 0; border-right: 0; border-bottom: 0; padding-bottom: calc(20px + env(safe-area-inset-bottom, 0px)); } }
 </style>
 <!-- Visites du site : Vercel Web Analytics, sans cookie ni base de données. Ne fait rien tant que tu ne l'actives pas dans Vercel (onglet Analytics). -->
 <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
@@ -5700,7 +5718,7 @@ function stCard(h, i) {
     (ADMIN ? '<button type="button" class="stx" data-st="del" data-id="' + id + '" title="' + (h.auto ? "Masquer ce serveur" : "Supprimer ce serveur") + '" aria-label="' + (h.auto ? "Masquer " : "Supprimer ") + esc(h.name) + '">&times;</button>' : "") + '</div>' +
     '<div class="stkind">' + stIcon(h.kind) + esc(STKIND[h.kind]) + '</div>' +
     '<p class="stnote">' + (x.note ? esc(x.note) : (x.state === "up" ? "Aucun problème signalé." : "Aucun détail pour l'instant.")) + '</p>' +
-    '<div class="stfoot">' + (x.at ? "Mis à jour " + stAgo(x.at) : "Pas de mise à jour récente") + '</div>';
+    '<div class="stfoot"><span>' + (x.at ? "Mis à jour " + stAgo(x.at) : "Pas de mise à jour récente") + '</span><button type="button" class="strep" data-stissue="' + id + '">Signaler</button></div>';
   if (ADMIN) {
     c += '<div class="rqadm"><div class="rqseg" role="group" aria-label="État de ' + esc(h.name) + '">' + Object.keys(STSTATES).map(function (k) {
       return '<button type="button" title="' + STSTATES[k] + '" data-st="set" data-id="' + id + '" data-s="' + k + '" aria-pressed="' + (x.state === k) + '">' + STSHORT[k] + '</button>';
@@ -5760,7 +5778,7 @@ function viewStatus() {
     '<div class="wrap">' +
     (ADMIN ? '<div id="stadmin"><div class="rqaddwrap"><div class="rqadd"><input type="text" id="st-n" maxlength="30" placeholder="Ajouter un serveur (ex. Mixdrop)" autocomplete="off" aria-label="Nom du serveur"><select id="st-k" aria-label="Type de serveur"><option value="stream">Streaming</option><option value="dl">Téléchargement</option><option value="both">Les deux</option></select><button type="button" class="btn small" data-st="add">Ajouter</button></div></div><div class="stmasked" id="stmasked"></div></div>' : "") +
     '<div id="stbody" style="padding-top:26px"></div>' +
-    '<div class="row" style="padding:28px 0 72px"><a class="btn" href="/demande/">Signaler un problème</a><a class="btn ghost" href="/">Retour</a></div></div></div>';
+    '<div class="row" style="padding:28px 0 72px"><button type="button" class="btn" data-stissue="">Signaler un problème</button><a class="btn ghost" href="/">Retour</a></div></div></div>';
   stPaint(false);
 }
 document.addEventListener("click", function (e) {
@@ -5816,6 +5834,62 @@ document.addEventListener("change", function (e) {
   var h = stAll().filter(function (z) { return z.id === t.dataset.stnote; })[0]; if (!h) return;
   if (stCommit(h, stState(h).state, t.value.trim().slice(0, 140))) stDone("Enregistré.");
 });
+
+/* Signaler un problème : serveur + raison + détails facultatifs, envoyé sur Discord via /api/notify (kind "issue") */
+(function () {
+  var REASONS = [["slow", "Ça charge lentement (buffering)"], ["allerr", "Toutes les vidéos sont en erreur"], ["offline", "Le serveur est hors ligne"], ["video", "Une vidéo précise ne marche pas"], ["other", "Autre problème"]];
+  var box = document.createElement("div");
+  box.className = "dlmodal"; box.id = "stissue"; box.hidden = true;
+  box.innerHTML = '<div class="dlcard" role="dialog" aria-modal="true" aria-labelledby="si-t">' +
+    '<button type="button" class="dlx" id="si-x" aria-label="Fermer">×</button>' +
+    '<div class="dlhead"><span class="dltag">Signalement</span></div><h3 id="si-t">Signaler un problème</h3>' +
+    '<div class="sif"><p class="sil">1. Quel serveur ?</p><div class="siopts" id="si-srv"></div></div>' +
+    '<div class="sif"><p class="sil">2. Quel est le souci ?</p><div class="siopts col" id="si-why">' + REASONS.map(function (r) { return '<button type="button" class="siopt" data-sir="' + r[0] + '" aria-pressed="false">' + r[1] + '</button>'; }).join("") + '</div></div>' +
+    '<div class="sif"><p class="sil">3. Un détail ? <em>(facultatif)</em></p>' +
+    '<input type="text" id="si-ttl" maxlength="120" placeholder="Titre concerné, ex. Twinkling Watermelon" autocomplete="off" aria-label="Titre concerné">' +
+    '<textarea id="si-msg" maxlength="300" rows="3" placeholder="Épisode, message d\'erreur, appareil…" aria-label="Détails"></textarea></div>' +
+    '<p class="simsg" id="si-msg2" role="status"></p>' +
+    '<div class="dlbtns"><button type="button" class="btn" id="si-send" disabled>Envoyer le signalement</button><button type="button" class="btn ghost" id="si-cancel">Annuler</button></div></div>';
+  document.body.appendChild(box);
+  var srv = "", why = "", sending = false;
+  function msg(t, c) { var m = $("#si-msg2"); m.textContent = t || ""; m.className = "simsg" + (c ? " " + c : ""); }
+  function ready() { $("#si-send").disabled = sending || !srv || !why; }
+  function mark(sel, attr, val) { Array.prototype.forEach.call(box.querySelectorAll(sel), function (b) { b.setAttribute("aria-pressed", b.getAttribute(attr) === val ? "true" : "false"); }); }
+  function close() { box.hidden = true; }
+  function sentToday() { var a = readJSON("noir.issues", []); return (Array.isArray(a) ? a : []).filter(function (t) { return Date.now() - t < 86400000; }); }
+  function open(pre) {
+    var names = stList().map(function (h) { return h.name; });
+    $("#si-srv").innerHTML = names.concat(["Je ne sais pas"]).map(function (n) { return '<button type="button" class="siopt" data-sis="' + esc(n) + '" aria-pressed="false">' + esc(n) + '</button>'; }).join("");
+    srv = ""; why = ""; sending = false;
+    $("#si-ttl").value = ""; $("#si-msg").value = ""; mark("[data-sir]", "data-sir", ""); msg("");
+    var h = stAll().filter(function (z) { return z.id === pre; })[0];
+    if (h) { srv = h.name; mark("[data-sis]", "data-sis", srv); }
+    var n = sentToday().length; if (n >= 5) msg("Limite de signalements atteinte pour aujourd'hui.", "err");
+    ready(); box.hidden = false;
+    (document.querySelector("dialog#player[open]") || document.body).appendChild(box);
+  }
+  document.addEventListener("click", function (e) {
+    var o = e.target.closest ? e.target.closest("[data-stissue]") : null;
+    if (o) { open(o.dataset.stissue); return; }
+    if (box.hidden) return;
+    if (e.target === box || e.target.id === "si-x" || e.target.id === "si-cancel") { close(); return; }
+    var a = e.target.closest("[data-sis]"); if (a) { srv = a.dataset.sis; mark("[data-sis]", "data-sis", srv); ready(); return; }
+    var r = e.target.closest("[data-sir]"); if (r) { why = r.dataset.sir; mark("[data-sir]", "data-sir", why); ready(); return; }
+    if (e.target.id === "si-send") {
+      if (!srv || !why || sending) return;
+      if (sentToday().length >= 5) { msg("Limite de signalements atteinte pour aujourd'hui.", "err"); return; }
+      sending = true; ready(); msg("Envoi du signalement…");
+      notifyDiscord({ kind: "issue", server: srv, reason: why, title: $("#si-ttl").value.trim(), message: $("#si-msg").value.trim(), page: location.href }).then(function (ok) {
+        sending = false;
+        if (!ok) { msg("Envoi impossible pour l'instant, réessaie dans un instant.", "err"); ready(); return; }
+        var a2 = sentToday(); a2.push(Date.now()); try { localStorage.setItem("noir.issues", JSON.stringify(a2)); } catch (x) {}
+        msg("✓ Signalement envoyé, merci !", "ok"); $("#si-send").disabled = true;
+        setTimeout(close, 1600);
+      });
+    }
+  });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !box.hidden) { close(); e.stopPropagation(); } }, true);
+})();
 
 /* ===== Routage ===== */
 /* ===== Page acteur : ses titres du catalogue + fiche TMDB (photo, naissance…) via /api/person ===== */
