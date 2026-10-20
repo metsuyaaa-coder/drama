@@ -4,7 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <base href="/">
-<title>DramaByM</title>
+<title>DramaByM : dramas coréens, séries et films en streaming</title>
+<link rel="canonical" href="https://dramabym.vercel.app/">
+<meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="icon" type="image/svg+xml" href="favicon.svg?v=2">
 <link rel="icon" type="image/png" sizes="192x192" href="favicon.png?v=2">
 <link rel="apple-touch-icon" href="favicon.png?v=2">
@@ -3314,7 +3316,7 @@ function viewHome() {
   if (!db.length) {
     app.innerHTML = ADMIN ?
       emptyBox("Catalogue vide", "Cherche une série ou un film sur TMDB, ajuste la fiche, ajoute tes sources, puis publie le catalogue pour que tout le monde le voie.", '<a class="btn" href="/ajouter">Créer ma première fiche</a>') :
-      (CATFAIL ? emptyBox("Chargement impossible", "Le catalogue n'a pas pu être chargé (connexion, bloqueur de contenu ou VPN). Réessaie, ou désactive ton bloqueur sur ce site.", '<button class="btn" type="button" data-reload="1">Réessayer</button>') : emptyBox("Bientôt", "Le catalogue est vide pour l'instant. Reviens un peu plus tard."));
+      emptyBox("Chargement impossible", "Le catalogue n'a pas pu être chargé (connexion, bloqueur de contenu ou navigateur intégré à une appli). Réessaie, ou ouvre le site dans Chrome / Safari." + (CATERR ? " (" + esc(CATERR) + ")" : ""), '<button class="btn" type="button" data-reload="1">Réessayer</button>');
     return;
   }
   var list = sortedDb();
@@ -5862,6 +5864,7 @@ function pageTitle(a, b) {
 
 function route(force) {
   force = force === true;
+  if (CATLOADING && !ADMIN && !db.length) { var ap = $("#app"); if (ap) ap.innerHTML = skeletonHTML(); return; }
   var parts = curPath().split("/");
   var a = (parts[1] || "").toLowerCase(), b = parts[2] || "";
   if (a === "recherche" || a === "acteur") { try { b = decodeURIComponent(parts.slice(2).join("/")); } catch (e) { b = parts.slice(2).join("/"); } }
@@ -6691,11 +6694,19 @@ function ghParse(spec) {
   return m ? { repo: m[1], branch: m[2] || CONFIG.GITHUB_BRANCH || "main" } : null;
 }
 function ghUrl(gi) { return "https://api.github.com/repos/" + gi.repo + "/contents/" + encodeURI(CONFIG.GITHUB_PATH || "catalog.json"); }
-var CATFAIL = false, CATCACHE = "noir.catcache";
+var CATFAIL = false, CATERR = "", CATCACHE = "noir.catcache", CATLOADING = true;
+/* Vérifie qu'on a bien reçu un catalogue (et pas une page d'erreur, ni la fiche base64 de l'API GitHub) */
+function catShape(d) {
+  if (Array.isArray(d) || (d && Array.isArray(d.series))) return d;
+  if (d && typeof d.content === "string" && d.encoding === "base64") {
+    try { return catShape(JSON.parse(decodeURIComponent(escape(atob(d.content.replace(/\s/g, "")))))); } catch (e) {}
+  }
+  throw new Error("catalogue invalide");
+}
 function fetchCatalogData() {
   /* Plusieurs sources dans l'ordre, pour qu'un navigateur qui bloque l'une (bloqueur de pub, limite GitHub, réseau, VPN) passe par une autre */
   var tmo = function (p, ms) { return new Promise(function (ok, ko) { var t = setTimeout(function () { ko(new Error("timeout")); }, ms); p.then(function (v) { clearTimeout(t); ok(v); }, function (e) { clearTimeout(t); ko(e); }); }); };
-  var jget = function (url, opt) { return tmo(fetch(url, opt).then(function (r) { if (!r.ok) throw new Error("http " + r.status); return r.json(); }), 12000); };
+  var jget = function (url, opt) { return tmo(fetch(url, opt).then(function (r) { if (!r.ok) throw new Error("http " + r.status); return r.json(); }), 8000); };
   var local = function () { return jget("/catalog.json?v=" + Date.now(), { cache: "no-store" }); };
   var gi = ghParse(CONFIG.GITHUB_REPO || (ADMIN ? ghRepo() : ""));
   var chain = [];
@@ -6706,19 +6717,37 @@ function fetchCatalogData() {
     chain.push(function () { return jget("https://raw.githubusercontent.com/" + gi.repo + "/" + encodeURIComponent(gi.branch) + "/" + encodeURI(CONFIG.GITHUB_PATH || "catalog.json") + "?v=" + Math.floor(Date.now() / 60000), { cache: "no-store" }); });
   }
   chain.push(local);
-  if (!ADMIN) chain.push(function () { var c = readJSON(CATCACHE, null); if (c && typeof c === "object") return c; throw new Error("pas de copie"); });
-  var i = 0;
-  var next = function () {
-    return chain[i++]().then(function (d) {
-      if (!d || typeof d !== "object") throw new Error("catalogue invalide");
-      return d;
-    }).catch(function (e) { if (i < chain.length) return next(); throw e; });
+  var good = function (d) {
+    d = catShape(d);
+    if (!ADMIN && !(Array.isArray(d) ? d : d.series).length) throw new Error("catalogue vide");
+    return d;
   };
-  return next().then(function (d) {
+  var done = function (d) {
     CATFAIL = false;
     if (!ADMIN) { try { localStorage.setItem(CATCACHE, JSON.stringify(d)); } catch (e) {} }
     return d;
-  }, function (e) { CATFAIL = true; throw e; });
+  };
+  var fail = function (e) {
+    var c = !ADMIN ? readJSON(CATCACHE, null) : null;
+    if (c) { try { return good(c); } catch (e2) {} }
+    CATFAIL = true; CATERR = "réseau : " + (e && e.message); throw e;
+  };
+  if (ADMIN) {
+    /* admin : dans l'ordre, GitHub d'abord (copie la plus fraîche) */
+    var i = 0, next = function () {
+      return chain[i++]().then(good).catch(function (e) { if (i < chain.length) return next(); throw e; });
+    };
+    return next().then(done, fail);
+  }
+  /* visiteur : toutes les sources en même temps, la première bonne réponse gagne (plus d'attente sur une source qui traîne) */
+  var fns = chain.slice(), lastIdx = fns.length - 1;
+  var lateLocal = fns[lastIdx]; fns[lastIdx] = function () { return new Promise(function (r) { setTimeout(r, gi ? 2500 : 0); }).then(lateLocal); };
+  return new Promise(function (ok, ko) {
+    var left = fns.length, lastErr = null;
+    fns.forEach(function (f) {
+      f().then(good).then(ok, function (e) { lastErr = e; if (--left === 0) ko(lastErr); });
+    });
+  }).then(done, fail);
 }
 /* Fiches supprimées ici mais pas encore publiées : on ne les ressuscite pas à la synchro */
 var DELKEY = "noir.deleted";
@@ -6889,15 +6918,19 @@ function loadCatalog() { return loadCatalogCore().then(notifRefresh, notifRefres
 function loadCatalogCore() {
   if (PREVIEW) return Promise.resolve();
   return fetchCatalogData().then(function (data) {
-    var st = null;
-    if (ADMIN) { ingestRemoteTombs(data); checkRefreshSignal(data); }
-    adoptTeam(data); adoptHero(data); adoptReqs(data); adoptAnnounce(data); adoptInbox(data);
+    var st = null, raw = data, safe = function (f) { try { f(); } catch (e) { CATERR = "traitement : " + (e && e.message); } };
+    if (ADMIN) safe(function () { ingestRemoteTombs(raw); checkRefreshSignal(raw); });
     if (data && !Array.isArray(data) && Array.isArray(data.series)) { st = data.settings || null; data = data.series; }
     if (!Array.isArray(data)) return;
-    data = data.map(normalize);
+    /* Visiteur : les fiches passent AVANT le reste, et chaque étape est isolée (un souci sur la bannière, l'équipe, etc. ne doit jamais vider le catalogue) */
+    var list = [];
+    data.forEach(function (x) { try { list.push(normalize(x)); } catch (e) { CATERR = "fiche : " + (e && e.message); } });
+    data = list;
     var priv = !!(st && st.downloads === "private");
-    adoptPlayer(st);
     if (!ADMIN) { db = data; SETTINGS.downloads = priv ? "private" : "public"; }
+    safe(function () { adoptTeam(raw); }); safe(function () { adoptHero(raw); }); safe(function () { adoptReqs(raw); }); safe(function () { adoptAnnounce(raw); }); safe(function () { adoptInbox(raw); });
+    safe(function () { adoptPlayer(st); });
+    if (!ADMIN) { /* déjà posé plus haut */ }
     else if (!db.length) {
       db = data; persist();
       if (!readJSON(SETKEY, null)) { SETTINGS.downloads = priv ? "private" : "public"; saveSettings(); }
@@ -6907,7 +6940,7 @@ function loadCatalogCore() {
       if (pr.changed) { db = pr.list; chg = true; }
       if (chg) persist();
     }
-  }).catch(function () {});
+  }).catch(function (e) { if (!CATERR) CATERR = String(e && e.message || e); });
 }
 
 /* Admin : met à jour toutes les fiches venant de TMDB (infos, affiches, distribution, saisons, épisodes).
@@ -7164,7 +7197,28 @@ function bootLoad(n) {
     if (!db.length && !ADMIN && n < 2) return new Promise(function (r) { setTimeout(r, 1500 * (n + 1)); }).then(function () { return bootLoad(n + 1); });
   });
 }
-bootLoad(0).then(function () { route(true); backfillAka(); backfillNetworks(); checkBuild(); });
+/* Visiteur déjà venu : on affiche tout de suite la dernière copie du catalogue, puis on la met à jour en arrière-plan */
+if (!ADMIN && !db.length) {
+  try {
+    var cc = catShape(readJSON(CATCACHE, null)), arr = Array.isArray(cc) ? cc : cc.series, pre = [];
+    arr.forEach(function (x) { try { pre.push(normalize(x)); } catch (e) {} });
+    if (pre.length) {
+      db = pre;
+      if (cc.settings) SETTINGS.downloads = cc.settings.downloads === "private" ? "private" : "public";
+      CATLOADING = false; route(true);
+    }
+  } catch (e) {}
+}
+bootLoad(0).then(function () {
+  CATLOADING = false;
+  route(true); backfillAka(); backfillNetworks(); checkBuild();
+  if (!db.length && !ADMIN) {
+    var tries = 0, tm = setInterval(function () {
+      tries++;
+      loadCatalog().then(function () { if (db.length) { clearInterval(tm); route(true); } else if (tries >= 10) clearInterval(tm); });
+    }, 6000);
+  }
+});
 /* Admins : on regarde le catalogue publié toutes les 60 s (et quand l'onglet redevient visible) pour récupérer suppressions, sources et signal de rafraîchissement */
 var polling = false;
 function pollCatalog() {

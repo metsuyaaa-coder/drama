@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /panel
+Disallow: /admin
+Disallow: /ajouter
+Disallow: /modifier
+Disallow: /api/
+
+Sitemap: https://dramabym.vercel.app/sitemap.xml
