@@ -3314,7 +3314,7 @@ function viewHome() {
   if (!db.length) {
     app.innerHTML = ADMIN ?
       emptyBox("Catalogue vide", "Cherche une série ou un film sur TMDB, ajuste la fiche, ajoute tes sources, puis publie le catalogue pour que tout le monde le voie.", '<a class="btn" href="/ajouter">Créer ma première fiche</a>') :
-      emptyBox("Bientôt", "Le catalogue est vide pour l'instant. Reviens un peu plus tard.");
+      (CATFAIL ? emptyBox("Chargement impossible", "Le catalogue n'a pas pu être chargé (connexion, bloqueur de contenu ou VPN). Réessaie, ou désactive ton bloqueur sur ce site.", '<button class="btn" type="button" data-reload="1">Réessayer</button>') : emptyBox("Bientôt", "Le catalogue est vide pour l'instant. Reviens un peu plus tard."));
     return;
   }
   var list = sortedDb();
@@ -6486,6 +6486,7 @@ $("#btn-export").addEventListener("click", function () {
   toast("catalog.json téléchargé" + (priv ? " (téléchargements privés : liens retirés)" : "") + " : mets-le à côté de index.html sur ton hébergement. Astuce : lie ton dépôt avec « GitHub » pour publier en un clic.");
 });
 document.addEventListener("click", function (e) {
+  if (e.target.closest("[data-reload]")) { location.reload(); return; }
   if (e.target.closest("[data-preview]")) { if (!REAL_ADMIN) return; e.preventDefault(); setPreview(true); go("/"); route(true); return; }
   if (e.target.closest("#preview-quit")) { e.preventDefault(); setPreview(false); go("/panel"); route(true); return; }
 });
@@ -6690,19 +6691,34 @@ function ghParse(spec) {
   return m ? { repo: m[1], branch: m[2] || CONFIG.GITHUB_BRANCH || "main" } : null;
 }
 function ghUrl(gi) { return "https://api.github.com/repos/" + gi.repo + "/contents/" + encodeURI(CONFIG.GITHUB_PATH || "catalog.json"); }
+var CATFAIL = false, CATCACHE = "noir.catcache";
 function fetchCatalogData() {
-  var local = function () {
-    return fetch("/catalog.json?v=" + Date.now(), { cache: "no-store" }).then(function (r) {
-      if (!r.ok) throw new Error("catalog.json introuvable");
-      return r.json();
-    });
-  };
+  /* Plusieurs sources dans l'ordre, pour qu'un navigateur qui bloque l'une (bloqueur de pub, limite GitHub, réseau, VPN) passe par une autre */
+  var tmo = function (p, ms) { return new Promise(function (ok, ko) { var t = setTimeout(function () { ko(new Error("timeout")); }, ms); p.then(function (v) { clearTimeout(t); ok(v); }, function (e) { clearTimeout(t); ko(e); }); }); };
+  var jget = function (url, opt) { return tmo(fetch(url, opt).then(function (r) { if (!r.ok) throw new Error("http " + r.status); return r.json(); }), 12000); };
+  var local = function () { return jget("/catalog.json?v=" + Date.now(), { cache: "no-store" }); };
   var gi = ghParse(CONFIG.GITHUB_REPO || (ADMIN ? ghRepo() : ""));
-  if (!gi) return local();
-  var hd = ADMIN && ghToken() ? ghHeaders({ Accept: "application/vnd.github.raw+json" }) : { Accept: "application/vnd.github.raw+json" };
-  return fetch(ghUrl(gi) + "?ref=" + encodeURIComponent(gi.branch), { headers: hd, cache: "no-store" })
-    .then(function (r) { if (!r.ok) throw new Error("github"); return r.json(); })
-    .catch(local);
+  var chain = [];
+  if (gi) {
+    var hd = ADMIN && ghToken() ? ghHeaders({ Accept: "application/vnd.github.raw+json" }) : { Accept: "application/vnd.github.raw+json" };
+    chain.push(function () { return jget(ghUrl(gi) + "?ref=" + encodeURIComponent(gi.branch), { headers: hd, cache: "no-store" }); });
+    /* sans limite de requêtes, contrairement à api.github.com */
+    chain.push(function () { return jget("https://raw.githubusercontent.com/" + gi.repo + "/" + encodeURIComponent(gi.branch) + "/" + encodeURI(CONFIG.GITHUB_PATH || "catalog.json") + "?v=" + Math.floor(Date.now() / 60000), { cache: "no-store" }); });
+  }
+  chain.push(local);
+  if (!ADMIN) chain.push(function () { var c = readJSON(CATCACHE, null); if (c && typeof c === "object") return c; throw new Error("pas de copie"); });
+  var i = 0;
+  var next = function () {
+    return chain[i++]().then(function (d) {
+      if (!d || typeof d !== "object") throw new Error("catalogue invalide");
+      return d;
+    }).catch(function (e) { if (i < chain.length) return next(); throw e; });
+  };
+  return next().then(function (d) {
+    CATFAIL = false;
+    if (!ADMIN) { try { localStorage.setItem(CATCACHE, JSON.stringify(d)); } catch (e) {} }
+    return d;
+  }, function (e) { CATFAIL = true; throw e; });
 }
 /* Fiches supprimées ici mais pas encore publiées : on ne les ressuscite pas à la synchro */
 var DELKEY = "noir.deleted";
@@ -7142,7 +7158,13 @@ function skeletonHTML() {
 }
 $("#app").innerHTML = skeletonHTML();
 paintAnnounce(); notifPaint();
-loadCatalog().then(function () { route(true); backfillAka(); backfillNetworks(); checkBuild(); });
+/* Visiteur : si le catalogue n'a pas pu être lu, on réessaie quelques fois avant d'afficher quoi que ce soit */
+function bootLoad(n) {
+  return loadCatalog().then(function () {
+    if (!db.length && !ADMIN && n < 2) return new Promise(function (r) { setTimeout(r, 1500 * (n + 1)); }).then(function () { return bootLoad(n + 1); });
+  });
+}
+bootLoad(0).then(function () { route(true); backfillAka(); backfillNetworks(); checkBuild(); });
 /* Admins : on regarde le catalogue publié toutes les 60 s (et quand l'onglet redevient visible) pour récupérer suppressions, sources et signal de rafraîchissement */
 var polling = false;
 function pollCatalog() {
