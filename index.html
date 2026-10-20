@@ -24,7 +24,7 @@
 <meta name="twitter:description" content="Ton répertoire de dramas, séries et films à regarder en streaming ou à télécharger, avec les nouveaux épisodes toujours à jour.">
 <meta name="twitter:image" content="https://dramabym.vercel.app/dbm.png?v=2">
 <meta name="theme-color" content="#000000">
-<script>try{var _p=JSON.parse(localStorage.getItem("noir.prefs")||"{}");if(_p&&/^(light|red|blue)$/.test(_p.theme)){document.documentElement.setAttribute("data-theme",_p.theme);var _m=document.querySelector('meta[name=theme-color]');if(_m)_m.content={light:"#f5f4f0",red:"#000000",blue:"#081a3a"}[_p.theme];}}catch(e){}</script>
+<script>try{var _p=JSON.parse(localStorage.getItem("noir.prefs")||"{}");if(_p&&/^(light|red|blue|violet)$/.test(_p.theme)){document.documentElement.setAttribute("data-theme",_p.theme);var _m=document.querySelector('meta[name=theme-color]');if(_m)_m.content={light:"#f5f4f0",red:"#000000",blue:"#081a3a",violet:"#0a0612"}[_p.theme];}}catch(e){}</script>
 <link rel="manifest" href="manifest.webmanifest">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -1986,6 +1986,8 @@ body { overflow-x: hidden; max-width: 100%; position: relative; }
 /* ===== Thèmes (Paramètres > Général > Apparence) ===== */
 html[data-theme="red"] { --bg: #000; --fg: #fff; --dim: #a39090; --line: #35191d; --panel: #130709; --s0: #0c0405; --s1: #1f0b0e; --acc: #e11d2e; --on-acc: #fff; }
 html[data-theme="blue"] { --bg: #081a3a; --fg: #fff; --dim: #9db4dd; --line: #1f3b73; --panel: #0d2554; --s0: #061430; --s1: #12306a; --acc: #2f80ff; --on-acc: #fff; }
+html[data-theme="violet"] { --bg: #0a0612; --fg: #fff; --dim: #a99bc4; --line: #2a1b45; --panel: #120a20; --s0: #0d0718; --s1: #1b0f33; --acc: #8b5cf6; --on-acc: #fff; }
+html[data-theme="violet"] ::selection { background: #8b5cf6; color: #fff; }
 html[data-theme="red"] ::selection { background: #e11d2e; color: #fff; }
 html[data-theme="blue"] ::selection { background: #2f80ff; color: #fff; }
 /* ===== Thème clair : vrai thème à variables (plus d'inversion de couleurs) ===== */
@@ -3465,14 +3467,14 @@ function shuffleStable(arr) {
 var PREFKEY = "noir.prefs";
 var PREFS = (function () {
   var p = readJSON(PREFKEY, {}); if (!p || typeof p !== "object" || Array.isArray(p)) p = {};
-  return { noanim: !!p.noanim, hideTips: !!p.hideTips, hideLang: !!p.hideLang, hideLive: !!p.hideLive, hideNew: !!p.hideNew, hideNov: !!p.hideNov, rememberPlayer: !!p.rememberPlayer, theme: (["light", "red", "blue"].indexOf(p.theme) > -1 ? p.theme : ""), lastPlayer: String(p.lastPlayer || ""), order: Array.isArray(p.order) ? p.order.filter(function (x) { return typeof x === "string"; }) : [] };
+  return { noanim: !!p.noanim, hideTips: !!p.hideTips, hideLang: !!p.hideLang, hideLive: !!p.hideLive, hideNew: !!p.hideNew, hideNov: !!p.hideNov, rememberPlayer: !!p.rememberPlayer, theme: (["light", "red", "blue", "violet"].indexOf(p.theme) > -1 ? p.theme : ""), lastPlayer: String(p.lastPlayer || ""), order: Array.isArray(p.order) ? p.order.filter(function (x) { return typeof x === "string"; }) : [] };
 })();
 function savePrefs() { try { localStorage.setItem(PREFKEY, JSON.stringify(PREFS)); } catch (e) { toast("Stockage plein ou bloqué par le navigateur"); } }
 function applyPrefs() {
   var c = document.documentElement.classList;
   c.toggle("noanim", PREFS.noanim); c.toggle("notips", PREFS.hideTips);
   var de = document.documentElement; if (PREFS.theme) de.setAttribute("data-theme", PREFS.theme); else de.removeAttribute("data-theme");
-  var tm = document.querySelector('meta[name="theme-color"]'); if (tm) tm.setAttribute("content", { light: "#f5f4f0", blue: "#081a3a" }[PREFS.theme] || "#000000");
+  var tm = document.querySelector('meta[name="theme-color"]'); if (tm) tm.setAttribute("content", { light: "#f5f4f0", blue: "#081a3a", violet: "#0a0612" }[PREFS.theme] || "#000000");
   c.toggle("hb-lang", PREFS.hideLang); c.toggle("hb-live", PREFS.hideLive); c.toggle("hb-new", PREFS.hideNew); c.toggle("hb-nov", PREFS.hideNov);
 }
 /* badges des affiches : quand certains sont cachés, les autres remontent (pas de trou) */
@@ -3559,7 +3561,8 @@ var THEMES = [
   ["", "Noir", "Le thème d'origine", "#000", "#fff", "#fff"],
   ["light", "Clair", "Fond clair, texte anthracite", "#f5f4f0", "#17171a", "#17171a"],
   ["red", "Rouge & noir", "Noir profond, accents rouges", "#000", "#fff", "#e11d2e"],
-  ["blue", "Bleu & blanc", "Bleu nuit, texte blanc", "#081a3a", "#fff", "#2f80ff"]
+  ["blue", "Bleu & blanc", "Bleu nuit, texte blanc", "#081a3a", "#fff", "#2f80ff"],
+  ["violet", "Noir & violet", "Noir profond, accents violets", "#0a0612", "#fff", "#8b5cf6"]
 ];
 function stThemes() {
   return '<div class="stsec"><div class="stlbl">Apparence</div><p class="stnote">Change les couleurs du site. Les affiches gardent leurs couleurs.</p><div class="thgrid" role="radiogroup" aria-label="Thème">' +
