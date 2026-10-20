@@ -2,11 +2,12 @@
    Variables d'environnement :
      DISCORD_WEBHOOK_URL         (obligatoire) adresse du webhook Discord, ex. https://discord.com/api/webhooks/...
      DISCORD_WEBHOOK_DEADLINKS   (facultatif)  autre webhook pour les liens morts. Sinon ils vont sur DISCORD_WEBHOOK_URL.
-   Reçoit : POST JSON { kind: "request" | "deadlink", ... } */
+   Reçoit : POST JSON { kind: "request" | "deadlink" | "issue", ... }
+   "issue" = signalement général depuis la page Statut des serveurs (serveur + raison). */
 
 var hits = {}; /* limite par visiteur, en mémoire (indicatif : elle repart de zéro quand Vercel redémarre la fonction) */
 function limited(ip, kind) {
-  var now = Date.now(), win = 3600000, max = kind === "request" ? 5 : 10, k = kind + "|" + ip;
+  var now = Date.now(), win = 3600000, max = kind === "request" || kind === "issue" ? 5 : 10, k = kind + "|" + ip;
   if (Object.keys(hits).length > 3000) hits = {};
   var a = (hits[k] || []).filter(function (t) { return now - t < win; });
   if (a.length >= max) { hits[k] = a; return true; }
@@ -28,10 +29,10 @@ module.exports = async function (req, res) {
   if (typeof b === "string") { try { b = JSON.parse(b); } catch (e) { b = null; } }
   if (!b || typeof b !== "object") { res.status(400).json({ error: "requête invalide" }); return; }
 
-  var kind = b.kind === "deadlink" ? "deadlink" : b.kind === "request" ? "request" : "";
+  var kind = b.kind === "deadlink" ? "deadlink" : b.kind === "request" ? "request" : b.kind === "issue" ? "issue" : "";
   if (!kind) { res.status(400).json({ error: "type inconnu" }); return; }
 
-  var hook = kind === "deadlink" ? (process.env.DISCORD_WEBHOOK_DEADLINKS || process.env.DISCORD_WEBHOOK_URL) : process.env.DISCORD_WEBHOOK_URL;
+  var hook = kind === "deadlink" || kind === "issue" ? (process.env.DISCORD_WEBHOOK_DEADLINKS || process.env.DISCORD_WEBHOOK_URL) : process.env.DISCORD_WEBHOOK_URL;
   if (!hookOk(hook)) { res.status(500).json({ error: "webhook Discord manquant ou invalide" }); return; }
 
   var ip = String((req.headers["x-forwarded-for"] || "").split(",")[0] || req.socket && req.socket.remoteAddress || "?").trim();
@@ -58,6 +59,20 @@ module.exports = async function (req, res) {
     if (id) embed.url = "https://www.themoviedb.org/" + media + "/" + id;
     var poster = String(b.poster || "");
     if (/^\/[\w-]+\.(jpg|png)$/i.test(poster)) embed.thumbnail = { url: "https://image.tmdb.org/t/p/w185" + poster };
+  } else if (kind === "issue") {
+    var srv = clean(b.server, 60);
+    var REASONS = { slow: "Lent / buffering", allerr: "Toutes les vidéos en erreur", offline: "Serveur hors ligne", video: "Une vidéo ne marche pas", other: "Autre" };
+    var rk = REASONS[String(b.reason)] ? String(b.reason) : "";
+    if (!srv || !rk) { res.status(400).json({ error: "signalement incomplet" }); return; }
+    var fields3 = [
+      { name: "Serveur", value: srv, inline: true },
+      { name: "Problème", value: REASONS[rk], inline: true }
+    ];
+    var ttl = clean(b.title, 120), msg = clean(b.message, 300), pg = httpUrl(b.page);
+    if (ttl) fields3.push({ name: "Titre concerné", value: ttl });
+    if (msg) fields3.push({ name: "Détails", value: msg });
+    try { if (pg && new URL(pg).host === host) fields3.push({ name: "Page", value: "<" + pg + ">" }); } catch (e) {}
+    embed = { title: "Problème signalé : " + srv, color: (rk === "offline" || rk === "allerr") ? 0xe5484d : rk === "other" ? 0x8c8c8c : 0xf5a524, fields: fields3, footer: { text: "DramaByM · page Statut" }, timestamp: new Date().toISOString() };
   } else {
     var title = clean(b.title, 200);
     var link = httpUrl(b.url);
