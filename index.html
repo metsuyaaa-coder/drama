@@ -1397,6 +1397,22 @@ footer .about .flist li, footer .about p.dev { font-weight: 500; }
 .mlind { position: absolute; top: 0; bottom: 0; left: 0; width: 33.3334%; background: var(--fg); transition: transform .45s var(--ease); z-index: 0; }
 .mltabs[data-i="1"] .mlind { transform: translateX(100%); }
 .mltabs[data-i="2"] .mlind { transform: translateX(200%); }
+.mltabs[data-i="3"] .mlind { transform: translateX(300%); }
+.mltabs.four { grid-template-columns: repeat(4, 1fr); max-width: 940px; }
+.mltabs.four .mlind { width: 25%; }
+/* photos d'acteurs (recherche) */
+@keyframes actph { from { opacity: 0; } to { opacity: 1; } }
+.actchip .ai { width: 44px; height: 44px; overflow: hidden; }
+.actchip .ai img, .actcard .ap img { width: 100%; height: 100%; object-fit: cover; object-position: center 20%; display: block; animation: actph .35s ease both; }
+.actgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 14px; }
+.actcard { display: block; min-width: 0; border: 1px solid var(--line); background: var(--panel); animation: cardIn .45s var(--ease) backwards; animation-delay: calc(var(--k, 0) * 40ms); transition: border-color .2s, background .2s, transform .25s var(--ease); }
+.actcard:hover { border-color: var(--fg); background: #111; transform: translateY(-2px); }
+.actcard .ap { display: grid; place-items: center; aspect-ratio: 1 / 1; overflow: hidden; background: #000; border-bottom: 1px solid var(--line); font-family: var(--display); font-weight: 900; font-size: 56px; color: var(--dim); }
+.actcard .at { display: block; padding: 10px 12px 12px; min-width: 0; }
+.actcard .at b { display: block; font-weight: 500; font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.actcard .at small { font-family: var(--mono); font-size: 11px; color: var(--dim); }
+.actmode .mlsort { display: none; }
+@media (max-width: 640px) { .actgrid { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 10px; } .actcard .ap { font-size: 44px; } }
 .mlt { position: relative; z-index: 1; display: grid; grid-template-columns: auto 1fr; grid-template-rows: auto auto; align-items: center; column-gap: 14px; text-align: left; padding: 16px 20px; background: transparent; border: 0; border-left: 1px solid var(--line); border-radius: 0; color: var(--dim); cursor: pointer; transition: color .3s; }
 .mlt:first-of-type { border-left: 0; }
 .mlt svg { grid-row: 1 / 3; width: 30px; height: 30px; transition: transform .4s var(--ease); }
@@ -3918,7 +3934,7 @@ function akaFrom(t, movie) {
 }
 
 /* Acteurs de la distribution dont le nom correspond à la recherche */
-function actorMatches(needle) {
+function actorMatches(needle, lim) {
   if (!needle || needle.length < 2) return [];
   var map = {};
   db.forEach(function (s) {
@@ -3928,19 +3944,55 @@ function actorMatches(needle) {
       var e = map[k] || (map[k] = { name: c.name, n: 0 }); e.n++;
     });
   });
-  return Object.keys(map).map(function (k) { return map[k]; }).sort(function (a, b) { return b.n - a.n || a.name.localeCompare(b.name, "fr"); }).slice(0, 8);
+  return Object.keys(map).map(function (k) { return map[k]; }).sort(function (a, b) { return b.n - a.n || a.name.localeCompare(b.name, "fr"); }).slice(0, lim || 8);
 }
 function actorsBlock(list) {
   if (!list.length) return "";
   return '<div class="wrap actres"><h3 class="note">Acteurs</h3><div class="actchips">' + list.map(function (a, i) {
-    return '<a class="actchip" style="--k:' + Math.min(i, 12) + '" href="/acteur/' + encodeURIComponent(a.name) + '"><span class="ai">' + esc(a.name.charAt(0)) + '</span><span class="at"><b>' + esc(a.name) + '</b><small>' + a.n + (a.n > 1 ? " titres" : " titre") + '</small></span></a>';
+    return '<a class="actchip" style="--k:' + Math.min(i, 12) + '" href="/acteur/' + encodeURIComponent(a.name) + '"><span class="ai" data-actph="' + esc(a.name) + '">' + esc(a.name.charAt(0)) + '</span><span class="at"><b>' + esc(a.name) + '</b><small>' + a.n + (a.n > 1 ? " titres" : " titre") + '</small></span></a>';
   }).join("") + '</div></div>';
+}
+function actorsGrid(list) {
+  return '<div class="actgrid">' + list.map(function (a, i) {
+    return '<a class="actcard" style="--k:' + Math.min(i, 12) + '" href="/acteur/' + encodeURIComponent(a.name) + '"><span class="ap" data-actph="' + esc(a.name) + '">' + esc(a.name.charAt(0)) + '</span><span class="at"><b>' + esc(a.name) + '</b><small>' + a.n + (a.n > 1 ? " titres" : " titre") + '</small></span></a>';
+  }).join("") + '</div>';
+}
+/* Photos des acteurs : déjà en cache = tout de suite ; sinon /api/person (3 à la fois, après une courte pause pour ne pas charger à chaque lettre tapée) */
+var actPhotoTimer = 0;
+function actPhotoPaint(el, p) {
+  if (!el || !p || !p.photo || !/^\/[\w-]+\.(jpg|png)$/i.test(p.photo)) return;
+  var url = IMG + "w185" + p.photo, im = new Image();
+  im.onload = function () { if (el.isConnected) el.innerHTML = '<img src="' + esc(url) + '" alt="">'; };
+  im.src = url;
+}
+function actPhotos(root) {
+  clearTimeout(actPhotoTimer);
+  var pend = [];
+  Array.prototype.forEach.call((root || document).querySelectorAll("[data-actph]"), function (el) {
+    var name = el.getAttribute("data-actph"), c = personCached(fold(name));
+    if (c) actPhotoPaint(el, c); else pend.push(el);
+  });
+  if (!pend.length) return;
+  actPhotoTimer = setTimeout(function () {
+    var i = 0;
+    function next() {
+      while (i < pend.length) {
+        var el = pend[i++]; if (!el.isConnected) continue;
+        var name = el.getAttribute("data-actph"), key = fold(name), items = actorTitles(name);
+        if (!items.length || (personFail[key] && Date.now() - personFail[key] < 30000)) continue;
+        personFetch(key, items).then(function (p) { actPhotoPaint(el, p); }, function () {}).then(next);
+        return;
+      }
+    }
+    next(); next(); next();
+  }, 350);
 }
 /* ===== Recherche (refonte) : même style que Ma liste / Séries (en-tête animé, onglets coulissants, tri, cartes) ===== */
 NICONS.srtv = '<rect x="3" y="6" width="18" height="13" rx="2"/><path d="m8 2.5 4 3.5 4-3.5"/>';
 NICONS.srfilm = '<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 4v16M17 4v16M3 9h4M3 15h4M17 9h4M17 15h4"/>';
 var srSort = "rel", srSig = null;
-var SRTABS = [["", "Tout", "grid"], ["tv", "Séries", "srtv"], ["movie", "Films", "srfilm"]];
+NICONS.sract = '<circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/>';
+var SRTABS = [["", "Tout", "grid"], ["tv", "Séries", "srtv"], ["movie", "Films", "srfilm"], ["actor", "Acteurs", "sract"]];
 var SRSORTS = [["rel", "Pertinence"], ["recent", "Récents"], ["az", "A–Z"], ["year", "Année"], ["rating", "Note"]];
 var SRLOGO = '<path pathLength="90" d="M10.5 4a6.5 6.5 0 1 1 0 13 6.5 6.5 0 0 1 0-13z"/><path pathLength="90" d="m15.4 15.4 5.6 5.6"/><path class="sp" pathLength="40" style="transform-origin:10.5px 10.5px" d="m10.5 7.4.7 1.8 1.9.3-1.4 1.3.4 1.9-1.6-.9-1.6.9.4-1.9L7.9 9.5l1.9-.3z"/>';
 function srRank(s, n) {
@@ -3983,7 +4035,7 @@ function srBuild() {
   $("#app").innerHTML = '<div id="srroot"><div class="mlhero"><div class="wrap">' +
     '<div class="mltitle"><svg class="mllogo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + SRLOGO + '</svg>' +
     '<div><h1>Recherche</h1><p class="note srnote" id="srnote"></p></div></div>' +
-    '<div class="mltabs" id="srtabs" data-i="0" role="tablist"><span class="mlind"></span>' + tabs + '</div></div></div>' +
+    '<div class="mltabs four" id="srtabs" data-i="0" role="tablist"><span class="mlind"></span>' + tabs + '</div></div></div>' +
     '<div id="sract"></div><div class="wrap"><div class="mltools"><div class="mlsort" role="group" aria-label="Trier">' + sorts + '</div><span class="mlsum" id="srsum"></span>' +
     '<a class="btn small ghost" id="srclose" href="/">Fermer la recherche</a></div><div class="lsf intro" id="srf"></div><div id="srbody"></div></div></div>';
 }
@@ -3999,16 +4051,19 @@ function viewSearch(q) {
   var newOpts = newOptions(base); if (newOpts.indexOf(newFilter) < 0) newFilter = "";
   var kd = dramaTypes(base); if (kd.indexOf(kdFilter) < 0) kdFilter = "";
   var plats = platOptions(base); if (plats.indexOf(platFilter) < 0) platFilter = "";
-  var pool = base.filter(srOther), counts = [pool.length, 0, 0];
+  var pool = base.filter(srOther), counts = [pool.length, 0, 0, 0];
   pool.forEach(function (s) { counts[isMovie(s) ? 2 : 1]++; });
-  var found = srSorted(pool.filter(function (s) { return !typeFilter || (typeFilter === "movie") === isMovie(s); }), needle);
+  var allActors = actorMatches(needle, 999), isAct = typeFilter === "actor";
+  counts[3] = allActors.length;
+  var found = srSorted(pool.filter(function (s) { return !typeFilter || isAct || (typeFilter === "movie") === isMovie(s); }), needle);
   var sig = [typeFilter, filter, langFilter, newFilter, kdFilter, platFilter, dlFilter, srSort].join("|");
   var fresh = !$("#srroot");
   var swap = !fresh && srSig !== null && sig !== srSig;
   srSig = sig;
   if (fresh) srBuild();
-  var actors = actorMatches(needle);
-  $("#srnote").innerHTML = found.length + (found.length > 1 ? " résultats" : " résultat") + (q.trim() ? ' pour <span class="srq">« ' + esc(q.trim()) + ' »</span>' : " au catalogue");
+  var actors = allActors.slice(0, 8), nn = isAct ? allActors.length : found.length;
+  $("#srroot").classList.toggle("actmode", isAct);
+  $("#srnote").innerHTML = nn + (nn > 1 ? " résultats" : " résultat") + (q.trim() ? ' pour <span class="srq">« ' + esc(q.trim()) + ' »</span>' : " au catalogue");
   var box = $("#srtabs"), idx = 0;
   SRTABS.forEach(function (t, k) {
     var b = box.querySelector('[data-typef="' + t[0] + '"]'); if (!b) return;
@@ -4019,21 +4074,27 @@ function viewSearch(q) {
   });
   box.dataset.i = idx;
   var f = $("#srf"); if (!fresh) f.classList.remove("intro");
-  f.innerHTML = base.length ? srFilters({ genres: Object.keys(genres).sort(), newOpts: newOpts, kd: kd, plats: plats, canDl: canDl }) : "";
-  $("#sract").innerHTML = actorsBlock(actors);
-  $("#srsum").textContent = found.length + (found.length > 1 ? " titres" : " titre");
+  f.innerHTML = base.length && !isAct ? srFilters({ genres: Object.keys(genres).sort(), newOpts: newOpts, kd: kd, plats: plats, canDl: canDl }) : "";
+  $("#sract").innerHTML = isAct ? "" : actorsBlock(actors);
+  $("#srsum").textContent = isAct ? allActors.length + (allActors.length > 1 ? " acteurs" : " acteur") : found.length + (found.length > 1 ? " titres" : " titre");
   $("#srclose").setAttribute("href", searchBack);
   Array.prototype.forEach.call(document.querySelectorAll("[data-srsort]"), function (b) { b.classList.toggle("on", b.dataset.srsort === srSort); });
   var body = $("#srbody");
   body.className = swap ? "mlswap" : "";
   if (swap) { void body.offsetWidth; body.className = "mlswap"; }
-  if (found.length) body.innerHTML = '<div class="mlgrid' + (fresh || swap ? "" : " still") + '">' + found.map(function (s, i) { return lsCard(s, i, "type"); }).join("") + '</div>';
+  if (isAct) {
+    body.innerHTML = allActors.length
+      ? actorsGrid(allActors.slice(0, 24)) + (allActors.length > 24 ? '<p class="note" style="margin:18px 0 0">24 acteurs affichés sur ' + allActors.length + '. Précise ta recherche pour affiner.</p>' : "")
+      : '<div class="mlempty">' + nsvg("search", "mlei") + '<h3>' + (needle.length < 2 ? "Cherche un acteur" : "Aucun acteur") + '</h3><p>' + (needle.length < 2 ? "Tape au moins deux lettres du nom d\'un acteur." : "Aucun acteur du catalogue ne correspond à ces mots.") + '</p></div>';
+  }
+  else if (found.length) body.innerHTML = '<div class="mlgrid' + (fresh || swap ? "" : " still") + '">' + found.map(function (s, i) { return lsCard(s, i, "type"); }).join("") + '</div>';
   else if (needle && !base.length) {
     body.innerHTML = '<div class="mlempty">' + nsvg("search", "mlei") + '<h3>Rien trouvé</h3><p>' + (actors.length ? "Aucun titre ne correspond à ces mots, mais des acteurs correspondent juste au-dessus." : "Aucun titre ne correspond. Essaie un autre mot, ou demande-le-moi.") + '</p>' +
       '<div class="row"><a class="btn" href="/demande/' + encodeURIComponent(q.trim()) + '">Demander ce titre</a><a class="btn ghost" href="/">Retour à l\'accueil</a></div></div>';
   } else {
     body.innerHTML = '<div class="mlempty">' + nsvg("search", "mlei") + '<h3>Aucun résultat</h3><p>Aucun titre ne correspond à ces filtres.</p><button type="button" class="btn ghost" data-srreset="1">' + nsvg("reset") + '<span>Réinitialiser les filtres</span></button></div>';
   }
+  actPhotos($("#srroot"));
 }
 document.addEventListener("click", function (e) {
   var t = e.target.closest ? e.target.closest("[data-srsort],[data-srreset]") : null; if (!t || !$("#srroot")) return;
