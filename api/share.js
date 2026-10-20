@@ -29,12 +29,33 @@ const IMAGES = {
   "/parametres": "/dbm-parametres.png?v=1"
 };
 const TEXTE_RECHERCHE = (q) => ({ titre: "« " + q + " » · DramaByM", desc: "Résultats de recherche pour « " + q + " » dans le répertoire DramaByM." });
-const TEXTE_ACTEUR = (n) => ({ titre: n + " · DramaByM", desc: "Les titres avec " + n + " disponibles sur DramaByM." });
+const TEXTE_ACTEUR = (n, titres) => ({
+  titre: n + " · DramaByM",
+  desc: titres && titres.length
+    ? coupe("Les titres avec " + n + " sur DramaByM : " + titres.slice(0, 4).join(", ") + (titres.length > 4 ? " et " + (titres.length - 4) + " autre" + (titres.length - 4 > 1 ? "s" : "") : "") + ".", 240)
+    : "Les titres avec " + n + " disponibles sur DramaByM."
+});
+
+/* ligne d'infos d'une fiche : « Série · 2 saisons · 16 épisodes · ★ 8.5 · Romance / Drame » */
+function infosFiche(s) {
+  const film = s.type === "movie";
+  const saisons = Array.isArray(s.seasons) ? s.seasons : [];
+  let eps = 0; saisons.forEach((se) => { eps += (se.episodes || []).length; });
+  const p = [film ? "Film" : "Série"];
+  if (film && s.runtime) p.push(s.runtime + " min");
+  if (!film && saisons.length > 1) p.push(saisons.length + " saisons");
+  if (!film && eps) p.push(eps + (eps > 1 ? " épisodes" : " épisode"));
+  if (s.rating) p.push("★ " + s.rating);
+  if (Array.isArray(s.genres) && s.genres.length) p.push(s.genres.slice(0, 3).join(" / "));
+  return p.join(" · ");
+}
 
 const esc = (v) => String(v == null ? "" : v).replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 const propre = (v) => String(v == null ? "" : v).replace(/\s+/g, " ").trim();
 const coupe = (v, n) => { v = propre(v); return v.length > n ? v.slice(0, n - 1).replace(/\s+\S*$/, "") + "…" : v; };
 const hq = (u) => String(u || "").replace(/\/t\/p\/w\d+\//, "/t/p/w1280/");   // bannière en grande taille (TMDB)
+const fold = (v) => propre(v).normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+const TMDB_IMG = "https://image.tmdb.org/t/p/w780";
 const decode = (v) => { try { return decodeURIComponent(v); } catch (e) { return v; } };
 
 async function lire(url, ms) {
@@ -57,7 +78,7 @@ function balises(o) {
   ];
   if (o.defaut) L.push('<meta property="og:image:width" content="1200">', '<meta property="og:image:height" content="630">');
   L.push(
-    '<meta name="twitter:card" content="summary_large_image">',
+    '<meta name="twitter:card" content="' + esc(o.card || "summary_large_image") + '">',
     '<meta name="twitter:title" content="' + esc(o.titre) + '">',
     '<meta name="twitter:description" content="' + esc(o.desc) + '">',
     '<meta name="twitter:image" content="' + esc(o.image) + '">'
@@ -108,7 +129,8 @@ module.exports = async (req, res) => {
       if (s && s.name) {
         const film = s.type === "movie";
         const img = hq(s.backdrop || s.poster);
-        const syn = coupe(s.overview, 240) || ("Regarde " + s.name + " sur DramaByM.");
+        const infos = infosFiche(s);
+        const syn = coupe(infos + " — " + (propre(s.overview) || ("Regarde " + s.name + " sur DramaByM.")), 250);
         return reponse(injecte(html, Object.assign(base, {
           titre: s.name + (s.year ? " (" + s.year + ")" : "") + " · DramaByM",
           desc: syn,
@@ -118,7 +140,34 @@ module.exports = async (req, res) => {
         })));
       }
     } else if (racine === "/recherche" && reste) page = TEXTE_RECHERCHE(coupe(reste, 60));
-    else if (racine === "/acteur" && reste) page = TEXTE_ACTEUR(coupe(reste, 60));
+    else if (racine === "/acteur" && reste) {
+      const nom = coupe(reste, 60);
+      page = TEXTE_ACTEUR(nom);
+      try {
+        const cat = await (await lire(origine + "/catalog.json", 4000)).json();
+        const liste = Array.isArray(cat) ? cat : (cat && cat.series) || [];
+        const cle = fold(reste);
+        const titres = []; const noms = []; let pid = "", affiche = "";
+        liste.forEach((x) => {
+          const c = (x.cast || []).filter((y) => y && fold(y.name) === cle)[0];
+          if (!c) return;
+          if (!affiche) affiche = c.name;
+          if (!pid && c.id) pid = c.id;
+          titres.push(x);
+        });
+        titres.sort((a, b) => (parseInt(b.year, 10) || 0) - (parseInt(a.year, 10) || 0));
+        titres.forEach((x) => { if (x.name) noms.push(x.name); });
+        const nomAffiche = affiche || nom;
+        page = TEXTE_ACTEUR(nomAffiche, noms);
+        /* photo via ton /api/person (même source que la page acteur) */
+        if (titres.length) try {
+          const tt = []; titres.slice(0, 6).forEach((x) => { tt.push(x.original_name || x.name); if (x.original_name && x.name) tt.push(x.name); });
+          const url = origine + "/api/person?name=" + encodeURIComponent(nomAffiche) + "&language=fr-FR&titles=" + encodeURIComponent(tt.join("|")) + (pid ? "&id=" + encodeURIComponent(pid) : "");
+          const p = await (await lire(url, 3500)).json();
+          if (p && p.photo) { base.image = TMDB_IMG + p.photo; base.defaut = false; base.card = "summary"; }
+        } catch (e) { /* pas de photo : on garde l'image par défaut */ }
+      } catch (e) { /* catalogue indisponible : texte simple */ }
+    }
     else if (racine === "/demande" && reste) page = PAGES["/demande"];
 
     const cle = (racine === "/demande" && reste) ? "/demande" : chemin.toLowerCase();
