@@ -770,6 +770,13 @@ dialog#reportdlg::backdrop { background: rgba(0,0,0,.85); }
 .pbar .btn:disabled { opacity: .3; pointer-events: none; }
 dialog#player.wide .pbar { display: none; }
 #peplist svg { width: 16px; height: 16px; flex: 0 0 auto; }
+#pprev, #pnext { gap: 9px; white-space: nowrap; }
+#pprev svg, #pnext svg { width: 15px; height: 15px; flex: 0 0 auto; transition: transform .25s var(--ease); }
+#pprev:hover:not(:disabled) svg { transform: translateX(-4px); }
+#pnext:hover:not(:disabled) svg { transform: translateX(4px); }
+#pprev:active:not(:disabled) svg { transform: translateX(-7px); }
+#pnext:active:not(:disabled) svg { transform: translateX(7px); }
+#pprev:disabled, #pnext:disabled { opacity: .35; cursor: not-allowed; }
 
 /* panneau « Épisodes » dans le lecteur */
 .peps { position: absolute; z-index: 6; top: 0; right: 0; bottom: 0; width: min(400px, 100%); display: flex; flex-direction: column; background: rgba(5,5,5,.97); border-left: 1px solid var(--line); animation: epsIn .25s var(--ease) both; }
@@ -2140,7 +2147,7 @@ dialog#ninfo::backdrop { background: rgba(0,0,0,.85); }
     <div class="pone" id="pone" style="display:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg><span>Besoin d'une autre source ou celle-ci bug ?</span><a href="/demande" id="pdemande">/demande</a></div>
     <div class="pone" id="prep"><button type="button" id="preport" class="rbtn"><span>Signaler</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21V4"/><path d="M5 4h13l-2.5 4.5L18 13H5"/></svg></button></div>
     <div class="pone" id="pone2" style="display:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg><span>Besoin d'un lien de téléchargement ?</span><a href="/demande" id="pdemande2">/demande</a></div>
-    <div class="pn" id="pnav"><button class="btn small ghost" id="pprev" type="button">Épisode précédent</button><button class="btn small ghost" id="peplist" type="button" aria-label="Liste des épisodes" title="Épisodes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="9" width="14" height="11" rx="1.5"/><path d="M7 5.5h12.5A1.5 1.5 0 0 1 21 7v9"/><path d="M11 2.5h8.5A1.5 1.5 0 0 1 21 4"/></svg><span>Épisodes</span></button><button class="btn small" id="pnext" type="button">Épisode suivant</button></div>
+    <div class="pn" id="pnav"><button class="btn small ghost" id="pprev" type="button" title="Épisode précédent (P)" aria-label="Épisode précédent"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 5.5v13a.8.8 0 0 1-1.25.66L8 13.2a.8.8 0 0 1 0-1.32l9.75-6.04A.8.8 0 0 1 19 5.5z" fill="currentColor"/><path d="M5 5v14"/></svg><span>Ép. précédent</span></button><button class="btn small ghost" id="peplist" type="button" aria-label="Liste des épisodes" title="Épisodes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="9" width="14" height="11" rx="1.5"/><path d="M7 5.5h12.5A1.5 1.5 0 0 1 21 7v9"/><path d="M11 2.5h8.5A1.5 1.5 0 0 1 21 4"/></svg><span>Épisodes</span></button><button class="btn small" id="pnext" type="button" title="Épisode suivant (N)" aria-label="Épisode suivant"><span>Ép. suivant</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 5.5v13a.8.8 0 0 0 1.25.66L16 13.2a.8.8 0 0 0 0-1.32L6.25 5.84A.8.8 0 0 0 5 5.5z" fill="currentColor"/><path d="M19 5v14"/></svg></button></div>
   </div>
   <div class="peps" id="peps" hidden role="dialog" aria-label="Liste des épisodes">
     <div class="eh"><div class="eht"><b>Épisodes</b><small id="pepsub"></small></div><button class="btn small ghost" id="pepsx" type="button">Fermer</button></div>
