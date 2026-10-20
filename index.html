@@ -1897,21 +1897,23 @@ body { overflow-x: hidden; max-width: 100%; position: relative; }
 .tvstage:-webkit-full-screen { aspect-ratio: auto; width: 100%; height: 100%; border: 0; }
 /* l'iframe dépasse en haut et en bas : le titre YouTube est rogné, et les clics tombent sur nos commandes */
 .tvstage iframe { position: absolute; left: 0; top: -70px; width: 100%; height: calc(100% + 140px); border: 0; pointer-events: none; }
-.tvtop, .tvbot { position: absolute; left: 0; right: 0; z-index: 3; opacity: 0; transition: opacity .3s, transform .3s var(--ease); pointer-events: none; }
+.tvtop, .tvbot { position: absolute; left: 0; right: 0; z-index: 5; opacity: 0; transition: opacity .3s, transform .3s var(--ease); pointer-events: none; }
 .tvtop { top: 0; display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; padding: 16px 16px 48px; background: linear-gradient(to bottom, rgba(0,0,0,.85), transparent); transform: translateY(-8px); }
 .tvbot { bottom: 0; padding: 40px 16px 10px; background: linear-gradient(to top, rgba(0,0,0,.9), transparent); transform: translateY(8px); }
 .tvstage.on .tvtop, .tvstage.on .tvbot { opacity: 1; transform: none; pointer-events: auto; }
 .tvstage.hide.playing { cursor: none; }
+.tvstage.stuck .tvload::after { display: none; }
 .tvtitle { min-width: 0; display: grid; gap: 4px; }
 .tvtitle small { font-family: var(--mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--dim); }
 .tvtitle b { font-family: var(--display); font-weight: 900; font-size: clamp(20px, 3vw, 32px); line-height: 1; text-transform: uppercase; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.tvic, .tvbig, .tvbar { touch-action: manipulation; }
 .tvic { flex: none; width: 40px; height: 40px; display: grid; place-items: center; background: transparent; border: 0; color: var(--fg); cursor: pointer; border-radius: 0; transition: background .2s, color .2s; }
 .tvic svg { width: 20px; height: 20px; }
 .tvic:hover { background: var(--fg); color: var(--bg); }
-.tvbig { position: absolute; z-index: 2; left: 50%; top: 50%; width: 84px; height: 84px; margin: 0; display: grid; place-items: center; border: 1px solid var(--fg); background: rgba(8,8,8,.94); color: var(--fg); cursor: pointer; border-radius: 0; opacity: 0; transform: translate(-50%, -50%) scale(.85); pointer-events: none; transition: opacity .25s, transform .3s var(--ease), background .2s, color .2s; }
+.tvbig { position: absolute; z-index: 2; left: 50%; top: 50%; width: 96px; height: 96px; margin: 0; display: grid; place-items: center; border: 1px solid var(--fg); background: rgba(8,8,8,.94); color: var(--fg); cursor: pointer; border-radius: 0; opacity: 0; transform: translate(-50%, -50%) scale(.85); pointer-events: none; transition: opacity .25s, transform .3s var(--ease), background .2s, color .2s; }
 .tvbig svg { width: 30px; height: 30px; }
 .tvbig.isplay svg { margin-left: 4px; }
-.tvstage.ready.flash .tvbig, .tvstage.ready.paused.on .tvbig { opacity: 1; transform: translate(-50%, -50%); pointer-events: auto; }
+.tvstage.ready.flash .tvbig, .tvstage.ready.paused .tvbig, .tvstage.stuck .tvbig { opacity: 1; transform: translate(-50%, -50%); pointer-events: auto; }
 .tvqw { position: relative; }
 .tvqb { width: auto; padding: 0 10px; gap: 6px; display: inline-flex; align-items: center; font-family: var(--mono); font-size: 12px; letter-spacing: .06em; }
 .tvqb svg { width: 18px; height: 18px; }
@@ -1938,8 +1940,9 @@ body { overflow-x: hidden; max-width: 100%; position: relative; }
 .tvvol::-webkit-slider-thumb { -webkit-appearance: none; width: 10px; height: 10px; margin-top: -3.5px; background: #fff; border: 0; border-radius: 0; }
 .tvvol::-moz-range-track { height: 3px; background: rgba(255,255,255,.3); }
 .tvvol::-moz-range-thumb { width: 10px; height: 10px; background: #fff; border: 0; border-radius: 0; }
-.tvload { position: absolute; inset: 0; z-index: 4; display: grid; place-items: center; background: #000 center / cover no-repeat; transition: opacity .45s; }
+.tvload { position: absolute; inset: 0; z-index: 1; display: grid; place-items: center; background: #000 center / cover no-repeat; transition: opacity .45s; }
 .tvload::after { content: ""; width: 38px; height: 38px; border: 2px solid rgba(255,255,255,.2); border-top-color: #fff; border-radius: 50%; animation: tvspin .8s linear infinite; }
+.tvload.msg { z-index: 4; }
 .tvload.msg::after { display: none; }
 .tvload .tvmsg { display: none; text-align: center; padding: 20px; font-family: var(--mono); font-size: 13px; letter-spacing: .06em; text-transform: uppercase; }
 .tvload.msg .tvmsg { display: grid; gap: 14px; justify-items: center; }
@@ -4913,6 +4916,7 @@ function tvBuild() {
   var st = tvq("tv-stage"), bar = tvq("tv-bar");
   b.addEventListener("click", function (e) {
     var t = e.target;
+    if (TV.touch && !TV.wasOn && t.closest && t.closest("#tv-stage") && !t.closest("#tv-big")) { TV.touch = false; return; }
     if (t === b || (t.classList && t.classList.contains("tvbox"))) return tvClose();
     if (t.closest("#tv-x")) return tvClose();
     if (t.closest("#tv-pp") || t.closest("#tv-big")) return tvToggle();
@@ -4931,6 +4935,7 @@ function tvBuild() {
     st.classList.add("on"); st.classList.remove("hide"); clearTimeout(TV.idle);
     var arm = function () {
       TV.idle = setTimeout(function () {
+        if (!TV.playing) return;
         if (TV.seeking || st.querySelector(".tvbot:hover, .tvtop:hover") || tvq("tv-qm").classList.contains("open")) return arm();
         st.classList.remove("on"); st.classList.add("hide");
       }, TV.playing ? 2400 : 3500);
@@ -4938,7 +4943,8 @@ function tvBuild() {
     arm();
   };
   st.addEventListener("pointermove", wake); st.addEventListener("pointerdown", wake);
-  st.addEventListener("pointerleave", function () { clearTimeout(TV.idle); if (!TV.seeking) { st.classList.remove("on"); st.classList.remove("hide"); tvq("tv-qm").classList.remove("open"); } });
+  st.addEventListener("pointerdown", function (e) { TV.touch = e.pointerType === "touch" || e.pointerType === "pen"; TV.wasOn = st.classList.contains("on"); }, true);
+  st.addEventListener("pointerleave", function (e) { if (e.pointerType === "touch" || e.pointerType === "pen" || !TV.playing) return; clearTimeout(TV.idle); if (!TV.seeking) { st.classList.remove("on"); st.classList.remove("hide"); tvq("tv-qm").classList.remove("open"); } });
   TV.wake = wake;
   /* barre de progression : clic ou glisser */
   var scrub = function (e) {
@@ -5011,10 +5017,11 @@ function tvState(e) {
   var was = st.classList.contains("playing");
   st.classList.toggle("paused", !TV.playing); st.classList.toggle("playing", TV.playing);
   var bg = tvq("tv-big"); bg.innerHTML = TV.playing ? TVI.pause : TVI.play; bg.classList.toggle("isplay", !TV.playing);
-  if (TV.playing && !was && st.classList.contains("ready")) { st.classList.add("flash"); clearTimeout(TV.fl); TV.fl = setTimeout(function () { st.classList.remove("flash"); }, 650); }
+  if (TV.playing && !was && st.classList.contains("ready")) { st.classList.add("flash"); clearTimeout(TV.fl); TV.fl = setTimeout(function () { st.classList.remove("flash"); }, 1000); }
   if (!TV.playing) { st.classList.remove("flash"); }
+  if (!TV.playing && d !== S.BUFFERING) { /* en pause : les commandes restent affichées */ clearTimeout(TV.idle); }
   tvq("tv-pp").innerHTML = TV.playing ? TVI.pause : TVI.play;
-  if (shownPlaying) { if (!st.classList.contains("ready")) { st.classList.add("ready"); tvAudio(); tvApplyQ(); } }
+  if (shownPlaying) { st.classList.remove("stuck"); if (!st.classList.contains("ready")) { st.classList.add("ready"); tvAudio(); tvApplyQ(); } }
   if (d === S.ENDED) { try { TV.p.seekTo(0, true); TV.p.pauseVideo(); } catch (x) {} }
   if (TV.wake) TV.wake();
 }
@@ -5041,6 +5048,8 @@ function tvGo(i) {
   Array.prototype.forEach.call(document.querySelectorAll("#tv-ths .tvth"), function (b, k) { b.classList.toggle("on", k === i); });
   var st = tvq("tv-stage"), ld = tvq("tv-load"); st.classList.remove("ready"); ld.classList.remove("msg");
   tvq("tv-pos").style.width = "0"; tvq("tv-buf").style.width = "0"; tvq("tv-time").textContent = "0:00 / 0:00";
+  st.classList.remove("stuck"); clearTimeout(TV.stuck);
+  TV.stuck = setTimeout(function () { if (!st.classList.contains("ready") && !ld.classList.contains("msg")) st.classList.add("stuck"); }, 2500);
   clearTimeout(TV.fail); TV.fail = setTimeout(function () { if (!st.classList.contains("ready")) tvFail(); }, 12000);
   ytReady(function () {
     if (!TV.box || TV.box.hidden) return;
@@ -5071,13 +5080,13 @@ function tvOpen(id, start) {
   TV.box.hidden = false; document.documentElement.style.overflow = "hidden"; tvq("tv-qm").classList.remove("open"); tvq("tv-ql").textContent = TV.q === "auto" ? "Auto" : (TVQN[TV.q] || TV.q); tvq("tv-vol").value = TV.muted ? 0 : TV.vol; tvMuteIcon();
   clearInterval(TV.timer); TV.timer = setInterval(tvTick, 250);
   tvGo(start || 0);
-  var x = tvq("tv-x"); if (x) x.focus();
+  if (TV.wake) TV.wake();
 }
 function tvClose() {
   if (!TV.box || TV.box.hidden) return;
   try { if (document.fullscreenElement) document.exitFullscreen(); } catch (x) {}
   try { if (TV.ready) TV.p.pauseVideo(); } catch (x) {}
-  clearInterval(TV.timer); clearTimeout(TV.idle); clearTimeout(TV.fail);
+  clearInterval(TV.timer); clearTimeout(TV.idle); clearTimeout(TV.fail); clearTimeout(TV.stuck);
   TV.box.hidden = true; TV.playing = false; document.documentElement.style.overflow = "";
 }
 document.addEventListener("click", function (e) {
