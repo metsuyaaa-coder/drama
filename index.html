@@ -1974,6 +1974,23 @@ html[data-theme="light"] .tvm img, html[data-theme="light"] .tvm iframe, html[da
 .thopt b::after { content: ""; flex: none; width: 8px; height: 8px; border: 1px solid var(--dim); border-radius: 50%; }
 .thopt.on b::after { background: var(--acc); border-color: var(--acc); }
 .thopt small { color: var(--dim); font-size: 12px; line-height: 1.35; }
+
+/* ===== Notifications : le message s'ouvre comme « Infos du site » ===== */
+dialog#ninfo { width: min(560px, 94vw); max-height: 90vh; overflow: auto; padding: 0; border: 1px solid var(--line); background: var(--bg); color: var(--fg); }
+dialog#ninfo[open] { animation: dialogIn .3s var(--ease) both; }
+dialog#ninfo::backdrop { background: rgba(0,0,0,.85); }
+#ninfo .wbox h3 { font-family: var(--display); font-weight: 700; font-size: 22px; text-transform: uppercase; letter-spacing: .03em; margin: 6px 0 -4px; }
+#ninfo .wbox b { color: var(--fg); }
+#ninfo .wbox ul.nlist { margin: 0; padding: 0; list-style: none; display: grid; gap: 8px; }
+#ninfo .wbox ul.nlist li { position: relative; padding-left: 18px; color: #cfcfcf; }
+#ninfo .wbox ul.nlist li::before { content: ""; position: absolute; left: 0; top: .62em; width: 7px; height: 7px; background: var(--acc); }
+#ninfo .nbtns { display: flex; flex-wrap: wrap; gap: 10px; }
+.nitem[data-nmsg] { cursor: pointer; }
+.nitem[data-nmsg] .nt p { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.hsend .hint { margin: -4px 0 0; font-size: 12px; color: var(--dim); }
+.hsend .hbtns { display: flex; flex-wrap: wrap; gap: 10px; }
+.hsend .hacts { display: flex; flex-wrap: wrap; gap: 8px; }
+
 </style>
 <!-- Visites du site : Vercel Web Analytics, sans cookie ni base de données. Ne fait rien tant que tu ne l'actives pas dans Vercel (onglet Analytics). -->
 <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
@@ -2998,7 +3015,7 @@ function notifScan() {
 /* infos envoyées par le Head admin (catalog.json > inbox) */
 function nCleanMsg(m) {
   if (!m || typeof m !== "object" || !m.id) return null;
-  return { id: String(m.id).slice(0, 40), kind: Object.prototype.hasOwnProperty.call(ANNKINDS, m.kind) ? m.kind : "info", title: String(m.title || "").slice(0, 80), text: String(m.text || "").slice(0, 400), link: String(m.link || "").slice(0, 300), label: String(m.label || "").slice(0, 40), at: +m.at || 0 };
+  return { id: String(m.id).slice(0, 40), kind: Object.prototype.hasOwnProperty.call(ANNKINDS, m.kind) ? m.kind : "info", title: String(m.title || "").slice(0, 80), text: String(m.text || "").slice(0, 400), link: String(m.link || "").slice(0, 300), label: String(m.label || "").slice(0, 40), badge: String(m.badge || "").slice(0, 30), body: String(m.body || "").slice(0, 3000), close: String(m.close || "").slice(0, 24), at: +m.at || 0 };
 }
 function adoptInbox(data) {
   var r = data && !Array.isArray(data) ? data.inbox : null;
@@ -3038,7 +3055,7 @@ function nItemHTML(x) {
   var m = x.m, l = annSafeLink(m.link), ext = /^https?:/i.test(l);
   return '<div class="nitem' + (x.read ? "" : " unread") + '" data-nmsg="' + esc(x.id) + '"><span class="ni">' + nsvg(NKIND[m.kind] || "info") + '</span><span class="nt"><b>' + esc(m.title || ANNKINDS[m.kind] || "Info") + '</b><p>' + esc(m.text) + '</p>' +
     (l ? '<a class="nlink" href="' + esc(l) + '"' + (ext ? ' target="_blank" rel="noopener noreferrer"' : '') + ' data-nopen="' + esc(x.id) + '">' + esc(m.label || "En savoir plus") + '</a>' : '') +
-    '<small>' + esc(nAgo(m.at)) + '</small></span>' + rm + '</div>';
+    '<small>' + esc(nAgo(m.at)) + ' · Ouvrir</small></span>' + rm + '</div>';
 }
 function nRenderBox(list) {
   var box = $("#nbox"); if (!box) return;
@@ -3103,7 +3120,7 @@ document.addEventListener("click", function (e) {
   }
   var op = t.closest("[data-nopen]");
   if (op) { nMarkRead(op.dataset.nopen); nOpen(false); return; }
-  var it = t.closest("[data-nmsg]"); if (it) { nMarkRead(it.dataset.nmsg); it.classList.remove("unread"); }
+  var it = t.closest("[data-nmsg]"); if (it) { var mid = it.dataset.nmsg; nMarkRead(mid); it.classList.remove("unread"); var mm = (INBOX.items || []).filter(function (x) { return x.id === mid; })[0]; if (mm) { nOpen(false); nInfoShow(mm); } }
 });
 document.addEventListener("keydown", function (e) {
   if (e.key !== "Escape") return;
@@ -3119,44 +3136,125 @@ function notifPoll() {
 setInterval(notifPoll, 180000);
 document.addEventListener("visibilitychange", function () { if (!document.hidden) notifPoll(); });
 
-/* Head admin : envoyer une info dans la boîte de notifications de tout le monde */
+/* Head admin : envoyer une info dans la boîte de notifications de tout le monde.
+   Au clic dans la cloche, le message s'ouvre dans une fenêtre du même style que « Infos du site ». Tout est modifiable. */
+var INBOX_EDIT = "";
+function nFmt(t) {
+  var inl = function (x) { return esc(x).replace(/\*\*([^*]+)\*\*/g, "<b>$1</b>"); };
+  var out = [], list = [];
+  var flush = function () { if (list.length) { out.push('<ul class="nlist">' + list.map(function (x) { return "<li>" + inl(x) + "</li>"; }).join("") + "</ul>"); list = []; } };
+  String(t || "").replace(/\r/g, "").split("\n").forEach(function (ln) {
+    var l = ln.trim(), m;
+    if (!l) { flush(); return; }
+    if ((m = l.match(/^[-•*]\s+(.+)$/))) { list.push(m[1]); return; }
+    flush();
+    if ((m = l.match(/^#{1,3}\s+(.+)$/))) out.push("<h3>" + inl(m[1]) + "</h3>");
+    else out.push("<p>" + inl(l) + "</p>");
+  });
+  flush();
+  return out.join("");
+}
+function nInfoShow(m) {
+  var d = $("#ninfo");
+  if (!d) {
+    d = document.createElement("dialog"); d.id = "ninfo"; d.setAttribute("aria-labelledby", "ninfo-t");
+    d.addEventListener("click", function (e) { if (e.target === d || e.target.closest("[data-ninfo-x]") || e.target.closest("a[href]")) d.close(); });
+    document.body.appendChild(d);
+  }
+  var l = annSafeLink(m.link), ext = /^https?:/i.test(l);
+  d.innerHTML = '<div class="wbox">' + (m.badge ? '<span class="beta">' + esc(m.badge) + '</span>' : '') +
+    '<h2 id="ninfo-t">' + esc(m.title || ANNKINDS[m.kind] || "Info") + '</h2>' + nFmt(m.body || m.text) +
+    '<div class="nbtns">' + (l ? '<a class="btn" href="' + esc(l) + '"' + (ext ? ' target="_blank" rel="noopener noreferrer"' : '') + '>' + esc(m.label || "En savoir plus") + '</a>' : '') +
+    '<button class="btn' + (l ? ' ghost' : '') + '" type="button" data-ninfo-x>' + esc(m.close || "Compris") + '</button></div></div>';
+  if (d.showModal && !d.open) d.showModal();
+}
+function inboxRead(f) {
+  var g = function (id) { var el = f.querySelector("#" + id); return el ? el.value.trim() : ""; };
+  var body = g("in-body"), text = g("in-text");
+  if (!text && body) {
+    var first = body.split("\n").map(function (x) { return x.trim(); }).filter(function (x) { return x && !/^#/.test(x); })[0] || "";
+    text = first.replace(/^[-•*]\s+/, "").replace(/\*\*/g, "").slice(0, 140);
+  }
+  return nCleanMsg({ id: "p", kind: g("in-kind"), title: g("in-title"), badge: g("in-badge"), text: text, body: body, link: g("in-link"), label: g("in-label"), close: g("in-close"), at: 0 });
+}
+var INBOX_TPL = {
+  badge: "Nouveautés", title: "Nouveautés du site", kind: "new",
+  text: "Bandes-annonces sur les fiches et 3 nouveaux thèmes : Clair, Rouge & noir, Bleu & blanc.",
+  body: "## Bandes-annonces\n- Un bouton « ▶ Bande-annonce » apparaît sur les fiches, au-dessus du titre\n- Un lecteur fait maison : commandes au survol, barre de progression, volume, plein écran\n- Raccourcis : Espace (lecture/pause), ← → (±5 s), M (son), F (plein écran)\n- Plusieurs vidéos par fiche (bande-annonce, teaser) avec des vignettes pour changer\n\n## Thèmes\n- Va dans Paramètres > Général > Apparence\n- 4 choix : Noir, Clair, Rouge & noir, Bleu & blanc\n- Ton choix est gardé sur ton appareil\n\nBon visionnage !",
+  close: "Compris"
+};
 function inboxSection() {
-  var opts = Object.keys(ANNKINDS).map(function (k) { return '<option value="' + k + '">' + esc(ANNKINDS[k]) + '</option>'; }).join("");
   var items = INBOX.items || [];
+  var ed = INBOX_EDIT ? items.filter(function (m) { return m.id === INBOX_EDIT; })[0] : null;
+  if (!ed) INBOX_EDIT = "";
+  var v = function (k) { return ed ? esc(ed[k] || "") : ""; };
+  var opts = Object.keys(ANNKINDS).map(function (k) { return '<option value="' + k + '"' + (ed && ed.kind === k ? " selected" : "") + '>' + esc(ANNKINDS[k]) + '</option>'; }).join("");
   var sent = items.length ? items.map(function (m) {
     return '<div class="hrow"><span class="ni">' + nsvg(NKIND[m.kind] || "info") + '</span><div><b>' + esc(m.title || ANNKINDS[m.kind] || "Info") + '</b><span>' + esc(m.text) + (m.at ? ' · ' + esc(nAgo(m.at)) : '') + '</span></div>' +
-      '<button class="btn danger small" type="button" data-inboxdel="' + esc(m.id) + '" title="Retirer pour tout le monde">' + nsvg("trash") + '<span>Retirer</span></button></div>';
+      '<span class="hacts"><button class="btn ghost small" type="button" data-inboxedit="' + esc(m.id) + '">' + nsvg("send") + '<span>Modifier</span></button>' +
+      '<button class="btn danger small" type="button" data-inboxdel="' + esc(m.id) + '" title="Retirer pour tout le monde">' + nsvg("trash") + '<span>Retirer</span></button></span></div>';
   }).join("") : '<p class="note" style="margin:0">Aucune info envoyée pour l\'instant.</p>';
-  return '<form id="inboxsend" class="hsend"><h3 class="note hl" style="margin:0;text-transform:uppercase;letter-spacing:.08em">' + nsvg("megaphone") + 'Envoyer une info (cloche)</h3>' +
-    '<p class="note" style="margin:0">Le message arrive dans la boîte de notifications de tous les visiteurs, à côté de Paramètres. Les épisodes, eux, préviennent tout seuls ceux qui ont activé « Notifier pour un nouvel épisode ».</p>' +
-    '<label class="f"><span>Titre (facultatif)</span><input type="text" id="in-title" maxlength="80" autocomplete="off" placeholder="Ex. Nouveau serveur"></label>' +
-    '<label class="f"><span>Message (400 caractères maximum)</span><textarea id="in-text" maxlength="400" style="min-height:80px" placeholder="Ex. La saison 2 arrive ce week-end."></textarea></label>' +
-    '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px"><label class="f"><span>Type</span><select id="in-kind">' + opts + '</select></label>' +
-    '<label class="f"><span>Lien (facultatif)</span><input type="text" id="in-link" maxlength="300" autocomplete="off" placeholder="/serie/123 ou https://…"></label>' +
-    '<label class="f"><span>Texte du lien</span><input type="text" id="in-label" maxlength="40" autocomplete="off" placeholder="En savoir plus"></label></div>' +
-    '<div class="row"><button class="btn" type="submit">' + nsvg("send") + '<span>Envoyer</span></button></div>' +
+  var grid = 'display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px';
+  return '<form id="inboxsend" class="hsend"><h3 class="note hl" style="margin:0;text-transform:uppercase;letter-spacing:.08em">' + nsvg("megaphone") + (ed ? 'Modifier une info' : 'Envoyer une info (cloche)') + '</h3>' +
+    '<p class="note" style="margin:0">Le message arrive dans la cloche de tous les visiteurs. Au clic, il s\'ouvre dans une fenêtre du même style que « Infos du site ». Les épisodes, eux, préviennent tout seuls ceux qui ont activé « Notifier pour un nouvel épisode ».</p>' +
+    '<div style="' + grid + '"><label class="f"><span>Badge au-dessus du titre (facultatif)</span><input type="text" id="in-badge" maxlength="30" autocomplete="off" placeholder="Ex. Nouveautés" value="' + v("badge") + '"></label>' +
+    '<label class="f"><span>Type (icône de la cloche)</span><select id="in-kind">' + opts + '</select></label></div>' +
+    '<label class="f"><span>Titre</span><input type="text" id="in-title" maxlength="80" autocomplete="off" placeholder="Ex. Nouveautés du site" value="' + v("title") + '"></label>' +
+    '<label class="f"><span>Message court (affiché dans la cloche, 400 caractères maximum)</span><textarea id="in-text" maxlength="400" style="min-height:70px" placeholder="Ex. Bandes-annonces et nouveaux thèmes !">' + v("text") + '</textarea></label>' +
+    '<label class="f"><span>Contenu de la fenêtre (facultatif)</span><textarea id="in-body" maxlength="3000" style="min-height:200px" placeholder="Le texte complet qui s\'affiche quand on ouvre la notification">' + v("body") + '</textarea></label>' +
+    '<p class="hint">Une ligne = un paragraphe. Commence une ligne par « - » pour une liste, par « ## » pour un sous-titre, et mets un mot entre ** ** pour le mettre en gras. Si ce champ est vide, la fenêtre affiche le message court.</p>' +
+    '<div style="' + grid + '"><label class="f"><span>Lien (facultatif)</span><input type="text" id="in-link" maxlength="300" autocomplete="off" placeholder="/serie/123 ou https://…" value="' + v("link") + '"></label>' +
+    '<label class="f"><span>Texte du lien</span><input type="text" id="in-label" maxlength="40" autocomplete="off" placeholder="En savoir plus" value="' + v("label") + '"></label>' +
+    '<label class="f"><span>Texte du bouton « fermer »</span><input type="text" id="in-close" maxlength="24" autocomplete="off" placeholder="Compris" value="' + v("close") + '"></label></div>' +
+    '<div class="hbtns"><button class="btn" type="submit">' + nsvg("send") + '<span>' + (ed ? 'Enregistrer les modifications' : 'Envoyer') + '</span></button>' +
+    '<button class="btn ghost" type="button" data-inboxpreview="1"><span>Aperçu</span></button>' +
+    (ed ? '<button class="btn ghost" type="button" data-inboxcancel="1"><span>Annuler</span></button>' : '<button class="btn ghost" type="button" data-inboxtpl="1"><span>Modèle : nouveautés</span></button>') + '</div>' +
     '<div class="hsent"><h3 class="note hl" style="margin:10px 0 0;text-transform:uppercase;letter-spacing:.08em">Déjà envoyées (' + items.length + ')</h3>' + sent + '</div></form>';
 }
 document.addEventListener("submit", function (e) {
   if (e.target.id !== "inboxsend") return;
   e.preventDefault();
   if (!headOk()) return;
-  var v = function (id) { return e.target.querySelector("#" + id).value.trim(); };
-  var text = v("in-text"), link = v("in-link");
-  if (!text) { toast("Écris un message à envoyer."); return; }
+  var link = e.target.querySelector("#in-link").value.trim();
+  var m = inboxRead(e.target);
+  if (!m || (!m.text && !m.body)) { toast("Écris un message à envoyer."); return; }
   if (link && !annSafeLink(link)) { toast("Le lien doit commencer par https:// ou par /"); return; }
-  var now = Date.now(), m = nCleanMsg({ id: String(now), kind: v("in-kind"), title: v("in-title"), text: text, link: link, label: v("in-label"), at: now });
-  INBOX = { at: now, items: [m].concat(INBOX.items || []).slice(0, 30) };
+  var now = Date.now(), items = INBOX.items || [], was = INBOX_EDIT;
+  if (was) {
+    var old = items.filter(function (x) { return x.id === was; })[0];
+    m.id = was; m.at = old ? old.at : now;
+    items = items.map(function (x) { return x.id === was ? m : x; });
+  } else { m.id = String(now); m.at = now; items = [m].concat(items).slice(0, 30); }
+  INBOX = { at: now, items: items }; INBOX_EDIT = "";
   nSave(INBOXKEY, INBOX); notifPaint();
-  toast(autoSyncOn() ? "Info envoyée." : "Info enregistrée. Clique sur « Publier » pour que tout le monde la reçoive.");
+  toast(autoSyncOn() ? (was ? "Info modifiée." : "Info envoyée.") : "Info enregistrée. Clique sur « Publier » pour que tout le monde la reçoive.");
   markDirty(); viewHead();
 });
 document.addEventListener("click", function (e) {
-  var d = e.target.closest("[data-inboxdel]"); if (!d || !headOk()) return;
-  if (!window.confirm("Retirer cette info pour tout le monde ?")) return;
-  var now = Date.now();
-  INBOX = { at: now, items: (INBOX.items || []).filter(function (m) { return m.id !== d.dataset.inboxdel; }) };
-  nSave(INBOXKEY, INBOX); notifPaint(); markDirty(); viewHead();
+  var t = e.target;
+  if (!t.closest) return;
+  var d = t.closest("[data-inboxdel]");
+  if (d) {
+    if (!headOk()) return;
+    if (!window.confirm("Retirer cette info pour tout le monde ?")) return;
+    var now = Date.now();
+    INBOX = { at: now, items: (INBOX.items || []).filter(function (m) { return m.id !== d.dataset.inboxdel; }) };
+    if (INBOX_EDIT === d.dataset.inboxdel) INBOX_EDIT = "";
+    nSave(INBOXKEY, INBOX); notifPaint(); markDirty(); viewHead();
+    return;
+  }
+  if (!headOk()) return;
+  var ed = t.closest("[data-inboxedit]");
+  if (ed) { INBOX_EDIT = ed.dataset.inboxedit; viewHead(); var f = $("#inboxsend"); if (f) f.scrollIntoView({ behavior: "smooth", block: "start" }); return; }
+  if (t.closest("[data-inboxcancel]")) { INBOX_EDIT = ""; viewHead(); return; }
+  var pv = t.closest("[data-inboxpreview]");
+  if (pv) { var m = inboxRead(pv.closest("form")); if (!m || (!m.text && !m.body)) { toast("Écris un message pour voir l'aperçu."); return; } nInfoShow(m); return; }
+  var tp = t.closest("[data-inboxtpl]");
+  if (tp) {
+    var fm = tp.closest("form"), map = { "in-badge": "badge", "in-title": "title", "in-kind": "kind", "in-text": "text", "in-body": "body", "in-close": "close" };
+    Object.keys(map).forEach(function (id) { var el = fm.querySelector("#" + id); if (el) el.value = INBOX_TPL[map[id]]; });
+    toast("Modèle chargé : modifie ce que tu veux, clique sur Aperçu, puis Envoyer.");
+  }
 });
 
 /* ===== Sauvegardes : copie de catalog.json dans backups/ du dépôt GitHub avant chaque publication ===== */
