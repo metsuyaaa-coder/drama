@@ -24199,7 +24199,23 @@
               "name": "Épisode 2",
               "overview": "Kang Jae-hee's double life begins. She's Yoon Yi-jun's secretary by day and a detective by night. Yi-jun keeps testing her, but Jae-hee relentlessly keeps an eye on him and searches for the missing phone. She plans to infiltrate the room that's banned from entering, but Yi-jun doesn't let his guard down easily. Their relationship takes a strange turn through unexpected physical contact.",
               "air_date": "2026-10-20",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/6YfZGOVvp6CeR",
+                  "by": "head"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/ya8yGleyksLIZ",
+                  "by": "head"
+                },
+                {
+                  "name": "UQLOAD",
+                  "url": "https://uqload.vc/embed-3ozq4tfc8gwh.html",
+                  "by": "head"
+                }
+              ],
               "downloads": []
             },
             {
@@ -24292,7 +24308,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792504195459,
+      "updatedAt": 1792520320645,
       "trend": 84
     },
     {
@@ -27172,6 +27188,15 @@
     "at": 1792452351145
   },
   "journal": [
+    {
+      "k": "mvh0bfd64p4tt",
+      "t": 1792520320650,
+      "b": "head",
+      "a": "edit",
+      "i": "303745",
+      "n": "Love in Disguise",
+      "d": "sources 4 → 7"
+    },
     {
       "k": "mvgsmrbgd4isa",
       "t": 1792507412428,
