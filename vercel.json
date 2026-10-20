@@ -131,6 +131,10 @@
         }
       ],
       "destination": "/api/share?path=/serie/:id"
+    },
+    {
+      "source": "/((?!api/|.*\\..*).*)",
+      "destination": "/index.html"
     }
   ]
 }
