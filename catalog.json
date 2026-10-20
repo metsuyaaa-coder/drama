@@ -6836,10 +6836,12 @@
       ],
       "sources": [],
       "addedAt": 1792257731153,
-      "langs": [],
+      "langs": [
+        "VOSTFR"
+      ],
       "downloads": [],
       "posterV": 2,
-      "updatedAt": 1792449178767,
+      "updatedAt": 1792502795045,
       "trend": 76,
       "networks": [
         "Hunan Television",
@@ -26204,6 +26206,15 @@
     "at": 1792454020694
   },
   "journal": [
+    {
+      "k": "mvgpvsiya9lc3",
+      "t": 1792502795050,
+      "b": "head",
+      "a": "edit",
+      "i": "304452",
+      "n": "The Lament of Autumn",
+      "d": ""
+    },
     {
       "k": "mvfz6er54cjl6",
       "t": 1792457940785,
