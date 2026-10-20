@@ -164,7 +164,7 @@ nav a:hover::after, nav a.on::after { transform: scaleX(1); }
   .card:hover .poster img { transform: scale(1.05); filter: brightness(.75); }
 }
 .card:active .poster { transform: scale(.97); border-color: var(--acc); }
-.poster .lang, .tags .lang { font-family: var(--mono); font-weight: 500; text-transform: uppercase; letter-spacing: .06em; background: var(--acc); color: var(--on-acc); line-height: 1; white-space: nowrap; }
+.poster .lang, .tags .lang { font-family: var(--mono); font-weight: 500; text-transform: uppercase; letter-spacing: .06em; background: #fff; color: #000; line-height: 1; white-space: nowrap; }
 .poster .lang { position: absolute; z-index: 1; top: 8px; left: 8px; font-size: 10px; padding: 4px 6px; }
 .tags .lang { font-size: 12px; padding: 5px 8px; font-weight: 700; }
 .tags .lang::before, .tags .lang + span::before { content: none !important; }
@@ -870,7 +870,7 @@ dialog#player::-webkit-scrollbar { display: none; }
 .card .rdel:hover { background: var(--bg); }
 @media (hover: none) { .card .poster .rdel { opacity: 1; } }
 button.more { background: none; border: 0; padding: 0; cursor: pointer; }
-.card .poster .rtag { position: absolute; z-index: 1; left: 0; right: 0; bottom: 0; padding: 7px 10px; background: var(--acc); color: var(--on-acc); font-weight: 700; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; }
+.card .poster .rtag { position: absolute; z-index: 1; left: 0; right: 0; bottom: 0; padding: 7px 10px; background: #fff; color: #000; font-weight: 700; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; }
 
 /* écrans de chargement : cartes grises animées */
 .sk { background: linear-gradient(100deg, var(--panel) 30%, var(--s1) 50%, var(--panel) 70%) 0 0 / 250% 100%; animation: skShine 1.4s linear infinite; border-radius: 0; }
@@ -1017,7 +1017,7 @@ footer .wrap.about { display: grid; grid-template-columns: repeat(auto-fit, minm
 .about .mail { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; font-family: var(--mono); font-size: 12px; margin-top: 12px; word-break: break-all; }
 
 /* badge « En cours » (séries toujours diffusées) */
-.live { font-family: var(--mono); font-weight: 500; text-transform: uppercase; letter-spacing: .06em; background: var(--bg); color: var(--fg); border: 1px solid var(--acc); line-height: 1; white-space: nowrap; }
+.live { font-family: var(--mono); font-weight: 500; text-transform: uppercase; letter-spacing: .06em; background: #000; color: #fff; border: 1px solid #fff; line-height: 1; white-space: nowrap; }
 .poster .live { position: absolute; z-index: 1; top: 8px; right: 8px; font-size: 10px; padding: 4px 6px; }
 .tags .live { font-size: 12px; padding: 4px 8px; font-weight: 700; }
 .tags .live::before, .tags .live + span::before { content: none !important; }
@@ -1029,8 +1029,8 @@ footer .wrap.about { display: grid; grid-template-columns: repeat(auto-fit, minm
 .tags .live { margin-right: 100%; }
 
 /* badge « Nouvel épisode » */
-.new { display: inline-flex; align-items: center; gap: 5px; font-family: var(--mono); font-weight: 700; text-transform: uppercase; letter-spacing: .06em; background: var(--acc); color: var(--on-acc); line-height: 1; white-space: nowrap; }
-.new i { width: 5px; height: 5px; border-radius: 50%; background: var(--bg); flex: 0 0 auto; animation: blink 1.6s ease-in-out infinite; }
+.new { display: inline-flex; align-items: center; gap: 5px; font-family: var(--mono); font-weight: 700; text-transform: uppercase; letter-spacing: .06em; background: #fff; color: #000; line-height: 1; white-space: nowrap; }
+.new i { width: 5px; height: 5px; border-radius: 50%; background: #000; flex: 0 0 auto; animation: blink 1.6s ease-in-out infinite; }
 @keyframes blink { 50% { opacity: .2; } }
 .poster .new { position: absolute; z-index: 1; top: 8px; left: 8px; font-size: 10px; padding: 4px 6px; }
 .poster .lang + .new, .poster .live + .new { top: 30px; }
@@ -1038,12 +1038,15 @@ footer .wrap.about { display: grid; grid-template-columns: repeat(auto-fit, minm
 .tags .new { font-size: 12px; padding: 5px 8px; margin-right: 100%; }
 .tags .new::before, .tags .new + span::before { content: none !important; }
 /* badge « Nouvelle série » / « Nouveau » (placé sous les autres badges) */
-.nov { display: inline-flex; align-items: center; font-family: var(--mono); font-weight: 700; text-transform: uppercase; letter-spacing: .06em; background: var(--acc); color: var(--on-acc); line-height: 1; white-space: nowrap; }
+.nov { display: inline-flex; align-items: center; font-family: var(--mono); font-weight: 700; text-transform: uppercase; letter-spacing: .06em; background: #fde68a; color: #422006; line-height: 1; white-space: nowrap; }
 .poster .nov { position: absolute; z-index: 1; left: 8px; font-size: 10px; padding: 4px 6px; }
 .tags .nov { font-size: 12px; padding: 5px 8px; margin-right: 100%; }
 .tags .nov::before, .tags .nov + span::before { content: none !important; }
 /* badge « K-drama » (fiche) */
-.kd { display: inline-flex; align-items: center; font-family: var(--mono); font-weight: 700; text-transform: uppercase; letter-spacing: .06em; background: color-mix(in srgb, var(--acc) 20%, var(--bg)); color: var(--fg); border: 1px solid var(--acc); line-height: 1; white-space: nowrap; }
+.kd { display: inline-flex; align-items: center; font-family: var(--mono); font-weight: 700; text-transform: uppercase; letter-spacing: .06em; background: #fbcfe8; color: #500724; line-height: 1; white-space: nowrap; }
+.kd-J { background: #bfdbfe; color: #172554; }
+.kd-C { background: #fecaca; color: #450a0a; }
+.kd-T { background: #a7f3d0; color: #022c22; }
 .tags .kd { font-size: 12px; padding: 5px 8px; margin-right: 100%; }
 .tags .kd::before, .tags .kd + span::before { content: none !important; }
 .ep b .new { font-size: 10px; padding: 4px 6px; margin-left: 8px; vertical-align: middle; }
@@ -2907,7 +2910,7 @@ function adoptAnnounce(data) {
       ANN = { on: !!r.on, text: String(r.text || "").slice(0, 300), kind: Object.prototype.hasOwnProperty.call(ANNKINDS, r.kind) ? r.kind : "info", link: String(r.link || "").slice(0, 300), label: String(r.label || "").slice(0, 40), id: String(r.id || ""), at: +r.at || 0 };
       annSave();
     }
-  } else if (!ADMIN) ANN = null;
+  }
   paintAnnounce();
 }
 function readAnnFields() {
@@ -3033,7 +3036,7 @@ function adoptInbox(data) {
       INBOX = { at: +r.at || 0, items: r.items.map(nCleanMsg).filter(Boolean).slice(0, 30) };
       nSave(INBOXKEY, INBOX);
     }
-  } else if (!ADMIN) { INBOX = { at: 0, items: [] }; nSave(INBOXKEY, INBOX); }
+  }
 }
 function nMsgs() {
   var gone = nArr(NGONEKEY), old = Date.now() - 30 * 864e5;
@@ -3070,10 +3073,12 @@ function nRenderBox(list) {
   var box = $("#nbox"); if (!box) return;
   list = list || nAll();
   var un = list.filter(function (x) { return !x.read; }).length, subs = Object.keys(nSubs()).length;
-  box.innerHTML = '<div class="nh"><h2>Notifications</h2>' + (un ? '<button type="button" data-nreadall>' + nsvg("checks") + 'Tout lire</button>' : '') + '</div>' +
+  var html = '<div class="nh"><h2>Notifications</h2>' + (un ? '<button type="button" data-nreadall>' + nsvg("checks") + 'Tout lire</button>' : '') + '</div>' +
     (list.length ? '<div class="nl2">' + list.map(nItemHTML).join("") + '</div>'
       : '<div class="nempty">' + nsvg("bell-off") + '<b>Rien pour l\'instant</b><p>Sur la fiche d\'une série, touche « Notifier pour un nouvel épisode » : tu seras prévenu ici dès qu\'un lien est posté.</p></div>') +
     '<div class="nf"><span>' + subs + (subs > 1 ? " séries suivies" : " série suivie") + '</span>' + (list.length ? '<button type="button" data-nclear>Tout effacer</button>' : '') + '</div>';
+  if (box.dataset.sig === html) return;
+  box.dataset.sig = html; box.innerHTML = html;
 }
 function notifPaint() {
   var list = nAll(), un = list.filter(function (x) { return !x.read; }).length;
@@ -3095,7 +3100,7 @@ function nMarkAllRead() {
 function nOpen(on) {
   var box = $("#nbox"), btn = $("#notifbtn"); if (!box || !btn || on === !box.hidden) return;
   box.hidden = !on; btn.classList.toggle("on", on); btn.setAttribute("aria-expanded", on ? "true" : "false");
-  if (on) nRenderBox(); else { nMarkAllRead(); notifPaint(); }
+  if (on) { box.dataset.sig = ""; nRenderBox(); } else { nMarkAllRead(); notifPaint(); }
 }
 function notifBtnHTML(s) {
   var on = nIsSub(s.id);
@@ -3113,6 +3118,7 @@ document.addEventListener("click", function (e) {
   }
   if (t.closest("#notifbtn")) { $("header.top").classList.remove("open"); $("#burger").setAttribute("aria-expanded", "false"); nOpen($("#nbox").hidden); return; }
   var box = $("#nbox"); if (!box || box.hidden) return;
+  if (!t.isConnected) return;
   if (!t.closest("#notifwrap")) { nOpen(false); return; }
   if (t.closest("[data-nreadall]")) { nMarkAllRead(); notifPaint(); return; }
   var rm = t.closest("[data-nrm]");
@@ -3123,6 +3129,7 @@ document.addEventListener("click", function (e) {
     notifPaint(); return;
   }
   if (t.closest("[data-nclear]")) {
+    if (!window.confirm("Effacer toutes les notifications ?")) return;
     nSave(NITEMKEY, []);
     var g2 = nArr(NGONEKEY); (INBOX.items || []).forEach(function (m) { if (g2.indexOf(m.id) < 0) g2.push(m.id); }); nSave(NGONEKEY, g2.slice(-100));
     notifPaint(); return;
