@@ -21,15 +21,50 @@
       "type": "tv",
       "name": "100 Days of Deception",
       "original_name": "100일의 거짓말",
+      "origin_country": [
+        "KR"
+      ],
+      "networks": [
+        "tvN"
+      ],
+      "original_language": "ko",
+      "aka": [
+        "100 Days of Deception",
+        "百日谎言",
+        "100 Dias de Mentiras",
+        "百日謊言",
+        "100 дни на измама",
+        "100 днів омани",
+        "100 ימים של ריגול",
+        "100 วันปฏิบัติการลวง",
+        "100 días de engaño",
+        "100 de zile de minciuni",
+        "100 Ngày Lừa Dối",
+        "100 dni oszustwa",
+        "100日の嘘",
+        "مئة يوم من الخداع 100",
+        "100 jours en espionne",
+        "100 дней лжи",
+        "百日的谎言",
+        "100ilui Geojitmal",
+        "100-il-ui Geo-jit-mal",
+        "Baekilui Geojinmal",
+        "Hundred Days of Lies",
+        "Hundred Days of Deception",
+        "100 Days of Lies",
+        "100일의 거짓말"
+      ],
       "year": "2026",
       "overview": "En quête de liberté, la meilleure pickpocket de Séoul infiltre le gouvernement colonial japonais pour lui dérober des secrets, mais tombe amoureuse du fils de sa cible.",
       "genres": [
         "Action & Adventure",
         "Drame"
       ],
-      "rating": "9.3",
+      "rating": "8.4",
+      "pop": 34.6443,
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/w500/bZHEU42QynnMrHUWK1Hhvj2cdPA.jpg",
+      "posterV": 2,
       "backdrop": "https://image.tmdb.org/t/p/original/3SvKCITqMtjgPIhFBjRc4yTAc4H.jpg",
       "cast": [
         {
@@ -101,16 +136,18 @@
             {
               "number": 1,
               "name": "Épisode 1",
-              "overview": "Pickpocket Lee Ga-gyeong has just one goal — to flee colonial Joseon. But she soon ends up unexpectedly entangled with the Korean independence movement.",
+              "overview": "Pickpocket Lee Ga-kyung has just one goal — to flee colonial Joseon. But she soon ends up unexpectedly entangled with the Korean independence movement.",
               "air_date": "2026-10-10",
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/2TgyEgZCFGobY"
+                  "url": "https://vidara.to/e/2TgyEgZCFGobY",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-vzlzv64p907n.html"
+                  "url": "https://uqload.vc/embed-vzlzv64p907n.html",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
@@ -128,23 +165,26 @@
                   "name": "1FICHIER",
                   "url": "https://1fichier.com/?xg1jsq8vmidbsuw2gdif",
                   "size": "2.8 Go",
-                  "quality": "1080p (H.264)"
+                  "quality": "1080p (H.264)",
+                  "by": "head"
                 }
               ]
             },
             {
               "number": 2,
               "name": "Épisode 2",
-              "overview": "Ga-gyeong's language skills shock Yoo Philip and Yoo So-ran. Meanwhile, Kim Tae-ung's insistence that Ga-gyeong return his wallet raises her suspicions.",
+              "overview": "Ga-kyung's language skills shock Yoo Philip and Yoo So-ran. Meanwhile, Kim Tae-ung's insistence that Ga-kyung return his wallet raises her suspicions.",
               "air_date": "2026-10-11",
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/5thkvKklZ5I2D"
+                  "url": "https://vidara.to/e/5thkvKklZ5I2D",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-z1zyz49djtuq.html"
+                  "url": "https://uqload.vc/embed-z1zyz49djtuq.html",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -163,14 +203,15 @@
                   "name": "1FICHIER",
                   "url": "https://1fichier.com/?871905qoy820g0cncdyi",
                   "size": "2.6 Go",
-                  "quality": "1080p (H.264)"
+                  "quality": "1080p (H.264)",
+                  "by": "head"
                 }
               ]
             },
             {
               "number": 3,
               "name": "Épisode 3",
-              "overview": "",
+              "overview": "Despite Ga-kyung's initial reservations about So-ran, the two join hands. On her first day at work undercover, Ga-kyung meets a familiar face.",
               "air_date": "2026-10-17",
               "sources": [
                 {
@@ -198,7 +239,8 @@
                 {
                   "name": "1FICHIER",
                   "url": "https://1fichier.com/?abhv2ccz9gh3cktnl4rd",
-                  "quality": "100p (H.264) 2.7",
+                  "size": "2.7Go",
+                  "quality": "1080p (H.264)",
                   "by": "head"
                 }
               ]
@@ -206,7 +248,7 @@
             {
               "number": 4,
               "name": "Épisode 4",
-              "overview": "",
+              "overview": "Tae-ung remains suspicious of Ga-kyung, but also strangely captivated — or even charmed? Meanwhile, the Gugukdan start making big plans.",
               "air_date": "2026-10-18",
               "sources": [
                 {
@@ -345,44 +387,9 @@
       "langs": [
         "VOSTFR"
       ],
-      "trend": 72,
-      "aka": [
-        "100 Days of Deception",
-        "百日谎言",
-        "100 Dias de Mentiras",
-        "百日謊言",
-        "100 дни на измама",
-        "100 днів омани",
-        "100 ימים של ריגול",
-        "100 วันปฏิบัติการลวง",
-        "100 días de engaño",
-        "100 de zile de minciuni",
-        "100 Ngày Lừa Dối",
-        "100 dni oszustwa",
-        "100日の嘘",
-        "مئة يوم من الخداع 100",
-        "100 jours en espionne",
-        "100 дней лжи",
-        "百日的谎言",
-        "100ilui Geojitmal",
-        "100-il-ui Geo-jit-mal",
-        "Baekilui Geojinmal",
-        "Hundred Days of Lies",
-        "Hundred Days of Deception",
-        "100 Days of Lies",
-        "100일의 거짓말"
-      ],
       "downloads": [],
-      "pop": 40.18,
-      "posterV": 2,
-      "origin_country": [
-        "KR"
-      ],
-      "original_language": "ko",
-      "updatedAt": 1792425654588,
-      "networks": [
-        "tvN"
-      ]
+      "updatedAt": 1792504114600,
+      "trend": 75
     },
     {
       "id": "275102",
@@ -394,7 +401,7 @@
       "genres": [
         "Drame"
       ],
-      "rating": "7.1",
+      "rating": "7.2",
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/pJsIzlTjmx07ilwEkl0cglrMVa1.jpg",
       "backdrop": "https://image.tmdb.org/t/p/original/uc1p1PEbEMpdIHqnU9TESNC6Jhp.jpg",
@@ -473,7 +480,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/o0KoP8VjByjK2"
+                  "url": "https://vidara.to/e/o0KoP8VjByjK2",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -486,7 +494,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/p11nSozxWwKeC"
+                  "url": "https://vidara.to/e/p11nSozxWwKeC",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -499,7 +508,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/qLMR4mPCXnzcb"
+                  "url": "https://vidara.to/e/qLMR4mPCXnzcb",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -512,7 +522,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/FaM5h5snLtw3j"
+                  "url": "https://vidara.to/e/FaM5h5snLtw3j",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -525,7 +536,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/N1BBIUNRZ8dLa"
+                  "url": "https://vidara.to/e/N1BBIUNRZ8dLa",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -538,7 +550,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/bDv8gNdbM7FxT"
+                  "url": "https://vidara.to/e/bDv8gNdbM7FxT",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -551,7 +564,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/xLiCBKbni0sjq"
+                  "url": "https://vidara.to/e/xLiCBKbni0sjq",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -564,7 +578,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/wQqaJbGvO4nOd"
+                  "url": "https://vidara.to/e/wQqaJbGvO4nOd",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -606,13 +621,13 @@
         "스캔들"
       ],
       "downloads": [],
-      "pop": 62.4172,
-      "posterV": 2,
+      "pop": 52.6244,
       "origin_country": [
         "KR"
       ],
       "original_language": "ko",
-      "updatedAt": 1792425655442,
+      "posterV": 2,
+      "updatedAt": 1792504115441,
       "networks": [
         "Netflix"
       ]
@@ -657,8 +672,8 @@
         "Drame",
         "Crime"
       ],
-      "rating": "9.3",
-      "pop": 64.1724,
+      "rating": "9.4",
+      "pop": 52.9229,
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/original/u0DrgmScTheIyCVEaeDKQ3sagLu.jpg",
       "backdrop": "https://image.tmdb.org/t/p/original/mDYIV71RL3mkaW8IfSGNthuVB7l.jpg",
@@ -737,11 +752,13 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/yxmRmsmX4zOOn"
+                  "url": "https://vidara.to/e/yxmRmsmX4zOOn",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-m1tmawcz7c7k.html"
+                  "url": "https://uqload.vc/embed-m1tmawcz7c7k.html",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -755,7 +772,8 @@
                   "name": "1FICHIER",
                   "url": "https://1fichier.com/?1qd8vda0u704nuwfzs2g",
                   "size": "2.32 Go",
-                  "quality": "1080p (H.264)"
+                  "quality": "1080p (H.264)",
+                  "by": "head"
                 }
               ]
             },
@@ -767,11 +785,13 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/X8HN8WRXjyREk"
+                  "url": "https://vidara.to/e/X8HN8WRXjyREk",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-cs61nhnp5yge.html"
+                  "url": "https://uqload.vc/embed-cs61nhnp5yge.html",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -785,7 +805,8 @@
                   "name": "1FICHIER",
                   "url": "https://1fichier.com/?xxzdrtttn7jbmkzlslaj",
                   "size": "2.3 Go",
-                  "quality": "1080p (H.264)"
+                  "quality": "1080p (H.264)",
+                  "by": "head"
                 }
               ]
             },
@@ -797,15 +818,18 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/09adi9vhA9U10"
+                  "url": "https://vidara.to/e/09adi9vhA9U10",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/1beitjsENq5T9"
+                  "url": "https://playmate.to/embed/1beitjsENq5T9",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-v6n8916hwstw.html"
+                  "url": "https://uqload.vc/embed-v6n8916hwstw.html",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -819,14 +843,15 @@
                   "name": "1FICHIER",
                   "url": "https://1fichier.com/?453rfjul6t7nuvyie39a",
                   "size": "2.4 Go",
-                  "quality": "1080p (H.264)"
+                  "quality": "1080p (H.264)",
+                  "by": "head"
                 }
               ]
             },
             {
               "number": 4,
               "name": "Épisode 4",
-              "overview": "",
+              "overview": "After a new surgeon arrives at the hospital, Jang Hui-suk and Su-jeong keep a close eye on him. Meanwhile, a pharmaceutical rep suffers an emergency.",
               "air_date": "2026-10-17",
               "sources": [
                 {
@@ -935,12 +960,12 @@
       ],
       "downloads": [],
       "trend": 85,
-      "posterV": 2,
       "origin_country": [
         "KR"
       ],
       "original_language": "ko",
-      "updatedAt": 1792425656451,
+      "posterV": 2,
+      "updatedAt": 1792504116266,
       "networks": [
         "SBS"
       ]
@@ -1005,7 +1030,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/3QfRuU3eWf2pd"
+                  "url": "https://vidara.to/e/3QfRuU3eWf2pd",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -1024,7 +1050,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/eUMaYzaQipoBC"
+                  "url": "https://vidara.to/e/eUMaYzaQipoBC",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -1043,7 +1070,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/xgOueNVwmNOUW"
+                  "url": "https://vidara.to/e/xgOueNVwmNOUW",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -1062,7 +1090,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/EzQNWBlkb36Wp"
+                  "url": "https://vidara.to/e/EzQNWBlkb36Wp",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -1081,7 +1110,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/K1PgGFz1ZalgO"
+                  "url": "https://vidara.to/e/K1PgGFz1ZalgO",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -1100,7 +1130,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/01pwhHhg0gn8e"
+                  "url": "https://vidara.to/e/01pwhHhg0gn8e",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -1119,7 +1150,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/4JdlGj1dD8Ldt"
+                  "url": "https://vidara.to/e/4JdlGj1dD8Ldt",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -1138,7 +1170,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/dpDMfNI88jG0b"
+                  "url": "https://vidara.to/e/dpDMfNI88jG0b",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -1157,7 +1190,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/LM71BZYML1U5k"
+                  "url": "https://vidara.to/e/LM71BZYML1U5k",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -1176,7 +1210,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/2z1IXUQrSyI1H"
+                  "url": "https://vidara.to/e/2z1IXUQrSyI1H",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -1195,7 +1230,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/790VZKjrFjYYP"
+                  "url": "https://vidara.to/e/790VZKjrFjYYP",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -1214,7 +1250,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/KW1kJkCQK5RKC"
+                  "url": "https://vidara.to/e/KW1kJkCQK5RKC",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -1259,13 +1296,13 @@
         "21세기 대군부인"
       ],
       "downloads": [],
-      "pop": 52.4457,
-      "posterV": 2,
+      "pop": 43.7547,
       "origin_country": [
         "KR"
       ],
       "original_language": "ko",
-      "updatedAt": 1792425657363,
+      "posterV": 2,
+      "updatedAt": 1792504117062,
       "posterCustom": true,
       "networks": [
         "MBC"
@@ -1284,7 +1321,7 @@
         "Action"
       ],
       "rating": "6.9",
-      "pop": 368.4952,
+      "pop": 385.9445,
       "status": "Released",
       "runtime": 160,
       "poster": "https://image.tmdb.org/t/p/w500/qW1m7bcsRb2lo8xG2v0p4mARyH8.jpg",
@@ -1355,11 +1392,13 @@
       "sources": [
         {
           "name": "VIDARA (VFQ)",
-          "url": "https://vidara.to/e/BzHQVFDTYsM7q"
+          "url": "https://vidara.to/e/BzHQVFDTYsM7q",
+          "by": "head"
         },
         {
           "name": "UQLOAD",
-          "url": "https://uqload.vc/embed-bauoh90lty4u.html"
+          "url": "https://uqload.vc/embed-bauoh90lty4u.html",
+          "by": "head"
         },
         {
           "name": "PLAYMATE",
@@ -1381,6 +1420,7 @@
         "Добро дошли у Хоуп",
         "Надежда",
         "希望：末日血戰",
+        "Umut",
         "أمل",
         "HOPE：逆襲希望港",
         "Vilties uostas",
@@ -1411,11 +1451,12 @@
           "name": "1FICHIER",
           "url": "https://1fichier.com/?mrcpz2qu52dc3uqfg0gt&af=5010551",
           "size": "5.5 Go",
-          "quality": "1080p (H.265)"
+          "quality": "1080p (H.265)",
+          "by": "head"
         }
       ],
       "posterV": 2,
-      "updatedAt": 1792425657942
+      "updatedAt": 1792504117539
     },
     {
       "id": "305644",
@@ -1428,7 +1469,7 @@
         "Drame"
       ],
       "rating": "9.2",
-      "pop": 19.5933,
+      "pop": 18.2818,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/eTzC7L3HgsNNBEkTpl9s3tVJUYv.jpg",
       "backdrop": "https://image.tmdb.org/t/p/original/fYL4I6cezb06BHhQlrNjNhy7jhf.jpg",
@@ -1497,21 +1538,23 @@
       "seasons": [
         {
           "number": 1,
-          "name": "Saison 1",
+          "name": "Mini-série",
           "episodes": [
             {
               "number": 1,
               "name": "Épisode 1",
-              "overview": "Kang Pi-o is known around school as an unrivaled talent — until he meets the mysterious Choi Jeong-yo and realizes he may have finally met his match.",
+              "overview": "Au lycée, Kang Pi-o est réputé pour son talent inégalé, mais sa rencontre avec le mystérieux Choi Jeong-yo lui fait comprendre qu'il a peut-être enfin trouvé un rival à sa hauteur.",
               "air_date": "2026-08-29",
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/ohzEDomqEreFp"
+                  "url": "https://vidara.to/e/ohzEDomqEreFp",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/hIetlWRx1BeC7"
+                  "url": "https://playmate.to/embed/hIetlWRx1BeC7",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -1525,16 +1568,18 @@
             {
               "number": 2,
               "name": "Épisode 2",
-              "overview": "With Jeong-yo now his classmate, a bitter Pi-o keeps his distance. But when the two are tasked with a joint performance, Pi-o finds himself warming up.",
+              "overview": "Maintenant que Jeong-yo est son camarade de classe, Pi-o, amer, garde ses distances. Mais quand ils doivent se produire ensemble, Pi-o se montre peu à peu moins hostile.",
               "air_date": "2026-08-30",
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/XCNKuBxl2cuA2"
+                  "url": "https://vidara.to/e/XCNKuBxl2cuA2",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/FS1cR2ed7YUWU"
+                  "url": "https://playmate.to/embed/FS1cR2ed7YUWU",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -1548,16 +1593,18 @@
             {
               "number": 3,
               "name": "Épisode 3",
-              "overview": "When crisis strikes right before the joint stage, Pi-o improvises a fix — only to wonder if it was a mistake when Jeong-yo's skills outshine his own.",
+              "overview": "Un incident survient juste avant le concert. Pi-o improvise une solution, mais se demande s'il a vraiment bien fait lorsque le talent de Jeong-yo éclipse le sien.",
               "air_date": "2026-09-05",
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/lPxNEpn0zBWGO"
+                  "url": "https://vidara.to/e/lPxNEpn0zBWGO",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/b9gSOaqAPdDCF"
+                  "url": "https://playmate.to/embed/b9gSOaqAPdDCF",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -1571,16 +1618,18 @@
             {
               "number": 4,
               "name": "Épisode 4",
-              "overview": "With Pi-o determined to reclaim his love for music, Jeong-yo shows Pi-o how to have fun on the piano. Jeong-yo's family troubles catch up to him.",
+              "overview": "Pi-o est déterminé à retrouver son amour pour la musique et Jeong-yo lui montre comment prendre du plaisir au piano. Jeong-yo se fait rattraper par ses problèmes familiaux.",
               "air_date": "2026-09-06",
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/n7JxEHraWahct"
+                  "url": "https://vidara.to/e/n7JxEHraWahct",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/4WbHDkwe4XKJe"
+                  "url": "https://playmate.to/embed/4WbHDkwe4XKJe",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -1594,16 +1643,18 @@
             {
               "number": 5,
               "name": "Épisode 5",
-              "overview": "Intent on proving himself, Pi-o joins the Prague Harmonie International Competition and asks Jeong-yo to join too. Pi-o's obsessive practice takes a toll.",
+              "overview": "Déterminé à faire ses preuves, Pi-o s'inscrit à un concours et demande à Jeong-yo de l'accompagner. Les entraînements obsessionnels de Pi-o finissent par avoir des conséquences.",
               "air_date": "2026-09-12",
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/dSUzFCU25R6UN"
+                  "url": "https://vidara.to/e/dSUzFCU25R6UN",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/u40BvdLaFHfT9"
+                  "url": "https://playmate.to/embed/u40BvdLaFHfT9",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -1617,16 +1668,18 @@
             {
               "number": 6,
               "name": "Épisode 6",
-              "overview": "Years later, Pi-o is successful and world-renowned — but miserable. Hong Jae-in tries to let Pi-o know how she feels. Pi-o hunts down news of Jeong-yo.",
+              "overview": "Des années plus tard, Pi-o est célèbre dans le monde entier, mais malheureux. Alors que Hong Jae-in veut lui avouer ses sentiments, il cherche à avoir des nouvelles de Jeong-yo.",
               "air_date": "2026-09-13",
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/FOTHTpm9UWuTx"
+                  "url": "https://vidara.to/e/FOTHTpm9UWuTx",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/757tyIfbbGqmA"
+                  "url": "https://playmate.to/embed/757tyIfbbGqmA",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -1640,16 +1693,18 @@
             {
               "number": 7,
               "name": "Épisode 7",
-              "overview": "Pi-o finds himself stuck deep in a slump, but can't seem to overcome his fears alone. Later, a familiar face suggests collaborating on a performance.",
+              "overview": "Pi-o traverse une mauvaise passe et ne parvient pas à surmonter seul ses peurs. Plus tard, un visage familier lui propose de jouer à ses côtés.",
               "air_date": "2026-09-19",
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/n3vEWDI0TDDKZ"
+                  "url": "https://vidara.to/e/n3vEWDI0TDDKZ",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/VWcwMP486bUUl"
+                  "url": "https://playmate.to/embed/VWcwMP486bUUl",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -1663,16 +1718,18 @@
             {
               "number": 8,
               "name": "Épisode 8",
-              "overview": "Pi-o faces increasing pressure to do the joint performance, but his issues with the piano only get worse. Jeong-yo finally steps in to help.",
+              "overview": "Alors que Pi-o subit une pression croissante pour accepter de jouer en duo, ses difficultés au piano ne font qu'empirer. Jeong-yo finit par intervenir pour l'aider.",
               "air_date": "2026-09-20",
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/2N0nzGyv49Msj"
+                  "url": "https://vidara.to/e/2N0nzGyv49Msj",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/kB7NWo3PnFdzx"
+                  "url": "https://playmate.to/embed/kB7NWo3PnFdzx",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -1686,16 +1743,18 @@
             {
               "number": 9,
               "name": "Épisode 9",
-              "overview": "Pi-o learns the shocking truth behind Jeong-yo's kidnapping. Jeong-yo asks for Pi-o's help with a piano piece, but his harsh words leave Pi-o rattled.",
+              "overview": "Pi-o découvre la vérité choquante derrière l'enlèvement de Jeong-yo. Ce dernier sollicite son aide pour un morceau de piano, mais le critique durement, ce qui déstabilise Pi-o.",
               "air_date": "2026-09-26",
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/piaKZontGk29F"
+                  "url": "https://vidara.to/e/piaKZontGk29F",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/jvvv2xBYYxa56"
+                  "url": "https://playmate.to/embed/jvvv2xBYYxa56",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -1709,16 +1768,18 @@
             {
               "number": 10,
               "name": "Épisode 10",
-              "overview": "Pi-o realizes Jeong-yo has been hiding a huge secret. With everything revealed, Jeong-yo turns even more cruel, and Pi-o falls deeper into despair.",
+              "overview": "Pi-o découvre que Jeong-yo lui cache un lourd secret. Une fois la vérité révélée, Jeong-yo se montre encore plus cruel, et Pi-o sombre un peu plus dans le désespoir.",
               "air_date": "2026-09-27",
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/JLWW4nuWjrBnv"
+                  "url": "https://vidara.to/e/JLWW4nuWjrBnv",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/bAy04TAnjC9S2"
+                  "url": "https://playmate.to/embed/bAy04TAnjC9S2",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -1732,16 +1793,18 @@
             {
               "number": 11,
               "name": "Épisode 11",
-              "overview": "As the Korean Symphony’s 80th anniversary concert begins, Jeong-yo and Pi-o face a turning point — but when the performance ends, only one person remains on stage.",
+              "overview": "Jeong-yo est surpris par le changement d'attitude soudain de Pi-o. Plus tard, quand le concert touche à sa fin, quelqu'un décide d'occuper le devant de la scène.",
               "air_date": "2026-10-03",
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/Fs9vSFyPnGDDK"
+                  "url": "https://vidara.to/e/Fs9vSFyPnGDDK",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/wCDPkwH5AgDvG"
+                  "url": "https://playmate.to/embed/wCDPkwH5AgDvG",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -1755,16 +1818,18 @@
             {
               "number": 12,
               "name": "Épisode 12",
-              "overview": "After painful losses, Pi-o considers leaving music behind, but Jeong-yo shares his final feelings as their last four-hands performance begins.",
+              "overview": "Pi-o décide de tourner le dos à la musique, mais Jeong-yo tente de le faire changer d'avis avec un ultime cadeau. Comment vont-ils mettre un point d'orgue à leur histoire ?",
               "air_date": "2026-10-04",
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/qvkhFT3ITA1Gt"
+                  "url": "https://vidara.to/e/qvkhFT3ITA1Gt",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/vyliAbY5JHRmy"
+                  "url": "https://playmate.to/embed/vyliAbY5JHRmy",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -1805,12 +1870,12 @@
         "포핸즈"
       ],
       "downloads": [],
-      "posterV": 2,
       "origin_country": [
         "KR"
       ],
       "original_language": "ko",
-      "updatedAt": 1792425659452,
+      "posterV": 2,
+      "updatedAt": 1792504118368,
       "networks": [
         "tvN"
       ]
@@ -1820,6 +1885,29 @@
       "type": "tv",
       "name": "Dive into You",
       "original_name": "너에게 다이브",
+      "origin_country": [
+        "KR"
+      ],
+      "networks": [
+        "Channel A"
+      ],
+      "original_language": "ko",
+      "aka": [
+        "再次奔向你",
+        "Dive into You",
+        "De volta para você",
+        "向你跳水",
+        "Volveré Por Ti",
+        "君へダイブ",
+        "Потопете се в себе си",
+        "ดิ่งลึกสู่ใจเธอ",
+        "الغوص في حبك",
+        "Погружение к тебе",
+        "向你Dive",
+        "潜入你心",
+        "Погружаясь в тебя",
+        "너에게 다이브"
+      ],
       "year": "2026",
       "overview": "Une actrice et son frère jumeau voyagent dans le temps – et échangent leurs corps – pour sauver la vie de leur ami.",
       "genres": [
@@ -1828,9 +1916,10 @@
         "Science-Fiction & Fantastique"
       ],
       "rating": "9.0",
-      "pop": 15.0254,
+      "pop": 13.9089,
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/w500/6OAuQOGqjYY1JXbkTlWz4Mm2Kmi.jpg",
+      "posterV": 2,
       "backdrop": "https://image.tmdb.org/t/p/original/jseW3HucgNjN2CwJa3MiOlF4xMO.jpg",
       "cast": [
         {
@@ -1867,15 +1956,18 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/5YXxZiybnWGFQ"
+                  "url": "https://vidara.to/e/5YXxZiybnWGFQ",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/OUMCEnlPAqzMU"
+                  "url": "https://playmate.to/embed/OUMCEnlPAqzMU",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-c49jps70wbmu.html"
+                  "url": "https://uqload.vc/embed-c49jps70wbmu.html",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -1894,15 +1986,18 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/G7RAaPCAZqPIV"
+                  "url": "https://vidara.to/e/G7RAaPCAZqPIV",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/OBPx6KJaAQbkS"
+                  "url": "https://playmate.to/embed/OBPx6KJaAQbkS",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-l5pewc05t1xp.html"
+                  "url": "https://uqload.vc/embed-l5pewc05t1xp.html",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -1921,15 +2016,18 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/YVAMUlgvZT9Sn"
+                  "url": "https://vidara.to/e/YVAMUlgvZT9Sn",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/HRRG2TzLutO17"
+                  "url": "https://playmate.to/embed/HRRG2TzLutO17",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-y5dwrdf5g0j1.html"
+                  "url": "https://uqload.vc/embed-y5dwrdf5g0j1.html",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -1948,15 +2046,18 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/9y8cAiISS2MT3"
+                  "url": "https://vidara.to/e/9y8cAiISS2MT3",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/rvl5l1ggDZ8xl"
+                  "url": "https://playmate.to/embed/rvl5l1ggDZ8xl",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-1m73oweb3xx7.html"
+                  "url": "https://uqload.vc/embed-1m73oweb3xx7.html",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -1975,15 +2076,18 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/nQdHtHc3D14Au"
+                  "url": "https://vidara.to/e/nQdHtHc3D14Au",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/x8WdVygQYIU6c"
+                  "url": "https://playmate.to/embed/x8WdVygQYIU6c",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-yxc47s2v5p7c.html"
+                  "url": "https://uqload.vc/embed-yxc47s2v5p7c.html",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -2002,15 +2106,18 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/hs5DmaOKYRpji"
+                  "url": "https://vidara.to/e/hs5DmaOKYRpji",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/GlVKFE0c6DpEo"
+                  "url": "https://playmate.to/embed/GlVKFE0c6DpEo",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-logymxhaafxc.html"
+                  "url": "https://uqload.vc/embed-logymxhaafxc.html",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -2023,7 +2130,7 @@
             {
               "number": 7,
               "name": "Épisode 7",
-              "overview": "",
+              "overview": "Someone who knows the secret of time travel deliberately hid the camcorder. The twins’ investigation points to Hyeong-won.",
               "air_date": "2026-10-17",
               "sources": [
                 {
@@ -2052,7 +2159,7 @@
             {
               "number": 8,
               "name": "Épisode 8",
-              "overview": "",
+              "overview": "The twins return to 2026, where Woo-jae has become an actor and turns his back on Ha-na. Meanwhile, Ha-na receives a mysterious screenplay.",
               "air_date": "2026-10-18",
               "sources": [
                 {
@@ -2126,32 +2233,8 @@
       "langs": [
         "VOSTFR"
       ],
-      "aka": [
-        "再次奔向你",
-        "Dive into You",
-        "De volta para você",
-        "向你跳水",
-        "Volveré Por Ti",
-        "君へダイブ",
-        "Потопете се в себе си",
-        "ดิ่งลึกสู่ใจเธอ",
-        "الغوص في حبك",
-        "Погружение к тебе",
-        "向你Dive",
-        "潜入你心",
-        "Погружаясь в тебя",
-        "너에게 다이브"
-      ],
       "downloads": [],
-      "posterV": 2,
-      "origin_country": [
-        "KR"
-      ],
-      "original_language": "ko",
-      "updatedAt": 1792425660272,
-      "networks": [
-        "Channel A"
-      ],
+      "updatedAt": 1792504119147,
       "trend": 0
     },
     {
@@ -2159,6 +2242,41 @@
       "type": "tv",
       "name": "A Love Other Than Yours",
       "original_name": "너 말고 다른 연애",
+      "origin_country": [
+        "KR"
+      ],
+      "networks": [
+        "KBS2"
+      ],
+      "original_language": "ko",
+      "aka": [
+        "不是你的恋爱",
+        "Um Amor Diferente do Seu",
+        "A Love Other Than Yours",
+        "Кохання, але не з тобою/ Кохання поза нами",
+        "Eine andere Liebe als deine",
+        "Un amor distinto al tuyo",
+        "Un autre amour que le tien",
+        "Un amore diverso dal tuo",
+        "Másféle szerelem",
+        "Miłość inna niż ty",
+        "O iubire alta decât a ta",
+        "Senden Başka Bir Aşk",
+        "Láska jiná než tvá",
+        "Μια Αγάπη Διαφορετική από τη Δική σου",
+        "حُبٌّ آخَر غَير حُبِّك",
+        "अ लव अदर देन योर्स",
+        "เมื่อหัวใจมีใครอีกคน",
+        "あなたとは違う恋愛",
+        "除了你之外的戀愛",
+        "Любовь, но не с тобой",
+        "除了你之外的恋爱",
+        "君以外の恋愛",
+        "Neo Malgo Dareun Yeonae",
+        "不是和你談的戀愛",
+        "Not You, Another Love",
+        "너 말고 다른 연애"
+      ],
       "year": "2026",
       "overview": "Une romance réaliste et touchante sur un couple qui, après dix ans de vie commune, voit sa relation confortable bouleversée par des sentiments inattendus.",
       "genres": [
@@ -2166,9 +2284,10 @@
         "Comédie"
       ],
       "rating": "6.3",
-      "pop": 40.7841,
+      "pop": 40.2399,
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/w500/iKgdhgBPi1cCRRqsUgaxUDRuFP6.jpg",
+      "posterV": 2,
       "backdrop": "https://image.tmdb.org/t/p/original/moUjiEzpJVNZc7hyNRBbLPt0CPX.jpg",
       "cast": [
         {
@@ -2195,15 +2314,18 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/hbnOPoWNxJrp0"
+                  "url": "https://vidara.to/e/hbnOPoWNxJrp0",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/8hPXJmRQQaTTC"
+                  "url": "https://playmate.to/embed/8hPXJmRQQaTTC",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-lu6fpdz9205l.html"
+                  "url": "https://uqload.vc/embed-lu6fpdz9205l.html",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -2221,15 +2343,18 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/bC6TJm3DgbbKe"
+                  "url": "https://vidara.to/e/bC6TJm3DgbbKe",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/bQOJsvf2M7Rc2"
+                  "url": "https://playmate.to/embed/bQOJsvf2M7Rc2",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-fuxcci4g5jjg.html"
+                  "url": "https://uqload.vc/embed-fuxcci4g5jjg.html",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -2247,15 +2372,18 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/IZtGFoRm8TH8n"
+                  "url": "https://vidara.to/e/IZtGFoRm8TH8n",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/RfPzcR4oIHMU0"
+                  "url": "https://playmate.to/embed/RfPzcR4oIHMU0",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-pv2u7h8v5bj3.html"
+                  "url": "https://uqload.vc/embed-pv2u7h8v5bj3.html",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -2273,15 +2401,18 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/sUjzbTLyZ1dYM"
+                  "url": "https://vidara.to/e/sUjzbTLyZ1dYM",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/J6jceidU6vKVS"
+                  "url": "https://playmate.to/embed/J6jceidU6vKVS",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-e0od46ai4l1v.html"
+                  "url": "https://uqload.vc/embed-e0od46ai4l1v.html",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -2299,15 +2430,18 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/EDj2DpUmfm0vz"
+                  "url": "https://vidara.to/e/EDj2DpUmfm0vz",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/TlxrUpqHsskXb"
+                  "url": "https://playmate.to/embed/TlxrUpqHsskXb",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-t7rabjjuvupp.html"
+                  "url": "https://uqload.vc/embed-t7rabjjuvupp.html",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -2325,15 +2459,18 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/cwy4ONBhR27hF"
+                  "url": "https://vidara.to/e/cwy4ONBhR27hF",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/qXDCwnEd0FuBO"
+                  "url": "https://playmate.to/embed/qXDCwnEd0FuBO",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-fr4qcr0y3rz3.html"
+                  "url": "https://uqload.vc/embed-fr4qcr0y3rz3.html",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -2351,15 +2488,18 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/yNeh8FwYpAdbY"
+                  "url": "https://vidara.to/e/yNeh8FwYpAdbY",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/ysHmvhnEFX3G5"
+                  "url": "https://playmate.to/embed/ysHmvhnEFX3G5",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-eagin2y2p6nr.html"
+                  "url": "https://uqload.vc/embed-eagin2y2p6nr.html",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -2377,15 +2517,18 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/B4ChfZOi4AilX"
+                  "url": "https://vidara.to/e/B4ChfZOi4AilX",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/X8tlikfJLKOhR"
+                  "url": "https://playmate.to/embed/X8tlikfJLKOhR",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-rrm24ry2h8p3.html"
+                  "url": "https://uqload.vc/embed-rrm24ry2h8p3.html",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -2397,8 +2540,8 @@
             },
             {
               "number": 9,
-              "name": "Épisode 9",
-              "overview": "",
+              "name": "Do You Remember When We Fell in Love?",
+              "overview": "Mi-do tells her family she is quitting directing. Meanwhile, she and Namgung begin dating other people. As soon as they do, Su-a makes a bold move while Tae-seung takes a provocative step.",
               "air_date": "2026-10-17",
               "sources": [
                 {
@@ -2434,8 +2577,8 @@
             },
             {
               "number": 10,
-              "name": "Épisode 10",
-              "overview": "",
+              "name": "What Do Our Scars Look Like?",
+              "overview": "Namgung and Mi-do keep up the pretense of being a couple in front of their families. Sol's arrival stirs Namgung's past, while Mi-do confides a long-held secret to Tae-seung.",
               "air_date": "2026-10-18",
               "sources": [
                 {
@@ -2510,45 +2653,9 @@
       "langs": [
         "VOSTFR"
       ],
-      "aka": [
-        "不是你的恋爱",
-        "Um Amor Diferente do Seu",
-        "A Love Other Than Yours",
-        "Кохання, але не з тобою/ Кохання поза нами",
-        "Eine andere Liebe als deine",
-        "Un amor distinto al tuyo",
-        "Un autre amour que le tien",
-        "Un amore diverso dal tuo",
-        "Másféle szerelem",
-        "Miłość inna niż ty",
-        "O iubire alta decât a ta",
-        "Senden Başka Bir Aşk",
-        "Láska jiná než tvá",
-        "Μια Αγάπη Διαφορετική από τη Δική σου",
-        "حُبٌّ آخَر غَير حُبِّك",
-        "अ लव अदर देन योर्स",
-        "เมื่อหัวใจมีใครอีกคน",
-        "あなたとは違う恋愛",
-        "除了你之外的戀愛",
-        "Любовь, но не с тобой",
-        "除了你之外的恋爱",
-        "君以外の恋愛",
-        "Neo Malgo Dareun Yeonae",
-        "不是和你談的戀愛",
-        "Not You, Another Love",
-        "너 말고 다른 연애"
-      ],
       "downloads": [],
-      "posterV": 2,
-      "origin_country": [
-        "KR"
-      ],
-      "original_language": "ko",
-      "updatedAt": 1792425661324,
-      "trend": 50,
-      "networks": [
-        "KBS2"
-      ]
+      "updatedAt": 1792504120022,
+      "trend": 50
     },
     {
       "id": "290193",
@@ -2595,7 +2702,7 @@
         "Mystère"
       ],
       "rating": "8.1",
-      "pop": 14.8207,
+      "pop": 13.726,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/2mwgHfOyrFrmvozjFoEXHRdfGhv.jpg",
       "backdrop": "https://image.tmdb.org/t/p/original/3bHz9dYSZ5XDxY0zDaBpYgUOhE2.jpg",
@@ -2644,7 +2751,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/XNraEcYnaTmWg"
+                  "url": "https://vidara.to/e/XNraEcYnaTmWg",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -2662,7 +2770,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/07p49axke0OHs"
+                  "url": "https://vidara.to/e/07p49axke0OHs",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -2681,7 +2790,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/uAEAbxFY8cJTp"
+                  "url": "https://vidara.to/e/uAEAbxFY8cJTp",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -2700,7 +2810,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/w9BNkyT1fOurJ"
+                  "url": "https://vidara.to/e/w9BNkyT1fOurJ",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -2719,7 +2830,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/bID89BIhgr2t2"
+                  "url": "https://vidara.to/e/bID89BIhgr2t2",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -2738,7 +2850,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/SOne2Vp9Rza1Z"
+                  "url": "https://vidara.to/e/SOne2Vp9Rza1Z",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -2757,7 +2870,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/vaEz4zTMQ0Qi8"
+                  "url": "https://vidara.to/e/vaEz4zTMQ0Qi8",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -2776,7 +2890,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/kYOIPa81A0bq2"
+                  "url": "https://vidara.to/e/kYOIPa81A0bq2",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -2795,7 +2910,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/FRqAqPlSFGmCt"
+                  "url": "https://vidara.to/e/FRqAqPlSFGmCt",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -2814,7 +2930,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/2sqo3MWDLE1Gb"
+                  "url": "https://vidara.to/e/2sqo3MWDLE1Gb",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -2837,12 +2954,12 @@
         "VF"
       ],
       "downloads": [],
-      "posterV": 2,
       "origin_country": [
         "KR"
       ],
       "original_language": "ko",
-      "updatedAt": 1792425662310,
+      "posterV": 2,
+      "updatedAt": 1792504120846,
       "networks": [
         "Netflix"
       ]
@@ -2884,7 +3001,7 @@
         "Drame"
       ],
       "rating": "8.2",
-      "pop": 10.4448,
+      "pop": 10.6425,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/A4Y4xlDHS4xi2WI9265vRyIYLoo.jpg",
       "backdrop": "https://image.tmdb.org/t/p/original/eBD46F44qKGPZiRLffO4q3JF8Hc.jpg",
@@ -2963,15 +3080,18 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/DsUFfC8SaMz92"
+                  "url": "https://vidara.to/e/DsUFfC8SaMz92",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/nxg7197xednGp"
+                  "url": "https://playmate.to/embed/nxg7197xednGp",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-5lew37brg8r6.html"
+                  "url": "https://uqload.vc/embed-5lew37brg8r6.html",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -2990,15 +3110,18 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/BOzp4HWpecTMN"
+                  "url": "https://vidara.to/e/BOzp4HWpecTMN",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/8NaSCJxhg7C2H"
+                  "url": "https://playmate.to/embed/8NaSCJxhg7C2H",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-f3ciqd9luuht.html"
+                  "url": "https://uqload.vc/embed-f3ciqd9luuht.html",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -3016,15 +3139,18 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/l0Cu1TJoIpWsu"
+                  "url": "https://vidara.to/e/l0Cu1TJoIpWsu",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/8vgDa4DRgkKUu"
+                  "url": "https://playmate.to/embed/8vgDa4DRgkKUu",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-gq3ndc4ohvz1.html"
+                  "url": "https://uqload.vc/embed-gq3ndc4ohvz1.html",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -3042,15 +3168,18 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/jxJf5HYr8jttm"
+                  "url": "https://vidara.to/e/jxJf5HYr8jttm",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/Ac7ce4FlLXso5"
+                  "url": "https://playmate.to/embed/Ac7ce4FlLXso5",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-4cj9lgbhicxp.html"
+                  "url": "https://uqload.vc/embed-4cj9lgbhicxp.html",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -3068,15 +3197,18 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/iB6lsVBk2l1TQ"
+                  "url": "https://vidara.to/e/iB6lsVBk2l1TQ",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/nQzCCoBBFaQ8W"
+                  "url": "https://playmate.to/embed/nQzCCoBBFaQ8W",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-h2qre1nqompb.html"
+                  "url": "https://uqload.vc/embed-h2qre1nqompb.html",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -3094,15 +3226,18 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/JtovdTElvavMQ"
+                  "url": "https://vidara.to/e/JtovdTElvavMQ",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/YwQWGJ8aV5xdI"
+                  "url": "https://playmate.to/embed/YwQWGJ8aV5xdI",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-yoke9und8u7a.html"
+                  "url": "https://uqload.vc/embed-yoke9und8u7a.html",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -3120,15 +3255,18 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/XtqLHEw1Hyo52"
+                  "url": "https://vidara.to/e/XtqLHEw1Hyo52",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/21YU7Cm3ngxhL"
+                  "url": "https://playmate.to/embed/21YU7Cm3ngxhL",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-edwqqesvnlee.html"
+                  "url": "https://uqload.vc/embed-edwqqesvnlee.html",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -3146,15 +3284,18 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/ALmZYFwmgNa99"
+                  "url": "https://vidara.to/e/ALmZYFwmgNa99",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/nb1hjNrhCT1yv"
+                  "url": "https://playmate.to/embed/nb1hjNrhCT1yv",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-tzopl1fw19zc.html"
+                  "url": "https://uqload.vc/embed-tzopl1fw19zc.html",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -3172,15 +3313,18 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/VQaCoqxYkB0e1"
+                  "url": "https://vidara.to/e/VQaCoqxYkB0e1",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/2FXIaMBs7BIjj"
+                  "url": "https://playmate.to/embed/2FXIaMBs7BIjj",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-0g8au3yzkfz0.html"
+                  "url": "https://uqload.vc/embed-0g8au3yzkfz0.html",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -3198,15 +3342,18 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/qes3cIQOYHyTE"
+                  "url": "https://vidara.to/e/qes3cIQOYHyTE",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/L1F4gWJIXbwRW"
+                  "url": "https://playmate.to/embed/L1F4gWJIXbwRW",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-cbqzntu1lcfy.html"
+                  "url": "https://uqload.vc/embed-cbqzntu1lcfy.html",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -3224,15 +3371,18 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/IlTWfviMCdKWw"
+                  "url": "https://vidara.to/e/IlTWfviMCdKWw",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/jMuDd9MdpIJlw"
+                  "url": "https://playmate.to/embed/jMuDd9MdpIJlw",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-ajrffr4ie0wj.html"
+                  "url": "https://uqload.vc/embed-ajrffr4ie0wj.html",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -3250,15 +3400,18 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/q7g5FsXIXmfcj"
+                  "url": "https://vidara.to/e/q7g5FsXIXmfcj",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/8zruzmBoFSG5y"
+                  "url": "https://playmate.to/embed/8zruzmBoFSG5y",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-iv05rz9sn9v6.html"
+                  "url": "https://uqload.vc/embed-iv05rz9sn9v6.html",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -3278,12 +3431,12 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "posterV": 2,
       "origin_country": [
         "KR"
       ],
       "original_language": "ko",
-      "updatedAt": 1792425663254,
+      "posterV": 2,
+      "updatedAt": 1792504121637,
       "networks": [
         "tvN"
       ]
@@ -3327,7 +3480,7 @@
         "Drame"
       ],
       "rating": "8.8",
-      "pop": 18.7818,
+      "pop": 17.7666,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/bwTzW1wTgUxUOQruhT8DvinUYgR.jpg",
       "backdrop": "https://image.tmdb.org/t/p/original/efaMS00Fevc3fw2dbeP7rh22O6D.jpg",
@@ -3406,22 +3559,26 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/V64DSvmtiWGso"
+                  "url": "https://vidara.to/e/V64DSvmtiWGso",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/Inru4uHmaxdWK"
+                  "url": "https://playmate.to/embed/Inru4uHmaxdWK",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-n8apnemqdq0h.html"
+                  "url": "https://uqload.vc/embed-n8apnemqdq0h.html",
+                  "by": "head"
                 }
               ],
               "downloads": [
                 {
                   "name": "1FICHIER",
                   "url": "https://1fichier.com/?johdr222ymwuumq524n6",
-                  "quality": "1080p (H.264)"
+                  "quality": "1080p (H.264)",
+                  "by": "head"
                 }
               ]
             },
@@ -3433,22 +3590,26 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/NqXgcDSVHv5NJ"
+                  "url": "https://vidara.to/e/NqXgcDSVHv5NJ",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/h2ByonYcLPvfL"
+                  "url": "https://playmate.to/embed/h2ByonYcLPvfL",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-diyr3sorn5js.html"
+                  "url": "https://uqload.vc/embed-diyr3sorn5js.html",
+                  "by": "head"
                 }
               ],
               "downloads": [
                 {
                   "name": "1FICHIER",
                   "url": "https://1fichier.com/?03g5pqk4d7pjzs223b2q",
-                  "quality": "1080p (H.264)"
+                  "quality": "1080p (H.264)",
+                  "by": "head"
                 }
               ]
             },
@@ -3460,22 +3621,26 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/42iQnNRO4bnjW"
+                  "url": "https://vidara.to/e/42iQnNRO4bnjW",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/8xBTiBBrtwk6B"
+                  "url": "https://playmate.to/embed/8xBTiBBrtwk6B",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-mdmgmojruyuu.html"
+                  "url": "https://uqload.vc/embed-mdmgmojruyuu.html",
+                  "by": "head"
                 }
               ],
               "downloads": [
                 {
                   "name": "1FICHIER",
                   "url": "https://1fichier.com/?98iqqub0vg15xbthzclj",
-                  "quality": "1080p (H.264)"
+                  "quality": "1080p (H.264)",
+                  "by": "head"
                 }
               ]
             },
@@ -3487,22 +3652,26 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/wAalS5mxT5T3b"
+                  "url": "https://vidara.to/e/wAalS5mxT5T3b",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/M1kvSPEXpEIeT"
+                  "url": "https://playmate.to/embed/M1kvSPEXpEIeT",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-g7xlq7x6mwj2.html"
+                  "url": "https://uqload.vc/embed-g7xlq7x6mwj2.html",
+                  "by": "head"
                 }
               ],
               "downloads": [
                 {
                   "name": "1FICHIER",
                   "url": "https://1fichier.com/?zsqncedpj3sq82r9p4ww",
-                  "quality": "1080p (H.264)"
+                  "quality": "1080p (H.264)",
+                  "by": "head"
                 }
               ]
             },
@@ -3514,22 +3683,26 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/Pu10GvLaDoYcW"
+                  "url": "https://vidara.to/e/Pu10GvLaDoYcW",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/psQE5ODD7rNUV"
+                  "url": "https://playmate.to/embed/psQE5ODD7rNUV",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-vuhbyulvm8ra.html"
+                  "url": "https://uqload.vc/embed-vuhbyulvm8ra.html",
+                  "by": "head"
                 }
               ],
               "downloads": [
                 {
                   "name": "1FICHIER",
                   "url": "https://1fichier.com/?ajppbb8gmbk6jis8k18q",
-                  "quality": "1080p (H.264)"
+                  "quality": "1080p (H.264)",
+                  "by": "head"
                 }
               ]
             },
@@ -3541,22 +3714,26 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/IL87f44aMGz2q"
+                  "url": "https://vidara.to/e/IL87f44aMGz2q",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/Gk6cCyISJTd0D"
+                  "url": "https://playmate.to/embed/Gk6cCyISJTd0D",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-snwfecgwft2r.html"
+                  "url": "https://uqload.vc/embed-snwfecgwft2r.html",
+                  "by": "head"
                 }
               ],
               "downloads": [
                 {
                   "name": "1FICHIER",
                   "url": "https://1fichier.com/?wl6k0o6scneqrftepnsj",
-                  "quality": "1080p (H.264)"
+                  "quality": "1080p (H.264)",
+                  "by": "head"
                 }
               ]
             },
@@ -3568,22 +3745,26 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/6lSyX5wyx3ZTH"
+                  "url": "https://vidara.to/e/6lSyX5wyx3ZTH",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/K5P9JPXYlpZOE"
+                  "url": "https://playmate.to/embed/K5P9JPXYlpZOE",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-u5vlumqzztux.html"
+                  "url": "https://uqload.vc/embed-u5vlumqzztux.html",
+                  "by": "head"
                 }
               ],
               "downloads": [
                 {
                   "name": "1FICHIER",
                   "url": "https://1fichier.com/?9rjl6c6nbpt1ywjki0z3",
-                  "quality": "1080p (H.264)"
+                  "quality": "1080p (H.264)",
+                  "by": "head"
                 }
               ]
             },
@@ -3595,22 +3776,26 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/FHUOK2kdPsgmc"
+                  "url": "https://vidara.to/e/FHUOK2kdPsgmc",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/y5ynCQtsFEkjn"
+                  "url": "https://playmate.to/embed/y5ynCQtsFEkjn",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-oqn3lhrdr2lk.html"
+                  "url": "https://uqload.vc/embed-oqn3lhrdr2lk.html",
+                  "by": "head"
                 }
               ],
               "downloads": [
                 {
                   "name": "1FICHIER",
                   "url": "https://1fichier.com/?69m2gqngrhfo4koxr1ek",
-                  "quality": "1080p (H.264)"
+                  "quality": "1080p (H.264)",
+                  "by": "head"
                 }
               ]
             },
@@ -3622,22 +3807,26 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/uQ6cHgfbXrQyP"
+                  "url": "https://vidara.to/e/uQ6cHgfbXrQyP",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/E2PD7QpcEsGnW"
+                  "url": "https://playmate.to/embed/E2PD7QpcEsGnW",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-u8jfrtfpezt5.html"
+                  "url": "https://uqload.vc/embed-u8jfrtfpezt5.html",
+                  "by": "head"
                 }
               ],
               "downloads": [
                 {
                   "name": "1FICHIER",
                   "url": "https://1fichier.com/?ii2ovnjiqv7adu1dqcpj",
-                  "quality": "1080p (H.264)"
+                  "quality": "1080p (H.264)",
+                  "by": "head"
                 }
               ]
             },
@@ -3649,22 +3838,26 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/epcWB6fMK1QKm"
+                  "url": "https://vidara.to/e/epcWB6fMK1QKm",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/Elxd3nl886Jwo"
+                  "url": "https://playmate.to/embed/Elxd3nl886Jwo",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-xubfgagwbxsb.html"
+                  "url": "https://uqload.vc/embed-xubfgagwbxsb.html",
+                  "by": "head"
                 }
               ],
               "downloads": [
                 {
                   "name": "1FICHIER",
                   "url": "https://1fichier.com/?3zx4xiw1i5w3bxpyx1i5",
-                  "quality": "1080p (H.264)"
+                  "quality": "1080p (H.264)",
+                  "by": "head"
                 }
               ]
             },
@@ -3676,22 +3869,26 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/U2o3QvHv70KcI"
+                  "url": "https://vidara.to/e/U2o3QvHv70KcI",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/s2ofYgvbWkioo"
+                  "url": "https://playmate.to/embed/s2ofYgvbWkioo",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-0r0634faayi6.html"
+                  "url": "https://uqload.vc/embed-0r0634faayi6.html",
+                  "by": "head"
                 }
               ],
               "downloads": [
                 {
                   "name": "1FICHIER",
                   "url": "https://1fichier.com/?pljtmkz4de07go77swus",
-                  "quality": "1080p (H.264)"
+                  "quality": "1080p (H.264)",
+                  "by": "head"
                 }
               ]
             },
@@ -3703,22 +3900,26 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/1jUBmbroB6uU8"
+                  "url": "https://vidara.to/e/1jUBmbroB6uU8",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/9R0KaER8IKnw7"
+                  "url": "https://playmate.to/embed/9R0KaER8IKnw7",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-t2cmf7iaveb3.html"
+                  "url": "https://uqload.vc/embed-t2cmf7iaveb3.html",
+                  "by": "head"
                 }
               ],
               "downloads": [
                 {
                   "name": "1FICHIER",
                   "url": "https://1fichier.com/?9vyn6z5rxf96ehz017xu",
-                  "quality": "1080p (H.264)"
+                  "quality": "1080p (H.264)",
+                  "by": "head"
                 }
               ]
             },
@@ -3730,22 +3931,26 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/QCBwlcxwJfAAS"
+                  "url": "https://vidara.to/e/QCBwlcxwJfAAS",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/kmRqwGPoWJKqR"
+                  "url": "https://playmate.to/embed/kmRqwGPoWJKqR",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-hbsmwzdao91u.html"
+                  "url": "https://uqload.vc/embed-hbsmwzdao91u.html",
+                  "by": "head"
                 }
               ],
               "downloads": [
                 {
                   "name": "1FICHIER",
                   "url": "https://1fichier.com/?ktuzmzs27u0c8qwp4llw",
-                  "quality": "1080p (H.264)"
+                  "quality": "1080p (H.264)",
+                  "by": "head"
                 }
               ]
             },
@@ -3757,22 +3962,26 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/t2QcYzRipeJHh"
+                  "url": "https://vidara.to/e/t2QcYzRipeJHh",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/j2lWl56KoP2Zb"
+                  "url": "https://playmate.to/embed/j2lWl56KoP2Zb",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-6tfyob9ximol.html"
+                  "url": "https://uqload.vc/embed-6tfyob9ximol.html",
+                  "by": "head"
                 }
               ],
               "downloads": [
                 {
                   "name": "1FICHIER",
                   "url": "https://1fichier.com/?fp8rfcyslk4ihpmx7kib",
-                  "quality": "1080p (H.264)"
+                  "quality": "1080p (H.264)",
+                  "by": "head"
                 }
               ]
             },
@@ -3784,22 +3993,26 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/lM6ABl8I6tmjz"
+                  "url": "https://vidara.to/e/lM6ABl8I6tmjz",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/OglJn3F4aTeHZ"
+                  "url": "https://playmate.to/embed/OglJn3F4aTeHZ",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-sh1e0rf1ycp6.html"
+                  "url": "https://uqload.vc/embed-sh1e0rf1ycp6.html",
+                  "by": "head"
                 }
               ],
               "downloads": [
                 {
                   "name": "1FICHIER",
                   "url": "https://1fichier.com/?svjshpadj0qzqbthtxse",
-                  "quality": "1080p (H.264)"
+                  "quality": "1080p (H.264)",
+                  "by": "head"
                 }
               ]
             },
@@ -3811,22 +4024,26 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/VHo68FXz0Jdo1"
+                  "url": "https://vidara.to/e/VHo68FXz0Jdo1",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/1RXzjaio2iRV3"
+                  "url": "https://playmate.to/embed/1RXzjaio2iRV3",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-56rn4m21rfas.html"
+                  "url": "https://uqload.vc/embed-56rn4m21rfas.html",
+                  "by": "head"
                 }
               ],
               "downloads": [
                 {
                   "name": "1FICHIER",
                   "url": "https://1fichier.com/?yhc1e75zalmdai4yx9cy",
-                  "quality": "1080p (H.264)"
+                  "quality": "1080p (H.264)",
+                  "by": "head"
                 }
               ]
             }
@@ -3840,12 +4057,12 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "posterV": 2,
       "origin_country": [
         "KR"
       ],
       "original_language": "ko",
-      "updatedAt": 1792425664468,
+      "posterV": 2,
+      "updatedAt": 1792504122481,
       "networks": [
         "tvN"
       ]
@@ -3894,7 +4111,7 @@
         "Comédie"
       ],
       "rating": "8.5",
-      "pop": 21.3188,
+      "pop": 20.0422,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/xBnscv5BrJREKVSvh0le61y4KDk.jpg",
       "backdrop": "https://image.tmdb.org/t/p/original/eSB0fD6CbNW3LT8Z55V07fmYFpo.jpg",
@@ -3973,15 +4190,18 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/3ckAUwiYBrbHa"
+                  "url": "https://vidara.to/e/3ckAUwiYBrbHa",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/DzpNFHDEdU6Yk"
+                  "url": "https://playmate.to/embed/DzpNFHDEdU6Yk",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-lscqan26fm94.html"
+                  "url": "https://uqload.vc/embed-lscqan26fm94.html",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -3994,15 +4214,18 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/Sul4fj11IC7WI"
+                  "url": "https://vidara.to/e/Sul4fj11IC7WI",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/QyIS29wsYtruo"
+                  "url": "https://playmate.to/embed/QyIS29wsYtruo",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-c2cbw84muvsm.html"
+                  "url": "https://uqload.vc/embed-c2cbw84muvsm.html",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -4015,15 +4238,18 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/MkgI3BoVO3lSl"
+                  "url": "https://vidara.to/e/MkgI3BoVO3lSl",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/0idmlTazj71pU"
+                  "url": "https://playmate.to/embed/0idmlTazj71pU",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-pkf6vgeb5ph5.html"
+                  "url": "https://uqload.vc/embed-pkf6vgeb5ph5.html",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -4036,15 +4262,18 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/vkZlITQNdZUr3"
+                  "url": "https://vidara.to/e/vkZlITQNdZUr3",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/7KxAmQmKCTiMo"
+                  "url": "https://playmate.to/embed/7KxAmQmKCTiMo",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-m4ancdtfunwa.html"
+                  "url": "https://uqload.vc/embed-m4ancdtfunwa.html",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -4057,15 +4286,18 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/cKtn78LBYbn7s"
+                  "url": "https://vidara.to/e/cKtn78LBYbn7s",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/W6SuIlzZd26YN"
+                  "url": "https://playmate.to/embed/W6SuIlzZd26YN",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-0pw6jyj5cd58.html"
+                  "url": "https://uqload.vc/embed-0pw6jyj5cd58.html",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -4078,15 +4310,18 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/Ec4uBR6ZpX9q4"
+                  "url": "https://vidara.to/e/Ec4uBR6ZpX9q4",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/lVhUa5bexcbqm"
+                  "url": "https://playmate.to/embed/lVhUa5bexcbqm",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-yygetij29orb.html"
+                  "url": "https://uqload.vc/embed-yygetij29orb.html",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -4099,15 +4334,18 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/VMLOKzlZ2Xzss"
+                  "url": "https://vidara.to/e/VMLOKzlZ2Xzss",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/4yTqKwsRpy9Ja"
+                  "url": "https://playmate.to/embed/4yTqKwsRpy9Ja",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-auflb91of91p.html"
+                  "url": "https://uqload.vc/embed-auflb91of91p.html",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -4120,15 +4358,18 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/P5dpdMemhu5tU"
+                  "url": "https://vidara.to/e/P5dpdMemhu5tU",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/oS4WcLaAnedTR"
+                  "url": "https://playmate.to/embed/oS4WcLaAnedTR",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-0cuf002gogbg.html"
+                  "url": "https://uqload.vc/embed-0cuf002gogbg.html",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -4141,15 +4382,18 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/AIflJTBqF2iPe"
+                  "url": "https://vidara.to/e/AIflJTBqF2iPe",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/GRvuj8j1e83LA"
+                  "url": "https://playmate.to/embed/GRvuj8j1e83LA",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-zhnz9hahzgox.html"
+                  "url": "https://uqload.vc/embed-zhnz9hahzgox.html",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -4162,15 +4406,18 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/NAtR5XfA38ehU"
+                  "url": "https://vidara.to/e/NAtR5XfA38ehU",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/DdBks1N7f2gnR"
+                  "url": "https://playmate.to/embed/DdBks1N7f2gnR",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-4hjn17sbvphz.html"
+                  "url": "https://uqload.vc/embed-4hjn17sbvphz.html",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -4183,15 +4430,18 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/c0XAuvm4UKf04"
+                  "url": "https://vidara.to/e/c0XAuvm4UKf04",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/LBGzH1oFH4XBF"
+                  "url": "https://playmate.to/embed/LBGzH1oFH4XBF",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-mr53lzb2wv4b.html"
+                  "url": "https://uqload.vc/embed-mr53lzb2wv4b.html",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -4204,15 +4454,18 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/DBbcjHppiKDuE"
+                  "url": "https://vidara.to/e/DBbcjHppiKDuE",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/Ii2ppYuOIB793"
+                  "url": "https://playmate.to/embed/Ii2ppYuOIB793",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-o4pui445d4uc.html"
+                  "url": "https://uqload.vc/embed-o4pui445d4uc.html",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -4225,15 +4478,18 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/1xFDJKdNyFDpa"
+                  "url": "https://vidara.to/e/1xFDJKdNyFDpa",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/UkxvALmQLwkTn"
+                  "url": "https://playmate.to/embed/UkxvALmQLwkTn",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-gj7zckfuar0v.html"
+                  "url": "https://uqload.vc/embed-gj7zckfuar0v.html",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -4246,15 +4502,18 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/eOxbmLHM6C2Et"
+                  "url": "https://vidara.to/e/eOxbmLHM6C2Et",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/C5FpfMq106f8L"
+                  "url": "https://playmate.to/embed/C5FpfMq106f8L",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-u2wxcww2xe5d.html"
+                  "url": "https://uqload.vc/embed-u2wxcww2xe5d.html",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -4267,15 +4526,18 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/mARdT1RU3MwtK"
+                  "url": "https://vidara.to/e/mARdT1RU3MwtK",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/MP1rXzizDwv93"
+                  "url": "https://playmate.to/embed/MP1rXzizDwv93",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-m2pti86gtlat.html"
+                  "url": "https://uqload.vc/embed-m2pti86gtlat.html",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -4288,15 +4550,18 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/BWkUZv0xvjMJt"
+                  "url": "https://vidara.to/e/BWkUZv0xvjMJt",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/sDXaYgFynngeq"
+                  "url": "https://playmate.to/embed/sDXaYgFynngeq",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-7ow5p688iih3.html"
+                  "url": "https://uqload.vc/embed-7ow5p688iih3.html",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -4311,12 +4576,12 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "posterV": 2,
       "origin_country": [
         "KR"
       ],
       "original_language": "ko",
-      "updatedAt": 1792425665510,
+      "posterV": 2,
+      "updatedAt": 1792504123292,
       "networks": [
         "SBS"
       ]
@@ -4375,7 +4640,7 @@
         "Comédie"
       ],
       "rating": "9.4",
-      "pop": 56.2249,
+      "pop": 55.3969,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/fMECSPrTmRClSViMsXFYmiYIcWP.jpg",
       "backdrop": "https://image.tmdb.org/t/p/original/vyG93jhmPL7tBIhRtCLa5mdBKob.jpg",
@@ -4414,7 +4679,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/7H73efrUeki3a"
+                  "url": "https://vidara.to/e/7H73efrUeki3a",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -4432,7 +4698,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/qg4jGENPzfI1I"
+                  "url": "https://vidara.to/e/qg4jGENPzfI1I",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -4450,7 +4717,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/hKNgk20fSTywg"
+                  "url": "https://vidara.to/e/hKNgk20fSTywg",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -4468,7 +4736,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/yTIt4U07g25Lk"
+                  "url": "https://vidara.to/e/yTIt4U07g25Lk",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -4486,7 +4755,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/FLxFsyXmre5tl"
+                  "url": "https://vidara.to/e/FLxFsyXmre5tl",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -4504,7 +4774,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/trjsmze7J0jAu"
+                  "url": "https://vidara.to/e/trjsmze7J0jAu",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -4522,7 +4793,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/5vDG1M2638kFD"
+                  "url": "https://vidara.to/e/5vDG1M2638kFD",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -4540,7 +4812,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/518euYcRm6B2Q"
+                  "url": "https://vidara.to/e/518euYcRm6B2Q",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -4558,7 +4831,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/whybadNaqbxbW"
+                  "url": "https://vidara.to/e/whybadNaqbxbW",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -4576,7 +4850,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/XqaWRzmmCWuuz"
+                  "url": "https://vidara.to/e/XqaWRzmmCWuuz",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -4597,12 +4872,12 @@
         "VF"
       ],
       "downloads": [],
-      "posterV": 2,
       "origin_country": [
         "KR"
       ],
       "original_language": "ko",
-      "updatedAt": 1792425666419,
+      "posterV": 2,
+      "updatedAt": 1792504124219,
       "networks": [
         "Netflix"
       ]
@@ -4646,7 +4921,7 @@
         "Science-Fiction & Fantastique"
       ],
       "rating": "8.3",
-      "pop": 27.1199,
+      "pop": 27.8065,
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/w500/pTEFqAjLd5YTsMD6NSUxV6Dq7A6.jpg",
       "backdrop": "https://image.tmdb.org/t/p/original/8hp2CuGnw1iP5dLBVMAPUv23swx.jpg",
@@ -4710,7 +4985,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/eaTiMVK1sXXW6"
+                  "url": "https://vidara.to/e/eaTiMVK1sXXW6",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -4723,7 +4999,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/xpac5Ve9eVJiL"
+                  "url": "https://vidara.to/e/xpac5Ve9eVJiL",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -4736,7 +5013,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/k6gp6hArCq1L0"
+                  "url": "https://vidara.to/e/k6gp6hArCq1L0",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -4749,7 +5027,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/zzrAG7qVEqyYR"
+                  "url": "https://vidara.to/e/zzrAG7qVEqyYR",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -4762,7 +5041,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/6RXRr4dCCmHfQ"
+                  "url": "https://vidara.to/e/6RXRr4dCCmHfQ",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -4775,7 +5055,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/B3ZMhmtC7bnhX"
+                  "url": "https://vidara.to/e/B3ZMhmtC7bnhX",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -4788,7 +5069,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/ObWCLGZY4sgtL"
+                  "url": "https://vidara.to/e/ObWCLGZY4sgtL",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -4801,7 +5083,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/VcAO93Q8LYH4b"
+                  "url": "https://vidara.to/e/VcAO93Q8LYH4b",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -4814,7 +5097,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/MvYrKWr8lLgIQ"
+                  "url": "https://vidara.to/e/MvYrKWr8lLgIQ",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -4827,7 +5111,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/u03jpqNetsudJ"
+                  "url": "https://vidara.to/e/u03jpqNetsudJ",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -4840,7 +5125,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/BW3aQrfEkBPFc"
+                  "url": "https://vidara.to/e/BW3aQrfEkBPFc",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -4853,7 +5139,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/HtPGIOHtH6aGn"
+                  "url": "https://vidara.to/e/HtPGIOHtH6aGn",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -4875,12 +5162,12 @@
         "VF"
       ],
       "downloads": [],
-      "posterV": 2,
       "origin_country": [
         "KR"
       ],
       "original_language": "ko",
-      "updatedAt": 1792425667516,
+      "posterV": 2,
+      "updatedAt": 1792504125128,
       "networks": [
         "Netflix"
       ]
@@ -4921,7 +5208,7 @@
         "Drame"
       ],
       "rating": "7.6",
-      "pop": 19.4722,
+      "pop": 15.3424,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/u0mCeqVvQW2HEfrRy1we9UklsQd.jpg",
       "backdrop": "https://image.tmdb.org/t/p/original/mIjERiWlnDzQWHTcZdtucLmTCeO.jpg",
@@ -5000,7 +5287,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/mp3IkH93GCYvN"
+                  "url": "https://vidara.to/e/mp3IkH93GCYvN",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -5013,7 +5301,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/qdN7B275Ic9Se"
+                  "url": "https://vidara.to/e/qdN7B275Ic9Se",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -5026,7 +5315,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/6dpwAECh2o6Ll"
+                  "url": "https://vidara.to/e/6dpwAECh2o6Ll",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -5039,7 +5329,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/5tO7CYOBn7luP"
+                  "url": "https://vidara.to/e/5tO7CYOBn7luP",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -5052,7 +5343,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/z8YqmV5X1qbJW"
+                  "url": "https://vidara.to/e/z8YqmV5X1qbJW",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -5065,7 +5357,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/Av4SEMxKd8bRg"
+                  "url": "https://vidara.to/e/Av4SEMxKd8bRg",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -5078,7 +5371,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/lNvdUFH0JxyEN"
+                  "url": "https://vidara.to/e/lNvdUFH0JxyEN",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -5091,7 +5385,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/jHFlIqMhXT0M4"
+                  "url": "https://vidara.to/e/jHFlIqMhXT0M4",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -5107,12 +5402,12 @@
         "VF"
       ],
       "downloads": [],
-      "posterV": 2,
       "origin_country": [
         "JP"
       ],
       "original_language": "ja",
-      "updatedAt": 1792425668508,
+      "posterV": 2,
+      "updatedAt": 1792504126051,
       "networks": [
         "Netflix"
       ]
@@ -5144,7 +5439,7 @@
         "Drame"
       ],
       "rating": "8.2",
-      "pop": 22.2016,
+      "pop": 19.1052,
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/original/2yi3gOIQt22NjJam1u5jqBa3GQ1.jpg",
       "backdrop": "https://image.tmdb.org/t/p/original/fRR6jHutlHuYxMeZp4cZfjgafzd.jpg",
@@ -5183,7 +5478,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/drjwGqDUVzGrw"
+                  "url": "https://vidara.to/e/drjwGqDUVzGrw",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -5196,7 +5492,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/pyezT0ZeaVzrV"
+                  "url": "https://vidara.to/e/pyezT0ZeaVzrV",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -5209,7 +5506,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/etifBhL0sBQQH"
+                  "url": "https://vidara.to/e/etifBhL0sBQQH",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -5222,7 +5520,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/x3oeNTfKSSPJX"
+                  "url": "https://vidara.to/e/x3oeNTfKSSPJX",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -5235,7 +5534,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/LNn3A8MaUvxzS"
+                  "url": "https://vidara.to/e/LNn3A8MaUvxzS",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -5248,7 +5548,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/io5OTJBO0dEBc"
+                  "url": "https://vidara.to/e/io5OTJBO0dEBc",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -5268,7 +5569,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/UQLfiglPL0MW7"
+                  "url": "https://vidara.to/e/UQLfiglPL0MW7",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -5287,7 +5589,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/BjCVWO8gFbKCk"
+                  "url": "https://vidara.to/e/BjCVWO8gFbKCk",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -5306,7 +5609,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/Eh8jOqNtRtHWM"
+                  "url": "https://vidara.to/e/Eh8jOqNtRtHWM",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -5388,12 +5692,12 @@
         "VF"
       ],
       "downloads": [],
-      "posterV": 2,
       "origin_country": [
         "KR"
       ],
       "original_language": "ko",
-      "updatedAt": 1792425669455,
+      "posterV": 2,
+      "updatedAt": 1792504127202,
       "networks": [
         "Disney+"
       ]
@@ -5442,7 +5746,7 @@
         "Drame"
       ],
       "rating": "8.9",
-      "pop": 89.8651,
+      "pop": 74.474,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/ecRrKGXfflZmDZBD4irdkybClT.jpg",
       "backdrop": "https://image.tmdb.org/t/p/original/rN9xHDp83kZ3cOr82JR1b4rFIFk.jpg",
@@ -5476,15 +5780,18 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/V6ytpBcYLAalG"
+                  "url": "https://vidara.to/e/V6ytpBcYLAalG",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/C7a8bjqOqiWwJ"
+                  "url": "https://playmate.to/embed/C7a8bjqOqiWwJ",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-gau8o46ekbec.html"
+                  "url": "https://uqload.vc/embed-gau8o46ekbec.html",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -5497,7 +5804,8 @@
                   "name": "1FICHIER",
                   "url": "https://1fichier.com/?57vr6kyc5obiqi1iung5",
                   "size": "4 Go",
-                  "quality": "1080p (H.264)"
+                  "quality": "1080p (H.264)",
+                  "by": "head"
                 }
               ]
             },
@@ -5509,7 +5817,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/xPxAg60z4HB6c"
+                  "url": "https://vidara.to/e/xPxAg60z4HB6c",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -5528,7 +5837,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/6zWXxQkpTQfvl"
+                  "url": "https://vidara.to/e/6zWXxQkpTQfvl",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -5547,7 +5857,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/bUjVAavNS1ExI"
+                  "url": "https://vidara.to/e/bUjVAavNS1ExI",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -5566,15 +5877,18 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/bPIEw2upU4y5D"
+                  "url": "https://vidara.to/e/bPIEw2upU4y5D",
+                  "by": "head"
                 },
                 {
                   "name": "PLAYMATE",
-                  "url": "https://playmate.to/embed/N5JWm3mmxB3lV"
+                  "url": "https://playmate.to/embed/N5JWm3mmxB3lV",
+                  "by": "head"
                 },
                 {
                   "name": "UQLOAD",
-                  "url": "https://uqload.vc/embed-6b5zvifq8te2.html"
+                  "url": "https://uqload.vc/embed-6b5zvifq8te2.html",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -5587,7 +5901,8 @@
                   "name": "1FICHIER",
                   "url": "https://1fichier.com/?ypvj0b9h03fqb7fjgh2z",
                   "size": "3.9 Go",
-                  "quality": "1080p (H.264)"
+                  "quality": "1080p (H.264)",
+                  "by": "head"
                 }
               ]
             },
@@ -5599,7 +5914,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/gX8tqAUo23Fvn"
+                  "url": "https://vidara.to/e/gX8tqAUo23Fvn",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -5618,7 +5934,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/917weWRH9WdQD"
+                  "url": "https://vidara.to/e/917weWRH9WdQD",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -5637,7 +5954,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/u4pQPYbeo8s4s"
+                  "url": "https://vidara.to/e/u4pQPYbeo8s4s",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -5656,7 +5974,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/Qtnkr2LO3ehTd"
+                  "url": "https://vidara.to/e/Qtnkr2LO3ehTd",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -5675,7 +5994,8 @@
               "sources": [
                 {
                   "name": "VIDARA",
-                  "url": "https://vidara.to/e/BtTjifRggwwTy"
+                  "url": "https://vidara.to/e/BtTjifRggwwTy",
+                  "by": "head"
                 },
                 {
                   "name": "VIDMOLY",
@@ -5697,388 +6017,16 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "trend": 54,
-      "posterV": 2,
       "origin_country": [
         "KR"
       ],
       "original_language": "ko",
-      "updatedAt": 1792425670319,
+      "posterV": 2,
+      "trend": 54,
+      "updatedAt": 1792504128216,
       "networks": [
         "Netflix"
       ]
-    },
-    {
-      "id": "300146",
-      "type": "tv",
-      "name": "Where the Mask Ends",
-      "original_name": "嫁金钗",
-      "origin_country": [
-        "CN"
-      ],
-      "original_language": "zh",
-      "aka": [
-        "Where the Mask Ends",
-        "Замуж благодаря золотой заколке",
-        "Gả Kim Thoa",
-        "ปลดหน้ากาก",
-        "Batas Akhir Sebuah Topeng",
-        "Donde termina la máscara",
-        "Di Mana Topeng Berakhir",
-        "Onde A Máscara Termina",
-        "가금채",
-        "A Noiva da Presilha Dourada",
-        "Sous le masque",
-        "Където маската пада",
-        "嫁金釵",
-        "زفاف الدبوس الذهبي",
-        "Где маске престају",
-        "Jia Jin Chai",
-        "Женитьба на золотой шпильке",
-        "Maske Düştüğünde",
-        "嫁金钗"
-      ],
-      "year": "2026",
-      "overview": "Wei Rao, jeune femme noble, est obligée de se marier avec le prince Lu Zuo, alors que celui-ci est dans le coma et proche de la mort. Elle force alors Ah Chou, une jeune fille ordinaire dont la seule caractéristique est sa ressemblance frappante avec Wei Rao, à prendre sa place au mariage. Mais Lu Zuo se réveille précisément le jour des noces... Ah Chou doit maintenant faire face à Wei Rao, qui veut récupérer sa place, à Lu Zuo, qui la prend pour cette vipère de Wei Rao, mais aussi à toute la demeure du prince qui est pleine de pièges et de complots.",
-      "genres": [
-        "Drame"
-      ],
-      "rating": "9.0",
-      "pop": 53.3514,
-      "status": "Returning Series",
-      "poster": "https://image.tmdb.org/t/p/original/6Pw78I4inl8CESM4GZMyQTGobph.jpg",
-      "backdrop": "https://image.tmdb.org/t/p/original/YndvGwqwroUDVltBWmnOuTvJke.jpg",
-      "cast": [
-        {
-          "name": "Tian Xiwei",
-          "character": "Wei Rao / Jundai / A Chou",
-          "id": 2430198
-        },
-        {
-          "name": "Yan An",
-          "character": "Lu Zhuo",
-          "id": 2040132
-        }
-      ],
-      "seasons": [
-        {
-          "number": 1,
-          "name": "Saison 1",
-          "episodes": [
-            {
-              "number": 1,
-              "name": "Épisode 1",
-              "overview": "After discovering her lookalike, cruel heiress Wei Rao conspires to use the woman as a pawn when a sudden crisis forces an unwanted marriage.",
-              "air_date": "2026-10-16",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-2yld09tdh2b7.html"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 2,
-              "name": "Épisode 2",
-              "overview": "A-Chou agrees to marry Lu Zhuo in Wei Rao's place, but she warns her mother about the Wei family. Meanwhile, the true heiress takes on the name Jundai.",
-              "air_date": "2026-10-16",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-ftm3yk26ikx5.html"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 3,
-              "name": "Épisode 3",
-              "overview": "After refusing to leave, the impostor Wei Rao makes a painful sacrifice to win Lu Zhuo's trust. Meanwhile, a calculated plot begins to unfold.",
-              "air_date": "2026-10-16",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-x3lw9r89bioi.html"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 4,
-              "name": "Épisode 4",
-              "overview": "Wei Rao's maid helps her with a cover-up after Lu Zhuo nearly learns a lethal secret. A customary visit to the Wei family leads to a deadly setup.",
-              "air_date": "2026-10-16",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-6ifc1l4tf216.html"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 5,
-              "name": "Épisode 5",
-              "overview": "",
-              "air_date": "2026-10-17",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-xcbor8t9dv4h.html",
-                  "by": "614d778ed0"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 6,
-              "name": "Épisode 6",
-              "overview": "",
-              "air_date": "2026-10-17",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-zmr0tzd11iag.html",
-                  "by": "614d778ed0"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 7,
-              "name": "Épisode 7",
-              "overview": "",
-              "air_date": "2026-10-18",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-bhugx915dqcd.html",
-                  "by": "614d778ed0"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 8,
-              "name": "Épisode 8",
-              "overview": "",
-              "air_date": "2026-10-18",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-3hhib22j6hag.html",
-                  "by": "614d778ed0"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 9,
-              "name": "Épisode 9",
-              "overview": "",
-              "air_date": "2026-10-19",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-9p7npb10m6a6.html",
-                  "by": "614d778ed0"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 10,
-              "name": "Épisode 10",
-              "overview": "",
-              "air_date": "2026-10-19",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-u0j2mq2vxvvx.html",
-                  "by": "614d778ed0"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 11,
-              "name": "Épisode 11",
-              "overview": "",
-              "air_date": "2026-10-20",
-              "sources": [],
-              "downloads": []
-            },
-            {
-              "number": 12,
-              "name": "Épisode 12",
-              "overview": "",
-              "air_date": "2026-10-20",
-              "sources": [],
-              "downloads": []
-            },
-            {
-              "number": 13,
-              "name": "Épisode 13",
-              "overview": "",
-              "air_date": "2026-10-21",
-              "sources": [],
-              "downloads": []
-            },
-            {
-              "number": 14,
-              "name": "Épisode 14",
-              "overview": "",
-              "air_date": "2026-10-21",
-              "sources": [],
-              "downloads": []
-            },
-            {
-              "number": 15,
-              "name": "Épisode 15",
-              "overview": "",
-              "air_date": "",
-              "sources": [],
-              "downloads": []
-            },
-            {
-              "number": 16,
-              "name": "Épisode 16",
-              "overview": "",
-              "air_date": "",
-              "sources": [],
-              "downloads": []
-            },
-            {
-              "number": 17,
-              "name": "Épisode 17",
-              "overview": "",
-              "air_date": "",
-              "sources": [],
-              "downloads": []
-            },
-            {
-              "number": 18,
-              "name": "Épisode 18",
-              "overview": "",
-              "air_date": "",
-              "sources": [],
-              "downloads": []
-            },
-            {
-              "number": 19,
-              "name": "Épisode 19",
-              "overview": "",
-              "air_date": "",
-              "sources": [],
-              "downloads": []
-            },
-            {
-              "number": 20,
-              "name": "Épisode 20",
-              "overview": "",
-              "air_date": "",
-              "sources": [],
-              "downloads": []
-            },
-            {
-              "number": 21,
-              "name": "Épisode 21",
-              "overview": "",
-              "air_date": "",
-              "sources": [],
-              "downloads": []
-            },
-            {
-              "number": 22,
-              "name": "Épisode 22",
-              "overview": "",
-              "air_date": "",
-              "sources": [],
-              "downloads": []
-            },
-            {
-              "number": 23,
-              "name": "Épisode 23",
-              "overview": "",
-              "air_date": "",
-              "sources": [],
-              "downloads": []
-            },
-            {
-              "number": 24,
-              "name": "Épisode 24",
-              "overview": "",
-              "air_date": "",
-              "sources": [],
-              "downloads": []
-            },
-            {
-              "number": 25,
-              "name": "Épisode 25",
-              "overview": "",
-              "air_date": "",
-              "sources": [],
-              "downloads": []
-            },
-            {
-              "number": 26,
-              "name": "Épisode 26",
-              "overview": "",
-              "air_date": "",
-              "sources": [],
-              "downloads": []
-            },
-            {
-              "number": 27,
-              "name": "Épisode 27",
-              "overview": "",
-              "air_date": "",
-              "sources": [],
-              "downloads": []
-            },
-            {
-              "number": 28,
-              "name": "Épisode 28",
-              "overview": "",
-              "air_date": "",
-              "sources": [],
-              "downloads": []
-            },
-            {
-              "number": 29,
-              "name": "Épisode 29",
-              "overview": "",
-              "air_date": "",
-              "sources": [],
-              "downloads": []
-            },
-            {
-              "number": 30,
-              "name": "Épisode 30",
-              "overview": "",
-              "air_date": "",
-              "sources": [],
-              "downloads": []
-            }
-          ],
-          "downloads": []
-        }
-      ],
-      "sources": [],
-      "addedAt": 1792409035721,
-      "langs": [
-        "VOSTFR"
-      ],
-      "downloads": [],
-      "posterV": 2,
-      "updatedAt": 1792444514388,
-      "trend": 93,
-      "networks": [
-        "CCTV-8",
-        "Youku"
-      ],
-      "posterCustom": true
     },
     {
       "id": "289690",
@@ -6109,7 +6057,7 @@
         "Science-Fiction & Fantastique"
       ],
       "rating": "7.1",
-      "pop": 6.2618,
+      "pop": 6.9183,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/3hsCoGDAceyh1FnFHHLkozPNlSS.jpg",
       "backdrop": "https://image.tmdb.org/t/p/original/SYzF7EFhhKTspLDzogpel2HHDl.jpg",
@@ -6429,7 +6377,7 @@
       ],
       "downloads": [],
       "posterV": 2,
-      "updatedAt": 1792425671300,
+      "updatedAt": 1792504129056,
       "networks": [
         "Lifetime",
         "U+ Mobile TV"
@@ -6458,7 +6406,7 @@
         "Drame"
       ],
       "rating": "9.0",
-      "pop": 65.1592,
+      "pop": 62.009,
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/original/nGSj4YtMOwP4cjGSD1fDlI6WLag.jpg",
       "backdrop": "https://image.tmdb.org/t/p/original/vD84yLJVVd7cC2lKF8sEukQG2A3.jpg",
@@ -6579,8 +6527,8 @@
             },
             {
               "number": 8,
-              "name": "Épisode 8",
-              "overview": "",
+              "name": "Rival",
+              "overview": "Jiang Xueting joins the Yu Army as a translator after being hired by Yu Changxuan. Li Boren notices that Yu Changxuan already knew that Jiang Xueting is Ye Pingjun's boyfriend. He is sure that Yu Changxuan is serious about going after Ye Pingjun this time.",
               "air_date": "2026-10-14",
               "sources": [
                 {
@@ -6593,8 +6541,8 @@
             },
             {
               "number": 9,
-              "name": "Épisode 9",
-              "overview": "",
+              "name": "Stealing Confidential Files",
+              "overview": "Jiang Xueting sneaks into the archives during his overtime shift. He manages to steal a list of the names of deceased individuals from the mining incident. That is why Jiang Xueting returns to the country in advance and tries to join the Yu Army.",
               "air_date": "2026-10-15",
               "sources": [
                 {
@@ -6607,8 +6555,8 @@
             },
             {
               "number": 10,
-              "name": "Épisode 10",
-              "overview": "",
+              "name": "Building the Arsenal",
+              "overview": "Yu Changxuan reveals the plans he has been plotting all along within the army, building Yu Army's own arsenal on Changping Mountain, but his plan is rejected by the old generals.",
               "air_date": "2026-10-15",
               "sources": [
                 {
@@ -6621,8 +6569,8 @@
             },
             {
               "number": 11,
-              "name": "Épisode 11",
-              "overview": "",
+              "name": "The Yu Army in Crisis",
+              "overview": "An article exposing how Feng Sanli forced soldiers to work in a mine where they died in a disaster sparks outrage across Nanhuai, plunging the Yu Army into scandal.",
               "air_date": "2026-10-16",
               "sources": [
                 {
@@ -6635,8 +6583,8 @@
             },
             {
               "number": 12,
-              "name": "Épisode 12",
-              "overview": "",
+              "name": "Reforming the Army",
+              "overview": "On his deathbed, the limping soldier reveals the whereabouts of the stolen goods. When Yu Changxuan rushes to the scene, he finds that the gold has already been moved, leading him to conclude that someone was protecting Feng Sanli.",
               "air_date": "2026-10-16",
               "sources": [
                 {
@@ -6649,8 +6597,8 @@
             },
             {
               "number": 13,
-              "name": "Épisode 13",
-              "overview": "",
+              "name": "Divide",
+              "overview": "Gu Ruitong leads his troops in storming through the door and takes Jiang Xueting into custody on charges of stealing military secrets and defecting to the enemy.",
               "air_date": "2026-10-17",
               "sources": [
                 {
@@ -6663,8 +6611,8 @@
             },
             {
               "number": 14,
-              "name": "Épisode 14",
-              "overview": "",
+              "name": "Unrequited Love",
+              "overview": "Yu Changxuan confronts Jiang Xueting in prison, questioning how he can truly care for Ye Pingjun while secretly working as a spy and still planning to marry her.",
               "air_date": "2026-10-18",
               "sources": [
                 {
@@ -6679,7 +6627,7 @@
               "number": 15,
               "name": "Épisode 15",
               "overview": "",
-              "air_date": "",
+              "air_date": "2026-10-19",
               "sources": [],
               "downloads": []
             },
@@ -6687,7 +6635,7 @@
               "number": 16,
               "name": "Épisode 16",
               "overview": "",
-              "air_date": "",
+              "air_date": "2026-10-20",
               "sources": [],
               "downloads": []
             },
@@ -6695,7 +6643,7 @@
               "number": 17,
               "name": "Épisode 17",
               "overview": "",
-              "air_date": "",
+              "air_date": "2026-10-20",
               "sources": [],
               "downloads": []
             },
@@ -6703,7 +6651,7 @@
               "number": 18,
               "name": "Épisode 18",
               "overview": "",
-              "air_date": "",
+              "air_date": "2026-10-21",
               "sources": [],
               "downloads": []
             },
@@ -6711,7 +6659,7 @@
               "number": 19,
               "name": "Épisode 19",
               "overview": "",
-              "air_date": "",
+              "air_date": "2026-10-21",
               "sources": [],
               "downloads": []
             },
@@ -6719,7 +6667,7 @@
               "number": 20,
               "name": "Épisode 20",
               "overview": "",
-              "air_date": "",
+              "air_date": "2026-10-22",
               "sources": [],
               "downloads": []
             },
@@ -6727,7 +6675,7 @@
               "number": 21,
               "name": "Épisode 21",
               "overview": "",
-              "air_date": "",
+              "air_date": "2026-10-22",
               "sources": [],
               "downloads": []
             },
@@ -6735,7 +6683,7 @@
               "number": 22,
               "name": "Épisode 22",
               "overview": "",
-              "air_date": "",
+              "air_date": "2026-10-23",
               "sources": [],
               "downloads": []
             },
@@ -6743,7 +6691,7 @@
               "number": 23,
               "name": "Épisode 23",
               "overview": "",
-              "air_date": "",
+              "air_date": "2026-10-24",
               "sources": [],
               "downloads": []
             },
@@ -6751,7 +6699,7 @@
               "number": 24,
               "name": "Épisode 24",
               "overview": "",
-              "air_date": "",
+              "air_date": "2026-10-25",
               "sources": [],
               "downloads": []
             },
@@ -6894,8 +6842,8 @@
       ],
       "downloads": [],
       "posterV": 2,
-      "updatedAt": 1792502795045,
-      "trend": 78,
+      "updatedAt": 1792504129890,
+      "trend": 76,
       "networks": [
         "Hunan Television",
         "Mango TV"
@@ -6946,7 +6894,7 @@
         "Mystère"
       ],
       "rating": "8.2",
-      "pop": 15.7683,
+      "pop": 12.7552,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/ccej6D8J81DDJWqhP7OG6PA6xcl.jpg",
       "posterV": 2,
@@ -7040,14 +6988,7 @@
                   "by": "head"
                 }
               ],
-              "downloads": [
-                {
-                  "name": "1FICHIER",
-                  "url": "https://1fichier.com/?564zs4ikr4ksb133ko08",
-                  "quality": "1080p (H.264)",
-                  "by": "head"
-                }
-              ]
+              "downloads": []
             },
             {
               "number": 2,
@@ -7071,14 +7012,7 @@
                   "by": "head"
                 }
               ],
-              "downloads": [
-                {
-                  "name": "1FICHIER",
-                  "url": "https://1fichier.com/?wz1a2k096pn86xdivsqr",
-                  "quality": "1080p (H.264)",
-                  "by": "head"
-                }
-              ]
+              "downloads": []
             },
             {
               "number": 3,
@@ -7102,14 +7036,7 @@
                   "by": "head"
                 }
               ],
-              "downloads": [
-                {
-                  "name": "1FICHIER",
-                  "url": "https://1fichier.com/?vahu12kbtjmqcb79xu34",
-                  "quality": "1080p (H.264)",
-                  "by": "head"
-                }
-              ]
+              "downloads": []
             },
             {
               "number": 4,
@@ -7133,14 +7060,7 @@
                   "by": "head"
                 }
               ],
-              "downloads": [
-                {
-                  "name": "1FICHIER",
-                  "url": "https://1fichier.com/?7s1n5465t9jzi7c7qpfm",
-                  "quality": "1080p (H.264)",
-                  "by": "head"
-                }
-              ]
+              "downloads": []
             },
             {
               "number": 5,
@@ -7164,14 +7084,7 @@
                   "by": "head"
                 }
               ],
-              "downloads": [
-                {
-                  "name": "1FICHIER",
-                  "url": "https://1fichier.com/?oxre9xipiw1m7pcpk9wy",
-                  "quality": "1080p (H.264)",
-                  "by": "head"
-                }
-              ]
+              "downloads": []
             },
             {
               "number": 6,
@@ -7195,14 +7108,7 @@
                   "by": "head"
                 }
               ],
-              "downloads": [
-                {
-                  "name": "1FICHIER",
-                  "url": "https://1fichier.com/?7kuq8hsaeige5u577loa",
-                  "quality": "1080p (H.264)",
-                  "by": "head"
-                }
-              ]
+              "downloads": []
             },
             {
               "number": 7,
@@ -7250,14 +7156,7 @@
                   "by": "head"
                 }
               ],
-              "downloads": [
-                {
-                  "name": "1FICHIER",
-                  "url": "https://1fichier.com/?pfm6oybjyhf0e070uge5",
-                  "quality": "1080p (H.264)",
-                  "by": "head"
-                }
-              ]
+              "downloads": []
             },
             {
               "number": 9,
@@ -7281,14 +7180,7 @@
                   "by": "head"
                 }
               ],
-              "downloads": [
-                {
-                  "name": "1FICHIER",
-                  "url": "https://1fichier.com/?y3gvza0iyyj81upwu2hx",
-                  "quality": "1080p (H.264)",
-                  "by": "head"
-                }
-              ]
+              "downloads": []
             },
             {
               "number": 10,
@@ -7312,14 +7204,7 @@
                   "by": "head"
                 }
               ],
-              "downloads": [
-                {
-                  "name": "1FICHIER",
-                  "url": "https://1fichier.com/?80v7qfqceso4f98dun00",
-                  "quality": "1080p (H.264)",
-                  "by": "head"
-                }
-              ]
+              "downloads": []
             },
             {
               "number": 11,
@@ -7343,14 +7228,7 @@
                   "by": "head"
                 }
               ],
-              "downloads": [
-                {
-                  "name": "1FICHIER",
-                  "url": "https://1fichier.com/?py5r06rmn8ccdvb40hf4",
-                  "quality": "1080p (H.264)",
-                  "by": "head"
-                }
-              ]
+              "downloads": []
             },
             {
               "number": 12,
@@ -7374,14 +7252,7 @@
                   "by": "head"
                 }
               ],
-              "downloads": [
-                {
-                  "name": "1FICHIER",
-                  "url": "https://1fichier.com/?6ynz08nf2yit2ov110f5",
-                  "quality": "1080p (H.264)",
-                  "by": "head"
-                }
-              ]
+              "downloads": []
             }
           ],
           "downloads": []
@@ -7394,7 +7265,7 @@
         "VF"
       ],
       "downloads": [],
-      "updatedAt": 1792425673263,
+      "updatedAt": 1792504130767,
       "networks": [
         "Disney+"
       ]
@@ -7434,7 +7305,7 @@
         "Drame"
       ],
       "rating": "9.6",
-      "pop": 40.5058,
+      "pop": 34.1184,
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/w500/av7wQdYaicBCCUFQ6jRlm9ylZx4.jpg",
       "posterV": 2,
@@ -7627,11 +7498,11 @@
         "VF"
       ],
       "downloads": [],
-      "updatedAt": 1792425674455,
-      "trend": 0,
+      "updatedAt": 1792504131603,
       "networks": [
         "Nippon TV"
-      ]
+      ],
+      "trend": 0
     },
     {
       "id": "m1375646",
@@ -7675,7 +7546,7 @@
         "Science-Fiction"
       ],
       "rating": "8.1",
-      "pop": 85.3928,
+      "pop": 76.7142,
       "status": "Released",
       "runtime": 123,
       "poster": "https://image.tmdb.org/t/p/original/1uCUiv52q32A4egyBkrRgL5m7w3.jpg",
@@ -7779,7 +7650,7 @@
           "by": "head"
         }
       ],
-      "updatedAt": 1792425674972,
+      "updatedAt": 1792504132126,
       "trend": 58,
       "posterCustom": true
     },
@@ -7818,7 +7689,7 @@
         "Comédie"
       ],
       "rating": "7.9",
-      "pop": 24.3972,
+      "pop": 27.8909,
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/w500/pGqcErS76y8bcvZZSFUefdZOg2x.jpg",
       "posterV": 2,
@@ -7991,7 +7862,7 @@
             {
               "number": 5,
               "name": "Épisode 5",
-              "overview": "Bonding over their shared pain, Minjae and Youjin quickly grow close. But when Youjin's brother, Youseong, senses something suspicious, he starts investigating. As Youjin draws closer, Minjae becomes frightened and starts questioning whether he has the right to love someone and whether he should continue their relationship. While Minjae keeps trying to pull away, Youjin boldly moves closer. On a rainy night, Minjae can no longer ignore Youjin's feelings or his own.",
+              "overview": "On a rainy night, Minjae can no longer ignore Youjin's bold feelings or his own.",
               "air_date": "2026-10-19",
               "sources": [
                 {
@@ -8091,7 +7962,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792445651314,
+      "updatedAt": 1792504132957,
       "networks": [
         "ENA"
       ],
@@ -8115,6 +7986,7 @@
         "Накарай ме да настръхна",
         "أشعرني بالسعادة",
         "Заставь меня дрожать",
+        "Izazovi mi trnce",
         "让我心动",
         "Make Me Tremble",
         "내가 떨릴 수 있게"
@@ -8125,8 +7997,8 @@
         "Drame",
         "Comédie"
       ],
-      "rating": "",
-      "pop": 13.582,
+      "rating": "8.0",
+      "pop": 13.2251,
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/w500/e4MlbtE02So4D5DJy197DbiAxqs.jpg",
       "posterV": 2,
@@ -8399,7 +8271,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792425677496,
+      "updatedAt": 1792504133825,
       "trend": 57,
       "networks": [
         "TVING"
@@ -8435,8 +8307,8 @@
       "genres": [
         "Drame"
       ],
-      "rating": "7.6",
-      "pop": 17.9571,
+      "rating": "7.2",
+      "pop": 15.9549,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/hub0e50sPTkEH8FKhJmXCW60xVl.jpg",
       "posterV": 2,
@@ -8648,7 +8520,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792425678413,
+      "updatedAt": 1792504134669,
       "networks": [
         "TVING"
       ]
@@ -8681,7 +8553,7 @@
         "Familial"
       ],
       "rating": "6.0",
-      "pop": 5.4337,
+      "pop": 5.7618,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/9JaeSxCUS7XWPb6ta6KmRDct6xh.jpg",
       "posterV": 2,
@@ -8916,7 +8788,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792425679422,
+      "updatedAt": 1792504135612,
       "networks": [
         "KBS Drama"
       ]
@@ -8966,7 +8838,7 @@
         "Comédie"
       ],
       "rating": "8.7",
-      "pop": 33.7139,
+      "pop": 32.989,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/xQwpGhQC6v01IRTbn5DV0WusXuZ.jpg",
       "posterV": 2,
@@ -9492,7 +9364,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792425680413,
+      "updatedAt": 1792504136633,
       "networks": [
         "Netflix"
       ]
@@ -9534,7 +9406,7 @@
         "Crime"
       ],
       "rating": "8.3",
-      "pop": 17.9767,
+      "pop": 17.3683,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/t735IT5vH3vSjm63EusFVg5HEqd.jpg",
       "posterV": 2,
@@ -9807,7 +9679,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792425681382,
+      "updatedAt": 1792504138525,
       "networks": [
         "MBC"
       ]
@@ -9846,7 +9718,7 @@
         "Drame"
       ],
       "rating": "8.3",
-      "pop": 6.8599,
+      "pop": 7.0219,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/k1uOMMHv0o9xPJuxh0q28nqN83Y.jpg",
       "posterV": 2,
@@ -10010,7 +9882,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792425682367,
+      "updatedAt": 1792504139451,
       "networks": [
         "Coupang Play"
       ]
@@ -10061,7 +9933,7 @@
         "Drame"
       ],
       "rating": "8.7",
-      "pop": 13.695,
+      "pop": 13.6066,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/cGpfU5zWci552BFDfrby8iRCAPu.jpg",
       "posterV": 2,
@@ -10286,7 +10158,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792425683292,
+      "updatedAt": 1792504140490,
       "networks": [
         "tvN"
       ]
@@ -10335,7 +10207,7 @@
         "Drame"
       ],
       "rating": "8.1",
-      "pop": 15.7933,
+      "pop": 12.5463,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/jbQsa0W9JbHypYSZmgB1lKxGzL5.jpg",
       "posterV": 2,
@@ -10489,7 +10361,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792425684481,
+      "updatedAt": 1792504141426,
       "networks": [
         "Netflix"
       ]
@@ -10526,7 +10398,7 @@
         "Drame"
       ],
       "rating": "8.2",
-      "pop": 15.1799,
+      "pop": 12.9543,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/4buHiyaXkkzIdFDu66GOhvXEqbK.jpg",
       "posterV": 2,
@@ -10766,7 +10638,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792425685697,
+      "updatedAt": 1792504142498,
       "networks": [
         "ENA"
       ]
@@ -10808,7 +10680,7 @@
         "Mystère"
       ],
       "rating": "8.8",
-      "pop": 7.6501,
+      "pop": 7.538,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/z74qJEf1MRsEEIKFgbeyBAHmJXg.jpg",
       "posterV": 2,
@@ -11048,7 +10920,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792425686434,
+      "updatedAt": 1792504143588,
       "networks": [
         "KBS2"
       ]
@@ -11095,7 +10967,7 @@
         "Crime"
       ],
       "rating": "8.5",
-      "pop": 14.1527,
+      "pop": 13.5828,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/qFxbrHvNq5tn9SCBq3aKPgaGfyO.jpg",
       "posterV": 2,
@@ -11340,7 +11212,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792425687155,
+      "updatedAt": 1792504144576,
       "networks": [
         "JTBC"
       ]
@@ -11386,7 +11258,7 @@
         "Drame"
       ],
       "rating": "8.4",
-      "pop": 12.0977,
+      "pop": 11.5462,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/bcnneY1DWQzmwfvsuhGGnwv9KYD.jpg",
       "posterV": 2,
@@ -11631,7 +11503,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792425687981,
+      "updatedAt": 1792504145470,
       "networks": [
         "SBS"
       ]
@@ -11687,7 +11559,7 @@
         "Drame"
       ],
       "rating": "8.9",
-      "pop": 17.5898,
+      "pop": 16.239,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/30P3ySNo0m0xNhHQMXzpmquLwxa.jpg",
       "posterV": 2,
@@ -11932,7 +11804,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792425689102,
+      "updatedAt": 1792504146484,
       "networks": [
         "tvN"
       ]
@@ -11967,7 +11839,7 @@
         "Science-Fiction & Fantastique"
       ],
       "rating": "8.2",
-      "pop": 12.3655,
+      "pop": 11.4489,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/kPHv37XVpyWCsae3gtHujw1wPyW.jpg",
       "posterV": 2,
@@ -12217,7 +12089,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792425689906,
+      "updatedAt": 1792504147474,
       "networks": [
         "JTBC"
       ]
@@ -12264,7 +12136,7 @@
         "Drame"
       ],
       "rating": "7.9",
-      "pop": 9.7595,
+      "pop": 9.8442,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/4HsHVDD4K3IWr6jmTL5bIkM7qPV.jpg",
       "posterV": 2,
@@ -12405,7 +12277,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792425690848,
+      "updatedAt": 1792504148461,
       "networks": [
         "Netflix"
       ]
@@ -12446,7 +12318,7 @@
         "Science-Fiction & Fantastique"
       ],
       "rating": "6.6",
-      "pop": 6.4444,
+      "pop": 6.2334,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/iLf17aFCx2ESajFp1oyb03fmzNp.jpg",
       "posterV": 2,
@@ -12630,7 +12502,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792425691695,
+      "updatedAt": 1792504149480,
       "networks": [
         "Lifetime",
         "U+ Mobile TV"
@@ -12665,8 +12537,8 @@
         "Drame",
         "Comédie"
       ],
-      "rating": "9.3",
-      "pop": 12.4297,
+      "rating": "9.4",
+      "pop": 12.3273,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/cBiwrUwUNNYXTc5xrDEQWcMqftd.jpg",
       "posterV": 2,
@@ -12891,7 +12763,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792425692630,
+      "updatedAt": 1792504150484,
       "networks": [
         "ENA"
       ]
@@ -12938,7 +12810,7 @@
         "Drame"
       ],
       "rating": "8.2",
-      "pop": 10.5562,
+      "pop": 10.0103,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/zwEYhe03vN1rbjF8Bsf9Dng0W8e.jpg",
       "posterV": 2,
@@ -13158,7 +13030,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792425693498,
+      "updatedAt": 1792504151469,
       "networks": [
         "ENA"
       ]
@@ -13213,7 +13085,7 @@
         "Drame"
       ],
       "rating": "8.5",
-      "pop": 44.628,
+      "pop": 40.0193,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/mxa7YxVln3Rwnd2Va82PoclTznj.jpg",
       "posterV": 2,
@@ -13415,7 +13287,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792425694428,
+      "updatedAt": 1792504152497,
       "networks": [
         "SBS"
       ]
@@ -13451,7 +13323,7 @@
         "Familial"
       ],
       "rating": "8.1",
-      "pop": 10.3615,
+      "pop": 10.193,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/dc4YYEMeoiYLas0ao5UZugXeSSo.jpg",
       "posterV": 2,
@@ -13701,7 +13573,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792425695343,
+      "updatedAt": 1792504153420,
       "networks": [
         "MBC"
       ]
@@ -13745,7 +13617,7 @@
         "Comédie"
       ],
       "rating": "8.8",
-      "pop": 25.1559,
+      "pop": 21.6514,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/wY4rhPE90jJ4bp1JZOFY0MeRJQX.jpg",
       "posterV": 2,
@@ -14016,7 +13888,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792425696199,
+      "updatedAt": 1792504154466,
       "networks": [
         "Coupang Play"
       ]
@@ -14066,7 +13938,7 @@
         "Drame"
       ],
       "rating": "8.8",
-      "pop": 22.2832,
+      "pop": 19.0428,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/jj7AYkz2OLRDL1wfJmjTXyWQ5I4.jpg",
       "posterV": 2,
@@ -14286,7 +14158,7 @@
         "VF"
       ],
       "downloads": [],
-      "updatedAt": 1792425697230,
+      "updatedAt": 1792504155429,
       "networks": [
         "Netflix"
       ]
@@ -14331,7 +14203,7 @@
         "Drame"
       ],
       "rating": "8.6",
-      "pop": 17.8228,
+      "pop": 15.3153,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/avO54r6aVZxS61XSUqJjWo58t1x.jpg",
       "posterV": 2,
@@ -14581,7 +14453,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792425698008,
+      "updatedAt": 1792504156458,
       "networks": [
         "tvN"
       ]
@@ -14632,7 +14504,7 @@
         "Drame"
       ],
       "rating": "8.0",
-      "pop": 36.1265,
+      "pop": 29.0439,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/oldJKLaDBPLDQBdXvdNTLCEehUI.jpg",
       "posterV": 2,
@@ -14806,7 +14678,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792425698765,
+      "updatedAt": 1792504157461,
       "networks": [
         "Netflix"
       ]
@@ -14850,7 +14722,7 @@
         "Drame"
       ],
       "rating": "8.1",
-      "pop": 13.868,
+      "pop": 14.3069,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/5dgTRxtP5g07RSH5LEOl367Fuwi.jpg",
       "posterV": 2,
@@ -15100,7 +14972,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792425699535,
+      "updatedAt": 1792504158418,
       "networks": [
         "tvN"
       ]
@@ -15144,7 +15016,7 @@
         "Comédie"
       ],
       "rating": "7.7",
-      "pop": 10.5184,
+      "pop": 11.5131,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/afLKnB1yzh28YbpbB5Z5xragMf.jpg",
       "posterV": 2,
@@ -15440,7 +15312,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792425700373,
+      "updatedAt": 1792504159466,
       "networks": [
         "SBS"
       ]
@@ -15489,7 +15361,7 @@
         "Science-Fiction & Fantastique"
       ],
       "rating": "8.8",
-      "pop": 16.7077,
+      "pop": 17.4192,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/uxEN0pfh5OCSjIvV4GGXDVtjIuR.jpg",
       "posterV": 2,
@@ -15747,7 +15619,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792425701148,
+      "updatedAt": 1792504160673,
       "networks": [
         "SBS"
       ]
@@ -15781,7 +15653,7 @@
         "Drame"
       ],
       "rating": "6.7",
-      "pop": 6.0584,
+      "pop": 5.325,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/aWWBq5tA2En7bxlTKh8XpCGJUFz.jpg",
       "posterV": 2,
@@ -15937,7 +15809,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792425701862,
+      "updatedAt": 1792504162459,
       "posterCustom": true,
       "networks": [
         "MBN Plus"
@@ -15971,7 +15843,7 @@
         "Drame"
       ],
       "rating": "6.3",
-      "pop": 5.6056,
+      "pop": 6.6146,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/AuOpTRzztBKq0fAagGxc2tGexNO.jpg",
       "posterV": 2,
@@ -16155,7 +16027,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792425702757,
+      "updatedAt": 1792504163497,
       "networks": [
         "wavve"
       ]
@@ -16201,7 +16073,7 @@
         "Mystère"
       ],
       "rating": "7.8",
-      "pop": 13.4498,
+      "pop": 10.6563,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/ixBHQ96ryMa8Q0uIOFdUCjqRyy8.jpg",
       "posterV": 2,
@@ -16398,7 +16270,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792425703597,
+      "updatedAt": 1792504164519,
       "networks": [
         "Disney+"
       ]
@@ -16438,7 +16310,7 @@
         "Drame"
       ],
       "rating": "8.6",
-      "pop": 12.7843,
+      "pop": 12.0947,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/c2jswCrMoqDEBEXwSAlrCWtXdfZ.jpg",
       "posterV": 2,
@@ -16688,7 +16560,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792425704330,
+      "updatedAt": 1792504165502,
       "networks": [
         "JTBC"
       ]
@@ -16717,7 +16589,7 @@
         "Drame"
       ],
       "rating": "0.5",
-      "pop": 5.5202,
+      "pop": 4.8997,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/7mKYQWgTDe0Zf13FXn8QYxPf18r.jpg",
       "posterV": 2,
@@ -16925,7 +16797,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792453865521,
+      "updatedAt": 1792504166415,
       "networks": [
         "MBS"
       ]
@@ -16951,7 +16823,7 @@
         "Drame"
       ],
       "rating": "",
-      "pop": 1.498,
+      "pop": 1.3101,
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/w500/b8KrYRjYZEohssl8wKMsRbbxLMN.jpg",
       "posterV": 2,
@@ -17105,7 +16977,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792425705778,
+      "updatedAt": 1792504167482,
       "networks": [
         "CBC"
       ]
@@ -17137,7 +17009,7 @@
         "Comédie"
       ],
       "rating": "4.0",
-      "pop": 4.4877,
+      "pop": 4.3505,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/wc9IbG1FkxzGGSkrP3kxUDpt2Ls.jpg",
       "posterV": 2,
@@ -17441,7 +17313,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792455599817,
+      "updatedAt": 1792504168430,
       "networks": [
         "ABEMA"
       ]
@@ -17469,7 +17341,7 @@
         "Drame"
       ],
       "rating": "",
-      "pop": 3.9853,
+      "pop": 4.3211,
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/original/sAOEypaK8zSIP5a1Vlk7yLbaiIK.jpg",
       "posterV": 2,
@@ -17623,7 +17495,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792454343860,
+      "updatedAt": 1792504169437,
       "networks": [
         "BS TV Tokyo"
       ]
@@ -17653,7 +17525,7 @@
         "Comédie"
       ],
       "rating": "10.0",
-      "pop": 4.0379,
+      "pop": 3.8403,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/zrAv5ht5ORQycrERpHvdy5R2SXG.jpg",
       "posterV": 2,
@@ -17831,7 +17703,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792425708102,
+      "updatedAt": 1792504170470,
       "networks": [
         "MBS"
       ]
@@ -17859,7 +17731,7 @@
         "Drame"
       ],
       "rating": "8.0",
-      "pop": 2.0031,
+      "pop": 1.7909,
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/w500/9ACz4RNhdAH1sZjW2x8OnWuUsqS.jpg",
       "posterV": 2,
@@ -18004,7 +17876,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792425708839,
+      "updatedAt": 1792504171443,
       "networks": [
         "MBS"
       ]
@@ -18035,7 +17907,7 @@
         "Drame"
       ],
       "rating": "5.0",
-      "pop": 2.8168,
+      "pop": 3.2133,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/4FlQ5JdJLMLOrPo14KN4EZu3uuI.jpg",
       "posterV": 2,
@@ -18227,7 +18099,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792455119669,
+      "updatedAt": 1792504172436,
       "networks": [
         "TV Tokyo"
       ]
@@ -18262,7 +18134,7 @@
         "Mystère"
       ],
       "rating": "5.5",
-      "pop": 10.6575,
+      "pop": 9.8151,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/xVZvNASRqY91hD09g1cXHpErhGX.jpg",
       "posterV": 2,
@@ -18464,7 +18336,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792454935412,
+      "updatedAt": 1792504173493,
       "networks": [
         "TBS"
       ]
@@ -18498,8 +18370,8 @@
         "Drame",
         "Mystère"
       ],
-      "rating": "7.3",
-      "pop": 7.4785,
+      "rating": "8.0",
+      "pop": 7.0557,
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/w500/aDUl4kdFJgsks4DNb4ZlzXGOs8X.jpg",
       "posterV": 2,
@@ -18721,7 +18593,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792425711259,
+      "updatedAt": 1792504174538,
       "networks": [
         "Nippon TV"
       ]
@@ -18766,7 +18638,7 @@
         "Action & Adventure"
       ],
       "rating": "8.0",
-      "pop": 8.8799,
+      "pop": 8.3064,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/kllmJ1DdzuRszNNwFFu0M7V55Fg.jpg",
       "posterV": 2,
@@ -18932,7 +18804,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792425712259,
+      "updatedAt": 1792504175527,
       "networks": [
         "Netflix"
       ]
@@ -18967,7 +18839,7 @@
         "Comédie"
       ],
       "rating": "7.7",
-      "pop": 6.0722,
+      "pop": 6.1243,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/d78INqowmEx6DeoqqtE9UZakFTz.jpg",
       "posterV": 2,
@@ -19189,7 +19061,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792454015743,
+      "updatedAt": 1792504176493,
       "networks": [
         "TBS"
       ]
@@ -19224,7 +19096,7 @@
         "Crime"
       ],
       "rating": "6.9",
-      "pop": 5.0894,
+      "pop": 5.1592,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/69MPQL5lEcmI3x82tgCSVUZGha.jpg",
       "posterV": 2,
@@ -19441,7 +19313,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792425714053,
+      "updatedAt": 1792504177492,
       "networks": [
         "TBS"
       ]
@@ -19489,7 +19361,7 @@
         "Drame"
       ],
       "rating": "7.8",
-      "pop": 15.6817,
+      "pop": 14.177,
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/w500/fRgQ7noEDUoP6w2EEQlQgvnrpiy.jpg",
       "posterV": 2,
@@ -19697,7 +19569,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792425715082,
+      "updatedAt": 1792504178477,
       "networks": [
         "Netflix"
       ]
@@ -19730,7 +19602,7 @@
         "Drame"
       ],
       "rating": "",
-      "pop": 12.2294,
+      "pop": 10.3568,
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/w500/tjbKBHKqFLDdqscv3aVMVpmkGxj.jpg",
       "posterV": 2,
@@ -19912,7 +19784,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792454413125,
+      "updatedAt": 1792504179504,
       "networks": [
         "Fuji TV",
         "Channel A"
@@ -19931,6 +19803,8 @@
         "Welcome back, First love.",
         "歡迎回來，初戀。",
         "欢迎回来，初恋。",
+        "Okaeri, Hatsukoi",
+        "okakoi",
         "おかえり、初恋。"
       ],
       "year": "2026",
@@ -19939,7 +19813,7 @@
         "Drame"
       ],
       "rating": "",
-      "pop": 2.2606,
+      "pop": 2.3482,
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/w500/gZ7dPo58d30aAJ05RtqrgTEFmhs.jpg",
       "posterV": 2,
@@ -19954,6 +19828,16 @@
           "name": "林芽亜里",
           "character": "Shiori Yamane",
           "id": 4456218
+        },
+        {
+          "name": "Hayato Takao",
+          "character": "Kashiwagi Kei",
+          "id": 4792469
+        },
+        {
+          "name": "朝倉あき",
+          "character": "Ohata Jun",
+          "id": 1115687
         }
       ],
       "seasons": [
@@ -20063,7 +19947,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792455196276,
+      "updatedAt": 1792504180429,
       "networks": [
         "MBS"
       ]
@@ -20090,7 +19974,7 @@
         "Mystère"
       ],
       "rating": "8.5",
-      "pop": 16.2388,
+      "pop": 16.8492,
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/original/t69nmUrT8G4HQ452nLDzkZujEDj.jpg",
       "posterV": 2,
@@ -20266,7 +20150,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792448501285,
+      "updatedAt": 1792504181442,
       "networks": [
         "iQiyi"
       ]
@@ -20322,7 +20206,7 @@
         "Mystère"
       ],
       "rating": "8.5",
-      "pop": 28.2018,
+      "pop": 25.1452,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/f6urgYb39ZDHQCZmkzTDmZc5DpS.jpg",
       "posterV": 2,
@@ -20626,7 +20510,7 @@
       ],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1792425718772,
+      "updatedAt": 1792504182609,
       "networks": [
         "Disney+"
       ]
@@ -20670,7 +20554,7 @@
         "Crime"
       ],
       "rating": "6.6",
-      "pop": 7.124,
+      "pop": 7.5314,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/hwEfhJNLii8oUfuiRBPk11DDv8y.jpg",
       "posterV": 2,
@@ -20862,7 +20746,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792425719682
+      "updatedAt": 1792504184442
     },
     {
       "id": "126035",
@@ -20914,7 +20798,7 @@
         "Drame"
       ],
       "rating": "7.3",
-      "pop": 8.3803,
+      "pop": 8.4917,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/pWIcIhpQibR1eDU0As4HRZeb8EL.jpg",
       "posterV": 2,
@@ -21316,7 +21200,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792425720465
+      "updatedAt": 1792504185429
     },
     {
       "id": "273977",
@@ -21366,7 +21250,7 @@
         "Drame"
       ],
       "rating": "7.5",
-      "pop": 18.5356,
+      "pop": 14.6467,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/nP2PRGSmLdbZtQtoXPPppcDAsNw.jpg",
       "posterV": 2,
@@ -21536,7 +21420,7 @@
         "VF"
       ],
       "downloads": [],
-      "updatedAt": 1792425721406,
+      "updatedAt": 1792504186426,
       "posterCustom": true
     },
     {
@@ -21572,7 +21456,7 @@
         "Drame"
       ],
       "rating": "7.5",
-      "pop": 6.5519,
+      "pop": 6.6622,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/2cSPPspfRkZncs0Oo9b8Ej5nrYS.jpg",
       "posterV": 2,
@@ -21823,7 +21707,7 @@
       ],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1792425722157
+      "updatedAt": 1792504187405
     },
     {
       "id": "233221",
@@ -21864,7 +21748,7 @@
         "Drame"
       ],
       "rating": "8.1",
-      "pop": 7.0973,
+      "pop": 7.1965,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/ysc63ghJEM5mXBd9qWEgB0ohWTy.jpg",
       "posterV": 2,
@@ -22061,7 +21945,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792425723128
+      "updatedAt": 1792504188459
     },
     {
       "id": "288603",
@@ -22097,7 +21981,7 @@
         "Drame"
       ],
       "rating": "8.0",
-      "pop": 13.8335,
+      "pop": 11.3451,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/51x3GY7o07PqLgCN0UIJVHHzgCO.jpg",
       "posterV": 2,
@@ -22561,7 +22445,7 @@
       ],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1792454545370
+      "updatedAt": 1792504189693
     },
     {
       "id": "289139",
@@ -22603,7 +22487,7 @@
         "Drame"
       ],
       "rating": "8.3",
-      "pop": 14.5395,
+      "pop": 13.6592,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/sOh7qrLixexhiWObAKSyh4mAlAR.jpg",
       "posterV": 2,
@@ -23142,7 +23026,384 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792442136094
+      "updatedAt": 1792504191618
+    },
+    {
+      "id": "300146",
+      "type": "tv",
+      "name": "Where the Mask Ends",
+      "original_name": "嫁金钗",
+      "origin_country": [
+        "CN"
+      ],
+      "networks": [
+        "CCTV-8",
+        "Youku"
+      ],
+      "original_language": "zh",
+      "aka": [
+        "Where the Mask Ends",
+        "Замуж благодаря золотой заколке",
+        "Gả Kim Thoa",
+        "ปลดหน้ากาก",
+        "Batas Akhir Sebuah Topeng",
+        "Donde termina la máscara",
+        "Di Mana Topeng Berakhir",
+        "Onde A Máscara Termina",
+        "가금채",
+        "Sous le masque",
+        "Където маската пада",
+        "嫁金釵",
+        "زفاف الدبوس الذهبي",
+        "Где маске престају",
+        "Kde končí maska",
+        "Jia Jin Chai",
+        "Женитьба на золотой шпильке",
+        "Maske Düştüğünde",
+        "Transfer Gold Hairpin",
+        "嫁金钗"
+      ],
+      "year": "2026",
+      "overview": "Wei Rao, jeune femme noble, est obligée de se marier avec le prince Lu Zuo, alors que celui-ci est dans le coma et proche de la mort. Elle force alors Ah Chou, une jeune fille ordinaire dont la seule caractéristique est sa ressemblance frappante avec Wei Rao, à prendre sa place au mariage. Mais Lu Zuo se réveille précisément le jour des noces... Ah Chou doit maintenant faire face à Wei Rao, qui veut récupérer sa place, à Lu Zuo, qui la prend pour cette vipère de Wei Rao, mais aussi à toute la demeure du prince qui est pleine de pièges et de complots.",
+      "genres": [
+        "Drame"
+      ],
+      "rating": "9.0",
+      "pop": 62.7969,
+      "status": "Returning Series",
+      "poster": "https://image.tmdb.org/t/p/original/6Pw78I4inl8CESM4GZMyQTGobph.jpg",
+      "posterV": 2,
+      "backdrop": "https://image.tmdb.org/t/p/original/YndvGwqwroUDVltBWmnOuTvJke.jpg",
+      "cast": [
+        {
+          "name": "Tian Xiwei",
+          "character": "Wei Rao / Jundai / A Chou",
+          "id": 2430198
+        },
+        {
+          "name": "Yan An",
+          "character": "Lu Zhuo",
+          "id": 2040132
+        }
+      ],
+      "seasons": [
+        {
+          "number": 1,
+          "name": "Saison 1",
+          "episodes": [
+            {
+              "number": 1,
+              "name": "Épisode 1",
+              "overview": "Après avoir découvert son sosie, la cruelle héritière Wei Rao décide de l'utiliser comme pion lorsqu'une crise soudaine lui impose un mariage non désiré.",
+              "air_date": "2026-10-16",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-2yld09tdh2b7.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 2,
+              "name": "Épisode 2",
+              "overview": "A-Chou accepte d'épouser Lu Zhuo à la place de Wei Rao, mais met sa mère en garde contre la famille Wei. Pendant ce temps, la véritable héritière prend le nom de Jundai.",
+              "air_date": "2026-10-16",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-ftm3yk26ikx5.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 3,
+              "name": "Épisode 3",
+              "overview": "Après avoir refusé de partir, l'imposteur Wei Rao fait un sacrifice douloureux pour gagner la confiance de Lu Zhuo. Pendant ce temps, une machination dérape.",
+              "air_date": "2026-10-16",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-x3lw9r89bioi.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 4,
+              "name": "Épisode 4",
+              "overview": "La servante de Wei Rao l'aide à dissimuler des preuves après que Lu Zhuo a failli découvrir un secret mortel. Une visite traditionnelle chez les Wei mène à un piège fatal.",
+              "air_date": "2026-10-16",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-6ifc1l4tf216.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 5,
+              "name": "Épisode 5",
+              "overview": "Après avoir survécu à l'incendie de la bibliothèque, Wei Rao tente de cacher une lettre secrète. Lu Zhuo se méfie en remarquant ses mains calleuses.",
+              "air_date": "2026-10-17",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-xcbor8t9dv4h.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 6,
+              "name": "Épisode 6",
+              "overview": "Wei Rao est félicitée pour l'organisation d'un grand banquet d'anniversaire. Mais le danger plane sur sa demeure, tandis que Lu Zhuo prépare un complot secret avec des papillons.",
+              "air_date": "2026-10-17",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-zmr0tzd11iag.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 7,
+              "name": "Épisode 7",
+              "overview": "En pleine représentation au banquet, Wei Rao est assaillie de menaces cachées. Mais grâce à sa vivacité d'esprit, elle retourne un dangereux piège contre ses ennemis.",
+              "air_date": "2026-10-18",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-bhugx915dqcd.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 8,
+              "name": "Épisode 8",
+              "overview": "Poussé par la jalousie, Lu Zhuo conclut un pacte avec Wei Rao. Les retrouvailles de celle-ci avec son frère attirent dangereusement l'attention de Han Liao.",
+              "air_date": "2026-10-18",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-3hhib22j6hag.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 9,
+              "name": "Épisode 9",
+              "overview": "Acculée par un rival impitoyable, Wei Rao joue son va-tout sur un coup de bluff et doit s'en remettre à un complice incertain pour garder son passé enfoui.",
+              "air_date": "2026-10-19",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-9p7npb10m6a6.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 10,
+              "name": "Épisode 10",
+              "overview": "Wei Rao transforme un ordre impérial en humiliation pour Han Liao. Suite à un acte de défi symbolique, elle se retrouve toutefois isolée face à des soldats rebelles hostiles.",
+              "air_date": "2026-10-19",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-u0j2mq2vxvvx.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 11,
+              "name": "Épisode 11",
+              "overview": "En grand danger face aux élites de la cour, Wei Rao reçoit l'aide cruciale de Lu Zhuo, mais une convocation impériale soudaine met son secret en péril.",
+              "air_date": "2026-10-20",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 12,
+              "name": "Épisode 12",
+              "overview": "Face à l'ultimatum mortel de Consort Li, Wei Rao gagne du temps tandis que ses rivaux recourent au meurtre et que Han Liao attise la révolte.",
+              "air_date": "2026-10-20",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 13,
+              "name": "Épisode 13",
+              "overview": "",
+              "air_date": "2026-10-21",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 14,
+              "name": "Épisode 14",
+              "overview": "",
+              "air_date": "2026-10-21",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 15,
+              "name": "Épisode 15",
+              "overview": "",
+              "air_date": "",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 16,
+              "name": "Épisode 16",
+              "overview": "",
+              "air_date": "",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 17,
+              "name": "Épisode 17",
+              "overview": "",
+              "air_date": "",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 18,
+              "name": "Épisode 18",
+              "overview": "",
+              "air_date": "",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 19,
+              "name": "Épisode 19",
+              "overview": "",
+              "air_date": "",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 20,
+              "name": "Épisode 20",
+              "overview": "",
+              "air_date": "",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 21,
+              "name": "Épisode 21",
+              "overview": "",
+              "air_date": "",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 22,
+              "name": "Épisode 22",
+              "overview": "",
+              "air_date": "",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 23,
+              "name": "Épisode 23",
+              "overview": "",
+              "air_date": "",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 24,
+              "name": "Épisode 24",
+              "overview": "",
+              "air_date": "",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 25,
+              "name": "Épisode 25",
+              "overview": "",
+              "air_date": "",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 26,
+              "name": "Épisode 26",
+              "overview": "",
+              "air_date": "",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 27,
+              "name": "Épisode 27",
+              "overview": "",
+              "air_date": "",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 28,
+              "name": "Épisode 28",
+              "overview": "",
+              "air_date": "",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 29,
+              "name": "Épisode 29",
+              "overview": "",
+              "air_date": "",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 30,
+              "name": "Épisode 30",
+              "overview": "",
+              "air_date": "",
+              "sources": [],
+              "downloads": []
+            }
+          ],
+          "downloads": []
+        }
+      ],
+      "sources": [],
+      "addedAt": 1792409035721,
+      "langs": [
+        "VOSTFR"
+      ],
+      "downloads": [],
+      "posterCustom": true,
+      "updatedAt": 1792504193592,
+      "trend": 95
     },
     {
       "id": "128995",
@@ -23182,7 +23443,7 @@
         "Drame"
       ],
       "rating": "8.0",
-      "pop": 14.9883,
+      "pop": 14.7298,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/bD3ZosBZYfswsSFQs1kkHELJDF7.jpg",
       "posterV": 2,
@@ -23768,7 +24029,7 @@
       ],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1792425727097
+      "updatedAt": 1792504194550
     },
     {
       "id": "303745",
@@ -23816,12 +24077,12 @@
         "Crime",
         "Action & Adventure"
       ],
-      "rating": "",
-      "pop": 17.9818,
+      "rating": "1.0",
+      "pop": 34.7466,
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/w500/kSAXIAovLC4z7Wp2Hy8oqLmpkox.jpg",
       "posterV": 2,
-      "backdrop": "https://image.tmdb.org/t/p/original/32g5MD6eHPAZ5NAgkNAURb4eupm.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/original/ob7m6JqZ7jSOocR3VL73VxRC6Is.jpg",
       "cast": [
         {
           "name": "Si-wan Yim",
@@ -23892,7 +24153,7 @@
             {
               "number": 1,
               "name": "Épisode 1",
-              "overview": "",
+              "overview": "Taekang Group's successor, Yoon Yi-jun, is suspected of murdering his secretary, but the group's power and lack of evidence impede the investigation. To find key evidence, special forces-turned-detective Kang Jae-hee applies to be his secretary, not as a woman but as a man! She manages to get the job, but Yi-jun doesn't let his guard down. Jae-hee risks getting exposed on her first day at work.",
               "air_date": "2026-10-19",
               "sources": [
                 {
@@ -23936,7 +24197,7 @@
             {
               "number": 2,
               "name": "Épisode 2",
-              "overview": "",
+              "overview": "Kang Jae-hee's double life begins. She's Yoon Yi-jun's secretary by day and a detective by night. Yi-jun keeps testing her, but Jae-hee relentlessly keeps an eye on him and searches for the missing phone. She plans to infiltrate the room that's banned from entering, but Yi-jun doesn't let his guard down easily. Their relationship takes a strange turn through unexpected physical contact.",
               "air_date": "2026-10-20",
               "sources": [],
               "downloads": []
@@ -24031,8 +24292,8 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792443150618,
-      "trend": 89
+      "updatedAt": 1792504195459,
+      "trend": 84
     },
     {
       "id": "278577",
@@ -24068,12 +24329,12 @@
       "genres": [
         "Drame"
       ],
-      "rating": "8.4",
-      "pop": 17.0713,
+      "rating": "8.5",
+      "pop": 14.9096,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/8QybFgm5jzNoJPjwWYW1r1ZBdOb.jpg",
       "posterV": 2,
-      "backdrop": "https://image.tmdb.org/t/p/original/lUk9QrdemPo7S1v3051H8Rfxua6.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/original/kiEtIq7Up7vpbAYvPTJPKHiJE1t.jpg",
       "cast": [
         {
           "name": "宋威龙",
@@ -24606,7 +24867,7 @@
       ],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1792451984730
+      "updatedAt": 1792504196352
     },
     {
       "id": "280822",
@@ -24642,7 +24903,7 @@
         "Science-Fiction & Fantastique"
       ],
       "rating": "8.2",
-      "pop": 7.4662,
+      "pop": 7.4782,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/vM1LMQoKTtKGZ0RtT7KviIDGtkk.jpg",
       "posterV": 2,
@@ -25219,7 +25480,7 @@
       ],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1792453514258
+      "updatedAt": 1792504197221
     },
     {
       "id": "286506",
@@ -25257,7 +25518,7 @@
         "Drame"
       ],
       "rating": "8.6",
-      "pop": 12.3589,
+      "pop": 12.0266,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/x7ENbberEtM1sOrTJbfK8RubvB.jpg",
       "posterV": 2,
@@ -25828,7 +26089,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792457940743
+      "updatedAt": 1792504198079
     },
     {
       "id": "251600",
@@ -25867,7 +26128,7 @@
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/oRGXEzC98Xna3Cnl4CnDEw6OLYB.jpg",
       "posterV": 2,
-      "backdrop": "https://image.tmdb.org/t/p/original/ionxRhgB6NcCAqZOfRkJeCr8TTq.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/original/tlAZ3g7EzHqWj0Yn6SXVAdFfAcE.jpg",
       "cast": [
         {
           "name": "宋威龙",
@@ -26387,7 +26648,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792503941127,
+      "updatedAt": 1792504198906,
       "posterCustom": true
     }
   ],
@@ -26404,6 +26665,7 @@
     "300146\thttps://vidmoly.me/v/6ifc1l4tf216"
   ],
   "deletedFiches": [],
+  "refreshAt": 1792423579957,
   "team": {
     "id": "259837",
     "text": "",
@@ -26519,6 +26781,15 @@
     "at": 1792454020694
   },
   "journal": [
+    {
+      "k": "mvgqpvuc7twaw",
+      "t": 1792504199028,
+      "b": "head",
+      "a": "tmdb",
+      "i": "",
+      "n": "Toutes les fiches",
+      "d": "85 fiches"
+    },
     {
       "k": "mvgq94kfdhcoe",
       "t": 1792503941160,
@@ -27176,6 +27447,5 @@
       "n": "The WONDERfools",
       "d": "sources 8 → 16"
     }
-  ],
-  "refreshAt": 1792423579957
+  ]
 }
