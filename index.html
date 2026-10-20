@@ -1868,6 +1868,12 @@ body { overflow-x: hidden; max-width: 100%; position: relative; }
 .codebox textarea:focus { outline: 0; border-color: var(--fg); }
 .codemsg { min-height: 1.4em; margin: 0; font-size: 13px; color: var(--dim); }
 .codemsg.ok { color: #86efac; font-weight: 700; } .codemsg.err { color: #f87171; }
+
+/* onglets de Paramètres : icône à gauche, texte à côté, sans chiffre */
+#settabs .mlt { display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 12px; padding: 18px 14px; text-align: left; min-width: 0; }
+#settabs .mlt svg { grid-row: auto; width: 24px; height: 24px; margin: 0; flex: none; }
+#settabs .mlt .l { align-self: center; font-size: 12px; letter-spacing: .08em; white-space: nowrap; max-width: 100%; overflow: hidden; text-overflow: ellipsis; }
+@media (max-width: 640px) { #settabs .mlt { gap: 8px; padding: 15px 6px; } #settabs .mlt svg { width: 20px; height: 20px; } #settabs .mlt .l { font-size: 11px; letter-spacing: .04em; } }
 </style>
 <!-- Visites du site : Vercel Web Analytics, sans cookie ni base de données. Ne fait rien tant que tu ne l'actives pas dans Vercel (onglet Analytics). -->
 <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
@@ -3289,7 +3295,7 @@ function stRefresh() {
 }
 function viewSettings() {
   var tabs = SETTABS.map(function (k) {
-    return '<button type="button" class="mlt' + (k === setTab ? " on" : "") + '" role="tab" aria-selected="' + (k === setTab ? "true" : "false") + '" data-settab="' + k + '">' + stSvg(ST_TABICO[k]) + '<b>' + stCount(k) + '</b><span class="l">' + SETLABEL[k] + '</span></button>';
+    return '<button type="button" class="mlt' + (k === setTab ? " on" : "") + '" role="tab" aria-selected="' + (k === setTab ? "true" : "false") + '" data-settab="' + k + '">' + stSvg(ST_TABICO[k]) + '<span class="l">' + SETLABEL[k] + '</span></button>';
   }).join("");
   $("#app").innerHTML = '<div id="setroot"><div class="mlhero"><div class="wrap">' +
     '<div class="mltitle"><svg class="mllogo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h9M17 7h3"/><path d="M4 17h3M11 17h9"/><path class="sp" d="M15 4.5v5M9 14.5v5"/></svg>' +
@@ -3389,7 +3395,7 @@ document.addEventListener("click", function (e) {
   }
 });
 /* ===== Transfert par code : liste, épisodes vus, reprise et suivis dans un texte à copier-coller (rien n'est envoyé sur un serveur) ===== */
-var CODE_SID = /^[\w.-]{1,40}$/, CODE_BAD = /^(__proto__|constructor|prototype)$/, CODE_EK = /^\d{1,3}x\d{1,4}$/;
+var CODE_SID = /^[\w.-]{1,40}$/, CODE_BAD = /^(__proto__|constructor|prototype)$/, CODE_EK = /^(\d{1,3})x(\d{1,4})$/;
 function codeB64(bytes) {
   var s = "", i;
   for (i = 0; i < bytes.length; i += 8192) s += String.fromCharCode.apply(null, bytes.subarray(i, i + 8192));
@@ -3413,19 +3419,109 @@ function codePipe(bytes, Ctor, max) {
   }
   return step();
 }
-function codeMake() {
-  var o = { app: "dramabym", v: 1, l: readList(), s: readSeen(), r: readResume(), n: nSubs() };
-  var raw = new TextEncoder().encode(JSON.stringify(o)), plain = function () { return "DBM0-" + codeB64(raw); };
-  if (window.CompressionStream && window.Blob && Blob.prototype.stream) return codePipe(raw, CompressionStream, 0).then(function (z) { return "DBM1-" + codeB64(z); }, plain);
-  return Promise.resolve(plain());
+/* Format compact : chaque id n'est écrit qu'une fois (triés, par écarts), « épisodes 1 à N » tient sur 1 octet, les autres épisodes sont des plages, les dates sont à 15 min près */
+function cbW(a, n) { while (n >= 128) { a.push((n % 128) | 128); n = Math.floor(n / 128); } a.push(n); }
+function cbR(st) {
+  var n = 0, m = 1, b, k = 0;
+  do {
+    if (st.p >= st.b.length || ++k > 9) throw new Error("bad");
+    b = st.b[st.p++]; n += (b & 127) * m; m *= 128;
+  } while (b & 128);
+  if (n > 9e15) throw new Error("bad");
+  return n;
 }
+function cbTok(id) {   /* 0 = id numérique, 1 = film « m… », 2 = « c… », 3 = autre texte */
+  var m = /^(m|c)?(0|[1-9]\d{0,14})$/.exec(id);
+  return m ? +m[2] * 4 + (m[1] === "m" ? 1 : m[1] === "c" ? 2 : 0) : 3;
+}
+function cbEps(a, keys) {
+  var by = {}, ss, ps = 0, one;
+  keys.forEach(function (k) { var m = CODE_EK.exec(String(k)); if (m) (by[+m[1]] = by[+m[1]] || []).push(+m[2]); });
+  ss = Object.keys(by).map(Number).sort(function (x, y) { return x - y; });
+  ss.forEach(function (sn) { by[sn] = by[sn].sort(function (x, y) { return x - y; }).filter(function (x, i, t) { return !i || x !== t[i - 1]; }); });
+  one = ss.length === 1 && ss[0] === 1 ? by[1] : null;
+  if (one && one[0] === 1 && one[one.length - 1] === one.length) { cbW(a, one.length); return; }   /* 1x1 à 1xN : un seul nombre */
+  cbW(a, 0); cbW(a, ss.length);
+  ss.forEach(function (sn) {
+    var runs = [], pe = -1;
+    by[sn].forEach(function (x) { var r = runs[runs.length - 1]; if (r && x === r[1] + 1) r[1] = x; else runs.push([x, x]); });
+    cbW(a, sn - ps); ps = sn; cbW(a, runs.length);
+    runs.forEach(function (r) { cbW(a, r[0] - pe - 1); cbW(a, r[1] - r[0]); pe = r[1]; });
+  });
+}
+function cbEpsRead(st) {
+  var out = [], h = cbR(st), ns, sn = 0, i, j, x, nr, pe, s0, len;
+  if (h > 0) { if (h > 9999) throw new Error("bad"); for (x = 1; x <= h; x++) out.push("1x" + x); return out; }
+  ns = cbR(st); if (ns > 1000) throw new Error("bad");
+  for (i = 0; i < ns; i++) {
+    sn += cbR(st); nr = cbR(st); pe = -1;
+    if (sn > 999 || nr > 10000) throw new Error("bad");
+    for (j = 0; j < nr; j++) {
+      s0 = pe + 1 + cbR(st); len = cbR(st);
+      if (len > 10000 || s0 + len > 9999 || out.length + len + 1 > 60000) throw new Error("bad");
+      for (x = s0; x <= s0 + len; x++) out.push(sn + "x" + x);
+      pe = s0 + len;
+    }
+  }
+  return out;
+}
+function cbQ(v) { return Math.max(0, Math.round((+v || 0) / 900000)); }
+function cbPack(o) {
+  var l = Array.isArray(o.l) ? o.l : [], sk = Object.keys(o.s || {}), rk = Object.keys(o.r || {}), nk = Object.keys(o.n || {});
+  var pos = Object.create(null), ids = [], b = [], out = [], base = 0, prev = 0;
+  function add(id) { id = String(id); if (!(id in pos)) { pos[id] = -1; ids.push(id); } }
+  l.forEach(add); sk.forEach(add); rk.forEach(add); nk.forEach(add);
+  ids.sort(function (x, y) { var d = cbTok(x) - cbTok(y); return d || (x < y ? -1 : x > y ? 1 : 0); });
+  ids.forEach(function (id, i) { pos[id] = i; });
+  rk.forEach(function (id) { base = Math.max(base, cbQ(o.r[id] && o.r[id].at)); });
+  nk.forEach(function (id) { base = Math.max(base, cbQ(o.n[id] && o.n[id].at)); });
+  cbW(out, ids.length);
+  ids.forEach(function (id) {
+    var t = cbTok(id), u, i; cbW(out, t - prev); prev = t;
+    if (t === 3) { u = new TextEncoder().encode(id).subarray(0, 64); cbW(out, u.length); for (i = 0; i < u.length; i++) out.push(u[i]); }
+  });
+  cbW(out, base);
+  cbW(b, l.length); l.forEach(function (id) { cbW(b, pos[String(id)]); });
+  cbW(b, sk.length); sk.forEach(function (id) { cbW(b, pos[id]); cbEps(b, Object.keys(o.s[id] || {})); });
+  cbW(b, rk.length); rk.forEach(function (id) { var v = o.r[id] || {}; cbW(b, pos[id]); cbW(b, v.si == null ? 0 : (+v.si || 0) + 1); cbW(b, v.n == null ? 0 : (+v.n || 0) + 1); cbW(b, base - cbQ(v.at)); });
+  cbW(b, nk.length); nk.forEach(function (id) { var v = o.n[id] || {}; cbW(b, pos[id]); cbW(b, base - cbQ(v.at)); cbEps(b, v.known || []); });
+  return out.concat(b);
+}
+function cbUnpack(u) {
+  var st = { b: u, p: 0 }, ids = [], o = { app: "dramabym", l: [], s: {}, r: {}, n: {} }, i, n, t = 0, base;
+  function lim(x) { if (x > 20000) throw new Error("bad"); return x; }
+  function id() { var x = cbR(st); if (x >= ids.length) throw new Error("bad"); return ids[x]; }
+  function ago(d) { return Math.max(0, base - d) * 900000; }
+  n = lim(cbR(st));
+  for (i = 0; i < n; i++) {
+    t += cbR(st); var k = t % 4, q = (t - k) / 4;
+    if (k === 0) ids.push(String(q)); else if (k === 1) ids.push("m" + q); else if (k === 2) ids.push("c" + q);
+    else {
+      var len = cbR(st); if (len > 64 || st.p + len > st.b.length) throw new Error("bad");
+      ids.push(new TextDecoder().decode(st.b.subarray(st.p, st.p + len))); st.p += len;
+    }
+  }
+  base = cbR(st);
+  n = lim(cbR(st)); for (i = 0; i < n; i++) o.l.push(id());
+  n = lim(cbR(st)); for (i = 0; i < n; i++) { var sid = id(), ks = cbEpsRead(st); if (CODE_BAD.test(sid)) continue; o.s[sid] = {}; ks.forEach(function (e) { o.s[sid][e] = 1; }); }
+  n = lim(cbR(st)); for (i = 0; i < n; i++) { var rid = id(), si = cbR(st), nn = cbR(st), ra = ago(cbR(st)); if (!CODE_BAD.test(rid)) o.r[rid] = { si: si ? si - 1 : null, n: nn ? nn - 1 : null, at: ra }; }
+  n = lim(cbR(st)); for (i = 0; i < n; i++) { var nid = id(), na = ago(cbR(st)), kn = cbEpsRead(st); if (!CODE_BAD.test(nid)) o.n[nid] = { known: kn, at: na }; }
+  return o;
+}
+function codeMake() {
+  var o = { l: readList(), s: readSeen(), r: readResume(), n: nSubs() }, bin = new Uint8Array(cbPack(o)), plain = "DBM2-" + codeB64(bin);
+  if (window.CompressionStream && window.Blob && Blob.prototype.stream) return codePipe(bin, CompressionStream, 0).then(function (z) { var c = "DBM3-" + codeB64(z); return c.length < plain.length ? c : plain; }, function () { return plain; });
+  return Promise.resolve(plain);
+}
+/* lit aussi les anciens codes (DBM0 / DBM1, en JSON) */
 function codeRead(text) {
-  var m = String(text || "").replace(/\s+/g, "").match(/DBM([01])-([A-Za-z0-9_-]+)/);
+  var m = String(text || "").replace(/\s+/g, "").match(/DBM([0-3])-([A-Za-z0-9_-]+)/);
   if (!m || m[2].length > 400000) return Promise.reject(new Error("bad"));
-  var bytes; try { bytes = codeBytes(m[2]); } catch (e) { return Promise.reject(new Error("bad")); }
-  var p = m[1] === "1" ? (window.DecompressionStream && Blob.prototype.stream ? codePipe(bytes, DecompressionStream, 3e6) : Promise.reject(new Error("nodec"))) : Promise.resolve(bytes);
+  var bytes, zip = m[1] === "1" || m[1] === "3", bin = m[1] === "2" || m[1] === "3";
+  try { bytes = codeBytes(m[2]); } catch (e) { return Promise.reject(new Error("bad")); }
+  var p = zip ? (window.DecompressionStream && Blob.prototype.stream ? codePipe(bytes, DecompressionStream, 3e6) : Promise.reject(new Error("nodec"))) : Promise.resolve(bytes);
   return p.then(function (u) {
-    var o = JSON.parse(new TextDecoder().decode(u));
+    var o = bin ? cbUnpack(u) : JSON.parse(new TextDecoder().decode(u));
     if (!o || o.app !== "dramabym") throw new Error("bad");
     return o;
   });
@@ -3481,7 +3577,7 @@ function codeOpen(mode) {
       codeMsg(readList().length + " titre(s) dans ta liste, " + Object.keys(readSeen()).length + " série(s) avec épisodes vus. Copie ce code, puis colle-le sur l'autre appareil.");
     });
   } else {
-    ta.readOnly = false; ta.value = ""; ta.placeholder = "Colle ton code ici (il commence par DBM1-)"; go.textContent = "Importer"; go.disabled = false; ta.focus();
+    ta.readOnly = false; ta.value = ""; ta.placeholder = "Colle ton code ici (il commence par DBM)"; go.textContent = "Importer"; go.disabled = false; ta.focus();
   }
 }
 function codeCopy(txt) {
@@ -3511,7 +3607,7 @@ document.addEventListener("click", function (e) {
     codeMsg("✓ Ajouté : " + cnt.l + " titre(s) à ta liste, " + cnt.s + " épisode(s) vu(s), " + cnt.r + " reprise(s), " + cnt.n + " série(s) suivie(s).", "ok");
     toast("Données ajoutées ✓"); stRefresh();
   }, function (err) {
-    codeMsg(err && err.message === "nodec" ? "Ce navigateur est trop ancien pour lire ce code. Mets-le à jour ou utilise l'export par fichier." : err && err.message === "big" ? "Ce code est trop volumineux." : "Code invalide : vérifie qu'il est complet (il commence par DBM1- ou DBM0-).", "err");
+    codeMsg(err && err.message === "nodec" ? "Ce navigateur est trop ancien pour lire ce code. Mets-le à jour ou utilise l'export par fichier." : err && err.message === "big" ? "Ce code est trop volumineux." : "Code invalide : vérifie qu'il est complet (il commence par DBM).", "err");
   });
 });
 function viewHome() {
