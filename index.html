@@ -1881,6 +1881,7 @@ body { overflow-x: hidden; max-width: 100%; position: relative; }
 @media (max-width: 640px) { #settabs .mlt { gap: 8px; padding: 15px 6px; } #settabs .mlt svg { width: 20px; height: 20px; } #settabs .mlt .l { font-size: 11px; letter-spacing: .04em; } }
 
 /* ===== Bandes-annonces : chip sur la fiche + lecteur perso ===== */
+.detail .tags { align-items: center; }
 .tchip { display: inline-flex; align-items: center; gap: 8px; padding: 5px 10px 5px 8px; border: 1px solid var(--acc); background: transparent; color: var(--fg); font: inherit; font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; line-height: 1; cursor: pointer; border-radius: 0; transition: background .2s, color .2s; }
 .tchip svg { width: 11px; height: 11px; flex: none; transition: transform .25s var(--ease); }
 .tchip:hover { background: var(--acc); color: var(--on-acc); }
@@ -1899,17 +1900,26 @@ body { overflow-x: hidden; max-width: 100%; position: relative; }
 .tvtop, .tvbot { position: absolute; left: 0; right: 0; z-index: 3; opacity: 0; transition: opacity .3s, transform .3s var(--ease); pointer-events: none; }
 .tvtop { top: 0; display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; padding: 16px 16px 48px; background: linear-gradient(to bottom, rgba(0,0,0,.85), transparent); transform: translateY(-8px); }
 .tvbot { bottom: 0; padding: 40px 16px 10px; background: linear-gradient(to top, rgba(0,0,0,.9), transparent); transform: translateY(8px); }
-.tvstage.on .tvtop, .tvstage.on .tvbot, .tvstage.paused .tvtop, .tvstage.paused .tvbot { opacity: 1; transform: none; pointer-events: auto; }
-.tvstage.hide { cursor: none; }
+.tvstage.on .tvtop, .tvstage.on .tvbot { opacity: 1; transform: none; pointer-events: auto; }
+.tvstage.hide.playing { cursor: none; }
 .tvtitle { min-width: 0; display: grid; gap: 4px; }
 .tvtitle small { font-family: var(--mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--dim); }
 .tvtitle b { font-family: var(--display); font-weight: 900; font-size: clamp(20px, 3vw, 32px); line-height: 1; text-transform: uppercase; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .tvic { flex: none; width: 40px; height: 40px; display: grid; place-items: center; background: transparent; border: 0; color: var(--fg); cursor: pointer; border-radius: 0; transition: background .2s, color .2s; }
 .tvic svg { width: 20px; height: 20px; }
 .tvic:hover { background: var(--fg); color: var(--bg); }
-.tvbig { position: absolute; z-index: 2; left: 50%; top: 50%; width: 84px; height: 84px; margin: -42px 0 0 -42px; display: grid; place-items: center; border: 1px solid var(--fg); background: rgba(0,0,0,.45); backdrop-filter: blur(6px); color: var(--fg); cursor: pointer; border-radius: 0; opacity: 0; transform: scale(.85); pointer-events: none; transition: opacity .25s, transform .3s var(--ease), background .2s, color .2s; }
+.tvbig { position: absolute; z-index: 2; left: 50%; top: 50%; width: 84px; height: 84px; margin: 0; display: grid; place-items: center; border: 1px solid var(--fg); background: rgba(0,0,0,.45); backdrop-filter: blur(6px); color: var(--fg); cursor: pointer; border-radius: 0; opacity: 0; transform: translate(-50%, -50%) scale(.85); pointer-events: none; transition: opacity .25s, transform .3s var(--ease), background .2s, color .2s; }
 .tvbig svg { width: 30px; height: 30px; margin-left: 3px; }
-.tvstage.paused .tvbig { opacity: 1; transform: none; pointer-events: auto; }
+.tvstage.ready.paused.on .tvbig { opacity: 1; transform: translate(-50%, -50%); pointer-events: auto; }
+.tvqw { position: relative; }
+.tvqb { width: auto; padding: 0 10px; gap: 6px; display: inline-flex; align-items: center; font-family: var(--mono); font-size: 12px; letter-spacing: .06em; }
+.tvqb svg { width: 18px; height: 18px; }
+.tvqm { position: absolute; right: 0; bottom: calc(100% + 6px); min-width: 140px; display: none; background: rgba(10,10,10,.96); border: 1px solid var(--line); padding: 4px; z-index: 6; }
+.tvqm.open { display: grid; }
+.tvqm button { display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 9px 12px; background: transparent; border: 0; color: #cfcfcf; font-family: var(--mono); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; cursor: pointer; border-radius: 0; text-align: left; }
+.tvqm button:hover { background: #fff; color: #000; }
+.tvqm button.on { color: #fff; font-weight: 700; }
+.tvqm button.on::after { content: "✓"; }
 .tvbig:hover { background: var(--fg); color: var(--bg); }
 .tvbar { position: relative; height: 20px; cursor: pointer; touch-action: none; }
 .tvbar::before { content: ""; position: absolute; left: 0; right: 0; top: 50%; height: 3px; margin-top: -1.5px; background: rgba(255,255,255,.22); transition: height .15s, margin .15s; }
@@ -1934,6 +1944,8 @@ body { overflow-x: hidden; max-width: 100%; position: relative; }
 .tvload.msg .tvmsg { display: grid; gap: 14px; justify-items: center; }
 .tvstage.ready .tvload { opacity: 0; pointer-events: none; }
 .tvths { display: flex; gap: 10px; overflow-x: auto; padding-bottom: 4px; }
+.tvths .tvth:first-child { margin-left: auto; }
+.tvths .tvth:last-child { margin-right: auto; }
 .tvths:empty { display: none; }
 .tvth { flex: 0 0 auto; width: 176px; padding: 0; background: none; border: 1px solid var(--line); color: var(--dim); text-align: left; cursor: pointer; border-radius: 0; transition: border-color .2s, color .2s; }
 .tvth img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; opacity: .55; transition: opacity .2s; }
@@ -1946,7 +1958,7 @@ body { overflow-x: hidden; max-width: 100%; position: relative; }
   .tvm { padding: 0; align-items: center; }
   .tvvol { display: none; }
   .tvbig { width: 68px; height: 68px; margin: -34px 0 0 -34px; }
-  .tvth { width: 132px; }
+  .tvth { width: min(132px, calc((100vw - 44px) / 3)); }
   .tvths { padding: 0 12px 4px; }
 }
 @media (prefers-reduced-motion: reduce) { .tvm, .tvbox, .tvload::after { animation: none; } }
@@ -4819,10 +4831,22 @@ document.addEventListener("click", function (e) {
    Le lecteur utilise l'API YouTube (iframe) sans ses commandes : tout ce qui est affiché (lecture, barre, volume, plein écran) est le nôtre. */
 function vidsFrom(t) {
   var r = (t && t.videos && t.videos.results) || [], ol = String((t && t.original_language) || "");
-  return r.filter(function (v) { return v && v.site === "YouTube" && v.key && (v.type === "Trailer" || v.type === "Teaser"); })
-    .map(function (v) { var l = v.iso_639_1 || ""; return { v: v, s: (v.type === "Trailer" ? 0 : 10) + (l === "fr" ? 0 : l === "en" ? 1 : l === ol ? 2 : 3) + (v.official ? 0 : .5) }; })
-    .sort(function (a, b) { return a.s - b.s; }).slice(0, 6)
-    .map(function (x) { return { key: String(x.v.key), name: String(x.v.name || "").slice(0, 80), type: x.v.type }; });
+  var all = r.filter(function (v) { return v && v.site === "YouTube" && v.key && (v.type === "Trailer" || v.type === "Teaser"); })
+    .map(function (v) { return { v: v, s: (v.type === "Trailer" ? 0 : 10) + (v.official ? 0 : 5) + (v.size ? -Math.min(v.size, 2160) / 100000 : 0) }; })
+    .sort(function (a, b) { return a.s - b.s; }).map(function (x) { return x.v; });
+  function pick(fn) { for (var i = 0; i < all.length; i++) if (fn(all[i])) return all[i]; return null; }
+  var used = {}, out = [];
+  function add(v, lab) {
+    if (!v) return;
+    if (used[v.key]) { var o = out.filter(function (x) { return x.key === String(v.key); })[0]; if (o && o.lab.indexOf(lab) < 0) o.lab += " / " + lab; return; }
+    used[v.key] = 1; out.push({ key: String(v.key), name: String(v.name || "").slice(0, 80), type: v.type, lab: lab });
+  }
+  var vo = pick(function (v) { return ol && v.iso_639_1 === ol; }) || pick(function (v) { return !v.iso_639_1; });
+  var en = pick(function (v) { return v.iso_639_1 === "en"; });
+  var fr = pick(function (v) { return v.iso_639_1 === "fr"; });
+  add(vo, "Original"); add(en, "Anglais"); add(fr, "Français");
+  if (!out.length && all.length) add(all[0], "Original");
+  return out.slice(0, 3);
 }
 var TVI = {
   play: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12.5-7.5a1 1 0 0 0 0-1.72L8.5 3.64A1 1 0 0 0 7 4.5z"/></svg>',
@@ -4830,6 +4854,7 @@ var TVI = {
   vol: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9.5v5h3.5l4.5 4v-13l-4.5 4z" fill="currentColor"/><path d="M15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11"/></svg>',
   mute: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9.5v5h3.5l4.5 4v-13l-4.5 4z" fill="currentColor"/><path d="m16 9.5 5 5m0-5-5 5"/></svg>',
   full: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>',
+  gear: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg>',
   x: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>'
 };
 function trailerChip(s) {
@@ -4844,7 +4869,7 @@ function trailersSection() {
       ? 'Activées : les fiches qui ont une vidéo affichent « Bande-annonce » et la lisent dans le lecteur du site. Les vidéos viennent de TMDB : pour les fiches déjà au catalogue, lance « Tout mettre à jour depuis TMDB ».'
       : 'Désactivées : le bouton « Bande-annonce » est caché pour tout le monde.') + '</p>', 2);
 }
-var TV = { box: null, p: null, list: [], i: 0, ready: false, playing: false, seeking: false, seekTo: 0, timer: 0, idle: 0, fail: 0, name: "" };
+var TV = { vol: 100, muted: false, q: "hd1080", box: null, p: null, list: [], i: 0, ready: false, playing: false, seeking: false, seekTo: 0, timer: 0, idle: 0, fail: 0, name: "" };
 function tvFmt(n) { n = Math.max(0, Math.floor(n || 0)); var m = Math.floor(n / 60), s = n % 60; return m + ":" + (s < 10 ? "0" : "") + s; }
 function tvq(id) { return document.getElementById(id); }
 function ytReady(cb) {
@@ -4867,6 +4892,7 @@ function tvBuild() {
     '<div class="tvbot"><div class="tvbar" id="tv-bar"><i class="b" id="tv-buf"></i><i class="p" id="tv-pos"></i></div>' +
     '<div class="tvrow"><button type="button" class="tvic" id="tv-pp" aria-label="Lecture / pause">' + TVI.play + '</button><button type="button" class="tvic" id="tv-mu" aria-label="Son">' + TVI.vol + '</button>' +
     '<input type="range" class="tvvol" id="tv-vol" min="0" max="100" value="100" aria-label="Volume"><span class="tvtime" id="tv-time">0:00 / 0:00</span><span class="tvsp"></span>' +
+    '<div class="tvqw"><div class="tvqm" id="tv-qm"></div><button type="button" class="tvic tvqb" id="tv-q" aria-label="Qualité">' + TVI.gear + '<span id="tv-ql">Auto</span></button></div>' +
     '<button type="button" class="tvic" id="tv-fs" aria-label="Plein écran">' + TVI.full + '</button></div></div>' +
     '<div class="tvload" id="tv-load"><div class="tvmsg"><span>Lecteur indisponible</span><a class="btn small ghost" id="tv-yl" target="_blank" rel="noopener noreferrer" href="#">Voir sur YouTube</a></div></div></div>' +
     '<div class="tvths" id="tv-ths"></div></div>';
@@ -4878,15 +4904,28 @@ function tvBuild() {
     if (t.closest("#tv-x")) return tvClose();
     if (t.closest("#tv-pp") || t.closest("#tv-big")) return tvToggle();
     if (t.closest("#tv-mu")) return tvMute();
+    var qo = t.closest("[data-tvq]"); if (qo) return tvSetQ(qo.dataset.tvq);
+    if (t.closest("#tv-q")) return tvQMenu();
+    if (t.closest("#tv-qm")) return;
+    tvq("tv-qm").classList.remove("open");
     if (t.closest("#tv-fs")) return tvFull();
     var th = t.closest("[data-tvi]"); if (th) return tvGo(+th.dataset.tvi);
     if (t.closest("#tv-bar") || t.closest("#tv-vol") || t.closest(".tvtop") || t.closest("#tv-yl")) return;
     if (t.closest("#tv-stage")) tvToggle();
   });
   /* commandes visibles au survol, qui se cachent seules pendant la lecture */
-  var wake = function () { st.classList.add("on"); st.classList.remove("hide"); clearTimeout(TV.idle); if (TV.playing) TV.idle = setTimeout(function () { if (!TV.seeking) { st.classList.remove("on"); st.classList.add("hide"); } }, 2400); };
+  var wake = function () {
+    st.classList.add("on"); st.classList.remove("hide"); clearTimeout(TV.idle);
+    var arm = function () {
+      TV.idle = setTimeout(function () {
+        if (TV.seeking || st.querySelector(".tvbot:hover, .tvtop:hover") || tvq("tv-qm").classList.contains("open")) return arm();
+        st.classList.remove("on"); st.classList.add("hide");
+      }, TV.playing ? 2400 : 3500);
+    };
+    arm();
+  };
   st.addEventListener("pointermove", wake); st.addEventListener("pointerdown", wake);
-  st.addEventListener("pointerleave", function () { clearTimeout(TV.idle); if (TV.playing && !TV.seeking) { st.classList.remove("on"); st.classList.remove("hide"); } });
+  st.addEventListener("pointerleave", function () { clearTimeout(TV.idle); if (!TV.seeking) { st.classList.remove("on"); st.classList.remove("hide"); tvq("tv-qm").classList.remove("open"); } });
   TV.wake = wake;
   /* barre de progression : clic ou glisser */
   var scrub = function (e) {
@@ -4898,7 +4937,7 @@ function tvBuild() {
   bar.addEventListener("pointermove", function (e) { if (TV.seeking) scrub(e); });
   var up = function () { if (!TV.seeking) return; TV.seeking = false; bar.classList.remove("drag"); try { TV.p.seekTo(TV.seekTo, true); } catch (x) {} };
   bar.addEventListener("pointerup", up); bar.addEventListener("pointercancel", up);
-  tvq("tv-vol").addEventListener("input", function () { if (!TV.ready) return; var v = +this.value; try { TV.p.setVolume(v); if (v > 0 && TV.p.isMuted()) TV.p.unMute(); else if (v === 0) TV.p.mute(); } catch (x) {} tvMuteIcon(); });
+  tvq("tv-vol").addEventListener("input", function () { if (!TV.ready) return; var v = +this.value; if (v > 0) TV.vol = v; TV.muted = v === 0; tvAudio(); });
   document.addEventListener("keydown", function (e) {
     if (!TV.box || TV.box.hidden) return;
     var ae = document.activeElement, k = e.key;
@@ -4910,15 +4949,41 @@ function tvBuild() {
   });
   return b;
 }
-function tvMuteIcon() {
-  var m = false; try { m = TV.ready && (TV.p.isMuted() || TV.p.getVolume() === 0); } catch (x) {}
-  tvq("tv-mu").innerHTML = m ? TVI.mute : TVI.vol;
+function tvMuteIcon() { tvq("tv-mu").innerHTML = TV.muted ? TVI.mute : TVI.vol; }
+/* le son est géré par notre propre état (TV.vol / TV.muted) et réappliqué à chaque vidéo : plus d'inversion mute / pas mute */
+function tvAudio() {
+  if (TV.ready) { try { TV.p.setVolume(TV.vol); if (TV.muted) TV.p.mute(); else TV.p.unMute(); } catch (x) {} }
+  var r = tvq("tv-vol"); if (r) r.value = TV.muted ? 0 : TV.vol;
+  tvMuteIcon();
+}
+/* qualité : YouTube décide parfois seul, on demande la meilleure et on laisse le choix */
+var TVQN = { highres: "4320p", hd2880: "2880p", hd2160: "2160p", hd1440: "1440p", hd1080: "1080p", hd720: "720p", large: "480p", medium: "360p", small: "240p", tiny: "144p", auto: "Auto", default: "Auto" };
+function tvApplyQ() {
+  if (!TV.ready) return;
+  try { if (TV.q === "auto") { TV.p.setPlaybackQuality("default"); } else { TV.p.setPlaybackQualityRange(TV.q, TV.q); TV.p.setPlaybackQuality(TV.q); } } catch (x) {}
+  tvq("tv-ql").textContent = TV.q === "auto" ? "Auto" : (TVQN[TV.q] || TV.q);
+}
+function tvSetQ(q) {
+  TV.q = q; tvApplyQ();
+  /* setPlaybackQuality ne recharge pas toujours le flux : on relance à la même seconde */
+  if (TV.ready && q !== "auto") { try { var c = TV.p.getCurrentTime(), k = (TV.list[TV.i] || {}).key; if (k && TV.p.getPlaybackQuality && TV.p.getPlaybackQuality() !== q) { TV.p.loadVideoById({ videoId: k, startSeconds: c, suggestedQuality: q }); } } catch (x) {} }
+  tvq("tv-qm").classList.remove("open");
+}
+function tvQMenu() {
+  var m = tvq("tv-qm");
+  if (m.classList.contains("open")) return m.classList.remove("open");
+  var lv = []; try { lv = TV.p.getAvailableQualityLevels() || []; } catch (x) {}
+  lv = lv.filter(function (q) { return TVQN[q] && q !== "default" && q !== "auto"; });
+  if (!lv.length) lv = ["hd2160", "hd1440", "hd1080", "hd720", "large", "medium"];
+  m.innerHTML = ["auto"].concat(lv).map(function (q) { return '<button type="button" data-tvq="' + q + '"' + (q === TV.q ? ' class="on"' : '') + '>' + TVQN[q] + '</button>'; }).join("");
+  m.classList.add("open");
 }
 function tvToggle() { if (!TV.ready) return; try { if (TV.playing) TV.p.pauseVideo(); else TV.p.playVideo(); } catch (x) {} }
 function tvMute() {
   if (!TV.ready) return;
-  try { if (TV.p.isMuted() || TV.p.getVolume() === 0) { TV.p.unMute(); if (TV.p.getVolume() === 0) TV.p.setVolume(60); tvq("tv-vol").value = TV.p.getVolume(); } else { TV.p.mute(); } } catch (x) {}
-  tvMuteIcon();
+  TV.muted = !TV.muted;
+  if (!TV.muted && TV.vol < 5) TV.vol = 60;
+  tvAudio();
 }
 function tvFull() {
   var st = tvq("tv-stage"), fe = document.fullscreenElement || document.webkitFullscreenElement;
@@ -4930,9 +4995,9 @@ function tvState(e) {
   if (!S) return;
   TV.playing = d === S.PLAYING || d === S.BUFFERING;
   var shownPlaying = d === S.PLAYING;
-  st.classList.toggle("paused", !TV.playing);
+  st.classList.toggle("paused", !TV.playing); st.classList.toggle("playing", TV.playing);
   tvq("tv-pp").innerHTML = TV.playing ? TVI.pause : TVI.play;
-  if (shownPlaying) { st.classList.add("ready"); }
+  if (shownPlaying) { if (!st.classList.contains("ready")) { st.classList.add("ready"); tvAudio(); tvApplyQ(); } }
   if (d === S.ENDED) { try { TV.p.seekTo(0, true); TV.p.pauseVideo(); } catch (x) {} }
   if (TV.wake) TV.wake();
 }
@@ -4954,7 +5019,7 @@ function tvTick() {
 function tvGo(i) {
   var v = TV.list[i]; if (!v) return;
   TV.i = i;
-  tvq("tv-type").textContent = v.type === "Teaser" ? "Teaser" : "Bande-annonce";
+  tvq("tv-type").textContent = (v.type === "Teaser" ? "Teaser" : "Bande-annonce") + (v.lab ? " · " + v.lab : "");
   tvq("tv-name").textContent = TV.name || v.name;
   Array.prototype.forEach.call(document.querySelectorAll("#tv-ths .tvth"), function (b, k) { b.classList.toggle("on", k === i); });
   var st = tvq("tv-stage"), ld = tvq("tv-load"); st.classList.remove("ready"); ld.classList.remove("msg");
@@ -4963,13 +5028,13 @@ function tvGo(i) {
   ytReady(function () {
     if (!TV.box || TV.box.hidden) return;
     var key = (TV.list[TV.i] || {}).key; if (!key) return;
-    if (TV.p && TV.p.loadVideoById) { try { TV.p.loadVideoById(key); } catch (x) {} return; }
+    if (TV.p && TV.p.loadVideoById) { try { TV.p.loadVideoById({ videoId: key, suggestedQuality: TV.q === "auto" ? "default" : TV.q }); } catch (x) {} tvAudio(); return; }
     if (TV.p) return;
     TV.p = new YT.Player("tv-yt", {
       host: "https://www.youtube-nocookie.com", videoId: key,
       playerVars: { controls: 0, rel: 0, modestbranding: 1, iv_load_policy: 3, playsinline: 1, disablekb: 1, fs: 0, autoplay: 1, origin: location.origin },
       events: {
-        onReady: function () { TV.ready = true; try { TV.p.setVolume(+tvq("tv-vol").value); TV.p.playVideo(); } catch (x) {} tvMuteIcon(); },
+        onReady: function () { TV.ready = true; tvAudio(); tvApplyQ(); try { TV.p.playVideo(); } catch (x) {} },
         onStateChange: tvState,
         onError: function () { tvFail(); }
       }
@@ -4978,15 +5043,15 @@ function tvGo(i) {
 }
 function tvOpen(id, start) {
   var s = byId(id); if (!s || !trailersOn()) return;
-  var list = (s.videos || []).filter(function (v) { return v && v.key; }); if (!list.length) return;
+  var list = (s.videos || []).filter(function (v) { return v && v.key; }).slice(0, 3); if (!list.length) return;
   tvBuild();
   TV.list = list; TV.name = s.name || "";
   var bg = hq(s.backdrop || s.poster);
   tvq("tv-load").style.backgroundImage = bg ? 'linear-gradient(rgba(0,0,0,.62),rgba(0,0,0,.62)),url("' + String(bg).replace(/"/g, "%22") + '")' : "none";
   tvq("tv-ths").innerHTML = list.length > 1 ? list.map(function (v, k) {
-    return '<button type="button" class="tvth" data-tvi="' + k + '"><img src="https://i.ytimg.com/vi/' + encodeURIComponent(v.key) + '/mqdefault.jpg" alt="" loading="lazy"><span>' + esc(v.type === "Teaser" ? "Teaser" : "Bande-annonce") + (v.name ? " · " + esc(v.name) : "") + '</span></button>';
+    return '<button type="button" class="tvth" data-tvi="' + k + '"><img src="https://i.ytimg.com/vi/' + encodeURIComponent(v.key) + '/mqdefault.jpg" alt="" loading="lazy"><span>' + esc(v.lab || (v.type === "Teaser" ? "Teaser" : "Bande-annonce")) + (v.name ? " · " + esc(v.name) : "") + '</span></button>';
   }).join("") : "";
-  TV.box.hidden = false; document.documentElement.style.overflow = "hidden";
+  TV.box.hidden = false; document.documentElement.style.overflow = "hidden"; tvq("tv-qm").classList.remove("open"); tvq("tv-ql").textContent = TV.q === "auto" ? "Auto" : (TVQN[TV.q] || TV.q); tvq("tv-vol").value = TV.muted ? 0 : TV.vol; tvMuteIcon();
   clearInterval(TV.timer); TV.timer = setInterval(tvTick, 250);
   tvGo(start || 0);
   var x = tvq("tv-x"); if (x) x.focus();
