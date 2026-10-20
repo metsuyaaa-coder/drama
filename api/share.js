@@ -8,7 +8,7 @@ const IMAGE_PAR_DEFAUT = "/dbm.png?v=2";
 
 /* ===== Textes des pages (modifie-les ici comme tu veux) ===== */
 const PAGES = {
-  "/":            { titre: "DramaByM", desc: "Bienvenue sur DramaByM ! Retrouve ton répertoire de dramas, séries et films à regarder en streaming ou à télécharger, avec les nouveaux épisodes à jour." },
+  "/":            { titre: "DramaByM", desc: "Ton répertoire de dramas, séries et films à regarder en streaming ou à télécharger, avec les nouveaux épisodes toujours à jour." },
   "/series":      { titre: "Séries · DramaByM", desc: "Toutes les séries et dramas du répertoire DramaByM : filtre par langue, plateforme ou genre et lance ton prochain épisode." },
   "/films":       { titre: "Films · DramaByM", desc: "Tous les films du répertoire DramaByM, à regarder en streaming ou à télécharger." },
   "/calendrier":  { titre: "Calendrier · DramaByM", desc: "Les prochains épisodes de la semaine : ne rate aucune sortie de tes dramas préférés." },
