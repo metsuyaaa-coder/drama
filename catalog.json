@@ -26200,7 +26200,7 @@
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/oRGXEzC98Xna3Cnl4CnDEw6OLYB.jpg",
       "posterV": 2,
-      "backdrop": "https://image.tmdb.org/t/p/original/Zm0DSpp38XbEgFUj4PLaCrVre5.jpg",
+      "backdrop": "https://media.themoviedb.org/t/p/w533_and_h300_face/tlAZ3g7EzHqWj0Yn6SXVAdFfAcE.jpg",
       "cast": [
         {
           "name": "宋威龙",
@@ -26720,7 +26720,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792527124200,
+      "updatedAt": 1792532049608,
       "posterCustom": true
     },
     {
@@ -27270,6 +27270,15 @@
     "at": 1792529783562
   },
   "journal": [
+    {
+      "k": "mvh7athqlj6r7",
+      "t": 1792532049614,
+      "b": "head",
+      "a": "edit",
+      "i": "251600",
+      "n": "The Eternal Fragrance",
+      "d": ""
+    },
     {
       "k": "mvh734jkkz64s",
       "t": 1792531690688,
