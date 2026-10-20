@@ -19721,7 +19721,7 @@
         "キッドナップ ゲーム"
       ],
       "year": "2026",
-      "overview": "",
+      "overview": "Sept individus, issus de pays, de milieux et de religions différents, se retrouvent contraints de participer à un jeu mortel. Pourquoi ont-ils été choisis ? Qui orchestre ce jeu de survie ? Et quel est son véritable but ? Dans un monde au bord du gouffre, un jeu de survie extrême où la vie est en jeu, commence.",
       "genres": [
         "Crime",
         "Drame"
@@ -19909,7 +19909,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792425716005,
+      "updatedAt": 1792454413125,
       "networks": [
         "Fuji TV",
         "Channel A"
@@ -25327,6 +25327,15 @@
     "at": 1792452351145
   },
   "journal": [
+    {
+      "k": "mvfx2stcblvxc",
+      "t": 1792454413152,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "320513",
+      "n": "kiDnap GAME",
+      "d": ""
+    },
     {
       "k": "mvfx1bdd1kw9l",
       "t": 1792454343889,
