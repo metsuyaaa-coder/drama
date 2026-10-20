@@ -27247,30 +27247,15 @@
       },
       {
         "id": "playmate",
-        "state": "slow",
-        "note": "BUFFER UN PEU LENT",
-        "at": 1792529610274
+        "state": "up",
+        "note": "",
+        "at": 1792529779005
       }
     ],
-    "log": [
-      {
-        "t": 1792529610274,
-        "id": "playmate",
-        "name": "Playmate",
-        "state": "slow",
-        "note": "BUFFER UN PEU LENT"
-      },
-      {
-        "t": 1792529595691,
-        "id": "playmate",
-        "name": "Playmate",
-        "state": "slow",
-        "note": ""
-      }
-    ],
+    "log": [],
     "extra": [],
     "hidden": [],
-    "at": 1792529610274
+    "at": 1792529783562
   },
   "journal": [
     {
