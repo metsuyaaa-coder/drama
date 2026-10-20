@@ -1300,14 +1300,15 @@ footer .wrap.about { display: grid; grid-template-columns: repeat(auto-fit, minm
 .nbell .nbadge { position: absolute; top: -7px; right: -7px; min-width: 18px; height: 18px; padding: 0 5px; display: grid; place-items: center; background: var(--acc); color: var(--on-acc); border: 2px solid var(--bg); font-family: var(--mono); font-size: 10px; font-weight: 700; line-height: 1; }
 .nbell.on .nbadge { background: var(--bg); color: var(--fg); border-color: var(--acc); }
 .nbell .nbadge[hidden] { display: none; }
-.nbox { position: absolute; z-index: 30; top: calc(100% + 12px); right: 0; width: min(400px, calc(100vw - 24px)); max-height: min(560px, calc(100vh - 110px)); display: flex; flex-direction: column; background: var(--bg); border: 1px solid var(--acc); box-shadow: 0 18px 50px rgba(0,0,0,.7); animation: dialogIn .22s var(--ease) both; }
+.nbox { position: absolute; z-index: 30; top: calc(100% + 12px); right: 0; width: min(400px, calc(100vw - 24px)); max-height: min(560px, calc(100vh - 110px)); max-height: min(560px, calc(100dvh - 110px)); overflow: hidden; display: flex; flex-direction: column; background: var(--bg); border: 1px solid var(--acc); box-shadow: 0 18px 50px rgba(0,0,0,.7); animation: dialogIn .22s var(--ease) both; }
 .nbox[hidden] { display: none; }
 .nbox .nh { display: flex; align-items: center; gap: 10px; padding: 14px 16px; border-bottom: 1px solid var(--line); }
 .nbox .nh h2 { margin: 0; flex: 1; font-family: var(--display); font-weight: 900; font-size: 22px; letter-spacing: .04em; text-transform: uppercase; line-height: 1; }
 .nbox .nh button { display: inline-flex; align-items: center; gap: 6px; background: none; border: 1px solid var(--line); padding: 6px 10px; font-size: 12px; color: var(--dim); cursor: pointer; transition: color .2s, border-color .2s; }
 .nbox .nh button:hover { color: var(--fg); border-color: var(--acc); }
 .nbox .nh button svg { width: 15px; height: 15px; flex: none; }
-.nbox .nl2 { overflow-y: auto; overscroll-behavior: contain; }
+.nbox .nl2 { flex: 1 1 auto; min-height: 0; overflow-y: auto; overflow-x: hidden; overscroll-behavior: contain; -webkit-overflow-scrolling: touch; touch-action: pan-y; scrollbar-width: thin; scrollbar-color: var(--line) transparent; }
+.nbox .nh, .nbox .nf { flex: none; }
 .nitem { position: relative; display: grid; grid-template-columns: 38px minmax(0, 1fr) auto; gap: 12px; align-items: start; padding: 14px 16px; border-bottom: 1px solid var(--line); color: var(--fg); transition: background .2s; }
 .nitem:last-child { border-bottom: 0; }
 .nitem.lk:hover { background: var(--panel); }
@@ -1341,7 +1342,7 @@ footer .wrap.about { display: grid; grid-template-columns: repeat(auto-fit, minm
   .notifwrap { order: 1; margin-left: auto; position: static; }
   .burger { order: 2; margin-left: 0 !important; }
   .hero .row .btn[data-notify], .detail .row .btn[data-notify] { flex: 1 1 100%; }
-  .nbox { left: 12px; right: 12px; width: auto; top: 100%; margin-top: 6px; max-height: calc(100vh - 140px); }
+  .nbox { left: 12px; right: 12px; width: auto; top: 100%; margin-top: 6px; max-height: calc(100vh - 140px); max-height: calc(100dvh - 140px); }
 }
 /* envoi d'infos (Head admin) */
 .hsend { display: grid; gap: 12px; }
