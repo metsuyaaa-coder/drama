@@ -24,7 +24,7 @@
 <meta name="twitter:description" content="Ton répertoire de dramas, séries et films à regarder en streaming ou à télécharger, avec les nouveaux épisodes toujours à jour.">
 <meta name="twitter:image" content="https://dramabym.vercel.app/dbm.png?v=2">
 <meta name="theme-color" content="#000000">
-<script>try{var _p=JSON.parse(localStorage.getItem("noir.prefs")||"{}");if(_p&&/^(light|red|blue)$/.test(_p.theme)){document.documentElement.setAttribute("data-theme",_p.theme);var _m=document.querySelector('meta[name=theme-color]');if(_m)_m.content={light:"#ffffff",red:"#000000",blue:"#081a3a"}[_p.theme];}}catch(e){}</script>
+<script>try{var _p=JSON.parse(localStorage.getItem("noir.prefs")||"{}");if(_p&&/^(light|red|blue)$/.test(_p.theme)){document.documentElement.setAttribute("data-theme",_p.theme);var _m=document.querySelector('meta[name=theme-color]');if(_m)_m.content={light:"#f1f0ed",red:"#000000",blue:"#081a3a"}[_p.theme];}}catch(e){}</script>
 <link rel="manifest" href="manifest.webmanifest">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -1038,15 +1038,12 @@ footer .wrap.about { display: grid; grid-template-columns: repeat(auto-fit, minm
 .tags .new { font-size: 12px; padding: 5px 8px; margin-right: 100%; }
 .tags .new::before, .tags .new + span::before { content: none !important; }
 /* badge « Nouvelle série » / « Nouveau » (placé sous les autres badges) */
-.nov { display: inline-flex; align-items: center; font-family: var(--mono); font-weight: 700; text-transform: uppercase; letter-spacing: .06em; background: #fde68a; color: #422006; line-height: 1; white-space: nowrap; }
+.nov { display: inline-flex; align-items: center; font-family: var(--mono); font-weight: 700; text-transform: uppercase; letter-spacing: .06em; background: var(--acc); color: var(--on-acc); line-height: 1; white-space: nowrap; }
 .poster .nov { position: absolute; z-index: 1; left: 8px; font-size: 10px; padding: 4px 6px; }
 .tags .nov { font-size: 12px; padding: 5px 8px; margin-right: 100%; }
 .tags .nov::before, .tags .nov + span::before { content: none !important; }
 /* badge « K-drama » (fiche) */
-.kd { display: inline-flex; align-items: center; font-family: var(--mono); font-weight: 700; text-transform: uppercase; letter-spacing: .06em; background: #fbcfe8; color: #500724; line-height: 1; white-space: nowrap; }
-.kd-J { background: #bfdbfe; color: #172554; }
-.kd-C { background: #fecaca; color: #450a0a; }
-.kd-T { background: #a7f3d0; color: #022c22; }
+.kd { display: inline-flex; align-items: center; font-family: var(--mono); font-weight: 700; text-transform: uppercase; letter-spacing: .06em; background: color-mix(in srgb, var(--acc) 20%, var(--bg)); color: var(--fg); border: 1px solid var(--acc); line-height: 1; white-space: nowrap; }
 .tags .kd { font-size: 12px; padding: 5px 8px; margin-right: 100%; }
 .tags .kd::before, .tags .kd + span::before { content: none !important; }
 .ep b .new { font-size: 10px; padding: 4px 6px; margin-left: 8px; vertical-align: middle; }
@@ -1908,9 +1905,10 @@ body { overflow-x: hidden; max-width: 100%; position: relative; }
 .tvic { flex: none; width: 40px; height: 40px; display: grid; place-items: center; background: transparent; border: 0; color: var(--fg); cursor: pointer; border-radius: 0; transition: background .2s, color .2s; }
 .tvic svg { width: 20px; height: 20px; }
 .tvic:hover { background: var(--fg); color: var(--bg); }
-.tvbig { position: absolute; z-index: 2; left: 50%; top: 50%; width: 84px; height: 84px; margin: 0; display: grid; place-items: center; border: 1px solid var(--fg); background: rgba(0,0,0,.45); backdrop-filter: blur(6px); color: var(--fg); cursor: pointer; border-radius: 0; opacity: 0; transform: translate(-50%, -50%) scale(.85); pointer-events: none; transition: opacity .25s, transform .3s var(--ease), background .2s, color .2s; }
-.tvbig svg { width: 30px; height: 30px; margin-left: 3px; }
-.tvstage.ready.paused.on .tvbig { opacity: 1; transform: translate(-50%, -50%); pointer-events: auto; }
+.tvbig { position: absolute; z-index: 2; left: 50%; top: 50%; width: 84px; height: 84px; margin: 0; display: grid; place-items: center; border: 1px solid var(--fg); background: rgba(8,8,8,.94); color: var(--fg); cursor: pointer; border-radius: 0; opacity: 0; transform: translate(-50%, -50%) scale(.85); pointer-events: none; transition: opacity .25s, transform .3s var(--ease), background .2s, color .2s; }
+.tvbig svg { width: 30px; height: 30px; }
+.tvbig.isplay svg { margin-left: 4px; }
+.tvstage.ready.flash .tvbig, .tvstage.ready.paused.on .tvbig { opacity: 1; transform: translate(-50%, -50%); pointer-events: auto; }
 .tvqw { position: relative; }
 .tvqb { width: auto; padding: 0 10px; gap: 6px; display: inline-flex; align-items: center; font-family: var(--mono); font-size: 12px; letter-spacing: .06em; }
 .tvqb svg { width: 18px; height: 18px; }
@@ -1957,7 +1955,6 @@ body { overflow-x: hidden; max-width: 100%; position: relative; }
 @media (max-width: 720px) {
   .tvm { padding: 0; align-items: center; }
   .tvvol { display: none; }
-  .tvbig { width: 68px; height: 68px; margin: -34px 0 0 -34px; }
   .tvth { width: min(132px, calc((100vw - 44px) / 3)); }
   .tvths { padding: 0 12px 4px; }
 }
@@ -1970,7 +1967,7 @@ html[data-theme="blue"] { --bg: #081a3a; --fg: #fff; --dim: #9db4dd; --line: #1f
 html[data-theme="red"] ::selection { background: #e11d2e; color: #fff; }
 html[data-theme="blue"] ::selection { background: #2f80ff; color: #fff; }
 /* Clair : tout est inversé (noir <-> blanc), puis les images, vidéos et lecteurs sont remis à l'endroit */
-html[data-theme="light"] { filter: invert(1) hue-rotate(180deg); }
+html[data-theme="light"] { --bg: #0e0f12; --fg: #e4e3e0; --dim: #8a8a8a; --line: #2a2b2f; --panel: #17181b; --s0: #0a0b0d; --s1: #1d1e22; filter: invert(1) hue-rotate(180deg); }
 html[data-theme="light"] img, html[data-theme="light"] video, html[data-theme="light"] iframe, html[data-theme="light"] canvas,
 html[data-theme="light"] [style*="background-image"], html[data-theme="light"] .thprev, html[data-theme="light"] dialog#player, html[data-theme="light"] .tvm { filter: invert(1) hue-rotate(180deg); }
 html[data-theme="light"] dialog#player img, html[data-theme="light"] dialog#player video, html[data-theme="light"] dialog#player iframe, html[data-theme="light"] dialog#player canvas, html[data-theme="light"] dialog#player [style*="background-image"],
@@ -3385,7 +3382,7 @@ function applyPrefs() {
   var c = document.documentElement.classList;
   c.toggle("noanim", PREFS.noanim); c.toggle("notips", PREFS.hideTips);
   var de = document.documentElement; if (PREFS.theme) de.setAttribute("data-theme", PREFS.theme); else de.removeAttribute("data-theme");
-  var tm = document.querySelector('meta[name="theme-color"]'); if (tm) tm.setAttribute("content", { light: "#ffffff", blue: "#081a3a" }[PREFS.theme] || "#000000");
+  var tm = document.querySelector('meta[name="theme-color"]'); if (tm) tm.setAttribute("content", { light: "#f1f0ed", blue: "#081a3a" }[PREFS.theme] || "#000000");
   c.toggle("hb-lang", PREFS.hideLang); c.toggle("hb-live", PREFS.hideLive); c.toggle("hb-new", PREFS.hideNew); c.toggle("hb-nov", PREFS.hideNov);
 }
 /* badges des affiches : quand certains sont cachés, les autres remontent (pas de trou) */
@@ -3470,7 +3467,7 @@ function stCount(t) {
 }
 var THEMES = [
   ["", "Noir", "Le thème d'origine", "#000", "#fff", "#fff"],
-  ["light", "Clair", "Fond blanc, texte noir", "#fff", "#111", "#111"],
+  ["light", "Clair", "Fond blanc cassé, texte anthracite", "#f1f0ed", "#1b1c1f", "#1b1c1f"],
   ["red", "Rouge & noir", "Noir profond, accents rouges", "#000", "#fff", "#e11d2e"],
   ["blue", "Bleu & blanc", "Bleu nuit, texte blanc", "#081a3a", "#fff", "#2f80ff"]
 ];
@@ -4888,7 +4885,7 @@ function tvBuild() {
   var b = document.createElement("div"); b.className = "tvm"; b.hidden = true; b.setAttribute("role", "dialog"); b.setAttribute("aria-label", "Bande-annonce");
   b.innerHTML = '<div class="tvbox"><div class="tvstage paused" id="tv-stage"><div id="tv-yt"></div>' +
     '<div class="tvtop"><div class="tvtitle"><small id="tv-type"></small><b id="tv-name"></b></div><button type="button" class="tvic" id="tv-x" aria-label="Fermer">' + TVI.x + '</button></div>' +
-    '<button type="button" class="tvbig" id="tv-big" aria-label="Lecture">' + TVI.play + '</button>' +
+    '<button type="button" class="tvbig isplay" id="tv-big" aria-label="Lecture">' + TVI.play + '</button>' +
     '<div class="tvbot"><div class="tvbar" id="tv-bar"><i class="b" id="tv-buf"></i><i class="p" id="tv-pos"></i></div>' +
     '<div class="tvrow"><button type="button" class="tvic" id="tv-pp" aria-label="Lecture / pause">' + TVI.play + '</button><button type="button" class="tvic" id="tv-mu" aria-label="Son">' + TVI.vol + '</button>' +
     '<input type="range" class="tvvol" id="tv-vol" min="0" max="100" value="100" aria-label="Volume"><span class="tvtime" id="tv-time">0:00 / 0:00</span><span class="tvsp"></span>' +
@@ -4995,7 +4992,11 @@ function tvState(e) {
   if (!S) return;
   TV.playing = d === S.PLAYING || d === S.BUFFERING;
   var shownPlaying = d === S.PLAYING;
+  var was = st.classList.contains("playing");
   st.classList.toggle("paused", !TV.playing); st.classList.toggle("playing", TV.playing);
+  var bg = tvq("tv-big"); bg.innerHTML = TV.playing ? TVI.pause : TVI.play; bg.classList.toggle("isplay", !TV.playing);
+  if (TV.playing && !was && st.classList.contains("ready")) { st.classList.add("flash"); clearTimeout(TV.fl); TV.fl = setTimeout(function () { st.classList.remove("flash"); }, 650); }
+  if (!TV.playing) { st.classList.remove("flash"); }
   tvq("tv-pp").innerHTML = TV.playing ? TVI.pause : TVI.play;
   if (shownPlaying) { if (!st.classList.contains("ready")) { st.classList.add("ready"); tvAudio(); tvApplyQ(); } }
   if (d === S.ENDED) { try { TV.p.seekTo(0, true); TV.p.pauseVideo(); } catch (x) {} }
