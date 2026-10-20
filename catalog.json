@@ -21383,7 +21383,7 @@
       "rating": "7.5",
       "pop": 14.6467,
       "status": "Ended",
-      "poster": "https://image.tmdb.org/t/p/original/nP2PRGSmLdbZtQtoXPPppcDAsNw.jpg",
+      "poster": "https://image.tmdb.org/t/p/original/8hZqZB4DAC1Ebzbk80zc0H80SNa.jpg",
       "posterV": 2,
       "backdrop": "https://image.tmdb.org/t/p/original/uLYp6qxGNzDlDtBOAlDbfcf4QgO.jpg",
       "cast": [
@@ -21551,7 +21551,7 @@
         "VF"
       ],
       "downloads": [],
-      "updatedAt": 1792504186426,
+      "updatedAt": 1792506169983,
       "posterCustom": true
     },
     {
@@ -26404,6 +26404,271 @@
       "downloads": [],
       "updatedAt": 1792504228011,
       "posterCustom": true
+    },
+    {
+      "id": "285415",
+      "type": "tv",
+      "name": "Fascination",
+      "original_name": "着迷",
+      "origin_country": [
+        "CN"
+      ],
+      "networks": [
+        "Mango TV"
+      ],
+      "original_language": "zh",
+      "aka": [
+        "Fascination",
+        "着迷",
+        "Mê Hoặc",
+        "著迷",
+        "Zhao Mi"
+      ],
+      "year": "2026",
+      "overview": "",
+      "genres": [
+        "Drame"
+      ],
+      "rating": "",
+      "pop": 2.2766,
+      "status": "Ended",
+      "poster": "https://image.tmdb.org/t/p/original/9QeX8kaPvQw6aIDqRQqlX1iNST5.jpg",
+      "posterV": 2,
+      "backdrop": "https://image.tmdb.org/t/p/original/65B5VCQqFrzedPOjY76aAL0jsAp.jpg",
+      "cast": [
+        {
+          "name": "任运杰",
+          "character": "Lin Moqing",
+          "id": 3178418
+        },
+        {
+          "name": "戚硯笛",
+          "character": "Lan Hewei",
+          "id": 2447692
+        },
+        {
+          "name": "高天妮",
+          "character": "Zhu Wenjie",
+          "id": 4659924
+        },
+        {
+          "name": "刘宴侨",
+          "character": "Lin Mojiao",
+          "id": 4781231
+        },
+        {
+          "name": "吴圣麒",
+          "character": "Lu Xing",
+          "id": 5275732
+        }
+      ],
+      "seasons": [
+        {
+          "number": 1,
+          "name": "Saison 1",
+          "episodes": [
+            {
+              "number": 1,
+              "name": "Épisode 1",
+              "overview": "",
+              "air_date": "2026-04-27",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 2,
+              "name": "Épisode 2",
+              "overview": "",
+              "air_date": "2026-04-27",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 3,
+              "name": "Épisode 3",
+              "overview": "",
+              "air_date": "2026-04-27",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 4,
+              "name": "Épisode 4",
+              "overview": "",
+              "air_date": "2026-04-27",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 5,
+              "name": "Épisode 5",
+              "overview": "",
+              "air_date": "2026-04-27",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 6,
+              "name": "Épisode 6",
+              "overview": "",
+              "air_date": "2026-04-27",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 7,
+              "name": "Épisode 7",
+              "overview": "",
+              "air_date": "2026-04-27",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 8,
+              "name": "Épisode 8",
+              "overview": "",
+              "air_date": "2026-04-27",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 9,
+              "name": "Épisode 9",
+              "overview": "",
+              "air_date": "2026-04-28",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 10,
+              "name": "Épisode 10",
+              "overview": "",
+              "air_date": "2026-04-28",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 11,
+              "name": "Épisode 11",
+              "overview": "",
+              "air_date": "2026-04-29",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 12,
+              "name": "Épisode 12",
+              "overview": "",
+              "air_date": "2026-04-29",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 13,
+              "name": "Épisode 13",
+              "overview": "",
+              "air_date": "2026-04-30",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 14,
+              "name": "Épisode 14",
+              "overview": "",
+              "air_date": "2026-04-30",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 15,
+              "name": "Épisode 15",
+              "overview": "",
+              "air_date": "2026-05-01",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 16,
+              "name": "Épisode 16",
+              "overview": "",
+              "air_date": "2026-05-01",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 17,
+              "name": "Épisode 17",
+              "overview": "",
+              "air_date": "2026-05-02",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 18,
+              "name": "Épisode 18",
+              "overview": "",
+              "air_date": "2026-05-02",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 19,
+              "name": "Épisode 19",
+              "overview": "",
+              "air_date": "2026-05-03",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 20,
+              "name": "Épisode 20",
+              "overview": "",
+              "air_date": "2026-05-03",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 21,
+              "name": "Épisode 21",
+              "overview": "",
+              "air_date": "2026-05-04",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 22,
+              "name": "Épisode 22",
+              "overview": "",
+              "air_date": "2026-05-04",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 23,
+              "name": "Épisode 23",
+              "overview": "",
+              "air_date": "2026-05-05",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 24,
+              "name": "Épisode 24",
+              "overview": "",
+              "air_date": "2026-05-05",
+              "sources": [],
+              "downloads": []
+            }
+          ],
+          "downloads": []
+        }
+      ],
+      "sources": [],
+      "addedAt": 1792506297393,
+      "langs": [],
+      "downloads": [],
+      "posterCustom": true,
+      "updatedAt": 1792506623395
     }
   ],
   "deletedLinks": [
@@ -26513,27 +26778,34 @@
     ],
     "at": 1792452351145
   },
-  "hosts": {
-    "items": [
-      {
-        "id": "uqload",
-        "state": "up",
-        "note": "",
-        "at": 1792454001799
-      },
-      {
-        "id": "vidara",
-        "state": "up",
-        "note": "",
-        "at": 1792454008892
-      }
-    ],
-    "log": [],
-    "extra": [],
-    "hidden": [],
-    "at": 1792454020694
-  },
   "journal": [
+    {
+      "k": "mvgs4a8wzxib1",
+      "t": 1792506623429,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "285415",
+      "n": "Fascination",
+      "d": "affiche"
+    },
+    {
+      "k": "mvgs27nl4lgy3",
+      "t": 1792506453825,
+      "b": "614d778ed0",
+      "a": "add",
+      "i": "285415",
+      "n": "Fascination",
+      "d": ""
+    },
+    {
+      "k": "mvgrw4ow9rw9a",
+      "t": 1792506170048,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "273977",
+      "n": "The Art of Sarah",
+      "d": "affiche"
+    },
     {
       "k": "mvgq94kfdhcoe",
       "t": 1792504228048,
