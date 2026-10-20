@@ -2092,11 +2092,13 @@ if (ADMIN) { var _st = readJSON(SETKEY, null); if (_st && _st.downloads === "pri
 /* Pub avant téléchargement : activée par défaut, le Head admin peut la couper (settings.ads dans catalog.json) */
 function adsOn() { return SETTINGS.ads !== "off"; }
 function saveSettings() { try { localStorage.setItem(SETKEY, JSON.stringify(SETTINGS)); } catch (e) {} }
-var PREVIEW = false;
+var PREVIEW = false, REAL_ADMIN = ADMIN;
 function dlAdmin() { return ADMIN && !PREVIEW; }
 function dlOpen() { return dlAdmin() || SETTINGS.downloads !== "private"; }
 function setPreview(on) {
   PREVIEW = on;
+  /* Aperçu = on devient vraiment un visiteur : plus aucun bouton ni page admin, jusqu'à « Quitter l'aperçu » */
+  if (REAL_ADMIN) { ADMIN = !on; try { document.body.classList.toggle("admin", !on); } catch (e) {} }
   var b = document.getElementById("preview-bar");
   if (!on) { if (b) b.remove(); return; }
   if (b) return;
@@ -2134,7 +2136,7 @@ function unlockToken(pw) {
 function loginAdmin(stay, hash) {
   try { localStorage.setItem("noir.admin", JSON.stringify(hash || "")); } catch (e) {}
   var local = readJSON(STORE, []).map(normalize);
-  ADMIN_ID = hash || ""; ADMIN = true;
+  ADMIN_ID = hash || ""; ADMIN = true; REAL_ADMIN = true;
   if (local.length) { db = local; loadCatalog().then(function () { route(true); }); }
   document.body.classList.add("admin");
   persist();
@@ -2927,7 +2929,7 @@ document.addEventListener("keydown", function (e) {
 /* Visiteurs : s'ils suivent des séries, on relit le catalogue de temps en temps pour les prévenir sans qu'ils rechargent la page */
 var nPolling = false, nLastPoll = Date.now();
 function notifPoll() {
-  if (ADMIN || nPolling || document.hidden || !Object.keys(nSubs()).length || Date.now() - nLastPoll < 60000) return;
+  if (ADMIN || PREVIEW || nPolling || document.hidden || !Object.keys(nSubs()).length || Date.now() - nLastPoll < 60000) return;
   nPolling = true; nLastPoll = Date.now();
   loadCatalog().then(function () { nPolling = false; }, function () { nPolling = false; });
 }
@@ -6484,6 +6486,10 @@ $("#btn-export").addEventListener("click", function () {
   toast("catalog.json téléchargé" + (priv ? " (téléchargements privés : liens retirés)" : "") + " : mets-le à côté de index.html sur ton hébergement. Astuce : lie ton dépôt avec « GitHub » pour publier en un clic.");
 });
 document.addEventListener("click", function (e) {
+  if (e.target.closest("[data-preview]")) { if (!REAL_ADMIN) return; e.preventDefault(); setPreview(true); go("/"); route(true); return; }
+  if (e.target.closest("#preview-quit")) { e.preventDefault(); setPreview(false); go("/panel"); route(true); return; }
+});
+document.addEventListener("click", function (e) {
   if (!ADMIN) return;
   var t = e.target.closest("[data-setdl]");
   if (t) {
@@ -6499,8 +6505,6 @@ document.addEventListener("click", function (e) {
     toast("Pub : " + (adsOn() ? "activée" : "désactivée") + (autoSyncOn() ? " pour tout le monde" : ". Clique sur « Publier » pour l'appliquer aux visiteurs."));
     markDirty(); return;
   }
-  if (e.target.closest("[data-preview]")) { setPreview(true); go("/"); route(true); return; }
-  if (e.target.id === "preview-quit") { setPreview(false); go("/panel"); route(true); return; }
   var c = e.target.closest("[data-clickid]");
   if (c) { var el = document.getElementById(c.dataset.clickid); if (el) el.click(); return; }
   if (e.target.id === "btn-pull") { ghPull(); return; }
@@ -6867,6 +6871,7 @@ function mergeRemote(data) {
 }
 function loadCatalog() { return loadCatalogCore().then(notifRefresh, notifRefresh); }
 function loadCatalogCore() {
+  if (PREVIEW) return Promise.resolve();
   return fetchCatalogData().then(function (data) {
     var st = null;
     if (ADMIN) { ingestRemoteTombs(data); checkRefreshSignal(data); }
