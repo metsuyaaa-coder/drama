@@ -616,7 +616,7 @@ body.admin .admin-only { display: revert !important; }
 body.admin nav a.admin-only { display: inline-flex !important; }
 @media (min-width: 721px) { header.top nav { margin-left: 32px; } }
 
-.toast { position: fixed; left: 50%; bottom: calc(24px + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%) translateY(20px); background: var(--acc); color: var(--on-acc); padding: 10px 20px; font-size: 14px; font-weight: 500; opacity: 0; pointer-events: none; transition: .25s; z-index: 50; max-width: 90vw; }
+.toast { position: fixed; left: 50%; bottom: calc(24px + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%) translateY(20px); background: var(--acc); color: var(--on-acc); padding: 10px 20px; font-size: 14px; font-weight: 500; opacity: 0; pointer-events: none; transition: .25s; z-index: 400; max-width: 90vw; }
 .toast.show { opacity: 1; transform: translateX(-50%); }
 
 @media (max-width: 720px) {
@@ -1983,6 +1983,87 @@ body { overflow-x: hidden; max-width: 100%; position: relative; }
 @media (prefers-reduced-motion: reduce) { .tvm, .tvbox, .tvload::after { animation: none; } }
 
 
+/* ===== Collections ===== */
+.colgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 22px 18px; }
+.colc { --c0: #8b5cf6; --c1: #312e81; position: relative; display: block; min-width: 0; color: inherit; animation: cardIn .5s var(--ease) both; animation-delay: calc(var(--i, 0) * 45ms); }
+.colcov { position: relative; aspect-ratio: 16 / 10; overflow: hidden; isolation: isolate; border: 1px solid var(--line); background: radial-gradient(120% 100% at 0 0, var(--c0) 0%, transparent 62%), linear-gradient(155deg, var(--c1), #000 88%); transition: transform .35s var(--ease), border-color .3s, box-shadow .35s; }
+.colcov::before { content: ""; position: absolute; inset: 0; z-index: -1; background: repeating-linear-gradient(115deg, rgba(255,255,255,.035) 0 1px, transparent 1px 9px); }
+.colcov::after { content: ""; position: absolute; inset: auto 0 0 0; height: 62%; background: linear-gradient(transparent, rgba(0,0,0,.82)); z-index: 1; pointer-events: none; }
+.colc:hover .colcov { transform: translateY(-5px); border-color: var(--c0); box-shadow: 0 18px 38px rgba(0,0,0,.65), 0 0 0 1px var(--c0); }
+.colem { position: absolute; left: 14px; top: 10px; z-index: 2; font-family: var(--display); font-weight: 900; font-size: 30px; line-height: 1; color: #fff; text-shadow: 0 2px 14px rgba(0,0,0,.5); }
+.cp { position: absolute; bottom: -14%; width: 34%; aspect-ratio: 2 / 3; background: #111 center / cover; border: 1px solid rgba(255,255,255,.16); box-shadow: 0 10px 26px rgba(0,0,0,.6); transition: transform .5s var(--ease); }
+.cp1 { right: 6%; transform: rotate(7deg); z-index: 0; }
+.cp2 { right: 25%; transform: rotate(-3deg) translateY(-5%); z-index: -0; }
+.cp3 { right: 44%; transform: rotate(-11deg) translateY(2%); }
+.colc:hover .cp1 { transform: rotate(11deg) translate(8%, -8%); }
+.colc:hover .cp2 { transform: rotate(-3deg) translateY(-14%); }
+.colc:hover .cp3 { transform: rotate(-16deg) translate(-8%, -4%); }
+.colmeta { display: block; padding-top: 10px; min-width: 0; }
+.colmeta b { display: block; font-family: var(--display); font-weight: 800; font-size: 22px; line-height: 1.05; text-transform: uppercase; letter-spacing: .02em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.colmeta span { display: block; margin-top: 4px; font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: .07em; color: var(--dim); }
+.colnew { display: grid; place-items: center; align-content: center; gap: 10px; aspect-ratio: 16 / 10; border: 1px dashed var(--dim); background: transparent; color: var(--dim); cursor: pointer; border-radius: 0; font-family: var(--mono); font-size: 12px; text-transform: uppercase; letter-spacing: .08em; transition: color .25s, border-color .25s, background .25s; animation: cardIn .5s var(--ease) both; }
+.colnew svg { width: 34px; height: 34px; transition: transform .4s var(--ease); }
+.colnew:hover { color: var(--fg); border-color: var(--acc); background: color-mix(in srgb, var(--acc) 8%, transparent); }
+.colnew:hover svg { transform: rotate(90deg) scale(1.1); }
+.colhero { --c0: #8b5cf6; --c1: #312e81; position: relative; overflow: hidden; isolation: isolate; padding: 40px 0 30px; border-bottom: 1px solid var(--line); }
+.colhero::before { content: ""; position: absolute; z-index: -1; width: 720px; height: 720px; left: -200px; top: -380px; border-radius: 50%; background: radial-gradient(closest-side, var(--c0), transparent); opacity: .34; pointer-events: none; }
+.colhero::after { content: ""; position: absolute; z-index: -1; inset: 0; background: repeating-linear-gradient(115deg, rgba(255,255,255,.025) 0 1px, transparent 1px 11px); pointer-events: none; }
+.colback { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 22px; font-family: var(--mono); font-size: 12px; text-transform: uppercase; letter-spacing: .08em; color: var(--dim); transition: color .2s; }
+.colback:hover { color: var(--fg); }
+.colhead { display: flex; align-items: flex-end; gap: 22px; flex-wrap: wrap; }
+.colbadge { flex: none; width: 96px; height: 96px; display: grid; place-items: center; font-family: var(--display); font-weight: 900; font-size: 52px; color: #fff; background: linear-gradient(150deg, var(--c0), var(--c1)); border: 1px solid rgba(255,255,255,.18); box-shadow: 0 16px 40px rgba(0,0,0,.55); animation: riseIn .6s var(--ease) both; }
+.colhead h1 { font-family: var(--display); font-weight: 900; font-size: clamp(40px, 7vw, 84px); line-height: .95; text-transform: uppercase; margin: 0 0 8px; text-wrap: balance; animation: riseIn .6s .06s var(--ease) both; }
+.colhead p { margin: 0; max-width: 60ch; color: var(--dim); animation: riseIn .6s .1s var(--ease) both; }
+.colhead .cmeta { margin-top: 10px; font-family: var(--mono); font-size: 12px; text-transform: uppercase; letter-spacing: .07em; color: var(--dim); }
+.colhead .cmeta i { font-style: normal; color: var(--c0); }
+.colact { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; animation: riseIn .6s .14s var(--ease) both; }
+.coladd { position: relative; max-width: 520px; margin: 26px 0 8px; }
+.coladd input { width: 100%; padding: 13px 16px 13px 44px; background: var(--panel); border: 1px solid var(--line); color: var(--fg); font: inherit; border-radius: 0; transition: border-color .2s; }
+.coladd input:focus { outline: none; border-color: var(--acc); }
+.coladd > svg { position: absolute; left: 14px; top: 14px; width: 20px; height: 20px; color: var(--dim); pointer-events: none; }
+.coladd .cres { position: absolute; left: 0; right: 0; top: 100%; z-index: 20; background: var(--panel); border: 1px solid var(--acc); border-top: 0; box-shadow: 0 20px 40px rgba(0,0,0,.6); }
+.cres button { display: flex; align-items: center; gap: 12px; width: 100%; padding: 8px 12px; background: transparent; border: 0; border-top: 1px solid var(--line); color: var(--fg); text-align: left; cursor: pointer; border-radius: 0; font: inherit; }
+.cres button:first-child { border-top: 0; }
+.cres button:hover { background: var(--s1); }
+.cres img, .cres .cph { flex: none; width: 30px; height: 44px; object-fit: cover; background: var(--s1); }
+.cres span { flex: 1; min-width: 0; }
+.cres b { display: block; font-weight: 500; font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.cres em { font-style: normal; font-family: var(--mono); font-size: 11px; color: var(--dim); }
+.cres svg { flex: none; width: 18px; height: 18px; color: var(--dim); }
+.colov { position: fixed; inset: 0; z-index: 120; display: grid; place-items: center; padding: 16px; background: rgba(0,0,0,.74); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); animation: fadeIn .2s ease both; }
+.colbox { width: min(560px, 100%); max-height: calc(100vh - 32px); overflow: auto; background: var(--bg); border: 1px solid var(--line); box-shadow: 0 30px 80px rgba(0,0,0,.7); animation: riseIn .35s var(--ease) both; }
+.colbox > .cbh { display: flex; align-items: center; justify-content: space-between; padding: 16px 20px; border-bottom: 1px solid var(--line); }
+.colbox h2 { margin: 0; font-family: var(--display); font-weight: 800; font-size: 26px; text-transform: uppercase; letter-spacing: .03em; }
+.colbox .cbx { width: 34px; height: 34px; display: grid; place-items: center; padding: 0; background: transparent; border: 1px solid var(--line); color: var(--dim); cursor: pointer; border-radius: 0; font-size: 18px; line-height: 1; transition: color .2s, border-color .2s; }
+.colbox .cbx:hover { color: var(--fg); border-color: var(--fg); }
+.colbox .cbb { padding: 20px; display: grid; gap: 16px; }
+.colbox .colprev { max-width: 280px; margin: 0 auto 4px; pointer-events: none; }
+.colbox label.cf { display: grid; gap: 6px; font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: var(--dim); }
+.colbox label.cf input, .colbox label.cf textarea { padding: 12px 14px; background: var(--panel); border: 1px solid var(--line); color: var(--fg); font: 15px var(--body); text-transform: none; letter-spacing: 0; border-radius: 0; resize: none; transition: border-color .2s; }
+.colbox label.cf input:focus, .colbox label.cf textarea:focus { outline: none; border-color: var(--acc); }
+.cswatch, .cemo { display: flex; flex-wrap: wrap; gap: 8px; }
+.cswatch button { width: 34px; height: 34px; padding: 0; border: 2px solid transparent; background: linear-gradient(150deg, var(--c0), var(--c1)); cursor: pointer; border-radius: 0; outline: 1px solid var(--line); outline-offset: 0; transition: transform .2s; }
+.cswatch button:hover { transform: scale(1.1); }
+.cswatch button.on { border-color: var(--fg); outline-color: transparent; }
+.cemo button { width: 38px; height: 38px; padding: 0; display: grid; place-items: center; background: var(--panel); border: 1px solid var(--line); color: var(--fg); font-size: 18px; cursor: pointer; border-radius: 0; transition: background .2s, border-color .2s; }
+.cemo button:hover { border-color: var(--dim); }
+.cemo button.on { background: var(--acc); color: var(--on-acc); border-color: var(--acc); }
+.colbox .cbf { display: flex; justify-content: flex-end; gap: 10px; padding: 14px 20px; border-top: 1px solid var(--line); }
+.cpick { display: grid; }
+.cprow { --c0: #8b5cf6; --c1: #312e81; display: flex; align-items: center; gap: 14px; width: 100%; padding: 12px 20px; background: transparent; border: 0; border-top: 1px solid var(--line); color: var(--fg); text-align: left; cursor: pointer; border-radius: 0; font: inherit; transition: background .2s; }
+.cprow:first-child { border-top: 0; }
+.cprow:hover { background: var(--s1); }
+.cprow .ce { flex: none; width: 42px; height: 42px; display: grid; place-items: center; font-family: var(--display); font-weight: 900; font-size: 22px; color: #fff; background: linear-gradient(150deg, var(--c0), var(--c1)); }
+.cprow .ct { flex: 1; min-width: 0; }
+.cprow .ct b { display: block; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.cprow .ct em { font-style: normal; font-family: var(--mono); font-size: 11px; color: var(--dim); text-transform: uppercase; letter-spacing: .06em; }
+.cprow .ck { flex: none; width: 26px; height: 26px; display: grid; place-items: center; border: 1px solid var(--line); color: transparent; transition: background .2s, color .2s, border-color .2s; }
+.cprow .ck svg { width: 16px; height: 16px; }
+.cprow.on .ck { background: var(--acc); color: var(--on-acc); border-color: var(--acc); }
+.cpnew { border-top: 1px solid var(--line); }
+.cpnew .cprow .ce { background: transparent; border: 1px dashed var(--dim); color: var(--dim); }
+@media (max-width: 640px) { .colgrid { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 18px 12px; } .colbadge { width: 72px; height: 72px; font-size: 38px; } .colmeta b { font-size: 18px; } }
+@media (prefers-reduced-motion: reduce) { .colc, .colnew, .colbox, .colov, .colbadge, .colhead h1, .colhead p, .colact { animation: none; } }
 /* ===== Thèmes (Paramètres > Général > Apparence) ===== */
 html[data-theme="red"] { --bg: #000; --fg: #fff; --dim: #a39090; --line: #35191d; --panel: #130709; --s0: #0c0405; --s1: #1f0b0e; --acc: #e11d2e; --on-acc: #fff; }
 html[data-theme="blue"] { --bg: #081a3a; --fg: #fff; --dim: #9db4dd; --line: #1f3b73; --panel: #0d2554; --s0: #061430; --s1: #12306a; --acc: #2f80ff; --on-acc: #fff; }
@@ -3647,7 +3728,7 @@ document.addEventListener("click", function (e) {
   if (e.target.closest("[data-catreset]")) { PREFS.order = []; savePrefs(); $("#catlist").innerHTML = catRowsHtml(); toast("Ordre réinitialisé"); }
 });
 
-var USER_KEYS = ["noir.seen", "noir.list", "noir.resume", "noir.prefs", "noir.fit"];
+var USER_KEYS = ["noir.seen", "noir.list", "noir.resume", "noir.prefs", "noir.fit", "noir.collections"];
 function exportData() {
   var out = { app: "dramabym", v: 1, at: new Date().toISOString(), data: {} };
   USER_KEYS.forEach(function (k) { try { var v = localStorage.getItem(k); if (v != null) out.data[k] = v; } catch (e) {} });
@@ -4179,7 +4260,7 @@ NICONS.eye = '<path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circl
 NICONS.play = '<path d="M7 4.5v15l13-7.5z"/>';
 NICONS.search = '<circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/>';
 NICONS.check = '<path d="M20 6 9 17l-5-5"/>';
-var MLTABS = ["list", "subs", "seen"], MLICON = { list: "bookmark", subs: "bell-ring", seen: "eye" }, MLLABEL = { list: "À regarder", subs: "Suivis", seen: "Vus" };
+var MLTABS = ["list", "subs", "seen", "cols"], MLICON = { list: "bookmark", subs: "bell-ring", seen: "eye", cols: "layers" }, MLLABEL = { list: "À regarder", subs: "Suivis", seen: "Vus", cols: "Collections" };
 var mlQuery = "", mlSort = "recent";
 function subsItems() {
   var subs = nSubs(), out = [];
@@ -4191,7 +4272,7 @@ function mlProgress(s) {
   (s.seasons || []).forEach(function (se) { (se.episodes || []).forEach(function (ep) { t++; if (all[epKey(se, ep)]) n++; }); });
   return { n: n, t: t, p: t ? n / t : 0 };
 }
-function mlData() { return { list: listItems(), subs: subsItems(), seen: seenTitles() }; }
+function mlData() { return { list: listItems(), subs: subsItems(), seen: seenTitles(), cols: readCols() }; }
 function mlFilter(arr, tab) {
   var q = mlQuery.trim().toLowerCase(), out = arr.slice();
   if (q) out = out.filter(function (s) { return String(s.name || "").toLowerCase().indexOf(q) > -1 || String(s.original_name || s.originalName || "").toLowerCase().indexOf(q) > -1; });
@@ -4215,7 +4296,7 @@ function mlCard(s, i, tab) {
       inner += '<span class="mlring" style="--p:' + pr.p.toFixed(3) + '"><svg viewBox="0 0 36 36" aria-hidden="true"><circle class="bg" cx="18" cy="18" r="15.9" pathLength="100"/><circle class="fg" cx="18" cy="18" r="15.9" pathLength="100"/></svg><b>' + (pr.p >= 1 ? nsvg("check") : Math.round(pr.p * 100) + "%") + '</b></span>';
     } else if (pr.n) inner += '<span class="mlbar"><i style="--p:' + pr.p.toFixed(3) + '"></i></span>';
   }
-  var acts = (tab === "list" ? '<button type="button" class="mlb rm" data-mlrm="' + id + '" aria-label="Retirer de ma liste" title="Retirer de ma liste">' + nsvg("bookmark-x") + '</button>' : '') +
+  var acts = (tab === "col" ? '<button type="button" class="mlb rm" data-colrm="' + id + '" aria-label="Retirer de la collection" title="Retirer de la collection">' + nsvg("bookmark-x") + '</button>' : '') + (tab === "list" ? '<button type="button" class="mlb rm" data-mlrm="' + id + '" aria-label="Retirer de ma liste" title="Retirer de ma liste">' + nsvg("bookmark-x") + '</button>' : '') +
     (tab === "subs" ? '<button type="button" class="mlb rm" data-unfollow="' + id + '" aria-label="Ne plus suivre" title="Ne plus suivre">' + nsvg("bell-off") + '</button>' : '');
   return '<div class="mlc" style="--i:' + Math.min(i || 0, 14) + '"><div class="poster"><a class="mlhit" href="/serie/' + id + '" aria-label="' + esc(s.name) + '"></a>' +
     (s.poster ? '<img loading="lazy" src="' + esc(s.poster) + '" alt="">' : '<div class="ph">' + esc(String(s.name).charAt(0)) + '</div>') +
@@ -4249,7 +4330,16 @@ function mlSetTabs(L, animate) {
 }
 function mlRenderBody(L, still, swap) {
   var body = $("#mlbody"); if (!body) return;
-  var arr = mlFilter(L[listTab], listTab), q = mlQuery.trim();
+  var q = mlQuery.trim();
+  var so = document.querySelector(".mlsort"); if (so) so.style.display = listTab === "cols" ? "none" : "";
+  if (listTab === "cols") {
+    var cq = q.toLowerCase(), carr = L.cols.filter(function (c) { return !cq || c.n.toLowerCase().indexOf(cq) > -1; });
+    body.className = swap ? "mlswap" : ""; if (swap) { void body.offsetWidth; body.className = "mlswap"; }
+    body.innerHTML = colGridHTML(carr);
+    var cs = $("#mlsum"); if (cs) cs.textContent = carr.length + (carr.length > 1 ? " collections" : " collection");
+    return;
+  }
+  var arr = mlFilter(L[listTab], listTab);
   body.className = swap ? "mlswap" : "";
   if (swap) { void body.offsetWidth; body.className = "mlswap"; }
   body.innerHTML = arr.length ? '<div class="mlgrid' + (still ? ' still' : '') + '">' + arr.map(function (s, i) { return mlCard(s, i, listTab); }).join("") + '</div>' : mlEmpty(listTab, q && L[listTab].length);
@@ -4269,13 +4359,13 @@ function mlBuild() {
   $("#app").innerHTML = '<div id="mlroot"><div class="mlhero"><div class="wrap">' +
     '<div class="mltitle"><svg class="mllogo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"/><path class="sp" d="m12 7.2.9 2 2.1.3-1.5 1.5.4 2.1-1.9-1-1.9 1 .4-2.1L9 9.5l2.1-.3z"/></svg>' +
     '<div><h1>Ma liste</h1><p class="note">Enregistrée sur cet appareil</p></div></div>' +
-    '<div class="mltabs" id="mltabs" data-i="' + MLTABS.indexOf(listTab) + '" role="tablist"><span class="mlind"></span>' + tabs + '</div></div></div>' +
+    '<div class="mltabs four" id="mltabs" data-i="' + MLTABS.indexOf(listTab) + '" role="tablist"><span class="mlind"></span>' + tabs + '</div></div></div>' +
     '<div class="wrap"><div class="mltools"><label class="mlsearch">' + nsvg("search") + '<input id="mlq" type="search" placeholder="Rechercher dans ma liste" autocomplete="off" aria-label="Rechercher dans ma liste"></label>' +
     '<div class="mlsort" role="group" aria-label="Trier">' + sorts + '</div><span class="mlsum" id="mlsum"></span></div><div id="mlbody"></div></div></div>';
   mlSetTabs(L, true); mlRenderBody(L, false, false);
 }
 function mlPatch(still) { var L = mlData(); mlSetTabs(L, false); mlRenderBody(L, !!still, !still); }
-function viewMyList() { if ($("#mlroot")) mlPatch(false); else mlBuild(); }
+function viewMyList() { if (colWantTab) { listTab = colWantTab; colWantTab = ""; mlBuild(); return; } if ($("#mlroot")) mlPatch(false); else mlBuild(); }
 document.addEventListener("input", function (e) {
   if (e.target && e.target.id === "mlq") { mlQuery = e.target.value; mlRenderBody(mlData(), true, false); }
 });
@@ -5211,7 +5301,7 @@ function viewSerie(id) {
     '<div>' + (platBrands(s).length ? '<div class="plats"><span class="plbl">Diffusé sur</span>' + platBrands(s).map(platMark).join("") + '</div>' : '') + '<div class="tags">' + (langLabel(s) ? '<span class="lang">' + esc(langLabel(s)) + '</span>' : '') + (ongoing(s) ? '<span class="live">En cours</span>' : '') + (ne ? newBadge("Nouvel épisode") : '') + novBadge(s) + kdBadge(s) + tags.map(function (t) { return "<span>" + esc(t) + "</span>"; }).join("") + trailerChip(s) + '</div>' +
     '<h1>' + esc(s.name) + '</h1>' + (s.original_name && s.original_name !== s.name ? '<div class="orig">' + esc(s.original_name) + '</div>' : '<div class="orig"></div>') +
     '<p class="ov">' + esc(s.overview || "Pas de synopsis.") + '</p>' +
-    '<div class="row"><button class="btn" data-watch="' + esc(s.id) + '">' + PLAYICON + '<span>Regarder</span></button>' + dlBtnMovie + dlBtnSerie + '<button class="btn ghost' + (inList(s.id) ? " on" : "") + '" type="button" data-list="' + esc(s.id) + '">' + (inList(s.id) ? "✓ Dans ma liste" : "+ Ma liste") + '</button>' + shareBtn(s) + (movie ? '' : notifBtnHTML(s)) + (ADMIN ? '<a class="btn ghost" href="/modifier/' + esc(s.id) + '">Modifier</a>' + (canDeleteFiche(s) ? '<button class="btn danger" data-del="' + esc(s.id) + '">Supprimer</button>' : '') : '') + '</div>' + srcChips +
+    '<div class="row"><button class="btn" data-watch="' + esc(s.id) + '">' + PLAYICON + '<span>Regarder</span></button>' + dlBtnMovie + dlBtnSerie + '<button class="btn ghost' + (inList(s.id) ? " on" : "") + '" type="button" data-list="' + esc(s.id) + '">' + (inList(s.id) ? "✓ Dans ma liste" : "+ Ma liste") + '</button>' + colBtnHTML(s.id) + shareBtn(s) + (movie ? '' : notifBtnHTML(s)) + (ADMIN ? '<a class="btn ghost" href="/modifier/' + esc(s.id) + '">Modifier</a>' + (canDeleteFiche(s) ? '<button class="btn danger" data-del="' + esc(s.id) + '">Supprimer</button>' : '') : '') + '</div>' + srcChips +
     ((s.cast || []).length ? '<h3 class="note" style="margin:32px 0 0;text-transform:uppercase;letter-spacing:.08em">Distribution</h3><div class="cast">' + s.cast.slice(0, 12).map(function (c) { return '<div><a class="castlink" href="/acteur/' + encodeURIComponent(c.name) + '" title="Voir tous ses titres"><b>' + esc(c.name) + '</b></a><span>' + esc(c.character || "") + '</span></div>'; }).join("") + '</div>' : '') +
     '</div></div></section>';
   if (!movie && (s.seasons || []).length) {
@@ -6883,7 +6973,7 @@ document.addEventListener("click", function (e) {
   if (m) { var bio = $("#actbio"); if (bio) { var open = bio.classList.toggle("clamp"); m.textContent = open ? "Lire la suite" : "Réduire"; } }
 });
 
-var NAVMAP = { "": "nav-home", series: "nav-series", films: "nav-films", ajouter: "nav-add", modifier: "nav-add", panel: "nav-panel", "ma-liste": "nav-list", calendrier: "nav-cal", demande: "nav-req", demandes: "nav-req", statut: "nav-stat", parametres: "nav-set" };
+var NAVMAP = { "": "nav-home", series: "nav-series", films: "nav-films", ajouter: "nav-add", modifier: "nav-add", panel: "nav-panel", "ma-liste": "nav-list", collection: "nav-list", calendrier: "nav-cal", demande: "nav-req", demandes: "nav-req", statut: "nav-stat", parametres: "nav-set" };
 
 /* ===== Partager une fiche (feuille de partage du téléphone, sinon copie du lien) ===== */
 var SHICON = '<svg class="shic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle class="c" cx="18" cy="5" r="2.6"/><circle class="c" cx="6" cy="12" r="2.6"/><circle class="c" cx="18" cy="19" r="2.6"/><path d="m8.3 10.8 7.4-4.4M8.3 13.2l7.4 4.4"/></svg><svg class="shok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>';
@@ -6922,8 +7012,204 @@ document.addEventListener("click", function (e) {
   else copy();
 });
 
+/* ===== Collections : listes à thème créées par chaque visiteur (enregistrées sur l'appareil, partageables par lien) ===== */
+var COLKEY = "noir.collections", COLID = /^[\w-]{1,24}$/, COLSID = /^[\w.-]{1,40}$/;
+var COLPAL = [["#8b5cf6", "#312e81"], ["#f43f5e", "#7f1d1d"], ["#f59e0b", "#78350f"], ["#10b981", "#064e3b"], ["#38bdf8", "#0c4a6e"], ["#ec4899", "#701a75"], ["#a3e635", "#365314"], ["#e5e7eb", "#3f3f46"]];
+var COLEMO = ["♥", "★", "☾", "✦", "❖", "☂", "♪", "⚔", "☕", "✿", "⚡", "☠"];
+NICONS["layers"] = '<path d="m12 3 9 5-9 5-9-5 9-5z"/><path d="m3 13 9 5 9-5"/><path d="m3 17.5 9 5 9-5" opacity=".5"/>';
+NICONS["plus"] = '<path d="M12 5v14"/><path d="M5 12h14"/>';
+NICONS["check"] = NICONS["check"] || '<path d="m5 12.5 4.5 4.5L19 7.5"/>';
+function colClean(c) {
+  if (!c || typeof c !== "object" || !COLID.test(String(c.id || ""))) return null;
+  var seen = {}, ids = (Array.isArray(c.i) ? c.i : []).map(String).filter(function (x) { if (!COLSID.test(x) || seen[x]) return false; seen[x] = 1; return true; }).slice(0, 300);
+  var ci = parseInt(c.c, 10), ei = parseInt(c.e, 10);
+  return { id: String(c.id), n: String(c.n || "").trim().slice(0, 40) || "Sans titre", d: String(c.d || "").trim().slice(0, 140), c: ci >= 0 && ci < COLPAL.length ? ci : 0, e: ei >= 0 && ei < COLEMO.length ? ei : 0, i: ids, at: +c.at || 0 };
+}
+function readCols() { var l = readJSON(COLKEY, []); return Array.isArray(l) ? l.map(colClean).filter(Boolean) : []; }
+function saveCols(l) { try { localStorage.setItem(COLKEY, JSON.stringify(l)); return true; } catch (e) { toast("Stockage plein ou bloqué par le navigateur"); return false; } }
+function colGet(id) { return readCols().filter(function (c) { return c.id === id; })[0]; }
+function colItems(c) { return c.i.map(function (id) { return byId(id); }).filter(Boolean); }
+function colNewId() { return "k" + Date.now().toString(36) + Math.random().toString(36).slice(2, 6); }
+function colHas(c, sid) { return c.i.indexOf(String(sid)) > -1; }
+function colToggle(cid, sid) {
+  var l = readCols(), c = l.filter(function (x) { return x.id === cid; })[0]; if (!c) return null;
+  sid = String(sid); var k = c.i.indexOf(sid);
+  if (k > -1) c.i.splice(k, 1); else c.i.unshift(sid);
+  c.at = Date.now(); saveCols(l); return k === -1;
+}
+function colStyle(c) { var p = COLPAL[c.c] || COLPAL[0]; return "--c0:" + p[0] + ";--c1:" + p[1]; }
+function colCard(c, i, tag) {
+  var items = colItems(c), posters = items.filter(function (s) { return s.poster; }).slice(0, 3);
+  var n = c.i.length, t = tag || "a", href = t === "a" ? ' href="/collection/' + esc(c.id) + '"' : "";
+  return '<' + t + ' class="colc"' + href + ' style="' + colStyle(c) + ';--i:' + Math.min(i || 0, 14) + '"><div class="colcov"><span class="colem">' + COLEMO[c.e] + '</span>' +
+    posters.map(function (s, k) { return '<i class="cp cp' + (k + 1) + '" style="background-image:url(\'' + esc(s.poster) + '\')"></i>'; }).join("") + '</div>' +
+    '<span class="colmeta"><b>' + esc(c.n) + '</b><span>' + n + (n > 1 ? " titres" : " titre") + '</span></span></' + t + '>';
+}
+function colGridHTML(arr) {
+  var h = '<button type="button" class="colnew" data-colnew style="--i:0">' + nsvg("plus") + 'Nouvelle collection</button>';
+  return '<div class="colgrid">' + h + arr.map(function (c, i) { return colCard(c, i + 1); }).join("") + '</div>' +
+    (arr.length ? '' : '<p class="note" style="margin-top:22px">Crée des listes à thème (« Romances », « À revoir », « Soirée entre amis »…) et retrouve-les ici. Tu peux les partager avec un lien.</p>');
+}
+function colEncode(c) {
+  var o = { n: c.n, d: c.d, c: c.c, e: c.e, i: c.i };
+  return codeB64(new TextEncoder().encode(JSON.stringify(o)));
+}
+function colDecode(tok) {
+  try {
+    var o = JSON.parse(new TextDecoder().decode(codeBytes(String(tok || "").replace(/[^\w-]/g, ""))));
+    o.id = "p"; return colClean(o);
+  } catch (e) { return null; }
+}
+/* ----- fenêtre : créer / modifier ----- */
+function colClose() { var o = $("#colov"); if (o) { o.remove(); document.documentElement.style.overflow = ""; } }
+function colOpen(inner) {
+  colClose();
+  var o = document.createElement("div"); o.className = "colov"; o.id = "colov"; o.innerHTML = '<div class="colbox" role="dialog" aria-modal="true">' + inner + '</div>';
+  o.addEventListener("mousedown", function (e) { if (e.target === o) colClose(); });
+  document.body.appendChild(o); document.documentElement.style.overflow = "hidden";
+  return o;
+}
+document.addEventListener("keydown", function (e) { if (e.key === "Escape" && $("#colov")) { e.stopPropagation(); colClose(); } }, true);
+function colEdit(id, addSid) {
+  var base = id ? colGet(id) : null;
+  var cur = base ? JSON.parse(JSON.stringify(base)) : { id: "", n: "", d: "", c: Math.floor(Math.random() * COLPAL.length), e: Math.floor(Math.random() * COLEMO.length), i: addSid ? [String(addSid)] : [] };
+  var o = colOpen('<div class="cbh"><h2>' + (base ? "Modifier la collection" : "Nouvelle collection") + '</h2><button type="button" class="cbx" data-colx aria-label="Fermer">×</button></div>' +
+    '<form class="cbb" id="colform" autocomplete="off"><div class="colprev" id="colprev"></div>' +
+    '<label class="cf">Nom<input id="colname" maxlength="40" placeholder="Ex. : Romances qui font pleurer" required></label>' +
+    '<label class="cf">Description (facultatif)<textarea id="coldesc" rows="2" maxlength="140" placeholder="Une phrase pour dire de quoi il s\'agit"></textarea></label>' +
+    '<div class="cf" style="display:grid;gap:8px;font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--dim)">Couleur<div class="cswatch" id="colsw"></div></div>' +
+    '<div class="cf" style="display:grid;gap:8px;font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--dim)">Symbole<div class="cemo" id="colemo"></div></div></form>' +
+    '<div class="cbf"><button type="button" class="btn ghost small" data-colx>Annuler</button><button type="submit" class="btn small" form="colform">' + (base ? "Enregistrer" : "Créer") + '</button></div>');
+  var name = o.querySelector("#colname"), desc = o.querySelector("#coldesc");
+  name.value = cur.n; desc.value = cur.d;
+  function paint() {
+    cur.n = name.value; cur.d = desc.value;
+    o.querySelector("#colprev").innerHTML = colCard({ id: "x", n: cur.n.trim() || "Ma collection", d: cur.d, c: cur.c, e: cur.e, i: cur.i }, 0, "div");
+    o.querySelector("#colsw").innerHTML = COLPAL.map(function (p, k) { return '<button type="button" class="' + (k === cur.c ? "on" : "") + '" data-colc="' + k + '" style="--c0:' + p[0] + ';--c1:' + p[1] + '" aria-label="Couleur ' + (k + 1) + '"></button>'; }).join("");
+    o.querySelector("#colemo").innerHTML = COLEMO.map(function (g, k) { return '<button type="button" class="' + (k === cur.e ? "on" : "") + '" data-cole="' + k + '">' + g + '</button>'; }).join("");
+  }
+  paint(); setTimeout(function () { name.focus(); }, 30);
+  name.addEventListener("input", function () { cur.n = name.value; var b = o.querySelector(".colmeta b"); if (b) b.textContent = cur.n.trim() || "Ma collection"; });
+  o.addEventListener("click", function (e) {
+    if (e.target.closest("[data-colx]")) { colClose(); return; }
+    var bc = e.target.closest("[data-colc]"), be = e.target.closest("[data-cole]");
+    if (bc) { cur.c = +bc.dataset.colc; paint(); } else if (be) { cur.e = +be.dataset.cole; paint(); }
+  });
+  o.querySelector("#colform").addEventListener("submit", function (e) {
+    e.preventDefault(); cur.n = name.value; cur.d = desc.value;
+    if (!cur.n.trim()) { name.focus(); return; }
+    var l = readCols(), saved;
+    if (base) { saved = l.filter(function (x) { return x.id === base.id; })[0]; if (!saved) return; saved.n = cur.n; saved.d = cur.d; saved.c = cur.c; saved.e = cur.e; saved.at = Date.now(); saved = colClean(saved); l = l.map(function (x) { return x.id === saved.id ? saved : x; }); }
+    else { saved = colClean({ id: colNewId(), n: cur.n, d: cur.d, c: cur.c, e: cur.e, i: cur.i, at: Date.now() }); l.unshift(saved); }
+    if (!saveCols(l)) return;
+    colClose(); toast(base ? "Collection mise à jour" : "Collection créée ✓");
+    if (addSid && !base) colRefreshBtn(addSid);
+    var p = curPath();
+    if (p === "/ma-liste") mlPatch(true); else if (/^\/collection\//.test(p)) { if (base) route(true); else go("/collection/" + saved.id); }
+  });
+}
+/* ----- fenêtre : ajouter un titre à une ou plusieurs collections (depuis la fiche) ----- */
+function colInAny(sid) { return readCols().some(function (c) { return colHas(c, sid); }); }
+function colBtnHTML(sid) {
+  var on = colInAny(sid);
+  return '<button class="btn ghost' + (on ? " on" : "") + '" type="button" data-colpick="' + esc(sid) + '">' + (on ? "✓ En collection" : "+ Collection") + '</button>';
+}
+function colRefreshBtn(sid) {
+  var b = document.querySelector('[data-colpick="' + String(sid).replace(/"/g, "") + '"]'); if (!b) return;
+  var on = colInAny(sid); b.textContent = on ? "✓ En collection" : "+ Collection"; b.classList.toggle("on", on);
+}
+function colPickHTML(sid) {
+  var l = readCols();
+  return '<div class="cpick">' + l.map(function (c) {
+    var on = colHas(c, sid);
+    return '<button type="button" class="cprow' + (on ? " on" : "") + '" data-colt="' + esc(c.id) + '" style="' + colStyle(c) + '"><span class="ce">' + COLEMO[c.e] + '</span><span class="ct"><b>' + esc(c.n) + '</b><em>' + c.i.length + (c.i.length > 1 ? " titres" : " titre") + '</em></span><span class="ck">' + nsvg("check") + '</span></button>';
+  }).join("") + '</div><div class="cpnew"><button type="button" class="cprow" data-colnewadd><span class="ce">' + nsvg("plus") + '</span><span class="ct"><b>Nouvelle collection</b><em>Créer et y ajouter ce titre</em></span></button></div>';
+}
+function colPick(sid) {
+  var s = byId(sid); if (!s) return;
+  var o = colOpen('<div class="cbh"><h2>Ajouter à une collection</h2><button type="button" class="cbx" data-colx aria-label="Fermer">×</button></div><div id="colplist">' + colPickHTML(sid) + '</div><div class="cbf"><button type="button" class="btn small" data-colx>Terminé</button></div>');
+  o.addEventListener("click", function (e) {
+    if (e.target.closest("[data-colx]")) { colClose(); colRefreshBtn(sid); return; }
+    if (e.target.closest("[data-colnewadd]")) { colEdit("", sid); return; }
+    var r = e.target.closest("[data-colt]"); if (!r) return;
+    var on = colToggle(r.dataset.colt, sid);
+    var c = colGet(r.dataset.colt);
+    toast(on ? "Ajouté à « " + (c ? c.n : "") + " »" : "Retiré de « " + (c ? c.n : "") + " »");
+    o.querySelector("#colplist").innerHTML = colPickHTML(sid); colRefreshBtn(sid);
+  });
+}
+/* ----- page d'une collection ----- */
+var colSearchQ = "";
+function colResults(c, q) {
+  q = String(q || "").trim().toLowerCase(); if (!q) return "";
+  var out = db.filter(function (s) { return !colHas(c, s.id) && (String(s.name || "").toLowerCase().indexOf(q) > -1 || String(s.original_name || "").toLowerCase().indexOf(q) > -1); }).slice(0, 6);
+  if (!out.length) return '<div class="cres"><button type="button" disabled><span><b>Aucun titre trouvé</b></span></button></div>';
+  return '<div class="cres">' + out.map(function (s) {
+    return '<button type="button" data-coladd="' + esc(s.id) + '">' + (s.poster ? '<img src="' + esc(s.poster) + '" alt="" loading="lazy">' : '<i class="cph"></i>') + '<span><b>' + esc(s.name) + '</b><em>' + esc([isMovie(s) ? "Film" : "Série", s.year].filter(Boolean).join(" · ")) + '</em></span>' + nsvg("plus") + '</button>';
+  }).join("") + '</div>';
+}
+function viewCollection(b) {
+  var shared = b === "p", c = shared ? colDecode(location.hash.slice(1)) : colGet(b);
+  if (!c) {
+    $("#app").innerHTML = '<div class="wrap"><div class="mlempty" style="margin-top:60px">' + nsvg("layers", "mlei") + '<h3>Collection introuvable</h3><p>' + (shared ? "Ce lien de partage n'est pas valide." : "Elle a peut-être été supprimée, ou elle est sur un autre appareil.") + '</p><a class="btn" href="/ma-liste" data-colback>Mes collections</a></div></div>';
+    return;
+  }
+  var items = colItems(c), n = c.i.length;
+  var acts = shared ? '<button type="button" class="btn" data-colsave>' + nsvg("plus") + '<span>Enregistrer dans mes collections</span></button>'
+    : '<button type="button" class="btn" data-colshare="' + esc(c.id) + '">' + SHICON + '<span>Partager</span></button><button type="button" class="btn ghost" data-coledit="' + esc(c.id) + '">Modifier</button><button type="button" class="btn danger" data-coldel="' + esc(c.id) + '">Supprimer</button>';
+  var body = items.length ? '<div class="mlgrid">' + items.map(function (s, i) { return mlCard(s, i, shared ? "colro" : "col"); }).join("") + '</div>'
+    : '<div class="mlempty">' + nsvg("layers", "mlei") + '<h3>Collection vide</h3><p>' + (shared ? "Aucun titre de cette collection n'est disponible sur le site." : "Ajoute des titres avec la recherche ci-dessus, ou depuis n'importe quelle fiche avec « + Collection ».") + '</p></div>';
+  $("#app").innerHTML = '<div id="colroot"><section class="colhero" style="' + colStyle(c) + '"><div class="wrap"><a class="colback" href="/ma-liste" data-colback>' + nsvg("chev-left") + 'Mes collections</a>' +
+    '<div class="colhead"><div class="colbadge">' + COLEMO[c.e] + '</div><div><h1>' + esc(c.n) + '</h1>' + (c.d ? '<p>' + esc(c.d) + '</p>' : '') + '<div class="cmeta"><i>' + (shared ? "Collection partagée" : "Collection perso") + '</i> · ' + n + (n > 1 ? " titres" : " titre") + '</div></div></div><div class="colact">' + acts + '</div></div></section>' +
+    '<div class="wrap">' + (shared ? '<div style="height:26px"></div>' : '<div class="coladd">' + nsvg("search") + '<input id="colq" type="search" placeholder="Ajouter un titre à cette collection…" autocomplete="off" aria-label="Ajouter un titre"><div id="colres"></div></div><div style="height:18px"></div>') + body + '</div></div>';
+}
+NICONS["chev-left"] = NICONS["chev-left"] || '<path d="m15 18-6-6 6-6"/>';
+var colWantTab = "";
+document.addEventListener("input", function (e) {
+  if (!e.target || e.target.id !== "colq") return;
+  var m = curPath().match(/^\/collection\/([^/]+)/), c = m && colGet(m[1]); if (!c) return;
+  $("#colres").innerHTML = colResults(c, e.target.value);
+});
+document.addEventListener("click", function (e) {
+  var t = e.target.closest ? e.target.closest("[data-colnew],[data-coledit],[data-coldel],[data-colshare],[data-colsave],[data-colrm],[data-coladd],[data-colpick],[data-colback]") : null;
+  if (!t) { var r = $("#colres"); if (r && r.innerHTML && !e.target.closest(".coladd")) r.innerHTML = ""; return; }
+  var m = curPath().match(/^\/collection\/([^/]+)/), cid = m ? m[1] : "";
+  if (t.hasAttribute("data-colback")) { e.preventDefault(); colWantTab = "cols"; if (curPath() === "/ma-liste") route(true); else go("/ma-liste"); return; }
+  if (t.hasAttribute("data-colnew")) { colEdit(""); return; }
+  if (t.dataset.colpick) { colPick(t.dataset.colpick); return; }
+  if (t.dataset.coledit) { colEdit(t.dataset.coledit); return; }
+  if (t.dataset.coldel) {
+    if (t.dataset.armed) { saveCols(readCols().filter(function (x) { return x.id !== t.dataset.coldel; })); toast("Collection supprimée"); colWantTab = "cols"; go("/ma-liste"); }
+    else { t.dataset.armed = "1"; t.textContent = "Confirmer ?"; setTimeout(function () { if (t.isConnected) { delete t.dataset.armed; t.textContent = "Supprimer"; } }, 3000); }
+    return;
+  }
+  if (t.dataset.colshare) {
+    var c = colGet(t.dataset.colshare); if (!c) return;
+    var url = location.origin + "/collection/p#" + colEncode(c);
+    var data = { title: c.n + " · DramaByM", text: "Ma collection « " + c.n + " » sur DramaByM", url: url };
+    var copy = function () { shareCopy(url).then(function () { shareDone(t, "Lien copié"); toast("Lien de la collection copié ✓"); }, function () { toast(url); }); };
+    var touch = window.matchMedia && matchMedia("(pointer: coarse)").matches;
+    if (navigator.share && touch) navigator.share(data).then(function () { shareDone(t, "Partagé !"); }, function (err) { if (!err || err.name !== "AbortError") copy(); });
+    else copy();
+    return;
+  }
+  if (t.hasAttribute("data-colsave")) {
+    var sc = colDecode(location.hash.slice(1)); if (!sc) return;
+    sc.id = colNewId(); sc.at = Date.now(); var l = readCols(); l.unshift(sc);
+    if (saveCols(l)) { toast("Collection enregistrée ✓"); go("/collection/" + sc.id); }
+    return;
+  }
+  if (t.dataset.colrm && cid) {
+    var box = t.closest(".mlc"), sid = t.dataset.colrm;
+    var done = function () { colToggle(cid, sid); toast("Retiré de la collection"); route(true); };
+    if (box) { box.classList.add("out"); setTimeout(done, 260); } else done();
+    return;
+  }
+  if (t.dataset.coladd && cid) { colToggle(cid, t.dataset.coladd); var s = byId(t.dataset.coladd); toast("« " + (s ? s.name : "Titre") + " » ajouté"); route(true); setTimeout(function () { var q = $("#colq"); if (q) q.focus(); }, 40); }
+});
+
 /* ===== Titre de l'onglet du navigateur selon la page ===== */
-var PAGETITLES = { series: "Séries", films: "Films", "ma-liste": "Ma liste", calendrier: "Calendrier", demande: "Faire une demande", demandes: "Demandes en cours", statut: "Statut des serveurs", parametres: "Paramètres", admin: "Connexion admin", panel: "Panneau admin", headadmin: "Head admin", ajouter: "Ajouter une fiche", motdepasse: "Mot de passe" };
+var PAGETITLES = { series: "Séries", films: "Films", "ma-liste": "Ma liste", collection: "Collection", calendrier: "Calendrier", demande: "Faire une demande", demandes: "Demandes en cours", statut: "Statut des serveurs", parametres: "Paramètres", admin: "Connexion admin", panel: "Panneau admin", headadmin: "Head admin", ajouter: "Ajouter une fiche", motdepasse: "Mot de passe" };
 function pageTitle(a, b) {
   var s;
   if (a === "serie") { s = byId(b); return s ? s.name + " · DramaByM" : "DramaByM"; }
@@ -6941,7 +7227,7 @@ function route(force) {
 
   if ((a === "ajouter" || a === "modifier" || a === "motdepasse" || a === "panel") && !ADMIN) { go("/admin", true); return; }
 
-  var changed = force || a !== lastPage || a === "serie" || a === "modifier" || a === "acteur";
+  var changed = force || a !== lastPage || a === "serie" || a === "modifier" || a === "acteur" || a === "collection";
   if (a !== lastPage) { filter = ""; langFilter = ""; dlFilter = false; newFilter = ""; kdFilter = ""; platFilter = ""; platOpen = false; typeFilter = ""; listTab = "list"; calWeek = 0; calType = ""; }
   lastPage = a;
 
@@ -6962,6 +7248,7 @@ function route(force) {
   else if (a === "series") { rerender = function () { viewList("Séries", function (s) { return !isMovie(s); }); }; rerender(); }
   else if (a === "films") { rerender = function () { viewList("Films", isMovie); }; rerender(); }
   else if (a === "ma-liste") { rerender = viewMyList; rerender(); }
+  else if (a === "collection") { rerender = function () { viewCollection(b); }; rerender(); }
   else if (a === "calendrier") { rerender = viewCalendar; rerender(); }
   else if (a === "acteur") { rerender = function () { viewActor(b); }; rerender(); }
   else if (a === "demande") viewRequest(b, parts[3]);
