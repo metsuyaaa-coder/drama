@@ -28572,13 +28572,13 @@
     "at": 1792447040454
   },
   "announce": {
-    "on": true,
+    "on": false,
     "text": "test numero 1",
     "kind": "info",
     "link": "",
     "label": "",
     "id": "1792550353112",
-    "at": 1792550353112
+    "at": 1792550482621
   },
   "inbox": {
     "at": 1792539388187,
