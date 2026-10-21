@@ -6940,7 +6940,7 @@ function calxSave() { try { localStorage.setItem(CALXKEY, JSON.stringify(CALX));
 function calxClean(r) {
   var out = [];
   ((r && r.items) || []).forEach(function (x) {
-    if (x && x.sid != null && /^\d{4}-\d{2}-\d{2}$/.test(String(x.date))) out.push({ id: String(x.id || x.sid + "_" + x.date), sid: String(x.sid), date: String(x.date), label: String(x.label || "").slice(0, 60) });
+    if (x && x.sid != null && /^\d{4}-\d{2}-\d{2}$/.test(String(x.date))) out.push({ id: String(x.id || x.sid + "_" + x.date), sid: String(x.sid), date: String(x.date), label: String(x.label || "").slice(0, 60), media: x.media === "movie" ? "movie" : (x.media === "tv" ? "tv" : ""), name: String(x.name || "").slice(0, 120), poster: String(x.poster || "").slice(0, 200), year: String(x.year || "").slice(0, 4), dt: /^[KCJT]$/.test(x.dt) ? x.dt : "" });
   });
   return out.slice(0, 300);
 }
@@ -6948,6 +6948,12 @@ function adoptCalx(data) {
   if (!data || Array.isArray(data) || !data.calx || !Array.isArray(data.calx.items)) return;
   var r = data.calx;
   if (!ADMIN || !CALX || (+r.at || 0) >= (+CALX.at || 0)) { CALX = { items: calxClean(r), at: +r.at || 0 }; calxSave(); }
+}
+/* Fiche du catalogue si elle existe, sinon un titre TMDB « externe » (affiche et nom enregistrés dans l'entrée) */
+function calxResolve(x) {
+  var s = byId(x.sid);
+  if (s && (!x.media || (x.media === "movie") === isMovie(s))) return s;
+  return { id: x.sid, name: x.name || "Titre", poster: x.poster || "", year: x.year || "", type: x.media === "movie" ? "movie" : "tv", seasons: [], ext: true };
 }
 function calxItems() { return (CALX && CALX.items) || []; }
 function calxHasSrc(s) { return !!((s.sources || []).length || (s.seasons || []).some(function (se) { return (se.episodes || []).some(function (ep) { return (ep.sources || []).length; }); })); }
@@ -6986,8 +6992,8 @@ function calModel() {
   });
   calxItems().forEach(function (x) {
     if (x.date < first || x.date > last) return;
-    var s = byId(x.sid); if (!s || (calType && dramaType(s) !== calType)) return;
-    by["x|" + x.id] = { date: x.date, s: s, se: null, nums: [], ok: calxHasSrc(s), custom: x };
+    var s = calxResolve(x); if (calType && (s.ext ? x.dt : dramaType(s)) !== calType) return;
+    by["x|" + x.id] = { date: x.date, s: s, se: null, nums: [], ok: s.ext ? false : calxHasSrc(s), custom: x };
   });
   var groups = Object.keys(by).map(function (k) { return by[k]; });
   groups.sort(function (a, b) { return String(a.s.name).localeCompare(String(b.s.name), "fr"); });
@@ -7009,13 +7015,14 @@ function calStripHTML(M) {
   }).join("");
 }
 function calCardHTML(g, i, M) {
-  var many = g.nums.length > 1, dt = dramaType(g.s), st;
+  var many = g.nums.length > 1, dt = g.s.ext ? g.custom.dt : dramaType(g.s), st;
   if (g.ok) st = '<span class="cxs ok">' + nsvg("check") + 'Disponible</span>';
   else if (g.date > M.today) st = '<span class="cxs soon">' + nsvg("clock") + 'À venir</span>';
-  else st = '<span class="cxs wait">' + nsvg("clock") + 'En attente d\'un lien</span>';
+  else st = '<span class="cxs wait">' + nsvg("clock") + (g.s.ext ? 'Bientôt sur le site' : 'En attente d\'un lien') + '</span>';
   var meta = g.custom ? esc(g.custom.label || (isMovie(g.s) ? "Film" : "Nouveau sur le site")) : 'Saison ' + esc(g.se.number) + ' · Épisode' + (many ? "s " : " ") + esc(calRanges(g.nums));
   var card = '<a class="cxcard" style="--i:' + Math.min(i, 14) + '" href="/serie/' + esc(g.s.id) + '"><span class="cxp">' + (g.s.poster ? '<img loading="lazy" src="' + esc(g.s.poster) + '" alt="">' : '<em>' + esc(String(g.s.name).charAt(0)) + '</em>') + '</span>' +
     '<span class="cxt"><b>' + esc(g.s.name) + '</b><span class="cxm">' + (!calType && dt ? '<i class="cxk" style="--c:' + CAL_KC[dt] + '">' + dt + '</i>' : '') + meta + '</span>' + st + '</span></a>';
+  if (g.s.ext) card = card.replace('<a class="cxcard"', '<div class="cxcard"').replace(/ href="[^"]*"/, "").replace(/<\/a>$/, "</div>");
   if (g.custom && ADMIN) card = '<div class="cxwrap">' + card + '<button type="button" class="cxdel" data-calxdel="' + esc(g.custom.id) + '" title="Retirer du calendrier" aria-label="Retirer du calendrier">×</button></div>';
   return card;
 }
@@ -7055,7 +7062,7 @@ function calBuild() {
     '<div class="cxrange"><b id="calrange"></b><small id="calwk"></small></div>' +
     '<button type="button" class="cxarr" data-calweek="1" aria-label="Semaine suivante">' + nsvg("chevr") + '</button>' +
     '<button type="button" class="btn small ghost cxtoday hide" id="caltoday" data-calweek="0">Aujourd\'hui</button></div></div></div>' +
-    '<div class="wrap">' + (ADMIN ? '<div class="cxadmin"><button type="button" class="btn small ghost" data-calx="toggle">+ Ajouter un titre au calendrier</button><div class="cxadd" id="calxform" hidden><div class="cxf"><label>Titre<input type="text" id="calxt" list="calxl" placeholder="Cherche un titre du site" autocomplete="off"></label><datalist id="calxl"></datalist>' +
+    '<div class="wrap">' + (ADMIN ? '<div class="cxadmin"><button type="button" class="btn small ghost" data-calx="toggle">+ Ajouter un titre au calendrier</button><div class="cxadd" id="calxform" hidden><div class="cxf"><label>Titre (recherche TMDB)<input type="text" id="calxt" list="calxl" placeholder="Tape un titre, ex. Moving" autocomplete="off"></label><datalist id="calxl"></datalist>' +
       '<label>Date<input type="date" id="calxd"></label><label>Texte (facultatif)<input type="text" id="calxn" maxlength="60" placeholder="Ex. Saison 2 · Ép. 1–2"></label></div><div class="row"><button type="button" class="btn small" data-calx="add">Ajouter</button><button type="button" class="btn small ghost" data-calx="toggle">Fermer</button></div></div></div>' : '') +
     '<div class="cxchips" role="group" aria-label="Catégorie">' + chips + '</div>' +
     '<div class="cxstrip" id="calstrip"></div><div class="cxsum"><span id="calsum"></span></div><div id="calbody"></div></div></div>';
@@ -7077,7 +7084,28 @@ document.addEventListener("click", function (e) {
   } else { calDay = calDay === t.dataset.calday ? "" : t.dataset.calday; calDir = 0; calPatch(); }
 });
 /* Admin : ajouter / retirer un titre du calendrier */
-function calxLabelOf(s) { return s.name + (s.year ? " (" + s.year + ")" : ""); }
+var calxHits = {}, calxTimer = 0, calxSeq = 0, CALX_LG = { ko: "Corée", ja: "Japon", zh: "Chine", cn: "Chine", th: "Thaïlande" };
+function calxSearch(q) {
+  var seq = ++calxSeq;
+  tmdb("/search/multi", { query: q, language: "fr-FR", include_adult: "false" }).then(function (r) {
+    if (seq !== calxSeq) return;
+    calxHits = {};
+    var opts = (r.results || []).filter(function (x) { return x.media_type === "tv" || x.media_type === "movie"; }).slice(0, 10).map(function (x) {
+      var mv = x.media_type === "movie", d = (mv ? x.release_date : x.first_air_date) || "", lg = x.original_language || "";
+      var h = { sid: String(x.id), media: x.media_type, name: String((mv ? x.title : x.name) || "").trim(), year: d.slice(0, 4), date: d, poster: x.poster_path ? "https://image.tmdb.org/t/p/w185" + x.poster_path : "", dt: { ko: "K", ja: "J", zh: "C", cn: "C", th: "T" }[lg] || "" };
+      var lab = h.name + (h.year ? " (" + h.year + ")" : "") + " · " + (mv ? "Film" : "Série") + (CALX_LG[lg] ? " · " + CALX_LG[lg] : "");
+      calxHits[lab] = h; return '<option value="' + esc(lab) + '"></option>';
+    }).join("");
+    var dl = $("#calxl"); if (dl) dl.innerHTML = opts;
+  }).catch(function (err) { if (seq === calxSeq) toast(String((err && err.message) || "Recherche TMDB impossible")); });
+}
+document.addEventListener("input", function (e) {
+  if (!ADMIN || !e.target || e.target.id !== "calxt") return;
+  var v = e.target.value.trim(), h = calxHits[v];
+  if (h) { if (h.date) $("#calxd").value = h.date; return; }
+  clearTimeout(calxTimer);
+  if (v.length >= 2) calxTimer = setTimeout(function () { calxSearch(v); }, 300);
+});
 document.addEventListener("click", function (e) {
   if (!ADMIN || !$("#calroot")) return;
   var d = e.target.closest ? e.target.closest("[data-calxdel]") : null;
@@ -7093,18 +7121,17 @@ document.addEventListener("click", function (e) {
   if (b.dataset.calx === "toggle") {
     f.hidden = !f.hidden;
     if (!f.hidden) {
-      $("#calxl").innerHTML = db.slice().sort(function (a, c) { return String(a.name).localeCompare(String(c.name), "fr"); }).map(function (s) { return '<option value="' + esc(calxLabelOf(s)) + '"></option>'; }).join("");
       if (!$("#calxd").value) $("#calxd").value = calDay || isoDate(new Date());
       $("#calxt").focus();
     }
     return;
   }
-  var q = $("#calxt").value.trim().toLowerCase(), date = $("#calxd").value, hit = null;
-  db.forEach(function (s) { if (!hit && (calxLabelOf(s).toLowerCase() === q || String(s.name).toLowerCase() === q)) hit = s; });
-  if (!hit) { toast("Choisis un titre dans la liste proposée."); return; }
+  var val = $("#calxt").value.trim(), date = $("#calxd").value, hit = calxHits[val];
+  if (!hit) db.forEach(function (s) { if (!hit && String(s.name).toLowerCase() === val.toLowerCase()) hit = { sid: String(s.id), media: isMovie(s) ? "movie" : "tv", name: s.name, year: s.year || "", poster: "", dt: "" }; });
+  if (!hit) { toast("Choisis un titre dans la liste de recherche TMDB."); return; }
   if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) { toast("Choisis une date."); return; }
-  var its = calxItems().filter(function (x) { return !(x.sid === String(hit.id) && x.date === date); });
-  its.push({ id: hit.id + "_" + date + "_" + Date.now().toString(36), sid: String(hit.id), date: date, label: $("#calxn").value.trim().slice(0, 60) });
+  var its = calxItems().filter(function (x) { return !(x.sid === hit.sid && x.date === date); });
+  its.push({ id: hit.sid + "_" + date + "_" + Date.now().toString(36), sid: hit.sid, date: date, label: $("#calxn").value.trim().slice(0, 60), media: hit.media, name: hit.name, poster: hit.poster || "", year: hit.year || "", dt: hit.dt || "" });
   CALX = { items: its, at: Date.now() }; calxSave(); markDirty();
   $("#calxt").value = ""; $("#calxn").value = "";
   var dt = new Date(date + "T12:00:00"), now = new Date();
