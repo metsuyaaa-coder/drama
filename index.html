@@ -24,7 +24,7 @@
 <meta name="twitter:description" content="Ton répertoire de dramas, séries et films à regarder en streaming ou à télécharger, avec les nouveaux épisodes toujours à jour.">
 <meta name="twitter:image" content="https://dramabym.vercel.app/dbm.png?v=2">
 <meta name="theme-color" content="#000000">
-<script>try{var _p=JSON.parse(localStorage.getItem("noir.prefs")||"{}");if(_p&&/^(red|blue|violet)$/.test(_p.theme)){document.documentElement.setAttribute("data-theme",_p.theme);var _m=document.querySelector('meta[name=theme-color]');if(_m)_m.content={red:"#000000",blue:"#081a3a",violet:"#05020a"}[_p.theme];}if(_p&&/^#[0-9a-f]{6}$/i.test(_p.accent)){var _h=_p.accent,_r=parseInt(_h.substr(1,2),16),_g=parseInt(_h.substr(3,2),16),_b=parseInt(_h.substr(5,2),16),_s=document.documentElement.style;_s.setProperty("--acc",_h);_s.setProperty("--on-acc",(0.299*_r+0.587*_g+0.114*_b)>150?"#000":"#fff");}}catch(e){}</script>
+<script>try{var _p=JSON.parse(localStorage.getItem("noir.prefs")||"{}");if(_p&&/^(red|blue|violet|gold|rose|emerald)$/.test(_p.theme)){document.documentElement.setAttribute("data-theme",_p.theme);var _m=document.querySelector('meta[name=theme-color]');if(_m)_m.content={red:"#000000",blue:"#081a3a",violet:"#05020a",gold:"#0b0905",rose:"#0d0509",emerald:"#04100b"}[_p.theme];}if(_p&&/^#[0-9a-f]{6}$/i.test(_p.accent)){var _h=_p.accent,_r=parseInt(_h.substr(1,2),16),_g=parseInt(_h.substr(3,2),16),_b=parseInt(_h.substr(5,2),16),_s=document.documentElement.style;_s.setProperty("--acc",_h);_s.setProperty("--on-acc",(0.299*_r+0.587*_g+0.114*_b)>150?"#000":"#fff");}}catch(e){}</script>
 <link rel="manifest" href="manifest.webmanifest">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -33,7 +33,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://image.tmdb.org">
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Big+Shoulders+Display:wght@700;900&family=Hanken+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Big+Shoulders+Display:wght@700;900&family=Hanken+Grotesk:wght@400;500;700;800;900&family=JetBrains+Mono:wght@400;500;800&display=swap" rel="stylesheet">
 <style>
 /* Concept : interface noir et blanc, seules les affiches gardent leurs couleurs */
 :root {
@@ -431,12 +431,12 @@ html.hb-lang .poster .lang, html.hb-live .poster .live, html.hb-new .poster .new
 #count svg { width: 16px; height: 16px; flex: none; }
 footer .flist { list-style: none; margin: 0; padding: 0; }
 footer .flist li::before { content: "\2022  "; }
-footer .uplinks { color: var(--dim); font-size: .86em; white-space: nowrap; }
-footer .uplinks a, footer .uplinks .upd { color: var(--fg); background: none; border: 0; padding: 0; margin: 0; font: inherit; text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 3px; cursor: pointer; transition: color .2s, text-decoration-color .2s; }
+footer .uplinks { color: var(--dim); font-weight: 900; font-size: .9em; white-space: nowrap; }
+footer .uplinks a, footer .uplinks .upd { color: var(--fg); font-weight: 900; background: none; border: 0; padding: 0; margin: 0; font: inherit; font-weight: 900; text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 3px; cursor: pointer; transition: color .2s, text-decoration-color .2s; }
 footer .uplinks a:hover, footer .uplinks .upd:hover, footer .uplinks .upd[aria-expanded="true"] { color: var(--acc); text-decoration-color: var(--acc); }
 .discpop { position: fixed; z-index: 90; display: flex; align-items: center; gap: 10px; padding: 9px 10px 9px 14px; background: var(--panel); border: 1px solid var(--acc); box-shadow: 0 14px 34px rgba(0,0,0,.6); animation: discIn .18s var(--ease) both; }
-.discpop span { font-family: var(--mono); font-size: 11px; color: var(--dim); text-transform: uppercase; letter-spacing: .08em; }
-.discpop b { font-family: var(--mono); font-weight: 500; font-size: 14px; color: var(--fg); }
+.discpop span { font-family: var(--mono); font-weight: 900; font-size: 11px; color: var(--dim); text-transform: uppercase; letter-spacing: .08em; }
+.discpop b { font-family: var(--mono); font-weight: 900; font-size: 14px; color: var(--fg); }
 @keyframes discIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
 footer .copy { max-width: 1280px; margin: 28px auto 0; padding: 20px max(16px, env(safe-area-inset-right, 0px)) 0 max(16px, env(safe-area-inset-left, 0px)); border-top: 1px solid var(--line); text-align: center; font-size: 13px; color: var(--dim); }
 
@@ -1378,7 +1378,7 @@ footer #btn-install { background: var(--acc); color: var(--on-acc); border: 1px 
 footer #btn-install:hover { background: transparent; color: var(--fg); }
 footer #btn-install[hidden] { display: none; }
 footer #btn-install svg { width: 18px; height: 18px; flex: none; }
-footer .about .flist li, footer .about p.dev { font-weight: 500; }
+footer .about .flist li, footer .about p.dev { font-weight: 800; }
 /* barre du lecteur : tout le rectangle « Besoin d'une autre source / d'un lien » est cliquable, et les rectangles se rangent du plus grand au plus petit */
 .pbar .ptip { order: -2; }
 .pbar .pl { order: -1; }
@@ -1990,6 +1990,55 @@ body { overflow-x: hidden; max-width: 100%; position: relative; }
 @media (prefers-reduced-motion: reduce) { .tvm, .tvbox, .tvload::after { animation: none; } }
 
 
+/* ===== Crédits + VIP ===== */
+.crhero, .viphero { position: relative; display: grid; gap: 12px; justify-items: start; padding: 44px 0 26px; }
+.crtag { font-family: var(--mono); font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: .14em; color: var(--on-acc); background: var(--acc); padding: 4px 9px; }
+.crhero h1, .viphero h1 { font-family: var(--display); font-weight: 900; font-size: clamp(48px, 9vw, 104px); line-height: .9; margin: 0; text-transform: uppercase; letter-spacing: .01em; }
+.crhero p, .viphero p { margin: 0; color: var(--dim); max-width: 60ch; font-weight: 500; }
+.crgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 18px; padding-bottom: 40px; }
+.crsec { position: relative; padding: 24px 22px 22px; border: 1px solid var(--line); background: linear-gradient(160deg, color-mix(in srgb, var(--acc) 9%, var(--panel)), var(--panel) 62%); animation: cardIn .5s var(--ease) both; animation-delay: calc(var(--i, 0) * 60ms); transition: border-color .3s, transform .3s var(--ease); }
+.crsec::before { content: ""; position: absolute; left: -1px; top: -1px; width: 38px; height: 3px; background: var(--acc); transition: width .35s var(--ease); }
+.crsec:hover { border-color: var(--acc); transform: translateY(-3px); }
+.crsec:hover::before { width: calc(100% + 2px); }
+.crsec h2 { font-family: var(--mono); font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: .14em; color: var(--acc); margin: 0 0 14px; }
+.crsec ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.crsec li { display: grid; gap: 2px; font-size: 20px; line-height: 1.15; }
+.crsec li b { font-family: var(--display); font-weight: 900; font-size: 28px; text-transform: uppercase; letter-spacing: .02em; }
+.crsec li span { color: var(--dim); font-size: 14px; font-weight: 600; }
+.crsec p { margin: 12px 0 0; color: var(--dim); font-weight: 600; line-height: 1.5; }
+.crsec a { color: var(--fg); font-weight: 800; text-decoration: underline; text-decoration-color: var(--acc); text-underline-offset: 3px; }
+.crsec a:hover { color: var(--acc); }
+.credit { display: grid; gap: 12px; max-width: 760px; padding-bottom: 40px; }
+.credit textarea { width: 100%; min-height: 340px; background: var(--panel); color: var(--fg); border: 1px solid var(--line); border-radius: 0; padding: 14px; font-family: var(--mono); font-size: 14px; line-height: 1.55; resize: vertical; }
+.credit textarea:focus { outline: none; border-color: var(--acc); }
+.vipbox { display: grid; gap: 14px; max-width: 560px; padding: 24px; border: 1px solid var(--acc); background: linear-gradient(150deg, color-mix(in srgb, var(--acc) 14%, var(--panel)), var(--panel) 70%); box-shadow: 0 0 0 1px color-mix(in srgb, var(--acc) 30%, transparent), 0 24px 60px rgba(0,0,0,.5); }
+.vipbox h2 { font-family: var(--display); font-weight: 900; font-size: 34px; text-transform: uppercase; margin: 0; }
+.vipbox p { margin: 0; color: var(--dim); font-weight: 600; }
+.vipcode { width: 100%; background: var(--bg); color: var(--fg); border: 1px solid var(--line); border-radius: 0; padding: 14px; font-family: var(--mono); font-weight: 800; font-size: 20px; letter-spacing: .14em; text-transform: uppercase; text-align: center; }
+.vipcode:focus { outline: none; border-color: var(--acc); box-shadow: 0 0 0 3px color-mix(in srgb, var(--acc) 25%, transparent); }
+.viperr { min-height: 18px; margin: 0; font-weight: 700; color: #ff6b81 !important; }
+.vipon { display: inline-flex; align-items: center; gap: 8px; width: fit-content; padding: 6px 12px; background: var(--acc); color: var(--on-acc); font-family: var(--mono); font-weight: 800; font-size: 12px; text-transform: uppercase; letter-spacing: .12em; }
+.vipperks { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; padding: 30px 0 44px; }
+.vipperk { display: grid; gap: 8px; padding: 18px; border: 1px solid var(--line); background: var(--panel); animation: cardIn .5s var(--ease) both; animation-delay: calc(var(--i, 0) * 70ms); }
+.vipperk i { font-style: normal; font-size: 26px; color: var(--acc); }
+.vipperk b { font-family: var(--display); font-weight: 900; font-size: 24px; text-transform: uppercase; }
+.vipperk span { color: var(--dim); font-weight: 600; font-size: 14px; line-height: 1.45; }
+.vipadm { display: grid; gap: 4px; }
+.vipadm .vrow { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 12px; padding: 10px 0; border-bottom: 1px solid var(--line); }
+.vipadm .vrow code { font-family: var(--mono); font-weight: 800; letter-spacing: .08em; color: var(--acc); }
+.thopt.lock { opacity: .6; }
+.thvip, .cswatch button.vipx::after, .cemo button.vipx::after { font-style: normal; font-family: var(--mono); font-weight: 800; font-size: 9px; letter-spacing: .1em; padding: 1px 4px; background: var(--acc); color: var(--on-acc); }
+.cswatch button, .cemo button { position: relative; }
+.cswatch button.vipx::after, .cemo button.vipx::after { content: "VIP"; position: absolute; right: -4px; top: -6px; }
+.cswatch button.lock, .cemo button.lock { opacity: .5; }
+footer .copy a { color: var(--fg); font-weight: 800; text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 3px; }
+footer .copy a:hover { color: var(--acc); text-decoration-color: var(--acc); }
+html[data-theme="gold"] { --bg: #0b0905; --fg: #fff; --dim: #b3a58a; --line: #33270f; --panel: #14100a; --s0: #0e0b06; --s1: #1f1809; --acc: #d4a017; --on-acc: #000; }
+html[data-theme="rose"] { --bg: #0d0509; --fg: #fff; --dim: #b894a6; --line: #3a1528; --panel: #16080f; --s0: #10060b; --s1: #240c18; --acc: #ec4899; --on-acc: #fff; }
+html[data-theme="emerald"] { --bg: #04100b; --fg: #fff; --dim: #8fb8a6; --line: #123626; --panel: #07190f; --s0: #05130c; --s1: #0b2a1b; --acc: #10b981; --on-acc: #000; }
+html[data-theme="gold"] ::selection { background: #d4a017; color: #000; }
+html[data-theme="rose"] ::selection { background: #ec4899; color: #fff; }
+html[data-theme="emerald"] ::selection { background: #10b981; color: #000; }
 /* ===== Collections ===== */
 .colgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 22px 18px; }
 .colc { --c0: #8b5cf6; --c1: #312e81; position: relative; display: block; min-width: 0; color: inherit; animation: cardIn .5s var(--ease) both; animation-delay: calc(var(--i, 0) * 45ms); }
@@ -2189,7 +2238,7 @@ dialog#ninfo::backdrop { background: rgba(0,0,0,.85); }
       <ul class="flist"><li>Meyriuu <span class="uplinks">[ <button type="button" class="upd" data-disc="meyriuu." aria-haspopup="true" aria-expanded="false">Discord</button> ]</span></li><li>Nebula <span class="uplinks">[ <a href="https://www.tumblr.com/dramavor?source=share" target="_blank" rel="noopener noreferrer">Tumblr</a> · <button type="button" class="upd" data-disc="zephiris09" aria-haspopup="true" aria-expanded="false">Discord</button> ]</span></li></ul>
     </div>
   </div>
-  <p class="copy">© 2026 DramaByM. Tous droits réservés.</p>
+  <p class="copy">© 2026 DramaByM. Tous droits réservés. · <a href="/credits">Crédits</a> · <a href="/vip">VIP</a></p>
 </footer>
 
 <div class="volet" id="volet" hidden role="dialog" aria-label="Volet admin">
@@ -3513,18 +3562,38 @@ function shuffleStable(arr) {
     return ka - kb;
   });
 }
+/* ===== Crédits + VIP : état (avant les préférences, pour que applyPrefs le voie) ===== */
+var CREDKEY = "noir.credits", CREDITS = readJSON(CREDKEY, null);
+var VIPKEY = "noir.vip", VIPREGKEY = "noir.vipreg", VIPPLAINKEY = "noir.vipplain";
+var VIPREG = readJSON(VIPREGKEY, null), VIP = readJSON(VIPKEY, null);
+var VIPTHEMES = { gold: "#0b0905", rose: "#0d0509", emerald: "#04100b" };
+var CREDDEFAULT = "# Développeur\nMeyriuu\n\n# Uploadeurs\nMeyriuu\nNebula\n\n# Merci\n> Un grand merci à tous ceux qui soutiennent DramaByM.";
+function vipNorm(c) { var n = String(c || "").toUpperCase().replace(/[^A-Z0-9]/g, ""); return n.indexOf("VIP") === 0 ? n : "VIP" + n; }
+function vipHash(c) { return sha256("dramabym-vip:" + vipNorm(c)); }
+function vipGen() {
+  var A = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789", b = new Uint8Array(8), t = "";
+  (window.crypto || window.msCrypto).getRandomValues(b);
+  for (var i = 0; i < 8; i++) t += A.charAt(b[i] % A.length);
+  return "VIP-" + t.slice(0, 4) + "-" + t.slice(4);
+}
+function isVip() {
+  if (ADMIN) return true;
+  if (!VIP || !VIP.h) return false;
+  if (VIPREG && Array.isArray(VIPREG.items)) return VIPREG.items.some(function (x) { return x.h === VIP.h; });
+  return true;
+}
 /* ===== Paramètres (enregistrés sur l'appareil) ===== */
 var PREFKEY = "noir.prefs";
 var PREFS = (function () {
   var p = readJSON(PREFKEY, {}); if (!p || typeof p !== "object" || Array.isArray(p)) p = {};
-  return { noanim: !!p.noanim, hideTips: !!p.hideTips, hideLang: !!p.hideLang, hideLive: !!p.hideLive, hideNew: !!p.hideNew, hideNov: !!p.hideNov, rememberPlayer: !!p.rememberPlayer, theme: (["red", "blue", "violet"].indexOf(p.theme) > -1 ? p.theme : ""), accent: (/^#[0-9a-f]{6}$/i.test(p.accent) ? p.accent.toLowerCase() : ""), lastPlayer: String(p.lastPlayer || ""), order: Array.isArray(p.order) ? p.order.filter(function (x) { return typeof x === "string"; }) : [] };
+  return { noanim: !!p.noanim, hideTips: !!p.hideTips, hideLang: !!p.hideLang, hideLive: !!p.hideLive, hideNew: !!p.hideNew, hideNov: !!p.hideNov, rememberPlayer: !!p.rememberPlayer, theme: (["red", "blue", "violet", "gold", "rose", "emerald"].indexOf(p.theme) > -1 ? p.theme : ""), accent: (/^#[0-9a-f]{6}$/i.test(p.accent) ? p.accent.toLowerCase() : ""), lastPlayer: String(p.lastPlayer || ""), order: Array.isArray(p.order) ? p.order.filter(function (x) { return typeof x === "string"; }) : [] };
 })();
 function savePrefs() { try { localStorage.setItem(PREFKEY, JSON.stringify(PREFS)); } catch (e) { toast("Stockage plein ou bloqué par le navigateur"); } }
 function applyPrefs() {
   var c = document.documentElement.classList;
   c.toggle("noanim", PREFS.noanim); c.toggle("notips", PREFS.hideTips);
-  var de = document.documentElement; if (PREFS.theme) de.setAttribute("data-theme", PREFS.theme); else de.removeAttribute("data-theme");
-  var tm = document.querySelector('meta[name="theme-color"]'); if (tm) tm.setAttribute("content", { blue: "#081a3a", violet: "#05020a" }[PREFS.theme] || "#000000");
+  var de = document.documentElement, th = PREFS.theme; if (VIPTHEMES[th] && !isVip()) th = ""; if (th) de.setAttribute("data-theme", th); else de.removeAttribute("data-theme");
+  var tm = document.querySelector('meta[name="theme-color"]'); if (tm) tm.setAttribute("content", { blue: "#081a3a", violet: "#05020a", gold: "#0b0905", rose: "#0d0509", emerald: "#04100b" }[th] || "#000000");
   var st = de.style;
   if (PREFS.accent) { var r = parseInt(PREFS.accent.substr(1, 2), 16), g = parseInt(PREFS.accent.substr(3, 2), 16), bl = parseInt(PREFS.accent.substr(5, 2), 16); st.setProperty("--acc", PREFS.accent); st.setProperty("--on-acc", (0.299 * r + 0.587 * g + 0.114 * bl) > 150 ? "#000" : "#fff"); }
   else { st.removeProperty("--acc"); st.removeProperty("--on-acc"); }
@@ -3614,13 +3683,16 @@ var THEMES = [
   ["", "Noir", "Le thème d'origine", "#000", "#fff", "#fff"],
   ["red", "Rouge & noir", "Noir profond, accents rouges", "#000", "#fff", "#e11d2e"],
   ["blue", "Bleu & blanc", "Bleu nuit, texte blanc", "#081a3a", "#fff", "#2f80ff"],
-  ["violet", "Noir & violet", "Noir profond, accents violets", "#05020a", "#fff", "#6d28d9"]
+  ["violet", "Noir & violet", "Noir profond, accents violets", "#05020a", "#fff", "#6d28d9"],
+  ["gold", "Noir & or", "Réservé aux VIP", "#0b0905", "#fff", "#d4a017", true],
+  ["rose", "Noir & rose", "Réservé aux VIP", "#0d0509", "#fff", "#ec4899", true],
+  ["emerald", "Noir & émeraude", "Réservé aux VIP", "#04100b", "#fff", "#10b981", true]
 ];
 function stThemes() {
   return '<div class="stsec"><div class="stlbl">Apparence</div><p class="stnote">Change les couleurs du site. Les affiches gardent leurs couleurs.</p><div class="thgrid" role="radiogroup" aria-label="Thème">' +
     THEMES.map(function (t) {
       var on = (PREFS.theme || "") === t[0];
-      return '<button type="button" class="thopt' + (on ? " on" : "") + '" role="radio" aria-checked="' + (on ? "true" : "false") + '" data-theme-set="' + t[0] + '"><span class="thprev" style="background:' + t[3] + '"><i style="width:62%;background:' + t[4] + '"></i><i style="width:34%;background:' + t[5] + '"></i></span><b>' + esc(t[1]) + '</b><small>' + esc(t[2]) + '</small></button>';
+      return '<button type="button" class="thopt' + (on ? " on" : "") + (t[6] && !isVip() ? " lock" : "") + '" role="radio" aria-checked="' + (on ? "true" : "false") + '" data-theme-set="' + t[0] + '"><span class="thprev" style="background:' + t[3] + '"><i style="width:62%;background:' + t[4] + '"></i><i style="width:34%;background:' + t[5] + '"></i></span><b>' + esc(t[1]) + (t[6] ? ' <em class="thvip">VIP</em>' : '') + '</b><small>' + esc(t[2]) + '</small></button>';
     }).join("") + '</div>' +
     '<div class="stlbl" style="margin-top:18px">Couleur d\'accent</div><p class="stnote">Remplace la couleur d\'accent du thème (boutons, sélections…). Les badges des affiches ne changent pas.</p>' +
     '<div class="row" style="display:flex;align-items:center;gap:12px;flex-wrap:wrap"><input type="color" id="accpick" value="' + (PREFS.accent || accOfTheme()) + '" aria-label="Choisir la couleur d\'accent" style="width:56px;height:40px;padding:0;border:1px solid var(--line);background:none;cursor:pointer"><button type="button" class="btn ghost small" data-accreset>Couleur du thème</button></div></div>';
@@ -3638,6 +3710,7 @@ document.addEventListener("click", function (e) {
 document.addEventListener("click", function (e) {
   var b = e.target.closest ? e.target.closest("[data-theme-set]") : null;
   if (!b) return;
+  if (VIPTHEMES[b.dataset.themeSet] && !isVip()) { toast("Thème réservé aux VIP"); go("/vip"); return; }
   PREFS.theme = b.dataset.themeSet || ""; savePrefs(); applyPrefs();
   Array.prototype.forEach.call(document.querySelectorAll("[data-theme-set]"), function (o) { var on = o === b; o.classList.toggle("on", on); o.setAttribute("aria-checked", on ? "true" : "false"); });
   var nm = THEMES.filter(function (t) { return t[0] === PREFS.theme; })[0]; toast("Thème : " + (nm ? nm[1] : "Noir"));
@@ -5787,6 +5860,7 @@ function viewHead() {
       ? '<div style="display:grid;gap:12px"><h3 class="note" style="margin:0;text-transform:uppercase;letter-spacing:.08em">À publier</h3><p class="note" style="margin:0">Remplace les lignes ADMIN_HASH et ADMINS dans CONFIG (index.html) par celles-ci, puis remets le fichier en ligne.</p><pre class="code" id="hashline">' + esc(adminsLine(headDraft)) + '</pre><div class="row"><button class="btn" type="button" id="copyhash">Copier les lignes</button><button class="btn ghost" type="button" id="head-reset">Annuler les changements</button></div></div>'
       : '<p class="note">Aucun changement en attente.</p>') +
     inboxSection() +
+    vipHeadSection() +
     '<div class="row"><a class="btn" href="/ajouter">Ajouter une fiche</a><a class="btn ghost" href="/panel">Panneau admin</a></div>' +
     '<div class="row"><button class="btn ghost" type="button" id="head-quit">Se déconnecter</button><a class="btn ghost" href="/">Retour au site</a></div></div></div>';
 }
@@ -7019,10 +7093,153 @@ document.addEventListener("click", function (e) {
   else copy();
 });
 
+/* ===== Page Crédits (modifiable par le Head admin, publiée dans catalog.json > credits) ===== */
+var credEditing = false;
+function credSave() { try { localStorage.setItem(CREDKEY, JSON.stringify(CREDITS)); } catch (e) {} }
+function adoptCredits(data) {
+  var r = data && !Array.isArray(data) ? data.credits : null;
+  if (r && typeof r.text === "string" && (!ADMIN || !CREDITS || (+r.at || 0) >= (+CREDITS.at || 0))) { CREDITS = { text: r.text.slice(0, 4000), at: +r.at || 0 }; credSave(); }
+  if (curPath() === "/credits" && !credEditing) viewCredits();
+}
+function credInline(t) {
+  return esc(t).replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g, function (m, a, u) { return '<a href="' + u + '" target="_blank" rel="noopener noreferrer">' + a + '</a>'; });
+}
+function creditsHTML(text) {
+  var secs = [], cur = null;
+  String(text).split(/\r?\n/).forEach(function (l) {
+    l = l.trim(); if (!l) return;
+    var m = l.match(/^#+\s*(.+)$/);
+    if (m) { cur = { t: m[1], items: [], note: [] }; secs.push(cur); return; }
+    if (!cur) { cur = { t: "", items: [], note: [] }; secs.push(cur); }
+    if (l.charAt(0) === ">") cur.note.push(l.replace(/^>\s*/, "")); else cur.items.push(l.replace(/^[-•*]\s+/, ""));
+  });
+  secs = secs.slice(0, 30);
+  if (!secs.length) return '<p class="note">Rien pour l\'instant.</p>';
+  return '<div class="crgrid">' + secs.map(function (s, i) {
+    return '<section class="crsec" style="--i:' + Math.min(i, 12) + '">' + (s.t ? '<h2>' + credInline(s.t) + '</h2>' : '') +
+      (s.items.length ? '<ul>' + s.items.slice(0, 60).map(function (it) {
+        var p = it.split(/\s+[—–]\s+/), nm = p.shift();
+        return '<li><b>' + credInline(nm) + '</b>' + (p.length ? '<span>' + credInline(p.join(" — ")) + '</span>' : '') + '</li>';
+      }).join("") + '</ul>' : '') +
+      s.note.map(function (n) { return '<p>' + credInline(n) + '</p>'; }).join("") + '</section>';
+  }).join("") + '</div>';
+}
+function viewCredits() {
+  var txt = CREDITS && typeof CREDITS.text === "string" ? CREDITS.text : CREDDEFAULT, head = isHead(), app = $("#app");
+  if (credEditing && head) {
+    app.innerHTML = '<div class="wrap"><section class="crhero"><span class="crtag">Head admin</span><h1>Modifier les crédits</h1></section>' +
+      '<div class="credit"><p class="note" style="margin:0"><b>#</b> Titre pour une nouvelle section · une ligne = une personne · <b>Nom — rôle</b> · <b>&gt;</b> pour une phrase · <b>[texte](https://lien)</b> pour un lien.</p>' +
+      '<textarea id="cred-txt" maxlength="4000" spellcheck="false">' + esc(txt) + '</textarea>' +
+      '<div class="row"><button type="button" class="btn" data-cred="save">Enregistrer</button><button type="button" class="btn ghost" data-cred="cancel">Annuler</button><button type="button" class="btn ghost" data-cred="default">Remettre le texte de départ</button></div></div></div>';
+    return;
+  }
+  app.innerHTML = '<div class="wrap"><section class="crhero"><span class="crtag">DramaByM</span><h1>Crédits</h1><p>Les personnes derrière le site, et celles qui le font vivre.</p>' +
+    (head ? '<button type="button" class="btn small" data-cred="edit">Modifier les crédits</button>' : '') + '</section>' + creditsHTML(txt) + '</div>';
+}
+document.addEventListener("click", function (e) {
+  var b = e.target.closest ? e.target.closest("[data-cred]") : null; if (!b || !isHead()) return;
+  var a = b.dataset.cred;
+  if (a === "edit") { credEditing = true; viewCredits(); return; }
+  if (a === "cancel") { credEditing = false; viewCredits(); return; }
+  if (a === "default") { var t0 = $("#cred-txt"); if (t0) t0.value = CREDDEFAULT; return; }
+  if (a === "save") {
+    var t = $("#cred-txt"); CREDITS = { text: (t ? t.value : "").slice(0, 4000), at: Date.now() }; credSave(); credEditing = false;
+    toast(autoSyncOn() ? "Crédits enregistrés." : "Crédits enregistrés. Clique sur « Publier » pour que tout le monde les voie.");
+    markDirty(); viewCredits();
+  }
+});
+
+/* ===== VIP : codes créés par le Head admin (/headadmin), vérifiés sur /vip ; seules les empreintes sont publiées (catalog.json > vip) ===== */
+function vipSaveReg() { try { localStorage.setItem(VIPREGKEY, JSON.stringify(VIPREG)); } catch (e) {} }
+function vipSavePlain(m) { try { localStorage.setItem(VIPPLAINKEY, JSON.stringify(m)); } catch (e) {} }
+function adoptVip(data) {
+  var r = data && !Array.isArray(data) ? data.vip : null;
+  if (r && Array.isArray(r.items) && (!ADMIN || !VIPREG || (+r.at || 0) >= (+VIPREG.at || 0))) {
+    VIPREG = { at: +r.at || 0, items: r.items.filter(function (x) { return x && /^[0-9a-f]{64}$/.test(String(x.h || "")); }).map(function (x) { return { id: String(x.id || x.h.slice(0, 8)), n: String(x.n || "").slice(0, 30), h: x.h, at: +x.at || 0 }; }).slice(0, 500) };
+    vipSaveReg();
+  }
+  applyPrefs();
+  if (curPath() === "/vip") viewVip();
+}
+function viewVip() {
+  var app = $("#app"), on = isVip();
+  var perks = [["★", "Thèmes exclusifs", "Noir & or, Noir & rose, Noir & émeraude : des thèmes réservés, à choisir dans les paramètres."],
+    ["❖", "Collections exclusives", "Des couleurs et des symboles que seuls les VIP peuvent utiliser sur leurs collections."],
+    ["♛", "Ton nom aux crédits", "Les soutiens peuvent être cités sur la page Crédits."]];
+  var perkHTML = '<div class="vipperks">' + perks.map(function (p, i) { return '<div class="vipperk" style="--i:' + i + '"><i>' + p[0] + '</i><b>' + p[1] + '</b><span>' + p[2] + '</span></div>'; }).join("") + '</div>';
+  var box;
+  if (on) {
+    var nm = VIP && VIP.n ? VIP.n : "";
+    box = '<div class="vipbox"><span class="vipon">♛ VIP actif</span><h2>' + (ADMIN && !(VIP && VIP.h) ? 'Accès admin' : 'Merci' + (nm ? ' ' + esc(nm) : '') + ' !') + '</h2><p>' + (ADMIN && !(VIP && VIP.h) ? 'Les admins ont tous les avantages VIP.' : 'Ton code est activé sur cet appareil. Tes avantages sont débloqués.') + '</p>' +
+      '<div class="row"><a class="btn" href="/parametres">Choisir un thème</a><a class="btn ghost" href="/ma-liste">Mes collections</a>' + (VIP && VIP.h ? '<button type="button" class="btn ghost" data-vipquit>Retirer mon code</button>' : '') + '</div></div>';
+  } else {
+    box = '<form class="vipbox" id="vipform" autocomplete="off"><h2>Ton code VIP</h2><p>Tu as reçu un code ? Entre-le ici pour débloquer les avantages VIP sur cet appareil.</p>' +
+      '<input class="vipcode" id="vipcode" type="text" maxlength="24" placeholder="VIP-XXXX-XXXX" spellcheck="false" autocapitalize="characters" aria-label="Code VIP">' +
+      '<p class="viperr" id="viperr" role="alert"></p><div class="row"><button class="btn" type="submit">Activer</button></div></form>';
+  }
+  app.innerHTML = '<div class="wrap"><section class="viphero"><span class="crtag">DramaByM</span><h1>VIP</h1><p>Pour remercier celles et ceux qui soutiennent le site.</p></section>' + box + perkHTML + '</div>';
+}
+document.addEventListener("submit", function (e) {
+  if (e.target.id !== "vipform") return;
+  e.preventDefault();
+  var inp = $("#vipcode"), err = $("#viperr"), code = inp ? inp.value : "";
+  if (vipNorm(code).length < 8) { err.textContent = "Entre ton code complet."; return; }
+  if (!VIPREG || !Array.isArray(VIPREG.items)) { err.textContent = "Impossible de vérifier le code pour l'instant. Réessaie dans un instant."; return; }
+  var h = vipHash(code), it = VIPREG.items.filter(function (x) { return x.h === h; })[0];
+  if (!it) { err.textContent = "Code incorrect."; inp.select(); return; }
+  VIP = { h: h, n: it.n || "" };
+  try { localStorage.setItem(VIPKEY, JSON.stringify(VIP)); } catch (er) {}
+  applyPrefs(); toast("VIP activé ✓"); viewVip();
+});
+document.addEventListener("click", function (e) {
+  if (!(e.target.closest && e.target.closest("[data-vipquit]"))) return;
+  VIP = null; try { localStorage.removeItem(VIPKEY); } catch (er) {}
+  applyPrefs(); toast("Code VIP retiré de cet appareil."); viewVip();
+});
+/* ----- Head admin : générer / retirer des codes ----- */
+function vipPlainMap() { var m = readJSON(VIPPLAINKEY, {}); return m && typeof m === "object" && !Array.isArray(m) ? m : {}; }
+function vipHeadSection() {
+  if (!isHead()) return "";
+  var items = (VIPREG && VIPREG.items) || [], pm = vipPlainMap();
+  var rows = items.length ? items.map(function (x) {
+    var c = pm[x.id];
+    return '<div class="vrow"><b>' + esc(x.n || "Sans nom") + '</b><span style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">' + (c ? '<code>' + esc(c) + '</code><button class="btn ghost small" type="button" data-copy="' + esc(c) + '">Copier</button>' : '<span class="note" style="margin:0">code non conservé sur cet appareil</span>') + '<button class="btn danger small" type="button" data-vipdel="' + esc(x.id) + '">Retirer</button></span></div>';
+  }).join("") : '<p class="note">Aucun code VIP pour l\'instant.</p>';
+  return '<div class="vipadm"><h3 class="note" style="margin:0 0 6px;text-transform:uppercase;letter-spacing:.08em">Codes VIP (' + items.length + ')</h3>' + rows + '</div>' +
+    '<form id="vipadd" style="display:grid;gap:12px"><h3 class="note" style="margin:0;text-transform:uppercase;letter-spacing:.08em">Générer un code VIP</h3>' +
+    '<label class="f"><span>Nom de la personne (visible dans catalog.json)</span><input type="text" id="vipn" maxlength="30" autocomplete="off"></label><p class="note" id="autherr"></p>' +
+    '<div class="row"><button class="btn ghost" type="submit">Générer</button></div>' +
+    '<p class="note" style="margin:0">Le code s\'affiche ici, copie-le et envoie-le à la personne. Seule son empreinte est publiée : retirer un code le désactive pour tout le monde dès la publication. Le code reste visible seulement sur cet appareil.</p></form>';
+}
+document.addEventListener("submit", function (e) {
+  if (e.target.id !== "vipadd") return;
+  e.preventDefault();
+  if (!isHead()) return;
+  var nm = cleanName($("#vipn").value);
+  if (!nm) { authError(e.target, "Donne un nom à cette personne"); return; }
+  var code = vipGen(), items = ((VIPREG && VIPREG.items) || []).slice(), id = "v" + Date.now().toString(36);
+  items.push({ id: id, n: nm, h: vipHash(code), at: Date.now() });
+  VIPREG = { at: Date.now(), items: items }; vipSaveReg();
+  var pm = vipPlainMap(); pm[id] = code; vipSavePlain(pm);
+  toast(autoSyncOn() ? "Code créé : " + code : "Code créé : " + code + ". Clique sur « Publier » pour l'activer.");
+  markDirty(); viewHead();
+});
+document.addEventListener("click", function (e) {
+  var d = e.target.closest ? e.target.closest("[data-vipdel]") : null; if (!d || !isHead()) return;
+  var id = d.dataset.vipdel, it = ((VIPREG && VIPREG.items) || []).filter(function (x) { return x.id === id; })[0]; if (!it) return;
+  if (!window.confirm("Retirer le code VIP de « " + (it.n || "cette personne") + " » ?")) return;
+  VIPREG = { at: Date.now(), items: VIPREG.items.filter(function (x) { return x.id !== id; }) }; vipSaveReg();
+  var pm = vipPlainMap(); delete pm[id]; vipSavePlain(pm);
+  toast("Code retiré."); markDirty(); viewHead();
+});
+
 /* ===== Collections : listes à thème créées par chaque visiteur (enregistrées sur l'appareil, partageables par lien) ===== */
 var COLKEY = "noir.collections", COLID = /^[\w-]{1,24}$/, COLSID = /^[\w.-]{1,40}$/;
 var COLPAL = [["#8b5cf6", "#312e81"], ["#f43f5e", "#7f1d1d"], ["#f59e0b", "#78350f"], ["#10b981", "#064e3b"], ["#38bdf8", "#0c4a6e"], ["#ec4899", "#701a75"], ["#a3e635", "#365314"], ["#e5e7eb", "#3f3f46"]];
 var COLEMO = ["♥", "★", "☾", "✦", "❖", "☂", "♪", "⚔", "☕", "✿", "⚡", "☠"];
+var VIPCOL_FROM = COLPAL.length, VIPEMO_FROM = COLEMO.length;
+COLPAL.push(["#facc15", "#713f12"], ["#22d3ee", "#164e63"], ["#fb7185", "#4c0519"], ["#c084fc", "#3b0764"]);
+COLEMO.push("♛", "♠", "♦", "☀", "❄", "✧");
 NICONS["layers"] = '<path d="m12 3 9 5-9 5-9-5 9-5z"/><path d="m3 13 9 5 9-5"/><path d="m3 17.5 9 5 9-5" opacity=".5"/>';
 NICONS["plus"] = '<path d="M12 5v14"/><path d="M5 12h14"/>';
 NICONS["check"] = NICONS["check"] || '<path d="m5 12.5 4.5 4.5L19 7.5"/>';
@@ -7077,9 +7294,10 @@ function colOpen(inner) {
   return o;
 }
 document.addEventListener("keydown", function (e) { if (e.key === "Escape" && $("#colov")) { e.stopPropagation(); colClose(); } }, true);
+function vipCls(k, from) { return k >= from ? " vipx" + (isVip() ? "" : " lock") : ""; }
 function colEdit(id, addSid) {
   var base = id ? colGet(id) : null;
-  var cur = base ? JSON.parse(JSON.stringify(base)) : { id: "", n: "", d: "", c: Math.floor(Math.random() * COLPAL.length), e: Math.floor(Math.random() * COLEMO.length), i: addSid ? [String(addSid)] : [] };
+  var cur = base ? JSON.parse(JSON.stringify(base)) : { id: "", n: "", d: "", c: Math.floor(Math.random() * VIPCOL_FROM), e: Math.floor(Math.random() * VIPEMO_FROM), i: addSid ? [String(addSid)] : [] };
   var o = colOpen('<div class="cbh"><h2>' + (base ? "Modifier la collection" : "Nouvelle collection") + '</h2><button type="button" class="cbx" data-colx aria-label="Fermer">×</button></div>' +
     '<form class="cbb" id="colform" autocomplete="off"><div class="colprev" id="colprev"></div>' +
     '<label class="cf">Nom<input id="colname" maxlength="40" placeholder="Ex. : Romances qui font pleurer" required></label>' +
@@ -7092,15 +7310,16 @@ function colEdit(id, addSid) {
   function paint() {
     cur.n = name.value; cur.d = desc.value;
     o.querySelector("#colprev").innerHTML = colCard({ id: "x", n: cur.n.trim() || "Ma collection", d: cur.d, c: cur.c, e: cur.e, i: cur.i }, 0, "div");
-    o.querySelector("#colsw").innerHTML = COLPAL.map(function (p, k) { return '<button type="button" class="' + (k === cur.c ? "on" : "") + '" data-colc="' + k + '" style="--c0:' + p[0] + ';--c1:' + p[1] + '" aria-label="Couleur ' + (k + 1) + '"></button>'; }).join("");
-    o.querySelector("#colemo").innerHTML = COLEMO.map(function (g, k) { return '<button type="button" class="' + (k === cur.e ? "on" : "") + '" data-cole="' + k + '">' + g + '</button>'; }).join("");
+    o.querySelector("#colsw").innerHTML = COLPAL.map(function (p, k) { return '<button type="button" class="' + (k === cur.c ? "on" : "") + vipCls(k, VIPCOL_FROM) + '" data-colc=""' + k + '" style="--c0:' + p[0] + ';--c1:' + p[1] + '" aria-label="Couleur ' + (k + 1) + '"></button>'; }).join("");
+    o.querySelector("#colemo").innerHTML = COLEMO.map(function (g, k) { return '<button type="button" class="' + (k === cur.e ? "on" : "") + vipCls(k, VIPEMO_FROM) + '" data-cole=""' + k + '">' + g + '</button>'; }).join("");
   }
   paint(); setTimeout(function () { name.focus(); }, 30);
   name.addEventListener("input", function () { cur.n = name.value; var b = o.querySelector(".colmeta b"); if (b) b.textContent = cur.n.trim() || "Ma collection"; });
   o.addEventListener("click", function (e) {
     if (e.target.closest("[data-colx]")) { colClose(); return; }
     var bc = e.target.closest("[data-colc]"), be = e.target.closest("[data-cole]");
-    if (bc) { cur.c = +bc.dataset.colc; paint(); } else if (be) { cur.e = +be.dataset.cole; paint(); }
+    if (bc) { if (+bc.dataset.colc >= VIPCOL_FROM && !isVip()) { toast("Couleur réservée aux VIP"); return; } cur.c = +bc.dataset.colc; paint(); }
+    else if (be) { if (+be.dataset.cole >= VIPEMO_FROM && !isVip()) { toast("Symbole réservé aux VIP"); return; } cur.e = +be.dataset.cole; paint(); }
   });
   o.querySelector("#colform").addEventListener("submit", function (e) {
     e.preventDefault(); cur.n = name.value; cur.d = desc.value;
@@ -7216,7 +7435,7 @@ document.addEventListener("click", function (e) {
 });
 
 /* ===== Titre de l'onglet du navigateur selon la page ===== */
-var PAGETITLES = { series: "Séries", films: "Films", "ma-liste": "Ma liste", collection: "Collection", calendrier: "Calendrier", demande: "Faire une demande", demandes: "Demandes en cours", statut: "Statut des serveurs", parametres: "Paramètres", admin: "Connexion admin", panel: "Panneau admin", headadmin: "Head admin", ajouter: "Ajouter une fiche", motdepasse: "Mot de passe" };
+var PAGETITLES = { credits: "Crédits", vip: "VIP", series: "Séries", films: "Films", "ma-liste": "Ma liste", collection: "Collection", calendrier: "Calendrier", demande: "Faire une demande", demandes: "Demandes en cours", statut: "Statut des serveurs", parametres: "Paramètres", admin: "Connexion admin", panel: "Panneau admin", headadmin: "Head admin", ajouter: "Ajouter une fiche", motdepasse: "Mot de passe" };
 function pageTitle(a, b) {
   var s;
   if (a === "serie") { s = byId(b); return s ? s.name + " · DramaByM" : "DramaByM"; }
@@ -7263,6 +7482,8 @@ function route(force) {
   else if (a === "statut") { rerender = viewStatus; rerender(); }
   else if (a === "recherche") { curQ = b; rerender = function () { viewSearch(curQ); }; rerender(); }
   else if (a === "admin") viewLogin();
+  else if (a === "credits") { rerender = viewCredits; rerender(); }
+  else if (a === "vip") { rerender = viewVip; rerender(); }
   else if (a === "headadmin") viewHead();
   else if (a === "motdepasse") viewSetPassword(false);
   else if (a === "panel") viewPanel();
@@ -7753,6 +7974,8 @@ function ghPublish(obj, tried, opts) {
     }
     obj.deletedLinks = t.links; obj.deletedFiches = t.fiches;
     if (remote && remote.team && (!TEAM || (+remote.team.at || 0) > (+TEAM.at || 0))) obj.team = remote.team; else if (TEAM) obj.team = TEAM;
+    if (remote && remote.credits && typeof remote.credits.text === "string" && (!CREDITS || (+remote.credits.at || 0) > (+CREDITS.at || 0))) obj.credits = remote.credits; else if (CREDITS) obj.credits = CREDITS;
+    if (remote && remote.vip && Array.isArray(remote.vip.items) && (!VIPREG || (+remote.vip.at || 0) > (+VIPREG.at || 0))) obj.vip = remote.vip; else if (VIPREG) obj.vip = VIPREG;
     if (remote && remote.hero && Array.isArray(remote.hero.ids) && (!HERO || (+remote.hero.at || 0) > (+HERO.at || 0))) obj.hero = remote.hero; else if (HERO) obj.hero = HERO;
     if (remote && remote.announce && typeof remote.announce === "object" && (!ANN || (+remote.announce.at || 0) > (+ANN.at || 0))) obj.announce = remote.announce; else if (ANN) obj.announce = ANN;
     if (remote && remote.inbox && Array.isArray(remote.inbox.items) && (+remote.inbox.at || 0) > (+INBOX.at || 0)) obj.inbox = remote.inbox; else if (INBOX && INBOX.at) obj.inbox = INBOX;
@@ -7816,6 +8039,8 @@ function buildCatalogObj() {
   if (SETTINGS.trailersAt) { obj.settings.trailers = trailersOn() ? "on" : "off"; obj.settings.trailersAt = SETTINGS.trailersAt; }
   var rf0 = +readJSON(RFKEY, 0) || 0; if (rf0) obj.refreshAt = rf0;
   if (TEAM) obj.team = TEAM;
+  if (CREDITS) obj.credits = CREDITS;
+  if (VIPREG) obj.vip = VIPREG;
   if (HERO) obj.hero = HERO;
   if (ANN) obj.announce = ANN;
   if (INBOX && INBOX.at) obj.inbox = INBOX;
@@ -8319,7 +8544,7 @@ function loadCatalogCore() {
     data = list;
     var priv = !!(st && st.downloads === "private");
     if (!ADMIN) { db = data; SETTINGS.downloads = priv ? "private" : "public"; }
-    safe(function () { adoptTeam(raw); }); safe(function () { adoptHero(raw); }); safe(function () { adoptReqs(raw); }); safe(function () { adoptStat(raw); }); safe(function () { adoptAnnounce(raw); }); safe(function () { adoptInbox(raw); });
+    safe(function () { adoptTeam(raw); }); safe(function () { adoptHero(raw); }); safe(function () { adoptReqs(raw); }); safe(function () { adoptStat(raw); }); safe(function () { adoptAnnounce(raw); }); safe(function () { adoptInbox(raw); }); safe(function () { adoptCredits(raw); }); safe(function () { adoptVip(raw); });
     safe(function () { adoptPlayer(st); });
     if (!ADMIN) { /* déjà posé plus haut */ }
     else if (!db.length) {
