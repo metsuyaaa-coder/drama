@@ -29207,6 +29207,418 @@
       ],
       "downloads": [],
       "updatedAt": 1792596395355
+    },
+    {
+      "id": "229891",
+      "type": "tv",
+      "name": "Can This Love Be Translated?",
+      "original_name": "이 사랑 통역 되나요?",
+      "origin_country": [
+        "KR"
+      ],
+      "networks": [
+        "Netflix"
+      ],
+      "original_language": "ko",
+      "aka": [
+        "O Amor Pode Ser Traduzido?",
+        "Can This Love Be Translated?",
+        "CAN THIS LOVE BE TRANSLATED? - 2024",
+        "爱情怎么翻译？",
+        "愛情怎麼翻譯？",
+        "¿Cómo se traduce este amor?",
+        "Pode Este Amor Ser Traduzido?",
+        "Чи можна перекласти любов?",
+        "هل يمكن ترجمة هذا الحب؟",
+        "Comment traduire cet amour ?",
+        "Come si dice \"amore\"?",
+        "ยากชะมัด รักภาษาอะไร",
+        "Tiếng Yêu Này, Anh Dịch Được Không?",
+        "Μεταφράζεται ο Έρωτας;",
+        "Jak przetłumaczyć miłość?",
+        "Može li se ova ljubav prevesti?",
+        "Jak tlumočit lásku?",
+        "איך מתרגמים אהבה?",
+        "Comment traduire cet amour?",
+        "Hogy mondod, hogy „szeretlek”?",
+        "恋の通訳、できますか?",
+        "Можно ли перевести любовь?",
+        "Putem traduce dragostea?",
+        "Може ли любовта да се преведе?",
+        "이 사랑이 통역되나요?",
+        "Yi Sarang Tongyeok Dwenayo?",
+        "I Sarang Tongyeok Doenayo?",
+        "[이사랑 통역되나요？]",
+        "Чи можна перекласти цю любов?",
+        "Can You Interpret This Love?",
+        "Can Love Be Interpreted?",
+        "Can This Love Be Interpreted?",
+        "Can This Love Be Translated",
+        "이 사랑 통역 되나요?"
+      ],
+      "year": "2026",
+      "overview": "Pas facile de se comprendre pour une célébrité et son interprète alors qu'ils parcourent le monde pour une émission de télévision. Trouveront-ils le langage de l'amour ?",
+      "genres": [
+        "Drame",
+        "Comédie"
+      ],
+      "rating": "8.4",
+      "pop": 16.0053,
+      "status": "Ended",
+      "poster": "https://image.tmdb.org/t/p/w500/zgUh4cgalSzBjbsT5P0qmU7Rjzk.jpg",
+      "posterV": 2,
+      "backdrop": "https://image.tmdb.org/t/p/original/svnZYhAboLrwHEtkKRm2mIdjocB.jpg",
+      "videos": [
+        {
+          "key": "IIHQ1Z2yu80",
+          "name": "이 사랑 통역 되나요? | 공식 예고편 | 넷플릭스",
+          "type": "Trailer",
+          "lab": "Original"
+        },
+        {
+          "key": "tNZG1aLBATY",
+          "name": "Official Trailer [Subtitled]",
+          "type": "Trailer",
+          "lab": "Anglais"
+        },
+        {
+          "key": "lGd0uAEJBQA",
+          "name": "Comment traduire cet amour ? | Bande-annonce officielle VF | Netflix France",
+          "type": "Trailer",
+          "lab": "Français"
+        }
+      ],
+      "cast": [
+        {
+          "name": "Kim Seon-ho",
+          "character": "Joo Ho-jin",
+          "id": 1863349
+        },
+        {
+          "name": "Go Youn-jung",
+          "character": "Cha Mu-hee",
+          "id": 2791233
+        },
+        {
+          "name": "福士蒼汰",
+          "character": "Hiro Kurosawa",
+          "id": 1149334
+        },
+        {
+          "name": "이이담",
+          "character": "Shin Ji-seon",
+          "id": 3314352
+        },
+        {
+          "name": "최우성",
+          "character": "Kim Yong-woo",
+          "id": 3105281
+        }
+      ],
+      "seasons": [
+        {
+          "number": 1,
+          "name": "Mini-série",
+          "episodes": [
+            {
+              "number": 1,
+              "name": "Épisode 1 - Rencontre dans la confusion des langues",
+              "overview": "Quand leurs chemins se croisent à Tokyo, Cha Mu-hee et Joo Ho-jin espèrent laisser le passé derrière eux. Dans un restaurant, Mu-hee demande à Ho-jin de traduire ses sentiments.",
+              "air_date": "2026-01-16",
+              "sources": [
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/ucpVUv3gNWBpn",
+                  "by": "head"
+                },
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/Ij28kQXE6Bj73",
+                  "by": "head"
+                },
+                {
+                  "name": "UQLOAD",
+                  "url": "https://uqload.vc/embed-anvcddubyydd.html",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 2,
+              "name": "Épisode 2 - Sous les projecteurs, l'interprète perdu",
+              "overview": "Mu-hee devient une star mondiale du jour au lendemain, mais son personnage la hante. Une publication sur Instagram froisse Ho-jin.",
+              "air_date": "2026-01-16",
+              "sources": [
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/FM1KFiC0bNtzs",
+                  "by": "head"
+                },
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/teWKrAWLZfNQy",
+                  "by": "head"
+                },
+                {
+                  "name": "UQLOAD",
+                  "url": "https://uqload.vc/embed-ehhs6trh5xxh.html",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 3,
+              "name": "Épisode 3 - Mauvaise traduction au milieu des caméras",
+              "overview": "Une rencontre fortuite entre Mu-hee et Hiro à une soirée tapis rouge a des conséquences inattendues. Leur alchimie est source d'inspiration pour le casting de \"Romantic Trip.\"",
+              "air_date": "2026-01-16",
+              "sources": [
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/z8XnN5RzamVBP",
+                  "by": "head"
+                },
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/2VNi4cxkIRGTF",
+                  "by": "head"
+                },
+                {
+                  "name": "UQLOAD",
+                  "url": "https://uqload.vc/embed-rb25689nunc0.html",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 4,
+              "name": "Épisode 4 - Tempête sur le plateau canadien",
+              "overview": "Fâché contre sa nouvelle partenaire de plateau, Hiro lui mène la vie dure lors d'un tournage au Canada. Ho-jin apprend à connaître Mu-hee et décide de la soutenir.",
+              "air_date": "2026-01-16",
+              "sources": [
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/Z4yVYJ6a37JiN",
+                  "by": "head"
+                },
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/Br04RQmByfcK2",
+                  "by": "head"
+                },
+                {
+                  "name": "UQLOAD",
+                  "url": "https://uqload.vc/embed-xkum3el4cq2c.html",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 5,
+              "name": "Épisode 5 - Promesses non formulées",
+              "overview": "Hiro passe un moment agréable avec Mu-hee, malgré sa persistance à ne pas l'aimer. Ho-jin tombe par hasard sur une nouvelle productrice qui l'arrête net.",
+              "air_date": "2026-01-16",
+              "sources": [
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/0p7KmOLwrxLbr",
+                  "by": "head"
+                },
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/3fbdGEKkppafD",
+                  "by": "head"
+                },
+                {
+                  "name": "UQLOAD",
+                  "url": "https://uqload.vc/embed-0rvk5v7ffr9u.html",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 6,
+              "name": "Épisode 6 - Soirée d'équipe et tensions latentes",
+              "overview": "Un secret rapproche Yong-u et Ji-sun. Mu-hee rejette la responsabilité de ses actes sur Do Ra-mi, et Ho-jin ne sait plus quoi penser après une soirée avec l'équipe.",
+              "air_date": "2026-01-16",
+              "sources": [
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/tgdWPl4fkzQLI",
+                  "by": "head"
+                },
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/dLwvomDlQHcjH",
+                  "by": "head"
+                },
+                {
+                  "name": "UQLOAD",
+                  "url": "https://uqload.vc/embed-p5lwkbrh10hj.html",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 7,
+              "name": "Épisode 7 - Réflexions à Séoul : verres et vérités",
+              "overview": "À Séoul, Hiro cherche à y voir plus clair concernant ses sentiments. Après un concert, Kim Young-hwan organise un rendez-vous entre Mu-hee et Ho-jin, réticent.",
+              "air_date": "2026-01-16",
+              "sources": [
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/upoxYnfcmHnrw",
+                  "by": "head"
+                },
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/u9bBZhRw07gYd",
+                  "by": "head"
+                },
+                {
+                  "name": "UQLOAD",
+                  "url": "https://uqload.vc/embed-2234bmuuqjvh.html",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 8,
+              "name": "Épisode 8 - Gène et décisions difficiles",
+              "overview": "La relation de Mu-hee et Do Ra-mi évolue après quelques moments gênants avec la famille, des amis et d'autres stars, incitant une personne à prendre des mesures drastiques.",
+              "air_date": "2026-01-16",
+              "sources": [
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/gf4lXZzOJIOne",
+                  "by": "head"
+                },
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/0QPgNCQQOYT51",
+                  "by": "head"
+                },
+                {
+                  "name": "UQLOAD",
+                  "url": "https://uqload.vc/embed-g1qchc5pr8n8.html",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 9,
+              "name": "Épisode 9 - Trajectoires croisées en Italie",
+              "overview": "Mu-hee et Hiro se confient lors d'un tournage en Italie. Alors que les rumeurs vont bon train au sujet de sa vie amoureuse, Ho-jin apprend une vérité surprenante de Do Ra-mi.",
+              "air_date": "2026-01-16",
+              "sources": [
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/DWC9KDm3Eq3Io",
+                  "by": "head"
+                },
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/aD2EUg9S1yS5L",
+                  "by": "head"
+                },
+                {
+                  "name": "UQLOAD",
+                  "url": "https://uqload.vc/embed-2jyz5hjv8p6p.html",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 10,
+              "name": "Épisode 10 - Vignoble des souvenirs",
+              "overview": "Alors qu'il se fait à sa nouvelle relation, Ho-jin retrouve une personne importante de sa famille dans un luxueux domaine viticole. Mu-hee découvre l'origine de ses problèmes.",
+              "air_date": "2026-01-16",
+              "sources": [
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/Fxs3CsMX5cQ5S",
+                  "by": "head"
+                },
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/8ANIGWFUXpn2q",
+                  "by": "head"
+                },
+                {
+                  "name": "UQLOAD",
+                  "url": "https://uqload.vc/embed-g5sw7wxaugrf.html",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 11,
+              "name": "Épisode 11 - L'orage médiatique",
+              "overview": "Mu-hee et Ho-jin se trouvent confrontés au passé lorsqu'un scandale éclate dans les médias. Une ancienne publication sur Instagram soulève d'importantes questions.",
+              "air_date": "2026-01-16",
+              "sources": [
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/tHsue9fjEKXFJ",
+                  "by": "head"
+                },
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/G6IxMj4Aq5QlW",
+                  "by": "head"
+                },
+                {
+                  "name": "UQLOAD",
+                  "url": "https://uqload.vc/embed-vw7qum72o82m.html",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 12,
+              "name": "Épisode 12 - Une langue pour l'amour",
+              "overview": "Des secrets font surface, et certaines relations se solidifient. Mu-hee et Ho-jin finiront-ils heureux ensemble, ou certaines émotions sont-elles trop difficiles à interpréter ?",
+              "air_date": "2026-01-16",
+              "sources": [
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/p6OLlK96skduH",
+                  "by": "head"
+                },
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/gVsO8HFG6v6kn",
+                  "by": "head"
+                },
+                {
+                  "name": "UQLOAD",
+                  "url": "https://uqload.vc/embed-tuf8eb6hu60j.html",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            }
+          ],
+          "downloads": []
+        }
+      ],
+      "sources": [],
+      "addedAt": 1792603776359,
+      "langs": [
+        "VOSTFR"
+      ],
+      "downloads": [],
+      "updatedAt": 1792603840749
     }
   ],
   "deletedLinks": [
@@ -29424,6 +29836,15 @@
     "at": 1792602810955
   },
   "journal": [
+    {
+      "k": "mvie1jw35tbn9",
+      "t": 1792603840755,
+      "b": "head",
+      "a": "add",
+      "i": "229891",
+      "n": "Can This Love Be Translated?",
+      "d": ""
+    },
     {
       "k": "mvi9js8awbkmz",
       "t": 1792596319878,
