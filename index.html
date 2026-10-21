@@ -321,7 +321,9 @@ dialog#player[open]::backdrop { animation: fadeIn .3s ease both; }
 .fsb b { display: inline-block; margin-right: 6px; padding: 0 5px; background: #fcd34d; color: #000; font-weight: 800; }
 .chip.on .fsb { border-color: currentColor; color: inherit; background: transparent; }
 .chip.on .fsb b { background: var(--on-acc); color: var(--acc); }
-.chip.fsonly { cursor: default; }
+.srcone { display: flex; align-items: center; gap: 10px; width: 100%; min-height: 52px; padding: 8px 16px; border: 1px solid var(--line); border-left: 3px solid var(--acc); background: var(--panel); color: var(--fg); font-size: 13px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; }
+@media (min-width: 721px) { .srcone { width: auto; } }
+.srcone .fsb { max-width: none; }
 .srcnm { display: flex; flex-wrap: wrap; align-items: center; gap: 5px 8px; min-width: 0; line-height: 1.2; text-align: left; }
 .srcnm .fsb { margin-left: 0; vertical-align: baseline; }
 #psrc .chip { align-items: center; }
@@ -2967,7 +2969,7 @@ function parseMeta(after) {
 }
 /* Réécrit une ligne « Nom | lien 1080 264 2go-3.5go » avec la qualité et la taille mises en forme */
 function tidySrcLine(line) {
-  var m = line.match(/https?:\/\/[^\s|]+/); if (!m) return line;
+  var m = line.match(/https?:\/\/[^\s|\[]+/); if (!m) return line;
   var end = m.index + m[0].length, rest = line.slice(end), fm = rest.match(/\[([^\]]{1,40})\]/);
   if (fm) rest = rest.replace(fm[0], " ");
   var meta = parseMeta(rest);
@@ -2978,7 +2980,7 @@ function textToSrc(text) {
   var out = [];
   String(text || "").split("\n").forEach(function (line) {
     line = line.trim(); if (!line) return;
-    var m = line.match(/https?:\/\/[^\s|]+/); if (!m) return;
+    var m = line.match(/https?:\/\/[^\s|\[]+/); if (!m) return;
     var url = fixVidmoly(m[0]);
     var name = isVidmoly(url) ? "VIDMOLY" : line.slice(0, m.index).replace(/[|\s]+$/, "").trim();
     var o = { name: name || hostName(url), url: url };
@@ -6711,7 +6713,7 @@ function renderPlayer() {
   $("#psrc").className = "srcs" + (many ? " many" : "");
   $("#psrc").innerHTML = cur.sources.length > 1 ? (many ? '<button type="button" class="srctoggle" data-srctoggle aria-expanded="false" aria-label="Changer de serveur"><span class="nm">' + esc((cur.sources[cur.i] || {}).name || "") + fsBadge(cur.sources[cur.i]) + '</span><span class="cnt">' + (cur.i + 1) + '/' + cur.sources.length + '</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>' : '') + cur.sources.map(function (x, k) {
     return '<button type="button" class="chip' + (k === cur.i ? " on" : "") + '" data-src="' + k + '"><span class="srcnm">' + esc(x.name) + fsBadge(x) + '</span></button>';
-  }).join("") : (cur.sources[0] && cur.sources[0].fansub ? '<span class="chip on fsonly"><span class="srcnm">' + esc(cur.sources[0].name) + fsBadge(cur.sources[0]) + '</span></span>' : "");
+  }).join("") : (cur.sources[0] && cur.sources[0].fansub ? '<div class="srcone"><span class="srcnm">' + esc(cur.sources[0].name) + fsBadge(cur.sources[0]) + '</span></div>' : "");
   watchSource();
 }
 /* Écran de chargement : bouton « ça rame ? » après 7 s, et filet de sécurité à 20 s pour ne jamais tourner à l'infini */
