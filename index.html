@@ -2518,6 +2518,33 @@ html:not(.glowon) .mlhero::before, html:not(.glowon) .mlhero::after, html:not(.g
 html:not(.glowon) .colc.fx2 .colcov { box-shadow: none; }
 html:not(.glowon) .colc.fx2 .colem { text-shadow: none; }
 html:not(.glowon) .colc.fx2 .colem .cico { filter: none; }
+
+/* ===== Ma liste : bouton Partager à côté du titre ===== */
+.mltitle .mlhead { min-width: 0; flex: 1 1 auto; }
+.mltitle .mlshare { margin-left: auto; flex: none; min-height: 44px; padding: 0 18px; gap: 10px; animation: riseIn .6s .12s var(--ease) both; }
+.mltitle .mlshare[hidden] { display: none; }
+@media (max-width: 560px) {
+  .mltitle { gap: 12px; }
+  .mltitle h1 { font-size: clamp(34px, 11vw, 44px); overflow-wrap: anywhere; }
+  .mltitle .note { font-size: 12px; }
+  .mltitle .mlshare { width: 44px; min-height: 44px; padding: 0; justify-content: center; }
+  .mltitle .mlshare span { display: none; }
+}
+
+/* ===== Liste des serveurs : badges fansub propres (mobile + PC) ===== */
+.srcnm .nmt, .srctoggle .nm .nmt { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+#psrc .srctoggle .nm { display: flex; align-items: center; gap: 8px; }
+#psrc .srctoggle .nm .fsb { margin-left: 0; flex: 0 1 auto; min-width: 0; }
+@media (max-width: 720px) {
+  #psrc.srcs.many.open { flex-direction: column; flex-wrap: nowrap; gap: 6px; }
+  #psrc.srcs.many.open .chip { flex: none; width: 100%; min-height: 52px; padding: 0 14px 0 12px; justify-content: flex-start; text-align: left; }
+  #psrc .chip .srcnm { flex: 1 1 auto; flex-wrap: nowrap; justify-content: space-between; align-items: center; gap: 10px; width: auto; min-width: 0; }
+  #psrc .chip .srcnm .nmt { flex: 0 1 auto; }
+  #psrc .chip .srcnm .fsb { flex: 0 1 auto; min-width: 0; margin: 0 0 0 auto; max-width: 58%; }
+  #psrc .srcone { flex-wrap: nowrap; }
+  #psrc .srcone .srcnm { flex: 1 1 auto; flex-wrap: nowrap; justify-content: space-between; gap: 10px; min-width: 0; }
+  #psrc .srcone .srcnm .fsb { flex: 0 1 auto; min-width: 0; max-width: 58%; margin: 0 0 0 auto; }
+}
 </style>
 <!-- Visites du site : Vercel Web Analytics, sans cookie ni base de données. Ne fait rien tant que tu ne l'actives pas dans Vercel (onglet Analytics). -->
 <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
@@ -4838,7 +4865,7 @@ function mlRenderBody(L, still, swap) {
   var q = mlQuery.trim();
   var so = document.querySelector(".mlsort"); if (so) so.style.display = listTab === "cols" ? "none" : "";
   var cpl = $("#colplus"); if (cpl) cpl.hidden = !(listTab === "cols" && L.cols.length);
-  var msh = $("#mlshare"); if (msh) msh.hidden = !(listTab === "list" && L.list.length);
+  var msh = $("#mlshare"); if (msh) msh.hidden = !(L.list.length || L.subs.length || L.seen.length);
   if (listTab === "cols") {
     var cq = q.toLowerCase(), carr = L.cols.filter(function (c) { return !cq || c.n.toLowerCase().indexOf(cq) > -1; });
     body.className = swap ? "mlswap" : ""; if (swap) { void body.offsetWidth; body.className = "mlswap"; }
@@ -4865,10 +4892,11 @@ function mlBuild() {
   var sorts = [["recent", "Récents"], ["az", "A–Z"], ["year", "Année"]].map(function (x) { return '<button type="button" data-mlsort="' + x[0] + '" class="' + (mlSort === x[0] ? 'on' : '') + '">' + x[1] + '</button>'; }).join("");
   $("#app").innerHTML = '<div id="mlroot"><div class="mlhero"><div class="wrap">' +
     '<div class="mltitle"><svg class="mllogo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"/><path class="sp" d="m12 7.2.9 2 2.1.3-1.5 1.5.4 2.1-1.9-1-1.9 1 .4-2.1L9 9.5l2.1-.3z"/></svg>' +
-    '<div><h1>Ma liste</h1><p class="note">Enregistrée sur cet appareil</p></div></div>' +
+    '<div class="mlhead"><h1>Ma liste</h1><p class="note">Enregistrée sur cet appareil</p></div>' +
+    '<button type="button" class="btn small ghost share mlshare" id="mlshare" data-mlshare aria-label="Partager toute ma liste" title="Partager toute ma liste" hidden>' + SHICON + '<span>Partager</span></button></div>' +
     '<div class="mltabs four" id="mltabs" data-i="' + MLTABS.indexOf(listTab) + '" role="tablist"><span class="mlind"></span>' + tabs + '</div></div></div>' +
     '<div class="wrap"><div class="mltools"><label class="mlsearch">' + nsvg("search") + '<input id="mlq" type="search" placeholder="Rechercher dans ma liste" autocomplete="off" aria-label="Rechercher dans ma liste"></label>' +
-    '<div class="mlsort" role="group" aria-label="Trier">' + sorts + '</div><div class="mlend"><span class="mlsum" id="mlsum"></span><button type="button" class="btn small ghost share" id="mlshare" data-mlshare hidden>' + SHICON + '<span>Partager</span></button><button type="button" class="colplus" id="colplus" data-colnew aria-label="Nouvelle collection" title="Nouvelle collection" hidden>' + nsvg("plus") + '</button></div></div><div id="mlbody"></div></div></div>';
+    '<div class="mlsort" role="group" aria-label="Trier">' + sorts + '</div><div class="mlend"><span class="mlsum" id="mlsum"></span><button type="button" class="colplus" id="colplus" data-colnew aria-label="Nouvelle collection" title="Nouvelle collection" hidden>' + nsvg("plus") + '</button></div></div><div id="mlbody"></div></div></div>';
   mlSetTabs(L, true); mlRenderBody(L, false, false);
 }
 function mlPatch(still) { var L = mlData(); mlSetTabs(L, false); mlRenderBody(L, !!still, !still); }
@@ -6712,9 +6740,9 @@ function renderPlayer() {
   var many = cur.sources.length > 1;
   refreshReport();
   $("#psrc").className = "srcs" + (many ? " many" : "");
-  $("#psrc").innerHTML = cur.sources.length > 1 ? (many ? '<button type="button" class="srctoggle" data-srctoggle aria-expanded="false" aria-label="Changer de serveur"><span class="nm">' + esc((cur.sources[cur.i] || {}).name || "") + fsBadge(cur.sources[cur.i]) + '</span><span class="cnt">' + (cur.i + 1) + '/' + cur.sources.length + '</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>' : '') + cur.sources.map(function (x, k) {
-    return '<button type="button" class="chip' + (k === cur.i ? " on" : "") + '" data-src="' + k + '"><span class="srcnm">' + esc(x.name) + fsBadge(x) + '</span></button>';
-  }).join("") : (cur.sources[0] && cur.sources[0].fansub ? '<div class="srcone"><span class="srcnm">' + esc(cur.sources[0].name) + fsBadge(cur.sources[0]) + '</span></div>' : "");
+  $("#psrc").innerHTML = cur.sources.length > 1 ? (many ? '<button type="button" class="srctoggle" data-srctoggle aria-expanded="false" aria-label="Changer de serveur"><span class="nm"><span class="nmt">' + esc((cur.sources[cur.i] || {}).name || "") + '</span>' + fsBadge(cur.sources[cur.i]) + '</span><span class="cnt">' + (cur.i + 1) + '/' + cur.sources.length + '</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>' : '') + cur.sources.map(function (x, k) {
+    return '<button type="button" class="chip' + (k === cur.i ? " on" : "") + '" data-src="' + k + '"><span class="srcnm"><span class="nmt">' + esc(x.name) + '</span>' + fsBadge(x) + '</span></button>';
+  }).join("") : (cur.sources[0] && cur.sources[0].fansub ? '<div class="srcone"><span class="srcnm"><span class="nmt">' + esc(cur.sources[0].name) + '</span>' + fsBadge(cur.sources[0]) + '</span></div>' : "");
   watchSource();
 }
 /* Écran de chargement : bouton « ça rame ? » après 7 s, et filet de sécurité à 20 s pour ne jamais tourner à l'infini */
@@ -8021,7 +8049,7 @@ function colAddOpen(cid) {
     paint(); colRefreshPage(cid);
   });
 }
-/* Partager « À regarder » par lien : même format que le partage d'une collection, ouvert par l'ami sur /collection/p */
+/* Partager toute « Ma liste » (À regarder + Suivis + Vus) par lien : même format que le partage d'une collection, ouvert par l'ami sur /collection/p */
 document.addEventListener("click", function (e) {
   var t = e.target.closest ? e.target.closest("[data-mlshare],[data-colmerge]") : null; if (!t) return;
   if (t.hasAttribute("data-colmerge")) {
@@ -8032,7 +8060,10 @@ document.addEventListener("click", function (e) {
     return;
   }
   /* les mêmes titres que ceux affichés dans l'onglet : liste, puis stockage brut, puis cartes à l'écran */
-  var ids = listItems().map(function (x) { return String(x.id); });
+  var ids = [], seenId = {};
+  [listItems(), subsItems(), seenTitles()].forEach(function (arr) {
+    arr.forEach(function (x) { var k = String(x.id); if (!seenId[k]) { seenId[k] = 1; ids.push(k); } });
+  });
   if (!ids.length) ids = readList();
   if (!ids.length) Array.prototype.forEach.call(document.querySelectorAll("#mlbody [data-mlrm]"), function (b) { ids.push(String(b.dataset.mlrm)); });
   if (!ids.length) { toast("Ta liste est vide"); return; }
