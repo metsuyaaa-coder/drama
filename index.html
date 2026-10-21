@@ -2545,6 +2545,12 @@ html:not(.glowon) .colc.fx2 .colem .cico { filter: none; }
   #psrc .srcone .srcnm { flex: 1 1 auto; flex-wrap: nowrap; justify-content: space-between; gap: 10px; min-width: 0; }
   #psrc .srcone .srcnm .fsb { flex: 0 1 auto; min-width: 0; max-width: 58%; margin: 0 0 0 auto; }
 }
+
+/* ===== Liste reçue par lien ===== */
+.mlsact { display: flex; flex-wrap: wrap; gap: 10px; margin: -6px 0 22px; animation: riseIn .6s .1s var(--ease) both; }
+.mlsact .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; }
+.mlsact .btn svg { width: 18px; height: 18px; flex: none; }
+@media (max-width: 560px) { .mlsact .btn { flex: 1 1 100%; } .mlsact { margin-top: 0; } }
 </style>
 <!-- Visites du site : Vercel Web Analytics, sans cookie ni base de données. Ne fait rien tant que tu ne l'actives pas dans Vercel (onglet Analytics). -->
 <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
@@ -4786,17 +4792,40 @@ function mlProgress(s) {
   (s.seasons || []).forEach(function (se) { (se.episodes || []).forEach(function (ep) { t++; if (all[epKey(se, ep)]) n++; }); });
   return { n: n, t: t, p: t ? n / t : 0 };
 }
-function mlData() { return { list: listItems(), subs: subsItems(), seen: seenTitles(), cols: readCols() }; }
+/* « Ma liste » reçue par lien (/ma-liste/p#…) : lecture seule, avec les mêmes onglets que la liste de l'ami */
+var mlShared = null;
+function mlIds(a) { var seen = {}; return (Array.isArray(a) ? a : []).map(String).filter(function (x) { if (!COLSID.test(x) || seen[x]) return false; seen[x] = 1; return true; }).slice(0, 300); }
+function mlShareEncode() {
+  var o = { v: 2, l: mlIds(listItems().map(function (x) { return x.id; })), s: mlIds(subsItems().map(function (x) { return x.id; })), w: mlIds(seenTitles().map(function (x) { return x.id; })),
+    c: readCols().slice(0, 40).map(function (c) { return { n: c.n, d: c.d, c: c.c, e: c.e, f: c.f || 0, s: c.s || 0, o: c.o ? 1 : 0, p: /^https:/.test(c.p || "") ? c.p : "", i: c.i }; }) };
+  return codeB64(new TextEncoder().encode(JSON.stringify(o)));
+}
+function mlShareDecode(tok) {
+  try {
+    var o = JSON.parse(new TextDecoder().decode(codeBytes(String(tok || "").replace(/[^\w-]/g, ""))));
+    if (!o || typeof o !== "object") return null;
+    var cols = (Array.isArray(o.c) ? o.c : []).slice(0, 40).map(function (c) { c = c || {}; c.id = "p"; return colClean(c); }).filter(Boolean);
+    var out = { l: mlIds(o.l), s: mlIds(o.s), w: mlIds(o.w), c: cols };
+    return out.l.length || out.s.length || out.w.length || out.c.length ? out : null;
+  } catch (e) { return null; }
+}
+function mlData() {
+  if (mlShared) {
+    var m = function (ids) { return ids.map(function (id) { return byId(id); }).filter(Boolean); };
+    return { list: m(mlShared.l), subs: m(mlShared.s), seen: m(mlShared.w), cols: mlShared.c };
+  }
+  return { list: listItems(), subs: subsItems(), seen: seenTitles(), cols: readCols() };
+}
 function mlFilter(arr, tab) {
   var q = mlQuery.trim().toLowerCase(), out = arr.slice();
   if (q) out = out.filter(function (s) { return String(s.name || "").toLowerCase().indexOf(q) > -1 || String(s.original_name || s.originalName || "").toLowerCase().indexOf(q) > -1; });
   if (mlSort === "az") out.sort(function (a, b) { return String(a.name).localeCompare(String(b.name)); });
   else if (mlSort === "year") out.sort(function (a, b) { return (parseInt(b.year, 10) || 0) - (parseInt(a.year, 10) || 0); });
-  else if (tab === "seen") { var r = readResume(); out.sort(function (a, b) { return ((r[b.id] && r[b.id].at) || 0) - ((r[a.id] && r[a.id].at) || 0); }); }
+  else if (tab === "seen" && !mlShared) { var r = readResume(); out.sort(function (a, b) { return ((r[b.id] && r[b.id].at) || 0) - ((r[a.id] && r[a.id].at) || 0); }); }
   return out;
 }
 function mlCard(s, i, tab) {
-  var id = esc(s.id), mv = isMovie(s), pr = mv ? null : mlProgress(s);
+  var id = esc(s.id), mv = isMovie(s), ro = tab === "ro", pr = (mv || ro) ? null : mlProgress(s);
   var meta = [mv ? "Film" : "Série", s.year, s.rating ? "★ " + s.rating : ""].filter(Boolean).join("  ·  ");
   var extra = "", inner = "";
   if (tab === "subs") {
@@ -4811,6 +4840,7 @@ function mlCard(s, i, tab) {
     } else if (pr.n) inner += '<span class="mlbar"><i style="--p:' + pr.p.toFixed(3) + '"></i></span>';
   }
   var acts = (tab === "col" ? '<button type="button" class="mlb rm" data-colrm="' + id + '" aria-label="Retirer de la collection" title="Retirer de la collection">' + nsvg("bookmark-x") + '</button>' : '') + (tab === "list" ? '<button type="button" class="mlb rm" data-mlrm="' + id + '" aria-label="Retirer de ma liste" title="Retirer de ma liste">' + nsvg("bookmark-x") + '</button>' : '') +
+    (ro ? (function () { var on = inList(s.id), tt = on ? "Retirer de ma liste" : "Ajouter à ma liste"; return '<button type="button" class="mlb bm' + (on ? ' on' : '') + '" data-lsbm="' + id + '" aria-pressed="' + (on ? 'true' : 'false') + '" aria-label="' + tt + '" title="' + tt + '">' + nsvg("bookmark") + '</button>'; })() : '') +
     (tab === "subs" ? '<button type="button" class="mlb rm" data-unfollow="' + id + '" aria-label="Ne plus suivre" title="Ne plus suivre">' + nsvg("bell-off") + '</button>' : '');
   return '<div class="mlc" style="--i:' + Math.min(i || 0, 14) + '"><div class="poster"><a class="mlhit" href="/serie/' + id + '" aria-label="' + esc(s.name) + '"></a>' +
     (s.poster ? '<img loading="lazy" src="' + esc(s.poster) + '" alt="">' : '<div class="ph">' + esc(String(s.name).charAt(0)) + '</div>') +
@@ -4836,6 +4866,7 @@ function mlSeenRow(s, i) {
     '<span class="mlsc ' + (done ? "ok" : "go") + '">' + (done ? nsvg("check") + 'Terminé' : (next ? 'Suivant<small>' + esc(next) + '</small>' : 'En cours')) + '</span></a>';
 }
 function mlEmpty(tab, q) {
+  if (mlShared && !q) return '<div class="mlempty">' + nsvg(MLICON[tab], "mlei") + '<h3>Rien ici</h3><p>Cet onglet est vide dans la liste partagée.</p></div>';
   var T = {
     list: ["Ta liste est vide", "Ajoute des titres depuis leur fiche avec « + Ma liste » et retrouve-les ici."],
     subs: ["Aucune série suivie", "Ouvre une fiche et clique sur « Notifier pour un nouvel épisode » : tu seras prévenu dès qu'un lien est posté."],
@@ -4860,26 +4891,31 @@ function mlSetTabs(L, animate) {
     if (c && c.dataset.n !== String(n)) { c.dataset.n = n; mlCount(c, n, animate); }
   });
 }
+function mlSharedCols(arr, total) {
+  if (!total) return '<div class="mlempty">' + nsvg("layers", "mlei") + '<h3>Aucune collection</h3><p>Cette liste ne contient aucune collection.</p></div>';
+  if (!arr.length) return '<div class="mlempty">' + nsvg("search", "mlei") + '<h3>Aucune collection trouvée</h3><p>Aucune collection ne correspond à cette recherche.</p></div>';
+  return '<div class="colgrid">' + arr.map(function (c, i) { return colCard(c, i).replace(' href="/collection/p"', ' href="/collection/p#' + colEncode(c) + '"'); }).join("") + '</div>';
+}
 function mlRenderBody(L, still, swap) {
   var body = $("#mlbody"); if (!body) return;
   var q = mlQuery.trim();
   var so = document.querySelector(".mlsort"); if (so) so.style.display = listTab === "cols" ? "none" : "";
-  var cpl = $("#colplus"); if (cpl) cpl.hidden = !(listTab === "cols" && L.cols.length);
+  var cpl = $("#colplus"); if (cpl) cpl.hidden = !!mlShared || !(listTab === "cols" && L.cols.length);
   var msh = $("#mlshare"); if (msh) msh.hidden = !(L.list.length || L.subs.length || L.seen.length);
   if (listTab === "cols") {
     var cq = q.toLowerCase(), carr = L.cols.filter(function (c) { return !cq || c.n.toLowerCase().indexOf(cq) > -1; });
     body.className = swap ? "mlswap" : ""; if (swap) { void body.offsetWidth; body.className = "mlswap"; }
-    body.innerHTML = colGridHTML(carr, L.cols.length);
+    body.innerHTML = mlShared ? mlSharedCols(carr, L.cols.length) : colGridHTML(carr, L.cols.length);
     var cs = $("#mlsum"); if (cs) cs.textContent = carr.length + (carr.length > 1 ? " collections" : " collection");
     return;
   }
   var arr = mlFilter(L[listTab], listTab);
   body.className = swap ? "mlswap" : "";
   if (swap) { void body.offsetWidth; body.className = "mlswap"; }
-  body.innerHTML = arr.length ? (listTab === "seen" ? '<div class="mlsgrid' + (still ? ' still' : '') + '">' + arr.map(function (s, i) { return mlSeenRow(s, i); }).join("") + '</div>' : '<div class="mlgrid' + (still ? ' still' : '') + '">' + arr.map(function (s, i) { return mlCard(s, i, listTab); }).join("") + '</div>') : mlEmpty(listTab, q && L[listTab].length);
+  body.innerHTML = arr.length ? (listTab === "seen" && !mlShared ? '<div class="mlsgrid' + (still ? ' still' : '') + '">' + arr.map(function (s, i) { return mlSeenRow(s, i); }).join("") + '</div>' : '<div class="mlgrid' + (still ? ' still' : '') + '">' + arr.map(function (s, i) { return mlCard(s, i, mlShared ? "ro" : listTab); }).join("") + '</div>') : mlEmpty(listTab, q && L[listTab].length);
   var sum = $("#mlsum"); if (sum) {
     var n = arr.length;
-    if (listTab === "seen") { var ep = 0; arr.forEach(function (x) { ep += x._n || 0; }); sum.textContent = ep + (ep > 1 ? " épisodes vus" : " épisode vu"); }
+    if (listTab === "seen" && !mlShared) { var ep = 0; arr.forEach(function (x) { ep += x._n || 0; }); sum.textContent = ep + (ep > 1 ? " épisodes vus" : " épisode vu"); }
     else if (listTab === "subs") sum.textContent = n + (n > 1 ? " séries suivies" : " série suivie");
     else sum.textContent = n + (n > 1 ? " titres" : " titre");
   }
@@ -4892,15 +4928,30 @@ function mlBuild() {
   var sorts = [["recent", "Récents"], ["az", "A–Z"], ["year", "Année"]].map(function (x) { return '<button type="button" data-mlsort="' + x[0] + '" class="' + (mlSort === x[0] ? 'on' : '') + '">' + x[1] + '</button>'; }).join("");
   $("#app").innerHTML = '<div id="mlroot"><div class="mlhero"><div class="wrap">' +
     '<div class="mltitle"><svg class="mllogo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"/><path class="sp" d="m12 7.2.9 2 2.1.3-1.5 1.5.4 2.1-1.9-1-1.9 1 .4-2.1L9 9.5l2.1-.3z"/></svg>' +
-    '<div class="mlhead"><h1>Ma liste</h1><p class="note">Enregistrée sur cet appareil</p></div>' +
-    '<button type="button" class="btn small ghost share mlshare" id="mlshare" data-mlshare aria-label="Partager toute ma liste" title="Partager toute ma liste" hidden>' + SHICON + '<span>Partager</span></button></div>' +
+    (mlShared ? '<div class="mlhead"><h1>Liste partagée</h1><p class="note">Aperçu en lecture seule · rien n\'est ajouté à ta liste sans ton accord</p></div></div>' +
+      '<div class="mlsact"><button type="button" class="btn" data-mlsadd>' + nsvg("plus") + '<span>Ajouter à ma liste</span></button><a class="btn ghost" href="/ma-liste">' + nsvg("bookmark") + '<span>Voir ma liste</span></a></div>' :
+      '<div class="mlhead"><h1>Ma liste</h1><p class="note">Enregistrée sur cet appareil</p></div>' +
+      '<button type="button" class="btn small ghost share mlshare" id="mlshare" data-mlshare aria-label="Partager toute ma liste" title="Partager toute ma liste" hidden>' + SHICON + '<span>Partager</span></button></div>') +
     '<div class="mltabs four" id="mltabs" data-i="' + MLTABS.indexOf(listTab) + '" role="tablist"><span class="mlind"></span>' + tabs + '</div></div></div>' +
     '<div class="wrap"><div class="mltools"><label class="mlsearch">' + nsvg("search") + '<input id="mlq" type="search" placeholder="Rechercher dans ma liste" autocomplete="off" aria-label="Rechercher dans ma liste"></label>' +
     '<div class="mlsort" role="group" aria-label="Trier">' + sorts + '</div><div class="mlend"><span class="mlsum" id="mlsum"></span><button type="button" class="colplus" id="colplus" data-colnew aria-label="Nouvelle collection" title="Nouvelle collection" hidden>' + nsvg("plus") + '</button></div></div><div id="mlbody"></div></div></div>';
   mlSetTabs(L, true); mlRenderBody(L, false, false);
 }
 function mlPatch(still) { var L = mlData(); mlSetTabs(L, false); mlRenderBody(L, !!still, !still); }
-function viewMyList() { if (colWantTab) { listTab = colWantTab; colWantTab = ""; mlBuild(); return; } if ($("#mlroot")) mlPatch(false); else mlBuild(); }
+function viewMyList() {
+  var prev = mlShared;
+  mlShared = null;
+  if (curPath() === "/ma-liste/p") {
+    mlShared = mlShareDecode(location.hash.slice(1));
+    if (!mlShared) {
+      $("#app").innerHTML = '<div class="wrap"><div class="mlempty" style="margin-top:60px">' + nsvg("layers", "mlei") + '<h3>Liste introuvable</h3><p>Ce lien de partage n\'est pas valide.</p><a class="btn" href="/ma-liste">Ma liste</a></div></div>';
+      return;
+    }
+    if (!prev) { var L0 = mlData(); listTab = L0.list.length ? "list" : L0.subs.length ? "subs" : L0.seen.length ? "seen" : "cols"; }
+    mlBuild(); return;
+  }
+  if (prev) { listTab = "list"; mlBuild(); return; }
+  if (colWantTab) { listTab = colWantTab; colWantTab = ""; mlBuild(); return; } if ($("#mlroot")) mlPatch(false); else mlBuild(); }
 document.addEventListener("input", function (e) {
   if (e.target && e.target.id === "mlq") { mlQuery = e.target.value; mlRenderBody(mlData(), true, false); }
 });
@@ -8049,7 +8100,7 @@ function colAddOpen(cid) {
     paint(); colRefreshPage(cid);
   });
 }
-/* Partager toute « Ma liste » (À regarder + Suivis + Vus) par lien : même format que le partage d'une collection, ouvert par l'ami sur /collection/p */
+/* Partager toute « Ma liste » (À regarder, Suivis, Vus, Collections) par lien : l'ami ouvre /ma-liste/p, une vraie page Ma liste en lecture seule */
 document.addEventListener("click", function (e) {
   var t = e.target.closest ? e.target.closest("[data-mlshare],[data-colmerge]") : null; if (!t) return;
   if (t.hasAttribute("data-colmerge")) {
@@ -8059,20 +8110,19 @@ document.addEventListener("click", function (e) {
     toast(add.length ? add.length + (add.length > 1 ? " titres ajoutés" : " titre ajouté") + " à ta liste ✓" : "Tout est déjà dans ta liste");
     return;
   }
-  /* les mêmes titres que ceux affichés dans l'onglet : liste, puis stockage brut, puis cartes à l'écran */
-  var ids = [], seenId = {};
-  [listItems(), subsItems(), seenTitles()].forEach(function (arr) {
-    arr.forEach(function (x) { var k = String(x.id); if (!seenId[k]) { seenId[k] = 1; ids.push(k); } });
-  });
-  if (!ids.length) ids = readList();
-  if (!ids.length) Array.prototype.forEach.call(document.querySelectorAll("#mlbody [data-mlrm]"), function (b) { ids.push(String(b.dataset.mlrm)); });
-  if (!ids.length) { toast("Ta liste est vide"); return; }
-  var url = location.origin + "/collection/p#" + colEncode({ n: "Ma liste", d: "", c: 0, e: 0, f: 0, s: 0, o: 0, p: "", i: ids });
-  var data = { title: "Ma liste · DramaByM", text: "Ma liste de dramas et films sur DramaByM", url: url };
+  var url = location.origin + "/ma-liste/p#" + mlShareEncode();
+  var data = { title: "Ma liste · DramaByM", text: "Ma liste de dramas et films sur DramaByM : à regarder, suivis, vus et collections", url: url };
   var copy = function () { shareCopy(url).then(function () { shareDone(t, "Lien copié"); toast("Lien de ta liste copié ✓"); }, function () { toast(url); }); };
   var touch = window.matchMedia && matchMedia("(pointer: coarse)").matches;
   if (navigator.share && touch) navigator.share(data).then(function () { shareDone(t, "Partagé !"); }, function (err) { if (!err || err.name !== "AbortError") copy(); });
   else copy();
+});
+document.addEventListener("click", function (e) {
+  var t = e.target.closest ? e.target.closest("[data-mlsadd]") : null; if (!t || !mlShared) return;
+  var add = mlShared.l.filter(function (id) { return byId(id) && !inList(id); });
+  add.slice().reverse().forEach(function (id) { toggleList(id); });
+  toast(add.length ? add.length + (add.length > 1 ? " titres ajoutés" : " titre ajouté") + " à ta liste ✓" : mlShared.l.length ? "Tout est déjà dans ta liste" : "Aucun titre « À regarder » à ajouter");
+  mlRenderBody(mlData(), true, false);
 });
 function viewCollection(b) {
   var shared = b === "p", c = shared ? colDecode(location.hash.slice(1)) : colGet(b);
