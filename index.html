@@ -2020,7 +2020,7 @@ body { overflow-x: hidden; max-width: 100%; position: relative; }
 .vipon { display: inline-flex; align-items: center; gap: 8px; width: fit-content; padding: 6px 12px; background: var(--acc); color: var(--on-acc); font-family: var(--mono); font-weight: 800; font-size: 12px; text-transform: uppercase; letter-spacing: .12em; }
 .vipperks { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; padding: 30px 0 44px; }
 .vipperk { display: grid; gap: 8px; padding: 18px; border: 1px solid var(--line); background: var(--panel); animation: cardIn .5s var(--ease) both; animation-delay: calc(var(--i, 0) * 70ms); }
-.vipperk i { font-style: normal; font-size: 26px; color: var(--acc); }
+.vipperk i { font-style: normal; font-size: 28px; color: var(--acc); line-height: 1; }
 .vipperk b { font-family: var(--display); font-weight: 900; font-size: 24px; text-transform: uppercase; }
 .vipperk span { color: var(--dim); font-weight: 600; font-size: 14px; line-height: 1.45; }
 .vipadm { display: grid; gap: 4px; }
@@ -2050,14 +2050,17 @@ html[data-theme="lime"] ::selection { background: #a3e635; color: #000; }
 .setbtn { position: relative; }
 .setbtn.isvip::after { content: "♛"; position: absolute; top: -7px; right: -7px; width: 17px; height: 17px; display: grid; place-items: center; background: var(--acc); color: var(--on-acc); font-size: 10px; line-height: 1; pointer-events: none; }
 .cfx button { width: auto !important; padding: 0 14px !important; font-family: var(--mono); font-weight: 800; font-size: 12px !important; text-transform: uppercase; letter-spacing: .08em; }
-.colc.fx1 .colcov::before { background: linear-gradient(110deg, transparent 38%, rgba(255,255,255,.26) 50%, transparent 62%); background-size: 260% 100%; animation: colSweep 3.4s linear infinite; }
+.colc.fx1 .colcov::before { z-index: 2; pointer-events: none; background: linear-gradient(105deg, transparent 40%, rgba(255,255,255,.12) 44%, rgba(255,255,255,.62) 50%, rgba(255,255,255,.12) 56%, transparent 60%); background-size: 280% 100%; background-repeat: no-repeat; background-position: 160% 0; mix-blend-mode: overlay; animation: colSweep 3s ease-in-out infinite; }
+.colc.fx1 .colcov { border-color: color-mix(in srgb, var(--c0) 60%, #fff); }
 .colc.fx2 .colcov { border-color: var(--c0); box-shadow: 0 0 0 1px var(--c0), 0 0 24px color-mix(in srgb, var(--c0) 55%, transparent), inset 0 0 28px color-mix(in srgb, var(--c0) 22%, transparent); }
 .colc.fx2 .colem { text-shadow: 0 0 14px var(--c0), 0 0 30px var(--c0); }
-.colc.fx3 .colcov::before { background: linear-gradient(130deg, var(--c0), transparent 30%, var(--c1) 55%, transparent 75%, var(--c0)); background-size: 300% 300%; opacity: .55; animation: colAurora 7s ease-in-out infinite; }
-@keyframes colSweep { from { background-position: 160% 0; } to { background-position: -60% 0; } }
+.colc.fx3 .colcov::before { z-index: 2; pointer-events: none; background: linear-gradient(125deg, var(--c0) 0%, transparent 22%, color-mix(in srgb, var(--c0) 45%, #fff) 42%, transparent 62%, var(--c0) 80%, transparent 100%); background-size: 300% 300%; mix-blend-mode: screen; opacity: .7; animation: colAurora 6s ease-in-out infinite; }
+.colc.fx3 .colcov { border-color: color-mix(in srgb, var(--c0) 70%, transparent); }
+@keyframes colSweep { 0% { background-position: 160% 0; } 70%, 100% { background-position: -60% 0; } }
 @keyframes colAurora { 0%, 100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
-@media (prefers-reduced-motion: reduce) { .colc.fx1 .colcov::before, .colc.fx3 .colcov::before { animation: none; } }
-html.noanim .colc.fx1 .colcov::before, html.noanim .colc.fx3 .colcov::before { animation: none; }
+@media (prefers-reduced-motion: reduce) { .colc.fx1 .colcov::before { animation: none; background-position: 40% 0; } .colc.fx3 .colcov::before { animation: none; background-position: 30% 50%; } }
+html.noanim .colc.fx1 .colcov::before { animation: none !important; background-position: 40% 0; }
+html.noanim .colc.fx3 .colcov::before { animation: none !important; background-position: 30% 50%; }
 .cpc { position: absolute; inset: 0; z-index: 0; background: #111 center / cover no-repeat; transition: transform .5s var(--ease); }
 .colc:hover .cpc { transform: scale(1.05); }
 .colcover { position: absolute; inset: 0; z-index: -1; background: #111 center / cover no-repeat; opacity: .5; }
@@ -2152,8 +2155,16 @@ html.noanim .colc.fx1 .colcov::before, html.noanim .colc.fx3 .colcov::before { a
 @media (max-width: 640px) { .colgrid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 12px; } .colbadge { width: 72px; height: 72px; font-size: 38px; } .colmeta b { font-size: 18px; } }
 .colbox button, .colbox .btn, .colbox label { touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
 .colbox .cbf .btn { min-height: 44px; }
-.cfm button { width: auto !important; padding: 0 14px !important; font-family: var(--mono); font-weight: 800; font-size: 12px !important; text-transform: uppercase; letter-spacing: .08em; gap: 8px; }
-.cfm button i { display: inline-block; width: 11px; border: 1.5px solid currentColor; flex: none; }
+.colbox .cfm { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.colbox .cfm button { width: auto !important; height: auto !important; min-height: 78px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; padding: 12px 6px !important; text-align: center; line-height: 1.15; font-family: var(--mono); font-weight: 800; font-size: 11px !important; text-transform: uppercase; letter-spacing: .06em; }
+.colbox .cfm button i { display: block; flex: none; border: 2px solid currentColor; border-radius: 1px; }
+.cico { display: block; width: 1em; height: 1em; flex: none; }
+.colem .cico { filter: drop-shadow(0 2px 10px rgba(0,0,0,.5)); }
+.colc.fx2 .colem .cico { filter: drop-shadow(0 0 8px var(--c0)) drop-shadow(0 0 16px var(--c0)); }
+.colbadge .cico { width: .6em; height: .6em; }
+.cprow .ce .cico { width: 1.05em; height: 1.05em; }
+.cemo button .cico { width: 20px; height: 20px; }
+.rqvip i .cico { width: 14px; height: 14px; }
 .cimp { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: -6px; }
 .cimp .btn { gap: 8px; }
 .cimp .btn svg { width: 16px; height: 16px; flex: none; }
@@ -2168,6 +2179,19 @@ html.noanim .colc.fx1 .colcov::before, html.noanim .colc.fx3 .colcov::before { a
   .cprow { min-height: 60px; }
 }
 @media (hover: none) { .cswatch button:hover { transform: none; } }
+@media (max-width: 720px) {
+  .colbox .cbb { padding: 16px; gap: 18px; }
+  .colbox .cswatch { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 8px; }
+  .colbox .cswatch button { width: 100%; height: auto; aspect-ratio: 1; }
+  .colbox .cemo:not(.cfx):not(.cfm) { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 8px; }
+  .colbox .cemo:not(.cfx):not(.cfm) button { width: 100%; height: auto; aspect-ratio: 1; }
+  .colbox .cfx { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+  .colbox .cfx button { width: auto !important; height: 44px; padding: 0 2px !important; font-size: 11px !important; letter-spacing: .04em; }
+  .colbox .cimp { display: grid; grid-template-columns: 1fr; }
+  .colbox .cimp .btn { width: 100%; min-height: 44px; }
+  .colbox .cbf { gap: 8px; }
+  .colbox .cbf .btn { flex: 1 1 0; }
+}
 .rqvip { display: flex; align-items: center; gap: 10px; padding: 12px 14px; border: 1px solid var(--acc); background: linear-gradient(150deg, color-mix(in srgb, var(--acc) 14%, var(--panel)), var(--panel)); font-weight: 700; font-size: 14px; line-height: 1.4; }
 .rqvip i { font-style: normal; flex: none; width: 24px; height: 24px; display: grid; place-items: center; background: var(--acc); color: var(--on-acc); font-size: 13px; }
 .rqvip small { display: block; font-family: var(--mono); font-weight: 500; font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--dim); }
@@ -4277,7 +4301,7 @@ function viewRequest(pre, kind) {
     '<label class="f"><span>Ta demande</span><select name="type"><option value="stream"' + (kind === "stream" ? " selected" : "") + '>Streaming</option><option value="dl"' + (kind === "dl" ? " selected" : "") + '>Téléchargement</option><option value="both"' + (kind === "both" ? " selected" : "") + '>Les deux (streaming + téléchargement)</option></select></label>' +
     '<label class="f"><span>Date de sortie (ou année)</span><input type="text" name="date" class="auto" readonly maxlength="40" placeholder="Rempli automatiquement"></label>' +
     '<input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0">' +
-    (isVip() ? '<div class="rqvip" role="status"><i>♛</i><span>Demande prioritaire VIP<small>Sera traitée en 12 h maximum</small></span></div>' : '') +
+    (isVip() ? '<div class="rqvip" role="status"><i>' + colIco(12) + '</i><span>Demande prioritaire VIP<small>Sera traitée en 12 h maximum</small></span></div>' : '') +
     '<p class="note" id="autherr"></p><div class="row"><button class="btn" type="submit">Envoyer</button><a class="btn ghost" href="/demandes">Demandes en cours</a><a class="btn ghost" href="/">Retour</a></div></form></div>';
   reqSel = null;
   if (t.trim().length >= 2) reqSuggest(t, false);
@@ -7249,12 +7273,12 @@ function adoptVip(data) {
 }
 function viewVip() {
   var app = $("#app"), on = isVip();
-  var perks = [["★", "Thèmes exclusifs", "Sept thèmes réservés (or, rose, émeraude, glace, feu, argent, citron), à choisir dans les paramètres."],
-    ["❖", "Collections exclusives", "Des couleurs, des symboles, des effets animés (Éclat, Néon, Aurore) et ta propre image de couverture."],
-    ["♛", "Ton nom aux crédits", "Les soutiens peuvent être cités sur la page Crédits."],
-    ["◐", "Couleur de fond libre", "L'accent est libre pour tous ; les VIP peuvent aussi choisir la couleur de fond du site."],
-    ["⚡", "Demande prioritaire", "Tes demandes de titres passent en premier : elles sont traitées en 12 h maximum."],
-    ["✦", "Badge VIP", "Une petite couronne ♛ s'affiche sur le bouton des paramètres, en haut du site."]];
+  var perks = [[colIco(1), "Thèmes exclusifs", "Sept thèmes réservés (or, rose, émeraude, glace, feu, argent, citron), à choisir dans les paramètres."],
+    [colIco(4), "Collections exclusives", "Des couleurs, des symboles, des effets animés (Éclat, Néon, Aurore) et ta propre image de couverture."],
+    [colIco(12), "Ton nom aux crédits", "Les soutiens peuvent être cités sur la page Crédits."],
+    ['<svg class="cico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/></svg>', "Couleur de fond libre", "L'accent est libre pour tous ; les VIP peuvent aussi choisir la couleur de fond du site."],
+    [colIco(10), "Demande prioritaire", "Tes demandes de titres passent en premier : elles sont traitées en 12 h maximum."],
+    [colIco(3), "Badge VIP", "Une petite couronne ♛ s'affiche sur le bouton des paramètres, en haut du site."]];
   var perkHTML = '<div class="vipperks">' + perks.map(function (p, i) { return '<div class="vipperk" style="--i:' + i + '"><i>' + p[0] + '</i><b>' + p[1] + '</b><span>' + p[2] + '</span></div>'; }).join("") + '</div>';
   var box;
   if (on) {
@@ -7326,10 +7350,13 @@ document.addEventListener("click", function (e) {
 var COLKEY = "noir.collections", COLID = /^[\w-]{1,24}$/, COLSID = /^[\w.-]{1,40}$/;
 var COLPAL = [["#8b5cf6", "#312e81"], ["#f43f5e", "#7f1d1d"], ["#f59e0b", "#78350f"], ["#10b981", "#064e3b"], ["#38bdf8", "#0c4a6e"], ["#ec4899", "#701a75"], ["#a3e635", "#365314"], ["#e5e7eb", "#3f3f46"]];
 var COLEMO = ["♥", "★", "☾", "✦", "❖", "☂", "♪", "⚔", "☕", "✿", "⚡", "☠"];
-var COLFX = ["Aucun", "Éclat", "Néon", "Aurore"], COLFM = [["Affiche large", 14], ["Affiche", 11], ["Paysage", 20]];
+var COLFX = ["Aucun", "Éclat", "Néon", "Aurore"], COLFM = [["Affiche large", 20, 25], ["Affiche", 17, 25], ["Paysage", 28, 18]];
 var VIPCOL_FROM = COLPAL.length, VIPEMO_FROM = COLEMO.length;
 COLPAL.push(["#facc15", "#713f12"], ["#22d3ee", "#164e63"], ["#fb7185", "#4c0519"], ["#c084fc", "#3b0764"]);
 COLEMO.push("♛", "♠", "♦", "☀", "❄", "✧");
+var COLICO = ["<path d=\"M12 20.5S3 15 3 8.8a4.8 4.8 0 0 1 9-2.3 4.8 4.8 0 0 1 9 2.3C21 15 12 20.5 12 20.5z\"/>", "<path d=\"m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.5 2.9 1-6.1L3.1 9.5l6.1-.9z\"/>", "<path d=\"M20 14.5A8 8 0 1 1 9.5 4 6.5 6.5 0 0 0 20 14.5z\"/>", "<path d=\"M12 3c.8 4.6 2.4 7.2 9 9-6.6 1.8-8.2 4.4-9 9-.8-4.6-2.4-7.2-9-9 6.6-1.8 8.2-4.4 9-9z\"/>", "<path d=\"M12 3l3 3-3 3-3-3z\"/><path d=\"M12 15l3 3-3 3-3-3z\"/><path d=\"M3 12l3-3 3 3-3 3z\"/><path d=\"M15 12l3-3 3 3-3 3z\"/>", "<path d=\"M3 12a9 9 0 0 1 18 0z\"/><path d=\"M12 12v6.5a2 2 0 0 1-4 0\"/>", "<path d=\"M9 18V5l11-2v13\"/><circle cx=\"6.5\" cy=\"18\" r=\"2.5\"/><circle cx=\"17.5\" cy=\"16\" r=\"2.5\"/>", "<polyline points=\"14.5 17.5 3 6 3 3 6 3 17.5 14.5\"/><line x1=\"13\" x2=\"19\" y1=\"19\" y2=\"13\"/><line x1=\"16\" x2=\"20\" y1=\"16\" y2=\"20\"/><line x1=\"19\" x2=\"21\" y1=\"21\" y2=\"19\"/><polyline points=\"14.5 6.5 18 3 21 3 21 6 17.5 9.5\"/><line x1=\"5\" x2=\"9\" y1=\"14\" y2=\"18\"/><line x1=\"7\" x2=\"4\" y1=\"17\" y2=\"20\"/><line x1=\"3\" x2=\"5\" y1=\"19\" y2=\"21\"/>", "<path d=\"M4 9h13v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5z\"/><path d=\"M17 11h1.5a2.5 2.5 0 0 1 0 5H17\"/><path d=\"M8 3v3\"/><path d=\"M12 3v3\"/>", "<circle cx=\"12\" cy=\"12\" r=\"2.2\"/><circle cx=\"12\" cy=\"6.2\" r=\"3\"/><circle cx=\"12\" cy=\"17.8\" r=\"3\"/><circle cx=\"6.2\" cy=\"12\" r=\"3\"/><circle cx=\"17.8\" cy=\"12\" r=\"3\"/>", "<path d=\"M13 2 4 14h7l-1 8 9-12h-7z\"/>", "<circle cx=\"9\" cy=\"12\" r=\"1\"/><circle cx=\"15\" cy=\"12\" r=\"1\"/><path d=\"M8 20v2h8v-2\"/><path d=\"m12.5 17-.5-1-.5 1h1z\"/><path d=\"M16 20a2 2 0 0 0 1.56-3.25 8 8 0 1 0-11.12 0A2 2 0 0 0 8 20\"/>", "<path d=\"M3 8l4.5 4L12 5l4.5 7L21 8l-2 11H5z\"/><path d=\"M5 21.5h14\"/>", "<path d=\"M12 3c3 4 8 6.5 8 11a4 4 0 0 1-7 2.5c.2 1.8.8 3 2 4.5H9c1.2-1.5 1.8-2.7 2-4.5A4 4 0 0 1 4 14c0-4.5 5-7 8-11z\"/>", "<path d=\"M12 3l7 9-7 9-7-9z\"/>", "<circle cx=\"12\" cy=\"12\" r=\"4\"/><path d=\"M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4\"/>", "<path d=\"M12 2v20M3.3 7l17.4 10M3.3 17 20.7 7\"/><path d=\"m9.5 3.5 2.5 2 2.5-2M9.5 20.5l2.5-2 2.5 2\"/>", "<path d=\"M10 4c.6 3.4 1.8 5 6 6-4.2 1-5.4 2.6-6 6-.6-3.4-1.8-5-6-6 4.2-1 5.4-2.6 6-6z\"/><path d=\"M18 15c.3 1.7.9 2.5 3 3-2.1.5-2.7 1.3-3 3-.3-1.7-.9-2.5-3-3 2.1-.5 2.7-1.3 3-3z\"/>"];
+function colIco(k) { return '<svg class="cico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + (COLICO[k] || COLICO[0]) + '</svg>'; }
+
 NICONS["layers"] = '<path d="m12 3 9 5-9 5-9-5 9-5z"/><path d="m3 13 9 5 9-5"/><path d="m3 17.5 9 5 9-5" opacity=".5"/>';
 NICONS["image"] = NICONS["image"] || '<rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="m21 16-5-5-8 8"/>';
 NICONS["plus"] = '<path d="M12 5v14"/><path d="M5 12h14"/>';
@@ -7376,7 +7403,7 @@ function colStyle(c) { var p = COLPAL[c.c] || COLPAL[0]; return "--c0:" + p[0] +
 function colCard(c, i, tag) {
   var items = colItems(c), posters = c.p ? [] : items.filter(function (s) { return s.poster; }).slice(0, 3);
   var n = c.i.length, t = tag || "a", href = t === "a" ? ' href="/collection/' + esc(c.id) + '"' : "";
-  return '<' + t + ' class="colc fm' + (c.s || 0) + (c.f ? ' fx' + c.f : '') + '"' + href + ' style="' + colStyle(c) + ';--i:' + Math.min(i || 0, 14) + '"><div class="colcov"><span class="colem">' + COLEMO[c.e] + '</span>' + (c.p ? '<i class="cpc" style="background-image:url(\'' + esc(c.p) + '\')"></i>' : '') +
+  return '<' + t + ' class="colc fm' + (c.s || 0) + (c.f ? ' fx' + c.f : '') + '"' + href + ' style="' + colStyle(c) + ';--i:' + Math.min(i || 0, 14) + '"><div class="colcov"><span class="colem">' + colIco(c.e) + '</span>' + (c.p ? '<i class="cpc" style="background-image:url(\'' + esc(c.p) + '\')"></i>' : '') +
     posters.map(function (s, k) { return '<i class="cp cp' + (k + 1) + '" style="background-image:url(\'' + esc(s.poster) + '\')"></i>'; }).join("") + '</div>' +
     '<span class="colmeta"><b>' + esc(c.n) + '</b><span>' + n + (n > 1 ? " titres" : " titre") + '</span></span></' + t + '>';
 }
@@ -7445,10 +7472,10 @@ function colEdit(id, addSid) {
   function paint() {
     cur.n = name.value; cur.d = desc.value;
     o.querySelector("#colprev").innerHTML = colCard({ id: "x", n: cur.n.trim() || "Ma collection", d: cur.d, c: cur.c, e: cur.e, f: cur.f, s: cur.s || 0, p: cur.p, i: cur.i }, 0, "div");
-    o.querySelector("#colfm").innerHTML = COLFM.map(function (g, k) { return '<button type="button" class="' + (k === (cur.s || 0) ? "on" : "") + '" data-colfm="' + k + '"><i style="height:' + g[1] + 'px"></i>' + g[0] + '</button>'; }).join("");
+    o.querySelector("#colfm").innerHTML = COLFM.map(function (g, k) { return '<button type="button" class="' + (k === (cur.s || 0) ? "on" : "") + '" data-colfm="' + k + '"><i style="width:' + g[1] + 'px;height:' + g[2] + 'px"></i>' + g[0] + '</button>'; }).join("");
     o.querySelector("#colsw").innerHTML = COLPAL.map(function (p, k) { return '<button type="button" class="' + (k === cur.c ? "on" : "") + vipCls(k, VIPCOL_FROM) + '" data-colc="' + k + '" style="--c0:' + p[0] + ';--c1:' + p[1] + '" aria-label="Couleur ' + (k + 1) + '"></button>'; }).join("");
     o.querySelector("#colfx").innerHTML = COLFX.map(function (g, k) { return '<button type="button" class="' + (k === (cur.f || 0) ? "on" : "") + vipCls(k, 1) + '" data-colf="' + k + '">' + g + '</button>'; }).join("");
-    o.querySelector("#colemo").innerHTML = COLEMO.map(function (g, k) { return '<button type="button" class="' + (k === cur.e ? "on" : "") + vipCls(k, VIPEMO_FROM) + '" data-cole="' + k + '">' + g + '</button>'; }).join("");
+    o.querySelector("#colemo").innerHTML = COLEMO.map(function (g, k) { return '<button type="button" class="' + (k === cur.e ? "on" : "") + vipCls(k, VIPEMO_FROM) + '" data-cole="' + k + '" aria-label="Symbole ' + (k + 1) + '">' + colIco(k) + '</button>'; }).join("");
   }
   paint(); setTimeout(function () { name.focus(); }, 30);
   name.addEventListener("input", function () { cur.n = name.value; var b = o.querySelector(".colmeta b"); if (b) b.textContent = cur.n.trim() || "Ma collection"; });
@@ -7489,7 +7516,7 @@ function colPickHTML(sid) {
   var l = readCols();
   return '<div class="cpick">' + l.map(function (c) {
     var on = colHas(c, sid);
-    return '<button type="button" class="cprow' + (on ? " on" : "") + '" data-colt="' + esc(c.id) + '" style="' + colStyle(c) + '"><span class="ce">' + COLEMO[c.e] + '</span><span class="ct"><b>' + esc(c.n) + '</b><em>' + c.i.length + (c.i.length > 1 ? " titres" : " titre") + '</em></span><span class="ck">' + nsvg("check") + '</span></button>';
+    return '<button type="button" class="cprow' + (on ? " on" : "") + '" data-colt="' + esc(c.id) + '" style="' + colStyle(c) + '"><span class="ce">' + colIco(c.e) + '</span><span class="ct"><b>' + esc(c.n) + '</b><em>' + c.i.length + (c.i.length > 1 ? " titres" : " titre") + '</em></span><span class="ck">' + nsvg("check") + '</span></button>';
   }).join("") + '</div><div class="cpnew"><button type="button" class="cprow" data-colnewadd><span class="ce">' + nsvg("plus") + '</span><span class="ct"><b>Nouvelle collection</b><em>Créer et y ajouter ce titre</em></span></button></div>';
 }
 function colPick(sid) {
@@ -7527,7 +7554,7 @@ function viewCollection(b) {
   var body = items.length ? '<div class="mlgrid">' + items.map(function (s, i) { return mlCard(s, i, shared ? "colro" : "col"); }).join("") + '</div>'
     : '<div class="mlempty">' + nsvg("layers", "mlei") + '<h3>Collection vide</h3><p>' + (shared ? "Aucun titre de cette collection n'est disponible sur le site." : "Ajoute des titres avec la recherche ci-dessus, ou depuis n'importe quelle fiche avec « + Collection ».") + '</p></div>';
   $("#app").innerHTML = '<div id="colroot"><section class="colhero" style="' + colStyle(c) + '">' + (c.p ? '<i class="colcover" style="background-image:url(\'' + esc(c.p) + '\')"></i>' : '') + '<div class="wrap"><a class="colback" href="/ma-liste" data-colback>' + nsvg("chev-left") + 'Mes collections</a>' +
-    '<div class="colhead"><div class="colbadge">' + COLEMO[c.e] + '</div><div><h1>' + esc(c.n) + '</h1>' + (c.d ? '<p>' + esc(c.d) + '</p>' : '') + '<div class="cmeta"><i>' + (shared ? "Collection partagée" : "Collection perso") + '</i> · ' + n + (n > 1 ? " titres" : " titre") + '</div></div></div><div class="colact">' + acts + '</div></div></section>' +
+    '<div class="colhead"><div class="colbadge">' + colIco(c.e) + '</div><div><h1>' + esc(c.n) + '</h1>' + (c.d ? '<p>' + esc(c.d) + '</p>' : '') + '<div class="cmeta"><i>' + (shared ? "Collection partagée" : "Collection perso") + '</i> · ' + n + (n > 1 ? " titres" : " titre") + '</div></div></div><div class="colact">' + acts + '</div></div></section>' +
     '<div class="wrap">' + (shared ? '<div style="height:26px"></div>' : '<div class="coladd">' + nsvg("search") + '<input id="colq" type="search" placeholder="Ajouter un titre à cette collection…" autocomplete="off" aria-label="Ajouter un titre"><div id="colres"></div></div><div style="height:18px"></div>') + body + '</div></div>';
 }
 NICONS["chev-left"] = NICONS["chev-left"] || '<path d="m15 18-6-6 6-6"/>';
