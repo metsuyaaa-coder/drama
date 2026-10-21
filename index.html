@@ -2110,7 +2110,7 @@ html.noanim .colc.fx1 .colcov::before, html.noanim .colc.fx3 .colcov::before { a
 .cres em { font-style: normal; font-family: var(--mono); font-size: 11px; color: var(--dim); }
 .cres svg { flex: none; width: 18px; height: 18px; color: var(--dim); }
 .colov { position: fixed; inset: 0; z-index: 120; display: grid; place-items: center; padding: 16px; background: rgba(0,0,0,.74); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); animation: fadeIn .2s ease both; }
-.colbox { width: min(560px, 100%); max-height: calc(100vh - 32px); overflow: auto; background: var(--bg); border: 1px solid var(--line); box-shadow: 0 30px 80px rgba(0,0,0,.7); animation: riseIn .35s var(--ease) both; }
+.colbox { width: min(560px, 100%); max-height: calc(100vh - 32px); max-height: calc(100dvh - 32px); overflow: auto; overscroll-behavior: contain; -webkit-overflow-scrolling: touch; background: var(--bg); border: 1px solid var(--line); box-shadow: 0 30px 80px rgba(0,0,0,.7); animation: riseIn .35s var(--ease) both; }
 .colbox > .cbh { display: flex; align-items: center; justify-content: space-between; padding: 16px 20px; border-bottom: 1px solid var(--line); }
 .colbox h2 { margin: 0; font-family: var(--display); font-weight: 800; font-size: 26px; text-transform: uppercase; letter-spacing: .03em; }
 .colbox .cbx { width: 34px; height: 34px; display: grid; place-items: center; padding: 0; background: transparent; border: 1px solid var(--line); color: var(--dim); cursor: pointer; border-radius: 0; font-size: 18px; line-height: 1; transition: color .2s, border-color .2s; }
@@ -2127,7 +2127,7 @@ html.noanim .colc.fx1 .colcov::before, html.noanim .colc.fx3 .colcov::before { a
 .cemo button { width: 38px; height: 38px; padding: 0; display: grid; place-items: center; background: var(--panel); border: 1px solid var(--line); color: var(--fg); font-size: 18px; cursor: pointer; border-radius: 0; transition: background .2s, border-color .2s; }
 .cemo button:hover { border-color: var(--dim); }
 .cemo button.on { background: var(--acc); color: var(--on-acc); border-color: var(--acc); }
-.colbox .cbf { display: flex; justify-content: flex-end; gap: 10px; padding: 14px 20px; border-top: 1px solid var(--line); }
+.colbox .cbf { position: sticky; bottom: 0; z-index: 2; background: var(--bg); display: flex; justify-content: flex-end; gap: 10px; padding: 14px 20px calc(14px + env(safe-area-inset-bottom, 0px)); border-top: 1px solid var(--line); }
 .cpick { display: grid; }
 .cprow { --c0: #8b5cf6; --c1: #312e81; display: flex; align-items: center; gap: 14px; width: 100%; padding: 12px 20px; background: transparent; border: 0; border-top: 1px solid var(--line); color: var(--fg); text-align: left; cursor: pointer; border-radius: 0; font: inherit; transition: background .2s; }
 .cprow:first-child { border-top: 0; }
@@ -2142,6 +2142,25 @@ html.noanim .colc.fx1 .colcov::before, html.noanim .colc.fx3 .colcov::before { a
 .cpnew { border-top: 1px solid var(--line); }
 .cpnew .cprow .ce { background: transparent; border: 1px dashed var(--dim); color: var(--dim); }
 @media (max-width: 640px) { .colgrid { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 18px 12px; } .colbadge { width: 72px; height: 72px; font-size: 38px; } .colmeta b { font-size: 18px; } }
+.colbox button, .colbox .btn, .colbox label { touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
+.colbox .cbf .btn { min-height: 44px; }
+.cimp { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: -6px; }
+.cimp .btn { gap: 8px; }
+.cimp .btn svg { width: 16px; height: 16px; flex: none; }
+.cimp .cimpn { font-family: var(--mono); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--dim); }
+.cimp .btn.lock { opacity: .5; }
+@media (max-width: 720px) {
+  .colov { padding: 10px; align-items: end; }
+  .colbox { max-height: calc(100dvh - 20px); }
+  .cswatch button { width: 40px; height: 40px; }
+  .cemo button { width: 44px; height: 44px; }
+  .colbox .cbx { width: 44px; height: 44px; }
+  .cprow { min-height: 60px; }
+}
+@media (hover: none) { .cswatch button:hover { transform: none; } }
+.rqvip { display: flex; align-items: center; gap: 10px; padding: 12px 14px; border: 1px solid var(--acc); background: linear-gradient(150deg, color-mix(in srgb, var(--acc) 14%, var(--panel)), var(--panel)); font-weight: 700; font-size: 14px; line-height: 1.4; }
+.rqvip i { font-style: normal; flex: none; width: 24px; height: 24px; display: grid; place-items: center; background: var(--acc); color: var(--on-acc); font-size: 13px; }
+.rqvip small { display: block; font-family: var(--mono); font-weight: 500; font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--dim); }
 @media (prefers-reduced-motion: reduce) { .colc, .colnew, .colbox, .colov, .colbadge, .colhead h1, .colhead p, .colact { animation: none; } }
 /* ===== Thèmes (Paramètres > Général > Apparence) ===== */
 html[data-theme="red"] { --bg: #000; --fg: #fff; --dim: #a39090; --line: #35191d; --panel: #130709; --s0: #0c0405; --s1: #1f0b0e; --acc: #e11d2e; --on-acc: #fff; }
@@ -4248,6 +4267,7 @@ function viewRequest(pre, kind) {
     '<label class="f"><span>Ta demande</span><select name="type"><option value="stream"' + (kind === "stream" ? " selected" : "") + '>Streaming</option><option value="dl"' + (kind === "dl" ? " selected" : "") + '>Téléchargement</option><option value="both"' + (kind === "both" ? " selected" : "") + '>Les deux (streaming + téléchargement)</option></select></label>' +
     '<label class="f"><span>Date de sortie (ou année)</span><input type="text" name="date" class="auto" readonly maxlength="40" placeholder="Rempli automatiquement"></label>' +
     '<input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0">' +
+    (isVip() ? '<div class="rqvip" role="status"><i>♛</i><span>Demande prioritaire VIP<small>Sera traitée en 12 h maximum</small></span></div>' : '') +
     '<p class="note" id="autherr"></p><div class="row"><button class="btn" type="submit">Envoyer</button><a class="btn ghost" href="/demandes">Demandes en cours</a><a class="btn ghost" href="/">Retour</a></div></form></div>';
   reqSel = null;
   if (t.trim().length >= 2) reqSuggest(t, false);
@@ -7223,6 +7243,7 @@ function viewVip() {
     ["❖", "Collections exclusives", "Des couleurs, des symboles, des effets animés (Éclat, Néon, Aurore) et ta propre image de couverture."],
     ["♛", "Ton nom aux crédits", "Les soutiens peuvent être cités sur la page Crédits."],
     ["◐", "Couleur de fond libre", "L'accent est libre pour tous ; les VIP peuvent aussi choisir la couleur de fond du site."],
+    ["⚡", "Demande prioritaire", "Tes demandes de titres passent en premier : elles sont traitées en 12 h maximum."],
     ["✦", "Badge VIP", "Une petite couronne ♛ s'affiche sur le bouton des paramètres, en haut du site."]];
   var perkHTML = '<div class="vipperks">' + perks.map(function (p, i) { return '<div class="vipperk" style="--i:' + i + '"><i>' + p[0] + '</i><b>' + p[1] + '</b><span>' + p[2] + '</span></div>'; }).join("") + '</div>';
   var box;
@@ -7300,13 +7321,34 @@ var VIPCOL_FROM = COLPAL.length, VIPEMO_FROM = COLEMO.length;
 COLPAL.push(["#facc15", "#713f12"], ["#22d3ee", "#164e63"], ["#fb7185", "#4c0519"], ["#c084fc", "#3b0764"]);
 COLEMO.push("♛", "♠", "♦", "☀", "❄", "✧");
 NICONS["layers"] = '<path d="m12 3 9 5-9 5-9-5 9-5z"/><path d="m3 13 9 5 9-5"/><path d="m3 17.5 9 5 9-5" opacity=".5"/>';
+NICONS["image"] = NICONS["image"] || '<rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="m21 16-5-5-8 8"/>';
 NICONS["plus"] = '<path d="M12 5v14"/><path d="M5 12h14"/>';
 NICONS["check"] = NICONS["check"] || '<path d="m5 12.5 4.5 4.5L19 7.5"/>';
+var COLIMG = /^data:image\/(?:jpeg|png|webp);base64,[A-Za-z0-9+\/=]{20,220000}$/;
+/* réduit une photo de la galerie en petit JPEG pour la garder dans le navigateur */
+function colShrink(file) {
+  return new Promise(function (ok, ko) {
+    var url = URL.createObjectURL(file), im = new Image();
+    im.onload = function () {
+      try {
+        var max = 720, w = im.naturalWidth, h = im.naturalHeight, k = Math.min(1, max / Math.max(w, h));
+        var cv = document.createElement("canvas"); cv.width = Math.max(1, Math.round(w * k)); cv.height = Math.max(1, Math.round(h * k));
+        var cx = cv.getContext("2d"); cx.fillStyle = "#000"; cx.fillRect(0, 0, cv.width, cv.height); cx.drawImage(im, 0, 0, cv.width, cv.height);
+        var q = .82, out = cv.toDataURL("image/jpeg", q);
+        while (out.length > 200000 && q > .35) { q -= .1; out = cv.toDataURL("image/jpeg", q); }
+        URL.revokeObjectURL(url);
+        out.length <= 220000 ? ok(out) : ko(new Error("trop lourde"));
+      } catch (e) { URL.revokeObjectURL(url); ko(e); }
+    };
+    im.onerror = function () { URL.revokeObjectURL(url); ko(new Error("illisible")); };
+    im.src = url;
+  });
+}
 function colClean(c) {
   if (!c || typeof c !== "object" || !COLID.test(String(c.id || ""))) return null;
   var seen = {}, ids = (Array.isArray(c.i) ? c.i : []).map(String).filter(function (x) { if (!COLSID.test(x) || seen[x]) return false; seen[x] = 1; return true; }).slice(0, 300);
   var ci = parseInt(c.c, 10), ei = parseInt(c.e, 10), fi = parseInt(c.f, 10), pv = String(c.p || "").trim();
-  return { id: String(c.id), n: String(c.n || "").trim().slice(0, 40) || "Sans titre", d: String(c.d || "").trim().slice(0, 140), c: ci >= 0 && ci < COLPAL.length ? ci : 0, e: ei >= 0 && ei < COLEMO.length ? ei : 0, f: fi > 0 && fi < COLFX.length ? fi : 0, p: /^https:\/\/[^\s'"()<>\\]{4,290}$/.test(pv) ? pv : "", i: ids, at: +c.at || 0 };
+  return { id: String(c.id), n: String(c.n || "").trim().slice(0, 40) || "Sans titre", d: String(c.d || "").trim().slice(0, 140), c: ci >= 0 && ci < COLPAL.length ? ci : 0, e: ei >= 0 && ei < COLEMO.length ? ei : 0, f: fi > 0 && fi < COLFX.length ? fi : 0, p: (/^https:\/\/[^\s'"()<>\\]{4,290}$/.test(pv) || COLIMG.test(pv)) ? pv : "", i: ids, at: +c.at || 0 };
 }
 function readCols() { var l = readJSON(COLKEY, []); return Array.isArray(l) ? l.map(colClean).filter(Boolean) : []; }
 function saveCols(l) { try { localStorage.setItem(COLKEY, JSON.stringify(l)); return true; } catch (e) { toast("Stockage plein ou bloqué par le navigateur"); return false; } }
@@ -7334,7 +7376,7 @@ function colGridHTML(arr) {
     (arr.length ? '' : '<p class="note" style="margin-top:22px">Crée des listes à thème (« Romances », « À revoir », « Soirée entre amis »…) et retrouve-les ici. Tu peux les partager avec un lien.</p>');
 }
 function colEncode(c) {
-  var o = { n: c.n, d: c.d, c: c.c, e: c.e, f: c.f || 0, p: c.p || "", i: c.i };
+  var o = { n: c.n, d: c.d, c: c.c, e: c.e, f: c.f || 0, p: /^https:/.test(c.p || "") ? c.p : "", i: c.i };
   return codeB64(new TextEncoder().encode(JSON.stringify(o)));
 }
 function colDecode(tok) {
@@ -7362,29 +7404,46 @@ function colEdit(id, addSid) {
     '<label class="cf">Nom<input id="colname" maxlength="40" placeholder="Ex. : Romances qui font pleurer" required></label>' +
     '<label class="cf">Description (facultatif)<textarea id="coldesc" rows="2" maxlength="140" placeholder="Une phrase pour dire de quoi il s\'agit"></textarea></label>' +
     '<label class="cf">Image de couverture <em class="thvip">VIP</em><input id="colcov" type="url" maxlength="290" placeholder="' + (isVip() ? 'https://… (lien direct vers une image)' : 'Réservé aux VIP') + '"' + (isVip() ? '' : ' disabled') + '></label>' +
+    '<div class="cimp"><button type="button" class="btn ghost small' + (isVip() ? '' : ' lock') + '" data-colimg>' + nsvg("image") + 'Importer depuis la galerie</button><button type="button" class="btn ghost small" data-colimgrm hidden>Retirer l\'image</button><span class="cimpn" id="colimgn"></span><input type="file" id="colfile" accept="image/*" hidden></div>' +
     '<div class="cf" style="display:grid;gap:8px;font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--dim)">Couleur<div class="cswatch" id="colsw"></div></div>' +
     '<div class="cf" style="display:grid;gap:8px;font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--dim)">Symbole<div class="cemo" id="colemo"></div></div>' +
     '<div class="cf" style="display:grid;gap:8px;font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--dim)">Effet<div class="cemo cfx" id="colfx"></div></div></form>' +
     '<div class="cbf"><button type="button" class="btn ghost small" data-colx>Annuler</button><button type="submit" class="btn small" form="colform">' + (base ? "Enregistrer" : "Créer") + '</button></div>');
   var name = o.querySelector("#colname"), desc = o.querySelector("#coldesc");
   name.value = cur.n; desc.value = cur.d;
-  var cov = o.querySelector("#colcov"); cov.value = cur.p || "";
+  var cov = o.querySelector("#colcov"), cfile = o.querySelector("#colfile"), cimn = o.querySelector("#colimgn"), cirm = o.querySelector("[data-colimgrm]");
+  function covSync() {
+    var local = /^data:/.test(cur.p || "");
+    cov.value = local ? "" : (cur.p || "");
+    cimn.textContent = local ? "✓ Image importée" : "";
+    cirm.hidden = !local;
+  }
+  covSync();
+  cfile.addEventListener("change", function () {
+    var f = cfile.files && cfile.files[0]; cfile.value = ""; if (!f) return;
+    if (!/^image\//.test(f.type || "")) { toast("Choisis un fichier image"); return; }
+    cimn.textContent = "Import…";
+    colShrink(f).then(function (d) { cur.p = d; covSync(); paint(); toast("Image importée ✓"); }, function () { covSync(); toast("Impossible de lire cette image"); });
+  });
   cov.addEventListener("change", function () {
     var v = cov.value.trim();
+    if (!v && /^data:/.test(cur.p || "")) return;
     if (v && !/^https:\/\/[^\s'"()<>\\]{4,290}$/.test(v)) { toast("Lien d'image invalide (il doit commencer par https://)"); cov.value = ""; cur.p = ""; } else cur.p = v;
-    paint();
+    covSync(); paint();
   });
   function paint() {
     cur.n = name.value; cur.d = desc.value;
     o.querySelector("#colprev").innerHTML = colCard({ id: "x", n: cur.n.trim() || "Ma collection", d: cur.d, c: cur.c, e: cur.e, f: cur.f, p: cur.p, i: cur.i }, 0, "div");
-    o.querySelector("#colsw").innerHTML = COLPAL.map(function (p, k) { return '<button type="button" class="' + (k === cur.c ? "on" : "") + vipCls(k, VIPCOL_FROM) + '" data-colc=""' + k + '" style="--c0:' + p[0] + ';--c1:' + p[1] + '" aria-label="Couleur ' + (k + 1) + '"></button>'; }).join("");
+    o.querySelector("#colsw").innerHTML = COLPAL.map(function (p, k) { return '<button type="button" class="' + (k === cur.c ? "on" : "") + vipCls(k, VIPCOL_FROM) + '" data-colc="' + k + '" style="--c0:' + p[0] + ';--c1:' + p[1] + '" aria-label="Couleur ' + (k + 1) + '"></button>'; }).join("");
     o.querySelector("#colfx").innerHTML = COLFX.map(function (g, k) { return '<button type="button" class="' + (k === (cur.f || 0) ? "on" : "") + vipCls(k, 1) + '" data-colf="' + k + '">' + g + '</button>'; }).join("");
-    o.querySelector("#colemo").innerHTML = COLEMO.map(function (g, k) { return '<button type="button" class="' + (k === cur.e ? "on" : "") + vipCls(k, VIPEMO_FROM) + '" data-cole=""' + k + '">' + g + '</button>'; }).join("");
+    o.querySelector("#colemo").innerHTML = COLEMO.map(function (g, k) { return '<button type="button" class="' + (k === cur.e ? "on" : "") + vipCls(k, VIPEMO_FROM) + '" data-cole="' + k + '">' + g + '</button>'; }).join("");
   }
   paint(); setTimeout(function () { name.focus(); }, 30);
   name.addEventListener("input", function () { cur.n = name.value; var b = o.querySelector(".colmeta b"); if (b) b.textContent = cur.n.trim() || "Ma collection"; });
   o.addEventListener("click", function (e) {
     if (e.target.closest("[data-colx]")) { colClose(); return; }
+    if (e.target.closest("[data-colimg]")) { if (!isVip()) { toast("Image de couverture réservée aux VIP"); go("/vip"); colClose(); return; } cfile.click(); return; }
+    if (e.target.closest("[data-colimgrm]")) { cur.p = ""; covSync(); paint(); return; }
     var bc = e.target.closest("[data-colc]"), be = e.target.closest("[data-cole]"), bf = e.target.closest("[data-colf]");
     if (bf) { if (+bf.dataset.colf >= 1 && !isVip()) { toast("Effet réservé aux VIP"); return; } cur.f = +bf.dataset.colf; paint(); return; }
     if (bc) { if (+bc.dataset.colc >= VIPCOL_FROM && !isVip()) { toast("Couleur réservée aux VIP"); return; } cur.c = +bc.dataset.colc; paint(); }
@@ -7818,20 +7877,20 @@ document.addEventListener("submit", function (e) {
     var titre = String(fd.get("titre") || "").trim();
     var emailErr = null;
     var mailP = fetch(REQ_URL, { method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" }, body: JSON.stringify({
-      _subject: "DramaByM : demande « " + titre + " »", _captcha: "false", _template: "table",
-      "Discord": String(fd.get("discord") || "").trim() || "non renseigné", "Titre": titre, "Demande": ({ stream: "Streaming", dl: "Téléchargement", both: "Streaming + téléchargement" })[String(fd.get("type"))] || "Streaming", "Date de sortie": String(fd.get("date") || "").trim(),
+      _subject: (isVip() ? "[VIP · 12 h max] " : "") + "DramaByM : demande « " + titre + " »", _captcha: "false", _template: "table",
+      "Priorité": isVip() ? "VIP : à traiter sous 12 h" : "Normale", "Discord": String(fd.get("discord") || "").trim() || "non renseigné", "Titre": titre, "Demande": ({ stream: "Streaming", dl: "Téléchargement", both: "Streaming + téléchargement" })[String(fd.get("type"))] || "Streaming", "Date de sortie": String(fd.get("date") || "").trim(),
       "Type": reqSel.media === "movie" ? "Film" : "Série", "Origine": reqSel.origin || "", "Titre anglais": reqSel.en || "", "Titre original": reqSel.orig || "",
       "Lien TMDB": "https://www.themoviedb.org/" + (reqSel.media === "movie" ? "movie/" : "tv/") + reqSel.id
     }) }).then(function (r) {
       return r.json().catch(function () { return {}; }).then(function (j) { if (!r.ok || j.success === false || j.success === "false") throw new Error(String(j.message || "refusé par le service")); });
     }).then(function () { return true; }, function (err) { emailErr = err; return false; });
-    var discP = notifyDiscord({ kind: "request", titre: titre, media: reqSel.media, tmdbId: reqSel.id, date: String(fd.get("date") || "").trim(), origin: reqSel.origin || "", en: reqSel.en || "", orig: reqSel.orig || "", poster: reqSel.poster || "", demande: String(fd.get("type") || "stream"), discord: String(fd.get("discord") || "").trim() });
+    var discP = notifyDiscord({ kind: "request", titre: titre, media: reqSel.media, tmdbId: reqSel.id, date: String(fd.get("date") || "").trim(), origin: reqSel.origin || "", en: reqSel.en || "", orig: reqSel.orig || "", poster: reqSel.poster || "", demande: String(fd.get("type") || "stream"), vip: isVip(), discord: String(fd.get("discord") || "").trim() });
     Promise.all([mailP, discP]).then(function (ok) {
       if (!ok[0] && !ok[1]) throw emailErr || new Error("réessaie dans un moment.");
     }).then(function () {
       try { localStorage.setItem("noir.reqAt", String(Date.now())); } catch (er) {}
       bumpReq();
-      $("#app").innerHTML = '<div class="wrap"><div class="authbox"><h1>Merci</h1><p class="lead">Ta demande est bien envoyée. Je l\'ajoute dès que possible.</p><div class="row"><a class="btn" href="/">Retour à l\'accueil</a><a class="btn ghost" href="/demande">Une autre demande</a></div></div></div>';
+      $("#app").innerHTML = '<div class="wrap"><div class="authbox"><h1>Merci</h1><p class="lead">Ta demande est bien envoyée. ' + (isVip() ? 'En tant que VIP, elle sera traitée en 12 h maximum.' : 'Je l\'ajoute dès que possible.') + '</p><div class="row"><a class="btn" href="/">Retour à l\'accueil</a><a class="btn ghost" href="/demande">Une autre demande</a></div></div></div>';
     }).catch(function (err) {
       rb.disabled = false; rb.textContent = "Envoyer";
       var m = err && err.message ? err.message : "";
