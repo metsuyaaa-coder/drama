@@ -6635,7 +6635,13 @@
               "name": "Épisode 17",
               "overview": "",
               "air_date": "",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-eefrqegqnb2f.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -6643,7 +6649,13 @@
               "name": "Épisode 18",
               "overview": "",
               "air_date": "",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-lo1ez1pbubmi.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -6833,7 +6845,7 @@
       ],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1792610960358,
+      "updatedAt": 1792623139180,
       "trend": 0,
       "videos": [
         {
@@ -29519,6 +29531,15 @@
     "at": 1792602810955
   },
   "journal": [
+    {
+      "k": "mvipj6nu3gkez",
+      "t": 1792623139194,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "304452",
+      "n": "The Lament of Autumn",
+      "d": "sources 16 → 18"
+    },
     {
       "k": "mviph21hymo6h",
       "t": 1792623039893,
