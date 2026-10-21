@@ -317,6 +317,10 @@ dialog#player::backdrop { background: rgba(0,0,0,.88); }
 dialog#player[open]::backdrop { animation: fadeIn .3s ease both; }
 .phead { display: flex; align-items: center; gap: 12px; padding: 10px 14px; border-bottom: 1px solid var(--line); font-size: 14px; flex-wrap: wrap; }
 .phead b { font-weight: 500; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; max-width: 40%; }
+.fsb { display: inline-block; margin-left: 8px; padding: 1px 6px; border: 1px solid #fcd34d; color: #fcd34d; background: rgba(252, 211, 77, .1); font-family: var(--mono); font-size: 9.5px; font-weight: 700; letter-spacing: .08em; line-height: 1.5; text-transform: uppercase; vertical-align: 1px; white-space: nowrap; max-width: 14ch; overflow: hidden; text-overflow: ellipsis; }
+.chip.on .fsb { border-color: currentColor; color: inherit; background: transparent; }
+.chip.fsonly { cursor: default; }
+.srctoggle .nm .fsb { max-width: 18ch; }
 .srcs { display: flex; flex-wrap: wrap; gap: 6px; flex: 1; min-width: 0; }
 .pframe { aspect-ratio: 16 / 9; background: var(--s0); position: relative; overflow: hidden; }
 .pstage { position: absolute; inset: 0; transform-origin: center center; }
@@ -1459,6 +1463,26 @@ footer .about .flist li, footer .about p.dev { font-weight: 800; }
 .mlsum { font-family: var(--mono); font-size: 12px; color: var(--dim); text-transform: uppercase; letter-spacing: .06em; }
 .mlswap { animation: mlswap .4s var(--ease) both; }
 @keyframes mlswap { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+.mlsgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 380px), 1fr)); gap: 10px; }
+.mlsgrid.still .mls { animation: none; }
+.mls { display: grid; grid-template-columns: 64px minmax(0, 1fr) auto; align-items: center; gap: 14px; padding: 10px 14px 10px 10px; border: 1px solid var(--line); background: transparent; animation: cardIn .5s var(--ease) both; animation-delay: calc(var(--i, 0) * 45ms); transition: border-color .25s, background .25s, transform .3s var(--ease); }
+.mls:hover { border-color: var(--acc); background: var(--panel); transform: translateX(4px); }
+.mlsp { position: relative; width: 64px; aspect-ratio: 2 / 3; background: var(--panel); overflow: hidden; display: grid; place-items: center; }
+.mlsp img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.mlsp em { font-style: normal; font-family: var(--display); font-weight: 900; font-size: 24px; color: var(--dim); }
+.mlsb { display: grid; gap: 5px; min-width: 0; }
+.mlsb b { font-weight: 600; font-size: 15px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.mlsm { font-family: var(--mono); font-size: 11px; color: var(--dim); }
+.mlsbar { display: block; height: 3px; background: var(--line); margin-top: 3px; }
+.mlsbar i { display: block; height: 100%; width: calc(var(--p) * 100%); background: var(--fg); transform-origin: left; animation: mlfill .9s .25s var(--ease) both; }
+.mls.done .mlsbar i { background: var(--grn); }
+.mlsl { display: flex; flex-wrap: wrap; gap: 2px 12px; font-family: var(--mono); font-size: 11px; color: var(--dim); }
+.mlsl span:first-child { color: var(--fg); }
+.mlsc { display: inline-flex; flex-direction: column; align-items: flex-end; gap: 2px; padding: 7px 10px; border: 1px solid var(--line); font-family: var(--mono); font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; white-space: nowrap; }
+.mlsc small { font-size: 10px; font-weight: 500; letter-spacing: .02em; text-transform: none; color: var(--dim); }
+.mlsc.ok { display: inline-flex; flex-direction: row; align-items: center; gap: 5px; border-color: transparent; background: #86efac; color: #052e16; }
+.mlsc.ok svg { width: 13px; height: 13px; stroke: currentColor; fill: none; }
+@media (max-width: 520px) { .mls { grid-template-columns: 54px minmax(0, 1fr); } .mlsp { width: 54px; } .mlsc { grid-column: 2; justify-self: start; flex-direction: row; gap: 8px; } }
 .mlgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(168px, 1fr)); gap: 26px 16px; }
 .mlc { position: relative; min-width: 0; animation: cardIn .5s var(--ease) both; animation-delay: calc(var(--i, 0) * 45ms); transition: opacity .26s, transform .26s var(--ease); }
 .mlgrid.still .mlc { animation: none; }
@@ -1639,6 +1663,17 @@ footer .about .flist li, footer .about p.dev { font-weight: 800; }
 .cxnone { margin: 0; align-self: center; color: var(--dim); font-size: 14px; }
 .cxgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 10px; padding-bottom: 14px; }
 .cxcard { display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 14px; padding: 10px; border: 1px solid var(--line); background: transparent; animation: cardIn .5s var(--ease) both; animation-delay: calc(var(--i, 0) * 50ms); transition: border-color .25s, background .25s, transform .3s var(--ease); }
+.cxwrap { position: relative; display: block; }
+.cxwrap .cxcard { height: 100%; }
+.cxdel { position: absolute; top: 6px; right: 6px; z-index: 2; width: 26px; height: 26px; display: grid; place-items: center; border: 1px solid var(--line); background: var(--bg); color: var(--fg); font-size: 17px; line-height: 1; cursor: pointer; opacity: .8; }
+.cxdel:hover { border-color: #fca5a5; color: #fca5a5; opacity: 1; }
+.cxadmin { padding-block: 18px 4px; }
+.cxadd { margin-top: 12px; padding: 16px; border: 1px solid var(--line); background: var(--panel); display: grid; gap: 14px; }
+.cxadd[hidden] { display: none; }
+.cxf { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) minmax(0, 2fr); gap: 12px; }
+.cxf label { display: grid; gap: 6px; font-family: var(--mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--dim); }
+.cxf input { text-transform: none; letter-spacing: 0; font-family: inherit; font-size: 14px; color: var(--fg); color-scheme: dark; }
+@media (max-width: 720px) { .cxf { grid-template-columns: minmax(0, 1fr); } }
 .cxcard:hover { border-color: var(--acc); background: var(--panel); transform: translateX(5px); }
 .cxcard:active { transform: scale(.985); }
 .cxp { position: relative; width: 64px; aspect-ratio: 2 / 3; background: var(--panel); overflow: hidden; display: grid; place-items: center; }
@@ -2879,9 +2914,11 @@ function autoNameAll(arr) {
 }
 
 /* Sources : une par ligne, au format "Nom | lien" (ou juste le lien) */
+/* Badge « fansub » d'un serveur (rien si le champ est vide) */
+function fsBadge(x) { return x && x.fansub ? '<span class="fsb" title="Fansub : ' + esc(x.fansub) + '">' + esc(x.fansub) + '</span>' : ""; }
 function srcToText(arr) {
   return (arr || []).map(function (s) {
-    return s.name + " | " + s.url + (s.quality ? " " + s.quality : "") + (s.size ? " " + s.size : "");
+    return s.name + " | " + s.url + (s.quality ? " " + s.quality : "") + (s.size ? " " + s.size : "") + (s.fansub ? " [" + s.fansub + "]" : "");
   }).join("\n");
 }
 /* Qualité et taille : on tape vite, ça se met en forme tout seul
@@ -2927,8 +2964,10 @@ function parseMeta(after) {
 /* Réécrit une ligne « Nom | lien 1080 264 2go-3.5go » avec la qualité et la taille mises en forme */
 function tidySrcLine(line) {
   var m = line.match(/https?:\/\/[^\s|]+/); if (!m) return line;
-  var end = m.index + m[0].length, meta = parseMeta(line.slice(end));
-  return line.slice(0, end) + (meta.quality ? " " + meta.quality : "") + (meta.size ? " " + meta.size : "");
+  var end = m.index + m[0].length, rest = line.slice(end), fm = rest.match(/\[([^\]]{1,40})\]/);
+  if (fm) rest = rest.replace(fm[0], " ");
+  var meta = parseMeta(rest);
+  return line.slice(0, end) + (meta.quality ? " " + meta.quality : "") + (meta.size ? " " + meta.size : "") + (fm && fm[1].trim() ? " [" + fm[1].trim() + "]" : "");
 }
 /* Une ligne : "Nom | lien 1080p 35go" (Nom, qualité et taille facultatifs, ordre libre après le lien) */
 function textToSrc(text) {
@@ -2939,7 +2978,9 @@ function textToSrc(text) {
     var url = fixVidmoly(m[0]);
     var name = isVidmoly(url) ? "VIDMOLY" : line.slice(0, m.index).replace(/[|\s]+$/, "").trim();
     var o = { name: name || hostName(url), url: url };
-    var meta = parseMeta(line.slice(m.index + url.length));
+    var after = line.slice(m.index + url.length), fm = after.match(/\[([^\]]{1,40})\]/) || after.match(/\bfansubs?\s*[:=]\s*([^|\[\]]{1,40})/i);
+    if (fm) { var fs = fm[1].replace(/[<>"]/g, "").trim().slice(0, 30); if (fs) o.fansub = fs; after = after.replace(fm[0], " "); }
+    var meta = parseMeta(after);
     if (meta.size) o.size = meta.size;
     if (meta.quality) o.quality = meta.quality;
     out.push(o);
@@ -4743,6 +4784,24 @@ function mlCard(s, i, tab) {
     (langLabel(s) ? '<span class="lang">' + esc(langLabel(s)) + '</span>' : '') + (newEpisode(s) ? newBadge("Nouvel ép.") : '') + inner + acts + '</div>' +
     '<a class="mlmeta" href="/serie/' + id + '"><b>' + esc(s.name) + '</b><span>' + esc(meta) + '</span>' + (extra ? '<em>' + esc(extra) + '</em>' : '') + '</a></div>';
 }
+/* Onglet « Vus » : une ligne par série avec progression, dernier épisode vu et prochain à regarder */
+function mlSeenRow(s, i) {
+  var id = esc(s.id), all = readSeen()[s.id] || {}, pr = mlProgress(s), last = "", next = "", n = 0;
+  (s.seasons || []).forEach(function (se) {
+    (se.episodes || []).forEach(function (ep) {
+      if (all[epKey(se, ep)]) last = "S" + se.number + " · Ép. " + ep.number;
+      else if (!next) next = "S" + se.number + " · Ép. " + ep.number;
+    });
+  });
+  var done = pr.t && pr.n >= pr.t, pct = Math.round(pr.p * 100);
+  var meta = [isMovie(s) ? "Film" : "Série", s.year, s.rating ? "★ " + s.rating : ""].filter(Boolean).join("  ·  ");
+  return '<a class="mls' + (done ? " done" : "") + '" style="--i:' + Math.min(i || 0, 14) + ';--p:' + pr.p.toFixed(3) + '" href="/serie/' + id + '">' +
+    '<span class="mlsp">' + (s.poster ? '<img loading="lazy" src="' + esc(s.poster) + '" alt="">' : '<em>' + esc(String(s.name).charAt(0)) + '</em>') + '</span>' +
+    '<span class="mlsb"><b>' + esc(s.name) + '</b><span class="mlsm">' + esc(meta) + '</span>' +
+    '<span class="mlsbar"><i></i></span>' +
+    '<span class="mlsl"><span>' + (pr.t ? pr.n + ' / ' + pr.t + ' épisodes · ' + pct + ' %' : 'Aucun épisode') + '</span>' + (last ? '<span>Dernier vu : ' + esc(last) + '</span>' : '') + '</span></span>' +
+    '<span class="mlsc ' + (done ? "ok" : "go") + '">' + (done ? nsvg("check") + 'Terminé' : (next ? 'Suivant<small>' + esc(next) + '</small>' : 'En cours')) + '</span></a>';
+}
 function mlEmpty(tab, q) {
   var T = {
     list: ["Ta liste est vide", "Ajoute des titres depuis leur fiche avec « + Ma liste » et retrouve-les ici."],
@@ -4783,7 +4842,7 @@ function mlRenderBody(L, still, swap) {
   var arr = mlFilter(L[listTab], listTab);
   body.className = swap ? "mlswap" : "";
   if (swap) { void body.offsetWidth; body.className = "mlswap"; }
-  body.innerHTML = arr.length ? '<div class="mlgrid' + (still ? ' still' : '') + '">' + arr.map(function (s, i) { return mlCard(s, i, listTab); }).join("") + '</div>' : mlEmpty(listTab, q && L[listTab].length);
+  body.innerHTML = arr.length ? (listTab === "seen" ? '<div class="mlsgrid' + (still ? ' still' : '') + '">' + arr.map(function (s, i) { return mlSeenRow(s, i); }).join("") + '</div>' : '<div class="mlgrid' + (still ? ' still' : '') + '">' + arr.map(function (s, i) { return mlCard(s, i, listTab); }).join("") + '</div>') : mlEmpty(listTab, q && L[listTab].length);
   var sum = $("#mlsum"); if (sum) {
     var n = arr.length;
     if (listTab === "seen") { var ep = 0; arr.forEach(function (x) { ep += x._n || 0; }); sum.textContent = ep + (ep > 1 ? " épisodes vus" : " épisode vu"); }
@@ -6303,10 +6362,10 @@ function renderEditor() {
   var d = draft, movie = d.type === "movie";
   var saved = db.some(function (x) { return String(x.id) === String(d.id); });
   var canRefresh = saved && (movie ? /^m\d+$/.test(String(d.id)) : /^\d+$/.test(String(d.id)));
-  var hint = '<p class="note">Une source par ligne, au format Nom | lien. Sans nom, elle prend automatiquement celui du site (ex. UQLOAD, VIDARA).</p>';
+  var hint = '<p class="note">Une source par ligne, au format Nom | lien. Sans nom, elle prend automatiquement celui du site (ex. UQLOAD, VIDARA). Fansub : ajoute [NOM DE LA TEAM] à la fin de la ligne, il s\'affiche en badge sur ce serveur (rien si tu ne mets rien).</p>';
   var reading;
   if (movie) {
-    reading = '<label class="f"><span>Sources du film</span><textarea class="srcbox" data-f="sources" placeholder="Source 1 | https://...&#10;Source 2 | https://...">' + esc(srcToText(d.sources)) + '</textarea></label>' + hint;
+    reading = '<label class="f"><span>Sources du film</span><textarea class="srcbox" data-f="sources" placeholder="Source 1 | https://... [TEAM]&#10;Source 2 | https://...">' + esc(srcToText(d.sources)) + '</textarea></label>' + hint;
   } else if ((d.seasons || []).length) {
     reading = '<div class="tpl"><label class="f"><span>Modèles de sources pour tous les épisodes : {s} = saison, {e} = épisode</span><textarea id="tpl" placeholder="Source 1 | https://site.com/embed/' + esc(d.id) + '/{s}/{e}&#10;Source 2 | https://autre.com/tv/' + esc(d.id) + '?s={s}&amp;e={e}"></textarea></label><button class="btn ghost" type="button" id="applytpl">Remplir</button></div>' + hint +
       d.seasons.map(function (se, i) {
@@ -6315,7 +6374,7 @@ function renderEditor() {
           '<div class="bulk"><label class="f"><span>Ajout en masse : un épisode par ligne, dans l\'ordre. Les sources s\'ajoutent à celles qui existent déjà (un autre hébergeur = une source en plus)</span><textarea data-bulkta="' + i + '" placeholder="https://uqload.vc/embed-xxxx.html&#10;https://uqload.vc/embed-yyyy.html&#10;https://uqload.vc/embed-zzzz.html"></textarea></label>' +
           '<div class="bulkrow"><label class="f"><span>À partir de l\'épisode</span><input type="number" min="1" value="1" data-bulkfrom="' + i + '"></label><button class="btn ghost" type="button" data-bulk="' + i + '">Remplir la saison</button></div></div>' +
           (se.episodes || []).map(function (ep, j) {
-            return '<div class="eprow"><span class="n">' + String(ep.number).padStart(2, "0") + '</span><span class="t">' + esc(ep.name || "") + '</span><textarea data-s="' + i + '" data-e="' + j + '" placeholder="Nom | lien (une source par ligne)" aria-label="Sources saison ' + esc(se.number) + ' épisode ' + esc(ep.number) + '">' + esc(srcToText(ep.sources)) + '</textarea></div>';
+            return '<div class="eprow"><span class="n">' + String(ep.number).padStart(2, "0") + '</span><span class="t">' + esc(ep.name || "") + '</span><textarea data-s="' + i + '" data-e="' + j + '" placeholder="Nom | lien [TEAM fansub, facultatif] (une par ligne)" aria-label="Sources saison ' + esc(se.number) + ' épisode ' + esc(ep.number) + '">' + esc(srcToText(ep.sources)) + '</textarea></div>';
           }).join("") + '</details>';
       }).join("");
   } else {
@@ -6631,7 +6690,7 @@ function renderPlayer() {
   if (cur.langTip !== lp) { cur.langTip = lp; if (lp) tipIdx = 0; }
   showTip(tipIdx);
   clearInterval(tipTimer); tipTimer = setInterval(function () { showTip(tipIdx + 1); }, 9000);
-  $("#pl").style.display = cur.sources.length > 1 ? "flex" : "none";
+  $("#pl").style.display = (cur.sources.length > 1 || (cur.sources[0] && cur.sources[0].fansub)) ? "flex" : "none";
   $("#pone").style.display = cur.sources.length <= 1 ? "flex" : "none";
   $("#pone2").style.display = (dlOpen() && !(cur.dl || []).length) ? "flex" : "none";
   $("#pnav").style.display = cur.nav ? "flex" : "none";
@@ -6646,9 +6705,9 @@ function renderPlayer() {
   var many = cur.sources.length > 1;
   refreshReport();
   $("#psrc").className = "srcs" + (many ? " many" : "");
-  $("#psrc").innerHTML = cur.sources.length > 1 ? (many ? '<button type="button" class="srctoggle" data-srctoggle aria-expanded="false" aria-label="Changer de serveur"><span class="nm">' + esc((cur.sources[cur.i] || {}).name || "") + '</span><span class="cnt">' + (cur.i + 1) + '/' + cur.sources.length + '</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>' : '') + cur.sources.map(function (x, k) {
-    return '<button type="button" class="chip' + (k === cur.i ? " on" : "") + '" data-src="' + k + '">' + esc(x.name) + '</button>';
-  }).join("") : "";
+  $("#psrc").innerHTML = cur.sources.length > 1 ? (many ? '<button type="button" class="srctoggle" data-srctoggle aria-expanded="false" aria-label="Changer de serveur"><span class="nm">' + esc((cur.sources[cur.i] || {}).name || "") + fsBadge(cur.sources[cur.i]) + '</span><span class="cnt">' + (cur.i + 1) + '/' + cur.sources.length + '</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>' : '') + cur.sources.map(function (x, k) {
+    return '<button type="button" class="chip' + (k === cur.i ? " on" : "") + '" data-src="' + k + '">' + esc(x.name) + fsBadge(x) + '</button>';
+  }).join("") : (cur.sources[0] && cur.sources[0].fansub ? '<span class="chip on fsonly">' + esc(cur.sources[0].name) + fsBadge(cur.sources[0]) + '</span>' : "");
   watchSource();
 }
 /* Écran de chargement : bouton « ça rame ? » après 7 s, et filet de sécurité à 20 s pour ne jamais tourner à l'infini */
@@ -6871,6 +6930,23 @@ function toggleFull() {
 
 /* ===== Calendrier des dramas (K, C, J, T) : sorties d'épisodes, semaine par semaine (dates TMDB des fiches) ===== */
 var calWeek = 0, calType = "", calDay = "", calDir = 0;
+/* Titres ajoutés à la main au calendrier (nouveautés du site : films, séries, saisons…), publiés dans catalog.json (calx) */
+var CALXKEY = "noir.calx", CALX = readJSON(CALXKEY, null);
+function calxSave() { try { localStorage.setItem(CALXKEY, JSON.stringify(CALX)); } catch (e) {} }
+function calxClean(r) {
+  var out = [];
+  ((r && r.items) || []).forEach(function (x) {
+    if (x && x.sid != null && /^\d{4}-\d{2}-\d{2}$/.test(String(x.date))) out.push({ id: String(x.id || x.sid + "_" + x.date), sid: String(x.sid), date: String(x.date), label: String(x.label || "").slice(0, 60) });
+  });
+  return out.slice(0, 300);
+}
+function adoptCalx(data) {
+  if (!data || Array.isArray(data) || !data.calx || !Array.isArray(data.calx.items)) return;
+  var r = data.calx;
+  if (!ADMIN || !CALX || (+r.at || 0) >= (+CALX.at || 0)) { CALX = { items: calxClean(r), at: +r.at || 0 }; calxSave(); }
+}
+function calxItems() { return (CALX && CALX.items) || []; }
+function calxHasSrc(s) { return !!((s.sources || []).length || (s.seasons || []).some(function (se) { return (se.episodes || []).some(function (ep) { return (ep.sources || []).length; }); })); }
 function isoDate(d) { return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0"); }
 function calRanges(nums) {
   nums = nums.slice().sort(function (a, b) { return a - b; });
@@ -6904,6 +6980,11 @@ function calModel() {
       });
     });
   });
+  calxItems().forEach(function (x) {
+    if (x.date < first || x.date > last) return;
+    var s = byId(x.sid); if (!s || (calType && dramaType(s) !== calType)) return;
+    by["x|" + x.id] = { date: x.date, s: s, se: null, nums: [], ok: calxHasSrc(s), custom: x };
+  });
   var groups = Object.keys(by).map(function (k) { return by[k]; });
   groups.sort(function (a, b) { return String(a.s.name).localeCompare(String(b.s.name), "fr"); });
   return { days: days, groups: groups, today: today };
@@ -6928,8 +7009,11 @@ function calCardHTML(g, i, M) {
   if (g.ok) st = '<span class="cxs ok">' + nsvg("check") + 'Disponible</span>';
   else if (g.date > M.today) st = '<span class="cxs soon">' + nsvg("clock") + 'À venir</span>';
   else st = '<span class="cxs wait">' + nsvg("clock") + 'En attente d\'un lien</span>';
-  return '<a class="cxcard" style="--i:' + Math.min(i, 14) + '" href="/serie/' + esc(g.s.id) + '"><span class="cxp">' + (g.s.poster ? '<img loading="lazy" src="' + esc(g.s.poster) + '" alt="">' : '<em>' + esc(String(g.s.name).charAt(0)) + '</em>') + '</span>' +
-    '<span class="cxt"><b>' + esc(g.s.name) + '</b><span class="cxm">' + (!calType && dt ? '<i class="cxk" style="--c:' + CAL_KC[dt] + '">' + dt + '</i>' : '') + 'Saison ' + esc(g.se.number) + ' · Épisode' + (many ? "s " : " ") + esc(calRanges(g.nums)) + '</span>' + st + '</span></a>';
+  var meta = g.custom ? esc(g.custom.label || (isMovie(g.s) ? "Film" : "Nouveau sur le site")) : 'Saison ' + esc(g.se.number) + ' · Épisode' + (many ? "s " : " ") + esc(calRanges(g.nums));
+  var card = '<a class="cxcard" style="--i:' + Math.min(i, 14) + '" href="/serie/' + esc(g.s.id) + '"><span class="cxp">' + (g.s.poster ? '<img loading="lazy" src="' + esc(g.s.poster) + '" alt="">' : '<em>' + esc(String(g.s.name).charAt(0)) + '</em>') + '</span>' +
+    '<span class="cxt"><b>' + esc(g.s.name) + '</b><span class="cxm">' + (!calType && dt ? '<i class="cxk" style="--c:' + CAL_KC[dt] + '">' + dt + '</i>' : '') + meta + '</span>' + st + '</span></a>';
+  if (g.custom && ADMIN) card = '<div class="cxwrap">' + card + '<button type="button" class="cxdel" data-calxdel="' + esc(g.custom.id) + '" title="Retirer du calendrier" aria-label="Retirer du calendrier">×</button></div>';
+  return card;
 }
 function calBodyHTML(M) {
   if (!M.groups.length && !calDay) {
@@ -6967,12 +7051,14 @@ function calBuild() {
     '<div class="cxrange"><b id="calrange"></b><small id="calwk"></small></div>' +
     '<button type="button" class="cxarr" data-calweek="1" aria-label="Semaine suivante">' + nsvg("chevr") + '</button>' +
     '<button type="button" class="btn small ghost cxtoday hide" id="caltoday" data-calweek="0">Aujourd\'hui</button></div></div></div>' +
-    '<div class="wrap"><div class="cxchips" role="group" aria-label="Catégorie">' + chips + '</div>' +
+    '<div class="wrap">' + (ADMIN ? '<div class="cxadmin"><button type="button" class="btn small ghost" data-calx="toggle">+ Ajouter un titre au calendrier</button><div class="cxadd" id="calxform" hidden><div class="cxf"><label>Titre<input type="text" id="calxt" list="calxl" placeholder="Cherche un titre du site" autocomplete="off"></label><datalist id="calxl"></datalist>' +
+      '<label>Date<input type="date" id="calxd"></label><label>Texte (facultatif)<input type="text" id="calxn" maxlength="60" placeholder="Ex. Saison 2 · Ép. 1–2"></label></div><div class="row"><button type="button" class="btn small" data-calx="add">Ajouter</button><button type="button" class="btn small ghost" data-calx="toggle">Fermer</button></div></div></div>' : '') +
+    '<div class="cxchips" role="group" aria-label="Catégorie">' + chips + '</div>' +
     '<div class="cxstrip" id="calstrip"></div><div class="cxsum"><span id="calsum"></span></div><div id="calbody"></div></div></div>';
   calPatch();
 }
 function viewCalendar() {
-  if (!db.some(function (s) { return !!dramaType(s); })) { $("#app").innerHTML = emptyBox("Calendrier", "Aucun drama au catalogue pour l'instant."); return; }
+  if (!db.some(function (s) { return !!dramaType(s); }) && !calxItems().length && !ADMIN) { $("#app").innerHTML = emptyBox("Calendrier", "Aucun drama au catalogue pour l'instant."); return; }
   if (["K", "C", "J", "T"].indexOf(calType) < 0) calType = "";
   if ($("#calroot")) calPatch(); else calBuild();
 }
@@ -6986,6 +7072,42 @@ document.addEventListener("click", function (e) {
     calDir = nw > calWeek ? 1 : nw < calWeek ? -1 : 0; calWeek = nw; calDay = ""; calPatch();
   } else { calDay = calDay === t.dataset.calday ? "" : t.dataset.calday; calDir = 0; calPatch(); }
 });
+/* Admin : ajouter / retirer un titre du calendrier */
+function calxLabelOf(s) { return s.name + (s.year ? " (" + s.year + ")" : ""); }
+document.addEventListener("click", function (e) {
+  if (!ADMIN || !$("#calroot")) return;
+  var d = e.target.closest ? e.target.closest("[data-calxdel]") : null;
+  if (d) {
+    e.preventDefault(); e.stopPropagation();
+    var id = d.dataset.calxdel;
+    CALX = { items: calxItems().filter(function (x) { return x.id !== id; }), at: Date.now() }; calxSave(); markDirty(); calPatch();
+    toast(autoSyncOn() ? "Retiré du calendrier." : "Retiré. Clique sur « Publier » pour que tout le monde le voie."); return;
+  }
+  var b = e.target.closest ? e.target.closest("[data-calx]") : null; if (!b) return;
+  e.preventDefault();
+  var f = $("#calxform");
+  if (b.dataset.calx === "toggle") {
+    f.hidden = !f.hidden;
+    if (!f.hidden) {
+      $("#calxl").innerHTML = db.slice().sort(function (a, c) { return String(a.name).localeCompare(String(c.name), "fr"); }).map(function (s) { return '<option value="' + esc(calxLabelOf(s)) + '"></option>'; }).join("");
+      if (!$("#calxd").value) $("#calxd").value = calDay || isoDate(new Date());
+      $("#calxt").focus();
+    }
+    return;
+  }
+  var q = $("#calxt").value.trim().toLowerCase(), date = $("#calxd").value, hit = null;
+  db.forEach(function (s) { if (!hit && (calxLabelOf(s).toLowerCase() === q || String(s.name).toLowerCase() === q)) hit = s; });
+  if (!hit) { toast("Choisis un titre dans la liste proposée."); return; }
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) { toast("Choisis une date."); return; }
+  var its = calxItems().filter(function (x) { return !(x.sid === String(hit.id) && x.date === date); });
+  its.push({ id: hit.id + "_" + date + "_" + Date.now().toString(36), sid: String(hit.id), date: date, label: $("#calxn").value.trim().slice(0, 60) });
+  CALX = { items: its, at: Date.now() }; calxSave(); markDirty();
+  $("#calxt").value = ""; $("#calxn").value = "";
+  var dt = new Date(date + "T12:00:00"), now = new Date();
+  calWeek = Math.round((new Date(dt.getFullYear(), dt.getMonth(), dt.getDate() - ((dt.getDay() + 6) % 7)) - new Date(now.getFullYear(), now.getMonth(), now.getDate() - ((now.getDay() + 6) % 7))) / 604800000);
+  calDay = ""; calDir = 0; calPatch();
+  toast(autoSyncOn() ? "Ajouté au calendrier." : "Ajouté. Clique sur « Publier » pour que tout le monde le voie.");
+}, true);
 /* glisser à gauche / à droite pour changer de semaine (mobile) */
 var calTX = null, calTY = 0;
 document.addEventListener("touchstart", function (e) {
@@ -8197,7 +8319,7 @@ document.addEventListener("click", function (e) {
     if (!tpls.length) { toast("Écris d'abord au moins un modèle de source"); return; }
     draft.seasons.forEach(function (sea) {
       sea.episodes.forEach(function (epi) {
-        epi.sources = capSrc(tpls.map(function (x) { return { name: x.name, url: x.url.replace(/\{s\}/g, sea.number).replace(/\{e\}/g, epi.number) }; }));
+        epi.sources = capSrc(tpls.map(function (x) { var r = { name: x.name, url: x.url.replace(/\{s\}/g, sea.number).replace(/\{e\}/g, epi.number) }; if (x.fansub) r.fansub = x.fansub; return r; }));
       });
     });
     renderEditor(); toast("Sources remplies pour tous les épisodes");
@@ -8483,6 +8605,7 @@ function ghPublish(obj, tried, opts) {
     if (remote && remote.credits && typeof remote.credits.text === "string" && (!CREDITS || (+remote.credits.at || 0) > (+CREDITS.at || 0))) obj.credits = remote.credits; else if (CREDITS) obj.credits = CREDITS;
     if (remote && remote.vip && Array.isArray(remote.vip.items) && (!VIPREG || (+remote.vip.at || 0) > (+VIPREG.at || 0))) obj.vip = remote.vip; else if (VIPREG) obj.vip = VIPREG;
     if (remote && remote.hero && Array.isArray(remote.hero.ids) && (!HERO || (+remote.hero.at || 0) > (+HERO.at || 0))) obj.hero = remote.hero; else if (HERO) obj.hero = HERO;
+    if (remote && remote.calx && Array.isArray(remote.calx.items) && (!CALX || (+remote.calx.at || 0) > (+CALX.at || 0))) obj.calx = remote.calx; else if (CALX) obj.calx = CALX;
     if (remote && remote.announce && typeof remote.announce === "object" && (!ANN || (+remote.announce.at || 0) > (+ANN.at || 0))) obj.announce = remote.announce; else if (ANN) obj.announce = ANN;
     if (remote && remote.inbox && Array.isArray(remote.inbox.items) && (+remote.inbox.at || 0) > (+INBOX.at || 0)) obj.inbox = remote.inbox; else if (INBOX && INBOX.at) obj.inbox = INBOX;
     if (remote && remote.requests && (+remote.requests.at || 0) > (+REQS.at || 0)) obj.requests = remote.requests; else if (REQS.at) obj.requests = REQS;
@@ -8548,6 +8671,7 @@ function buildCatalogObj() {
   if (CREDITS) obj.credits = CREDITS;
   if (VIPREG) obj.vip = VIPREG;
   if (HERO) obj.hero = HERO;
+  if (CALX) obj.calx = CALX;
   if (ANN) obj.announce = ANN;
   if (INBOX && INBOX.at) obj.inbox = INBOX;
   if (REQS.at) obj.requests = REQS;
@@ -9050,7 +9174,7 @@ function loadCatalogCore() {
     data = list;
     var priv = !!(st && st.downloads === "private");
     if (!ADMIN) { db = data; SETTINGS.downloads = priv ? "private" : "public"; }
-    safe(function () { adoptTeam(raw); }); safe(function () { adoptHero(raw); }); safe(function () { adoptReqs(raw); }); safe(function () { adoptStat(raw); }); safe(function () { adoptAnnounce(raw); }); safe(function () { adoptInbox(raw); }); safe(function () { adoptCredits(raw); }); safe(function () { adoptVip(raw); });
+    safe(function () { adoptTeam(raw); }); safe(function () { adoptHero(raw); }); safe(function () { adoptCalx(raw); }); safe(function () { adoptReqs(raw); }); safe(function () { adoptStat(raw); }); safe(function () { adoptAnnounce(raw); }); safe(function () { adoptInbox(raw); }); safe(function () { adoptCredits(raw); }); safe(function () { adoptVip(raw); });
     safe(function () { adoptPlayer(st); });
     if (!ADMIN) { /* déjà posé plus haut */ }
     else if (!db.length) {
