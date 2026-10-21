@@ -29615,10 +29615,11 @@
       "sources": [],
       "addedAt": 1792603776359,
       "langs": [
-        "VOSTFR"
+        "VOSTFR",
+        "VF"
       ],
       "downloads": [],
-      "updatedAt": 1792603840749
+      "updatedAt": 1792604277048
     }
   ],
   "deletedLinks": [
@@ -29836,6 +29837,15 @@
     "at": 1792602810955
   },
   "journal": [
+    {
+      "k": "mvieawji4sp4i",
+      "t": 1792604277054,
+      "b": "head",
+      "a": "edit",
+      "i": "229891",
+      "n": "Can This Love Be Translated?",
+      "d": ""
+    },
     {
       "k": "mvie1jw35tbn9",
       "t": 1792603840755,
