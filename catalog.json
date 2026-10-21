@@ -29151,7 +29151,13 @@
               "name": "Épisode 1",
               "overview": "Après un match de boxe palpitant, Kim Gun-woo et Hong Woo-jin se lient d'amitié. Les ambitions de Kim Myeong-gil se révèlent et reposent sur des méthodes intimidantes.",
               "air_date": "2023-06-09",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/pvmpn1Zgfl4xs",
+                  "by": "head"
+                }
+              ],
               "downloads": []
             },
             {
@@ -29159,7 +29165,13 @@
               "name": "Épisode 2",
               "overview": "Gun-woo rencontre Choi Tae-ho pour remédier aux dettes de sa mère. Myeong-gil subit une rencontre humiliante avec Hong Min-beom qui fait naître des désirs de vengeance.",
               "air_date": "2023-06-09",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/B7TziTsxyqSyC",
+                  "by": "head"
+                }
+              ],
               "downloads": []
             },
             {
@@ -29167,7 +29179,13 @@
               "name": "Épisode 3",
               "overview": "Gun-woo et Woo-jin trouvent le moyen de démanteler l'arnaque. Myeong-gil prend le dessus sur Min-beom.",
               "air_date": "2023-06-09",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/gcs8PKhuOtOOC",
+                  "by": "head"
+                }
+              ],
               "downloads": []
             },
             {
@@ -29175,7 +29193,13 @@
               "name": "Épisode 4",
               "overview": "À la suite d'une mésaventure du groupe, M. Choi prévoit d'utiliser ses propres moyens. Alors que leurs plans se mettent en place, leurs ennemis viennent les contrecarrer.",
               "air_date": "2023-06-09",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/mK7C205kp1glJ",
+                  "by": "head"
+                }
+              ],
               "downloads": []
             },
             {
@@ -29183,7 +29207,13 @@
               "name": "Épisode 5",
               "overview": "Après avoir échappé à une menace de justesse, le groupe se prépare à la suite tandis que M. Choi et ses hommes cherchent à soutirer de précieuses informations.",
               "air_date": "2023-06-09",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/i3ztALWltLOPH",
+                  "by": "head"
+                }
+              ],
               "downloads": []
             },
             {
@@ -29191,7 +29221,13 @@
               "name": "Épisode 6",
               "overview": "Les amis célèbrent leur victoire avant de s'entraîner pour la prochaine étape. Plus vulnérable que jamais, Myeong-gil s'en prend à M. Choi et ses gardes.",
               "air_date": "2023-06-09",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/IhudabIWmK2Oe",
+                  "by": "head"
+                }
+              ],
               "downloads": []
             },
             {
@@ -29199,7 +29235,13 @@
               "name": "Épisode 7",
               "overview": "Après un échec impensable, Gun-woo et Woo-jin sont déterminés à se venger et collaborent avec un allié inattendu.",
               "air_date": "2023-06-09",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/Gn584hNxSwyiK",
+                  "by": "head"
+                }
+              ],
               "downloads": []
             },
             {
@@ -29207,7 +29249,13 @@
               "name": "Épisode 8",
               "overview": "Mus par leur sens du devoir envers ceux qui leur sont chers, Gun-woo et Woo-jin s'activent pour faire tomber Myeong-gil une bonne fois pour toutes.",
               "air_date": "2023-06-09",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/dBehXNNBv5JId",
+                  "by": "head"
+                }
+              ],
               "downloads": []
             }
           ],
@@ -29361,7 +29409,7 @@
         "VF"
       ],
       "downloads": [],
-      "updatedAt": 1792611038861
+      "updatedAt": 1792618199444
     }
   ],
   "deletedLinks": [
@@ -29632,6 +29680,15 @@
     "at": 1792602810955
   },
   "journal": [
+    {
+      "k": "mvimlb4qyftzp",
+      "t": 1792618199450,
+      "b": "head",
+      "a": "edit",
+      "i": "127529",
+      "n": "Bloodhounds",
+      "d": "sources 14 → 22"
+    },
     {
       "k": "mvijdkdhnc1i4",
       "t": 1792612799333,
