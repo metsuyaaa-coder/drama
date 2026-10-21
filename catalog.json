@@ -28787,6 +28787,306 @@
       "downloads": [],
       "posterCustom": true,
       "updatedAt": 1792534026967
+    },
+    {
+      "id": "270420",
+      "type": "tv",
+      "name": "No Tail to Tell",
+      "original_name": "오늘부터 인간입니다만",
+      "origin_country": [
+        "KR"
+      ],
+      "networks": [
+        "SBS"
+      ],
+      "original_language": "ko",
+      "aka": [
+        "No Tail to Tell",
+        "今天开始是人类",
+        "De Repente Humana",
+        "從今天開始，雖然成為了人類",
+        "Відсьогодні я людина",
+        "Từ Hôm Nay, Tôi Là Con Người",
+        "Od dzisiaj jestem człowiekiem",
+        "Od danas sam čovjek",
+        "เรื่องของจิ้งจอกสาวไร้หาง",
+        "今天開始是人類",
+        "Humana por accidente",
+        "بلا ذيول",
+        "Juste humaine",
+        "Μια Ιστορία Χωρίς Ουρά",
+        "С сегодняшнего дня я человек",
+        "Zničehonic obyčejná",
+        "מהיום אני אנושית",
+        "今日から\"ニンゲン\"に転身しました",
+        "از امروز یک انسانم",
+        "虽然从今天开始是人类",
+        "Человек с сегодняшнего дня",
+        "Human From Today",
+        "오늘부터 인간입니다만"
+      ],
+      "year": "2026",
+      "overview": "Dotée du pouvoir d'exaucer les vœux, la vie d'une renarde cynique à neuf queues prend un tournant lorsqu'elle rencontre un footballeur, changeant ainsi le destin des deux personnages.",
+      "genres": [
+        "Science-Fiction & Fantastique",
+        "Comédie",
+        "Drame"
+      ],
+      "rating": "8.0",
+      "pop": 9.7575,
+      "status": "Ended",
+      "poster": "https://image.tmdb.org/t/p/w500/bSX49M4tjDsnC8dOVQxt1sLgH6z.jpg",
+      "posterV": 2,
+      "backdrop": "https://image.tmdb.org/t/p/original/sa9igU1XIER6bMgtZ2Ejfo1KsD8.jpg",
+      "videos": [
+        {
+          "key": "Tdr2lgjjYoo",
+          "name": "[스페셜 티저] 김혜윤X로몬, 로코 신드롬 예감 1000%🦊 '오늘부터 인간입니다만' SBS 방송 예정! #오늘부터인간입니다만 #SBSCatc",
+          "type": "Teaser",
+          "lab": "Original"
+        }
+      ],
+      "cast": [
+        {
+          "name": "김혜윤",
+          "character": "Eun-ho",
+          "id": 2214888
+        },
+        {
+          "name": "Lomon",
+          "character": "Kang Si-yeol",
+          "id": 2074587
+        },
+        {
+          "name": "Lee Si-woo",
+          "character": "Geum-ho",
+          "id": 3901565
+        },
+        {
+          "name": "장동주",
+          "character": "Hyun Woo-seok",
+          "id": 2485939
+        },
+        {
+          "name": "Kim Tae-woo",
+          "character": "Jang Do-cheol",
+          "id": 25003
+        },
+        {
+          "name": "Choi Seung-yoon",
+          "character": "Lee Yoon",
+          "id": 2982886
+        },
+        {
+          "name": "인교진",
+          "character": "Park Yong-gil",
+          "id": 1614018
+        },
+        {
+          "name": "Lee Seung-joon",
+          "character": "Hyeon Sang-cheol",
+          "id": 1113060
+        },
+        {
+          "name": "홍수현",
+          "character": "Hong Yeon-su",
+          "id": 1235477
+        },
+        {
+          "name": "주진모",
+          "character": "Lord Pagun",
+          "id": 945428
+        },
+        {
+          "name": "Cha Mi-kyung",
+          "character": "Kim Bok-soon",
+          "id": 2204431
+        }
+      ],
+      "seasons": [
+        {
+          "number": 1,
+          "name": "Saison 1",
+          "episodes": [
+            {
+              "number": 1,
+              "name": "An Inevitable Event",
+              "overview": "Eun Ho lives a glamorous life granting the wishes of the wealthy. Until one day, she crosses paths with Kang Si Yeol, a high school soccer player.",
+              "air_date": "2026-01-16",
+              "sources": [
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/MAEqC80k1YQ6M",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 2,
+              "name": "The Hour of Transfer",
+              "overview": "Without explanation, Eun Ho's power drains away after her encounter with Si Yeol. She soon appears before him again, demanding that he make a wish.",
+              "air_date": "2026-01-17",
+              "sources": [
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/qyTjuOWaVfHvj",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 3,
+              "name": "The Rise and Fall",
+              "overview": "After giving away his wish to Hyun U Seok, Si Yeol enrages Eun Ho — and wakes up to unintended consequences as he tries to understand his new reality.",
+              "air_date": "2026-01-23",
+              "sources": [
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/mbZfJ6vxdqQic",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 4,
+              "name": "The Price of Good Deeds",
+              "overview": "Desperate for his life back, Si-yeol pleads with Woo-seok to reverse the wish. But Jang Do-cheol kidnaps Si-yeol - putting him and Eun-ho in peril.",
+              "air_date": "2026-01-24",
+              "sources": [
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/ZNNcVDlcZRFol",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 5,
+              "name": "The Changer, the Changed, and the Lacking",
+              "overview": "Eun-ho and Si-yeol head to the mountains in search of another fox that could help. But they encounter a figure from her past that shocks her.",
+              "air_date": "2026-01-30",
+              "sources": [
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/KARlSgB98M936",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 6,
+              "name": "The False Kindness",
+              "overview": "Si-yeol and Eun-ho clash over Geum-ho's plan, each trying to persuade the other that their way is better — and what it means to be human.",
+              "air_date": "2026-01-31",
+              "sources": [
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/92Me91OFI3snX",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 7,
+              "name": "The Revenge of Memory",
+              "overview": "After surviving a near disaster, Eun-ho and Si-yeol begin to develop a bond. Soon, they try to turn their luck around by stepping up their good deeds.",
+              "air_date": "2026-02-06",
+              "sources": [
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/vkdq0nRVbR88c",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 8,
+              "name": "The Hobby Called Love",
+              "overview": "Eun-ho's confession and subsequent actions leave Si-yeol feeling overwhelmed. But after spending quality time together, they end up going on a date.",
+              "air_date": "2026-02-07",
+              "sources": [
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/4uX0qCpMsHBMJ",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 9,
+              "name": "Love Attack",
+              "overview": "After their kiss, Eun-ho and Si-yeol navigate the awkward aftermath. Meanwhile, Do-cheol uses Woo-seok to get one step closer to Eun-ho.",
+              "air_date": "2026-02-20",
+              "sources": [
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/RzDeR8YIDPZNt",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 10,
+              "name": "From Chance to Destiny",
+              "overview": "Pagun approaches Eun-ho with a sobering truth about Si-yeol and Woo-seok's fate — forcing her to find a way to change destiny as her feelings evolve.",
+              "air_date": "2026-02-21",
+              "sources": [
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/KibH3BARXdyB0",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 11,
+              "name": "The Way of Humans",
+              "overview": "During a date at a soccer game, Eun-ho runs into Lee Yoon — shocking Si-yeol. Meanwhile, Do-cheol uses Geum-ho to obtain the fox bead.",
+              "air_date": "2026-02-27",
+              "sources": [
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/4UnIurgL9Qg8N",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 12,
+              "name": "Love Without Regret",
+              "overview": "Eun-ho makes a fateful decision to save a dying Si-yeol. Now facing eternal separation, will they ever find their happily ever after?",
+              "air_date": "2026-02-28",
+              "sources": [
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/URuOQnPOTA5po",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            }
+          ],
+          "downloads": []
+        }
+      ],
+      "sources": [],
+      "addedAt": 1792595701876,
+      "langs": [
+        "VOSTFR"
+      ],
+      "downloads": [],
+      "updatedAt": 1792595725022
     }
   ],
   "deletedLinks": [
@@ -28976,6 +29276,15 @@
     "at": 1792533000003
   },
   "journal": [
+    {
+      "k": "mvi97lr7bd6m8",
+      "t": 1792595725027,
+      "b": "head",
+      "a": "add",
+      "i": "270420",
+      "n": "No Tail to Tell",
+      "d": ""
+    },
     {
       "k": "mvi7z3luh17xc",
       "t": 1792593648642,
