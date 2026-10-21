@@ -8206,7 +8206,7 @@
                 {
                   "name": "VIDMOLY",
                   "url": "https://vidmoly.org/embed-fc5in9ixpx6i.html",
-                  "quality": "[Dramavore]",
+                  "fansub": "Dramavore",
                   "by": "614d778ed0"
                 },
                 {
@@ -8244,7 +8244,7 @@
                 {
                   "name": "VIDMOLY",
                   "url": "https://vidmoly.org/embed-7bnseb4rx1is.html",
-                  "quality": "[Dramavore]",
+                  "fansub": "Dramavore",
                   "by": "614d778ed0"
                 },
                 {
@@ -8282,7 +8282,7 @@
                 {
                   "name": "VIDMOLY",
                   "url": "https://vidmoly.org/embed-9yoeptdk418r.html",
-                  "quality": "[Dramavore]",
+                  "fansub": "Dramavore",
                   "by": "614d778ed0"
                 },
                 {
@@ -8320,7 +8320,7 @@
                 {
                   "name": "VIDMOLY",
                   "url": "https://vidmoly.org/embed-ojc4on9ylm2p.html",
-                  "quality": "[Dramavore]",
+                  "fansub": "Dramavore",
                   "by": "614d778ed0"
                 },
                 {
@@ -8373,7 +8373,7 @@
                 {
                   "name": "STREAMTAPE",
                   "url": "https://streamtape.com/e/MX0rWlalPviYO6/",
-                  "quality": "[Dramavore]",
+                  "fansub": "Dramavore",
                   "by": "614d778ed0"
                 }
               ],
@@ -8411,7 +8411,7 @@
                 {
                   "name": "VIDMOLY",
                   "url": "https://vidmoly.org/embed-qddjd8pvnpf3.html",
-                  "quality": "[Dramavore]",
+                  "fansub": "Dramavore",
                   "by": "614d778ed0"
                 }
               ],
@@ -8483,7 +8483,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792611303574,
+      "updatedAt": 1792611547039,
       "networks": [
         "ENA"
       ],
@@ -29390,6 +29390,15 @@
     "at": 1792602810955
   },
   "journal": [
+    {
+      "k": "mviimq4h22zvw",
+      "t": 1792611547073,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "307106",
+      "n": "Between Steps",
+      "d": ""
+    },
     {
       "k": "mvii5a82ilbl5",
       "t": 1792611394069,
