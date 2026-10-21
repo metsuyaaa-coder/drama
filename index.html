@@ -2470,17 +2470,13 @@ dialog#player .pbar { align-items: stretch; gap: 12px; padding: 14px max(18px, e
 #ptitle.lk:hover { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 5px; }
 #ptitle.lk:hover::after { color: var(--fg); }
 
-/* ===== Effets lumineux : coupés par défaut, réactivables dans Paramètres > Général > Effets lumineux ===== */
-html:not(.glowon) .mllogo .sp, html:not(.glowon) .rqlogo .sp { display: none; }
-html:not(.glowon) .plogo .tri { fill-opacity: 0 !important; stroke: currentColor; animation: mldraw .8s .7s var(--ease) forwards; }
-html:not(.glowon) .pkick i, html:not(.glowon) #psrc .chip.on::after { display: none; }
-html:not(.glowon) .stdot, html:not(.glowon) .pnsync.on i { animation: none !important; box-shadow: none !important; }
-html:not(.glowon) .pwa .pi { animation: none !important; box-shadow: none !important; }
+/* ===== Grosses lueurs : coupées par défaut, réactivables dans Paramètres > Général > Effets lumineux ===== */
 html:not(.glowon) #pnext, html:not(.glowon) #psrc .chip.on, html:not(.glowon) .pline i, html:not(.glowon) .ptip .tprog, html:not(.glowon) dialog#player:not(.wide) .pframe { box-shadow: none !important; }
-html:not(.glowon) .ptip .tprog { background: var(--acc); }
 html:not(.glowon) .ptip .tprog::after { display: none; }
-html:not(.glowon) .pspin::after { animation: none; }
-html:not(.glowon) .mlhero::before, html:not(.glowon) .mlhero::after, html:not(.glowon) dialog#player::before { display: none; }
+html:not(.glowon) .mlhero::before, html:not(.glowon) .mlhero::after, html:not(.glowon) .sehero::before, html:not(.glowon) .colhero::before, html:not(.glowon) dialog#player::before, html:not(.glowon) .hlbox::after { display: none; }
+html:not(.glowon) .colc.fx2 .colcov { box-shadow: none; }
+html:not(.glowon) .colc.fx2 .colem { text-shadow: none; }
+html:not(.glowon) .colc.fx2 .colem .cico { filter: none; }
 </style>
 <!-- Visites du site : Vercel Web Analytics, sans cookie ni base de données. Ne fait rien tant que tu ne l'actives pas dans Vercel (onglet Analytics). -->
 <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
@@ -4109,7 +4105,7 @@ function stBody(t) {
     stSwitch("noanim", "Désactiver toutes les animations", "Tout s\'affiche normalement, mais sans mouvement ni transition.", PREFS.noanim, "zap", 0) +
     stSwitch("hideTips", "Cacher le carrousel d\'astuces", "Masque les astuces en bas du lecteur.", PREFS.hideTips, "bulb", 1) +
     stSwitch("rememberPlayer", "Se souvenir du dernier lecteur", "Relance directement le serveur choisi en dernier, quand il est disponible sur le titre.", PREFS.rememberPlayer, "play", 2) +
-    stSwitch("glow", "Effets lumineux", "Réactive les lueurs, points lumineux et étincelles (logos, boutons, lecteur). Désactivé par défaut.", PREFS.glow, "bulb", 3) + '</div>' +
+    stSwitch("glow", "Effets lumineux", "Réactive les grosses lueurs et points de lumière en arrière-plan, partout sur le site. Désactivé par défaut.", PREFS.glow, "bulb", 3) + '</div>' +
     '<div class="stsec"><div class="stlbl">Page d\'accueil</div><p class="stnote">Change l\'ordre des rangées de la page d\'accueil avec les flèches.</p>' +
     '<div class="spanel"><div id="catlist">' + catRowsHtml() + '</div><div class="row"><button type="button" class="btn ghost small" data-catreset>Réinitialiser</button></div></div></div>' +
     '<div class="spanel soon"><p class="note" style="margin:0;padding:16px 20px">D\'autres paramètres arrivent bientôt.</p></div>';
