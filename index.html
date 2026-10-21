@@ -7087,10 +7087,10 @@ document.addEventListener("click", function (e) {
 var calxHits = {}, calxTimer = 0, calxSeq = 0, CALX_LG = { ko: "Corée", ja: "Japon", zh: "Chine", cn: "Chine", th: "Thaïlande" };
 function calxSearch(q) {
   var seq = ++calxSeq;
-  tmdb("/search/multi", { query: q, language: "fr-FR", include_adult: "false" }).then(function (r) {
+  reqFetch(q, "fr-FR").then(function (r) {
     if (seq !== calxSeq) return;
     calxHits = {};
-    var opts = (r.results || []).filter(function (x) { return x.media_type === "tv" || x.media_type === "movie"; }).slice(0, 10).map(function (x) {
+    var opts = (r.results || []).filter(reqKeep).slice(0, 10).map(function (x) {
       var mv = x.media_type === "movie", d = (mv ? x.release_date : x.first_air_date) || "", lg = x.original_language || "";
       var h = { sid: String(x.id), media: x.media_type, name: String((mv ? x.title : x.name) || "").trim(), year: d.slice(0, 4), date: d, poster: x.poster_path ? "https://image.tmdb.org/t/p/w185" + x.poster_path : "", dt: { ko: "K", ja: "J", zh: "C", cn: "C", th: "T" }[lg] || "" };
       var lab = h.name + (h.year ? " (" + h.year + ")" : "") + " · " + (mv ? "Film" : "Série") + (CALX_LG[lg] ? " · " + CALX_LG[lg] : "");
