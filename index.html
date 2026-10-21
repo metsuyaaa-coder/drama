@@ -2294,6 +2294,159 @@ dialog#ninfo::backdrop { background: rgba(0,0,0,.85); }
 .hsend .hbtns { display: flex; flex-wrap: wrap; gap: 10px; }
 .hsend .hacts { display: flex; flex-wrap: wrap; gap: 8px; }
 
+
+/* ===== Lecteur : refonte (même langage visuel que Ma liste, Séries, Calendrier et Paramètres) ===== */
+.pcount[hidden], .pline[hidden], .epsback[hidden] { display: none; }
+dialog#player { isolation: isolate; background: var(--bg); }
+dialog#player::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 340px; z-index: -1; pointer-events: none;
+  background: radial-gradient(560px 240px at 6% -60px, color-mix(in srgb, var(--acc) 22%, transparent), transparent 72%), radial-gradient(480px 220px at 98% -80px, rgba(255,255,255,.07), transparent 72%); }
+dialog#player.wide::before { display: none; }
+@keyframes plping { 0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--grn) 60%, transparent); } 100% { box-shadow: 0 0 0 9px transparent; } }
+@keyframes plpulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: .4; transform: scale(.78); } }
+@keyframes plsheet { from { opacity: 0; transform: translateY(44px); } to { opacity: 1; transform: none; } }
+
+/* en-tête */
+dialog#player .phead { position: relative; gap: 14px; padding: max(12px, env(safe-area-inset-top, 0px)) max(18px, env(safe-area-inset-right, 0px)) 14px max(18px, env(safe-area-inset-left, 0px)); background: transparent; border-bottom: 1px solid var(--line); }
+#pclose { flex: none; gap: 8px; min-height: 44px; padding: 0 18px 0 12px; }
+#pclose svg { width: 18px; height: 18px; flex: none; transition: transform .25s var(--ease); }
+#pclose:hover svg { transform: translateX(-4px); }
+.plogo { flex: none; width: 46px; height: 46px; color: var(--fg); }
+.plogo .scr { stroke-dasharray: 80; stroke-dashoffset: 80; animation: mldraw 1s .1s var(--ease) forwards; }
+.plogo .tri { stroke: var(--sky); fill: var(--sky); fill-opacity: 0; stroke-dasharray: 40; stroke-dashoffset: 40; transform-origin: 12px 11px; animation: mldraw .8s .7s var(--ease) forwards, mlspark 3.2s 1.7s ease-in-out infinite; }
+html.noanim .plogo .scr, html.noanim .plogo .tri { stroke-dashoffset: 0 !important; }
+@media (prefers-reduced-motion: reduce) { .plogo .scr, .plogo .tri { stroke-dashoffset: 0; } }
+.phead .pt { gap: 0; }
+.pkick { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 4px; font-family: var(--mono); font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--dim); white-space: nowrap; }
+.pkick i { width: 7px; height: 7px; border-radius: 50%; background: var(--grn); animation: plping 1.8s ease-out infinite; }
+.pkick em { font-style: normal; color: var(--fg); font-weight: 800; }
+.phead .pt b { font-size: clamp(24px, 2.8vw, 34px); line-height: 1.02; }
+.phead .pt small { margin-top: 5px; font-family: var(--mono); font-size: 12px; letter-spacing: .02em; }
+.pcount { flex: none; display: flex; flex-direction: column; align-items: flex-end; gap: 4px; padding: 2px 0 2px 18px; border-left: 1px solid var(--line); line-height: 1; }
+.pcount small { font-family: var(--mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--dim); }
+.pcount b { font-family: var(--display); font-weight: 900; font-size: 46px; line-height: .86; letter-spacing: .01em; }
+.pcount span { font-family: var(--mono); font-size: 11px; color: var(--dim); }
+dialog#player .phead .row { gap: 8px; }
+dialog#player .phead .row .btn { min-height: 44px; }
+.pline { position: absolute; left: 0; right: 0; bottom: -1px; height: 3px; pointer-events: none; }
+.pline i { display: block; height: 100%; width: 0; background: linear-gradient(90deg, color-mix(in srgb, var(--acc) 35%, transparent), var(--acc)); box-shadow: 0 0 14px color-mix(in srgb, var(--acc) 75%, transparent); transition: width .7s var(--ease); }
+dialog#player[open] .phead .pt, dialog#player[open] .phead .pcount, dialog#player[open] .phead .row, dialog#player[open] .pbar > * { animation: riseIn .5s .08s var(--ease) backwards; }
+
+/* écran vidéo */
+dialog#player .pframe { background: var(--s0); }
+dialog#player:not(.wide) .pframe::after { content: ""; position: absolute; inset: 0; z-index: 4; pointer-events: none; --c: var(--acc); --t: 2px; --l: 22px;
+  background:
+    linear-gradient(var(--c), var(--c)) 0 0 / var(--l) var(--t) no-repeat, linear-gradient(var(--c), var(--c)) 0 0 / var(--t) var(--l) no-repeat,
+    linear-gradient(var(--c), var(--c)) 100% 0 / var(--l) var(--t) no-repeat, linear-gradient(var(--c), var(--c)) 100% 0 / var(--t) var(--l) no-repeat,
+    linear-gradient(var(--c), var(--c)) 0 100% / var(--l) var(--t) no-repeat, linear-gradient(var(--c), var(--c)) 0 100% / var(--t) var(--l) no-repeat,
+    linear-gradient(var(--c), var(--c)) 100% 100% / var(--l) var(--t) no-repeat, linear-gradient(var(--c), var(--c)) 100% 100% / var(--t) var(--l) no-repeat; }
+dialog#player .pframe.fsui::after, dialog#player .pframe:fullscreen::after, dialog#player .pframe:-webkit-full-screen::after { display: none; }
+dialog#player.wide .pframe { margin: 0; border: 0; box-shadow: none; }
+dialog#player .pframe.fsui, dialog#player .pframe:fullscreen, dialog#player .pframe:-webkit-full-screen { margin: 0 !important; border: 0 !important; box-shadow: none !important; }
+
+/* chargement */
+.pload { gap: 20px; background: radial-gradient(ellipse at center, color-mix(in srgb, var(--acc) 10%, var(--s1)) 0%, var(--s0) 72%); }
+.pspin { position: relative; width: 68px; height: 68px; border: 0; border-radius: 0; animation: none; }
+.pspin::before { content: ""; position: absolute; inset: 0; border: 2px solid var(--line); border-top-color: var(--acc); border-radius: 50%; animation: pspin .9s linear infinite; }
+.pspin::after { content: ""; position: absolute; left: 50%; top: 50%; width: 0; height: 0; border-left: 15px solid var(--fg); border-top: 9px solid transparent; border-bottom: 9px solid transparent; transform: translate(-35%, -50%); animation: plpulse 1.6s ease-in-out infinite; }
+.plbl { font-size: 11px; letter-spacing: .18em; }
+
+/* barre de commandes */
+dialog#player .pbar { align-items: stretch; gap: 12px; padding: 14px max(18px, env(safe-area-inset-right, 0px)) calc(14px + env(safe-area-inset-bottom, 0px)) max(18px, env(safe-area-inset-left, 0px)); background: linear-gradient(to bottom, var(--s0), var(--bg)); border-top: 1px solid var(--line); }
+#pbar .pl { order: -4; flex: 1 1 340px; align-items: center; gap: 12px; }
+#pbar .pfold { order: -3; }
+#pbar .pn { order: -2; flex: 0 0 auto; margin-left: auto; gap: 10px; }
+#pbar .ptip { order: -1; flex: 1 1 100%; }
+.pbar .chiplbl { margin: 0; font-size: 11px; letter-spacing: .14em; }
+#psrc { counter-reset: srcn; gap: 8px; }
+#psrc .chip { counter-increment: srcn; align-items: center; gap: 10px; min-height: 48px; padding: 0 18px 0 12px; background: var(--panel); border: 1px solid var(--line); color: var(--dim); font-size: 12px; font-weight: 700; letter-spacing: .08em; transition: color .2s, border-color .2s, background .2s, transform .3s var(--ease), box-shadow .3s; }
+#psrc .chip::before { content: counter(srcn, decimal-leading-zero); padding: 3px 5px; border: 1px solid currentColor; font-family: var(--mono); font-size: 10px; font-weight: 500; letter-spacing: .04em; opacity: .6; }
+#psrc .chip:hover { color: var(--fg); border-color: var(--dim); background: var(--s1); transform: translateY(-2px); }
+#psrc .chip.on { background: var(--acc); border-color: var(--acc); color: var(--on-acc); box-shadow: 0 10px 28px -12px color-mix(in srgb, var(--acc) 80%, transparent); }
+#psrc .chip.on::before { opacity: 1; }
+#psrc .chip.on::after { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; animation: plpulse 1.6s ease-in-out infinite; }
+#psrc .srctoggle { min-height: 52px; background: var(--panel); border: 1px solid var(--line); border-left: 3px solid var(--acc); }
+#psrc .srctoggle[aria-expanded="true"] { border-color: var(--acc); background: var(--s1); }
+.pbar .pn .btn { min-height: 48px; padding: 0 20px; }
+#pnext { box-shadow: 0 12px 32px -14px color-mix(in srgb, var(--acc) 85%, transparent); }
+#pnext:hover:not(:disabled) { box-shadow: none; }
+
+/* volet « Astuces & aide » (aussi sur PC : plus de place pour la vidéo) */
+#pbar .pfold { display: inline-flex; align-items: center; justify-content: center; gap: 10px; flex: 0 0 auto; width: auto; min-height: 48px; padding: 0 16px; background: transparent; border: 1px solid var(--line); color: var(--dim); font: inherit; font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; cursor: pointer; border-radius: 0; transition: color .2s, border-color .2s, background .2s; }
+#pbar .pfold:hover { color: var(--fg); border-color: var(--dim); }
+#pbar .pfold[aria-expanded="true"] { color: var(--fg); border-color: var(--acc); background: var(--panel); }
+#pbar .pfold svg { width: 16px; height: 16px; flex: none; }
+#pbar .pfold .chv { width: 14px; height: 14px; transition: transform .25s var(--ease); }
+#pbar .pfold[aria-expanded="true"] .chv { transform: rotate(180deg); }
+#pbar .pfold[aria-expanded="true"] .hlp { color: var(--acc); }
+#pbar:not(.open) .ptip, #pbar:not(.open) #pone, #pbar:not(.open) #pone2, #pbar:not(.open) #prep { display: none !important; }
+
+/* conseil */
+#pbar .ptip { gap: 14px; min-height: 66px; padding: 12px 14px; background: var(--panel); border: 1px solid var(--line); border-left: 3px solid var(--c); }
+.ptip .tico { width: 42px; height: 42px; }
+.ptip .tico svg { width: 20px; height: 20px; }
+
+/* tuiles : autre source, signaler, téléchargement */
+#pbar #pone, #pbar #pone2, #pbar #prep { position: relative; flex: 1 1 260px; width: auto; min-width: 0; max-width: none; min-height: 66px; align-self: stretch; align-items: center; justify-content: flex-start; gap: 14px; padding: 12px 14px; text-align: left; background: var(--panel); border: 1px solid var(--line); color: var(--dim); font-size: 13px; line-height: 1.4; cursor: pointer; transition: border-color .25s, background .25s, transform .3s var(--ease); }
+#pbar #pone > span, #pbar #pone2 > span { flex: 1; min-width: 0; }
+#pbar #pone > svg, #pbar #pone2 > svg { flex: none; width: 42px; height: 42px; padding: 11px; border: 1px solid var(--line); color: var(--dim); transition: background .25s, color .25s, border-color .25s; }
+#pbar #pone a, #pbar #pone2 a { flex: none; padding: 6px 10px; border: 1px solid var(--line); font-family: var(--mono); font-size: 11px; font-weight: 700; letter-spacing: .06em; text-decoration: none; color: var(--fg); transition: border-color .2s; }
+#pbar #pone:hover, #pbar #pone2:hover, #pbar #prep:hover { background: var(--s1); border-color: var(--acc); color: var(--fg); transform: translateY(-2px); }
+#pbar #pone:hover > svg, #pbar #pone2:hover > svg, #pbar #prep:hover .rbtn svg { background: var(--acc); border-color: var(--acc); color: var(--on-acc); }
+#pbar #pone:hover a, #pbar #pone2:hover a { color: var(--fg); border-color: var(--acc); text-decoration: none; }
+#pbar #prep { padding: 0; }
+#pbar #prep .rbtn { display: grid; grid-template-columns: auto 1fr; grid-template-rows: auto auto; align-items: center; column-gap: 14px; width: 100%; min-height: 66px; padding: 12px 14px; border: 0; background: transparent; color: var(--fg); text-align: left; font-size: 13px; letter-spacing: .1em; }
+#pbar #prep .rbtn:hover { background: transparent; color: var(--fg); }
+#pbar #prep .rbtn svg { grid-column: 1; grid-row: 1 / 3; width: 42px; height: 42px; padding: 11px; border: 1px solid var(--line); color: var(--dim); transition: background .25s, color .25s, border-color .25s; }
+#pbar #prep .rbtn span { grid-column: 2; grid-row: 1; }
+#pbar #prep .rbtn::after { content: "Lien mort ou vidéo qui plante ?"; grid-column: 2; grid-row: 2; font-size: 12px; font-weight: 400; letter-spacing: 0; text-transform: none; color: var(--dim); }
+#pbar #prep .repok { display: flex; align-items: center; gap: 10px; width: 100%; min-height: 66px; padding: 12px 14px; border: 0; }
+#pbar #prep:has(.repok) { border-color: color-mix(in srgb, var(--grn) 45%, transparent); cursor: default; }
+#pbar #prep:has(.repok):hover { transform: none; border-color: color-mix(in srgb, var(--grn) 45%, transparent); background: var(--panel); }
+
+/* liste des épisodes : fond assombri, volet à droite (PC) ou feuille du bas (mobile) */
+.epsback { position: absolute; inset: 0; z-index: 5; background: rgba(0,0,0,.62); backdrop-filter: blur(3px); animation: fadeIn .25s ease both; }
+.peps { width: min(440px, 100%); background: var(--bg); border-left: 1px solid var(--acc); box-shadow: -30px 0 80px rgba(0,0,0,.6); }
+.peps .eh { padding-bottom: 14px; background: linear-gradient(to bottom, color-mix(in srgb, var(--acc) 12%, transparent), transparent); }
+.peps .eh b { font-size: 28px; }
+.epi { padding-block: 14px; }
+
+/* barre « Format » du plein écran */
+.pframe.fsui .fsbar { border-color: color-mix(in srgb, var(--acc) 40%, var(--line)); }
+
+@media (min-width: 721px) {
+  #psrc .chip { display: inline-flex; }
+  dialog#player:not(.wide) .pframe { margin: 14px max(18px, env(safe-area-inset-right, 0px)) 0 max(18px, env(safe-area-inset-left, 0px)); border: 1px solid var(--line); box-shadow: 0 30px 90px -40px color-mix(in srgb, var(--acc) 45%, transparent); }
+}
+
+@media (max-width: 720px) {
+  dialog#player .phead { gap: 10px; padding: max(10px, env(safe-area-inset-top, 0px)) max(12px, env(safe-area-inset-right, 0px)) 12px max(12px, env(safe-area-inset-left, 0px)); }
+  #pclose { width: 44px; padding: 0; justify-content: center; }
+  #pclose span, .plogo { display: none; }
+  .phead .pt b { flex: 0 0 auto; font-size: 21px; max-width: 100%; }
+  .pcount { padding: 2px 0 2px 12px; }
+  .pcount small { display: none; }
+  .pcount b { font-size: 34px; }
+  dialog#player .pbar { gap: 10px; padding: 10px max(12px, env(safe-area-inset-right, 0px)) calc(10px + env(safe-area-inset-bottom, 0px)) max(12px, env(safe-area-inset-left, 0px)); }
+  #pbar .pn { order: -4; flex: 1 0 100%; width: 100%; margin-left: 0; gap: 8px; }
+  #pbar .pl { order: -3; flex: 1 0 100%; width: 100%; }
+  #pbar .pfold { order: -2; flex: 1 0 100%; width: 100%; justify-content: space-between; }
+  #pbar .pfold span { flex: 1; text-align: left; }
+  .pbar .chiplbl { display: none; }
+  .pbar .pn .btn { min-height: 50px; padding: 0 12px; }
+  #pprev { flex: 1 1 0; }
+  #pnext { flex: 2 1 0; }
+  .pbar .pn #peplist { flex: 0 0 54px; padding: 0; }
+  #psrc.many.open .chip { display: inline-flex; flex: 1 1 calc(50% - 6px); min-height: 50px; }
+  #pbar #pone, #pbar #pone2, #pbar #prep { flex: 1 0 100%; }
+  .peps { top: auto; left: 0; right: 0; width: 100%; height: min(80vh, 80dvh, 660px); border-left: 0; border-top: 2px solid var(--acc); box-shadow: 0 -30px 80px rgba(0,0,0,.6); animation: plsheet .3s var(--ease) both; }
+  .peps::before { content: ""; position: absolute; top: 8px; left: 50%; width: 44px; height: 4px; transform: translateX(-50%); background: var(--line); }
+  .peps .eh { padding-top: 24px; padding-left: max(16px, env(safe-area-inset-left, 0px)); }
+}
+@media (max-width: 400px) {
+  #pprev span { display: none; }
+  #pprev { flex: 0 0 54px; padding: 0; }
+}
+
 </style>
 <!-- Visites du site : Vercel Web Analytics, sans cookie ni base de données. Ne fait rien tant que tu ne l'actives pas dans Vercel (onglet Analytics). -->
 <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
@@ -2401,9 +2554,10 @@ dialog#ninfo::backdrop { background: rgba(0,0,0,.85); }
 
 <dialog id="player">
   <div class="phead">
-    <button class="btn small ghost" id="pclose" type="button">Retour</button>
-    <div class="pt"><b id="ptitle"></b><small id="psub"></small></div>
+    <button class="btn small ghost hbtn" id="pclose" type="button" aria-label="Retour"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg><span>Retour</span></button>
+    <svg class="plogo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect class="scr" x="2.5" y="4" width="19" height="13" rx="1.5"/><path class="scr" d="M8 21h8M12 17v4"/><path class="tri" d="M10.2 8.2v5.6l5-2.8z"/></svg><div class="pt"><span class="pkick" id="pkick"><i></i><em>Film</em><span> · en lecture</span></span><b id="ptitle"></b><small id="psub"></small></div><div class="pcount" id="pcount" hidden><small>Épisode</small><b>1</b><span>1 sur 1</span></div>
     <span class="row"><span id="pdl" style="display:contents"></span><button class="btn small ghost hbtn" id="preload" type="button" title="Recharger le lecteur (R)" aria-label="Recharger"><svg class="hi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg><span>Recharger</span></button><button class="btn small ghost hbtn" id="pfull" type="button" title="Plein écran (F)" aria-label="Plein écran"><span class="fi"><svg class="hi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3H5a2 2 0 0 0-2 2v3M21 8V5a2 2 0 0 0-2-2h-3M3 16v3a2 2 0 0 0 2 2h3M16 21h3a2 2 0 0 0 2-2v-3"/></svg></span><span class="lbl">Plein écran</span></button></span>
+    <div class="pline" id="pline" hidden><i id="plinef"></i></div>
   </div>
   <div class="pframe" id="pframe">
     <div class="pstage" id="pstage"></div>
@@ -2414,12 +2568,13 @@ dialog#ninfo::backdrop { background: rgba(0,0,0,.85); }
   <div class="pbar" id="pbar">
     <div class="ptip" id="ptip"><span class="tico" id="tico" aria-hidden="true"></span><div class="tbody"><small id="tlbl"></small><p id="ttext" aria-live="polite"></p></div><div class="tnav"><button type="button" class="tbtn" id="tprev" aria-label="Conseil précédent"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button><span class="tdots" id="tdots" aria-hidden="true"></span><button type="button" class="tbtn" id="tnext" aria-label="Conseil suivant"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button></div><i class="tprog" id="tprog"></i></div>
     <div class="pl" id="pl"><span class="chiplbl">Serveur</span><span class="srcs" id="psrc"></span></div>
-    <button type="button" class="pfold" id="pfold" aria-expanded="false" aria-controls="pbar"><span>Astuces &amp; aide</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+    <button type="button" class="pfold" id="pfold" aria-expanded="false" aria-controls="pbar"><svg class="hlp" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M9.2 9.2a3 3 0 0 1 5.6 1.1c0 2-2.8 2.4-2.8 4.2"/><path d="M12 17.6h.01"/></svg><span>Astuces &amp; aide</span><svg class="chv" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
     <div class="pone" id="pone" style="display:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg><span>Besoin d'une autre source ou celle-ci bug ?</span><a href="/demande" id="pdemande">/demande</a></div>
     <div class="pone" id="prep"><button type="button" id="preport" class="rbtn"><span>Signaler</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21V4"/><path d="M5 4h13l-2.5 4.5L18 13H5"/></svg></button></div>
     <div class="pone" id="pone2" style="display:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg><span>Besoin d'un lien de téléchargement ?</span><a href="/demande" id="pdemande2">/demande</a></div>
     <div class="pn" id="pnav"><button class="btn small ghost" id="pprev" type="button" title="Épisode précédent (P)" aria-label="Épisode précédent"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 5.5v13a.8.8 0 0 1-1.25.66L8 13.2a.8.8 0 0 1 0-1.32l9.75-6.04A.8.8 0 0 1 19 5.5z" fill="currentColor"/><path d="M5 5v14"/></svg><span>Ép. précédent</span></button><button class="btn small ghost" id="peplist" type="button" aria-label="Liste des épisodes" title="Épisodes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="9" width="14" height="11" rx="1.5"/><path d="M7 5.5h12.5A1.5 1.5 0 0 1 21 7v9"/><path d="M11 2.5h8.5A1.5 1.5 0 0 1 21 4"/></svg><span>Épisodes</span></button><button class="btn small" id="pnext" type="button" title="Épisode suivant (N)" aria-label="Épisode suivant"><span>Ép. suivant</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 5.5v13a.8.8 0 0 0 1.25.66L16 13.2a.8.8 0 0 0 0-1.32L6.25 5.84A.8.8 0 0 0 5 5.5z" fill="currentColor"/><path d="M19 5v14"/></svg></button></div>
   </div>
+  <div class="epsback" id="epsback" hidden></div>
   <div class="peps" id="peps" hidden role="dialog" aria-label="Liste des épisodes">
     <div class="eh"><div class="eht"><b>Épisodes</b><small id="pepsub"></small></div><button class="btn small ghost" id="pepsx" type="button">Fermer</button></div>
     <div class="eprog"><i id="eprogf"></i></div>
@@ -6412,10 +6567,26 @@ function sortPbar() {
   var bar = $("#pbar"); if (!bar) return;
   if (window.ResizeObserver) new ResizeObserver(function () { sortPbar(); }).observe(bar); else window.addEventListener("resize", sortPbar);
 })();
+/* En-tête du lecteur : film ou série, numéro d'épisode en grand et progression dans la saison */
+function paintPlayerHead() {
+  var kick = $("#pkick"), box = $("#pcount"), line = $("#pline"), f = $("#plinef");
+  if (kick) kick.querySelector("em").textContent = cur.nav ? "Série" : "Film";
+  var n = cur.nav && cur.nav.eps, d = n ? epsData() : null, sel = null, k = -1;
+  if (d) {
+    sel = d.list.filter(function (x) { return x.i === n.si; })[0];
+    if (sel) sel.eps.forEach(function (ep, j) { if (String(ep.number) === String(n.num)) k = j; });
+  }
+  if (!sel || k < 0) { box.hidden = true; line.hidden = true; return; }
+  box.hidden = false; line.hidden = false;
+  box.querySelector("b").textContent = String(n.num);
+  box.querySelector("span").textContent = (k + 1) + " sur " + sel.eps.length;
+  f.style.width = Math.round(100 * (k + 1) / sel.eps.length) + "%";
+}
 function renderPlayer() {
   var s = cur.sources[cur.i], url = safeUrl(s.url);
   $("#ptitle").textContent = cur.title;
   $("#psub").textContent = cur.sub || "";
+  paintPlayerHead();
   var rq = "/demande/" + encodeURIComponent(cur.title || "");
   $("#pdl").innerHTML = dlOpen() ? ((cur.dl || []).length ? dlButtons(cur.dl, "Télécharger", " ghost") : '<a class="btn small ghost" data-reqdl="1" href="' + rq + '/dl">' + DLICON + '<span>Télécharger</span></a>') : "";
   Array.prototype.forEach.call(document.querySelectorAll("#pdl .btn"), function (b) { var n = b.dataset.dlname || "Télécharger"; b.title = n; b.setAttribute("aria-label", n); });
@@ -6430,7 +6601,7 @@ function renderPlayer() {
   $("#pone2").style.display = (dlOpen() && !(cur.dl || []).length) ? "flex" : "none";
   $("#pnav").style.display = cur.nav ? "flex" : "none";
   $("#peplist").style.display = (cur.nav && cur.nav.eps) ? "" : "none";
-  $("#peps").hidden = true;
+  $("#peps").hidden = true; $("#epsback").hidden = true;
   $("#pprev").disabled = !(cur.nav && cur.nav.prev);
   $("#pnext").disabled = !(cur.nav && cur.nav.next);
   sortPbar();
@@ -6609,10 +6780,11 @@ function renderEps() {
 function openEps() {
   var d = epsData(); if (!d) return;
   epsSeason = d.n.si; epsQuery = ""; $("#pepsq").value = "";
-  $("#peps").hidden = false;
+  $("#peps").hidden = false; $("#epsback").hidden = false;
   renderEps();
 }
-function closeEps() { $("#peps").hidden = true; }
+function closeEps() { $("#peps").hidden = true; $("#epsback").hidden = true; }
+$("#epsback").addEventListener("click", closeEps);
 $("#peplist").addEventListener("click", function () { if ($("#peps").hidden) openEps(); else closeEps(); });
 $("#pepsx").addEventListener("click", closeEps);
 $("#pepsq").addEventListener("input", function () { epsQuery = this.value; renderEps(); });
