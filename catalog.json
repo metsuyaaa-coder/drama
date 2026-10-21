@@ -29365,8 +29365,8 @@
       {
         "id": "vidara",
         "state": "down",
-        "note": "",
-        "at": 1792601805584
+        "note": "UNE ATTAQUE DDOS",
+        "at": 1792601816782
       },
       {
         "id": "playmate",
@@ -29376,6 +29376,13 @@
       }
     ],
     "log": [
+      {
+        "t": 1792601816782,
+        "id": "vidara",
+        "name": "Vidara",
+        "state": "down",
+        "note": "UNE ATTAQUE DDOS"
+      },
       {
         "t": 1792601805584,
         "id": "vidara",
@@ -29400,7 +29407,7 @@
     ],
     "extra": [],
     "hidden": [],
-    "at": 1792601805584
+    "at": 1792601816782
   },
   "journal": [
     {
