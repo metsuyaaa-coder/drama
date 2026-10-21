@@ -391,7 +391,7 @@
       ],
       "downloads": [],
       "updatedAt": 1792533937106,
-      "trend": 0,
+      "trend": 46,
       "videos": [
         {
           "key": "P0ElxnFyfXY",
@@ -1025,7 +1025,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "trend": 0,
+      "trend": 80,
       "origin_country": [
         "KR"
       ],
@@ -1575,7 +1575,7 @@
         "Lootuse sadam",
         "호프"
       ],
-      "trend": 100,
+      "trend": 99,
       "downloads": [
         {
           "name": "1FICHIER",
@@ -6446,7 +6446,7 @@
       ],
       "original_language": "ko",
       "posterV": 2,
-      "trend": 53,
+      "trend": 0,
       "updatedAt": 1792533949891,
       "networks": [
         "Netflix"
@@ -7323,7 +7323,7 @@
       "downloads": [],
       "posterV": 2,
       "updatedAt": 1792533951913,
-      "trend": 73,
+      "trend": 47,
       "networks": [
         "Hunan Television",
         "Mango TV"
@@ -8177,7 +8177,7 @@
         }
       ],
       "updatedAt": 1792533954520,
-      "trend": 50,
+      "trend": 62,
       "posterCustom": true,
       "videos": [
         {
@@ -8553,7 +8553,7 @@
       "networks": [
         "ENA"
       ],
-      "trend": 0,
+      "trend": 54,
       "videos": [
         {
           "key": "9rYSMI9azZg",
@@ -25924,7 +25924,7 @@
       ],
       "downloads": [],
       "updatedAt": 1792535227263,
-      "trend": 76,
+      "trend": 78,
       "videos": [
         {
           "key": "55ATD_SJ_Xw",
@@ -29364,9 +29364,9 @@
       },
       {
         "id": "vidara",
-        "state": "down",
-        "note": "UNE ATTAQUE DDOS",
-        "at": 1792601816782
+        "state": "up",
+        "note": "",
+        "at": 1792602810954
       },
       {
         "id": "playmate",
@@ -29376,6 +29376,20 @@
       }
     ],
     "log": [
+      {
+        "t": 1792602810954,
+        "id": "vidara",
+        "name": "Vidara",
+        "state": "up",
+        "note": ""
+      },
+      {
+        "t": 1792602810270,
+        "id": "vidara",
+        "name": "Vidara",
+        "state": "down",
+        "note": ""
+      },
       {
         "t": 1792601816782,
         "id": "vidara",
@@ -29407,7 +29421,7 @@
     ],
     "extra": [],
     "hidden": [],
-    "at": 1792601816782
+    "at": 1792602810955
   },
   "journal": [
     {
