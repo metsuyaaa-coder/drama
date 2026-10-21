@@ -431,6 +431,13 @@ html.hb-lang .poster .lang, html.hb-live .poster .live, html.hb-new .poster .new
 #count svg { width: 16px; height: 16px; flex: none; }
 footer .flist { list-style: none; margin: 0; padding: 0; }
 footer .flist li::before { content: "\2022  "; }
+footer .uplinks { color: var(--dim); font-size: .86em; white-space: nowrap; }
+footer .uplinks a, footer .uplinks .upd { color: var(--fg); background: none; border: 0; padding: 0; margin: 0; font: inherit; text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 3px; cursor: pointer; transition: color .2s, text-decoration-color .2s; }
+footer .uplinks a:hover, footer .uplinks .upd:hover, footer .uplinks .upd[aria-expanded="true"] { color: var(--acc); text-decoration-color: var(--acc); }
+.discpop { position: fixed; z-index: 90; display: flex; align-items: center; gap: 10px; padding: 9px 10px 9px 14px; background: var(--panel); border: 1px solid var(--acc); box-shadow: 0 14px 34px rgba(0,0,0,.6); animation: discIn .18s var(--ease) both; }
+.discpop span { font-family: var(--mono); font-size: 11px; color: var(--dim); text-transform: uppercase; letter-spacing: .08em; }
+.discpop b { font-family: var(--mono); font-weight: 500; font-size: 14px; color: var(--fg); }
+@keyframes discIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
 footer .copy { max-width: 1280px; margin: 28px auto 0; padding: 20px max(16px, env(safe-area-inset-right, 0px)) 0 max(16px, env(safe-area-inset-left, 0px)); border-top: 1px solid var(--line); text-align: center; font-size: 13px; color: var(--dim); }
 
 /* ===== Panneau admin (refonte, même style que Paramètres / Ma liste / Calendrier) ===== */
@@ -2179,7 +2186,7 @@ dialog#ninfo::backdrop { background: rgba(0,0,0,.85); }
       <h3>Développeur</h3>
       <p class="dev">Meyriuu</p>
       <h3 style="margin-top:18px">Uploadeurs</h3>
-      <ul class="flist"><li>Meyriuu</li><li>Nebula</li></ul>
+      <ul class="flist"><li>Meyriuu <span class="uplinks">[ <button type="button" class="upd" data-disc="meyriuu." aria-haspopup="true" aria-expanded="false">Discord</button> ]</span></li><li>Nebula <span class="uplinks">[ <a href="https://www.tumblr.com/dramavor?source=share" target="_blank" rel="noopener noreferrer">Tumblr</a> · <button type="button" class="upd" data-disc="zephiris09" aria-haspopup="true" aria-expanded="false">Discord</button> ]</span></li></ul>
     </div>
   </div>
   <p class="copy">© 2026 DramaByM. Tous droits réservés.</p>
@@ -8051,6 +8058,21 @@ window.addEventListener("beforeinstallprompt", function () { setTimeout(pwaShow,
 window.addEventListener("appinstalled", pwaHide);
 setTimeout(pwaShow, 2500);
 
+/* Pseudo Discord des uploadeurs : petite bulle près du lien, avec bouton Copier */
+function discClose() { var p = document.getElementById("discpop"); if (p) p.remove(); Array.prototype.forEach.call(document.querySelectorAll(".upd[aria-expanded=true]"), function (x) { x.setAttribute("aria-expanded", "false"); }); }
+document.addEventListener("click", function (e) {
+  var d = e.target.closest ? e.target.closest("[data-disc]") : null;
+  if (!d) { if (!(e.target.closest && e.target.closest("#discpop"))) discClose(); return; }
+  var was = d.getAttribute("aria-expanded") === "true"; discClose(); if (was) return;
+  var p = document.createElement("div"); p.className = "discpop"; p.id = "discpop"; p.setAttribute("role", "dialog"); p.setAttribute("aria-label", "Pseudo Discord");
+  p.innerHTML = '<span>Discord</span><b>' + esc(d.dataset.disc) + '</b><button type="button" class="btn small ghost" data-copy="' + esc(d.dataset.disc) + '">Copier</button>';
+  document.body.appendChild(p); d.setAttribute("aria-expanded", "true");
+  var r = d.getBoundingClientRect(), w = p.offsetWidth, h = p.offsetHeight;
+  p.style.left = Math.max(8, Math.min(innerWidth - w - 8, r.left + r.width / 2 - w / 2)) + "px";
+  p.style.top = (r.top - h - 10 > 8 ? r.top - h - 10 : r.bottom + 10) + "px";
+});
+document.addEventListener("keydown", function (e) { if (e.key === "Escape") discClose(); });
+window.addEventListener("scroll", discClose, { passive: true });
 document.addEventListener("click", function (e) {
   var b = e.target.closest("[data-copy]"); if (!b) return;
   var txt = b.dataset.copy;
