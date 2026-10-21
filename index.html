@@ -317,10 +317,15 @@ dialog#player::backdrop { background: rgba(0,0,0,.88); }
 dialog#player[open]::backdrop { animation: fadeIn .3s ease both; }
 .phead { display: flex; align-items: center; gap: 12px; padding: 10px 14px; border-bottom: 1px solid var(--line); font-size: 14px; flex-wrap: wrap; }
 .phead b { font-weight: 500; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; max-width: 40%; }
-.fsb { display: inline-block; margin-left: 8px; padding: 1px 6px; border: 1px solid #fcd34d; color: #fcd34d; background: rgba(252, 211, 77, .1); font-family: var(--mono); font-size: 9.5px; font-weight: 700; letter-spacing: .08em; line-height: 1.5; text-transform: uppercase; vertical-align: 1px; white-space: nowrap; max-width: 14ch; overflow: hidden; text-overflow: ellipsis; }
+.fsb { display: inline-block; margin-left: 8px; padding: 0 6px 0 0; border: 1px solid #fcd34d; color: #fcd34d; background: rgba(252, 211, 77, .1); font-family: var(--mono); font-size: 9.5px; font-weight: 700; letter-spacing: .08em; line-height: 1.5; text-transform: uppercase; vertical-align: 1px; white-space: nowrap; max-width: 26ch; overflow: hidden; text-overflow: ellipsis; }
+.fsb b { display: inline-block; margin-right: 6px; padding: 0 5px; background: #fcd34d; color: #000; font-weight: 800; }
 .chip.on .fsb { border-color: currentColor; color: inherit; background: transparent; }
+.chip.on .fsb b { background: var(--on-acc); color: var(--acc); }
 .chip.fsonly { cursor: default; }
-.srctoggle .nm .fsb { max-width: 18ch; }
+.srcnm { display: flex; flex-wrap: wrap; align-items: center; gap: 5px 8px; min-width: 0; line-height: 1.2; text-align: left; }
+.srcnm .fsb { margin-left: 0; vertical-align: baseline; }
+#psrc .chip { align-items: center; }
+.srctoggle .nm .fsb { max-width: 24ch; }
 .srcs { display: flex; flex-wrap: wrap; gap: 6px; flex: 1; min-width: 0; }
 .pframe { aspect-ratio: 16 / 9; background: var(--s0); position: relative; overflow: hidden; }
 .pstage { position: absolute; inset: 0; transform-origin: center center; }
@@ -2398,7 +2403,6 @@ dialog#player .pbar { align-items: stretch; gap: 12px; padding: 14px max(18px, e
 #psrc .chip:hover { color: var(--fg); border-color: var(--dim); background: var(--s1); transform: translateY(-2px); }
 #psrc .chip.on { background: var(--acc); border-color: var(--acc); color: var(--on-acc); box-shadow: 0 10px 28px -12px color-mix(in srgb, var(--acc) 80%, transparent); }
 #psrc .chip.on::before { opacity: 1; }
-#psrc .chip.on::after { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; animation: plpulse 1.6s ease-in-out infinite; }
 #psrc .srctoggle { min-height: 52px; background: var(--panel); border: 1px solid var(--line); border-left: 3px solid var(--acc); }
 #psrc .srctoggle[aria-expanded="true"] { border-color: var(--acc); background: var(--s1); }
 .pbar .pn .btn { min-height: 48px; padding: 0 20px; }
@@ -2915,7 +2919,7 @@ function autoNameAll(arr) {
 
 /* Sources : une par ligne, au format "Nom | lien" (ou juste le lien) */
 /* Badge « fansub » d'un serveur (rien si le champ est vide) */
-function fsBadge(x) { return x && x.fansub ? '<span class="fsb" title="Fansub : ' + esc(x.fansub) + '">' + esc(x.fansub) + '</span>' : ""; }
+function fsBadge(x) { return x && x.fansub ? '<span class="fsb" title="Fansub : ' + esc(x.fansub) + '"><b>Fansub</b>' + esc(x.fansub) + '</span>' : ""; }
 function srcToText(arr) {
   return (arr || []).map(function (s) {
     return s.name + " | " + s.url + (s.quality ? " " + s.quality : "") + (s.size ? " " + s.size : "") + (s.fansub ? " [" + s.fansub + "]" : "");
@@ -6706,8 +6710,8 @@ function renderPlayer() {
   refreshReport();
   $("#psrc").className = "srcs" + (many ? " many" : "");
   $("#psrc").innerHTML = cur.sources.length > 1 ? (many ? '<button type="button" class="srctoggle" data-srctoggle aria-expanded="false" aria-label="Changer de serveur"><span class="nm">' + esc((cur.sources[cur.i] || {}).name || "") + fsBadge(cur.sources[cur.i]) + '</span><span class="cnt">' + (cur.i + 1) + '/' + cur.sources.length + '</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>' : '') + cur.sources.map(function (x, k) {
-    return '<button type="button" class="chip' + (k === cur.i ? " on" : "") + '" data-src="' + k + '">' + esc(x.name) + fsBadge(x) + '</button>';
-  }).join("") : (cur.sources[0] && cur.sources[0].fansub ? '<span class="chip on fsonly">' + esc(cur.sources[0].name) + fsBadge(cur.sources[0]) + '</span>' : "");
+    return '<button type="button" class="chip' + (k === cur.i ? " on" : "") + '" data-src="' + k + '"><span class="srcnm">' + esc(x.name) + fsBadge(x) + '</span></button>';
+  }).join("") : (cur.sources[0] && cur.sources[0].fansub ? '<span class="chip on fsonly"><span class="srcnm">' + esc(cur.sources[0].name) + fsBadge(cur.sources[0]) + '</span></span>' : "");
   watchSource();
 }
 /* Écran de chargement : bouton « ça rame ? » après 7 s, et filet de sécurité à 20 s pour ne jamais tourner à l'infini */
