@@ -17226,6 +17226,11 @@
                   "name": "PLAYMATE",
                   "url": "https://playmate.to/embed/T0bm616xNpCRs",
                   "by": "head"
+                },
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/DJROAqYOoOMIK",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -17244,6 +17249,11 @@
                 {
                   "name": "PLAYMATE",
                   "url": "https://playmate.to/embed/CAZjWDqq03rRx",
+                  "by": "head"
+                },
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/ByuCApB1u44Su",
                   "by": "head"
                 }
               ],
@@ -17264,6 +17274,11 @@
                   "name": "PLAYMATE",
                   "url": "https://playmate.to/embed/XEgPTacTig1Ho",
                   "by": "head"
+                },
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/w8XTIk2MruIJC",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -17282,6 +17297,11 @@
                 {
                   "name": "PLAYMATE",
                   "url": "https://playmate.to/embed/NPsusNqgsvwr1",
+                  "by": "head"
+                },
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/NC2Cd9hZMFYJ5",
                   "by": "head"
                 }
               ],
@@ -17302,6 +17322,11 @@
                   "name": "PLAYMATE",
                   "url": "https://playmate.to/embed/V3Tb1S9fJud0B",
                   "by": "head"
+                },
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/Tg9oTHUeLcJQf",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -17320,6 +17345,11 @@
                 {
                   "name": "PLAYMATE",
                   "url": "https://playmate.to/embed/DmaeEG0ziJQkR",
+                  "by": "head"
+                },
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/nEmdgvs7SjPBu",
                   "by": "head"
                 }
               ],
@@ -17340,6 +17370,11 @@
                   "name": "PLAYMATE",
                   "url": "https://playmate.to/embed/pWglyM6p8WcSI",
                   "by": "head"
+                },
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/mymsp4gVux9Ux",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -17358,6 +17393,11 @@
                 {
                   "name": "PLAYMATE",
                   "url": "https://playmate.to/embed/eeUEzwpdSD8bW",
+                  "by": "head"
+                },
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/KZUb5Z2fD1Fv1",
                   "by": "head"
                 }
               ],
@@ -17378,6 +17418,11 @@
                   "name": "PLAYMATE",
                   "url": "https://playmate.to/embed/ZO29HdU8JCxqR",
                   "by": "head"
+                },
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/I2ObNtTGNcuGP",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -17396,6 +17441,11 @@
                 {
                   "name": "PLAYMATE",
                   "url": "https://playmate.to/embed/JlsIL0S2t7bNq",
+                  "by": "head"
+                },
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/HUv6Yfw65y6Ea",
                   "by": "head"
                 }
               ],
@@ -17416,6 +17466,11 @@
                   "name": "PLAYMATE",
                   "url": "https://playmate.to/embed/Npsxet4IBFt3q",
                   "by": "head"
+                },
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/LJQ39x4bZYhDC",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -17435,6 +17490,11 @@
                   "name": "PLAYMATE",
                   "url": "https://playmate.to/embed/yJxAFy3sESdXL",
                   "by": "head"
+                },
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/6MWIA5kiLjGpU",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -17449,7 +17509,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792626321929,
+      "updatedAt": 1792626340863,
       "networks": [
         "JTBC"
       ],
@@ -29833,6 +29893,15 @@
     "at": 1792602810955
   },
   "journal": [
+    {
+      "k": "mvirft39b4pu4",
+      "t": 1792626340869,
+      "b": "head",
+      "a": "edit",
+      "i": "289424",
+      "n": "We Are All Trying Here",
+      "d": "sources 12 → 36"
+    },
     {
       "k": "mviquzznc7cuu",
       "t": 1792625370035,
