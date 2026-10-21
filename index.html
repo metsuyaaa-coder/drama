@@ -2063,9 +2063,10 @@ html.noanim .colc.fx1 .colcov::before, html.noanim .colc.fx3 .colcov::before { a
 .colcover { position: absolute; inset: 0; z-index: -1; background: #111 center / cover no-repeat; opacity: .5; }
 .colcover::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, var(--bg) 2%, transparent 80%), linear-gradient(to right, var(--bg), transparent 70%); }
 /* ===== Collections ===== */
-.colgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 22px 18px; }
+.colgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 24px 18px; align-items: start; }
+.colc.fm2 { grid-column: span 2; }
 .colc { --c0: #8b5cf6; --c1: #312e81; position: relative; display: block; min-width: 0; color: inherit; animation: cardIn .5s var(--ease) both; animation-delay: calc(var(--i, 0) * 45ms); }
-.colcov { position: relative; aspect-ratio: 16 / 10; overflow: hidden; isolation: isolate; border: 1px solid var(--line); background: radial-gradient(120% 100% at 0 0, var(--c0) 0%, transparent 62%), linear-gradient(155deg, var(--c1), #000 88%); transition: transform .35s var(--ease), border-color .3s, box-shadow .35s; }
+.colcov { position: relative; aspect-ratio: 4 / 5; overflow: hidden; isolation: isolate; border: 1px solid var(--line); background: radial-gradient(120% 100% at 0 0, var(--c0) 0%, transparent 62%), linear-gradient(155deg, var(--c1), #000 88%); transition: transform .35s var(--ease), border-color .3s, box-shadow .35s; }
 .colcov::before { content: ""; position: absolute; inset: 0; z-index: -1; background: repeating-linear-gradient(115deg, rgba(255,255,255,.035) 0 1px, transparent 1px 9px); }
 .colcov::after { content: ""; position: absolute; inset: auto 0 0 0; height: 62%; background: linear-gradient(transparent, rgba(0,0,0,.82)); z-index: 1; pointer-events: none; }
 .colc:hover .colcov { transform: translateY(-5px); border-color: var(--c0); box-shadow: 0 18px 38px rgba(0,0,0,.65), 0 0 0 1px var(--c0); }
@@ -2077,10 +2078,17 @@ html.noanim .colc.fx1 .colcov::before, html.noanim .colc.fx3 .colcov::before { a
 .colc:hover .cp1 { transform: rotate(11deg) translate(8%, -8%); }
 .colc:hover .cp2 { transform: rotate(-3deg) translateY(-14%); }
 .colc:hover .cp3 { transform: rotate(-16deg) translate(-8%, -4%); }
+.colc.fm1 .colcov { aspect-ratio: 2 / 3; }
+.colc.fm2 .colcov { aspect-ratio: 16 / 10; }
+.colc.fm0 .cp, .colc.fm1 .cp { width: 46%; bottom: -10%; }
+.colc.fm0 .cp1, .colc.fm1 .cp1 { right: 5%; }
+.colc.fm0 .cp2, .colc.fm1 .cp2 { right: 27%; }
+.colc.fm0 .cp3, .colc.fm1 .cp3 { right: 49%; }
+.colc.fm0 .colem, .colc.fm1 .colem { font-size: 36px; left: 16px; top: 12px; }
 .colmeta { display: block; padding-top: 10px; min-width: 0; }
 .colmeta b { display: block; font-family: var(--display); font-weight: 800; font-size: 22px; line-height: 1.05; text-transform: uppercase; letter-spacing: .02em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .colmeta span { display: block; margin-top: 4px; font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: .07em; color: var(--dim); }
-.colnew { display: grid; place-items: center; align-content: center; gap: 10px; aspect-ratio: 16 / 10; border: 1px dashed var(--dim); background: transparent; color: var(--dim); cursor: pointer; border-radius: 0; font-family: var(--mono); font-size: 12px; text-transform: uppercase; letter-spacing: .08em; transition: color .25s, border-color .25s, background .25s; animation: cardIn .5s var(--ease) both; }
+.colnew { display: grid; place-items: center; align-content: center; gap: 10px; aspect-ratio: 4 / 5; border: 1px dashed var(--dim); background: transparent; color: var(--dim); cursor: pointer; border-radius: 0; font-family: var(--mono); font-size: 12px; text-transform: uppercase; letter-spacing: .08em; transition: color .25s, border-color .25s, background .25s; animation: cardIn .5s var(--ease) both; }
 .colnew svg { width: 34px; height: 34px; transition: transform .4s var(--ease); }
 .colnew:hover { color: var(--fg); border-color: var(--acc); background: color-mix(in srgb, var(--acc) 8%, transparent); }
 .colnew:hover svg { transform: rotate(90deg) scale(1.1); }
@@ -2116,7 +2124,7 @@ html.noanim .colc.fx1 .colcov::before, html.noanim .colc.fx3 .colcov::before { a
 .colbox .cbx { width: 34px; height: 34px; display: grid; place-items: center; padding: 0; background: transparent; border: 1px solid var(--line); color: var(--dim); cursor: pointer; border-radius: 0; font-size: 18px; line-height: 1; transition: color .2s, border-color .2s; }
 .colbox .cbx:hover { color: var(--fg); border-color: var(--fg); }
 .colbox .cbb { padding: 20px; display: grid; gap: 16px; }
-.colbox .colprev { max-width: 280px; margin: 0 auto 4px; pointer-events: none; }
+.colbox .colprev { max-width: 240px; margin: 0 auto 4px; pointer-events: none; }
 .colbox label.cf { display: grid; gap: 6px; font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: var(--dim); }
 .colbox label.cf input, .colbox label.cf textarea { padding: 12px 14px; background: var(--panel); border: 1px solid var(--line); color: var(--fg); font: 15px var(--body); text-transform: none; letter-spacing: 0; border-radius: 0; resize: none; transition: border-color .2s; }
 .colbox label.cf input:focus, .colbox label.cf textarea:focus { outline: none; border-color: var(--acc); }
@@ -2141,9 +2149,11 @@ html.noanim .colc.fx1 .colcov::before, html.noanim .colc.fx3 .colcov::before { a
 .cprow.on .ck { background: var(--acc); color: var(--on-acc); border-color: var(--acc); }
 .cpnew { border-top: 1px solid var(--line); }
 .cpnew .cprow .ce { background: transparent; border: 1px dashed var(--dim); color: var(--dim); }
-@media (max-width: 640px) { .colgrid { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 18px 12px; } .colbadge { width: 72px; height: 72px; font-size: 38px; } .colmeta b { font-size: 18px; } }
+@media (max-width: 640px) { .colgrid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 12px; } .colbadge { width: 72px; height: 72px; font-size: 38px; } .colmeta b { font-size: 18px; } }
 .colbox button, .colbox .btn, .colbox label { touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
 .colbox .cbf .btn { min-height: 44px; }
+.cfm button { width: auto !important; padding: 0 14px !important; font-family: var(--mono); font-weight: 800; font-size: 12px !important; text-transform: uppercase; letter-spacing: .08em; gap: 8px; }
+.cfm button i { display: inline-block; width: 11px; border: 1.5px solid currentColor; flex: none; }
 .cimp { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: -6px; }
 .cimp .btn { gap: 8px; }
 .cimp .btn svg { width: 16px; height: 16px; flex: none; }
@@ -7316,7 +7326,7 @@ document.addEventListener("click", function (e) {
 var COLKEY = "noir.collections", COLID = /^[\w-]{1,24}$/, COLSID = /^[\w.-]{1,40}$/;
 var COLPAL = [["#8b5cf6", "#312e81"], ["#f43f5e", "#7f1d1d"], ["#f59e0b", "#78350f"], ["#10b981", "#064e3b"], ["#38bdf8", "#0c4a6e"], ["#ec4899", "#701a75"], ["#a3e635", "#365314"], ["#e5e7eb", "#3f3f46"]];
 var COLEMO = ["♥", "★", "☾", "✦", "❖", "☂", "♪", "⚔", "☕", "✿", "⚡", "☠"];
-var COLFX = ["Aucun", "Éclat", "Néon", "Aurore"];
+var COLFX = ["Aucun", "Éclat", "Néon", "Aurore"], COLFM = [["Affiche large", 14], ["Affiche", 11], ["Paysage", 20]];
 var VIPCOL_FROM = COLPAL.length, VIPEMO_FROM = COLEMO.length;
 COLPAL.push(["#facc15", "#713f12"], ["#22d3ee", "#164e63"], ["#fb7185", "#4c0519"], ["#c084fc", "#3b0764"]);
 COLEMO.push("♛", "♠", "♦", "☀", "❄", "✧");
@@ -7347,8 +7357,8 @@ function colShrink(file) {
 function colClean(c) {
   if (!c || typeof c !== "object" || !COLID.test(String(c.id || ""))) return null;
   var seen = {}, ids = (Array.isArray(c.i) ? c.i : []).map(String).filter(function (x) { if (!COLSID.test(x) || seen[x]) return false; seen[x] = 1; return true; }).slice(0, 300);
-  var ci = parseInt(c.c, 10), ei = parseInt(c.e, 10), fi = parseInt(c.f, 10), pv = String(c.p || "").trim();
-  return { id: String(c.id), n: String(c.n || "").trim().slice(0, 40) || "Sans titre", d: String(c.d || "").trim().slice(0, 140), c: ci >= 0 && ci < COLPAL.length ? ci : 0, e: ei >= 0 && ei < COLEMO.length ? ei : 0, f: fi > 0 && fi < COLFX.length ? fi : 0, p: (/^https:\/\/[^\s'"()<>\\]{4,290}$/.test(pv) || COLIMG.test(pv)) ? pv : "", i: ids, at: +c.at || 0 };
+  var ci = parseInt(c.c, 10), ei = parseInt(c.e, 10), fi = parseInt(c.f, 10), si = parseInt(c.s, 10), pv = String(c.p || "").trim();
+  return { id: String(c.id), n: String(c.n || "").trim().slice(0, 40) || "Sans titre", d: String(c.d || "").trim().slice(0, 140), c: ci >= 0 && ci < COLPAL.length ? ci : 0, e: ei >= 0 && ei < COLEMO.length ? ei : 0, f: fi > 0 && fi < COLFX.length ? fi : 0, s: si > 0 && si < COLFM.length ? si : 0, p: (/^https:\/\/[^\s'"()<>\\]{4,290}$/.test(pv) || COLIMG.test(pv)) ? pv : "", i: ids, at: +c.at || 0 };
 }
 function readCols() { var l = readJSON(COLKEY, []); return Array.isArray(l) ? l.map(colClean).filter(Boolean) : []; }
 function saveCols(l) { try { localStorage.setItem(COLKEY, JSON.stringify(l)); return true; } catch (e) { toast("Stockage plein ou bloqué par le navigateur"); return false; } }
@@ -7366,7 +7376,7 @@ function colStyle(c) { var p = COLPAL[c.c] || COLPAL[0]; return "--c0:" + p[0] +
 function colCard(c, i, tag) {
   var items = colItems(c), posters = c.p ? [] : items.filter(function (s) { return s.poster; }).slice(0, 3);
   var n = c.i.length, t = tag || "a", href = t === "a" ? ' href="/collection/' + esc(c.id) + '"' : "";
-  return '<' + t + ' class="colc' + (c.f ? ' fx' + c.f : '') + '"' + href + ' style="' + colStyle(c) + ';--i:' + Math.min(i || 0, 14) + '"><div class="colcov"><span class="colem">' + COLEMO[c.e] + '</span>' + (c.p ? '<i class="cpc" style="background-image:url(\'' + esc(c.p) + '\')"></i>' : '') +
+  return '<' + t + ' class="colc fm' + (c.s || 0) + (c.f ? ' fx' + c.f : '') + '"' + href + ' style="' + colStyle(c) + ';--i:' + Math.min(i || 0, 14) + '"><div class="colcov"><span class="colem">' + COLEMO[c.e] + '</span>' + (c.p ? '<i class="cpc" style="background-image:url(\'' + esc(c.p) + '\')"></i>' : '') +
     posters.map(function (s, k) { return '<i class="cp cp' + (k + 1) + '" style="background-image:url(\'' + esc(s.poster) + '\')"></i>'; }).join("") + '</div>' +
     '<span class="colmeta"><b>' + esc(c.n) + '</b><span>' + n + (n > 1 ? " titres" : " titre") + '</span></span></' + t + '>';
 }
@@ -7376,7 +7386,7 @@ function colGridHTML(arr) {
     (arr.length ? '' : '<p class="note" style="margin-top:22px">Crée des listes à thème (« Romances », « À revoir », « Soirée entre amis »…) et retrouve-les ici. Tu peux les partager avec un lien.</p>');
 }
 function colEncode(c) {
-  var o = { n: c.n, d: c.d, c: c.c, e: c.e, f: c.f || 0, p: /^https:/.test(c.p || "") ? c.p : "", i: c.i };
+  var o = { n: c.n, d: c.d, c: c.c, e: c.e, f: c.f || 0, s: c.s || 0, p: /^https:/.test(c.p || "") ? c.p : "", i: c.i };
   return codeB64(new TextEncoder().encode(JSON.stringify(o)));
 }
 function colDecode(tok) {
@@ -7398,7 +7408,7 @@ document.addEventListener("keydown", function (e) { if (e.key === "Escape" && $(
 function vipCls(k, from) { return k >= from ? " vipx" + (isVip() ? "" : " lock") : ""; }
 function colEdit(id, addSid) {
   var base = id ? colGet(id) : null;
-  var cur = base ? JSON.parse(JSON.stringify(base)) : { id: "", n: "", d: "", c: Math.floor(Math.random() * VIPCOL_FROM), e: Math.floor(Math.random() * VIPEMO_FROM), f: 0, p: "", i: addSid ? [String(addSid)] : [] };
+  var cur = base ? JSON.parse(JSON.stringify(base)) : { id: "", n: "", d: "", c: Math.floor(Math.random() * VIPCOL_FROM), e: Math.floor(Math.random() * VIPEMO_FROM), f: 0, s: 0, p: "", i: addSid ? [String(addSid)] : [] };
   var o = colOpen('<div class="cbh"><h2>' + (base ? "Modifier la collection" : "Nouvelle collection") + '</h2><button type="button" class="cbx" data-colx aria-label="Fermer">×</button></div>' +
     '<form class="cbb" id="colform" autocomplete="off"><div class="colprev" id="colprev"></div>' +
     '<label class="cf">Nom<input id="colname" maxlength="40" placeholder="Ex. : Romances qui font pleurer" required></label>' +
@@ -7407,7 +7417,8 @@ function colEdit(id, addSid) {
     '<div class="cimp"><button type="button" class="btn ghost small' + (isVip() ? '' : ' lock') + '" data-colimg>' + nsvg("image") + 'Importer depuis la galerie</button><button type="button" class="btn ghost small" data-colimgrm hidden>Retirer l\'image</button><span class="cimpn" id="colimgn"></span><input type="file" id="colfile" accept="image/*" hidden></div>' +
     '<div class="cf" style="display:grid;gap:8px;font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--dim)">Couleur<div class="cswatch" id="colsw"></div></div>' +
     '<div class="cf" style="display:grid;gap:8px;font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--dim)">Symbole<div class="cemo" id="colemo"></div></div>' +
-    '<div class="cf" style="display:grid;gap:8px;font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--dim)">Effet<div class="cemo cfx" id="colfx"></div></div></form>' +
+    '<div class="cf" style="display:grid;gap:8px;font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--dim)">Effet<div class="cemo cfx" id="colfx"></div></div>' +
+    '<div class="cf" style="display:grid;gap:8px;font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--dim)">Format<div class="cemo cfm" id="colfm"></div></div></form>' +
     '<div class="cbf"><button type="button" class="btn ghost small" data-colx>Annuler</button><button type="submit" class="btn small" form="colform">' + (base ? "Enregistrer" : "Créer") + '</button></div>');
   var name = o.querySelector("#colname"), desc = o.querySelector("#coldesc");
   name.value = cur.n; desc.value = cur.d;
@@ -7433,7 +7444,8 @@ function colEdit(id, addSid) {
   });
   function paint() {
     cur.n = name.value; cur.d = desc.value;
-    o.querySelector("#colprev").innerHTML = colCard({ id: "x", n: cur.n.trim() || "Ma collection", d: cur.d, c: cur.c, e: cur.e, f: cur.f, p: cur.p, i: cur.i }, 0, "div");
+    o.querySelector("#colprev").innerHTML = colCard({ id: "x", n: cur.n.trim() || "Ma collection", d: cur.d, c: cur.c, e: cur.e, f: cur.f, s: cur.s || 0, p: cur.p, i: cur.i }, 0, "div");
+    o.querySelector("#colfm").innerHTML = COLFM.map(function (g, k) { return '<button type="button" class="' + (k === (cur.s || 0) ? "on" : "") + '" data-colfm="' + k + '"><i style="height:' + g[1] + 'px"></i>' + g[0] + '</button>'; }).join("");
     o.querySelector("#colsw").innerHTML = COLPAL.map(function (p, k) { return '<button type="button" class="' + (k === cur.c ? "on" : "") + vipCls(k, VIPCOL_FROM) + '" data-colc="' + k + '" style="--c0:' + p[0] + ';--c1:' + p[1] + '" aria-label="Couleur ' + (k + 1) + '"></button>'; }).join("");
     o.querySelector("#colfx").innerHTML = COLFX.map(function (g, k) { return '<button type="button" class="' + (k === (cur.f || 0) ? "on" : "") + vipCls(k, 1) + '" data-colf="' + k + '">' + g + '</button>'; }).join("");
     o.querySelector("#colemo").innerHTML = COLEMO.map(function (g, k) { return '<button type="button" class="' + (k === cur.e ? "on" : "") + vipCls(k, VIPEMO_FROM) + '" data-cole="' + k + '">' + g + '</button>'; }).join("");
@@ -7444,6 +7456,7 @@ function colEdit(id, addSid) {
     if (e.target.closest("[data-colx]")) { colClose(); return; }
     if (e.target.closest("[data-colimg]")) { if (!isVip()) { toast("Image de couverture réservée aux VIP"); go("/vip"); colClose(); return; } cfile.click(); return; }
     if (e.target.closest("[data-colimgrm]")) { cur.p = ""; covSync(); paint(); return; }
+    var bm = e.target.closest("[data-colfm]"); if (bm) { cur.s = +bm.dataset.colfm || 0; paint(); return; }
     var bc = e.target.closest("[data-colc]"), be = e.target.closest("[data-cole]"), bf = e.target.closest("[data-colf]");
     if (bf) { if (+bf.dataset.colf >= 1 && !isVip()) { toast("Effet réservé aux VIP"); return; } cur.f = +bf.dataset.colf; paint(); return; }
     if (bc) { if (+bc.dataset.colc >= VIPCOL_FROM && !isVip()) { toast("Couleur réservée aux VIP"); return; } cur.c = +bc.dataset.colc; paint(); }
@@ -7453,8 +7466,8 @@ function colEdit(id, addSid) {
     e.preventDefault(); cur.n = name.value; cur.d = desc.value;
     if (!cur.n.trim()) { name.focus(); return; }
     var l = readCols(), saved;
-    if (base) { saved = l.filter(function (x) { return x.id === base.id; })[0]; if (!saved) return; saved.n = cur.n; saved.d = cur.d; saved.c = cur.c; saved.e = cur.e; saved.f = cur.f; saved.p = cur.p || ""; saved.at = Date.now(); saved = colClean(saved); l = l.map(function (x) { return x.id === saved.id ? saved : x; }); }
-    else { saved = colClean({ id: colNewId(), n: cur.n, d: cur.d, c: cur.c, e: cur.e, f: cur.f, p: cur.p || "", i: cur.i, at: Date.now() }); l.unshift(saved); }
+    if (base) { saved = l.filter(function (x) { return x.id === base.id; })[0]; if (!saved) return; saved.n = cur.n; saved.d = cur.d; saved.c = cur.c; saved.e = cur.e; saved.f = cur.f; saved.s = cur.s || 0; saved.p = cur.p || ""; saved.at = Date.now(); saved = colClean(saved); l = l.map(function (x) { return x.id === saved.id ? saved : x; }); }
+    else { saved = colClean({ id: colNewId(), n: cur.n, d: cur.d, c: cur.c, e: cur.e, f: cur.f, s: cur.s || 0, p: cur.p || "", i: cur.i, at: Date.now() }); l.unshift(saved); }
     if (!saveCols(l)) return;
     colClose(); toast(base ? "Collection mise à jour" : "Collection créée ✓");
     if (addSid && !base) colRefreshBtn(addSid);
