@@ -2469,6 +2469,18 @@ dialog#player .pbar { align-items: stretch; gap: 12px; padding: 14px max(18px, e
 #ptitle.lk::after { content: " ↗"; font-family: var(--mono); font-size: .5em; color: var(--dim); vertical-align: .35em; transition: color .2s; }
 #ptitle.lk:hover { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 5px; }
 #ptitle.lk:hover::after { color: var(--fg); }
+
+/* ===== Effets lumineux : coupés par défaut, réactivables dans Paramètres > Général > Effets lumineux ===== */
+html:not(.glowon) .mllogo .sp, html:not(.glowon) .rqlogo .sp { display: none; }
+html:not(.glowon) .plogo .tri { fill-opacity: 0 !important; stroke: currentColor; animation: mldraw .8s .7s var(--ease) forwards; }
+html:not(.glowon) .pkick i, html:not(.glowon) #psrc .chip.on::after { display: none; }
+html:not(.glowon) .stdot, html:not(.glowon) .pnsync.on i { animation: none !important; box-shadow: none !important; }
+html:not(.glowon) .pwa .pi { animation: none !important; box-shadow: none !important; }
+html:not(.glowon) #pnext, html:not(.glowon) #psrc .chip.on, html:not(.glowon) .pline i, html:not(.glowon) .ptip .tprog, html:not(.glowon) dialog#player:not(.wide) .pframe { box-shadow: none !important; }
+html:not(.glowon) .ptip .tprog { background: var(--acc); }
+html:not(.glowon) .ptip .tprog::after { display: none; }
+html:not(.glowon) .pspin::after { animation: none; }
+html:not(.glowon) .mlhero::before, html:not(.glowon) .mlhero::after, html:not(.glowon) dialog#player::before { display: none; }
 </style>
 <!-- Visites du site : Vercel Web Analytics, sans cookie ni base de données. Ne fait rien tant que tu ne l'actives pas dans Vercel (onglet Analytics). -->
 <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
@@ -3911,12 +3923,12 @@ function isVip() {
 var PREFKEY = "noir.prefs";
 var PREFS = (function () {
   var p = readJSON(PREFKEY, {}); if (!p || typeof p !== "object" || Array.isArray(p)) p = {};
-  return { noanim: !!p.noanim, hideTips: !!p.hideTips, hideLang: !!p.hideLang, hideLive: !!p.hideLive, hideNew: !!p.hideNew, hideNov: !!p.hideNov, rememberPlayer: !!p.rememberPlayer, theme: (["red", "blue", "violet", "gold", "rose", "emerald", "ice", "fire", "silver", "lime"].indexOf(p.theme) > -1 ? p.theme : ""), accent: (/^#[0-9a-f]{6}$/i.test(p.accent) ? p.accent.toLowerCase() : ""), bgc: (/^#[0-9a-f]{6}$/i.test(p.bgc) ? p.bgc.toLowerCase() : ""), lastPlayer: String(p.lastPlayer || ""), order: Array.isArray(p.order) ? p.order.filter(function (x) { return typeof x === "string"; }) : [] };
+  return { glow: !!p.glow, noanim: !!p.noanim, hideTips: !!p.hideTips, hideLang: !!p.hideLang, hideLive: !!p.hideLive, hideNew: !!p.hideNew, hideNov: !!p.hideNov, rememberPlayer: !!p.rememberPlayer, theme: (["red", "blue", "violet", "gold", "rose", "emerald", "ice", "fire", "silver", "lime"].indexOf(p.theme) > -1 ? p.theme : ""), accent: (/^#[0-9a-f]{6}$/i.test(p.accent) ? p.accent.toLowerCase() : ""), bgc: (/^#[0-9a-f]{6}$/i.test(p.bgc) ? p.bgc.toLowerCase() : ""), lastPlayer: String(p.lastPlayer || ""), order: Array.isArray(p.order) ? p.order.filter(function (x) { return typeof x === "string"; }) : [] };
 })();
 function savePrefs() { try { localStorage.setItem(PREFKEY, JSON.stringify(PREFS)); } catch (e) { toast("Stockage plein ou bloqué par le navigateur"); } }
 function applyPrefs() {
   var c = document.documentElement.classList;
-  c.toggle("noanim", PREFS.noanim); c.toggle("notips", PREFS.hideTips);
+  c.toggle("noanim", PREFS.noanim); c.toggle("glowon", PREFS.glow); c.toggle("notips", PREFS.hideTips);
   var de = document.documentElement, th = PREFS.theme; if (VIPTHEMES[th] && !isVip()) th = ""; if (th) de.setAttribute("data-theme", th); else de.removeAttribute("data-theme");
   var tm = document.querySelector('meta[name="theme-color"]'); if (tm) tm.setAttribute("content", { blue: "#081a3a", violet: "#05020a", gold: "#0b0905", rose: "#0d0509", emerald: "#04100b", ice: "#04101a", fire: "#0f0602", silver: "#08080a", lime: "#070d02" }[th] || "#000000");
   var st = de.style;
@@ -4004,7 +4016,7 @@ function stAction(ico, title, desc, attr, label, ghost, i) {
     '<button type="button" class="btn small' + (ghost ? " ghost" : "") + '" ' + attr + '>' + esc(label) + '</button></div>';
 }
 function stCount(t) {
-  if (t === "general") return ["noanim", "hideTips", "rememberPlayer", "theme"].filter(function (k) { return PREFS[k]; }).length;
+  if (t === "general") return ["noanim", "hideTips", "rememberPlayer", "glow", "theme"].filter(function (k) { return PREFS[k]; }).length;
   if (t === "badges") return BADGE_PREFS.filter(function (b) { return PREFS[b[0]]; }).length;
   return USER_KEYS.filter(function (k) { try { return localStorage.getItem(k) != null; } catch (e) { return false; } }).length;
 }
@@ -4096,7 +4108,8 @@ function stBody(t) {
   return stThemes() + '<div class="stsec"><div class="stlbl">Confort</div>' +
     stSwitch("noanim", "Désactiver toutes les animations", "Tout s\'affiche normalement, mais sans mouvement ni transition.", PREFS.noanim, "zap", 0) +
     stSwitch("hideTips", "Cacher le carrousel d\'astuces", "Masque les astuces en bas du lecteur.", PREFS.hideTips, "bulb", 1) +
-    stSwitch("rememberPlayer", "Se souvenir du dernier lecteur", "Relance directement le serveur choisi en dernier, quand il est disponible sur le titre.", PREFS.rememberPlayer, "play", 2) + '</div>' +
+    stSwitch("rememberPlayer", "Se souvenir du dernier lecteur", "Relance directement le serveur choisi en dernier, quand il est disponible sur le titre.", PREFS.rememberPlayer, "play", 2) +
+    stSwitch("glow", "Effets lumineux", "Réactive les lueurs, points lumineux et étincelles (logos, boutons, lecteur). Désactivé par défaut.", PREFS.glow, "bulb", 3) + '</div>' +
     '<div class="stsec"><div class="stlbl">Page d\'accueil</div><p class="stnote">Change l\'ordre des rangées de la page d\'accueil avec les flèches.</p>' +
     '<div class="spanel"><div id="catlist">' + catRowsHtml() + '</div><div class="row"><button type="button" class="btn ghost small" data-catreset>Réinitialiser</button></div></div></div>' +
     '<div class="spanel soon"><p class="note" style="margin:0;padding:16px 20px">D\'autres paramètres arrivent bientôt.</p></div>';
