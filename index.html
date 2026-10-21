@@ -4868,7 +4868,7 @@ function mlBuild() {
     '<div><h1>Ma liste</h1><p class="note">Enregistrée sur cet appareil</p></div></div>' +
     '<div class="mltabs four" id="mltabs" data-i="' + MLTABS.indexOf(listTab) + '" role="tablist"><span class="mlind"></span>' + tabs + '</div></div></div>' +
     '<div class="wrap"><div class="mltools"><label class="mlsearch">' + nsvg("search") + '<input id="mlq" type="search" placeholder="Rechercher dans ma liste" autocomplete="off" aria-label="Rechercher dans ma liste"></label>' +
-    '<div class="mlsort" role="group" aria-label="Trier">' + sorts + '</div><div class="mlend"><span class="mlsum" id="mlsum"></span><button type="button" class="btn small ghost" id="mlshare" data-mlshare hidden>' + SHICON + '<span>Partager</span></button><button type="button" class="colplus" id="colplus" data-colnew aria-label="Nouvelle collection" title="Nouvelle collection" hidden>' + nsvg("plus") + '</button></div></div><div id="mlbody"></div></div></div>';
+    '<div class="mlsort" role="group" aria-label="Trier">' + sorts + '</div><div class="mlend"><span class="mlsum" id="mlsum"></span><button type="button" class="btn small ghost share" id="mlshare" data-mlshare hidden>' + SHICON + '<span>Partager</span></button><button type="button" class="colplus" id="colplus" data-colnew aria-label="Nouvelle collection" title="Nouvelle collection" hidden>' + nsvg("plus") + '</button></div></div><div id="mlbody"></div></div></div>';
   mlSetTabs(L, true); mlRenderBody(L, false, false);
 }
 function mlPatch(still) { var L = mlData(); mlSetTabs(L, false); mlRenderBody(L, !!still, !still); }
@@ -8031,7 +8031,10 @@ document.addEventListener("click", function (e) {
     toast(add.length ? add.length + (add.length > 1 ? " titres ajoutés" : " titre ajouté") + " à ta liste ✓" : "Tout est déjà dans ta liste");
     return;
   }
-  var ids = readList().filter(function (id) { return byId(id); });
+  /* les mêmes titres que ceux affichés dans l'onglet : liste, puis stockage brut, puis cartes à l'écran */
+  var ids = listItems().map(function (x) { return String(x.id); });
+  if (!ids.length) ids = readList();
+  if (!ids.length) Array.prototype.forEach.call(document.querySelectorAll("#mlbody [data-mlrm]"), function (b) { ids.push(String(b.dataset.mlrm)); });
   if (!ids.length) { toast("Ta liste est vide"); return; }
   var url = location.origin + "/collection/p#" + colEncode({ n: "Ma liste", d: "", c: 0, e: 0, f: 0, s: 0, o: 0, p: "", i: ids });
   var data = { title: "Ma liste · DramaByM", text: "Ma liste de dramas et films sur DramaByM", url: url };
@@ -8048,7 +8051,7 @@ function viewCollection(b) {
   }
   var items = colItems(c), n = c.i.length;
   var acts = shared ? '<button type="button" class="btn" data-colsave>' + nsvg("plus") + '<span>Enregistrer dans mes collections</span></button><button type="button" class="btn ghost" data-colmerge>' + nsvg("bookmark") + '<span>Ajouter à ma liste</span></button>'
-    : '<button type="button" class="btn" data-colshare="' + esc(c.id) + '">' + SHICON + '<span>Partager</span></button><button type="button" class="btn ghost" data-coledit="' + esc(c.id) + '">Modifier</button><button type="button" class="btn danger" data-coldel="' + esc(c.id) + '">Supprimer</button>';
+    : '<button type="button" class="btn share" data-colshare="' + esc(c.id) + '">' + SHICON + '<span>Partager</span></button><button type="button" class="btn ghost" data-coledit="' + esc(c.id) + '">Modifier</button><button type="button" class="btn danger" data-coldel="' + esc(c.id) + '">Supprimer</button>';
   var body = colBodyHTML(c, shared, "");
   $("#app").innerHTML = '<div id="colroot"><section class="colhero" style="' + colStyle(c) + '">' + (c.p ? '<i class="colcover" style="background-image:url(\'' + esc(c.p) + '\')"></i>' : '') + '<div class="wrap"><a class="colback" href="/ma-liste" data-colback>' + nsvg("chev-left") + 'Mes collections</a>' +
     '<div class="colhead"><div class="colbadge">' + colIco(c.e) + '</div><div><h1>' + esc(c.n) + '</h1>' + (c.d ? '<p>' + esc(c.d) + '</p>' : '') + '<div class="cmeta"><i>' + (shared ? "Collection partagée" : "Collection perso") + '</i> · <span id="colcount">' + n + (n > 1 ? " titres" : " titre") + '</span></div></div></div><div class="colact">' + acts + '</div></div></section>' +
