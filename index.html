@@ -6762,63 +6762,6 @@ function paintPlayerHead() {
   box.querySelector("span").textContent = p2(k + 1) + " sur " + p2(sel.eps.length);
   f.style.width = Math.round(100 * (k + 1) / sel.eps.length) + "%";
 }
-/* ===== Source HLS (Bunny Stream) : l'URL embed est envoyée à /api/play, qui renvoie un M3U8 signé et temporaire, lu avec hls.js ===== */
-var BUNNY_EMBED = /^https:\/\/iframe\.mediadelivery\.net\/embed\/\d+\/[0-9a-f-]{36}\/?$/i;
-function isHlsSrc(u) { u = String(u || "").trim(); return BUNNY_EMBED.test(u) || u === "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"; }
-var hlsObj = null, hlsTimer = null, hlsLoad = null;
-function stopHls() { clearTimeout(hlsTimer); if (hlsObj) { try { hlsObj.destroy(); } catch (e) {} hlsObj = null; } }
-function loadHlsLib() {
-  if (window.Hls) return Promise.resolve();
-  if (hlsLoad) return hlsLoad;
-  hlsLoad = new Promise(function (ok, ko) {
-    var s = document.createElement("script"); s.src = "https://cdn.jsdelivr.net/npm/hls.js@1.5.15/dist/hls.min.js";
-    s.onload = ok; s.onerror = function () { hlsLoad = null; ko(new Error("hls.js")); }; document.head.appendChild(s);
-  });
-  return hlsLoad;
-}
-function fetchPlay(embedUrl) {
-  return fetch("/api/play", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ embedUrl: embedUrl }) })
-    .then(function (r) { return r.json().then(function (j) { if (!r.ok) throw new Error((j.error && j.error.message) || "Erreur"); return j; }); });
-}
-function startHls(embedUrl) {
-  var st = $("#pstage"), o = $("#pload");
-  st.innerHTML = '<video id="phls" controls playsinline autoplay style="width:100%;height:100%;background:#000"></video>';
-  var v = $("#phls"), busy = false, fails = 0, native = false;
-  var alive = function () { return document.body.contains(v); };
-  var failUi = function (msg) { stopLoading(); if (msg) toast(msg); };
-  clearTimeout(slowTimer); clearTimeout(hardTimer);
-  if (o) { $("#plbl").textContent = "Chargement · " + String((cur.sources[cur.i] || {}).name || "serveur"); $("#pslow").hidden = true; o.classList.add("on"); hardTimer = setTimeout(function () { failUi("Toujours rien ? Essaie « Recharger »"); }, 20000); }
-  v.addEventListener("loadeddata", stopLoading);
-  var schedule = function (exp) { clearTimeout(hlsTimer); hlsTimer = setTimeout(renew, Math.max(5000, exp - Date.now() - 60000)); };
-  function renew() {
-    if (!alive()) { stopHls(); return; }
-    if (busy) return; busy = true;
-    var t = v.currentTime;
-    fetchPlay(embedUrl).then(function (j) {
-      busy = false; if (!alive()) return; fails = 0;
-      if (native) { v.src = j.manifestUrl; v.currentTime = t; v.play().catch(function () {}); }
-      else { hlsObj.once(Hls.Events.MANIFEST_PARSED, function () { hlsObj.startLoad(t); v.play().catch(function () {}); }); hlsObj.loadSource(j.manifestUrl); }
-      schedule(j.expiresAt);
-    }).catch(function () { busy = false; failUi("Impossible de renouveler le flux"); });
-  }
-  Promise.all([loadHlsLib().catch(function () { return null; }), fetchPlay(embedUrl)]).then(function (r) {
-    var j = r[1]; if (!alive()) return;
-    if (window.Hls && Hls.isSupported()) {
-      hlsObj = new Hls({ lowLatencyMode: false });
-      hlsObj.on(Hls.Events.ERROR, function (_e, d) {
-        var code = d.response && d.response.code;
-        if ((code === 401 || code === 403 || code === 410) && fails++ < 3) { renew(); return; }
-        if (!d.fatal) return;
-        if (d.type === Hls.ErrorTypes.NETWORK_ERROR) hlsObj.startLoad();
-        else if (d.type === Hls.ErrorTypes.MEDIA_ERROR) hlsObj.recoverMediaError();
-        else { failUi("Lecture impossible"); if ($("#pslow")) $("#pslow").hidden = false; }
-      });
-      hlsObj.loadSource(j.manifestUrl); hlsObj.attachMedia(v);
-    } else if (v.canPlayType("application/vnd.apple.mpegurl")) { native = true; v.src = j.manifestUrl; }
-    else { failUi("HLS non supporté par ce navigateur"); return; }
-    schedule(j.expiresAt);
-  }).catch(function (e) { failUi(e && e.message ? e.message : "Lecture impossible"); });
-}
 function renderPlayer() {
   var s = cur.sources[cur.i], url = safeUrl(s.url);
   $("#ptitle").textContent = cur.title;
@@ -6842,9 +6785,7 @@ function renderPlayer() {
   $("#pprev").disabled = !(cur.nav && cur.nav.prev);
   $("#pnext").disabled = !(cur.nav && cur.nav.next);
   sortPbar();
-  stopHls();
-  if (isHlsSrc(url)) startHls(url);
-  else $("#pstage").innerHTML = '<iframe src="' + esc(url) + '" allowfullscreen webkitallowfullscreen mozallowfullscreen allow="autoplay *; fullscreen *; picture-in-picture *; encrypted-media *"></iframe>';
+  $("#pstage").innerHTML = '<iframe src="' + esc(url) + '" allowfullscreen webkitallowfullscreen mozallowfullscreen allow="autoplay *; fullscreen *; picture-in-picture *; encrypted-media *"></iframe>';
   applyFit();
   loadingUi();
   var many = cur.sources.length > 1;
