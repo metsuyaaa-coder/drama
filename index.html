@@ -2050,7 +2050,8 @@ html[data-theme="silver"] ::selection { background: #cbd5e1; color: #000; }
 html[data-theme="lime"] { --bg: #070d02; --fg: #fff; --dim: #a9bd8a; --line: #23360b; --panel: #0e1704; --s0: #0a1103; --s1: #16260a; --acc: #a3e635; --on-acc: #000; }
 html[data-theme="lime"] ::selection { background: #a3e635; color: #000; }
 .setbtn { position: relative; }
-.setbtn.isvip::after { content: "♛"; position: absolute; top: -7px; right: -7px; width: 17px; height: 17px; display: grid; place-items: center; background: var(--acc); color: var(--on-acc); font-size: 10px; line-height: 1; pointer-events: none; }
+.vipcrown { position: absolute; z-index: 3; top: -13px; left: -9px; width: 24px; height: 24px; display: grid; place-items: center; color: var(--acc); transform: rotate(-22deg); filter: drop-shadow(0 2px 3px rgba(0,0,0,.7)); pointer-events: none; }
+.vipcrown svg { width: 24px; height: 24px; }
 .cfx button { width: auto !important; padding: 0 14px !important; font-family: var(--mono); font-weight: 800; font-size: 12px !important; text-transform: uppercase; letter-spacing: .08em; }
 .colc.fx1 .colcov::before { z-index: 5; pointer-events: none; background: linear-gradient(105deg, transparent 40%, rgba(255,255,255,.12) 44%, rgba(255,255,255,.62) 50%, rgba(255,255,255,.12) 56%, transparent 60%); background-size: 280% 100%; background-repeat: no-repeat; background-position: 160% 0; mix-blend-mode: overlay; animation: colSweep 3s ease-in-out infinite; }
 .colc.fx1 .colcov { border-color: color-mix(in srgb, var(--c0) 60%, #fff); }
@@ -3742,7 +3743,8 @@ function applyPrefs() {
   var st = de.style;
   if (PREFS.accent) { var r = parseInt(PREFS.accent.substr(1, 2), 16), g = parseInt(PREFS.accent.substr(3, 2), 16), bl = parseInt(PREFS.accent.substr(5, 2), 16); st.setProperty("--acc", PREFS.accent); st.setProperty("--on-acc", (0.299 * r + 0.587 * g + 0.114 * bl) > 150 ? "#000" : "#fff"); }
   else { st.removeProperty("--acc"); st.removeProperty("--on-acc"); }
-  var vch = document.getElementById("setbtn"); if (vch) vch.classList.toggle("isvip", !!(VIP && VIP.h && isVip()));
+  var vipOn = isVip(), CROWN = '<i class="vipcrown" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" fill-opacity=".3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8l4.5 4L12 5l4.5 7L21 8l-2 11H5z"/><path d="M5 21.5h14"/></svg></i>';
+  document.querySelectorAll(".search").forEach(function (el) { var c = el.querySelector(".vipcrown"); if (vipOn && !c) el.insertAdjacentHTML("afterbegin", CROWN); else if (!vipOn && c) c.remove(); });
   if (PREFS.bgc && isVip()) { var bv = bgVars(PREFS.bgc); st.setProperty("--bg", bv.bg); st.setProperty("--panel", bv.panel); st.setProperty("--s0", bv.s0); st.setProperty("--s1", bv.s1); st.setProperty("--line", bv.line); if (tm) tm.setAttribute("content", bv.bg); }
   else ["--bg", "--panel", "--s0", "--s1", "--line"].forEach(function (k) { st.removeProperty(k); });
   c.toggle("hb-lang", PREFS.hideLang); c.toggle("hb-live", PREFS.hideLive); c.toggle("hb-new", PREFS.hideNew); c.toggle("hb-nov", PREFS.hideNov);
@@ -7339,7 +7341,7 @@ function viewVip() {
     [colIco(12), "Ton nom aux crédits", "Les soutiens peuvent être cités sur la page Crédits."],
     ['<svg class="cico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/></svg>', "Couleur de fond libre", "L'accent est libre pour tous ; les VIP peuvent aussi choisir la couleur de fond du site."],
     [colIco(10), "Demande prioritaire", "Tes demandes de titres passent en premier : elles sont traitées en 12 h maximum."],
-    [colIco(3), "Badge VIP", "Une petite couronne ♛ s'affiche sur le bouton des paramètres, en haut du site."]];
+    [colIco(3), "Badge VIP", "Une petite couronne se pose sur la barre de recherche, en haut du site."]];
   var perkHTML = '<div class="vipperks">' + perks.map(function (p, i) { return '<div class="vipperk" style="--i:' + i + '"><i>' + p[0] + '</i><b>' + p[1] + '</b><span>' + p[2] + '</span></div>'; }).join("") + '</div>';
   var box;
   if (on) {
