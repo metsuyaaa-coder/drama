@@ -29622,6 +29622,276 @@
       "downloads": [],
       "updatedAt": 1792609232223,
       "posterCustom": true
+    },
+    {
+      "id": "127529",
+      "type": "tv",
+      "name": "Bloodhounds",
+      "original_name": "사냥개들",
+      "origin_country": [
+        "KR"
+      ],
+      "networks": [
+        "Netflix"
+      ],
+      "original_language": "ko",
+      "aka": [
+        "Bloodhounds",
+        "사냥개들",
+        "Cães de Caça",
+        "Perros de caza",
+        "猎犬",
+        "Chó Săn Công Lý",
+        "Čmuchalové",
+        "La Traque dans le sang",
+        "Kopók",
+        "I segugi",
+        "獵犬",
+        "Sabuesos",
+        "Охотничьи псы",
+        "صيد خارج الحلبة",
+        "כלבי ציד",
+        "Гончаки",
+        "Τα Λαγωνικά",
+        "Kruvini šunys",
+        "Copoii",
+        "ブラッドハウンド",
+        "მონადირე ძაღლები",
+        "Sanyanggaedeul",
+        "Словно гончие"
+      ],
+      "year": "2023",
+      "overview": "Deux jeunes boxeurs font équipe avec un prêteur bienveillant pour faire tomber un usurier sans pitié qui s'attaque aux plus fauchés et désespérés.",
+      "genres": [
+        "Drame",
+        "Action & Adventure",
+        "Crime"
+      ],
+      "rating": "8.5",
+      "pop": 37.7385,
+      "status": "Ended",
+      "poster": "https://image.tmdb.org/t/p/w500/uSQzD7TXsL96J5ggDrJFdUs8uXU.jpg",
+      "posterV": 2,
+      "backdrop": "https://image.tmdb.org/t/p/original/zhsEnDNCQX5dlI2wbKzV90pV0B9.jpg",
+      "videos": [
+        {
+          "key": "WJCx8rgLDi8",
+          "name": "1차 예고편",
+          "type": "Teaser",
+          "lab": "Original"
+        },
+        {
+          "key": "eyiR8pO50JE",
+          "name": "Official Trailer [ENG SUB]",
+          "type": "Trailer",
+          "lab": "Anglais"
+        }
+      ],
+      "cast": [
+        {
+          "name": "Woo Do-hwan",
+          "character": "Kim Gun-woo",
+          "id": 1845057
+        },
+        {
+          "name": "Lee Sang-yi",
+          "character": "Hong Woo-jin",
+          "id": 1863428
+        },
+        {
+          "name": "Rain",
+          "character": "Im Baek-jeong",
+          "id": 112013
+        },
+        {
+          "name": "이명로",
+          "character": "Allen",
+          "id": 3507434
+        }
+      ],
+      "seasons": [
+        {
+          "number": 1,
+          "name": "Saison 1",
+          "episodes": [
+            {
+              "number": 1,
+              "name": "Épisode 1",
+              "overview": "Après un match de boxe palpitant, Kim Gun-woo et Hong Woo-jin se lient d'amitié. Les ambitions de Kim Myeong-gil se révèlent et reposent sur des méthodes intimidantes.",
+              "air_date": "2023-06-09",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 2,
+              "name": "Épisode 2",
+              "overview": "Gun-woo rencontre Choi Tae-ho pour remédier aux dettes de sa mère. Myeong-gil subit une rencontre humiliante avec Hong Min-beom qui fait naître des désirs de vengeance.",
+              "air_date": "2023-06-09",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 3,
+              "name": "Épisode 3",
+              "overview": "Gun-woo et Woo-jin trouvent le moyen de démanteler l'arnaque. Myeong-gil prend le dessus sur Min-beom.",
+              "air_date": "2023-06-09",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 4,
+              "name": "Épisode 4",
+              "overview": "À la suite d'une mésaventure du groupe, M. Choi prévoit d'utiliser ses propres moyens. Alors que leurs plans se mettent en place, leurs ennemis viennent les contrecarrer.",
+              "air_date": "2023-06-09",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 5,
+              "name": "Épisode 5",
+              "overview": "Après avoir échappé à une menace de justesse, le groupe se prépare à la suite tandis que M. Choi et ses hommes cherchent à soutirer de précieuses informations.",
+              "air_date": "2023-06-09",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 6,
+              "name": "Épisode 6",
+              "overview": "Les amis célèbrent leur victoire avant de s'entraîner pour la prochaine étape. Plus vulnérable que jamais, Myeong-gil s'en prend à M. Choi et ses gardes.",
+              "air_date": "2023-06-09",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 7,
+              "name": "Épisode 7",
+              "overview": "Après un échec impensable, Gun-woo et Woo-jin sont déterminés à se venger et collaborent avec un allié inattendu.",
+              "air_date": "2023-06-09",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 8,
+              "name": "Épisode 8",
+              "overview": "Mus par leur sens du devoir envers ceux qui leur sont chers, Gun-woo et Woo-jin s'activent pour faire tomber Myeong-gil une bonne fois pour toutes.",
+              "air_date": "2023-06-09",
+              "sources": [],
+              "downloads": []
+            }
+          ],
+          "downloads": []
+        },
+        {
+          "number": 2,
+          "name": "Saison 2",
+          "episodes": [
+            {
+              "number": 1,
+              "name": "Épisode 1",
+              "overview": "Kim Gun-woo se prépare pour un combat contre un champion redoutable. Mais dans l'ombre, le brutal Im Baek-jeong le traque.",
+              "air_date": "2026-04-03",
+              "sources": [
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/xcyUfLysgglyS",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 2,
+              "name": "Épisode 2",
+              "overview": "Gun-woo fait passer la sécurité de sa mère avant tout. Hong Woo-jin se tourne vers un vieil ami pour obtenir de l'aide. Mais les hommes de Baek-jeong ne tardent pas à les rattraper après les avoir filés à toute vitesse.",
+              "air_date": "2026-04-03",
+              "sources": [
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/eUqqa4rZlL1jp",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 3,
+              "name": "Épisode 3",
+              "overview": "Gun-woo découvre à quel point IKFC est sophistiqué et qu'il pourrait bien se faire entraîner dans ses manigances. Pendant ce temps, Baek-jeong trouve une autre cible pour l'attirer dans ses filets.",
+              "air_date": "2026-04-03",
+              "sources": [
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/9VJg9nI4L0Djq",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 4,
+              "name": "Épisode 4",
+              "overview": "La tension monte lorsque Baek-jeong met en danger un proche allié de Gun-woo. Alors que le groupe de Baek-jeong est démasqué, Min Gang-yong met au point une mission pour le traquer.",
+              "air_date": "2026-04-03",
+              "sources": [
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/FSEhXEi1G7Saa",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 5,
+              "name": "Épisode 5",
+              "overview": "Acculé, Gun-woo décide d'affronter Baek-jeong en personne. Mais la situation dégénère, attisant encore davantage la rage de Baek-jeong.",
+              "air_date": "2026-04-03",
+              "sources": [
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/g03ilKNLA9Bs8",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 6,
+              "name": "Épisode 6",
+              "overview": "Gun-woo et Woo-jin cernent le point faible de Baek-jeong. Gang-yong tente une dernière manœuvre pour la capturer, mais la tâche est semée d'embûches.",
+              "air_date": "2026-04-03",
+              "sources": [
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/DiL90cfPHpU8B",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 7,
+              "name": "Épisode 7",
+              "overview": "Hong Min-beom conçoit un plan pour mettre fin à la folie une fois pour toutes : opposer Gun-woo et Woo-jin dans un combat final contre de redoutables ennemis pour une paix durable.",
+              "air_date": "2026-04-03",
+              "sources": [
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/ZPHkHGM5vBOiK",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            }
+          ],
+          "downloads": []
+        }
+      ],
+      "sources": [],
+      "addedAt": 1792609762474,
+      "langs": [],
+      "downloads": [],
+      "updatedAt": 1792609770663
     }
   ],
   "deletedLinks": [
@@ -29852,6 +30122,15 @@
     "at": 1792602810955
   },
   "journal": [
+    {
+      "k": "mvihknfxjuodq",
+      "t": 1792609770669,
+      "b": "head",
+      "a": "add",
+      "i": "127529",
+      "n": "Bloodhounds",
+      "d": ""
+    },
     {
       "k": "mvihaaxqm7vwt",
       "t": 1792609304792,
