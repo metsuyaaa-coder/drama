@@ -7525,7 +7525,13 @@
               "name": "Épisode 3",
               "overview": "After learning his father once stayed at Karin's house, Yubin joins her at the village meeting for answers. There, he gets roped into designing for a festival, which he agrees to do on the sole condition that he moves in with Karin. Thus begins their cohabitation under a strict set of house rules.",
               "air_date": "2026-10-21",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-ijjzdhnp7nqv.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -7595,7 +7601,7 @@
         "VF"
       ],
       "downloads": [],
-      "updatedAt": 1792610964092,
+      "updatedAt": 1792624413987,
       "networks": [
         "Nippon TV"
       ],
@@ -29531,6 +29537,15 @@
     "at": 1792602810955
   },
   "journal": [
+    {
+      "k": "mviqaib9465sz",
+      "t": 1792624414005,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "305551",
+      "n": "Merry Berry Love",
+      "d": "sources 6 → 7"
+    },
     {
       "k": "mvipj6nu3gkez",
       "t": 1792623139194,
