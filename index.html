@@ -1455,7 +1455,8 @@ footer .about .flist li, footer .about p.dev { font-weight: 800; }
 .mlsort button + button { border-left: 1px solid var(--line); }
 .mlsort button:hover { color: var(--fg); }
 .mlsort button.on { background: var(--acc); color: var(--on-acc); }
-.mlsum { margin-left: auto; font-family: var(--mono); font-size: 12px; color: var(--dim); text-transform: uppercase; letter-spacing: .06em; }
+.mlend { margin-left: auto; display: flex; align-items: center; gap: 12px; }
+.mlsum { font-family: var(--mono); font-size: 12px; color: var(--dim); text-transform: uppercase; letter-spacing: .06em; }
 .mlswap { animation: mlswap .4s var(--ease) both; }
 @keyframes mlswap { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
 .mlgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(168px, 1fr)); gap: 26px 16px; }
@@ -1513,7 +1514,8 @@ footer .about .flist li, footer .about p.dev { font-weight: 800; }
   .mlt b { align-self: center; font-size: 30px; line-height: 1; }
   .mlt .l { align-self: center; max-width: 100%; font-size: 10px; letter-spacing: .03em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .mlsearch { flex: 1 1 100%; max-width: none; }
-  .mlsum { margin-left: 0; flex: 1 1 100%; }
+  .mlend { margin-left: 0; flex: 1 1 100%; justify-content: space-between; }
+  .mlsum { margin-left: 0; }
   .mlgrid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 12px; }
 }
 /* ===== Recherche (refonte) + highlight lumineux ===== */
@@ -2095,11 +2097,12 @@ html.noanim .colc.fx3 .colcov::before { animation: none !important; background-p
 .colhead .cmeta { margin-top: 10px; font-family: var(--mono); font-size: 12px; text-transform: uppercase; letter-spacing: .07em; color: var(--dim); }
 .colhead .cmeta i { font-style: normal; color: var(--c0); }
 .colact { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; animation: riseIn .6s .14s var(--ease) both; }
-.coladd { position: relative; max-width: 520px; margin: 26px 0 8px; }
-.coladd input { width: 100%; padding: 13px 16px 13px 44px; background: var(--panel); border: 1px solid var(--line); color: var(--fg); font: inherit; border-radius: 0; transition: border-color .2s; }
+.coladd { display: flex; align-items: stretch; gap: 10px; max-width: 520px; margin: 26px 0 8px; }
+.colsearch { position: relative; flex: 1 1 auto; min-width: 0; display: block; }
+.coladd input { width: 100%; padding: 13px 16px 13px 44px; font-size: 16px; background: var(--panel); border: 1px solid var(--line); color: var(--fg); font: inherit; border-radius: 0; transition: border-color .2s; }
 .coladd input:focus { outline: none; border-color: var(--acc); }
-.coladd > svg { position: absolute; left: 14px; top: 14px; width: 20px; height: 20px; color: var(--dim); pointer-events: none; }
-.coladd .cres { position: absolute; left: 0; right: 0; top: 100%; z-index: 20; background: var(--panel); border: 1px solid var(--acc); border-top: 0; box-shadow: 0 20px 40px rgba(0,0,0,.6); }
+.colsearch > svg { position: absolute; left: 14px; top: 14px; width: 20px; height: 20px; color: var(--dim); pointer-events: none; }
+.coladd .cres-old { position: absolute; left: 0; right: 0; top: 100%; z-index: 20; background: var(--panel); border: 1px solid var(--acc); border-top: 0; box-shadow: 0 20px 40px rgba(0,0,0,.6); }
 .cres button { display: flex; align-items: center; gap: 12px; width: 100%; padding: 8px 12px; background: transparent; border: 0; border-top: 1px solid var(--line); color: var(--fg); text-align: left; cursor: pointer; border-radius: 0; font: inherit; }
 .cres button:first-child { border-top: 0; }
 .cres button:hover { background: var(--s1); }
@@ -2197,6 +2200,31 @@ html.noanim .colc.fx3 .colcov::before { animation: none !important; background-p
 .cprow .ce .cico { width: 1.05em; height: 1.05em; }
 .cemo button .cico { width: 20px; height: 20px; }
 .rqvip i .cico { width: 14px; height: 14px; }
+.colplus, .colplusbtn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; border: 1px solid var(--acc); background: var(--acc); color: var(--on-acc); cursor: pointer; border-radius: 0; font-weight: 700; font-size: 13px; letter-spacing: .06em; text-transform: uppercase; touch-action: manipulation; -webkit-tap-highlight-color: transparent; transition: transform .2s var(--ease), background .2s, color .2s; }
+.colplus { width: 40px; height: 40px; padding: 0; }
+.colplus[hidden] { display: none; }
+.colplusbtn { flex: none; padding: 0 18px; min-height: 48px; }
+.colplus svg, .colplusbtn svg { width: 18px; height: 18px; flex: none; transition: transform .35s var(--ease); }
+@media (hover: hover) { .colplus:hover svg, .colplusbtn:hover svg { transform: rotate(90deg); } }
+.colplus:active, .colplusbtn:active { transform: scale(.96); }
+.colgrid.only { grid-template-columns: minmax(0, 280px); }
+.cmq { position: sticky; top: 0; z-index: 3; padding: 14px 20px; background: var(--bg); border-bottom: 1px solid var(--line); }
+.cmq .mlsearch { max-width: none; display: block; }
+.cmq .mlsearch input { font-size: 16px; padding: 13px 12px 13px 40px; background: var(--panel); }
+.cmhint { padding: 22px 20px; margin: 0; }
+.cmres .cmth { flex: none; width: 36px; height: 54px; object-fit: cover; background: var(--s1); display: block; }
+.cmres .ck { color: var(--dim); }
+.cmres.on .ck { color: var(--on-acc); }
+.cmres .ct b { white-space: normal; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+@media (max-width: 720px) {
+  .colplus { width: 44px; height: 44px; }
+  .coladd { max-width: none; margin-top: 20px; }
+  .colplusbtn { padding: 0 14px; min-height: 50px; }
+  .colplusbtn span { display: none; }
+  .colplusbtn { width: 50px; padding: 0; }
+  .cmq { padding: 12px 16px; }
+  .cmres { padding: 10px 16px; min-height: 72px; }
+}
 .cimp { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: -6px; }
 .cimp .btn { gap: 8px; }
 .cimp .btn svg { width: 16px; height: 16px; flex: none; }
@@ -4554,10 +4582,11 @@ function mlRenderBody(L, still, swap) {
   var body = $("#mlbody"); if (!body) return;
   var q = mlQuery.trim();
   var so = document.querySelector(".mlsort"); if (so) so.style.display = listTab === "cols" ? "none" : "";
+  var cpl = $("#colplus"); if (cpl) cpl.hidden = !(listTab === "cols" && L.cols.length);
   if (listTab === "cols") {
     var cq = q.toLowerCase(), carr = L.cols.filter(function (c) { return !cq || c.n.toLowerCase().indexOf(cq) > -1; });
     body.className = swap ? "mlswap" : ""; if (swap) { void body.offsetWidth; body.className = "mlswap"; }
-    body.innerHTML = colGridHTML(carr);
+    body.innerHTML = colGridHTML(carr, L.cols.length);
     var cs = $("#mlsum"); if (cs) cs.textContent = carr.length + (carr.length > 1 ? " collections" : " collection");
     return;
   }
@@ -4583,7 +4612,7 @@ function mlBuild() {
     '<div><h1>Ma liste</h1><p class="note">Enregistrée sur cet appareil</p></div></div>' +
     '<div class="mltabs four" id="mltabs" data-i="' + MLTABS.indexOf(listTab) + '" role="tablist"><span class="mlind"></span>' + tabs + '</div></div></div>' +
     '<div class="wrap"><div class="mltools"><label class="mlsearch">' + nsvg("search") + '<input id="mlq" type="search" placeholder="Rechercher dans ma liste" autocomplete="off" aria-label="Rechercher dans ma liste"></label>' +
-    '<div class="mlsort" role="group" aria-label="Trier">' + sorts + '</div><span class="mlsum" id="mlsum"></span></div><div id="mlbody"></div></div></div>';
+    '<div class="mlsort" role="group" aria-label="Trier">' + sorts + '</div><div class="mlend"><span class="mlsum" id="mlsum"></span><button type="button" class="colplus" id="colplus" data-colnew aria-label="Nouvelle collection" title="Nouvelle collection" hidden>' + nsvg("plus") + '</button></div></div><div id="mlbody"></div></div></div>';
   mlSetTabs(L, true); mlRenderBody(L, false, false);
 }
 function mlPatch(still) { var L = mlData(); mlSetTabs(L, false); mlRenderBody(L, !!still, !still); }
@@ -7439,10 +7468,11 @@ function colCard(c, i, tag, demo) {
     posters.map(function (s, k) { return '<i class="cp cp' + (k + 1) + '" style="background-image:url(\'' + esc(s.poster) + '\')"></i>'; }).join("") + (ghost ? '<i class="cp cp1 cpd"></i><i class="cp cp2 cpd"></i><i class="cp cp3 cpd"></i>' : "") + '</div>' +
     '<span class="colmeta"><b>' + esc(c.n) + '</b><span>' + n + (n > 1 ? " titres" : " titre") + '</span></span></' + t + '>';
 }
-function colGridHTML(arr) {
-  var h = '<button type="button" class="colnew" data-colnew style="--i:0">' + nsvg("plus") + 'Nouvelle collection</button>';
-  return '<div class="colgrid">' + h + arr.map(function (c, i) { return colCard(c, i + 1); }).join("") + '</div>' +
-    (arr.length ? '' : '<p class="note" style="margin-top:22px">Crée des listes à thème (« Romances », « À revoir », « Soirée entre amis »…) et retrouve-les ici. Tu peux les partager avec un lien.</p>');
+function colGridHTML(arr, total) {
+  if (!total) return '<div class="colgrid only"><button type="button" class="colnew" data-colnew style="--i:0">' + nsvg("plus") + 'Nouvelle collection</button></div>' +
+    '<p class="note" style="margin-top:22px">Crée des listes à thème (« Romances », « À revoir », « Soirée entre amis »…) et retrouve-les ici. Tu peux les partager avec un lien.</p>';
+  if (!arr.length) return '<div class="mlempty">' + nsvg("search", "mlei") + '<h3>Aucune collection trouvée</h3><p>Aucune de tes collections ne correspond à cette recherche.</p></div>';
+  return '<div class="colgrid">' + arr.map(function (c, i) { return colCard(c, i); }).join("") + '</div>';
 }
 function colEncode(c) {
   var o = { n: c.n, d: c.d, c: c.c, e: c.e, f: c.f || 0, s: c.s || 0, o: c.o ? 1 : 0, p: /^https:/.test(c.p || "") ? c.p : "", i: c.i };
@@ -7576,6 +7606,47 @@ function colResults(c, q) {
     return '<button type="button" data-coladd="' + esc(s.id) + '">' + (s.poster ? '<img src="' + esc(s.poster) + '" alt="" loading="lazy">' : '<i class="cph"></i>') + '<span><b>' + esc(s.name) + '</b><em>' + esc([isMovie(s) ? "Film" : "Série", s.year].filter(Boolean).join(" · ")) + '</em></span>' + nsvg("plus") + '</button>';
   }).join("") + '</div>';
 }
+function colBodyHTML(c, shared, q) {
+  var items = colItems(c), qq = String(q || "").trim().toLowerCase();
+  if (qq) items = items.filter(function (s) { return String(s.name || "").toLowerCase().indexOf(qq) > -1 || String(s.original_name || "").toLowerCase().indexOf(qq) > -1; });
+  if (items.length) return '<div class="mlgrid' + (qq ? " still" : "") + '">' + items.map(function (s, i) { return mlCard(s, i, shared ? "colro" : "col"); }).join("") + '</div>';
+  if (qq) return '<div class="mlempty">' + nsvg("search", "mlei") + '<h3>Aucun titre trouvé</h3><p>Rien dans cette collection ne correspond à « ' + esc(String(q).trim()) + ' ».</p></div>';
+  return '<div class="mlempty">' + nsvg("layers", "mlei") + '<h3>Collection vide</h3><p>' + (shared ? "Aucun titre de cette collection n'est disponible sur le site." : "Ajoute des titres avec le bouton + ci-dessus, ou depuis n'importe quelle fiche avec « + Collection ».") + '</p></div>';
+}
+function colRefreshPage(cid) {
+  var c = colGet(cid), bd = $("#colbody"); if (!c || !bd) return;
+  var q = $("#colq"); bd.innerHTML = colBodyHTML(c, false, q ? q.value : "");
+  var ct = $("#colcount"); if (ct) ct.textContent = c.i.length + (c.i.length > 1 ? " titres" : " titre");
+}
+/* fenêtre « Ajouter un titre » : recherche dans tout le site, un appui ajoute ou retire */
+function colAddOpen(cid) {
+  var c0 = colGet(cid); if (!c0) return;
+  var o = colOpen('<div class="cbh"><h2>Ajouter un titre</h2><button type="button" class="cbx" data-colx aria-label="Fermer">×</button></div>' +
+    '<div class="cmq"><label class="mlsearch">' + nsvg("search") + '<input id="colmq" type="search" placeholder="Nom du drama ou du film…" autocomplete="off" aria-label="Rechercher un titre à ajouter"></label></div>' +
+    '<div class="cpick" id="colmres"></div><div class="cbf"><button type="button" class="btn small" data-colx>Terminé</button></div>');
+  var inp = o.querySelector("#colmq"), res = o.querySelector("#colmres");
+  function paint() {
+    var c = colGet(cid); if (!c) { colClose(); return; }
+    var q = inp.value.trim().toLowerCase();
+    if (!q) { res.innerHTML = '<p class="note cmhint">Tape le nom d\'un titre pour l\'ajouter à « ' + esc(c.n) + ' ».</p>'; return; }
+    var out = db.filter(function (s) { return String(s.name || "").toLowerCase().indexOf(q) > -1 || String(s.original_name || "").toLowerCase().indexOf(q) > -1; }).slice(0, 30);
+    if (!out.length) { res.innerHTML = '<p class="note cmhint">Aucun titre trouvé.</p>'; return; }
+    res.innerHTML = out.map(function (s) {
+      var on = colHas(c, s.id);
+      return '<button type="button" class="cprow cmres' + (on ? " on" : "") + '" data-colmadd="' + esc(s.id) + '" style="' + colStyle(c) + '">' + (s.poster ? '<img class="cmth" src="' + esc(s.poster) + '" alt="" loading="lazy">' : '<i class="cmth"></i>') +
+        '<span class="ct"><b>' + esc(s.name) + '</b><em>' + esc([isMovie(s) ? "Film" : "Série", s.year].filter(Boolean).join(" · ")) + '</em></span><span class="ck">' + nsvg(on ? "check" : "plus") + '</span></button>';
+    }).join("");
+  }
+  paint(); setTimeout(function () { inp.focus(); }, 40);
+  inp.addEventListener("input", paint);
+  o.addEventListener("click", function (e) {
+    if (e.target.closest("[data-colx]")) { colClose(); return; }
+    var r = e.target.closest("[data-colmadd]"); if (!r) return;
+    var on = colToggle(cid, r.dataset.colmadd), s = byId(r.dataset.colmadd);
+    toast(on ? "« " + (s ? s.name : "Titre") + " » ajouté" : "Retiré de la collection");
+    paint(); colRefreshPage(cid);
+  });
+}
 function viewCollection(b) {
   var shared = b === "p", c = shared ? colDecode(location.hash.slice(1)) : colGet(b);
   if (!c) {
@@ -7585,25 +7656,25 @@ function viewCollection(b) {
   var items = colItems(c), n = c.i.length;
   var acts = shared ? '<button type="button" class="btn" data-colsave>' + nsvg("plus") + '<span>Enregistrer dans mes collections</span></button>'
     : '<button type="button" class="btn" data-colshare="' + esc(c.id) + '">' + SHICON + '<span>Partager</span></button><button type="button" class="btn ghost" data-coledit="' + esc(c.id) + '">Modifier</button><button type="button" class="btn danger" data-coldel="' + esc(c.id) + '">Supprimer</button>';
-  var body = items.length ? '<div class="mlgrid">' + items.map(function (s, i) { return mlCard(s, i, shared ? "colro" : "col"); }).join("") + '</div>'
-    : '<div class="mlempty">' + nsvg("layers", "mlei") + '<h3>Collection vide</h3><p>' + (shared ? "Aucun titre de cette collection n'est disponible sur le site." : "Ajoute des titres avec la recherche ci-dessus, ou depuis n'importe quelle fiche avec « + Collection ».") + '</p></div>';
+  var body = colBodyHTML(c, shared, "");
   $("#app").innerHTML = '<div id="colroot"><section class="colhero" style="' + colStyle(c) + '">' + (c.p ? '<i class="colcover" style="background-image:url(\'' + esc(c.p) + '\')"></i>' : '') + '<div class="wrap"><a class="colback" href="/ma-liste" data-colback>' + nsvg("chev-left") + 'Mes collections</a>' +
-    '<div class="colhead"><div class="colbadge">' + colIco(c.e) + '</div><div><h1>' + esc(c.n) + '</h1>' + (c.d ? '<p>' + esc(c.d) + '</p>' : '') + '<div class="cmeta"><i>' + (shared ? "Collection partagée" : "Collection perso") + '</i> · ' + n + (n > 1 ? " titres" : " titre") + '</div></div></div><div class="colact">' + acts + '</div></div></section>' +
-    '<div class="wrap">' + (shared ? '<div style="height:26px"></div>' : '<div class="coladd">' + nsvg("search") + '<input id="colq" type="search" placeholder="Ajouter un titre à cette collection…" autocomplete="off" aria-label="Ajouter un titre"><div id="colres"></div></div><div style="height:18px"></div>') + body + '</div></div>';
+    '<div class="colhead"><div class="colbadge">' + colIco(c.e) + '</div><div><h1>' + esc(c.n) + '</h1>' + (c.d ? '<p>' + esc(c.d) + '</p>' : '') + '<div class="cmeta"><i>' + (shared ? "Collection partagée" : "Collection perso") + '</i> · <span id="colcount">' + n + (n > 1 ? " titres" : " titre") + '</span></div></div></div><div class="colact">' + acts + '</div></div></section>' +
+    '<div class="wrap">' + (shared ? '<div style="height:26px"></div>' : '<div class="coladd"><label class="colsearch">' + nsvg("search") + '<input id="colq" type="search" placeholder="Rechercher un titre…" autocomplete="off" aria-label="Rechercher dans cette collection"></label><button type="button" class="colplusbtn" data-coladdopen aria-label="Ajouter un titre" title="Ajouter un titre">' + nsvg("plus") + '<span>Ajouter</span></button></div><div style="height:18px"></div>') + '<div id="colbody">' + body + '</div></div></div>';
 }
 NICONS["chev-left"] = NICONS["chev-left"] || '<path d="m15 18-6-6 6-6"/>';
 var colWantTab = "";
 document.addEventListener("input", function (e) {
   if (!e.target || e.target.id !== "colq") return;
   var m = curPath().match(/^\/collection\/([^/]+)/), c = m && colGet(m[1]); if (!c) return;
-  $("#colres").innerHTML = colResults(c, e.target.value);
+  var bd = $("#colbody"); if (bd) bd.innerHTML = colBodyHTML(c, false, e.target.value);
 });
 document.addEventListener("click", function (e) {
-  var t = e.target.closest ? e.target.closest("[data-colnew],[data-coledit],[data-coldel],[data-colshare],[data-colsave],[data-colrm],[data-coladd],[data-colpick],[data-colback]") : null;
+  var t = e.target.closest ? e.target.closest("[data-colnew],[data-coledit],[data-coldel],[data-colshare],[data-colsave],[data-colrm],[data-coladd],[data-colpick],[data-colback],[data-coladdopen]") : null;
   if (!t) { var r = $("#colres"); if (r && r.innerHTML && !e.target.closest(".coladd")) r.innerHTML = ""; return; }
   var m = curPath().match(/^\/collection\/([^/]+)/), cid = m ? m[1] : "";
   if (t.hasAttribute("data-colback")) { e.preventDefault(); colWantTab = "cols"; if (curPath() === "/ma-liste") route(true); else go("/ma-liste"); return; }
   if (t.hasAttribute("data-colnew")) { colEdit(""); return; }
+  if (t.hasAttribute("data-coladdopen")) { if (cid) colAddOpen(cid); return; }
   if (t.dataset.colpick) { colPick(t.dataset.colpick); return; }
   if (t.dataset.coledit) { colEdit(t.dataset.coledit); return; }
   if (t.dataset.coldel) {
