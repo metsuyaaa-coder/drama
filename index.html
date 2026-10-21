@@ -4838,6 +4838,7 @@ function mlRenderBody(L, still, swap) {
   var q = mlQuery.trim();
   var so = document.querySelector(".mlsort"); if (so) so.style.display = listTab === "cols" ? "none" : "";
   var cpl = $("#colplus"); if (cpl) cpl.hidden = !(listTab === "cols" && L.cols.length);
+  var msh = $("#mlshare"); if (msh) msh.hidden = !(listTab === "list" && L.list.length);
   if (listTab === "cols") {
     var cq = q.toLowerCase(), carr = L.cols.filter(function (c) { return !cq || c.n.toLowerCase().indexOf(cq) > -1; });
     body.className = swap ? "mlswap" : ""; if (swap) { void body.offsetWidth; body.className = "mlswap"; }
@@ -4867,7 +4868,7 @@ function mlBuild() {
     '<div><h1>Ma liste</h1><p class="note">Enregistrée sur cet appareil</p></div></div>' +
     '<div class="mltabs four" id="mltabs" data-i="' + MLTABS.indexOf(listTab) + '" role="tablist"><span class="mlind"></span>' + tabs + '</div></div></div>' +
     '<div class="wrap"><div class="mltools"><label class="mlsearch">' + nsvg("search") + '<input id="mlq" type="search" placeholder="Rechercher dans ma liste" autocomplete="off" aria-label="Rechercher dans ma liste"></label>' +
-    '<div class="mlsort" role="group" aria-label="Trier">' + sorts + '</div><div class="mlend"><span class="mlsum" id="mlsum"></span><button type="button" class="colplus" id="colplus" data-colnew aria-label="Nouvelle collection" title="Nouvelle collection" hidden>' + nsvg("plus") + '</button></div></div><div id="mlbody"></div></div></div>';
+    '<div class="mlsort" role="group" aria-label="Trier">' + sorts + '</div><div class="mlend"><span class="mlsum" id="mlsum"></span><button type="button" class="btn small ghost" id="mlshare" data-mlshare hidden>' + SHICON + '<span>Partager</span></button><button type="button" class="colplus" id="colplus" data-colnew aria-label="Nouvelle collection" title="Nouvelle collection" hidden>' + nsvg("plus") + '</button></div></div><div id="mlbody"></div></div></div>';
   mlSetTabs(L, true); mlRenderBody(L, false, false);
 }
 function mlPatch(still) { var L = mlData(); mlSetTabs(L, false); mlRenderBody(L, !!still, !still); }
@@ -8020,6 +8021,25 @@ function colAddOpen(cid) {
     paint(); colRefreshPage(cid);
   });
 }
+/* Partager « À regarder » par lien : même format que le partage d'une collection, ouvert par l'ami sur /collection/p */
+document.addEventListener("click", function (e) {
+  var t = e.target.closest ? e.target.closest("[data-mlshare],[data-colmerge]") : null; if (!t) return;
+  if (t.hasAttribute("data-colmerge")) {
+    var sc = colDecode(location.hash.slice(1)); if (!sc) return;
+    var add = sc.i.filter(function (id) { return byId(id) && !inList(id); });
+    add.slice().reverse().forEach(function (id) { toggleList(id); });
+    toast(add.length ? add.length + (add.length > 1 ? " titres ajoutés" : " titre ajouté") + " à ta liste ✓" : "Tout est déjà dans ta liste");
+    return;
+  }
+  var ids = readList().filter(function (id) { return byId(id); });
+  if (!ids.length) { toast("Ta liste est vide"); return; }
+  var url = location.origin + "/collection/p#" + colEncode({ n: "Ma liste", d: "", c: 0, e: 0, f: 0, s: 0, o: 0, p: "", i: ids });
+  var data = { title: "Ma liste · DramaByM", text: "Ma liste de dramas et films sur DramaByM", url: url };
+  var copy = function () { shareCopy(url).then(function () { shareDone(t, "Lien copié"); toast("Lien de ta liste copié ✓"); }, function () { toast(url); }); };
+  var touch = window.matchMedia && matchMedia("(pointer: coarse)").matches;
+  if (navigator.share && touch) navigator.share(data).then(function () { shareDone(t, "Partagé !"); }, function (err) { if (!err || err.name !== "AbortError") copy(); });
+  else copy();
+});
 function viewCollection(b) {
   var shared = b === "p", c = shared ? colDecode(location.hash.slice(1)) : colGet(b);
   if (!c) {
@@ -8027,7 +8047,7 @@ function viewCollection(b) {
     return;
   }
   var items = colItems(c), n = c.i.length;
-  var acts = shared ? '<button type="button" class="btn" data-colsave>' + nsvg("plus") + '<span>Enregistrer dans mes collections</span></button>'
+  var acts = shared ? '<button type="button" class="btn" data-colsave>' + nsvg("plus") + '<span>Enregistrer dans mes collections</span></button><button type="button" class="btn ghost" data-colmerge>' + nsvg("bookmark") + '<span>Ajouter à ma liste</span></button>'
     : '<button type="button" class="btn" data-colshare="' + esc(c.id) + '">' + SHICON + '<span>Partager</span></button><button type="button" class="btn ghost" data-coledit="' + esc(c.id) + '">Modifier</button><button type="button" class="btn danger" data-coldel="' + esc(c.id) + '">Supprimer</button>';
   var body = colBodyHTML(c, shared, "");
   $("#app").innerHTML = '<div id="colroot"><section class="colhero" style="' + colStyle(c) + '">' + (c.p ? '<i class="colcover" style="background-image:url(\'' + esc(c.p) + '\')"></i>' : '') + '<div class="wrap"><a class="colback" href="/ma-liste" data-colback>' + nsvg("chev-left") + 'Mes collections</a>' +
