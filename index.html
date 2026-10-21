@@ -2347,7 +2347,7 @@ dialog#player .pframe.fsui, dialog#player .pframe:fullscreen, dialog#player .pfr
 .pload { gap: 20px; background: radial-gradient(ellipse at center, color-mix(in srgb, var(--acc) 10%, var(--s1)) 0%, var(--s0) 72%); }
 .pspin { position: relative; width: 68px; height: 68px; border: 0; border-radius: 0; animation: none; }
 .pspin::before { content: ""; position: absolute; inset: 0; border: 2px solid var(--line); border-top-color: var(--acc); border-radius: 50%; animation: pspin .9s linear infinite; }
-.pspin::after { content: ""; position: absolute; left: 50%; top: 50%; width: 0; height: 0; border-left: 15px solid var(--fg); border-top: 9px solid transparent; border-bottom: 9px solid transparent; transform: translate(-35%, -50%); animation: plpulse 1.6s ease-in-out infinite; }
+.pspin::after { content: ""; position: absolute; left: 50%; top: 50%; width: 0; height: 0; margin: -9px 0 0 -5px; border-left: 15px solid var(--fg); border-top: 9px solid transparent; border-bottom: 9px solid transparent; animation: plpulse 1.6s ease-in-out infinite; }
 .plbl { font-size: 11px; letter-spacing: .18em; }
 
 /* barre de commandes */
@@ -2464,6 +2464,11 @@ dialog#player .pbar { align-items: stretch; gap: 12px; padding: 14px max(18px, e
   .phead .pt { grid-column: 1 / 3; }
   dialog#player .phead:has(.pcount[hidden]) .pt { grid-column: 1 / -1; }
 }
+
+#ptitle.lk { cursor: pointer; transition: opacity .2s; }
+#ptitle.lk::after { content: " ↗"; font-family: var(--mono); font-size: .5em; color: var(--dim); vertical-align: .35em; transition: color .2s; }
+#ptitle.lk:hover { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 5px; }
+#ptitle.lk:hover::after { color: var(--fg); }
 </style>
 <!-- Visites du site : Vercel Web Analytics, sans cookie ni base de données. Ne fait rien tant que tu ne l'actives pas dans Vercel (onglet Analytics). -->
 <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
@@ -3037,7 +3042,7 @@ function clearResume() {
 }
 function resumeWatch(id) {
   var s = byId(id), r = readResume()[id]; if (!s || !r) return;
-  if (isMovie(s)) { saveResume(s.id); play(s.sources, s.name, defaultSrc(s.sources), "", null, s.downloads); } else playEp(s, r.si, r.n);
+  if (isMovie(s)) { saveResume(s.id); play(s.sources, s.name, defaultSrc(s.sources), "", null, s.downloads, s.id); } else playEp(s, r.si, r.n);
 }
 /* ===== Épisodes vus, nouveautés, ma liste (tout reste dans le navigateur) ===== */
 var SEENKEY = "noir.seen", LISTKEY = "noir.list", NEWDAYS = 7, NEWSERIESDAYS = 15;
@@ -5476,7 +5481,7 @@ function tvBuild() {
     '<div class="tvrow"><button type="button" class="tvic" id="tv-pp" aria-label="Lecture / pause">' + TVI.play + '</button><button type="button" class="tvic" id="tv-mu" aria-label="Son">' + TVI.vol + '</button>' +
     '<input type="range" class="tvvol" id="tv-vol" min="0" max="100" value="100" aria-label="Volume"><span class="tvtime" id="tv-time">0:00 / 0:00</span><span class="tvsp"></span>' +
     '<div class="tvqw"><div class="tvqm" id="tv-qm"></div><button type="button" class="tvic tvqb" id="tv-q" aria-label="Qualité">' + TVI.gear + '<span id="tv-ql">Auto</span></button></div>' +
-    '<button type="button" class="tvic" id="tv-fs" aria-label="Plein écran">' + TVI.full + '</button></div></div>' +
+    '</div></div>' +
     '<div class="tvload" id="tv-load"><div class="tvmsg"><span>Lecteur indisponible</span><a class="btn small ghost" id="tv-yl" target="_blank" rel="noopener noreferrer" href="#">Voir sur YouTube</a></div></div></div>' +
     '<div class="tvths" id="tv-ths"></div></div>';
   document.body.appendChild(b); TV.box = b;
@@ -5492,7 +5497,6 @@ function tvBuild() {
     if (t.closest("#tv-q")) return tvQMenu();
     if (t.closest("#tv-qm")) return;
     tvq("tv-qm").classList.remove("open");
-    if (t.closest("#tv-fs")) return tvFull();
     var th = t.closest("[data-tvi]"); if (th) return tvGo(+th.dataset.tvi);
     if (t.closest("#tv-bar") || t.closest("#tv-vol") || t.closest(".tvtop") || t.closest("#tv-yl")) return;
     if (t.closest("#tv-stage")) tvStageTap(e);
@@ -5531,7 +5535,7 @@ function tvBuild() {
     if (k === " " || k === "k" || k === "K") { if (k === " " && ae && /^(BUTTON|INPUT)$/.test(ae.tagName)) return; e.preventDefault(); tvToggle(); TV.wake(); }
     else if (k === "ArrowRight" || k === "ArrowLeft") { if (ae && ae.id === "tv-vol") return; e.preventDefault(); if (TV.ready) try { TV.p.seekTo(Math.max(0, TV.p.getCurrentTime() + (k === "ArrowRight" ? 5 : -5)), true); } catch (x) {} TV.wake(); }
     else if (k === "m" || k === "M") { tvMute(); TV.wake(); }
-    else if (k === "f" || k === "F") { tvFull(); }
+    else if (k === "f" || k === "F") { /* plein écran désactivé pour les bandes-annonces */ }
   });
   return b;
 }
@@ -5608,6 +5612,7 @@ function tvMute() {
   tvAudio();
 }
 function tvFull() {
+  return; /* plus de plein écran pour les bandes-annonces */
   var st = tvq("tv-stage"), fe = document.fullscreenElement || document.webkitFullscreenElement;
   if (fe) { (document.exitFullscreen || document.webkitExitFullscreen).call(document); return; }
   var rq = st.requestFullscreen || st.webkitRequestFullscreen; if (rq) try { rq.call(st); } catch (x) {}
@@ -6561,12 +6566,12 @@ function playerSection() {
     '<div id="srclist" class="pnsrc">' + (names.length ? srcRowsHtml(names, m) : '<p class="note">Aucune source dans le catalogue pour l\'instant.</p>') + '</div>' +
     '<div class="row"><button class="btn" type="button" id="src-order-save">Appliquer à tout le monde</button><button class="btn ghost" type="button" id="src-order-reset">Réinitialiser</button></div>', 4);
 }
-function play(sources, title, idx, sub, nav, dls) {
+function play(sources, title, idx, sub, nav, dls, sid) {
   if (!sources || !sources.length) { toast("Aucune source sur cette fiche"); return; }
   var picked = sources[idx || 0];
   sources = orderSources(sources);
   idx = Math.max(0, sources.indexOf(picked));
-  cur = { sources: sources, i: idx || 0, title: title, sub: sub || "", nav: nav || null, dl: dls || [] };
+  cur = { sid: sid, sources: sources, i: idx || 0, title: title, sub: sub || "", nav: nav || null, dl: dls || [] };
   var dlg = $("#player");
   renderPlayer();
   dlg.classList.remove("wide");
@@ -6588,6 +6593,9 @@ function sortPbar() {
 function paintPlayerHead() {
   var kick = $("#pkick"), box = $("#pcount"), line = $("#pline"), f = $("#plinef");
   if (kick) kick.querySelector("em").textContent = cur.nav ? "Série" : "Film";
+  var tt = $("#ptitle"), lk = cur.sid != null && cur.sid !== "";
+  tt.classList.toggle("lk", lk);
+  if (lk) { tt.setAttribute("role", "link"); tt.tabIndex = 0; tt.title = "Ouvrir la fiche"; } else { tt.removeAttribute("role"); tt.removeAttribute("tabindex"); tt.removeAttribute("title"); }
   var n = cur.nav && cur.nav.eps, d = n ? epsData() : null, sel = null, k = -1;
   if (d) {
     sel = d.list.filter(function (x) { return x.i === n.si; })[0];
@@ -6595,8 +6603,9 @@ function paintPlayerHead() {
   }
   if (!sel || k < 0) { box.hidden = true; line.hidden = true; return; }
   box.hidden = false; line.hidden = false;
-  box.querySelector("b").textContent = String(n.num);
-  box.querySelector("span").textContent = (k + 1) + " sur " + sel.eps.length;
+  var p2 = function (v) { v = String(v); return /^\d$/.test(v) ? "0" + v : v; };
+  box.querySelector("b").textContent = p2(n.num);
+  box.querySelector("span").textContent = p2(k + 1) + " sur " + p2(sel.eps.length);
   f.style.width = Math.round(100 * (k + 1) / sel.eps.length) + "%";
 }
 function renderPlayer() {
@@ -6656,6 +6665,12 @@ function loadingUi() {
   fr.addEventListener("load", stopLoading);
   fr.addEventListener("error", function () { $("#pslow").hidden = false; });
 }
+function openFicheFromPlayer() {
+  if (cur.sid == null || cur.sid === "") return;
+  var id = cur.sid; closePlayer(); go("/serie/" + id);
+}
+$("#ptitle").addEventListener("click", openFicheFromPlayer);
+$("#ptitle").addEventListener("keydown", function (e) { if (e.key === "Enter") { e.preventDefault(); openFicheFromPlayer(); } });
 function nextServer() {
   var n = (cur.sources || []).length; if (n < 2) return;
   cur.i = (cur.i + 1) % n; rememberServer(); renderPlayer();
@@ -6708,7 +6723,7 @@ function playEp(s, si, num) {
     prev: p ? function () { playEp(s, p.si, p.ep.number); } : null,
     next: n ? function () { playEp(s, n.si, n.ep.number); } : null,
     eps: { s: s, si: si, num: c.ep.number }
-  }, c.ep.downloads);
+  }, c.ep.downloads, s.id);
 }
 /* Conseils du lecteur, en carrousel */
 var tipIdx = 0, tipTimer = null;
@@ -8037,7 +8052,7 @@ document.addEventListener("click", function (e) {
   if (t.dataset.resume != null) { e.preventDefault(); resumeWatch(t.dataset.resume); }
   else if (t.dataset.watch != null) {
     var w = byId(t.dataset.watch); if (!w) return;
-    if (isMovie(w)) { saveResume(w.id); play(w.sources, w.name, defaultSrc(w.sources), "", null, w.downloads); }
+    if (isMovie(w)) { saveResume(w.id); play(w.sources, w.name, defaultSrc(w.sources), "", null, w.downloads, w.id); }
     else if (!(w.seasons || []).length) toast("Cette fiche n'a pas encore d'épisodes");
     else if (curPath() === "/serie/" + w.id) {
       dlMode = false;
@@ -8052,7 +8067,7 @@ document.addEventListener("click", function (e) {
   }
   else if (t.dataset.movsrc != null) {
     var m = t.dataset.movsrc.split("|"), mv = byId(m[0]);
-    if (mv) { saveResume(mv.id); play(mv.sources, mv.name, +m[1], "", null, mv.downloads); }
+    if (mv) { saveResume(mv.id); play(mv.sources, mv.name, +m[1], "", null, mv.downloads, mv.id); }
   }
   else if (t.dataset.playep != null) {
     var p = t.dataset.playep.split("|"), s2 = byId(p[0]), se = s2.seasons[+p[1]];
