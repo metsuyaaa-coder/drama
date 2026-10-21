@@ -2447,6 +2447,23 @@ dialog#player .pbar { align-items: stretch; gap: 12px; padding: 14px max(18px, e
   #pprev { flex: 0 0 54px; padding: 0; }
 }
 
+
+/* mobile : en-tête sur deux lignes (boutons en haut, titre + n° d'épisode dessous) */
+@media (max-width: 720px) {
+  dialog#player .phead { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; grid-template-areas: "back . acts" "ttl ttl cnt"; align-items: center; gap: 10px 10px; }
+  dialog#player.wide .phead { display: grid; }
+  #pclose { grid-area: back; }
+  dialog#player .phead .row { grid-area: acts; justify-self: end; gap: 8px; }
+  dialog#player .phead .pt { grid-area: ttl; }
+  dialog#player .phead .pcount { grid-area: cnt; flex-direction: column; align-items: flex-end; gap: 4px; padding: 0 0 0 12px; }
+  .pcount b { font-size: 40px; }
+  .pcount span { font-size: 10px; white-space: nowrap; }
+  .phead .pt b { font-size: 24px; white-space: normal; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .phead .pt small { white-space: normal; }
+  .pcount[hidden] { display: none; }
+  .phead .pt { grid-column: 1 / 3; }
+  dialog#player .phead:has(.pcount[hidden]) .pt { grid-column: 1 / -1; }
+}
 </style>
 <!-- Visites du site : Vercel Web Analytics, sans cookie ni base de données. Ne fait rien tant que tu ne l'actives pas dans Vercel (onglet Analytics). -->
 <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
