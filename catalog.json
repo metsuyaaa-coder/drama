@@ -7869,6 +7869,11 @@
                   "name": "DLSURF",
                   "url": "https://dlsurf.com/l/01vid",
                   "by": "614d778ed0"
+                },
+                {
+                  "name": "DLSURF 2",
+                  "url": "https://dlsurf.com/l/01stfr",
+                  "by": "614d778ed0"
                 }
               ]
             },
@@ -7906,6 +7911,16 @@
                   "size": "2.6Go",
                   "quality": "1080p (H.264) VOSTFR",
                   "by": "head"
+                },
+                {
+                  "name": "DLSURF",
+                  "url": "https://dlsurf.com/l/02vid",
+                  "by": "614d778ed0"
+                },
+                {
+                  "name": "DLSURF 2",
+                  "url": "https://dlsurf.com/l/02stfr",
+                  "by": "614d778ed0"
                 }
               ]
             },
@@ -7943,6 +7958,16 @@
                   "size": "2.4Go",
                   "quality": "1080p (H.264) VOSTFR",
                   "by": "head"
+                },
+                {
+                  "name": "DLSURF",
+                  "url": "https://dlsurf.com/l/03vid",
+                  "by": "614d778ed0"
+                },
+                {
+                  "name": "DLSURF 2",
+                  "url": "https://dlsurf.com/l/03stfr",
+                  "by": "614d778ed0"
                 }
               ]
             },
@@ -7980,6 +8005,16 @@
                   "size": "2.6Go",
                   "quality": "1080p (H.264) VOSTFR",
                   "by": "head"
+                },
+                {
+                  "name": "DLSURF",
+                  "url": "https://dlsurf.com/l/04vid",
+                  "by": "614d778ed0"
+                },
+                {
+                  "name": "DLSURF 2",
+                  "url": "https://dlsurf.com/l/04stfr",
+                  "by": "614d778ed0"
                 }
               ]
             },
@@ -8017,6 +8052,16 @@
                   "size": "2.8Go",
                   "quality": "1080p (H.264) VOSTFR",
                   "by": "head"
+                },
+                {
+                  "name": "DLSURF",
+                  "url": "https://dlsurf.com/l/05vid",
+                  "by": "614d778ed0"
+                },
+                {
+                  "name": "DLSURF 2",
+                  "url": "https://dlsurf.com/l/05stfr",
+                  "by": "614d778ed0"
                 }
               ]
             },
@@ -8054,6 +8099,16 @@
                   "size": "2.6Go",
                   "quality": "1080p (H.264) VOSTFR",
                   "by": "head"
+                },
+                {
+                  "name": "DLSURF",
+                  "url": "https://dlsurf.com/l/06vid",
+                  "by": "614d778ed0"
+                },
+                {
+                  "name": "DLSURF 2",
+                  "url": "https://dlsurf.com/l/06stfr",
+                  "by": "614d778ed0"
                 }
               ]
             },
@@ -8115,7 +8170,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792621249110,
+      "updatedAt": 1792621538577,
       "networks": [
         "ENA"
       ],
@@ -29496,12 +29551,12 @@
   "journal": [
     {
       "k": "mvioeo9yay7mb",
-      "t": 1792621249126,
+      "t": 1792621538587,
       "b": "614d778ed0",
       "a": "edit",
       "i": "307106",
       "n": "Between Steps",
-      "d": "téléchargements 6 → 7"
+      "d": "téléchargements 7 → 18"
     },
     {
       "k": "mvincgsc59x0r",
