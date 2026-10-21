@@ -29397,20 +29397,8 @@
     "at": 1792600013909
   },
   "calx": {
-    "items": [
-      {
-        "id": "127529_2026-10-21_mviicxys",
-        "sid": "127529",
-        "date": "2026-10-21",
-        "label": "",
-        "media": "tv",
-        "name": "Bloodhounds",
-        "poster": "",
-        "year": "2023",
-        "dt": ""
-      }
-    ],
-    "at": 1792611090676
+    "items": [],
+    "at": 1792611104084
   },
   "announce": {
     "on": false,
