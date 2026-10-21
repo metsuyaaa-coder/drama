@@ -24,7 +24,7 @@
 <meta name="twitter:description" content="Ton répertoire de dramas, séries et films à regarder en streaming ou à télécharger, avec les nouveaux épisodes toujours à jour.">
 <meta name="twitter:image" content="https://dramabym.vercel.app/dbm.png?v=2">
 <meta name="theme-color" content="#000000">
-<script>try{var _p=JSON.parse(localStorage.getItem("noir.prefs")||"{}");if(_p&&/^(red|blue|violet|gold|rose|emerald)$/.test(_p.theme)){document.documentElement.setAttribute("data-theme",_p.theme);var _m=document.querySelector('meta[name=theme-color]');if(_m)_m.content={red:"#000000",blue:"#081a3a",violet:"#05020a",gold:"#0b0905",rose:"#0d0509",emerald:"#04100b"}[_p.theme];}if(_p&&/^#[0-9a-f]{6}$/i.test(_p.accent)){var _h=_p.accent,_r=parseInt(_h.substr(1,2),16),_g=parseInt(_h.substr(3,2),16),_b=parseInt(_h.substr(5,2),16),_s=document.documentElement.style;_s.setProperty("--acc",_h);_s.setProperty("--on-acc",(0.299*_r+0.587*_g+0.114*_b)>150?"#000":"#fff");}}catch(e){}</script>
+<script>try{var _p=JSON.parse(localStorage.getItem("noir.prefs")||"{}");if(_p&&/^(red|blue|violet|gold|rose|emerald|ice|fire|silver|lime)$/.test(_p.theme)){document.documentElement.setAttribute("data-theme",_p.theme);var _m=document.querySelector('meta[name=theme-color]');if(_m)_m.content={red:"#000000",blue:"#081a3a",violet:"#05020a",gold:"#0b0905",rose:"#0d0509",emerald:"#04100b",ice:"#04101a",fire:"#0f0602",silver:"#08080a",lime:"#070d02"}[_p.theme];}if(_p&&/^#[0-9a-f]{6}$/i.test(_p.accent)){var _h=_p.accent,_r=parseInt(_h.substr(1,2),16),_g=parseInt(_h.substr(3,2),16),_b=parseInt(_h.substr(5,2),16),_s=document.documentElement.style;_s.setProperty("--acc",_h);_s.setProperty("--on-acc",(0.299*_r+0.587*_g+0.114*_b)>150?"#000":"#fff");}if(_p&&/^#[0-9a-f]{6}$/i.test(_p.bgc)&&(localStorage.getItem("noir.vip")||localStorage.getItem("noir.admin"))){var _c=[1,3,5].map(function(i){return parseInt(_p.bgc.substr(i,2),16)}),_l=.299*_c[0]+.587*_c[1]+.114*_c[2];if(_l>56)_c=_c.map(function(v){return v*56/_l});var _x=function(t,a){return "#"+_c.map(function(v){v=Math.round(v+((a?255:0)-v)*t);return ("0"+Math.max(0,Math.min(255,v)).toString(16)).slice(-2)}).join("")},_y=document.documentElement.style;_y.setProperty("--bg",_x(0,1));_y.setProperty("--panel",_x(.04,1));_y.setProperty("--s0",_x(.25,0));_y.setProperty("--s1",_x(.09,1));_y.setProperty("--line",_x(.15,1));}}catch(e){}</script>
 <link rel="manifest" href="manifest.webmanifest">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -2039,6 +2039,29 @@ html[data-theme="emerald"] { --bg: #04100b; --fg: #fff; --dim: #8fb8a6; --line: 
 html[data-theme="gold"] ::selection { background: #d4a017; color: #000; }
 html[data-theme="rose"] ::selection { background: #ec4899; color: #fff; }
 html[data-theme="emerald"] ::selection { background: #10b981; color: #000; }
+html[data-theme="ice"] { --bg: #04101a; --fg: #fff; --dim: #8fb0c4; --line: #123049; --panel: #071a29; --s0: #05141f; --s1: #0b2a42; --acc: #38bdf8; --on-acc: #000; }
+html[data-theme="ice"] ::selection { background: #38bdf8; color: #000; }
+html[data-theme="fire"] { --bg: #0f0602; --fg: #fff; --dim: #c4a08a; --line: #40200c; --panel: #190b04; --s0: #120803; --s1: #2b1507; --acc: #f97316; --on-acc: #000; }
+html[data-theme="fire"] ::selection { background: #f97316; color: #000; }
+html[data-theme="silver"] { --bg: #08080a; --fg: #fff; --dim: #a3a8b3; --line: #2a2c33; --panel: #101114; --s0: #0b0b0d; --s1: #1b1c21; --acc: #cbd5e1; --on-acc: #000; }
+html[data-theme="silver"] ::selection { background: #cbd5e1; color: #000; }
+html[data-theme="lime"] { --bg: #070d02; --fg: #fff; --dim: #a9bd8a; --line: #23360b; --panel: #0e1704; --s0: #0a1103; --s1: #16260a; --acc: #a3e635; --on-acc: #000; }
+html[data-theme="lime"] ::selection { background: #a3e635; color: #000; }
+.setbtn { position: relative; }
+.setbtn.isvip::after { content: "♛"; position: absolute; top: -7px; right: -7px; width: 17px; height: 17px; display: grid; place-items: center; background: var(--acc); color: var(--on-acc); font-size: 10px; line-height: 1; pointer-events: none; }
+.cfx button { width: auto !important; padding: 0 14px !important; font-family: var(--mono); font-weight: 800; font-size: 12px !important; text-transform: uppercase; letter-spacing: .08em; }
+.colc.fx1 .colcov::before { background: linear-gradient(110deg, transparent 38%, rgba(255,255,255,.26) 50%, transparent 62%); background-size: 260% 100%; animation: colSweep 3.4s linear infinite; }
+.colc.fx2 .colcov { border-color: var(--c0); box-shadow: 0 0 0 1px var(--c0), 0 0 24px color-mix(in srgb, var(--c0) 55%, transparent), inset 0 0 28px color-mix(in srgb, var(--c0) 22%, transparent); }
+.colc.fx2 .colem { text-shadow: 0 0 14px var(--c0), 0 0 30px var(--c0); }
+.colc.fx3 .colcov::before { background: linear-gradient(130deg, var(--c0), transparent 30%, var(--c1) 55%, transparent 75%, var(--c0)); background-size: 300% 300%; opacity: .55; animation: colAurora 7s ease-in-out infinite; }
+@keyframes colSweep { from { background-position: 160% 0; } to { background-position: -60% 0; } }
+@keyframes colAurora { 0%, 100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+@media (prefers-reduced-motion: reduce) { .colc.fx1 .colcov::before, .colc.fx3 .colcov::before { animation: none; } }
+html.noanim .colc.fx1 .colcov::before, html.noanim .colc.fx3 .colcov::before { animation: none; }
+.cpc { position: absolute; inset: 0; z-index: 0; background: #111 center / cover no-repeat; transition: transform .5s var(--ease); }
+.colc:hover .cpc { transform: scale(1.05); }
+.colcover { position: absolute; inset: 0; z-index: -1; background: #111 center / cover no-repeat; opacity: .5; }
+.colcover::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, var(--bg) 2%, transparent 80%), linear-gradient(to right, var(--bg), transparent 70%); }
 /* ===== Collections ===== */
 .colgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 22px 18px; }
 .colc { --c0: #8b5cf6; --c1: #312e81; position: relative; display: block; min-width: 0; color: inherit; animation: cardIn .5s var(--ease) both; animation-delay: calc(var(--i, 0) * 45ms); }
@@ -3566,8 +3589,17 @@ function shuffleStable(arr) {
 var CREDKEY = "noir.credits", CREDITS = readJSON(CREDKEY, null);
 var VIPKEY = "noir.vip", VIPREGKEY = "noir.vipreg", VIPPLAINKEY = "noir.vipplain";
 var VIPREG = readJSON(VIPREGKEY, null), VIP = readJSON(VIPKEY, null);
-var VIPTHEMES = { gold: "#0b0905", rose: "#0d0509", emerald: "#04100b" };
+var VIPTHEMES = { gold: "#0b0905", rose: "#0d0509", emerald: "#04100b", ice: "#04101a", fire: "#0f0602", silver: "#08080a", lime: "#070d02" };
 var CREDDEFAULT = "# Développeur\nMeyriuu\n\n# Uploadeurs\nMeyriuu\nNebula\n\n# Merci\n> Un grand merci à tous ceux qui soutiennent DramaByM.";
+function hex2rgb(h) { return [parseInt(h.substr(1, 2), 16), parseInt(h.substr(3, 2), 16), parseInt(h.substr(5, 2), 16)]; }
+function rgb2hex(a) { return "#" + a.map(function (v) { v = Math.max(0, Math.min(255, Math.round(v))); return ("0" + v.toString(16)).slice(-2); }).join(""); }
+function mixc(a, b, t) { return a.map(function (v, i) { return v + (b[i] - v) * t; }); }
+/* fond choisi par un VIP : on l'assombrit si besoin (le site est pensé pour un fond sombre) et on en déduit les panneaux et les lignes */
+function bgVars(hex) {
+  var c = hex2rgb(hex), l = .299 * c[0] + .587 * c[1] + .114 * c[2];
+  if (l > 56) c = c.map(function (v) { return v * 56 / l; });
+  return { bg: rgb2hex(c), panel: rgb2hex(mixc(c, [255, 255, 255], .04)), s0: rgb2hex(mixc(c, [0, 0, 0], .25)), s1: rgb2hex(mixc(c, [255, 255, 255], .09)), line: rgb2hex(mixc(c, [255, 255, 255], .15)) };
+}
 function vipNorm(c) { var n = String(c || "").toUpperCase().replace(/[^A-Z0-9]/g, ""); return n.indexOf("VIP") === 0 ? n : "VIP" + n; }
 function vipHash(c) { return sha256("dramabym-vip:" + vipNorm(c)); }
 function vipGen() {
@@ -3586,17 +3618,20 @@ function isVip() {
 var PREFKEY = "noir.prefs";
 var PREFS = (function () {
   var p = readJSON(PREFKEY, {}); if (!p || typeof p !== "object" || Array.isArray(p)) p = {};
-  return { noanim: !!p.noanim, hideTips: !!p.hideTips, hideLang: !!p.hideLang, hideLive: !!p.hideLive, hideNew: !!p.hideNew, hideNov: !!p.hideNov, rememberPlayer: !!p.rememberPlayer, theme: (["red", "blue", "violet", "gold", "rose", "emerald"].indexOf(p.theme) > -1 ? p.theme : ""), accent: (/^#[0-9a-f]{6}$/i.test(p.accent) ? p.accent.toLowerCase() : ""), lastPlayer: String(p.lastPlayer || ""), order: Array.isArray(p.order) ? p.order.filter(function (x) { return typeof x === "string"; }) : [] };
+  return { noanim: !!p.noanim, hideTips: !!p.hideTips, hideLang: !!p.hideLang, hideLive: !!p.hideLive, hideNew: !!p.hideNew, hideNov: !!p.hideNov, rememberPlayer: !!p.rememberPlayer, theme: (["red", "blue", "violet", "gold", "rose", "emerald", "ice", "fire", "silver", "lime"].indexOf(p.theme) > -1 ? p.theme : ""), accent: (/^#[0-9a-f]{6}$/i.test(p.accent) ? p.accent.toLowerCase() : ""), bgc: (/^#[0-9a-f]{6}$/i.test(p.bgc) ? p.bgc.toLowerCase() : ""), lastPlayer: String(p.lastPlayer || ""), order: Array.isArray(p.order) ? p.order.filter(function (x) { return typeof x === "string"; }) : [] };
 })();
 function savePrefs() { try { localStorage.setItem(PREFKEY, JSON.stringify(PREFS)); } catch (e) { toast("Stockage plein ou bloqué par le navigateur"); } }
 function applyPrefs() {
   var c = document.documentElement.classList;
   c.toggle("noanim", PREFS.noanim); c.toggle("notips", PREFS.hideTips);
   var de = document.documentElement, th = PREFS.theme; if (VIPTHEMES[th] && !isVip()) th = ""; if (th) de.setAttribute("data-theme", th); else de.removeAttribute("data-theme");
-  var tm = document.querySelector('meta[name="theme-color"]'); if (tm) tm.setAttribute("content", { blue: "#081a3a", violet: "#05020a", gold: "#0b0905", rose: "#0d0509", emerald: "#04100b" }[th] || "#000000");
+  var tm = document.querySelector('meta[name="theme-color"]'); if (tm) tm.setAttribute("content", { blue: "#081a3a", violet: "#05020a", gold: "#0b0905", rose: "#0d0509", emerald: "#04100b", ice: "#04101a", fire: "#0f0602", silver: "#08080a", lime: "#070d02" }[th] || "#000000");
   var st = de.style;
   if (PREFS.accent) { var r = parseInt(PREFS.accent.substr(1, 2), 16), g = parseInt(PREFS.accent.substr(3, 2), 16), bl = parseInt(PREFS.accent.substr(5, 2), 16); st.setProperty("--acc", PREFS.accent); st.setProperty("--on-acc", (0.299 * r + 0.587 * g + 0.114 * bl) > 150 ? "#000" : "#fff"); }
   else { st.removeProperty("--acc"); st.removeProperty("--on-acc"); }
+  var vch = document.getElementById("setbtn"); if (vch) vch.classList.toggle("isvip", !!(VIP && VIP.h && isVip()));
+  if (PREFS.bgc && isVip()) { var bv = bgVars(PREFS.bgc); st.setProperty("--bg", bv.bg); st.setProperty("--panel", bv.panel); st.setProperty("--s0", bv.s0); st.setProperty("--s1", bv.s1); st.setProperty("--line", bv.line); if (tm) tm.setAttribute("content", bv.bg); }
+  else ["--bg", "--panel", "--s0", "--s1", "--line"].forEach(function (k) { st.removeProperty(k); });
   c.toggle("hb-lang", PREFS.hideLang); c.toggle("hb-live", PREFS.hideLive); c.toggle("hb-new", PREFS.hideNew); c.toggle("hb-nov", PREFS.hideNov);
 }
 /* badges des affiches : quand certains sont cachés, les autres remontent (pas de trou) */
@@ -3686,7 +3721,11 @@ var THEMES = [
   ["violet", "Noir & violet", "Noir profond, accents violets", "#05020a", "#fff", "#6d28d9"],
   ["gold", "Noir & or", "Réservé aux VIP", "#0b0905", "#fff", "#d4a017", true],
   ["rose", "Noir & rose", "Réservé aux VIP", "#0d0509", "#fff", "#ec4899", true],
-  ["emerald", "Noir & émeraude", "Réservé aux VIP", "#04100b", "#fff", "#10b981", true]
+  ["emerald", "Noir & émeraude", "Réservé aux VIP", "#04100b", "#fff", "#10b981", true],
+  ["ice", "Noir & glace", "Réservé aux VIP", "#04101a", "#fff", "#38bdf8", true],
+  ["fire", "Noir & feu", "Réservé aux VIP", "#0f0602", "#fff", "#f97316", true],
+  ["silver", "Noir & argent", "Réservé aux VIP", "#08080a", "#fff", "#cbd5e1", true],
+  ["lime", "Noir & citron", "Réservé aux VIP", "#070d02", "#fff", "#a3e635", true]
 ];
 function stThemes() {
   return '<div class="stsec"><div class="stlbl">Apparence</div><p class="stnote">Change les couleurs du site. Les affiches gardent leurs couleurs.</p><div class="thgrid" role="radiogroup" aria-label="Thème">' +
@@ -3695,8 +3734,25 @@ function stThemes() {
       return '<button type="button" class="thopt' + (on ? " on" : "") + (t[6] && !isVip() ? " lock" : "") + '" role="radio" aria-checked="' + (on ? "true" : "false") + '" data-theme-set="' + t[0] + '"><span class="thprev" style="background:' + t[3] + '"><i style="width:62%;background:' + t[4] + '"></i><i style="width:34%;background:' + t[5] + '"></i></span><b>' + esc(t[1]) + (t[6] ? ' <em class="thvip">VIP</em>' : '') + '</b><small>' + esc(t[2]) + '</small></button>';
     }).join("") + '</div>' +
     '<div class="stlbl" style="margin-top:18px">Couleur d\'accent</div><p class="stnote">Remplace la couleur d\'accent du thème (boutons, sélections…). Les badges des affiches ne changent pas.</p>' +
-    '<div class="row" style="display:flex;align-items:center;gap:12px;flex-wrap:wrap"><input type="color" id="accpick" value="' + (PREFS.accent || accOfTheme()) + '" aria-label="Choisir la couleur d\'accent" style="width:56px;height:40px;padding:0;border:1px solid var(--line);background:none;cursor:pointer"><button type="button" class="btn ghost small" data-accreset>Couleur du thème</button></div></div>';
+    '<div class="row" style="display:flex;align-items:center;gap:12px;flex-wrap:wrap"><input type="color" id="accpick" value="' + (PREFS.accent || accOfTheme()) + '" aria-label="Choisir la couleur d\'accent" style="width:56px;height:40px;padding:0;border:1px solid var(--line);background:none;cursor:pointer"><button type="button" class="btn ghost small" data-accreset>Couleur du thème</button></div>' +
+    '<div class="stlbl" style="margin-top:18px">Couleur de fond <em class="thvip">VIP</em></div><p class="stnote">L\'accent est libre pour tout le monde. Changer aussi la couleur de fond est réservé aux VIP (le fond est assombri si besoin pour que le texte reste lisible).</p>' +
+    '<div class="row" style="display:flex;align-items:center;gap:12px;flex-wrap:wrap"><input type="color" id="bgpick" value="' + (PREFS.bgc || bgOfTheme()) + '" aria-label="Choisir la couleur de fond" ' + (isVip() ? '' : 'disabled ') + 'style="width:56px;height:40px;padding:0;border:1px solid var(--line);background:none;' + (isVip() ? 'cursor:pointer' : 'opacity:.4') + '"><button type="button" class="btn ghost small" data-bgreset' + (isVip() ? '' : ' disabled') + '>Fond du thème</button>' + (isVip() ? '' : '<a class="btn small" href="/vip">Débloquer avec un code VIP</a>') + '</div></div>';
 }
+function bgOfTheme() {
+  var v = "", ks = ["--bg", "--panel", "--s0", "--s1", "--line"], st = document.documentElement.style, sv = ks.map(function (k) { return st.getPropertyValue(k); });
+  try { ks.forEach(function (k) { st.removeProperty(k); }); v = getComputedStyle(document.documentElement).getPropertyValue("--bg").trim(); ks.forEach(function (k, i) { if (sv[i]) st.setProperty(k, sv[i]); }); } catch (e) {}
+  if (/^#[0-9a-f]{3}$/i.test(v)) v = "#" + v[1] + v[1] + v[2] + v[2] + v[3] + v[3];
+  return /^#[0-9a-f]{6}$/i.test(v) ? v : "#000000";
+}
+document.addEventListener("input", function (e) {
+  if (!e.target || e.target.id !== "bgpick" || !isVip()) return;
+  PREFS.bgc = String(e.target.value).toLowerCase(); savePrefs(); applyPrefs();
+});
+document.addEventListener("click", function (e) {
+  var b = e.target.closest ? e.target.closest("[data-bgreset]") : null;
+  if (!b || !isVip()) return;
+  PREFS.bgc = ""; savePrefs(); applyPrefs(); toast("Fond : celui du thème"); stRefresh();
+});
 function accOfTheme() { var v = ""; try { var st = document.documentElement.style, a = st.getPropertyValue("--acc"), o = st.getPropertyValue("--on-acc"); st.removeProperty("--acc"); st.removeProperty("--on-acc"); v = getComputedStyle(document.documentElement).getPropertyValue("--acc").trim(); if (a) st.setProperty("--acc", a); if (o) st.setProperty("--on-acc", o); } catch (e) {} if (/^#[0-9a-f]{3}$/i.test(v)) v = "#" + v[1] + v[1] + v[2] + v[2] + v[3] + v[3]; return /^#[0-9a-f]{6}$/i.test(v) ? v : "#ffffff"; }
 document.addEventListener("input", function (e) {
   if (!e.target || e.target.id !== "accpick") return;
@@ -7163,9 +7219,11 @@ function adoptVip(data) {
 }
 function viewVip() {
   var app = $("#app"), on = isVip();
-  var perks = [["★", "Thèmes exclusifs", "Noir & or, Noir & rose, Noir & émeraude : des thèmes réservés, à choisir dans les paramètres."],
-    ["❖", "Collections exclusives", "Des couleurs et des symboles que seuls les VIP peuvent utiliser sur leurs collections."],
-    ["♛", "Ton nom aux crédits", "Les soutiens peuvent être cités sur la page Crédits."]];
+  var perks = [["★", "Thèmes exclusifs", "Sept thèmes réservés (or, rose, émeraude, glace, feu, argent, citron), à choisir dans les paramètres."],
+    ["❖", "Collections exclusives", "Des couleurs, des symboles, des effets animés (Éclat, Néon, Aurore) et ta propre image de couverture."],
+    ["♛", "Ton nom aux crédits", "Les soutiens peuvent être cités sur la page Crédits."],
+    ["◐", "Couleur de fond libre", "L'accent est libre pour tous ; les VIP peuvent aussi choisir la couleur de fond du site."],
+    ["✦", "Badge VIP", "Une petite couronne ♛ s'affiche sur le bouton des paramètres, en haut du site."]];
   var perkHTML = '<div class="vipperks">' + perks.map(function (p, i) { return '<div class="vipperk" style="--i:' + i + '"><i>' + p[0] + '</i><b>' + p[1] + '</b><span>' + p[2] + '</span></div>'; }).join("") + '</div>';
   var box;
   if (on) {
@@ -7237,6 +7295,7 @@ document.addEventListener("click", function (e) {
 var COLKEY = "noir.collections", COLID = /^[\w-]{1,24}$/, COLSID = /^[\w.-]{1,40}$/;
 var COLPAL = [["#8b5cf6", "#312e81"], ["#f43f5e", "#7f1d1d"], ["#f59e0b", "#78350f"], ["#10b981", "#064e3b"], ["#38bdf8", "#0c4a6e"], ["#ec4899", "#701a75"], ["#a3e635", "#365314"], ["#e5e7eb", "#3f3f46"]];
 var COLEMO = ["♥", "★", "☾", "✦", "❖", "☂", "♪", "⚔", "☕", "✿", "⚡", "☠"];
+var COLFX = ["Aucun", "Éclat", "Néon", "Aurore"];
 var VIPCOL_FROM = COLPAL.length, VIPEMO_FROM = COLEMO.length;
 COLPAL.push(["#facc15", "#713f12"], ["#22d3ee", "#164e63"], ["#fb7185", "#4c0519"], ["#c084fc", "#3b0764"]);
 COLEMO.push("♛", "♠", "♦", "☀", "❄", "✧");
@@ -7246,8 +7305,8 @@ NICONS["check"] = NICONS["check"] || '<path d="m5 12.5 4.5 4.5L19 7.5"/>';
 function colClean(c) {
   if (!c || typeof c !== "object" || !COLID.test(String(c.id || ""))) return null;
   var seen = {}, ids = (Array.isArray(c.i) ? c.i : []).map(String).filter(function (x) { if (!COLSID.test(x) || seen[x]) return false; seen[x] = 1; return true; }).slice(0, 300);
-  var ci = parseInt(c.c, 10), ei = parseInt(c.e, 10);
-  return { id: String(c.id), n: String(c.n || "").trim().slice(0, 40) || "Sans titre", d: String(c.d || "").trim().slice(0, 140), c: ci >= 0 && ci < COLPAL.length ? ci : 0, e: ei >= 0 && ei < COLEMO.length ? ei : 0, i: ids, at: +c.at || 0 };
+  var ci = parseInt(c.c, 10), ei = parseInt(c.e, 10), fi = parseInt(c.f, 10), pv = String(c.p || "").trim();
+  return { id: String(c.id), n: String(c.n || "").trim().slice(0, 40) || "Sans titre", d: String(c.d || "").trim().slice(0, 140), c: ci >= 0 && ci < COLPAL.length ? ci : 0, e: ei >= 0 && ei < COLEMO.length ? ei : 0, f: fi > 0 && fi < COLFX.length ? fi : 0, p: /^https:\/\/[^\s'"()<>\\]{4,290}$/.test(pv) ? pv : "", i: ids, at: +c.at || 0 };
 }
 function readCols() { var l = readJSON(COLKEY, []); return Array.isArray(l) ? l.map(colClean).filter(Boolean) : []; }
 function saveCols(l) { try { localStorage.setItem(COLKEY, JSON.stringify(l)); return true; } catch (e) { toast("Stockage plein ou bloqué par le navigateur"); return false; } }
@@ -7263,9 +7322,9 @@ function colToggle(cid, sid) {
 }
 function colStyle(c) { var p = COLPAL[c.c] || COLPAL[0]; return "--c0:" + p[0] + ";--c1:" + p[1]; }
 function colCard(c, i, tag) {
-  var items = colItems(c), posters = items.filter(function (s) { return s.poster; }).slice(0, 3);
+  var items = colItems(c), posters = c.p ? [] : items.filter(function (s) { return s.poster; }).slice(0, 3);
   var n = c.i.length, t = tag || "a", href = t === "a" ? ' href="/collection/' + esc(c.id) + '"' : "";
-  return '<' + t + ' class="colc"' + href + ' style="' + colStyle(c) + ';--i:' + Math.min(i || 0, 14) + '"><div class="colcov"><span class="colem">' + COLEMO[c.e] + '</span>' +
+  return '<' + t + ' class="colc' + (c.f ? ' fx' + c.f : '') + '"' + href + ' style="' + colStyle(c) + ';--i:' + Math.min(i || 0, 14) + '"><div class="colcov"><span class="colem">' + COLEMO[c.e] + '</span>' + (c.p ? '<i class="cpc" style="background-image:url(\'' + esc(c.p) + '\')"></i>' : '') +
     posters.map(function (s, k) { return '<i class="cp cp' + (k + 1) + '" style="background-image:url(\'' + esc(s.poster) + '\')"></i>'; }).join("") + '</div>' +
     '<span class="colmeta"><b>' + esc(c.n) + '</b><span>' + n + (n > 1 ? " titres" : " titre") + '</span></span></' + t + '>';
 }
@@ -7275,7 +7334,7 @@ function colGridHTML(arr) {
     (arr.length ? '' : '<p class="note" style="margin-top:22px">Crée des listes à thème (« Romances », « À revoir », « Soirée entre amis »…) et retrouve-les ici. Tu peux les partager avec un lien.</p>');
 }
 function colEncode(c) {
-  var o = { n: c.n, d: c.d, c: c.c, e: c.e, i: c.i };
+  var o = { n: c.n, d: c.d, c: c.c, e: c.e, f: c.f || 0, p: c.p || "", i: c.i };
   return codeB64(new TextEncoder().encode(JSON.stringify(o)));
 }
 function colDecode(tok) {
@@ -7297,27 +7356,37 @@ document.addEventListener("keydown", function (e) { if (e.key === "Escape" && $(
 function vipCls(k, from) { return k >= from ? " vipx" + (isVip() ? "" : " lock") : ""; }
 function colEdit(id, addSid) {
   var base = id ? colGet(id) : null;
-  var cur = base ? JSON.parse(JSON.stringify(base)) : { id: "", n: "", d: "", c: Math.floor(Math.random() * VIPCOL_FROM), e: Math.floor(Math.random() * VIPEMO_FROM), i: addSid ? [String(addSid)] : [] };
+  var cur = base ? JSON.parse(JSON.stringify(base)) : { id: "", n: "", d: "", c: Math.floor(Math.random() * VIPCOL_FROM), e: Math.floor(Math.random() * VIPEMO_FROM), f: 0, p: "", i: addSid ? [String(addSid)] : [] };
   var o = colOpen('<div class="cbh"><h2>' + (base ? "Modifier la collection" : "Nouvelle collection") + '</h2><button type="button" class="cbx" data-colx aria-label="Fermer">×</button></div>' +
     '<form class="cbb" id="colform" autocomplete="off"><div class="colprev" id="colprev"></div>' +
     '<label class="cf">Nom<input id="colname" maxlength="40" placeholder="Ex. : Romances qui font pleurer" required></label>' +
     '<label class="cf">Description (facultatif)<textarea id="coldesc" rows="2" maxlength="140" placeholder="Une phrase pour dire de quoi il s\'agit"></textarea></label>' +
+    '<label class="cf">Image de couverture <em class="thvip">VIP</em><input id="colcov" type="url" maxlength="290" placeholder="' + (isVip() ? 'https://… (lien direct vers une image)' : 'Réservé aux VIP') + '"' + (isVip() ? '' : ' disabled') + '></label>' +
     '<div class="cf" style="display:grid;gap:8px;font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--dim)">Couleur<div class="cswatch" id="colsw"></div></div>' +
-    '<div class="cf" style="display:grid;gap:8px;font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--dim)">Symbole<div class="cemo" id="colemo"></div></div></form>' +
+    '<div class="cf" style="display:grid;gap:8px;font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--dim)">Symbole<div class="cemo" id="colemo"></div></div>' +
+    '<div class="cf" style="display:grid;gap:8px;font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--dim)">Effet<div class="cemo cfx" id="colfx"></div></div></form>' +
     '<div class="cbf"><button type="button" class="btn ghost small" data-colx>Annuler</button><button type="submit" class="btn small" form="colform">' + (base ? "Enregistrer" : "Créer") + '</button></div>');
   var name = o.querySelector("#colname"), desc = o.querySelector("#coldesc");
   name.value = cur.n; desc.value = cur.d;
+  var cov = o.querySelector("#colcov"); cov.value = cur.p || "";
+  cov.addEventListener("change", function () {
+    var v = cov.value.trim();
+    if (v && !/^https:\/\/[^\s'"()<>\\]{4,290}$/.test(v)) { toast("Lien d'image invalide (il doit commencer par https://)"); cov.value = ""; cur.p = ""; } else cur.p = v;
+    paint();
+  });
   function paint() {
     cur.n = name.value; cur.d = desc.value;
-    o.querySelector("#colprev").innerHTML = colCard({ id: "x", n: cur.n.trim() || "Ma collection", d: cur.d, c: cur.c, e: cur.e, i: cur.i }, 0, "div");
+    o.querySelector("#colprev").innerHTML = colCard({ id: "x", n: cur.n.trim() || "Ma collection", d: cur.d, c: cur.c, e: cur.e, f: cur.f, p: cur.p, i: cur.i }, 0, "div");
     o.querySelector("#colsw").innerHTML = COLPAL.map(function (p, k) { return '<button type="button" class="' + (k === cur.c ? "on" : "") + vipCls(k, VIPCOL_FROM) + '" data-colc=""' + k + '" style="--c0:' + p[0] + ';--c1:' + p[1] + '" aria-label="Couleur ' + (k + 1) + '"></button>'; }).join("");
+    o.querySelector("#colfx").innerHTML = COLFX.map(function (g, k) { return '<button type="button" class="' + (k === (cur.f || 0) ? "on" : "") + vipCls(k, 1) + '" data-colf="' + k + '">' + g + '</button>'; }).join("");
     o.querySelector("#colemo").innerHTML = COLEMO.map(function (g, k) { return '<button type="button" class="' + (k === cur.e ? "on" : "") + vipCls(k, VIPEMO_FROM) + '" data-cole=""' + k + '">' + g + '</button>'; }).join("");
   }
   paint(); setTimeout(function () { name.focus(); }, 30);
   name.addEventListener("input", function () { cur.n = name.value; var b = o.querySelector(".colmeta b"); if (b) b.textContent = cur.n.trim() || "Ma collection"; });
   o.addEventListener("click", function (e) {
     if (e.target.closest("[data-colx]")) { colClose(); return; }
-    var bc = e.target.closest("[data-colc]"), be = e.target.closest("[data-cole]");
+    var bc = e.target.closest("[data-colc]"), be = e.target.closest("[data-cole]"), bf = e.target.closest("[data-colf]");
+    if (bf) { if (+bf.dataset.colf >= 1 && !isVip()) { toast("Effet réservé aux VIP"); return; } cur.f = +bf.dataset.colf; paint(); return; }
     if (bc) { if (+bc.dataset.colc >= VIPCOL_FROM && !isVip()) { toast("Couleur réservée aux VIP"); return; } cur.c = +bc.dataset.colc; paint(); }
     else if (be) { if (+be.dataset.cole >= VIPEMO_FROM && !isVip()) { toast("Symbole réservé aux VIP"); return; } cur.e = +be.dataset.cole; paint(); }
   });
@@ -7325,8 +7394,8 @@ function colEdit(id, addSid) {
     e.preventDefault(); cur.n = name.value; cur.d = desc.value;
     if (!cur.n.trim()) { name.focus(); return; }
     var l = readCols(), saved;
-    if (base) { saved = l.filter(function (x) { return x.id === base.id; })[0]; if (!saved) return; saved.n = cur.n; saved.d = cur.d; saved.c = cur.c; saved.e = cur.e; saved.at = Date.now(); saved = colClean(saved); l = l.map(function (x) { return x.id === saved.id ? saved : x; }); }
-    else { saved = colClean({ id: colNewId(), n: cur.n, d: cur.d, c: cur.c, e: cur.e, i: cur.i, at: Date.now() }); l.unshift(saved); }
+    if (base) { saved = l.filter(function (x) { return x.id === base.id; })[0]; if (!saved) return; saved.n = cur.n; saved.d = cur.d; saved.c = cur.c; saved.e = cur.e; saved.f = cur.f; saved.p = cur.p || ""; saved.at = Date.now(); saved = colClean(saved); l = l.map(function (x) { return x.id === saved.id ? saved : x; }); }
+    else { saved = colClean({ id: colNewId(), n: cur.n, d: cur.d, c: cur.c, e: cur.e, f: cur.f, p: cur.p || "", i: cur.i, at: Date.now() }); l.unshift(saved); }
     if (!saveCols(l)) return;
     colClose(); toast(base ? "Collection mise à jour" : "Collection créée ✓");
     if (addSid && !base) colRefreshBtn(addSid);
@@ -7385,7 +7454,7 @@ function viewCollection(b) {
     : '<button type="button" class="btn" data-colshare="' + esc(c.id) + '">' + SHICON + '<span>Partager</span></button><button type="button" class="btn ghost" data-coledit="' + esc(c.id) + '">Modifier</button><button type="button" class="btn danger" data-coldel="' + esc(c.id) + '">Supprimer</button>';
   var body = items.length ? '<div class="mlgrid">' + items.map(function (s, i) { return mlCard(s, i, shared ? "colro" : "col"); }).join("") + '</div>'
     : '<div class="mlempty">' + nsvg("layers", "mlei") + '<h3>Collection vide</h3><p>' + (shared ? "Aucun titre de cette collection n'est disponible sur le site." : "Ajoute des titres avec la recherche ci-dessus, ou depuis n'importe quelle fiche avec « + Collection ».") + '</p></div>';
-  $("#app").innerHTML = '<div id="colroot"><section class="colhero" style="' + colStyle(c) + '"><div class="wrap"><a class="colback" href="/ma-liste" data-colback>' + nsvg("chev-left") + 'Mes collections</a>' +
+  $("#app").innerHTML = '<div id="colroot"><section class="colhero" style="' + colStyle(c) + '">' + (c.p ? '<i class="colcover" style="background-image:url(\'' + esc(c.p) + '\')"></i>' : '') + '<div class="wrap"><a class="colback" href="/ma-liste" data-colback>' + nsvg("chev-left") + 'Mes collections</a>' +
     '<div class="colhead"><div class="colbadge">' + COLEMO[c.e] + '</div><div><h1>' + esc(c.n) + '</h1>' + (c.d ? '<p>' + esc(c.d) + '</p>' : '') + '<div class="cmeta"><i>' + (shared ? "Collection partagée" : "Collection perso") + '</i> · ' + n + (n > 1 ? " titres" : " titre") + '</div></div></div><div class="colact">' + acts + '</div></div></section>' +
     '<div class="wrap">' + (shared ? '<div style="height:26px"></div>' : '<div class="coladd">' + nsvg("search") + '<input id="colq" type="search" placeholder="Ajouter un titre à cette collection…" autocomplete="off" aria-label="Ajouter un titre"><div id="colres"></div></div><div style="height:18px"></div>') + body + '</div></div>';
 }
