@@ -6434,7 +6434,8 @@ function renderPlayer() {
   $("#pprev").disabled = !(cur.nav && cur.nav.prev);
   $("#pnext").disabled = !(cur.nav && cur.nav.next);
   sortPbar();
-  $("#pstage").innerHTML = '<iframe src="' + esc(url) + '" allowfullscreen webkitallowfullscreen mozallowfullscreen allow="autoplay; fullscreen; picture-in-picture; encrypted-media"></iframe>';
+  $("#pstage").innerHTML = '<iframe src="' + esc(url) + '" allowfullscreen webkitallowfullscreen mozallowfullscreen allow="autoplay *; fullscreen *; picture-in-picture *; encrypted-media *"></iframe>';
+  applyFit();
   loadingUi();
   var many = cur.sources.length > 1;
   refreshReport();
@@ -6624,7 +6625,7 @@ $("#peps").addEventListener("click", function (e) {
   closeEps();
   playEp(d.n.s, parseInt(p[0], 10), p[1]);
 });
-$("#player").addEventListener("cancel", function (e) { if (!$("#peps").hidden) { e.preventDefault(); closeEps(); } });
+$("#player").addEventListener("cancel", function (e) { if (!$("#peps").hidden) { e.preventDefault(); closeEps(); return; } if (Date.now() - lastFsExit < 600) e.preventDefault(); });
 
 function closePlayer() {
   clearInterval(tipTimer);
@@ -8108,6 +8109,12 @@ document.addEventListener("focusout", function (e) {
 var FITKEY = "noir.fit", fitMode = "normal", barTimer = null, fsOn = false;
 try { var sf = localStorage.getItem(FITKEY); if (sf === "zoom" || sf === "stretch") fitMode = sf; } catch (e) {}
 
+/* Plein écran déclenché par le bouton du lecteur embarqué (l'iframe elle-même), pas par notre bouton */
+function embedFs() {
+  var fe = document.fullscreenElement || document.webkitFullscreenElement, f = $("#pframe");
+  return !!(fe && f && fe !== f && f.contains(fe));
+}
+var lastFsExit = 0;
 function inFullscreen() {
   var fsEl = document.fullscreenElement || document.webkitFullscreenElement;
   return !!(fsEl && fsEl === $("#pframe")) || $("#player").classList.contains("wide");
@@ -8116,12 +8123,14 @@ function inFullscreen() {
    On suppose une vidéo 16:9 (cas normal) qui laisse des bandes noires dans l'iframe. */
 function applyFit() {
   var st = $("#pstage"), fr = $("#pframe");
-  var on = inFullscreen(), W = fr.clientWidth, H = fr.clientHeight, r = 16 / 9, sx = 1, sy = 1;
+  var on = inFullscreen() && !embedFs(), W = fr.clientWidth, H = fr.clientHeight, r = 16 / 9, sx = 1, sy = 1;
   if (on && W && H && fitMode !== "normal") {
     if (W / H >= r) { sx = W / (H * r); sy = fitMode === "zoom" ? sx : 1; }
     else { sy = H / (W / r); sx = fitMode === "zoom" ? sy : 1; }
   }
-  st.style.transform = (sx === 1 && sy === 1) ? "" : "scale(" + sx.toFixed(4) + "," + sy.toFixed(4) + ")";
+  st.style.transform = "";
+  var ifr = st.querySelector("iframe");
+  if (ifr) { ifr.style.transformOrigin = "center center"; ifr.style.transform = (sx === 1 && sy === 1) ? "" : "scale(" + sx.toFixed(4) + "," + sy.toFixed(4) + ")"; }
   Array.prototype.forEach.call(document.querySelectorAll("#fsbar [data-fit]"), function (b) {
     var o = b.dataset.fit === fitMode; b.classList.toggle("on", o); b.setAttribute("aria-pressed", o ? "true" : "false");
   });
@@ -8150,6 +8159,7 @@ function unlockOrientation() {
   try { var o = window.screen && screen.orientation; if (o && o.unlock) o.unlock(); } catch (e) {}
 }
 function syncFs() {
+  if (embedFs()) { applyFit(); return; }
   var on = inFullscreen() && $("#player").open !== false;
   var fr = $("#pframe");
   if (on === fsOn) { applyFit(); return; }
@@ -8190,8 +8200,14 @@ $("#pdl").addEventListener("click", function (e) { if (e.target.closest("[data-r
 $("#pprev").addEventListener("click", function () { if (cur.nav && cur.nav.prev) cur.nav.prev(); });
 $("#pnext").addEventListener("click", function () { if (cur.nav && cur.nav.next) { markCurSeen(); cur.nav.next(); } });
 $("#pfull").addEventListener("click", toggleFull);
-document.addEventListener("fullscreenchange", function () { if (!$("#player").classList.contains("wide")) setFullLbl(!!document.fullscreenElement); syncFs(); });
-document.addEventListener("webkitfullscreenchange", function () { if (!$("#player").classList.contains("wide")) setFullLbl(!!document.webkitFullscreenElement); syncFs(); });
+function onFsChange() {
+  var fe = document.fullscreenElement || document.webkitFullscreenElement;
+  if (!fe) lastFsExit = Date.now();
+  if (!$("#player").classList.contains("wide") && !embedFs()) setFullLbl(fe === $("#pframe"));
+  syncFs();
+}
+document.addEventListener("fullscreenchange", onFsChange);
+document.addEventListener("webkitfullscreenchange", onFsChange);
 $("#player").addEventListener("click", function (e) { if (e.target === this) closePlayer(); });
 $("#player").addEventListener("close", function () { watchToken++; clearTimeout(watchTimer); stopLoading(); closeEps(); clearInterval(tipTimer); document.documentElement.classList.remove("lock"); $("#pstage").innerHTML = ""; syncFs(); });
 
