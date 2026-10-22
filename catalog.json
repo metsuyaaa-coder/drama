@@ -20666,8 +20666,8 @@
           "downloads": [
             {
               "name": "DLSURF",
-              "url": "https://dlsurf.com/bundle/kidnap-game-vostfr1080p",
-              "quality": "H.264",
+              "url": "https://dlsurf.com/bundle/kidnap-game-vostfr",
+              "quality": "1080p (H.264)",
               "by": "614d778ed0"
             }
           ]
@@ -20679,7 +20679,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792706906435,
+      "updatedAt": 1792706999547,
       "networks": [
         "Fuji TV",
         "Channel A"
@@ -30705,6 +30705,7 @@
     }
   ],
   "deletedLinks": [
+    "320513\thttps://dlsurf.com/bundle/kidnap-game-vostfr1080p",
     "303745\thttps://vidara.to/e/SMzDM5xzhlDQv",
     "292121\thttps://dlsurf.com/bundle/the-scarecrow-vostfr1080p",
     "292121\thttps://dlsurf.com/l/bumz38l",
@@ -30720,7 +30721,6 @@
     "292121\thttps://dlsurf.com/l/g122d1f",
     "292121\thttps://dlsurf.com/l/qqnovky",
     "307106\thttps://dlsurf.com/bundle/between-steps-2026-vostfr",
-    "320513\thttps://dlsurf.com/bundle/kidnap-game-vostfr",
     "320513\thttps://dlsurf.com/l/kidnap-game-01-vostfr",
     "320513\thttps://dlsurf.com/l/kidnap-game-01-vostfrsrt",
     "320513\thttps://dlsurf.com/l/kidnap-game-02-vostfr",
@@ -31071,7 +31071,7 @@
   "journal": [
     {
       "k": "mvk3elw1b7zc2",
-      "t": 1792706906449,
+      "t": 1792706999559,
       "b": "614d778ed0",
       "a": "edit",
       "i": "320513",
