@@ -339,7 +339,13 @@
               "downloads": []
             }
           ],
-          "downloads": []
+          "downloads": [
+            {
+              "name": "DLSURF",
+              "url": "https://dlsurf.com/bundle/100-days-of-deception-vostfr",
+              "by": "614d778ed0"
+            }
+          ]
         }
       ],
       "sources": [],
@@ -381,7 +387,7 @@
         "KR"
       ],
       "original_language": "ko",
-      "updatedAt": 1792610941679,
+      "updatedAt": 1792633373499,
       "networks": [
         "tvN"
       ],
@@ -8857,7 +8863,13 @@
               "downloads": []
             }
           ],
-          "downloads": []
+          "downloads": [
+            {
+              "name": "DLSURF",
+              "url": "https://dlsurf.com/bundle/make-me-tingle-vostfr",
+              "by": "614d778ed0"
+            }
+          ]
         }
       ],
       "sources": [],
@@ -8866,7 +8878,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792610968865,
+      "updatedAt": 1792634311780,
       "trend": 0,
       "networks": [
         "TVING"
@@ -29827,6 +29839,24 @@
     "at": 1792602810955
   },
   "journal": [
+    {
+      "k": "mviw6niqhq8jx",
+      "t": 1792634311826,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "311648",
+      "n": "Make Me Tingle",
+      "d": "téléchargements 4 → 5"
+    },
+    {
+      "k": "mvivlr4mkhwxi",
+      "t": 1792633373536,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "293607",
+      "n": "100 Days of Deception",
+      "d": "téléchargements 4 → 5"
+    },
     {
       "k": "mviv6h6dce8v7",
       "t": 1792632623989,
