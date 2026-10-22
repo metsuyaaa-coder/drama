@@ -20655,7 +20655,13 @@
               "downloads": []
             }
           ],
-          "downloads": []
+          "downloads": [
+            {
+              "name": "DLSURF",
+              "url": "https://dlsurf.com/bundle/kidnap-game-vostfr",
+              "by": "614d778ed0"
+            }
+          ]
         }
       ],
       "sources": [],
@@ -20664,7 +20670,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792611736161,
+      "updatedAt": 1792676135032,
       "networks": [
         "Fuji TV",
         "Channel A"
@@ -30675,6 +30681,15 @@
     "at": 1792671854709
   },
   "journal": [
+    {
+      "k": "mvjl32imcbowb",
+      "t": 1792676135038,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "320513",
+      "n": "kiDnap GAME",
+      "d": "téléchargements 0 → 1"
+    },
     {
       "k": "mvjl1ioa8af0h",
       "t": 1792676062666,
