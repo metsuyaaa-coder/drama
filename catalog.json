@@ -7740,6 +7740,11 @@
                   "name": "VIDMOLY",
                   "url": "https://vidmoly.org/embed-ijjzdhnp7nqv.html",
                   "by": "614d778ed0"
+                },
+                {
+                  "name": "PLAYMATE",
+                  "url": "https://playmate.to/embed/Xz29d6qjqjHbQ",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -7811,7 +7816,7 @@
         "VF"
       ],
       "downloads": [],
-      "updatedAt": 1792624413987,
+      "updatedAt": 1792627326268,
       "networks": [
         "Nippon TV"
       ],
@@ -29953,6 +29958,15 @@
     "at": 1792602810955
   },
   "journal": [
+    {
+      "k": "mvis0xfnmn4eb",
+      "t": 1792627326275,
+      "b": "head",
+      "a": "edit",
+      "i": "305551",
+      "n": "Merry Berry Love",
+      "d": "sources 7 → 8"
+    },
     {
       "k": "mvirft39b4pu4",
       "t": 1792626644497,
