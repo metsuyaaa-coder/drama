@@ -4118,6 +4118,8 @@ function stopLoading() {
 function loadingUi() {
   var o = $("#pload"), fr = document.querySelector("#pstage iframe"); if (!o || !fr) return;
   clearTimeout(slowTimer); clearTimeout(hardTimer);
+  var bg = $("#pbgimg"), fs = cur.sid != null && cur.sid !== "" ? byId(cur.sid) : null, bu = fs && hqb(fs) ? safeUrl(hqb(fs)) : ""; if (bu === "about:blank") bu = "";
+  if (bg) { bg.style.backgroundImage = bu ? 'url("' + String(bu).replace(/"/g, "%22") + '")' : ""; bg.classList.toggle("on", !!bu); }
   var many = cur.sources.length > 1;
   $("#plbl").textContent = "Chargement · " + String((cur.sources[cur.i] || {}).name || "serveur");
   $("#pslow").textContent = many ? "Ça rame ? Essayer un autre serveur" : "Ça rame ? Réessayer";

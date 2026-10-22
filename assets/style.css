@@ -2543,3 +2543,11 @@ html:not(.glowon) .colc.fx2 .colem .cico { filter: none; }
 #psrc .chip[data-stst]::after { content: ""; display: inline-block; width: 7px; height: 7px; margin-left: 7px; border-radius: 50%; vertical-align: middle; background: #f87171; }
 #psrc .chip[data-stst="slow"]::after { background: #fde68a; }
 #psrc .chip[data-stst="maint"]::after { background: #7dd3fc; }
+
+/* Écran de chargement du lecteur : bannière du film / de la série en fond */
+.pload { overflow: hidden; }
+.pload .pbgimg { position: absolute; inset: 0; z-index: 0; background-size: cover; background-position: center; opacity: 0; transform: scale(1.05); transition: opacity .5s; pointer-events: none; }
+.pload .pbgimg.on { opacity: 1; }
+.pload .pbgimg::after { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(0,0,0,.45) 0%, rgba(0,0,0,.82) 100%); }
+.pload > :not(.pbgimg) { position: relative; z-index: 1; }
+.pload .plbl { color: #e5e5e5; text-shadow: 0 1px 6px rgba(0,0,0,.8); }
