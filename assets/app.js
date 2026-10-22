@@ -4085,7 +4085,29 @@ function renderPlayer() {
   $("#psrc").innerHTML = cur.sources.length > 1 ? (many ? '<button type="button" class="srctoggle" data-srctoggle aria-expanded="false" aria-label="Changer de serveur"><span class="nm"><span class="nmt">' + esc((cur.sources[cur.i] || {}).name || "") + '</span>' + fsBadge(cur.sources[cur.i]) + '</span><span class="cnt">' + (cur.i + 1) + '/' + cur.sources.length + '</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>' : '') + cur.sources.map(function (x, k) {
     return '<button type="button" class="chip' + (k === cur.i ? " on" : "") + '" data-src="' + k + '"><span class="srcnm"><span class="nmt">' + esc(x.name) + '</span>' + fsBadge(x) + '</span></button>';
   }).join("") : (cur.sources[0] && cur.sources[0].fansub ? '<div class="srcone"><span class="srcnm"><span class="nmt">' + esc(cur.sources[0].name) + '</span>' + fsBadge(cur.sources[0]) + '</span></div>' : "");
+  paintStatusWarn();
   watchSource();
+}
+/* Avertissement du lecteur : visible seulement si le serveur en cours a un souci dans « Statut des serveurs » (panne, ralenti, maintenance) */
+function stIssueOf(x) {
+  if (!x) return null;
+  var raw = x.url ? hostName(x.url) : String(x.name || "").replace(/ \d+$/, ""), id = stSlug(raw);
+  if (!id || id === "source" || STAT.hidden.indexOf(id) > -1) return null;
+  var r = stState({ id: id }); if (r.state === "up") return null;
+  return { id: id, name: stNice(raw), state: r.state, note: r.note, at: r.at };
+}
+function paintStatusWarn() {
+  var box = $("#pwarn"); if (!box) return;
+  var srcs = cur.sources || [], here = stIssueOf(srcs[cur.i]);
+  Array.prototype.forEach.call(document.querySelectorAll("#psrc [data-src]"), function (b) {
+    var q = stIssueOf(srcs[+b.dataset.src]); if (q) b.setAttribute("data-stst", q.state); else b.removeAttribute("data-stst");
+  });
+  if (!here) { box.hidden = true; box.innerHTML = ""; box.className = "pwarn"; return; }
+  var ok = srcs.filter(function (x) { return x !== srcs[cur.i] && !stIssueOf(x); }).map(function (x) { return String(x.name || ""); }).filter(Boolean);
+  var txt = here.note ? esc(here.note) : (here.state === "down" ? "Ce serveur est en panne pour le moment." : here.state === "maint" ? "Ce serveur est en maintenance." : "Ce serveur est ralenti, la vidéo peut mettre du temps à charger.");
+  box.className = "pwarn s-" + here.state;
+  box.innerHTML = '<span class="stdot" aria-hidden="true"></span><div class="pwb"><b>' + esc(here.name) + ' · ' + STSTATES[here.state] + '</b><p>' + txt + (ok.length ? ' Essaie plutôt : <em>' + ok.map(esc).join(", ") + '</em>.' : '') + '</p></div>';
+  box.hidden = false;
 }
 /* Écran de chargement : bouton « ça rame ? » après 7 s, et filet de sécurité à 20 s pour ne jamais tourner à l'infini */
 var slowTimer = null, hardTimer = null;
@@ -4696,6 +4718,7 @@ function adoptStat(data) {
     STAT = { items: r.items, log: Array.isArray(r.log) ? r.log.slice(0, 40) : [], extra: Array.isArray(r.extra) ? r.extra.slice(0, 60) : [], hidden: Array.isArray(r.hidden) ? r.hidden.slice(0, 100) : [], at: +r.at || 0 };
     statSave();
     if ($("#strot")) stPaint(false);
+    var pl = $("#player"); if (pl && pl.open && cur.sources && cur.sources.length) paintStatusWarn();
   }
 }
 function stState(h) { var x = STAT.items.filter(function (i) { return i.id === h.id; })[0] || {}; return { state: STSTATES[x.state] ? x.state : "up", note: String(x.note || ""), at: +x.at || 0 }; }

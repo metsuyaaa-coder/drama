@@ -2530,3 +2530,16 @@ html:not(.glowon) .colc.fx2 .colem .cico { filter: none; }
 @media (prefers-reduced-motion: reduce) {
   .card, .mlc, .mls, .stcard, .pnc, .actcard, .ep, .mlswap, #app.enter { animation: none !important; }
 }
+
+
+/* Avertissement de serveur dans le lecteur : visible seulement en cas de panne, lenteur ou maintenance */
+.pbar .pwarn { --c: #f87171; order: -3; flex: 0 0 100%; display: flex; align-items: center; gap: 12px; padding: 10px 14px; background: color-mix(in srgb, var(--c) 10%, var(--s0)); border: 1px solid color-mix(in srgb, var(--c) 40%, var(--line)); border-left: 3px solid var(--c); line-height: 1.4; }
+.pbar .pwarn[hidden] { display: none; }
+.pwarn .stdot { flex: 0 0 auto; }
+.pwarn .pwb { min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.pwarn .pwb b { color: var(--c); font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+.pwarn .pwb p { margin: 0; color: #cfcfcf; font-size: 13px; }
+.pwarn .pwb em { font-style: normal; color: var(--fg); font-weight: 700; }
+#psrc .chip[data-stst]::after { content: ""; display: inline-block; width: 7px; height: 7px; margin-left: 7px; border-radius: 50%; vertical-align: middle; background: #f87171; }
+#psrc .chip[data-stst="slow"]::after { background: #fde68a; }
+#psrc .chip[data-stst="maint"]::after { background: #7dd3fc; }
