@@ -2684,7 +2684,7 @@ document.addEventListener("click", function (e) {
   viewSearch(curQ);
 });
 
-/* Téléchargement : liens 1fichier ajoutés par l'admin (film, saison entière, épisode) */
+/* Téléchargement : liens ajoutés par l'admin (film, saison entière, épisode) */
 var dlMode = false;
 function hasDl(s) {
   if (!s) return false;
@@ -2771,6 +2771,7 @@ document.addEventListener("click", function (e) {
     '<button type="button" class="dlx" id="dlm-x" aria-label="Fermer">×</button>' +
     '<div class="dlhead"><span class="dltag">' + DLICON + 'Téléchargement</span></div>' +
     '<h3 id="dlm-t"></h3><div class="dlmeta" id="dlm-meta"></div>' +
+    '<div class="dlwarn" id="dlm-warn" role="note" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 2 20h20z"/><path d="M12 10v4"/><path d="M12 17h.01"/></svg><p><b>DLSurf contient des publicités.</b> Fais attention à ce que tu cliques, et installe le navigateur <b>Brave</b> (il bloque les pubs) pour télécharger tranquillement.</p></div>' +
     '<ol class="dlsteps" id="dlm-steps"><li class="on"><i>1</i><span>Débloquer</span></li><li><i>2</i><span>Télécharger</span></li></ol>' +
     '<div class="dlad" id="dlm-ad"><div class="adt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="1.5"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><b>Débloque le lien en un clic</b></div>' +
     '<p>Une pub s\'ouvre dans un nouvel onglet : ne clique sur rien, ferme-la simplement pour revenir ici. C\'est ce qui permet de garder le site gratuit, merci !</p>' +
@@ -2831,6 +2832,7 @@ document.addEventListener("click", function (e) {
       if (b.dataset.dlsize) meta.push(tile("Taille", b.dataset.dlsize));
       meta.push(tile("Hébergeur", hostName(b.dataset.dlurl)));
       $("#dlm-meta").innerHTML = meta.join(""); $("#dlm-meta").hidden = !meta.length;
+      var wn = $("#dlm-warn"); if (wn) wn.hidden = stSlug(hostName(b.dataset.dlurl)) !== "dlsurf";
       realUrl = b.dataset.dlurl;
       box.dataset.url = realUrl;
       lock();
@@ -3759,15 +3761,15 @@ function renderEditor() {
   }
   var dlEdit;
   if (movie) {
-    dlEdit = '<label class="f"><span>Liens de téléchargement du film (1fichier)</span><textarea class="srcbox" data-f="downloads" placeholder="1fichier | https://1fichier.com/?xxxxxxxx 1080p 2,1go">' + esc(srcToText(d.downloads)) + '</textarea></label>' +
-      '<p class="note">Un lien par ligne, au format Nom | lien. Sans nom, il prend celui du site (ex. 1FICHIER).</p>';
+    dlEdit = '<label class="f"><span>Liens de téléchargement du film</span><textarea class="srcbox" data-f="downloads" placeholder="Nom | https://lien-du-fichier 1080p 2,1go">' + esc(srcToText(d.downloads)) + '</textarea></label>' +
+      '<p class="note">Un lien par ligne, au format Nom | lien. Sans nom, il prend celui du site.</p>';
   } else if ((d.seasons || []).length) {
-    dlEdit = '<p class="note">Colle le lien 1fichier de la saison entière, et/ou un lien par épisode. Écris simplement : Nom | lien 1080p 1,4go (la qualité et la taille se mettent juste après le lien, séparées par des espaces, et sont facultatives). Raccourcis : « 1080 264 » devient « 1080p (H.264) » « 2go-3.5go » devient « 2Go - 3.5Go », « vostfr » devient « VOSTFR » et « multi » devient « MULTI ». Les visiteurs les voient dans l\'onglet « Télécharger » de la fiche.</p>' +
+    dlEdit = '<p class="note">Colle le lien de la saison entière, et/ou un lien par épisode. Écris simplement : Nom | lien 1080p 1,4go (la qualité et la taille se mettent juste après le lien, séparées par des espaces, et sont facultatives). Raccourcis : « 1080 264 » devient « 1080p (H.264) » « 2go-3.5go » devient « 2Go - 3.5Go », « vostfr » devient « VOSTFR » et « multi » devient « MULTI ». Les visiteurs les voient dans l\'onglet « Télécharger » de la fiche.</p>' +
       d.seasons.map(function (se, i) {
         var eps = se.episodes || [], filled = eps.filter(function (e) { return (e.downloads || []).length; }).length;
         return '<details class="epedit"' + (keepOpenDl === i ? " open" : "") + '><summary>' + esc(se.name || "Saison " + se.number) + '<i>' + ((se.downloads || []).length ? "pack ✓ · " : "") + filled + "/" + eps.length + ' avec lien</i></summary>' +
-          '<div class="bulk"><label class="f"><span>Lien de la saison entière (pack)</span><textarea class="srcbox" style="min-height:60px" data-dlseason="' + i + '" placeholder="1fichier | https://1fichier.com/dir/xxxxxxxx 1080p 25go">' + esc(srcToText(se.downloads)) + '</textarea></label></div>' +
-          '<div class="bulk"><label class="f"><span>Ajout en masse : un lien par épisode, un par ligne, dans l\'ordre (remplace les liens existants de ces épisodes)</span><textarea data-dlbulkta="' + i + '" placeholder="https://1fichier.com/?aaaa&#10;https://1fichier.com/?bbbb&#10;https://1fichier.com/?cccc"></textarea></label>' +
+          '<div class="bulk"><label class="f"><span>Lien de la saison entière (pack)</span><textarea class="srcbox" style="min-height:60px" data-dlseason="' + i + '" placeholder="Nom | https://lien-de-la-saison 1080p 25go">' + esc(srcToText(se.downloads)) + '</textarea></label></div>' +
+          '<div class="bulk"><label class="f"><span>Ajout en masse : un lien par épisode, un par ligne, dans l\'ordre (remplace les liens existants de ces épisodes)</span><textarea data-dlbulkta="' + i + '" placeholder="https://lien-episode-1&#10;https://lien-episode-2&#10;https://lien-episode-3"></textarea></label>' +
           '<div class="bulkrow"><label class="f"><span>À partir de l\'épisode</span><input type="number" min="1" value="1" data-dlbulkfrom="' + i + '"></label><button class="btn ghost" type="button" data-dlbulk="' + i + '">Remplir la saison</button></div></div>' +
           eps.map(function (ep, j) {
             return '<div class="eprow"><span class="n">' + String(ep.number).padStart(2, "0") + '</span><span class="t">' + esc(ep.name || "") + '</span><textarea data-dls="' + i + '" data-dle="' + j + '" placeholder="Nom | lien 1080p 2go (un par ligne)" aria-label="Téléchargement saison ' + esc(se.number) + ' épisode ' + esc(ep.number) + '">' + esc(srcToText(ep.downloads)) + '</textarea></div>';

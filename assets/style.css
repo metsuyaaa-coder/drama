@@ -2551,3 +2551,10 @@ html:not(.glowon) .colc.fx2 .colem .cico { filter: none; }
 .pload .pbgimg::after { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(0,0,0,.45) 0%, rgba(0,0,0,.82) 100%); }
 .pload > :not(.pbgimg) { position: relative; z-index: 1; }
 .pload .plbl { color: #e5e5e5; text-shadow: 0 1px 6px rgba(0,0,0,.8); }
+
+/* Fenêtre de téléchargement : avertissement affiché seulement pour DLSurf */
+.dlwarn { display: flex; align-items: flex-start; gap: 10px; margin: 0 0 16px; padding: 10px 12px; background: color-mix(in srgb, #fde68a 10%, var(--s0)); border: 1px solid color-mix(in srgb, #fde68a 40%, var(--line)); border-left: 3px solid #fde68a; line-height: 1.45; }
+.dlwarn[hidden] { display: none; }
+.dlwarn svg { flex: 0 0 auto; width: 20px; height: 20px; margin-top: 1px; color: #fde68a; }
+.dlwarn p { margin: 0; font-size: 13px; color: #d4d4d4; }
+.dlwarn b { color: var(--fg); }
