@@ -340,7 +340,14 @@
               "downloads": []
             }
           ],
-          "downloads": []
+          "downloads": [
+            {
+              "name": "DLSURF",
+              "url": "https://dlsurf.com/bundle/100-days-of-deception-vostfr",
+              "quality": "1080p (H.264)",
+              "by": "614d778ed0"
+            }
+          ]
         }
       ],
       "sources": [],
@@ -382,7 +389,7 @@
         "KR"
       ],
       "original_language": "ko",
-      "updatedAt": 1792700736175,
+      "updatedAt": 1792707963181,
       "networks": [
         "tvN"
       ],
@@ -30738,7 +30745,6 @@
     "320513\thttps://dlsurf.com/l/kidnap-game-03-vostfrsrt",
     "292121\thttps://dlsurf.com/bundle/c56025a385ad",
     "220074\thttps://dlsurf.com/bundle/023aa67f423b",
-    "293607\thttps://dlsurf.com/bundle/100-days-of-deception-vostfr",
     "311648\thttps://dlsurf.com/bundle/make-me-tingle-vostfr",
     "307106\thttps://dlsurf.com/l/01vid",
     "307106\thttps://dlsurf.com/l/01stfr",
@@ -31078,6 +31084,15 @@
     "at": 1792697940038
   },
   "journal": [
+    {
+      "k": "mvk419ats2m8o",
+      "t": 1792707963221,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "293607",
+      "n": "100 Days of Deception",
+      "d": "téléchargements 4 → 5"
+    },
     {
       "k": "mvk3elw1b7zc2",
       "t": 1792707591512,
