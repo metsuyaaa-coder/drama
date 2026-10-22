@@ -30647,7 +30647,7 @@
       {
         "id": "rmvfvu0n9",
         "title": "kiDnap GAME",
-        "status": "wait",
+        "status": "done",
         "kind": "dl",
         "votes": 2,
         "tmdb": 320513,
@@ -30655,7 +30655,8 @@
         "year": "2026",
         "poster": "/uGm1PzEAe6MOceGfL6gE14tTiSf.jpg",
         "origin": "Japon",
-        "en": ""
+        "en": "",
+        "sid": "320513"
       },
       {
         "id": "rmvfvuden",
@@ -30712,7 +30713,7 @@
         "sid": "292121"
       }
     ],
-    "at": 1792673640431
+    "at": 1792678359865
   },
   "hosts": {
     "items": [
