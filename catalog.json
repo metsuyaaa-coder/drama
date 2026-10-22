@@ -7745,6 +7745,11 @@
                   "name": "PLAYMATE",
                   "url": "https://playmate.to/embed/Xz29d6qjqjHbQ",
                   "by": "head"
+                },
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/Yxeab10lulDjn",
+                  "by": "head"
                 }
               ],
               "downloads": []
@@ -7816,7 +7821,7 @@
         "VF"
       ],
       "downloads": [],
-      "updatedAt": 1792627326268,
+      "updatedAt": 1792627505251,
       "networks": [
         "Nippon TV"
       ],
@@ -29999,6 +30004,15 @@
   },
   "journal": [
     {
+      "k": "mvis0xfnmn4eb",
+      "t": 1792627505256,
+      "b": "head",
+      "a": "edit",
+      "i": "305551",
+      "n": "Merry Berry Love",
+      "d": "sources 8 → 9"
+    },
+    {
       "k": "mvis1opmo80pq",
       "t": 1792627361626,
       "b": "head",
@@ -30015,15 +30029,6 @@
       "i": "319077",
       "n": "The Vacation Principle",
       "d": ""
-    },
-    {
-      "k": "mvis0xfnmn4eb",
-      "t": 1792627326275,
-      "b": "head",
-      "a": "edit",
-      "i": "305551",
-      "n": "Merry Berry Love",
-      "d": "sources 7 → 8"
     },
     {
       "k": "mvirft39b4pu4",
