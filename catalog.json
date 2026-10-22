@@ -30513,9 +30513,22 @@
         "poster": "/4FL7HY3pK8s9HojrOOy1aAG6FGX.jpg",
         "origin": "Chine",
         "en": "Evil Minds"
+      },
+      {
+        "id": "rmvjiwibv",
+        "title": "The Scarecrow",
+        "status": "wait",
+        "kind": "dl",
+        "votes": 1,
+        "tmdb": 292121,
+        "media": "tv",
+        "year": "2026",
+        "poster": "/vYJAhjmcVz50uhJwFl5wjTHsdT4.jpg",
+        "origin": "Corée",
+        "en": ""
       }
     ],
-    "at": 1792672177405
+    "at": 1792672469707
   },
   "hosts": {
     "items": [
