@@ -3960,7 +3960,22 @@ var cur = { sources: [], i: 0, title: "" };
 var PREFERRED = "playmate";
 /* Lecteur par défaut pour tout le monde : choisi par le Head admin (settings.player dans catalog.json). Vide = première source de la liste. */
 function defaultPlayer() { return SETTINGS.player == null ? PREFERRED : String(SETTINGS.player); }
+/* Auto-bascule : si le serveur prévu au départ est en panne ou en maintenance dans « Statut des serveurs », on lance directement le premier serveur sans souci (dans l'ordre choisi par l'admin) */
+function srcBad(x) { var q = stIssueOf(x); return !!q && (q.state === "down" || q.state === "maint"); }
+function srcSlow(x) { var q = stIssueOf(x); return !!q && q.state === "slow"; }
 function defaultSrc(sources) {
+  sources = sources || [];
+  var k = defaultSrcBase(sources);
+  if (sources.length < 2 || !srcBad(sources[k])) return k;
+  var ord = orderSources(sources), pick = null, i;
+  for (i = 0; i < ord.length && !pick; i++) if (!stIssueOf(ord[i])) pick = ord[i];
+  for (i = 0; i < ord.length && !pick; i++) if (srcSlow(ord[i])) pick = ord[i];
+  var j = pick ? sources.indexOf(pick) : -1;
+  if (j < 0) return k;
+  toast((sources[k].name || "Ce serveur") + " est " + (stIssueOf(sources[k]).state === "maint" ? "en maintenance" : "en panne") + ", lancement de " + (sources[j].name || "un autre serveur"));
+  return j;
+}
+function defaultSrcBase(sources) {
   if (PREFS.rememberPlayer && PREFS.lastPlayer) { for (var q = 0; q < (sources || []).length; q++) if (srcKey(sources[q]) === PREFS.lastPlayer) return q; }
   if (hasOrder()) { var k = (sources || []).indexOf(orderSources(sources)[0]); return k < 0 ? 0 : k; }
   var P = defaultPlayer().toLowerCase().trim();
@@ -4144,7 +4159,10 @@ $("#ptitle").addEventListener("click", openFicheFromPlayer);
 $("#ptitle").addEventListener("keydown", function (e) { if (e.key === "Enter") { e.preventDefault(); openFicheFromPlayer(); } });
 function nextServer() {
   var n = (cur.sources || []).length; if (n < 2) return;
-  cur.i = (cur.i + 1) % n; rememberServer(); renderPlayer();
+  var nx = (cur.i + 1) % n, g;
+  for (g = 0; g < n && srcBad(cur.sources[nx]) && nx !== cur.i; g++) nx = (nx + 1) % n;
+  if (nx === cur.i) nx = (cur.i + 1) % n;
+  cur.i = nx; rememberServer(); renderPlayer();
   toast("Serveur : " + (cur.sources[cur.i].name || cur.i + 1));
 }
 $("#pslow").addEventListener("click", function () { if ((cur.sources || []).length > 1) nextServer(); else renderPlayer(); });
@@ -4175,7 +4193,8 @@ function watchSource() {
     var pl = $("#player");
     if (tok !== watchToken || !pl || !pl.open) return;
     var n = cur.sources.length, nxt = -1;
-    for (var k = 1; k < n; k++) { var j = (cur.i + k) % n; if (!cur.tried[j]) { nxt = j; break; } }
+    for (var k = 1; k < n; k++) { var j = (cur.i + k) % n; if (!cur.tried[j] && !srcBad(cur.sources[j])) { nxt = j; break; } }
+    if (nxt < 0) for (var k2 = 1; k2 < n; k2++) { var j2 = (cur.i + k2) % n; if (!cur.tried[j2]) { nxt = j2; break; } }
     if (nxt < 0) { stopLoading(); cur.tried = {}; toast("Aucun serveur ne répond pour l'instant, réessaie plus tard"); return; }
     toast("Ce serveur ne répond pas, passage à " + (cur.sources[nxt].name || "la source suivante"));
     cur.i = nxt; renderPlayer();
@@ -6896,6 +6915,19 @@ function skeletonHTML() {
   if (p.indexOf("/serie/") === 0) return open + '<div class="wrap sk-detail"><div class="sk skposter"></div><div class="sk-col"><div class="sk sk-l t"></div><div class="sk sk-l s"></div><div class="sk sk-l"></div><div class="sk sk-l"></div><div class="sk sk-l"></div><div class="sk sk-btn"></div></div></div>' + close;
   return open + '<div class="wrap"><div class="sk sk-h big"></div><div class="grid">' + many(12) + '</div></div>' + close;
 }
+/* Écran de démarrage de l'appli installée : retiré dès que le catalogue est affiché (900 ms minimum pour ne pas clignoter) */
+var splashGone = false;
+function splashDone() {
+  if (splashGone) return; splashGone = true;
+  var sp = document.getElementById("splash"), root = document.documentElement;
+  if (!sp || !root.classList.contains("splash-on")) return;
+  var wait = Math.max(0, 900 - (window.performance && performance.now ? performance.now() : 900));
+  setTimeout(function () {
+    sp.classList.add("out");
+    setTimeout(function () { root.classList.remove("splash-on"); if (sp.parentNode) sp.parentNode.removeChild(sp); }, 600);
+  }, wait);
+}
+setTimeout(splashDone, 6000);
 $("#app").innerHTML = skeletonHTML();
 paintAnnounce(); notifPaint();
 /* Visiteur : si le catalogue n'a pas pu être lu, on réessaie quelques fois avant d'afficher quoi que ce soit */
@@ -6912,13 +6944,13 @@ if (!ADMIN && !db.length) {
     if (pre.length) {
       db = pre;
       if (cc.settings) SETTINGS.downloads = cc.settings.downloads === "private" ? "private" : "public";
-      CATLOADING = false; route(true);
+      CATLOADING = false; route(true); splashDone();
     }
   } catch (e) {}
 }
 bootLoad(0).then(function () {
   CATLOADING = false;
-  route(true); backfillAka(); backfillNetworks(); checkBuild();
+  route(true); splashDone(); backfillAka(); backfillNetworks(); checkBuild();
   if (!db.length && !ADMIN) {
     var tries = 0, tm = setInterval(function () {
       tries++;
