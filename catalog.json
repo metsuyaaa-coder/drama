@@ -11349,13 +11349,6 @@
               "size": "25Go",
               "quality": "1080p (H.264) VOSTFR",
               "by": "head"
-            },
-            {
-              "name": "DLSURF",
-              "url": "https://dlsurf.com/bundle/the-scarecrow-vostfr",
-              "size": "11Go",
-              "quality": "1080p (H.264) VOSTFR",
-              "by": "614d778ed0"
             }
           ]
         }
@@ -30723,9 +30716,15 @@
         "note": ""
       }
     ],
-    "extra": [],
+    "extra": [
+      {
+        "id": "dlsurf",
+        "name": "Dlsurf",
+        "kind": "dl"
+      }
+    ],
     "hidden": [],
-    "at": 1792693342961
+    "at": 1792693806502
   },
   "journal": [
     {
