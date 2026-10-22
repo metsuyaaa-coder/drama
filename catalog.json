@@ -30464,7 +30464,7 @@
       "rating": "8.2",
       "pop": 11.9586,
       "status": "Ended",
-      "poster": "https://image.tmdb.org/t/p/w500/gHozOomiA24DvlgNfjkYCB5NBiO.jpg",
+      "poster": "https://image.tmdb.org/t/p/original/qboMRJiRYkU5uf7fUJCuGs5gsoJ.jpg",
       "posterV": 2,
       "backdrop": "https://image.tmdb.org/t/p/original/fCEKeONLr0tuWV5hT0iHeiRjYM4.jpg",
       "videos": [
@@ -30727,7 +30727,8 @@
         "VF"
       ],
       "downloads": [],
-      "updatedAt": 1792700821236
+      "updatedAt": 1792712770384,
+      "posterCustom": true
     }
   ],
   "deletedLinks": [
@@ -31092,6 +31093,15 @@
     "at": 1792697940038
   },
   "journal": [
+    {
+      "k": "mvk6wajp7h9gr",
+      "t": 1792712770405,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "110356",
+      "n": "My Name",
+      "d": "affiche"
+    },
     {
       "k": "mvk6nfqcqat9u",
       "t": 1792712357220,
