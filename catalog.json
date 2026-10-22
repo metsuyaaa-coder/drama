@@ -30492,9 +30492,22 @@
         "poster": "/rzjWCXvQFpYB4GDnVEw61kePUgu.jpg",
         "origin": "Corée",
         "en": "Can This Love Be Translated?"
+      },
+      {
+        "id": "rmvjiq5ot",
+        "title": "心理罪",
+        "status": "wait",
+        "kind": "both",
+        "votes": 1,
+        "tmdb": 69714,
+        "media": "tv",
+        "year": "2015",
+        "poster": "/4FL7HY3pK8s9HojrOOy1aAG6FGX.jpg",
+        "origin": "Chine",
+        "en": "Evil Minds"
       }
     ],
-    "at": 1792604425193
+    "at": 1792672173389
   },
   "hosts": {
     "items": [
