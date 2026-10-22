@@ -2551,6 +2551,21 @@ html:not(.glowon) .colc.fx2 .colem .cico { filter: none; }
 .mlsact .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; }
 .mlsact .btn svg { width: 18px; height: 18px; flex: none; }
 @media (max-width: 560px) { .mlsact .btn { flex: 1 1 100%; } .mlsact { margin-top: 0; } }
+
+/* ===== Optimisations performances ===== */
+.mlb, .lsplat { backdrop-filter: none; -webkit-backdrop-filter: none; }
+.mlb { background: rgba(0, 0, 0, .78); }
+@media (max-width: 700px) {
+  header.top { backdrop-filter: none; background: rgba(0, 0, 0, .97); }
+  .card, .mlc, .mls, .stcard, .pnc, .actcard, .ep { animation-duration: .25s; }
+}
+@media (hover: none) {
+  .mlc:hover .poster { transform: none; box-shadow: none; border-color: var(--line); }
+  .mlc:hover .poster img { transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .card, .mlc, .mls, .stcard, .pnc, .actcard, .ep, .mlswap, #app.enter { animation: none !important; }
+}
 </style>
 <!-- Visites du site : Vercel Web Analytics, sans cookie ni base de données. Ne fait rien tant que tu ne l'actives pas dans Vercel (onglet Analytics). -->
 <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
@@ -3076,7 +3091,7 @@ var pendingScroll = false;
 function card(s, i) {
   var meta = [s.type === "movie" ? "Film" : "", s.year, s.rating ? "★ " + s.rating : ""].filter(Boolean).join("  ·  ");
   return '<a class="card" style="--i:' + Math.min(i || 0, 14) + '" href="/serie/' + esc(s.id) + '"><div class="poster">' +
-    (s.poster ? '<img loading="lazy" src="' + esc(s.poster) + '" alt="' + esc(s.name) + '">' : '<div class="ph">' + esc(s.name.charAt(0)) + '</div>') +
+    (s.poster ? '<img loading="lazy" decoding="async" src="' + esc(th(s.poster)) + '" alt="' + esc(s.name) + '">' : '<div class="ph">' + esc(s.name.charAt(0)) + '</div>') +
     (langLabel(s) ? '<span class="lang">' + esc(langLabel(s)) + '</span>' : '') + (newEpisode(s) ? newBadge("Nouvel ép.") : '') + '</div><div class="meta"><b>' + esc(s.name) + '</b><span>' + esc(meta) + '</span></div></a>';
 }
 /* Langue : VOSTFR, VF ou VOSTFR + VF */
@@ -3118,7 +3133,7 @@ function resumeList() {
 }
 function resumeCard(s, i) {
   return '<a class="card" style="--i:' + Math.min(i || 0, 14) + '" href="/serie/' + esc(s.id) + '" data-resume="' + esc(s.id) + '"><div class="poster">' +
-    (s.poster ? '<img loading="lazy" src="' + esc(s.poster) + '" alt="' + esc(s.name) + '">' : '<div class="ph">' + esc(s.name.charAt(0)) + '</div>') +
+    (s.poster ? '<img loading="lazy" decoding="async" src="' + esc(th(s.poster)) + '" alt="' + esc(s.name) + '">' : '<div class="ph">' + esc(s.name.charAt(0)) + '</div>') +
     '<span class="rtag">Reprendre</span><button type="button" class="rdel" data-resumedel="' + esc(s.id) + '" aria-label="Retirer de Reprendre" title="Retirer de Reprendre">&times;</button></div><div class="meta"><b>' + esc(s.name) + '</b><span>' + esc(s._r) + '</span></div></a>';
 }
 function removeResume(id) {
@@ -3302,9 +3317,12 @@ function refreshTrending() {
   }).catch(function () { return false; });
 }
 /* Passe une image TMDB (w500, w1280…) en pleine résolution */
-function hq(u) { return String(u || "").replace(/\/t\/p\/w\d+\//, "/t/p/original/"); }
+function hq(u, isBackdrop) { return String(u || "").replace(/\/t\/p\/(?:w\d+|original)\//, "/t/p/" + (isBackdrop ? (window.innerWidth <= 700 ? "w780" : "w1280") : "w780") + "/"); }
+function hqb(h) { return hq(h.backdrop || h.poster, !!h.backdrop); }
+/* Miniature de carte : w500 -> w342 (assez net même en 3x sur une carte de 130px) */
+function th(u) { return String(u || "").replace("/t/p/w500/", "/t/p/w342/"); }
 function heroSlide(h, on) {
-  return '<div class="hslide' + (on ? " on" : "") + '"><div class="bg" style="background-image:url(\'' + esc(hq(h.backdrop || h.poster)) + '\')"></div><div class="wrap">' +
+  return '<div class="hslide' + (on ? " on" : "") + '"><div class="bg" style="background-image:url(\'' + esc(hqb(h)) + '\')"></div><div class="wrap">' +
     '<div class="tags">' + (langLabel(h) ? '<span class="lang">' + esc(langLabel(h)) + '</span>' : '') + (newEpisode(h) ? newBadge("Nouvel épisode") : '') + [isMovie(h) ? "Film" : "Série", h.year, (h.genres || []).slice(0, 3).join(" / ")].filter(Boolean).map(function (t) { return "<span>" + esc(t) + "</span>"; }).join("") + '</div>' +
     '<h1>' + esc(h.name) + '</h1><p>' + esc(h.overview || "") + '</p>' +
     '<div class="row"><button class="btn" data-watch="' + esc(h.id) + '">' + PLAYICON + '<span>Regarder</span></button><a class="btn ghost" href="/serie/' + esc(h.id) + '">Voir la fiche</a></div></div></div>';
@@ -3418,7 +3436,7 @@ function teamBlock() {
   }
   if (!s) return '<section class="wrap team"><div class="teambox empty"><div class="in">' + badge + '<p>Aucun titre mis en avant pour le moment.</p><div class="row"><button class="btn" type="button" data-team="edit">Choisir un titre</button></div></div></div></section>';
   var chips = [isMovie(s) ? "Film" : "Série", s.year, s.rating ? "★ " + s.rating : "", (s.genres || []).slice(0, 3).join(" / "), isMovie(s) && s.runtime ? s.runtime + " min" : ""].filter(Boolean);
-  return '<section class="wrap team"><div class="teambox"><div class="bg" style="background-image:url(\'' + esc(hq(s.backdrop || s.poster)) + '\')"></div><div class="in">' +
+  return '<section class="wrap team"><div class="teambox"><div class="bg" style="background-image:url(\'' + esc(hqb(s)) + '\')"></div><div class="in">' +
     '<div class="tags"><span class="lang">Sélection de l\'équipe</span>' + chips.map(function (c) { return "<span>" + esc(c) + "</span>"; }).join("") + '</div>' +
     '<h2>' + esc(s.name) + '</h2>' +
     '<p>' + esc((TEAM && TEAM.text) || s.overview || "") + '</p>' +
@@ -4770,7 +4788,7 @@ function seenTitles() {
 }
 function seenCard(s, i) {
   return '<a class="card" style="--i:' + Math.min(i || 0, 14) + '" href="/serie/' + esc(s.id) + '"><div class="poster">' +
-    (s.poster ? '<img loading="lazy" src="' + esc(s.poster) + '" alt="' + esc(s.name) + '">' : '<div class="ph">' + esc(s.name.charAt(0)) + '</div>') +
+    (s.poster ? '<img loading="lazy" decoding="async" src="' + esc(th(s.poster)) + '" alt="' + esc(s.name) + '">' : '<div class="ph">' + esc(s.name.charAt(0)) + '</div>') +
     '<span class="rtag">' + (s._t && s._n >= s._t ? "Tout vu" : s._n + "/" + s._t + " vus") + '</span></div><div class="meta"><b>' + esc(s.name) + '</b><span>' + esc([s.year, s._n + " / " + s._t + " épisodes"].filter(Boolean).join("  ·  ")) + '</span></div></a>';
 }
 /* ===== Ma liste (refonte) : en-tête animé, onglets coulissants, recherche, tri, cartes avec actions ===== */
@@ -4843,7 +4861,7 @@ function mlCard(s, i, tab) {
     (ro ? (function () { var on = inList(s.id), tt = on ? "Retirer de ma liste" : "Ajouter à ma liste"; return '<button type="button" class="mlb bm' + (on ? ' on' : '') + '" data-lsbm="' + id + '" aria-pressed="' + (on ? 'true' : 'false') + '" aria-label="' + tt + '" title="' + tt + '">' + nsvg("bookmark") + '</button>'; })() : '') +
     (tab === "subs" ? '<button type="button" class="mlb rm" data-unfollow="' + id + '" aria-label="Ne plus suivre" title="Ne plus suivre">' + nsvg("bell-off") + '</button>' : '');
   return '<div class="mlc" style="--i:' + Math.min(i || 0, 14) + '"><div class="poster"><a class="mlhit" href="/serie/' + id + '" aria-label="' + esc(s.name) + '"></a>' +
-    (s.poster ? '<img loading="lazy" src="' + esc(s.poster) + '" alt="">' : '<div class="ph">' + esc(String(s.name).charAt(0)) + '</div>') +
+    (s.poster ? '<img loading="lazy" decoding="async" src="' + esc(th(s.poster)) + '" alt="">' : '<div class="ph">' + esc(String(s.name).charAt(0)) + '</div>') +
     (langLabel(s) ? '<span class="lang">' + esc(langLabel(s)) + '</span>' : '') + (newEpisode(s) ? newBadge("Nouvel ép.") : '') + inner + acts + '</div>' +
     '<a class="mlmeta" href="/serie/' + id + '"><b>' + esc(s.name) + '</b><span>' + esc(meta) + '</span>' + (extra ? '<em>' + esc(extra) + '</em>' : '') + '</a></div>';
 }
@@ -4859,7 +4877,7 @@ function mlSeenRow(s, i) {
   var done = pr.t && pr.n >= pr.t, pct = Math.round(pr.p * 100);
   var meta = [isMovie(s) ? "Film" : "Série", s.year, s.rating ? "★ " + s.rating : ""].filter(Boolean).join("  ·  ");
   return '<a class="mls' + (done ? " done" : "") + '" style="--i:' + Math.min(i || 0, 14) + ';--p:' + pr.p.toFixed(3) + '" href="/serie/' + id + '">' +
-    '<span class="mlsp">' + (s.poster ? '<img loading="lazy" src="' + esc(s.poster) + '" alt="">' : '<em>' + esc(String(s.name).charAt(0)) + '</em>') + '</span>' +
+    '<span class="mlsp">' + (s.poster ? '<img loading="lazy" decoding="async" src="' + esc(th(s.poster)) + '" alt="">' : '<em>' + esc(String(s.name).charAt(0)) + '</em>') + '</span>' +
     '<span class="mlsb"><b>' + esc(s.name) + '</b><span class="mlsm">' + esc(meta) + '</span>' +
     '<span class="mlsbar"><i></i></span>' +
     '<span class="mlsl"><span>' + (pr.t ? pr.n + ' / ' + pr.t + ' épisodes · ' + pct + ' %' : 'Aucun épisode') + '</span>' + (last ? '<span>Dernier vu : ' + esc(last) + '</span>' : '') + '</span></span>' +
@@ -5081,7 +5099,7 @@ function lsCard(s, i, tag) {
   var pb = mv ? [] : platBrands(s);
   var on = inList(s.id);
   return '<div class="mlc" style="--i:' + Math.min(i || 0, 14) + '"><div class="poster"><a class="mlhit" href="/serie/' + id + '" aria-label="' + esc(s.name) + '"></a>' +
-    (s.poster ? '<img loading="lazy" src="' + esc(s.poster) + '" alt="">' : '<div class="ph">' + esc(String(s.name).charAt(0)) + '</div>') +
+    (s.poster ? '<img loading="lazy" decoding="async" src="' + esc(th(s.poster)) + '" alt="">' : '<div class="ph">' + esc(String(s.name).charAt(0)) + '</div>') +
     (langLabel(s) ? '<span class="lang">' + esc(langLabel(s)) + '</span>' : '') + (newEpisode(s) ? newBadge("Nouvel ép.") : '') +
     (pb.length ? '<span class="lsplat">' + platMark(pb[0]) + '</span>' : '') +
     (pr && pr.n ? '<span class="mlbar"><i style="--p:' + pr.p.toFixed(3) + '"></i></span>' : '') +
@@ -5184,7 +5202,16 @@ document.addEventListener("click", function (e) {
 
 /* Recherche multilingue : on ignore la casse, les accents et la ponctuation, et on compare
    avec le titre, le titre original et tous les titres alternatifs / traductions de TMDB (champ aka) */
+var FOLDC = new Map();
 function fold(x) {
+  if (typeof x === "string") {
+    var hit = FOLDC.get(x); if (hit !== undefined) return hit;
+    if (FOLDC.size > 20000) FOLDC.clear();
+    var r = foldRaw(x); FOLDC.set(x, r); return r;
+  }
+  return foldRaw(x);
+}
+function foldRaw(x) {
   x = String(x || "").toLowerCase();
   try { x = x.normalize("NFD").replace(/[\u0300-\u036f]/g, ""); } catch (e) {}
   try { x = x.replace(/[^\p{L}\p{N}]+/gu, " "); } catch (e) { x = x.replace(/[^a-z0-9\u00c0-\uffff]+/g, " "); }
@@ -5328,6 +5355,22 @@ function srBuild() {
     '<div id="sract"></div><div class="wrap"><div class="mltools"><div class="mlsort" role="group" aria-label="Trier">' + sorts + '</div><span class="mlsum" id="srsum"></span>' +
     '<a class="btn small ghost" id="srclose" href="/">Fermer la recherche</a></div><div class="lsf intro" id="srf"></div><div id="srbody"></div></div></div>';
 }
+var SR_PAGE = 48, srIO = null;
+function srMore(list, shown) {
+  if (srIO) { srIO.disconnect(); srIO = null; }
+  var sent = document.querySelector("#srbody .srmore"); if (!sent) return;
+  var grid = document.querySelector("#srbody .mlgrid"); if (!grid) return;
+  function add() {
+    var next = Math.min(list.length, shown + SR_PAGE), html = "";
+    for (var i = shown; i < next; i++) html += lsCard(list[i], i, "type");
+    grid.classList.add("still"); grid.insertAdjacentHTML("beforeend", html); shown = next;
+    if (shown >= list.length) { if (srIO) { srIO.disconnect(); srIO = null; } sent.remove(); return true; }
+    return false;
+  }
+  if (!("IntersectionObserver" in window)) { while (!add()) {} return; }
+  srIO = new IntersectionObserver(function (en) { if (en[0].isIntersecting) add(); }, { rootMargin: "900px 0px" });
+  srIO.observe(sent);
+}
 function viewSearch(q) {
   q = q || "";
   var needle = fold(q) || q.trim().toLowerCase();
@@ -5369,6 +5412,7 @@ function viewSearch(q) {
   $("#srsum").textContent = isAct ? allActors.length + (allActors.length > 1 ? " acteurs" : " acteur") : found.length + (found.length > 1 ? " titres" : " titre");
   $("#srclose").setAttribute("href", searchBack);
   Array.prototype.forEach.call(document.querySelectorAll("[data-srsort]"), function (b) { b.classList.toggle("on", b.dataset.srsort === srSort); });
+  if (srIO) { srIO.disconnect(); srIO = null; }
   var body = $("#srbody");
   body.className = swap ? "mlswap" : "";
   if (swap) { void body.offsetWidth; body.className = "mlswap"; }
@@ -5377,7 +5421,7 @@ function viewSearch(q) {
       ? actorsGrid(allActors.slice(0, 24)) + (allActors.length > 24 ? '<p class="note" style="margin:18px 0 0">24 acteurs affichés sur ' + allActors.length + '. Précise ta recherche pour affiner.</p>' : "")
       : '<div class="mlempty">' + nsvg("search", "mlei") + '<h3>' + (needle.length < 2 ? "Cherche un acteur" : "Aucun acteur") + '</h3><p>' + (needle.length < 2 ? "Tape au moins deux lettres du nom d\'un acteur." : "Aucun acteur du catalogue ne correspond à ces mots.") + '</p></div>';
   }
-  else if (found.length) body.innerHTML = '<div class="mlgrid' + (fresh || swap ? "" : " still") + '">' + found.map(function (s, i) { return lsCard(s, i, "type"); }).join("") + '</div>';
+  else if (found.length) { body.innerHTML = '<div class="mlgrid' + (fresh || swap ? "" : " still") + '">' + found.slice(0, SR_PAGE).map(function (s, i) { return lsCard(s, i, "type"); }).join("") + '</div>' + (found.length > SR_PAGE ? '<div class="srmore" style="height:1px"></div>' : ""); srMore(found, SR_PAGE); }
   else if (needle && !base.length) {
     body.innerHTML = '<div class="mlempty">' + nsvg("search", "mlei") + '<h3>Rien trouvé</h3><p>' + (actors.length ? "Aucun titre ne correspond à ces mots, mais des acteurs correspondent juste au-dessus." : "Aucun titre ne correspond. Essaie un autre mot, ou demande-le-moi.") + '</p>' +
       '<div class="row"><a class="btn" href="/demande/' + encodeURIComponent(q.trim()) + '">Demander ce titre</a><a class="btn ghost" href="/">Retour à l\'accueil</a></div></div>';
@@ -5834,7 +5878,7 @@ function tvOpen(id, start) {
   var list = (s.videos || []).filter(function (v) { return v && v.key; }).slice(0, 3); if (!list.length) return;
   tvBuild();
   TV.list = list; TV.name = s.name || "";
-  var bg = hq(s.backdrop || s.poster);
+  var bg = hqb(s);
   tvq("tv-load").style.backgroundImage = bg ? 'linear-gradient(rgba(0,0,0,.62),rgba(0,0,0,.62)),url("' + String(bg).replace(/"/g, "%22") + '")' : "none";
   tvq("tv-ths").innerHTML = list.length > 1 ? list.map(function (v, k) {
     return '<button type="button" class="tvth" data-tvi="' + k + '"><img src="https://i.ytimg.com/vi/' + encodeURIComponent(v.key) + '/mqdefault.jpg" alt="" loading="lazy"><span>' + esc(v.lab || (v.type === "Teaser" ? "Teaser" : "Bande-annonce")) + (v.name ? " · " + esc(v.name) : "") + '</span></button>';
@@ -5882,7 +5926,7 @@ function viewSerie(id) {
       srcChips = '<p class="note" style="margin-top:14px">' + (ADMIN ? 'Aucune source pour l\'instant. Ajoute-en avec « Modifier ».' : 'Aucune source disponible pour l\'instant.') + '</p>';
     }
   }
-  var html = '<section class="detail"><div class="bg" style="background-image:url(\'' + esc(hq(s.backdrop || s.poster)) + '\')"></div><div class="wrap">' +
+  var html = '<section class="detail"><div class="bg" style="background-image:url(\'' + esc(hqb(s)) + '\')"></div><div class="wrap">' +
     '<div class="poster">' + (s.poster ? '<img src="' + esc(s.poster) + '" alt="' + esc(s.name) + '">' : '<div class="ph">' + esc(s.name.charAt(0)) + '</div>') + '</div>' +
     '<div>' + (platBrands(s).length ? '<div class="plats"><span class="plbl">Diffusé sur</span>' + platBrands(s).map(platMark).join("") + '</div>' : '') + '<div class="tags">' + (langLabel(s) ? '<span class="lang">' + esc(langLabel(s)) + '</span>' : '') + (ongoing(s) ? '<span class="live">En cours</span>' : '') + (ne ? newBadge("Nouvel épisode") : '') + novBadge(s) + kdBadge(s) + tags.map(function (t) { return "<span>" + esc(t) + "</span>"; }).join("") + trailerChip(s) + '</div>' +
     '<h1>' + esc(s.name) + '</h1>' + (s.original_name && s.original_name !== s.name ? '<div class="orig">' + esc(s.original_name) + '</div>' : '<div class="orig"></div>') +
@@ -7102,7 +7146,7 @@ function calCardHTML(g, i, M) {
   else if (g.date > M.today) st = '<span class="cxs soon">' + nsvg("clock") + 'À venir</span>';
   else st = '<span class="cxs wait">' + nsvg("clock") + (g.s.ext ? 'Bientôt sur le site' : 'En attente d\'un lien') + '</span>';
   var meta = g.custom ? esc(g.custom.label || (isMovie(g.s) ? "Film" : "Nouveau sur le site")) : 'Saison ' + esc(g.se.number) + ' · Épisode' + (many ? "s " : " ") + esc(calRanges(g.nums));
-  var card = '<a class="cxcard" style="--i:' + Math.min(i, 14) + '" href="/serie/' + esc(g.s.id) + '"><span class="cxp">' + (g.s.poster ? '<img loading="lazy" src="' + esc(g.s.poster) + '" alt="">' : '<em>' + esc(String(g.s.name).charAt(0)) + '</em>') + '</span>' +
+  var card = '<a class="cxcard" style="--i:' + Math.min(i, 14) + '" href="/serie/' + esc(g.s.id) + '"><span class="cxp">' + (g.s.poster ? '<img loading="lazy" decoding="async" src="' + esc(th(g.s.poster)) + '" alt="">' : '<em>' + esc(String(g.s.name).charAt(0)) + '</em>') + '</span>' +
     '<span class="cxt"><b>' + esc(g.s.name) + '</b><span class="cxm">' + (!calType && dt ? '<i class="cxk" style="--c:' + CAL_KC[dt] + '">' + dt + '</i>' : '') + meta + '</span>' + st + '</span></a>';
   if (g.s.ext) card = card.replace('<a class="cxcard"', '<div class="cxcard"').replace(/ href="[^"]*"/, "").replace(/<\/a>$/, "</div>");
   if (g.custom && ADMIN) card = '<div class="cxwrap">' + card + '<button type="button" class="cxdel" data-calxdel="' + esc(g.custom.id) + '" title="Retirer du calendrier" aria-label="Retirer du calendrier">×</button></div>';
@@ -8266,7 +8310,11 @@ document.addEventListener("click", function (e) {
   var r = b.parentNode.querySelector(".rail");
   r.scrollBy({ left: (b.dataset.rail === "next" ? 1 : -1) * Math.round(r.clientWidth * .85), behavior: "smooth" });
 });
-document.addEventListener("scroll", function (e) { if (e.target.classList && e.target.classList.contains("rail")) updRails(); }, true);
+var railRaf = 0;
+document.addEventListener("scroll", function (e) {
+  if (railRaf || !(e.target.classList && e.target.classList.contains("rail"))) return;
+  railRaf = requestAnimationFrame(function () { railRaf = 0; updRails(); });
+}, { capture: true, passive: true });
 window.addEventListener("resize", updRails);
 
 /* ===== Recherche : suggestions sous la barre ===== */
@@ -8540,7 +8588,8 @@ document.addEventListener("submit", function (e) {
 document.addEventListener("input", function (e) {
   var t = e.target;
   if (t.id === "q") {
-    liveSearch(t.value);
+    var qv = t.value; clearTimeout(window._liveT);
+    window._liveT = setTimeout(function () { liveSearch(qv); }, 140);
     return;
   }
   if (!draft) return;
