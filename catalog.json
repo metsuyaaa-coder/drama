@@ -64,7 +64,7 @@
         "Drame"
       ],
       "rating": "8.8",
-      "pop": 33.2882,
+      "pop": 30.9308,
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/w500/bZHEU42QynnMrHUWK1Hhvj2cdPA.jpg",
       "posterV": 2,
@@ -391,7 +391,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792668403070,
+      "updatedAt": 1792700736175,
       "trend": 46,
       "videos": [
         {
@@ -638,13 +638,13 @@
         "스캔들"
       ],
       "downloads": [],
-      "pop": 44.5325,
+      "pop": 39.5258,
       "origin_country": [
         "KR"
       ],
       "original_language": "ko",
       "posterV": 2,
-      "updatedAt": 1792610942560,
+      "updatedAt": 1792700736896,
       "networks": [
         "Netflix"
       ],
@@ -704,7 +704,7 @@
         "Crime"
       ],
       "rating": "9.4",
-      "pop": 48.621,
+      "pop": 42.8094,
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/original/u0DrgmScTheIyCVEaeDKQ3sagLu.jpg",
       "backdrop": "https://image.tmdb.org/t/p/original/mDYIV71RL3mkaW8IfSGNthuVB7l.jpg",
@@ -996,7 +996,7 @@
       ],
       "original_language": "ko",
       "posterV": 2,
-      "updatedAt": 1792610943507,
+      "updatedAt": 1792700737650,
       "networks": [
         "SBS"
       ],
@@ -1341,13 +1341,13 @@
         "21세기 대군부인"
       ],
       "downloads": [],
-      "pop": 35.7621,
+      "pop": 34.2953,
       "origin_country": [
         "KR"
       ],
       "original_language": "ko",
       "posterV": 2,
-      "updatedAt": 1792610944871,
+      "updatedAt": 1792700738447,
       "posterCustom": true,
       "networks": [
         "MBC"
@@ -1380,7 +1380,7 @@
         "Action"
       ],
       "rating": "6.9",
-      "pop": 408.3035,
+      "pop": 433.8407,
       "status": "Released",
       "runtime": 160,
       "poster": "https://image.tmdb.org/t/p/w500/qW1m7bcsRb2lo8xG2v0p4mARyH8.jpg",
@@ -1515,7 +1515,7 @@
         }
       ],
       "posterV": 2,
-      "updatedAt": 1792610945419,
+      "updatedAt": 1792700738897,
       "videos": [
         {
           "key": "ztqZZO-lLsE",
@@ -1548,7 +1548,7 @@
         "Drame"
       ],
       "rating": "9.2",
-      "pop": 18.2237,
+      "pop": 17.9691,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/eTzC7L3HgsNNBEkTpl9s3tVJUYv.jpg",
       "backdrop": "https://image.tmdb.org/t/p/original/fYL4I6cezb06BHhQlrNjNhy7jhf.jpg",
@@ -1954,7 +1954,7 @@
       ],
       "original_language": "ko",
       "posterV": 2,
-      "updatedAt": 1792610946795,
+      "updatedAt": 1792700740100,
       "networks": [
         "tvN"
       ],
@@ -1988,9 +1988,9 @@
       "aka": [
         "再次奔向你",
         "Dive into You",
+        "Volveré Por Ti",
         "De volta para você",
         "向你跳水",
-        "Volveré Por Ti",
         "君へダイブ",
         "Потопете се в себе си",
         "ดิ่งลึกสู่ใจเธอ",
@@ -2009,7 +2009,7 @@
         "Science-Fiction & Fantastique"
       ],
       "rating": "9.0",
-      "pop": 13.32,
+      "pop": 13.7935,
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/w500/6OAuQOGqjYY1JXbkTlWz4Mm2Kmi.jpg",
       "posterV": 2,
@@ -2327,7 +2327,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792610947861,
+      "updatedAt": 1792700741102,
       "trend": 0,
       "videos": [
         {
@@ -2391,7 +2391,7 @@
         "Comédie"
       ],
       "rating": "6.3",
-      "pop": 40.2563,
+      "pop": 38.1809,
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/w500/iKgdhgBPi1cCRRqsUgaxUDRuFP6.jpg",
       "posterV": 2,
@@ -2761,7 +2761,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792610948816,
+      "updatedAt": 1792700742197,
       "trend": 0,
       "videos": [
         {
@@ -2823,7 +2823,7 @@
         "Mystère"
       ],
       "rating": "8.1",
-      "pop": 13.0527,
+      "pop": 13.7116,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/2mwgHfOyrFrmvozjFoEXHRdfGhv.jpg",
       "backdrop": "https://image.tmdb.org/t/p/original/3bHz9dYSZ5XDxY0zDaBpYgUOhE2.jpg",
@@ -3080,7 +3080,7 @@
       ],
       "original_language": "ko",
       "posterV": 2,
-      "updatedAt": 1792610949851,
+      "updatedAt": 1792700743074,
       "networks": [
         "Netflix"
       ],
@@ -3136,7 +3136,7 @@
         "Drame"
       ],
       "rating": "8.3",
-      "pop": 12.0322,
+      "pop": 12.3593,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/A4Y4xlDHS4xi2WI9265vRyIYLoo.jpg",
       "backdrop": "https://image.tmdb.org/t/p/original/eBD46F44qKGPZiRLffO4q3JF8Hc.jpg",
@@ -3571,7 +3571,7 @@
       ],
       "original_language": "ko",
       "posterV": 2,
-      "updatedAt": 1792610950761,
+      "updatedAt": 1792700744117,
       "networks": [
         "tvN"
       ],
@@ -3617,8 +3617,8 @@
         "Shining Watermelon",
         "Banjjagineun Woteomellon",
         "반짝이는워터멜론",
-        "သံစဉ်အိမ်မက်များဆီသို့",
         "ဖရဲသီးလေးရဲ့ ဂီတ",
+        "သံစဉ်အိမ်မက်များဆီသို့",
         "Sparkling Watermelon",
         "Ngọt Ngào Rực Rỡ"
       ],
@@ -3629,7 +3629,7 @@
         "Drame"
       ],
       "rating": "8.8",
-      "pop": 17.4208,
+      "pop": 16.5484,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/bwTzW1wTgUxUOQruhT8DvinUYgR.jpg",
       "backdrop": "https://image.tmdb.org/t/p/original/efaMS00Fevc3fw2dbeP7rh22O6D.jpg",
@@ -4211,7 +4211,7 @@
       ],
       "original_language": "ko",
       "posterV": 2,
-      "updatedAt": 1792610951892,
+      "updatedAt": 1792700745172,
       "networks": [
         "tvN"
       ],
@@ -4274,7 +4274,7 @@
         "Comédie"
       ],
       "rating": "8.5",
-      "pop": 21.389,
+      "pop": 22.3749,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/xBnscv5BrJREKVSvh0le61y4KDk.jpg",
       "backdrop": "https://image.tmdb.org/t/p/original/eSB0fD6CbNW3LT8Z55V07fmYFpo.jpg",
@@ -4744,7 +4744,7 @@
       ],
       "original_language": "ko",
       "posterV": 2,
-      "updatedAt": 1792610952853,
+      "updatedAt": 1792700745937,
       "networks": [
         "SBS"
       ],
@@ -4817,7 +4817,7 @@
         "Comédie"
       ],
       "rating": "9.4",
-      "pop": 53.309,
+      "pop": 53.7046,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/fMECSPrTmRClSViMsXFYmiYIcWP.jpg",
       "backdrop": "https://image.tmdb.org/t/p/original/vyG93jhmPL7tBIhRtCLa5mdBKob.jpg",
@@ -5054,7 +5054,7 @@
       ],
       "original_language": "ko",
       "posterV": 2,
-      "updatedAt": 1792610953874,
+      "updatedAt": 1792700747170,
       "networks": [
         "Netflix"
       ],
@@ -5112,7 +5112,7 @@
         "Science-Fiction & Fantastique"
       ],
       "rating": "8.3",
-      "pop": 30.4784,
+      "pop": 29.4361,
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/w500/pTEFqAjLd5YTsMD6NSUxV6Dq7A6.jpg",
       "backdrop": "https://image.tmdb.org/t/p/original/8hp2CuGnw1iP5dLBVMAPUv23swx.jpg",
@@ -5358,7 +5358,7 @@
       ],
       "original_language": "ko",
       "posterV": 2,
-      "updatedAt": 1792610954894,
+      "updatedAt": 1792700748109,
       "networks": [
         "Netflix"
       ],
@@ -5419,7 +5419,7 @@
         "Drame"
       ],
       "rating": "7.6",
-      "pop": 14.9001,
+      "pop": 13.8662,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/u0mCeqVvQW2HEfrRy1we9UklsQd.jpg",
       "backdrop": "https://image.tmdb.org/t/p/original/mIjERiWlnDzQWHTcZdtucLmTCeO.jpg",
@@ -5618,7 +5618,7 @@
       ],
       "original_language": "ja",
       "posterV": 2,
-      "updatedAt": 1792610955823,
+      "updatedAt": 1792700749120,
       "networks": [
         "Netflix"
       ],
@@ -5664,7 +5664,7 @@
         "Drame"
       ],
       "rating": "8.2",
-      "pop": 16.5077,
+      "pop": 15.7153,
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/original/2yi3gOIQt22NjJam1u5jqBa3GQ1.jpg",
       "backdrop": "https://image.tmdb.org/t/p/original/fRR6jHutlHuYxMeZp4cZfjgafzd.jpg",
@@ -5922,7 +5922,7 @@
       ],
       "original_language": "ko",
       "posterV": 2,
-      "updatedAt": 1792610956823,
+      "updatedAt": 1792700750821,
       "networks": [
         "Disney+"
       ],
@@ -5985,7 +5985,7 @@
         "Drame"
       ],
       "rating": "8.8",
-      "pop": 58.1374,
+      "pop": 47.7784,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/ecRrKGXfflZmDZBD4irdkybClT.jpg",
       "backdrop": "https://image.tmdb.org/t/p/original/rN9xHDp83kZ3cOr82JR1b4rFIFk.jpg",
@@ -6262,7 +6262,7 @@
       "original_language": "ko",
       "posterV": 2,
       "trend": 0,
-      "updatedAt": 1792610957814,
+      "updatedAt": 1792700751537,
       "networks": [
         "Netflix"
       ],
@@ -6310,7 +6310,7 @@
         "Science-Fiction & Fantastique"
       ],
       "rating": "7.1",
-      "pop": 7.4299,
+      "pop": 9.0617,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/3hsCoGDAceyh1FnFHHLkozPNlSS.jpg",
       "backdrop": "https://image.tmdb.org/t/p/original/SYzF7EFhhKTspLDzogpel2HHDl.jpg",
@@ -6630,7 +6630,7 @@
       ],
       "downloads": [],
       "posterV": 2,
-      "updatedAt": 1792610958823,
+      "updatedAt": 1792700752263,
       "networks": [
         "Lifetime",
         "U+ Mobile TV"
@@ -6667,8 +6667,8 @@
       "genres": [
         "Drame"
       ],
-      "rating": "9.0",
-      "pop": 52.4556,
+      "rating": "8.0",
+      "pop": 59.0027,
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/original/nGSj4YtMOwP4cjGSD1fDlI6WLag.jpg",
       "backdrop": "https://image.tmdb.org/t/p/original/vD84yLJVVd7cC2lKF8sEukQG2A3.jpg",
@@ -7128,7 +7128,7 @@
       ],
       "downloads": [],
       "posterV": 2,
-      "updatedAt": 1792623139180,
+      "updatedAt": 1792700752970,
       "trend": 0,
       "networks": [
         "Hunan Television",
@@ -7188,7 +7188,7 @@
         "Mystère"
       ],
       "rating": "8.2",
-      "pop": 13.3946,
+      "pop": 13.0836,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/ccej6D8J81DDJWqhP7OG6PA6xcl.jpg",
       "posterV": 2,
@@ -7559,7 +7559,7 @@
         "VF"
       ],
       "downloads": [],
-      "updatedAt": 1792610962106,
+      "updatedAt": 1792700753679,
       "networks": [
         "Disney+"
       ],
@@ -7613,7 +7613,7 @@
         "Drame"
       ],
       "rating": "9.7",
-      "pop": 33.4817,
+      "pop": 32.0452,
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/w500/av7wQdYaicBCCUFQ6jRlm9ylZx4.jpg",
       "posterV": 2,
@@ -7779,7 +7779,7 @@
             {
               "number": 5,
               "name": "Épisode 5",
-              "overview": "",
+              "overview": "After sharing a kiss with Yubin under the fireworks, Karin starts to wonder if this is the start of a Korean-style \"budding romance.\" Meanwhile, Sia, an acquaintance of Yubin's, arrives on Charo Island. She urges him to return to Korea while revealing to Karin the real reason he came to the island.",
               "air_date": "2026-11-04",
               "sources": [],
               "downloads": []
@@ -7835,7 +7835,7 @@
         "VF"
       ],
       "downloads": [],
-      "updatedAt": 1792628463506,
+      "updatedAt": 1792700754404,
       "networks": [
         "Nippon TV"
       ],
@@ -7897,7 +7897,7 @@
         "Science-Fiction"
       ],
       "rating": "8.1",
-      "pop": 71.4392,
+      "pop": 75.9153,
       "status": "Released",
       "runtime": 123,
       "poster": "https://image.tmdb.org/t/p/original/1uCUiv52q32A4egyBkrRgL5m7w3.jpg",
@@ -8001,7 +8001,7 @@
           "by": "head"
         }
       ],
-      "updatedAt": 1792610966151,
+      "updatedAt": 1792700754828,
       "trend": 78,
       "posterCustom": true,
       "videos": [
@@ -8059,8 +8059,8 @@
         "Drame",
         "Comédie"
       ],
-      "rating": "8.7",
-      "pop": 29.9222,
+      "rating": "8.9",
+      "pop": 28.5312,
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/w500/pGqcErS76y8bcvZZSFUefdZOg2x.jpg",
       "posterV": 2,
@@ -8347,7 +8347,7 @@
             {
               "number": 9,
               "name": "Épisode 9",
-              "overview": "",
+              "overview": "Youjin grows increasingly close to Professor Jihoon. He shares that he met Minjae in the US and gives her Minjae's new contact information. But Youjin brushes it off, insisting that their love is over. Meanwhile, Youseong happens to get in touch with Minjae and secretly investigates the couple's past without Youjin's knowledge. What could have happened between two people who were once so deeply in love?",
               "air_date": "2026-11-02",
               "sources": [],
               "downloads": []
@@ -8386,7 +8386,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792678497897,
+      "updatedAt": 1792700755546,
       "networks": [
         "ENA"
       ],
@@ -8416,19 +8416,20 @@
       ],
       "original_language": "ko",
       "aka": [
+        "내가 떨릴 수 있게",
         "Make Me Tingle",
         "心动制造所",
         "心動製造所",
         "เสียวนัก เดี๋ยวรักเข้าให้",
         "私を震えさせて",
+        "Rung Động Khó Cưỡng",
         "Накарай ме да настръхна",
         "أشعرني بالسعادة",
         "Заставь меня дрожать",
         "Izazovi mi trnce",
         "Hazme vibrar",
         "让我心动",
-        "Make Me Tremble",
-        "내가 떨릴 수 있게"
+        "Make Me Tremble"
       ],
       "year": "2026",
       "overview": "Yeon-su a grandi dans une famille conservatrice, où la courtoisie et la discipline priment sur tout, ce qui lui a quelque peu compliqué la découverte de sa véritable personnalité. Un jour, elle se retrouve impliquée dans une entreprise spécialisée dans les jouets érotiques et fait la connaissance de Dokgo Dal, qui lui ouvre les portes d’un tout autre univers. Alors que leur amour s’épanouit, Yeon-su découvre non seulement ses émotions, mais prend également conscience de l’importance du désir physique, ce qui l’amène à atteindre une véritable maturité.",
@@ -8437,7 +8438,7 @@
         "Comédie"
       ],
       "rating": "8.0",
-      "pop": 13.1305,
+      "pop": 14.1459,
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/w500/e4MlbtE02So4D5DJy197DbiAxqs.jpg",
       "posterV": 2,
@@ -8655,7 +8656,7 @@
             {
               "number": 5,
               "name": "Épisode 5",
-              "overview": "",
+              "overview": "Despite rejecting her date offer, Dal bonds with Yeon-su on assignment -- right as Ji-o drops a surprise confession.",
               "air_date": "2026-10-22",
               "sources": [],
               "downloads": []
@@ -8663,7 +8664,7 @@
             {
               "number": 6,
               "name": "Épisode 6",
-              "overview": "",
+              "overview": "While running a pop-up store in Busan, Yeon-su is forced to confront her true feelings for Dal once and for all.",
               "air_date": "2026-10-22",
               "sources": [],
               "downloads": []
@@ -8710,7 +8711,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792668379995,
+      "updatedAt": 1792700756375,
       "trend": 59,
       "networks": [
         "TVING"
@@ -8761,7 +8762,7 @@
         "Drame"
       ],
       "rating": "7.4",
-      "pop": 14.6391,
+      "pop": 14.4962,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/hub0e50sPTkEH8FKhJmXCW60xVl.jpg",
       "posterV": 2,
@@ -8973,7 +8974,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792610969915,
+      "updatedAt": 1792700757081,
       "networks": [
         "TVING"
       ],
@@ -9020,7 +9021,7 @@
         "Familial"
       ],
       "rating": "6.0",
-      "pop": 5.9381,
+      "pop": 8.008,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/9JaeSxCUS7XWPb6ta6KmRDct6xh.jpg",
       "posterV": 2,
@@ -9255,7 +9256,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792691488008,
+      "updatedAt": 1792700757793,
       "networks": [
         "KBS Drama"
       ],
@@ -9319,7 +9320,7 @@
         "Comédie"
       ],
       "rating": "8.7",
-      "pop": 30.7101,
+      "pop": 32.5049,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/xQwpGhQC6v01IRTbn5DV0WusXuZ.jpg",
       "posterV": 2,
@@ -9845,7 +9846,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792610971958,
+      "updatedAt": 1792700758515,
       "networks": [
         "Netflix"
       ],
@@ -9901,7 +9902,7 @@
         "Crime"
       ],
       "rating": "8.4",
-      "pop": 15.3619,
+      "pop": 14.4129,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/t735IT5vH3vSjm63EusFVg5HEqd.jpg",
       "posterV": 2,
@@ -10174,7 +10175,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792610973951,
+      "updatedAt": 1792700759244,
       "networks": [
         "MBC"
       ],
@@ -10227,7 +10228,7 @@
         "Drame"
       ],
       "rating": "8.3",
-      "pop": 7.073,
+      "pop": 7.2291,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/k1uOMMHv0o9xPJuxh0q28nqN83Y.jpg",
       "posterV": 2,
@@ -10391,7 +10392,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792610975861,
+      "updatedAt": 1792700759971,
       "networks": [
         "Coupang Play"
       ],
@@ -10456,7 +10457,7 @@
         "Drame"
       ],
       "rating": "8.7",
-      "pop": 14.509,
+      "pop": 15.0517,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/cGpfU5zWci552BFDfrby8iRCAPu.jpg",
       "posterV": 2,
@@ -10681,7 +10682,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792610976916,
+      "updatedAt": 1792700761126,
       "networks": [
         "tvN"
       ],
@@ -10744,7 +10745,7 @@
         "Drame"
       ],
       "rating": "8.1",
-      "pop": 13.7215,
+      "pop": 13.2603,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/jbQsa0W9JbHypYSZmgB1lKxGzL5.jpg",
       "posterV": 2,
@@ -10898,7 +10899,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792610978155,
+      "updatedAt": 1792700762123,
       "networks": [
         "Netflix"
       ],
@@ -10955,7 +10956,7 @@
         "Drame"
       ],
       "rating": "8.2",
-      "pop": 10.5907,
+      "pop": 9.1723,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/4buHiyaXkkzIdFDu66GOhvXEqbK.jpg",
       "posterV": 2,
@@ -11203,7 +11204,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792694011161,
+      "updatedAt": 1792700763179,
       "networks": [
         "ENA"
       ],
@@ -11259,7 +11260,7 @@
         "Mystère"
       ],
       "rating": "8.8",
-      "pop": 7.4703,
+      "pop": 8.0189,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/z74qJEf1MRsEEIKFgbeyBAHmJXg.jpg",
       "posterV": 2,
@@ -11499,7 +11500,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792610980097,
+      "updatedAt": 1792700764216,
       "networks": [
         "KBS2"
       ],
@@ -11560,7 +11561,7 @@
         "Crime"
       ],
       "rating": "8.5",
-      "pop": 13.3672,
+      "pop": 12.7782,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/qFxbrHvNq5tn9SCBq3aKPgaGfyO.jpg",
       "posterV": 2,
@@ -11805,7 +11806,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792610981426,
+      "updatedAt": 1792700765103,
       "networks": [
         "JTBC"
       ],
@@ -11865,7 +11866,7 @@
         "Drame"
       ],
       "rating": "8.4",
-      "pop": 11.457,
+      "pop": 12.7193,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/bcnneY1DWQzmwfvsuhGGnwv9KYD.jpg",
       "posterV": 2,
@@ -12110,7 +12111,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792610982474,
+      "updatedAt": 1792700766107,
       "networks": [
         "SBS"
       ],
@@ -12180,7 +12181,7 @@
         "Drame"
       ],
       "rating": "8.9",
-      "pop": 15.6601,
+      "pop": 16.9315,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/30P3ySNo0m0xNhHQMXzpmquLwxa.jpg",
       "posterV": 2,
@@ -12425,7 +12426,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792610983580,
+      "updatedAt": 1792700767095,
       "networks": [
         "tvN"
       ],
@@ -12474,7 +12475,7 @@
         "Science-Fiction & Fantastique"
       ],
       "rating": "8.2",
-      "pop": 10.5204,
+      "pop": 10.9289,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/kPHv37XVpyWCsae3gtHujw1wPyW.jpg",
       "posterV": 2,
@@ -12724,7 +12725,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792610984571,
+      "updatedAt": 1792700768092,
       "networks": [
         "JTBC"
       ],
@@ -12779,7 +12780,7 @@
         "Drame"
       ],
       "rating": "7.9",
-      "pop": 9.0896,
+      "pop": 9.4744,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/4HsHVDD4K3IWr6jmTL5bIkM7qPV.jpg",
       "posterV": 2,
@@ -12920,7 +12921,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792610985566,
+      "updatedAt": 1792700769124,
       "networks": [
         "Netflix"
       ],
@@ -12975,7 +12976,7 @@
         "Science-Fiction & Fantastique"
       ],
       "rating": "6.8",
-      "pop": 6.6932,
+      "pop": 7.1103,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/iLf17aFCx2ESajFp1oyb03fmzNp.jpg",
       "posterV": 2,
@@ -13159,7 +13160,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792610986646,
+      "updatedAt": 1792700770091,
       "networks": [
         "Lifetime",
         "U+ Mobile TV"
@@ -13209,7 +13210,7 @@
         "Comédie"
       ],
       "rating": "9.4",
-      "pop": 13.158,
+      "pop": 12.9957,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/cBiwrUwUNNYXTc5xrDEQWcMqftd.jpg",
       "posterV": 2,
@@ -13434,7 +13435,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792610990035,
+      "updatedAt": 1792700771186,
       "networks": [
         "ENA"
       ],
@@ -13495,7 +13496,7 @@
         "Drame"
       ],
       "rating": "8.2",
-      "pop": 8.562,
+      "pop": 12.1116,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/zwEYhe03vN1rbjF8Bsf9Dng0W8e.jpg",
       "posterV": 2,
@@ -13715,7 +13716,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792610991024,
+      "updatedAt": 1792700772184,
       "networks": [
         "ENA"
       ],
@@ -13784,7 +13785,7 @@
         "Drame"
       ],
       "rating": "8.5",
-      "pop": 33.9414,
+      "pop": 30.5474,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/mxa7YxVln3Rwnd2Va82PoclTznj.jpg",
       "posterV": 2,
@@ -13986,7 +13987,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792610992028,
+      "updatedAt": 1792700773131,
       "networks": [
         "SBS"
       ],
@@ -14042,7 +14043,7 @@
         "Familial"
       ],
       "rating": "8.1",
-      "pop": 10.688,
+      "pop": 12.1076,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/dc4YYEMeoiYLas0ao5UZugXeSSo.jpg",
       "posterV": 2,
@@ -14292,7 +14293,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792610993044,
+      "updatedAt": 1792700774182,
       "networks": [
         "MBC"
       ],
@@ -14350,7 +14351,7 @@
         "Comédie"
       ],
       "rating": "8.8",
-      "pop": 19.0987,
+      "pop": 15.6854,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/wY4rhPE90jJ4bp1JZOFY0MeRJQX.jpg",
       "posterV": 2,
@@ -14621,7 +14622,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792610994084,
+      "updatedAt": 1792700775098,
       "networks": [
         "Coupang Play"
       ],
@@ -14685,7 +14686,7 @@
         "Drame"
       ],
       "rating": "8.8",
-      "pop": 21.7253,
+      "pop": 21.9737,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/jj7AYkz2OLRDL1wfJmjTXyWQ5I4.jpg",
       "posterV": 2,
@@ -14905,7 +14906,7 @@
         "VF"
       ],
       "downloads": [],
-      "updatedAt": 1792610995106,
+      "updatedAt": 1792700776104,
       "networks": [
         "Netflix"
       ],
@@ -14957,8 +14958,8 @@
         "Comédie",
         "Drame"
       ],
-      "rating": "8.6",
-      "pop": 14.9795,
+      "rating": "8.5",
+      "pop": 12.9923,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/avO54r6aVZxS61XSUqJjWo58t1x.jpg",
       "posterV": 2,
@@ -15208,7 +15209,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792610996069,
+      "updatedAt": 1792700777132,
       "networks": [
         "tvN"
       ],
@@ -15273,7 +15274,7 @@
         "Drame"
       ],
       "rating": "8.0",
-      "pop": 22.2291,
+      "pop": 17.7737,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/oldJKLaDBPLDQBdXvdNTLCEehUI.jpg",
       "posterV": 2,
@@ -15447,7 +15448,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792610997036,
+      "updatedAt": 1792700778118,
       "networks": [
         "Netflix"
       ],
@@ -15505,7 +15506,7 @@
         "Drame"
       ],
       "rating": "8.1",
-      "pop": 15.0812,
+      "pop": 16.722,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/5dgTRxtP5g07RSH5LEOl367Fuwi.jpg",
       "posterV": 2,
@@ -15755,7 +15756,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792610998026,
+      "updatedAt": 1792700779096,
       "networks": [
         "tvN"
       ],
@@ -15807,7 +15808,7 @@
         "Comédie"
       ],
       "rating": "7.7",
-      "pop": 12.1238,
+      "pop": 11.264,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/afLKnB1yzh28YbpbB5Z5xragMf.jpg",
       "posterV": 2,
@@ -16103,7 +16104,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792610998990,
+      "updatedAt": 1792700780089,
       "networks": [
         "SBS"
       ],
@@ -16166,7 +16167,7 @@
         "Science-Fiction & Fantastique"
       ],
       "rating": "8.8",
-      "pop": 15.8913,
+      "pop": 16.4948,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/uxEN0pfh5OCSjIvV4GGXDVtjIuR.jpg",
       "posterV": 2,
@@ -16424,7 +16425,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792610999938,
+      "updatedAt": 1792700781312,
       "networks": [
         "SBS"
       ],
@@ -16472,7 +16473,7 @@
         "Drame"
       ],
       "rating": "6.7",
-      "pop": 4.7486,
+      "pop": 5.0453,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/aWWBq5tA2En7bxlTKh8XpCGJUFz.jpg",
       "posterV": 2,
@@ -16628,7 +16629,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792611000892,
+      "updatedAt": 1792700782575,
       "posterCustom": true,
       "networks": [
         "MBN Plus"
@@ -16676,7 +16677,7 @@
         "Drame"
       ],
       "rating": "6.3",
-      "pop": 6.118,
+      "pop": 6.3349,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/AuOpTRzztBKq0fAagGxc2tGexNO.jpg",
       "posterV": 2,
@@ -16860,7 +16861,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792611001823,
+      "updatedAt": 1792700784131,
       "networks": [
         "wavve"
       ],
@@ -16914,7 +16915,7 @@
         "Mystère"
       ],
       "rating": "7.9",
-      "pop": 10.6267,
+      "pop": 9.4475,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/ixBHQ96ryMa8Q0uIOFdUCjqRyy8.jpg",
       "posterV": 2,
@@ -17111,7 +17112,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792611002720,
+      "updatedAt": 1792700785150,
       "networks": [
         "Disney+"
       ],
@@ -17165,7 +17166,7 @@
         "Drame"
       ],
       "rating": "8.6",
-      "pop": 12.2952,
+      "pop": 12.8398,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/c2jswCrMoqDEBEXwSAlrCWtXdfZ.jpg",
       "posterV": 2,
@@ -17595,7 +17596,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792626644490,
+      "updatedAt": 1792700786082,
       "networks": [
         "JTBC"
       ],
@@ -17638,7 +17639,7 @@
         "Drame"
       ],
       "rating": "0.5",
-      "pop": 4.4576,
+      "pop": 4.2124,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/7mKYQWgTDe0Zf13FXn8QYxPf18r.jpg",
       "posterV": 2,
@@ -17846,7 +17847,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792611004851,
+      "updatedAt": 1792700787092,
       "networks": [
         "MBS"
       ],
@@ -17880,7 +17881,7 @@
         "Drame"
       ],
       "rating": "",
-      "pop": 1.3506,
+      "pop": 1.3394,
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/w500/b8KrYRjYZEohssl8wKMsRbbxLMN.jpg",
       "posterV": 2,
@@ -18034,7 +18035,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792611005836,
+      "updatedAt": 1792700788104,
       "networks": [
         "CBC"
       ]
@@ -18066,7 +18067,7 @@
         "Comédie"
       ],
       "rating": "4.0",
-      "pop": 4.6035,
+      "pop": 4.7132,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/wc9IbG1FkxzGGSkrP3kxUDpt2Ls.jpg",
       "posterV": 2,
@@ -18370,7 +18371,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792627341531,
+      "updatedAt": 1792700789111,
       "networks": [
         "ABEMA"
       ],
@@ -18406,7 +18407,7 @@
         "Drame"
       ],
       "rating": "",
-      "pop": 5.018,
+      "pop": 4.0625,
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/original/sAOEypaK8zSIP5a1Vlk7yLbaiIK.jpg",
       "posterV": 2,
@@ -18560,7 +18561,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792611007870,
+      "updatedAt": 1792700790228,
       "networks": [
         "BS TV Tokyo"
       ]
@@ -18590,7 +18591,7 @@
         "Comédie"
       ],
       "rating": "9.5",
-      "pop": 3.5836,
+      "pop": 3.6584,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/zrAv5ht5ORQycrERpHvdy5R2SXG.jpg",
       "posterV": 2,
@@ -18768,7 +18769,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792611008878,
+      "updatedAt": 1792700791092,
       "networks": [
         "MBS"
       ]
@@ -18796,7 +18797,7 @@
         "Drame"
       ],
       "rating": "8.0",
-      "pop": 2.9628,
+      "pop": 2.1589,
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/w500/9ACz4RNhdAH1sZjW2x8OnWuUsqS.jpg",
       "posterV": 2,
@@ -18941,7 +18942,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792611009813,
+      "updatedAt": 1792700792203,
       "networks": [
         "MBS"
       ]
@@ -18972,7 +18973,7 @@
         "Drame"
       ],
       "rating": "5.0",
-      "pop": 2.8277,
+      "pop": 3.3735,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/4FlQ5JdJLMLOrPo14KN4EZu3uuI.jpg",
       "posterV": 2,
@@ -19164,7 +19165,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792611010778,
+      "updatedAt": 1792700793125,
       "networks": [
         "TV Tokyo"
       ]
@@ -19199,7 +19200,7 @@
         "Mystère"
       ],
       "rating": "5.5",
-      "pop": 9.4224,
+      "pop": 8.5997,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/xVZvNASRqY91hD09g1cXHpErhGX.jpg",
       "posterV": 2,
@@ -19401,7 +19402,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792611011879,
+      "updatedAt": 1792700794092,
       "networks": [
         "TBS"
       ],
@@ -19444,7 +19445,7 @@
         "Mystère"
       ],
       "rating": "8.0",
-      "pop": 6.6272,
+      "pop": 6.816,
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/w500/aDUl4kdFJgsks4DNb4ZlzXGOs8X.jpg",
       "posterV": 2,
@@ -19666,7 +19667,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792611012867,
+      "updatedAt": 1792700795221,
       "networks": [
         "Nippon TV"
       ]
@@ -19711,7 +19712,7 @@
         "Action & Adventure"
       ],
       "rating": "8.0",
-      "pop": 9.2197,
+      "pop": 9.6307,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/kllmJ1DdzuRszNNwFFu0M7V55Fg.jpg",
       "posterV": 2,
@@ -19877,7 +19878,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792611013865,
+      "updatedAt": 1792700796183,
       "networks": [
         "Netflix"
       ],
@@ -19920,7 +19921,7 @@
         "Comédie"
       ],
       "rating": "7.7",
-      "pop": 5.9423,
+      "pop": 5.9725,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/d78INqowmEx6DeoqqtE9UZakFTz.jpg",
       "posterV": 2,
@@ -20142,7 +20143,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792611014834,
+      "updatedAt": 1792700797099,
       "networks": [
         "TBS"
       ]
@@ -20177,7 +20178,7 @@
         "Crime"
       ],
       "rating": "6.9",
-      "pop": 6.655,
+      "pop": 5.8858,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/69MPQL5lEcmI3x82tgCSVUZGha.jpg",
       "posterV": 2,
@@ -20394,7 +20395,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792611015961,
+      "updatedAt": 1792700798130,
       "networks": [
         "TBS"
       ],
@@ -20450,7 +20451,7 @@
         "Drame"
       ],
       "rating": "7.8",
-      "pop": 11.8984,
+      "pop": 11.5328,
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/w500/fRgQ7noEDUoP6w2EEQlQgvnrpiy.jpg",
       "posterV": 2,
@@ -20658,7 +20659,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792611017061,
+      "updatedAt": 1792700799267,
       "networks": [
         "Netflix"
       ],
@@ -20704,12 +20705,12 @@
         "Crime",
         "Drame"
       ],
-      "rating": "",
-      "pop": 10.3568,
+      "rating": "5.0",
+      "pop": 13.1018,
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/w500/tjbKBHKqFLDdqscv3aVMVpmkGxj.jpg",
       "posterV": 2,
-      "backdrop": "https://image.tmdb.org/t/p/original/5FkaT3QyWpBSa2EhiTOJfzf3Ci5.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/original/f2XoQ4503j04kyPFIA6qqweZaRE.jpg",
       "cast": [
         {
           "name": "坂口健太郎",
@@ -20893,26 +20894,23 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792678497897,
+      "updatedAt": 1792700800098,
       "networks": [
         "Fuji TV",
         "Channel A"
       ],
       "videos": [
         {
-          "key": "MrpDLW_DT6Q",
-          "name": "Trailer [ENG SUB]",
-          "type": "Trailer"
-        },
-        {
           "key": "R9EPb_6jWQE",
           "name": "『kiDnap GAME』 本予告映像 【10月6日（火）放送スタート！】",
-          "type": "Trailer"
+          "type": "Trailer",
+          "lab": "Original"
         },
         {
-          "key": "EwlvMXOjxn8",
-          "name": "메인 예고편",
-          "type": "Trailer"
+          "key": "MrpDLW_DT6Q",
+          "name": "Trailer [ENG SUB]",
+          "type": "Trailer",
+          "lab": "Anglais"
         }
       ]
     },
@@ -20939,7 +20937,7 @@
         "Drame"
       ],
       "rating": "",
-      "pop": 2.1451,
+      "pop": 2.7835,
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/w500/gZ7dPo58d30aAJ05RtqrgTEFmhs.jpg",
       "posterV": 2,
@@ -21073,7 +21071,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792611018928,
+      "updatedAt": 1792700801450,
       "networks": [
         "MBS"
       ],
@@ -21108,7 +21106,7 @@
         "Mystère"
       ],
       "rating": "8.5",
-      "pop": 17.835,
+      "pop": 15.4798,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/t69nmUrT8G4HQ452nLDzkZujEDj.jpg",
       "posterV": 2,
@@ -21313,7 +21311,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792611019874,
+      "updatedAt": 1792700803112,
       "networks": [
         "iQiyi"
       ],
@@ -21362,8 +21360,8 @@
         "杀人者的购物中心2",
         "دوکانێک بۆ بکوژەکان",
         "مرکز خرید قاتلان",
-        "Killerdeului Shoppingmall",
         "The Killer's Shopping Mall",
+        "Killerdeului Shoppingmall",
         "Sarinjaui Syopingmol",
         "ဦီးဦး ဒုံဝုတို့ ဆိုင်",
         "လူသတ်သမားတွေရဲ့ ဆိုင်",
@@ -21379,7 +21377,7 @@
         "Mystère"
       ],
       "rating": "8.5",
-      "pop": 26.3294,
+      "pop": 26.9292,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/f6urgYb39ZDHQCZmkzTDmZc5DpS.jpg",
       "posterV": 2,
@@ -21683,7 +21681,7 @@
       ],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1792611020953,
+      "updatedAt": 1792700804156,
       "networks": [
         "Disney+"
       ],
@@ -21741,7 +21739,7 @@
         "Crime"
       ],
       "rating": "6.6",
-      "pop": 7.3518,
+      "pop": 8.3297,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/hwEfhJNLii8oUfuiRBPk11DDv8y.jpg",
       "posterV": 2,
@@ -21933,7 +21931,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792611021894
+      "updatedAt": 1792700805385
     },
     {
       "id": "126035",
@@ -21984,8 +21982,8 @@
       "genres": [
         "Drame"
       ],
-      "rating": "7.3",
-      "pop": 8.2064,
+      "rating": "7.4",
+      "pop": 9.0025,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/pWIcIhpQibR1eDU0As4HRZeb8EL.jpg",
       "posterV": 2,
@@ -22387,7 +22385,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792611022970,
+      "updatedAt": 1792700807696,
       "videos": [
         {
           "key": "rR-R-kL7B80",
@@ -22451,7 +22449,7 @@
         "Drame"
       ],
       "rating": "7.5",
-      "pop": 16.6282,
+      "pop": 12.1403,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/8hZqZB4DAC1Ebzbk80zc0H80SNa.jpg",
       "posterV": 2,
@@ -22621,7 +22619,7 @@
         "VF"
       ],
       "downloads": [],
-      "updatedAt": 1792611023912,
+      "updatedAt": 1792700808534,
       "posterCustom": true,
       "videos": [
         {
@@ -22671,7 +22669,7 @@
         "Drame"
       ],
       "rating": "7.5",
-      "pop": 9.6392,
+      "pop": 7.7408,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/2cSPPspfRkZncs0Oo9b8Ej5nrYS.jpg",
       "posterV": 2,
@@ -22922,7 +22920,7 @@
       ],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1792611025141,
+      "updatedAt": 1792700809254,
       "videos": [
         {
           "key": "v_x2FUX7jVk",
@@ -22971,7 +22969,7 @@
         "Drame"
       ],
       "rating": "8.1",
-      "pop": 6.5801,
+      "pop": 5.7276,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/ysc63ghJEM5mXBd9qWEgB0ohWTy.jpg",
       "posterV": 2,
@@ -23168,7 +23166,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792611026151,
+      "updatedAt": 1792700810068,
       "videos": [
         {
           "key": "93CiNzRELLc",
@@ -23212,7 +23210,7 @@
         "Drame"
       ],
       "rating": "8.0",
-      "pop": 11.9383,
+      "pop": 12.1601,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/51x3GY7o07PqLgCN0UIJVHHzgCO.jpg",
       "posterV": 2,
@@ -23676,7 +23674,7 @@
       ],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1792611027210,
+      "updatedAt": 1792700810872,
       "videos": [
         {
           "key": "m6aJOU2iMwc",
@@ -23726,7 +23724,7 @@
         "Drame"
       ],
       "rating": "8.3",
-      "pop": 13.2918,
+      "pop": 13.4778,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/sOh7qrLixexhiWObAKSyh4mAlAR.jpg",
       "posterV": 2,
@@ -24265,7 +24263,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792611028203,
+      "updatedAt": 1792700811650,
       "videos": [
         {
           "key": "dBI_FXWoyII",
@@ -24304,12 +24302,14 @@
         "Di Mana Topeng Berakhir",
         "Onde A Máscara Termina",
         "가금채",
+        "A Noiva da Presilha Dourada",
         "Sous le masque",
         "Където маската пада",
         "嫁金釵",
         "زفاف الدبوس الذهبي",
         "Где маске престају",
         "Kde končí maska",
+        "Zamiana z dziedziczką",
         "Jia Jin Chai",
         "Женитьба на золотой шпильке",
         "Maske Düştüğünde",
@@ -24321,8 +24321,8 @@
       "genres": [
         "Drame"
       ],
-      "rating": "9.0",
-      "pop": 70.4477,
+      "rating": "7.2",
+      "pop": 94.4177,
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/original/6Pw78I4inl8CESM4GZMyQTGobph.jpg",
       "posterV": 2,
@@ -24543,8 +24543,8 @@
             {
               "number": 15,
               "name": "Épisode 15",
-              "overview": "",
-              "air_date": "",
+              "overview": "Le faux témoignage et les fausses reliques de Jundai montent la cour impériale contre Wei Rao, la laissant vulnérable quand Lu Zhuo est contraint de partir.",
+              "air_date": "2026-10-22",
               "sources": [
                 {
                   "name": "VIDMOLY",
@@ -24558,7 +24558,7 @@
               "number": 16,
               "name": "Épisode 16",
               "overview": "",
-              "air_date": "",
+              "air_date": "2026-10-23",
               "sources": [],
               "downloads": []
             },
@@ -24566,7 +24566,7 @@
               "number": 17,
               "name": "Épisode 17",
               "overview": "",
-              "air_date": "",
+              "air_date": "2026-10-24",
               "sources": [],
               "downloads": []
             },
@@ -24574,7 +24574,7 @@
               "number": 18,
               "name": "Épisode 18",
               "overview": "",
-              "air_date": "",
+              "air_date": "2026-10-25",
               "sources": [],
               "downloads": []
             },
@@ -24582,7 +24582,7 @@
               "number": 19,
               "name": "Épisode 19",
               "overview": "",
-              "air_date": "",
+              "air_date": "2026-10-26",
               "sources": [],
               "downloads": []
             },
@@ -24590,7 +24590,7 @@
               "number": 20,
               "name": "Épisode 20",
               "overview": "",
-              "air_date": "",
+              "air_date": "2026-10-27",
               "sources": [],
               "downloads": []
             },
@@ -24598,7 +24598,7 @@
               "number": 21,
               "name": "Épisode 21",
               "overview": "",
-              "air_date": "",
+              "air_date": "2026-10-28",
               "sources": [],
               "downloads": []
             },
@@ -24685,7 +24685,7 @@
       ],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1792679781808,
+      "updatedAt": 1792700812364,
       "trend": 90,
       "videos": [
         {
@@ -24740,7 +24740,7 @@
         "Drame"
       ],
       "rating": "8.0",
-      "pop": 14.6342,
+      "pop": 15.3587,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/bD3ZosBZYfswsSFQs1kkHELJDF7.jpg",
       "posterV": 2,
@@ -25326,7 +25326,7 @@
       ],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1792611030180,
+      "updatedAt": 1792700813184,
       "videos": [
         {
           "key": "Ce9zR79lf94",
@@ -25390,8 +25390,8 @@
         "Crime",
         "Action & Adventure"
       ],
-      "rating": "5.6",
-      "pop": 58.7374,
+      "rating": "7.2",
+      "pop": 84.9593,
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/w500/kSAXIAovLC4z7Wp2Hy8oqLmpkox.jpg",
       "posterV": 2,
@@ -25641,7 +25641,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792698353629,
+      "updatedAt": 1792700813899,
       "trend": 77,
       "videos": [
         {
@@ -25693,7 +25693,7 @@
         "Drame"
       ],
       "rating": "8.5",
-      "pop": 23.6057,
+      "pop": 23.9683,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/8QybFgm5jzNoJPjwWYW1r1ZBdOb.jpg",
       "posterV": 2,
@@ -26230,7 +26230,7 @@
       ],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1792611032162,
+      "updatedAt": 1792700814613,
       "videos": [
         {
           "key": "AoM_Qz9I-QE",
@@ -26280,7 +26280,7 @@
         "Science-Fiction & Fantastique"
       ],
       "rating": "8.2",
-      "pop": 8.3588,
+      "pop": 9.6373,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/vM1LMQoKTtKGZ0RtT7KviIDGtkk.jpg",
       "posterV": 2,
@@ -26857,7 +26857,7 @@
       ],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1792611033187,
+      "updatedAt": 1792700815471,
       "videos": [
         {
           "key": "V8dN-148qls",
@@ -26903,7 +26903,7 @@
         "Drame"
       ],
       "rating": "8.8",
-      "pop": 12.9833,
+      "pop": 13.9805,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/x7ENbberEtM1sOrTJbfK8RubvB.jpg",
       "posterV": 2,
@@ -27475,7 +27475,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792611034121,
+      "updatedAt": 1792700816205,
       "videos": [
         {
           "key": "4xUpx0B012E",
@@ -27524,7 +27524,7 @@
         "Drame"
       ],
       "rating": "7.6",
-      "pop": 11.0147,
+      "pop": 9.7698,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/oRGXEzC98Xna3Cnl4CnDEw6OLYB.jpg",
       "posterV": 2,
@@ -28049,7 +28049,7 @@
       ],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1792673179590,
+      "updatedAt": 1792700816916,
       "videos": [
         {
           "key": "Z3WCk7AHBzk",
@@ -28090,7 +28090,7 @@
         "Drame"
       ],
       "rating": "8",
-      "pop": 2.1631,
+      "pop": 2.5939,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/9QeX8kaPvQw6aIDqRQqlX1iNST5.jpg",
       "posterV": 2,
@@ -28474,7 +28474,7 @@
       ],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1792611394033
+      "updatedAt": 1792700817720
     },
     {
       "id": "270420",
@@ -28521,7 +28521,7 @@
         "Drame"
       ],
       "rating": "8.0",
-      "pop": 9.7575,
+      "pop": 10.2179,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/bSX49M4tjDsnC8dOVQxt1sLgH6z.jpg",
       "posterV": 2,
@@ -28978,7 +28978,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792672989207
+      "updatedAt": 1792700818447
     },
     {
       "id": "229891",
@@ -29023,8 +29023,8 @@
         "[이사랑 통역되나요？]",
         "Чи можна перекласти цю любов?",
         "Can You Interpret This Love?",
-        "Can Love Be Interpreted?",
         "Can This Love Be Interpreted?",
+        "Can Love Be Interpreted?",
         "Can This Love Be Translated",
         "이 사랑 통역 되나요?"
       ],
@@ -29035,7 +29035,7 @@
         "Comédie"
       ],
       "rating": "8.4",
-      "pop": 16.0053,
+      "pop": 17.3983,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/3ipCrnOCifJm9xeme8DzoMgmIND.jpg",
       "posterV": 2,
@@ -29475,7 +29475,7 @@
         "VF"
       ],
       "downloads": [],
-      "updatedAt": 1792672949881,
+      "updatedAt": 1792700819162,
       "posterCustom": true
     },
     {
@@ -29523,7 +29523,7 @@
         "Crime"
       ],
       "rating": "8.5",
-      "pop": 37.7385,
+      "pop": 36.3358,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/uSQzD7TXsL96J5ggDrJFdUs8uXU.jpg",
       "posterV": 2,
@@ -30017,7 +30017,7 @@
         "VF"
       ],
       "downloads": [],
-      "updatedAt": 1792673151471
+      "updatedAt": 1792700819887
     },
     {
       "id": "220074",
@@ -30556,7 +30556,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792678497897
+      "updatedAt": 1792700820805
     },
     {
       "id": "110356",
@@ -30868,7 +30868,7 @@
         "VF"
       ],
       "downloads": [],
-      "updatedAt": 1792700683795
+      "updatedAt": 1792700821236
     }
   ],
   "deletedLinks": [
@@ -31238,6 +31238,15 @@
     "at": 1792697940038
   },
   "journal": [
+    {
+      "k": "mvjzs6lq96ek8",
+      "t": 1792700821358,
+      "b": "head",
+      "a": "tmdb",
+      "i": "",
+      "n": "Toutes les fiches",
+      "d": "91 fiches"
+    },
     {
       "k": "mvjzia0k400hg",
       "t": 1792700359220,
