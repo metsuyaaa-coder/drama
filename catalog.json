@@ -30556,6 +30556,238 @@
       ],
       "downloads": [],
       "updatedAt": 1792678497897
+    },
+    {
+      "id": "110356",
+      "type": "tv",
+      "name": "My Name",
+      "original_name": "마이 네임",
+      "origin_country": [
+        "KR"
+      ],
+      "networks": [
+        "Netflix"
+      ],
+      "original_language": "ko",
+      "aka": [
+        "마이 네임",
+        "My Name",
+        "Во имя мести",
+        "Mi nombre",
+        "МОЄ ІМ'Я",
+        "以吾之名",
+        "Modrá až na kost",
+        "נקמה סמויה",
+        "A bosszú nevében",
+        "Mon nom",
+        "هذا اسمي",
+        "Numele meu",
+        "Το Όνομά μου",
+        "マイネーム: 偽りと復讐",
+        "Менің атым",
+        "Моето име",
+        "我的名字",
+        "吾之名",
+        "マイネーム : 偽りと復讐",
+        "マイネーム 偽りと復讐",
+        "Maineim",
+        "Undercover",
+        "มายเนม"
+      ],
+      "year": "2021",
+      "overview": "Jiwoo se rapproche d'un cartel de la drogue et intègre la police afin d'enquêter sur la mort de son père. Sa quête de vengeance sera jalonnée de douloureuses vérités.",
+      "genres": [
+        "Crime",
+        "Drame",
+        "Mystère"
+      ],
+      "rating": "8.2",
+      "pop": 11.9586,
+      "status": "Ended",
+      "poster": "https://image.tmdb.org/t/p/w500/gHozOomiA24DvlgNfjkYCB5NBiO.jpg",
+      "posterV": 2,
+      "backdrop": "https://image.tmdb.org/t/p/original/fCEKeONLr0tuWV5hT0iHeiRjYM4.jpg",
+      "videos": [
+        {
+          "key": "q7i7XY3VE20",
+          "name": "마이 네임 | 공식 예고편 | 넷플릭스",
+          "type": "Trailer",
+          "lab": "Original"
+        },
+        {
+          "key": "KFMYo3xax2A",
+          "name": "Official Teaser [Subtitled]",
+          "type": "Trailer",
+          "lab": "Anglais"
+        },
+        {
+          "key": "j8ZmxZiLtG8",
+          "name": "My Name - Bande Annonce [VF]",
+          "type": "Trailer",
+          "lab": "Français"
+        }
+      ],
+      "cast": [
+        {
+          "name": "Han So-hee",
+          "character": "Yoon Ji-woo / Song Ji-woo / Oh Hye-jin",
+          "id": 2112859
+        },
+        {
+          "name": "Park Hee-soon",
+          "character": "Choi Mu-jin",
+          "id": 93999
+        },
+        {
+          "name": "Ahn Bo-hyun",
+          "character": "Jeon Pil-do",
+          "id": 1591491
+        },
+        {
+          "name": "Kim Sang-ho",
+          "character": "Cha Gi-ho",
+          "id": 123820
+        },
+        {
+          "name": "Lee Hak-ju",
+          "character": "Jung Tae-ju",
+          "id": 1615316
+        },
+        {
+          "name": "Chang Ryul",
+          "character": "Do Gang-jae",
+          "id": 3003834
+        }
+      ],
+      "seasons": [
+        {
+          "number": 1,
+          "name": "Saison 1",
+          "episodes": [
+            {
+              "number": 1,
+              "name": "Épisode 1",
+              "overview": "Le jour de son anniversaire, Jiwoo Yoon assiste à la mort atroce de son père. Prête à tout pour se venger, la jeune femme se lance à la recherche de l'assassin.",
+              "air_date": "2021-10-15",
+              "sources": [
+                {
+                  "name": "EMBEDORIGIN",
+                  "url": "https://embedorigin.cc/e/kf8gjpnk2vnm",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 2,
+              "name": "Épisode 2",
+              "overview": "Mujin Choi inflige une punition à Gangjae Do. Jiwoo intègre les forces de police sous couverture et change radicalement d'identité.",
+              "air_date": "2021-10-15",
+              "sources": [
+                {
+                  "name": "EMBEDORIGIN",
+                  "url": "https://embedorigin.cc/e/b2m812am8wu4",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 3,
+              "name": "Épisode 3",
+              "overview": "Durant la traque d'une cible imprévue avec son équipe, Jiwoo doit faire preuve de sang-froid. Un nouveau réseau de drogue et son chef menacent l'empire de Mujin.",
+              "air_date": "2021-10-15",
+              "sources": [
+                {
+                  "name": "EMBEDORIGIN",
+                  "url": "https://embedorigin.cc/e/ub202f3ld1pz",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 4,
+              "name": "Épisode 4",
+              "overview": "Pour Giho Cha, la déclaration de guerre de Gangjae contre Mujin vient à point nommé. Pildo Jeon suspecte Jiwoo de manigancer quelque chose et décide de la suivre.",
+              "air_date": "2021-10-15",
+              "sources": [
+                {
+                  "name": "EMBEDORIGIN",
+                  "url": "https://embedorigin.cc/e/tctv9brregj7",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 5,
+              "name": "Épisode 5",
+              "overview": "Jiwoo et Pildo échappent au pire de justesse, reportant l'attention de la police sur Gangjae. La présence d'un visage familier au commissariat déstabilise Jiwoo.",
+              "air_date": "2021-10-15",
+              "sources": [
+                {
+                  "name": "EMBEDORIGIN",
+                  "url": "https://embedorigin.cc/e/qql3g8aco7bx",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 6,
+              "name": "Épisode 6",
+              "overview": "Jiwoo reçoit par courrier une photo qui la bouleverse. Mujin met tout en œuvre pour protéger ses intérêts.",
+              "air_date": "2021-10-15",
+              "sources": [
+                {
+                  "name": "EMBEDORIGIN",
+                  "url": "https://embedorigin.cc/e/jtpvoqhyc195",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 7,
+              "name": "Épisode 7",
+              "overview": "Jiwoo est victime d'un guet-apens. Mujin se soumet à un interrogatoire. Pildo met la main sur des enregistrements compromettants.",
+              "air_date": "2021-10-15",
+              "sources": [
+                {
+                  "name": "EMBEDORIGIN",
+                  "url": "https://embedorigin.cc/e/99drzhie8a1d",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 8,
+              "name": "Épisode 8",
+              "overview": "Pour tenter de raisonner Jiwoo, assoiffée de vengeance, Pildo décide d'employer la force. Mujin réagit à une nouvelle trahison.",
+              "air_date": "2021-10-15",
+              "sources": [
+                {
+                  "name": "EMBEDORIGIN",
+                  "url": "https://embedorigin.cc/e/th59y31w8ywe",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            }
+          ],
+          "downloads": []
+        }
+      ],
+      "sources": [],
+      "addedAt": 1792698411233,
+      "langs": [
+        "VOSTFR",
+        "VF"
+      ],
+      "downloads": [],
+      "updatedAt": 1792698417535
     }
   ],
   "deletedLinks": [
@@ -30924,6 +31156,15 @@
     "at": 1792697940038
   },
   "journal": [
+    {
+      "k": "mvjycnt5qvyj0",
+      "t": 1792698417545,
+      "b": "head",
+      "a": "add",
+      "i": "110356",
+      "n": "My Name",
+      "d": ""
+    },
     {
       "k": "mvjybahwrlmhs",
       "t": 1792698353636,
