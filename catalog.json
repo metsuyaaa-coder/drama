@@ -8431,7 +8431,13 @@
               "name": "Épisode 5",
               "overview": "",
               "air_date": "2026-10-22",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-mu3t2rnotk0z.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -8439,7 +8445,13 @@
               "name": "Épisode 6",
               "overview": "",
               "air_date": "2026-10-22",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-lpcadma7on3n.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -8475,7 +8487,14 @@
               "downloads": []
             }
           ],
-          "downloads": []
+          "downloads": [
+            {
+              "name": "DLSURF",
+              "url": "https://dlsurf.com/bundle/make-me-tingle-vostfr",
+              "quality": "1080p (H.264)",
+              "by": "614d778ed0"
+            }
+          ]
         }
       ],
       "sources": [],
@@ -8484,7 +8503,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792708258450,
+      "updatedAt": 1792712357207,
       "trend": 59,
       "networks": [
         "TVING"
@@ -31073,6 +31092,15 @@
     "at": 1792697940038
   },
   "journal": [
+    {
+      "k": "mvk6nfqcqat9u",
+      "t": 1792712357220,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "311648",
+      "n": "Make Me Tingle",
+      "d": "sources 16 → 18, téléchargements 4 → 5"
+    },
     {
       "k": "mvk6ifgil9hl2",
       "t": 1792712123586,
