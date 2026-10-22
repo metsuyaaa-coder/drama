@@ -21072,7 +21072,14 @@
               "downloads": []
             }
           ],
-          "downloads": []
+          "downloads": [
+            {
+              "name": "DLSURF",
+              "url": "https://dlsurf.com/bundle/kidnap-game-vostfr",
+              "quality": "1080p (H.264)",
+              "by": "614d778ed0"
+            }
+          ]
         }
       ],
       "sources": [],
@@ -21081,7 +21088,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792706999547,
+      "updatedAt": 1792707591466,
       "networks": [
         "Fuji TV",
         "Channel A"
@@ -31073,7 +31080,7 @@
   "journal": [
     {
       "k": "mvk3elw1b7zc2",
-      "t": 1792706999559,
+      "t": 1792707591512,
       "b": "614d778ed0",
       "a": "edit",
       "i": "320513",
