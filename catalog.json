@@ -25469,11 +25469,6 @@
               "air_date": "2026-10-19",
               "sources": [
                 {
-                  "name": "VIDARA",
-                  "url": "https://vidara.to/e/SMzDM5xzhlDQv",
-                  "by": "head"
-                },
-                {
                   "name": "PLAYMATE",
                   "url": "https://playmate.to/embed/CY9OAa71cL4ly",
                   "by": "head"
@@ -25487,6 +25482,11 @@
                   "name": "STREAMTAPE",
                   "url": "https://streamtape.com/e/R9BYKYPD0pIdea7/",
                   "by": "614d778ed0"
+                },
+                {
+                  "name": "UQLOAD",
+                  "url": "https://uqload.vc/embed-3ozq4tfc8gwh.html",
+                  "by": "head"
                 }
               ],
               "downloads": [
@@ -25640,7 +25640,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792611031129,
+      "updatedAt": 1792698353629,
       "trend": 77,
       "videos": [
         {
@@ -30559,6 +30559,7 @@
     }
   ],
   "deletedLinks": [
+    "303745\thttps://vidara.to/e/SMzDM5xzhlDQv",
     "292121\thttps://dlsurf.com/bundle/the-scarecrow-vostfr1080p",
     "220074\thttps://dlsurf.com/bundle/flex-x-cop-vostfr",
     "292121\thttps://dlsurf.com/l/bumz38l",
@@ -30923,6 +30924,15 @@
     "at": 1792697940038
   },
   "journal": [
+    {
+      "k": "mvjybahwrlmhs",
+      "t": 1792698353636,
+      "b": "head",
+      "a": "edit",
+      "i": "303745",
+      "n": "Love in Disguise",
+      "d": ""
+    },
     {
       "k": "mvjvq7uvhvhaw",
       "t": 1792694011207,
