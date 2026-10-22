@@ -20685,7 +20685,13 @@
               "downloads": []
             }
           ],
-          "downloads": []
+          "downloads": [
+            {
+              "name": "DLSURF",
+              "url": "https://dlsurf.com/bundle/kidnap-game-vostfr",
+              "by": "614d778ed0"
+            }
+          ]
         }
       ],
       "sources": [],
@@ -20694,7 +20700,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792677063185,
+      "updatedAt": 1792677142066,
       "networks": [
         "Fuji TV",
         "Channel A"
@@ -30387,7 +30393,6 @@
     }
   ],
   "deletedLinks": [
-    "320513\thttps://dlsurf.com/bundle/kidnap-game-vostfr",
     "307106\thttps://dlsurf.com/bundle/between-steps-2026-vostfr",
     "220074\thttps://dlsurf.com/bundle/flex-x-cop-vostfr",
     "292121\thttps://dlsurf.com/bundle/c56025a385ad",
@@ -30709,12 +30714,12 @@
   "journal": [
     {
       "k": "mvjlmypane3jv",
-      "t": 1792677063214,
+      "t": 1792677142076,
       "b": "614d778ed0",
       "a": "edit",
       "i": "320513",
       "n": "kiDnap GAME",
-      "d": "téléchargements 1 → 6"
+      "d": "téléchargements 6 → 7"
     },
     {
       "k": "mvjlms76z591e",
