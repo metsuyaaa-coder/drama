@@ -37651,7 +37651,7 @@
         "近邻"
       ],
       "year": "2026",
-      "overview": "",
+      "overview": "Au début des années 90, dans la petite ville de Qingwu au nord, les familles Qi et Cao ont pour seul point commun d'être voisins et d'avoir vu leurs plus jeunes enfants, Qi Shi et Cao Xin naître exactement le même jour.\nCao Dong Fang, veuf depuis la mort de son épouse, élève seul ses enfants avec l'aide de son père.\nQuand à Huo Qing Lian et sa femme Qi Ai Hua, tous les deux tiennent beaucoup l'un à l'autre mais ne cessent de se chamailler.",
       "genres": [
         "Familial",
         "Drame"
@@ -38092,10 +38092,12 @@
       ],
       "sources": [],
       "addedAt": 1792793511824,
-      "langs": [],
+      "langs": [
+        "VOSTFR"
+      ],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1792794078938
+      "updatedAt": 1792794906886
     },
     {
       "id": "289116",
@@ -39012,6 +39014,15 @@
     "at": 1792697940038
   },
   "journal": [
+    {
+      "k": "mvljsrhaix9ht",
+      "t": 1792794906910,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "286686",
+      "n": "In My Prime",
+      "d": ""
+    },
     {
       "k": "mvljrgcf36dhg",
       "t": 1792794845823,
