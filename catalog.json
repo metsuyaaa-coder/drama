@@ -20966,11 +20966,19 @@
         "Mystère"
       ],
       "rating": "8.5",
-      "pop": 15.4798,
+      "pop": 12.8757,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/t69nmUrT8G4HQ452nLDzkZujEDj.jpg",
       "posterV": 2,
       "backdrop": "https://image.tmdb.org/t/p/original/q48icceyDIuAZC9wL66ZEQF03oj.jpg",
+      "videos": [
+        {
+          "key": "ncCuL--1_PI",
+          "name": "Light the Dark | A Family Promise Faces A Storm Of Fate, But Their Hope Never Fa",
+          "type": "Trailer",
+          "lab": "Anglais"
+        }
+      ],
       "cast": [
         {
           "name": "蒋欣",
@@ -21171,16 +21179,8 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792700803112,
       "posterCustom": true,
-      "videos": [
-        {
-          "key": "ncCuL--1_PI",
-          "name": "Light the Dark | A Family Promise Faces A Storm Of Fate, But Their Hope Never Fa",
-          "type": "Trailer",
-          "lab": "Anglais"
-        }
-      ],
+      "updatedAt": 1792766174276,
       "trend": 0
     },
     {
@@ -34047,6 +34047,15 @@
     "at": 1792697940038
   },
   "journal": [
+    {
+      "k": "mvl2ox8uiz85g",
+      "t": 1792766174286,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "288328",
+      "n": "Light the Dark",
+      "d": ""
+    },
     {
       "k": "mvl2lzapwuuf7",
       "t": 1792766036977,
