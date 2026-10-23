@@ -30736,6 +30736,450 @@
       "downloads": [],
       "updatedAt": 1792712770384,
       "posterCustom": true
+    },
+    {
+      "id": "289271",
+      "type": "tv",
+      "name": "Ashes to Crown",
+      "original_name": "翘楚",
+      "origin_country": [
+        "CN"
+      ],
+      "networks": [
+        "Youku"
+      ],
+      "original_language": "zh",
+      "aka": [
+        "Ashes to Crown",
+        "翘楚",
+        "翹楚",
+        "Kiều Sở",
+        "พลิกชะตาเหนือฟ้า",
+        "Bangkit dari Kehancuran",
+        "De las sombras a la corona",
+        "Das Cinzas à Coroa",
+        "교초",
+        "Yang Terunggul",
+        "De l'ombre à la puissance",
+        "De las cenizas a la corona",
+        "Das Cinzas ao Trono",
+        "Выдающийся талант",
+        "Qiao Chu",
+        "楚后",
+        "Императрица Чу"
+      ],
+      "year": "2026",
+      "overview": "Chu Zhao, la fille du général, refuse d'accepter son destin, celui d'un simple pion destiné à être sacrifié pour permettre l'ascension au pouvoir de Xiao Xun. Prenant les choses en main, elle se fraye un chemin à coups d'épée avec l'aide de Xie Yanlai, protégeant le petit-fils de l'empereur alors qu'il se rend en audience auprès de ce dernier. Au cours d'une confrontation tendue à la cour impériale, elle aide le jeune prince à s'assurer le trône, coupant ainsi la route à Xiao Xun vers le pouvoir. Mais un nouvel empereur s'accompagne de nouvelles crises. Le royaume est déchiré par des conflits internes et des menaces étrangères. Aux côtés de Xie Yanlai, Chu Zhao navigue dans les eaux tumultueuses de la cour, mène les troupes au combat et, finalement, réécrit son propre destin, épargnant au peuple de l’État de Chu les ravages de la guerre.",
+      "genres": [
+        "Drame"
+      ],
+      "rating": "7.6",
+      "pop": 9.6606,
+      "status": "Ended",
+      "poster": "https://image.tmdb.org/t/p/w500/avupwPQBoIp8ahCaIYIQfT1N6ps.jpg",
+      "posterV": 2,
+      "backdrop": "https://image.tmdb.org/t/p/original/6CgpC5cS8jvkXgkI0pRoj31nHf6.jpg",
+      "videos": [
+        {
+          "key": "0PvM9X6SKKg",
+          "name": "预告",
+          "type": "Trailer",
+          "lab": "Original"
+        },
+        {
+          "key": "P2BMhVUhSh4",
+          "name": "【Official Trailer】One thought is enough to rewrite fate, one moment takes to ste",
+          "type": "Trailer",
+          "lab": "Anglais"
+        }
+      ],
+      "cast": [
+        {
+          "name": "Chen Duling",
+          "character": "Chu Zhao",
+          "id": 1476992
+        },
+        {
+          "name": "周翊然",
+          "character": "Xie Yanlai",
+          "id": 3067811
+        },
+        {
+          "name": "唐晓天",
+          "character": "Xie Yanfang",
+          "id": 2312401
+        },
+        {
+          "name": "王瑞昌",
+          "character": "Xiao Xun",
+          "id": 1973972
+        },
+        {
+          "name": "吴施乐",
+          "character": "Chu Tang",
+          "id": 4356701
+        },
+        {
+          "name": "高茂桐",
+          "character": "Deng Yi",
+          "id": 3094351
+        },
+        {
+          "name": "吴佳峻",
+          "character": "Xiao Ayun",
+          "id": 5739382
+        }
+      ],
+      "seasons": [
+        {
+          "number": 1,
+          "name": "Saison 1",
+          "episodes": [
+            {
+              "number": 1,
+              "name": "Épisode 1",
+              "overview": "Ruthless Emperor Xiao Xun wipes out the Chu clan and strangles his empress. Mysteriously reborn on the eve of their wedding, Chu Zhao vows revenge.",
+              "air_date": "2026-06-02",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-7wm8b1lx630p.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 2,
+              "name": "Épisode 2",
+              "overview": "Xiao Xun launches his rebellion early, but Chu Zhao fights her way into the palace to thwart his ascension and reshape the empire's fate.",
+              "air_date": "2026-06-02",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-44s4e4oheh93.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 3,
+              "name": "Épisode 3",
+              "overview": "Now regent, Chu Zhao appoints her trusted ally to lead the Imperial Guard. But as tensions mount, Xiao Xun lays a trap — and she's ready for it.",
+              "air_date": "2026-06-02",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-9kw5s43440k2.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 4,
+              "name": "Épisode 4",
+              "overview": "Xiao Xun accuses Chu Zhao of poisoning the young emperor, but she turns his plot against him — until an assassin strikes at court.",
+              "air_date": "2026-06-02",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-aj7e81dqwld7.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 5,
+              "name": "Épisode 5",
+              "overview": "Chu Zhao sets a trap to frame Xiao Xun as a defector, but Deng Yi aids his escape — putting Xie Yanlai in deadly peril along the way.",
+              "air_date": "2026-06-03",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-nxw165hcuocl.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 6,
+              "name": "Épisode 6",
+              "overview": "Xie Yanfang flexes his power by engineering an invasion on the frontier. With her father gravely ill, Chu Zhao defies the court to ride to his aid.",
+              "air_date": "2026-06-03",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-c5kdp0dk5dad.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 7,
+              "name": "Épisode 7",
+              "overview": "Chu Zhao disguises herself among dispatch riders to evade Xiao Xun's ambush. Meanwhile, Yanlai risks everything to follow her to the frontier.",
+              "air_date": "2026-06-04",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-8nlwxoxolsli.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 8,
+              "name": "Épisode 8",
+              "overview": "Chu Zhao and Yanlai take shelter at Cangmu Stronghold, where she reveals her rebirth and past life to him. He vows to defy fate by her side.",
+              "air_date": "2026-06-05",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-oemxv5fvvb5a.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 9,
+              "name": "Épisode 9",
+              "overview": "Chu Zhao sets up an ambush for Tie Ying at the Cangmu stronghold. Later, Xiao Xun colludes with the Northern Desert to launch an attack.",
+              "air_date": "2026-06-05",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-zwj76tqf5p1t.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 10,
+              "name": "Épisode 10",
+              "overview": "With Wangcheng under siege, Chu Zhao devises a daring chain of stratagems to break free. Far away, her ailing father receives word of her battle.",
+              "air_date": "2026-06-06",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-kdci8sgyj3r1.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 11,
+              "name": "Épisode 11",
+              "overview": "Chu Zhao reaches her gravely ill father, but a shocking discovery follows. Elsewhere, Deng Yi falls into Yanfang's devious trap.",
+              "air_date": "2026-06-07",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-nckbay1j6ban.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 12,
+              "name": "Épisode 12",
+              "overview": "Chu Zhao learns a shattering truth about her birth mother from Chu Ling and that Yanlai is partially responsible for her father's chronic illness.",
+              "air_date": "2026-06-08",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-qgz768u74yhm.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 13,
+              "name": "Épisode 13",
+              "overview": "Chu Zhao buries her grief to fight alongside Yanlai against the Northern Desert — but victory demands a staggering price from those she loves most.",
+              "air_date": "2026-06-09",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-9102gxdvif50.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 14,
+              "name": "Épisode 14",
+              "overview": "Xiao Xun intercepts Chu Zhao's victory dispatches and marches on the capital. As rivals scheme for power, he burns the imperial edict and openly rebels.",
+              "air_date": "2026-06-10",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-8xlfdfrfkcq1.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 15,
+              "name": "Épisode 15",
+              "overview": "Chu Zhao and Yanlai use the Longwei Army to force the Lord of Xiaonan to withdraw. Back in the capital, Deng Yi and Xie Yanfang's rivalry escalates.",
+              "air_date": "2026-06-11",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-2l9c3n0ndcxu.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 16,
+              "name": "Épisode 16",
+              "overview": "Chu Tang devises a plan to capture Xiao Xun, giving Chu Zhao leverage to force a surrender. Deng Yi issues an amnesty to end the conflict.",
+              "air_date": "2026-06-12",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-qota7wdajfiz.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 17,
+              "name": "Épisode 17",
+              "overview": "After exchanging a lifelong vow, Chu Zhao and Yanlai part ways. She returns to the capital to court allies and secure power — but Yanfang is watching.",
+              "air_date": "2026-06-13",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-g6pon83pb470.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 18,
+              "name": "Épisode 18",
+              "overview": "When Deng Yi blocks Chu Zhao's bid to give Yanlai command of the frontier troops, Yanlai stakes his life on a vow to slay the Northern Desert King.",
+              "air_date": "2026-06-14",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-sz5paxm71x6h.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 19,
+              "name": "Épisode 19",
+              "overview": "Yanlai refuses to enshrine his mother in the Xie ancestral hall and opens up to Chu Zhao. At court, Chu Zhao rattles Xiao Xun with a fire oil inquiry.",
+              "air_date": "2026-06-15",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-ncj6km7aibs8.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 20,
+              "name": "Épisode 20",
+              "overview": "Chu Zhao cracks down on corruption in Jingzhou as Yanfang feigns illness to mask a deadly move. An ill omen for Yanlai leaves Chu Zhao on edge.",
+              "air_date": "2026-06-16",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-9vcy4lhr3915.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 21,
+              "name": "Épisode 21",
+              "overview": "Yanfang lets Northern Desert forces ambush Zhong Changrong, but Yanlai rides to the rescue — then launches a daring assault on the desert royal court.",
+              "air_date": "2026-06-17",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-i581o82r5tvo.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 22,
+              "name": "Épisode 22",
+              "overview": "Deng Yi fakes his death and flees with Xiao Xun, who poisons his father and raises an army. As the war escalates, Chu Zhao rides out to fight — alone.",
+              "air_date": "2026-06-17",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-t3mbqsymxrt8.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 23,
+              "name": "Épisode 23",
+              "overview": "Chu Zhao storms Xiaonan and uncovers the true mastermind behind the upheaval — but a power grab leaves her imprisoned. Then the impossible happens.",
+              "air_date": "2026-06-17",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-76u4m5qz2nzw.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 24,
+              "name": "Épisode 24",
+              "overview": "Chu Zhao feigns submission and secretly mentors the young emperor for one last gambit. Everything she's fought for comes down to this.",
+              "air_date": "2026-06-17",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-bh4795330ob0.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            }
+          ],
+          "downloads": []
+        }
+      ],
+      "sources": [],
+      "addedAt": 1792714570870,
+      "langs": [],
+      "downloads": [],
+      "updatedAt": 1792715174217
     }
   ],
   "deletedLinks": [
@@ -31100,6 +31544,15 @@
     "at": 1792697940038
   },
   "journal": [
+    {
+      "k": "mvk8btd99f2sm",
+      "t": 1792715174253,
+      "b": "614d778ed0",
+      "a": "add",
+      "i": "289271",
+      "n": "Ashes to Crown",
+      "d": ""
+    },
     {
       "k": "mvk737cic9tct",
       "t": 1792713092850,
