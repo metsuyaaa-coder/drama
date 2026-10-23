@@ -32759,10 +32759,12 @@
       ],
       "sources": [],
       "addedAt": 1792717466240,
-      "langs": [],
+      "langs": [
+        "VOSTFR"
+      ],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1792717933549
+      "updatedAt": 1792722322775
     }
   ],
   "deletedLinks": [
@@ -33127,6 +33129,15 @@
     "at": 1792697940038
   },
   "journal": [
+    {
+      "k": "mvkcl18ekh3lh",
+      "t": 1792722322814,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "281231",
+      "n": "The Epoch of Miyu",
+      "d": ""
+    },
     {
       "k": "mvkckkex37g7d",
       "t": 1792722301017,
