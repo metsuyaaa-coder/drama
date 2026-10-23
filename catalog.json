@@ -2740,7 +2740,7 @@
         "들쥐"
       ],
       "year": "2026",
-      "overview": "Un écrivain reclus découvre à son réveil que son identité a été volée. Il doit alors s'allier avec un usurier impitoyable pour traquer le Rat, l'inconnu qui a saccagé sa vie.",
+      "overview": "Je Mun Jae mène une existence discrète, entièrement organisée autour de ses habitudes solitaires. Mais son quotidien bascule lorsqu'il se retrouve soudainement incapable de prouver qui il est. Son empreinte digitale n'est plus reconnue par son téléphone, tandis que la personne qui gérait ses affaires a mystérieusement disparu. En cherchant à comprendre ce qui lui arrive, il découvre avec stupeur qu'un individu surnommé le « Rat » s'est approprié son identité, sa fortune et jusqu'à son existence.\nBien décidé à récupérer ce qui lui appartient, Mun Jae se lance à la poursuite de cet usurpateur insaisissable. Sa quête le conduit jusqu'à No Ja, un usurier peu scrupuleux qui dirige également une agence de détectives privés. Celui-ci recherchait Mun Jae depuis trois ans pour récupérer une dette impayée et voit dans cette mystérieuse affaire une occasion de faire d'une pierre deux coups.\nRéunis par leurs intérêts respectifs, les deux hommes s'engagent alors dans une enquête qui les mènera sur les traces du « Rat ». Pour Mun Jae, l'enjeu dépasse désormais la simple récupération de sa fortune : il s'agit de retrouver l'identité et la vie qui lui ont été volées.",
       "genres": [
         "Crime",
         "Drame",
@@ -2994,7 +2994,7 @@
       ],
       "original_language": "ko",
       "posterV": 2,
-      "updatedAt": 1792700743074,
+      "updatedAt": 1792767898613,
       "networks": [
         "Netflix"
       ],
@@ -34047,6 +34047,15 @@
     "at": 1792697940038
   },
   "journal": [
+    {
+      "k": "mvl3pvrae2g27",
+      "t": 1792767898630,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "290193",
+      "n": "Mousetrap",
+      "d": ""
+    },
     {
       "k": "mvl3onz14vkxj",
       "t": 1792767841885,
