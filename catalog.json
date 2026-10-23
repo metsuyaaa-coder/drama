@@ -14190,7 +14190,7 @@
         "로맨스의 절댓값"
       ],
       "year": "2026",
-      "overview": "La lycéenne Yeo Eui-ju écrit secrètement des romans sur Internet la nuit. Lorsque quatre charmants nouveaux professeurs arrivent, ils lui inspirent des histoires et bouleversent son école. Une romance pleine d'esprit sur les rêves d'adolescents, les moments maladroits et le passage à l'âge adulte.",
+      "overview": "Yeo Ui Ju est une lycéenne qui mène une double vie, élève ordinaire le jour et romancière la nuit. Elle écrit des romans d'amour mettant en scène de beaux professeurs comme personnages principaux et rencontre de manière inattendue quatre de ces professeurs séduisants dans sa vie réelle, finissant par avoir une vie scolaire tumultueuse.\n\nL'un des professeurs est Ga Wu Su, professeur de mathématiques génial avec 156 de QI et membre de Mensa qui sourit rarement. Il y a aussi No Da Ju, un professeur de japonais à la personnalité pétillante, Jeong Gi Jeon professeur d'éducation physique à la personnalité masculine, et enfin, Yun Dong Ju professeur de coréen, doux et attentionné",
       "genres": [
         "Drame",
         "Comédie"
@@ -14467,7 +14467,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792721614081,
+      "updatedAt": 1792768691641,
       "networks": [
         "Coupang Play"
       ],
@@ -34047,6 +34047,15 @@
     "at": 1792697940038
   },
   "journal": [
+    {
+      "k": "mvl46vnm78dj5",
+      "t": 1792768691650,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "314784",
+      "n": "Absolute Value of Romance",
+      "d": ""
+    },
     {
       "k": "mvl462zyw30ft",
       "t": 1792768654510,
