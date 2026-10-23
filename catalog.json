@@ -1509,7 +1509,7 @@
       "name": "Four Hands, Two Sonatas",
       "original_name": "포핸즈",
       "year": "2026",
-      "overview": "Quand deux jeunes pianistes issus de mondes radicalement opposés se rencontrent dans un prestigieux lycée spécialisé en musique, les mélodies de leurs vies s'accordent intimement.",
+      "overview": "Kang Bi O est un pianiste prodige d'un lycée d'élite spécialisé en musique. Brillant et discipliné, il voit ses certitudes vaciller lorsque Choi Jeong Yo, un autre génie du piano et rival revient dans le monde musical et déclenche une compétition acharnée. Hong Jae In est quant à elle une altiste dotée d'une oreille musicale exceptionnelle, et devient une alliée précieuse pour Bi O.\n\nEntre pression des concours, amitiés fragiles et sentiments naissants, les élèves devront apprendre à jouer à quatre mains pour pousser leurs limites, suivre leurs rêves et apprendre à grandir ensemble.\n\n",
       "genres": [
         "Drame"
       ],
@@ -1896,7 +1896,7 @@
       ],
       "original_language": "ko",
       "posterV": 2,
-      "updatedAt": 1792700740100,
+      "updatedAt": 1792767698034,
       "networks": [
         "tvN"
       ],
@@ -34047,6 +34047,15 @@
     "at": 1792697940038
   },
   "journal": [
+    {
+      "k": "mvl3lkznho9b5",
+      "t": 1792767698051,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "305644",
+      "n": "Four Hands, Two Sonatas",
+      "d": ""
+    },
     {
       "k": "mvl3iirl0ixr8",
       "t": 1792767555201,
