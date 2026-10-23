@@ -16979,7 +16979,7 @@
       "rating": "8.6",
       "pop": 12.8398,
       "status": "Ended",
-      "poster": "https://image.tmdb.org/t/p/original/c2jswCrMoqDEBEXwSAlrCWtXdfZ.jpg",
+      "poster": "https://image.tmdb.org/t/p/original/nXDJ4rlinP0WFPEN9sUXXImr56u.jpg",
       "posterV": 2,
       "backdrop": "https://image.tmdb.org/t/p/original/4ZXZi107TbfBJFGT4cnqbavQIoc.jpg",
       "cast": [
@@ -17407,7 +17407,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792700786082,
+      "updatedAt": 1792719084013,
       "networks": [
         "JTBC"
       ],
@@ -17424,7 +17424,8 @@
           "type": "Trailer",
           "lab": "Anglais"
         }
-      ]
+      ],
+      "posterCustom": true
     },
     {
       "id": "311844",
@@ -33097,6 +33098,15 @@
     "at": 1792697940038
   },
   "journal": [
+    {
+      "k": "mvkanm605bkeg",
+      "t": 1792719084024,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "289424",
+      "n": "We Are All Trying Here",
+      "d": "affiche"
+    },
     {
       "k": "mvkaf4n631wi7",
       "t": 1792718688066,
