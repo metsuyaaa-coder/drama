@@ -917,6 +917,8 @@
                 {
                   "name": "1FICHIER",
                   "url": "https://1fichier.com/?lrrk5j55drnbredahieo",
+                  "size": "2.2Go",
+                  "quality": "1080p (H.264)",
                   "by": "head"
                 }
               ]
@@ -947,7 +949,7 @@
                 {
                   "name": "1FICHIER",
                   "url": "https://1fichier.com/?bnyh4lyaug1g1auise4s",
-                  "size": "2.2Go",
+                  "size": "2.5Go",
                   "quality": "1080p (H.264)",
                   "by": "head"
                 }
@@ -1025,7 +1027,7 @@
       ],
       "original_language": "ko",
       "posterV": 2,
-      "updatedAt": 1792776375482,
+      "updatedAt": 1792776406865,
       "networks": [
         "SBS"
       ],
@@ -35801,7 +35803,7 @@
   "journal": [
     {
       "k": "mvl8jsndh4nmu",
-      "t": 1792776375489,
+      "t": 1792776406871,
       "b": "head",
       "a": "edit",
       "i": "293610",
