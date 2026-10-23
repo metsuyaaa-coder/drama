@@ -27343,7 +27343,7 @@
       "rating": "7.6",
       "pop": 9.7698,
       "status": "Ended",
-      "poster": "https://image.tmdb.org/t/p/original/oRGXEzC98Xna3Cnl4CnDEw6OLYB.jpg",
+      "poster": "https://image.tmdb.org/t/p/original/hW9WvgtXk9Bf58bB4TZ1Dy0WquB.jpg",
       "posterV": 2,
       "backdrop": "https://image.tmdb.org/t/p/original/tlAZ3g7EzHqWj0Yn6SXVAdFfAcE.jpg",
       "cast": [
@@ -27898,7 +27898,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792700816916,
+      "updatedAt": 1792717160708,
       "posterCustom": true,
       "videos": [
         {
@@ -32446,6 +32446,15 @@
     "at": 1792697940038
   },
   "journal": [
+    {
+      "k": "mvk9ie4qi2xe9",
+      "t": 1792717160714,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "251600",
+      "n": "The Eternal Fragrance",
+      "d": "affiche"
+    },
     {
       "k": "mvk93jp6zrl2w",
       "t": 1792716468090,
