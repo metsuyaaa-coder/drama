@@ -11679,7 +11679,7 @@
       "rating": "8.4",
       "pop": 12.7193,
       "status": "Ended",
-      "poster": "https://image.tmdb.org/t/p/w500/bcnneY1DWQzmwfvsuhGGnwv9KYD.jpg",
+      "poster": "https://image.tmdb.org/t/p/original/uPDaIn065n79UBLYr8zwnXis6n2.jpg",
       "posterV": 2,
       "backdrop": "https://image.tmdb.org/t/p/original/dL5mViE22ZHnhrUU9wlklzIU4Iy.jpg",
       "cast": [
@@ -11922,7 +11922,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792700766107,
+      "updatedAt": 1792719680515,
       "networks": [
         "SBS"
       ],
@@ -11939,7 +11939,8 @@
           "type": "Trailer",
           "lab": "Anglais"
         }
-      ]
+      ],
+      "posterCustom": true
     },
     {
       "id": "289763",
@@ -33102,6 +33103,15 @@
     "at": 1792697940038
   },
   "journal": [
+    {
+      "k": "mvkb0efpl3lex",
+      "t": 1792719680533,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "287011",
+      "n": "Sold Out on You",
+      "d": "affiche"
+    },
     {
       "k": "mvkaxoydy2ncb",
       "t": 1792719554197,
