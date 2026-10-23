@@ -391,7 +391,7 @@
       ],
       "downloads": [],
       "updatedAt": 1792713092838,
-      "trend": 46,
+      "trend": 63,
       "videos": [
         {
           "key": "OsF0AxLqBzY",
@@ -971,7 +971,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "trend": 0,
+      "trend": 67,
       "origin_country": [
         "KR"
       ],
@@ -1471,7 +1471,7 @@
         "Lootuse sadam",
         "호프"
       ],
-      "trend": 99,
+      "trend": 100,
       "downloads": [
         {
           "name": "1FICHIER",
@@ -7636,7 +7636,7 @@
       "networks": [
         "Nippon TV"
       ],
-      "trend": 58,
+      "trend": 0,
       "videos": [
         {
           "key": "801lPiNx5y4",
@@ -7799,7 +7799,7 @@
         }
       ],
       "updatedAt": 1792700754828,
-      "trend": 75,
+      "trend": 74,
       "posterCustom": true,
       "videos": [
         {
@@ -8170,7 +8170,7 @@
       "networks": [
         "ENA"
       ],
-      "trend": 51,
+      "trend": 0,
       "videos": [
         {
           "key": "4HsK_-QQE5Y",
@@ -8511,7 +8511,7 @@
       ],
       "downloads": [],
       "updatedAt": 1792712357207,
-      "trend": 59,
+      "trend": 44,
       "networks": [
         "TVING"
       ],
@@ -21142,7 +21142,7 @@
           "lab": "Anglais"
         }
       ],
-      "trend": 42
+      "trend": 53
     },
     {
       "id": "215072",
@@ -25460,7 +25460,7 @@
       ],
       "downloads": [],
       "updatedAt": 1792700813899,
-      "trend": 77,
+      "trend": 79,
       "videos": [
         {
           "key": "55ATD_SJ_Xw",
@@ -30776,7 +30776,7 @@
       "rating": "7.6",
       "pop": 9.6606,
       "status": "Ended",
-      "poster": "https://image.tmdb.org/t/p/w500/avupwPQBoIp8ahCaIYIQfT1N6ps.jpg",
+      "poster": "https://image.tmdb.org/t/p/original/6pC0XDwZtKAMrx68vKUkXcOs3gM.jpg",
       "posterV": 2,
       "backdrop": "https://image.tmdb.org/t/p/original/6CgpC5cS8jvkXgkI0pRoj31nHf6.jpg",
       "videos": [
@@ -31179,7 +31179,8 @@
       "addedAt": 1792714570870,
       "langs": [],
       "downloads": [],
-      "updatedAt": 1792715174217
+      "updatedAt": 1792715226866,
+      "posterCustom": true
     }
   ],
   "deletedLinks": [
@@ -31544,6 +31545,15 @@
     "at": 1792697940038
   },
   "journal": [
+    {
+      "k": "mvk8cxzca23j1",
+      "t": 1792715226888,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "289271",
+      "n": "Ashes to Crown",
+      "d": "affiche"
+    },
     {
       "k": "mvk8btd99f2sm",
       "t": 1792715174253,
