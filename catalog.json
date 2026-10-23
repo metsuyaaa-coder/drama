@@ -952,6 +952,13 @@
                   "size": "2.5Go",
                   "quality": "1080p (H.264)",
                   "by": "head"
+                },
+                {
+                  "name": "GOFILE",
+                  "url": "https://gofile.io/d/TDikYJyz",
+                  "size": "2.2Go",
+                  "quality": "1080p (H.264)",
+                  "by": "head"
                 }
               ]
             },
@@ -1027,7 +1034,7 @@
       ],
       "original_language": "ko",
       "posterV": 2,
-      "updatedAt": 1792776406865,
+      "updatedAt": 1792776442060,
       "networks": [
         "SBS"
       ],
@@ -35803,12 +35810,12 @@
   "journal": [
     {
       "k": "mvl8jsndh4nmu",
-      "t": 1792776406871,
+      "t": 1792776442069,
       "b": "head",
       "a": "edit",
       "i": "293610",
       "n": "Doctor X: Mafia in White",
-      "d": "téléchargements 4 → 5"
+      "d": "téléchargements 5 → 6"
     },
     {
       "k": "mvl810rch09v4",
