@@ -22819,7 +22819,7 @@
         "Labor Attorney No Moo-jin"
       ],
       "year": "2025",
-      "overview": "",
+      "overview": "No Mu jin est un avocat du travail rusé, habitué à défendre les puissants... jusqu'au jour où un étrange événement chamboule sa vie. Du jour au lendemain, il se retrouve confronté à des clients très particuliers : des fantômes.\n\nPris malgré lui dans des affaires venues d'un autre monde, il va devoir apprendre à écouter les morts pour mieux défendre les vivants. Accompagné de personnages tout aussi imprévisibles qu'attachants, Mu jin se retrouve plongé dans une série d'enquêtes mêlant injustice, mystère et rires.",
       "genres": [
         "Comédie",
         "Mystère",
@@ -23024,7 +23024,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792700810068,
+      "updatedAt": 1792766576724,
       "videos": [
         {
           "key": "93CiNzRELLc",
@@ -34047,6 +34047,15 @@
     "at": 1792697940038
   },
   "journal": [
+    {
+      "k": "mvl2xjs1os1qx",
+      "t": 1792766576737,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "233221",
+      "n": "Oh My Ghost Clients",
+      "d": ""
+    },
     {
       "k": "mvl2vv6fhrdq9",
       "t": 1792766498199,
