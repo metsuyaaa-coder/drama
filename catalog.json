@@ -6420,7 +6420,7 @@
       "rating": "7.1",
       "pop": 9.0617,
       "status": "Ended",
-      "poster": "https://image.tmdb.org/t/p/w500/3hsCoGDAceyh1FnFHHLkozPNlSS.jpg",
+      "poster": "https://image.tmdb.org/t/p/original/npbdAzfLAx6zXnIMN4nYs7l8mgX.jpg",
       "backdrop": "https://image.tmdb.org/t/p/original/SYzF7EFhhKTspLDzogpel2HHDl.jpg",
       "cast": [
         {
@@ -6738,7 +6738,7 @@
       ],
       "downloads": [],
       "posterV": 2,
-      "updatedAt": 1792700752263,
+      "updatedAt": 1792721854961,
       "networks": [
         "Lifetime",
         "U+ Mobile TV"
@@ -6750,7 +6750,8 @@
           "type": "Trailer",
           "lab": "Original"
         }
-      ]
+      ],
+      "posterCustom": true
     },
     {
       "id": "304452",
@@ -9516,7 +9517,7 @@
       "rating": "8.7",
       "pop": 32.5049,
       "status": "Ended",
-      "poster": "https://image.tmdb.org/t/p/original/xQwpGhQC6v01IRTbn5DV0WusXuZ.jpg",
+      "poster": "https://image.tmdb.org/t/p/original/9TcVxrWEJeFjoTXDBSrqqXNptye.jpg",
       "posterV": 2,
       "backdrop": "https://image.tmdb.org/t/p/original/mp2AFsWsuyxCzenJh3DTKw7z4jG.jpg",
       "cast": [
@@ -10040,7 +10041,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792700758515,
+      "updatedAt": 1792721526603,
       "networks": [
         "Netflix"
       ],
@@ -10057,7 +10058,8 @@
           "type": "Trailer",
           "lab": "Anglais"
         }
-      ]
+      ],
+      "posterCustom": true
     },
     {
       "id": "294095",
@@ -11766,7 +11768,7 @@
       "rating": "8.5",
       "pop": 12.7782,
       "status": "Ended",
-      "poster": "https://image.tmdb.org/t/p/w500/qFxbrHvNq5tn9SCBq3aKPgaGfyO.jpg",
+      "poster": "https://image.tmdb.org/t/p/original/yeudYKqoLPiTsdbUEIpRDbNGEHl.jpg",
       "posterV": 2,
       "backdrop": "https://image.tmdb.org/t/p/original/stJcZWrpfT2DjY0K261Q2FpxUkS.jpg",
       "cast": [
@@ -12009,7 +12011,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792700765103,
+      "updatedAt": 1792721325469,
       "networks": [
         "JTBC"
       ],
@@ -12026,7 +12028,8 @@
           "type": "Trailer",
           "lab": "Anglais"
         }
-      ]
+      ],
+      "posterCustom": true
     },
     {
       "id": "287011",
@@ -14558,7 +14561,7 @@
       "rating": "8.8",
       "pop": 15.6854,
       "status": "Ended",
-      "poster": "https://image.tmdb.org/t/p/w500/wY4rhPE90jJ4bp1JZOFY0MeRJQX.jpg",
+      "poster": "https://image.tmdb.org/t/p/original/yVGZMiqDiuTpT5gmOFXUD7gZZxd.jpg",
       "posterV": 2,
       "backdrop": "https://image.tmdb.org/t/p/original/sWgf0zfmjKiwXl5ND2b9apkChkV.jpg",
       "cast": [
@@ -14827,7 +14830,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792700775098,
+      "updatedAt": 1792721614081,
       "networks": [
         "Coupang Play"
       ],
@@ -14844,7 +14847,8 @@
           "type": "Trailer",
           "lab": "Anglais"
         }
-      ]
+      ],
+      "posterCustom": true
     },
     {
       "id": "259837",
@@ -16376,7 +16380,7 @@
       "rating": "8.8",
       "pop": 16.4948,
       "status": "Ended",
-      "poster": "https://image.tmdb.org/t/p/original/uxEN0pfh5OCSjIvV4GGXDVtjIuR.jpg",
+      "poster": "https://image.tmdb.org/t/p/original/rYLQbyIvbEd0lF84iXrx7CbPcBB.jpg",
       "posterV": 2,
       "backdrop": "https://image.tmdb.org/t/p/original/p1ntnKJwn1URGv1xpU6NN33Y11O.jpg",
       "cast": [
@@ -16632,7 +16636,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792700781312,
+      "updatedAt": 1792721921375,
       "networks": [
         "SBS"
       ],
@@ -16649,7 +16653,8 @@
           "type": "Trailer",
           "lab": "Anglais"
         }
-      ]
+      ],
+      "posterCustom": true
     },
     {
       "id": "319600",
@@ -33116,6 +33121,51 @@
     "at": 1792697940038
   },
   "journal": [
+    {
+      "k": "mvkccfiruuv0g",
+      "t": 1792721921427,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "303143",
+      "n": "My Royal Nemesis",
+      "d": "affiche"
+    },
+    {
+      "k": "mvkcb09oyzb70",
+      "t": 1792721855004,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "289690",
+      "n": "Love Phobia",
+      "d": "affiche"
+    },
+    {
+      "k": "mvkc5uene7sfs",
+      "t": 1792721614127,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "314784",
+      "n": "Absolute Value of Romance",
+      "d": "affiche"
+    },
+    {
+      "k": "mvkc3ywod8roa",
+      "t": 1792721526648,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "291496",
+      "n": "Our Sticky Love",
+      "d": "affiche"
+    },
+    {
+      "k": "mvkbyroc0jz8l",
+      "t": 1792721325504,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "300727",
+      "n": "The Apartment Job",
+      "d": "affiche"
+    },
     {
       "k": "mvkboarqlqcxy",
       "t": 1792720795526,
