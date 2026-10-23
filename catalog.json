@@ -391,7 +391,7 @@
       ],
       "downloads": [],
       "updatedAt": 1792776624582,
-      "trend": 45,
+      "trend": 50,
       "videos": [
         {
           "key": "OsF0AxLqBzY",
@@ -1002,7 +1002,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "trend": 63,
+      "trend": 77,
       "origin_country": [
         "KR"
       ],
@@ -1502,7 +1502,7 @@
         "Lootuse sadam",
         "호프"
       ],
-      "trend": 97,
+      "trend": 98,
       "downloads": [
         {
           "name": "1FICHIER",
@@ -6905,7 +6905,7 @@
       "downloads": [],
       "posterCustom": true,
       "updatedAt": 1792776641876,
-      "trend": 59,
+      "trend": 51,
       "videos": [
         {
           "key": "4Idq9bH6zl8",
@@ -7688,7 +7688,7 @@
       "networks": [
         "Nippon TV"
       ],
-      "trend": 50,
+      "trend": 0,
       "videos": [
         {
           "key": "801lPiNx5y4",
@@ -7851,7 +7851,7 @@
         }
       ],
       "updatedAt": 1792776644485,
-      "trend": 59,
+      "trend": 0,
       "posterCustom": true,
       "videos": [
         {
@@ -8563,7 +8563,7 @@
       ],
       "downloads": [],
       "updatedAt": 1792776646325,
-      "trend": 71,
+      "trend": 56,
       "networks": [
         "TVING"
       ],
@@ -24587,7 +24587,7 @@
       "downloads": [],
       "posterCustom": true,
       "updatedAt": 1792776702725,
-      "trend": 90,
+      "trend": 86,
       "videos": [
         {
           "key": "lLBSb_Xc1sw",
@@ -25543,7 +25543,7 @@
       ],
       "downloads": [],
       "updatedAt": 1792776705758,
-      "trend": 68,
+      "trend": 72,
       "videos": [
         {
           "key": "55ATD_SJ_Xw",
@@ -33273,7 +33273,8 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792776722615
+      "updatedAt": 1792776722615,
+      "trend": 87
     },
     {
       "id": "338103",
