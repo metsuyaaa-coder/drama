@@ -7298,7 +7298,7 @@
       "rating": "8.2",
       "pop": 13.0836,
       "status": "Ended",
-      "poster": "https://image.tmdb.org/t/p/w500/ccej6D8J81DDJWqhP7OG6PA6xcl.jpg",
+      "poster": "https://image.tmdb.org/t/p/original/hk8u9W7YBZf106zBGX8P4COVpWl.jpg",
       "posterV": 2,
       "backdrop": "https://image.tmdb.org/t/p/original/zbzldNycqQy1O9gP5vwJf9HECwk.jpg",
       "cast": [
@@ -7744,7 +7744,7 @@
         "VF"
       ],
       "downloads": [],
-      "updatedAt": 1792700753679,
+      "updatedAt": 1792720795483,
       "networks": [
         "Disney+"
       ],
@@ -7761,7 +7761,8 @@
           "type": "Trailer",
           "lab": "Anglais"
         }
-      ]
+      ],
+      "posterCustom": true
     },
     {
       "id": "305551",
@@ -33115,6 +33116,15 @@
     "at": 1792697940038
   },
   "journal": [
+    {
+      "k": "mvkboarqlqcxy",
+      "t": 1792720795526,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "208336",
+      "n": "Revenge of Others",
+      "d": "affiche"
+    },
     {
       "k": "mvkbb7lbmn6l6",
       "t": 1792720635309,
