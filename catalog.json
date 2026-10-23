@@ -23070,7 +23070,7 @@
       "rating": "8.0",
       "pop": 12.1601,
       "status": "Ended",
-      "poster": "https://image.tmdb.org/t/p/original/51x3GY7o07PqLgCN0UIJVHHzgCO.jpg",
+      "poster": "https://image.tmdb.org/t/p/original/r9HAvH6wZy5brt6KCP0bbGchsox.jpg",
       "posterV": 2,
       "backdrop": "https://image.tmdb.org/t/p/original/h1bGO8w5hyn22DGNv0MOZKTog1X.jpg",
       "cast": [
@@ -23532,7 +23532,7 @@
       ],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1792700810872,
+      "updatedAt": 1792775136771,
       "videos": [
         {
           "key": "m6aJOU2iMwc",
@@ -35585,6 +35585,15 @@
     "at": 1792697940038
   },
   "journal": [
+    {
+      "k": "mvl810rch09v4",
+      "t": 1792775136792,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "288603",
+      "n": "Never-Ending Summer",
+      "d": "affiche"
+    },
     {
       "k": "mvl7rozksyfd8",
       "t": 1792774914556,
