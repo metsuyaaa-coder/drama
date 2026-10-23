@@ -29375,7 +29375,7 @@
       "rating": "8.5",
       "pop": 36.3358,
       "status": "Ended",
-      "poster": "https://image.tmdb.org/t/p/w500/uSQzD7TXsL96J5ggDrJFdUs8uXU.jpg",
+      "poster": "https://image.tmdb.org/t/p/original/yu4oHDi6kO3cYXdmEnYT6SibATj.jpg",
       "posterV": 2,
       "backdrop": "https://image.tmdb.org/t/p/original/zhsEnDNCQX5dlI2wbKzV90pV0B9.jpg",
       "videos": [
@@ -29867,7 +29867,8 @@
         "VF"
       ],
       "downloads": [],
-      "updatedAt": 1792700819887
+      "updatedAt": 1792718291748,
+      "posterCustom": true
     },
     {
       "id": "220074",
@@ -33094,6 +33095,15 @@
     "at": 1792697940038
   },
   "journal": [
+    {
+      "k": "mvka6muuc3ocr",
+      "t": 1792718291766,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "127529",
+      "n": "Bloodhounds",
+      "d": "affiche"
+    },
     {
       "k": "mvk9yygor6dsu",
       "t": 1792717933560,
