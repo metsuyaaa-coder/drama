@@ -22521,7 +22521,7 @@
         "New President Project"
       ],
       "year": "2025",
-      "overview": "Une comédie dramatique qui raconte l'histoire du PDG Shin, qui sert de médiateur dans les conflits pour des personnes qui se trouvent au bord du gouffre et n'ont aucune chance de gagner.",
+      "overview": "M. Shin, ancien négociateur d'élite, dirige désormais une friterie de poulet frit dans un quartier commerçant d'une petite ville. Dans un environnement où les conflits mineurs entre habitants s'enflamment rapidement, il intervient avec ses compétences en médiation pour résoudre les disputes, des querelles de voisinage aux drames familiaux.\nAidé d'une équipe formée d'une jeune juge inexpérimentée, d'une livreuse dynamique et d'un détective marqué par son passé, il gère les problèmes du quartier tout en dissimulant un secret personnel.\n\n",
       "genres": [
         "Comédie",
         "Drame"
@@ -22778,7 +22778,7 @@
       ],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1792718688060,
+      "updatedAt": 1792767421618,
       "videos": [
         {
           "key": "v_x2FUX7jVk",
@@ -34047,6 +34047,15 @@
     "at": 1792697940038
   },
   "journal": [
+    {
+      "k": "mvl3fnp9in4nt",
+      "t": 1792767421629,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "286198",
+      "n": "Shin's Project",
+      "d": ""
+    },
     {
       "k": "mvl3eqjtty45z",
       "t": 1792767378665,
