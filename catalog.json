@@ -29922,7 +29922,7 @@
       "rating": "7.6",
       "pop": 18.6558,
       "status": "Ended",
-      "poster": "https://image.tmdb.org/t/p/w500/2eWH2RDxpbIfEs17BpJTQhcOqRs.jpg",
+      "poster": "https://image.tmdb.org/t/p/original/CPi0q1KWOc0I9sRR4mgX3HkUHy.jpg",
       "posterV": 2,
       "backdrop": "https://image.tmdb.org/t/p/original/nOGPxfYqd0f3oeFGGinpDOP68MQ.jpg",
       "videos": [
@@ -30429,7 +30429,8 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792706543880
+      "updatedAt": 1792719554176,
+      "posterCustom": true
     },
     {
       "id": "110356",
@@ -33101,6 +33102,15 @@
     "at": 1792697940038
   },
   "journal": [
+    {
+      "k": "mvkaxoydy2ncb",
+      "t": 1792719554197,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "220074",
+      "n": "Flex X Cop",
+      "d": "affiche"
+    },
     {
       "k": "mvkavwt00rcfu",
       "t": 1792719471060,
