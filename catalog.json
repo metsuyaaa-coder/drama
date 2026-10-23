@@ -10570,7 +10570,7 @@
         "동궁"
       ],
       "year": "2026",
-      "overview": "Sur ordre du roi, un visiteur du monde des esprits et une dame de la cour à l'écoute des morts entrent dans le Palais de l'est. Perceront-ils ses sombres secrets ?",
+      "overview": "Dans le palais du prince héritier, d'étranges incidents défient toute explication.\nLe roi fait appel en secret à Gu Cheon, capable de traverser le monde des fantômes et de les tuer d'un coup d'épée, et à la dame de la cour Saeng Gang, née avec le don ou la malédiction d'entendre les esprits.\nEnsemble, ils cherchent à lever la malédiction qui plane sur le palais et à percer ses secrets les plus sombres.\nMais plus ils avancent, plus le voile de ténèbres semble s'étendre, et les apparitions deviennent plus proches qu'ils ne l'imaginaient.\nDans ce monde où le visible et l'invisible se confondent, chaque pas pourrait les conduire au-delà de tout ce qu'ils connaissent...",
       "genres": [
         "Mystère",
         "Action & Adventure",
@@ -10732,7 +10732,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792719931370,
+      "updatedAt": 1792768333070,
       "networks": [
         "Netflix"
       ],
@@ -34047,6 +34047,15 @@
     "at": 1792697940038
   },
   "journal": [
+    {
+      "k": "mvl3z6zievv9d",
+      "t": 1792768333086,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "279323",
+      "n": "The East Palace",
+      "d": ""
+    },
     {
       "k": "mvl3xzu013a82",
       "t": 1792768277160,
