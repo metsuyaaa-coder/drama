@@ -14799,7 +14799,7 @@
         "취사병 전설이 되다"
       ],
       "year": "2026",
-      "overview": "",
+      "overview": "Kang Seong Jae est un jeune homme qui s'engage dans l'armée. Contrairement à ce qu'il imaginait, il ne devient pas un soldat de terrain, mais est affecté à la cuisine militaire. Sa vie prend alors une tournure inattendue lorsqu'il obtient un mystérieux système qui lui permet d'accomplir des missions comme dans un jeu vidéo. Grâce à cela, il développe des compétences culinaires exceptionnelles et devient peu à peu une véritable légende dans les cuisines de l'armée.\n\n",
       "genres": [
         "Science-Fiction & Fantastique",
         "Comédie",
@@ -15056,7 +15056,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792700777132,
+      "updatedAt": 1792768808804,
       "networks": [
         "tvN"
       ],
@@ -34047,6 +34047,15 @@
     "at": 1792697940038
   },
   "journal": [
+    {
+      "k": "mvl49e23u6fvv",
+      "t": 1792768808811,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "295509",
+      "n": "The Legend of Kitchen Soldier",
+      "d": ""
+    },
     {
       "k": "mvl46vnm78dj5",
       "t": 1792768691650,
