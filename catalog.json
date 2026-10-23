@@ -10559,7 +10559,7 @@
       "rating": "8.1",
       "pop": 13.2603,
       "status": "Ended",
-      "poster": "https://image.tmdb.org/t/p/original/jbQsa0W9JbHypYSZmgB1lKxGzL5.jpg",
+      "poster": "https://image.tmdb.org/t/p/original/mUoFBZvlnmiKBXFsH1Z5JpS6MHr.jpg",
       "posterV": 2,
       "backdrop": "https://image.tmdb.org/t/p/original/8PHBAdPyfIwS5W6cfKLhItEb875.jpg",
       "cast": [
@@ -10711,7 +10711,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792700762123,
+      "updatedAt": 1792719931370,
       "networks": [
         "Netflix"
       ],
@@ -10734,7 +10734,8 @@
           "type": "Teaser",
           "lab": "Français"
         }
-      ]
+      ],
+      "posterCustom": true
     },
     {
       "id": "292121",
@@ -33104,6 +33105,15 @@
     "at": 1792697940038
   },
   "journal": [
+    {
+      "k": "mvkb5rzwhn28l",
+      "t": 1792719931388,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "279323",
+      "n": "The East Palace",
+      "d": "affiche"
+    },
     {
       "k": "mvkb39ux5pqg2",
       "t": 1792719814569,
