@@ -22226,7 +22226,7 @@
       "rating": "7.4",
       "pop": 9.0025,
       "status": "Ended",
-      "poster": "https://image.tmdb.org/t/p/original/erk39dfwGAIEVg0UQ9jkximdUiF.jpg",
+      "poster": "https://image.tmdb.org/t/p/original/zBzdzNeGjYSrPbHrgF6fGTSTGil.jpg",
       "posterV": 2,
       "backdrop": "https://image.tmdb.org/t/p/original/cPLtnxTlFpCIyH6AkGNuGCluvY1.jpg",
       "cast": [
@@ -22626,7 +22626,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792718606414,
+      "updatedAt": 1792722590740,
       "videos": [
         {
           "key": "rR-R-kL7B80",
@@ -33129,6 +33129,15 @@
     "at": 1792697940038
   },
   "journal": [
+    {
+      "k": "mvkcqs0am0hcn",
+      "t": 1792722590794,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "126035",
+      "n": "Nevertheless,",
+      "d": "affiche"
+    },
     {
       "k": "mvkcl18ekh3lh",
       "t": 1792722322814,
