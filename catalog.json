@@ -34162,7 +34162,7 @@
       "rating": "7.5",
       "pop": 13.7709,
       "status": "Ended",
-      "poster": "https://image.tmdb.org/t/p/original/vc5DPNSp8uu9nU3PtxAZ6DihmIY.jpg",
+      "poster": "https://image.tmdb.org/t/p/original/nWIGqemMxYbomrZCfd6xpVUsE38.jpg",
       "posterV": 2,
       "backdrop": "https://image.tmdb.org/t/p/original/6640A10Z0aysTCroNQQPK8ZB4FH.jpg",
       "videos": [
@@ -34785,7 +34785,7 @@
       "langs": [],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1792774120744
+      "updatedAt": 1792774176426
     }
   ],
   "deletedLinks": [
@@ -35163,6 +35163,15 @@
     "at": 1792697940038
   },
   "journal": [
+    {
+      "k": "mvl7gfr7wxa2r",
+      "t": 1792774176451,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "262932",
+      "n": "Generation to Generation",
+      "d": "affiche"
+    },
     {
       "k": "mvl7f8tbut40t",
       "t": 1792774120799,
