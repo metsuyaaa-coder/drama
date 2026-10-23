@@ -330,7 +330,7 @@ var STATUS = { "Returning Series": "En cours", "Ended": "Terminée", "Canceled":
 function statusFr(s) { return STATUS[s] || s || ""; }
 
 /* ===== Vues ===== */
-var filter = "", langFilter = "", dlFilter = false, newFilter = "", kdFilter = "", platFilter = "", platOpen = false, seasonSel = { id: "", i: 0 }, typeFilter = "", curQ = "", searchBack = "/";
+var filter = "", langFilter = "", dlFilter = false, liveFilter = false, newFilter = "", kdFilter = "", platFilter = "", platOpen = false, seasonSel = { id: "", i: 0 }, typeFilter = "", curQ = "", searchBack = "/";
 var rerender = null;
 var lastPage = null;
 var pendingScroll = false;
@@ -2308,6 +2308,7 @@ function platRow(plats) {
     (platOpen ? '<div class="platall hlbox"><button type="button" class="chip' + (!platFilter ? " on" : "") + '" data-platf="">Toutes</button>' + plats.map(platChip).join("") + '</div>' : '') + '</div>';
 }
 function newMatch(s) { return (!newFilter || (newFilter === "serie" ? !!newSeries(s) : !!newEpisode(s))) && (!kdFilter || dramaType(s) === kdFilter) && (!platFilter || platNames(s).indexOf(platFilter) > -1); }
+function liveMatch(s) { return !liveFilter || ongoing(s); }
 function langMatch(s) { return !langFilter || (s.langs || []).indexOf(langFilter) > -1; }
 function langChips() {
   return '<div class="chips langchips"><span class="chiplbl">Langue</span><button class="chip' + (!langFilter ? " on" : "") + '" data-langf="">Toutes</button>' +
@@ -2327,7 +2328,7 @@ var LSLOGO = {
 function lsList() { return sortedDb().filter(lsCtx.pred); }
 function lsMatch(s) {
   if (filter && (s.genres || []).indexOf(filter) < 0) return false;
-  if (!langMatch(s) || !newMatch(s)) return false;
+  if (!langMatch(s) || !newMatch(s) || !liveMatch(s)) return false;
   var q = fold(lsQuery); if (q && !titleMatch(s, q)) return false;
   return true;
 }
@@ -2357,9 +2358,10 @@ function lsFilters(list, title) {
   list.forEach(function (x) { (x.genres || []).forEach(function (g) { genres[g] = 1; }); });
   var series = title === "Séries";
   var newOpts = series ? newOptions(list) : [], kdTypes = series ? dramaTypes(list) : [], plats = series ? platOptions(list) : [];
-  var gk = Object.keys(genres).sort();
+  var gk = Object.keys(genres).sort(), liveAny = series && list.some(ongoing);
   return '<div class="chips lsgenres"><button class="chip' + (!filter ? " on" : "") + '" data-genre="">Tout</button>' +
     gk.map(function (g) { return '<button class="chip' + (filter === g ? " on" : "") + '" data-genre="' + esc(g) + '">' + esc(g) + '</button>'; }).join("") + '</div>' +
+    (liveAny ? '<div class="chips langchips"><span class="chiplbl">Diffusion</span><button class="chip' + (!liveFilter ? " on" : "") + '" data-livef="">Toutes</button><button class="chip' + (liveFilter ? " on" : "") + '" data-livef="1">En cours</button></div>' : '') +
     (newOpts.length ? '<div class="chips langchips"><span class="chiplbl">Nouveautés</span><button class="chip' + (!newFilter ? " on" : "") + '" data-newf="">Toutes</button>' + newOpts.map(function (o) { return '<button class="chip' + (newFilter === o ? " on" : "") + '" data-newf="' + o + '">' + NEWLBL[o] + '</button>'; }).join("") + '</div>' : '') +
     (kdTypes.length ? '<div class="chips langchips"><span class="chiplbl">Catégorie</span><button class="chip' + (!kdFilter ? " on" : "") + '" data-kdf="">Toutes</button>' + kdTypes.map(function (d) { return '<button class="chip' + (kdFilter === d ? " on" : "") + '" data-kdf="' + d + '">' + DRAMA[d] + '</button>'; }).join("") + '</div>' : '') +
     platRow(plats);
@@ -2382,7 +2384,7 @@ function lsRenderBody(list, still, swap) {
   if (swap) { void body.offsetWidth; body.className = "mlswap"; }
   if (arr.length) body.innerHTML = '<div class="mlgrid' + (still ? ' still' : '') + '">' + arr.map(lsCard).join("") + '</div>';
   else {
-    var filtered = !!(lsQuery.trim() || filter || langFilter || newFilter || kdFilter || platFilter);
+    var filtered = !!(lsQuery.trim() || filter || langFilter || newFilter || kdFilter || platFilter || liveFilter);
     body.innerHTML = '<div class="mlempty">' + nsvg("search", "mlei") + '<h3>Aucun résultat</h3><p>' + (filtered ? 'Aucun titre ne correspond à ces filtres.' : 'Aucun titre dans cette section pour l\'instant.') + '</p>' + (filtered ? '<button type="button" class="btn ghost" data-lsreset="1">' + nsvg("reset") + '<span>Réinitialiser les filtres</span></button>' : '') + '</div>';
   }
   if (sum) sum.textContent = arr.length + (arr.length > 1 ? " titres" : " titre");
@@ -2410,6 +2412,7 @@ function lsPatch(list, animate, swap) {
   if (kd.indexOf(kdFilter) < 0) kdFilter = "";
   var plats = title === "Séries" ? platOptions(list) : [];
   if (plats.indexOf(platFilter) < 0) platFilter = "";
+  if (liveFilter && (title !== "Séries" || !list.some(ongoing))) liveFilter = false;
   var note = $("#lsnote"); if (note) note.textContent = list.length + (list.length > 1 ? " titres" : " titre");
   lsSetTabs(list, animate);
   var f = $("#lsf"); if (f) { if (!animate) f.classList.remove("intro"); f.innerHTML = lsFilters(list, title); }
@@ -2435,7 +2438,7 @@ document.addEventListener("click", function (e) {
     lsRenderBody(lsList(), false, true); return;
   }
   if (t.dataset.lsreset) {
-    filter = langFilter = newFilter = kdFilter = platFilter = ""; lsQuery = ""; platOpen = false;
+    filter = langFilter = newFilter = kdFilter = platFilter = ""; liveFilter = false; lsQuery = ""; platOpen = false;
     lsPatch(lsList(), false, true); return;
   }
   e.preventDefault();
@@ -2580,7 +2583,7 @@ function srSorted(arr, needle) {
   else if (mode === "rating") a.sort(function (x, y) { return (parseFloat(y.rating) || 0) - (parseFloat(x.rating) || 0); });
   return a;
 }
-function srOther(s) { return (!filter || (s.genres || []).indexOf(filter) > -1) && langMatch(s) && newMatch(s) && (!dlFilter || hasDl(s)); }
+function srOther(s) { return (!filter || (s.genres || []).indexOf(filter) > -1) && langMatch(s) && newMatch(s) && (!dlFilter || hasDl(s)) && liveMatch(s); }
 function srChip(attr, val, label, on) { return '<button type="button" class="chip' + (on ? " on" : "") + '" ' + attr + '="' + esc(val) + '">' + esc(label) + '</button>'; }
 function srRow(label, items) { return '<div class="chips langchips"><span class="chiplbl">' + label + '</span>' + items + '</div>'; }
 function srFilters(o) {
@@ -2589,6 +2592,7 @@ function srFilters(o) {
     (o.newOpts.length ? srRow("Nouveautés", srChip("data-newf", "", "Toutes", !newFilter) + o.newOpts.map(function (x) { return srChip("data-newf", x, NEWLBL[x], newFilter === x); }).join("")) : "") +
     (o.kd.length ? srRow("Catégorie", srChip("data-kdf", "", "Toutes", !kdFilter) + o.kd.map(function (d) { return srChip("data-kdf", d, DRAMA[d], kdFilter === d); }).join("")) : "") +
     platRow(o.plats) +
+    (o.liveAny ? srRow("Diffusion", srChip("data-livef", "", "Toutes", !liveFilter) + srChip("data-livef", "1", "En cours", liveFilter)) : "") +
     (o.canDl ? srRow("Téléchargement", srChip("data-dlf", "", "Tous", !dlFilter) + srChip("data-dlf", "1", "Avec lien", dlFilter)) : "");
 }
 function srBuild() {
@@ -2629,12 +2633,13 @@ function viewSearch(q) {
   var newOpts = newOptions(base); if (newOpts.indexOf(newFilter) < 0) newFilter = "";
   var kd = dramaTypes(base); if (kd.indexOf(kdFilter) < 0) kdFilter = "";
   var plats = platOptions(base); if (plats.indexOf(platFilter) < 0) platFilter = "";
+  var liveAny = base.some(ongoing); if (!liveAny) liveFilter = false;
   var pool = base.filter(srOther), counts = [pool.length, 0, 0, 0];
   pool.forEach(function (s) { counts[isMovie(s) ? 2 : 1]++; });
   var allActors = actorMatches(needle, 999), isAct = typeFilter === "actor";
   counts[3] = allActors.length;
   var found = srSorted(pool.filter(function (s) { return !typeFilter || isAct || (typeFilter === "movie") === isMovie(s); }), needle);
-  var sig = [typeFilter, filter, langFilter, newFilter, kdFilter, platFilter, dlFilter, srSort].join("|");
+  var sig = [typeFilter, filter, langFilter, newFilter, kdFilter, platFilter, dlFilter, liveFilter, srSort].join("|");
   var fresh = !$("#srroot");
   var swap = !fresh && srSig !== null && sig !== srSig;
   srSig = sig;
@@ -2653,7 +2658,7 @@ function viewSearch(q) {
   });
   box.dataset.i = idx;
   var f = $("#srf"); if (!fresh) f.classList.remove("intro");
-  f.innerHTML = base.length && !isAct ? srFilters({ genres: Object.keys(genres).sort(), newOpts: newOpts, kd: kd, plats: plats, canDl: canDl }) : "";
+  f.innerHTML = base.length && !isAct ? srFilters({ genres: Object.keys(genres).sort(), newOpts: newOpts, kd: kd, plats: plats, liveAny: liveAny, canDl: canDl }) : "";
   $("#sract").innerHTML = isAct ? "" : actorsBlock(actors);
   $("#srsum").textContent = isAct ? allActors.length + (allActors.length > 1 ? " acteurs" : " acteur") : found.length + (found.length > 1 ? " titres" : " titre");
   $("#srclose").setAttribute("href", searchBack);
@@ -2679,7 +2684,7 @@ function viewSearch(q) {
 document.addEventListener("click", function (e) {
   var t = e.target.closest ? e.target.closest("[data-srsort],[data-srreset]") : null; if (!t || !$("#srroot")) return;
   if (t.dataset.srsort) { srSort = t.dataset.srsort; viewSearch(curQ); return; }
-  filter = langFilter = newFilter = kdFilter = platFilter = ""; typeFilter = ""; dlFilter = false; platOpen = false;
+  filter = langFilter = newFilter = kdFilter = platFilter = ""; typeFilter = ""; dlFilter = false; liveFilter = false; platOpen = false;
   viewSearch(curQ);
 });
 
@@ -5540,7 +5545,7 @@ function route(force) {
   if ((a === "ajouter" || a === "modifier" || a === "motdepasse" || a === "panel") && !ADMIN) { go("/admin", true); return; }
 
   var changed = force || a !== lastPage || a === "serie" || a === "modifier" || a === "acteur" || a === "collection";
-  if (a !== lastPage) { filter = ""; langFilter = ""; dlFilter = false; newFilter = ""; kdFilter = ""; platFilter = ""; platOpen = false; typeFilter = ""; listTab = "list"; calWeek = 0; calType = ""; }
+  if (a !== lastPage) { filter = ""; langFilter = ""; dlFilter = false; liveFilter = false; newFilter = ""; kdFilter = ""; platFilter = ""; platOpen = false; typeFilter = ""; listTab = "list"; calWeek = 0; calType = ""; }
   lastPage = a;
 
   var q = $("#q");
@@ -5655,7 +5660,7 @@ document.addEventListener("click", function (e) {
   if (st) { var sb = st.closest(".srcs"), so = sb.classList.toggle("open"); st.setAttribute("aria-expanded", so ? "true" : "false"); return; }
   var rd = e.target.closest("[data-resumedel]");
   if (rd) { e.preventDefault(); e.stopPropagation(); removeResume(rd.dataset.resumedel); viewHome(); return; }
-  var t = e.target.closest("[data-resume],[data-watch],[data-movsrc],[data-playep],[data-src],[data-del],[data-list],[data-listtab],[data-seen],[data-seenseason],[data-genre],[data-langf],[data-newf],[data-kdf],[data-platf],[data-platopen],[data-seasonopen],[data-seasontab],[data-dlf],[data-typef],[data-pick],[data-bulk],[data-dlbulk],[data-dltab],#save,#applytpl,#refreshall,#manual,#manualfilm,#refresh,#copyhash");
+  var t = e.target.closest("[data-resume],[data-watch],[data-movsrc],[data-playep],[data-src],[data-del],[data-list],[data-listtab],[data-seen],[data-seenseason],[data-genre],[data-langf],[data-newf],[data-livef],[data-kdf],[data-platf],[data-platopen],[data-seasonopen],[data-seasontab],[data-dlf],[data-typef],[data-pick],[data-bulk],[data-dlbulk],[data-dltab],#save,#applytpl,#refreshall,#manual,#manualfilm,#refresh,#copyhash");
   if (!t) return;
   if (t.dataset.resume != null) { e.preventDefault(); resumeWatch(t.dataset.resume); }
   else if (t.dataset.watch != null) {
@@ -5752,6 +5757,7 @@ document.addEventListener("click", function (e) {
   else if (t.dataset.platopen != null) { platOpen = !platOpen; if (rerender) rerender(); }
   else if (t.dataset.platf != null) { platFilter = t.dataset.platf; platOpen = false; if (rerender) rerender(); }
   else if (t.dataset.newf != null) { newFilter = t.dataset.newf; if (rerender) rerender(); }
+  else if (t.dataset.livef != null) { liveFilter = t.dataset.livef === "1"; if (rerender) rerender(); }
   else if (t.dataset.dlf != null) { dlFilter = t.dataset.dlf === "1"; if (rerender) rerender(); }
   else if (t.dataset.typef != null) { typeFilter = t.dataset.typef; if (rerender) rerender(); }
   else if (t.dataset.pick != null) pick(t.dataset.pick);
