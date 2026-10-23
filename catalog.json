@@ -34784,10 +34784,12 @@
       ],
       "sources": [],
       "addedAt": 1792773322642,
-      "langs": [],
+      "langs": [
+        "VOSTFR"
+      ],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1792774801493
+      "updatedAt": 1792774899637
     },
     {
       "id": "299952",
@@ -35582,6 +35584,15 @@
   },
   "journal": [
     {
+      "k": "mvl7gfr7wxa2r",
+      "t": 1792774899653,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "262932",
+      "n": "Generation to Generation",
+      "d": "affiche"
+    },
+    {
       "k": "mvl7vm4u9emax",
       "t": 1792774884558,
       "b": "614d778ed0",
@@ -35589,15 +35600,6 @@
       "i": "286988",
       "n": "Blossom Through the Cloud",
       "d": ""
-    },
-    {
-      "k": "mvl7gfr7wxa2r",
-      "t": 1792774801525,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "262932",
-      "n": "Generation to Generation",
-      "d": "affiche"
     },
     {
       "k": "mvl7rozksyfd8",
