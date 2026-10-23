@@ -2306,7 +2306,7 @@
         "너 말고 다른 연애"
       ],
       "year": "2026",
-      "overview": "Une romance réaliste et touchante sur un couple qui, après dix ans de vie commune, voit sa relation confortable bouleversée par des sentiments inattendus.",
+      "overview": "Namgung Ho et Lee Mi Do forment un couple solide depuis dix ans et semblent avancer naturellement vers le mariage. Pourtant, à l'approche de cette nouvelle étape, leurs certitudes commencent à vaciller.\n\nHo, inquiet de voir leur relation s'essouffler avec le temps, tente de la préserver en faisant une demande en mariage. De son côté, Mi Do voit son quotidien bouleversé lorsqu'elle rencontre un autre homme qui réveille en elle des émotions qu'elle pensait oubliées.",
       "genres": [
         "Drame",
         "Comédie"
@@ -2682,7 +2682,7 @@
       ],
       "downloads": [],
       "posterV": 2,
-      "updatedAt": 1792700742197,
+      "updatedAt": 1792767841867,
       "networks": [
         "KBS2"
       ],
@@ -34047,6 +34047,15 @@
     "at": 1792697940038
   },
   "journal": [
+    {
+      "k": "mvl3onz14vkxj",
+      "t": 1792767841885,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "314939",
+      "n": "A Love Other Than Yours",
+      "d": ""
+    },
     {
       "k": "mvl3nj3oqnzp2",
       "t": 1792767788916,
