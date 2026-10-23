@@ -3509,7 +3509,7 @@
       "rating": "8.8",
       "pop": 16.5484,
       "status": "Ended",
-      "poster": "https://image.tmdb.org/t/p/w500/bwTzW1wTgUxUOQruhT8DvinUYgR.jpg",
+      "poster": "https://image.tmdb.org/t/p/original/m56EaJ4zLG84F8jpNT7ZmaL0IAS.jpg",
       "backdrop": "https://image.tmdb.org/t/p/original/efaMS00Fevc3fw2dbeP7rh22O6D.jpg",
       "cast": [
         {
@@ -4025,7 +4025,7 @@
       ],
       "original_language": "ko",
       "posterV": 2,
-      "updatedAt": 1792700745172,
+      "updatedAt": 1792719814553,
       "networks": [
         "tvN"
       ],
@@ -4042,7 +4042,8 @@
           "type": "Trailer",
           "lab": "Anglais"
         }
-      ]
+      ],
+      "posterCustom": true
     },
     {
       "id": "218539",
@@ -33103,6 +33104,15 @@
     "at": 1792697940038
   },
   "journal": [
+    {
+      "k": "mvkb39ux5pqg2",
+      "t": 1792719814569,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "212204",
+      "n": "Twinkling Watermelon",
+      "d": "affiche"
+    },
     {
       "k": "mvkb0efpl3lex",
       "t": 1792719680533,
