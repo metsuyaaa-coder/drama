@@ -31204,9 +31204,11 @@
       ],
       "sources": [],
       "addedAt": 1792714570870,
-      "langs": [],
+      "langs": [
+        "VOSTFR"
+      ],
       "downloads": [],
-      "updatedAt": 1792715477326,
+      "updatedAt": 1792722261384,
       "posterCustom": true
     },
     {
@@ -33121,6 +33123,15 @@
     "at": 1792697940038
   },
   "journal": [
+    {
+      "k": "mvkcjpvizrtdk",
+      "t": 1792722261438,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "289271",
+      "n": "Ashes to Crown",
+      "d": ""
+    },
     {
       "k": "mvkccfiruuv0g",
       "t": 1792721921427,
