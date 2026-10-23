@@ -28486,8 +28486,8 @@
       ],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1792787412581,
-      "eprt": 18
+      "updatedAt": 1792797279589,
+      "eprt": "18"
     },
     {
       "id": "270420",
@@ -40339,6 +40339,15 @@
     "at": 1792697940038
   },
   "journal": [
+    {
+      "k": "mvll7m9lxh8uz",
+      "t": 1792797279609,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "285415",
+      "n": "Fascination",
+      "d": ""
+    },
     {
       "k": "mvlku81m8xfia",
       "t": 1792796654650,
