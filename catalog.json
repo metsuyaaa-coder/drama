@@ -36365,7 +36365,7 @@
         "We live together"
       ],
       "year": "2026",
-      "overview": "",
+      "overview": "La banquière d'investissement Qian Fei (Wang Chu Ran) est prête à franchir une nouvelle étape dans sa relation et à emménager dans l'appartement qu'elle a choisi avec son fiancé. Mais lorsqu'il la quitte pour une autre femme, elle se retrouve le cœur brisé, avec un lourd prêt à rembourser. Pour alléger son fardeau financier, Qian Fei décide de louer une chambre de son appartement. Li Yi Fei (Tan Jian Ci), héritier d'une puissante famille d'affaires et étoile montante d'une banque d'investissement, s'y installe avec sa petite amie. Cependant, leur relation prend rapidement fin et Yi Fei choisit malgré tout de rester. Contre toute attente, Qian Fei et lui se sentent attirés l'un par l'autre : en travaillant ensemble sur une introduction en bourse, ils apprennent à se soutenir et à affronter les épreuves de la vie. Cette série est adaptée du roman \"We Live Together\" de Hong Jiu.",
       "genres": [
         "Drame",
         "Comédie"
@@ -36926,9 +36926,11 @@
       ],
       "sources": [],
       "addedAt": 1792782414296,
-      "langs": [],
+      "langs": [
+        "VOSTFR"
+      ],
       "downloads": [],
-      "updatedAt": 1792783151134
+      "updatedAt": 1792783659106
     },
     {
       "id": "117378",
@@ -37920,6 +37922,15 @@
     "at": 1792697940038
   },
   "journal": [
+    {
+      "k": "mvld3omkbuoae",
+      "t": 1792783659116,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "230311",
+      "n": "Love Has Fireworks",
+      "d": ""
+    },
     {
       "k": "mvld0uza5hrmv",
       "t": 1792783527382,
