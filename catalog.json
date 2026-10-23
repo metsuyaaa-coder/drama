@@ -18343,7 +18343,7 @@
       ],
       "rating": "",
       "pop": 3.8573,
-      "status": "Returning Series",
+      "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/sAOEypaK8zSIP5a1Vlk7yLbaiIK.jpg",
       "posterV": 2,
       "backdrop": "https://image.tmdb.org/t/p/original/6oCCGi56rrSYNKIqfbrRxFEweBk.jpg",
@@ -18496,7 +18496,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792787385219,
+      "updatedAt": 1792797588535,
       "networks": [
         "BS TV Tokyo"
       ]
@@ -40339,6 +40339,15 @@
     "at": 1792697940038
   },
   "journal": [
+    {
+      "k": "mvlle8nj10k2n",
+      "t": 1792797588559,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "325063",
+      "n": "My Cold Coworker Obsessively Loves Me",
+      "d": ""
+    },
     {
       "k": "mvlldlstm8lqw",
       "t": 1792797558941,
