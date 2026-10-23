@@ -413,7 +413,7 @@
       "name": "The Scandal",
       "original_name": "스캔들",
       "year": "2026",
-      "overview": "Durant la période Joseon, une proposition secrète éveille les désirs d'une aristocrate talentueuse, d'un séducteur notoire et d'une jeune femme naïve prise au piège d'un jeu cruel.",
+      "overview": "Dans la Corée de la dynastie Joseon, une époque marquée par de lourdes oppressions et des tabous stricts, le destin de trois individus bascule à la suite d'un jeu cruel et d'un pari amoureux des plus périlleux.\nD'un côté, Mme Jo, une femme aux talents exceptionnels qui se sent à l'étroit dans les carcans de sa condition féminine, cache des ambitions et des tourments profonds. De l'autre, son cousin Jo Won, un séducteur invétéré qui a connu tous les visages de l'amour. Liés par une relation ambiguë et un passé complexe, ils décident de lancer un défi machiavélique. Leur cible : Ahn Hui Yeon, une femme vertueuse et pieuse. Mais ce jeu avec le feu, destiné à assouvir des désirs dissimulés et à braver les interdits de l'époque, va rapidement devenir hors de contrôle et éveiller des passions aussi destructrices qu'inattendues.\nRemake du film Untold Scandal lui-même basé sur le roman \"Les Liaisons Dangereuses\" de Pierre Choderlos de Laclos.",
       "genres": [
         "Drame"
       ],
@@ -635,7 +635,7 @@
       ],
       "original_language": "ko",
       "posterV": 2,
-      "updatedAt": 1792700736896,
+      "updatedAt": 1792767555187,
       "networks": [
         "Netflix"
       ],
@@ -34047,6 +34047,15 @@
     "at": 1792697940038
   },
   "journal": [
+    {
+      "k": "mvl3iirl0ixr8",
+      "t": 1792767555201,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "275102",
+      "n": "The Scandal",
+      "d": ""
+    },
     {
       "k": "mvl3h427dfmws",
       "t": 1792767489487,
