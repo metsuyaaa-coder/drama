@@ -17816,7 +17816,7 @@
       ],
       "rating": "",
       "pop": 1.2834,
-      "status": "Returning Series",
+      "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/b8KrYRjYZEohssl8wKMsRbbxLMN.jpg",
       "posterV": 2,
       "backdrop": "https://image.tmdb.org/t/p/original/l3jPRm9xqJNkq3PYIdXrXE7aM81.jpg",
@@ -17969,7 +17969,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792787383290,
+      "updatedAt": 1792797396712,
       "networks": [
         "CBC"
       ]
@@ -40339,6 +40339,15 @@
     "at": 1792697940038
   },
   "journal": [
+    {
+      "k": "mvlla4ne54f1d",
+      "t": 1792797396746,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "317415",
+      "n": "That Genius is Attached to His Fake Girlfriend",
+      "d": ""
+    },
     {
       "k": "mvll7m9lxh8uz",
       "t": 1792797279609,
