@@ -5403,7 +5403,7 @@
         "메이드 인 코리아"
       ],
       "year": "2025",
-      "overview": "Dans la Corée du Sud des années 1970, suivez deux hommes aux antipodes du pouvoir : l'un animé par l'ambition, l'autre par la justice. Alors que leurs mondes s'entrechoquent, la cupidité, la loyauté et la survie s'entremêlent dans une bataille qui façonnera une nation.",
+      "overview": "Situé dans les années 1970, Baek Ki Tae est un homme ambitieux animé par une soif insatiable de pouvoir et de richesse. Face à lui se dresse Jang Geon Young, un procureur redoutable connu pour son instinct aiguisé et sa ténacité. Lorsque survient une affaire majeure, Jang Geon Young met tout en œuvre pour stopper Baek Ki Tae. Autour d'eux gravitent plusieurs figures clés : la lobbyiste Choe Yoo Ji, l'enquêtrice Oh Ye Jin, Bae Gem Zi, et le secrétaire en chef Cheon Seok Jung — tous pris dans un jeu dangereux de pouvoir, de corruption et de survie.",
       "genres": [
         "Crime",
         "Drame"
@@ -5667,7 +5667,7 @@
       ],
       "original_language": "ko",
       "posterV": 2,
-      "updatedAt": 1792700750821,
+      "updatedAt": 1792767378650,
       "networks": [
         "Disney+"
       ],
@@ -34047,6 +34047,15 @@
     "at": 1792697940038
   },
   "journal": [
+    {
+      "k": "mvl3eqjtty45z",
+      "t": 1792767378665,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "246473",
+      "n": "Made in Korea",
+      "d": ""
+    },
     {
       "k": "mvl3drnpix6b4",
       "t": 1792767333445,
