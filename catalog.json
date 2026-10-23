@@ -34591,7 +34591,7 @@
         "id": "rmvl6riqw",
         "title": "Mouse",
         "status": "wait",
-        "kind": "stream",
+        "kind": "both",
         "votes": 1,
         "tmdb": 117378,
         "media": "tv",
@@ -34601,7 +34601,7 @@
         "en": ""
       }
     ],
-    "at": 1792773013928
+    "at": 1792773021932
   },
   "hosts": {
     "items": [
