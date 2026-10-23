@@ -22490,7 +22490,7 @@
       "rating": "7.5",
       "pop": 7.7408,
       "status": "Ended",
-      "poster": "https://image.tmdb.org/t/p/original/2cSPPspfRkZncs0Oo9b8Ej5nrYS.jpg",
+      "poster": "https://image.tmdb.org/t/p/original/iiBkY6mrYWdyosaHtJQm0pFXyBt.jpg",
       "posterV": 2,
       "backdrop": "https://image.tmdb.org/t/p/original/m0hmWbxQJPtHKQzSez55VnQE8YU.jpg",
       "cast": [
@@ -22739,7 +22739,7 @@
       ],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1792700809254,
+      "updatedAt": 1792718688060,
       "videos": [
         {
           "key": "v_x2FUX7jVk",
@@ -33097,6 +33097,15 @@
     "at": 1792697940038
   },
   "journal": [
+    {
+      "k": "mvkaf4n631wi7",
+      "t": 1792718688066,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "286198",
+      "n": "Shin's Project",
+      "d": "affiche"
+    },
     {
       "k": "mvkaddnfxrxry",
       "t": 1792718606427,
