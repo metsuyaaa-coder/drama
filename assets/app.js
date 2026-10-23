@@ -449,6 +449,12 @@ function newSeries(s) {
   if (age < 0 || age > NEWSERIESDAYS) return "";
   return ds.length > 1 && (max - min) / 864e5 <= 1 ? "Nouveau" : "Nouvelle série";
 }
+/* Filtre « Nouvelles séries » : les séries qui viennent de sortir (badge Nouvelle série / Nouveau) + les séries encore EN COURS même si elles ont dépassé les NEWSERIESDAYS jours (au moins une source). Le badge sur l'affiche, lui, ne change pas. */
+function newSeriesFilter(s) {
+  if (!s || isMovie(s)) return false;
+  if (newSeries(s)) return true;
+  return ongoing(s) && (s.seasons || []).some(function (se) { return (se.episodes || []).some(function (ep) { return (ep.sources || []).length; }); });
+}
 /* Drama asiatique : K (Corée), J (Japon), C (Chine), T (Taïwan).
    1) pays d'origine TMDB si la fiche l'a (KR, JP, CN, TW), 2) sinon l'écriture du titre original :
    hangul = K, kana = J, caractères chinois seuls = C. Hors films, animation, télé-réalité, talk-show,
@@ -2238,7 +2244,7 @@ document.addEventListener("click", function (e) {
 /* Filtre nouveautés : "" (tout) | "serie" (nouvelles séries) | "ep" (nouveaux épisodes) */
 function newOptions(list) {
   var o = [];
-  if (list.some(function (s) { return newSeries(s); })) o.push("serie");
+  if (list.some(newSeriesFilter)) o.push("serie");
   if (list.some(function (s) { return newEpisode(s); })) o.push("ep");
   return o;
 }
@@ -2307,7 +2313,7 @@ function platRow(plats) {
   return '<div class="chips langchips platrow">' + tog +
     (platOpen ? '<div class="platall hlbox"><button type="button" class="chip' + (!platFilter ? " on" : "") + '" data-platf="">Toutes</button>' + plats.map(platChip).join("") + '</div>' : '') + '</div>';
 }
-function newMatch(s) { return (!newFilter || (newFilter === "serie" ? !!newSeries(s) : !!newEpisode(s))) && (!kdFilter || dramaType(s) === kdFilter) && (!platFilter || platNames(s).indexOf(platFilter) > -1); }
+function newMatch(s) { return (!newFilter || (newFilter === "serie" ? newSeriesFilter(s) : !!newEpisode(s))) && (!kdFilter || dramaType(s) === kdFilter) && (!platFilter || platNames(s).indexOf(platFilter) > -1); }
 function liveMatch(s) { return !liveFilter || ongoing(s); }
 function langMatch(s) { return !langFilter || (s.langs || []).indexOf(langFilter) > -1; }
 function langChips() {
