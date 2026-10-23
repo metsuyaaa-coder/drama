@@ -398,7 +398,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792776624582,
+      "updatedAt": 1792787332972,
       "trend": 45,
       "videos": [
         {
@@ -413,7 +413,8 @@
           "type": "Trailer",
           "lab": "Anglais"
         }
-      ]
+      ],
+      "eprt": 69
     },
     {
       "id": "275102",
@@ -651,7 +652,7 @@
       ],
       "original_language": "ko",
       "posterV": 2,
-      "updatedAt": 1792776625499,
+      "updatedAt": 1792787333679,
       "networks": [
         "Netflix"
       ],
@@ -668,7 +669,8 @@
           "type": "Trailer",
           "lab": "Anglais"
         }
-      ]
+      ],
+      "eprt": 55
     },
     {
       "id": "293610",
@@ -1034,7 +1036,7 @@
       ],
       "original_language": "ko",
       "posterV": 2,
-      "updatedAt": 1792776626434,
+      "updatedAt": 1792787334211,
       "networks": [
         "SBS"
       ],
@@ -1051,7 +1053,8 @@
           "type": "Trailer",
           "lab": "Anglais"
         }
-      ]
+      ],
+      "eprt": 64
     },
     {
       "id": "278573",
@@ -1385,7 +1388,7 @@
       ],
       "original_language": "ko",
       "posterV": 2,
-      "updatedAt": 1792776627313,
+      "updatedAt": 1792787334890,
       "posterCustom": true,
       "networks": [
         "MBC"
@@ -1403,7 +1406,8 @@
           "type": "Trailer",
           "lab": "Anglais"
         }
-      ]
+      ],
+      "eprt": 73
     },
     {
       "id": "m1058424",
@@ -1553,7 +1557,7 @@
         }
       ],
       "posterV": 2,
-      "updatedAt": 1792776627834,
+      "updatedAt": 1792787335178,
       "videos": [
         {
           "key": "ztqZZO-lLsE",
@@ -1992,7 +1996,7 @@
       ],
       "original_language": "ko",
       "posterV": 2,
-      "updatedAt": 1792776628759,
+      "updatedAt": 1792787335754,
       "networks": [
         "tvN"
       ],
@@ -2009,7 +2013,8 @@
           "type": "Trailer",
           "lab": "Anglais"
         }
-      ]
+      ],
+      "eprt": 61
     },
     {
       "id": "316197",
@@ -2365,7 +2370,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792776629657,
+      "updatedAt": 1792787336276,
       "trend": 0,
       "videos": [
         {
@@ -2380,7 +2385,8 @@
           "type": "Teaser",
           "lab": "Anglais"
         }
-      ]
+      ],
+      "eprt": 64
     },
     {
       "id": "314939",
@@ -2799,7 +2805,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792776630597,
+      "updatedAt": 1792787336959,
       "trend": 0,
       "videos": [
         {
@@ -2814,7 +2820,8 @@
           "type": "Trailer",
           "lab": "Anglais"
         }
-      ]
+      ],
+      "eprt": 64
     },
     {
       "id": "290193",
@@ -3118,7 +3125,7 @@
       ],
       "original_language": "ko",
       "posterV": 2,
-      "updatedAt": 1792776631493,
+      "updatedAt": 1792787337681,
       "networks": [
         "Netflix"
       ],
@@ -3135,7 +3142,8 @@
           "type": "Trailer",
           "lab": "Anglais"
         }
-      ]
+      ],
+      "eprt": 56
     },
     {
       "id": "296140",
@@ -3609,7 +3617,7 @@
       ],
       "original_language": "ko",
       "posterV": 2,
-      "updatedAt": 1792776632428,
+      "updatedAt": 1792787338270,
       "networks": [
         "tvN"
       ],
@@ -3626,7 +3634,8 @@
           "type": "Trailer",
           "lab": "Anglais"
         }
-      ]
+      ],
+      "eprt": 69
     },
     {
       "id": "212204",
@@ -4249,7 +4258,7 @@
       ],
       "original_language": "ko",
       "posterV": 2,
-      "updatedAt": 1792776633381,
+      "updatedAt": 1792787339300,
       "networks": [
         "tvN"
       ],
@@ -4267,7 +4276,8 @@
           "lab": "Anglais"
         }
       ],
-      "posterCustom": true
+      "posterCustom": true,
+      "eprt": 63
     },
     {
       "id": "218539",
@@ -4783,7 +4793,7 @@
       ],
       "original_language": "ko",
       "posterV": 2,
-      "updatedAt": 1792776634330,
+      "updatedAt": 1792787340530,
       "networks": [
         "SBS"
       ],
@@ -4800,7 +4810,8 @@
           "type": "Trailer",
           "lab": "Anglais"
         }
-      ]
+      ],
+      "eprt": 67
     },
     {
       "id": "276161",
@@ -5093,7 +5104,7 @@
       ],
       "original_language": "ko",
       "posterV": 2,
-      "updatedAt": 1792776635431,
+      "updatedAt": 1792787341453,
       "networks": [
         "Netflix"
       ],
@@ -5110,7 +5121,8 @@
           "type": "Teaser",
           "lab": "Français"
         }
-      ]
+      ],
+      "eprt": 66
     },
     {
       "id": "99966",
@@ -5397,7 +5409,7 @@
       ],
       "original_language": "ko",
       "posterV": 2,
-      "updatedAt": 1792776636409,
+      "updatedAt": 1792787342559,
       "networks": [
         "Netflix"
       ],
@@ -5420,7 +5432,8 @@
           "type": "Trailer",
           "lab": "Français"
         }
-      ]
+      ],
+      "eprt": 61
     },
     {
       "id": "298008",
@@ -5657,7 +5670,7 @@
       ],
       "original_language": "ja",
       "posterV": 2,
-      "updatedAt": 1792776637378,
+      "updatedAt": 1792787343444,
       "networks": [
         "Netflix"
       ],
@@ -5674,7 +5687,8 @@
           "type": "Trailer",
           "lab": "Anglais"
         }
-      ]
+      ],
+      "eprt": 69
     },
     {
       "id": "246473",
@@ -5961,7 +5975,7 @@
       ],
       "original_language": "ko",
       "posterV": 2,
-      "updatedAt": 1792776638355,
+      "updatedAt": 1792787344620,
       "networks": [
         "Disney+"
       ],
@@ -5978,7 +5992,8 @@
           "type": "Trailer",
           "lab": "Anglais"
         }
-      ]
+      ],
+      "eprt": 67
     },
     {
       "id": "289423",
@@ -6301,7 +6316,7 @@
       "original_language": "ko",
       "posterV": 2,
       "trend": 0,
-      "updatedAt": 1792776639793,
+      "updatedAt": 1792787345470,
       "networks": [
         "Netflix"
       ],
@@ -6318,7 +6333,8 @@
           "type": "Trailer",
           "lab": "Anglais"
         }
-      ]
+      ],
+      "eprt": 63
     },
     {
       "id": "289690",
@@ -6669,7 +6685,7 @@
       ],
       "downloads": [],
       "posterV": 2,
-      "updatedAt": 1792776640743,
+      "updatedAt": 1792787346452,
       "networks": [
         "Lifetime",
         "U+ Mobile TV"
@@ -6682,7 +6698,8 @@
           "lab": "Original"
         }
       ],
-      "posterCustom": true
+      "posterCustom": true,
+      "eprt": 48
     },
     {
       "id": "304452",
@@ -7186,7 +7203,7 @@
       ],
       "downloads": [],
       "posterV": 2,
-      "updatedAt": 1792776641876,
+      "updatedAt": 1792787347544,
       "trend": 55,
       "networks": [
         "Hunan Television",
@@ -7200,7 +7217,8 @@
           "type": "Trailer",
           "lab": "Anglais"
         }
-      ]
+      ],
+      "eprt": 48
     },
     {
       "id": "208336",
@@ -7617,7 +7635,7 @@
         "VF"
       ],
       "downloads": [],
-      "updatedAt": 1792776642904,
+      "updatedAt": 1792787348294,
       "networks": [
         "Disney+"
       ],
@@ -7635,7 +7653,8 @@
           "lab": "Anglais"
         }
       ],
-      "posterCustom": true
+      "posterCustom": true,
+      "eprt": 63
     },
     {
       "id": "305551",
@@ -7894,7 +7913,7 @@
         "VF"
       ],
       "downloads": [],
-      "updatedAt": 1792776643851,
+      "updatedAt": 1792787349302,
       "networks": [
         "Nippon TV"
       ],
@@ -7912,7 +7931,8 @@
           "type": "Trailer",
           "lab": "Anglais"
         }
-      ]
+      ],
+      "eprt": 47
     },
     {
       "id": "m1375646",
@@ -8060,7 +8080,7 @@
           "by": "head"
         }
       ],
-      "updatedAt": 1792776644485,
+      "updatedAt": 1792787349808,
       "trend": 65,
       "posterCustom": true,
       "videos": [
@@ -8452,7 +8472,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792776645404,
+      "updatedAt": 1792787350676,
       "networks": [
         "ENA"
       ],
@@ -8470,7 +8490,8 @@
           "type": "Trailer",
           "lab": "Anglais"
         }
-      ]
+      ],
+      "eprt": 70
     },
     {
       "id": "311648",
@@ -8796,7 +8817,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792776646325,
+      "updatedAt": 1792787351429,
       "trend": 53,
       "networks": [
         "TVING"
@@ -8814,7 +8835,8 @@
           "type": "Trailer",
           "lab": "Anglais"
         }
-      ]
+      ],
+      "eprt": 55
     },
     {
       "id": "294636",
@@ -9059,7 +9081,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792776647232,
+      "updatedAt": 1792787352447,
       "networks": [
         "TVING"
       ],
@@ -9076,7 +9098,8 @@
           "type": "Trailer",
           "lab": "Anglais"
         }
-      ]
+      ],
+      "eprt": 46
     },
     {
       "id": "276470",
@@ -9341,7 +9364,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792776648111,
+      "updatedAt": 1792787353300,
       "networks": [
         "KBS Drama"
       ],
@@ -9358,7 +9381,8 @@
           "type": "Teaser",
           "lab": "Anglais"
         }
-      ]
+      ],
+      "eprt": 62
     },
     {
       "id": "291496",
@@ -9931,7 +9955,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792776649058,
+      "updatedAt": 1792787354487,
       "networks": [
         "Netflix"
       ],
@@ -9949,7 +9973,8 @@
           "lab": "Anglais"
         }
       ],
-      "posterCustom": true
+      "posterCustom": true,
+      "eprt": 61
     },
     {
       "id": "294095",
@@ -10261,7 +10286,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792776649991,
+      "updatedAt": 1792787355530,
       "networks": [
         "MBC"
       ],
@@ -10278,7 +10303,8 @@
           "type": "Teaser",
           "lab": "Anglais"
         }
-      ]
+      ],
+      "eprt": 65
     },
     {
       "id": "301418",
@@ -10478,7 +10504,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792776650878,
+      "updatedAt": 1792787356458,
       "networks": [
         "Coupang Play"
       ],
@@ -10495,7 +10521,8 @@
           "type": "Teaser",
           "lab": "Anglais"
         }
-      ]
+      ],
+      "eprt": 50
     },
     {
       "id": "298610",
@@ -10768,7 +10795,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792776651880,
+      "updatedAt": 1792787357479,
       "networks": [
         "tvN"
       ],
@@ -10785,7 +10812,8 @@
           "type": "Trailer",
           "lab": "Anglais"
         }
-      ]
+      ],
+      "eprt": 64
     },
     {
       "id": "279323",
@@ -10985,7 +11013,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792776652783,
+      "updatedAt": 1792787358462,
       "networks": [
         "Netflix"
       ],
@@ -11009,7 +11037,8 @@
           "lab": "Français"
         }
       ],
-      "posterCustom": true
+      "posterCustom": true,
+      "eprt": 50
     },
     {
       "id": "292121",
@@ -11298,7 +11327,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792776653715,
+      "updatedAt": 1792787359450,
       "networks": [
         "ENA"
       ],
@@ -11316,7 +11345,8 @@
           "lab": "Anglais"
         }
       ],
-      "posterCustom": true
+      "posterCustom": true,
+      "eprt": 66
     },
     {
       "id": "300954",
@@ -11595,7 +11625,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792776654667,
+      "updatedAt": 1792787360545,
       "networks": [
         "KBS2"
       ],
@@ -11612,7 +11642,8 @@
           "type": "Trailer",
           "lab": "Anglais"
         }
-      ]
+      ],
+      "eprt": 60
     },
     {
       "id": "300727",
@@ -11901,7 +11932,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792776655616,
+      "updatedAt": 1792787361299,
       "networks": [
         "JTBC"
       ],
@@ -11919,7 +11950,8 @@
           "lab": "Anglais"
         }
       ],
-      "posterCustom": true
+      "posterCustom": true,
+      "eprt": 64
     },
     {
       "id": "287011",
@@ -12207,7 +12239,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792776656736,
+      "updatedAt": 1792787362545,
       "networks": [
         "SBS"
       ],
@@ -12225,7 +12257,8 @@
           "lab": "Anglais"
         }
       ],
-      "posterCustom": true
+      "posterCustom": true,
+      "eprt": 68
     },
     {
       "id": "289763",
@@ -12523,7 +12556,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792776657894,
+      "updatedAt": 1792787363306,
       "networks": [
         "tvN"
       ],
@@ -12540,7 +12573,8 @@
           "type": "Trailer",
           "lab": "Français"
         }
-      ]
+      ],
+      "eprt": 70
     },
     {
       "id": "299365",
@@ -12822,7 +12856,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792776658923,
+      "updatedAt": 1792787364525,
       "networks": [
         "JTBC"
       ],
@@ -12833,7 +12867,8 @@
           "type": "Trailer",
           "lab": "Anglais"
         }
-      ]
+      ],
+      "eprt": 65
     },
     {
       "id": "286360",
@@ -13018,7 +13053,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792776659894,
+      "updatedAt": 1792787365371,
       "networks": [
         "Netflix"
       ],
@@ -13035,7 +13070,8 @@
           "type": "Trailer",
           "lab": "Anglais"
         }
-      ]
+      ],
+      "eprt": 64
     },
     {
       "id": "315007",
@@ -13257,7 +13293,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792776660844,
+      "updatedAt": 1792787366451,
       "networks": [
         "Lifetime",
         "U+ Mobile TV"
@@ -13275,7 +13311,8 @@
           "type": "Trailer",
           "lab": "Anglais"
         }
-      ]
+      ],
+      "eprt": 54
     },
     {
       "id": "301412",
@@ -13532,7 +13569,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792776661829,
+      "updatedAt": 1792787367519,
       "networks": [
         "ENA"
       ],
@@ -13549,7 +13586,8 @@
           "type": "Trailer",
           "lab": "Anglais"
         }
-      ]
+      ],
+      "eprt": 60
     },
     {
       "id": "287009",
@@ -13813,7 +13851,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792776662840,
+      "updatedAt": 1792787368445,
       "networks": [
         "ENA"
       ],
@@ -13831,7 +13869,8 @@
           "lab": "Anglais"
         }
       ],
-      "posterCustom": true
+      "posterCustom": true,
+      "eprt": 66
     },
     {
       "id": "296206",
@@ -14085,7 +14124,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792776663830,
+      "updatedAt": 1792787369461,
       "networks": [
         "SBS"
       ],
@@ -14108,7 +14147,8 @@
           "type": "Trailer",
           "lab": "Français"
         }
-      ]
+      ],
+      "eprt": 68
     },
     {
       "id": "233833",
@@ -14391,7 +14431,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792776664731,
+      "updatedAt": 1792787370461,
       "networks": [
         "MBC"
       ],
@@ -14408,7 +14448,8 @@
           "type": "Teaser",
           "lab": "Anglais"
         }
-      ]
+      ],
+      "eprt": 68
     },
     {
       "id": "314784",
@@ -14720,7 +14761,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792776665701,
+      "updatedAt": 1792787371425,
       "networks": [
         "Coupang Play"
       ],
@@ -14738,7 +14779,8 @@
           "lab": "Anglais"
         }
       ],
-      "posterCustom": true
+      "posterCustom": true,
+      "eprt": 31
     },
     {
       "id": "259837",
@@ -15005,7 +15047,7 @@
         "VF"
       ],
       "downloads": [],
-      "updatedAt": 1792776666597,
+      "updatedAt": 1792787372449,
       "networks": [
         "Netflix"
       ],
@@ -15017,7 +15059,8 @@
           "lab": "Anglais"
         }
       ],
-      "posterCustom": true
+      "posterCustom": true,
+      "eprt": 71
     },
     {
       "id": "295509",
@@ -15309,7 +15352,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792776667557,
+      "updatedAt": 1792787373639,
       "networks": [
         "tvN"
       ],
@@ -15326,7 +15369,8 @@
           "type": "Trailer",
           "lab": "Anglais"
         }
-      ]
+      ],
+      "eprt": 58
     },
     {
       "id": "285838",
@@ -15548,7 +15592,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792776668552,
+      "updatedAt": 1792787374323,
       "networks": [
         "Netflix"
       ],
@@ -15565,7 +15609,8 @@
           "type": "Trailer",
           "lab": "Anglais"
         }
-      ]
+      ],
+      "eprt": 45
     },
     {
       "id": "297640",
@@ -15856,7 +15901,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792776669513,
+      "updatedAt": 1792787375443,
       "networks": [
         "tvN"
       ],
@@ -15867,7 +15912,8 @@
           "type": "Trailer",
           "lab": "Anglais"
         }
-      ]
+      ],
+      "eprt": 65
     },
     {
       "id": "281010",
@@ -16204,7 +16250,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792776670501,
+      "updatedAt": 1792787376453,
       "networks": [
         "SBS"
       ],
@@ -16222,7 +16268,8 @@
           "lab": "Anglais"
         }
       ],
-      "posterCustom": true
+      "posterCustom": true,
+      "eprt": 65
     },
     {
       "id": "303143",
@@ -16526,7 +16573,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792776671572,
+      "updatedAt": 1792787377284,
       "networks": [
         "SBS"
       ],
@@ -16544,7 +16591,8 @@
           "lab": "Anglais"
         }
       ],
-      "posterCustom": true
+      "posterCustom": true,
+      "eprt": 70
     },
     {
       "id": "319600",
@@ -16731,7 +16779,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792776672477,
+      "updatedAt": 1792787378279,
       "posterCustom": true,
       "networks": [
         "MBN Plus"
@@ -16749,7 +16797,8 @@
           "type": "Teaser",
           "lab": "Anglais"
         }
-      ]
+      ],
+      "eprt": 36
     },
     {
       "id": "284000",
@@ -16963,7 +17012,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792776673380,
+      "updatedAt": 1792787379394,
       "networks": [
         "wavve"
       ],
@@ -16974,7 +17023,8 @@
           "type": "Teaser",
           "lab": "Anglais"
         }
-      ]
+      ],
+      "eprt": 58
     },
     {
       "id": "278113",
@@ -17214,7 +17264,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792776674340,
+      "updatedAt": 1792787380478,
       "networks": [
         "Disney+"
       ],
@@ -17231,7 +17281,8 @@
           "type": "Trailer",
           "lab": "Anglais"
         }
-      ]
+      ],
+      "eprt": 66
     },
     {
       "id": "289424",
@@ -17698,7 +17749,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792776675227,
+      "updatedAt": 1792787381294,
       "networks": [
         "JTBC"
       ],
@@ -17716,7 +17767,8 @@
           "lab": "Anglais"
         }
       ],
-      "posterCustom": true
+      "posterCustom": true,
+      "eprt": 66
     },
     {
       "id": "311844",
@@ -17950,7 +18002,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792776676111,
+      "updatedAt": 1792787382521,
       "networks": [
         "MBS"
       ],
@@ -17961,7 +18013,8 @@
           "type": "Trailer",
           "lab": "Original"
         }
-      ]
+      ],
+      "eprt": 23
     },
     {
       "id": "317415",
@@ -18138,7 +18191,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792776677076,
+      "updatedAt": 1792787383290,
       "networks": [
         "CBC"
       ]
@@ -18474,7 +18527,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792776678073,
+      "updatedAt": 1792787384385,
       "networks": [
         "ABEMA"
       ],
@@ -18485,7 +18538,8 @@
           "type": "Trailer",
           "lab": "Original"
         }
-      ]
+      ],
+      "eprt": 18
     },
     {
       "id": "325063",
@@ -18664,7 +18718,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792776679137,
+      "updatedAt": 1792787385219,
       "networks": [
         "BS TV Tokyo"
       ]
@@ -18872,10 +18926,11 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792776680118,
+      "updatedAt": 1792787386467,
       "networks": [
         "MBS"
-      ]
+      ],
+      "eprt": 24
     },
     {
       "id": "323264",
@@ -19045,7 +19100,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792776681042,
+      "updatedAt": 1792787387379,
       "networks": [
         "MBS"
       ]
@@ -19268,10 +19323,11 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792776681993,
+      "updatedAt": 1792787388447,
       "networks": [
         "TV Tokyo"
-      ]
+      ],
+      "eprt": 25
     },
     {
       "id": "322570",
@@ -19505,7 +19561,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792776683013,
+      "updatedAt": 1792787389685,
       "networks": [
         "TBS"
       ],
@@ -19516,7 +19572,8 @@
           "type": "Trailer",
           "lab": "Original"
         }
-      ]
+      ],
+      "eprt": 44
     },
     {
       "id": "326063",
@@ -19770,10 +19827,11 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792776684019,
+      "updatedAt": 1792787390438,
       "networks": [
         "Nippon TV"
-      ]
+      ],
+      "eprt": 45
     },
     {
       "id": "312493",
@@ -19981,7 +20039,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792776685003,
+      "updatedAt": 1792787391458,
       "networks": [
         "Netflix"
       ],
@@ -19992,7 +20050,8 @@
           "type": "Teaser",
           "lab": "Anglais"
         }
-      ]
+      ],
+      "eprt": 50
     },
     {
       "id": "209459",
@@ -20246,10 +20305,11 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792776685953,
+      "updatedAt": 1792787392621,
       "networks": [
         "TBS"
-      ]
+      ],
+      "eprt": 47
     },
     {
       "id": "311871",
@@ -20498,7 +20558,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792776686931,
+      "updatedAt": 1792787393474,
       "networks": [
         "TBS"
       ],
@@ -20509,7 +20569,8 @@
           "type": "Trailer",
           "lab": "Original"
         }
-      ]
+      ],
+      "eprt": 44
     },
     {
       "id": "300529",
@@ -20762,7 +20823,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792776688752,
+      "updatedAt": 1792787394171,
       "networks": [
         "Netflix"
       ],
@@ -20779,7 +20840,8 @@
           "type": "Trailer",
           "lab": "Anglais"
         }
-      ]
+      ],
+      "eprt": 56
     },
     {
       "id": "320513",
@@ -21004,7 +21066,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792776689740,
+      "updatedAt": 1792787394774,
       "networks": [
         "Fuji TV",
         "Channel A"
@@ -21022,7 +21084,8 @@
           "type": "Trailer",
           "lab": "Anglais"
         }
-      ]
+      ],
+      "eprt": 57
     },
     {
       "id": "334323",
@@ -21186,7 +21249,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792776690765,
+      "updatedAt": 1792787395318,
       "networks": [
         "MBS"
       ],
@@ -21426,7 +21489,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792776692671,
+      "updatedAt": 1792787396466,
       "networks": [
         "iQiyi"
       ],
@@ -21439,7 +21502,8 @@
           "lab": "Anglais"
         }
       ],
-      "trend": 0
+      "trend": 0,
+      "eprt": 45
     },
     {
       "id": "215072",
@@ -21796,7 +21860,7 @@
       ],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1792776693885,
+      "updatedAt": 1792787397540,
       "networks": [
         "Disney+"
       ],
@@ -21813,7 +21877,8 @@
           "type": "Trailer",
           "lab": "Anglais"
         }
-      ]
+      ],
+      "eprt": 60
     },
     {
       "id": "312663",
@@ -22046,7 +22111,8 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792776695634
+      "updatedAt": 1792787398483,
+      "eprt": 44
     },
     {
       "id": "126035",
@@ -22500,7 +22566,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792776696676,
+      "updatedAt": 1792787399456,
       "videos": [
         {
           "key": "rR-R-kL7B80",
@@ -22515,7 +22581,8 @@
           "lab": "Anglais"
         }
       ],
-      "posterCustom": true
+      "posterCustom": true,
+      "eprt": 70
     },
     {
       "id": "273977",
@@ -22735,7 +22802,7 @@
         "VF"
       ],
       "downloads": [],
-      "updatedAt": 1792776697681,
+      "updatedAt": 1792787400501,
       "posterCustom": true,
       "videos": [
         {
@@ -22750,7 +22817,8 @@
           "type": "Trailer",
           "lab": "Anglais"
         }
-      ]
+      ],
+      "eprt": 45
     },
     {
       "id": "286198",
@@ -23036,7 +23104,7 @@
       ],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1792776698694,
+      "updatedAt": 1792787401363,
       "videos": [
         {
           "key": "v_x2FUX7jVk",
@@ -23044,7 +23112,8 @@
           "type": "Trailer",
           "lab": "Anglais"
         }
-      ]
+      ],
+      "eprt": 63
     },
     {
       "id": "233221",
@@ -23282,7 +23351,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792776699657,
+      "updatedAt": 1792787402620,
       "videos": [
         {
           "key": "93CiNzRELLc",
@@ -23290,7 +23359,8 @@
           "type": "Teaser",
           "lab": "Anglais"
         }
-      ]
+      ],
+      "eprt": 67
     },
     {
       "id": "288603",
@@ -23790,7 +23860,7 @@
       ],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1792776700708,
+      "updatedAt": 1792787403360,
       "videos": [
         {
           "key": "m6aJOU2iMwc",
@@ -23798,7 +23868,8 @@
           "type": "Trailer",
           "lab": "Original"
         }
-      ]
+      ],
+      "eprt": 45
     },
     {
       "id": "289139",
@@ -24379,7 +24450,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792777557144,
+      "updatedAt": 1792787404459,
       "videos": [
         {
           "key": "dBI_FXWoyII",
@@ -24394,7 +24465,8 @@
           "lab": "Anglais"
         }
       ],
-      "posterCustom": true
+      "posterCustom": true,
+      "eprt": 39
     },
     {
       "id": "300146",
@@ -24808,7 +24880,7 @@
       ],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1792776702725,
+      "updatedAt": 1792787405473,
       "trend": 88,
       "videos": [
         {
@@ -24823,7 +24895,8 @@
           "type": "Trailer",
           "lab": "Anglais"
         }
-      ]
+      ],
+      "eprt": 51
     },
     {
       "id": "128995",
@@ -25449,7 +25522,7 @@
       ],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1792776703755,
+      "updatedAt": 1792787406493,
       "videos": [
         {
           "key": "Ce9zR79lf94",
@@ -25463,7 +25536,8 @@
           "type": "Trailer",
           "lab": "Anglais"
         }
-      ]
+      ],
+      "eprt": 65
     },
     {
       "id": "303745",
@@ -25764,7 +25838,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792776705758,
+      "updatedAt": 1792787407585,
       "trend": 73,
       "videos": [
         {
@@ -25779,7 +25853,8 @@
           "type": "Teaser",
           "lab": "Anglais"
         }
-      ]
+      ],
+      "eprt": 64
     },
     {
       "id": "278577",
@@ -26353,7 +26428,7 @@
       ],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1792776706710,
+      "updatedAt": 1792787408467,
       "videos": [
         {
           "key": "AoM_Qz9I-QE",
@@ -26367,7 +26442,8 @@
           "type": "Trailer",
           "lab": "Anglais"
         }
-      ]
+      ],
+      "eprt": 44
     },
     {
       "id": "280822",
@@ -26980,7 +27056,7 @@
       ],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1792776707666,
+      "updatedAt": 1792787409561,
       "videos": [
         {
           "key": "V8dN-148qls",
@@ -26988,7 +27064,8 @@
           "type": "Trailer",
           "lab": "Anglais"
         }
-      ]
+      ],
+      "eprt": 45
     },
     {
       "id": "286506",
@@ -27598,7 +27675,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792776708719,
+      "updatedAt": 1792787410609,
       "videos": [
         {
           "key": "4xUpx0B012E",
@@ -27612,7 +27689,8 @@
           "type": "Trailer",
           "lab": "Anglais"
         }
-      ]
+      ],
+      "eprt": 43
     },
     {
       "id": "251600",
@@ -28172,7 +28250,7 @@
       ],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1792776709667,
+      "updatedAt": 1792787411205,
       "videos": [
         {
           "key": "Z3WCk7AHBzk",
@@ -28186,7 +28264,8 @@
           "type": "Trailer",
           "lab": "Anglais"
         }
-      ]
+      ],
+      "eprt": 45
     },
     {
       "id": "285415",
@@ -28597,7 +28676,8 @@
       ],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1792776710898
+      "updatedAt": 1792787412581,
+      "eprt": 18
     },
     {
       "id": "270420",
@@ -29101,8 +29181,9 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792776712666,
-      "posterCustom": true
+      "updatedAt": 1792787413205,
+      "posterCustom": true,
+      "eprt": 61
     },
     {
       "id": "229891",
@@ -29599,8 +29680,9 @@
         "VF"
       ],
       "downloads": [],
-      "updatedAt": 1792776713706,
-      "posterCustom": true
+      "updatedAt": 1792787414298,
+      "posterCustom": true,
+      "eprt": 65
     },
     {
       "id": "127529",
@@ -30141,8 +30223,9 @@
         "VF"
       ],
       "downloads": [],
-      "updatedAt": 1792776714717,
-      "posterCustom": true
+      "updatedAt": 1792787415447,
+      "posterCustom": true,
+      "eprt": 59
     },
     {
       "id": "220074",
@@ -30697,8 +30780,9 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792776716299,
-      "posterCustom": true
+      "updatedAt": 1792787416411,
+      "posterCustom": true,
+      "eprt": 65
     },
     {
       "id": "110356",
@@ -31010,8 +31094,9 @@
         "VF"
       ],
       "downloads": [],
-      "updatedAt": 1792776717712,
-      "posterCustom": true
+      "updatedAt": 1792787417652,
+      "posterCustom": true,
+      "eprt": 49
     },
     {
       "id": "289271",
@@ -31457,8 +31542,9 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792776718741,
-      "posterCustom": true
+      "updatedAt": 1792787418468,
+      "posterCustom": true,
+      "eprt": 44
     },
     {
       "id": "295558",
@@ -31954,7 +32040,8 @@
       ],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1792778027638
+      "updatedAt": 1792787419472,
+      "eprt": 44
     },
     {
       "id": "297982",
@@ -32363,7 +32450,8 @@
       ],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1792776720744
+      "updatedAt": 1792787420284,
+      "eprt": 45
     },
     {
       "id": "281231",
@@ -33013,7 +33101,8 @@
       ],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1792776721682
+      "updatedAt": 1792787421471,
+      "eprt": 43
     },
     {
       "id": "286171",
@@ -33038,7 +33127,7 @@
       "genres": [
         "Drame"
       ],
-      "rating": "",
+      "rating": "8.0",
       "pop": 8.5236,
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/w500/5OuUPWLwr5JKLZBhzF7antNWdvY.jpg",
@@ -33463,8 +33552,9 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792776722615,
-      "trend": 83
+      "updatedAt": 1792787422635,
+      "trend": 83,
+      "eprt": 47
     },
     {
       "id": "338103",
@@ -33910,7 +34000,8 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792776723598
+      "updatedAt": 1792787423345,
+      "eprt": 15
     },
     {
       "id": "286988",
@@ -34353,7 +34444,8 @@
       ],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1792776724567
+      "updatedAt": 1792787424365,
+      "eprt": 45
     },
     {
       "id": "262932",
@@ -35017,7 +35109,8 @@
       ],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1792776725663
+      "updatedAt": 1792787425479,
+      "eprt": 39
     },
     {
       "id": "299952",
@@ -35435,7 +35528,8 @@
       ],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1792776726846
+      "updatedAt": 1792787426509,
+      "eprt": 48
     },
     {
       "id": "272938",
@@ -35949,7 +36043,8 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792778624110
+      "updatedAt": 1792787427571,
+      "eprt": 44
     },
     {
       "id": "278605",
@@ -36521,7 +36616,8 @@
       ],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1792780628996
+      "updatedAt": 1792787428650,
+      "eprt": 40
     },
     {
       "id": "117378",
@@ -37122,8 +37218,9 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792783713150,
-      "posterCustom": true
+      "updatedAt": 1792787429274,
+      "posterCustom": true,
+      "eprt": 73
     },
     {
       "id": "230311",
@@ -37722,7 +37819,8 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792783659106
+      "updatedAt": 1792787430644,
+      "eprt": 45
     }
   ],
   "deletedLinks": [
@@ -38113,6 +38211,15 @@
     "at": 1792697940038
   },
   "journal": [
+    {
+      "k": "mvlfcixuw4vtm",
+      "t": 1792787430882,
+      "b": "head",
+      "a": "tmdb",
+      "i": "",
+      "n": "Toutes les fiches",
+      "d": "104 fiches"
+    },
     {
       "k": "mvld0uza5hrmv",
       "t": 1792783713155,
