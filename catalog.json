@@ -18734,7 +18734,7 @@
       ],
       "rating": "8.0",
       "pop": 2.6455,
-      "status": "Returning Series",
+      "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/9ACz4RNhdAH1sZjW2x8OnWuUsqS.jpg",
       "posterV": 2,
       "backdrop": "https://image.tmdb.org/t/p/original/tGH6KZB1bGeJaIz9ZiSPLxbck22.jpg",
@@ -18878,7 +18878,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792787387379,
+      "updatedAt": 1792797455232,
       "networks": [
         "MBS"
       ]
@@ -40339,6 +40339,15 @@
     "at": 1792697940038
   },
   "journal": [
+    {
+      "k": "mvllbdsq0tbsb",
+      "t": 1792797455258,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "323264",
+      "n": "Let's End Our Friendship Now",
+      "d": ""
+    },
     {
       "k": "mvlla4ne54f1d",
       "t": 1792797396746,
