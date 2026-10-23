@@ -16317,7 +16317,7 @@
         "아주르 스프링"
       ],
       "year": "2026",
-      "overview": "Deux personnes enlisées dans leur vie se lancent dans la plongée haenyeo, trouvant guérison et nouveau sens dans la mer alors qu'elles affrontent ensemble leur passé et leurs peurs.",
+      "overview": "Seo An Na, une ancienne athlète dont la carrière s'est arrêtée après une blessure, rencontre Yun Deok Hyeon, un homme marqué par les traumatismes de son passé. Tous les deux se retrouvent dans un village au bord de la mer où ils deviennent plongeurs traditionnels coréens. À travers la mer, leur quotidien difficile et les habitants du village, ils essaient de guérir leurs blessures et de redonner un sens à leur vie.",
       "genres": [
         "Drame"
       ],
@@ -16478,7 +16478,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792700782575,
+      "updatedAt": 1792768965004,
       "posterCustom": true,
       "networks": [
         "MBN Plus"
@@ -34047,6 +34047,15 @@
     "at": 1792697940038
   },
   "journal": [
+    {
+      "k": "mvl4cql2utws1",
+      "t": 1792768965014,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "319600",
+      "n": "Azure Spring",
+      "d": ""
+    },
     {
       "k": "mvl4bmhfduubz",
       "t": 1792768913043,
