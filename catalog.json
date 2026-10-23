@@ -37964,9 +37964,20 @@
         "poster": "https://image.tmdb.org/t/p/w185/lrWHBK1h4rrEnx5Ml8iDR1SwNux.jpg",
         "year": "2021",
         "dt": "K"
+      },
+      {
+        "id": "200709_2026-10-24_mvlfkjhz",
+        "sid": "200709",
+        "date": "2026-10-24",
+        "label": "",
+        "media": "tv",
+        "name": "Héros fragile",
+        "poster": "https://image.tmdb.org/t/p/w185/qWY4cFftaZxvtHet3S9p7NYTZeD.jpg",
+        "year": "2022",
+        "dt": "K"
       }
     ],
-    "at": 1792782828477
+    "at": 1792787804855
   },
   "announce": {
     "on": false,
