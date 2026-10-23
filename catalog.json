@@ -32109,10 +32109,12 @@
       ],
       "sources": [],
       "addedAt": 1792716098400,
-      "langs": [],
+      "langs": [
+        "VOSTFR"
+      ],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1792716468085
+      "updatedAt": 1792722300963
     },
     {
       "id": "281231",
@@ -33125,6 +33127,15 @@
     "at": 1792697940038
   },
   "journal": [
+    {
+      "k": "mvkckkex37g7d",
+      "t": 1792722301017,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "297982",
+      "n": "Irreplaceable",
+      "d": ""
+    },
     {
       "k": "mvkck2wxqbgrd",
       "t": 1792722278337,
