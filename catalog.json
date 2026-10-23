@@ -34120,10 +34120,12 @@
       ],
       "sources": [],
       "addedAt": 1792772585525,
-      "langs": [],
+      "langs": [
+        "VOSTFR"
+      ],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1792772886118
+      "updatedAt": 1792774884535
     },
     {
       "id": "262932",
@@ -35579,6 +35581,15 @@
     "at": 1792697940038
   },
   "journal": [
+    {
+      "k": "mvl7vm4u9emax",
+      "t": 1792774884558,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "286988",
+      "n": "Blossom Through the Cloud",
+      "d": ""
+    },
     {
       "k": "mvl7gfr7wxa2r",
       "t": 1792774801525,
