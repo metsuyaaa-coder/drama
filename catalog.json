@@ -4862,7 +4862,7 @@
         "Now my school"
       ],
       "year": "2022",
-      "overview": "Alors qu'un virus zombie décime tous les élèves d'un lycée, un groupe d'étudiants décide de s'enfermer dans l'enceinte de l'école pour tenter de survivre à l'épidémie.",
+      "overview": "Dans une petite ville tranquille, où rien ne se passe habituellement, un étrange virus apparaît, transformant les personnes en zombies. Sa propagation se multiplie d'heure en heure. Et alors que la population essaye d'y faire face, un groupe de jeunes, dont Cheong San et On Jo, se retrouve piégé dans son école. S'ensuit alors une course pour sortir d'ici, tout en évitant d'être contaminé.",
       "genres": [
         "Action & Adventure",
         "Drame",
@@ -5103,7 +5103,7 @@
       ],
       "original_language": "ko",
       "posterV": 2,
-      "updatedAt": 1792700748109,
+      "updatedAt": 1792766931425,
       "networks": [
         "Netflix"
       ],
@@ -34047,6 +34047,15 @@
     "at": 1792697940038
   },
   "journal": [
+    {
+      "k": "mvl355gxxqgcu",
+      "t": 1792766931441,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "99966",
+      "n": "All of Us Are Dead",
+      "d": ""
+    },
     {
       "k": "mvl3454jhr729",
       "t": 1792766884339,
