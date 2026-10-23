@@ -33683,6 +33683,447 @@
       ],
       "downloads": [],
       "updatedAt": 1792766036948
+    },
+    {
+      "id": "286988",
+      "type": "tv",
+      "name": "Blossom Through the Cloud",
+      "original_name": "飞到我心上",
+      "origin_country": [
+        "CN"
+      ],
+      "networks": [
+        "Hunan Television",
+        "Mango TV"
+      ],
+      "original_language": "zh",
+      "aka": [
+        "Blossom Through the Cloud",
+        "Além Das Nuvens",
+        "飛到我心上",
+        "จุดจอดหัวใจปักหมุดไว้ที่เธอ",
+        "Leti iznad oblaka",
+        "Bay Vào Tim Anh",
+        "비도아심상 : 너를 향한 비행",
+        "تزهر بين الغيوم",
+        "حَلِّقْ إلى قلبي",
+        "降落我心上",
+        "Landing on My Heart",
+        "飞到我心上"
+      ],
+      "year": "2026",
+      "overview": "Ancienne hôtesse de l’air, Ruan Sixian décide de poursuivre son rêve de devenir pilote en intégrant une école de pilotage. Elle se retrouve bientôt confrontée à Fu Mingyu, un dirigeant du secteur de l’aviation. Entre affrontements et réconciliations, tous deux se lancent dans une course aux enjeux élevés pour faire avancer l’innovation dans le secteur aérien et trouver une forme de rédemption professionnelle.",
+      "genres": [
+        "Drame",
+        "Comédie"
+      ],
+      "rating": "7.6",
+      "pop": 6.6808,
+      "status": "Ended",
+      "poster": "https://image.tmdb.org/t/p/original/ecUJK58QyF1uBuDzJwxTItWg2WK.jpg",
+      "posterV": 2,
+      "backdrop": "https://image.tmdb.org/t/p/original/aYtWVJ5mUkPRFghrCHbc3I2v4WE.jpg",
+      "videos": [
+        {
+          "key": "_NLi-jFdLFk",
+          "name": "Trailer",
+          "type": "Trailer",
+          "lab": "Anglais"
+        }
+      ],
+      "cast": [
+        {
+          "name": "魏哲鸣",
+          "character": "Fu Mingyu",
+          "id": 1914924
+        },
+        {
+          "name": "刘些宁",
+          "character": "Ruan Sixian",
+          "id": 2838971
+        },
+        {
+          "name": "费启鸣",
+          "character": "Yan An",
+          "id": 2633279
+        },
+        {
+          "name": "赵晴",
+          "character": "Zheng Youan",
+          "id": 2937438
+        },
+        {
+          "name": "金泽灏",
+          "character": "Yue Yang",
+          "id": 2417157
+        },
+        {
+          "name": "Xuan Zhao",
+          "character": "Bai Yang",
+          "id": 2079238
+        },
+        {
+          "name": "Ma Yujie",
+          "character": "Jiang Ziyue",
+          "id": 2307500
+        },
+        {
+          "name": "季美含",
+          "character": "Si Xiaozhen",
+          "id": 2872808
+        }
+      ],
+      "seasons": [
+        {
+          "number": 1,
+          "name": "Saison 1",
+          "episodes": [
+            {
+              "number": 1,
+              "name": "A \"Confession\" Letter",
+              "overview": "",
+              "air_date": "2026-08-31",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-aknm6v3klrq3.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 2,
+              "name": "Fate Is Like an Illusion",
+              "overview": "",
+              "air_date": "2026-08-31",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-6jj9he0lcj3a.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 3,
+              "name": "Is There a Catch?",
+              "overview": "",
+              "air_date": "2026-09-01",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-e5o8wb2zw621.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 4,
+              "name": "Épisode 4",
+              "overview": "",
+              "air_date": "2026-09-01",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-gic3ngpaw7v3.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 5,
+              "name": "Épisode 5",
+              "overview": "",
+              "air_date": "2026-09-02",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-je2ke3btk4bu.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 6,
+              "name": "Épisode 6",
+              "overview": "",
+              "air_date": "2026-09-02",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-xb2szsmcjfqx.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 7,
+              "name": "Épisode 7",
+              "overview": "",
+              "air_date": "2026-09-03",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-0wjwoyv95li1.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 8,
+              "name": "Épisode 8",
+              "overview": "",
+              "air_date": "2026-09-03",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-0h32g67tu51t.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 9,
+              "name": "Épisode 9",
+              "overview": "",
+              "air_date": "2026-09-04",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-aul92qjml8am.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 10,
+              "name": "Épisode 10",
+              "overview": "",
+              "air_date": "2026-09-05",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-p16i9io9tbsi.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 11,
+              "name": "Épisode 11",
+              "overview": "",
+              "air_date": "2026-09-06",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-eh4vt2iyz5uc.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 12,
+              "name": "Épisode 12",
+              "overview": "",
+              "air_date": "2026-09-06",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-r41zyfhgbbj5.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 13,
+              "name": "Épisode 13",
+              "overview": "",
+              "air_date": "2026-09-07",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-4jdou5vbavwj.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 14,
+              "name": "Épisode 14",
+              "overview": "",
+              "air_date": "2026-09-07",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-fmykuuhkxuni.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 15,
+              "name": "Épisode 15",
+              "overview": "",
+              "air_date": "2026-09-08",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-qstfr556yv1y.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 16,
+              "name": "Épisode 16",
+              "overview": "",
+              "air_date": "2026-09-08",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-0d9xx2s0t8gw.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 17,
+              "name": "Épisode 17",
+              "overview": "",
+              "air_date": "2026-09-09",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-kbsxfet3n1i1.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 18,
+              "name": "Épisode 18",
+              "overview": "",
+              "air_date": "2026-09-09",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-cxxay40k89nm.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 19,
+              "name": "Épisode 19",
+              "overview": "",
+              "air_date": "2026-09-10",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-a6pr6rqfnjvz.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 20,
+              "name": "Épisode 20",
+              "overview": "",
+              "air_date": "2026-09-10",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-v8wn3x4kiuic.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 21,
+              "name": "Épisode 21",
+              "overview": "",
+              "air_date": "2026-09-11",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-507381t635wb.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 22,
+              "name": "Épisode 22",
+              "overview": "",
+              "air_date": "2026-09-11",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-yf6vif29z1gb.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 23,
+              "name": "Épisode 23",
+              "overview": "",
+              "air_date": "2026-09-11",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-f9gnvzt16f6y.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 24,
+              "name": "Épisode 24",
+              "overview": "",
+              "air_date": "2026-09-11",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-i6qr446ptlwf.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            }
+          ],
+          "downloads": []
+        }
+      ],
+      "sources": [],
+      "addedAt": 1792772585525,
+      "langs": [],
+      "downloads": [],
+      "posterCustom": true,
+      "updatedAt": 1792772886118
     }
   ],
   "deletedLinks": [
@@ -34047,6 +34488,15 @@
     "at": 1792697940038
   },
   "journal": [
+    {
+      "k": "mvl6os6fhwpzl",
+      "t": 1792772886183,
+      "b": "614d778ed0",
+      "a": "add",
+      "i": "286988",
+      "n": "Blossom Through the Cloud",
+      "d": ""
+    },
     {
       "k": "mvl4cql2utws1",
       "t": 1792768965014,
