@@ -15621,7 +15621,7 @@
       "rating": "7.7",
       "pop": 11.264,
       "status": "Ended",
-      "poster": "https://image.tmdb.org/t/p/w500/afLKnB1yzh28YbpbB5Z5xragMf.jpg",
+      "poster": "https://image.tmdb.org/t/p/original/sC0xzkx7e6JMSlN3BGy1bITeWck.jpg",
       "posterV": 2,
       "backdrop": "https://image.tmdb.org/t/p/original/p98XiePTvNrXegxyKc6n46UJD85.jpg",
       "cast": [
@@ -15915,7 +15915,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792700780089,
+      "updatedAt": 1792719216063,
       "networks": [
         "SBS"
       ],
@@ -15932,7 +15932,8 @@
           "type": "Trailer",
           "lab": "Anglais"
         }
-      ]
+      ],
+      "posterCustom": true
     },
     {
       "id": "303143",
@@ -33098,6 +33099,15 @@
     "at": 1792697940038
   },
   "journal": [
+    {
+      "k": "mvkaqg23vk3y3",
+      "t": 1792719216075,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "281010",
+      "n": "Phantom Lawyer",
+      "d": "affiche"
+    },
     {
       "k": "mvkanm605bkeg",
       "t": 1792719084024,
