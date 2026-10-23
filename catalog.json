@@ -34786,6 +34786,422 @@
       "downloads": [],
       "posterCustom": true,
       "updatedAt": 1792774238205
+    },
+    {
+      "id": "299952",
+      "type": "tv",
+      "name": "The Early Spring",
+      "original_name": "早春晴朗",
+      "origin_country": [
+        "CN"
+      ],
+      "networks": [
+        "Youku"
+      ],
+      "original_language": "zh",
+      "aka": [
+        "The Early Spring",
+        "Ранняя весна",
+        "Đầu Xuân Tươi Sáng",
+        "ฤดูใหม่นี้มีเพียงสองเรา",
+        "Cerahnya Awal Musim Semi",
+        "Cuando empiece la primavera",
+        "Cerah di Awal Musim Bunga",
+        "Primavera Antecipada",
+        "조춘청랑",
+        "早春晴朗",
+        "İlkbaharın Başında",
+        "La primavera temprana",
+        "Zao Chun Qing Lang"
+      ],
+      "year": "2026",
+      "overview": "Shang Zhitao, une jeune diplômée ordinaire, décroche contre toute attente un poste dans une prestigieuse agence de publicité à Pékin. Dès son premier jour, son patron exigeant au verbe acéré, Luan Nian, lui conseille sèchement de démissionner.  Sans se laisser décourager, elle s'accroche, surmonte la pression de l'entreprise et fait ses preuves. Au fil des défis professionnels, une jalousie mutuelle et une romance secrète complexe s'installent entre la jeune recrue et son supérieur. Après plusieurs années de vie commune, une série de malentendus pousse Zhitao à tout quitter du jour au lendemain pour retourner vivre dans sa ville natale. Ce n'est que six ans plus tard que leurs chemins se croisent à nouveau, alors qu'elle a mûri et dirige sa propre entreprise.",
+      "genres": [
+        "Drame"
+      ],
+      "rating": "8.1",
+      "pop": 26.8941,
+      "status": "Ended",
+      "poster": "https://image.tmdb.org/t/p/original/yiAzR6wGqjyAotZ4DvFvFeo8QS0.jpg",
+      "posterV": 2,
+      "backdrop": "https://image.tmdb.org/t/p/original/oUFUvEMCBP80e4eYsfVfxC8n7ih.jpg",
+      "videos": [
+        {
+          "key": "k2l7W7jppvo",
+          "name": "进退概念片",
+          "type": "Trailer",
+          "lab": "Original"
+        },
+        {
+          "key": "7JsnZ47CTDg",
+          "name": "Official Trailer",
+          "type": "Trailer",
+          "lab": "Anglais"
+        }
+      ],
+      "cast": [
+        {
+          "name": "井柏然",
+          "character": "Luan Nian",
+          "id": 1094210
+        },
+        {
+          "name": "孙千",
+          "character": "Shang Zhitao",
+          "id": 2084573
+        }
+      ],
+      "seasons": [
+        {
+          "number": 1,
+          "name": "Saison 1",
+          "episodes": [
+            {
+              "number": 1,
+              "name": "Tu N'Es Pas Adaptée",
+              "overview": "Après avoir raté un entretien d'embauche dans une agence réputée, Shang Zhitao se démène pour trouver ses marques à Pékin tout en se liant d'amitié avec sa nouvelle colocataire.",
+              "air_date": "2026-08-26",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-0cp23yvkd3xk.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 2,
+              "name": "Le Monde Du Travail N'Est Pas Un Jeu D'Enfant",
+              "overview": "Lors d'un dîner organisé pour fêter la signature d'un nouveau projet, Nian intervient pour aider Zhitao. Pendant ce temps, une erreur d'identité menace la paix chez Sun Yu.",
+              "air_date": "2026-08-26",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-pw7ur4rnn0h9.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 3,
+              "name": "Rendre Une Faveur Au Prix De Sa Vie",
+              "overview": "Après avoir échappé à un agresseur lors d'un tournage sous la pluie en montagne, Zhitao et Nian ne peuvent compter que sur eux-mêmes lorsqu'un glissement de terrain les isole.",
+              "air_date": "2026-08-26",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-76bq1jn6xvst.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 4,
+              "name": "Suis-Moi À La Maison",
+              "overview": "Une femme appartenant au passé de Nian vient perturber son dîner avec Zhitao, tandis qu'une rencontre fortuite dans un bar fait remonter à la surface sa jalousie grandissante.",
+              "air_date": "2026-08-26",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-yv11jue4iptn.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 5,
+              "name": "Peux-Tu Contrôler L'Amour?",
+              "overview": "Après une nuit non préméditée avec Nian, Zhitao insiste pour que leur relation reste strictement professionnelle, malgré les efforts de ce dernier pour la séduire.",
+              "air_date": "2026-08-27",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-sfoudvc7hoxh.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 6,
+              "name": "Le Premier Verre De Lait D'Osmanthus",
+              "overview": "Déterminée à prendre ses distances avec Nian, Zhitao demande une mutation, mais il refuse de la laisser partir et met à l'épreuve les limites qu'ils s'étaient fixées.",
+              "air_date": "2026-08-27",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-360tv0r14789.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 7,
+              "name": "La Vie Ne Vaincra Jamais Une Personne Ambitieuse",
+              "overview": "Zhitao tente de se concentrer sur son travail et d'éviter Nian, mais un nouveau projet l'oblige à solliciter son aide alors que la jalousie commence à brouiller leur jugement.",
+              "air_date": "2026-08-28",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-x48ex3dquk3r.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 8,
+              "name": "Le Premier Qui Tombe Amoureux Finit Par Tout Perdre",
+              "overview": "Alors que Zhitao est félicitée pour sa base de données, Nian est suspendu à la suite d'une plainte malveillante. Ils décident alors de profiter d'une retraite à la montagne.",
+              "air_date": "2026-08-28",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-lhpyekxonksf.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 9,
+              "name": "L'Amour Est Un Bonbon Volé",
+              "overview": "Malgré un budget limité, Zhitao parvient à obtenir un parrainage pour le tournoi de basket, impressionnant ainsi ses collègues, tandis que Nian fait une proposition surprenante.",
+              "air_date": "2026-08-29",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-buvdcwtjzvc1.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 10,
+              "name": "Être Avec Toi, C'Est Sauter Dans L'Inconnu",
+              "overview": "Une histoire d'amour secrète naît entre Zhitao et Nian, mais une erreur commise au travail menace le fragile équilibre qu'ils se sont efforcés de maintenir.",
+              "air_date": "2026-08-29",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-1jtwtu7bqhbs.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 11,
+              "name": "La Douce Amertume Des Débuts De L'Amour",
+              "overview": "Lorsque Zang Yao accepte les fleurs envoyées au bureau, Zhitao se fait de fausses idées et décide de prendre quelques jours de congé et de les passer avec ses colocataires.",
+              "air_date": "2026-08-30",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-35vkjh983u76.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 12,
+              "name": "Chutes De Neige Avec Toi À Mes Côtés",
+              "overview": "La tension monte entre Nian et Zhitao lorsqu'il tente de prendre soin d'elle pendant les vacances. Pendant ce temps, Yao décide de faire le premier pas auprès de son béguin.",
+              "air_date": "2026-08-31",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-n4h8o5dp059h.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 13,
+              "name": "A-T-On Un Avenir ?",
+              "overview": "Zhitao reçoit une offre d'emploi inattendue lors d'un séminaire d'entreprise à Phuket, mais une conversation au bord de la mer met en lumière les divergences qui l'opposent à Nian.",
+              "air_date": "2026-09-01",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-0d3njo7iw3cp.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 14,
+              "name": "L'Amour, C'Est Faire Des Exceptions",
+              "overview": "Alors que ses colocataires Yu et Yuanzhu sont retenus à l'hôpital, Zhitao est harcelée par une agence de location peu scrupuleuse, incitant Nian à intervenir.",
+              "air_date": "2026-09-02",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-37y4apcslhhp.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 15,
+              "name": "Deux personnes, un cœur",
+              "overview": "Alors que Zhitao est en proie à des doutes quant à son avenir avec Nian, un nouveau directeur général s'efforce de saper son autorité au bureau.",
+              "air_date": "2026-09-03",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-7qxbsjg9qo9x.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 16,
+              "name": "Je pense à toi en ce moment, je te verrai dans le prochain",
+              "overview": "Dony tente de rallier Zhitao à sa cause alors que Nian se méfie de plus en plus de son nouveau patron. Pendant ce temps, Zang Yao s'apprête à retourner au Royaume-Uni.",
+              "air_date": "2026-09-04",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-lzzl48y485l6.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 17,
+              "name": "Le courage, c'est agir malgré la peur",
+              "overview": "Après avoir appris le comportement inapproprié de Dony au travail, Zhitao prend les choses en main, provoquant un tollé au bureau et inquiétant Nian.",
+              "air_date": "2026-09-05",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-ike30npm6cz8.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 18,
+              "name": "Liste de choses à faire dans la vie",
+              "overview": "La jalousie de Nian s'enflamme après un malentendu lors d'un speed-dating, et une rencontre fortuite avec l'ex de Zhitao creuse encore davantage le fossé entre eux.",
+              "air_date": "2026-09-06",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-gwas8daqeeoy.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 19,
+              "name": "Un Nouveau Saut Dans L'Inconnu",
+              "overview": "Nian devient méfiant lorsque Zhitao envisage de travailler en dehors de la ville. Un problème de santé oblige enfin le couple à se pencher sur son avenir.",
+              "air_date": "2026-09-07",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-34say1r3y34l.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 20,
+              "name": "Je Veillerai Sur Toi De Là-Haut, Jusqu'à Ce Que Ta Vie Soit Complète",
+              "overview": "Yuanzhu avoue enfin ses sentiments à Zhitao, mais lorsqu'une nouvelle dévastatrice tombe, Nian confond la compassion de cette dernière avec un sentiment d'une autre nature.",
+              "air_date": "2026-09-08",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-3lv44dfyxbyn.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 21,
+              "name": "Un Grand Départ",
+              "overview": "Un scandale au bureau réduit les chances de Zhitao de remporter un prix décerné par l'entreprise, la poussant à reconsidérer sa carrière - et son avenir avec Nian.",
+              "air_date": "2026-09-09",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-1h4v5b8f0o0h.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 22,
+              "name": "Le Numéro Composé N'Est Pas Attribué",
+              "overview": "Nian découvre la vérité derrière le départ soudain de Zhitao, tandis que celle-ci retourne à Harbin pour s'occuper de son père et prendre un nouveau départ.",
+              "air_date": "2026-09-09",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-we2b1m6cyk75.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 23,
+              "name": "Luke Est Aussi Mon Chien",
+              "overview": "Nian tente de se faire pardonner par Zhitao après l'avoir retrouvée à Harbin, profitant de ses visites chez Luke pour regagner peu à peu sa place dans sa vie.",
+              "air_date": "2026-09-09",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-kynw9i7sv4m1.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 24,
+              "name": "Shang Zhitao, Bon Retour À Pékin",
+              "overview": "Une crise financière ramène Nian à Harbin où il se démène pour aider Zhitao. L'ancien couple a ainsi la possibilité de faire le point sur sa relation brisée.",
+              "air_date": "2026-09-09",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-jvxwioqgpnat.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            }
+          ],
+          "downloads": []
+        }
+      ],
+      "sources": [],
+      "addedAt": 1792774297761,
+      "langs": [],
+      "downloads": [],
+      "posterCustom": true,
+      "updatedAt": 1792774625433
     }
   ],
   "deletedLinks": [
@@ -35163,6 +35579,15 @@
     "at": 1792697940038
   },
   "journal": [
+    {
+      "k": "mvl7q28055ax7",
+      "t": 1792774625472,
+      "b": "614d778ed0",
+      "a": "add",
+      "i": "299952",
+      "n": "The Early Spring",
+      "d": ""
+    },
     {
       "k": "mvl7gfr7wxa2r",
       "t": 1792774238232,
