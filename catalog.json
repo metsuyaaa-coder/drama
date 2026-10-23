@@ -16520,7 +16520,7 @@
         "リバース"
       ],
       "year": "2026",
-      "overview": "",
+      "overview": "Myo Jin a perdu ses parents dans ce qui semble être un accident mais était en réalité un meurtre. Cela fait donc quinze ans qu'elle attend une chance de se venger. Mais quand enfin une opportunité semble se présenter, elle perd la mémoire dans un étrange accident.\nAlors qu'elle tente de retrouver ses souvenirs, elle doit faire face à de nouveaux éléments et se rapproche alors d'une vérité encore plus choquante que ce qu'elle croyait.",
       "genres": [
         "Mystère",
         "Drame"
@@ -16710,7 +16710,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792700784131,
+      "updatedAt": 1792768913036,
       "networks": [
         "wavve"
       ],
@@ -34047,6 +34047,15 @@
     "at": 1792697940038
   },
   "journal": [
+    {
+      "k": "mvl4bmhfduubz",
+      "t": 1792768913043,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "284000",
+      "n": "Reverse",
+      "d": ""
+    },
     {
       "k": "mvl4an0bdwx67",
       "t": 1792768867067,
