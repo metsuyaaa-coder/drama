@@ -4577,7 +4577,7 @@
         "Giáo Dục Chân Chính"
       ],
       "year": "2026",
-      "overview": "Quand il n'y a plus de respect à l'école, des inspecteurs d'un certain type viennent mettre de l'ordre en rappelant sans détour les principes de vie absents des manuels scolaires.",
+      "overview": "Les enseignants ont beaucoup de mal à discipliner les élèves et, souvent, ils n'en ont même pas la volonté. L'autorité des enseignants en classe s'effrite, ce qui engendre de graves problèmes sociaux. L'Assemblée nationale et le ministre de l'Éducation adoptent un amendement à la loi sur la protection des droits des enseignants.\n\nSuite à l'adoption de cette loi, un nouvel organisme gouvernemental, le Bureau de protection des droits à l'éducation est créé. Na Hwa Jin fait partie de ce bureau en tant qu'inspecteur. Son équipe est envoyée dans différents établissements scolaires en difficulté en tant que superviseurs. Sur place, ils peuvent enseigner aux élèves sans aucune restriction",
       "genres": [
         "Action & Adventure",
         "Drame",
@@ -4811,7 +4811,7 @@
       ],
       "original_language": "ko",
       "posterV": 2,
-      "updatedAt": 1792700747170,
+      "updatedAt": 1792767950281,
       "networks": [
         "Netflix"
       ],
@@ -34047,6 +34047,15 @@
     "at": 1792697940038
   },
   "journal": [
+    {
+      "k": "mvl3qzmjl1yrn",
+      "t": 1792767950299,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "276161",
+      "n": "Teach You a Lesson",
+      "d": ""
+    },
     {
       "k": "mvl3pvrae2g27",
       "t": 1792767898630,
