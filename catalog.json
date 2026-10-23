@@ -7872,7 +7872,7 @@
         "연애박사"
       ],
       "year": "2026",
-      "overview": "L'histoire d'amour entre un homme, ancien nageur ayant perdu sa jambe gauche, et une femme qui, après avoir perdu ses repères en tant qu'interne en médecine, trouve une nouvelle voie en tant que jeune diplômée.",
+      "overview": "Un ancien nageur qui se construit une nouvelle vie grâce à la robotique après avoir perdu une jambe et une femme qui se découvre une nouvelle voie universitaire après s'être éloignée de ses rêves d'origine vivent une histoire d'amour douce et apaisante tout en poursuivant leurs études d'ingénierie mécanique.",
       "genres": [
         "Drame",
         "Comédie"
@@ -8187,7 +8187,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792712123566,
+      "updatedAt": 1792768183890,
       "networks": [
         "ENA"
       ],
@@ -34047,6 +34047,15 @@
     "at": 1792697940038
   },
   "journal": [
+    {
+      "k": "mvl3vzvnbgzmq",
+      "t": 1792768183907,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "307106",
+      "n": "Between Steps",
+      "d": ""
+    },
     {
       "k": "mvl3tj6qwz67n",
       "t": 1792768091296,
