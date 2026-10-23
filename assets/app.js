@@ -330,7 +330,7 @@ var STATUS = { "Returning Series": "En cours", "Ended": "Terminée", "Canceled":
 function statusFr(s) { return STATUS[s] || s || ""; }
 
 /* ===== Vues ===== */
-var filter = "", langFilter = "", dlFilter = false, liveFilter = false, newFilter = "", kdFilter = "", platFilter = "", platOpen = false, fOpen = "", seasonSel = { id: "", i: 0 }, typeFilter = "", curQ = "", searchBack = "/";
+var filter = "", langFilter = "", dlFilter = false, liveFilter = false, miniFilter = "", newFilter = "", kdFilter = "", platFilter = "", platOpen = false, fOpen = "", seasonSel = { id: "", i: 0 }, typeFilter = "", curQ = "", searchBack = "/";
 var rerender = null;
 var lastPage = null;
 var pendingScroll = false;
@@ -2314,6 +2314,9 @@ function platRow(plats) {
     (platOpen ? '<div class="platall hlbox"><button type="button" class="chip' + (!platFilter ? " on" : "") + '" data-platf="">Toutes</button>' + plats.map(platChip).join("") + '</div>' : '') + '</div>';
 }
 function newMatch(s) { return (!newFilter || (newFilter === "serie" ? newSeriesFilter(s) : !!newEpisode(s))) && (!kdFilter || dramaType(s) === kdFilter) && (!platFilter || platNames(s).indexOf(platFilter) > -1); }
+/* Mini drama : série dont les épisodes durent entre 4 et 20 minutes (champ eprt = durée d'un épisode, remplie depuis TMDB ou à la main) */
+function miniDrama(s) { if (!s || s.type === "movie") return false; var n = parseFloat(s.eprt); return n >= 4 && n <= 20; }
+function miniMatch(s) { return !miniFilter || miniDrama(s); }
 /* Série terminée : statut « Ended / Terminée » (les séries annulées ne comptent pas) */
 function ended(s) { return !!s && s.type !== "movie" && /ended|termin/i.test(String(s.status || "")); }
 function liveMatch(s) { return !liveFilter || (liveFilter === "2" ? ended(s) : ongoing(s)); }
@@ -2338,7 +2341,7 @@ var LSLOGO = {
 function lsList() { return sortedDb().filter(lsCtx.pred); }
 function lsMatch(s) {
   if (filter && (s.genres || []).indexOf(filter) < 0) return false;
-  if (!langMatch(s) || !newMatch(s) || !liveMatch(s)) return false;
+  if (!langMatch(s) || !newMatch(s) || !liveMatch(s) || !miniMatch(s)) return false;
   var q = fold(lsQuery); if (q && !titleMatch(s, q)) return false;
   return true;
 }
@@ -2382,6 +2385,7 @@ function filterGroups(o) {
   if ((o.newOpts || []).length) g.push({ key: "new", label: "Nouveautés", txt: 1, cur: newFilter ? esc(NEWLBL[newFilter] || "") : "", inner: srChip("data-newf", "", "Toutes", !newFilter) + o.newOpts.map(function (x) { return srChip("data-newf", x, NEWLBL[x], newFilter === x); }).join("") });
   if ((o.kd || []).length) g.push({ key: "kd", label: "Catégorie", txt: 1, cur: kdFilter ? esc(DRAMA[kdFilter] || "") : "", inner: srChip("data-kdf", "", "Toutes", !kdFilter) + o.kd.map(function (d) { return srChip("data-kdf", d, DRAMA[d], kdFilter === d); }).join("") });
   if ((o.diff || []).length) g.push({ key: "diff", label: "Diffusion", txt: 1, cur: esc(diffLbl), inner: srChip("data-livef", "", "Toutes", !liveFilter) + o.diff.map(function (x) { return srChip("data-livef", x[0], x[1], liveFilter === x[0]); }).join("") });
+  if (o.mini) g.push({ key: "mini", label: "Format", txt: 1, cur: miniFilter ? "Mini drama" : "", inner: srChip("data-minif", "", "Tous", !miniFilter) + srChip("data-minif", "1", "Mini drama", miniFilter === "1") });
   if ((o.plats || []).length) g.push({ key: "plat", label: "Plateformes", cur: platFilter ? platMark(platBrand(platFilter)) : "", inner: '<button type="button" class="chip' + (!platFilter ? " on" : "") + '" data-platf="">Toutes</button>' + o.plats.map(platChip).join("") });
   if (o.canDl) g.push({ key: "dl", label: "Téléchargement", txt: 1, cur: dlFilter ? "Avec lien" : "", inner: srChip("data-dlf", "", "Tous", !dlFilter) + srChip("data-dlf", "1", "Avec lien", dlFilter) });
   return g;
@@ -2390,7 +2394,7 @@ function lsFilters(list, title) {
   var genres = {};
   list.forEach(function (x) { (x.genres || []).forEach(function (g) { genres[g] = 1; }); });
   var series = title === "Séries";
-  return fBar(filterGroups({ genres: Object.keys(genres).sort(), newOpts: series ? newOptions(list) : [], kd: series ? dramaTypes(list) : [], plats: series ? platOptions(list) : [], diff: series ? diffOpts(list) : [] }));
+  return fBar(filterGroups({ genres: Object.keys(genres).sort(), newOpts: series ? newOptions(list) : [], kd: series ? dramaTypes(list) : [], plats: series ? platOptions(list) : [], diff: series ? diffOpts(list) : [], mini: series && list.some(miniDrama) }));
 }
 function lsSetTabs(list, animate) {
   var box = $("#lstabs"); if (!box) return;
@@ -2410,7 +2414,7 @@ function lsRenderBody(list, still, swap) {
   if (swap) { void body.offsetWidth; body.className = "mlswap"; }
   if (arr.length) body.innerHTML = '<div class="mlgrid' + (still ? ' still' : '') + '">' + arr.map(lsCard).join("") + '</div>';
   else {
-    var filtered = !!(lsQuery.trim() || filter || langFilter || newFilter || kdFilter || platFilter || liveFilter);
+    var filtered = !!(lsQuery.trim() || filter || langFilter || newFilter || kdFilter || platFilter || liveFilter || miniFilter);
     body.innerHTML = '<div class="mlempty">' + nsvg("search", "mlei") + '<h3>Aucun résultat</h3><p>' + (filtered ? 'Aucun titre ne correspond à ces filtres.' : 'Aucun titre dans cette section pour l\'instant.') + '</p>' + (filtered ? '<button type="button" class="btn ghost" data-lsreset="1">' + nsvg("reset") + '<span>Réinitialiser les filtres</span></button>' : '') + '</div>';
   }
   if (sum) sum.textContent = arr.length + (arr.length > 1 ? " titres" : " titre");
@@ -2438,6 +2442,7 @@ function lsPatch(list, animate, swap) {
   if (kd.indexOf(kdFilter) < 0) kdFilter = "";
   var plats = title === "Séries" ? platOptions(list) : [];
   if (plats.indexOf(platFilter) < 0) platFilter = "";
+  if (miniFilter && (title !== "Séries" || !list.some(miniDrama))) miniFilter = "";
   if (liveFilter && (title !== "Séries" || !diffOpts(list).some(function (x) { return x[0] === liveFilter; }))) liveFilter = "";
   var note = $("#lsnote"); if (note) note.textContent = list.length + (list.length > 1 ? " titres" : " titre");
   lsSetTabs(list, animate);
@@ -2464,7 +2469,7 @@ document.addEventListener("click", function (e) {
     lsRenderBody(lsList(), false, true); return;
   }
   if (t.dataset.lsreset) {
-    filter = langFilter = newFilter = kdFilter = platFilter = ""; liveFilter = false; lsQuery = ""; platOpen = false; fOpen = "";
+    filter = langFilter = newFilter = kdFilter = platFilter = ""; liveFilter = false; miniFilter = ""; lsQuery = ""; platOpen = false; fOpen = "";
     lsPatch(lsList(), false, true); return;
   }
   e.preventDefault();
@@ -2609,11 +2614,11 @@ function srSorted(arr, needle) {
   else if (mode === "rating") a.sort(function (x, y) { return (parseFloat(y.rating) || 0) - (parseFloat(x.rating) || 0); });
   return a;
 }
-function srOther(s) { return (!filter || (s.genres || []).indexOf(filter) > -1) && langMatch(s) && newMatch(s) && (!dlFilter || hasDl(s)) && liveMatch(s); }
+function srOther(s) { return (!filter || (s.genres || []).indexOf(filter) > -1) && langMatch(s) && newMatch(s) && (!dlFilter || hasDl(s)) && liveMatch(s) && miniMatch(s); }
 function srChip(attr, val, label, on) { return '<button type="button" class="chip' + (on ? " on" : "") + '" ' + attr + '="' + esc(val) + '">' + esc(label) + '</button>'; }
 function srRow(label, items) { return '<div class="chips langchips"><span class="chiplbl">' + label + '</span>' + items + '</div>'; }
 function srFilters(o) {
-  return fBar(filterGroups({ lang: true, genres: o.genres, newOpts: o.newOpts, kd: o.kd, plats: o.plats, diff: o.diff, canDl: o.canDl }));
+  return fBar(filterGroups({ lang: true, genres: o.genres, newOpts: o.newOpts, kd: o.kd, plats: o.plats, diff: o.diff, mini: o.mini, canDl: o.canDl }));
 }
 function srBuild() {
   var tabs = SRTABS.map(function (t) { return '<button type="button" class="mlt" role="tab" aria-selected="false" data-typef="' + t[0] + '">' + nsvg(t[2]) + '<b data-n="">0</b><span class="l">' + t[1] + '</span></button>'; }).join("");
@@ -2653,13 +2658,14 @@ function viewSearch(q) {
   var newOpts = newOptions(base); if (newOpts.indexOf(newFilter) < 0) newFilter = "";
   var kd = dramaTypes(base); if (kd.indexOf(kdFilter) < 0) kdFilter = "";
   var plats = platOptions(base); if (plats.indexOf(platFilter) < 0) platFilter = "";
+  var miniAny = base.some(miniDrama); if (!miniAny) miniFilter = "";
   var diff = diffOpts(base); if (liveFilter && !diff.some(function (x) { return x[0] === liveFilter; })) liveFilter = "";
   var pool = base.filter(srOther), counts = [pool.length, 0, 0, 0];
   pool.forEach(function (s) { counts[isMovie(s) ? 2 : 1]++; });
   var allActors = actorMatches(needle, 999), isAct = typeFilter === "actor";
   counts[3] = allActors.length;
   var found = srSorted(pool.filter(function (s) { return !typeFilter || isAct || (typeFilter === "movie") === isMovie(s); }), needle);
-  var sig = [typeFilter, filter, langFilter, newFilter, kdFilter, platFilter, dlFilter, liveFilter, srSort].join("|");
+  var sig = [typeFilter, filter, langFilter, newFilter, kdFilter, platFilter, dlFilter, liveFilter, miniFilter, srSort].join("|");
   var fresh = !$("#srroot");
   var swap = !fresh && srSig !== null && sig !== srSig;
   srSig = sig;
@@ -2678,7 +2684,7 @@ function viewSearch(q) {
   });
   box.dataset.i = idx;
   var f = $("#srf"); if (!fresh) f.classList.remove("intro");
-  f.innerHTML = base.length && !isAct ? srFilters({ genres: Object.keys(genres).sort(), newOpts: newOpts, kd: kd, plats: plats, diff: diff, canDl: canDl }) : "";
+  f.innerHTML = base.length && !isAct ? srFilters({ genres: Object.keys(genres).sort(), newOpts: newOpts, kd: kd, plats: plats, diff: diff, mini: miniAny, canDl: canDl }) : "";
   $("#sract").innerHTML = isAct ? "" : actorsBlock(actors);
   $("#srsum").textContent = isAct ? allActors.length + (allActors.length > 1 ? " acteurs" : " acteur") : found.length + (found.length > 1 ? " titres" : " titre");
   $("#srclose").setAttribute("href", searchBack);
@@ -2704,7 +2710,7 @@ function viewSearch(q) {
 document.addEventListener("click", function (e) {
   var t = e.target.closest ? e.target.closest("[data-srsort],[data-srreset]") : null; if (!t || !$("#srroot")) return;
   if (t.dataset.srsort) { srSort = t.dataset.srsort; viewSearch(curQ); return; }
-  filter = langFilter = newFilter = kdFilter = platFilter = ""; typeFilter = ""; dlFilter = false; liveFilter = false; platOpen = false; fOpen = "";
+  filter = langFilter = newFilter = kdFilter = platFilter = ""; typeFilter = ""; dlFilter = false; liveFilter = false; miniFilter = ""; platOpen = false; fOpen = "";
   viewSearch(curQ);
 });
 
@@ -3731,6 +3737,14 @@ document.addEventListener("click", function (e) {
 var draft = null;
 var results = [];
 
+function epRuntime(t, full) {
+  var r = [];
+  (full || []).forEach(function (se) { ((se && se.episodes) || []).forEach(function (e) { if (e && +e.runtime > 0) r.push(+e.runtime); }); });
+  if (!r.length && Array.isArray(t.episode_run_time)) r = t.episode_run_time.filter(function (x) { return +x > 0; }).map(Number);
+  if (!r.length) return "";
+  r.sort(function (a, b) { return a - b; });
+  return r[Math.floor(r.length / 2)];
+}
 function blank(type) {
   return { id: (type === "movie" ? "m" : "c") + Date.now(), type: type, name: "", original_name: "", year: "", overview: "", genres: [], rating: "", status: "", runtime: "", poster: "", backdrop: "", cast: [], seasons: [], sources: [], langs: [], addedAt: Date.now() };
 }
@@ -3810,7 +3824,7 @@ function renderEditor() {
     '<div class="two"><label class="f"><span>Année</span><input type="text" data-f="year" value="' + esc(d.year) + '"></label>' +
     '<label class="f"><span>Note /10</span><input type="text" data-f="rating" value="' + esc(d.rating) + '"></label>' +
     '<label class="f"><span>Statut</span><input type="text" data-f="status" value="' + esc(d.status) + '"></label>' +
-    (movie ? '<label class="f"><span>Durée (minutes)</span><input type="text" data-f="runtime" value="' + esc(d.runtime) + '"></label>' : '') + '</div>' +
+    (movie ? '<label class="f"><span>Durée (minutes)</span><input type="text" data-f="runtime" value="' + esc(d.runtime) + '"></label>' : '<label class="f"><span>Durée d\'un épisode (min)</span><input type="text" data-f="eprt" inputmode="numeric" value="' + esc(d.eprt || "") + '"></label>') + '</div>' +
     '<div class="f"><span class="lbl">Langue affichée sur la fiche</span><div class="langpick">' + ["VOSTFR", "VF"].map(function (L) { return '<label class="chk"><input type="checkbox" data-lang="' + L + '"' + ((d.langs || []).indexOf(L) > -1 ? " checked" : "") + '><i>' + L + '</i></label>'; }).join("") + '</div></div>' +
     '<label class="f"><span>Genres (séparés par une virgule)</span><input type="text" data-f="genres" value="' + esc((d.genres || []).join(", ")) + '"></label>' +
     '<label class="f"><span>Synopsis</span><textarea data-f="overview">' + esc(d.overview) + '</textarea></label>' +
@@ -3884,6 +3898,7 @@ function pickTv(id, old) {
         rating: t.vote_average ? t.vote_average.toFixed(1) : "", pop: t.popularity || 0,
         status: t.status || "", poster: img(bestPoster(t), "w500"), posterV: 2, backdrop: img(t.backdrop_path, "original"), videos: vidsFrom(t),
         cast: ((t.credits && t.credits.cast) || []).slice(0, 12).map(function (c) { return { name: c.name, character: c.character, id: c.id }; }),
+        eprt: epRuntime(t, full),
         seasons: seasons.map(function (s, i) {
           return { number: s.season_number, name: s.name, episodes: (full[i].episodes || []).map(function (e) { return { number: e.episode_number, name: e.name, overview: e.overview || "", air_date: e.air_date || "", sources: [] }; }) };
         }),
@@ -5565,7 +5580,7 @@ function route(force) {
   if ((a === "ajouter" || a === "modifier" || a === "motdepasse" || a === "panel") && !ADMIN) { go("/admin", true); return; }
 
   var changed = force || a !== lastPage || a === "serie" || a === "modifier" || a === "acteur" || a === "collection";
-  if (a !== lastPage) { filter = ""; langFilter = ""; dlFilter = false; liveFilter = false; newFilter = ""; kdFilter = ""; platFilter = ""; platOpen = false; fOpen = ""; typeFilter = ""; listTab = "list"; calWeek = 0; calType = ""; }
+  if (a !== lastPage) { filter = ""; langFilter = ""; dlFilter = false; liveFilter = false; miniFilter = ""; newFilter = ""; kdFilter = ""; platFilter = ""; platOpen = false; fOpen = ""; typeFilter = ""; listTab = "list"; calWeek = 0; calType = ""; }
   lastPage = a;
 
   var q = $("#q");
@@ -5680,7 +5695,7 @@ document.addEventListener("click", function (e) {
   if (st) { var sb = st.closest(".srcs"), so = sb.classList.toggle("open"); st.setAttribute("aria-expanded", so ? "true" : "false"); return; }
   var rd = e.target.closest("[data-resumedel]");
   if (rd) { e.preventDefault(); e.stopPropagation(); removeResume(rd.dataset.resumedel); viewHome(); return; }
-  var t = e.target.closest("[data-resume],[data-watch],[data-movsrc],[data-playep],[data-src],[data-del],[data-list],[data-listtab],[data-seen],[data-seenseason],[data-genre],[data-langf],[data-newf],[data-livef],[data-fopen],[data-kdf],[data-platf],[data-platopen],[data-seasonopen],[data-seasontab],[data-dlf],[data-typef],[data-pick],[data-bulk],[data-dlbulk],[data-dltab],#save,#applytpl,#refreshall,#manual,#manualfilm,#refresh,#copyhash");
+  var t = e.target.closest("[data-resume],[data-watch],[data-movsrc],[data-playep],[data-src],[data-del],[data-list],[data-listtab],[data-seen],[data-seenseason],[data-genre],[data-langf],[data-newf],[data-livef],[data-minif],[data-fopen],[data-kdf],[data-platf],[data-platopen],[data-seasonopen],[data-seasontab],[data-dlf],[data-typef],[data-pick],[data-bulk],[data-dlbulk],[data-dltab],#save,#applytpl,#refreshall,#manual,#manualfilm,#refresh,#copyhash");
   if (!t) return;
   if (t.dataset.resume != null) { e.preventDefault(); resumeWatch(t.dataset.resume); }
   else if (t.dataset.watch != null) {
@@ -5782,6 +5797,7 @@ document.addEventListener("click", function (e) {
     var lf = $("#lsf");
     if (lf && lsCtx) lf.innerHTML = lsFilters(lsList(), lsCtx.title); else if ($("#srroot")) viewSearch(curQ); else if (rerender) rerender();
   }
+  else if (t.dataset.minif != null) { miniFilter = t.dataset.minif; fOpen = ""; if (rerender) rerender(); }
   else if (t.dataset.livef != null) { liveFilter = t.dataset.livef; fOpen = ""; if (rerender) rerender(); }
   else if (t.dataset.dlf != null) { dlFilter = t.dataset.dlf === "1"; fOpen = ""; if (rerender) rerender(); }
   else if (t.dataset.typef != null) { typeFilter = t.dataset.typef; if (rerender) rerender(); }
@@ -6749,7 +6765,7 @@ function tmdbFresh(s) {
     })).then(function (full) {
       var f = common(t);
       f.name = t.en_name || t.name || ""; f.original_name = t.original_name || ""; f.origin_country = t.origin_country || []; f.networks = (t.networks || []).map(function (n) { return n.name; }).filter(Boolean); f.original_language = t.original_language || ""; f.aka = akaFrom(t, false);
-      f.year = (t.first_air_date || "").slice(0, 4); f.overview = t.overview || "";
+      f.year = (t.first_air_date || "").slice(0, 4); f.overview = t.overview || ""; f.eprt = epRuntime(t, full);
       return {
         fields: f,
         seasons: seasons.map(function (x, i) {
