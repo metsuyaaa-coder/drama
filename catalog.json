@@ -31303,7 +31303,7 @@
       "rating": "8.2",
       "pop": 11.4325,
       "status": "Ended",
-      "poster": "https://image.tmdb.org/t/p/original/nvi9Kk5vdlD4UEK8MupWwvPA0W3.jpg",
+      "poster": "https://image.tmdb.org/t/p/original/g9INBUtEuCFVijhh1o46EWyYagk.jpg",
       "posterV": 2,
       "backdrop": "https://image.tmdb.org/t/p/original/eZTq2kkhZ9AQtQ1H5SD7h1Q0PIc.jpg",
       "videos": [
@@ -31764,7 +31764,7 @@
       ],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1792777918123
+      "updatedAt": 1792778027638
     },
     {
       "id": "297982",
@@ -35624,7 +35624,7 @@
   "journal": [
     {
       "k": "mvl9omv083fv7",
-      "t": 1792777918140,
+      "t": 1792778027645,
       "b": "614d778ed0",
       "a": "edit",
       "i": "295558",
