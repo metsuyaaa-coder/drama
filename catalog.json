@@ -10783,7 +10783,7 @@
         "허수아비"
       ],
       "year": "2026",
-      "overview": "Un policier acharné et un procureur idéaliste, anciens camarades de classe au lycée, se retrouvent alors qu'ils enquêtent sur une affaire de meurtres en série à l'échelle nationale, ce qui les entraîne à la fois dans une traque périlleuse et dans un passé personnel non résolu.",
+      "overview": "Kang Tae Ju, un détective d'élite autrefois respecté mais déchu à la suite d'une affaire interne, est muté dans sa ville natale à Gangseong. Loin du calme espéré, il se retrouve confronté à une série de meurtres : les victimes sont retrouvées dans des champs, tout près d'un épouvantail..\nPour résoudre l'affaire, il doit collaborer avec Cha Si Yeong, un procureur ambitieux... son harceleur acharné à l'école.",
       "genres": [
         "Crime",
         "Mystère",
@@ -11045,7 +11045,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792720635252,
+      "updatedAt": 1792768393297,
       "networks": [
         "ENA"
       ],
@@ -34047,6 +34047,15 @@
     "at": 1792697940038
   },
   "journal": [
+    {
+      "k": "mvl40hgh2m1nq",
+      "t": 1792768393313,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "292121",
+      "n": "The Scarecrow",
+      "d": ""
+    },
     {
       "k": "mvl3z6zievv9d",
       "t": 1792768333086,
