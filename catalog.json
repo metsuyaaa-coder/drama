@@ -13623,7 +13623,7 @@
         "김부장"
       ],
       "year": "2026",
-      "overview": "Quand sa fille disparaît, un père en apparence sans histoire retrouve ses qualités d'agent secret pour la retrouver — et s'attire des ennuis.",
+      "overview": "M. Kim est un ancien espion figurant sur la liste noire des personnes les plus recherchées par la Corée du Nord et sa présence en Corée du Sud est comme une bombe à retardement qui ne doit en aucun cas être découverte. Cachant son passé, il mène une vie ordinaire élevant sa fille, Min Ji. Cependant quand celle-ci disparaît sans laisser de trace, il n'hésite pas à révéler son identité et tout risquer pour partir à sa recherche.",
       "genres": [
         "Action & Adventure",
         "Crime",
@@ -13832,7 +13832,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792700773131,
+      "updatedAt": 1792768615156,
       "networks": [
         "SBS"
       ],
@@ -34047,6 +34047,15 @@
     "at": 1792697940038
   },
   "journal": [
+    {
+      "k": "mvl458n2ejky0",
+      "t": 1792768615166,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "296206",
+      "n": "Agent Kim Reactivated",
+      "d": ""
+    },
     {
       "k": "mvl43l5ko2rri",
       "t": 1792768538072,
