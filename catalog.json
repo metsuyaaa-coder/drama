@@ -38130,9 +38130,22 @@
         "poster": "/6FN0FAhkMeGmU3xAn4D1FmMJvtZ.jpg",
         "origin": "Corée",
         "en": "Teach You a Lesson"
+      },
+      {
+        "id": "rmvlfj3n0",
+        "title": "Héros fragile",
+        "status": "wait",
+        "kind": "stream",
+        "votes": 1,
+        "tmdb": 200709,
+        "media": "tv",
+        "year": "2022",
+        "poster": "/qWY4cFftaZxvtHet3S9p7NYTZeD.jpg",
+        "origin": "Corée",
+        "en": "Weak Hero"
       }
     ],
-    "at": 1792787727780
+    "at": 1792787737644
   },
   "hosts": {
     "items": [
