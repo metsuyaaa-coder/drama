@@ -330,7 +330,7 @@ var STATUS = { "Returning Series": "En cours", "Ended": "Terminée", "Canceled":
 function statusFr(s) { return STATUS[s] || s || ""; }
 
 /* ===== Vues ===== */
-var filter = "", langFilter = "", dlFilter = false, liveFilter = false, newFilter = "", kdFilter = "", platFilter = "", platOpen = false, seasonSel = { id: "", i: 0 }, typeFilter = "", curQ = "", searchBack = "/";
+var filter = "", langFilter = "", dlFilter = false, liveFilter = false, newFilter = "", kdFilter = "", platFilter = "", platOpen = false, fOpen = "", seasonSel = { id: "", i: 0 }, typeFilter = "", curQ = "", searchBack = "/";
 var rerender = null;
 var lastPage = null;
 var pendingScroll = false;
@@ -2363,18 +2363,34 @@ function lsCard(s, i, tag) {
     '<button type="button" class="mlb bm' + (on ? ' on' : '') + '" data-lsbm="' + id + '" aria-pressed="' + (on ? 'true' : 'false') + '" aria-label="' + (on ? 'Retirer de ma liste' : 'Ajouter à ma liste') + '" title="' + (on ? 'Retirer de ma liste' : 'Ajouter à ma liste') + '">' + nsvg("bookmark") + '</button></div>' +
     '<a class="mlmeta" href="/serie/' + id + '"><b>' + esc(s.name) + '</b><span>' + esc(meta) + '</span>' + (pr && pr.n ? '<em>' + pr.n + ' / ' + pr.t + ' vus</em>' : '') + '</a></div>';
 }
+/* Filtres en volets : une rangée de boutons (Genre, Nouveautés, Catégorie…), un seul volet ouvert à la fois, comme « Plateformes » */
+function fBar(groups) {
+  groups = groups.filter(function (g) { return g && g.inner; });
+  if (!groups.length) return "";
+  var open = null;
+  var tog = groups.map(function (g) {
+    var on = fOpen === g.key; if (on) open = g;
+    return '<button type="button" class="chip plattab' + (on ? " open" : "") + (g.cur ? " has" : "") + '" data-fopen="' + g.key + '" aria-expanded="' + (on ? "true" : "false") + '"><span>' + g.label + '</span>' + (g.cur ? '<span class="platcur' + (g.txt ? " tx" : "") + '">' + g.cur + '</span>' : '') + '<i class="caret" aria-hidden="true"></i></button>';
+  }).join("");
+  return '<div class="chips langchips platrow fbar"><div class="fbtns">' + tog + '</div>' + (open ? '<div class="platall hlbox">' + open.inner + '</div>' : '') + '</div>';
+}
+function filterGroups(o) {
+  var g = [], diffLbl = "";
+  (o.diff || []).forEach(function (x) { if (x[0] === liveFilter) diffLbl = x[1]; });
+  if (o.lang) g.push({ key: "lang", label: "Langue", txt: 1, cur: langFilter ? esc(langFilter) : "", inner: srChip("data-langf", "", "Toutes", !langFilter) + ["VOSTFR", "VF"].map(function (L) { return srChip("data-langf", L, L, langFilter === L); }).join("") });
+  if ((o.genres || []).length) g.push({ key: "genre", label: "Genre", txt: 1, cur: filter ? esc(filter) : "", inner: srChip("data-genre", "", "Tout", !filter) + o.genres.map(function (x) { return srChip("data-genre", x, x, filter === x); }).join("") });
+  if ((o.newOpts || []).length) g.push({ key: "new", label: "Nouveautés", txt: 1, cur: newFilter ? esc(NEWLBL[newFilter] || "") : "", inner: srChip("data-newf", "", "Toutes", !newFilter) + o.newOpts.map(function (x) { return srChip("data-newf", x, NEWLBL[x], newFilter === x); }).join("") });
+  if ((o.kd || []).length) g.push({ key: "kd", label: "Catégorie", txt: 1, cur: kdFilter ? esc(DRAMA[kdFilter] || "") : "", inner: srChip("data-kdf", "", "Toutes", !kdFilter) + o.kd.map(function (d) { return srChip("data-kdf", d, DRAMA[d], kdFilter === d); }).join("") });
+  if ((o.diff || []).length) g.push({ key: "diff", label: "Diffusion", txt: 1, cur: esc(diffLbl), inner: srChip("data-livef", "", "Toutes", !liveFilter) + o.diff.map(function (x) { return srChip("data-livef", x[0], x[1], liveFilter === x[0]); }).join("") });
+  if ((o.plats || []).length) g.push({ key: "plat", label: "Plateformes", cur: platFilter ? platMark(platBrand(platFilter)) : "", inner: '<button type="button" class="chip' + (!platFilter ? " on" : "") + '" data-platf="">Toutes</button>' + o.plats.map(platChip).join("") });
+  if (o.canDl) g.push({ key: "dl", label: "Téléchargement", txt: 1, cur: dlFilter ? "Avec lien" : "", inner: srChip("data-dlf", "", "Tous", !dlFilter) + srChip("data-dlf", "1", "Avec lien", dlFilter) });
+  return g;
+}
 function lsFilters(list, title) {
   var genres = {};
   list.forEach(function (x) { (x.genres || []).forEach(function (g) { genres[g] = 1; }); });
   var series = title === "Séries";
-  var newOpts = series ? newOptions(list) : [], kdTypes = series ? dramaTypes(list) : [], plats = series ? platOptions(list) : [];
-  var gk = Object.keys(genres).sort(), dOpts = series ? diffOpts(list) : [];
-  return '<div class="chips lsgenres"><button class="chip' + (!filter ? " on" : "") + '" data-genre="">Tout</button>' +
-    gk.map(function (g) { return '<button class="chip' + (filter === g ? " on" : "") + '" data-genre="' + esc(g) + '">' + esc(g) + '</button>'; }).join("") + '</div>' +
-    (dOpts.length ? '<div class="chips langchips"><span class="chiplbl">Diffusion</span><button class="chip' + (!liveFilter ? " on" : "") + '" data-livef="">Toutes</button>' + dOpts.map(function (x) { return '<button class="chip' + (liveFilter === x[0] ? " on" : "") + '" data-livef="' + x[0] + '">' + x[1] + '</button>'; }).join("") + '</div>' : '') +
-    (newOpts.length ? '<div class="chips langchips"><span class="chiplbl">Nouveautés</span><button class="chip' + (!newFilter ? " on" : "") + '" data-newf="">Toutes</button>' + newOpts.map(function (o) { return '<button class="chip' + (newFilter === o ? " on" : "") + '" data-newf="' + o + '">' + NEWLBL[o] + '</button>'; }).join("") + '</div>' : '') +
-    (kdTypes.length ? '<div class="chips langchips"><span class="chiplbl">Catégorie</span><button class="chip' + (!kdFilter ? " on" : "") + '" data-kdf="">Toutes</button>' + kdTypes.map(function (d) { return '<button class="chip' + (kdFilter === d ? " on" : "") + '" data-kdf="' + d + '">' + DRAMA[d] + '</button>'; }).join("") + '</div>' : '') +
-    platRow(plats);
+  return fBar(filterGroups({ genres: Object.keys(genres).sort(), newOpts: series ? newOptions(list) : [], kd: series ? dramaTypes(list) : [], plats: series ? platOptions(list) : [], diff: series ? diffOpts(list) : [] }));
 }
 function lsSetTabs(list, animate) {
   var box = $("#lstabs"); if (!box) return;
@@ -2448,7 +2464,7 @@ document.addEventListener("click", function (e) {
     lsRenderBody(lsList(), false, true); return;
   }
   if (t.dataset.lsreset) {
-    filter = langFilter = newFilter = kdFilter = platFilter = ""; liveFilter = false; lsQuery = ""; platOpen = false;
+    filter = langFilter = newFilter = kdFilter = platFilter = ""; liveFilter = false; lsQuery = ""; platOpen = false; fOpen = "";
     lsPatch(lsList(), false, true); return;
   }
   e.preventDefault();
@@ -2597,13 +2613,7 @@ function srOther(s) { return (!filter || (s.genres || []).indexOf(filter) > -1) 
 function srChip(attr, val, label, on) { return '<button type="button" class="chip' + (on ? " on" : "") + '" ' + attr + '="' + esc(val) + '">' + esc(label) + '</button>'; }
 function srRow(label, items) { return '<div class="chips langchips"><span class="chiplbl">' + label + '</span>' + items + '</div>'; }
 function srFilters(o) {
-  return srRow("Langue", srChip("data-langf", "", "Toutes", !langFilter) + ["VOSTFR", "VF"].map(function (L) { return srChip("data-langf", L, L, langFilter === L); }).join("")) +
-    (o.genres.length ? srRow("Genre", srChip("data-genre", "", "Tout", !filter) + o.genres.map(function (g) { return srChip("data-genre", g, g, filter === g); }).join("")) : "") +
-    (o.newOpts.length ? srRow("Nouveautés", srChip("data-newf", "", "Toutes", !newFilter) + o.newOpts.map(function (x) { return srChip("data-newf", x, NEWLBL[x], newFilter === x); }).join("")) : "") +
-    (o.kd.length ? srRow("Catégorie", srChip("data-kdf", "", "Toutes", !kdFilter) + o.kd.map(function (d) { return srChip("data-kdf", d, DRAMA[d], kdFilter === d); }).join("")) : "") +
-    platRow(o.plats) +
-    (o.diff.length ? srRow("Diffusion", srChip("data-livef", "", "Toutes", !liveFilter) + o.diff.map(function (x) { return srChip("data-livef", x[0], x[1], liveFilter === x[0]); }).join("")) : "") +
-    (o.canDl ? srRow("Téléchargement", srChip("data-dlf", "", "Tous", !dlFilter) + srChip("data-dlf", "1", "Avec lien", dlFilter)) : "");
+  return fBar(filterGroups({ lang: true, genres: o.genres, newOpts: o.newOpts, kd: o.kd, plats: o.plats, diff: o.diff, canDl: o.canDl }));
 }
 function srBuild() {
   var tabs = SRTABS.map(function (t) { return '<button type="button" class="mlt" role="tab" aria-selected="false" data-typef="' + t[0] + '">' + nsvg(t[2]) + '<b data-n="">0</b><span class="l">' + t[1] + '</span></button>'; }).join("");
@@ -2694,7 +2704,7 @@ function viewSearch(q) {
 document.addEventListener("click", function (e) {
   var t = e.target.closest ? e.target.closest("[data-srsort],[data-srreset]") : null; if (!t || !$("#srroot")) return;
   if (t.dataset.srsort) { srSort = t.dataset.srsort; viewSearch(curQ); return; }
-  filter = langFilter = newFilter = kdFilter = platFilter = ""; typeFilter = ""; dlFilter = false; liveFilter = false; platOpen = false;
+  filter = langFilter = newFilter = kdFilter = platFilter = ""; typeFilter = ""; dlFilter = false; liveFilter = false; platOpen = false; fOpen = "";
   viewSearch(curQ);
 });
 
@@ -5555,7 +5565,7 @@ function route(force) {
   if ((a === "ajouter" || a === "modifier" || a === "motdepasse" || a === "panel") && !ADMIN) { go("/admin", true); return; }
 
   var changed = force || a !== lastPage || a === "serie" || a === "modifier" || a === "acteur" || a === "collection";
-  if (a !== lastPage) { filter = ""; langFilter = ""; dlFilter = false; liveFilter = false; newFilter = ""; kdFilter = ""; platFilter = ""; platOpen = false; typeFilter = ""; listTab = "list"; calWeek = 0; calType = ""; }
+  if (a !== lastPage) { filter = ""; langFilter = ""; dlFilter = false; liveFilter = false; newFilter = ""; kdFilter = ""; platFilter = ""; platOpen = false; fOpen = ""; typeFilter = ""; listTab = "list"; calWeek = 0; calType = ""; }
   lastPage = a;
 
   var q = $("#q");
@@ -5670,7 +5680,7 @@ document.addEventListener("click", function (e) {
   if (st) { var sb = st.closest(".srcs"), so = sb.classList.toggle("open"); st.setAttribute("aria-expanded", so ? "true" : "false"); return; }
   var rd = e.target.closest("[data-resumedel]");
   if (rd) { e.preventDefault(); e.stopPropagation(); removeResume(rd.dataset.resumedel); viewHome(); return; }
-  var t = e.target.closest("[data-resume],[data-watch],[data-movsrc],[data-playep],[data-src],[data-del],[data-list],[data-listtab],[data-seen],[data-seenseason],[data-genre],[data-langf],[data-newf],[data-livef],[data-kdf],[data-platf],[data-platopen],[data-seasonopen],[data-seasontab],[data-dlf],[data-typef],[data-pick],[data-bulk],[data-dlbulk],[data-dltab],#save,#applytpl,#refreshall,#manual,#manualfilm,#refresh,#copyhash");
+  var t = e.target.closest("[data-resume],[data-watch],[data-movsrc],[data-playep],[data-src],[data-del],[data-list],[data-listtab],[data-seen],[data-seenseason],[data-genre],[data-langf],[data-newf],[data-livef],[data-fopen],[data-kdf],[data-platf],[data-platopen],[data-seasonopen],[data-seasontab],[data-dlf],[data-typef],[data-pick],[data-bulk],[data-dlbulk],[data-dltab],#save,#applytpl,#refreshall,#manual,#manualfilm,#refresh,#copyhash");
   if (!t) return;
   if (t.dataset.resume != null) { e.preventDefault(); resumeWatch(t.dataset.resume); }
   else if (t.dataset.watch != null) {
@@ -5750,9 +5760,9 @@ document.addEventListener("click", function (e) {
     toast(ddone + " épisode" + (ddone > 1 ? "s" : "") + " rempli" + (ddone > 1 ? "s" : "") + (dlines.length > deps.length - dfirst ? " (trop de lignes, les derniers sont ignorés)" : ""));
   }
   else if (t.dataset.listtab != null) { listTab = t.dataset.listtab; if (rerender) rerender(); }
-  else if (t.dataset.genre != null) { filter = t.dataset.genre; if (rerender) rerender(); }
-  else if (t.dataset.langf != null) { langFilter = t.dataset.langf; if (rerender) rerender(); }
-  else if (t.dataset.kdf != null) { kdFilter = t.dataset.kdf; if (rerender) rerender(); }
+  else if (t.dataset.genre != null) { filter = t.dataset.genre; fOpen = ""; if (rerender) rerender(); }
+  else if (t.dataset.langf != null) { langFilter = t.dataset.langf; fOpen = ""; if (rerender) rerender(); }
+  else if (t.dataset.kdf != null) { kdFilter = t.dataset.kdf; fOpen = ""; if (rerender) rerender(); }
   else if (t.dataset.seasonopen != null) {
     var sp = t.closest(".seasonpick"), so = sp.classList.toggle("open");
     t.classList.toggle("open", so); t.setAttribute("aria-expanded", so ? "true" : "false");
@@ -5765,10 +5775,15 @@ document.addEventListener("click", function (e) {
     document.querySelectorAll("details.season").forEach(function (d, k) { d.classList.toggle("cur", k === sti); d.open = k === sti; });
   }
   else if (t.dataset.platopen != null) { platOpen = !platOpen; if (rerender) rerender(); }
-  else if (t.dataset.platf != null) { platFilter = t.dataset.platf; platOpen = false; if (rerender) rerender(); }
-  else if (t.dataset.newf != null) { newFilter = t.dataset.newf; if (rerender) rerender(); }
-  else if (t.dataset.livef != null) { liveFilter = t.dataset.livef; if (rerender) rerender(); }
-  else if (t.dataset.dlf != null) { dlFilter = t.dataset.dlf === "1"; if (rerender) rerender(); }
+  else if (t.dataset.platf != null) { platFilter = t.dataset.platf; platOpen = false; fOpen = ""; if (rerender) rerender(); }
+  else if (t.dataset.newf != null) { newFilter = t.dataset.newf; fOpen = ""; if (rerender) rerender(); }
+  else if (t.dataset.fopen != null) {
+    fOpen = fOpen === t.dataset.fopen ? "" : t.dataset.fopen; platOpen = false;
+    var lf = $("#lsf");
+    if (lf && lsCtx) lf.innerHTML = lsFilters(lsList(), lsCtx.title); else if ($("#srroot")) viewSearch(curQ); else if (rerender) rerender();
+  }
+  else if (t.dataset.livef != null) { liveFilter = t.dataset.livef; fOpen = ""; if (rerender) rerender(); }
+  else if (t.dataset.dlf != null) { dlFilter = t.dataset.dlf === "1"; fOpen = ""; if (rerender) rerender(); }
   else if (t.dataset.typef != null) { typeFilter = t.dataset.typef; if (rerender) rerender(); }
   else if (t.dataset.pick != null) pick(t.dataset.pick);
   else if (t.id === "save") saveDraft();

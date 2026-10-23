@@ -2558,3 +2558,7 @@ html:not(.glowon) .colc.fx2 .colem .cico { filter: none; }
 .dlwarn svg { flex: 0 0 auto; width: 20px; height: 20px; margin-top: 1px; color: #fde68a; }
 .dlwarn p { margin: 0; font-size: 13px; color: #d4d4d4; }
 .dlwarn b { color: var(--fg); }
+
+/* Filtres en volets (Genre, Nouveautés, Catégorie, Diffusion, Plateformes…) */
+.fbar .fbtns { display: flex; flex-wrap: wrap; gap: 8px; width: 100%; }
+.chip.plattab .platcur.tx { color: var(--acc); font-weight: 700; letter-spacing: .04em; text-transform: none; }
