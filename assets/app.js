@@ -1161,7 +1161,6 @@ function ghBackup(gi, src, tried, opts) {
   return fetch(bkDirUrl(gi) + "/" + name, { method: "PUT", headers: ghHeaders({ "Content-Type": "application/json" }), body: JSON.stringify(body) }).then(function (r) {
     if (!r.ok) throw ghErr(r);
     try { localStorage.setItem(BKKEY, String(Date.now())); } catch (e) {}
-    bkPrune(gi);
   }).catch(function () { toast("Sauvegarde avant publication impossible : la publication continue"); });
 }
 function bkSection() {
@@ -6108,8 +6107,13 @@ function ghPublish(obj, tried, opts) {
     if (cur && cur.sha) body.sha = cur.sha;
     return fetch(url, { method: "PUT", headers: ghHeaders({ "Content-Type": "application/json" }), body: JSON.stringify(body) });
   }).then(function (r) {
-    if (!r.ok) { var e = ghErr(r); if ((r.status === 409 || r.status === 422) && (tried || 0) < 3) return ghPublish(obj, (tried || 0) + 1, opts); throw e; }
-    return r.json();
+    if (!r.ok) {
+      var e = ghErr(r), n = tried || 0;
+      /* GitHub refuse d'écrire si la branche a bougé pendant l'envoi : on attend un peu (de plus en plus), on relit la version en ligne, on fusionne et on renvoie */
+      if ((r.status === 409 || r.status === 422) && n < 5) return new Promise(function (res) { setTimeout(res, 800 * (n + 1)); }).then(function () { return ghPublish(obj, n + 1, opts); });
+      throw e;
+    }
+    return r.json().then(function (j) { setTimeout(function () { bkPrune(gi); }, 6000); return j; });
   });
 }
 function ghPull() {
