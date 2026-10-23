@@ -13309,7 +13309,7 @@
       "rating": "8.2",
       "pop": 12.1116,
       "status": "Ended",
-      "poster": "https://image.tmdb.org/t/p/w500/zwEYhe03vN1rbjF8Bsf9Dng0W8e.jpg",
+      "poster": "https://image.tmdb.org/t/p/original/rw74XX7qJB2IFG1tVO1RyTCr0jV.jpg",
       "posterV": 2,
       "backdrop": "https://image.tmdb.org/t/p/original/7KpvkMnbRsyrAlnrZpbnEWC42AE.jpg",
       "cast": [
@@ -13527,7 +13527,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792700772184,
+      "updatedAt": 1792719471051,
       "networks": [
         "ENA"
       ],
@@ -13544,7 +13544,8 @@
           "type": "Trailer",
           "lab": "Anglais"
         }
-      ]
+      ],
+      "posterCustom": true
     },
     {
       "id": "296206",
@@ -14499,7 +14500,7 @@
       "rating": "8.8",
       "pop": 21.9737,
       "status": "Ended",
-      "poster": "https://image.tmdb.org/t/p/w500/jj7AYkz2OLRDL1wfJmjTXyWQ5I4.jpg",
+      "poster": "https://image.tmdb.org/t/p/original/sDuoTe6bLbXwkW3fWLOknXwHYwt.jpg",
       "posterV": 2,
       "backdrop": "https://image.tmdb.org/t/p/original/810mXC0xkxXVtoKIPGGVgO9PuLh.jpg",
       "cast": [
@@ -14717,7 +14718,7 @@
         "VF"
       ],
       "downloads": [],
-      "updatedAt": 1792700776104,
+      "updatedAt": 1792719328996,
       "networks": [
         "Netflix"
       ],
@@ -14728,7 +14729,8 @@
           "type": "Trailer",
           "lab": "Anglais"
         }
-      ]
+      ],
+      "posterCustom": true
     },
     {
       "id": "295509",
@@ -33099,6 +33101,24 @@
     "at": 1792697940038
   },
   "journal": [
+    {
+      "k": "mvkavwt00rcfu",
+      "t": 1792719471060,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "287009",
+      "n": "Doctor on the Edge",
+      "d": "affiche"
+    },
+    {
+      "k": "mvkasv712zu3k",
+      "t": 1792719329005,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "259837",
+      "n": "The WONDERfools",
+      "d": "affiche"
+    },
     {
       "k": "mvkaqg23vk3y3",
       "t": 1792719216075,
