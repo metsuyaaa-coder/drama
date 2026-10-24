@@ -136,11 +136,14 @@ var db = EDITOR ? readJSON(STORE, []).map(normalize) : [];
 /* Réglages du site (téléchargement public ou privé). Les visiteurs les lisent dans catalog.json ; l'admin les garde sur son navigateur. */
 var SETKEY = "noir.settings";
 var SETTINGS = { downloads: "public" };
-if (ADMIN) { var _st = readJSON(SETKEY, null); if (_st && _st.downloads === "private") SETTINGS.downloads = "private"; if (_st && "player" in _st) { SETTINGS.player = _st.player; SETTINGS.playerAt = +_st.playerAt || 0; } if (_st && Array.isArray(_st.order)) { SETTINGS.order = _st.order; SETTINGS.orderAt = +_st.orderAt || 0; } if (_st && _st.ads === "off") { SETTINGS.ads = "off"; SETTINGS.adsAt = +_st.adsAt || 0; } else if (_st && +_st.adsAt) { SETTINGS.adsAt = +_st.adsAt; } if (_st && _st.trailers === "off") { SETTINGS.trailers = "off"; } if (_st && +_st.trailersAt) { SETTINGS.trailersAt = +_st.trailersAt; } }
+if (ADMIN) { var _st = readJSON(SETKEY, null); if (_st && _st.downloads === "private") SETTINGS.downloads = "private"; if (_st && "player" in _st) { SETTINGS.player = _st.player; SETTINGS.playerAt = +_st.playerAt || 0; } if (_st && Array.isArray(_st.order)) { SETTINGS.order = _st.order; SETTINGS.orderAt = +_st.orderAt || 0; } if (_st && _st.ads === "off") { SETTINGS.ads = "off"; SETTINGS.adsAt = +_st.adsAt || 0; } else if (_st && +_st.adsAt) { SETTINGS.adsAt = +_st.adsAt; } if (_st && _st.trailers === "off") { SETTINGS.trailers = "off"; } if (_st && +_st.trailersAt) { SETTINGS.trailersAt = +_st.trailersAt; } if (_st && _st.bl === "off") { SETTINGS.bl = "off"; } if (_st && +_st.blAt) { SETTINGS.blAt = +_st.blAt; } }
 /* Pub avant téléchargement : activée par défaut, le Head admin peut la couper (settings.ads dans catalog.json) */
 function adsOn() { return SETTINGS.ads !== "off"; }
 /* Bandes-annonces : activées par défaut, le Head admin peut les couper pour tout le monde (settings.trailers dans catalog.json) */
 function trailersOn() { return SETTINGS.trailers !== "off"; }
+/* Espace BL : le Head admin peut le couper pour tout le monde (settings.bl dans catalog.json). Lui seul le voit toujours. */
+function blEnabled() { return SETTINGS.bl !== "off"; }
+function blOpen() { return isHead() || blEnabled(); }
 function saveSettings() { try { localStorage.setItem(SETKEY, JSON.stringify(SETTINGS)); } catch (e) {} }
 var PREVIEW = false, REAL_ADMIN = ADMIN;
 function dlAdmin() { return ADMIN && !PREVIEW; }
@@ -197,7 +200,10 @@ function loginAdmin(stay, hash) {
 function esc(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
 function $(s, r) { return (r || document).querySelector(s); }
 function toast(m) { var t = $("#toast"); t.textContent = m; t.classList.add("show"); clearTimeout(toast.t); toast.t = setTimeout(function () { t.classList.remove("show"); }, 2600); }
-function byId(id) { return db.filter(function (x) { return String(x.id) === String(id); })[0]; }
+function byId(id) {
+  var s = db.filter(function (x) { return String(x.id) === String(id); })[0];
+  return s && s.bl && !blOpen() ? undefined : s;   /* espace BL coupé : ses fiches n'existent plus pour les visiteurs */
+}
 function safeUrl(u) { return /^https?:\/\//i.test(String(u || "").trim()) ? String(u).trim() : "about:blank"; }
 
 /* Vidmoly : tous les liens (vidmoly.to, .net, .me, /w/xxx, /xxx, embed-xxx.html…) sont ramenés à https://vidmoly.org/embed-ID.html, nommés VIDMOLY */
@@ -379,7 +385,7 @@ function langLabel(s) {
 function inScope(s) { return !!s && !!s.bl === BLMODE; }
 function scoped() { return db.filter(inScope); }
 function sortedDb() { return scoped().sort(function (a, b) { return (b.addedAt || 0) - (a.addedAt || 0); }); }
-function allSorted() { return db.slice().sort(function (a, b) { return (b.addedAt || 0) - (a.addedAt || 0); }); }
+function allSorted() { return db.filter(function (s) { return !s.bl || blOpen(); }).sort(function (a, b) { return (b.addedAt || 0) - (a.addedAt || 0); }); }
 function canEditFiche(s) { return ADMIN || (BLUP && !!s && !!s.bl); }
 function canAddHere() { return ADMIN || (BLUP && BLMODE); }
 function isMovie(s) { return s.type === "movie"; }
@@ -1307,7 +1313,7 @@ var PREFS = (function () {
 function savePrefs() { try { localStorage.setItem(PREFKEY, JSON.stringify(PREFS)); } catch (e) { toast("Stockage plein ou bloqué par le navigateur"); } }
 function applyPrefs() {
   var c = document.documentElement.classList;
-  c.toggle("noanim", PREFS.noanim); c.toggle("glowon", PREFS.glow); c.toggle("nobl", PREFS.hideBL); c.toggle("notips", PREFS.hideTips);
+  c.toggle("noanim", PREFS.noanim); c.toggle("glowon", PREFS.glow); c.toggle("nobl", PREFS.hideBL || !blOpen()); c.toggle("notips", PREFS.hideTips);
   var de = document.documentElement, th = PREFS.theme; if (VIPTHEMES[th] && !isVip()) th = ""; if (th) de.setAttribute("data-theme", th); else de.removeAttribute("data-theme");
   var tm = document.querySelector('meta[name="theme-color"]'); if (tm) tm.setAttribute("content", { blue: "#081a3a", violet: "#05020a", gold: "#0b0905", rose: "#0d0509", emerald: "#04100b", ice: "#04101a", fire: "#0f0602", silver: "#08080a", lime: "#070d02" }[th] || "#000000");
   var st = de.style;
@@ -1834,7 +1840,7 @@ function viewHome() {
   var tv = list.filter(function (s) { return !isMovie(s); });
   var mv = list.filter(isMovie);
   var picks = heroPicks();
-  var strip = BLMODE ? '<div class="wrap blstrip"><b><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>Espace BL</b><i></i><span>' + list.length + (list.length > 1 ? " titres" : " titre") + '</span></div>' : "";
+  var strip = BLMODE ? '<div class="wrap blstrip"><b><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>Espace BL</b><i></i><span>' + (!blEnabled() ? "Désactivé pour tout le monde sauf toi · " : "") + list.length + (list.length > 1 ? " titres" : " titre") + '</span></div>' : "";
   var html = strip + (heroEditing && isHead() ? heroEditor() : '<section class="hero">' + picks.map(function (h, k) { return heroSlide(h, k === 0); }).join("") +
     (picks.length > 1 ? '<div class="hdots">' + picks.map(function (h, k) { return '<button type="button" data-i="' + k + '" class="' + (k === 0 ? "on" : "") + '" aria-label="Diapositive ' + (k + 1) + '"></button>'; }).join("") + '</div>' : '') + (isHead() && !BLMODE ? '<button type="button" class="btn small heroedit-btn" data-hero="edit">Modifier le carrousel</button>' : '') + '</section>');
   var parts = {};
@@ -1940,8 +1946,8 @@ function viewRequest(pre, kind) {
     '<div class="rqwrap"><label class="f"><span>Nom du drama ou du film</span><input type="text" name="titre" id="reqtitre" required maxlength="120" value="' + esc(t) + '" autocomplete="off" placeholder="Tape le titre, dans n\'importe quelle langue" role="combobox" aria-expanded="false" aria-controls="reqsugg" aria-autocomplete="list"></label><div class="sugg tsug" id="reqsugg" role="listbox" hidden></div></div>' +
     '<p class="note" id="reqok">Choisis ton titre dans la liste proposée par TMDB pour pouvoir envoyer la demande.</p>' +
     '<label class="f"><span>Ta demande</span><select name="type"><option value="stream"' + (kind === "stream" ? " selected" : "") + '>Streaming</option><option value="dl"' + (kind === "dl" ? " selected" : "") + '>Téléchargement</option><option value="both"' + (kind === "both" ? " selected" : "") + '>Les deux (streaming + téléchargement)</option></select></label>' +
-    '<div class="f"><span class="lbl">Espace</span><div class="langpick"><label class="chk"><input type="checkbox" name="bl"' + (BLMODE ? " checked" : "") + '><i>BL</i></label></div></div>' +
-    '<p class="note" style="margin:-6px 0 0">Coche si c\'est un titre BL : il sera ajouté dans l\'espace BL.</p>' +
+    (blOpen() ? '<div class="f"><span class="lbl">Espace</span><div class="langpick"><label class="chk"><input type="checkbox" name="bl"' + (BLMODE ? " checked" : "") + '><i>BL</i></label></div></div>' +
+    '<p class="note" style="margin:-6px 0 0">Coche si c\'est un titre BL : il sera ajouté dans l\'espace BL.</p>' : "") +
     '<label class="f"><span>Date de sortie (ou année)</span><input type="text" name="date" class="auto" readonly maxlength="40" placeholder="Rempli automatiquement"></label>' +
     '<input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0">' +
     (isVip() ? '<div class="rqvip" role="status"><i>' + colIco(12) + '</i><span>Demande prioritaire VIP<small>Sera traitée en 12 h maximum</small></span></div>' : '') +
@@ -2977,6 +2983,14 @@ function trailersSection() {
       ? 'Activées : les fiches qui ont une vidéo affichent « Bande-annonce » et la lisent dans le lecteur du site. Les vidéos viennent de TMDB : pour les fiches déjà au catalogue, lance « Tout mettre à jour depuis TMDB ».'
       : 'Désactivées : le bouton « Bande-annonce » est caché pour tout le monde.') + '</p>', 2);
 }
+function blSection() {
+  var on = blEnabled();
+  return pnCard("globe", "Espace BL" + pnPill(on, "Activé", "Désactivé"), "Réservé au Head admin.",
+    '<div class="pnseg" role="tablist"><button type="button" class="pnopt' + (on ? ' on' : '') + '" role="tab" aria-selected="' + (on ? 'true' : 'false') + '" data-setbl="on">' + pnIco("check") + '<span><b>Activé</b><small>Visible par tous</small></span></button><button type="button" class="pnopt' + (on ? '' : ' on') + '" role="tab" aria-selected="' + (on ? 'false' : 'true') + '" data-setbl="off">' + pnIco("lock") + '<span><b>Désactivé</b><small>Visible seulement par toi</small></span></button></div>' +
+    '<p class="note">' + (on
+      ? 'Activé : l\'onglet BL, ses titres, ses demandes et l\'ajout par les uploadeurs BL sont ouverts.'
+      : 'Désactivé : pour tout le monde sauf toi, l\'onglet BL disparaît, /bl renvoie à l\'accueil, les titres BL sont introuvables (même dans Ma liste) et les uploadeurs BL ne peuvent plus ajouter. Les fiches BL restent intactes, tu les vois toujours.') + '</p>', 2);
+}
 var TV = { vol: 100, muted: false, q: "hd1080", box: null, p: null, list: [], i: 0, ready: false, playing: false, seeking: false, seekTo: 0, timer: 0, idle: 0, fail: 0, name: "" };
 function tvFmt(n) { n = Math.max(0, Math.floor(n || 0)); var m = Math.floor(n / 60), s = n % 60; return m + ":" + (s < 10 ? "0" : "") + s; }
 function tvq(id) { return document.getElementById(id); }
@@ -3614,7 +3628,7 @@ function panBody(tab) {
           ? 'Privé : seul toi (en mode admin) vois les boutons et l\'onglet Télécharger. À la publication, les liens sont retirés de catalog.json, donc personne ne peut les lire dans le fichier. Ils restent sur ce navigateur : fais une sauvegarde complète.'
           : 'Public : tous les visiteurs voient les boutons et l\'onglet Télécharger sur les fiches qui ont des liens.') + '</p>' +
         '<div class="row"><button class="btn ghost small" type="button" data-preview="1">' + pnIco("eye") + '<span>Voir comme un visiteur</span></button></div>', 0) +
-      (head ? adsSection() : '') + (head ? trailersSection() : '') +
+      (head ? adsSection() : '') + (head ? trailersSection() : '') + (head ? blSection() : '') +
       annSection() +
       playerSection();
   }
@@ -4079,6 +4093,7 @@ function canDeleteFiche(f) { if (isHead()) return true; var me = myId(); return 
 
 function saveDraft() {
   if (!draft.name.trim()) { toast("Ajoute au moins un titre"); return; }
+  if (!blOpen() && db.some(function (x) { return x.bl && String(x.id) === String(draft.id); })) { toast("L'espace BL est désactivé : cette fiche BL ne peut pas être modifiée."); return; }
   if (BLUP) {   /* l'uploadeur BL ne touche qu'aux fiches BL */
     var ex0 = byId(draft.id);
     if (ex0 && !ex0.bl) { toast("Ce titre est déjà sur le site principal : tu ne peux pas le modifier."); return; }
@@ -4142,6 +4157,8 @@ function adoptPlayer(st) {
   if (Array.isArray(st.order) && (!ADMIN || (+st.orderAt || 0) >= (+SETTINGS.orderAt || 0))) { SETTINGS.order = st.order; SETTINGS.orderAt = +st.orderAt || 0; if (ADMIN) saveSettings(); }
   if (!ADMIN || (+st.adsAt || 0) >= (+SETTINGS.adsAt || 0)) { SETTINGS.ads = st.ads === "off" ? "off" : "on"; SETTINGS.adsAt = +st.adsAt || 0; if (ADMIN) saveSettings(); }
   if (!ADMIN || (+st.trailersAt || 0) >= (+SETTINGS.trailersAt || 0)) { SETTINGS.trailers = st.trailers === "off" ? "off" : "on"; SETTINGS.trailersAt = +st.trailersAt || 0; if (ADMIN) saveSettings(); }
+  if (!ADMIN || (+st.blAt || 0) >= (+SETTINGS.blAt || 0)) { SETTINGS.bl = st.bl === "off" ? "off" : "on"; SETTINGS.blAt = +st.blAt || 0; if (ADMIN) saveSettings(); }
+  if (typeof applyPrefs === "function") applyPrefs();
 }
 /* Ordre des sources choisi par le Head admin : 1re, 2e, 3e, 4e… (les serveurs absents de la liste passent après) */
 function srcKey(x) { return String(x && x.name || "").replace(/\s+\d+$/, "").trim().toLowerCase(); }
@@ -4728,7 +4745,7 @@ function adoptReqs(data) {
   var r = data.requests;
   if (!ADMIN || (+r.at || 0) >= (+REQS.at || 0)) { REQS = { items: r.items, at: +r.at || 0 }; reqSave(); }
 }
-function reqFind(title) { var t = String(title).trim().toLowerCase(); return db.filter(function (s) { return String(s.name).trim().toLowerCase() === t; })[0]; }
+function reqFind(title) { var t = String(title).trim().toLowerCase(); return db.filter(function (s) { return (!s.bl || blOpen()) && String(s.name).trim().toLowerCase() === t; })[0]; }
 /* Type de demande : streaming, téléchargement ou les deux (vide = pas encore précisé) */
 var RQKIND = { stream: "Streaming", dl: "Téléchargement", both: "Les deux" }, rqTab = "wait", rqKindF = "";
 var RQCLOCK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>';
@@ -5684,6 +5701,7 @@ function pageTitle(a, b) {
 function route(force) {
   force = force === true;
   BLMODE = blOn();
+  if (BLMODE && !blOpen()) { BLMODE = false; go("/", true, true); return; }   /* espace BL coupé par le Head admin */
   if (CATLOADING && !EDITOR && !db.length) { var ap = $("#app"); if (ap) ap.innerHTML = skeletonHTML(); return; }
   var parts = curPath().split("/");
   var a = (parts[1] || "").toLowerCase(), b = parts[2] || "";
@@ -6278,6 +6296,7 @@ function ghPublish(obj, tried, opts) {
     if (rps && Array.isArray(rps.order) && (+rps.orderAt || 0) > (+SETTINGS.orderAt || 0) && obj.settings) { obj.settings.order = rps.order; obj.settings.orderAt = rps.orderAt; }
     if (rps && (+rps.adsAt || 0) > (+SETTINGS.adsAt || 0) && obj.settings) { obj.settings.ads = rps.ads === "off" ? "off" : "on"; obj.settings.adsAt = rps.adsAt; }
     if (rps && (+rps.trailersAt || 0) > (+SETTINGS.trailersAt || 0) && obj.settings) { obj.settings.trailers = rps.trailers === "off" ? "off" : "on"; obj.settings.trailersAt = rps.trailersAt; }
+    if (rps && (+rps.blAt || 0) > (+SETTINGS.blAt || 0) && obj.settings) { obj.settings.bl = rps.bl === "off" ? "off" : "on"; obj.settings.blAt = rps.blAt; }
     if (remote && !Array.isArray(remote) && remote.journal) { journalMerge(remote.journal); var jm = journalList(); if (jm.length) obj.journal = jm; }
     var rfa = Math.max(+(remote && remote.refreshAt) || 0, +readJSON(RFKEY, 0) || 0); if (rfa) obj.refreshAt = rfa;
     return fetch(url + "?ref=" + encodeURIComponent(gi.branch), { headers: ghHeaders(), cache: "no-store" });
@@ -6335,6 +6354,7 @@ function buildCatalogObj() {
   if (Array.isArray(SETTINGS.order)) { obj.settings.order = SETTINGS.order; obj.settings.orderAt = SETTINGS.orderAt || 0; }
   if (SETTINGS.adsAt) { obj.settings.ads = adsOn() ? "on" : "off"; obj.settings.adsAt = SETTINGS.adsAt; }
   if (SETTINGS.trailersAt) { obj.settings.trailers = trailersOn() ? "on" : "off"; obj.settings.trailersAt = SETTINGS.trailersAt; }
+  if (SETTINGS.blAt) { obj.settings.bl = blEnabled() ? "on" : "off"; obj.settings.blAt = SETTINGS.blAt; }
   var rf0 = +readJSON(RFKEY, 0) || 0; if (rf0) obj.refreshAt = rf0;
   if (TEAM) obj.team = TEAM;
   if (CREDITS) obj.credits = CREDITS;
@@ -6400,6 +6420,13 @@ document.addEventListener("click", function (e) {
     if (!isHead()) return;
     SETTINGS.trailers = tt2.dataset.settrailers === "off" ? "off" : "on"; SETTINGS.trailersAt = Date.now(); saveSettings(); viewPanel();
     toast("Bandes-annonces : " + (trailersOn() ? "activées" : "désactivées") + (autoSyncOn() ? " pour tout le monde" : ". Clique sur « Publier » pour l'appliquer aux visiteurs."));
+    markDirty(); return;
+  }
+  var tb = e.target.closest("[data-setbl]");
+  if (tb) {
+    if (!isHead()) return;
+    SETTINGS.bl = tb.dataset.setbl === "off" ? "off" : "on"; SETTINGS.blAt = Date.now(); saveSettings(); applyPrefs(); viewPanel();
+    toast("Espace BL : " + (blEnabled() ? "activé" : "désactivé") + (autoSyncOn() ? " pour tout le monde" : ". Clique sur « Publier » pour l'appliquer aux visiteurs."));
     markDirty(); return;
   }
   var ta = e.target.closest("[data-setads]");
@@ -7158,8 +7185,8 @@ if (!EDITOR && !db.length) {
     arr.forEach(function (x) { try { pre.push(normalize(x)); } catch (e) {} });
     if (pre.length) {
       db = pre;
-      if (cc.settings) SETTINGS.downloads = cc.settings.downloads === "private" ? "private" : "public";
-      CATLOADING = false; route(true); splashDone();
+      if (cc.settings) { SETTINGS.downloads = cc.settings.downloads === "private" ? "private" : "public"; SETTINGS.bl = cc.settings.bl === "off" ? "off" : "on"; }
+      CATLOADING = false; applyPrefs(); route(true); splashDone();
     }
   } catch (e) {}
 }
