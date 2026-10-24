@@ -6495,6 +6495,19 @@ $("#btn-key").addEventListener("click", function () {
       '<div class="row"><button class="btn ghost" type="button" id="copyhash">Copier la ligne</button><a class="btn" href="/">Continuer</a></div></div></div>';
   }).catch(function () { toast("Impossible de chiffrer la clé ici (ouvre le site en https)"); });
 });
+/* Onglet BL : confirmation avant d'entrer dans l'espace BL */
+document.addEventListener("click", function (e) {
+  if (e.button || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+  var l = e.target.closest ? e.target.closest('a[href="/bl"]') : null;
+  if (!l || BLMODE) return;
+  var d = $("#bldlg"); if (!d || !d.showModal) return;
+  e.preventDefault(); e.stopPropagation();
+  $("header.top").classList.remove("open"); $("#burger").setAttribute("aria-expanded", "false");
+  if (!d.open) d.showModal();
+}, true);
+$("#bl-go").addEventListener("click", function () { $("#bldlg").close(); go("/bl"); });
+$("#bl-stay").addEventListener("click", function () { $("#bldlg").close(); });
+$("#bldlg").addEventListener("click", function (e) { if (e.target === this) this.close(); });
 document.addEventListener("click", function (e) {   /* boutons du bloc « uploadeur BL » : ils déclenchent les vrais boutons du volet */
   var t = e.target.closest ? e.target.closest("[data-blconn]") : null;
   if (!t || !BLUP || !/^btn-(key|gh|export|quit)$/.test(t.dataset.blconn)) return;

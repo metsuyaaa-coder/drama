@@ -2578,6 +2578,12 @@ nav a.nav-blback:hover svg.blar { transform: translateX(-3px); }
 .tabbar a svg.blar { width: 11px; height: 11px; margin-left: 2px; vertical-align: -1px; opacity: .7; }
 .tabbar a svg.blar.big { width: 22px; height: 22px; margin: 0; vertical-align: baseline; opacity: 1; }
 body.bl .logo::after { content: "BL"; display: inline-block; margin-left: 10px; padding: 4px 7px 3px; vertical-align: 6px; font-family: var(--mono); font-size: 11px; font-weight: 500; letter-spacing: .08em; line-height: 1; background: var(--acc); color: var(--on-acc); }
+dialog#bldlg { width: min(520px, 94vw); padding: 0; border: 1px solid var(--line); background: var(--bg); color: var(--fg); }
+dialog#bldlg[open] { animation: dialogIn .3s var(--ease) both; }
+dialog#bldlg::backdrop { background: rgba(0,0,0,.85); }
+dialog#bldlg .row { display: flex; flex-wrap: wrap; gap: 10px; }
+@media (min-width: 721px) { header.top nav a#nav-bl, header.top nav a#nav-blback { margin-left: 12px; padding-left: 24px; border-left: 1px solid var(--line); } }
+.tabbar a[data-nav="nav-bl"], .tabbar a[data-nav="nav-blback"] { border-left: 1px solid var(--line); }
 .blconn { display: grid; gap: 12px; padding: 14px 16px; margin: 0 0 22px; border: 1px solid var(--line); background: var(--panel); }
 .blconn .note { margin: 0; line-height: 1.6; }
 .blconn .note b { color: var(--fg); font-weight: 500; }
