@@ -2597,6 +2597,7 @@ body.bl .blgate.bl-out { display: none; }
 }
 nav a.nav-blm svg.blar { width: 12px; height: 12px; opacity: .6; }
 .tabbar a svg.blar.big { width: 22px; height: 22px; }
+.tabbar a[data-nav="nav-bl"], .tabbar a[data-nav="nav-blback"] { border-left: 1px solid var(--line); }
 .logo { white-space: nowrap; }
 body.bl .logo::after { content: "BL"; display: inline-block; margin-left: 10px; padding: 4px 7px 3px; vertical-align: 6px; font-family: var(--mono); font-size: 11px; font-weight: 500; letter-spacing: .08em; line-height: 1; background: var(--acc); color: var(--on-acc); }
 dialog#bldlg { width: min(520px, 94vw); padding: 0; border: 1px solid var(--line); background: var(--bg); color: var(--fg); }
