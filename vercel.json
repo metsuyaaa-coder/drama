@@ -133,6 +133,28 @@
       "destination": "/api/share?path=/serie/:id"
     },
     {
+      "source": "/bl",
+      "has": [
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": ".*([Bb]ot|[Cc]rawl|[Ss]pider|facebookexternalhit|Facebot|WhatsApp|Telegram|Discord|Slack|LinkedIn|Twitter|Pinterest|Skype|Embedly|Mastodon|vkShare|Viber|iMessage|Applebot|[Pp]review).*"
+        }
+      ],
+      "destination": "/api/share?path=/bl"
+    },
+    {
+      "source": "/bl/:rest*",
+      "has": [
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": ".*([Bb]ot|[Cc]rawl|[Ss]pider|facebookexternalhit|Facebot|WhatsApp|Telegram|Discord|Slack|LinkedIn|Twitter|Pinterest|Skype|Embedly|Mastodon|vkShare|Viber|iMessage|Applebot|[Pp]review).*"
+        }
+      ],
+      "destination": "/api/share?path=/bl/:rest*"
+    },
+    {
       "source": "/((?!api/|.*\\..*).*)",
       "destination": "/index.html"
     }
