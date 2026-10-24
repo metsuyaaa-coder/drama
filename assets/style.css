@@ -2586,7 +2586,18 @@ body.bl .blgate.bl-out { display: none; }
 .blgate:hover svg.blar { opacity: 1; transform: translate(2px, -2px); }
 .blgate.back:hover svg.blar { transform: translateX(-3px); }
 @media (min-width: 721px) { header.top .search { margin-left: 0; } }
-@media (max-width: 720px) { .blgate { margin-left: 0; order: 0; padding: 6px 0; } .blgate .brk { font-size: 14px; } }
+@media (max-width: 1100px) { .blgate > svg:not(.blar) { display: none; } }
+/* mobile : plus de bouton en haut. Navigateur = onglet dans le menu, appli installée = onglet dans la barre du bas */
+@media (max-width: 720px) { .blgate, body.bl .blgate.bl-in { display: none !important; } }
+.nav-blm { display: none !important; }
+@media (max-width: 720px) {
+  html:not(.standalone):not(.nobl) body:not(.bl) nav a.nav-blm.bl-out { display: inline-flex !important; }
+  html:not(.standalone) body.bl nav a.nav-blm.bl-in { display: inline-flex !important; }
+  html.nobl .tabbar a[href="/bl"] { display: none !important; }
+}
+nav a.nav-blm svg.blar { width: 12px; height: 12px; opacity: .6; }
+.tabbar a svg.blar.big { width: 22px; height: 22px; }
+.logo { white-space: nowrap; }
 body.bl .logo::after { content: "BL"; display: inline-block; margin-left: 10px; padding: 4px 7px 3px; vertical-align: 6px; font-family: var(--mono); font-size: 11px; font-weight: 500; letter-spacing: .08em; line-height: 1; background: var(--acc); color: var(--on-acc); }
 dialog#bldlg { width: min(520px, 94vw); padding: 0; border: 1px solid var(--line); background: var(--bg); color: var(--fg); }
 dialog#bldlg[open] { animation: dialogIn .3s var(--ease) both; }
@@ -2604,6 +2615,7 @@ body.bl ::selection { background: #8b5cf6; color: #fff; }
 /* en-tête : fond teinté, filet violet lumineux dessous */
 body.bl header.top { background: rgba(5, 2, 10, .9); border-bottom-color: transparent; box-shadow: 0 1px 0 rgba(var(--blg), .35); }
 body.bl .tabbar { background: rgba(5, 2, 10, .96); }
+body.bl .tabbar a.bl-in { display: flex !important; }
 body.bl .blgate.back { color: var(--fg); }
 body.bl .blgate.back .brk { color: var(--acc); opacity: 1; }
 /* bandeau d'accueil BL */
