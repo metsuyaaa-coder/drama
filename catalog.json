@@ -16,7 +16,9 @@
     "ads": "on",
     "adsAt": 1792776989003,
     "trailers": "on",
-    "trailersAt": 1792533750236
+    "trailersAt": 1792533750236,
+    "bl": "off",
+    "blAt": 1792860808318
   },
   "series": [
     {
