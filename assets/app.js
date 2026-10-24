@@ -1,10 +1,22 @@
 /* ===== Navigation sans # : /serie/12, /demande, /headadmin… ===== */
-function curPath() {
+function rawPath() {
   var p = location.pathname.replace(/\/index\.html$/, "/");
   if (p.length > 1) p = p.replace(/\/+$/, "");
   return p || "/";
 }
-function go(path, replace) {
+/* ===== Espace BL : /bl, /bl/series, /bl/ajouter… Même site, catalogue à part (fiche.bl = true).
+   curPath() renvoie le chemin « logique » (sans /bl) : toutes les pages existantes marchent donc dans les deux espaces. ===== */
+function blOn() { return /^\/bl(\/|$)/i.test(rawPath()); }
+function curPath() { var p = rawPath(); if (/^\/bl(\/|$)/i.test(p)) p = p.slice(3) || "/"; return p; }
+var BLMODE = blOn();
+var BL_COMMON = /^\/(admin|headadmin|panel|motdepasse|credits|vip)(\/|$)/;   /* pages communes : jamais dans /bl */
+function blPath(p) {
+  p = String(p || "/");
+  if (!BLMODE || /^\/bl(\/|$)/i.test(p) || BL_COMMON.test(p)) return p;
+  return "/bl" + (p === "/" ? "" : p);
+}
+function go(path, replace, raw) {
+  path = raw ? path : blPath(path);
   try { history[replace ? "replaceState" : "pushState"](null, "", path); }
   catch (e) { location.href = path; return; }
   route();
@@ -63,6 +75,13 @@ function adminHashes() {
   if (!l.length) { try { var h = localStorage.getItem(PWSTORE); if (h) l.push(h); } catch (e) {} }
   return l;
 }
+/* Uploadeurs BL : liste gérée depuis /headadmin (CONFIG.BL_UPLOADERS). Ils n'ajoutent des fiches que dans l'espace BL. */
+function blHashes() {
+  var l = [];
+  (CONFIG.BL_UPLOADERS || []).forEach(function (a) { if (a && a.hash) l.push(a.hash); });
+  return l;
+}
+function isBlOnly(h) { return !!h && blHashes().indexOf(h) > -1 && adminHashes().indexOf(h) < 0 && h !== CONFIG.HEAD_HASH; }
 
 /* ===== Données ===== */
 function readJSON(k, fallback) { try { var v = JSON.parse(localStorage.getItem(k)); return v == null ? fallback : v; } catch (e) { return fallback; } }
@@ -100,12 +119,15 @@ var ADMIN_ID = (function () {
   if (typeof v !== "string" || !v) return "";
   if (adminHashes().indexOf(v) > -1) return v;
   if (CONFIG.HEAD_HASH && v === CONFIG.HEAD_HASH) return v;
+  if (blHashes().indexOf(v) > -1) return v;
   return "";
 })();
-var ADMIN = !!ADMIN_ID;
+var BLUP = !!ADMIN_ID && isBlOnly(ADMIN_ID);   /* uploadeur BL : pas admin, mais il enregistre et publie des fiches BL */
+var ADMIN = !!ADMIN_ID && !BLUP;
+var EDITOR = !!ADMIN_ID;                       /* admin ou uploadeur BL : garde une copie locale du catalogue et publie */
 function isHead() { return ADMIN && !!CONFIG.HEAD_HASH && ADMIN_ID === CONFIG.HEAD_HASH; }
 function myId() { return isHead() ? "head" : String(ADMIN_ID).slice(0, 10); }
-var db = ADMIN ? readJSON(STORE, []).map(normalize) : [];
+var db = EDITOR ? readJSON(STORE, []).map(normalize) : [];
 
 /* Réglages du site (téléchargement public ou privé). Les visiteurs les lisent dans catalog.json ; l'admin les garde sur son navigateur. */
 var SETKEY = "noir.settings";
@@ -160,11 +182,12 @@ function unlockToken(pw) {
 function loginAdmin(stay, hash) {
   try { localStorage.setItem("noir.admin", JSON.stringify(hash || "")); } catch (e) {}
   var local = readJSON(STORE, []).map(normalize);
-  ADMIN_ID = hash || ""; ADMIN = true; REAL_ADMIN = true;
+  ADMIN_ID = hash || ""; BLUP = isBlOnly(ADMIN_ID); ADMIN = !BLUP; EDITOR = true; REAL_ADMIN = ADMIN;
   if (local.length) { db = local; loadCatalog().then(function () { route(true); }); }
-  document.body.classList.add("admin");
+  document.body.classList.toggle("admin", ADMIN);
+  document.body.classList.toggle("blup", BLUP);
   persist();
-  if (!stay) { toast("Mode admin activé"); go("/"); }
+  if (!stay) { toast(BLUP ? "Accès uploadeur BL activé" : "Mode admin activé"); go(BLUP ? "/bl" : "/"); }
 }
 
 function esc(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
@@ -332,7 +355,7 @@ function statusFr(s) { return STATUS[s] || s || ""; }
 /* ===== Vues ===== */
 var filter = "", langFilter = "", dlFilter = false, liveFilter = false, miniFilter = "", newFilter = "", kdFilter = "", platFilter = "", platOpen = false, fOpen = "", seasonSel = { id: "", i: 0 }, typeFilter = "", curQ = "", searchBack = "/";
 var rerender = null;
-var lastPage = null;
+var lastPage = null, lastBL = BLMODE;
 var pendingScroll = false;
 
 function card(s, i) {
@@ -348,7 +371,13 @@ function langLabel(s) {
   var l = (s && s.langs) || [];
   return ["VOSTFR", "VF"].filter(function (x) { return l.indexOf(x) > -1; }).join(" + ");
 }
-function sortedDb() { return db.slice().sort(function (a, b) { return (b.addedAt || 0) - (a.addedAt || 0); }); }
+/* Le site principal et l'espace BL ont chacun leur catalogue. Ma liste et les compteurs « vus » regardent tout. */
+function inScope(s) { return !!s && !!s.bl === BLMODE; }
+function scoped() { return db.filter(inScope); }
+function sortedDb() { return scoped().sort(function (a, b) { return (b.addedAt || 0) - (a.addedAt || 0); }); }
+function allSorted() { return db.slice().sort(function (a, b) { return (b.addedAt || 0) - (a.addedAt || 0); }); }
+function canEditFiche(s) { return ADMIN || (BLUP && !!s && !!s.bl); }
+function canAddHere() { return ADMIN || (BLUP && BLMODE); }
 function isMovie(s) { return s.type === "movie"; }
 
 var CHEV = {
@@ -367,7 +396,7 @@ function saveResume(id, si, num) {
 function resumeList() {
   var r = readResume(), out = [];
   Object.keys(r).sort(function (a, b) { return r[b].at - r[a].at; }).forEach(function (id) {
-    var s = byId(id); if (!s) return;
+    var s = byId(id); if (!s || !inScope(s)) return;
     var info = r[id], label = "Film";
     if (!isMovie(s)) {
       var se = (s.seasons || [])[info.si], ep = se && (se.episodes || []).filter(function (e) { return String(e.number) === String(info.n); })[0];
@@ -538,7 +567,7 @@ function emptyBox(title, text, btn) {
 /* Carrousel de l'accueil : les 4 titres les plus populaires du moment (tendances TMDB de la semaine) */
 var heroTimer = null, TRENDKEY = "noir.trendAt";
 function popularPicks(n) {
-  return db.slice().sort(function (a, b) {
+  return scoped().sort(function (a, b) {
     return (b.trend || 0) - (a.trend || 0) || (b.pop || 0) - (a.pop || 0) ||
       (parseFloat(b.rating) || 0) - (parseFloat(a.rating) || 0) || (b.addedAt || 0) - (a.addedAt || 0);
   }).slice(0, n);
@@ -615,7 +644,7 @@ function adoptHero(data) {
 /* Fiches du carrousel : celles choisies par le Head admin (si elles existent encore), sinon les plus populaires */
 function heroPicks() {
   var out = [];
-  ((HERO && HERO.ids) || []).forEach(function (id) { var s = byId(id); if (s && out.indexOf(s) < 0) out.push(s); });
+  if (!BLMODE) ((HERO && HERO.ids) || []).forEach(function (id) { var s = byId(id); if (s && !s.bl && out.indexOf(s) < 0) out.push(s); });
   return out.length ? out : popularPicks(4);
 }
 function heroEditor() {
@@ -1791,11 +1820,17 @@ function viewHome() {
     return;
   }
   var list = sortedDb();
+  if (BLMODE && !list.length) {
+    app.innerHTML = canAddHere()
+      ? emptyBox("Aucun titre BL", "L'espace BL est vide pour l'instant. Cherche un titre sur TMDB, ajoute tes sources, il apparaîtra ici.", '<a class="btn" href="/ajouter">Créer la première fiche BL</a>')
+      : emptyBox("Aucun titre BL", "Rien dans l'espace BL pour l'instant : reviens bientôt.", '<a class="btn ghost" href="/" data-nobl>Retour à DramaByM</a>');
+    return;
+  }
   var tv = list.filter(function (s) { return !isMovie(s); });
   var mv = list.filter(isMovie);
   var picks = heroPicks();
   var html = heroEditing && isHead() ? heroEditor() : '<section class="hero">' + picks.map(function (h, k) { return heroSlide(h, k === 0); }).join("") +
-    (picks.length > 1 ? '<div class="hdots">' + picks.map(function (h, k) { return '<button type="button" data-i="' + k + '" class="' + (k === 0 ? "on" : "") + '" aria-label="Diapositive ' + (k + 1) + '"></button>'; }).join("") + '</div>' : '') + (isHead() ? '<button type="button" class="btn small heroedit-btn" data-hero="edit">Modifier le carrousel</button>' : '') + '</section>';
+    (picks.length > 1 ? '<div class="hdots">' + picks.map(function (h, k) { return '<button type="button" data-i="' + k + '" class="' + (k === 0 ? "on" : "") + '" aria-label="Diapositive ' + (k + 1) + '"></button>'; }).join("") + '</div>' : '') + (isHead() && !BLMODE ? '<button type="button" class="btn small heroedit-btn" data-hero="edit">Modifier le carrousel</button>' : '') + '</section>';
   var parts = {};
   var rs = resumeList();
   if (rs.length) parts.resume = rail("Reprendre", rs, "", resumeCard, '<button type="button" class="more" data-resumeclear>Tout effacer</button>');
@@ -1807,7 +1842,7 @@ function viewHome() {
   var newTv = tv.filter(function (s) { return newSeries(s); });
   if (newTv.length) parts.newtv = rail("Nouvelles séries", newTv);
   parts.latest = rail("Derniers ajouts", list);
-  parts.team = teamBlock();
+  parts.team = BLMODE ? "" : teamBlock();
   if (tv.length && mv.length) { parts.series = rail("Séries", shuffleStable(tv), "/series"); parts.films = rail("Films", mv, "/films"); }
   var ml = listItems();
   if (ml.length) parts.mylist = rail("Ma liste", ml, "/ma-liste");
@@ -2028,7 +2063,7 @@ document.addEventListener("click", function (e) {
 var listTab = "list";
 function seenTitles() {
   var all = readSeen(), out = [];
-  sortedDb().forEach(function (s) {
+  allSorted().forEach(function (s) {
     if (isMovie(s) || !all[s.id]) return;
     var n = 0, total = 0;
     (s.seasons || []).forEach(function (se) {
@@ -2533,7 +2568,7 @@ function akaFrom(t, movie) {
 function actorMatches(needle, lim) {
   if (!needle || needle.length < 2) return [];
   var map = {};
-  db.forEach(function (s) {
+  scoped().forEach(function (s) {
     (s.cast || []).forEach(function (c) {
       if (!c || !c.name) return;
       var k = fold(c.name); if (k.indexOf(needle) < 0) return;
@@ -3210,7 +3245,7 @@ function viewSerie(id) {
     '<div>' + (platBrands(s).length ? '<div class="plats"><span class="plbl">Diffusé sur</span>' + platBrands(s).map(platMark).join("") + '</div>' : '') + '<div class="tags">' + (langLabel(s) ? '<span class="lang">' + esc(langLabel(s)) + '</span>' : '') + (ongoing(s) ? '<span class="live">En cours</span>' : '') + (ne ? newBadge("Nouvel épisode") : '') + novBadge(s) + kdBadge(s) + tags.map(function (t) { return "<span>" + esc(t) + "</span>"; }).join("") + trailerChip(s) + '</div>' +
     '<h1>' + esc(s.name) + '</h1>' + (s.original_name && s.original_name !== s.name ? '<div class="orig">' + esc(s.original_name) + '</div>' : '<div class="orig"></div>') +
     '<p class="ov">' + esc(s.overview || "Pas de synopsis.") + '</p>' +
-    '<div class="row"><button class="btn" data-watch="' + esc(s.id) + '">' + PLAYICON + '<span>Regarder</span></button>' + dlBtnMovie + dlBtnSerie + '<button class="btn ghost' + (inList(s.id) ? " on" : "") + '" type="button" data-list="' + esc(s.id) + '">' + (inList(s.id) ? "✓ Dans ma liste" : "+ Ma liste") + '</button>' + colBtnHTML(s.id) + shareBtn(s) + (movie ? '' : notifBtnHTML(s)) + (ADMIN ? '<a class="btn ghost" href="/modifier/' + esc(s.id) + '">Modifier</a>' + (canDeleteFiche(s) ? '<button class="btn danger" data-del="' + esc(s.id) + '">Supprimer</button>' : '') : '') + '</div>' + srcChips +
+    '<div class="row"><button class="btn" data-watch="' + esc(s.id) + '">' + PLAYICON + '<span>Regarder</span></button>' + dlBtnMovie + dlBtnSerie + '<button class="btn ghost' + (inList(s.id) ? " on" : "") + '" type="button" data-list="' + esc(s.id) + '">' + (inList(s.id) ? "✓ Dans ma liste" : "+ Ma liste") + '</button>' + colBtnHTML(s.id) + shareBtn(s) + (movie ? '' : notifBtnHTML(s)) + (canEditFiche(s) ? '<a class="btn ghost" href="/modifier/' + esc(s.id) + '">Modifier</a>' + (canDeleteFiche(s) ? '<button class="btn danger" data-del="' + esc(s.id) + '">Supprimer</button>' : '') : '') + '</div>' + srcChips +
     ((s.cast || []).length ? '<h3 class="note" style="margin:32px 0 0;text-transform:uppercase;letter-spacing:.08em">Distribution</h3><div class="cast">' + s.cast.slice(0, 12).map(function (c) { return '<div><a class="castlink" href="/acteur/' + encodeURIComponent(c.name) + '" title="Voir tous ses titres"><b>' + esc(c.name) + '</b></a><span>' + esc(c.character || "") + '</span></div>'; }).join("") + '</div>' : '') +
     '</div></div></section>';
   if (!movie && (s.seasons || []).length) {
@@ -3249,7 +3284,7 @@ function similarTo(s, n) {
   platNames(s).forEach(function (x) { nw[x] = 1; });
   (s.cast || []).slice(0, 8).forEach(function (x) { if (x && x.name) ac[x.name] = 1; });
   var yr = parseInt(s.year, 10) || 0, mv = isMovie(s);
-  return db.filter(function (o) { return String(o.id) !== String(s.id); }).map(function (o) {
+  return db.filter(function (o) { return String(o.id) !== String(s.id) && !!o.bl === !!s.bl; }).map(function (o) {
     var sc = 0;
     (o.genres || []).forEach(function (x) { if (g[x]) sc += 2; });
     [].concat(o.origin_country || []).forEach(function (x) { if (c[String(x).toUpperCase()]) sc += 3; });
@@ -3280,7 +3315,7 @@ function journalSave(a) {
   return a;
 }
 function journalAdd(act, id, name, detail) {
-  if (!ADMIN) return;
+  if (!EDITOR) return;
   var a = journalList(), now = Date.now(), me = myId(), dup = null;
   if (act === "edit") a.forEach(function (e) { if (!dup && e.a === "edit" && e.b === me && String(e.i) === String(id) && now - e.t < 600000) dup = e; });
   if (dup) { dup.t = now; dup.n = String(name || "").slice(0, 80); if (detail) dup.d = String(detail).slice(0, 120); }
@@ -3298,7 +3333,7 @@ function journalMerge(remote) {
   });
   if (ch) journalSave(a);
 }
-function journalIngest(data) { if (ADMIN && data && !Array.isArray(data)) journalMerge(data.journal); }
+function journalIngest(data) { if (EDITOR && data && !Array.isArray(data)) journalMerge(data.journal); }
 function journalCounts(f) {
   var src = (f.sources || []).length, dl = (f.downloads || []).length, ep = 0;
   (f.seasons || []).forEach(function (se) { dl += (se.downloads || []).length; (se.episodes || []).forEach(function (e) { ep++; src += (e.sources || []).length; dl += (e.downloads || []).length; }); });
@@ -3316,6 +3351,7 @@ function sameFiche(a, b) { return JSON.stringify(Object.assign({}, a, { updatedA
 function adminLabel(b) {
   if (b === "head") return "Head admin";
   var f = null; (CONFIG.ADMINS || []).forEach(function (a) { if (a && a.hash && a.hash.slice(0, 10) === b) f = a; });
+  if (!f) { (CONFIG.BL_UPLOADERS || []).forEach(function (a) { if (a && a.hash && a.hash.slice(0, 10) === b) f = a; }); if (f) return String(f.name || "Uploadeur") + " (BL)"; }
   return f ? String(f.name || "Admin") : "Admin " + String(b || "?").slice(0, 4);
 }
 function journalSection() {
@@ -3611,7 +3647,8 @@ document.addEventListener("click", function (e) {
 /* ===== Connexion et mot de passe ===== */
 function viewLogin() {
   if (ADMIN) { go("/"); return; }
-  if (!adminHashes().length) {
+  if (BLUP) { go("/bl", true); return; }
+  if (!adminHashes().length && !blHashes().length) {
     $("#app").innerHTML = '<div class="wrap"><div class="authbox"><h1>Admin</h1><p class="lead">L\'accès admin n\'est pas configuré sur ce site.</p><div class="row"><a class="btn" href="/">Retour</a></div></div></div>';
     return;
   }
@@ -3644,13 +3681,21 @@ function viewPasswordDone(hash) {
 }
 
 /* ===== Head admin : gère la liste des admins (/headadmin) ===== */
-var headDraft = null;
+var headDraft = null, blDraft = null;
 function headOk() { return isHead(); }
 function configAdmins() {
   var l = [];
   if (CONFIG.ADMIN_HASH) l.push({ name: "Admin principal", hash: CONFIG.ADMIN_HASH });
   (CONFIG.ADMINS || []).forEach(function (a) { if (a && a.hash) l.push({ name: String(a.name || "Admin"), hash: a.hash }); });
   return l;
+}
+function configBlUp() {
+  var l = [];
+  (CONFIG.BL_UPLOADERS || []).forEach(function (a) { if (a && a.hash) l.push({ name: String(a.name || "Uploadeur BL"), hash: a.hash }); });
+  return l;
+}
+function blLine(list) {
+  return 'BL_UPLOADERS: [' + list.map(function (a) { return '{ name: ' + JSON.stringify(a.name) + ', hash: "' + a.hash + '" }'; }).join(", ") + '],';
 }
 function cleanName(v) { return String(v || "").replace(/[<>"'\\`]/g, "").trim().slice(0, 30); }
 function adminsLine(list) {
@@ -3674,10 +3719,15 @@ function viewHead() {
     return;
   }
   if (!headDraft) headDraft = configAdmins();
-  var changed = JSON.stringify(headDraft) !== JSON.stringify(configAdmins());
-  var rows = headDraft.length ? headDraft.map(function (a, i) {
-    return '<div style="display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--line)"><b>' + esc(a.name) + '</b><button class="btn danger small" type="button" data-headdel="' + i + '">Retirer</button></div>';
-  }).join("") : '<p class="note">Aucun admin pour l\'instant.</p>';
+  if (!blDraft) blDraft = configBlUp();
+  var chA = JSON.stringify(headDraft) !== JSON.stringify(configAdmins());
+  var chB = JSON.stringify(blDraft) !== JSON.stringify(configBlUp());
+  var changed = chA || chB;
+  var headRow = function (a, i, attr) {
+    return '<div style="display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--line)"><b>' + esc(a.name) + '</b><button class="btn danger small" type="button" ' + attr + '="' + i + '">Retirer</button></div>';
+  };
+  var rows = headDraft.length ? headDraft.map(function (a, i) { return headRow(a, i, "data-headdel"); }).join("") : '<p class="note">Aucun admin pour l\'instant.</p>';
+  var blRows = blDraft.length ? blDraft.map(function (a, i) { return headRow(a, i, "data-bldel"); }).join("") : '<p class="note">Aucun uploadeur BL pour l\'instant.</p>';
   app.innerHTML = '<div class="wrap"><div class="authbox" style="max-width:560px"><h1>Head admin</h1>' +
     '<p class="lead">Tu as toutes les permissions : tu peux ajouter, modifier et supprimer n\'importe quelle fiche ou n\'importe quel lien. Ajoute ou retire des admins ici. Un admin retiré perd l\'accès dès que le fichier mis à jour est en ligne, même s\'il était déjà connecté.</p>' +
     '<div style="display:grid;gap:4px"><h3 class="note" style="margin:0 0 6px;text-transform:uppercase;letter-spacing:.08em">Admins (' + headDraft.length + ')</h3>' + rows + '</div>' +
@@ -3685,12 +3735,17 @@ function viewHead() {
     '<label class="f"><span>Nom</span><input type="text" id="an" maxlength="30" autocomplete="off"></label>' +
     '<label class="f"><span>Mot de passe (6 caractères minimum)</span><input type="text" id="ap" autocomplete="off"></label><p class="note" id="autherr"></p>' +
     '<div class="row"><button class="btn ghost" type="submit">Ajouter</button></div></form>' +
+    '<div style="display:grid;gap:4px"><h3 class="note" style="margin:0 0 6px;text-transform:uppercase;letter-spacing:.08em">Uploadeurs BL (' + blDraft.length + ')</h3><p class="note" style="margin:0 0 6px">Un uploadeur BL n\'a accès qu\'à l\'onglet BL : il y voit l\'onglet « Ajouter » et ne peut ajouter ou modifier que des fiches BL. Sur le site principal, il n\'a aucun accès admin.</p>' + blRows + '</div>' +
+    '<form id="bladd" style="display:grid;gap:12px"><h3 class="note" style="margin:0;text-transform:uppercase;letter-spacing:.08em">Ajouter un uploadeur BL</h3>' +
+    '<label class="f"><span>Nom</span><input type="text" id="bn" maxlength="30" autocomplete="off"></label>' +
+    '<label class="f"><span>Mot de passe (6 caractères minimum)</span><input type="text" id="bp" autocomplete="off"></label><p class="note" id="autherr"></p>' +
+    '<div class="row"><button class="btn ghost" type="submit">Ajouter</button></div></form>' +
     (changed
-      ? '<div style="display:grid;gap:12px"><h3 class="note" style="margin:0;text-transform:uppercase;letter-spacing:.08em">À publier</h3><p class="note" style="margin:0">Remplace les lignes ADMIN_HASH et ADMINS dans CONFIG (assets/config.js) par celles-ci, puis remets le fichier en ligne.</p><pre class="code" id="hashline">' + esc(adminsLine(headDraft)) + '</pre><div class="row"><button class="btn" type="button" id="copyhash">Copier les lignes</button><button class="btn ghost" type="button" id="head-reset">Annuler les changements</button></div></div>'
+      ? '<div style="display:grid;gap:12px"><h3 class="note" style="margin:0;text-transform:uppercase;letter-spacing:.08em">À publier</h3><p class="note" style="margin:0">Dans CONFIG (assets/config.js), remplace ' + (chA ? 'les lignes ADMIN_HASH et ADMINS' : '') + (chA && chB ? ' et ' : '') + (chB ? 'la ligne BL_UPLOADERS' : '') + ' par ' + (chA && chB ? 'celles-ci' : 'celle-ci') + ', puis remets le fichier en ligne.</p><pre class="code" id="hashline">' + esc((chA ? adminsLine(headDraft) : '') + (chA && chB ? '\n' : '') + (chB ? blLine(blDraft) : '')) + '</pre><div class="row"><button class="btn" type="button" id="copyhash">Copier les lignes</button><button class="btn ghost" type="button" id="head-reset">Annuler les changements</button></div></div>'
       : '<p class="note">Aucun changement en attente.</p>') +
     inboxSection() +
     vipHeadSection() +
-    '<div class="row"><a class="btn" href="/ajouter">Ajouter une fiche</a><a class="btn ghost" href="/panel">Panneau admin</a></div>' +
+    '<div class="row"><a class="btn" href="/ajouter">Ajouter une fiche</a><a class="btn ghost" href="/bl/ajouter">Ajouter une fiche BL</a><a class="btn ghost" href="/panel">Panneau admin</a></div>' +
     '<div class="row"><button class="btn ghost" type="button" id="head-quit">Se déconnecter</button><a class="btn ghost" href="/">Retour au site</a></div></div></div>';
 }
 document.addEventListener("submit", function (e) {
@@ -3707,7 +3762,7 @@ document.addEventListener("submit", function (e) {
   } else if (id === "headlogin") {
     e.preventDefault();
     var h = pwHash("head:" + $("#hpw").value);
-    if (CONFIG.HEAD_HASH && h === CONFIG.HEAD_HASH) { loginAdmin(true, h); headDraft = configAdmins(); viewHead(); toast("Head admin : toutes les permissions"); }
+    if (CONFIG.HEAD_HASH && h === CONFIG.HEAD_HASH) { loginAdmin(true, h); headDraft = configAdmins(); blDraft = configBlUp(); viewHead(); toast("Head admin : toutes les permissions"); }
     else { $("#hpw").value = ""; authError(e.target, "Mot de passe incorrect"); }
   } else if (id === "headadd") {
     e.preventDefault();
@@ -3716,8 +3771,18 @@ document.addEventListener("submit", function (e) {
     if (!nm) { authError(e.target, "Donne un nom à cet admin"); return; }
     if (pw.length < 6) { authError(e.target, "6 caractères minimum"); return; }
     var ph = pwHash(pw);
-    if (headDraft.some(function (a) { return a.hash === ph; })) { authError(e.target, "Ce mot de passe est déjà utilisé par un autre admin"); return; }
+    if (headDraft.concat(blDraft || []).some(function (a) { return a.hash === ph; })) { authError(e.target, "Ce mot de passe est déjà utilisé par un autre accès"); return; }
     headDraft.push({ name: nm, hash: ph });
+    viewHead();
+  } else if (id === "bladd") {
+    e.preventDefault();
+    if (!headOk()) return;
+    var bnm = cleanName($("#bn").value), bpw = $("#bp").value;
+    if (!bnm) { authError(e.target, "Donne un nom à cet uploadeur"); return; }
+    if (bpw.length < 6) { authError(e.target, "6 caractères minimum"); return; }
+    var bph = pwHash(bpw);
+    if (headDraft.concat(blDraft).some(function (a) { return a.hash === bph; })) { authError(e.target, "Ce mot de passe est déjà utilisé par un autre accès"); return; }
+    blDraft.push({ name: bnm, hash: bph });
     viewHead();
   }
 });
@@ -3729,8 +3794,15 @@ document.addEventListener("click", function (e) {
     if (!window.confirm("Retirer « " + a.name + " » des admins ?")) return;
     headDraft.splice(i, 1); viewHead(); return;
   }
-  if (e.target.id === "head-reset") { headDraft = configAdmins(); viewHead(); return; }
-  if (e.target.id === "head-quit") { try { localStorage.removeItem("noir.admin"); } catch (er) {} headDraft = null; location.href = "/"; }
+  var bd = e.target.closest("[data-bldel]");
+  if (bd && blDraft && headOk()) {
+    var bi = +bd.dataset.bldel, ba = blDraft[bi];
+    if (!ba) return;
+    if (!window.confirm("Retirer « " + ba.name + " » des uploadeurs BL ?")) return;
+    blDraft.splice(bi, 1); viewHead(); return;
+  }
+  if (e.target.id === "head-reset") { headDraft = configAdmins(); blDraft = configBlUp(); viewHead(); return; }
+  if (e.target.id === "head-quit") { try { localStorage.removeItem("noir.admin"); } catch (er) {} headDraft = null; blDraft = null; location.href = "/"; }
 });
 
 /* ===== Éditeur ===== */
@@ -3746,7 +3818,24 @@ function epRuntime(t, full) {
   return r[Math.floor(r.length / 2)];
 }
 function blank(type) {
-  return { id: (type === "movie" ? "m" : "c") + Date.now(), type: type, name: "", original_name: "", year: "", overview: "", genres: [], rating: "", status: "", runtime: "", poster: "", backdrop: "", cast: [], seasons: [], sources: [], langs: [], addedAt: Date.now() };
+  var f = { id: (type === "movie" ? "m" : "c") + Date.now(), type: type, name: "", original_name: "", year: "", overview: "", genres: [], rating: "", status: "", runtime: "", poster: "", backdrop: "", cast: [], seasons: [], sources: [], langs: [], addedAt: Date.now() };
+  if (BLMODE) f.bl = true;
+  return f;
+}
+
+/* Uploadeur BL : bloc de connexions (clé TMDB, GitHub, publier, quitter) : il n'a pas le volet admin */
+function blConnStatus() {
+  return (getToken() ? "Clé TMDB liée ✓" : "Clé TMDB à lier") + " · " + (ghRepo() && ghToken() ? "GitHub lié ✓" : "GitHub à lier");
+}
+function blConnHTML() {
+  if (!BLUP) return "";
+  return '<div class="blconn"><p class="note">Uploadeur BL : tu ajoutes et modifies des fiches dans l\'espace BL uniquement. Lie ta clé TMDB (pour chercher les titres) et GitHub (pour publier tes fiches) une seule fois.<br><b id="blstat">' + blConnStatus() + '</b></p>' +
+    '<div class="row"><button type="button" class="btn small ghost" data-blconn="btn-key">Clé TMDB</button><button type="button" class="btn small ghost" data-blconn="btn-gh">GitHub</button><button type="button" class="btn small ghost" data-blconn="btn-export">Publier</button><button type="button" class="btn small ghost" data-blconn="btn-quit">Quitter</button></div></div>';
+}
+function blConnPaint() { var s = $("#blstat"); if (s) s.textContent = blConnStatus(); }
+function blToggleHTML(d) {
+  return '<div class="f"><span class="lbl">Espace</span><div class="langpick"><label class="chk"><input type="checkbox" data-bl' + (d.bl ? " checked" : "") + '><i>BL</i></label></div></div>' +
+    '<p class="note" style="margin:-6px 0 0">Coché : la fiche est rangée dans l\'espace BL et disparaît du site principal.</p>';
 }
 
 function viewEditor(id) {
@@ -3755,8 +3844,8 @@ function viewEditor(id) {
   if (existing) draft = JSON.parse(JSON.stringify(existing)); else if (!draft || draft.__saved) draft = null;
   results = existing ? [] : results;
   var app = $("#app");
-  app.innerHTML = '<div class="wrap page"><h1>' + (existing ? "Modifier la fiche" : "Nouvelle fiche") + '</h1>' +
-    '<p class="lead">' + (existing ? "Change les informations ou les sources, puis enregistre." : "Cherche une série ou un film sur TMDB. Le titre, le synopsis, l\'affiche, la distribution et les épisodes sont remplis pour toi.") + '</p>' +
+  app.innerHTML = '<div class="wrap page"><h1>' + (existing ? "Modifier la fiche" : "Nouvelle fiche") + (BLMODE ? " BL" : "") + '</h1>' +
+    '<p class="lead">' + (existing ? "Change les informations ou les sources, puis enregistre." : "Cherche une série ou un film sur TMDB. Le titre, le synopsis, l\'affiche, la distribution et les épisodes sont remplis pour toi.") + '</p>' + blConnHTML() +
     (existing ? "" : '<form class="findbox" id="find"><input id="fq" type="text" placeholder="Titre (ex. Breaking Bad, Inception)" autocomplete="off" aria-label="Titre à chercher sur TMDB"><button class="btn" type="submit">Chercher</button><button class="btn ghost" type="button" id="manual">Fiche vide série</button><button class="btn ghost" type="button" id="manualfilm">Fiche vide film</button></form><div id="res"></div>') +
     '<div id="editor"></div></div>';
   if (!existing) renderResults();
@@ -3826,6 +3915,7 @@ function renderEditor() {
     '<label class="f"><span>Statut</span><input type="text" data-f="status" value="' + esc(d.status) + '"></label>' +
     (movie ? '<label class="f"><span>Durée (minutes)</span><input type="text" data-f="runtime" value="' + esc(d.runtime) + '"></label>' : '<label class="f"><span>Durée d\'un épisode (min)</span><input type="text" data-f="eprt" inputmode="numeric" value="' + esc(d.eprt || "") + '"></label>') + '</div>' +
     '<div class="f"><span class="lbl">Langue affichée sur la fiche</span><div class="langpick">' + ["VOSTFR", "VF"].map(function (L) { return '<label class="chk"><input type="checkbox" data-lang="' + L + '"' + ((d.langs || []).indexOf(L) > -1 ? " checked" : "") + '><i>' + L + '</i></label>'; }).join("") + '</div></div>' +
+    (ADMIN ? blToggleHTML(d) : "") +
     '<label class="f"><span>Genres (séparés par une virgule)</span><input type="text" data-f="genres" value="' + esc((d.genres || []).join(", ")) + '"></label>' +
     '<label class="f"><span>Synopsis</span><textarea data-f="overview">' + esc(d.overview) + '</textarea></label>' +
     '<div class="two"><label class="f"><span>Affiche (URL)</span><input type="url" data-f="poster" value="' + esc(d.poster) + '"></label>' +
@@ -3841,6 +3931,7 @@ function pick(spec, old) {
 }
 
 function afterPick() {
+  if (draft && BLMODE && !byId(draft.id)) draft.bl = true;   /* nouvelle fiche créée depuis l'espace BL */
   renderEditor();
   var f = $("#editor"); if (f) f.scrollIntoView({ behavior: "smooth", block: "start" });
 }
@@ -3863,6 +3954,7 @@ function pickMovie(id, old) {
       draft.downloads = old.downloads || [];
       draft.langs = old.langs || [];
       draft.addedAt = old.addedAt || draft.addedAt;
+      if ("bl" in old) draft.bl = old.bl;
       if (customPoster(old)) { draft.poster = old.poster; draft.posterV = old.posterV; draft.posterCustom = true; }
       toast("Fiche mise à jour, tes sources sont conservées");
     } else {
@@ -3906,6 +3998,7 @@ function pickTv(id, old) {
       });
       if (old) {
         draft.addedAt = old.addedAt || draft.addedAt;
+        if ("bl" in old) draft.bl = old.bl;
         if (customPoster(old)) { draft.poster = old.poster; draft.posterV = old.posterV; draft.posterCustom = true; }
         draft.seasons.forEach(function (se) {
           var os = (old.seasons || []).filter(function (x) { return x.number === se.number; })[0];
@@ -3973,6 +4066,11 @@ function canDeleteFiche(f) { if (isHead()) return true; var me = myId(); return 
 
 function saveDraft() {
   if (!draft.name.trim()) { toast("Ajoute au moins un titre"); return; }
+  if (BLUP) {   /* l'uploadeur BL ne touche qu'aux fiches BL */
+    var ex0 = byId(draft.id);
+    if (ex0 && !ex0.bl) { toast("Ce titre est déjà sur le site principal : tu ne peux pas le modifier."); return; }
+    draft.bl = true;
+  }
   normalize(draft);
   draft.updatedAt = Date.now();
   draft.sources = capSrc(draft.sources);
@@ -4432,7 +4530,7 @@ var CAL_KC = { K: "#7dd3fc", C: "#fca5a5", J: "#f9a8d4", T: "#fcd34d" };
 function calFmt(d, o) { return d.toLocaleDateString("fr-FR", o); }
 function calCap(t) { return t.charAt(0).toUpperCase() + t.slice(1); }
 function calModel() {
-  var kd = db.filter(function (s) { var d = dramaType(s); return d && (!calType || d === calType); });
+  var kd = db.filter(function (s) { var d = dramaType(s); return !s.bl && d && (!calType || d === calType); });
   var now = new Date(), today = isoDate(now);
   var mon = new Date(now.getFullYear(), now.getMonth(), now.getDate() + calWeek * 7 - ((now.getDay() + 6) % 7), 12);
   var days = [], i; for (i = 0; i < 7; i++) days.push(new Date(mon.getFullYear(), mon.getMonth(), mon.getDate() + i, 12));
@@ -4526,7 +4624,7 @@ function calBuild() {
   calPatch();
 }
 function viewCalendar() {
-  if (!db.some(function (s) { return !!dramaType(s); }) && !calxItems().length && !ADMIN) { $("#app").innerHTML = emptyBox("Calendrier", "Aucun drama au catalogue pour l'instant."); return; }
+  if (!db.some(function (s) { return !s.bl && !!dramaType(s); }) && !calxItems().length && !ADMIN) { $("#app").innerHTML = emptyBox("Calendrier", "Aucun drama au catalogue pour l'instant."); return; }
   if (["K", "C", "J", "T"].indexOf(calType) < 0) calType = "";
   if ($("#calroot")) calPatch(); else calBuild();
 }
@@ -4922,7 +5020,7 @@ document.addEventListener("change", function (e) {
 var curActor = "", personCache = {};
 function actorTitles(name) {
   var key = fold(name);
-  return db.filter(function (s) { return (s.cast || []).some(function (c) { return c && fold(c.name) === key; }); })
+  return scoped().filter(function (s) { return (s.cast || []).some(function (c) { return c && fold(c.name) === key; }); })
     .sort(function (a, b) { return (parseInt(b.year, 10) || 0) - (parseInt(a.year, 10) || 0); });
 }
 function actorEntry(s, key) {
@@ -5572,18 +5670,39 @@ function pageTitle(a, b) {
 
 function route(force) {
   force = force === true;
-  if (CATLOADING && !ADMIN && !db.length) { var ap = $("#app"); if (ap) ap.innerHTML = skeletonHTML(); return; }
+  BLMODE = blOn();
+  if (CATLOADING && !EDITOR && !db.length) { var ap = $("#app"); if (ap) ap.innerHTML = skeletonHTML(); return; }
   var parts = curPath().split("/");
   var a = (parts[1] || "").toLowerCase(), b = parts[2] || "";
   if (a === "recherche" || a === "acteur") { try { b = decodeURIComponent(parts.slice(2).join("/")); } catch (e) { b = parts.slice(2).join("/"); } }
 
-  if ((a === "ajouter" || a === "modifier" || a === "motdepasse" || a === "panel") && !ADMIN) { go("/admin", true); return; }
+  /* un titre décide de son espace : fiche BL → espace BL, sinon site principal (l'adresse est corrigée sans ajouter d'historique) */
+  if ((a === "serie" || a === "modifier") && b) {
+    var fx0 = byId(b);
+    if (fx0 && !!fx0.bl !== BLMODE) { BLMODE = !!fx0.bl; try { history.replaceState(null, "", blPath("/" + a + "/" + b)); } catch (e) {} }
+  }
+  if (BLMODE && a === "calendrier") { go("/", true); return; }   /* pas de calendrier dans l'espace BL */
 
-  var changed = force || a !== lastPage || a === "serie" || a === "modifier" || a === "acteur" || a === "collection";
-  if (a !== lastPage) { filter = ""; langFilter = ""; dlFilter = false; liveFilter = false; miniFilter = ""; newFilter = ""; kdFilter = ""; platFilter = ""; platOpen = false; fOpen = ""; typeFilter = ""; listTab = "list"; calWeek = 0; calType = ""; }
-  lastPage = a;
+  /* accès : l'admin va partout ; l'uploadeur BL n'ajoute / modifie que des fiches BL, depuis l'espace BL */
+  if (a === "ajouter" || a === "modifier") {
+    if (!ADMIN) {
+      if (!BLUP) { go("/admin", true); return; }
+      var fx1 = a === "modifier" ? byId(b) : null;
+      if (fx1 && !fx1.bl) { toast("Tu ne peux modifier que les fiches BL"); go("/serie/" + b, true); return; }
+      if (!BLMODE) { go("/bl/" + a + (b ? "/" + b : ""), true); return; }
+    }
+  }
+  if ((a === "motdepasse" || a === "panel") && !ADMIN) { go("/admin", true); return; }
+
+  var flip = BLMODE !== lastBL;
+  var changed = force || flip || a !== lastPage || a === "serie" || a === "modifier" || a === "acteur" || a === "collection";
+  if (a !== lastPage || flip) { filter = ""; langFilter = ""; dlFilter = false; liveFilter = false; miniFilter = ""; newFilter = ""; kdFilter = ""; platFilter = ""; platOpen = false; fOpen = ""; typeFilter = ""; listTab = "list"; calWeek = 0; calType = ""; }
+  lastPage = a; lastBL = BLMODE;
+  if (flip) { var app0 = $("#app"); if (app0) app0.innerHTML = ""; }   /* on change d'espace : plus de vue ni de filtre de l'autre côté */
+  document.body.classList.toggle("bl", BLMODE);
 
   var q = $("#q");
+  if (q) q.placeholder = BLMODE ? "Rechercher un titre BL..." : "Rechercher un titre...";
   $("#sugg").hidden = true;
   $("header.top").classList.remove("open"); $("#burger").setAttribute("aria-expanded", "false");
   if (a !== "recherche" && q.value) q.value = "";
@@ -5593,7 +5712,7 @@ function route(force) {
   if (a === "serie") { var it = byId(b); navId = it && isMovie(it) ? "nav-films" : "nav-series"; }
   document.querySelectorAll("nav a").forEach(function (x) { x.classList.toggle("on", (x.id || x.dataset.nav) === navId); });
   var sb = $("#setbtn"); if (sb) sb.classList.toggle("on", a === "parametres");
-  $("#count").innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg><span>' + db.length + (db.length > 1 ? " FICHES" : " FICHE") + '</span>';
+  $("#count").innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg><span>' + scoped().length + (scoped().length > 1 ? " FICHES" : " FICHE") + '</span>';
 
   rerender = null;
   if (a === "serie") viewSerie(b);
@@ -5618,6 +5737,7 @@ function route(force) {
   else if (a === "parametres") viewSettings();
   else viewHome();
   document.title = pageTitle(a, b);
+  if (BLMODE) document.title = document.title.replace(/DramaByM$/, "DramaByM BL");
 
   if (changed) {
     window.scrollTo(0, 0);
@@ -5673,7 +5793,7 @@ function liveSearch(v) {
   curQ = v;
   var h = "/recherche/" + encodeURIComponent(v.trim());
   if (lastPage !== "recherche") { searchBack = curPath(); go(h); return; }
-  try { history.replaceState(null, "", h); } catch (e) {}
+  try { history.replaceState(null, "", blPath(h)); } catch (e) {}
   viewSearch(v);
 }
 $("#q").addEventListener("focus", openSearch);
@@ -5724,6 +5844,7 @@ document.addEventListener("click", function (e) {
   else if (t.dataset.src != null) { cur.i = +t.dataset.src; rememberServer(); renderPlayer(); }
   else if (t.dataset.del != null) {
     var fx = byId(t.dataset.del);
+    if (fx && !canEditFiche(fx)) return;
     if (fx && !canDeleteFiche(fx)) { toast("Cette fiche contient des liens d'autres admins : seul le Head admin peut la supprimer."); return; }
     if (t.dataset.armed) { journalAdd("del", t.dataset.del, fx ? fx.name : ""); tombAdd(t.dataset.del); db = db.filter(function (x) { return String(x.id) !== t.dataset.del; }); persist(); markDirty(); toast("Fiche supprimée"); go("/"); }
     else { t.dataset.armed = "1"; t.textContent = "Confirmer ?"; setTimeout(function () { if (t.isConnected) { delete t.dataset.armed; t.textContent = "Supprimer"; } }, 3000); }
@@ -5859,7 +5980,8 @@ function popList(b) {
 function selectNode(n) { try { var r = document.createRange(); r.selectNodeContents(n); var s = window.getSelection(); s.removeAllRanges(); s.addRange(r); } catch (e) {} }
 
 function authError(form, msg) {
-  $("#autherr").textContent = msg;
+  var er = (form && form.querySelector && form.querySelector("#autherr")) || $("#autherr");
+  er.textContent = msg;
   form.classList.remove("shake"); void form.offsetWidth; form.classList.add("shake");
 }
 
@@ -5911,6 +6033,7 @@ document.addEventListener("submit", function (e) {
     var ph = pwHash(pwv);
     if (adminHashes().indexOf(ph) > -1) unlockToken(pwv).then(function () { loginAdmin(false, ph); });
     else if (CONFIG.HEAD_HASH && pwHash("head:" + pwv) === CONFIG.HEAD_HASH) unlockToken(pwv).then(function () { loginAdmin(false, CONFIG.HEAD_HASH); });
+    else if (blHashes().indexOf(ph) > -1) loginAdmin(false, ph);   /* uploadeur BL */
     else { $("#pw").value = ""; authError(e.target, "Mot de passe incorrect"); }
   } else if (id === "setpw") {
     e.preventDefault();
@@ -5932,6 +6055,7 @@ document.addEventListener("input", function (e) {
     return;
   }
   if (!draft) return;
+  if (t.dataset.bl != null) { draft.bl = !!t.checked; return; }
   if (t.dataset.lang) {
     var set = (draft.langs || []).filter(function (x) { return x !== t.dataset.lang; });
     if (t.checked) set.push(t.dataset.lang);
@@ -6185,10 +6309,11 @@ $("#btn-gh").addEventListener("click", function () {
   } catch (e) {}
   toast(ghToken() ? "GitHub lié : « Publier » envoie directement catalog.json" : "Dépôt enregistré, il manque le jeton");
   if (curPath() === "/panel") viewPanel();
+  blConnPaint();
 });
 function buildCatalogObj() {
   var priv = SETTINGS.downloads === "private";
-  var list = JSON.parse(JSON.stringify(db));
+  var list = JSON.parse(JSON.stringify(BLUP ? db.filter(function (x) { return x.bl; }) : db));
   if (priv) stripDl(list);
   var tt = finalTombs(null);
   var obj = { settings: { downloads: SETTINGS.downloads }, series: list, deletedLinks: tt.links, deletedFiches: tt.fiches };
@@ -6215,7 +6340,7 @@ function afterPublish(obj) {
   var pp = pruneList(db, curTombs()); if (pp.changed) { db = pp.list; persist(); }
 }
 /* Synchro automatique : chaque enregistrement est envoyé sur GitHub (après fusion avec ce que l'autre admin a publié), et chaque admin relit le catalogue toutes les 30 s */
-function autoSyncOn() { return ADMIN && readJSON("noir.autosync", true) !== false && !!ghRepo() && !!ghToken(); }
+function autoSyncOn() { return EDITOR && readJSON("noir.autosync", true) !== false && !!ghRepo() && !!ghToken(); }
 var syncTimer = null, syncBusy = false, syncAgain = false;
 function markDirty() { if (!autoSyncOn()) return; clearTimeout(syncTimer); syncTimer = setTimeout(runAutoSync, 2500); }
 function runAutoSync() {
@@ -6357,6 +6482,8 @@ $("#btn-key").addEventListener("click", function () {
   if (!k || !k.trim()) return;
   k = k.trim();
   try { localStorage.setItem(KEYSTORE, k); toast("Clé enregistrée sur ce navigateur"); } catch (e) {}
+  blConnPaint();
+  if (BLUP) return;
   if (!window.crypto || !crypto.subtle) return;
   var p = window.prompt("Pour que le site retienne la clé sur tous tes appareils, retape ton mot de passe admin (ou annule).");
   if (!p) return;
@@ -6367,6 +6494,11 @@ $("#btn-key").addEventListener("click", function () {
       '<pre class="code" id="hashline">TOKEN_ENC: "' + esc(blob) + '",</pre>' +
       '<div class="row"><button class="btn ghost" type="button" id="copyhash">Copier la ligne</button><a class="btn" href="/">Continuer</a></div></div></div>';
   }).catch(function () { toast("Impossible de chiffrer la clé ici (ouvre le site en https)"); });
+});
+document.addEventListener("click", function (e) {   /* boutons du bloc « uploadeur BL » : ils déclenchent les vrais boutons du volet */
+  var t = e.target.closest ? e.target.closest("[data-blconn]") : null;
+  if (!t || !BLUP || !/^btn-(key|gh|export|quit)$/.test(t.dataset.blconn)) return;
+  var el = document.getElementById(t.dataset.blconn); if (el) el.click();
 });
 $("#btn-quit").addEventListener("click", function () {
   try { localStorage.removeItem("noir.admin"); } catch (e) {}
@@ -6484,10 +6616,10 @@ function fetchCatalogData() {
   var tmo = function (p, ms) { return new Promise(function (ok, ko) { var t = setTimeout(function () { ko(new Error("timeout")); }, ms); p.then(function (v) { clearTimeout(t); ok(v); }, function (e) { clearTimeout(t); ko(e); }); }); };
   var jget = function (url, opt) { return tmo(fetch(url, opt).then(function (r) { if (!r.ok) throw new Error("http " + r.status); return r.json(); }), 8000); };
   var local = function () { return jget("/catalog.json?v=" + Date.now(), { cache: "no-store" }); };
-  var gi = ghParse(CONFIG.GITHUB_REPO || (ADMIN ? ghRepo() : ""));
+  var gi = ghParse(CONFIG.GITHUB_REPO || (EDITOR ? ghRepo() : ""));
   var chain = [];
   if (gi) {
-    var hd = ADMIN && ghToken() ? ghHeaders({ Accept: "application/vnd.github.raw+json" }) : { Accept: "application/vnd.github.raw+json" };
+    var hd = EDITOR && ghToken() ? ghHeaders({ Accept: "application/vnd.github.raw+json" }) : { Accept: "application/vnd.github.raw+json" };
     chain.push(function () { return jget(ghUrl(gi) + "?ref=" + encodeURIComponent(gi.branch), { headers: hd, cache: "no-store" }); });
     /* sans limite de requêtes, contrairement à api.github.com */
     chain.push(function () { return jget("https://raw.githubusercontent.com/" + gi.repo + "/" + encodeURIComponent(gi.branch) + "/" + encodeURI(CONFIG.GITHUB_PATH || "catalog.json") + "?v=" + Math.floor(Date.now() / 60000), { cache: "no-store" }); });
@@ -6495,21 +6627,21 @@ function fetchCatalogData() {
   chain.push(local);
   var good = function (d) {
     d = catShape(d);
-    if (!ADMIN && !(Array.isArray(d) ? d : d.series).length) throw new Error("catalogue vide");
+    if (!EDITOR && !(Array.isArray(d) ? d : d.series).length) throw new Error("catalogue vide");
     return d;
   };
   var done = function (d) {
     CATFAIL = false;
-    if (!ADMIN) { try { localStorage.setItem(CATCACHE, JSON.stringify(d)); } catch (e) {} }
+    if (!EDITOR) { try { localStorage.setItem(CATCACHE, JSON.stringify(d)); } catch (e) {} }
     return d;
   };
   var fail = function (e) {
-    var c = !ADMIN ? readJSON(CATCACHE, null) : null;
+    var c = !EDITOR ? readJSON(CATCACHE, null) : null;
     if (c) { try { return good(c); } catch (e2) {} }
     CATFAIL = true; CATERR = "réseau : " + (e && e.message); throw e;
   };
-  if (ADMIN) {
-    /* admin : dans l'ordre, GitHub d'abord (copie la plus fraîche) */
+  if (EDITOR) {
+    /* admin ou uploadeur BL : dans l'ordre, GitHub d'abord (copie la plus fraîche) */
     var i = 0, next = function () {
       return chain[i++]().then(good).catch(function (e) { if (i < chain.length) return next(); throw e; });
     };
@@ -6572,7 +6704,7 @@ function finalTombs(remote) {
 /* Signal « rafraîchir tous les admins » : le Head admin met une date dans catalog.json (refreshAt), les autres rechargent la page quand ils la voient */
 var RFKEY = "noir.refreshAt", RFSEEN = "noir.refreshSeen";
 function checkRefreshSignal(data) {
-  if (!ADMIN || !data || Array.isArray(data)) return false;
+  if (!EDITOR || !data || Array.isArray(data)) return false;
   var at = +data.refreshAt || 0; if (!at) return false;
   var seen = readJSON(RFSEEN, null);
   if (seen != null && at <= +seen) return false;
@@ -6695,7 +6827,7 @@ function loadCatalogCore() {
   if (PREVIEW) return Promise.resolve();
   return fetchCatalogData().then(function (data) {
     var st = null, raw = data, safe = function (f) { try { f(); } catch (e) { CATERR = "traitement : " + (e && e.message); } };
-    if (ADMIN) safe(function () { ingestRemoteTombs(raw); checkRefreshSignal(raw); });
+    if (EDITOR) safe(function () { ingestRemoteTombs(raw); checkRefreshSignal(raw); });
     if (data && !Array.isArray(data) && Array.isArray(data.series)) { st = data.settings || null; data = data.series; }
     if (!Array.isArray(data)) return;
     /* Visiteur : les fiches passent AVANT le reste, et chaque étape est isolée (un souci sur la bannière, l'équipe, etc. ne doit jamais vider le catalogue) */
@@ -6703,13 +6835,14 @@ function loadCatalogCore() {
     data.forEach(function (x) { try { list.push(normalize(x)); } catch (e) { CATERR = "fiche : " + (e && e.message); } });
     data = list;
     var priv = !!(st && st.downloads === "private");
-    if (!ADMIN) { db = data; SETTINGS.downloads = priv ? "private" : "public"; }
+    if (!EDITOR) db = data;
+    if (!ADMIN) SETTINGS.downloads = priv ? "private" : "public";
     safe(function () { adoptTeam(raw); }); safe(function () { adoptHero(raw); }); safe(function () { adoptCalx(raw); }); safe(function () { adoptReqs(raw); }); safe(function () { adoptStat(raw); }); safe(function () { adoptAnnounce(raw); }); safe(function () { adoptInbox(raw); }); safe(function () { adoptCredits(raw); }); safe(function () { adoptVip(raw); });
     safe(function () { adoptPlayer(st); });
-    if (!ADMIN) { /* déjà posé plus haut */ }
+    if (!EDITOR) { /* déjà posé plus haut */ }
     else if (!db.length) {
       db = data; persist();
-      if (!readJSON(SETKEY, null)) { SETTINGS.downloads = priv ? "private" : "public"; saveSettings(); }
+      if (ADMIN && !readJSON(SETKEY, null)) { SETTINGS.downloads = priv ? "private" : "public"; saveSettings(); }
     } else {
       var chg = mergeRemote(data);
       var pr = pruneList(db, curTombs());   /* retire de ma copie locale ce qui a été supprimé en ligne */
@@ -6908,7 +7041,8 @@ document.addEventListener("click", function (e) {
   var h = a.getAttribute("href");
   if (h.indexOf("//") === 0) return;
   e.preventDefault();
-  if (h === curPath()) route(true); else go(h);
+  var tgt = a.hasAttribute("data-nobl") ? h : blPath(h);   /* dans l'espace BL, les liens restent dans l'espace BL (sauf data-nobl) */
+  if (tgt === rawPath()) route(true); else go(tgt, false, true);
 });
 /* ===== Onglet « Demande » : choisir entre faire une demande et voir les demandes en cours ===== */
 var rm = $("#reqmenu"), rmBtn = $("#nav-req"), rmTimer;
@@ -6945,7 +7079,7 @@ window.addEventListener("popstate", rmClose);
 /* Version du site : les admins qui ont encore une ancienne page en cache la rechargent automatiquement */
 var BUILD = "2026-10-19-catalogue";
 function checkBuild() {
-  if (!ADMIN || draft || teamEditing || heroEditing) return;
+  if (!EDITOR || draft || teamEditing || heroEditing) return;
   fetch(location.href, { cache: "reload" }).then(function (r) { return r.text(); }).then(function (t) {
     var m = t.match(/var BUILD = "([^"]+)"/);
     if (!m || m[1] === BUILD) return;
@@ -6956,6 +7090,8 @@ function checkBuild() {
   }).catch(function () {});
 }
 document.body.classList.toggle("admin", ADMIN);
+document.body.classList.toggle("blup", BLUP);
+document.body.classList.toggle("bl", BLMODE);
 /* Écran de chargement : cartes grises animées, selon la page ouverte */
 function skeletonHTML() {
   var p = curPath(), card = '<div class="skc"><div class="poster sk"></div><div class="sk sk-l"></div><div class="sk sk-l s"></div></div>';
@@ -6984,11 +7120,11 @@ paintAnnounce(); notifPaint();
 /* Visiteur : si le catalogue n'a pas pu être lu, on réessaie quelques fois avant d'afficher quoi que ce soit */
 function bootLoad(n) {
   return loadCatalog().then(function () {
-    if (!db.length && !ADMIN && n < 2) return new Promise(function (r) { setTimeout(r, 1500 * (n + 1)); }).then(function () { return bootLoad(n + 1); });
+    if (!db.length && !EDITOR && n < 2) return new Promise(function (r) { setTimeout(r, 1500 * (n + 1)); }).then(function () { return bootLoad(n + 1); });
   });
 }
 /* Visiteur déjà venu : on affiche tout de suite la dernière copie du catalogue, puis on la met à jour en arrière-plan */
-if (!ADMIN && !db.length) {
+if (!EDITOR && !db.length) {
   try {
     var cc = catShape(readJSON(CATCACHE, null)), arr = Array.isArray(cc) ? cc : cc.series, pre = [];
     arr.forEach(function (x) { try { pre.push(normalize(x)); } catch (e) {} });
@@ -7002,7 +7138,7 @@ if (!ADMIN && !db.length) {
 bootLoad(0).then(function () {
   CATLOADING = false;
   route(true); splashDone(); backfillAka(); backfillNetworks(); checkBuild();
-  if (!db.length && !ADMIN) {
+  if (!db.length && !EDITOR) {
     var tries = 0, tm = setInterval(function () {
       tries++;
       loadCatalog().then(function () { if (db.length) { clearInterval(tm); route(true); } else if (tries >= 10) clearInterval(tm); });
@@ -7012,7 +7148,7 @@ bootLoad(0).then(function () {
 /* Admins : on regarde le catalogue publié toutes les 60 s (et quand l'onglet redevient visible) pour récupérer suppressions, sources et signal de rafraîchissement */
 var polling = false;
 function pollCatalog() {
-  if (!ADMIN || polling || document.hidden || draft || teamEditing || heroEditing || refreshingAll) return;
+  if (!EDITOR || polling || document.hidden || draft || teamEditing || heroEditing || refreshingAll) return;
   polling = true;
   var before = JSON.stringify([db, TEAM, HERO, ANN, INBOX]);
   loadCatalog().then(function () {
