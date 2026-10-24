@@ -318,7 +318,13 @@
               "name": "Épisode 5",
               "overview": "",
               "air_date": "2026-10-24",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "EMBEDORIGIN",
+                  "url": "https://embedorigin.cc/e/j9a47vuiqfw6",
+                  "by": "head"
+                }
+              ],
               "downloads": [
                 {
                   "name": "DLSURF",
@@ -434,7 +440,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792856414187,
+      "updatedAt": 1792859690876,
       "trend": 62,
       "videos": [
         {
@@ -41989,6 +41995,15 @@
     "at": 1792697940038
   },
   "journal": [
+    {
+      "k": "mvmmdb444d350",
+      "t": 1792859690884,
+      "b": "head",
+      "a": "edit",
+      "i": "293607",
+      "n": "100 Days of Deception",
+      "d": "sources 16 → 17"
+    },
     {
       "k": "mvmmcxw0k57zx",
       "t": 1792859673744,
