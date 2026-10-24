@@ -1302,12 +1302,12 @@ function isVip() {
 var PREFKEY = "noir.prefs";
 var PREFS = (function () {
   var p = readJSON(PREFKEY, {}); if (!p || typeof p !== "object" || Array.isArray(p)) p = {};
-  return { glow: !!p.glow, noanim: !!p.noanim, hideTips: !!p.hideTips, hideLang: !!p.hideLang, hideLive: !!p.hideLive, hideNew: !!p.hideNew, hideNov: !!p.hideNov, rememberPlayer: !!p.rememberPlayer, theme: (["red", "blue", "violet", "gold", "rose", "emerald", "ice", "fire", "silver", "lime"].indexOf(p.theme) > -1 ? p.theme : ""), accent: (/^#[0-9a-f]{6}$/i.test(p.accent) ? p.accent.toLowerCase() : ""), bgc: (/^#[0-9a-f]{6}$/i.test(p.bgc) ? p.bgc.toLowerCase() : ""), lastPlayer: String(p.lastPlayer || ""), order: Array.isArray(p.order) ? p.order.filter(function (x) { return typeof x === "string"; }) : [] };
+  return { glow: !!p.glow, hideBL: !!p.hideBL, noanim: !!p.noanim, hideTips: !!p.hideTips, hideLang: !!p.hideLang, hideLive: !!p.hideLive, hideNew: !!p.hideNew, hideNov: !!p.hideNov, rememberPlayer: !!p.rememberPlayer, theme: (["red", "blue", "violet", "gold", "rose", "emerald", "ice", "fire", "silver", "lime"].indexOf(p.theme) > -1 ? p.theme : ""), accent: (/^#[0-9a-f]{6}$/i.test(p.accent) ? p.accent.toLowerCase() : ""), bgc: (/^#[0-9a-f]{6}$/i.test(p.bgc) ? p.bgc.toLowerCase() : ""), lastPlayer: String(p.lastPlayer || ""), order: Array.isArray(p.order) ? p.order.filter(function (x) { return typeof x === "string"; }) : [] };
 })();
 function savePrefs() { try { localStorage.setItem(PREFKEY, JSON.stringify(PREFS)); } catch (e) { toast("Stockage plein ou bloqué par le navigateur"); } }
 function applyPrefs() {
   var c = document.documentElement.classList;
-  c.toggle("noanim", PREFS.noanim); c.toggle("glowon", PREFS.glow); c.toggle("notips", PREFS.hideTips);
+  c.toggle("noanim", PREFS.noanim); c.toggle("glowon", PREFS.glow); c.toggle("nobl", PREFS.hideBL); c.toggle("notips", PREFS.hideTips);
   var de = document.documentElement, th = PREFS.theme; if (VIPTHEMES[th] && !isVip()) th = ""; if (th) de.setAttribute("data-theme", th); else de.removeAttribute("data-theme");
   var tm = document.querySelector('meta[name="theme-color"]'); if (tm) tm.setAttribute("content", { blue: "#081a3a", violet: "#05020a", gold: "#0b0905", rose: "#0d0509", emerald: "#04100b", ice: "#04101a", fire: "#0f0602", silver: "#08080a", lime: "#070d02" }[th] || "#000000");
   var st = de.style;
@@ -1395,7 +1395,7 @@ function stAction(ico, title, desc, attr, label, ghost, i) {
     '<button type="button" class="btn small' + (ghost ? " ghost" : "") + '" ' + attr + '>' + esc(label) + '</button></div>';
 }
 function stCount(t) {
-  if (t === "general") return ["noanim", "hideTips", "rememberPlayer", "glow", "theme"].filter(function (k) { return PREFS[k]; }).length;
+  if (t === "general") return ["noanim", "hideTips", "rememberPlayer", "glow", "hideBL", "theme"].filter(function (k) { return PREFS[k]; }).length;
   if (t === "badges") return BADGE_PREFS.filter(function (b) { return PREFS[b[0]]; }).length;
   return USER_KEYS.filter(function (k) { try { return localStorage.getItem(k) != null; } catch (e) { return false; } }).length;
 }
@@ -1488,7 +1488,8 @@ function stBody(t) {
     stSwitch("noanim", "Désactiver toutes les animations", "Tout s\'affiche normalement, mais sans mouvement ni transition.", PREFS.noanim, "zap", 0) +
     stSwitch("hideTips", "Cacher le carrousel d\'astuces", "Masque les astuces en bas du lecteur.", PREFS.hideTips, "bulb", 1) +
     stSwitch("rememberPlayer", "Se souvenir du dernier lecteur", "Relance directement le serveur choisi en dernier, quand il est disponible sur le titre.", PREFS.rememberPlayer, "play", 2) +
-    stSwitch("glow", "Effets lumineux", "Réactive les grosses lueurs et points de lumière en arrière-plan, partout sur le site. Désactivé par défaut.", PREFS.glow, "bulb", 3) + '</div>' +
+    stSwitch("glow", "Effets lumineux", "Réactive les grosses lueurs et points de lumière en arrière-plan, partout sur le site. Désactivé par défaut.", PREFS.glow, "bulb", 3) +
+    stSwitch("hideBL", "Masquer l\'espace BL", "Retire le bouton BL à côté de la recherche. Tu peux toujours y aller avec l\'adresse /bl.", PREFS.hideBL, "spark", 4) + '</div>' +
     '<div class="stsec"><div class="stlbl">Page d\'accueil</div><p class="stnote">Change l\'ordre des rangées de la page d\'accueil avec les flèches.</p>' +
     '<div class="spanel"><div id="catlist">' + catRowsHtml() + '</div><div class="row"><button type="button" class="btn ghost small" data-catreset>Réinitialiser</button></div></div></div>' +
     '<div class="spanel soon"><p class="note" style="margin:0;padding:16px 20px">D\'autres paramètres arrivent bientôt.</p></div>';
@@ -1939,6 +1940,8 @@ function viewRequest(pre, kind) {
     '<div class="rqwrap"><label class="f"><span>Nom du drama ou du film</span><input type="text" name="titre" id="reqtitre" required maxlength="120" value="' + esc(t) + '" autocomplete="off" placeholder="Tape le titre, dans n\'importe quelle langue" role="combobox" aria-expanded="false" aria-controls="reqsugg" aria-autocomplete="list"></label><div class="sugg tsug" id="reqsugg" role="listbox" hidden></div></div>' +
     '<p class="note" id="reqok">Choisis ton titre dans la liste proposée par TMDB pour pouvoir envoyer la demande.</p>' +
     '<label class="f"><span>Ta demande</span><select name="type"><option value="stream"' + (kind === "stream" ? " selected" : "") + '>Streaming</option><option value="dl"' + (kind === "dl" ? " selected" : "") + '>Téléchargement</option><option value="both"' + (kind === "both" ? " selected" : "") + '>Les deux (streaming + téléchargement)</option></select></label>' +
+    '<div class="f"><span class="lbl">Espace</span><div class="langpick"><label class="chk"><input type="checkbox" name="bl"' + (BLMODE ? " checked" : "") + '><i>BL</i></label></div></div>' +
+    '<p class="note" style="margin:-6px 0 0">Coche si c\'est un titre BL : il sera ajouté dans l\'espace BL.</p>' +
     '<label class="f"><span>Date de sortie (ou année)</span><input type="text" name="date" class="auto" readonly maxlength="40" placeholder="Rempli automatiquement"></label>' +
     '<input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0">' +
     (isVip() ? '<div class="rqvip" role="status"><i>' + colIco(12) + '</i><span>Demande prioritaire VIP<small>Sera traitée en 12 h maximum</small></span></div>' : '') +
@@ -3511,22 +3514,23 @@ function pnPill(on, a, b) { return '<span class="pnpill' + (on ? ' on' : '') + '
 function pnKv(rows) { return '<div class="pnkv">' + rows.map(function (r) { return '<div><span>' + r[0] + '</span><b>' + r[1] + '</b></div>'; }).join("") + '</div>'; }
 
 /* Statistiques du catalogue : calculées à partir des fiches, sans aucun service externe */
-function statsSection() {
-  var series = db.filter(function (x) { return !isMovie(x); }), films = db.filter(isMovie);
+function statsBlock(list, bl) {
+  var sfx = bl ? " BL" : "";
+  var series = list.filter(function (x) { return !isMovie(x); }), films = list.filter(isMovie);
   var seasons = 0, eps = 0, epNo = 0, src = 0, filmNo = 0, week = Date.now() - 7 * 86400000;
   series.forEach(function (x) { (x.seasons || []).forEach(function (se) { seasons++; (se.episodes || []).forEach(function (ep) { eps++; var k = (ep.sources || []).length; src += k; if (!k) epNo++; }); }); });
   films.forEach(function (x) { var k = (x.sources || []).length; src += k; if (!k) filmNo++; });
-  var added = db.filter(function (x) { return (x.addedAt || 0) > week; }).length;
-  var noPoster = db.filter(function (x) { return !x.poster; }).length;
+  var added = list.filter(function (x) { return (x.addedAt || 0) > week; }).length;
+  var noPoster = list.filter(function (x) { return !x.poster; }).length;
   var noPlat = series.filter(function (x) { return /^\d+$/.test(String(x.id)) && Array.isArray(x.networks) && !x.networks.length; }).length;
-  var noOv = db.filter(function (x) { return !String(x.overview || "").trim(); }).length;
+  var noOv = list.filter(function (x) { return !String(x.overview || "").trim(); }).length;
   var complete = 0;
-  db.forEach(function (x) {
+  list.forEach(function (x) {
     var ok = !!x.poster && !!String(x.overview || "").trim();
     if (ok) ok = isMovie(x) ? (x.sources || []).length > 0 : (x.seasons || []).every(function (se) { return (se.episodes || []).every(function (ep) { return (ep.sources || []).length > 0; }); });
     if (ok) complete++;
   });
-  var pct = db.length ? Math.round(complete * 100 / db.length) : 0;
+  var pct = list.length ? Math.round(complete * 100 / list.length) : 0;
   function bars(map, label, ico) {
     var k = Object.keys(map).sort(function (a, b) { return map[b] - map[a] || (a < b ? -1 : 1); }).slice(0, 5);
     if (!k.length) return "";
@@ -3536,7 +3540,7 @@ function statsSection() {
     }).join("") + '</div>';
   }
   var g = {}, pl = {}, cat = {}, sv = {}, pc = playerCounts();
-  db.forEach(function (x) { (x.genres || []).forEach(function (n) { g[n] = (g[n] || 0) + 1; }); });
+  list.forEach(function (x) { (x.genres || []).forEach(function (n) { g[n] = (g[n] || 0) + 1; }); });
   series.forEach(function (x) { platNames(x).forEach(function (n) { pl[n] = (pl[n] || 0) + 1; }); var d = dramaType(x); if (d) cat[DRAMA[d]] = (cat[DRAMA[d]] || 0) + 1; });
   Object.keys(pc).forEach(function (n) { sv[n.toUpperCase()] = pc[n]; });
   function box(ico, v, l) { return '<div class="pnst">' + pnIco(ico) + '<b>' + v + '</b><span>' + l + '</span></div>'; }
@@ -3547,22 +3551,26 @@ function statsSection() {
   if (noPoster) todo.push(td("alert", noPoster + (noPoster > 1 ? ' fiches sans affiche' : ' fiche sans affiche')));
   if (noOv) todo.push(td("alert", noOv + (noOv > 1 ? ' fiches sans synopsis' : ' fiche sans synopsis')));
   if (noPlat) todo.push(td("alert", noPlat + (noPlat > 1 ? ' séries sans plateforme' : ' série sans plateforme')));
-  var recent = db.filter(function (x) { return x.addedAt; }).sort(function (a, b) { return (b.addedAt || 0) - (a.addedAt || 0); }).slice(0, 5);
+  var recent = list.filter(function (x) { return x.addedAt; }).sort(function (a, b) { return (b.addedAt || 0) - (a.addedAt || 0); }).slice(0, 5);
   var recentHtml = recent.length ? '<div class="pnrecent">' + recent.map(function (x) {
     var p = x.poster ? (/^(https?:|data:)/.test(String(x.poster)) ? x.poster : img(x.poster, "w92")) : "";
     return '<a class="pnrec" href="/serie/' + esc(x.id) + '"><span class="pi"' + (p ? ' style="background-image:url(\'' + esc(p) + '\')"' : '') + '></span><span class="pt"><b>' + esc(x.name) + '</b><small>' + (isMovie(x) ? 'Film' : 'Série') + (typeof nAgo === "function" ? ' · ' + esc(nAgo(x.addedAt)) : '') + '</small></span>' + pnIco("chev") + '</a>';
   }).join("") + '</div>' : '<p class="note">Aucune fiche récente.</p>';
-  return pnCard("chart", "Statistiques", "Calculées à partir des fiches, sans aucun service externe.",
+  return pnCard("chart", "Statistiques" + sfx, "Calculées à partir des fiches, sans aucun service externe.",
       '<div class="pnstats">' + box("tv", series.length, "Séries") + box("film", films.length, "Films") + box("list", eps, "Épisodes") + box("link", src, "Sources") + box("plus", added, "Ajoutés (7 j)") + '</div>', 0) +
-    pnCard("check", "Santé du catalogue", "Fiches avec affiche, synopsis et au moins une source partout.",
-      '<div class="pnhl"><b>' + pct + ' %</b><span>' + complete + ' / ' + db.length + ' fiche' + (db.length > 1 ? 's' : '') + ' complète' + (complete > 1 ? 's' : '') + '</span></div>' +
+    pnCard("check", "Santé du catalogue" + sfx, "Fiches avec affiche, synopsis et au moins une source partout.",
+      '<div class="pnhl"><b>' + pct + ' %</b><span>' + complete + ' / ' + list.length + ' fiche' + (list.length > 1 ? 's' : '') + ' complète' + (complete > 1 ? 's' : '') + '</span></div>' +
       '<div class="pnbar"><i style="width:' + pct + '%"></i></div>' +
       '<div class="pntodo">' + (todo.length ? todo.join("") : td("check", "Rien à compléter : toutes les fiches ont leurs sources, affiche et synopsis.")) + '</div>', 1) +
-    pnCard("globe", "Répartition", "Top 5 par catégorie, plateforme, genre et serveur.",
+    pnCard("globe", "Répartition" + sfx, "Top 5 par catégorie, plateforme, genre et serveur.",
       '<div class="pntops">' + bars(cat, "Catégories", "tv") + bars(pl, "Plateformes", "globe") + bars(g, "Genres", "film") + bars(sv, "Serveurs", "server") + '</div>' +
       '<p class="note">Les visites (pages les plus vues, pays, appareils) se consultent dans Vercel : ton projet, onglet « Analytics ».</p>', 2) +
-    pnCard("clock", "Derniers ajouts", "Les 5 fiches ajoutées le plus récemment.", recentHtml, 3);
+    pnCard("clock", "Derniers ajouts" + sfx, "Les 5 fiches ajoutées le plus récemment.", recentHtml, 3);
 }
+function statsSection() {
+  return statsBlock(db.filter(function (x) { return !x.bl; }), false) + statsBlock(db.filter(function (x) { return x.bl; }), true);
+}
+
 function adsSection() {
   var on = adsOn();
   return pnCard("mega", "Pub avant téléchargement" + pnPill(on, "Activée", "Désactivée"), "Réservé au Head admin.",
@@ -4760,7 +4768,7 @@ function rqEmpty() {
 }
 function rqPaint(swap) {
   var body = $("#rqbody"); if (!body) return;
-  var it = REQS.items, wait = it.filter(function (x) { return x.status !== "done"; }).sort(function (a, b) { return (+b.votes || 0) - (+a.votes || 0); }), done = it.filter(function (x) { return x.status === "done"; }).reverse();
+  var it = REQS.items.filter(function (x) { return !!x.bl === BLMODE; }), wait = it.filter(function (x) { return x.status !== "done"; }).sort(function (a, b) { return (+b.votes || 0) - (+a.votes || 0); }), done = it.filter(function (x) { return x.status === "done"; }).reverse();
   var arr = (rqTab === "done" ? done : wait).filter(function (x) { return reqMatch(x, rqKindF); });
   var max = wait.reduce(function (m, x) { return Math.max(m, +x.votes || 0); }, 0);
   body.className = swap ? "mlswap" : "";
@@ -4782,7 +4790,7 @@ function viewRequests() {
   var filt = [["", "Tout"], ["stream", "Streaming"], ["dl", "Téléchargement"]].map(function (x) { return '<button type="button" data-rqf="' + x[0] + '">' + x[1] + '</button>'; }).join("");
   $("#app").innerHTML = '<div id="rqroot"><div class="mlhero"><div class="wrap">' +
     '<div class="mltitle"><svg class="mllogo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18z"/><path d="M12 8v8M8 12h8"/><path class="sp" style="transform-origin:19px 4px" d="m19 1.6.6 1.4 1.4.6-1.4.6-.6 1.4-.6-1.4L17 3.6l1.4-.6z"/></svg>' +
-    '<div><h1>Demandes</h1><p class="note">Streaming ou téléchargement : plus un titre est demandé, plus il passe vite</p></div></div>' +
+    '<div><h1>Demandes' + (BLMODE ? " BL" : "") + '</h1><p class="note">Streaming ou téléchargement : plus un titre est demandé, plus il passe vite</p></div></div>' +
     '<div class="mltabs two" id="rqtabs" data-i="0" role="tablist"><span class="mlind"></span>' + tabs + '</div></div></div>' +
     '<div class="wrap">' +
     (ADMIN ? '<div class="rqaddwrap"><div class="rqadd"><div class="rqsearch"><input type="text" id="rq-t" placeholder="Chercher sur TMDB (ou écrire un titre)" maxlength="120" autocomplete="off" aria-label="Titre demandé"><div class="sugg tsug" id="rq-sugg" hidden></div></div>' +
@@ -4827,10 +4835,10 @@ document.addEventListener("click", function (e) {
   if (k === "add") {
     var t = ($("#rq-t").value || "").trim(); if (!t) { toast("Écris un titre."); return; }
     var pk = rqSel && rqSel.title === t ? rqSel : null;
-    var same = REQS.items.filter(function (r) { return pk && r.tmdb ? String(r.tmdb) === String(pk.id) && r.media === pk.media : r.title.toLowerCase() === t.toLowerCase(); })[0], n = Math.max(1, +$("#rq-n").value || 1);
+    var same = REQS.items.filter(function (r) { return !!r.bl === BLMODE && (pk && r.tmdb ? String(r.tmdb) === String(pk.id) && r.media === pk.media : r.title.toLowerCase() === t.toLowerCase()); })[0], n = Math.max(1, +$("#rq-n").value || 1);
     var nk = ($("#rq-k") || {}).value || "stream";
     if (same) { same.votes = (+same.votes || 0) + n; same.kind = reqKind(same) && reqKind(same) !== nk ? "both" : nk; }
-    else REQS.items.push({ id: "r" + Date.now().toString(36), title: t, status: "wait", kind: nk, votes: n, tmdb: pk ? pk.id : "", media: pk ? pk.media : "", year: pk ? pk.year : "", poster: pk ? pk.poster : "", origin: pk ? pk.origin : "", en: pk ? pk.en : "" });
+    else REQS.items.push({ id: "r" + Date.now().toString(36), title: t, status: "wait", bl: BLMODE, kind: nk, votes: n, tmdb: pk ? pk.id : "", media: pk ? pk.media : "", year: pk ? pk.year : "", poster: pk ? pk.poster : "", origin: pk ? pk.origin : "", en: pk ? pk.en : "" });
     rqSel = null; rqPicks = []; $("#rq-t").value = ""; $("#rq-n").value = 1;
   } else if (!x) return;
   else if (k === "kind") x.kind = RQKIND[b.dataset.k] ? b.dataset.k : "";
@@ -6014,14 +6022,14 @@ document.addEventListener("submit", function (e) {
     var titre = String(fd.get("titre") || "").trim();
     var emailErr = null;
     var mailP = fetch(REQ_URL, { method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" }, body: JSON.stringify({
-      _subject: (isVip() ? "[VIP · 12 h max] " : "") + "DramaByM : demande « " + titre + " »", _captcha: "false", _template: "table",
-      "Priorité": isVip() ? "VIP : à traiter sous 12 h" : "Normale", "Discord": String(fd.get("discord") || "").trim() || "non renseigné", "Titre": titre, "Demande": ({ stream: "Streaming", dl: "Téléchargement", both: "Streaming + téléchargement" })[String(fd.get("type"))] || "Streaming", "Date de sortie": String(fd.get("date") || "").trim(),
+      _subject: (isVip() ? "[VIP · 12 h max] " : "") + (fd.get("bl") ? "[BL] " : "") + "DramaByM : demande « " + titre + " »", _captcha: "false", _template: "table",
+      "Priorité": isVip() ? "VIP : à traiter sous 12 h" : "Normale", "Discord": String(fd.get("discord") || "").trim() || "non renseigné", "Titre": titre, "Espace": fd.get("bl") ? "BL" : "Site principal", "Demande": ({ stream: "Streaming", dl: "Téléchargement", both: "Streaming + téléchargement" })[String(fd.get("type"))] || "Streaming", "Date de sortie": String(fd.get("date") || "").trim(),
       "Type": reqSel.media === "movie" ? "Film" : "Série", "Origine": reqSel.origin || "", "Titre anglais": reqSel.en || "", "Titre original": reqSel.orig || "",
       "Lien TMDB": "https://www.themoviedb.org/" + (reqSel.media === "movie" ? "movie/" : "tv/") + reqSel.id
     }) }).then(function (r) {
       return r.json().catch(function () { return {}; }).then(function (j) { if (!r.ok || j.success === false || j.success === "false") throw new Error(String(j.message || "refusé par le service")); });
     }).then(function () { return true; }, function (err) { emailErr = err; return false; });
-    var discP = notifyDiscord({ kind: "request", titre: titre, media: reqSel.media, tmdbId: reqSel.id, date: String(fd.get("date") || "").trim(), origin: reqSel.origin || "", en: reqSel.en || "", orig: reqSel.orig || "", poster: reqSel.poster || "", demande: String(fd.get("type") || "stream"), vip: isVip(), discord: String(fd.get("discord") || "").trim() });
+    var discP = notifyDiscord({ kind: "request", titre: titre, media: reqSel.media, tmdbId: reqSel.id, date: String(fd.get("date") || "").trim(), origin: reqSel.origin || "", en: reqSel.en || "", orig: reqSel.orig || "", poster: reqSel.poster || "", demande: String(fd.get("type") || "stream"), bl: !!fd.get("bl"), vip: isVip(), discord: String(fd.get("discord") || "").trim() });
     Promise.all([mailP, discP]).then(function (ok) {
       if (!ok[0] && !ok[1]) throw emailErr || new Error("réessaie dans un moment.");
     }).then(function () {

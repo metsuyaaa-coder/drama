@@ -2623,3 +2623,4 @@ body.bl .listhead h1::after { content: ""; display: block; width: 64px; height: 
 @media (hover: hover) { body.bl .card:hover .poster { box-shadow: none; } }
 body.bl .search input[type=text]:focus { border-color: var(--acc); }
 body.bl footer { border-top-color: rgba(var(--blg), .25); }
+html.nobl .blgate.bl-out { display: none; }
