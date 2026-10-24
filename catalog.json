@@ -41148,6 +41148,234 @@
       "downloads": [],
       "posterCustom": true,
       "updatedAt": 1792881443991
+    },
+    {
+      "id": "316702",
+      "type": "tv",
+      "name": "Final Table",
+      "original_name": "파이널 테이블",
+      "origin_country": [
+        "KR"
+      ],
+      "networks": [
+        "JTBC"
+      ],
+      "original_language": "ko",
+      "aka": [
+        "Final Table",
+        "最后的餐桌",
+        "Der letzte Tisch",
+        "La mesa final",
+        "La Table finale",
+        "L'ultimo piatto",
+        "Terítéken a győzelem",
+        "Ostatni stolik",
+        "A Mesa Final",
+        "Masa campionilor",
+        "Son Masa",
+        "Poslední stůl",
+        "Το τελευταίο μενού",
+        "المائدة الأخيرة",
+        "फ़ाइनल टेबल",
+        "สงครามนักปรุง",
+        "ファイナル･テーブル",
+        "最後一桌",
+        "ෆයිනල් ටේබල්",
+        "国际名厨争霸赛",
+        "파이널 테이블"
+      ],
+      "year": "2026",
+      "overview": "L'émission \"La Table : K-Chef 2026\" voit les meilleurs chefs coréens s'affronter. Le mystérieux Kang Han, surnommé \"chef Chris K\", Choi Song-yi, qui se bat pour sauver son restaurant, Cha Woo-jin, un perfectionniste étoilé, et bien d'autres chefs aux parcours variés s'engagent dans une bataille culinaire acharnée. Au-delà de la compétition, ils trouvent du réconfort à cuisiner et à se soutenir.",
+      "genres": [
+        "Drame"
+      ],
+      "rating": "",
+      "pop": 6.9202,
+      "status": "Returning Series",
+      "poster": "https://image.tmdb.org/t/p/original/uO1teDsPlsd60laweip8qHVv98E.jpg",
+      "posterV": 2,
+      "backdrop": "https://image.tmdb.org/t/p/original/anwMEnTDkhv5qJ8wXSRieCvFHGs.jpg",
+      "videos": [
+        {
+          "key": "JpDD_kbMT_I",
+          "name": "본편 예고편",
+          "type": "Trailer",
+          "lab": "Original"
+        },
+        {
+          "key": "eojaHI20G5g",
+          "name": "Official Teaser [Subtitled]",
+          "type": "Teaser",
+          "lab": "Anglais"
+        }
+      ],
+      "cast": [
+        {
+          "name": "Ahn Hyo-seop",
+          "character": "Kang Han / Chris K",
+          "id": 1571598
+        },
+        {
+          "name": "홍화연",
+          "character": "Choi Song-i",
+          "id": 4084216
+        },
+        {
+          "name": "Chang Ryul",
+          "character": "Cha Woo-jin",
+          "id": 3003834
+        },
+        {
+          "name": "Jeong Yoo-jin",
+          "character": "Seon Jeong-won",
+          "id": 1554866
+        },
+        {
+          "name": "장영남",
+          "character": "Moon Hae-seon",
+          "id": 93996
+        },
+        {
+          "name": "차지연",
+          "character": "Baek Hyeon-ju",
+          "id": 1711062
+        },
+        {
+          "name": "Lee Je-hyeong",
+          "character": "Hall staff 2",
+          "id": 6520763
+        },
+        {
+          "name": "Bret Allan Lindquist",
+          "character": "Belgium - Chef A",
+          "id": 3796067
+        },
+        {
+          "name": "곽민호",
+          "character": "Special appearance",
+          "id": 571168
+        }
+      ],
+      "eprt": 71,
+      "seasons": [
+        {
+          "number": 1,
+          "name": "Saison 1",
+          "episodes": [
+            {
+              "number": 1,
+              "name": "Épisode 1",
+              "overview": "Free-spirited Chef Kang Han returns to Korea and visits Famiglia, where an encounter with its manager, Song-yi, leads to an unexpected commotion.",
+              "air_date": "2026-10-24",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-mq3rdh5qxawa.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 2,
+              "name": "Épisode 2",
+              "overview": "",
+              "air_date": "2026-10-25",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 3,
+              "name": "Épisode 3",
+              "overview": "",
+              "air_date": "2026-10-31",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 4,
+              "name": "Épisode 4",
+              "overview": "",
+              "air_date": "2026-11-01",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 5,
+              "name": "Épisode 5",
+              "overview": "",
+              "air_date": "2026-11-07",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 6,
+              "name": "Épisode 6",
+              "overview": "",
+              "air_date": "2026-11-08",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 7,
+              "name": "Épisode 7",
+              "overview": "",
+              "air_date": "2026-11-14",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 8,
+              "name": "Épisode 8",
+              "overview": "",
+              "air_date": "2026-11-15",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 9,
+              "name": "Épisode 9",
+              "overview": "",
+              "air_date": "2026-11-21",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 10,
+              "name": "Épisode 10",
+              "overview": "",
+              "air_date": "2026-11-22",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 11,
+              "name": "Épisode 11",
+              "overview": "",
+              "air_date": "2026-11-28",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 12,
+              "name": "Épisode 12",
+              "overview": "",
+              "air_date": "2026-11-29",
+              "sources": [],
+              "downloads": []
+            }
+          ],
+          "downloads": []
+        }
+      ],
+      "sources": [],
+      "addedAt": 1792885844899,
+      "langs": [
+        "VOSTFR"
+      ],
+      "downloads": [],
+      "posterCustom": true,
+      "updatedAt": 1792886177131
     }
   ],
   "deletedLinks": [
@@ -41577,6 +41805,15 @@
     "at": 1792697940038
   },
   "journal": [
+    {
+      "k": "mvn252hyota80",
+      "t": 1792886180326,
+      "b": "614d778ed0",
+      "a": "add",
+      "i": "316702",
+      "n": "Final Table",
+      "d": ""
+    },
     {
       "k": "mvn0zk18vtm63",
       "t": 1792884243500,
@@ -44267,15 +44504,6 @@
       "i": "311648",
       "n": "Make Me Tingle",
       "d": "téléchargements 0 → 3"
-    },
-    {
-      "k": "mve952c7bgpas",
-      "t": 1792353741847,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "293607",
-      "n": "100 Days of Deception",
-      "d": ""
     }
   ],
   "refreshAt": 1792423579957
