@@ -2570,6 +2570,7 @@ body.bl .bl-out { display: none !important; }
 body.bl .blgate.bl-in { display: inline-flex !important; }
 /* uploadeur BL : l'onglet Ajouter n'apparaît que dans l'espace BL */
 body.blup.bl nav a.bl-up { display: inline-flex !important; }
+body.blup.bl .btn.bl-up { display: inline-flex !important; }   /* bouton « Publier le catalogue » du pied de page */
 /* entrée de l'espace BL : [ ♥ BL ↗ ] à côté de la recherche */
 .blgate { display: inline-flex; align-items: center; gap: 7px; flex: none; margin-left: auto; padding: 8px 4px; font-family: var(--mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--dim); white-space: nowrap; transition: color .2s; }
 .blgate.bl-in { display: none; }
@@ -2637,3 +2638,4 @@ body.bl .listhead h1::after { content: ""; display: block; width: 64px; height: 
 body.bl .search input[type=text]:focus { border-color: var(--acc); }
 body.bl footer { border-top-color: rgba(var(--blg), .25); }
 html.nobl .blgate.bl-out { display: none; }
+.volet.blup [data-adm] { display: none !important; }

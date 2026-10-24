@@ -3850,16 +3850,20 @@ function blank(type) {
   return f;
 }
 
-/* Uploadeur BL : bloc de connexions (clé TMDB, GitHub, publier, quitter) : il n'a pas le volet admin */
-function blConnStatus() {
-  return (getToken() ? "Clé TMDB liée ✓" : "Clé TMDB à lier") + " · " + (ghRepo() && ghToken() ? "GitHub lié ✓" : "GitHub à lier");
-}
+/* Uploadeur BL : en haut de « Ajouter », seulement ce qu'il reste à remplir (clé TMDB, GitHub). Une fois rempli, le bloc disparaît : tout reste dans le volet admin en bas de page. */
 function blConnHTML() {
   if (!BLUP) return "";
-  return '<div class="blconn"><p class="note">Uploadeur BL : tu ajoutes et modifies des fiches dans l\'espace BL uniquement. Lie ta clé TMDB (pour chercher les titres) et GitHub (pour publier tes fiches) une seule fois.<br><b id="blstat">' + blConnStatus() + '</b></p>' +
-    '<div class="row"><button type="button" class="btn small ghost" data-blconn="btn-key">Clé TMDB</button><button type="button" class="btn small ghost" data-blconn="btn-gh">GitHub</button><button type="button" class="btn small ghost" data-blconn="btn-export">Publier</button><button type="button" class="btn small ghost" data-blconn="btn-quit">Quitter</button></div></div>';
+  var miss = [];
+  if (!getToken()) miss.push('<button type="button" class="btn small ghost" data-blconn="btn-key">Clé TMDB</button>');
+  if (!(ghRepo() && ghToken())) miss.push('<button type="button" class="btn small ghost" data-blconn="btn-gh">GitHub</button>');
+  if (!miss.length) return "";
+  return '<div class="blconn" id="blconn"><p class="note">Avant de commencer, remplis ' + (miss.length > 1 ? "ces deux clés" : "cette clé") + ' (une seule fois, ensuite ce bloc disparaît). Tu les retrouves toujours dans le volet admin, en bas de la page.</p><div class="row">' + miss.join("") + '</div></div>';
 }
-function blConnPaint() { var s = $("#blstat"); if (s) s.textContent = blConnStatus(); }
+function blConnPaint() {
+  var b = $("#blconn"); if (!b) return;
+  var t = document.createElement("div"); t.innerHTML = blConnHTML();
+  if (t.firstChild) b.replaceWith(t.firstChild); else b.remove();
+}
 function blToggleHTML(d) {
   return '<div class="f"><span class="lbl">Espace</span><div class="langpick"><label class="chk"><input type="checkbox" data-bl' + (d.bl ? " checked" : "") + '><i>BL</i></label></div></div>' +
     '<p class="note" style="margin:-6px 0 0">Coché : la fiche est rangée dans l\'espace BL et disparaît du site principal.</p>';
@@ -6551,7 +6555,7 @@ $("#bl-stay").addEventListener("click", function () { $("#bldlg").close(); });
 $("#bldlg").addEventListener("click", function (e) { if (e.target === this) this.close(); });
 document.addEventListener("click", function (e) {   /* boutons du bloc « uploadeur BL » : ils déclenchent les vrais boutons du volet */
   var t = e.target.closest ? e.target.closest("[data-blconn]") : null;
-  if (!t || !BLUP || !/^btn-(key|gh|export|quit)$/.test(t.dataset.blconn)) return;
+  if (!t || !BLUP || !/^btn-(key|gh)$/.test(t.dataset.blconn)) return;
   var el = document.getElementById(t.dataset.blconn); if (el) el.click();
 });
 $("#btn-quit").addEventListener("click", function () {
@@ -6564,7 +6568,8 @@ $("#btn-quit").addEventListener("click", function () {
   var vo = $("#volet"), btn = $("#btn-volet"), timer;
   if (!vo || !btn) return;
   function open() {
-    if (!ADMIN) return;
+    if (!ADMIN && !BLUP) return;
+    vo.classList.toggle("blup", BLUP);   /* uploadeur BL : volet réduit à Clé TMDB et GitHub */
     clearTimeout(timer);
     var h = $("#vo-head"); if (h) h.hidden = !isHead();
     vo.hidden = false; void vo.offsetWidth; vo.classList.add("show");
