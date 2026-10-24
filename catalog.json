@@ -1013,7 +1013,23 @@
               "name": "Épisode 6",
               "overview": "",
               "air_date": "2026-10-24",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "EMBEDORIGIN",
+                  "url": "https://embedorigin.cc/e/xq28fywy144r",
+                  "by": "head"
+                },
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/5tNHhgDbtdbJk",
+                  "by": "head"
+                },
+                {
+                  "name": "UQLOAD",
+                  "url": "https://uqload.vc/embed-voty7c4f9qrc.html",
+                  "by": "head"
+                }
+              ],
               "downloads": []
             },
             {
@@ -1080,7 +1096,7 @@
       ],
       "original_language": "ko",
       "posterV": 2,
-      "updatedAt": 1792787334211,
+      "updatedAt": 1792861703444,
       "networks": [
         "SBS"
       ],
@@ -41790,6 +41806,15 @@
     "at": 1792697940038
   },
   "journal": [
+    {
+      "k": "mvmnkg0sznvhi",
+      "t": 1792861703452,
+      "b": "head",
+      "a": "edit",
+      "i": "293610",
+      "n": "Doctor X: Mafia in White",
+      "d": "sources 17 → 20"
+    },
     {
       "k": "mvmn3k7qa5xjp",
       "t": 1792860915734,
