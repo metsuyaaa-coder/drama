@@ -17848,7 +17848,7 @@
       ],
       "rating": "",
       "pop": 2.0394,
-      "status": "Returning Series",
+      "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/b8KrYRjYZEohssl8wKMsRbbxLMN.jpg",
       "posterV": 2,
       "backdrop": "https://image.tmdb.org/t/p/original/l3jPRm9xqJNkq3PYIdXrXE7aM81.jpg",
@@ -18001,7 +18001,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792881383878,
+      "updatedAt": 1792884124390,
       "networks": [
         "CBC"
       ]
@@ -41577,6 +41577,15 @@
   },
   "journal": [
     {
+      "k": "mvn0x050eps9s",
+      "t": 1792884124404,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "317415",
+      "n": "That Genius is Attached to His Fake Girlfriend",
+      "d": ""
+    },
+    {
       "k": "mvn0va2tql5gd",
       "t": 1792884043973,
       "b": "614d778ed0",
@@ -44266,15 +44275,6 @@
       "i": "300146",
       "n": "Where the Mask Ends",
       "d": "sources 8 → 12"
-    },
-    {
-      "k": "mve7lgi6ighy9",
-      "t": 1792351147470,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "304452",
-      "n": "The Lament of Autumn",
-      "d": ""
     }
   ],
   "refreshAt": 1792423579957
