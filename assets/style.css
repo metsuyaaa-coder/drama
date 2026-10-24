@@ -2568,7 +2568,6 @@ html:not(.glowon) .colc.fx2 .colem .cico { filter: none; }
 .bl-in { display: none !important; }
 body.bl .bl-out { display: none !important; }
 body.bl .blgate.bl-in { display: inline-flex !important; }
-body.bl .tabbar a.bl-in { display: flex !important; }
 /* uploadeur BL : l'onglet Ajouter n'apparaît que dans l'espace BL */
 body.blup.bl nav a.bl-up { display: inline-flex !important; }
 /* entrée de l'espace BL : [ ♥ BL ↗ ] à côté de la recherche */
@@ -2588,14 +2587,11 @@ body.bl .blgate.bl-out { display: none; }
 .blgate.back:hover svg.blar { transform: translateX(-3px); }
 @media (min-width: 721px) { header.top .search { margin-left: 0; } }
 @media (max-width: 720px) { .blgate { margin-left: 0; order: 0; padding: 6px 0; } .blgate .brk { font-size: 14px; } }
-.tabbar a svg.blar { width: 11px; height: 11px; margin-left: 2px; vertical-align: -1px; opacity: .7; }
-.tabbar a svg.blar.big { width: 22px; height: 22px; margin: 0; vertical-align: baseline; opacity: 1; }
 body.bl .logo::after { content: "BL"; display: inline-block; margin-left: 10px; padding: 4px 7px 3px; vertical-align: 6px; font-family: var(--mono); font-size: 11px; font-weight: 500; letter-spacing: .08em; line-height: 1; background: var(--acc); color: var(--on-acc); }
 dialog#bldlg { width: min(520px, 94vw); padding: 0; border: 1px solid var(--line); background: var(--bg); color: var(--fg); }
 dialog#bldlg[open] { animation: dialogIn .3s var(--ease) both; }
 dialog#bldlg::backdrop { background: rgba(0,0,0,.85); }
 dialog#bldlg .row { display: flex; flex-wrap: wrap; gap: 10px; }
-.tabbar a[data-nav="nav-bl"], .tabbar a[data-nav="nav-blback"] { border-left: 1px solid var(--line); }
 .blconn { display: grid; gap: 12px; padding: 14px 16px; margin: 0 0 22px; border: 1px solid var(--line); background: var(--panel); }
 .blconn .note { margin: 0; line-height: 1.6; }
 .blconn .note b { color: var(--fg); font-weight: 500; }
@@ -2605,13 +2601,9 @@ dialog#bldlg .row { display: flex; flex-wrap: wrap; gap: 10px; }
 /* ===== Thème de l'espace BL : violet / noir (prioritaire sur le thème choisi dans les paramètres) ===== */
 body.bl { --bg: #05020a; --dim: #9a8bbd; --line: #241540; --panel: #0c0618; --s0: #080411; --s1: #140a28; --acc: #8b5cf6; --on-acc: #fff; --blg: 139, 92, 246; }
 body.bl ::selection { background: #8b5cf6; color: #fff; }
-/* ambiance : halo violet en haut à droite, lueur plus sombre en bas à gauche */
-body.bl::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none; background: radial-gradient(900px 520px at 88% -10%, rgba(var(--blg), .22), transparent 70%), radial-gradient(760px 460px at -5% 105%, rgba(109, 40, 217, .16), transparent 70%); animation: blGlow 1.2s var(--ease) both; }
-@keyframes blGlow { from { opacity: 0; } to { opacity: 1; } }
 /* en-tête : fond teinté, filet violet lumineux dessous */
-body.bl header.top { background: rgba(5, 2, 10, .9); border-bottom-color: transparent; box-shadow: 0 1px 0 rgba(var(--blg), .28), 0 12px 40px -22px rgba(var(--blg), .55); }
+body.bl header.top { background: rgba(5, 2, 10, .9); border-bottom-color: transparent; box-shadow: 0 1px 0 rgba(var(--blg), .35); }
 body.bl .tabbar { background: rgba(5, 2, 10, .96); }
-body.bl .logo::after { box-shadow: 0 0 18px rgba(var(--blg), .55); }
 body.bl .blgate.back { color: var(--fg); }
 body.bl .blgate.back .brk { color: var(--acc); opacity: 1; }
 /* bandeau d'accueil BL */
@@ -2622,16 +2614,12 @@ body.bl .blgate.back .brk { color: var(--acc); opacity: 1; }
 /* carrousel : voile violet au lieu du voile noir */
 body.bl .hslide::after { background: linear-gradient(to top, var(--bg) 4%, rgba(26, 8, 56, .3) 60%, rgba(12, 4, 28, .72)); }
 body.bl .hero { border-bottom-color: rgba(var(--blg), .35); }
-body.bl .hdots button.on::before { box-shadow: 0 0 12px rgba(var(--blg), .8); }
 /* titres de rangées et de pages */
 body.bl .section-head h2 { display: inline-flex; align-items: center; gap: 12px; }
-body.bl .section-head h2::before { content: ""; width: 4px; height: .8em; background: var(--acc); box-shadow: 0 0 14px rgba(var(--blg), .75); }
+body.bl .section-head h2::before { content: ""; width: 4px; height: .8em; background: var(--acc); }
 body.bl .more:hover { color: var(--acc); }
-body.bl .listhead h1::after { content: ""; display: block; width: 64px; height: 3px; margin-top: 14px; background: var(--acc); box-shadow: 0 0 18px rgba(var(--blg), .8); }
+body.bl .listhead h1::after { content: ""; display: block; width: 64px; height: 3px; margin-top: 14px; background: var(--acc); }
 /* affiches */
-@media (hover: hover) { body.bl .card:hover .poster { box-shadow: 0 14px 38px -8px rgba(var(--blg), .6), 0 0 0 1px rgba(var(--blg), .55); } }
-body.bl .btn:not(.ghost):not(.danger) { box-shadow: 0 0 0 1px rgba(var(--blg), .5), 0 8px 26px -10px rgba(var(--blg), .7); }
-body.bl .chip.on { box-shadow: 0 0 14px -2px rgba(var(--blg), .55); }
-body.bl .search input[type=text]:focus { border-color: var(--acc); box-shadow: 0 0 0 3px rgba(var(--blg), .18); }
+@media (hover: hover) { body.bl .card:hover .poster { box-shadow: none; } }
+body.bl .search input[type=text]:focus { border-color: var(--acc); }
 body.bl footer { border-top-color: rgba(var(--blg), .25); }
-@media (prefers-reduced-motion: reduce) { body.bl::before { animation: none; } }
