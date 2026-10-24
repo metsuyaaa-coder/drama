@@ -15,6 +15,10 @@ function blPath(p) {
   if (!BLMODE || /^\/bl(\/|$)/i.test(p) || BL_COMMON.test(p)) return p;
   return "/bl" + (p === "/" ? "" : p);
 }
+function blChrome() {   /* barre du navigateur : violet dans l'espace BL, couleur du thème choisi sinon */
+  if (BLMODE) { var tm = document.querySelector('meta[name="theme-color"]'); if (tm) tm.setAttribute("content", "#05020a"); }
+  else if (typeof applyPrefs === "function") applyPrefs();
+}
 function go(path, replace, raw) {
   path = raw ? path : blPath(path);
   try { history[replace ? "replaceState" : "pushState"](null, "", path); }
@@ -1829,8 +1833,9 @@ function viewHome() {
   var tv = list.filter(function (s) { return !isMovie(s); });
   var mv = list.filter(isMovie);
   var picks = heroPicks();
-  var html = heroEditing && isHead() ? heroEditor() : '<section class="hero">' + picks.map(function (h, k) { return heroSlide(h, k === 0); }).join("") +
-    (picks.length > 1 ? '<div class="hdots">' + picks.map(function (h, k) { return '<button type="button" data-i="' + k + '" class="' + (k === 0 ? "on" : "") + '" aria-label="Diapositive ' + (k + 1) + '"></button>'; }).join("") + '</div>' : '') + (isHead() && !BLMODE ? '<button type="button" class="btn small heroedit-btn" data-hero="edit">Modifier le carrousel</button>' : '') + '</section>';
+  var strip = BLMODE ? '<div class="wrap blstrip"><b><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>Espace BL</b><i></i><span>' + list.length + (list.length > 1 ? " titres" : " titre") + '</span></div>' : "";
+  var html = strip + (heroEditing && isHead() ? heroEditor() : '<section class="hero">' + picks.map(function (h, k) { return heroSlide(h, k === 0); }).join("") +
+    (picks.length > 1 ? '<div class="hdots">' + picks.map(function (h, k) { return '<button type="button" data-i="' + k + '" class="' + (k === 0 ? "on" : "") + '" aria-label="Diapositive ' + (k + 1) + '"></button>'; }).join("") + '</div>' : '') + (isHead() && !BLMODE ? '<button type="button" class="btn small heroedit-btn" data-hero="edit">Modifier le carrousel</button>' : '') + '</section>');
   var parts = {};
   var rs = resumeList();
   if (rs.length) parts.resume = rail("Reprendre", rs, "", resumeCard, '<button type="button" class="more" data-resumeclear>Tout effacer</button>');
@@ -5700,6 +5705,7 @@ function route(force) {
   lastPage = a; lastBL = BLMODE;
   if (flip) { var app0 = $("#app"); if (app0) app0.innerHTML = ""; }   /* on change d'espace : plus de vue ni de filtre de l'autre côté */
   document.body.classList.toggle("bl", BLMODE);
+  if (flip || BLMODE) blChrome();
 
   var q = $("#q");
   if (q) q.placeholder = BLMODE ? "Rechercher un titre BL..." : "Rechercher un titre...";
@@ -7105,6 +7111,7 @@ function checkBuild() {
 document.body.classList.toggle("admin", ADMIN);
 document.body.classList.toggle("blup", BLUP);
 document.body.classList.toggle("bl", BLMODE);
+if (BLMODE) blChrome();
 /* Écran de chargement : cartes grises animées, selon la page ouverte */
 function skeletonHTML() {
   var p = curPath(), card = '<div class="skc"><div class="poster sk"></div><div class="sk sk-l"></div><div class="sk sk-l s"></div></div>';
