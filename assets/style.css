@@ -2573,7 +2573,7 @@ body.bl .tabbar a.bl-in { display: flex !important; }
 body.blup.bl nav a.bl-up { display: inline-flex !important; }
 nav a svg.blar { width: 13px; height: 13px; opacity: .55; transition: transform .3s var(--ease), opacity .2s; }
 nav a:hover svg.blar, nav a.on svg.blar { opacity: 1; }
-nav a.nav-bl:hover svg.blar { transform: translateX(3px); }
+nav a.nav-bl:hover svg.blar { transform: translate(2px, -2px); }
 nav a.nav-blback:hover svg.blar { transform: translateX(-3px); }
 .tabbar a svg.blar { width: 11px; height: 11px; margin-left: 2px; vertical-align: -1px; opacity: .7; }
 .tabbar a svg.blar.big { width: 22px; height: 22px; margin: 0; vertical-align: baseline; opacity: 1; }
