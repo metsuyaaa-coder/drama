@@ -50,12 +50,13 @@ module.exports = async function (req, res) {
       { name: "Origine", value: clean(b.origin, 40) || "?", inline: true },
       { name: "Année", value: clean(b.date, 20) || "?", inline: true },
       { name: "Demande", value: demande, inline: true },
+      { name: "Espace", value: b.bl ? "BL" : "Site principal", inline: true },
       { name: "Discord", value: clean(b.discord, 40) || "non renseigné", inline: true }
     ];
     var en = clean(b.en, 150), orig = clean(b.orig, 150);
     if (en) fields.push({ name: "Titre anglais", value: en, inline: true });
     if (orig) fields.push({ name: "Titre original", value: orig, inline: true });
-    embed = { title: "Nouvelle demande : " + titre, color: 0x7c5cff, fields: fields, footer: { text: "DramaByM" }, timestamp: new Date().toISOString() };
+    embed = { title: (b.bl ? "[BL] " : "") + "Nouvelle demande : " + titre, color: 0x7c5cff, fields: fields, footer: { text: "DramaByM" }, timestamp: new Date().toISOString() };
     if (id) embed.url = "https://www.themoviedb.org/" + media + "/" + id;
     var poster = String(b.poster || "");
     if (/^\/[\w-]+\.(jpg|png)$/i.test(poster)) embed.thumbnail = { url: "https://image.tmdb.org/t/p/w185" + poster };

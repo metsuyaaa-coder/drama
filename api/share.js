@@ -28,6 +28,11 @@ const IMAGES = {
   "/demandes": "/dbm-demandes.png?v=1",
   "/parametres": "/dbm-parametres.png?v=1"
 };
+const PAGES_BL = {
+  "/": { titre: "BL · DramaByM", desc: "L'espace BL de DramaByM : tous les dramas et films BL à regarder en streaming, avec les nouveaux épisodes toujours à jour." },
+  "/series": { titre: "Séries BL · DramaByM", desc: "Toutes les séries BL du répertoire DramaByM : lance ton prochain épisode." },
+  "/films": { titre: "Films BL · DramaByM", desc: "Tous les films BL du répertoire DramaByM, à regarder en streaming." }
+};
 const TEXTE_RECHERCHE = (q) => ({ titre: "« " + q + " » · DramaByM", desc: "Résultats de recherche pour « " + q + " » dans le répertoire DramaByM." });
 const TEXTE_ACTEUR = (n, titres) => ({
   titre: n + " · DramaByM",
@@ -140,11 +145,13 @@ module.exports = async (req, res) => {
     if (chemin.charAt(0) !== "/") chemin = "/" + chemin;
     chemin = chemin.replace(/\/{2,}/g, "/").slice(0, 300);
     if (chemin.length > 1) chemin = chemin.replace(/\/+$/, "");
-    const parts = chemin.split("/");
+    const estBL = /^\/bl(\/|$)/i.test(chemin);                 // espace BL : /bl, /bl/series, /bl/serie/ID…
+    const logique = estBL ? (chemin.slice(3) || "/") : chemin;   // même page, sans le préfixe /bl
+    const parts = logique.split("/");
     const racine = "/" + (parts[1] || "").toLowerCase();
     const reste = decode(parts.slice(2).join("/"));
     const base = { url: origine + chemin, image: origine + IMAGE_PAR_DEFAUT, defaut: true, type: "website" };
-    let page = PAGES[chemin.toLowerCase()] || null;
+    let page = (estBL && PAGES_BL[logique.toLowerCase()]) || PAGES[logique.toLowerCase()] || null;
 
     if (racine === "/serie" && reste) {
       const cat = await (await lire(origine + "/catalog.json", 5000)).json();
@@ -195,9 +202,9 @@ module.exports = async (req, res) => {
     }
     else if (racine === "/demande" && reste) page = PAGES["/demande"];
 
-    const cle = (racine === "/demande" && reste) ? "/demande" : chemin.toLowerCase();
-    if (IMAGES[cle]) { base.image = origine + IMAGES[cle]; base.defaut = true; }
-    return reponse(injecte(html, Object.assign(base, page || PAGES["/"])));
+    const cle = (racine === "/demande" && reste) ? "/demande" : logique.toLowerCase();
+    if (IMAGES[cle] && !(estBL && PAGES_BL[cle])) { base.image = origine + IMAGES[cle]; base.defaut = true; }
+    return reponse(injecte(html, Object.assign(base, page || (estBL ? PAGES_BL["/"] : PAGES["/"]))));
   } catch (e) {
     return reponse(html);   // en cas de souci : ton index.html d'origine, inchangé
   }
