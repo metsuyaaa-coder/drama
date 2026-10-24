@@ -19410,14 +19410,14 @@
         "告白ー25年目の秘密ー"
       ],
       "year": "2026",
-      "overview": "L'obsession inavouée d'un homme pour une femme depuis 25 ans finit par révéler la vérité sur un événement violent survenu pendant leur enfance.",
+      "overview": "Yukimura Sota est un employé quelconque du fabricant de cosmétiques NOSE. Du même âge que lui, Nose Mariko est la fille du président de cette entreprise et est elle-même en charge du développement d'une marque du groupe.\n\nDepuis vingt-cinq ans et une rencontre alors qu'ils étaient enfants, Sota est amoureux en secret de Mariko et a toujours gardé un œil sur elle de loin. Pour la première fois, il va lui adresser la parole et leur quotidien à tous les deux va se retrouver tout chamboulé.\n\n",
       "genres": [
         "Drame",
         "Mystère"
       ],
       "rating": "8.0",
       "pop": 7.0069,
-      "status": "Returning Series",
+      "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/aDUl4kdFJgsks4DNb4ZlzXGOs8X.jpg",
       "posterV": 2,
       "backdrop": "https://image.tmdb.org/t/p/original/mOALTFnD4MjvXIYdTlEl5aUEQT0.jpg",
@@ -19638,7 +19638,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792881390971,
+      "updatedAt": 1792884243473,
       "networks": [
         "Nippon TV"
       ],
@@ -41578,6 +41578,15 @@
   },
   "journal": [
     {
+      "k": "mvn0zk18vtm63",
+      "t": 1792884243500,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "326063",
+      "n": "25 Years of You",
+      "d": ""
+    },
+    {
       "k": "mvn0y9c2b4lgo",
       "t": 1792884182978,
       "b": "614d778ed0",
@@ -44267,15 +44276,6 @@
       "i": "293607",
       "n": "100 Days of Deception",
       "d": ""
-    },
-    {
-      "k": "mve89ug42a3zv",
-      "t": 1792352285284,
-      "b": "head",
-      "a": "edit",
-      "i": "300146",
-      "n": "Where the Mask Ends",
-      "d": "sources 12 → 8"
     }
   ],
   "refreshAt": 1792423579957
