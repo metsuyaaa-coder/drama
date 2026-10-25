@@ -2586,7 +2586,11 @@ body.bl .blgate.bl-out { display: none; }
 .blgate:hover .brk:last-child { transform: translateX(3px); }
 .blgate:hover svg.blar { opacity: 1; transform: translate(2px, -2px); }
 .blgate.back:hover svg.blar { transform: translateX(-3px); }
-@media (min-width: 721px) { header.top .search { margin-left: 0; } }
+@media (min-width: 721px) { header.top .search { margin-left: 0; } html.nobl body:not(.bl) header.top .search { margin-left: auto; } }   /* bouton BL masqué : la recherche garde sa place à droite */
+/* la recherche ne s'écrase plus : largeur minimum, et le bouton BL se compacte quand l'en-tête est serré (zoom, admin avec ses onglets en plus) */
+@media (min-width: 721px) { header.top .search { min-width: 170px; } }
+@media (min-width: 721px) and (max-width: 1700px) { header.top .wrap { gap: 18px; } .blgate > svg:not(.blar) { display: none; } .blgate { gap: 5px; } }
+@media (min-width: 721px) and (max-width: 1450px) { .blgate .brk { display: none; } }
 @media (max-width: 1100px) { .blgate > svg:not(.blar) { display: none; } }
 /* mobile : plus de bouton en haut. Navigateur = onglet dans le menu, appli installée = onglet dans la barre du bas */
 @media (max-width: 720px) { .blgate, body.bl .blgate.bl-in { display: none !important; } }
