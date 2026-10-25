@@ -33149,7 +33149,13 @@
               "name": "Épisode 4",
               "overview": "",
               "air_date": "2026-10-23",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-25qy2to433ic.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -33157,7 +33163,13 @@
               "name": "Épisode 5",
               "overview": "",
               "air_date": "2026-10-24",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-27pdysf9i60d.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -33165,7 +33177,13 @@
               "name": "Épisode 6",
               "overview": "",
               "air_date": "2026-10-24",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-ei4oxjyrgrxh.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -33173,7 +33191,13 @@
               "name": "Épisode 7",
               "overview": "",
               "air_date": "2026-10-25",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-d5en118iq72r.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -33450,7 +33474,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792881427973,
+      "updatedAt": 1792947380510,
       "trend": 68,
       "eprt": 48
     },
@@ -42137,6 +42161,15 @@
   },
   "journal": [
     {
+      "k": "mvo2ksvlyd996",
+      "t": 1792947380529,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "286171",
+      "n": "Tigers Sniff the Rose",
+      "d": "sources 3 → 7"
+    },
+    {
       "k": "mvo25i0sdboza",
       "t": 1792946666620,
       "b": "614d778ed0",
@@ -44826,15 +44859,6 @@
       "i": "233221",
       "n": "Oh My Ghost Clients",
       "d": ""
-    },
-    {
-      "k": "mvemozwnsknhp",
-      "t": 1792376506823,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "273977",
-      "n": "The Art of Sarah",
-      "d": "affiche"
     }
   ],
   "refreshAt": 1792423579957
