@@ -2859,7 +2859,23 @@
               "name": "Épisode 12",
               "overview": "",
               "air_date": "2026-10-25",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "EMBEDORIGIN",
+                  "url": "https://embedorigin.cc/e/9mjsvbf1p03v",
+                  "by": "head"
+                },
+                {
+                  "name": "VIDARA",
+                  "url": "https://vidara.to/e/I1iuCwzPUU0W1",
+                  "by": "head"
+                },
+                {
+                  "name": "UQLOAD",
+                  "url": "https://uqload.vc/embed-ie2ry7wj2oaj.html",
+                  "by": "head"
+                }
+              ],
               "downloads": []
             },
             {
@@ -2888,7 +2904,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792881328889,
+      "updatedAt": 1792940966418,
       "trend": 51,
       "videos": [
         {
@@ -42309,6 +42325,15 @@
   },
   "journal": [
     {
+      "k": "mvnyrbq3w60jh",
+      "t": 1792940966427,
+      "b": "head",
+      "a": "edit",
+      "i": "314939",
+      "n": "A Love Other Than Yours",
+      "d": "sources 41 → 44"
+    },
+    {
       "k": "mvnyjg7x8deqh",
       "t": 1792940599005,
       "b": "head",
@@ -44998,15 +45023,6 @@
       "i": "273977",
       "n": "The Art of Sarah",
       "d": ""
-    },
-    {
-      "k": "mvejc377goeui",
-      "t": 1792370865715,
-      "b": "head",
-      "a": "edit",
-      "i": "126035",
-      "n": "Nevertheless,",
-      "d": "téléchargements 0 → 10"
     }
   ]
 }
