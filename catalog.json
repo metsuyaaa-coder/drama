@@ -41334,7 +41334,13 @@
               "name": "Épisode 2",
               "overview": "",
               "air_date": "2026-10-25",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-sbc2lnkyp8q5.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -41428,7 +41434,7 @@
       ],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1792927940710,
+      "updatedAt": 1792945935813,
       "trend": 90
     },
     {
@@ -42114,6 +42120,15 @@
     "at": 1792697940038
   },
   "journal": [
+    {
+      "k": "mvo1pu5d9t5j5",
+      "t": 1792945935841,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "316702",
+      "n": "Final Table",
+      "d": "sources 2 → 3"
+    },
     {
       "k": "mvnzomwyfay6w",
       "t": 1792942520578,
@@ -44804,15 +44819,6 @@
       "i": "126035",
       "n": "Nevertheless,",
       "d": "sources 20 → 30"
-    },
-    {
-      "k": "mvejrmwfap35s",
-      "t": 1792371591087,
-      "b": "head",
-      "a": "edit",
-      "i": "293607",
-      "n": "100 Days of Deception",
-      "d": "sources 15 → 16"
     }
   ],
   "refreshAt": 1792423579957
