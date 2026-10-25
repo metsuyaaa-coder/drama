@@ -42327,7 +42327,7 @@
               "sources": [
                 {
                   "name": "EMBEDORIGIN",
-                  "url": "https://embedorigin.cc/e/3au5lly2vl5z",
+                  "url": "https://embedorigin.cc/e/qo7zbzdsnsjq",
                   "by": "head"
                 }
               ],
@@ -42561,10 +42561,11 @@
         "VF"
       ],
       "downloads": [],
-      "updatedAt": 1792954053201
+      "updatedAt": 1792957063122
     }
   ],
   "deletedLinks": [
+    "200709\thttps://embedorigin.cc/e/3au5lly2vl5z",
     "316702\thttps://vidmoly.org/embed-mq3rdh5qxawa.html",
     "320513\thttps://dlsurf.com/bundle/kidnap-game-vostfr1080p",
     "303745\thttps://vidara.to/e/SMzDM5xzhlDQv",
@@ -42982,6 +42983,15 @@
     "at": 1792697940038
   },
   "journal": [
+    {
+      "k": "mvo8cc0rvwodh",
+      "t": 1792957063131,
+      "b": "head",
+      "a": "edit",
+      "i": "200709",
+      "n": "Weak Hero",
+      "d": ""
+    },
     {
       "k": "mvo6jtjudbrvh",
       "t": 1792954053210,
@@ -45669,15 +45679,6 @@
       "t": 1792408396793,
       "b": "614d778ed0",
       "a": "del",
-      "i": "300146",
-      "n": "Where the Mask Ends",
-      "d": ""
-    },
-    {
-      "k": "mvf5lygfikgpg",
-      "t": 1792408277679,
-      "b": "614d778ed0",
-      "a": "add",
       "i": "300146",
       "n": "Where the Mask Ends",
       "d": ""
