@@ -953,6 +953,11 @@
                   "name": "UQLOAD",
                   "url": "https://uqload.vc/embed-204nxid9k9z4.html",
                   "by": "head"
+                },
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-n3u0trdqtglr.html",
+                  "by": "614d778ed0"
                 }
               ],
               "downloads": [
@@ -992,6 +997,11 @@
                   "name": "UQLOAD",
                   "url": "https://uqload.vc/embed-voty7c4f9qrc.html",
                   "by": "head"
+                },
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-luloeiz91qwe.html",
+                  "by": "614d778ed0"
                 }
               ],
               "downloads": []
@@ -1060,7 +1070,7 @@
       ],
       "original_language": "ko",
       "posterV": 2,
-      "updatedAt": 1792881323878,
+      "updatedAt": 1792948008458,
       "networks": [
         "SBS"
       ],
@@ -42186,6 +42196,15 @@
   },
   "journal": [
     {
+      "k": "mvo2y9eraax8y",
+      "t": 1792948008483,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "293610",
+      "n": "Doctor X: Mafia in White",
+      "d": "sources 20 → 22"
+    },
+    {
       "k": "mvo2w11fxijef",
       "t": 1792947904323,
       "b": "614d778ed0",
@@ -44875,15 +44894,6 @@
       "i": "288603",
       "n": "Never-Ending Summer",
       "d": "sources 29 → 30"
-    },
-    {
-      "k": "mvep7h214j8tf",
-      "t": 1792380728089,
-      "b": "614d778ed0",
-      "a": "add",
-      "i": "289139",
-      "n": "Overdo",
-      "d": ""
     }
   ],
   "refreshAt": 1792423579957
