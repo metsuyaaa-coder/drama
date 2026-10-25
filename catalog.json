@@ -289,6 +289,11 @@
                   "name": "EMBEDORIGIN",
                   "url": "https://embedorigin.cc/e/j9a47vuiqfw6",
                   "by": "head"
+                },
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-xqd1iiu5heod.html",
+                  "by": "614d778ed0"
                 }
               ],
               "downloads": []
@@ -313,6 +318,11 @@
                   "name": "UQLOAD",
                   "url": "https://uqload.vc/embed-cwrsnhokyg70.html",
                   "by": "head"
+                },
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-fmc4wh6x3k7c.html",
+                  "by": "614d778ed0"
                 }
               ],
               "downloads": []
@@ -414,7 +424,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792940598997,
+      "updatedAt": 1792946666594,
       "trend": 73,
       "videos": [
         {
@@ -42127,6 +42137,15 @@
   },
   "journal": [
     {
+      "k": "mvo25i0sdboza",
+      "t": 1792946666620,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "293607",
+      "n": "100 Days of Deception",
+      "d": "sources 20 → 22"
+    },
+    {
       "k": "mvo23sznftvkc",
       "t": 1792946587523,
       "b": "614d778ed0",
@@ -44816,15 +44835,6 @@
       "i": "273977",
       "n": "The Art of Sarah",
       "d": "affiche"
-    },
-    {
-      "k": "mvemjxsfcgnt9",
-      "t": 1792376270799,
-      "b": "614d778ed0",
-      "a": "add",
-      "i": "286198",
-      "n": "Shin's Project",
-      "d": ""
     }
   ],
   "refreshAt": 1792423579957
