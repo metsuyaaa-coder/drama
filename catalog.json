@@ -42012,6 +42012,164 @@
       ],
       "downloads": [],
       "updatedAt": 1792890241773
+    },
+    {
+      "id": "m11423",
+      "type": "movie",
+      "name": "Memories of Murder",
+      "original_name": "살인의 추억",
+      "aka": [
+        "Memories of Murder",
+        "Memorie di un assassino",
+        "Cinayet Günlüğü",
+        "Memories of Murder (Crónica de un asesino en serie)",
+        "Memórias de Um Assassino",
+        "杀人回忆",
+        "ฆาตกรรม ความตาย และสายฝน",
+        "Воспоминания об убийстве",
+        "살인의 추억",
+        "A halál jele",
+        "זכרונות מרצח",
+        "Zagadka Zbrodni",
+        "殺人の追憶",
+        "Pečeť vraha",
+        "خاطرات قتل",
+        "Spomienky na vraždu",
+        "殺人回憶",
+        "Спогади про вбивство",
+        "Μνήμες Φόνων",
+        "Memorias de un Asesino",
+        "Hồi Ức Kẻ Sát Nhân",
+        "ذكريات قاتل",
+        "მოგონებები მკვლელობაზე",
+        "Мемоарите на едно убийство",
+        "Spomini na umor",
+        "Mälestused mõrvast",
+        "Сећања на убиство",
+        "Atmiņas par noziegumu",
+        "Salinui chueok",
+        "Pecet vraha - Vzpomínky na vraha",
+        "Mnimes eglimaton",
+        "Μνήμες Εγκλήματος",
+        "Sjecanja na umorstvo",
+        "Satsujin no tsuioku",
+        "Sećanja na ubistvo",
+        "Crónica de un asesino en serie",
+        "Cinayət Xatirələri",
+        "Cinayet Anıları",
+        "殺人の追憶：2003"
+      ],
+      "year": "2003",
+      "overview": "Province de Gyunggi 1986. Le corps d'une jeune femme brutalement violée puis assassinée est retrouvé dans la campagne. Deux mois plus tard, d'autres crimes similaires ont lieu. Dans un pays qui n'a jamais connu de telles atrocités, la rumeur d'actes commis par un serial killer grandit de jour en jour. Une unité spéciale de la police est ainsi créée dans la région afin de trouver rapidement le coupable. Elle est placée sous les ordres d'un policier local et d'un détective spécialement envoyé de Séoul à sa demande. Devant l'absence de preuves concrètes, les deux hommes sombrent peu à peu dans le doute...",
+      "genres": [
+        "Crime",
+        "Drame",
+        "Thriller"
+      ],
+      "rating": "8.1",
+      "pop": 27.3937,
+      "status": "Released",
+      "runtime": 129,
+      "poster": "https://image.tmdb.org/t/p/w500/jcgUjx1QcupGzjntTVlnQ15lHqy.jpg",
+      "posterV": 2,
+      "backdrop": "https://image.tmdb.org/t/p/original/6Kn6qW3an3DkPl3MahWemTzrjCt.jpg",
+      "videos": [
+        {
+          "key": "lEqIv23MJLI",
+          "name": "2003 살인의 추억 (Memories of Murder) 티저 예고편",
+          "type": "Trailer",
+          "lab": "Original"
+        },
+        {
+          "key": "0n_HQwQU8ls",
+          "name": "MEMORIES OF MURDER Trailer",
+          "type": "Trailer",
+          "lab": "Anglais"
+        },
+        {
+          "key": "nDL1uUPz22I",
+          "name": "Memories of Murder - Bande Annonce VOST",
+          "type": "Trailer",
+          "lab": "Français"
+        }
+      ],
+      "cast": [
+        {
+          "name": "Song Kang-ho",
+          "character": "Detective Park Doo-man",
+          "id": 20738
+        },
+        {
+          "name": "Kim Sang-kyung",
+          "character": "Detective Seo Tae-yoon",
+          "id": 69378
+        },
+        {
+          "name": "Kim Roi-ha",
+          "character": "Detective Cho Yong-koo",
+          "id": 69379
+        },
+        {
+          "name": "Song Jae-ho",
+          "character": "Sergeant Shin Dong-chul",
+          "id": 1080904
+        },
+        {
+          "name": "Byun Hee-bong",
+          "character": "Sergeant Koo Hee-bong",
+          "id": 116180
+        },
+        {
+          "name": "고서희",
+          "character": "Officer Kwon Kwi-ok",
+          "id": 1299348
+        },
+        {
+          "name": "Ryu Tae-ho",
+          "character": "Jo Byung-soon",
+          "id": 1136064
+        },
+        {
+          "name": "Park No-shik",
+          "character": "Baek Kwang-ho",
+          "id": 1075838
+        },
+        {
+          "name": "Park Hae-il",
+          "character": "Park Hyeon-gyu",
+          "id": 21687
+        },
+        {
+          "name": "Jeon Mi-seon",
+          "character": "Kwok Seol-yung",
+          "id": 994248
+        },
+        {
+          "name": "Seo Young-hwa",
+          "character": "Eon Deok-nyeo",
+          "id": 564849
+        },
+        {
+          "name": "우고나",
+          "character": "Kim So-hyun",
+          "id": 3084955
+        }
+      ],
+      "seasons": [],
+      "sources": [
+        {
+          "name": "EMBEDORIGIN",
+          "url": "https://embedorigin.cc/e/cqvo46otsd4g",
+          "by": "head"
+        }
+      ],
+      "addedAt": 1792952760783,
+      "langs": [
+        "VOSTFR",
+        "VF"
+      ],
+      "downloads": [],
+      "updatedAt": 1792952906575
     }
   ],
   "deletedLinks": [
@@ -42432,6 +42590,15 @@
     "at": 1792697940038
   },
   "journal": [
+    {
+      "k": "mvo5v8t3mewxd",
+      "t": 1792952906583,
+      "b": "head",
+      "a": "add",
+      "i": "m11423",
+      "n": "Memories of Murder",
+      "d": ""
+    },
     {
       "k": "mvo3unw218bne",
       "t": 1792949734820,
@@ -45122,15 +45289,6 @@
       "i": "300146",
       "n": "Where the Mask Ends",
       "d": ""
-    },
-    {
-      "k": "mvf5hueqdak4p",
-      "t": 1792408198165,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "300146",
-      "n": "Where the Mask Ends",
-      "d": "sources 8 → 9"
     }
   ]
 }
