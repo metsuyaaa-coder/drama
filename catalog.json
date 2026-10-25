@@ -33885,7 +33885,13 @@
               "name": "Épisode 23",
               "overview": "",
               "air_date": "2026-10-24",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-jepzfi4vszzj.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -33893,7 +33899,13 @@
               "name": "Épisode 24",
               "overview": "",
               "air_date": "2026-10-25",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-gnzz74xgynv0.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -33946,7 +33958,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792881428889,
+      "updatedAt": 1792947904305,
       "eprt": 14
     },
     {
@@ -42174,6 +42186,15 @@
   },
   "journal": [
     {
+      "k": "mvo2w11fxijef",
+      "t": 1792947904323,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "338103",
+      "n": "Quite the Girl",
+      "d": "sources 22 → 24"
+    },
+    {
       "k": "mvo2uumwdcbky",
       "t": 1792947849368,
       "b": "614d778ed0",
@@ -44863,15 +44884,6 @@
       "i": "289139",
       "n": "Overdo",
       "d": ""
-    },
-    {
-      "k": "mveom1i9g6esv",
-      "t": 1792379728161,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "288603",
-      "n": "Never-Ending Summer",
-      "d": "sources 29 → 30"
     }
   ],
   "refreshAt": 1792423579957
