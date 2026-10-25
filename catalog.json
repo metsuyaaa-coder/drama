@@ -42180,6 +42180,388 @@
       ],
       "downloads": [],
       "updatedAt": 1792953057798
+    },
+    {
+      "id": "200709",
+      "type": "tv",
+      "name": "Weak Hero",
+      "original_name": "약한영웅",
+      "origin_country": [
+        "KR"
+      ],
+      "networks": [
+        "Netflix",
+        "wavve"
+      ],
+      "original_language": "ko",
+      "aka": [
+        "Weak Hero",
+        "弱美男英雄",
+        "弱小英雄",
+        "Křehký hrdina",
+        "Classe dos Heróis Fracos",
+        "Anh Hùng Yếu Ớt",
+        "Un héroe débil",
+        "Слабый герой",
+        "სუსტი გმირი",
+        "البطل الضعيف - الصف ١",
+        "Слабкий герой",
+        "Αδύναμος Ήρωας",
+        "Héros fragile",
+        "นักเรียนดีเดือด",
+        "Slabi heroj: Prvi razred",
+        "Weak Hero Class 1",
+        "גיבור חלש",
+        "Слабият герой",
+        "قهرمان ضعیف",
+        "弱いヒーロー",
+        "Słaby bohater",
+        "Eroul firav",
+        "A szokatlan hős",
+        "Silpnas herojus",
+        "Classe dos Heróis Fracos 1",
+        "Yakhanyoungwoong",
+        "약한영웅 Class 1",
+        "약한 영웅",
+        "약한영웅 Class 2",
+        "Слабкий Герой: Клас 1",
+        "Weak Hero Class",
+        "Yakhanyeongung",
+        "Người Hùng Yếu Đuối",
+        "약한영웅"
+      ],
+      "year": "2022",
+      "overview": "Yeon Shi Eun est un élève modèle qui se classe parmi les meilleurs de son lycée. Physiquement, Yeon Shi Eun semble faible, mais en utilisant son intelligence et sa psychologie, il lutte contre la violence qui a lieu dans son école.",
+      "genres": [
+        "Action & Adventure",
+        "Drame"
+      ],
+      "rating": "8.7",
+      "pop": 38.377,
+      "status": "Ended",
+      "poster": "https://image.tmdb.org/t/p/w500/hS9VVF5ffTVWNoC9B48QNsZFGy9.jpg",
+      "posterV": 2,
+      "backdrop": "https://image.tmdb.org/t/p/original/cLTAda6fMRirkCY1xfO4pmcHVkk.jpg",
+      "videos": [
+        {
+          "key": "_7BoArlzQEY",
+          "name": "[약한영웅 Class 1] 기선제압을 해야 한다 | 2차 예고편 | 웨이브 오리지널",
+          "type": "Trailer",
+          "lab": "Original"
+        },
+        {
+          "key": "GDTz8sLK3_Q",
+          "name": "Trailer | BIFF2022 약한영웅 Class 1 Weak Hero Class 1 | 온 스크린",
+          "type": "Trailer",
+          "lab": "Anglais"
+        }
+      ],
+      "cast": [
+        {
+          "name": "Park Ji-hoon",
+          "character": "Yeon Si-eun",
+          "id": 1901640
+        },
+        {
+          "name": "최현욱",
+          "character": "Ahn Su-ho",
+          "id": 3126573
+        },
+        {
+          "name": "Hong Kyung",
+          "character": "Oh Beom-seok",
+          "id": 1929194
+        },
+        {
+          "name": "려운",
+          "character": "Park Hu-min",
+          "id": 2621980
+        },
+        {
+          "name": "Choi Min-yeong",
+          "character": "Seo Jun-tae",
+          "id": 3495015
+        },
+        {
+          "name": "Yoo Su-bin",
+          "character": "Choi Hyo-man",
+          "id": 2149762
+        },
+        {
+          "name": "차우민",
+          "character": "Kang Woo-young",
+          "id": 3186373
+        },
+        {
+          "name": "Bae Na-ra",
+          "character": "Na Baek-jin",
+          "id": 4185856
+        },
+        {
+          "name": "이민재",
+          "character": "Go Hyun-tak",
+          "id": 3675304
+        },
+        {
+          "name": "Lee Jun-young",
+          "character": "Geum Seong-je",
+          "id": 1904058
+        },
+        {
+          "name": "차세진",
+          "character": "Basketball club member 3",
+          "id": 5280345
+        }
+      ],
+      "eprt": 42,
+      "seasons": [
+        {
+          "number": 1,
+          "name": "Niveau 1",
+          "episodes": [
+            {
+              "number": 1,
+              "name": "Épisode 1 : Premier affrontement",
+              "overview": "Jeon Yeong-bin cherche à provoquer Yeon Si-eun, mais Ahn Su-ho l'en empêche. Il décide alors d'attaquer Si-eun en se servant d'Oh Beom-seok.",
+              "air_date": "2022-11-18",
+              "sources": [
+                {
+                  "name": "EMBEDORIGIN",
+                  "url": "https://embedorigin.cc/e/3au5lly2vl5z",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 2,
+              "name": "Épisode 2 : Vérité et revanche",
+              "overview": "Si-eun ne se laisse pas impressionner et révèle la vérité sur Yeong-bin, mais ce dernier cherche à se venger.",
+              "air_date": "2022-11-18",
+              "sources": [
+                {
+                  "name": "EMBEDORIGIN",
+                  "url": "https://embedorigin.cc/e/rnmypeohi4ry",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 3,
+              "name": "Épisode 3 : Colère de Gil-su",
+              "overview": "Kim Gil-su enrage en apprenant que Jeon Seok-dae et sa bande ont été ridiculisés par un gringalet.",
+              "air_date": "2022-11-18",
+              "sources": [
+                {
+                  "name": "EMBEDORIGIN",
+                  "url": "https://embedorigin.cc/e/p6c2wy2mhoe2",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 4,
+              "name": "Épisode 4 - Sang et disparition",
+              "overview": "Si-eun découvre le sang de Su-ho sur le sol et réalise que la maison a été vidée. Il appelle Yeong-i à l'aide.",
+              "air_date": "2022-11-18",
+              "sources": [
+                {
+                  "name": "EMBEDORIGIN",
+                  "url": "https://embedorigin.cc/e/czsyrao96360",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 5,
+              "name": "Épisode 5 - Rencontre troublante",
+              "overview": "Beom-seok tombe sur les brutes de son ancienne école. Su-ho leur demande de s'excuser auprès de Beom-seok.",
+              "air_date": "2022-11-18",
+              "sources": [
+                {
+                  "name": "EMBEDORIGIN",
+                  "url": "https://embedorigin.cc/e/4009uaxfiknv",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 6,
+              "name": "Épisode 6 - Amitié brisée",
+              "overview": "L'amitié entre Su-ho et Beom-seok se brise. Si-eun tente d'intervenir, mais Beom-seok cède à ses démons en élaborant un sinistre stratagème.",
+              "air_date": "2022-11-18",
+              "sources": [
+                {
+                  "name": "EMBEDORIGIN",
+                  "url": "https://embedorigin.cc/e/b79yta6msunh",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 7,
+              "name": "Épisode 7 - Plans et conséquences",
+              "overview": "Le plan de Beom-seok met involontairement Si-eun en difficulté. Si-eun choisit d'éviter le conflit en préconisant le silence, mais Su-ho se doute de quelque chose.",
+              "air_date": "2022-11-18",
+              "sources": [
+                {
+                  "name": "EMBEDORIGIN",
+                  "url": "https://embedorigin.cc/e/gd4rxmvy3ra8",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 8,
+              "name": "Épisode 8 - Point de non-retour",
+              "overview": "Beom-seok regrette ce qu'il a fait, mais le point de non-retour a été franchi. En découvrant la vérité, Si-eun décide de prendre les choses en main.",
+              "air_date": "2022-11-18",
+              "sources": [
+                {
+                  "name": "EMBEDORIGIN",
+                  "url": "https://embedorigin.cc/e/3kuuu8dip4ri",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            }
+          ],
+          "downloads": []
+        },
+        {
+          "number": 2,
+          "name": "Niveau 2",
+          "episodes": [
+            {
+              "number": 1,
+              "name": "Épisode 1 - Nouveau départ",
+              "overview": "Toujours sous le choc de ce qui est arrivé à Su-ho, Si-eun s'isole. Seo Jun-tae aimerait bien tenir tête aux harceleurs… malgré les risques.",
+              "air_date": "2025-04-25",
+              "sources": [
+                {
+                  "name": "EMBEDORIGIN",
+                  "url": "https://embedorigin.cc/e/l2l7xg3at3wi",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 2,
+              "name": "Épisode 2 - Pièges et provocations",
+              "overview": "Si-eun intervient pour sauver Jun-tae, qui veut lui offrir son amitié en retour. Mais les deux sont visés par le plan de vengeance de Choi Hyo-man impliquant Go Hyun-tak.",
+              "air_date": "2025-04-25",
+              "sources": [
+                {
+                  "name": "EMBEDORIGIN",
+                  "url": "https://embedorigin.cc/e/nhacedm7k9j0",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 3,
+              "name": "Épisode 3 - Liens fragiles",
+              "overview": "Puni pour s'être battu, Si-eun se trouve de nouveaux amis en faisant du bénévolat… mais les ennuis le rattrapent.",
+              "air_date": "2025-04-25",
+              "sources": [
+                {
+                  "name": "EMBEDORIGIN",
+                  "url": "https://embedorigin.cc/e/67k7djpu74t0",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 4,
+              "name": "Épisode 4 - Trahisons et alliances",
+              "overview": "Quand Geum Seong-je dépasse les bornes, Si-eun passe un marché avec Na Baek-jin, laissant Park Hu-min, Hyun-tak et Jun-tae seuls dans la ligne de mire des harceleurs.",
+              "air_date": "2025-04-25",
+              "sources": [
+                {
+                  "name": "EMBEDORIGIN",
+                  "url": "https://embedorigin.cc/e/i3nc57cmwd2e",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 5,
+              "name": "Épisode 5 - Dilemmes personnels",
+              "overview": "Dos au mur et inquiet au sujet de son père, Hu-min s'explique avec Baek-jin. Si-eun envisage d'aller étudier à l'étranger après une dispute avec sa mère inquiète.",
+              "air_date": "2025-04-25",
+              "sources": [
+                {
+                  "name": "EMBEDORIGIN",
+                  "url": "https://embedorigin.cc/e/3qzgdnr49hqg",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 6,
+              "name": "Épisode 6 - Conflits et confrontations",
+              "overview": "Si-eun, Jun-tae, et Hyun-tak partent à la recherche de Hu-min, qui a décidé de rejoindre Baek-jin pour être en paix. Mais il a du mal à suivre les ordres…",
+              "air_date": "2025-04-25",
+              "sources": [
+                {
+                  "name": "EMBEDORIGIN",
+                  "url": "https://embedorigin.cc/e/pi5b556ioyjq",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 7,
+              "name": "Épisode 7 - Guerre des gangs",
+              "overview": "Baek-jin profite de l'absence de Si-eun pour mettre son plan de représailles à exécution. Hu-min riposte en mobilisant son lycée et en défiant Baek-jin au combat.",
+              "air_date": "2025-04-25",
+              "sources": [
+                {
+                  "name": "EMBEDORIGIN",
+                  "url": "https://embedorigin.cc/e/dofo9rw3ba82",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 8,
+              "name": "Épisode 8 - Le combat final",
+              "overview": "Hu-min, Hyun-tak et les lycéens d'Eunjang se rassemblent pour un dernier assaut contre le gang de Baek-jin. Qui finira par l'emporter ?",
+              "air_date": "2025-04-25",
+              "sources": [
+                {
+                  "name": "EMBEDORIGIN",
+                  "url": "https://embedorigin.cc/e/2i2bqtipo47x",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            }
+          ],
+          "downloads": []
+        }
+      ],
+      "sources": [],
+      "addedAt": 1792954022311,
+      "langs": [
+        "VOSTFR",
+        "VF"
+      ],
+      "downloads": [],
+      "updatedAt": 1792954053201
     }
   ],
   "deletedLinks": [
@@ -42600,6 +42982,15 @@
     "at": 1792697940038
   },
   "journal": [
+    {
+      "k": "mvo6jtjudbrvh",
+      "t": 1792954053210,
+      "b": "head",
+      "a": "add",
+      "i": "200709",
+      "n": "Weak Hero",
+      "d": ""
+    },
     {
       "k": "mvo5y8d3jwksw",
       "t": 1792953057806,
@@ -45290,15 +45681,6 @@
       "i": "300146",
       "n": "Where the Mask Ends",
       "d": ""
-    },
-    {
-      "k": "mvf5l898ow940",
-      "t": 1792408243724,
-      "b": "head",
-      "a": "edit",
-      "i": "300146",
-      "n": "Where the Mask Ends",
-      "d": "sources 9 → 8"
     }
   ]
 }
