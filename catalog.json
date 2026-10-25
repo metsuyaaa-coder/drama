@@ -24650,7 +24650,13 @@
               "name": "Épisode 17",
               "overview": "",
               "air_date": "",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-fn77tmmpo7r6.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -24658,7 +24664,13 @@
               "name": "Épisode 18",
               "overview": "",
               "air_date": "",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-cjodyrx59nqc.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -24768,7 +24780,7 @@
       ],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1792881407254,
+      "updatedAt": 1792947849352,
       "trend": 88,
       "videos": [
         {
@@ -42162,6 +42174,15 @@
   },
   "journal": [
     {
+      "k": "mvo2uumwdcbky",
+      "t": 1792947849368,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "300146",
+      "n": "Where the Mask Ends",
+      "d": "sources 16 → 18"
+    },
+    {
       "k": "mvo2t5tl1khm7",
       "t": 1792947770553,
       "b": "614d778ed0",
@@ -44851,15 +44872,6 @@
       "i": "288603",
       "n": "Never-Ending Summer",
       "d": "sources 29 → 30"
-    },
-    {
-      "k": "mveo5lymyvonw",
-      "t": 1792378961518,
-      "b": "614d778ed0",
-      "a": "add",
-      "i": "288603",
-      "n": "Never-Ending Summer",
-      "d": ""
     }
   ],
   "refreshAt": 1792423579957
