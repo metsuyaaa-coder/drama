@@ -2281,7 +2281,13 @@
               "name": "Épisode 10",
               "overview": "",
               "air_date": "2026-10-25",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-22ntccpzzujl.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -2331,7 +2337,7 @@
       ],
       "original_language": "ko",
       "posterV": 2,
-      "updatedAt": 1792942520550,
+      "updatedAt": 1792946587503,
       "networks": [
         "Channel A"
       ],
@@ -42121,6 +42127,15 @@
   },
   "journal": [
     {
+      "k": "mvo23sznftvkc",
+      "t": 1792946587523,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "316197",
+      "n": "Dive into You",
+      "d": "sources 33 → 34"
+    },
+    {
       "k": "mvo1pu5d9t5j5",
       "t": 1792945935841,
       "b": "614d778ed0",
@@ -44810,15 +44825,6 @@
       "i": "286198",
       "n": "Shin's Project",
       "d": ""
-    },
-    {
-      "k": "mvejs6ex5n2sn",
-      "t": 1792371616377,
-      "b": "head",
-      "a": "edit",
-      "i": "126035",
-      "n": "Nevertheless,",
-      "d": "sources 20 → 30"
     }
   ],
   "refreshAt": 1792423579957
