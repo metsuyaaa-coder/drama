@@ -25701,7 +25701,13 @@
               "name": "Épisode 3",
               "overview": "",
               "air_date": "2026-10-26",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-lqhoxdjeyuvf.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -25786,7 +25792,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792881411038,
+      "updatedAt": 1793035781825,
       "trend": 65,
       "videos": [
         {
@@ -43806,6 +43812,15 @@
   },
   "journal": [
     {
+      "k": "mvpj7k0wy18cc",
+      "t": 1793035782176,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "303745",
+      "n": "Love in Disguise",
+      "d": "sources 8 → 9"
+    },
+    {
       "k": "mvpif2njesyg4",
       "t": 1793034453295,
       "b": "614d778ed0",
@@ -46495,15 +46510,6 @@
       "i": "307106",
       "n": "Between Steps",
       "d": "sources 16 → 18"
-    },
-    {
-      "k": "mvfe4dee30qcb",
-      "t": 1792422573782,
-      "b": "head",
-      "a": "edit",
-      "i": "128995",
-      "n": "Yumi's Cells",
-      "d": ""
     }
   ],
   "refreshAt": 1792423579957
