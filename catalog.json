@@ -425,7 +425,7 @@
       ],
       "downloads": [],
       "updatedAt": 1792946666594,
-      "trend": 71,
+      "trend": 64,
       "videos": [
         {
           "key": "OsF0AxLqBzY",
@@ -1064,7 +1064,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "trend": 84,
+      "trend": 78,
       "origin_country": [
         "KR"
       ],
@@ -1567,7 +1567,7 @@
         "Upanje",
         "호프"
       ],
-      "trend": 98,
+      "trend": 96,
       "downloads": [
         {
           "name": "1FICHIER",
@@ -2829,7 +2829,7 @@
       "networks": [
         "KBS2"
       ],
-      "trend": 58,
+      "trend": 0,
       "videos": [
         {
           "key": "nQWv70PTHFM",
@@ -7040,7 +7040,7 @@
       "downloads": [],
       "posterCustom": true,
       "updatedAt": 1792947769524,
-      "trend": 52,
+      "trend": 44,
       "videos": [
         {
           "key": "4Idq9bH6zl8",
@@ -7989,7 +7989,7 @@
         }
       ],
       "updatedAt": 1792973938383,
-      "trend": 53,
+      "trend": 47,
       "posterCustom": true,
       "videos": [
         {
@@ -8373,7 +8373,7 @@
       "networks": [
         "ENA"
       ],
-      "trend": 0,
+      "trend": 49,
       "videos": [
         {
           "key": "4HsK_-QQE5Y",
@@ -24829,7 +24829,7 @@
       "downloads": [],
       "posterCustom": true,
       "updatedAt": 1792947849352,
-      "trend": 89,
+      "trend": 84,
       "videos": [
         {
           "key": "lLBSb_Xc1sw",
@@ -25793,7 +25793,7 @@
       ],
       "downloads": [],
       "updatedAt": 1793035781825,
-      "trend": 65,
+      "trend": 0,
       "videos": [
         {
           "key": "55ATD_SJ_Xw",
@@ -33188,7 +33188,7 @@
               "sources": [
                 {
                   "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-8s9y71qsbt6f.html",
+                  "url": "https://vidmoly.org/embed-iwf9fyzt56iy.html",
                   "by": "614d778ed0"
                 }
               ],
@@ -33552,8 +33552,8 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792947380510,
-      "trend": 85,
+      "updatedAt": 1793053920509,
+      "trend": 67,
       "eprt": 48
     },
     {
@@ -41576,7 +41576,7 @@
       "downloads": [],
       "posterCustom": true,
       "updatedAt": 1792949395733,
-      "trend": 83
+      "trend": 86
     },
     {
       "id": "334517",
@@ -41837,7 +41837,7 @@
       ],
       "downloads": [],
       "updatedAt": 1793032103918,
-      "trend": 64
+      "trend": 0
     },
     {
       "id": "m11423",
@@ -43379,6 +43379,7 @@
     }
   ],
   "deletedLinks": [
+    "286171\thttps://vidmoly.org/embed-8s9y71qsbt6f.html",
     "307106\thttps://streamtape.com/e/MX0rWlalPviYO6/",
     "200709\thttps://embedorigin.cc/e/3au5lly2vl5z",
     "316702\thttps://vidmoly.org/embed-mq3rdh5qxawa.html",
@@ -43811,6 +43812,15 @@
     "at": 1792697940038
   },
   "journal": [
+    {
+      "k": "mvpu0bntumyan",
+      "t": 1793053920521,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "286171",
+      "n": "Tigers Sniff the Rose",
+      "d": ""
+    },
     {
       "k": "mvpj7k0wy18cc",
       "t": 1793035782176,
@@ -46501,15 +46511,6 @@
       "i": "307106",
       "n": "Between Steps",
       "d": "sources 18 → 19"
-    },
-    {
-      "k": "mvfeiq9hltscx",
-      "t": 1792424024668,
-      "b": "head",
-      "a": "edit",
-      "i": "307106",
-      "n": "Between Steps",
-      "d": "sources 16 → 18"
     }
   ],
   "refreshAt": 1792423579957
