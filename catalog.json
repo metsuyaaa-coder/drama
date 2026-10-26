@@ -6897,7 +6897,13 @@
               "name": "Épisode 24",
               "overview": "",
               "air_date": "",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-5eqaly9vpc92.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -6905,7 +6911,13 @@
               "name": "Épisode 25",
               "overview": "",
               "air_date": "",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-fm8d0jh4wh8w.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -7039,7 +7051,7 @@
       ],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1792947769524,
+      "updatedAt": 1793055197265,
       "trend": 44,
       "videos": [
         {
@@ -43813,6 +43825,15 @@
   },
   "journal": [
     {
+      "k": "mvpurotaezk5a",
+      "t": 1793055197278,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "304452",
+      "n": "The Lament of Autumn",
+      "d": "sources 23 → 25"
+    },
+    {
       "k": "mvpu0bntumyan",
       "t": 1793053920521,
       "b": "614d778ed0",
@@ -46502,15 +46523,6 @@
       "i": "303745",
       "n": "Love in Disguise",
       "d": ""
-    },
-    {
-      "k": "mvfffbjqmzxo2",
-      "t": 1792424782411,
-      "b": "head",
-      "a": "edit",
-      "i": "307106",
-      "n": "Between Steps",
-      "d": "sources 18 → 19"
     }
   ],
   "refreshAt": 1792423579957
