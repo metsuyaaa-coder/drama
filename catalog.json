@@ -41698,7 +41698,14 @@
               "name": "Épisode 2",
               "overview": "",
               "air_date": "2026-10-25",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-yde6o0hk35jo.html",
+                  "fansub": "Drama Paradise : Inzaghi",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -41823,7 +41830,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1792890241773,
+      "updatedAt": 1793032103918,
       "trend": 64
     },
     {
@@ -43593,6 +43600,15 @@
     "at": 1792697940038
   },
   "journal": [
+    {
+      "k": "mvph0pvlc8vuo",
+      "t": 1793032103937,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "334517",
+      "n": "Oh! My Guard",
+      "d": "sources 1 → 2"
+    },
     {
       "k": "mvpf6sotjjrim",
       "t": 1793029028285,
@@ -46283,15 +46299,6 @@
       "i": "307106",
       "n": "Between Steps",
       "d": "téléchargements 0 → 4"
-    },
-    {
-      "k": "mvfasxi7ye0ov",
-      "t": 1792417001119,
-      "b": "614d778ed0",
-      "a": "add",
-      "i": "128995",
-      "n": "Yumi's Cells",
-      "d": ""
     }
   ],
   "refreshAt": 1792423579957
