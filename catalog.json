@@ -41725,8 +41725,8 @@
               "sources": [
                 {
                   "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-yde6o0hk35jo.html",
-                  "fansub": "Drama Paradise : Inzaghi",
+                  "url": "https://vidmoly.org/embed-7mk0oxbpdrmj.html",
+                  "fansub": "Dramavore : Rafia",
                   "by": "614d778ed0"
                 }
               ],
@@ -41854,7 +41854,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1793032103918,
+      "updatedAt": 1793056601230,
       "trend": 0
     },
     {
@@ -43397,6 +43397,7 @@
     }
   ],
   "deletedLinks": [
+    "334517\thttps://vidmoly.org/embed-yde6o0hk35jo.html",
     "286171\thttps://vidmoly.org/embed-8s9y71qsbt6f.html",
     "307106\thttps://streamtape.com/e/MX0rWlalPviYO6/",
     "200709\thttps://embedorigin.cc/e/3au5lly2vl5z",
@@ -43830,6 +43831,15 @@
     "at": 1792697940038
   },
   "journal": [
+    {
+      "k": "mvpvls47utzrv",
+      "t": 1793056601239,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "334517",
+      "n": "Oh! My Guard",
+      "d": ""
+    },
     {
       "k": "mvpv4ayc8h3ws",
       "t": 1793055785844,
@@ -46520,15 +46530,6 @@
       "i": "303745",
       "n": "Love in Disguise",
       "d": "téléchargements 0 → 1"
-    },
-    {
-      "k": "mvffzypqykp4h",
-      "t": 1792425727358,
-      "b": "head",
-      "a": "tmdb",
-      "i": "",
-      "n": "Toutes les fiches",
-      "d": "81 fiches"
     }
   ],
   "refreshAt": 1792423579957
