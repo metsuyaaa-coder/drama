@@ -6925,7 +6925,13 @@
               "name": "Épisode 26",
               "overview": "",
               "air_date": "",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-psbczvjj7r25.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -6933,7 +6939,13 @@
               "name": "Épisode 27",
               "overview": "",
               "air_date": "",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-oppqyw1plf5v.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -7051,7 +7063,7 @@
       ],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1793055197265,
+      "updatedAt": 1793129955399,
       "trend": 75,
       "videos": [
         {
@@ -44217,6 +44229,15 @@
   },
   "journal": [
     {
+      "k": "mvr3a0k640r38",
+      "t": 1793129955414,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "304452",
+      "n": "The Lament of Autumn",
+      "d": "sources 25 → 27"
+    },
+    {
       "k": "mvr373ho52gl5",
       "t": 1793129819244,
       "b": "614d778ed0",
@@ -46906,15 +46927,6 @@
       "i": "303745",
       "n": "Love in Disguise",
       "d": "sources 3 → 4"
-    },
-    {
-      "k": "mvfnqlu3v7kbf",
-      "t": 1792438727691,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "303745",
-      "n": "Love in Disguise",
-      "d": "sources 2 → 3"
     }
   ],
   "refreshAt": 1792423579957
