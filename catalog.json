@@ -43672,19 +43672,6 @@
         "sid": "117378"
       },
       {
-        "id": "rmvlfiw10",
-        "title": "Que ça vous serve de leçon !",
-        "status": "wait",
-        "kind": "dl",
-        "votes": 1,
-        "tmdb": 276161,
-        "media": "tv",
-        "year": "2026",
-        "poster": "/6FN0FAhkMeGmU3xAn4D1FmMJvtZ.jpg",
-        "origin": "Corée",
-        "en": "Teach You a Lesson"
-      },
-      {
         "id": "rmvlfj3n0",
         "title": "Héros fragile",
         "status": "done",
@@ -43727,7 +43714,7 @@
         "en": "Pandora: Beneath the Paradise"
       }
     ],
-    "at": 1793113399404
+    "at": 1793113419704
   },
   "hosts": {
     "items": [
