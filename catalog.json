@@ -425,7 +425,7 @@
       ],
       "downloads": [],
       "updatedAt": 1792946666594,
-      "trend": 64,
+      "trend": 54,
       "videos": [
         {
           "key": "OsF0AxLqBzY",
@@ -1064,7 +1064,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "trend": 0,
+      "trend": 72,
       "origin_country": [
         "KR"
       ],
@@ -1567,7 +1567,7 @@
         "Upanje",
         "호프"
       ],
-      "trend": 98,
+      "trend": 85,
       "downloads": [
         {
           "name": "1FICHIER",
@@ -2829,7 +2829,7 @@
       "networks": [
         "KBS2"
       ],
-      "trend": 41,
+      "trend": 0,
       "videos": [
         {
           "key": "nQWv70PTHFM",
@@ -7052,7 +7052,7 @@
       "downloads": [],
       "posterCustom": true,
       "updatedAt": 1793055197265,
-      "trend": 42,
+      "trend": 75,
       "videos": [
         {
           "key": "4Idq9bH6zl8",
@@ -8001,7 +8001,7 @@
         }
       ],
       "updatedAt": 1792973938383,
-      "trend": 44,
+      "trend": 0,
       "posterCustom": true,
       "videos": [
         {
@@ -24854,7 +24854,7 @@
       "downloads": [],
       "posterCustom": true,
       "updatedAt": 1793055785824,
-      "trend": 76,
+      "trend": 89,
       "videos": [
         {
           "key": "lLBSb_Xc1sw",
@@ -25818,7 +25818,7 @@
       ],
       "downloads": [],
       "updatedAt": 1793035781825,
-      "trend": 0,
+      "trend": 78,
       "videos": [
         {
           "key": "55ATD_SJ_Xw",
@@ -33308,7 +33308,13 @@
               "name": "Épisode 8",
               "overview": "",
               "air_date": "2026-10-25",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-p0a176girmuh.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -33316,7 +33322,13 @@
               "name": "Épisode 9",
               "overview": "",
               "air_date": "2026-10-26",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-cs65tbnsghkd.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -33324,7 +33336,13 @@
               "name": "Épisode 10",
               "overview": "",
               "air_date": "2026-10-26",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-dbm8dc0mr9ad.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -33332,7 +33350,13 @@
               "name": "Épisode 11",
               "overview": "",
               "air_date": "2026-10-27",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-46g6g9jd5pzy.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -33577,8 +33601,8 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1793053920509,
-      "trend": 0,
+      "updatedAt": 1793129819228,
+      "trend": 73,
       "eprt": 48
     },
     {
@@ -41601,7 +41625,7 @@
       "downloads": [],
       "posterCustom": true,
       "updatedAt": 1792949395733,
-      "trend": 71
+      "trend": 90
     },
     {
       "id": "334517",
@@ -41862,7 +41886,7 @@
       ],
       "downloads": [],
       "updatedAt": 1793056601230,
-      "trend": 58
+      "trend": 0
     },
     {
       "id": "m11423",
@@ -43401,7 +43425,7 @@
       ],
       "downloads": [],
       "updatedAt": 1793034453250,
-      "trend": 55
+      "trend": 0
     },
     {
       "id": "203344",
@@ -44192,6 +44216,15 @@
     "at": 1792697940038
   },
   "journal": [
+    {
+      "k": "mvr373ho52gl5",
+      "t": 1793129819244,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "286171",
+      "n": "Tigers Sniff the Rose",
+      "d": "sources 7 → 11"
+    },
     {
       "k": "mvr0eyaangun9",
       "t": 1793125146898,
@@ -46882,15 +46915,6 @@
       "i": "303745",
       "n": "Love in Disguise",
       "d": "sources 2 → 3"
-    },
-    {
-      "k": "mvfnd8lkbosph",
-      "t": 1792438104008,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "307106",
-      "n": "Between Steps",
-      "d": "sources 19 → 20"
     }
   ],
   "refreshAt": 1792423579957
