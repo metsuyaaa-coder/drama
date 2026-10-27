@@ -43402,7 +43402,13 @@
               "name": "Épisode 2",
               "overview": "",
               "air_date": "2026-10-27",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-ma0vaqv3wbyr.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -43479,7 +43485,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1793130305341,
+      "updatedAt": 1793140501175,
       "trend": 0
     },
     {
@@ -44413,6 +44419,15 @@
     "at": 1792697940038
   },
   "journal": [
+    {
+      "k": "mvr9k1qft3755",
+      "t": 1793140501191,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "335951",
+      "n": "Summer Vacation",
+      "d": "sources 1 → 2"
+    },
     {
       "k": "mvr9jaw77rloq",
       "t": 1793140466407,
@@ -47103,15 +47118,6 @@
       "i": "304452",
       "n": "The Lament of Autumn",
       "d": "sources 12 → 14"
-    },
-    {
-      "k": "mvftk378jjtuz",
-      "t": 1792448501300,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "288328",
-      "n": "Light the Dark",
-      "d": "sources 7 → 8"
     }
   ],
   "refreshAt": 1792423579957
