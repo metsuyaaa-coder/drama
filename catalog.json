@@ -8329,7 +8329,14 @@
               "name": "Épisode 8",
               "overview": "",
               "air_date": "2026-10-27",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-fbwqplj6trfd.html",
+                  "fansub": "Dramavore :Rafia",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -8381,7 +8388,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1793029028270,
+      "updatedAt": 1793125146704,
       "networks": [
         "ENA"
       ],
@@ -44186,6 +44193,15 @@
   },
   "journal": [
     {
+      "k": "mvr0eyaangun9",
+      "t": 1793125146898,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "307106",
+      "n": "Between Steps",
+      "d": "sources 25 → 26"
+    },
+    {
       "k": "mvqy6598p45wb",
       "t": 1793121376796,
       "b": "614d778ed0",
@@ -46875,15 +46891,6 @@
       "i": "307106",
       "n": "Between Steps",
       "d": "sources 19 → 20"
-    },
-    {
-      "k": "mvfinadydrzh2",
-      "t": 1792430174806,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "289139",
-      "n": "Overdo",
-      "d": "téléchargements 0 → 1"
     }
   ],
   "refreshAt": 1792423579957
