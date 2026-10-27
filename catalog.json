@@ -1064,7 +1064,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "trend": 78,
+      "trend": 0,
       "origin_country": [
         "KR"
       ],
@@ -1567,7 +1567,7 @@
         "Upanje",
         "호프"
       ],
-      "trend": 96,
+      "trend": 98,
       "downloads": [
         {
           "name": "1FICHIER",
@@ -2829,7 +2829,7 @@
       "networks": [
         "KBS2"
       ],
-      "trend": 0,
+      "trend": 41,
       "videos": [
         {
           "key": "nQWv70PTHFM",
@@ -7052,7 +7052,7 @@
       "downloads": [],
       "posterCustom": true,
       "updatedAt": 1793055197265,
-      "trend": 44,
+      "trend": 42,
       "videos": [
         {
           "key": "4Idq9bH6zl8",
@@ -8001,7 +8001,7 @@
         }
       ],
       "updatedAt": 1792973938383,
-      "trend": 47,
+      "trend": 44,
       "posterCustom": true,
       "videos": [
         {
@@ -8385,7 +8385,7 @@
       "networks": [
         "ENA"
       ],
-      "trend": 49,
+      "trend": 0,
       "videos": [
         {
           "key": "4HsK_-QQE5Y",
@@ -24847,7 +24847,7 @@
       "downloads": [],
       "posterCustom": true,
       "updatedAt": 1793055785824,
-      "trend": 84,
+      "trend": 76,
       "videos": [
         {
           "key": "lLBSb_Xc1sw",
@@ -33571,7 +33571,7 @@
       ],
       "downloads": [],
       "updatedAt": 1793053920509,
-      "trend": 67,
+      "trend": 0,
       "eprt": 48
     },
     {
@@ -41594,7 +41594,7 @@
       "downloads": [],
       "posterCustom": true,
       "updatedAt": 1792949395733,
-      "trend": 86
+      "trend": 71
     },
     {
       "id": "334517",
@@ -41855,7 +41855,7 @@
       ],
       "downloads": [],
       "updatedAt": 1793056601230,
-      "trend": 0
+      "trend": 58
     },
     {
       "id": "m11423",
@@ -43393,7 +43393,8 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1793034453250
+      "updatedAt": 1793034453250,
+      "trend": 55
     }
   ],
   "deletedLinks": [
@@ -43630,19 +43631,6 @@
         "sid": "233833"
       },
       {
-        "id": "rmvfvulrd",
-        "title": "Sous le masque",
-        "status": "wait",
-        "kind": "dl",
-        "votes": 1,
-        "tmdb": 300146,
-        "media": "tv",
-        "year": "2026",
-        "poster": "/nKhiK99WZohc3fJsTXJLf4SrSEY.jpg",
-        "origin": "Chine",
-        "en": "Where the Mask Ends"
-      },
-      {
         "id": "rmvjiq5ot",
         "title": "心理罪",
         "status": "wait",
@@ -43739,7 +43727,7 @@
         "sid": "m11423"
       }
     ],
-    "at": 1792970555358
+    "at": 1793113357788
   },
   "hosts": {
     "items": [
