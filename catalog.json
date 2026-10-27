@@ -6540,7 +6540,8 @@
         "玉簟秋",
         "Плачът на есента",
         "Ngọc Điệm Thu",
-        "옥점추"
+        "옥점추",
+        "O Lamento de Outono"
       ],
       "year": "2026",
       "overview": "Sous l'ère Républicaine, Ye Ping Jun cherche à payer les frais médicaux de sa mère avec son nouvel emploi. Mais pour son premier jour de travail, elle se retrouve accidentellement prise dans une tentative d'assassinat contre le cinquième fils de la famille Yu, Yu Chang Xuan. Quand elle se retrouve suspecte, elle fait un pari avec ce dernier : elle a dix jours pour trouver le vrai coupable. Yu Chang Xuan en profite, espérant pourvoir se rapprocher de Ye Ping Jun.",
@@ -6548,11 +6549,19 @@
         "Drame"
       ],
       "rating": "8.0",
-      "pop": 53.2936,
+      "pop": 50.6392,
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/original/nGSj4YtMOwP4cjGSD1fDlI6WLag.jpg",
       "posterV": 2,
       "backdrop": "https://image.tmdb.org/t/p/original/vD84yLJVVd7cC2lKF8sEukQG2A3.jpg",
+      "videos": [
+        {
+          "key": "4Idq9bH6zl8",
+          "name": "OFFICIAL TRAILER [Subtitled]",
+          "type": "Trailer",
+          "lab": "Anglais"
+        }
+      ],
       "cast": [
         {
           "name": "丞磊",
@@ -6565,6 +6574,7 @@
           "id": 2914051
         }
       ],
+      "eprt": 48,
       "seasons": [
         {
           "number": 1,
@@ -6670,8 +6680,8 @@
             },
             {
               "number": 8,
-              "name": "Épisode 8",
-              "overview": "",
+              "name": "Rival",
+              "overview": "Jiang Xueting joins the Yu Army as a translator after being hired by Yu Changxuan. Li Boren notices that Yu Changxuan already knew that Jiang Xueting is Ye Pingjun's boyfriend. He is sure that Yu Changxuan is serious about going after Ye Pingjun this time.",
               "air_date": "2026-10-14",
               "sources": [
                 {
@@ -6684,8 +6694,8 @@
             },
             {
               "number": 9,
-              "name": "Épisode 9",
-              "overview": "",
+              "name": "Stealing Confidential Files",
+              "overview": "Jiang Xueting sneaks into the archives during his overtime shift. He manages to steal a list of the names of deceased individuals from the mining incident. That is why Jiang Xueting returns to the country in advance and tries to join the Yu Army.",
               "air_date": "2026-10-15",
               "sources": [
                 {
@@ -6698,8 +6708,8 @@
             },
             {
               "number": 10,
-              "name": "Épisode 10",
-              "overview": "",
+              "name": "Building the Arsenal",
+              "overview": "Yu Changxuan reveals the plans he has been plotting all along within the army, building Yu Army's own arsenal on Changping Mountain, but his plan is rejected by the old generals.",
               "air_date": "2026-10-15",
               "sources": [
                 {
@@ -6712,8 +6722,8 @@
             },
             {
               "number": 11,
-              "name": "Épisode 11",
-              "overview": "",
+              "name": "The Yu Army in Crisis",
+              "overview": "An article exposing how Feng Sanli forced soldiers to work in a mine where they died in a disaster sparks outrage across Nanhuai, plunging the Yu Army into scandal.",
               "air_date": "2026-10-16",
               "sources": [
                 {
@@ -6726,8 +6736,8 @@
             },
             {
               "number": 12,
-              "name": "Épisode 12",
-              "overview": "",
+              "name": "Reforming the Army",
+              "overview": "On his deathbed, the limping soldier reveals the whereabouts of the stolen goods. When Yu Changxuan rushes to the scene, he finds that the gold has already been moved, leading him to conclude that someone was protecting Feng Sanli.",
               "air_date": "2026-10-16",
               "sources": [
                 {
@@ -6740,8 +6750,8 @@
             },
             {
               "number": 13,
-              "name": "Épisode 13",
-              "overview": "",
+              "name": "Divide",
+              "overview": "Gu Ruitong leads his troops in storming through the door and takes Jiang Xueting into custody on charges of stealing military secrets and defecting to the enemy.",
               "air_date": "2026-10-17",
               "sources": [
                 {
@@ -6754,8 +6764,8 @@
             },
             {
               "number": 14,
-              "name": "Épisode 14",
-              "overview": "",
+              "name": "Unrequited Love",
+              "overview": "Yu Changxuan confronts Jiang Xueting in prison, questioning how he can truly care for Ye Pingjun while secretly working as a spy and still planning to marry her.",
               "air_date": "2026-10-18",
               "sources": [
                 {
@@ -6768,9 +6778,9 @@
             },
             {
               "number": 15,
-              "name": "Épisode 15",
-              "overview": "",
-              "air_date": "",
+              "name": "Safe and Sound",
+              "overview": "At Fengtai, Ye Pingjun refuses to eat for three days, her high fever showing no sign of breaking. Yu Changxuan stays by her side, eventually resorting to threats against Jiang Xueting's life to make her eat.",
+              "air_date": "2026-10-19",
               "sources": [
                 {
                   "name": "VIDMOLY",
@@ -6782,9 +6792,9 @@
             },
             {
               "number": 16,
-              "name": "Épisode 16",
-              "overview": "",
-              "air_date": "",
+              "name": "Expedition Day",
+              "overview": "Ye Pingjun returns home. Li Boren chases her into the alley. He tells her about the things Yu Changxuan had done for her. Ye Pingjun is at a loss for words.",
+              "air_date": "2026-10-20",
               "sources": [
                 {
                   "name": "VIDMOLY",
@@ -6796,9 +6806,9 @@
             },
             {
               "number": 17,
-              "name": "Épisode 17",
-              "overview": "",
-              "air_date": "",
+              "name": "Jiang Xueting is Released from Prison",
+              "overview": "After Jiang Xueting is released from prison, Ye Pingjun feels heartbroken seeing how haggard he looks. However, Jiang Xueting presses her for answers about what really happened between her and Yu Changxuan, noticing the scars on her wrist.",
+              "air_date": "2026-10-20",
               "sources": [
                 {
                   "name": "VIDMOLY",
@@ -6810,9 +6820,9 @@
             },
             {
               "number": 18,
-              "name": "Épisode 18",
-              "overview": "",
-              "air_date": "",
+              "name": "A Triumphant Return",
+              "overview": "On the battlefield, Yu Changxuan watches his comrades fall and prepares to go down fighting, but Gu Ruitong and Kuang Bingwen arrive with reinforcements and rescue him.",
+              "air_date": "2026-10-21",
               "sources": [
                 {
                   "name": "VIDMOLY",
@@ -6824,9 +6834,9 @@
             },
             {
               "number": 19,
-              "name": "Épisode 19",
-              "overview": "",
-              "air_date": "",
+              "name": "Ye Pingjun's Arrest",
+              "overview": "Ye Pingjun's play calling for a boycott of Japanese goods enrages a group of Japanese rōnin. After the crowd beats them up during the ensuing clash, the Japanese Chamber of Commerce uses the incident as an excuse to imprison her and torture her into confessing.",
+              "air_date": "2026-10-21",
               "sources": [
                 {
                   "name": "VIDMOLY",
@@ -6838,9 +6848,9 @@
             },
             {
               "number": 20,
-              "name": "Épisode 20",
-              "overview": "",
-              "air_date": "",
+              "name": "Breaking Up",
+              "overview": "Ye Pingjun accidentally discovers that the photo of Yu Changxuan with the Japanese man was taken out of context and deliberately fabricated by Jiang Xueting. Deeply disappointed in Jiang Xueting, Ye Pingjun asks to break up.",
+              "air_date": "2026-10-22",
               "sources": [
                 {
                   "name": "VIDMOLY",
@@ -6852,9 +6862,9 @@
             },
             {
               "number": 21,
-              "name": "Épisode 21",
-              "overview": "",
-              "air_date": "",
+              "name": "Never Letting Go",
+              "overview": "Tao Xili has Ye Pingjun abducted and taken to the riverbank, where he tries to force her to kneel before him. To avenge his younger daughter, he orders his men to throw Ye Pingjun into the river.",
+              "air_date": "2026-10-22",
               "sources": [
                 {
                   "name": "VIDMOLY",
@@ -6868,7 +6878,7 @@
               "number": 22,
               "name": "Épisode 22",
               "overview": "",
-              "air_date": "",
+              "air_date": "2026-10-23",
               "sources": [
                 {
                   "name": "VIDMOLY",
@@ -6882,7 +6892,7 @@
               "number": 23,
               "name": "Épisode 23",
               "overview": "",
-              "air_date": "",
+              "air_date": "2026-10-24",
               "sources": [
                 {
                   "name": "VIDMOLY",
@@ -6896,7 +6906,7 @@
               "number": 24,
               "name": "Épisode 24",
               "overview": "",
-              "air_date": "",
+              "air_date": "2026-10-25",
               "sources": [
                 {
                   "name": "VIDMOLY",
@@ -6910,7 +6920,7 @@
               "number": 25,
               "name": "Épisode 25",
               "overview": "",
-              "air_date": "",
+              "air_date": "2026-10-26",
               "sources": [
                 {
                   "name": "VIDMOLY",
@@ -6924,7 +6934,7 @@
               "number": 26,
               "name": "Épisode 26",
               "overview": "",
-              "air_date": "",
+              "air_date": "2026-10-26",
               "sources": [
                 {
                   "name": "VIDMOLY",
@@ -6938,7 +6948,7 @@
               "number": 27,
               "name": "Épisode 27",
               "overview": "",
-              "air_date": "",
+              "air_date": "2026-10-27",
               "sources": [
                 {
                   "name": "VIDMOLY",
@@ -6952,7 +6962,7 @@
               "number": 28,
               "name": "Épisode 28",
               "overview": "",
-              "air_date": "",
+              "air_date": "2026-10-27",
               "sources": [],
               "downloads": []
             },
@@ -6960,7 +6970,7 @@
               "number": 29,
               "name": "Épisode 29",
               "overview": "",
-              "air_date": "",
+              "air_date": "2026-10-28",
               "sources": [],
               "downloads": []
             },
@@ -6968,7 +6978,7 @@
               "number": 30,
               "name": "Épisode 30",
               "overview": "",
-              "air_date": "",
+              "air_date": "2026-10-28",
               "sources": [],
               "downloads": []
             },
@@ -6976,7 +6986,7 @@
               "number": 31,
               "name": "Épisode 31",
               "overview": "",
-              "air_date": "",
+              "air_date": "2026-10-29",
               "sources": [],
               "downloads": []
             },
@@ -6984,7 +6994,7 @@
               "number": 32,
               "name": "Épisode 32",
               "overview": "",
-              "air_date": "",
+              "air_date": "2026-10-29",
               "sources": [],
               "downloads": []
             },
@@ -6992,7 +7002,7 @@
               "number": 33,
               "name": "Épisode 33",
               "overview": "",
-              "air_date": "",
+              "air_date": "2026-10-30",
               "sources": [],
               "downloads": []
             },
@@ -7000,7 +7010,7 @@
               "number": 34,
               "name": "Épisode 34",
               "overview": "",
-              "air_date": "",
+              "air_date": "2026-10-31",
               "sources": [],
               "downloads": []
             },
@@ -7008,7 +7018,7 @@
               "number": 35,
               "name": "Épisode 35",
               "overview": "",
-              "air_date": "",
+              "air_date": "2026-11-01",
               "sources": [],
               "downloads": []
             },
@@ -7016,7 +7026,7 @@
               "number": 36,
               "name": "Épisode 36",
               "overview": "",
-              "air_date": "",
+              "air_date": "2026-11-01",
               "sources": [],
               "downloads": []
             },
@@ -7024,7 +7034,7 @@
               "number": 37,
               "name": "Épisode 37",
               "overview": "",
-              "air_date": "",
+              "air_date": "2026-11-01",
               "sources": [],
               "downloads": []
             },
@@ -7032,7 +7042,7 @@
               "number": 38,
               "name": "Épisode 38",
               "overview": "",
-              "air_date": "",
+              "air_date": "2026-11-01",
               "sources": [],
               "downloads": []
             },
@@ -7040,7 +7050,7 @@
               "number": 39,
               "name": "Épisode 39",
               "overview": "",
-              "air_date": "",
+              "air_date": "2026-11-01",
               "sources": [],
               "downloads": []
             },
@@ -7048,7 +7058,7 @@
               "number": 40,
               "name": "Épisode 40",
               "overview": "",
-              "air_date": "",
+              "air_date": "2026-11-01",
               "sources": [],
               "downloads": []
             }
@@ -7063,17 +7073,8 @@
       ],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1793129955399,
-      "trend": 75,
-      "videos": [
-        {
-          "key": "4Idq9bH6zl8",
-          "name": "OFFICIAL TRAILER [Subtitled]",
-          "type": "Trailer",
-          "lab": "Anglais"
-        }
-      ],
-      "eprt": 48
+      "updatedAt": 1793130044545,
+      "trend": 75
     },
     {
       "id": "208336",
@@ -44230,7 +44231,7 @@
   "journal": [
     {
       "k": "mvr3a0k640r38",
-      "t": 1793129955414,
+      "t": 1793130044568,
       "b": "614d778ed0",
       "a": "edit",
       "i": "304452",
