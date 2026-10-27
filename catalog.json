@@ -25764,7 +25764,13 @@
               "name": "Épisode 4",
               "overview": "The investigating team finds traces of herbicide in the milk and suspects that someone is after Yi-jun. Jae-hee keeps an eye on Yoon Na-jung, the ambitious second daughter of Taekang, and follows Yi-jun to the family dinner, which is full of tension. Chairman Yoon makes an unexpected decision, causing a stir. Jae-hee joins Yi-jun for a drink and her drinking habit starts coming out.",
               "air_date": "2026-10-27",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-sg9j2aotlgak.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -25841,7 +25847,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1793130265820,
+      "updatedAt": 1793140466392,
       "trend": 78,
       "videos": [
         {
@@ -44408,6 +44414,15 @@
   },
   "journal": [
     {
+      "k": "mvr9jaw77rloq",
+      "t": 1793140466407,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "303745",
+      "n": "Love in Disguise",
+      "d": "sources 9 → 10"
+    },
+    {
       "k": "mvr6h9ovyqmmv",
       "t": 1793135332687,
       "b": "614d778ed0",
@@ -47097,15 +47112,6 @@
       "i": "288328",
       "n": "Light the Dark",
       "d": "sources 7 → 8"
-    },
-    {
-      "k": "mvfrsqrjk5o4s",
-      "t": 1792445651345,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "307106",
-      "n": "Between Steps",
-      "d": ""
     }
   ],
   "refreshAt": 1792423579957
