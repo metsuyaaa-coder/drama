@@ -43617,20 +43617,6 @@
         "sid": "320513"
       },
       {
-        "id": "rmvfvuden",
-        "title": "In Your Radiant Season",
-        "status": "wait",
-        "kind": "dl",
-        "votes": 1,
-        "tmdb": 233833,
-        "media": "tv",
-        "year": "2026",
-        "poster": "/3WUjyogsPQTusZtgNW86oFj9Njd.jpg",
-        "origin": "Corée",
-        "en": "",
-        "sid": "233833"
-      },
-      {
         "id": "rmvjiq5ot",
         "title": "心理罪",
         "status": "wait",
@@ -43725,9 +43711,23 @@
         "origin": "Corée",
         "en": "",
         "sid": "m11423"
+      },
+      {
+        "id": "rmvqtf5uz",
+        "title": "Mémoire fatale",
+        "status": "wait",
+        "bl": false,
+        "kind": "stream",
+        "votes": 1,
+        "tmdb": 203344,
+        "media": "tv",
+        "year": "2023",
+        "poster": "/bnrvfaJOFQQteHHbIW2NAGuwClf.jpg",
+        "origin": "Corée",
+        "en": "Pandora: Beneath the Paradise"
       }
     ],
-    "at": 1793113357788
+    "at": 1793113399404
   },
   "hosts": {
     "items": [
