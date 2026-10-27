@@ -43712,9 +43712,23 @@
         "poster": "/bnrvfaJOFQQteHHbIW2NAGuwClf.jpg",
         "origin": "Corée",
         "en": "Pandora: Beneath the Paradise"
+      },
+      {
+        "id": "rmvqtg88w",
+        "title": "박하경 여행기",
+        "status": "wait",
+        "bl": false,
+        "kind": "stream",
+        "votes": 1,
+        "tmdb": 210272,
+        "media": "tv",
+        "year": "2023",
+        "poster": "/fumf21EdFlDqqUFsGEVXNF03ng9.jpg",
+        "origin": "Corée",
+        "en": "One Day Off"
       }
     ],
-    "at": 1793113419704
+    "at": 1793113449152
   },
   "hosts": {
     "items": [
