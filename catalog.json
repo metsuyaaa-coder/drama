@@ -44562,9 +44562,23 @@
         "poster": "/cYV1cn51qeu7aLqMUrSsmPe1QNo.jpg",
         "origin": "Chine",
         "en": ""
+      },
+      {
+        "id": "rmvs5vv1h",
+        "title": "ONE : High School Heroes",
+        "status": "wait",
+        "bl": false,
+        "kind": "stream",
+        "votes": 1,
+        "tmdb": 233219,
+        "media": "tv",
+        "year": "2025",
+        "poster": "/7jIZaNtpZlEwNLWGaj0dXl4sDSq.jpg",
+        "origin": "Corée",
+        "en": "ONE: High School Heroes"
       }
     ],
-    "at": 1793194788940
+    "at": 1793194800101
   },
   "hosts": {
     "items": [
