@@ -6964,7 +6964,13 @@
               "name": "Épisode 28",
               "overview": "",
               "air_date": "2026-10-27",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-285miun17ou8.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -6972,7 +6978,13 @@
               "name": "Épisode 29",
               "overview": "",
               "air_date": "2026-10-28",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-hp88fqxzdljc.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -7074,7 +7086,7 @@
       ],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1793130214312,
+      "updatedAt": 1793208041704,
       "trend": 0
     },
     {
@@ -44938,6 +44950,15 @@
   },
   "journal": [
     {
+      "k": "mvsdrpfxivd2j",
+      "t": 1793208043149,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "304452",
+      "n": "The Lament of Autumn",
+      "d": "sources 27 → 29"
+    },
+    {
       "k": "mvsdeipw95iqr",
       "t": 1793207427908,
       "b": "614d778ed0",
@@ -47626,15 +47647,6 @@
       "a": "edit",
       "i": "320513",
       "n": "kiDnap GAME",
-      "d": ""
-    },
-    {
-      "k": "mvfx1bdd1kw9l",
-      "t": 1792454343889,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "325063",
-      "n": "My Cold Coworker Obsessively Loves Me",
       "d": ""
     }
   ],
