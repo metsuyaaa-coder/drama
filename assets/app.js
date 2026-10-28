@@ -1864,7 +1864,10 @@ function viewHome() {
   refreshTrending().then(function (ch) { if (ch && curPath() === "/") viewHome(); });
 }
 
-var REQ_MAX = 1;
+/* demandes par jour : 1 pour tout le monde, 2 pour les VIP, illimité pour les admins */
+function reqMax() { return ADMIN ? 1e9 : isVip() ? 2 : 1; }
+function reqMaxText() { return ADMIN ? "Demandes illimitées (admin)." : isVip() ? "2 demandes maximum par jour (VIP)." : "1 demande maximum par jour."; }
+function reqLimitMsg() { var m = reqMax(); return m === 1 ? "Tu as déjà fait ta demande du jour (1 par jour). Reviens demain." : "Tu as déjà fait tes " + m + " demandes du jour. Reviens demain."; }
 function todayKey() { var d = new Date(); return d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate(); }
 /* identifiant anonyme de l'appareil : il apparaît dans Discord / l'email, pour reconnaître une même personne */
 function visitorId() {
@@ -1953,7 +1956,7 @@ function viewRequest(pre, kind) {
   kind = kind === "dl" ? "dl" : kind === "both" ? "both" : "stream";
   var t = ""; try { t = decodeURIComponent(pre || ""); } catch (e) { t = pre || ""; }
   $("#app").innerHTML = '<div class="wrap"><form class="authbox rqcard hlbox" id="reqform" style="max-width:520px"><div class="rqhead"><svg class="rqlogo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="90" d="M21 3 10.5 13.5"/><path pathLength="90" d="M21 3l-6.5 18-4-7.5L3 9.5z"/><path class="sp" pathLength="40" style="transform-origin:4px 5.2px" d="m4 3 .6 1.4 1.4.6-1.4.6L4 7l-.6-1.4L2 5l1.4-.6z"/></svg><h1>Demander un titre</h1></div>' +
-    '<p class="lead">Il manque un drama ou un film (coréen, chinois, japonais ou thaï) ? Dis-le-moi, je l\'ajoute dès que possible. 1 demande maximum par jour.</p>' +
+    '<p class="lead">Il manque un drama ou un film (coréen, chinois, japonais ou thaï) ? Dis-le-moi, je l\'ajoute dès que possible. ' + reqMaxText() + '</p>' +
     '<label class="f"><span>Ton Discord (facultatif)</span><input type="text" name="discord" maxlength="40" placeholder="ex. pseudo ou pseudo#0000" autocomplete="off"></label>' +
     '<p class="note" style="margin:-6px 0 0">Laisse ton pseudo Discord pour que je puisse te prévenir quand ton titre est ajouté.</p>' +
     '<div class="rqwrap"><label class="f"><span>Nom du drama ou du film</span><input type="text" name="titre" id="reqtitre" required maxlength="120" value="' + esc(t) + '" autocomplete="off" placeholder="Tape le titre, dans n\'importe quelle langue" role="combobox" aria-expanded="false" aria-controls="reqsugg" aria-autocomplete="list"></label><div class="sugg tsug" id="reqsugg" role="listbox" hidden></div></div>' +
@@ -6058,12 +6061,12 @@ document.addEventListener("submit", function (e) {
     var rf = e.target, fd = new FormData(rf);
     if (fd.get("_honey")) return;
     var lastReq = 0; try { lastReq = +localStorage.getItem("noir.reqAt") || 0; } catch (er) {}
-    if (Date.now() - lastReq < 30000) { authError(rf, "Patiente quelques secondes avant d'envoyer une autre demande"); return; }
-    if (reqToday() >= REQ_MAX) { authError(rf, "Tu as déjà fait ta demande du jour (1 par jour). Reviens demain."); return; }
+    if (!ADMIN && Date.now() - lastReq < 30000) { authError(rf, "Patiente quelques secondes avant d'envoyer une autre demande"); return; }
+    if (reqToday() >= reqMax()) { authError(rf, reqLimitMsg()); return; }
     if (!reqSel || String(fd.get("titre") || "").trim() !== reqSel.fill) { authError(rf, "Choisis ton titre dans la liste TMDB avant d'envoyer la demande."); var ti = $("#reqtitre"); if (ti) { ti.focus(); reqSuggest(ti.value, true); } return; }
     var rb = rf.querySelector("button[type=submit]"); rb.disabled = true; rb.textContent = "Envoi…";
     var titre = String(fd.get("titre") || "").trim();
-    var emailErr = null, vid = visitorId();
+    var emailErr = null, vid = ADMIN ? "adm" + Math.random().toString(16).slice(2, 7) : visitorId();   /* admin : ID « adm… » différent à chaque fois, jamais limité */
     var sendMail = function () { return fetch(REQ_URL, { method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" }, body: JSON.stringify({
       _subject: (isVip() ? "[VIP · 12 h max] " : "") + (fd.get("bl") ? "[BL] " : "") + "DramaByM : demande « " + titre + " »", _captcha: "false", _template: "table",
       "Priorité": isVip() ? "VIP : à traiter sous 12 h" : "Normale", "Discord": String(fd.get("discord") || "").trim() || "non renseigné", "ID": vid, "Titre": titre, "Espace": fd.get("bl") ? "BL" : "Site principal", "Demande": ({ stream: "Streaming", dl: "Téléchargement", both: "Streaming + téléchargement" })[String(fd.get("type"))] || "Streaming", "Date de sortie": String(fd.get("date") || "").trim(),
@@ -6075,8 +6078,8 @@ document.addEventListener("submit", function (e) {
     var discP = notifyDiscord({ vid: vid, kind: "request", titre: titre, media: reqSel.media, tmdbId: reqSel.id, date: String(fd.get("date") || "").trim(), origin: reqSel.origin || "", en: reqSel.en || "", orig: reqSel.orig || "", poster: reqSel.poster || "", demande: String(fd.get("type") || "stream"), bl: !!fd.get("bl"), vip: isVip(), discord: String(fd.get("discord") || "").trim() });
     discP.then(function (d) {
       if (d === "limit") {
-        try { localStorage.setItem("noir.reqDay", JSON.stringify({ d: todayKey(), n: REQ_MAX })); } catch (er) {}
-        var le = new Error("Tu as déjà fait ta demande du jour (1 par jour). Reviens demain."); le.limit = true; throw le;
+        try { localStorage.setItem("noir.reqDay", JSON.stringify({ d: todayKey(), n: reqMax() })); } catch (er) {}
+        var le = new Error(reqLimitMsg()); le.limit = true; throw le;
       }
       return sendMail().then(function (m) { if (!m && !d) throw emailErr || new Error("réessaie dans un moment."); });
     }).then(function () {
