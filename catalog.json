@@ -22,6 +22,272 @@
   },
   "series": [
     {
+      "id": "316294",
+      "type": "tv",
+      "name": "Payback",
+      "original_name": "เพย์แบค เดอะซีรีส์",
+      "origin_country": [
+        "TH"
+      ],
+      "networks": [
+        "ONE 31"
+      ],
+      "original_language": "th",
+      "aka": [
+        "Payback",
+        "偿还",
+        "PAYBACK償還",
+        "페이백 더 시리즈",
+        "PAYBACK: Báo Thù",
+        "Расплата",
+        "Acerto de Contas",
+        "复仇",
+        "改过迁善",
+        "改過遷善",
+        "Payback The Series",
+        "เพย์แบค เดอะซีรีส์"
+      ],
+      "year": "2026",
+      "overview": "Sun, ancien collecteur de dettes, voit sa vie basculer après la mort tragique de son petit frère, tué par un débiteur. Comme si cela ne suffisait pas, son petit ami Bank le trahit en disparaissant avec tout son argent. Endetté et obligé de payer les soins médicaux de sa mère, Sun tente de survivre tant bien que mal.\n\nCinq ans plus tard, il travaille comme livreur lorsqu'il recroise Bank, devenu une célébrité sous l'agence Dream Entertainment. En découvrant que celui-ci pourrait être lié à la mort de son frère, Sun décide d'intégrer le monde du divertissement afin de se rapprocher de lui et préparer sa vengeance.\n\nAu sein de l'agence, il fait la rencontre de Jay, un homme froid et provocateur qui cache en réalité son rôle de directeur exécutif de Dream Entertainment. Malgré leurs disputes incessantes, une attirance de plus en plus forte naît entre eux. Sun finit également par comprendre que Jay est l'homme mystérieux qu'il avait rencontré cinq ans auparavant, alors qu'il portait un costume de mascotte en forme de lapin.",
+      "genres": [
+        "Drame",
+        "Crime",
+        "Action & Adventure"
+      ],
+      "rating": "8.9",
+      "pop": 8.7225,
+      "status": "Ended",
+      "poster": "https://image.tmdb.org/t/p/w500/616HQHGVqEh0ZbQIRdyjIBQfqhU.jpg",
+      "posterV": 2,
+      "backdrop": "https://image.tmdb.org/t/p/original/4L9sftGH7oQ1bpB0aQHERwyfDVd.jpg",
+      "videos": [
+        {
+          "key": "vbXQQCHdCpk",
+          "name": "Official Trailer | PAYBACK THE SERIES",
+          "type": "Trailer",
+          "lab": "Anglais"
+        }
+      ],
+      "cast": [
+        {
+          "name": "ธนากร วิชานุเคราะห์",
+          "character": "Sun",
+          "id": 4589861
+        },
+        {
+          "name": "จารุกิจ แก้วมูลเรือง",
+          "character": "Jay",
+          "id": 6063716
+        },
+        {
+          "name": "ปารมี เทศดรุณ",
+          "character": "Sky",
+          "id": 4273856
+        },
+        {
+          "name": "ชัยกมล เสริมส่งวิทยะ",
+          "character": "Pakin",
+          "id": 3648365
+        },
+        {
+          "name": "ธนวัตร ชินวัตร",
+          "character": "Bank",
+          "id": 4023239
+        },
+        {
+          "name": "Jirapat Uttamanan",
+          "character": "Kajorn",
+          "id": 3585000
+        },
+        {
+          "name": "กลศ อัทธเสรี",
+          "character": "Songphon",
+          "id": 2400256
+        },
+        {
+          "name": "Suttida Kasemsant Na Ayutthaya",
+          "character": "Pavinee",
+          "id": 3341856
+        },
+        {
+          "name": "คานธี วสุวิชย์กิต",
+          "character": "Jo",
+          "id": 2735144
+        },
+        {
+          "name": "ยะสะกะ ไชยสร",
+          "character": "Suchat",
+          "id": 3131644
+        },
+        {
+          "name": "Sarinya Olsson",
+          "character": "Karn",
+          "id": 4877750
+        },
+        {
+          "name": "ธนริศย์ พจน์คณาวัชร์",
+          "character": "Kavin",
+          "id": 6256038
+        }
+      ],
+      "eprt": 62,
+      "seasons": [
+        {
+          "number": 1,
+          "name": "Saison 1",
+          "episodes": [
+            {
+              "number": 1,
+              "name": "The Beginning of Revenge",
+              "overview": "Sun secures a job at an entertainment firm to enact revenge for his brother, who was murdered by a debtor five years ago.",
+              "air_date": "2026-05-30",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-4mk26pdnzf88.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 2,
+              "name": "Audition",
+              "overview": "Sun convinces a hesitant manager to sign him so he can audition for an acting gig to take revenge on Bank.",
+              "air_date": "2026-06-06",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-9lwp69b40nmp.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 3,
+              "name": "Profile Photo Shoot",
+              "overview": "Entering the entertainment world, Sun faces sabotage and difficult choices as his revenge plan moves forward.",
+              "air_date": "2026-06-13",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-4od26pmu6gbq.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 4,
+              "name": "Acting Lessons Begin",
+              "overview": "Bullied and targeted, Sun pushes forward in acting class while discovering the entertainment world’s dark side.",
+              "air_date": "2026-06-20",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-t8wajhl37p4w.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 5,
+              "name": "Abandon Your Pride",
+              "overview": "As Bank targets everyone around him, Sun uncovers a secret that reshapes his path to revenge.",
+              "air_date": "2026-06-27",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-zu8ojntqff88.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 6,
+              "name": "Jay's True Identity",
+              "overview": "Sun's mascot costume triggers Jay's memory of a past rescue and intimacy, revealing Sun is his long-lost savior.",
+              "air_date": "2026-07-04",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-o3ikfuxlvj0w.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 7,
+              "name": "Sky's Comeback",
+              "overview": "Sun tries to help Sky overcome camera panic for a short film, while Jay faces a plot to fire him over a casting dispute.",
+              "air_date": "2026-07-11",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-8t8rv0hfwd3y.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 8,
+              "name": "The Night They Bonded",
+              "overview": "A viral hit-and-run scandal forces Sun to uncover the truth before it destroys Jay and Kajorn's futures.",
+              "air_date": "2026-07-18",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-uoo5xqgbwhkr.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 9,
+              "name": "The Final Warning",
+              "overview": "Jay disappears to protect Sun as a risky plan to expose Bank's crimes takes a dangerous turn.",
+              "air_date": "2026-07-25",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-oknxstk8lgzr.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 10,
+              "name": "The Payback They Deserve",
+              "overview": "Jay returns to stand with Sun as their fight against Songphon and Bank reaches a decisive turning point.",
+              "air_date": "2026-08-01",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-52s5xcnkr4px.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            }
+          ],
+          "downloads": []
+        }
+      ],
+      "sources": [],
+      "addedAt": 1793222654741,
+      "langs": [],
+      "downloads": [],
+      "bl": true,
+      "updatedAt": 1793222891191
+    },
+    {
       "id": "293607",
       "type": "tv",
       "name": "100 Days of Deception",
@@ -44648,10 +44914,8 @@
     "320513\thttps://vidmoly.org/embed-7kon45gviu2g.html[Dramavore]"
   ],
   "deletedFiches": [
-    "316294",
     "1396"
   ],
-  "refreshAt": 1792423579957,
   "team": {
     "id": "110356",
     "text": "",
@@ -45176,6 +45440,15 @@
     "at": 1792697940038
   },
   "journal": [
+    {
+      "k": "mvsmly9rteyey",
+      "t": 1793222891199,
+      "b": "f2b389cb62",
+      "a": "add",
+      "i": "316294",
+      "n": "Payback",
+      "d": ""
+    },
     {
       "k": "mvsed0dwqowcn",
       "t": 1793209037108,
@@ -47866,15 +48139,7 @@
       "i": "322570",
       "n": "Until the T-Shirt Dries",
       "d": ""
-    },
-    {
-      "k": "mvfx5muqepqa1",
-      "t": 1792454545394,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "288603",
-      "n": "Never-Ending Summer",
-      "d": ""
     }
-  ]
+  ],
+  "refreshAt": 1792423579957
 }
