@@ -42716,7 +42716,14 @@
               "name": "Épisode 12",
               "overview": "",
               "air_date": "2026-10-25",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-6j4cg3d4mp4v.html",
+                  "fansub": "Drama Paradise : Inzaghi",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -42724,7 +42731,14 @@
               "name": "Épisode 13",
               "overview": "",
               "air_date": "2026-10-26",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-siqmtcryaejf.html",
+                  "fansub": "Drama Paradise : Inzaghi",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -42732,7 +42746,14 @@
               "name": "Épisode 14",
               "overview": "",
               "air_date": "2026-10-27",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-6rokwt09cdjg.html",
+                  "fansub": "Drama Paradise : Inzaghi",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -42825,7 +42846,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1793130301826
+      "updatedAt": 1793145968013
     },
     {
       "id": "332134",
@@ -44419,6 +44440,15 @@
     "at": 1792697940038
   },
   "journal": [
+    {
+      "k": "mvrct7z9z5byg",
+      "t": 1793145968037,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "339366",
+      "n": "My Loong",
+      "d": "sources 11 → 14"
+    },
     {
       "k": "mvr9k1qft3755",
       "t": 1793140501191,
@@ -47109,15 +47139,6 @@
       "i": "278577",
       "n": "Shine on Me",
       "d": ""
-    },
-    {
-      "k": "mvftylylp5dmw",
-      "t": 1792449178797,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "304452",
-      "n": "The Lament of Autumn",
-      "d": "sources 12 → 14"
     }
   ],
   "refreshAt": 1792423579957
