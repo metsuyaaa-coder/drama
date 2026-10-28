@@ -45346,9 +45346,31 @@
         "en": "",
         "auto": true,
         "at": 1793213714120
+      },
+      {
+        "id": "rmvsmok7o",
+        "title": "尚公主",
+        "status": "wait",
+        "bl": false,
+        "kind": "dl",
+        "votes": 1,
+        "tmdb": "286171",
+        "media": "tv",
+        "year": "2026",
+        "poster": "/bgPVGcFIlY2vetjneDXQ1WQbJRD.jpg",
+        "origin": "Chine",
+        "en": "Tigers Sniff the Rose",
+        "auto": true,
+        "at": 1793223012948
       }
     ],
-    "at": 1793213714119
+    "at": 1793223012948,
+    "log": [
+      {
+        "v": "b7c01477",
+        "t": 1793223012948
+      }
+    ]
   },
   "hosts": {
     "items": [
