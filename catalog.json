@@ -34090,7 +34090,13 @@
               "name": "Épisode 25",
               "overview": "",
               "air_date": "2026-10-20",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-1c7e88s2hq1k.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -34098,7 +34104,13 @@
               "name": "Épisode 26",
               "overview": "",
               "air_date": "2026-10-20",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-aerm8u7podgi.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -34135,7 +34147,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1793130280701,
+      "updatedAt": 1793209037098,
       "eprt": 14
     },
     {
@@ -44950,6 +44962,15 @@
   },
   "journal": [
     {
+      "k": "mvsed0dwqowcn",
+      "t": 1793209037108,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "338103",
+      "n": "Quite the Girl",
+      "d": "sources 24 → 26"
+    },
+    {
       "k": "mvsdrpfxivd2j",
       "t": 1793208043149,
       "b": "614d778ed0",
@@ -47638,15 +47659,6 @@
       "a": "edit",
       "i": "288603",
       "n": "Never-Ending Summer",
-      "d": ""
-    },
-    {
-      "k": "mvfx2stcblvxc",
-      "t": 1792454413152,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "320513",
-      "n": "kiDnap GAME",
       "d": ""
     }
   ],
