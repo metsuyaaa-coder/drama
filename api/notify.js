@@ -24,7 +24,7 @@ function hookOk(u) { return /^https:\/\/(discord|discordapp)\.com\/api\/webhooks
 /* Ajoute la demande à la liste « Demandes » de catalog.json (GitHub), sans base de données. Ne bloque jamais l'envoi si ça échoue. */
 async function listAdd(b, vid) {
   var token = process.env.GITHUB_TOKEN;
-  if (!token) return false;
+  if (!token) return "GITHUB_TOKEN manquant dans Vercel";
   var repo = process.env.GITHUB_REPO || "metsuyaaa-coder/drama", branch = process.env.GITHUB_BRANCH || "main", path = process.env.GITHUB_PATH || "catalog.json";
   var url = "https://api.github.com/repos/" + repo + "/contents/" + path;
   var H = function (accept) { return { Authorization: "Bearer " + token, Accept: accept || "application/vnd.github+json", "User-Agent": "dramabym-notify" }; };
@@ -33,12 +33,13 @@ async function listAdd(b, vid) {
   var kind = ({ stream: 1, dl: 1, both: 1 })[String(b.demande)] ? String(b.demande) : "stream";
   var poster = /^\/[\w-]+\.(jpg|png)$/i.test(String(b.poster || "")) ? String(b.poster) : "";
   for (var n = 0; n < 4; n++) {
-    var raw = await fetch(url + "?ref=" + encodeURIComponent(branch), { headers: H("application/vnd.github.raw+json") });
-    if (!raw.ok) return false;
-    var meta = await fetch(url + "?ref=" + encodeURIComponent(branch), { headers: H() });
-    if (!meta.ok) return false;
-    var obj = await raw.json(), sha = (await meta.json()).sha;
-    if (!obj || Array.isArray(obj) || typeof obj !== "object") return false;
+    var both = await Promise.all([
+      fetch(url + "?ref=" + encodeURIComponent(branch), { headers: H("application/vnd.github.raw+json") }),
+      fetch(url + "?ref=" + encodeURIComponent(branch), { headers: H() })
+    ]);
+    if (!both[0].ok || !both[1].ok) return "lecture GitHub refusée (HTTP " + (both[0].ok ? both[1].status : both[0].status) + ") : jeton, dépôt ou droits « Contents »";
+    var obj = await both[0].json(), sha = (await both[1].json()).sha;
+    if (!obj || Array.isArray(obj) || typeof obj !== "object") return "catalog.json illisible";
     var rq = obj.requests && Array.isArray(obj.requests.items) ? obj.requests : { items: [], at: 0 };
     var nowT = Date.now(), log = (Array.isArray(rq.log) ? rq.log : []).filter(function (e) { return e && nowT - (+e.t || 0) < 86400000; });
     if (vid && log.some(function (e) { return e.v === vid; })) return "limit";   /* déjà une demande dans les 24 h */
@@ -50,17 +51,17 @@ async function listAdd(b, vid) {
       same.votes = (+same.votes || 0) + 1;
       same.kind = same.kind && same.kind !== kind ? "both" : kind;
     } else {
-      if (rq.items.length >= 400) return false;
+      if (rq.items.length >= 400) return "liste pleine (400)";
       rq.items.push({ id: "r" + Date.now().toString(36), title: title, status: "wait", bl: bl, kind: kind, votes: 1, tmdb: tmdb, media: tmdb ? media : "", year: clean(b.date, 20).slice(0, 4), poster: poster, origin: clean(b.origin, 40), en: clean(b.en, 150), auto: true, at: Date.now() });
     }
     if (vid) log.push({ v: vid, t: nowT });
     obj.requests = { items: rq.items, at: nowT, log: log.slice(-300) };
     var put = await fetch(url, { method: "PUT", headers: H(), body: JSON.stringify({ message: "Nouvelle demande : " + title, content: Buffer.from(JSON.stringify(obj, null, 2), "utf8").toString("base64"), sha: sha, branch: branch }) });
     if (put.ok) return true;
-    if (put.status !== 409 && put.status !== 422) return false;
+    if (put.status !== 409 && put.status !== 422) return "écriture GitHub refusée (HTTP " + put.status + ") : le jeton doit avoir « Contents : Read and write »";
     await new Promise(function (res) { setTimeout(res, 700 * (n + 1)); });   /* quelqu'un a publié entre-temps : on relit et on recommence */
   }
-  return false;
+  return "conflit GitHub (réessaie)";
 }
 
 module.exports = async function (req, res) {
@@ -142,13 +143,14 @@ module.exports = async function (req, res) {
     embed = { title: video ? "Vidéo qui ne marche pas" : "Serveur mort signalé", description: "**" + title + "**" + (sub ? " · " + sub : ""), color: video ? 0xf5a524 : 0xe5484d, fields: fields2, footer: { text: "DramaByM" }, timestamp: new Date().toISOString() };
   }
 
-  var listed = false;
+  var listed = false, why = "";
   if (kind === "request") {
     try {
       var la = await listAdd(b, vid);
       if (la === "limit") { res.status(429).json({ error: "Une demande par jour", limit: true }); return; }
-      listed = la === true;
-    } catch (e) {}
+      listed = la === true; why = listed ? "" : String(la || "erreur");
+    } catch (e) { why = "erreur : " + String(e && e.message || e).slice(0, 80); }
+    embed.footer = { text: "DramaByM · liste des demandes : " + (listed ? "ajoutée ✓" : "NON ajoutée (" + why + ")") };
   }
   try {
     var r = await fetch(hook, {
