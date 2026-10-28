@@ -45159,8 +45159,8 @@
         "title": "尚公主",
         "status": "wait",
         "bl": false,
-        "kind": "dl",
-        "votes": 1,
+        "kind": "both",
+        "votes": 2,
         "tmdb": "286171",
         "media": "tv",
         "year": "2026",
@@ -45171,7 +45171,8 @@
         "at": 1793223012948
       }
     ],
-    "at": 1793223012948
+    "at": 1793231745422,
+    "log": []
   },
   "hosts": {
     "items": [
