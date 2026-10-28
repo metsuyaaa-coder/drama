@@ -20916,6 +20916,7 @@
                 {
                   "name": "VIDMOLY",
                   "url": "https://vidmoly.org/embed-7kon45gviu2g.html",
+                  "fansub": "Dramavore : Rafia",
                   "by": "614d778ed0"
                 }
               ],
@@ -20930,6 +20931,7 @@
                 {
                   "name": "VIDMOLY",
                   "url": "https://vidmoly.org/embed-5bmmihh0hcgi.html",
+                  "fansub": "Dramavore : Rafia",
                   "by": "614d778ed0"
                 }
               ],
@@ -20944,6 +20946,7 @@
                 {
                   "name": "VIDMOLY",
                   "url": "https://vidmoly.org/embed-e28yk846zf0v.html",
+                  "fansub": "Dramavore : Rafia",
                   "by": "614d778ed0"
                 }
               ],
@@ -20954,7 +20957,14 @@
               "name": "Breaking Point",
               "overview": "Only seven days remain in the game. Surgeon Han Kiju struggles with his mission: “Kill someone.” As a doctor, he encounters countless opportunities to take a life. Yet it is precisely because he is a doctor that he cannot bring himself to do so. With concern for his beloved daughter weighing heavily on his mind, Kiju is pushed ever closer to breaking point.",
               "air_date": "2026-10-27",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-9nk2l0vkye3i.html",
+                  "fansub": "Dramavore : Rafia",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -21030,7 +21040,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1793130254472,
+      "updatedAt": 1793207060491,
       "networks": [
         "Fuji TV",
         "Channel A"
@@ -44916,6 +44926,15 @@
   },
   "journal": [
     {
+      "k": "mvsd6o09fchlm",
+      "t": 1793207061513,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "320513",
+      "n": "kiDnap GAME",
+      "d": "sources 3 → 4"
+    },
+    {
       "k": "mvsd1zkhcvcb0",
       "t": 1793206843217,
       "b": "614d778ed0",
@@ -47604,15 +47623,6 @@
       "a": "edit",
       "i": "209459",
       "n": "I Will Be Your Bloom",
-      "d": ""
-    },
-    {
-      "k": "mvfwr2abb9fa2",
-      "t": 1792453865555,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "311844",
-      "n": "Salvation, Swallowed by the Nest",
       "d": ""
     }
   ],
