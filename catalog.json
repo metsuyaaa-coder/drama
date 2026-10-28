@@ -469,7 +469,7 @@
       ],
       "downloads": [],
       "updatedAt": 1793130195119,
-      "trend": 60,
+      "trend": 43,
       "videos": [
         {
           "key": "OsF0AxLqBzY",
@@ -1126,7 +1126,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "trend": 78,
+      "trend": 89,
       "origin_country": [
         "KR"
       ],
@@ -2948,7 +2948,7 @@
       ],
       "downloads": [],
       "updatedAt": 1793130205458,
-      "trend": 43,
+      "trend": 68,
       "videos": [
         {
           "key": "nQWv70PTHFM",
@@ -6458,7 +6458,7 @@
       ],
       "original_language": "ko",
       "posterV": 2,
-      "trend": 0,
+      "trend": 60,
       "updatedAt": 1793130213240,
       "networks": [
         "Netflix"
@@ -7384,7 +7384,7 @@
       "downloads": [],
       "posterV": 2,
       "updatedAt": 1793130214312,
-      "trend": 64,
+      "trend": 78,
       "networks": [
         "Hunan Television",
         "Mango TV"
@@ -8262,7 +8262,7 @@
         }
       ],
       "updatedAt": 1793130216469,
-      "trend": 53,
+      "trend": 42,
       "posterCustom": true,
       "videos": [
         {
@@ -8671,7 +8671,7 @@
       "networks": [
         "ENA"
       ],
-      "trend": 63,
+      "trend": 73,
       "videos": [
         {
           "key": "4HsK_-QQE5Y",
@@ -25112,7 +25112,7 @@
       "downloads": [],
       "posterCustom": true,
       "updatedAt": 1793130626238,
-      "trend": 87,
+      "trend": 80,
       "videos": [
         {
           "key": "lLBSb_Xc1sw",
@@ -26082,7 +26082,7 @@
       ],
       "downloads": [],
       "updatedAt": 1793140466392,
-      "trend": 84,
+      "trend": 0,
       "videos": [
         {
           "key": "55ATD_SJ_Xw",
@@ -33838,7 +33838,7 @@
       ],
       "downloads": [],
       "updatedAt": 1793130279911,
-      "trend": 75,
+      "trend": 74,
       "eprt": 48
     },
     {
@@ -41862,7 +41862,7 @@
       "downloads": [],
       "posterCustom": true,
       "updatedAt": 1793130295005,
-      "trend": 0
+      "trend": 77
     },
     {
       "id": "334517",
@@ -42133,7 +42133,7 @@
       ],
       "downloads": [],
       "updatedAt": 1793130296805,
-      "trend": 0
+      "trend": 49
     },
     {
       "id": "m11423",
@@ -44200,6 +44200,245 @@
       "downloads": [],
       "posterCustom": true,
       "updatedAt": 1793135332673
+    },
+    {
+      "id": "233219",
+      "type": "tv",
+      "name": "ONE: High School Heroes",
+      "original_name": "ONE: 하이스쿨 히어로즈",
+      "origin_country": [
+        "KR"
+      ],
+      "networks": [
+        "wavve"
+      ],
+      "original_language": "ko",
+      "aka": [
+        "ONE: High School Heroes",
+        "واحد: أبطال المدرسة الثانوية",
+        "ONE：高校英雄們",
+        "ONE：高中英雄们",
+        "One: Người Hùng Trung Học",
+        "یکه تاز قهرمان‌ های دبیرستان",
+        "ฮีโร่หน้ากาก พลิกโฉมโรงเรียน!",
+        "Герои старшей школы",
+        "ONE : High School Heroes",
+        "ONE：ハイスクールヒーローズ",
+        "원: 하이스쿨 히어로즈",
+        "원 하이스쿨 히어로즈",
+        "ONE: 하이스쿨 히어로즈"
+      ],
+      "year": "2025",
+      "overview": "Kim Ui Gyeom est le meilleur élève de son école. Il est modeste et évite la violence. Il souffre de l'oppression de son père, Kim Seok Tae. Se faisant passer pour un père et mari gentil, il est en réalité très strict et impose une discipline sévère à son fils.\n\nUn jour, Kim Ui Gyeom révèle un talent naturel pour le combat. Ce qui n'échappe pas à Kang Yun Gi, un élève de sa classe. Cachant ses réelles intentions, Kang Yun Gi l'entraîne dans un monde de violence dont le but est de se débarrasser des brutes de leur école.",
+      "genres": [
+        "Action & Adventure",
+        "Drame"
+      ],
+      "rating": "8.1",
+      "pop": 12.7,
+      "status": "Ended",
+      "poster": "https://image.tmdb.org/t/p/w500/uWK4QcYrLGITRNDvhLelm66j4Er.jpg",
+      "posterV": 2,
+      "backdrop": "https://image.tmdb.org/t/p/original/6Ohfk6UG6BstEQbwqJ0JHSjHl3O.jpg",
+      "videos": [
+        {
+          "key": "zSOwYkS9ngw",
+          "name": "ONE : 하이스쿨 히어로즈 | 티저 예고편 | 웨이브 오리지널",
+          "type": "Teaser",
+          "lab": "Original"
+        }
+      ],
+      "cast": [
+        {
+          "name": "Jeong-Ha Lee",
+          "character": "Kim Eui-gyeom",
+          "id": 2176671
+        },
+        {
+          "name": "Kim Do-wan",
+          "character": "Kang Yoon-ki",
+          "id": 1989398
+        },
+        {
+          "name": "Kim Sang-ho",
+          "character": "Kim Seok-tae",
+          "id": 123820
+        },
+        {
+          "name": "Ju-Ryoung Kim",
+          "character": "Myeong Da-bin",
+          "id": 587677
+        },
+        {
+          "name": "신준섭",
+          "character": "Nam Seung-Sik",
+          "id": 3807808
+        },
+        {
+          "name": "Lee Chan-hyeong",
+          "character": "Sung-Wook",
+          "id": 3226942
+        },
+        {
+          "name": "Shin Jae-whi",
+          "character": "Lee Ki-Yoon",
+          "id": 2805080
+        },
+        {
+          "name": "임성균",
+          "character": "Kim Seung-joon",
+          "id": 3038166
+        },
+        {
+          "name": "육준서",
+          "character": "Lee Geol-jae",
+          "id": 3370738
+        },
+        {
+          "name": "유희제",
+          "character": "Choi Ki-soo",
+          "id": 2683823
+        },
+        {
+          "name": "임현태",
+          "character": "Choi Hong-il",
+          "id": 3962466
+        },
+        {
+          "name": "홍민기",
+          "character": "Kim Nam-hyeop",
+          "id": 3116034
+        }
+      ],
+      "eprt": 47,
+      "seasons": [
+        {
+          "number": 1,
+          "name": "Saison 1",
+          "episodes": [
+            {
+              "number": 1,
+              "name": "Épisode 1",
+              "overview": "“How are you going to fight tomorrow? It starts tomorrow.\" After losing the cassette, Ui-Gyeom meets Yoon-Ki and their normal life is shaken up.",
+              "air_date": "2025-05-30",
+              "sources": [
+                {
+                  "name": "EMBEDORIGIN",
+                  "url": "https://embedorigin.cc/e/16674i83v9ov",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 2,
+              "name": "Épisode 2",
+              "overview": "“Fighting is a talent, after all.” After a fight with Seung-joon, he encounters an unexpected accident.",
+              "air_date": "2025-05-30",
+              "sources": [
+                {
+                  "name": "EMBEDORIGIN",
+                  "url": "https://embedorigin.cc/e/ob5yb23bk9yv",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 3,
+              "name": "Épisode 3",
+              "overview": "“I don't want to give in, not to them...” The resolve to fight back. Despair, visions, and an unexpected hand lead him on.",
+              "air_date": "2025-05-30",
+              "sources": [
+                {
+                  "name": "EMBEDORIGIN",
+                  "url": "https://embedorigin.cc/e/ql8oxmk2d6qg",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 4,
+              "name": "Épisode 4",
+              "overview": "“The problem is there are too many bad guys in the world.\" Anger with nowhere to go and shaky justice. Yun and Yi decide to “revolutionize.",
+              "air_date": "2025-05-30",
+              "sources": [
+                {
+                  "name": "EMBEDORIGIN",
+                  "url": "https://embedorigin.cc/e/2kqy17bss2rn",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 5,
+              "name": "Épisode 5",
+              "overview": "",
+              "air_date": "2025-06-06",
+              "sources": [
+                {
+                  "name": "EMBEDORIGIN",
+                  "url": "https://embedorigin.cc/e/zklkmyd27y3i",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 6,
+              "name": "Épisode 6",
+              "overview": "",
+              "air_date": "2025-06-06",
+              "sources": [
+                {
+                  "name": "EMBEDORIGIN",
+                  "url": "https://embedorigin.cc/e/lxk67bf2yada",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 7,
+              "name": "Épisode 7",
+              "overview": "",
+              "air_date": "2025-06-13",
+              "sources": [
+                {
+                  "name": "EMBEDORIGIN",
+                  "url": "https://embedorigin.cc/e/i1jvb1yysxys",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 8,
+              "name": "Épisode 8",
+              "overview": "",
+              "air_date": "2025-06-13",
+              "sources": [
+                {
+                  "name": "EMBEDORIGIN",
+                  "url": "https://embedorigin.cc/e/2hjcdsop5aq8",
+                  "by": "head"
+                }
+              ],
+              "downloads": []
+            }
+          ],
+          "downloads": []
+        }
+      ],
+      "sources": [],
+      "addedAt": 1793195028320,
+      "langs": [
+        "VOSTFR"
+      ],
+      "downloads": [],
+      "updatedAt": 1793195040886
     }
   ],
   "deletedLinks": [
@@ -44726,6 +44965,15 @@
     "at": 1792697940038
   },
   "journal": [
+    {
+      "k": "mvs610u8n5vu7",
+      "t": 1793195040896,
+      "b": "head",
+      "a": "add",
+      "i": "233219",
+      "n": "ONE: High School Heroes",
+      "d": ""
+    },
     {
       "k": "mvrct7z9z5byg",
       "t": 1793145968037,
@@ -47413,15 +47661,6 @@
       "t": 1792451984767,
       "b": "614d778ed0",
       "a": "edit",
-      "i": "278577",
-      "n": "Shine on Me",
-      "d": ""
-    },
-    {
-      "k": "mvfvjn8bzjx79",
-      "t": 1792451839835,
-      "b": "614d778ed0",
-      "a": "add",
       "i": "278577",
       "n": "Shine on Me",
       "d": ""
