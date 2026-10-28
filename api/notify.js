@@ -16,13 +16,13 @@ function limited(ip, kind) {
   if (a.length >= max) { hits[k] = a; return true; }
   a.push(now); hits[k] = a; return false;
 }
-var vidHits = {};   /* 1 demande par jour et par identifiant d'appareil (en mémoire ; la liste GitHub garde aussi un journal) */
+var vidHits = {};   /* identifiant -> heures des demandes des dernières 24 h */   /* 1 demande par jour et par identifiant d'appareil (en mémoire ; la liste GitHub garde aussi un journal) */
 function clean(v, n) { return String(v == null ? "" : v).replace(/[\u0000-\u001f\u007f`]/g, " ").replace(/\s+/g, " ").trim().slice(0, n); }
 function httpUrl(v) { v = clean(v, 500).replace(/\s/g, ""); return /^https?:\/\/[^\s<>]+$/i.test(v) ? v : ""; }
 function hookOk(u) { return /^https:\/\/(discord|discordapp)\.com\/api\/webhooks\/\d+\/[\w-]+$/.test(u || ""); }
 
 /* Ajoute la demande à la liste « Demandes » de catalog.json (GitHub), sans base de données. Ne bloque jamais l'envoi si ça échoue. */
-async function listAdd(b, vid) {
+async function listAdd(b, vid, max) {
   var token = process.env.GITHUB_TOKEN;
   if (!token) return "GITHUB_TOKEN manquant dans Vercel";
   var repo = process.env.GITHUB_REPO || "metsuyaaa-coder/drama", branch = process.env.GITHUB_BRANCH || "main", path = process.env.GITHUB_PATH || "catalog.json";
@@ -42,7 +42,7 @@ async function listAdd(b, vid) {
     if (!obj || Array.isArray(obj) || typeof obj !== "object") return "catalog.json illisible";
     var rq = obj.requests && Array.isArray(obj.requests.items) ? obj.requests : { items: [], at: 0 };
     var nowT = Date.now(), log = (Array.isArray(rq.log) ? rq.log : []).filter(function (e) { return e && nowT - (+e.t || 0) < 86400000; });
-    if (vid && log.some(function (e) { return e.v === vid; })) return "limit";   /* déjà une demande dans les 24 h */
+    if (vid && log.filter(function (e) { return e.v === vid; }).length >= max) return "limit";   /* déjà une demande dans les 24 h */
     var same = rq.items.filter(function (r) {
       return !!r.bl === bl && (tmdb && r.tmdb ? String(r.tmdb) === tmdb && r.media === media : String(r.title || "").toLowerCase() === title.toLowerCase());
     })[0];
@@ -83,9 +83,11 @@ module.exports = async function (req, res) {
   if (!hookOk(hook)) { res.status(500).json({ error: "webhook Discord manquant ou invalide" }); return; }
 
   var vid = clean(b.vid, 16).replace(/[^\w-]/g, "");
+  var maxDay = b.vip ? 2 : 1;   /* VIP : 2 demandes par jour, les autres 1 (les admins envoient un ID différent à chaque fois) */
   if (kind === "request" && vid) {
     var nv = Date.now(); Object.keys(vidHits).length > 3000 && (vidHits = {});
-    if (vidHits[vid] && nv - vidHits[vid] < 86400000) { res.status(429).json({ error: "Une demande par jour", limit: true }); return; }
+    vidHits[vid] = (vidHits[vid] || []).filter(function (t) { return nv - t < 86400000; });
+    if (vidHits[vid].length >= maxDay) { res.status(429).json({ error: "Une demande par jour", limit: true }); return; }
   }
   var ip = String((req.headers["x-forwarded-for"] || "").split(",")[0] || req.socket && req.socket.remoteAddress || "?").trim();
   if (limited(ip, kind)) { res.status(429).json({ error: "trop de requêtes" }); return; }
@@ -146,7 +148,7 @@ module.exports = async function (req, res) {
   var listed = false, why = "";
   if (kind === "request") {
     try {
-      var la = await listAdd(b, vid);
+      var la = await listAdd(b, vid, maxDay);
       if (la === "limit") { res.status(429).json({ error: "Une demande par jour", limit: true }); return; }
       listed = la === true; why = listed ? "" : String(la || "erreur");
     } catch (e) { why = "erreur : " + String(e && e.message || e).slice(0, 80); }
@@ -159,7 +161,7 @@ module.exports = async function (req, res) {
       body: JSON.stringify({ username: "DramaByM", embeds: [embed], allowed_mentions: { parse: [] } })
     });
     if (!r.ok) { res.status(502).json({ error: "Discord a refusé (" + r.status + ")" }); return; }
-    if (kind === "request" && vid) vidHits[vid] = Date.now();
+    if (kind === "request" && vid) (vidHits[vid] = vidHits[vid] || []).push(Date.now());
     res.status(200).json({ ok: true, listed: listed });
   } catch (e) {
     res.status(502).json({ error: "Discord injoignable" });
