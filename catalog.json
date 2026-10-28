@@ -6603,7 +6603,7 @@
               "sources": [
                 {
                   "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-tdh7j0iu23zd.html",
+                  "url": "https://vidmoly.org/embed-02c149eeh7v8.html",
                   "by": "614d778ed0"
                 }
               ],
@@ -6617,7 +6617,7 @@
               "sources": [
                 {
                   "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-6iqjcq48xas1.html",
+                  "url": "https://vidmoly.org/embed-ca0c3v7ltect.html",
                   "by": "614d778ed0"
                 }
               ],
@@ -7086,7 +7086,7 @@
       ],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1793208041704,
+      "updatedAt": 1793229708513,
       "trend": 0
     },
     {
@@ -44665,6 +44665,8 @@
     }
   ],
   "deletedLinks": [
+    "304452\thttps://vidmoly.org/embed-tdh7j0iu23zd.html",
+    "304452\thttps://vidmoly.org/embed-6iqjcq48xas1.html",
     "203344\thttps://vidmoly.org/embed-7mjv26x0xqjx.html",
     "m617882\thttps://vidmoly.org/embed-3hrjdohlscyh.html",
     "334517\thttps://vidmoly.org/embed-yde6o0hk35jo.html",
@@ -45274,6 +45276,15 @@
     "at": 1793227194170
   },
   "journal": [
+    {
+      "k": "mvsqo2p5bl7w0",
+      "t": 1793229708713,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "304452",
+      "n": "The Lament of Autumn",
+      "d": ""
+    },
     {
       "k": "mvspnl0tv54od",
       "t": 1793228006189,
@@ -47963,15 +47974,6 @@
       "a": "add",
       "i": "286506",
       "n": "Blossoms of Power",
-      "d": ""
-    },
-    {
-      "k": "mvfxs8hf7kjvn",
-      "t": 1792455599859,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "319077",
-      "n": "The Vacation Principle",
       "d": ""
     }
   ],
