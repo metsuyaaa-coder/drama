@@ -523,225 +523,6 @@
       "updatedAt": 1793239972579
     },
     {
-      "id": "315044",
-      "type": "tv",
-      "name": "Flower Boy",
-      "original_name": "หลงกลิ่นเกสร",
-      "origin_country": [
-        "TH"
-      ],
-      "networks": [
-        "ONE 31"
-      ],
-      "original_language": "th",
-      "aka": [
-        "Flower Boy",
-        "情迷花香中",
-        "Flower Boy : 향기에 홀린 소년",
-        "Цветочный парень",
-        "Flower Boy: Enchanted by the Scent of Kaysorn",
-        "Long Klin Kaysorn",
-        "Long Klin Keson",
-        "Flower Boy: Enchanted by the Scent of Pollen",
-        "หลงกลิ่นเกสร"
-      ],
-      "year": "2026",
-      "overview": "Scent est un jeune héritier à la tête d'une entreprise de parfumerie familiale en difficulté. Pour sauver son entreprise de la faillite, il part à la recherche des Mudan, une mystérieuse tribu vivant dans les forêts du nord de la Thaïlande et réputée pour son parfum envoûtant. Il y rencontre Gaysorn, un jeune homme dont l'odeur est particulièrement exceptionnelle, et décide de le ramener en ville afin d'utiliser son parfum pour créer une nouvelle fragrance. Mais Scent découvre bientôt que le parfum des Mudan devient plus puissant lorsque son propriétaire tombe amoureux. Alors que ses sentiments pour Gaysorn évoluent, les secrets et les véritables intentions de ce dernier risquent de mettre leur relation à l'épreuve.",
-      "genres": [
-        "Drame",
-        "Science-Fiction & Fantastique"
-      ],
-      "rating": "7.7",
-      "pop": 3.7209,
-      "status": "Ended",
-      "poster": "https://image.tmdb.org/t/p/w500/123SH5RVqynQ7BwzKcq1O8mJKA0.jpg",
-      "posterV": 2,
-      "backdrop": "https://image.tmdb.org/t/p/original/scGPHhUGqXSTwuaqqHC1CcaRfx6.jpg",
-      "videos": [],
-      "cast": [
-        {
-          "name": "ศัจกร ฉลาด",
-          "character": "Scent",
-          "id": 4164076
-        },
-        {
-          "name": "ภีมพล พาณิชย์ธำรง",
-          "character": "Gaysorn",
-          "id": 1752094
-        },
-        {
-          "name": "จิณภพ ปรารถนาสันติ",
-          "character": "Sun",
-          "id": 4263599
-        },
-        {
-          "name": "ปัณณวิชญ์ สิริเกียรติวาณิชย์",
-          "character": "Ray",
-          "id": 5006425
-        },
-        {
-          "name": "ภาคิน ลิขิตอัมพร",
-          "character": "Tawan",
-          "id": 6209674
-        },
-        {
-          "name": "อัมรินทร์ นิติพน",
-          "character": "Wittaya",
-          "id": 1272413
-        },
-        {
-          "name": "Petch Boranin",
-          "character": "Mekin",
-          "id": 3285977
-        },
-        {
-          "name": "สวนีย์ อุทุมมา",
-          "character": "Mata",
-          "id": 2424471
-        },
-        {
-          "name": "ลวัณญา อึ้งศิลป์ศรีกุล",
-          "character": "Bussaba",
-          "id": 3961065
-        },
-        {
-          "name": "เพ็ญเพ็ชร เพ็ญกุล",
-          "character": "Pruek",
-          "id": 3286468
-        }
-      ],
-      "eprt": 54,
-      "seasons": [
-        {
-          "number": 1,
-          "name": "Saison 1",
-          "episodes": [
-            {
-              "number": 1,
-              "name": "Épisode 1",
-              "overview": "Phummarak is rescued by the beautiful Gaysorn and discovers an irresistible scent that might save his family legacy.",
-              "air_date": "2026-04-25",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-r8tme7t3cuii.html",
-                  "by": "f2b389cb62"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 2,
-              "name": "Épisode 2",
-              "overview": "Phummarak brings Gaysorn to the city as a secret \"ingredient,\" without realizing the scent peaks when Gaysorn is in love.",
-              "air_date": "2026-05-02",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-el8a3jkhqvmq.html",
-                  "by": "f2b389cb62"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 3,
-              "name": "Épisode 3",
-              "overview": "Phummarak cheers up a homesick Gaysorn with a rooftop stargazing date, but the romance is cut short by his fiery ex, Ray.",
-              "air_date": "2026-05-09",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-ivg1qs3g2gcw.html",
-                  "by": "f2b389cb62"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 4,
-              "name": "Épisode 4",
-              "overview": "Gaysorn reveals the tribe's fragrance secret, making Phummarak realize Gaysorn fell for him at first sight.",
-              "air_date": "2026-05-16",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-aazuompxyv3i.html",
-                  "by": "f2b389cb62"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 5,
-              "name": "Épisode 5",
-              "overview": "Gaysorn discovers that Phummarak has secretly been collecting his sweat and demands to know the real reason behind it. Will this revelation change their relationship forever?",
-              "air_date": "2026-05-23",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-zpkzb1v001ls.html",
-                  "by": "f2b389cb62"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 6,
-              "name": "Épisode 6",
-              "overview": "The perfume secret breaks Gaysorn’s heart, prompting him to leave as Phummarak fights to win back his true love.",
-              "air_date": "2026-05-30",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-a9hqzdm1oxn7.html",
-                  "by": "f2b389cb62"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 7,
-              "name": "Épisode 7",
-              "overview": "The past catches up with everyone when Gaysorn's search exposes secrets hidden for sixteen years.",
-              "air_date": "2026-06-06",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-n72e9zsp24ai.html",
-                  "by": "f2b389cb62"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 8,
-              "name": "Épisode 8",
-              "overview": "A shocking revelation forces Phummarak to confront his family's past and the future of his relationship.",
-              "air_date": "2026-06-13",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-w0fbximbyahh.html",
-                  "by": "f2b389cb62"
-                }
-              ],
-              "downloads": []
-            }
-          ],
-          "downloads": []
-        }
-      ],
-      "sources": [],
-      "addedAt": 1793276579924,
-      "langs": [
-        "VOSTFR"
-      ],
-      "downloads": [],
-      "bl": true,
-      "updatedAt": 1793276655546
-    },
-    {
       "id": "317308",
       "type": "tv",
       "name": "The Missing Piece",
@@ -45872,6 +45653,7 @@
     "320513\thttps://vidmoly.org/embed-7kon45gviu2g.html[Dramavore]"
   ],
   "deletedFiches": [
+    "315044",
     "1396"
   ],
   "team": {
@@ -46338,13 +46120,7 @@
         "at": 1793277404348
       }
     ],
-    "at": 1793277404347,
-    "log": [
-      {
-        "v": "fe5766f5",
-        "t": 1793277404347
-      }
-    ]
+    "at": 1793277404347
   },
   "hosts": {
     "items": [
@@ -46449,6 +46225,15 @@
     "at": 1793227194170
   },
   "journal": [
+    {
+      "k": "mvtk3iwls1t5f",
+      "t": 1793279138421,
+      "b": "f2b389cb62",
+      "a": "del",
+      "i": "315044",
+      "n": "Flower Boy",
+      "d": ""
+    },
     {
       "k": "mvtizxvj830af",
       "t": 1793277291583,
@@ -49139,15 +48924,6 @@
       "i": "285415",
       "n": "Fascination",
       "d": "affiche"
-    },
-    {
-      "k": "mvgs27nl4lgy3",
-      "t": 1792506453825,
-      "b": "614d778ed0",
-      "a": "add",
-      "i": "285415",
-      "n": "Fascination",
-      "d": ""
     }
   ],
   "refreshAt": 1792423579957
