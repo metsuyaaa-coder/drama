@@ -22,1589 +22,6 @@
   },
   "series": [
     {
-      "id": "316294",
-      "type": "tv",
-      "name": "Payback",
-      "original_name": "เพย์แบค เดอะซีรีส์",
-      "origin_country": [
-        "TH"
-      ],
-      "networks": [
-        "ONE 31"
-      ],
-      "original_language": "th",
-      "aka": [
-        "Payback",
-        "偿还",
-        "PAYBACK償還",
-        "페이백 더 시리즈",
-        "PAYBACK: Báo Thù",
-        "Расплата",
-        "Acerto de Contas",
-        "复仇",
-        "改过迁善",
-        "改過遷善",
-        "Payback The Series",
-        "เพย์แบค เดอะซีรีส์"
-      ],
-      "year": "2026",
-      "overview": "Sun, ancien collecteur de dettes, voit sa vie basculer après la mort tragique de son petit frère, tué par un débiteur. Comme si cela ne suffisait pas, son petit ami Bank le trahit en disparaissant avec tout son argent. Endetté et obligé de payer les soins médicaux de sa mère, Sun tente de survivre tant bien que mal.\n\nCinq ans plus tard, il travaille comme livreur lorsqu'il recroise Bank, devenu une célébrité sous l'agence Dream Entertainment. En découvrant que celui-ci pourrait être lié à la mort de son frère, Sun décide d'intégrer le monde du divertissement afin de se rapprocher de lui et préparer sa vengeance.\n\nAu sein de l'agence, il fait la rencontre de Jay, un homme froid et provocateur qui cache en réalité son rôle de directeur exécutif de Dream Entertainment. Malgré leurs disputes incessantes, une attirance de plus en plus forte naît entre eux. Sun finit également par comprendre que Jay est l'homme mystérieux qu'il avait rencontré cinq ans auparavant, alors qu'il portait un costume de mascotte en forme de lapin.",
-      "genres": [
-        "Drame",
-        "Crime",
-        "Action & Adventure"
-      ],
-      "rating": "8.9",
-      "pop": 8.7225,
-      "status": "Ended",
-      "poster": "https://image.tmdb.org/t/p/w500/616HQHGVqEh0ZbQIRdyjIBQfqhU.jpg",
-      "posterV": 2,
-      "backdrop": "https://image.tmdb.org/t/p/original/4L9sftGH7oQ1bpB0aQHERwyfDVd.jpg",
-      "videos": [
-        {
-          "key": "vbXQQCHdCpk",
-          "name": "Official Trailer | PAYBACK THE SERIES",
-          "type": "Trailer",
-          "lab": "Anglais"
-        }
-      ],
-      "cast": [
-        {
-          "name": "ธนากร วิชานุเคราะห์",
-          "character": "Sun",
-          "id": 4589861
-        },
-        {
-          "name": "จารุกิจ แก้วมูลเรือง",
-          "character": "Jay",
-          "id": 6063716
-        },
-        {
-          "name": "ปารมี เทศดรุณ",
-          "character": "Sky",
-          "id": 4273856
-        },
-        {
-          "name": "ชัยกมล เสริมส่งวิทยะ",
-          "character": "Pakin",
-          "id": 3648365
-        },
-        {
-          "name": "ธนวัตร ชินวัตร",
-          "character": "Bank",
-          "id": 4023239
-        },
-        {
-          "name": "Jirapat Uttamanan",
-          "character": "Kajorn",
-          "id": 3585000
-        },
-        {
-          "name": "กลศ อัทธเสรี",
-          "character": "Songphon",
-          "id": 2400256
-        },
-        {
-          "name": "Suttida Kasemsant Na Ayutthaya",
-          "character": "Pavinee",
-          "id": 3341856
-        },
-        {
-          "name": "คานธี วสุวิชย์กิต",
-          "character": "Jo",
-          "id": 2735144
-        },
-        {
-          "name": "ยะสะกะ ไชยสร",
-          "character": "Suchat",
-          "id": 3131644
-        },
-        {
-          "name": "Sarinya Olsson",
-          "character": "Karn",
-          "id": 4877750
-        },
-        {
-          "name": "ธนริศย์ พจน์คณาวัชร์",
-          "character": "Kavin",
-          "id": 6256038
-        }
-      ],
-      "eprt": 62,
-      "seasons": [
-        {
-          "number": 1,
-          "name": "Saison 1",
-          "episodes": [
-            {
-              "number": 1,
-              "name": "The Beginning of Revenge",
-              "overview": "Sun secures a job at an entertainment firm to enact revenge for his brother, who was murdered by a debtor five years ago.",
-              "air_date": "2026-05-30",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-52s5xcnkr4px.html",
-                  "by": "f2b389cb62"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 2,
-              "name": "Audition",
-              "overview": "Sun convinces a hesitant manager to sign him so he can audition for an acting gig to take revenge on Bank.",
-              "air_date": "2026-06-06",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-oknxstk8lgzr.html",
-                  "by": "f2b389cb62"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 3,
-              "name": "Profile Photo Shoot",
-              "overview": "Entering the entertainment world, Sun faces sabotage and difficult choices as his revenge plan moves forward.",
-              "air_date": "2026-06-13",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-uoo5xqgbwhkr.html",
-                  "by": "f2b389cb62"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 4,
-              "name": "Acting Lessons Begin",
-              "overview": "Bullied and targeted, Sun pushes forward in acting class while discovering the entertainment world’s dark side.",
-              "air_date": "2026-06-20",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-8t8rv0hfwd3y.html",
-                  "by": "f2b389cb62"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 5,
-              "name": "Abandon Your Pride",
-              "overview": "As Bank targets everyone around him, Sun uncovers a secret that reshapes his path to revenge.",
-              "air_date": "2026-06-27",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-o3ikfuxlvj0w.html",
-                  "by": "f2b389cb62"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 6,
-              "name": "Jay's True Identity",
-              "overview": "Sun's mascot costume triggers Jay's memory of a past rescue and intimacy, revealing Sun is his long-lost savior.",
-              "air_date": "2026-07-04",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-zu8ojntqff88.html",
-                  "by": "f2b389cb62"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 7,
-              "name": "Sky's Comeback",
-              "overview": "Sun tries to help Sky overcome camera panic for a short film, while Jay faces a plot to fire him over a casting dispute.",
-              "air_date": "2026-07-11",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-t8wajhl37p4w.html",
-                  "by": "f2b389cb62"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 8,
-              "name": "The Night They Bonded",
-              "overview": "A viral hit-and-run scandal forces Sun to uncover the truth before it destroys Jay and Kajorn's futures.",
-              "air_date": "2026-07-18",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-4od26pmu6gbq.html",
-                  "by": "f2b389cb62"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 9,
-              "name": "The Final Warning",
-              "overview": "Jay disappears to protect Sun as a risky plan to expose Bank's crimes takes a dangerous turn.",
-              "air_date": "2026-07-25",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-4mk26pdnzf88.html",
-                  "by": "f2b389cb62"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 10,
-              "name": "The Payback They Deserve",
-              "overview": "Jay returns to stand with Sun as their fight against Songphon and Bank reaches a decisive turning point.",
-              "air_date": "2026-08-01",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-9lwp69b40nmp.html",
-                  "by": "f2b389cb62"
-                }
-              ],
-              "downloads": []
-            }
-          ],
-          "downloads": []
-        }
-      ],
-      "sources": [],
-      "addedAt": 1793223515451,
-      "langs": [
-        "VOSTFR"
-      ],
-      "downloads": [],
-      "bl": true,
-      "updatedAt": 1793223686126
-    },
-    {
-      "id": "318664",
-      "type": "tv",
-      "name": "Journey With You",
-      "original_name": "与君同",
-      "origin_country": [
-        "CN"
-      ],
-      "networks": [
-        "GagaOOLala"
-      ],
-      "original_language": "zh",
-      "aka": [
-        "Journey With You",
-        "ข้างคู่เคียงเพียงรอยแค้น",
-        "與君同",
-        "여군동 : 되돌린 운명",
-        "风定花开",
-        "与君同"
-      ],
-      "year": "2026",
-      "overview": "L'histoire suit un prince qui, après avoir été trahi et assassiné, se réincarne trois ans en arrière. Lorsqu'il retrouve son ancien meilleur ami, il découvre que celui-ci n'a peut-être jamais été l'ennemi qu'il croyait, inversant ainsi les rôles initiaux de traîtrise et menant à une relation complexe entre eux.",
-      "genres": [
-        "Drame",
-        "Science-Fiction & Fantastique"
-      ],
-      "rating": "7.7",
-      "pop": 3.7234,
-      "status": "Ended",
-      "poster": "https://image.tmdb.org/t/p/w500/qSMLWNahW1FmHR4d6LrED59oF8l.jpg",
-      "posterV": 2,
-      "backdrop": "https://image.tmdb.org/t/p/original/61gMFdrK5rUqAdmXvIcnk3lrGda.jpg",
-      "videos": [
-        {
-          "key": "PQ_EZrB2WXk",
-          "name": "《与君同》首发预告·双向守护版｜深宫宿命，重来一世只为你",
-          "type": "Teaser",
-          "lab": "Original"
-        }
-      ],
-      "cast": [
-        {
-          "name": "唐比德",
-          "character": "Yin Qi",
-          "id": 6118980
-        },
-        {
-          "name": "汪敬涵",
-          "character": "Pei Yanzhi",
-          "id": 6118982
-        },
-        {
-          "name": "段同舟",
-          "character": "Yin Zhou",
-          "id": 5215137
-        },
-        {
-          "name": "李宥呈",
-          "character": "Wei Ziming",
-          "id": 6118988
-        },
-        {
-          "name": "王越之",
-          "character": "Yin Heshu",
-          "id": 6166626
-        },
-        {
-          "name": "赵佳仪",
-          "character": "Lin Xianyue",
-          "id": 6166630
-        },
-        {
-          "name": "Luo Siqi",
-          "character": "Concubine Chen",
-          "id": 4859687
-        },
-        {
-          "name": "左洲源",
-          "character": "Zhong Wenjie",
-          "id": 6166639
-        },
-        {
-          "name": "杜奕衡",
-          "character": "Su He",
-          "id": 1174690
-        },
-        {
-          "name": "刘晨",
-          "character": "Empress",
-          "id": 6166641
-        },
-        {
-          "name": "谢霄翰",
-          "character": "Yin Zhao",
-          "id": 6166631
-        },
-        {
-          "name": "谢维娜",
-          "character": "Lin Jianshuang",
-          "id": 6166632
-        }
-      ],
-      "eprt": 48,
-      "seasons": [
-        {
-          "number": 1,
-          "name": "Saison 1",
-          "episodes": [
-            {
-              "number": 1,
-              "name": "Épisode 1",
-              "overview": "Yin Qi survives a bloody coup only to wake up three years in the past, on the eve of his mother’s death.",
-              "air_date": "2026-05-08",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-fbq2txzvhp2q.html",
-                  "by": "f2b389cb62"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 2,
-              "name": "Épisode 2",
-              "overview": "Yin Qi confirms the timeline has shifted and begins investigating the conspiracy while doubting Pei Yanzhi’s true heart.",
-              "air_date": "2026-05-08",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-ka4tvsw7vvz6.html",
-                  "by": "f2b389cb62"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 3,
-              "name": "Épisode 3",
-              "overview": "Yin Qi locks Pei Yanzhi inside the palace to keep him safe while hunting down Yin Zhou’s hidden fortune.",
-              "air_date": "2026-05-15",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-ir7qopt7nr37.html",
-                  "by": "f2b389cb62"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 4,
-              "name": "Épisode 4",
-              "overview": "Pei Yanzhi rescues Yin Qi from an ambush, sparking the long-suppressed feelings between them to surface.",
-              "air_date": "2026-05-22",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-u4pq41am74fz.html",
-                  "by": "f2b389cb62"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 5,
-              "name": "Épisode 5",
-              "overview": "A secret meeting reveals the truth Pei Yanzhi has hidden for years. Will it destroy Yin Qi’s trust in him forever?",
-              "air_date": "2026-05-29",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-2thxq9evaa1c.html",
-                  "by": "f2b389cb62"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 6,
-              "name": "Épisode 6",
-              "overview": "A long-hidden secret comes to light as Yin Qi reveals how tragedy bound him and Pei Yanzhi together.",
-              "air_date": "2026-06-05",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-30re5td4vg5w.html",
-                  "by": "f2b389cb62"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 7,
-              "name": "Épisode 7",
-              "overview": "As Yin Zhou launches his rebellion, Yin Qi and Pei Yanzhi move to expose his scheme and fight back.",
-              "air_date": "2026-06-12",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-1lcppqdng7ou.html",
-                  "by": "f2b389cb62"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 8,
-              "name": "Épisode 8",
-              "overview": "As peace finally arrives, Yin Qi learns a devastating truth that threatens everything he and Pei Yanzhi hope for.",
-              "air_date": "2026-06-19",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-iahdm84bpgzr.html",
-                  "by": "f2b389cb62"
-                }
-              ],
-              "downloads": []
-            }
-          ],
-          "downloads": []
-        }
-      ],
-      "sources": [],
-      "addedAt": 1793238285882,
-      "langs": [
-        "VOSTFR"
-      ],
-      "downloads": [],
-      "bl": true,
-      "updatedAt": 1793239972579
-    },
-    {
-      "id": "317308",
-      "type": "tv",
-      "name": "The Missing Piece",
-      "original_name": "请记住我的名字",
-      "origin_country": [
-        "CN"
-      ],
-      "networks": [
-        "Viki",
-        "GagaOOLala"
-      ],
-      "original_language": "zh",
-      "aka": [
-        "The Missing Piece",
-        "請記住我的名字",
-        "จิกซอว์ชิ้นสุดท้ายของเรา",
-        "A Peça Que Faltava",
-        "청기주아적명자 : 내 이름을 기억해 줘",
-        "貌合神离",
-        "季先生",
-        "Appearance in harmony but feels apart",
-        "Appearance and Departure",
-        "请记住我的名字"
-      ],
-      "year": "2026",
-      "overview": "Shen Mo perd la mémoire à la suite d'un accident. Il prend soudainement que Ji Ming Xuan est son petit ami, alors qu'il ne l'est pas réellement.\n\nIls vont finalement vivre ensemble et, au cours de ces six mois, leurs sentiments deviennent réellement réciproques. Mais lorsque Shen Mo retrouve la mémoire, il oublie complètement les six mois qu'ils ont passés ensemble.\n\nJi Ming Xuan ne veut pas le perdre et lui propose alors un contrat de trois ans. Officiellement, Shen Mo devient son « amant sous contrat », mais derrière cette relation contractuelle, les deux hommes sont déjà profondément attachés l'un à l'autre.",
-      "genres": [
-        "Drame"
-      ],
-      "rating": "9.3",
-      "pop": 4.6132,
-      "status": "Ended",
-      "poster": "https://image.tmdb.org/t/p/w500/ozxzhIThHt3csoDmov1pOYdp9am.jpg",
-      "posterV": 2,
-      "backdrop": "https://image.tmdb.org/t/p/original/iTs5hXdEDA3pI6FabhH6rKkpK7P.jpg",
-      "videos": [],
-      "cast": [
-        {
-          "name": "候明炫",
-          "character": "Ji Mingxuan",
-          "id": 4556572
-        },
-        {
-          "name": "饶子豪",
-          "character": "Shen Mo",
-          "id": 6200414
-        }
-      ],
-      "eprt": 36,
-      "seasons": [
-        {
-          "number": 1,
-          "name": "Saison 1",
-          "episodes": [
-            {
-              "number": 1,
-              "name": "Épisode 1",
-              "overview": "Shen Mo reunites with ex-lover Zhou Yang, but Ji Mingxuan’s possessiveness turns their tense reunion into a love triangle.",
-              "air_date": "2026-09-07",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-ctd7rouxde4d.html",
-                  "by": "f2b389cb62"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 2,
-              "name": "Épisode 2",
-              "overview": "Ji Mingxuan publicly claims Shen Mo, but Zhao Yi’s arrival makes Shen question whether he’s merely a substitute.",
-              "air_date": "2026-09-07",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-9us56j3zcapn.html",
-                  "by": "f2b389cb62"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 3,
-              "name": "Épisode 3",
-              "overview": "While sick, Ji Mingxuan draws Shen Mo closer, taking him to an art show and boldly declaring him his own.",
-              "air_date": "2026-09-12",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-oml6bzzcyeoa.html",
-                  "by": "f2b389cb62"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 4,
-              "name": "Épisode 4",
-              "overview": "When Shen Mo faces the man who threatened him years ago, Ji Mingxuan steps in to protect him at an engagement banquet.",
-              "air_date": "2026-09-13",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-ngn1jf2ena32.html",
-                  "by": "f2b389cb62"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 5,
-              "name": "Épisode 5",
-              "overview": "A birthday getaway turns into a trap when Shen Mo is locked in a room with Zhou Yang, exposing painful secrets.",
-              "air_date": "2026-09-19",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-rucjy35d3ytc.html",
-                  "by": "f2b389cb62"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 6,
-              "name": "Épisode 6",
-              "overview": "After his contract with Ji Mingxuan ends, Shen Mo searches his fractured memories to uncover their hidden past.",
-              "air_date": "2026-09-20",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-gfgnq0t97wxn.html",
-                  "by": "f2b389cb62"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 7,
-              "name": "Épisode 7",
-              "overview": "Three years earlier, Shen Mo was kidnapped, forced to leave Zhou Yang, and cast out by his family, shattering his memories.",
-              "air_date": "2026-09-26",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-ukcmxkt6pc93.html",
-                  "by": "f2b389cb62"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 8,
-              "name": "Épisode 8",
-              "overview": "As Shen Mo’s condition worsens, Ji Mingxuan pretends to be Zhou Yang out of guilt, while Shen questions his distance.",
-              "air_date": "2026-09-27",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-1fcl7nx3p05y.html",
-                  "by": "f2b389cb62"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 9,
-              "name": "Épisode 9",
-              "overview": "Unable to paint after injuring his hand, Shen Mo finds hope as Ji Mingxuan arranges surgery and supports his artistic dreams.",
-              "air_date": "2026-10-03",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-ki6m84ksnvel.html",
-                  "by": "f2b389cb62"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 10,
-              "name": "Épisode 10",
-              "overview": "Shen Mo discovers that the man he believed was Zhou Yang is someone else, unraveling everything he thought he knew.",
-              "air_date": "2026-10-04",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-smnwpgl70m18.html",
-                  "by": "f2b389cb62"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 11,
-              "name": "Épisode 11",
-              "overview": "Shen Mo reunites with Ji Mingxuan, but the child beside him sparks fears that he may already have a family.",
-              "air_date": "2026-10-10",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-hnou5k65eotq.html",
-                  "by": "f2b389cb62"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 12,
-              "name": "Épisode 12",
-              "overview": "As Shen Mo uncovers the truth behind their missed chances, he resolves to stop running from love and leave no regrets.",
-              "air_date": "2026-10-11",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-5hn3eiesnxyj.html",
-                  "by": "f2b389cb62"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 13,
-              "name": "Épisode 13",
-              "overview": "Shen Mo and Ji Mingxuan reconcile as the truth behind their separation finally emerges, giving their love another chance.",
-              "air_date": "2026-10-17",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-4pb0wz36uv6w.html",
-                  "by": "f2b389cb62"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 14,
-              "name": "Épisode 14",
-              "overview": "Zhou Yang warns Shen Mo that his family plans revenge against Ji Mingxuan, threatening their newly rekindled love.",
-              "air_date": "2026-10-18",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-44m3kssnjdzo.html",
-                  "by": "f2b389cb62"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 15,
-              "name": "Épisode 15",
-              "overview": "",
-              "air_date": "2026-10-24",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-49j09pnp5sqn.html",
-                  "by": "f2b389cb62"
-                }
-              ],
-              "downloads": []
-            }
-          ],
-          "downloads": []
-        }
-      ],
-      "sources": [],
-      "addedAt": 1793277017295,
-      "langs": [
-        "VOSTFR"
-      ],
-      "downloads": [],
-      "bl": true,
-      "updatedAt": 1793277291576
-    },
-    {
-      "id": "332507",
-      "type": "tv",
-      "name": "The Last Oath",
-      "original_name": "末誓",
-      "origin_country": [
-        "CN"
-      ],
-      "networks": [
-        "Viki",
-        "GagaOOLala"
-      ],
-      "original_language": "zh",
-      "aka": [
-        "The Last Oath",
-        "สัจจะสุดท้ายวันซอมบี้สิ้นโลก",
-        "El Último Juramento",
-        "O Último Juramento",
-        "末誓（モーシー） The Last Oath",
-        "烬爱",
-        "Mo Shi",
-        "末誓"
-      ],
-      "year": "2026",
-      "overview": "Dans un monde ravagé par un virus zombie mortel, l'humanité est prise en tenaille par deux géants pharmaceutiques corrompus qui prétendent développer un vaccin pour asseoir leur domination globale. L'étudiant Lin Zai paye un lourd tribut en perdant ses parents et son frère aîné. De manière inattendue, il découvre qu'il est immunisé contre les morsures, devenant une cible inestimable pour les factions au pouvoir.\n\nLorsque Lin Zai sauve A Lie, un agent spécial censé le traquer, un lien inattendu se tisse rapidement entre eux, évoluant vers une profonde intimité. Confrontés à un monde impitoyable et à des loyautés contradictoires, Lin Zai et A Lie devront faire des choix déchirants qui pousseront leur amour dans ses derniers retranchements.",
-      "genres": [
-        "Drame",
-        "Action & Adventure",
-        "Science-Fiction & Fantastique"
-      ],
-      "rating": "8.5",
-      "pop": 6.1106,
-      "status": "Ended",
-      "poster": "https://image.tmdb.org/t/p/w500/6Gt3rbhwfniiZoeORGcuDai5Nar.jpg",
-      "posterV": 2,
-      "backdrop": "https://image.tmdb.org/t/p/original/zDFiTPF1ox2LLIAjS2qdnUwk7go.jpg",
-      "videos": [
-        {
-          "key": "fEvFFF6mAp8",
-          "name": "《末誓》首發預告！9月4日20:00全球首播！末世相逢🖤生死與共，為愛破局｜我們，逆末世而行｜末誓 The Last Oath 🎬Official Trai",
-          "type": "Trailer",
-          "lab": "Original"
-        }
-      ],
-      "cast": [
-        {
-          "name": "陈名豪",
-          "character": "A Leh",
-          "id": 4282685
-        },
-        {
-          "name": "陈梁",
-          "character": "Lin Zai",
-          "id": 6430440
-        },
-        {
-          "name": "陆路",
-          "character": "He Yao",
-          "id": 2087807
-        },
-        {
-          "name": "王朝阳",
-          "character": "Sheng Changhuan",
-          "id": 3856177
-        }
-      ],
-      "eprt": 21,
-      "seasons": [
-        {
-          "number": 1,
-          "name": "Saison 1",
-          "episodes": [
-            {
-              "number": 1,
-              "name": "Infection",
-              "overview": "The zombie apocalypse takes everything from Lin Zai, even his brother, who dies saving him. More shockingly, after being bitten, Lin Zai somehow doesn’t turn into a zombie.",
-              "air_date": "2026-09-04",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-z7cuquvoyt4h.html",
-                  "by": "f2b389cb62"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 2,
-              "name": "Survival Rules for the Apocalypse",
-              "overview": "Lin Zai finally manages to save the mysterious man, only for him to remain constantly on guard and even warn Lin Zai that zombies aren’t the only danger in the apocalypse.",
-              "air_date": "2026-09-04",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-eco0h716uq0j.html",
-                  "by": "f2b389cb62"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 3,
-              "name": "Guangqi Terminal",
-              "overview": "Lin Zai finds himself in danger once again, only to be rescued by the mysterious man, who finally reveals his name.",
-              "air_date": "2026-09-05",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-ms53ouvnk54e.html",
-                  "by": "f2b389cb62"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 4,
-              "name": "Immunogen",
-              "overview": "The mysterious A-Leh is carrying out a mission he cannot reveal. Believing him to be a trustworthy companion, Lin Zai hopes he will stay at the camp.",
-              "air_date": "2026-09-05",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-glm9qhgdo38m.html",
-                  "by": "f2b389cb62"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 5,
-              "name": "Infected Sensory Profile",
-              "overview": "After waking up, Lin Zai is shocked to discover that A-Leh has abducted him. It turns out that Lin Zai is the “immune individual” A-Leh has been searching for, possessing genes that make him immune to the zombie virus.",
-              "air_date": "2026-09-11",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-r2psoksd3gkg.html",
-                  "by": "f2b389cb62"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 6,
-              "name": "Infected Zone Map",
-              "overview": "As an immune individual, Lin Zai worries that he might become a test subject. Although A-Leh acts indifferent, he secretly begins investigating what could happen to him.",
-              "air_date": "2026-09-11",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-kiula76f1d4q.html",
-                  "by": "f2b389cb62"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 7,
-              "name": "Class A Infected",
-              "overview": "Although A-Leh insists that his only responsibility is to bring the immune individual back, the way he protects Lin Zai is clearly becoming more than just part of the mission.",
-              "air_date": "2026-09-12",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-kll4y4a2wk49.html",
-                  "by": "f2b389cb62"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 8,
-              "name": "Infected Classification System",
-              "overview": "Lin Zai suffers another allergic reaction and collapses, prompting A-Leh to risk entering a zombie-infested town in search of medicine. Left alone, Lin Zai unexpectedly finds himself caught in a deadly plot against him.",
-              "air_date": "2026-09-12",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-vexr2io06lmz.html",
-                  "by": "f2b389cb62"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 9,
-              "name": "What Mom Owes You",
-              "overview": "After narrowly escaping death, Lin Zai tells A-Leh that all he wants is to return to the camp that feels like home, but A-Leh refuses to let him go.",
-              "air_date": "2026-09-18",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-um76xkvhb0qj.html",
-                  "by": "f2b389cb62"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 10,
-              "name": "Mobility & Fuel",
-              "overview": "Lin Zai and A-Leh encounter a mysterious man named He Yao, only to discover that he is a genetics expert once highly sought after by two major pharmaceutical corporations.",
-              "air_date": "2026-09-18",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-arw8eu0u1jup.html",
-                  "by": "f2b389cb62"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 11,
-              "name": "Last Message",
-              "overview": "With armed forces hunting them down, He Yao admits that he once took part in research on the zombie virus and barely managed to escape from the research facility.",
-              "air_date": "2026-09-19",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-46jdjirp0p9f.html",
-                  "by": "f2b389cb62"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 12,
-              "name": "Casia",
-              "overview": "A-Leh collapses after being poisoned, giving Lin Zai the perfect chance to escape. But when he hears A-Leh calling out to him, Lin Zai decides to stay and save him.",
-              "air_date": "2026-09-19",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-n5618488uyhv.html",
-                  "by": "f2b389cb62"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 13,
-              "name": "Post-Outbreak Infection Research",
-              "overview": "A-Leh’s wound worsens, but his time with Lin Zai feels almost like an ordinary date from before the apocalypse.",
-              "air_date": "2026-09-25",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-tktdbp593l6x.html",
-                  "by": "f2b389cb62"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 14,
-              "name": "The Final Performance",
-              "overview": "A mysterious survivor suddenly appears and leads A-Leh and Lin Zai to a new camp, where they unexpectedly reunite with an old acquaintance.",
-              "air_date": "2026-09-25",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-21zszpqx1wiw.html",
-                  "by": "f2b389cb62"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 15,
-              "name": "Dao Camp",
-              "overview": "Lin Zai faces a new choice: stay at the safe camp, or continue the journey with A-Leh?",
-              "air_date": "2026-09-26",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-nzafnvhh4iid.html",
-                  "by": "f2b389cb62"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 16,
-              "name": "Treatment Log",
-              "overview": "Lin Zai clashes with A-Leh again, and in He Yao’s laboratory, he discovers a familiar zombie.",
-              "air_date": "2026-10-02",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-dw2hy34qx8ws.html",
-                  "by": "f2b389cb62"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 17,
-              "name": "The Unfinished Film",
-              "overview": "To save his zombified brother, Lin Zai decides to undergo immune-subject experiments in secret, keeping it from A-Leh.",
-              "air_date": "2026-10-02",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-86c1te1eaqyu.html",
-                  "by": "f2b389cb62"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 18,
-              "name": "Camp Duty Assignments",
-              "overview": "The experiments begin taking a toll on Lin Zai’s body. Faced with A-Leh’s heartfelt confession, can he finally make a decision?",
-              "air_date": "2026-10-03",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-mf9emtuitbzw.html",
-                  "by": "f2b389cb62"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 19,
-              "name": "Whole Blood Donation Guidelines",
-              "overview": "To save his brother, Lin Zai insists on drawing even more of his blood despite the risks.",
-              "air_date": "2026-10-09",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-0d8x2juc3znr.html",
-                  "by": "f2b389cb62"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 20,
-              "name": "File 020",
-              "overview": "Lin Zai is left in critical condition after losing too much blood. A-Leh personally gives him a blood transfusion and stays by his bedside all night.",
-              "air_date": "2026-10-10",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-jjqewyefr8tc.html",
-                  "by": "f2b389cb62"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 21,
-              "name": "Self-experiment Record",
-              "overview": "Unwilling to give up on saving his brother, Lin Zai decides to undergo bone marrow collection, while A-Leh chooses to stay by his side and face it with him.",
-              "air_date": "2026-10-16",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-nitwjjzigqv9.html",
-                  "by": "f2b389cb62"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 22,
-              "name": "My Little Brother",
-              "overview": "Lin Zai loses another important family member and gradually falls deeper into He Yao’s scheme.",
-              "air_date": "2026-10-17",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-pzuzdpebv5ib.html",
-                  "by": "f2b389cb62"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 23,
-              "name": "Communication After The Fall",
-              "overview": "After his brother’s death, Lin Zai loses his reason to keep living, while A-Leh officially turns against his organization for him.",
-              "air_date": "2026-10-23",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-f75ndh1ljx30.html",
-                  "by": "f2b389cb62"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 24,
-              "name": "Herin",
-              "overview": "With all of He Yao’s lies exposed, A-Leh and Lin Zai decide to face the organization’s forces together.",
-              "air_date": "2026-10-24",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-6m8mokkwtjx1.html",
-                  "by": "f2b389cb62"
-                }
-              ],
-              "downloads": []
-            }
-          ],
-          "downloads": []
-        }
-      ],
-      "sources": [],
-      "addedAt": 1793277194000,
-      "langs": [
-        "VOSTFR"
-      ],
-      "downloads": [],
-      "bl": true,
-      "updatedAt": 1793277278711
-    },
-    {
-      "id": "318634",
-      "type": "tv",
-      "name": "Twisted Tie",
-      "original_name": "비틀린 넥타이",
-      "origin_country": [
-        "KR"
-      ],
-      "networks": [
-        "GagaOOLala",
-        "wavve",
-        "Heavenly",
-        "Shortime"
-      ],
-      "original_language": "ko",
-      "aka": [
-        "Twisted Tie",
-        "扭曲的领带",
-        "歪んだネクタイ",
-        "解不開的我們",
-        "เนคไทร้อน ซ่อนปมรัก",
-        "Chiếc Cà Vạt Rối Rắm",
-        "Запутанная связь",
-        "组长的社内福利",
-        "解不开的我们",
-        "纠缠的领带",
-        "팀장님의 사내 복지",
-        "扭曲的領帶",
-        "糾纏的領帶",
-        "Private Benefits",
-        "비틀린 넥타이"
-      ],
-      "year": "2026",
-      "overview": "Une histoire d'amour de bureau palpitante et pleine de suspense où s'entremêlent les désirs secrets qui franchissent audacieusement les limites !",
-      "genres": [
-        "Drame"
-      ],
-      "rating": "5.0",
-      "pop": 14.9838,
-      "status": "Returning Series",
-      "poster": "https://image.tmdb.org/t/p/w500/h5UlSUBTG7XQ8UsGdAdkqeiNTSo.jpg",
-      "posterV": 2,
-      "backdrop": "https://image.tmdb.org/t/p/original/jIR92epQdsA90SSAaCkHh3EweLQ.jpg",
-      "videos": [
-        {
-          "key": "fgybiu6U-k8",
-          "name": "단정한 얼굴 뒤에 감춘 | Twisted Tie Trailer [DRAMA] 비틀린넥타이",
-          "type": "Trailer",
-          "lab": "Original"
-        }
-      ],
-      "cast": [
-        {
-          "name": "고태운",
-          "character": "Kang Do-jin",
-          "id": 6376789
-        },
-        {
-          "name": "김도현",
-          "character": "Lee Sun-woo",
-          "id": 6376845
-        },
-        {
-          "name": "백승훈",
-          "character": "Baek I-geon",
-          "id": 6376892
-        },
-        {
-          "name": "이경원",
-          "character": "Jung Woo-jae",
-          "id": 6378790
-        }
-      ],
-      "eprt": 21,
-      "seasons": [
-        {
-          "number": 1,
-          "name": "Saison 1",
-          "episodes": [
-            {
-              "number": 1,
-              "name": "The Team Leader's Office Perks",
-              "overview": "",
-              "air_date": "2026-10-08",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-7ud1zgr9ga6p.html",
-                  "by": "f2b389cb62"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 2,
-              "name": "Hide and Seek Under the Desk",
-              "overview": "",
-              "air_date": "2026-10-15",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-zdcu4i67wb7b.html",
-                  "by": "f2b389cb62"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 3,
-              "name": "A Dangerous Bet",
-              "overview": "",
-              "air_date": "2026-10-22",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-udk7u1setl0n.html",
-                  "by": "f2b389cb62"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 4,
-              "name": "Épisode 4",
-              "overview": "",
-              "air_date": "2026-10-29",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-d0ptibgt45fj.html",
-                  "by": "f2b389cb62"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 5,
-              "name": "Épisode 5",
-              "overview": "",
-              "air_date": "2026-11-05",
-              "sources": [],
-              "downloads": []
-            },
-            {
-              "number": 6,
-              "name": "Épisode 6",
-              "overview": "",
-              "air_date": "",
-              "sources": [],
-              "downloads": []
-            }
-          ],
-          "downloads": []
-        }
-      ],
-      "sources": [],
-      "addedAt": 1793280422228,
-      "langs": [
-        "VOSTFR"
-      ],
-      "downloads": [],
-      "bl": true,
-      "updatedAt": 1793280703667
-    },
-    {
-      "id": "315044",
-      "type": "tv",
-      "name": "Flower Boy",
-      "original_name": "หลงกลิ่นเกสร",
-      "origin_country": [
-        "TH"
-      ],
-      "networks": [
-        "ONE 31"
-      ],
-      "original_language": "th",
-      "aka": [
-        "Flower Boy",
-        "情迷花香中",
-        "Flower Boy : 향기에 홀린 소년",
-        "Цветочный парень",
-        "Flower Boy: Enchanted by the Scent of Kaysorn",
-        "Long Klin Kaysorn",
-        "Long Klin Keson",
-        "Flower Boy: Enchanted by the Scent of Pollen",
-        "หลงกลิ่นเกสร"
-      ],
-      "year": "2026",
-      "overview": "Entre la survie et les sentiments qui naissent peu à peu, cet amour va-t-il fleurir ou sera-t-il arraché prématurément ?",
-      "genres": [
-        "Drame",
-        "Science-Fiction & Fantastique"
-      ],
-      "rating": "7.7",
-      "pop": 3.7209,
-      "status": "Ended",
-      "poster": "https://image.tmdb.org/t/p/w500/123SH5RVqynQ7BwzKcq1O8mJKA0.jpg",
-      "posterV": 2,
-      "backdrop": "https://image.tmdb.org/t/p/original/scGPHhUGqXSTwuaqqHC1CcaRfx6.jpg",
-      "videos": [],
-      "cast": [
-        {
-          "name": "ศัจกร ฉลาด",
-          "character": "Scent",
-          "id": 4164076
-        },
-        {
-          "name": "ภีมพล พาณิชย์ธำรง",
-          "character": "Gaysorn",
-          "id": 1752094
-        },
-        {
-          "name": "จิณภพ ปรารถนาสันติ",
-          "character": "Sun",
-          "id": 4263599
-        },
-        {
-          "name": "ปัณณวิชญ์ สิริเกียรติวาณิชย์",
-          "character": "Ray",
-          "id": 5006425
-        },
-        {
-          "name": "ภาคิน ลิขิตอัมพร",
-          "character": "Tawan",
-          "id": 6209674
-        },
-        {
-          "name": "อัมรินทร์ นิติพน",
-          "character": "Wittaya",
-          "id": 1272413
-        },
-        {
-          "name": "Petch Boranin",
-          "character": "Mekin",
-          "id": 3285977
-        },
-        {
-          "name": "สวนีย์ อุทุมมา",
-          "character": "Mata",
-          "id": 2424471
-        },
-        {
-          "name": "ลวัณญา อึ้งศิลป์ศรีกุล",
-          "character": "Bussaba",
-          "id": 3961065
-        },
-        {
-          "name": "เพ็ญเพ็ชร เพ็ญกุล",
-          "character": "Pruek",
-          "id": 3286468
-        }
-      ],
-      "eprt": 54,
-      "seasons": [
-        {
-          "number": 1,
-          "name": "Saison 1",
-          "episodes": [
-            {
-              "number": 1,
-              "name": "Épisode 1",
-              "overview": "Phummarak is rescued by the beautiful Gaysorn and discovers an irresistible scent that might save his family legacy.",
-              "air_date": "2026-04-25",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-iulfpyo0fsdb.html",
-                  "by": "f2b389cb62"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 2,
-              "name": "Épisode 2",
-              "overview": "Phummarak brings Gaysorn to the city as a secret \"ingredient,\" without realizing the scent peaks when Gaysorn is in love.",
-              "air_date": "2026-05-02",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-eqx64w1lu6ug.html",
-                  "by": "f2b389cb62"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 3,
-              "name": "Épisode 3",
-              "overview": "Phummarak cheers up a homesick Gaysorn with a rooftop stargazing date, but the romance is cut short by his fiery ex, Ray.",
-              "air_date": "2026-05-09",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-nkla2wif0w20.html",
-                  "by": "f2b389cb62"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 4,
-              "name": "Épisode 4",
-              "overview": "Gaysorn reveals the tribe's fragrance secret, making Phummarak realize Gaysorn fell for him at first sight.",
-              "air_date": "2026-05-16",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-po5lm6rl2xfo.html",
-                  "by": "f2b389cb62"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 5,
-              "name": "Épisode 5",
-              "overview": "Gaysorn discovers that Phummarak has secretly been collecting his sweat and demands to know the real reason behind it. Will this revelation change their relationship forever?",
-              "air_date": "2026-05-23",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-z3mbtzmkjy3v.html",
-                  "by": "f2b389cb62"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 6,
-              "name": "Épisode 6",
-              "overview": "The perfume secret breaks Gaysorn’s heart, prompting him to leave as Phummarak fights to win back his true love.",
-              "air_date": "2026-05-30",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-nu1i8zvu4dt0.html",
-                  "by": "f2b389cb62"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 7,
-              "name": "Épisode 7",
-              "overview": "The past catches up with everyone when Gaysorn's search exposes secrets hidden for sixteen years.",
-              "air_date": "2026-06-06",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-jzzf16qpjcwe.html",
-                  "by": "f2b389cb62"
-                }
-              ],
-              "downloads": []
-            },
-            {
-              "number": 8,
-              "name": "Épisode 8",
-              "overview": "A shocking revelation forces Phummarak to confront his family's past and the future of his relationship.",
-              "air_date": "2026-06-13",
-              "sources": [
-                {
-                  "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-vpzypwylpxw2.html",
-                  "by": "f2b389cb62"
-                }
-              ],
-              "downloads": []
-            }
-          ],
-          "downloads": []
-        }
-      ],
-      "sources": [],
-      "addedAt": 1793293551722,
-      "langs": [
-        "VOSTFR"
-      ],
-      "downloads": [],
-      "bl": true,
-      "updatedAt": 1793293625660
-    },
-    {
       "id": "293607",
       "type": "tv",
       "name": "100 Days of Deception",
@@ -46027,6 +44444,1370 @@
       "updatedAt": 1793197409964
     },
     {
+      "id": "316294",
+      "type": "tv",
+      "name": "Payback",
+      "original_name": "เพย์แบค เดอะซีรีส์",
+      "origin_country": [
+        "TH"
+      ],
+      "networks": [
+        "ONE 31"
+      ],
+      "original_language": "th",
+      "aka": [
+        "Payback",
+        "偿还",
+        "PAYBACK償還",
+        "페이백 더 시리즈",
+        "PAYBACK: Báo Thù",
+        "Расплата",
+        "Acerto de Contas",
+        "复仇",
+        "改过迁善",
+        "改過遷善",
+        "Payback The Series",
+        "เพย์แบค เดอะซีรีส์"
+      ],
+      "year": "2026",
+      "overview": "Sun, ancien collecteur de dettes, voit sa vie basculer après la mort tragique de son petit frère, tué par un débiteur. Comme si cela ne suffisait pas, son petit ami Bank le trahit en disparaissant avec tout son argent. Endetté et obligé de payer les soins médicaux de sa mère, Sun tente de survivre tant bien que mal.\n\nCinq ans plus tard, il travaille comme livreur lorsqu'il recroise Bank, devenu une célébrité sous l'agence Dream Entertainment. En découvrant que celui-ci pourrait être lié à la mort de son frère, Sun décide d'intégrer le monde du divertissement afin de se rapprocher de lui et préparer sa vengeance.\n\nAu sein de l'agence, il fait la rencontre de Jay, un homme froid et provocateur qui cache en réalité son rôle de directeur exécutif de Dream Entertainment. Malgré leurs disputes incessantes, une attirance de plus en plus forte naît entre eux. Sun finit également par comprendre que Jay est l'homme mystérieux qu'il avait rencontré cinq ans auparavant, alors qu'il portait un costume de mascotte en forme de lapin.",
+      "genres": [
+        "Drame",
+        "Crime",
+        "Action & Adventure"
+      ],
+      "rating": "8.9",
+      "pop": 8.7225,
+      "status": "Ended",
+      "poster": "https://image.tmdb.org/t/p/w500/616HQHGVqEh0ZbQIRdyjIBQfqhU.jpg",
+      "posterV": 2,
+      "backdrop": "https://image.tmdb.org/t/p/original/4L9sftGH7oQ1bpB0aQHERwyfDVd.jpg",
+      "videos": [
+        {
+          "key": "vbXQQCHdCpk",
+          "name": "Official Trailer | PAYBACK THE SERIES",
+          "type": "Trailer",
+          "lab": "Anglais"
+        }
+      ],
+      "cast": [
+        {
+          "name": "ธนากร วิชานุเคราะห์",
+          "character": "Sun",
+          "id": 4589861
+        },
+        {
+          "name": "จารุกิจ แก้วมูลเรือง",
+          "character": "Jay",
+          "id": 6063716
+        },
+        {
+          "name": "ปารมี เทศดรุณ",
+          "character": "Sky",
+          "id": 4273856
+        },
+        {
+          "name": "ชัยกมล เสริมส่งวิทยะ",
+          "character": "Pakin",
+          "id": 3648365
+        },
+        {
+          "name": "ธนวัตร ชินวัตร",
+          "character": "Bank",
+          "id": 4023239
+        },
+        {
+          "name": "Jirapat Uttamanan",
+          "character": "Kajorn",
+          "id": 3585000
+        },
+        {
+          "name": "กลศ อัทธเสรี",
+          "character": "Songphon",
+          "id": 2400256
+        },
+        {
+          "name": "Suttida Kasemsant Na Ayutthaya",
+          "character": "Pavinee",
+          "id": 3341856
+        },
+        {
+          "name": "คานธี วสุวิชย์กิต",
+          "character": "Jo",
+          "id": 2735144
+        },
+        {
+          "name": "ยะสะกะ ไชยสร",
+          "character": "Suchat",
+          "id": 3131644
+        },
+        {
+          "name": "Sarinya Olsson",
+          "character": "Karn",
+          "id": 4877750
+        },
+        {
+          "name": "ธนริศย์ พจน์คณาวัชร์",
+          "character": "Kavin",
+          "id": 6256038
+        }
+      ],
+      "eprt": 62,
+      "seasons": [
+        {
+          "number": 1,
+          "name": "Saison 1",
+          "episodes": [
+            {
+              "number": 1,
+              "name": "The Beginning of Revenge",
+              "overview": "Sun secures a job at an entertainment firm to enact revenge for his brother, who was murdered by a debtor five years ago.",
+              "air_date": "2026-05-30",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-52s5xcnkr4px.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 2,
+              "name": "Audition",
+              "overview": "Sun convinces a hesitant manager to sign him so he can audition for an acting gig to take revenge on Bank.",
+              "air_date": "2026-06-06",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-oknxstk8lgzr.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 3,
+              "name": "Profile Photo Shoot",
+              "overview": "Entering the entertainment world, Sun faces sabotage and difficult choices as his revenge plan moves forward.",
+              "air_date": "2026-06-13",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-uoo5xqgbwhkr.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 4,
+              "name": "Acting Lessons Begin",
+              "overview": "Bullied and targeted, Sun pushes forward in acting class while discovering the entertainment world’s dark side.",
+              "air_date": "2026-06-20",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-8t8rv0hfwd3y.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 5,
+              "name": "Abandon Your Pride",
+              "overview": "As Bank targets everyone around him, Sun uncovers a secret that reshapes his path to revenge.",
+              "air_date": "2026-06-27",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-o3ikfuxlvj0w.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 6,
+              "name": "Jay's True Identity",
+              "overview": "Sun's mascot costume triggers Jay's memory of a past rescue and intimacy, revealing Sun is his long-lost savior.",
+              "air_date": "2026-07-04",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-zu8ojntqff88.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 7,
+              "name": "Sky's Comeback",
+              "overview": "Sun tries to help Sky overcome camera panic for a short film, while Jay faces a plot to fire him over a casting dispute.",
+              "air_date": "2026-07-11",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-t8wajhl37p4w.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 8,
+              "name": "The Night They Bonded",
+              "overview": "A viral hit-and-run scandal forces Sun to uncover the truth before it destroys Jay and Kajorn's futures.",
+              "air_date": "2026-07-18",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-4od26pmu6gbq.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 9,
+              "name": "The Final Warning",
+              "overview": "Jay disappears to protect Sun as a risky plan to expose Bank's crimes takes a dangerous turn.",
+              "air_date": "2026-07-25",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-4mk26pdnzf88.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 10,
+              "name": "The Payback They Deserve",
+              "overview": "Jay returns to stand with Sun as their fight against Songphon and Bank reaches a decisive turning point.",
+              "air_date": "2026-08-01",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-9lwp69b40nmp.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            }
+          ],
+          "downloads": []
+        }
+      ],
+      "sources": [],
+      "addedAt": 1793223515451,
+      "langs": [
+        "VOSTFR"
+      ],
+      "downloads": [],
+      "bl": true,
+      "updatedAt": 1793223686126
+    },
+    {
+      "id": "318664",
+      "type": "tv",
+      "name": "Journey With You",
+      "original_name": "与君同",
+      "origin_country": [
+        "CN"
+      ],
+      "networks": [
+        "GagaOOLala"
+      ],
+      "original_language": "zh",
+      "aka": [
+        "Journey With You",
+        "ข้างคู่เคียงเพียงรอยแค้น",
+        "與君同",
+        "여군동 : 되돌린 운명",
+        "风定花开",
+        "与君同"
+      ],
+      "year": "2026",
+      "overview": "L'histoire suit un prince qui, après avoir été trahi et assassiné, se réincarne trois ans en arrière. Lorsqu'il retrouve son ancien meilleur ami, il découvre que celui-ci n'a peut-être jamais été l'ennemi qu'il croyait, inversant ainsi les rôles initiaux de traîtrise et menant à une relation complexe entre eux.",
+      "genres": [
+        "Drame",
+        "Science-Fiction & Fantastique"
+      ],
+      "rating": "7.7",
+      "pop": 3.7234,
+      "status": "Ended",
+      "poster": "https://image.tmdb.org/t/p/w500/qSMLWNahW1FmHR4d6LrED59oF8l.jpg",
+      "posterV": 2,
+      "backdrop": "https://image.tmdb.org/t/p/original/61gMFdrK5rUqAdmXvIcnk3lrGda.jpg",
+      "videos": [
+        {
+          "key": "PQ_EZrB2WXk",
+          "name": "《与君同》首发预告·双向守护版｜深宫宿命，重来一世只为你",
+          "type": "Teaser",
+          "lab": "Original"
+        }
+      ],
+      "cast": [
+        {
+          "name": "唐比德",
+          "character": "Yin Qi",
+          "id": 6118980
+        },
+        {
+          "name": "汪敬涵",
+          "character": "Pei Yanzhi",
+          "id": 6118982
+        },
+        {
+          "name": "段同舟",
+          "character": "Yin Zhou",
+          "id": 5215137
+        },
+        {
+          "name": "李宥呈",
+          "character": "Wei Ziming",
+          "id": 6118988
+        },
+        {
+          "name": "王越之",
+          "character": "Yin Heshu",
+          "id": 6166626
+        },
+        {
+          "name": "赵佳仪",
+          "character": "Lin Xianyue",
+          "id": 6166630
+        },
+        {
+          "name": "Luo Siqi",
+          "character": "Concubine Chen",
+          "id": 4859687
+        },
+        {
+          "name": "左洲源",
+          "character": "Zhong Wenjie",
+          "id": 6166639
+        },
+        {
+          "name": "杜奕衡",
+          "character": "Su He",
+          "id": 1174690
+        },
+        {
+          "name": "刘晨",
+          "character": "Empress",
+          "id": 6166641
+        },
+        {
+          "name": "谢霄翰",
+          "character": "Yin Zhao",
+          "id": 6166631
+        },
+        {
+          "name": "谢维娜",
+          "character": "Lin Jianshuang",
+          "id": 6166632
+        }
+      ],
+      "eprt": 48,
+      "seasons": [
+        {
+          "number": 1,
+          "name": "Saison 1",
+          "episodes": [
+            {
+              "number": 1,
+              "name": "Épisode 1",
+              "overview": "Yin Qi survives a bloody coup only to wake up three years in the past, on the eve of his mother’s death.",
+              "air_date": "2026-05-08",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-fbq2txzvhp2q.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 2,
+              "name": "Épisode 2",
+              "overview": "Yin Qi confirms the timeline has shifted and begins investigating the conspiracy while doubting Pei Yanzhi’s true heart.",
+              "air_date": "2026-05-08",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-ka4tvsw7vvz6.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 3,
+              "name": "Épisode 3",
+              "overview": "Yin Qi locks Pei Yanzhi inside the palace to keep him safe while hunting down Yin Zhou’s hidden fortune.",
+              "air_date": "2026-05-15",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-ir7qopt7nr37.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 4,
+              "name": "Épisode 4",
+              "overview": "Pei Yanzhi rescues Yin Qi from an ambush, sparking the long-suppressed feelings between them to surface.",
+              "air_date": "2026-05-22",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-u4pq41am74fz.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 5,
+              "name": "Épisode 5",
+              "overview": "A secret meeting reveals the truth Pei Yanzhi has hidden for years. Will it destroy Yin Qi’s trust in him forever?",
+              "air_date": "2026-05-29",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-2thxq9evaa1c.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 6,
+              "name": "Épisode 6",
+              "overview": "A long-hidden secret comes to light as Yin Qi reveals how tragedy bound him and Pei Yanzhi together.",
+              "air_date": "2026-06-05",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-30re5td4vg5w.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 7,
+              "name": "Épisode 7",
+              "overview": "As Yin Zhou launches his rebellion, Yin Qi and Pei Yanzhi move to expose his scheme and fight back.",
+              "air_date": "2026-06-12",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-1lcppqdng7ou.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 8,
+              "name": "Épisode 8",
+              "overview": "As peace finally arrives, Yin Qi learns a devastating truth that threatens everything he and Pei Yanzhi hope for.",
+              "air_date": "2026-06-19",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-iahdm84bpgzr.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            }
+          ],
+          "downloads": []
+        }
+      ],
+      "sources": [],
+      "addedAt": 1793238285882,
+      "langs": [
+        "VOSTFR"
+      ],
+      "downloads": [],
+      "bl": true,
+      "updatedAt": 1793239972579
+    },
+    {
+      "id": "317308",
+      "type": "tv",
+      "name": "The Missing Piece",
+      "original_name": "请记住我的名字",
+      "origin_country": [
+        "CN"
+      ],
+      "networks": [
+        "Viki",
+        "GagaOOLala"
+      ],
+      "original_language": "zh",
+      "aka": [
+        "The Missing Piece",
+        "請記住我的名字",
+        "จิกซอว์ชิ้นสุดท้ายของเรา",
+        "A Peça Que Faltava",
+        "청기주아적명자 : 내 이름을 기억해 줘",
+        "貌合神离",
+        "季先生",
+        "Appearance in harmony but feels apart",
+        "Appearance and Departure",
+        "请记住我的名字"
+      ],
+      "year": "2026",
+      "overview": "Shen Mo perd la mémoire à la suite d'un accident. Il prend soudainement que Ji Ming Xuan est son petit ami, alors qu'il ne l'est pas réellement.\n\nIls vont finalement vivre ensemble et, au cours de ces six mois, leurs sentiments deviennent réellement réciproques. Mais lorsque Shen Mo retrouve la mémoire, il oublie complètement les six mois qu'ils ont passés ensemble.\n\nJi Ming Xuan ne veut pas le perdre et lui propose alors un contrat de trois ans. Officiellement, Shen Mo devient son « amant sous contrat », mais derrière cette relation contractuelle, les deux hommes sont déjà profondément attachés l'un à l'autre.",
+      "genres": [
+        "Drame"
+      ],
+      "rating": "9.3",
+      "pop": 4.6132,
+      "status": "Ended",
+      "poster": "https://image.tmdb.org/t/p/w500/ozxzhIThHt3csoDmov1pOYdp9am.jpg",
+      "posterV": 2,
+      "backdrop": "https://image.tmdb.org/t/p/original/iTs5hXdEDA3pI6FabhH6rKkpK7P.jpg",
+      "videos": [],
+      "cast": [
+        {
+          "name": "候明炫",
+          "character": "Ji Mingxuan",
+          "id": 4556572
+        },
+        {
+          "name": "饶子豪",
+          "character": "Shen Mo",
+          "id": 6200414
+        }
+      ],
+      "eprt": 36,
+      "seasons": [
+        {
+          "number": 1,
+          "name": "Saison 1",
+          "episodes": [
+            {
+              "number": 1,
+              "name": "Épisode 1",
+              "overview": "Shen Mo reunites with ex-lover Zhou Yang, but Ji Mingxuan’s possessiveness turns their tense reunion into a love triangle.",
+              "air_date": "2026-09-07",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-ctd7rouxde4d.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 2,
+              "name": "Épisode 2",
+              "overview": "Ji Mingxuan publicly claims Shen Mo, but Zhao Yi’s arrival makes Shen question whether he’s merely a substitute.",
+              "air_date": "2026-09-07",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-9us56j3zcapn.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 3,
+              "name": "Épisode 3",
+              "overview": "While sick, Ji Mingxuan draws Shen Mo closer, taking him to an art show and boldly declaring him his own.",
+              "air_date": "2026-09-12",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-oml6bzzcyeoa.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 4,
+              "name": "Épisode 4",
+              "overview": "When Shen Mo faces the man who threatened him years ago, Ji Mingxuan steps in to protect him at an engagement banquet.",
+              "air_date": "2026-09-13",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-ngn1jf2ena32.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 5,
+              "name": "Épisode 5",
+              "overview": "A birthday getaway turns into a trap when Shen Mo is locked in a room with Zhou Yang, exposing painful secrets.",
+              "air_date": "2026-09-19",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-rucjy35d3ytc.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 6,
+              "name": "Épisode 6",
+              "overview": "After his contract with Ji Mingxuan ends, Shen Mo searches his fractured memories to uncover their hidden past.",
+              "air_date": "2026-09-20",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-gfgnq0t97wxn.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 7,
+              "name": "Épisode 7",
+              "overview": "Three years earlier, Shen Mo was kidnapped, forced to leave Zhou Yang, and cast out by his family, shattering his memories.",
+              "air_date": "2026-09-26",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-ukcmxkt6pc93.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 8,
+              "name": "Épisode 8",
+              "overview": "As Shen Mo’s condition worsens, Ji Mingxuan pretends to be Zhou Yang out of guilt, while Shen questions his distance.",
+              "air_date": "2026-09-27",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-1fcl7nx3p05y.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 9,
+              "name": "Épisode 9",
+              "overview": "Unable to paint after injuring his hand, Shen Mo finds hope as Ji Mingxuan arranges surgery and supports his artistic dreams.",
+              "air_date": "2026-10-03",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-ki6m84ksnvel.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 10,
+              "name": "Épisode 10",
+              "overview": "Shen Mo discovers that the man he believed was Zhou Yang is someone else, unraveling everything he thought he knew.",
+              "air_date": "2026-10-04",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-smnwpgl70m18.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 11,
+              "name": "Épisode 11",
+              "overview": "Shen Mo reunites with Ji Mingxuan, but the child beside him sparks fears that he may already have a family.",
+              "air_date": "2026-10-10",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-hnou5k65eotq.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 12,
+              "name": "Épisode 12",
+              "overview": "As Shen Mo uncovers the truth behind their missed chances, he resolves to stop running from love and leave no regrets.",
+              "air_date": "2026-10-11",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-5hn3eiesnxyj.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 13,
+              "name": "Épisode 13",
+              "overview": "Shen Mo and Ji Mingxuan reconcile as the truth behind their separation finally emerges, giving their love another chance.",
+              "air_date": "2026-10-17",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-4pb0wz36uv6w.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 14,
+              "name": "Épisode 14",
+              "overview": "Zhou Yang warns Shen Mo that his family plans revenge against Ji Mingxuan, threatening their newly rekindled love.",
+              "air_date": "2026-10-18",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-44m3kssnjdzo.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 15,
+              "name": "Épisode 15",
+              "overview": "",
+              "air_date": "2026-10-24",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-49j09pnp5sqn.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            }
+          ],
+          "downloads": []
+        }
+      ],
+      "sources": [],
+      "addedAt": 1793277017295,
+      "langs": [
+        "VOSTFR"
+      ],
+      "downloads": [],
+      "bl": true,
+      "updatedAt": 1793277291576
+    },
+    {
+      "id": "332507",
+      "type": "tv",
+      "name": "The Last Oath",
+      "original_name": "末誓",
+      "origin_country": [
+        "CN"
+      ],
+      "networks": [
+        "Viki",
+        "GagaOOLala"
+      ],
+      "original_language": "zh",
+      "aka": [
+        "The Last Oath",
+        "สัจจะสุดท้ายวันซอมบี้สิ้นโลก",
+        "El Último Juramento",
+        "O Último Juramento",
+        "末誓（モーシー） The Last Oath",
+        "烬爱",
+        "Mo Shi",
+        "末誓"
+      ],
+      "year": "2026",
+      "overview": "Dans un monde ravagé par un virus zombie mortel, l'humanité est prise en tenaille par deux géants pharmaceutiques corrompus qui prétendent développer un vaccin pour asseoir leur domination globale. L'étudiant Lin Zai paye un lourd tribut en perdant ses parents et son frère aîné. De manière inattendue, il découvre qu'il est immunisé contre les morsures, devenant une cible inestimable pour les factions au pouvoir.\n\nLorsque Lin Zai sauve A Lie, un agent spécial censé le traquer, un lien inattendu se tisse rapidement entre eux, évoluant vers une profonde intimité. Confrontés à un monde impitoyable et à des loyautés contradictoires, Lin Zai et A Lie devront faire des choix déchirants qui pousseront leur amour dans ses derniers retranchements.",
+      "genres": [
+        "Drame",
+        "Action & Adventure",
+        "Science-Fiction & Fantastique"
+      ],
+      "rating": "8.5",
+      "pop": 6.1106,
+      "status": "Ended",
+      "poster": "https://image.tmdb.org/t/p/w500/6Gt3rbhwfniiZoeORGcuDai5Nar.jpg",
+      "posterV": 2,
+      "backdrop": "https://image.tmdb.org/t/p/original/zDFiTPF1ox2LLIAjS2qdnUwk7go.jpg",
+      "videos": [
+        {
+          "key": "fEvFFF6mAp8",
+          "name": "《末誓》首發預告！9月4日20:00全球首播！末世相逢🖤生死與共，為愛破局｜我們，逆末世而行｜末誓 The Last Oath 🎬Official Trai",
+          "type": "Trailer",
+          "lab": "Original"
+        }
+      ],
+      "cast": [
+        {
+          "name": "陈名豪",
+          "character": "A Leh",
+          "id": 4282685
+        },
+        {
+          "name": "陈梁",
+          "character": "Lin Zai",
+          "id": 6430440
+        },
+        {
+          "name": "陆路",
+          "character": "He Yao",
+          "id": 2087807
+        },
+        {
+          "name": "王朝阳",
+          "character": "Sheng Changhuan",
+          "id": 3856177
+        }
+      ],
+      "eprt": 21,
+      "seasons": [
+        {
+          "number": 1,
+          "name": "Saison 1",
+          "episodes": [
+            {
+              "number": 1,
+              "name": "Infection",
+              "overview": "The zombie apocalypse takes everything from Lin Zai, even his brother, who dies saving him. More shockingly, after being bitten, Lin Zai somehow doesn’t turn into a zombie.",
+              "air_date": "2026-09-04",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-z7cuquvoyt4h.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 2,
+              "name": "Survival Rules for the Apocalypse",
+              "overview": "Lin Zai finally manages to save the mysterious man, only for him to remain constantly on guard and even warn Lin Zai that zombies aren’t the only danger in the apocalypse.",
+              "air_date": "2026-09-04",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-eco0h716uq0j.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 3,
+              "name": "Guangqi Terminal",
+              "overview": "Lin Zai finds himself in danger once again, only to be rescued by the mysterious man, who finally reveals his name.",
+              "air_date": "2026-09-05",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-ms53ouvnk54e.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 4,
+              "name": "Immunogen",
+              "overview": "The mysterious A-Leh is carrying out a mission he cannot reveal. Believing him to be a trustworthy companion, Lin Zai hopes he will stay at the camp.",
+              "air_date": "2026-09-05",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-glm9qhgdo38m.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 5,
+              "name": "Infected Sensory Profile",
+              "overview": "After waking up, Lin Zai is shocked to discover that A-Leh has abducted him. It turns out that Lin Zai is the “immune individual” A-Leh has been searching for, possessing genes that make him immune to the zombie virus.",
+              "air_date": "2026-09-11",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-r2psoksd3gkg.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 6,
+              "name": "Infected Zone Map",
+              "overview": "As an immune individual, Lin Zai worries that he might become a test subject. Although A-Leh acts indifferent, he secretly begins investigating what could happen to him.",
+              "air_date": "2026-09-11",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-kiula76f1d4q.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 7,
+              "name": "Class A Infected",
+              "overview": "Although A-Leh insists that his only responsibility is to bring the immune individual back, the way he protects Lin Zai is clearly becoming more than just part of the mission.",
+              "air_date": "2026-09-12",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-kll4y4a2wk49.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 8,
+              "name": "Infected Classification System",
+              "overview": "Lin Zai suffers another allergic reaction and collapses, prompting A-Leh to risk entering a zombie-infested town in search of medicine. Left alone, Lin Zai unexpectedly finds himself caught in a deadly plot against him.",
+              "air_date": "2026-09-12",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-vexr2io06lmz.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 9,
+              "name": "What Mom Owes You",
+              "overview": "After narrowly escaping death, Lin Zai tells A-Leh that all he wants is to return to the camp that feels like home, but A-Leh refuses to let him go.",
+              "air_date": "2026-09-18",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-um76xkvhb0qj.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 10,
+              "name": "Mobility & Fuel",
+              "overview": "Lin Zai and A-Leh encounter a mysterious man named He Yao, only to discover that he is a genetics expert once highly sought after by two major pharmaceutical corporations.",
+              "air_date": "2026-09-18",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-arw8eu0u1jup.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 11,
+              "name": "Last Message",
+              "overview": "With armed forces hunting them down, He Yao admits that he once took part in research on the zombie virus and barely managed to escape from the research facility.",
+              "air_date": "2026-09-19",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-46jdjirp0p9f.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 12,
+              "name": "Casia",
+              "overview": "A-Leh collapses after being poisoned, giving Lin Zai the perfect chance to escape. But when he hears A-Leh calling out to him, Lin Zai decides to stay and save him.",
+              "air_date": "2026-09-19",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-n5618488uyhv.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 13,
+              "name": "Post-Outbreak Infection Research",
+              "overview": "A-Leh’s wound worsens, but his time with Lin Zai feels almost like an ordinary date from before the apocalypse.",
+              "air_date": "2026-09-25",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-tktdbp593l6x.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 14,
+              "name": "The Final Performance",
+              "overview": "A mysterious survivor suddenly appears and leads A-Leh and Lin Zai to a new camp, where they unexpectedly reunite with an old acquaintance.",
+              "air_date": "2026-09-25",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-21zszpqx1wiw.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 15,
+              "name": "Dao Camp",
+              "overview": "Lin Zai faces a new choice: stay at the safe camp, or continue the journey with A-Leh?",
+              "air_date": "2026-09-26",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-nzafnvhh4iid.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 16,
+              "name": "Treatment Log",
+              "overview": "Lin Zai clashes with A-Leh again, and in He Yao’s laboratory, he discovers a familiar zombie.",
+              "air_date": "2026-10-02",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-dw2hy34qx8ws.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 17,
+              "name": "The Unfinished Film",
+              "overview": "To save his zombified brother, Lin Zai decides to undergo immune-subject experiments in secret, keeping it from A-Leh.",
+              "air_date": "2026-10-02",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-86c1te1eaqyu.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 18,
+              "name": "Camp Duty Assignments",
+              "overview": "The experiments begin taking a toll on Lin Zai’s body. Faced with A-Leh’s heartfelt confession, can he finally make a decision?",
+              "air_date": "2026-10-03",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-mf9emtuitbzw.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 19,
+              "name": "Whole Blood Donation Guidelines",
+              "overview": "To save his brother, Lin Zai insists on drawing even more of his blood despite the risks.",
+              "air_date": "2026-10-09",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-0d8x2juc3znr.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 20,
+              "name": "File 020",
+              "overview": "Lin Zai is left in critical condition after losing too much blood. A-Leh personally gives him a blood transfusion and stays by his bedside all night.",
+              "air_date": "2026-10-10",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-jjqewyefr8tc.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 21,
+              "name": "Self-experiment Record",
+              "overview": "Unwilling to give up on saving his brother, Lin Zai decides to undergo bone marrow collection, while A-Leh chooses to stay by his side and face it with him.",
+              "air_date": "2026-10-16",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-nitwjjzigqv9.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 22,
+              "name": "My Little Brother",
+              "overview": "Lin Zai loses another important family member and gradually falls deeper into He Yao’s scheme.",
+              "air_date": "2026-10-17",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-pzuzdpebv5ib.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 23,
+              "name": "Communication After The Fall",
+              "overview": "After his brother’s death, Lin Zai loses his reason to keep living, while A-Leh officially turns against his organization for him.",
+              "air_date": "2026-10-23",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-f75ndh1ljx30.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 24,
+              "name": "Herin",
+              "overview": "With all of He Yao’s lies exposed, A-Leh and Lin Zai decide to face the organization’s forces together.",
+              "air_date": "2026-10-24",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-6m8mokkwtjx1.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            }
+          ],
+          "downloads": []
+        }
+      ],
+      "sources": [],
+      "addedAt": 1793277194000,
+      "langs": [
+        "VOSTFR"
+      ],
+      "downloads": [],
+      "bl": true,
+      "updatedAt": 1793277278711
+    },
+    {
+      "id": "318634",
+      "type": "tv",
+      "name": "Twisted Tie",
+      "original_name": "비틀린 넥타이",
+      "origin_country": [
+        "KR"
+      ],
+      "networks": [
+        "GagaOOLala",
+        "wavve",
+        "Heavenly",
+        "Shortime"
+      ],
+      "original_language": "ko",
+      "aka": [
+        "Twisted Tie",
+        "扭曲的领带",
+        "歪んだネクタイ",
+        "解不開的我們",
+        "เนคไทร้อน ซ่อนปมรัก",
+        "Chiếc Cà Vạt Rối Rắm",
+        "Запутанная связь",
+        "组长的社内福利",
+        "解不开的我们",
+        "纠缠的领带",
+        "팀장님의 사내 복지",
+        "扭曲的領帶",
+        "糾纏的領帶",
+        "Private Benefits",
+        "비틀린 넥타이"
+      ],
+      "year": "2026",
+      "overview": "Une histoire d'amour de bureau palpitante et pleine de suspense où s'entremêlent les désirs secrets qui franchissent audacieusement les limites !",
+      "genres": [
+        "Drame"
+      ],
+      "rating": "5.0",
+      "pop": 14.9838,
+      "status": "Returning Series",
+      "poster": "https://image.tmdb.org/t/p/w500/h5UlSUBTG7XQ8UsGdAdkqeiNTSo.jpg",
+      "posterV": 2,
+      "backdrop": "https://image.tmdb.org/t/p/original/jIR92epQdsA90SSAaCkHh3EweLQ.jpg",
+      "videos": [
+        {
+          "key": "fgybiu6U-k8",
+          "name": "단정한 얼굴 뒤에 감춘 | Twisted Tie Trailer [DRAMA] 비틀린넥타이",
+          "type": "Trailer",
+          "lab": "Original"
+        }
+      ],
+      "cast": [
+        {
+          "name": "고태운",
+          "character": "Kang Do-jin",
+          "id": 6376789
+        },
+        {
+          "name": "김도현",
+          "character": "Lee Sun-woo",
+          "id": 6376845
+        },
+        {
+          "name": "백승훈",
+          "character": "Baek I-geon",
+          "id": 6376892
+        },
+        {
+          "name": "이경원",
+          "character": "Jung Woo-jae",
+          "id": 6378790
+        }
+      ],
+      "eprt": 21,
+      "seasons": [
+        {
+          "number": 1,
+          "name": "Saison 1",
+          "episodes": [
+            {
+              "number": 1,
+              "name": "The Team Leader's Office Perks",
+              "overview": "",
+              "air_date": "2026-10-08",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-7ud1zgr9ga6p.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 2,
+              "name": "Hide and Seek Under the Desk",
+              "overview": "",
+              "air_date": "2026-10-15",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-zdcu4i67wb7b.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 3,
+              "name": "A Dangerous Bet",
+              "overview": "",
+              "air_date": "2026-10-22",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-udk7u1setl0n.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 4,
+              "name": "Épisode 4",
+              "overview": "",
+              "air_date": "2026-10-29",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-d0ptibgt45fj.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 5,
+              "name": "Épisode 5",
+              "overview": "",
+              "air_date": "2026-11-05",
+              "sources": [],
+              "downloads": []
+            },
+            {
+              "number": 6,
+              "name": "Épisode 6",
+              "overview": "",
+              "air_date": "",
+              "sources": [],
+              "downloads": []
+            }
+          ],
+          "downloads": []
+        }
+      ],
+      "sources": [],
+      "addedAt": 1793280422228,
+      "langs": [
+        "VOSTFR"
+      ],
+      "downloads": [],
+      "bl": true,
+      "updatedAt": 1793280703667
+    },
+    {
       "id": "284929",
       "type": "tv",
       "name": "Queen of Darkness",
@@ -46475,6 +46256,912 @@
       ],
       "downloads": [],
       "updatedAt": 1793293244944
+    },
+    {
+      "id": "315044",
+      "type": "tv",
+      "name": "Flower Boy",
+      "original_name": "หลงกลิ่นเกสร",
+      "origin_country": [
+        "TH"
+      ],
+      "networks": [
+        "ONE 31"
+      ],
+      "original_language": "th",
+      "aka": [
+        "Flower Boy",
+        "情迷花香中",
+        "Flower Boy : 향기에 홀린 소년",
+        "Цветочный парень",
+        "Flower Boy: Enchanted by the Scent of Kaysorn",
+        "Long Klin Kaysorn",
+        "Long Klin Keson",
+        "Flower Boy: Enchanted by the Scent of Pollen",
+        "หลงกลิ่นเกสร"
+      ],
+      "year": "2026",
+      "overview": "Entre la survie et les sentiments qui naissent peu à peu, cet amour va-t-il fleurir ou sera-t-il arraché prématurément ?",
+      "genres": [
+        "Drame",
+        "Science-Fiction & Fantastique"
+      ],
+      "rating": "7.7",
+      "pop": 3.7209,
+      "status": "Ended",
+      "poster": "https://image.tmdb.org/t/p/w500/123SH5RVqynQ7BwzKcq1O8mJKA0.jpg",
+      "posterV": 2,
+      "backdrop": "https://image.tmdb.org/t/p/original/scGPHhUGqXSTwuaqqHC1CcaRfx6.jpg",
+      "videos": [],
+      "cast": [
+        {
+          "name": "ศัจกร ฉลาด",
+          "character": "Scent",
+          "id": 4164076
+        },
+        {
+          "name": "ภีมพล พาณิชย์ธำรง",
+          "character": "Gaysorn",
+          "id": 1752094
+        },
+        {
+          "name": "จิณภพ ปรารถนาสันติ",
+          "character": "Sun",
+          "id": 4263599
+        },
+        {
+          "name": "ปัณณวิชญ์ สิริเกียรติวาณิชย์",
+          "character": "Ray",
+          "id": 5006425
+        },
+        {
+          "name": "ภาคิน ลิขิตอัมพร",
+          "character": "Tawan",
+          "id": 6209674
+        },
+        {
+          "name": "อัมรินทร์ นิติพน",
+          "character": "Wittaya",
+          "id": 1272413
+        },
+        {
+          "name": "Petch Boranin",
+          "character": "Mekin",
+          "id": 3285977
+        },
+        {
+          "name": "สวนีย์ อุทุมมา",
+          "character": "Mata",
+          "id": 2424471
+        },
+        {
+          "name": "ลวัณญา อึ้งศิลป์ศรีกุล",
+          "character": "Bussaba",
+          "id": 3961065
+        },
+        {
+          "name": "เพ็ญเพ็ชร เพ็ญกุล",
+          "character": "Pruek",
+          "id": 3286468
+        }
+      ],
+      "eprt": 54,
+      "seasons": [
+        {
+          "number": 1,
+          "name": "Saison 1",
+          "episodes": [
+            {
+              "number": 1,
+              "name": "Épisode 1",
+              "overview": "Phummarak is rescued by the beautiful Gaysorn and discovers an irresistible scent that might save his family legacy.",
+              "air_date": "2026-04-25",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-iulfpyo0fsdb.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 2,
+              "name": "Épisode 2",
+              "overview": "Phummarak brings Gaysorn to the city as a secret \"ingredient,\" without realizing the scent peaks when Gaysorn is in love.",
+              "air_date": "2026-05-02",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-eqx64w1lu6ug.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 3,
+              "name": "Épisode 3",
+              "overview": "Phummarak cheers up a homesick Gaysorn with a rooftop stargazing date, but the romance is cut short by his fiery ex, Ray.",
+              "air_date": "2026-05-09",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-nkla2wif0w20.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 4,
+              "name": "Épisode 4",
+              "overview": "Gaysorn reveals the tribe's fragrance secret, making Phummarak realize Gaysorn fell for him at first sight.",
+              "air_date": "2026-05-16",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-po5lm6rl2xfo.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 5,
+              "name": "Épisode 5",
+              "overview": "Gaysorn discovers that Phummarak has secretly been collecting his sweat and demands to know the real reason behind it. Will this revelation change their relationship forever?",
+              "air_date": "2026-05-23",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-z3mbtzmkjy3v.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 6,
+              "name": "Épisode 6",
+              "overview": "The perfume secret breaks Gaysorn’s heart, prompting him to leave as Phummarak fights to win back his true love.",
+              "air_date": "2026-05-30",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-nu1i8zvu4dt0.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 7,
+              "name": "Épisode 7",
+              "overview": "The past catches up with everyone when Gaysorn's search exposes secrets hidden for sixteen years.",
+              "air_date": "2026-06-06",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-jzzf16qpjcwe.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 8,
+              "name": "Épisode 8",
+              "overview": "A shocking revelation forces Phummarak to confront his family's past and the future of his relationship.",
+              "air_date": "2026-06-13",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-vpzypwylpxw2.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            }
+          ],
+          "downloads": []
+        }
+      ],
+      "sources": [],
+      "addedAt": 1793293551722,
+      "langs": [
+        "VOSTFR"
+      ],
+      "downloads": [],
+      "bl": true,
+      "updatedAt": 1793293625660
+    },
+    {
+      "id": "311025",
+      "type": "tv",
+      "name": "Affinity",
+      "original_name": "炽热吸引",
+      "origin_country": [
+        "CN"
+      ],
+      "networks": [
+        "Youku"
+      ],
+      "original_language": "zh",
+      "aka": [
+        "Affinity",
+        "Thu Hút Mãnh Liệt",
+        "熾熱吸引",
+        "โอบรักแรงเสน่หา",
+        "치열흡인 : 치명적 이끌림",
+        "الانجذاب",
+        "Огненное влечение",
+        "Atração Ardente",
+        "炽热吸引"
+      ],
+      "year": "2026",
+      "overview": "Ce drama raconte l'histoire d'une attraction instinctive et virale entre deux personnages, Wu Nongyu et Xie Xinxu, dans un cadre futuriste et scientifique, mêlant romance, suspense et réflexion sur l'obsession et la rédemption.",
+      "genres": [
+        "Science-Fiction & Fantastique",
+        "Drame"
+      ],
+      "rating": "8.1",
+      "pop": 7.0587,
+      "status": "Ended",
+      "poster": "https://image.tmdb.org/t/p/original/zqlDjN7uz0KimCL2L9n9QQtKLFO.jpg",
+      "posterV": 2,
+      "backdrop": "https://image.tmdb.org/t/p/original/8jRoZr0vcPPIpB4GN5lfuwek8Go.jpg",
+      "videos": [
+        {
+          "key": "yk1cNGU-p4k",
+          "name": "Trailer [Subtitled]",
+          "type": "Trailer",
+          "lab": "Anglais"
+        }
+      ],
+      "cast": [
+        {
+          "name": "崔雨鑫",
+          "character": "Xie Xinxu / Gu Yanqing",
+          "id": 2730675
+        },
+        {
+          "name": "方瑾",
+          "character": "Wu Nongyu",
+          "id": 3541107
+        },
+        {
+          "name": "王一鈞",
+          "character": "Wu Siyuan",
+          "id": 2823870
+        },
+        {
+          "name": "Gao Weiman",
+          "character": "Li Xiang",
+          "id": 2580771
+        },
+        {
+          "name": "Wu Fei",
+          "character": "Lin Juan",
+          "id": 3965172
+        }
+      ],
+      "eprt": 19,
+      "seasons": [
+        {
+          "number": 1,
+          "name": "Saison 1",
+          "episodes": [
+            {
+              "number": 1,
+              "name": "Épisode 1",
+              "overview": "",
+              "air_date": "2026-01-22",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-0909ddkm6rz9.html",
+                  "fansub": "Dramavore : Rafia",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 2,
+              "name": "Épisode 2",
+              "overview": "",
+              "air_date": "2026-01-22",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-9z45bcccmret.html",
+                  "fansub": "Dramavore : Rafia",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 3,
+              "name": "Épisode 3",
+              "overview": "",
+              "air_date": "2026-01-22",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-ih49pfl20rzk.html",
+                  "fansub": "Dramavore : Rafia",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 4,
+              "name": "Épisode 4",
+              "overview": "",
+              "air_date": "2026-01-22",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-j1hkz4uls6e3.html",
+                  "fansub": "Dramavore : Rafia",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 5,
+              "name": "Épisode 5",
+              "overview": "",
+              "air_date": "2026-01-22",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-pv4s51hexkwu.html",
+                  "fansub": "Dramavore : Rafia",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 6,
+              "name": "Épisode 6",
+              "overview": "",
+              "air_date": "2026-01-22",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-ckertdkhkye7.html",
+                  "fansub": "Dramavore : Rafia",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 7,
+              "name": "Épisode 7",
+              "overview": "",
+              "air_date": "2026-01-22",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-n76py7bizu6h.html",
+                  "fansub": "Dramavore : Rafia",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 8,
+              "name": "Épisode 8",
+              "overview": "",
+              "air_date": "2026-01-22",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-f2wdzeq8t0h5.html",
+                  "fansub": "Dramavore : Rafia",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 9,
+              "name": "Épisode 9",
+              "overview": "",
+              "air_date": "2026-01-23",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-bdv8bwb8aa9w.html",
+                  "fansub": "Dramavore : Rafia",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 10,
+              "name": "Épisode 10",
+              "overview": "",
+              "air_date": "2026-01-23",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-5yy1tmefsgxy.html",
+                  "fansub": "Dramavore : Rafia",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 11,
+              "name": "Épisode 11",
+              "overview": "Merci de bien vouloir respecter les guillemets français. N'utilisez pas \"texte\", mais copiez/collez ce « texte », qui contient les bons espaces insécables au format HTML.",
+              "air_date": "2026-01-24",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-5uv5x6ed6wjk.html",
+                  "fansub": "Dramavore : Rafia",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 12,
+              "name": "Épisode 12",
+              "overview": "",
+              "air_date": "2026-01-24",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-907s029h6kz5.html",
+                  "fansub": "Dramavore : Rafia",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 13,
+              "name": "Épisode 13",
+              "overview": "",
+              "air_date": "2026-01-25",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-v149jokogtzg.html",
+                  "fansub": "Dramavore : Rafia",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 14,
+              "name": "Épisode 14",
+              "overview": "",
+              "air_date": "2026-01-25",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-16o2h60clux2.html",
+                  "fansub": "Dramavore : Rafia",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 15,
+              "name": "Épisode 15",
+              "overview": "",
+              "air_date": "2026-01-26",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-d1d1dluqlcqk.html",
+                  "fansub": "Dramavore : Rafia",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 16,
+              "name": "Épisode 16",
+              "overview": "",
+              "air_date": "2026-01-26",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-8v5irxc7u0jg.html",
+                  "fansub": "Dramavore : Rafia",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 17,
+              "name": "Épisode 17",
+              "overview": "",
+              "air_date": "2026-01-27",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-zzkorsotk2kj.html",
+                  "fansub": "Dramavore : Rafia",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 18,
+              "name": "Épisode 18",
+              "overview": "",
+              "air_date": "2026-01-27",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-zl55k4xtwobf.html",
+                  "fansub": "Dramavore : Rafia",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 19,
+              "name": "Épisode 19",
+              "overview": "",
+              "air_date": "2026-01-28",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-9ophszmdvnq8.html",
+                  "fansub": "Dramavore : Rafia",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 20,
+              "name": "Épisode 20",
+              "overview": "",
+              "air_date": "2026-01-28",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-livob6xsp78y.html",
+                  "fansub": "Dramavore : Rafia",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 21,
+              "name": "Épisode 21",
+              "overview": "",
+              "air_date": "2026-01-29",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-2sfdoa52i1pm.html",
+                  "fansub": "Dramavore : Rafia",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 22,
+              "name": "Épisode 22",
+              "overview": "",
+              "air_date": "2026-01-29",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-uvdukwzds6mf.html",
+                  "fansub": "Dramavore : Rafia",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 23,
+              "name": "Épisode 23",
+              "overview": "",
+              "air_date": "2026-01-30",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-7m3ccq0tol09.html",
+                  "fansub": "Dramavore : Rafia",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 24,
+              "name": "Épisode 24",
+              "overview": "",
+              "air_date": "2026-01-30",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-vso6lkcm87up.html",
+                  "fansub": "Dramavore : Rafia",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 25,
+              "name": "Épisode 25",
+              "overview": "",
+              "air_date": "2026-01-31",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-xifp6nsv0g82.html",
+                  "fansub": "Dramavore : Rafia",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 26,
+              "name": "Épisode 26",
+              "overview": "",
+              "air_date": "2026-01-31",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-pyyao6gz0u7y.html",
+                  "fansub": "Dramavore : Rafia",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 27,
+              "name": "Épisode 27",
+              "overview": "",
+              "air_date": "2026-02-01",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-y6ilfdgf37v4.html",
+                  "fansub": "Dramavore : Rafia",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 28,
+              "name": "Épisode 28",
+              "overview": "",
+              "air_date": "2026-02-01",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-0yq9xu33u1z6.html",
+                  "fansub": "Dramavore : Rafia",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 29,
+              "name": "Épisode 29",
+              "overview": "",
+              "air_date": "2026-02-02",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-5xq1iwm80jre.html",
+                  "fansub": "Dramavore : Rafia",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 30,
+              "name": "Épisode 30",
+              "overview": "",
+              "air_date": "2026-02-02",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-kxgu92nww0gn.html",
+                  "fansub": "Dramavore : Rafia",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 31,
+              "name": "Épisode 31",
+              "overview": "",
+              "air_date": "2026-02-03",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-q5jbfwboml6z.html",
+                  "fansub": "Dramavore : Rafia",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 32,
+              "name": "Épisode 32",
+              "overview": "",
+              "air_date": "2026-02-03",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-tlmrxpf91gaq.html",
+                  "fansub": "Dramavore : Rafia",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 33,
+              "name": "Épisode 33",
+              "overview": "",
+              "air_date": "2026-02-04",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-zhxp3e2ljjnj.html",
+                  "fansub": "Dramavore : Rafia",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 34,
+              "name": "Épisode 34",
+              "overview": "",
+              "air_date": "2026-02-04",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-72zley02sxvl.html",
+                  "fansub": "Dramavore : Rafia",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 35,
+              "name": "Épisode 35",
+              "overview": "",
+              "air_date": "2026-02-05",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-1inm7t3or8u0.html",
+                  "fansub": "Dramavore : Rafia",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 36,
+              "name": "Épisode 36",
+              "overview": "",
+              "air_date": "2026-02-05",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-mtxt78s3cy4g.html",
+                  "fansub": "Dramavore : Rafia",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 37,
+              "name": "Épisode 37",
+              "overview": "",
+              "air_date": "2026-02-05",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-by4vmkfpgegj.html",
+                  "fansub": "Dramavore : Rafia",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 38,
+              "name": "Épisode 38",
+              "overview": "",
+              "air_date": "2026-02-05",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-m2lmvjuwsq6s.html",
+                  "fansub": "Dramavore : Rafia",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 39,
+              "name": "Épisode 39",
+              "overview": "",
+              "air_date": "2026-02-05",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-vbfqnpw08qq3.html",
+                  "fansub": "Dramavore : Rafia",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 40,
+              "name": "Épisode 40",
+              "overview": "",
+              "air_date": "2026-02-05",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-69l18aq0h4hk.html",
+                  "fansub": "Dramavore : Rafia",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            }
+          ],
+          "downloads": []
+        }
+      ],
+      "sources": [],
+      "addedAt": 1793295826799,
+      "langs": [],
+      "downloads": [],
+      "posterCustom": true,
+      "updatedAt": 1793296980633
     }
   ],
   "deletedLinks": [
@@ -47129,6 +47816,15 @@
     "at": 1793280056955
   },
   "journal": [
+    {
+      "k": "mvtupy2o1l7hf",
+      "t": 1793296980672,
+      "b": "614d778ed0",
+      "a": "add",
+      "i": "311025",
+      "n": "Affinity",
+      "d": ""
+    },
     {
       "k": "mvtsq1c4enzn5",
       "t": 1793293625668,
@@ -49819,15 +50515,6 @@
       "i": "",
       "n": "Toutes les fiches",
       "d": "86 fiches"
-    },
-    {
-      "k": "mvh7mwvwqck5w",
-      "t": 1792532818454,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "288328",
-      "n": "Light the Dark",
-      "d": "affiche"
     }
   ],
   "refreshAt": 1792423579957
