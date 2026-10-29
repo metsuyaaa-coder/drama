@@ -1431,10 +1431,12 @@
       ],
       "sources": [],
       "addedAt": 1793277194000,
-      "langs": [],
+      "langs": [
+        "VOSTFR"
+      ],
       "downloads": [],
       "bl": true,
-      "updatedAt": 1793277262375
+      "updatedAt": 1793277278711
     },
     {
       "id": "293607",
@@ -46424,6 +46426,15 @@
   },
   "journal": [
     {
+      "k": "mvtizny7p6a9e",
+      "t": 1793277278719,
+      "b": "f2b389cb62",
+      "a": "edit",
+      "i": "332507",
+      "n": "The Last Oath",
+      "d": ""
+    },
+    {
       "k": "mvtizbcelksff",
       "t": 1793277262382,
       "b": "f2b389cb62",
@@ -49112,15 +49123,6 @@
       "a": "edit",
       "i": "273977",
       "n": "The Art of Sarah",
-      "d": "affiche"
-    },
-    {
-      "k": "mvgq94kfdhcoe",
-      "t": 1792504228048,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "251600",
-      "n": "The Eternal Fragrance",
       "d": "affiche"
     }
   ],
