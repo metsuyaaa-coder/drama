@@ -1305,7 +1305,13 @@
               "name": "The Team Leader's Office Perks",
               "overview": "",
               "air_date": "2026-10-08",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-7ud1zgr9ga6p.html",
+                  "by": "f2b389cb62"
+                }
+              ],
               "downloads": []
             },
             {
@@ -1313,7 +1319,13 @@
               "name": "Hide and Seek Under the Desk",
               "overview": "",
               "air_date": "2026-10-15",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-zdcu4i67wb7b.html",
+                  "by": "f2b389cb62"
+                }
+              ],
               "downloads": []
             },
             {
@@ -1321,7 +1333,13 @@
               "name": "A Dangerous Bet",
               "overview": "",
               "air_date": "2026-10-22",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-udk7u1setl0n.html",
+                  "by": "f2b389cb62"
+                }
+              ],
               "downloads": []
             },
             {
@@ -1329,7 +1347,13 @@
               "name": "Épisode 4",
               "overview": "",
               "air_date": "2026-10-29",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-d0ptibgt45fj.html",
+                  "by": "f2b389cb62"
+                }
+              ],
               "downloads": []
             },
             {
@@ -1359,7 +1383,7 @@
       ],
       "downloads": [],
       "bl": true,
-      "updatedAt": 1793280666434
+      "updatedAt": 1793280703667
     },
     {
       "id": "293607",
@@ -46374,6 +46398,15 @@
   },
   "journal": [
     {
+      "k": "mvtl12o0ksz61",
+      "t": 1793280703680,
+      "b": "f2b389cb62",
+      "a": "edit",
+      "i": "318634",
+      "n": "Twisted Tie",
+      "d": "sources 0 → 4"
+    },
+    {
       "k": "mvtl09xr2zr1p",
       "t": 1793280666447,
       "b": "f2b389cb62",
@@ -49063,15 +49096,6 @@
       "i": "307106",
       "n": "Between Steps",
       "d": "téléchargements 5 → 6"
-    },
-    {
-      "k": "mvh0bfd64p4tt",
-      "t": 1792520372120,
-      "b": "head",
-      "a": "edit",
-      "i": "303745",
-      "n": "Love in Disguise",
-      "d": "téléchargements 2 → 4"
     }
   ],
   "refreshAt": 1792423579957
