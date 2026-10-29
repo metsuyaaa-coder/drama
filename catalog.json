@@ -1018,6 +1018,425 @@
       "updatedAt": 1793277141571
     },
     {
+      "id": "332507",
+      "type": "tv",
+      "name": "The Last Oath",
+      "original_name": "末誓",
+      "origin_country": [
+        "CN"
+      ],
+      "networks": [
+        "Viki",
+        "GagaOOLala"
+      ],
+      "original_language": "zh",
+      "aka": [
+        "The Last Oath",
+        "สัจจะสุดท้ายวันซอมบี้สิ้นโลก",
+        "El Último Juramento",
+        "O Último Juramento",
+        "末誓（モーシー） The Last Oath",
+        "烬爱",
+        "Mo Shi",
+        "末誓"
+      ],
+      "year": "2026",
+      "overview": "Dans un monde ravagé par un virus zombie mortel, l'humanité est prise en tenaille par deux géants pharmaceutiques corrompus qui prétendent développer un vaccin pour asseoir leur domination globale. L'étudiant Lin Zai paye un lourd tribut en perdant ses parents et son frère aîné. De manière inattendue, il découvre qu'il est immunisé contre les morsures, devenant une cible inestimable pour les factions au pouvoir.\n\nLorsque Lin Zai sauve A Lie, un agent spécial censé le traquer, un lien inattendu se tisse rapidement entre eux, évoluant vers une profonde intimité. Confrontés à un monde impitoyable et à des loyautés contradictoires, Lin Zai et A Lie devront faire des choix déchirants qui pousseront leur amour dans ses derniers retranchements.",
+      "genres": [
+        "Drame",
+        "Action & Adventure",
+        "Science-Fiction & Fantastique"
+      ],
+      "rating": "8.5",
+      "pop": 6.1106,
+      "status": "Ended",
+      "poster": "https://image.tmdb.org/t/p/w500/6Gt3rbhwfniiZoeORGcuDai5Nar.jpg",
+      "posterV": 2,
+      "backdrop": "https://image.tmdb.org/t/p/original/zDFiTPF1ox2LLIAjS2qdnUwk7go.jpg",
+      "videos": [
+        {
+          "key": "fEvFFF6mAp8",
+          "name": "《末誓》首發預告！9月4日20:00全球首播！末世相逢🖤生死與共，為愛破局｜我們，逆末世而行｜末誓 The Last Oath 🎬Official Trai",
+          "type": "Trailer",
+          "lab": "Original"
+        }
+      ],
+      "cast": [
+        {
+          "name": "陈名豪",
+          "character": "A Leh",
+          "id": 4282685
+        },
+        {
+          "name": "陈梁",
+          "character": "Lin Zai",
+          "id": 6430440
+        },
+        {
+          "name": "陆路",
+          "character": "He Yao",
+          "id": 2087807
+        },
+        {
+          "name": "王朝阳",
+          "character": "Sheng Changhuan",
+          "id": 3856177
+        }
+      ],
+      "eprt": 21,
+      "seasons": [
+        {
+          "number": 1,
+          "name": "Saison 1",
+          "episodes": [
+            {
+              "number": 1,
+              "name": "Infection",
+              "overview": "The zombie apocalypse takes everything from Lin Zai, even his brother, who dies saving him. More shockingly, after being bitten, Lin Zai somehow doesn’t turn into a zombie.",
+              "air_date": "2026-09-04",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-z7cuquvoyt4h.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 2,
+              "name": "Survival Rules for the Apocalypse",
+              "overview": "Lin Zai finally manages to save the mysterious man, only for him to remain constantly on guard and even warn Lin Zai that zombies aren’t the only danger in the apocalypse.",
+              "air_date": "2026-09-04",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-eco0h716uq0j.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 3,
+              "name": "Guangqi Terminal",
+              "overview": "Lin Zai finds himself in danger once again, only to be rescued by the mysterious man, who finally reveals his name.",
+              "air_date": "2026-09-05",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-ms53ouvnk54e.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 4,
+              "name": "Immunogen",
+              "overview": "The mysterious A-Leh is carrying out a mission he cannot reveal. Believing him to be a trustworthy companion, Lin Zai hopes he will stay at the camp.",
+              "air_date": "2026-09-05",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-glm9qhgdo38m.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 5,
+              "name": "Infected Sensory Profile",
+              "overview": "After waking up, Lin Zai is shocked to discover that A-Leh has abducted him. It turns out that Lin Zai is the “immune individual” A-Leh has been searching for, possessing genes that make him immune to the zombie virus.",
+              "air_date": "2026-09-11",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-r2psoksd3gkg.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 6,
+              "name": "Infected Zone Map",
+              "overview": "As an immune individual, Lin Zai worries that he might become a test subject. Although A-Leh acts indifferent, he secretly begins investigating what could happen to him.",
+              "air_date": "2026-09-11",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-kiula76f1d4q.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 7,
+              "name": "Class A Infected",
+              "overview": "Although A-Leh insists that his only responsibility is to bring the immune individual back, the way he protects Lin Zai is clearly becoming more than just part of the mission.",
+              "air_date": "2026-09-12",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-kll4y4a2wk49.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 8,
+              "name": "Infected Classification System",
+              "overview": "Lin Zai suffers another allergic reaction and collapses, prompting A-Leh to risk entering a zombie-infested town in search of medicine. Left alone, Lin Zai unexpectedly finds himself caught in a deadly plot against him.",
+              "air_date": "2026-09-12",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-vexr2io06lmz.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 9,
+              "name": "What Mom Owes You",
+              "overview": "After narrowly escaping death, Lin Zai tells A-Leh that all he wants is to return to the camp that feels like home, but A-Leh refuses to let him go.",
+              "air_date": "2026-09-18",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-um76xkvhb0qj.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 10,
+              "name": "Mobility & Fuel",
+              "overview": "Lin Zai and A-Leh encounter a mysterious man named He Yao, only to discover that he is a genetics expert once highly sought after by two major pharmaceutical corporations.",
+              "air_date": "2026-09-18",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-arw8eu0u1jup.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 11,
+              "name": "Last Message",
+              "overview": "With armed forces hunting them down, He Yao admits that he once took part in research on the zombie virus and barely managed to escape from the research facility.",
+              "air_date": "2026-09-19",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-46jdjirp0p9f.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 12,
+              "name": "Casia",
+              "overview": "A-Leh collapses after being poisoned, giving Lin Zai the perfect chance to escape. But when he hears A-Leh calling out to him, Lin Zai decides to stay and save him.",
+              "air_date": "2026-09-19",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-n5618488uyhv.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 13,
+              "name": "Post-Outbreak Infection Research",
+              "overview": "A-Leh’s wound worsens, but his time with Lin Zai feels almost like an ordinary date from before the apocalypse.",
+              "air_date": "2026-09-25",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-tktdbp593l6x.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 14,
+              "name": "The Final Performance",
+              "overview": "A mysterious survivor suddenly appears and leads A-Leh and Lin Zai to a new camp, where they unexpectedly reunite with an old acquaintance.",
+              "air_date": "2026-09-25",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-21zszpqx1wiw.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 15,
+              "name": "Dao Camp",
+              "overview": "Lin Zai faces a new choice: stay at the safe camp, or continue the journey with A-Leh?",
+              "air_date": "2026-09-26",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-nzafnvhh4iid.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 16,
+              "name": "Treatment Log",
+              "overview": "Lin Zai clashes with A-Leh again, and in He Yao’s laboratory, he discovers a familiar zombie.",
+              "air_date": "2026-10-02",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-dw2hy34qx8ws.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 17,
+              "name": "The Unfinished Film",
+              "overview": "To save his zombified brother, Lin Zai decides to undergo immune-subject experiments in secret, keeping it from A-Leh.",
+              "air_date": "2026-10-02",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-86c1te1eaqyu.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 18,
+              "name": "Camp Duty Assignments",
+              "overview": "The experiments begin taking a toll on Lin Zai’s body. Faced with A-Leh’s heartfelt confession, can he finally make a decision?",
+              "air_date": "2026-10-03",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-mf9emtuitbzw.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 19,
+              "name": "Whole Blood Donation Guidelines",
+              "overview": "To save his brother, Lin Zai insists on drawing even more of his blood despite the risks.",
+              "air_date": "2026-10-09",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-0d8x2juc3znr.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 20,
+              "name": "File 020",
+              "overview": "Lin Zai is left in critical condition after losing too much blood. A-Leh personally gives him a blood transfusion and stays by his bedside all night.",
+              "air_date": "2026-10-10",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-jjqewyefr8tc.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 21,
+              "name": "Self-experiment Record",
+              "overview": "Unwilling to give up on saving his brother, Lin Zai decides to undergo bone marrow collection, while A-Leh chooses to stay by his side and face it with him.",
+              "air_date": "2026-10-16",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-nitwjjzigqv9.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 22,
+              "name": "My Little Brother",
+              "overview": "Lin Zai loses another important family member and gradually falls deeper into He Yao’s scheme.",
+              "air_date": "2026-10-17",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-pzuzdpebv5ib.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 23,
+              "name": "Communication After The Fall",
+              "overview": "After his brother’s death, Lin Zai loses his reason to keep living, while A-Leh officially turns against his organization for him.",
+              "air_date": "2026-10-23",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-f75ndh1ljx30.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 24,
+              "name": "Herin",
+              "overview": "With all of He Yao’s lies exposed, A-Leh and Lin Zai decide to face the organization’s forces together.",
+              "air_date": "2026-10-24",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-6m8mokkwtjx1.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            }
+          ],
+          "downloads": []
+        }
+      ],
+      "sources": [],
+      "addedAt": 1793277194000,
+      "langs": [],
+      "downloads": [],
+      "bl": true,
+      "updatedAt": 1793277262375
+    },
+    {
       "id": "293607",
       "type": "tv",
       "name": "100 Days of Deception",
@@ -46005,6 +46424,15 @@
   },
   "journal": [
     {
+      "k": "mvtizbcelksff",
+      "t": 1793277262382,
+      "b": "f2b389cb62",
+      "a": "add",
+      "i": "332507",
+      "n": "The Last Oath",
+      "d": ""
+    },
+    {
       "k": "mvtiwq4ql1pjr",
       "t": 1793277141578,
       "b": "f2b389cb62",
@@ -48694,15 +49122,6 @@
       "i": "251600",
       "n": "The Eternal Fragrance",
       "d": "affiche"
-    },
-    {
-      "k": "mvgqpvuc7twaw",
-      "t": 1792504199028,
-      "b": "head",
-      "a": "tmdb",
-      "i": "",
-      "n": "Toutes les fiches",
-      "d": "85 fiches"
     }
   ],
   "refreshAt": 1792423579957
