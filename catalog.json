@@ -47702,9 +47702,31 @@
         "en": "A Love Other Than Yours",
         "auto": true,
         "at": 1793282425454
+      },
+      {
+        "id": "rmvtvd44v",
+        "title": "คนโง่รักเข(ล)า",
+        "status": "wait",
+        "bl": true,
+        "kind": "stream",
+        "votes": 1,
+        "tmdb": "317326",
+        "media": "tv",
+        "year": "2026",
+        "poster": "/qQgFY9HNKC1nuBLQB7frqb7jjx7.jpg",
+        "origin": "Thaïlande",
+        "en": "Fool in Love",
+        "auto": true,
+        "at": 1793298061615
       }
     ],
-    "at": 1793282425454
+    "at": 1793298061615,
+    "log": [
+      {
+        "v": "fe567f2d",
+        "t": 1793298061615
+      }
+    ]
   },
   "hosts": {
     "items": [
