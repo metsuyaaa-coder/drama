@@ -1786,7 +1786,13 @@
               "name": "Are You Jealous?",
               "overview": "Yok breaks up with Ing over his playful behavior, but seeing him with Junior stirs feelings he thought were gone.",
               "air_date": "2026-10-29",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-ry8a2k21hekh.html",
+                  "by": "f2b389cb62"
+                }
+              ],
               "downloads": []
             },
             {
@@ -1904,7 +1910,7 @@
       ],
       "downloads": [],
       "bl": true,
-      "updatedAt": 1793298275920
+      "updatedAt": 1793308623462
     },
     {
       "id": "293607",
@@ -48135,6 +48141,15 @@
   },
   "journal": [
     {
+      "k": "mvu1nhprtlzqo",
+      "t": 1793308623471,
+      "b": "f2b389cb62",
+      "a": "edit",
+      "i": "317326",
+      "n": "Fool in Love",
+      "d": "sources 6 → 7"
+    },
+    {
       "k": "mvtvhpi1yklje",
       "t": 1793298275929,
       "b": "f2b389cb62",
@@ -50824,15 +50839,6 @@
       "i": "303745",
       "n": "Love in Disguise",
       "d": "sources 7 → 8"
-    },
-    {
-      "k": "mvh8h7dvogmcp",
-      "t": 1792534027171,
-      "b": "head",
-      "a": "tmdb",
-      "i": "",
-      "n": "Toutes les fiches",
-      "d": "86 fiches"
     }
   ],
   "refreshAt": 1792423579957
