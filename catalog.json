@@ -8728,7 +8728,13 @@
               "name": "Épisode 7",
               "overview": "",
               "air_date": "2026-10-29",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-06pmxaitimo7.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -8736,7 +8742,13 @@
               "name": "Épisode 8",
               "overview": "",
               "air_date": "2026-10-29",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-c2j8htef3yn8.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -8772,7 +8784,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1793130218184,
+      "updatedAt": 1793287656271,
       "trend": 45,
       "networks": [
         "TVING"
@@ -46444,6 +46456,15 @@
   },
   "journal": [
     {
+      "k": "mvtp63cbwt3o4",
+      "t": 1793287656299,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "311648",
+      "n": "Make Me Tingle",
+      "d": "sources 18 → 20"
+    },
+    {
       "k": "mvtozb1r9ebr6",
       "t": 1793287339695,
       "b": "614d778ed0",
@@ -49132,15 +49153,6 @@
       "a": "edit",
       "i": "303745",
       "n": "Love in Disguise",
-      "d": ""
-    },
-    {
-      "k": "mvh4jcrico4eo",
-      "t": 1792527825923,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "293607",
-      "n": "100 Days of Deception",
       "d": ""
     }
   ],
