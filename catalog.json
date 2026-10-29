@@ -742,6 +742,282 @@
       "updatedAt": 1793276655546
     },
     {
+      "id": "317308",
+      "type": "tv",
+      "name": "The Missing Piece",
+      "original_name": "请记住我的名字",
+      "origin_country": [
+        "CN"
+      ],
+      "networks": [
+        "Viki",
+        "GagaOOLala"
+      ],
+      "original_language": "zh",
+      "aka": [
+        "The Missing Piece",
+        "請記住我的名字",
+        "จิกซอว์ชิ้นสุดท้ายของเรา",
+        "A Peça Que Faltava",
+        "청기주아적명자 : 내 이름을 기억해 줘",
+        "貌合神离",
+        "季先生",
+        "Appearance in harmony but feels apart",
+        "Appearance and Departure",
+        "请记住我的名字"
+      ],
+      "year": "2026",
+      "overview": "Shen Mo perd la mémoire à la suite d'un accident. Il prend soudainement que Ji Ming Xuan est son petit ami, alors qu'il ne l'est pas réellement.\n\nIls vont finalement vivre ensemble et, au cours de ces six mois, leurs sentiments deviennent réellement réciproques. Mais lorsque Shen Mo retrouve la mémoire, il oublie complètement les six mois qu'ils ont passés ensemble.\n\nJi Ming Xuan ne veut pas le perdre et lui propose alors un contrat de trois ans. Officiellement, Shen Mo devient son « amant sous contrat », mais derrière cette relation contractuelle, les deux hommes sont déjà profondément attachés l'un à l'autre.",
+      "genres": [
+        "Drame"
+      ],
+      "rating": "9.3",
+      "pop": 4.6132,
+      "status": "Ended",
+      "poster": "https://image.tmdb.org/t/p/w500/ozxzhIThHt3csoDmov1pOYdp9am.jpg",
+      "posterV": 2,
+      "backdrop": "https://image.tmdb.org/t/p/original/iTs5hXdEDA3pI6FabhH6rKkpK7P.jpg",
+      "videos": [],
+      "cast": [
+        {
+          "name": "候明炫",
+          "character": "Ji Mingxuan",
+          "id": 4556572
+        },
+        {
+          "name": "饶子豪",
+          "character": "Shen Mo",
+          "id": 6200414
+        }
+      ],
+      "eprt": 36,
+      "seasons": [
+        {
+          "number": 1,
+          "name": "Saison 1",
+          "episodes": [
+            {
+              "number": 1,
+              "name": "Épisode 1",
+              "overview": "Shen Mo reunites with ex-lover Zhou Yang, but Ji Mingxuan’s possessiveness turns their tense reunion into a love triangle.",
+              "air_date": "2026-09-07",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-ctd7rouxde4d.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 2,
+              "name": "Épisode 2",
+              "overview": "Ji Mingxuan publicly claims Shen Mo, but Zhao Yi’s arrival makes Shen question whether he’s merely a substitute.",
+              "air_date": "2026-09-07",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-9us56j3zcapn.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 3,
+              "name": "Épisode 3",
+              "overview": "While sick, Ji Mingxuan draws Shen Mo closer, taking him to an art show and boldly declaring him his own.",
+              "air_date": "2026-09-12",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-oml6bzzcyeoa.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 4,
+              "name": "Épisode 4",
+              "overview": "When Shen Mo faces the man who threatened him years ago, Ji Mingxuan steps in to protect him at an engagement banquet.",
+              "air_date": "2026-09-13",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-ngn1jf2ena32.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 5,
+              "name": "Épisode 5",
+              "overview": "A birthday getaway turns into a trap when Shen Mo is locked in a room with Zhou Yang, exposing painful secrets.",
+              "air_date": "2026-09-19",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-rucjy35d3ytc.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 6,
+              "name": "Épisode 6",
+              "overview": "After his contract with Ji Mingxuan ends, Shen Mo searches his fractured memories to uncover their hidden past.",
+              "air_date": "2026-09-20",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-gfgnq0t97wxn.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 7,
+              "name": "Épisode 7",
+              "overview": "Three years earlier, Shen Mo was kidnapped, forced to leave Zhou Yang, and cast out by his family, shattering his memories.",
+              "air_date": "2026-09-26",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-ukcmxkt6pc93.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 8,
+              "name": "Épisode 8",
+              "overview": "As Shen Mo’s condition worsens, Ji Mingxuan pretends to be Zhou Yang out of guilt, while Shen questions his distance.",
+              "air_date": "2026-09-27",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-1fcl7nx3p05y.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 9,
+              "name": "Épisode 9",
+              "overview": "Unable to paint after injuring his hand, Shen Mo finds hope as Ji Mingxuan arranges surgery and supports his artistic dreams.",
+              "air_date": "2026-10-03",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-ki6m84ksnvel.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 10,
+              "name": "Épisode 10",
+              "overview": "Shen Mo discovers that the man he believed was Zhou Yang is someone else, unraveling everything he thought he knew.",
+              "air_date": "2026-10-04",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-smnwpgl70m18.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 11,
+              "name": "Épisode 11",
+              "overview": "Shen Mo reunites with Ji Mingxuan, but the child beside him sparks fears that he may already have a family.",
+              "air_date": "2026-10-10",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-hnou5k65eotq.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 12,
+              "name": "Épisode 12",
+              "overview": "As Shen Mo uncovers the truth behind their missed chances, he resolves to stop running from love and leave no regrets.",
+              "air_date": "2026-10-11",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-5hn3eiesnxyj.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 13,
+              "name": "Épisode 13",
+              "overview": "Shen Mo and Ji Mingxuan reconcile as the truth behind their separation finally emerges, giving their love another chance.",
+              "air_date": "2026-10-17",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-4pb0wz36uv6w.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 14,
+              "name": "Épisode 14",
+              "overview": "Zhou Yang warns Shen Mo that his family plans revenge against Ji Mingxuan, threatening their newly rekindled love.",
+              "air_date": "2026-10-18",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-44m3kssnjdzo.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 15,
+              "name": "Épisode 15",
+              "overview": "",
+              "air_date": "2026-10-24",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-49j09pnp5sqn.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            }
+          ],
+          "downloads": []
+        }
+      ],
+      "sources": [],
+      "addedAt": 1793277017295,
+      "langs": [],
+      "downloads": [],
+      "bl": true,
+      "updatedAt": 1793277141571
+    },
+    {
       "id": "293607",
       "type": "tv",
       "name": "100 Days of Deception",
@@ -45729,6 +46005,15 @@
   },
   "journal": [
     {
+      "k": "mvtiwq4ql1pjr",
+      "t": 1793277141578,
+      "b": "f2b389cb62",
+      "a": "add",
+      "i": "317308",
+      "n": "The Missing Piece",
+      "d": ""
+    },
+    {
       "k": "mvtimb42rl5ls",
       "t": 1793276655554,
       "b": "f2b389cb62",
@@ -48418,15 +48703,6 @@
       "i": "",
       "n": "Toutes les fiches",
       "d": "85 fiches"
-    },
-    {
-      "k": "mvgpvsiya9lc3",
-      "t": 1792502795050,
-      "b": "head",
-      "a": "edit",
-      "i": "304452",
-      "n": "The Lament of Autumn",
-      "d": ""
     }
   ],
   "refreshAt": 1792423579957
