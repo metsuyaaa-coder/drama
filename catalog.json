@@ -7810,7 +7810,13 @@
               "name": "Épisode 4",
               "overview": "Yubin grows conflicted between his budding feelings for Karin and his reality. On festival day, Karin's strawberries and Charo Island produce take center stage at the booth Yubin designed. After Kurokawa evaluates her strawberries as the judge, the much-anticipated first-place winner is announced.",
               "air_date": "2026-10-28",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-tytb0z1fux9c.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -7872,7 +7878,7 @@
         "VF"
       ],
       "downloads": [],
-      "updatedAt": 1793130215996,
+      "updatedAt": 1793287796569,
       "networks": [
         "Nippon TV"
       ],
@@ -46456,6 +46462,15 @@
   },
   "journal": [
     {
+      "k": "mvtp93l4uro73",
+      "t": 1793287796584,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "305551",
+      "n": "Merry Berry Love",
+      "d": "sources 10 → 11"
+    },
+    {
       "k": "mvtp63cbwt3o4",
       "t": 1793287656299,
       "b": "614d778ed0",
@@ -49145,15 +49160,6 @@
       "i": "300146",
       "n": "Where the Mask Ends",
       "d": "sources 10 → 12"
-    },
-    {
-      "k": "mvh4xniw3eybu",
-      "t": 1792528076120,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "303745",
-      "n": "Love in Disguise",
-      "d": ""
     }
   ],
   "refreshAt": 1792423579957
