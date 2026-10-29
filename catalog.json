@@ -1597,10 +1597,12 @@
       ],
       "sources": [],
       "addedAt": 1793293551722,
-      "langs": [],
+      "langs": [
+        "VOSTFR"
+      ],
       "downloads": [],
       "bl": true,
-      "updatedAt": 1793293619308
+      "updatedAt": 1793293625660
     },
     {
       "id": "293607",
@@ -47128,6 +47130,15 @@
   },
   "journal": [
     {
+      "k": "mvtsq1c4enzn5",
+      "t": 1793293625668,
+      "b": "f2b389cb62",
+      "a": "edit",
+      "i": "315044",
+      "n": "Flower Boy",
+      "d": ""
+    },
+    {
       "k": "mvtspwfnd3v55",
       "t": 1793293619315,
       "b": "f2b389cb62",
@@ -49817,15 +49828,6 @@
       "i": "288328",
       "n": "Light the Dark",
       "d": "affiche"
-    },
-    {
-      "k": "mvh7athqlj6r7",
-      "t": 1792532091026,
-      "b": "head",
-      "a": "edit",
-      "i": "251600",
-      "n": "The Eternal Fragrance",
-      "d": ""
     }
   ],
   "refreshAt": 1792423579957
