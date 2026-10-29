@@ -6992,7 +6992,13 @@
               "name": "Épisode 30",
               "overview": "",
               "air_date": "2026-10-28",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-2bcjqjq2a2bm.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -7000,7 +7006,13 @@
               "name": "Épisode 31",
               "overview": "",
               "air_date": "2026-10-29",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-thba2aujnyo3.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -7086,7 +7098,7 @@
       ],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1793229708513,
+      "updatedAt": 1793287262727,
       "trend": 50
     },
     {
@@ -46420,6 +46432,15 @@
   },
   "journal": [
     {
+      "k": "mvtoxnoprjwjw",
+      "t": 1793287262761,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "304452",
+      "n": "The Lament of Autumn",
+      "d": "sources 29 → 31"
+    },
+    {
       "k": "mvtoqgdpo8xys",
       "t": 1793286926701,
       "b": "614d778ed0",
@@ -49109,15 +49130,6 @@
       "i": "251600",
       "n": "The Eternal Fragrance",
       "d": ""
-    },
-    {
-      "k": "mvh35xuhnytnb",
-      "t": 1792525103513,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "307106",
-      "n": "Between Steps",
-      "d": "sources 23 → 24"
     }
   ],
   "refreshAt": 1792423579957
