@@ -46500,7 +46500,7 @@
         "炽热吸引"
       ],
       "year": "2026",
-      "overview": "Ce drama raconte l'histoire d'une attraction instinctive et virale entre deux personnages, Wu Nongyu et Xie Xinxu, dans un cadre futuriste et scientifique, mêlant romance, suspense et réflexion sur l'obsession et la rédemption.",
+      "overview": "Un mystérieux virus s'est répandu dans le monde et s'est divisé deux variants, \"A\" et \"B\". Ceux ayant contracté la variante A, comme Wu Nong Yu (Fang Jin) ne remarquent généralement aucun effet secondaire. En revanche, celles atteintes de la variante B peuvent développer des tendances antisociales et violentes ainsi que des pulsions possessives à l'égard des porteurs de A. Lorsque Nong Yu accompagne son frère agent de police sur une scène de crime, elle rencontre par hasard le suspect, Xie Xin Xu (Cui Yu Xin), qui s'avère être porteur de B. Cinq ans après leur première rencontre, Nong Yu est devenue étudiante en biotechnologie et Xin Xu décide de profiter de l'occasion pour la revoir en se faisant passer pour un professeur, espérant la faire tomber amoureuse de lui. Cependant, Nong Yu ne se laisse pas berner, ce qui donne naissance à des sentiments inattendus entre eux.",
       "genres": [
         "Science-Fiction & Fantastique",
         "Drame"
@@ -46508,7 +46508,7 @@
       "rating": "8.1",
       "pop": 7.0587,
       "status": "Ended",
-      "poster": "https://image.tmdb.org/t/p/original/zqlDjN7uz0KimCL2L9n9QQtKLFO.jpg",
+      "poster": "https://image.tmdb.org/t/p/original/8cXJxfSbHqHfamaJFyYRhTMg5uM.jpg",
       "posterV": 2,
       "backdrop": "https://image.tmdb.org/t/p/original/8jRoZr0vcPPIpB4GN5lfuwek8Go.jpg",
       "videos": [
@@ -47161,7 +47161,7 @@
       "langs": [],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1793296980633
+      "updatedAt": 1793297472298
     }
   ],
   "deletedLinks": [
@@ -47816,6 +47816,15 @@
     "at": 1793280056955
   },
   "journal": [
+    {
+      "k": "mvtv0hfln66a6",
+      "t": 1793297472321,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "311025",
+      "n": "Affinity",
+      "d": "affiche"
+    },
     {
       "k": "mvtupy2o1l7hf",
       "t": 1793296980672,
@@ -50506,15 +50515,6 @@
       "i": "304452",
       "n": "The Lament of Autumn",
       "d": "sources 14 → 16"
-    },
-    {
-      "k": "mvh80j8eg4n52",
-      "t": 1792533249374,
-      "b": "614d778ed0",
-      "a": "tmdb",
-      "i": "",
-      "n": "Toutes les fiches",
-      "d": "86 fiches"
     }
   ],
   "refreshAt": 1792423579957
