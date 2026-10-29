@@ -46283,9 +46283,31 @@
         "en": "As Promised",
         "auto": true,
         "at": 1793277404348
+      },
+      {
+        "id": "rmvtm1z72",
+        "title": "Un autre amour que le tien",
+        "status": "wait",
+        "bl": false,
+        "kind": "dl",
+        "votes": 1,
+        "tmdb": "314939",
+        "media": "tv",
+        "year": "2026",
+        "poster": "/lu3tuzFl4c6rx1WcoLOGZlkTjaw.jpg",
+        "origin": "Corée",
+        "en": "A Love Other Than Yours",
+        "auto": true,
+        "at": 1793282425454
       }
     ],
-    "at": 1793277404347
+    "at": 1793282425454,
+    "log": [
+      {
+        "v": "092a8d29",
+        "t": 1793282425454
+      }
+    ]
   },
   "hosts": {
     "items": [
