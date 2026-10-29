@@ -33472,7 +33472,13 @@
               "name": "Épisode 14",
               "overview": "",
               "air_date": "2026-10-28",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-d5hzay6khinb.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -33480,7 +33486,13 @@
               "name": "Épisode 15",
               "overview": "",
               "air_date": "2026-10-29",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-tjx0pk3mn3s4.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -33693,7 +33705,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1793279939703,
+      "updatedAt": 1793287339670,
       "trend": 70,
       "eprt": 48
     },
@@ -46432,6 +46444,15 @@
   },
   "journal": [
     {
+      "k": "mvtozb1r9ebr6",
+      "t": 1793287339695,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "286171",
+      "n": "Tigers Sniff the Rose",
+      "d": "sources 13 → 15"
+    },
+    {
       "k": "mvtoxnoprjwjw",
       "t": 1793287262761,
       "b": "614d778ed0",
@@ -49120,15 +49141,6 @@
       "a": "edit",
       "i": "293607",
       "n": "100 Days of Deception",
-      "d": ""
-    },
-    {
-      "k": "mvh4d91ki0hjo",
-      "t": 1792527124232,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "251600",
-      "n": "The Eternal Fragrance",
       "d": ""
     }
   ],
