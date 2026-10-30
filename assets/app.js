@@ -2182,6 +2182,30 @@ function mlCard(s, i, tab) {
     (langLabel(s) ? '<span class="lang">' + esc(langLabel(s)) + '</span>' : '') + (newEpisode(s) ? newBadge("Nouvel ép.") : '') + inner + acts + '</div>' +
     '<a class="mlmeta" href="/serie/' + id + '"><b>' + esc(s.name) + '</b><span>' + esc(meta) + '</span>' + (extra ? '<em>' + esc(extra) + '</em>' : '') + '</a></div>';
 }
+/* « Vu » : En cours de visionnage / Terminés / Abandonnés (l'abandon se marque à la main, par profil) */
+var DROPKEY = "noir.dropped", seenCat = "going";
+var SEENCATS = [["going", "En cours de visionnage"], ["done", "Terminés"], ["drop", "Abandonnés"]];
+function readDropped() { var v = readJSON(DROPKEY, {}); return v && typeof v === "object" && !Array.isArray(v) ? v : {}; }
+function setDropped(id, on) { var d = readDropped(); if (on) d[id] = Date.now(); else delete d[id]; try { localStorage.setItem(DROPKEY, JSON.stringify(d)); } catch (e) {} }
+function seenCatOf(s, drop) { if (drop[s.id]) return "drop"; return s._t && s._n >= s._t ? "done" : "going"; }
+function seenCounts(arr) { var d = readDropped(), c = { going: 0, done: 0, drop: 0 }; arr.forEach(function (s) { c[seenCatOf(s, d)]++; }); return c; }
+function seenCatAuto(arr) { var c = seenCounts(arr); return c.going ? "going" : c.done ? "done" : c.drop ? "drop" : "going"; }
+function seenEmpty(q) {
+  if (q) return '<div class="mlempty">' + nsvg("search", "mlei") + '<h3>Aucun résultat</h3><p>Rien ne correspond à « ' + esc(mlQuery.trim()) + ' » dans cette catégorie.</p></div>';
+  var T = { going: ["Rien en cours", "Les séries que tu as commencées sans les finir apparaissent ici."], done: ["Rien de terminé", "Une série dont tu as vu tous les épisodes passe ici."], drop: ["Aucun abandon", "Sur une série en cours, clique sur « Abandonner » pour la ranger ici. Tu peux la reprendre quand tu veux."] }[seenCat];
+  return '<div class="mlempty">' + nsvg("eye", "mlei") + '<h3>' + T[0] + '</h3><p>' + T[1] + '</p></div>';
+}
+/* Statistiques : combien de K-Drama, J-Drama, C-Drama… tu as vus (au moins un épisode) */
+function mlStatsPaint(L) {
+  var el = $("#mlstats"); if (!el) return;
+  if (mlShared || !L.seen.length) { el.innerHTML = ""; return; }
+  var g = { K: [0, 0], J: [0, 0], C: [0, 0], T: [0, 0], O: [0, 0] }, ep = 0, done = 0;
+  L.seen.forEach(function (s) { var d = dramaType(s) || "O", fin = s._t && s._n >= s._t; g[d][0]++; if (fin) { g[d][1]++; done++; } ep += s._n || 0; });
+  var tile = function (n, lab, sub, cls) { return '<div class="mlst' + (cls ? " " + cls : "") + '"><b>' + n + '</b><span>' + lab + '</span>' + (sub ? '<small>' + sub + '</small>' : '') + '</div>'; };
+  var fin = function (n) { return n ? n + (n > 1 ? " terminées" : " terminée") : ""; };
+  el.innerHTML = '<div class="mlstats">' + tile(L.seen.length, "Séries vues", fin(done), "tot") + tile(ep, ep > 1 ? "Épisodes vus" : "Épisode vu", "", "tot") +
+    tile(g.K[0], "K-Drama", fin(g.K[1])) + tile(g.J[0], "J-Drama", fin(g.J[1])) + tile(g.C[0], "C-Drama", fin(g.C[1])) + tile(g.T[0], "Thaï / Taïwan", fin(g.T[1])) + (g.O[0] ? tile(g.O[0], "Autres", fin(g.O[1])) : "") + '</div>';
+}
 /* Onglet « Vus » : une ligne par série avec progression, dernier épisode vu et prochain à regarder */
 function mlSeenRow(s, i) {
   var id = esc(s.id), all = readSeen()[s.id] || {}, pr = mlProgress(s), last = "", next = "", n = 0;
@@ -2191,14 +2215,15 @@ function mlSeenRow(s, i) {
       else if (!next) next = "S" + se.number + " · Ép. " + ep.number;
     });
   });
-  var done = pr.t && pr.n >= pr.t, pct = Math.round(pr.p * 100);
+  var done = pr.t && pr.n >= pr.t, pct = Math.round(pr.p * 100), dr = !done && !!readDropped()[s.id];
   var meta = [isMovie(s) ? "Film" : "Série", s.year, s.rating ? "★ " + s.rating : ""].filter(Boolean).join("  ·  ");
-  return '<a class="mls' + (done ? " done" : "") + '" style="--i:' + Math.min(i || 0, 14) + ';--p:' + pr.p.toFixed(3) + '" href="/serie/' + id + '">' +
+  return '<a class="mls' + (done ? " done" : "") + (dr ? " drop" : "") + '" style="--i:' + Math.min(i || 0, 14) + ';--p:' + pr.p.toFixed(3) + '" href="/serie/' + id + '">' +
     '<span class="mlsp">' + (s.poster ? '<img loading="lazy" decoding="async" src="' + esc(th(s.poster)) + '" alt="">' : '<em>' + esc(String(s.name).charAt(0)) + '</em>') + '</span>' +
     '<span class="mlsb"><b>' + esc(s.name) + '</b><span class="mlsm">' + esc(meta) + '</span>' +
     '<span class="mlsbar"><i></i></span>' +
     '<span class="mlsl"><span>' + (pr.t ? pr.n + ' / ' + pr.t + ' épisodes · ' + pct + ' %' : 'Aucun épisode') + '</span>' + (last ? '<span>Dernier vu : ' + esc(last) + '</span>' : '') + '</span></span>' +
-    '<span class="mlsc ' + (done ? "ok" : "go") + '">' + (done ? nsvg("check") + 'Terminé' : (next ? 'Suivant<small>' + esc(next) + '</small>' : 'En cours')) + '</span></a>';
+    '<span class="mlsc ' + (done ? "ok" : "go") + '">' + (done ? nsvg("check") + 'Terminé' : dr ? 'Abandonné' : (next ? 'Suivant<small>' + esc(next) + '</small>' : 'En cours')) + '</span>' +
+    (done ? '' : '<button type="button" class="mlsx" data-drop="' + id + '" data-on="' + (dr ? 0 : 1) + '">' + (dr ? "Reprendre" : "Abandonner") + '</button>') + '</a>';
 }
 function mlEmpty(tab, q) {
   if (mlShared && !q) return '<div class="mlempty">' + nsvg(MLICON[tab], "mlei") + '<h3>Rien ici</h3><p>Cet onglet est vide dans la liste partagée.</p></div>';
@@ -2244,10 +2269,15 @@ function mlRenderBody(L, still, swap) {
     var cs = $("#mlsum"); if (cs) cs.textContent = carr.length + (carr.length > 1 ? " collections" : " collection");
     return;
   }
-  var arr = mlFilter(L[listTab], listTab);
+  var arr = mlFilter(L[listTab], listTab), seenMode = listTab === "seen" && !mlShared, chips = "";
+  if (seenMode) {
+    var cn = seenCounts(L.seen), dd = readDropped();
+    chips = '<div class="mlcats" role="tablist">' + SEENCATS.map(function (k) { return '<button type="button" class="mlcat' + (seenCat === k[0] ? " on" : "") + '" role="tab" aria-selected="' + (seenCat === k[0] ? "true" : "false") + '" data-seencat="' + k[0] + '">' + k[1] + '<b>' + cn[k[0]] + '</b></button>'; }).join("") + '</div>';
+    arr = arr.filter(function (s) { return seenCatOf(s, dd) === seenCat; });
+  }
   body.className = swap ? "mlswap" : "";
   if (swap) { void body.offsetWidth; body.className = "mlswap"; }
-  body.innerHTML = arr.length ? (listTab === "seen" && !mlShared ? '<div class="mlsgrid' + (still ? ' still' : '') + '">' + arr.map(function (s, i) { return mlSeenRow(s, i); }).join("") + '</div>' : '<div class="mlgrid' + (still ? ' still' : '') + '">' + arr.map(function (s, i) { return mlCard(s, i, mlShared ? "ro" : listTab); }).join("") + '</div>') : mlEmpty(listTab, q && L[listTab].length);
+  body.innerHTML = chips + (arr.length ? (listTab === "seen" && !mlShared ? '<div class="mlsgrid' + (still ? ' still' : '') + '">' + arr.map(function (s, i) { return mlSeenRow(s, i); }).join("") + '</div>' : '<div class="mlgrid' + (still ? ' still' : '') + '">' + arr.map(function (s, i) { return mlCard(s, i, mlShared ? "ro" : listTab); }).join("") + '</div>') : (seenMode ? seenEmpty(q) : mlEmpty(listTab, q && L[listTab].length)));
   var sum = $("#mlsum"); if (sum) {
     var n = arr.length;
     if (listTab === "seen" && !mlShared) { var ep = 0; arr.forEach(function (x) { ep += x._n || 0; }); sum.textContent = ep + (ep > 1 ? " épisodes vus" : " épisode vu"); }
@@ -2268,11 +2298,12 @@ function mlBuild() {
       '<div class="mlhead"><h1>Ma liste</h1><p class="note">Enregistrée sur cet appareil</p></div>' +
       '<button type="button" class="btn small ghost share mlshare" id="mlshare" data-mlshare aria-label="Partager toute ma liste" title="Partager toute ma liste" hidden>' + SHICON + '<span>Partager</span></button></div>') +
     '<div class="mltabs four" id="mltabs" data-i="' + MLTABS.indexOf(listTab) + '" role="tablist"><span class="mlind"></span>' + tabs + '</div></div></div>' +
-    '<div class="wrap"><div class="mltools"><label class="mlsearch">' + nsvg("search") + '<input id="mlq" type="search" placeholder="Rechercher dans ma liste" autocomplete="off" aria-label="Rechercher dans ma liste"></label>' +
+    '<div class="wrap"><div id="mlstats"></div><div class="mltools"><label class="mlsearch">' + nsvg("search") + '<input id="mlq" type="search" placeholder="Rechercher dans ma liste" autocomplete="off" aria-label="Rechercher dans ma liste"></label>' +
     '<div class="mlsort" role="group" aria-label="Trier">' + sorts + '</div><div class="mlend"><span class="mlsum" id="mlsum"></span><button type="button" class="colplus" id="colplus" data-colnew aria-label="Nouvelle collection" title="Nouvelle collection" hidden>' + nsvg("plus") + '</button></div></div><div id="mlbody"></div></div></div>';
-  mlSetTabs(L, true); mlRenderBody(L, false, false);
+  if (listTab === "seen" && !mlShared) seenCat = seenCatAuto(L.seen);
+  mlSetTabs(L, true); mlRenderBody(L, false, false); mlStatsPaint(L);
 }
-function mlPatch(still) { var L = mlData(); mlSetTabs(L, false); mlRenderBody(L, !!still, !still); }
+function mlPatch(still) { var L = mlData(); mlSetTabs(L, false); mlRenderBody(L, !!still, !still); mlStatsPaint(L); }
 function viewMyList() {
   var prev = mlShared;
   mlShared = null;
@@ -2999,6 +3030,18 @@ function trailersSection() {
       ? 'Activées : les fiches qui ont une vidéo affichent « Bande-annonce » et la lisent dans le lecteur du site. Les vidéos viennent de TMDB : pour les fiches déjà au catalogue, lance « Tout mettre à jour depuis TMDB ».'
       : 'Désactivées : le bouton « Bande-annonce » est caché pour tout le monde.') + '</p>', 2);
 }
+var AVCATS = [["k", "K-Drama"], ["j", "J-Drama"], ["c", "C-Drama"], ["t", "Thaï"], ["b", "BL"], ["x", "Spécial"]];
+function avatarsSection() {
+  var list = avatarItems(), opts = AVCATS.map(function (c) { return '<option value="' + c[0] + '">' + c[1] + '</option>'; }).join("");
+  var rows = list.length ? '<div class="pnavs">' + list.map(function (x) {
+    return '<div class="pnav"><img src="' + esc(x.src) + '" alt="" loading="lazy"><span><b>' + esc(x.name || "Photo") + '</b><small>' + esc((AVCATS.filter(function (c) { return c[0] === x.cat; })[0] || AVCATS[5])[1]) + '</small></span><button type="button" class="btn danger small" data-avdel="' + esc(x.id) + '">Retirer</button></div>';
+  }).join("") + '</div>' : '<p class="note">Aucune photo ajoutée pour l\'instant.</p>';
+  return pnCard("user", "Photos de profil" + pnPill(list.length > 0, list.length + (list.length > 1 ? " photos" : " photo"), "Aucune"), "Ajoute des photos que tout le monde pourra choisir pour son profil.",
+    '<div class="pnavform"><label class="f"><span>Nom</span><input type="text" id="avname" maxlength="24" autocomplete="off" placeholder="ex. Hallyu Star"></label>' +
+    '<label class="f"><span>Catégorie</span><select id="avcat">' + opts + '</select></label>' +
+    '<label class="btn small ghost pnavfile">Choisir une image et l\'ajouter<input type="file" id="avfile" accept="image/*" hidden></label></div>' +
+    '<p class="note">L\'image est rognée en carré (256 px) et envoyée dans ton dépôt GitHub (dossier avatars). Il faut avoir lié GitHub dans le volet admin.</p>' + rows, 3);
+}
 function blSection() {
   var on = blEnabled();
   return pnCard("globe", "Espace BL" + pnPill(on, "Activé", "Désactivé"), "Réservé au Head admin.",
@@ -3644,7 +3687,7 @@ function panBody(tab) {
           ? 'Privé : seul toi (en mode admin) vois les boutons et l\'onglet Télécharger. À la publication, les liens sont retirés de catalog.json, donc personne ne peut les lire dans le fichier. Ils restent sur ce navigateur : fais une sauvegarde complète.'
           : 'Public : tous les visiteurs voient les boutons et l\'onglet Télécharger sur les fiches qui ont des liens.') + '</p>' +
         '<div class="row"><button class="btn ghost small" type="button" data-preview="1">' + pnIco("eye") + '<span>Voir comme un visiteur</span></button></div>', 0) +
-      (head ? adsSection() : '') + (head ? trailersSection() : '') + (head ? blSection() : '') +
+      (head ? adsSection() : '') + (head ? trailersSection() : '') + (head ? blSection() : '') + (head ? avatarsSection() : '') +
       annSection() +
       playerSection();
   }
@@ -4759,6 +4802,39 @@ document.addEventListener("touchend", function (e) {
 /* ===== Demandes en cours : liste tenue à la main par l'admin, publiée dans catalog.json (pas de base de données) ===== */
 var REQKEY = "noir.reqs", REQS = readJSON(REQKEY, null) || { items: [], at: 0 };
 if (!Array.isArray(REQS.items)) REQS = { items: [], at: 0 };
+/* Photos de profil proposées à tout le monde (ajoutées par le Head admin, publiées dans catalog.json : avatars) */
+var AVKEY = "noir.avatars", AVT = readJSON(AVKEY, null) || { items: [], at: 0 };
+if (!Array.isArray(AVT.items)) AVT = { items: [], at: 0 };
+function avSave() { try { localStorage.setItem(AVKEY, JSON.stringify(AVT)); } catch (e) {} }
+function avatarItems() { return AVT.items.filter(function (x) { return x && /^\w+$/.test(String(x.id)) && /^https:\/\//.test(String(x.src)); }); }
+function avRefresh() { try { if (window.PF && PF.refresh) PF.refresh(); } catch (e) {} }
+function adoptAvatars(data) {
+  if (!data || Array.isArray(data) || !data.avatars || !Array.isArray(data.avatars.items)) return;
+  var r = data.avatars;
+  if (!ADMIN || (+r.at || 0) >= (+AVT.at || 0)) { AVT = { items: r.items, at: +r.at || 0 }; avSave(); avRefresh(); }
+}
+/* image de la galerie -> carré rogné, JPEG léger */
+function cropToJpeg(file, size, q) {
+  return new Promise(function (res, rej) {
+    if (!file || !/^image\//.test(file.type || "")) { rej(new Error("Choisis une image (JPG, PNG, WebP…)")); return; }
+    if (file.size > 15 * 1048576) { rej(new Error("Image trop lourde (15 Mo maximum)")); return; }
+    var rd = new FileReader();
+    rd.onerror = function () { rej(new Error("Lecture de l'image impossible")); };
+    rd.onload = function () {
+      var im = new Image();
+      im.onerror = function () { rej(new Error("Ce fichier n'est pas une image valide")); };
+      im.onload = function () {
+        var s = Math.min(im.width, im.height), c = document.createElement("canvas");
+        c.width = c.height = size;
+        var g = c.getContext("2d"); g.fillStyle = "#000"; g.fillRect(0, 0, size, size);
+        g.drawImage(im, (im.width - s) / 2, (im.height - s) / 2, s, s, 0, 0, size, size);
+        res(c.toDataURL("image/jpeg", q || .85));
+      };
+      im.src = rd.result;
+    };
+    rd.readAsDataURL(file);
+  });
+}
 function reqSave() { try { localStorage.setItem(REQKEY, JSON.stringify(REQS)); } catch (e) {} }
 function adoptReqs(data) {
   if (!data || Array.isArray(data) || !data.requests || !Array.isArray(data.requests.items)) return;
@@ -5955,7 +6031,7 @@ document.addEventListener("click", function (e) {
     keepOpenDl = di; renderEditor(); keepOpenDl = null;
     toast(ddone + " épisode" + (ddone > 1 ? "s" : "") + " rempli" + (ddone > 1 ? "s" : "") + (dlines.length > deps.length - dfirst ? " (trop de lignes, les derniers sont ignorés)" : ""));
   }
-  else if (t.dataset.listtab != null) { listTab = t.dataset.listtab; if (rerender) rerender(); }
+  else if (t.dataset.listtab != null) { listTab = t.dataset.listtab; if (listTab === "seen" && !mlShared) seenCat = seenCatAuto(seenTitles()); if (rerender) rerender(); }
   else if (t.dataset.genre != null) { filter = t.dataset.genre; fOpen = ""; if (rerender) rerender(); }
   else if (t.dataset.langf != null) { langFilter = t.dataset.langf; fOpen = ""; if (rerender) rerender(); }
   else if (t.dataset.kdf != null) { kdFilter = t.dataset.kdf; fOpen = ""; if (rerender) rerender(); }
@@ -6329,6 +6405,7 @@ function ghPublish(obj, tried, opts) {
       ((remote && remote.requests && remote.requests.items) || []).forEach(function (r) { if (r && r.auto && (+r.at || 0) > (+REQS.at || 0) && !rq.items.some(function (x) { return x.id === r.id; })) rq.items.push(r); });
       obj.requests = rq;
     }
+    if (remote && remote.avatars && Array.isArray(remote.avatars.items) && (+remote.avatars.at || 0) > (+AVT.at || 0)) obj.avatars = remote.avatars; else if (AVT.at) obj.avatars = AVT;
     if (remote && remote.hosts && (+remote.hosts.at || 0) > (+STAT.at || 0)) obj.hosts = remote.hosts; else if (STAT.at) obj.hosts = STAT;
     var rps = remote && remote.settings;
     if (rps && "player" in rps && (+rps.playerAt || 0) > (+SETTINGS.playerAt || 0) && obj.settings) { obj.settings.player = rps.player; obj.settings.playerAt = rps.playerAt; }
@@ -6403,6 +6480,7 @@ function buildCatalogObj() {
   if (ANN) obj.announce = ANN;
   if (INBOX && INBOX.at) obj.inbox = INBOX;
   if (REQS.at) obj.requests = REQS;
+  if (AVT.at) obj.avatars = AVT;
   if (STAT.at) obj.hosts = STAT;
   var jl = journalList(); if (jl.length) obj.journal = jl;
   return obj;
@@ -6460,6 +6538,12 @@ document.addEventListener("click", function (e) {
     SETTINGS.trailers = tt2.dataset.settrailers === "off" ? "off" : "on"; SETTINGS.trailersAt = Date.now(); saveSettings(); viewPanel();
     toast("Bandes-annonces : " + (trailersOn() ? "activées" : "désactivées") + (autoSyncOn() ? " pour tout le monde" : ". Clique sur « Publier » pour l'appliquer aux visiteurs."));
     markDirty(); return;
+  }
+  var ad = e.target.closest("[data-avdel]");
+  if (ad) {
+    if (!isHead()) return;
+    AVT = { items: AVT.items.filter(function (x) { return x.id !== ad.dataset.avdel; }), at: Date.now() }; avSave(); avRefresh(); viewPanel(); markDirty();
+    toast("Photo retirée" + (autoSyncOn() ? "" : ". Clique sur « Publier » pour l'appliquer.")); return;
   }
   var tb = e.target.closest("[data-setbl]");
   if (tb) {
@@ -6575,6 +6659,32 @@ $("#btn-key").addEventListener("click", function () {
       '<div class="row"><button class="btn ghost" type="button" id="copyhash">Copier la ligne</button><a class="btn" href="/">Continuer</a></div></div></div>';
   }).catch(function () { toast("Impossible de chiffrer la clé ici (ouvre le site en https)"); });
 });
+document.addEventListener("change", function (e) {   /* panneau admin : ajout d'une photo de profil */
+  var t = e.target; if (!t || t.id !== "avfile") return;
+  var f = t.files && t.files[0]; t.value = "";
+  if (!f || !isHead()) return;
+  var gi = ghParse(ghRepo());
+  if (!gi || !ghToken()) { toast("Lie d'abord GitHub (volet admin) pour envoyer la photo"); return; }
+  var nm = (($("#avname") || {}).value || "").replace(/\s+/g, " ").trim().slice(0, 24) || f.name.replace(/\.[^.]+$/, "").slice(0, 24) || "Photo", cat = ($("#avcat") || {}).value || "x";
+  toast("Envoi de la photo…");
+  cropToJpeg(f, 256, .86).then(function (data) {
+    var id = "a" + Date.now().toString(36), path = "avatars/" + id + ".jpg";
+    return fetch("https://api.github.com/repos/" + gi.repo + "/contents/" + path, { method: "PUT", headers: ghHeaders({ "Content-Type": "application/json" }), body: JSON.stringify({ message: "Photo de profil : " + nm, content: data.split(",")[1], branch: gi.branch }) }).then(function (r) {
+      if (!r.ok) throw ghErr(r);
+      AVT = { items: AVT.items.concat([{ id: id, name: nm, cat: cat, src: "https://raw.githubusercontent.com/" + gi.repo + "/" + gi.branch + "/" + path }]), at: Date.now() };
+      avSave(); avRefresh(); viewPanel(); markDirty(); toast("Photo ajoutée");
+    });
+  }).catch(function (er) { toast(er && er.message ? er.message : "Impossible d'ajouter la photo"); });
+});
+/* Vu : changer de catégorie, abandonner / reprendre une série (avant le clic sur la ligne, qui ouvre la fiche) */
+document.addEventListener("click", function (e) {
+  var d = e.target.closest ? e.target.closest("[data-drop],[data-seencat]") : null; if (!d) return;
+  e.preventDefault(); e.stopPropagation();
+  if (d.dataset.seencat) { seenCat = d.dataset.seencat; if ($("#mlroot")) mlPatch(true); return; }
+  setDropped(d.dataset.drop, d.dataset.on === "1");
+  toast(d.dataset.on === "1" ? "Rangé dans « Abandonnés »" : "Remis « En cours de visionnage »");
+  if ($("#mlroot")) mlPatch(true);
+}, true);
 /* Onglet BL : confirmation avant d'entrer dans l'espace BL */
 document.addEventListener("click", function (e) {
   if (e.button || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
@@ -6931,7 +7041,7 @@ function loadCatalogCore() {
     var priv = !!(st && st.downloads === "private");
     if (!EDITOR) db = data;
     if (!ADMIN) SETTINGS.downloads = priv ? "private" : "public";
-    safe(function () { adoptTeam(raw); }); safe(function () { adoptHero(raw); }); safe(function () { adoptCalx(raw); }); safe(function () { adoptReqs(raw); }); safe(function () { adoptStat(raw); }); safe(function () { adoptAnnounce(raw); }); safe(function () { adoptInbox(raw); }); safe(function () { adoptCredits(raw); }); safe(function () { adoptVip(raw); });
+    safe(function () { adoptTeam(raw); }); safe(function () { adoptHero(raw); }); safe(function () { adoptCalx(raw); }); safe(function () { adoptReqs(raw); }); safe(function () { adoptAvatars(raw); }); safe(function () { adoptStat(raw); }); safe(function () { adoptAnnounce(raw); }); safe(function () { adoptInbox(raw); }); safe(function () { adoptCredits(raw); }); safe(function () { adoptVip(raw); });
     safe(function () { adoptPlayer(st); });
     if (!EDITOR) { /* déjà posé plus haut */ }
     else if (!db.length) {
