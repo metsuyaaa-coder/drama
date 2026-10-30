@@ -49871,9 +49871,31 @@
         "en": "Wild Eyes: The Woman of the Prince",
         "auto": true,
         "at": 1793397884672
+      },
+      {
+        "id": "rmvvmgmyr",
+        "title": "Recharge mon Coeur",
+        "status": "wait",
+        "bl": false,
+        "kind": "stream",
+        "votes": 1,
+        "tmdb": "289423",
+        "media": "tv",
+        "year": "2026",
+        "poster": "/p5UJ0xS2NVmqtUfy9i0DMIJ1Lf3.jpg",
+        "origin": "Corée",
+        "en": "Take Charge of My Heart",
+        "auto": true,
+        "at": 1793404041795
       }
     ],
-    "at": 1793397884672
+    "at": 1793404041795,
+    "log": [
+      {
+        "v": "5cd7418d",
+        "t": 1793404041795
+      }
+    ]
   },
   "hosts": {
     "items": [
