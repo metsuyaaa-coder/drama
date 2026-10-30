@@ -47516,10 +47516,12 @@
       ],
       "sources": [],
       "addedAt": 1793295826799,
-      "langs": [],
+      "langs": [
+        "VOSTFR"
+      ],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1793297472298
+      "updatedAt": 1793325038714
     },
     {
       "id": "254993",
@@ -48959,6 +48961,15 @@
     "at": 1793280056955
   },
   "journal": [
+    {
+      "k": "mvubfbtwnsla2",
+      "t": 1793325038756,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "311025",
+      "n": "Affinity",
+      "d": ""
+    },
     {
       "k": "mvub9k0rs7am4",
       "t": 1793324769435,
@@ -51649,15 +51660,6 @@
       "i": "270420",
       "n": "No Tail to Tell",
       "d": "sources 24 → 36"
-    },
-    {
-      "k": "mvi97lr7bd6m8",
-      "t": 1792595725027,
-      "b": "head",
-      "a": "add",
-      "i": "270420",
-      "n": "No Tail to Tell",
-      "d": ""
     }
   ],
   "refreshAt": 1792423579957
