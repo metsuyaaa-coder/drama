@@ -48577,7 +48577,7 @@
         "라이어"
       ],
       "year": "2026",
-      "overview": "Après un premier rendez-vous qui semblait parfait, quatre adultes voient leur vie bouleversée lorsque secrets et mensonges commencent à refaire surface.\n\nProfesseure de danse dans un collège artistique, Kang Ji Seon a grandi dans une famille autrefois fortunée, mais ruinée par les épreuves. Depuis, elle se méfie des autres et préfère garder ses distances plutôt que de risquer d'être trompée.\n\nSa rencontre avec Min Jun Ho, un père célibataire et chirurgien cardiaque respecté, va peu à peu changer sa vision des relations. Veuf depuis plusieurs années, celui-ci a consacré sa vie à l'éducation de son fils, jusqu'à ce que Ji Seon fasse renaître en lui des sentiments oubliés.\n\nAlors que leur rapprochement semble prometteur, des vérités cachées viennent fragiliser leur confiance naissante. Entre sincérité, mensonges et désillusions, leur histoire résistera-t-elle aux secrets du passé ?",
+      "overview": "À la suite d’un premier rendez-vous qui semblait idéal, quatre adultes voient leur quotidien bouleversé lorsque des secrets enfouis et des mensonges soigneusement dissimulés commencent à refaire surface.\n\nProfesseure de danse dans un collège artistique, Kang Ji Seon a grandi dans une famille autrefois aisée, dont la fortune s’est progressivement effondrée. Marquée par cette période difficile, elle a appris à se méfier des apparences et à garder ses distances pour ne pas être dupée.\n\nSa rencontre avec Min Jun Ho, un éminent chirurgien cardiaque et père célibataire, vient peu à peu ébranler ses certitudes. Veuf depuis plusieurs années, celui-ci a consacré toute son existence à élever son fils, renonçant à toute vie sentimentale. Mais sa rencontre avec Ji Seon ravive des sentiments qu’il croyait oubliés.\n\nAlors que leur relation prend un nouveau tournant, des révélations inattendues menacent de compromettre la confiance qu’ils commencent à construire. Entre vérités dissimulées et sentiments naissants, sauront-ils surmonter les épreuves qui se dressent sur leur chemin ?",
       "genres": [
         "Drame",
         "Crime",
@@ -48784,7 +48784,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1793395482128
+      "updatedAt": 1793396052692
     }
   ],
   "deletedLinks": [
@@ -49553,6 +49553,15 @@
     "at": 1793280056955
   },
   "journal": [
+    {
+      "k": "mvvhpejsp9wiy",
+      "t": 1793396052712,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "307478",
+      "n": "The Perfect Lie",
+      "d": ""
+    },
     {
       "k": "mvvhd6astrgfu",
       "t": 1793395482148,
@@ -52243,15 +52252,6 @@
       "i": "127529",
       "n": "Bloodhounds",
       "d": "sources 14 → 22"
-    },
-    {
-      "k": "mvijdkdhnc1i4",
-      "t": 1792612799333,
-      "b": "head",
-      "a": "edit",
-      "i": "307106",
-      "n": "Between Steps",
-      "d": ""
     }
   ],
   "refreshAt": 1792423579957
