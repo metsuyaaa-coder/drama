@@ -33536,7 +33536,13 @@
               "name": "Épisode 16",
               "overview": "",
               "air_date": "2026-10-29",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-by262q8u9saz.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -33544,7 +33550,13 @@
               "name": "Épisode 17",
               "overview": "",
               "air_date": "2026-10-30",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-ycs844lafjvc.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -33741,7 +33753,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1793287339670,
+      "updatedAt": 1793380990844,
       "trend": 0,
       "eprt": 48
     },
@@ -49285,6 +49297,15 @@
   },
   "journal": [
     {
+      "k": "mvv8qkr2yxrpg",
+      "t": 1793380990862,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "286171",
+      "n": "Tigers Sniff the Rose",
+      "d": "sources 15 → 17"
+    },
+    {
       "k": "mvv8pcqmvi9s7",
       "t": 1793380933822,
       "b": "614d778ed0",
@@ -51974,15 +51995,6 @@
       "i": "",
       "n": "Toutes les fiches",
       "d": "89 fiches"
-    },
-    {
-      "k": "mvii8hvjhmzd2",
-      "t": 1792610883199,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "307106",
-      "n": "Between Steps",
-      "d": ""
     }
   ],
   "refreshAt": 1792423579957
