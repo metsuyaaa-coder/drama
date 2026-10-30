@@ -4,8 +4,8 @@
    Phrase secrète : 8 mots qui dérivent une clé de chiffrement. La sauvegarde en ligne (api/profile.js) ne contient que des données chiffrées, illisibles sans la phrase. */
 (function () {
 "use strict";
-var PF_KEYS = ["noir.list", "noir.seen", "noir.resume", "noir.prefs", "noir.collections", "noir.notif.subs", "noir.notif.read", "noir.notif.gone", "noir.notif.items", "noir.notif.since"];
-var PF_CLOUD_KEYS = ["noir.list", "noir.seen", "noir.resume", "noir.prefs", "noir.collections", "noir.notif.subs", "noir.notif.read", "noir.notif.gone"];   /* ce qui est sauvegardé en ligne (pas les données qui se recalculent) */
+var PF_KEYS = ["noir.list", "noir.seen", "noir.resume", "noir.prefs", "noir.collections", "noir.dropped", "noir.notif.subs", "noir.notif.read", "noir.notif.gone", "noir.notif.items", "noir.notif.since"];
+var PF_CLOUD_KEYS = ["noir.list", "noir.seen", "noir.resume", "noir.prefs", "noir.collections", "noir.dropped", "noir.notif.subs", "noir.notif.read", "noir.notif.gone"];   /* ce qui est sauvegardé en ligne (pas les données qui se recalculent) */
 var META = "noir.profiles", CUR = "noir.pf.cur", DATA = "noir.pf.d.", SESS = "noir.pf.ok", PULLED = "noir.pf.pulled";
 var WORDS = "lune soleil etoile nuage pluie neige vent orage brume aurore sable ocean vague rivage ile lac source fleuve pont mont colline foret prairie jardin verger champ sentier route tunnel phare port barque voile ancre perle corail coquille galet cristal rubis opale jade ambre onyx argent cuivre bronze fer or tigre dragon panda lapin renard loup ours cerf biche hibou aigle moineau cygne grue canard poney chat chien souris panthere lion zebre koala singe paon colibri papillon abeille fourmi grenouille tortue poisson requin dauphin baleine crabe pieuvre meduse licorne cerise pomme poire peche prune mangue ananas citron orange banane melon raisin fraise framboise myrtille noix noisette amande riz the cafe miel sucre sel poivre menthe basilic thym safran vanille cannelle gingembre ramen sushi gateau bonbon glace crepe brioche biscuit tarte pizza soupe salade fromage beurre lait chocolat fleur rose lotus iris tulipe pivoine orchidee lilas violette jasmin lavande bambou pin chene erable saule cedre palmier cactus fougere mousse lierre bruyere ruban plume ballon cadeau cloche tambour guitare piano violon flute harpe radio camera livre carnet crayon pinceau miroir lampe bougie lanterne parapluie echarpe chapeau bottes gants valise horloge boussole carte voyage fusee comete galaxie planete eclipse arcenciel tonnerre eclair flamme braise cendre volcan geyser glacier desert oasis canyon grotte falaise recif lagune delta archipel savane tundra jungle steppe plaine vallee cascade ruisseau etang marais jonc nenuphar trefle muguet coquelicot bleuet marguerite camelia glycine magnolia gardenia hibiscus azalee aube crepuscule zenith horizon mirage tempete bourrasque rosee givre grele brouillard souffle echo rythme melodie refrain ballade sonate poeme conte".split(" ");
 
@@ -137,9 +137,10 @@ function select(id) {
   try { sessionStorage.setItem(SESS, "1"); sessionStorage.removeItem(PULLED); } catch (e) {}
   location.href = "/";
 }
-function create(name, avatar, cloud) {
+function create(name, avatar, cloud, photo) {
   var ps = metas(), p = { id: rid(), name: name, avatar: avatar, at: Date.now() };
   if (cloud) p.cloud = cloud;
+  if (avatar === "me" && photo) p.photo = photo;
   if (!ps.length) { ps.push(p); saveMetas(ps); try { localStorage.setItem(CUR, p.id); } catch (e) {} return { p: p, first: true }; }   /* 1er profil : il garde les données déjà présentes sur l'appareil */
   ps.push(p); saveMetas(ps); jset(DATA + p.id, {});
   return { p: p, first: false };
@@ -198,7 +199,7 @@ function cloudOk() {
 
 /* ===== Sauvegarde en ligne (chiffrée) ===== */
 function hsh(s) { var h = 5381; for (var i = 0; i < s.length; i++) h = ((h << 5) + h + s.charCodeAt(i)) | 0; return h + ":" + s.length; }
-function cloudSnapString(p) { return JSON.stringify({ name: p.name, avatar: p.avatar, data: snapshot(PF_CLOUD_KEYS) }); }
+function cloudSnapString(p) { return JSON.stringify({ name: p.name, avatar: p.avatar, photo: p.photo || "", data: snapshot(PF_CLOUD_KEYS) }); }
 var syncing = false, lastPush = 0;
 function pushNow(force) {
   var p = cur();
@@ -206,7 +207,7 @@ function pushNow(force) {
   var s = cloudSnapString(p), h = hsh(s);
   if (!force && h === p.cloud.last) return Promise.resolve();
   syncing = true; var at = Date.now();
-  var payload = JSON.stringify({ v: 1, name: p.name, avatar: p.avatar, data: snapshot(PF_CLOUD_KEYS), at: at });
+  var payload = JSON.stringify({ v: 1, name: p.name, avatar: p.avatar, photo: p.photo || "", data: snapshot(PF_CLOUD_KEYS), at: at });
   return encrypt(payload, p.cloud.key).then(function (blob) { return api("put", { id: p.cloud.id, auth: p.cloud.auth, blob: blob, at: at }); }).then(function (r) {
     if (r && r.ok) { var c = p.cloud; c.last = h; c.at = at; update(p.id, { cloud: c }); lastPush = Date.now(); }
   }).catch(function () {}).then(function () { syncing = false; });
@@ -221,9 +222,9 @@ function pullBoot() {
       if (!rem || (+rem.at || 0) <= (+p.cloud.at || 0)) return;                     /* rien de plus récent en ligne */
       if (hsh(cloudSnapString(p)) !== p.cloud.last) return;                          /* modifications locales non envoyées : on garde les miennes */
       applySnap(rem.data || {});
-      var np = { name: rem.name || p.name, avatar: PF_AV[rem.avatar] ? rem.avatar : p.avatar };
-      var c = p.cloud; c.at = +rem.at; c.last = hsh(JSON.stringify({ name: np.name, avatar: np.avatar, data: snapshot(PF_CLOUD_KEYS) }));
-      update(p.id, { name: np.name, avatar: np.avatar, cloud: c });
+      var okAv = avValid(rem.avatar, rem.photo), np = { name: rem.name || p.name, avatar: okAv ? rem.avatar : p.avatar, photo: okAv && rem.avatar === "me" ? rem.photo : (okAv ? "" : p.photo || "") };
+      var c = p.cloud; c.at = +rem.at; c.last = hsh(JSON.stringify({ name: np.name, avatar: np.avatar, photo: np.photo, data: snapshot(PF_CLOUD_KEYS) }));
+      update(p.id, { name: np.name, avatar: np.avatar, photo: np.photo, cloud: c });
       location.reload();
     });
   }).catch(function () {});
@@ -237,26 +238,44 @@ function startSync() {
   if (!cur().cloud.at) setTimeout(function () { pushNow(true); }, 4000);   /* première sauvegarde en ligne */
 }
 
+/* ===== Photos : avatars ajoutés par le Head admin (u:ID) et photo de la galerie (me) ===== */
+function customAv() { try { return typeof avatarItems === "function" ? avatarItems() : []; } catch (e) { return []; } }
+var PHOTO_RE = /^data:image\/jpeg;base64,[A-Za-z0-9+\/=]{20,160000}$/;
+function avValid(code, photo) { code = String(code || ""); if (code === "me") return PHOTO_RE.test(String(photo || "")); if (/^u:\w+$/.test(code)) return true; return !!PF_AV[code]; }
+function avHTML(code, photo, size) {
+  code = String(code || "");
+  if (code === "me" && PHOTO_RE.test(String(photo || ""))) return '<img src="' + photo + '" alt="" width="' + size + '" height="' + size + '">';
+  if (/^u:\w+$/.test(code)) {
+    var it = customAv().filter(function (x) { return x.id === code.slice(2); })[0];
+    if (it) return '<img src="' + E(it.src) + '" alt="' + E(it.name || "") + '" width="' + size + '" height="' + size + '">';
+  }
+  return pfAvatar(PF_AV[code] ? code : "k1", size);
+}
+function avCatOf(code) { if (PF_AV[code]) return code.charAt(0); var it = /^u:/.test(code) ? customAv().filter(function (x) { return "u:" + x.id === code; })[0] : null; return it ? (it.cat || "x") : "k"; }
+
 /* ===== Écran « Qui regarde ? » ===== */
-var scr = null, mode = "choose", manage = false, boot = false, edit = null, selAv = "k1", selCat = "k", phraseShown = "", pending = null;
+var scr = null, mode = "choose", manage = false, boot = false, edit = null, selAv = "k1", selCat = "k", selPhoto = "", phraseShown = "", pending = null;
 function E(s) { return typeof esc === "function" ? esc(s) : String(s).replace(/[&<>"']/g, ""); }
-function avBtn(code) { return '<button type="button" class="pfav-opt' + (selAv === code ? " on" : "") + '" data-pf="av" data-code="' + code + '" aria-label="' + E(PF_AV[code].n) + '" title="' + E(PF_AV[code].n) + '">' + pfAvatar(code, 96) + '</button>'; }
+function avBtn(code, label) { return '<button type="button" class="pfav-opt' + (selAv === code ? " on" : "") + '" data-pf="av" data-code="' + code + '" aria-label="' + E(label) + '" title="' + E(label) + '">' + avHTML(code, "", 96) + '</button>'; }
 function render() {
   if (!scr) return;
   var ps = metas(), c = curId(), h = "";
   if (mode === "choose") {
     h = '<h1 class="pftitle" id="pftitle">' + (manage ? "Gérer les profils" : ps.length ? "Qui regarde ?" : "Crée ton profil") + '</h1>';
     h += '<div class="pfgrid">' + ps.map(function (p) {
-      return '<button type="button" class="pfcard' + (p.id === c ? " cur" : "") + '" data-pf="' + (manage ? "edit" : "pick") + '" data-id="' + p.id + '"><span class="pfav">' + pfAvatar(PF_AV[p.avatar] ? p.avatar : "k1", 200) + (manage ? '<span class="pfedit" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 17.25V21h3.75L17.8 9.94l-3.75-3.75L3 17.25zM20.7 7.04a1 1 0 0 0 0-1.41l-2.34-2.34a1 1 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg></span>' : '') + '</span><b>' + E(p.name) + '</b></button>';
+      return '<button type="button" class="pfcard' + (p.id === c ? " cur" : "") + '" data-pf="' + (manage ? "edit" : "pick") + '" data-id="' + p.id + '"><span class="pfav">' + avHTML(p.avatar, p.photo, 200) + (manage ? '<span class="pfedit" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 17.25V21h3.75L17.8 9.94l-3.75-3.75L3 17.25zM20.7 7.04a1 1 0 0 0 0-1.41l-2.34-2.34a1 1 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg></span>' : '') + '</span><b>' + E(p.name) + '</b></button>';
     }).join("") + (ps.length < 6 ? '<button type="button" class="pfcard add" data-pf="new"><span class="pfav plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span><b>Ajouter un profil</b></button>' : '') + '</div>';
     h += '<p class="pfhint">' + (ps.length ? "Chaque profil a sa propre liste, sa progression et ses réglages." : "Un profil garde ta liste, ta progression et tes réglages. Tu peux en créer plusieurs sur le même appareil.") + '</p>';
     h += '<div class="pfactions">' + (ps.length ? '<button type="button" class="btn ghost" data-pf="manage">' + (manage ? "Terminé" : "Gérer les profils") + '</button>' : '') + '<button type="button" class="pflink" data-pf="restore">Me reconnecter avec ma phrase secrète</button></div>';
   } else if (mode === "form") {
-    var cats = PF_CATS.map(function (k) { return '<button type="button" class="pftab' + (selCat === k.id ? " on" : "") + '" data-pf="cat" data-cat="' + k.id + '">' + k.name + '</button>'; }).join("");
-    var avs = PF_AVORDER.filter(function (k) { return k.charAt(0) === selCat; }).map(avBtn).join("");
-    h = '<h1 class="pftitle" id="pftitle">' + (edit ? "Modifier le profil" : "Créer un profil") + '</h1><div class="pfform"><div class="pfpreview" id="pfprev">' + pfAvatar(selAv, 200) + '</div><div class="pffields">' +
+    var cu = customAv(), catList = PF_CATS.concat(cu.some(function (x) { return (x.cat || "x") === "x"; }) ? [{ id: "x", name: "Spécial" }] : []);
+    var cats = catList.map(function (k) { return '<button type="button" class="pftab' + (selCat === k.id ? " on" : "") + '" data-pf="cat" data-cat="' + k.id + '">' + k.name + '</button>'; }).join("");
+    var avs = PF_AVORDER.filter(function (k) { return k.charAt(0) === selCat; }).map(function (k) { return avBtn(k, PF_AV[k].n); }).join("") +
+      cu.filter(function (x) { return (x.cat || "x") === selCat; }).map(function (x) { return avBtn("u:" + x.id, x.name || "Photo"); }).join("");
+    h = '<h1 class="pftitle" id="pftitle">' + (edit ? "Modifier le profil" : "Créer un profil") + '</h1><div class="pfform"><div class="pfpreview" id="pfprev">' + avHTML(selAv, selPhoto, 200) + '</div><div class="pffields">' +
       '<label class="f"><span>Nom</span><input type="text" id="pfname" maxlength="20" autocomplete="off" value="' + E(edit ? edit.name : "") + '" placeholder="Ton prénom ou pseudo"></label>' +
-      '<div class="pftabs">' + cats + '</div><div class="pfavs" id="pfavs">' + avs + '</div><p class="note" id="pferr"></p>' +
+      '<div class="pftabs">' + cats + '</div><div class="pfavs" id="pfavs">' + avs + '</div>' +
+      '<div class="pfphotorow"><label class="btn small ghost pffile">' + (selAv === "me" ? "Changer ma photo" : "Ma photo (galerie)") + '<input type="file" id="pfphoto" accept="image/*" hidden></label><span class="note">Rognée en carré, gardée sur ton appareil et dans ta sauvegarde chiffrée.</span></div><p class="note" id="pferr"></p>' +
       '<div class="row"><button type="button" class="btn" data-pf="save">' + (edit ? "Enregistrer" : "Continuer") + '</button><button type="button" class="btn ghost" data-pf="back">Annuler</button>' + (edit ? '<button type="button" class="btn danger" data-pf="del">Supprimer</button>' : '') + '</div></div></div>';
   } else if (mode === "phrase") {
     h = '<h1 class="pftitle" id="pftitle">Ta phrase secrète</h1><div class="pfform one"><p class="lead">Elle te permet de retrouver ce profil (liste, progression, réglages) sur un autre appareil, ou si tu vides ton navigateur. <b>Note-la maintenant : elle ne sera plus jamais affichée.</b></p>' +
@@ -277,14 +296,28 @@ function open(m, opts) {
   if (!scr) {
     scr = document.createElement("div"); scr.className = "pfscreen"; scr.id = "pfscreen"; scr.setAttribute("role", "dialog"); scr.setAttribute("aria-modal", "true"); scr.setAttribute("aria-labelledby", "pftitle");
     scr.innerHTML = '<button type="button" class="pfclose" data-pf="close" aria-label="Fermer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button><div class="pfbody"></div>';
-    document.body.appendChild(scr); scr.addEventListener("click", onClick); scr.addEventListener("input", onInput);
+    document.body.appendChild(scr); scr.addEventListener("click", onClick); scr.addEventListener("input", onInput); scr.addEventListener("change", onChange);
   }
   scr.classList.toggle("noclose", boot); document.documentElement.classList.add("pfopen");
   cloudOk(); render();
 }
 function close() { if (scr) { scr.remove(); scr = null; } document.documentElement.classList.remove("pfopen"); }
+function onChange(e) {
+  if (e.target.id !== "pfphoto") return;
+  var f = e.target.files && e.target.files[0]; e.target.value = "";
+  if (!f) return;
+  if (typeof cropToJpeg !== "function") { setErr("Photo indisponible sur ce navigateur"); return; }
+  setErr("");
+  cropToJpeg(f, 256, .85).then(function (d) {
+    if (!PHOTO_RE.test(d)) throw new Error("Photo trop lourde");
+    selPhoto = d; selAv = "me";
+    var pv = scr && scr.querySelector("#pfprev"); if (pv) pv.innerHTML = avHTML(selAv, selPhoto, 200);
+    scr.querySelectorAll(".pfav-opt").forEach(function (b) { b.classList.remove("on"); });
+    var lb = scr.querySelector(".pffile"); if (lb) lb.firstChild.nodeValue = "Changer ma photo";
+  }).catch(function (er) { setErr(er && er.message ? er.message : "Impossible de lire cette image"); });
+}
 function onInput(e) { if (e.target.id === "pfname") setErr(""); }
-function startForm(p) { edit = p || null; selAv = p ? p.avatar : PF_AVORDER[Math.floor(Math.random() * PF_AVORDER.length)]; selCat = selAv.charAt(0); mode = "form"; render(); }
+function startForm(p) { edit = p || null; selAv = p && avValid(p.avatar, p.photo) ? p.avatar : PF_AVORDER[Math.floor(Math.random() * PF_AVORDER.length)]; selPhoto = p && p.photo ? p.photo : ""; selCat = avCatOf(selAv); mode = "form"; render(); }
 function onClick(e) {
   var t = e.target.closest ? e.target.closest("[data-pf]") : null; if (!t) return;
   var a = t.dataset.pf, ps = metas();
@@ -296,7 +329,7 @@ function onClick(e) {
   else if (a === "restore") { mode = "restore"; render(); }
   else if (a === "back") { mode = "choose"; edit = null; render(); }
   else if (a === "cat") { selCat = t.dataset.cat; var f = scr.querySelector("#pfname"), v = f ? f.value : ""; render(); var f2 = scr.querySelector("#pfname"); if (f2) f2.value = v; }
-  else if (a === "av") { selAv = t.dataset.code; scr.querySelector("#pfprev").innerHTML = pfAvatar(selAv, 200); scr.querySelectorAll(".pfav-opt").forEach(function (b) { b.classList.toggle("on", b.dataset.code === selAv); }); }
+  else if (a === "av") { selAv = t.dataset.code; scr.querySelector("#pfprev").innerHTML = avHTML(selAv, selPhoto, 200); var lb2 = scr.querySelector(".pffile"); if (lb2) lb2.firstChild.nodeValue = selPhoto ? "Ma photo (galerie)" : "Ma photo (galerie)"; scr.querySelectorAll(".pfav-opt").forEach(function (b) { b.classList.toggle("on", b.dataset.code === selAv); }); }
   else if (a === "save") saveForm();
   else if (a === "del") { if (edit && window.confirm("Supprimer le profil « " + edit.name + " » ? Sa liste, sa progression et ses réglages seront effacés de cet appareil" + (edit.cloud ? " et de la sauvegarde en ligne." : "."))) remove(edit.id); }
   else if (a === "copy") { try { navigator.clipboard.writeText(phraseShown).then(function () { toast("Phrase copiée"); }, function () { toast("Copie impossible : note-la à la main"); }); } catch (er) { toast("Copie impossible : note-la à la main"); } }
@@ -307,15 +340,17 @@ function saveForm() {
   var n = (scr.querySelector("#pfname").value || "").replace(/\s+/g, " ").trim().slice(0, 20);
   if (!n) { setErr("Donne un nom à ton profil"); return; }
   if (metas().some(function (p) { return p.name.toLowerCase() === n.toLowerCase() && (!edit || p.id !== edit.id); })) { setErr("Un profil porte déjà ce nom"); return; }
-  if (edit) { update(edit.id, { name: n, avatar: selAv }); edit = null; mode = "choose"; paintBtn(); render(); if (cur() && cur().cloud) pushNow(true); return; }
+  if (selAv === "me" && !PHOTO_RE.test(selPhoto)) { setErr("Choisis une photo ou un avatar"); return; }
+  var ph = selAv === "me" ? selPhoto : "";
+  if (edit) { update(edit.id, { name: n, avatar: selAv, photo: ph }); edit = null; mode = "choose"; paintBtn(); render(); if (cur() && cur().cloud) pushNow(true); return; }
   var btn = scr.querySelector('[data-pf="save"]'); btn.disabled = true;
   cloudOk().then(function (ok) {
-    if (!ok) { var r = create(n, selAv, null); paintBtn(); if (r.first) { close(); toast("Profil créé (sauvegarde en ligne indisponible)"); } else select(r.p.id); return; }
+    if (!ok) { var r = create(n, selAv, null, ph); paintBtn(); if (r.first) { close(); toast("Profil créé (sauvegarde en ligne indisponible)"); } else select(r.p.id); return; }
     setErr("Création en cours…", true);
-    var ph = newPhrase();
-    return derive(ph).then(function (d) {
-      var r = create(n, selAv, { id: d.id, auth: d.auth, key: d.key, at: 0, last: "" });
-      phraseShown = ph; pending = r; mode = "phrase"; render();
+    var phrase = newPhrase();
+    return derive(phrase).then(function (d) {
+      var r = create(n, selAv, { id: d.id, auth: d.auth, key: d.key, at: 0, last: "" }, ph);
+      phraseShown = phrase; pending = r; mode = "phrase"; render();
       if (!r.first) { /* le nouveau profil démarre à vide : sa 1re sauvegarde se fera à son ouverture */ }
     });
   }).catch(function () { btn.disabled = false; setErr("Impossible de créer le profil. Réessaie."); });
@@ -331,19 +366,19 @@ function doRestore() {
         if (!r || !r.ok || !r.blob) throw new Error("none");
         return decrypt(r.blob, d.key).then(function (txt) {
           var rem = JSON.parse(txt), ps = metas(), ex = ps.filter(function (p) { return p.cloud && p.cloud.id === d.id; })[0];
-          var av = PF_AV[rem.avatar] ? rem.avatar : "k1";
+          var av = avValid(rem.avatar, rem.photo) ? rem.avatar : "k1", phRem = av === "me" ? rem.photo : "";
           saveCur();
           var cloud = { id: d.id, auth: d.auth, key: d.key, at: +rem.at || 0, last: "" };
           var id;
-          if (ex) { id = ex.id; update(id, { name: rem.name || ex.name, avatar: av, cloud: cloud }); }
+          if (ex) { id = ex.id; update(id, { name: rem.name || ex.name, avatar: av, photo: phRem, cloud: cloud }); }
           else {
             var nm = String(rem.name || "Profil").slice(0, 20), base = nm, i = 2;
             while (ps.some(function (p) { return p.name.toLowerCase() === nm.toLowerCase(); })) nm = (base.slice(0, 17) + " " + i++);
-            var pr = { id: rid(), name: nm, avatar: av, at: Date.now(), cloud: cloud }; ps.push(pr); saveMetas(ps); id = pr.id;
+            var pr = { id: rid(), name: nm, avatar: av, photo: phRem, at: Date.now(), cloud: cloud }; ps.push(pr); saveMetas(ps); id = pr.id;
           }
           var data = rem.data || {}; var keep = {}; PF_KEYS.forEach(function (k) { if (typeof data[k] === "string") keep[k] = data[k]; });
           jset(DATA + id, keep);
-          cloud.last = hsh(JSON.stringify({ name: rem.name || "", avatar: av, data: keep }));
+          cloud.last = hsh(JSON.stringify({ name: rem.name || ex && ex.name || "", avatar: av, photo: phRem, data: keep }));
           update(id, { cloud: cloud });
           select(id);
         }, function () { throw new Error("bad"); });
@@ -356,17 +391,18 @@ function doRestore() {
 }
 
 /* ===== Bouton du haut ===== */
+var PERSON = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 12a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9zm0 2.2c-3.6 0-8 1.8-8 5.3V21h16v-1.5c0-3.5-4.4-5.3-8-5.3z"/></svg>';
 function paintBtn() {
-  var b = document.getElementById("pfbtn"); if (!b) return;
-  var p = cur();
-  b.innerHTML = p && PF_AV[p.avatar] ? pfAvatar(p.avatar, 44) : '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 12a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9zm0 2.2c-3.6 0-8 1.8-8 5.3V21h16v-1.5c0-3.5-4.4-5.3-8-5.3z"/></svg>';
-  b.classList.toggle("has", !!(p && PF_AV[p.avatar]));
-  b.title = p ? "Profil : " + p.name : "Profils"; b.setAttribute("aria-label", b.title);
+  var p = cur(), ok = !!(p && avValid(p.avatar, p.photo));
+  var b = document.getElementById("pfbtn");
+  if (b) { b.innerHTML = ok ? avHTML(p.avatar, p.photo, 44) : PERSON; b.classList.toggle("has", ok); b.title = p ? "Profil : " + p.name : "Profils"; b.setAttribute("aria-label", b.title); }
+  var t = document.getElementById("pftab");
+  if (t) { var av = t.querySelector(".tabav"); if (av) { av.innerHTML = ok ? avHTML(p.avatar, p.photo, 44) : PERSON; av.classList.toggle("has", ok); } var lb = t.querySelector(".tablb"); if (lb) lb.textContent = p ? p.name.slice(0, 9) : "Profil"; }
 }
 function init() {
   var ps = metas(), id = curId();
   if (ps.length && !ps.filter(function (p) { return p.id === id; })[0]) { try { localStorage.setItem(CUR, ps[0].id); } catch (e) {} }
-  var b = document.getElementById("pfbtn"); if (b) b.addEventListener("click", function () { open("choose"); });
+  ["pfbtn", "pftab"].forEach(function (id) { var b = document.getElementById(id); if (b) b.addEventListener("click", function () { open("choose"); }); });
   document.addEventListener("keydown", function (e) { if (e.key === "Escape" && scr && !boot) close(); });
   paintBtn();
   var asked = false; try { asked = !!sessionStorage.getItem(SESS); } catch (e) {}
@@ -374,6 +410,6 @@ function init() {
   else try { sessionStorage.setItem(SESS, "1"); } catch (e) {}
   startSync();
 }
-window.PF = { open: open, current: cur, list: metas };
+window.PF = { open: open, current: cur, list: metas, refresh: function () { paintBtn(); if (scr && mode === "choose") render(); } };
 if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init); else init();
 })();
