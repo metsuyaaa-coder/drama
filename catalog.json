@@ -48863,9 +48863,25 @@
         "en": "Gimbap and Onigiri",
         "auto": true,
         "at": 1793344053429
+      },
+      {
+        "id": "rmvupo3o9",
+        "title": "L'impératrice remariée",
+        "status": "wait",
+        "bl": false,
+        "kind": "stream",
+        "votes": 1,
+        "tmdb": "279246",
+        "media": "tv",
+        "year": "2026",
+        "poster": "/1TKAhnnicIIV5k2L8bquwnU1B0s.jpg",
+        "origin": "Corée",
+        "en": "The Remarried Empress",
+        "auto": true,
+        "at": 1793348962722
       }
     ],
-    "at": 1793345323824,
+    "at": 1793348962713,
     "log": [
       {
         "v": "a065885a",
@@ -48874,6 +48890,10 @@
       {
         "v": "b7c01477",
         "t": 1793345323824
+      },
+      {
+        "v": "9588b4c7",
+        "t": 1793348962713
       }
     ]
   },
