@@ -48254,7 +48254,7 @@
       ],
       "rating": "10.0",
       "pop": 13.9828,
-      "status": "Returning Series",
+      "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/4QA54CD2POmR42Nfv2n8v1dH3u.jpg",
       "posterV": 2,
       "backdrop": "https://image.tmdb.org/t/p/original/gWedDgBsZkuOho2qe3q2sTQmbpO.jpg",
@@ -48498,7 +48498,7 @@
         "VF"
       ],
       "downloads": [],
-      "updatedAt": 1793367194470,
+      "updatedAt": 1793368541205,
       "posterCustom": true
     }
   ],
@@ -49234,6 +49234,15 @@
     "at": 1793280056955
   },
   "journal": [
+    {
+      "k": "mvv1bqjj1hc6p",
+      "t": 1793368541215,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "289517",
+      "n": "Dead-End Job",
+      "d": ""
+    },
     {
       "k": "mvv0g8heiibkm",
       "t": 1793367194481,
@@ -51924,15 +51933,6 @@
       "i": "286506",
       "n": "Blossoms of Power",
       "d": ""
-    },
-    {
-      "k": "mvih940cqtmbt",
-      "t": 1792609232268,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "229891",
-      "n": "Can This Love Be Translated?",
-      "d": "affiche"
     }
   ],
   "refreshAt": 1792423579957
