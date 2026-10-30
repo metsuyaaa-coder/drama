@@ -49120,9 +49120,31 @@
         "en": "The Remarried Empress",
         "auto": true,
         "at": 1793348962722
+      },
+      {
+        "id": "rmvv3ns5g",
+        "title": "你好1983",
+        "status": "wait",
+        "bl": false,
+        "kind": "dl",
+        "votes": 1,
+        "tmdb": "280822",
+        "media": "tv",
+        "year": "2026",
+        "poster": "/j8rOn9MSKJ8tAuqOjTOzLsa0oqu.jpg",
+        "origin": "Chine",
+        "en": "Dream of Golden Years",
+        "auto": true,
+        "at": 1793372462404
       }
     ],
-    "at": 1793348962713
+    "at": 1793372462404,
+    "log": [
+      {
+        "v": "2cf657e6",
+        "t": 1793372462404
+      }
+    ]
   },
   "hosts": {
     "items": [
