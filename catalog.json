@@ -7020,7 +7020,13 @@
               "name": "Épisode 32",
               "overview": "",
               "air_date": "2026-10-29",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-njwtmzircwdb.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -7098,7 +7104,7 @@
       ],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1793287262727,
+      "updatedAt": 1793380827598,
       "trend": 56
     },
     {
@@ -49273,6 +49279,15 @@
   },
   "journal": [
     {
+      "k": "mvv8n2sh00ezl",
+      "t": 1793380827617,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "304452",
+      "n": "The Lament of Autumn",
+      "d": "sources 31 → 32"
+    },
+    {
       "k": "mvv8ltoo0lvs7",
       "t": 1793380769160,
       "b": "614d778ed0",
@@ -51962,15 +51977,6 @@
       "i": "127529",
       "n": "Bloodhounds",
       "d": "sources 7 → 14"
-    },
-    {
-      "k": "mvihltxthv0mb",
-      "t": 1792609825745,
-      "b": "head",
-      "a": "edit",
-      "i": "127529",
-      "n": "Bloodhounds",
-      "d": ""
     }
   ],
   "refreshAt": 1792423579957
