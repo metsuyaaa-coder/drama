@@ -48255,7 +48255,7 @@
       "rating": "10.0",
       "pop": 13.9828,
       "status": "Returning Series",
-      "poster": "https://image.tmdb.org/t/p/w500/1yobke0bpfNOazuF9wW7QbM2GER.jpg",
+      "poster": "https://image.tmdb.org/t/p/original/4QA54CD2POmR42Nfv2n8v1dH3u.jpg",
       "posterV": 2,
       "backdrop": "https://image.tmdb.org/t/p/original/gWedDgBsZkuOho2qe3q2sTQmbpO.jpg",
       "videos": [
@@ -48498,7 +48498,8 @@
         "VF"
       ],
       "downloads": [],
-      "updatedAt": 1793367070918
+      "updatedAt": 1793367194470,
+      "posterCustom": true
     }
   ],
   "deletedLinks": [
@@ -49235,12 +49236,12 @@
   "journal": [
     {
       "k": "mvv0g8heiibkm",
-      "t": 1793367071474,
+      "t": 1793367194481,
       "b": "614d778ed0",
       "a": "edit",
       "i": "289517",
       "n": "Dead-End Job",
-      "d": "sources 8 → 16"
+      "d": "affiche"
     },
     {
       "k": "mvuzrrfds3lhq",
