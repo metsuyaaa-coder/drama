@@ -49439,9 +49439,26 @@
         "en": "",
         "auto": true,
         "at": 1793373704993
+      },
+      {
+        "id": "rmvviso3k",
+        "title": "광안 : 세자의 여자",
+        "status": "wait",
+        "bl": false,
+        "kind": "stream",
+        "votes": 1,
+        "tmdb": "320953",
+        "media": "tv",
+        "year": "2026",
+        "poster": "/8D2b2CztzsNNt9eArEeEfHCUKzJ.jpg",
+        "origin": "Corée",
+        "en": "Wild Eyes: The Woman of the Prince",
+        "auto": true,
+        "at": 1793397884672
       }
     ],
-    "at": 1793393950099
+    "at": 1793397884672,
+    "log": []
   },
   "hosts": {
     "items": [
