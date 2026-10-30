@@ -425,7 +425,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "trend": 41,
+      "trend": 0,
       "aka": [
         "100 Days of Deception",
         "百日谎言",
@@ -1101,7 +1101,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "trend": 73,
+      "trend": 70,
       "posterV": 2,
       "origin_country": [
         "KR"
@@ -1604,7 +1604,7 @@
         "Upanje",
         "호프"
       ],
-      "trend": 93,
+      "trend": 92,
       "downloads": [
         {
           "name": "1FICHIER",
@@ -6134,7 +6134,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "trend": 53,
+      "trend": 0,
       "posterV": 2,
       "origin_country": [
         "KR"
@@ -6601,7 +6601,7 @@
       "downloads": [],
       "posterV": 2,
       "updatedAt": 1793286926361,
-      "trend": 84,
+      "trend": 79,
       "networks": [
         "CCTV-8",
         "Youku"
@@ -7552,7 +7552,7 @@
       "downloads": [],
       "posterV": 2,
       "updatedAt": 1793287262727,
-      "trend": 61,
+      "trend": 0,
       "networks": [
         "Hunan Television",
         "Mango TV"
@@ -8346,7 +8346,7 @@
       ],
       "downloads": [],
       "updatedAt": 1793287796569,
-      "trend": 0,
+      "trend": 46,
       "networks": [
         "Nippon TV"
       ],
@@ -8513,7 +8513,7 @@
         }
       ],
       "updatedAt": 1793130216469,
-      "trend": 0,
+      "trend": 48,
       "posterCustom": true,
       "videos": [
         {
@@ -25900,7 +25900,7 @@
       ],
       "downloads": [],
       "updatedAt": 1793140466392,
-      "trend": 79,
+      "trend": 78,
       "videos": [
         {
           "key": "55ATD_SJ_Xw",
@@ -33735,7 +33735,7 @@
       ],
       "downloads": [],
       "updatedAt": 1793287339670,
-      "trend": 86,
+      "trend": 67,
       "eprt": 48
     },
     {
@@ -41810,7 +41810,7 @@
       "downloads": [],
       "posterCustom": true,
       "updatedAt": 1793130295005,
-      "trend": 82
+      "trend": 87
     },
     {
       "id": "334517",
@@ -47815,6 +47815,448 @@
       ],
       "downloads": [],
       "updatedAt": 1793309132047
+    },
+    {
+      "id": "284934",
+      "type": "tv",
+      "name": "Sinful Marriage",
+      "original_name": "罪嫁",
+      "origin_country": [
+        "CN"
+      ],
+      "networks": [
+        "Mango TV"
+      ],
+      "original_language": "zh",
+      "aka": [
+        "Sinful Marriage",
+        "罪嫁",
+        "죄가 : 죄로 물든 혼인",
+        "Hôn Nhân Tội Lỗi",
+        "Zui Jia"
+      ],
+      "year": "2025",
+      "overview": "Connaissez-vous le proverbe, la haine est mauvaise conseillère ? \n\nDeux émotions distinctes vont changer la vie de deux personnes. Fan Xingxu, sous le coup de la colère, souhaite se venger de Shen Yuanzhi, qui par amour, va se dénoncer pour un crime qu'elle n'a pas commis. Leurs choix auront pour conséquence : l’union de Xingxu et Yuanzhi. Yuanzhi devra affronter de grands périls, et malheureusement pour elle, l’homme qu’elle a épousé et qui devrait la soutenir, pourrait bien s’avérer être son pire ennemi.\n",
+      "genres": [
+        "Drame"
+      ],
+      "rating": "8.7",
+      "pop": 3.192,
+      "status": "Ended",
+      "poster": "https://image.tmdb.org/t/p/original/6NmvdCps25ZTc6QfQLjNm8E2wrC.jpg",
+      "posterV": 2,
+      "backdrop": "https://image.tmdb.org/t/p/original/dN8FZsPNByDeXk5TS6TpOwscLBu.jpg",
+      "videos": [],
+      "cast": [
+        {
+          "name": "方瑾",
+          "character": "Shen Yuanzhi",
+          "id": 3541107
+        },
+        {
+          "name": "郭昊鈞",
+          "character": "Fan Xingxu",
+          "id": 2682571
+        },
+        {
+          "name": "Qiu Hongkai",
+          "character": "Fan Xingchen",
+          "id": 3155908
+        },
+        {
+          "name": "趙慕顏",
+          "character": "He Weilan",
+          "id": 3654714
+        },
+        {
+          "name": "Lei Xiaoyu",
+          "character": "Ninth Princess",
+          "id": 5260221
+        },
+        {
+          "name": "王凯沐",
+          "character": "",
+          "id": 4960268
+        }
+      ],
+      "eprt": "12",
+      "seasons": [
+        {
+          "number": 1,
+          "name": "Saison 1",
+          "episodes": [
+            {
+              "number": 1,
+              "name": "Épisode 1",
+              "overview": "",
+              "air_date": "2025-08-05",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-00zsw05d1coe.html",
+                  "fansub": "Mimi Fansub : Davsha",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 2,
+              "name": "Épisode 2",
+              "overview": "",
+              "air_date": "2025-08-05",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-bmrau84lg4n1.html",
+                  "fansub": "Mimi Fansub : Davsha",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 3,
+              "name": "Épisode 3",
+              "overview": "",
+              "air_date": "2025-08-05",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-bmrau84lg4n1.html",
+                  "fansub": "Mimi Fansub : Davsha",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 4,
+              "name": "Épisode 4",
+              "overview": "",
+              "air_date": "2025-08-05",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-e5460iyaj6xz.html",
+                  "fansub": "Mimi Fansub : Davsha",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 5,
+              "name": "Épisode 5",
+              "overview": "",
+              "air_date": "2025-08-05",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-vsv3x3361guc.html",
+                  "fansub": "Mimi Fansub : Davsha",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 6,
+              "name": "Épisode 6",
+              "overview": "",
+              "air_date": "2025-08-06",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-qxlqr0kywsii.html",
+                  "fansub": "Mimi Fansub : Davsha",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 7,
+              "name": "Épisode 7",
+              "overview": "",
+              "air_date": "2025-08-06",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-p3yxstkpkob3.html",
+                  "fansub": "Mimi Fansub : Davsha",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 8,
+              "name": "Épisode 8",
+              "overview": "",
+              "air_date": "2025-08-07",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-eqaqc6xd9gqq.html",
+                  "fansub": "Mimi Fansub : Davsha",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 9,
+              "name": "Épisode 9",
+              "overview": "",
+              "air_date": "2025-08-07",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-s2mutujh97sk.html",
+                  "fansub": "Mimi Fansub : Davsha",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 10,
+              "name": "Épisode 10",
+              "overview": "",
+              "air_date": "2025-08-08",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-w5bucafa63er.html",
+                  "fansub": "Mimi Fansub : Davsha",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 11,
+              "name": "Épisode 11",
+              "overview": "",
+              "air_date": "2025-08-08",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-3o24chseeigm.html",
+                  "fansub": "Mimi Fansub : Davsha",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 12,
+              "name": "Épisode 12",
+              "overview": "",
+              "air_date": "2025-08-09",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-mzov1pmvfklu.html",
+                  "fansub": "Mimi Fansub : Davsha",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 13,
+              "name": "Épisode 13",
+              "overview": "",
+              "air_date": "2025-08-09",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-x3z3yzwxawpi.html",
+                  "fansub": "Mimi Fansub : Davsha",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 14,
+              "name": "Épisode 14",
+              "overview": "",
+              "air_date": "2025-08-10",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-zpubvq12rwoq.html",
+                  "fansub": "Mimi Fansub : Davsha",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 15,
+              "name": "Épisode 15",
+              "overview": "",
+              "air_date": "2025-08-10",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-sfh18o7wz7rn.html",
+                  "fansub": "Mimi Fansub : Davsha",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 16,
+              "name": "Épisode 16",
+              "overview": "",
+              "air_date": "2025-08-11",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-r2rq33ro314l.html",
+                  "fansub": "Mimi Fansub : Davsha",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 17,
+              "name": "Épisode 17",
+              "overview": "",
+              "air_date": "2025-08-11",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-ddshl5njrsxd.html",
+                  "fansub": "Mimi Fansub : Davsha",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 18,
+              "name": "Épisode 18",
+              "overview": "",
+              "air_date": "2025-08-12",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-q0rrmk20d48m.html",
+                  "fansub": "Mimi Fansub : Davsha",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 19,
+              "name": "Épisode 19",
+              "overview": "",
+              "air_date": "2025-08-12",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-nyqjqk0o7iih.html",
+                  "fansub": "Mimi Fansub : Davsha",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 20,
+              "name": "Épisode 20",
+              "overview": "",
+              "air_date": "2025-08-13",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-n1iirb07dtp1.html",
+                  "fansub": "Mimi Fansub : Davsha",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 21,
+              "name": "Épisode 21",
+              "overview": "",
+              "air_date": "2025-08-13",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-lodthn2jrsw7.html",
+                  "fansub": "Mimi Fansub : Davsha",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 22,
+              "name": "Épisode 22",
+              "overview": "",
+              "air_date": "2025-08-14",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-9nel4b9w8dzg.html",
+                  "fansub": "Mimi Fansub : Davsha",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 23,
+              "name": "Épisode 23",
+              "overview": "",
+              "air_date": "2025-08-14",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-t4jdykdbn8m4.html",
+                  "fansub": "Mimi Fansub : Davsha",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 24,
+              "name": "Épisode 24",
+              "overview": "",
+              "air_date": "2025-08-15",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-rpvmd41mu6fw.html",
+                  "fansub": "Mimi Fansub : Davsha",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            }
+          ],
+          "downloads": []
+        }
+      ],
+      "sources": [],
+      "addedAt": 1793323567236,
+      "langs": [
+        "VOSTFR"
+      ],
+      "downloads": [],
+      "posterCustom": true,
+      "updatedAt": 1793324769369
     }
   ],
   "deletedLinks": [
@@ -48405,17 +48847,7 @@
         "at": 1793318826090
       }
     ],
-    "at": 1793318826071,
-    "log": [
-      {
-        "v": "468847c9",
-        "t": 1793316494973
-      },
-      {
-        "v": "cfaa4607",
-        "t": 1793318826071
-      }
-    ]
+    "at": 1793318826071
   },
   "hosts": {
     "items": [
@@ -48527,6 +48959,24 @@
     "at": 1793280056955
   },
   "journal": [
+    {
+      "k": "mvub9k0rs7am4",
+      "t": 1793324769435,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "284934",
+      "n": "Sinful Marriage",
+      "d": ""
+    },
+    {
+      "k": "mvub645pjffg2",
+      "t": 1793324608909,
+      "b": "614d778ed0",
+      "a": "add",
+      "i": "284934",
+      "n": "Sinful Marriage",
+      "d": ""
+    },
     {
       "k": "mvu1ye762bfva",
       "t": 1793309132130,
@@ -51207,24 +51657,6 @@
       "a": "add",
       "i": "270420",
       "n": "No Tail to Tell",
-      "d": ""
-    },
-    {
-      "k": "mvi7z3luh17xc",
-      "t": 1792593648642,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "320513",
-      "n": "kiDnap GAME",
-      "d": ""
-    },
-    {
-      "k": "mvhi28d2r4j1b",
-      "t": 1792550124758,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "99966",
-      "n": "All of Us Are Dead",
       "d": ""
     }
   ],
