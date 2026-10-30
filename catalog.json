@@ -13620,7 +13620,7 @@
       "rating": "8.2",
       "pop": 11.68,
       "status": "Ended",
-      "poster": "https://image.tmdb.org/t/p/original/4F5pvmkUNFvTYaCjNbltqchkyWZ.jpg",
+      "poster": "https://image.tmdb.org/t/p/original/zwEYhe03vN1rbjF8Bsf9Dng0W8e.jpg",
       "posterV": 2,
       "backdrop": "https://image.tmdb.org/t/p/original/7KpvkMnbRsyrAlnrZpbnEWC42AE.jpg",
       "cast": [
@@ -13838,7 +13838,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1793130232290,
+      "updatedAt": 1793368863194,
       "networks": [
         "ENA"
       ],
@@ -49235,6 +49235,15 @@
   },
   "journal": [
     {
+      "k": "mvv1imzq7rkbe",
+      "t": 1793368863206,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "287009",
+      "n": "Doctor on the Edge",
+      "d": "affiche"
+    },
+    {
       "k": "mvv1bqjj1hc6p",
       "t": 1793368541215,
       "b": "614d778ed0",
@@ -51923,15 +51932,6 @@
       "a": "add",
       "i": "127529",
       "n": "Bloodhounds",
-      "d": ""
-    },
-    {
-      "k": "mvihaaxqm7vwt",
-      "t": 1792609304792,
-      "b": "head",
-      "a": "edit",
-      "i": "286506",
-      "n": "Blossoms of Power",
       "d": ""
     }
   ],
