@@ -34196,7 +34196,13 @@
               "name": "Épisode 27",
               "overview": "",
               "air_date": "2026-10-20",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-div5yllyttw1.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -34204,7 +34210,13 @@
               "name": "Épisode 28",
               "overview": "",
               "air_date": "2026-10-20",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-dja78ne7d9lt.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -34212,7 +34224,13 @@
               "name": "Épisode 29",
               "overview": "",
               "air_date": "2026-10-20",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-tg88sgpw8ph2.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             }
           ],
@@ -34225,7 +34243,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1793209037098,
+      "updatedAt": 1793381808080,
       "eprt": 14
     },
     {
@@ -49297,6 +49315,15 @@
   },
   "journal": [
     {
+      "k": "mvv983c13m83d",
+      "t": 1793381808097,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "338103",
+      "n": "Quite the Girl",
+      "d": "sources 26 → 29"
+    },
+    {
       "k": "mvv8qkr2yxrpg",
       "t": 1793380990862,
       "b": "614d778ed0",
@@ -51986,15 +52013,6 @@
       "i": "320513",
       "n": "kiDnap GAME",
       "d": ""
-    },
-    {
-      "k": "mviibu2wcn9kd",
-      "t": 1792611038984,
-      "b": "head",
-      "a": "tmdb",
-      "i": "",
-      "n": "Toutes les fiches",
-      "d": "89 fiches"
     }
   ],
   "refreshAt": 1792423579957
