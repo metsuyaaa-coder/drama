@@ -48847,9 +48847,31 @@
         "en": "Kiss in the Wind",
         "auto": true,
         "at": 1793318826090
+      },
+      {
+        "id": "rmvumqvn9",
+        "title": "キンパとおにぎり〜恋するふたりは似ていてちがう〜",
+        "status": "wait",
+        "bl": false,
+        "kind": "stream",
+        "votes": 1,
+        "tmdb": "301885",
+        "media": "tv",
+        "year": "2026",
+        "poster": "/jLSWHc1qA8DUX45wkeYwoteVmxu.jpg",
+        "origin": "Japon",
+        "en": "Gimbap and Onigiri",
+        "auto": true,
+        "at": 1793344053429
       }
     ],
-    "at": 1793318826071
+    "at": 1793344053429,
+    "log": [
+      {
+        "v": "a065885a",
+        "t": 1793344053429
+      }
+    ]
   },
   "hosts": {
     "items": [
