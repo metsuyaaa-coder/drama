@@ -48680,7 +48680,7 @@
                 {
                   "name": "VIDMOLY",
                   "url": "https://vidmoly.org/embed-vcenakzerm8h.html",
-                  "quality": "Dramavore : Rafia]",
+                  "fansub": "Dramavore : Rafia",
                   "by": "614d778ed0"
                 }
               ],
@@ -48779,12 +48779,12 @@
         }
       ],
       "sources": [],
-      "addedAt": 1793394368348,
+      "addedAt": 1793395443908,
       "langs": [
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1793394909340
+      "updatedAt": 1793395482128
     }
   ],
   "deletedLinks": [
@@ -49553,6 +49553,24 @@
     "at": 1793280056955
   },
   "journal": [
+    {
+      "k": "mvvhd6astrgfu",
+      "t": 1793395482148,
+      "b": "614d778ed0",
+      "a": "add",
+      "i": "307478",
+      "n": "The Perfect Lie",
+      "d": ""
+    },
+    {
+      "k": "mvvhbfgye5baz",
+      "t": 1793395400722,
+      "b": "614d778ed0",
+      "a": "del",
+      "i": "307478",
+      "n": "The Perfect Lie",
+      "d": ""
+    },
     {
       "k": "mvvh0wdwc90fh",
       "t": 1793394909428,
@@ -52230,24 +52248,6 @@
       "k": "mvijdkdhnc1i4",
       "t": 1792612799333,
       "b": "head",
-      "a": "edit",
-      "i": "307106",
-      "n": "Between Steps",
-      "d": ""
-    },
-    {
-      "k": "mviiqs2dfsrvb",
-      "t": 1792611736213,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "320513",
-      "n": "kiDnap GAME",
-      "d": "sources 2 → 3"
-    },
-    {
-      "k": "mviimq4h22zvw",
-      "t": 1792611547073,
-      "b": "614d778ed0",
       "a": "edit",
       "i": "307106",
       "n": "Between Steps",
