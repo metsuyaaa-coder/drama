@@ -49687,33 +49687,6 @@
         "kind": "stream"
       },
       {
-        "id": "rmvffv9wm",
-        "title": "연애박사",
-        "status": "done",
-        "votes": 3,
-        "tmdb": 307106,
-        "media": "tv",
-        "year": "2026",
-        "poster": "/vyrpZOFIZJkQG8ZWTezmlNGav8R.jpg",
-        "origin": "Corée",
-        "en": "Between Steps",
-        "kind": "both"
-      },
-      {
-        "id": "rmvfvu0n9",
-        "title": "kiDnap GAME",
-        "status": "done",
-        "kind": "dl",
-        "votes": 2,
-        "tmdb": 320513,
-        "media": "tv",
-        "year": "2026",
-        "poster": "/uGm1PzEAe6MOceGfL6gE14tTiSf.jpg",
-        "origin": "Japon",
-        "en": "",
-        "sid": "320513"
-      },
-      {
         "id": "rmvjiq5ot",
         "title": "心理罪",
         "status": "wait",
@@ -49725,20 +49698,6 @@
         "poster": "/4FL7HY3pK8s9HojrOOy1aAG6FGX.jpg",
         "origin": "Chine",
         "en": "Evil Minds"
-      },
-      {
-        "id": "rmvjiwibv",
-        "title": "The Scarecrow",
-        "status": "done",
-        "kind": "dl",
-        "votes": 1,
-        "tmdb": 292121,
-        "media": "tv",
-        "year": "2026",
-        "poster": "/vYJAhjmcVz50uhJwFl5wjTHsdT4.jpg",
-        "origin": "Corée",
-        "en": "",
-        "sid": "292121"
       },
       {
         "id": "rmvjtkv28",
@@ -49753,20 +49712,6 @@
         "origin": "Corée",
         "en": "",
         "sid": "110356"
-      },
-      {
-        "id": "rmvl6riqw",
-        "title": "Mouse",
-        "status": "wait",
-        "kind": "both",
-        "votes": 1,
-        "tmdb": 117378,
-        "media": "tv",
-        "year": "2021",
-        "poster": "/lrWHBK1h4rrEnx5Ml8iDR1SwNux.jpg",
-        "origin": "Corée",
-        "en": "",
-        "sid": "117378"
       },
       {
         "id": "rmvlfj3n0",
@@ -50174,7 +50119,7 @@
         "at": 1793453009480
       }
     ],
-    "at": 1793456611822
+    "at": 1793456623326
   },
   "hosts": {
     "items": [
