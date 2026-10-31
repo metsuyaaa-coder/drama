@@ -50174,23 +50174,6 @@
         "at": 1793404041795
       },
       {
-        "id": "rmvw25hss",
-        "title": "The Early Spring",
-        "status": "done",
-        "bl": false,
-        "kind": "dl",
-        "votes": 1,
-        "tmdb": "299952",
-        "media": "tv",
-        "year": "2026",
-        "poster": "/nLWFbYv1r99Yy7dWvjoxMRegoe0.jpg",
-        "origin": "Chine",
-        "en": "",
-        "auto": true,
-        "at": 1793430395740,
-        "sid": "299952"
-      },
-      {
         "id": "rmvwdy5w5",
         "title": "L'amour sous couverture",
         "status": "done",
@@ -50239,7 +50222,7 @@
         "at": 1793453009480
       }
     ],
-    "at": 1793456596660
+    "at": 1793456604100
   },
   "hosts": {
     "items": [
