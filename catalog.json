@@ -2962,10 +2962,11 @@
       "sources": [],
       "addedAt": 1792092943222,
       "langs": [
-        "VOSTFR"
+        "VOSTFR",
+        "VF"
       ],
       "downloads": [],
-      "updatedAt": 1793468549645,
+      "updatedAt": 1793484780532,
       "trend": 51,
       "videos": [
         {
@@ -50637,13 +50638,7 @@
         "at": 1793471969081
       }
     ],
-    "at": 1793471969081,
-    "log": [
-      {
-        "v": "dfbb591c",
-        "t": 1793471969081
-      }
-    ]
+    "at": 1793471969081
   },
   "hosts": {
     "items": [
@@ -50755,6 +50750,15 @@
     "at": 1793280056955
   },
   "journal": [
+    {
+      "k": "mvwyj5do5q4se",
+      "t": 1793484780540,
+      "b": "head",
+      "a": "edit",
+      "i": "314939",
+      "n": "A Love Other Than Yours",
+      "d": ""
+    },
     {
       "k": "mvwp3dpvcnh7d",
       "t": 1793468940487,
@@ -53445,15 +53449,6 @@
       "i": "311648",
       "n": "Make Me Tingle",
       "d": "téléchargements 5 → 4"
-    },
-    {
-      "k": "mvjgbqhmtxwna",
-      "t": 1792668141274,
-      "b": "614d778ed0",
-      "a": "add",
-      "i": "220074",
-      "n": "Flex X Cop",
-      "d": ""
     }
   ]
 }
