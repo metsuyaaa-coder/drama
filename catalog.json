@@ -50273,9 +50273,31 @@
         "origin": "Chine",
         "en": "",
         "sid": "292696"
+      },
+      {
+        "id": "rmvwndqoy",
+        "title": "Parasite",
+        "status": "wait",
+        "bl": false,
+        "kind": "stream",
+        "votes": 1,
+        "tmdb": "496243",
+        "media": "movie",
+        "year": "2019",
+        "poster": "/7hLSzZX2jROmEXz2aEoh6JKUFy2.jpg",
+        "origin": "Corée",
+        "en": "",
+        "auto": true,
+        "at": 1793466052450
       }
     ],
-    "at": 1793463325697
+    "at": 1793466052450,
+    "log": [
+      {
+        "v": "0af43666",
+        "t": 1793466052450
+      }
+    ]
   },
   "hosts": {
     "items": [
