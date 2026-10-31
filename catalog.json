@@ -12279,6 +12279,9 @@
       "origin_country": [
         "KR"
       ],
+      "networks": [
+        "tvN"
+      ],
       "original_language": "ko",
       "aka": [
         "See You at Work Tomorrow!",
@@ -12322,11 +12325,25 @@
         "Drame"
       ],
       "rating": "8.9",
-      "pop": 18.0964,
+      "pop": 14.8066,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/30P3ySNo0m0xNhHQMXzpmquLwxa.jpg",
       "posterV": 2,
       "backdrop": "https://image.tmdb.org/t/p/original/zftF4KDGuhAGIA50bywcCXPjz5f.jpg",
+      "videos": [
+        {
+          "key": "kBGgK8F3CSU",
+          "name": "Official Trailer [Subtitled]",
+          "type": "Trailer",
+          "lab": "Anglais"
+        },
+        {
+          "key": "YndVgiU-ZgY",
+          "name": "SERIE À demain au bureau ! (2026) |BANDE ANNONCE VOSTFR| Prime Video",
+          "type": "Trailer",
+          "lab": "Français"
+        }
+      ],
       "cast": [
         {
           "name": "Seo In-guk",
@@ -12384,6 +12401,7 @@
           "id": 5379842
         }
       ],
+      "eprt": 70,
       "seasons": [
         {
           "number": 1,
@@ -12567,25 +12585,8 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1793130228225,
-      "networks": [
-        "tvN"
-      ],
-      "videos": [
-        {
-          "key": "kBGgK8F3CSU",
-          "name": "Official Trailer [Subtitled]",
-          "type": "Trailer",
-          "lab": "Anglais"
-        },
-        {
-          "key": "YndVgiU-ZgY",
-          "name": "SERIE À demain au bureau ! (2026) |BANDE ANNONCE VOSTFR| Prime Video",
-          "type": "Trailer",
-          "lab": "Français"
-        }
-      ],
-      "eprt": 70
+      "posterCustom": true,
+      "updatedAt": 1793464658123
     },
     {
       "id": "299365",
@@ -50386,6 +50387,15 @@
   },
   "journal": [
     {
+      "k": "mvwmjuualazq3",
+      "t": 1793464658146,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "289763",
+      "n": "See You at Work Tomorrow!",
+      "d": ""
+    },
+    {
       "k": "mvwmgumg6iomr",
       "t": 1793464517896,
       "b": "614d778ed0",
@@ -53075,15 +53085,6 @@
       "i": "305551",
       "n": "Merry Berry Love",
       "d": "téléchargements 1 → 2"
-    },
-    {
-      "k": "mvis0xfnmn4eb",
-      "t": 1792627505256,
-      "b": "head",
-      "a": "edit",
-      "i": "305551",
-      "n": "Merry Berry Love",
-      "d": "sources 8 → 9"
     }
   ],
   "refreshAt": 1792423579957
