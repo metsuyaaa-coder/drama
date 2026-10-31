@@ -3209,7 +3209,7 @@
       "rating": "8.3",
       "pop": 10.1173,
       "status": "Ended",
-      "poster": "https://image.tmdb.org/t/p/w500/A4Y4xlDHS4xi2WI9265vRyIYLoo.jpg",
+      "poster": "https://image.tmdb.org/t/p/original/9fYt7bfsTOLEKmiHqX2x9fGduhn.jpg",
       "backdrop": "https://image.tmdb.org/t/p/original/eBD46F44qKGPZiRLffO4q3JF8Hc.jpg",
       "cast": [
         {
@@ -3606,7 +3606,7 @@
       ],
       "original_language": "ko",
       "posterV": 2,
-      "updatedAt": 1793130207361,
+      "updatedAt": 1793464753851,
       "networks": [
         "tvN"
       ],
@@ -3624,7 +3624,8 @@
           "lab": "Anglais"
         }
       ],
-      "eprt": 69
+      "eprt": 69,
+      "posterCustom": true
     },
     {
       "id": "212204",
@@ -50387,6 +50388,15 @@
   },
   "journal": [
     {
+      "k": "mvwmlwpaudodg",
+      "t": 1793464753870,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "296140",
+      "n": "My Bias, My Boss",
+      "d": "affiche"
+    },
+    {
       "k": "mvwmjuualazq3",
       "t": 1793464658146,
       "b": "614d778ed0",
@@ -53076,15 +53086,6 @@
       "i": "251600",
       "n": "The Eternal Fragrance",
       "d": ""
-    },
-    {
-      "k": "mvisnz6pgod4u",
-      "t": 1792628463512,
-      "b": "head",
-      "a": "edit",
-      "i": "305551",
-      "n": "Merry Berry Love",
-      "d": "téléchargements 1 → 2"
     }
   ],
   "refreshAt": 1792423579957
