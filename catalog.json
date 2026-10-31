@@ -49797,12 +49797,12 @@
   },
   "announce": {
     "on": true,
-    "text": "Vidmoly : Le serveur peut être bloqué ou inaccessible dans certaines régions pour certains utilisateurs, ou les sous-titres peuvent parfois ne pas s’afficher.",
+    "text": "Vidmoly : Le serveur peut être bloqué ou inaccessible dans certaines régions pour certains utilisateurs, ou les sous-titres peuvent parfois ne pas s’afficher si c'est votre cas consultez ce",
     "kind": "info",
     "link": "https://www.tumblr.com/dramavor/823667546752516096/lisez-attentivement-cette-publication-bonsoir?source=share",
-    "label": "En savoir plus..",
-    "id": "1793452177344",
-    "at": 1793452177344
+    "label": "lien",
+    "id": "1793464349613",
+    "at": 1793464349613
   },
   "inbox": {
     "at": 1793452840500,
