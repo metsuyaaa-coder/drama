@@ -1961,7 +1961,7 @@ function viewRequest(pre, kind) {
     '<p class="note" style="margin:-6px 0 0">Laisse ton pseudo Discord pour que je puisse te prévenir quand ton titre est ajouté.</p>' +
     '<div class="rqwrap"><label class="f"><span>Nom du drama ou du film</span><input type="text" name="titre" id="reqtitre" required maxlength="120" value="' + esc(t) + '" autocomplete="off" placeholder="Tape le titre, dans n\'importe quelle langue" role="combobox" aria-expanded="false" aria-controls="reqsugg" aria-autocomplete="list"></label><div class="sugg tsug" id="reqsugg" role="listbox" hidden></div></div>' +
     '<p class="note" id="reqok">Choisis ton titre dans la liste proposée par TMDB pour pouvoir envoyer la demande.</p>' +
-    '<label class="f"><span>Ta demande</span><select name="type"><option value="stream"' + (kind === "stream" ? " selected" : "") + '>Streaming</option><option value="dl"' + (kind === "dl" ? " selected" : "") + '>Téléchargement</option><option value="both"' + (kind === "both" ? " selected" : "") + '>Les deux (streaming + téléchargement)</option></select></label>' +
+    '<input type="hidden" name="type" value="' + kind + '">' +
     (blOpen() ? '<div class="f"><span class="lbl">Espace</span><div class="langpick"><label class="chk"><input type="checkbox" name="bl"' + (BLMODE ? " checked" : "") + '><i>BL</i></label></div></div>' +
     '<p class="note" style="margin:-6px 0 0">Coche si c\'est un titre BL : il sera ajouté dans l\'espace BL.</p>' : "") +
     '<label class="f"><span>Date de sortie (ou année)</span><input type="text" name="date" class="auto" readonly maxlength="40" placeholder="Rempli automatiquement"></label>' +
@@ -4314,7 +4314,7 @@ function renderPlayer() {
   $("#psub").textContent = cur.sub || "";
   paintPlayerHead();
   var rq = "/demande/" + encodeURIComponent(cur.title || "");
-  $("#pdl").innerHTML = dlOpen() ? ((cur.dl || []).length ? dlButtons(cur.dl, "Télécharger", " ghost") : '<a class="btn small ghost" data-reqdl="1" href="' + rq + '/dl">' + DLICON + '<span>Télécharger</span></a>') : "";
+  $("#pdl").innerHTML = dlOpen() && (cur.dl || []).length ? dlButtons(cur.dl, "Télécharger", " ghost") : "";   /* pas de lien de téléchargement : pas de bouton */
   Array.prototype.forEach.call(document.querySelectorAll("#pdl .btn"), function (b) { var n = b.dataset.dlname || "Télécharger"; b.title = n; b.setAttribute("aria-label", n); });
   $("#pdemande").href = rq + "/stream"; $("#pdemande2").href = rq + "/dl";
   /* Sur Playmate / Vidara / Uqload, l'astuce langue s'affiche en premier à chaque changement de serveur */
@@ -4323,8 +4323,8 @@ function renderPlayer() {
   showTip(tipIdx);
   clearInterval(tipTimer); tipTimer = setInterval(function () { showTip(tipIdx + 1); }, 9000);
   $("#pl").style.display = (cur.sources.length > 1 || (cur.sources[0] && cur.sources[0].fansub)) ? "flex" : "none";
-  $("#pone").style.display = cur.sources.length <= 1 ? "flex" : "none";
-  $("#pone2").style.display = (dlOpen() && !(cur.dl || []).length) ? "flex" : "none";
+  $("#pone").style.display = "none";    /* plus de message « demander une autre source / un lien de téléchargement » dans le lecteur */
+  $("#pone2").style.display = "none";
   $("#pnav").style.display = cur.nav ? "flex" : "none";
   $("#peplist").style.display = (cur.nav && cur.nav.eps) ? "" : "none";
   $("#peps").hidden = true; $("#epsback").hidden = true;
