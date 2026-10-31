@@ -24532,7 +24532,6 @@
         "CN"
       ],
       "networks": [
-        "CCTV-8",
         "Youku"
       ],
       "original_language": "zh",
@@ -24567,11 +24566,25 @@
         "Drame"
       ],
       "rating": "8.2",
-      "pop": 93.675,
+      "pop": 86.7996,
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/original/6Pw78I4inl8CESM4GZMyQTGobph.jpg",
       "posterV": 2,
       "backdrop": "https://image.tmdb.org/t/p/original/q6VPQREsEGFccpWVF7wFvy9oc25.jpg",
+      "videos": [
+        {
+          "key": "lLBSb_Xc1sw",
+          "name": "预告",
+          "type": "Trailer",
+          "lab": "Original"
+        },
+        {
+          "key": "Q5vhvNyFph4",
+          "name": "#WhereTheMaskEnds If everything were laid bare, could one bold move turn the tab",
+          "type": "Trailer",
+          "lab": "Anglais"
+        }
+      ],
       "cast": [
         {
           "name": "Tian Xiwei",
@@ -24584,6 +24597,7 @@
           "id": 2040132
         }
       ],
+      "eprt": 51,
       "seasons": [
         {
           "number": 1,
@@ -24704,7 +24718,7 @@
             {
               "number": 9,
               "name": "Épisode 9",
-              "overview": "A ruthless rival corners Wei Rao into a desperate bluff, leaving her dependent on a risky co-conspirator to keep her past safely buried.",
+              "overview": "Acculée par un rival impitoyable, Wei Rao joue son va-tout sur un coup de bluff et doit s'en remettre à un complice incertain pour garder son passé enfoui.",
               "air_date": "2026-10-19",
               "sources": [
                 {
@@ -24718,7 +24732,7 @@
             {
               "number": 10,
               "name": "Épisode 10",
-              "overview": "Wei Rao turns an imperial order into a humiliation for Han Liao, but a symbolic act of defiance leaves her isolated when rebel soldiers strike.",
+              "overview": "Wei Rao transforme un ordre impérial en humiliation pour Han Liao. Suite à un acte de défi symbolique, elle se retrouve toutefois isolée face à des soldats rebelles hostiles.",
               "air_date": "2026-10-19",
               "sources": [
                 {
@@ -24844,7 +24858,7 @@
             {
               "number": 19,
               "name": "Épisode 19",
-              "overview": "Imperial schemes force a martial contest for Wei Rao's hand, driving an injured Lu Zhuo to fight Han Liao — but victory carries a tragic price.",
+              "overview": "Des intrigues impériales imposent un tournoi martial pour remporter la main de Wei Rao, poussant Lu Zhuo, blessé, à affronter Han Liao. Mais la victoire a un prix tragique.",
               "air_date": "2026-10-26",
               "sources": [
                 {
@@ -24858,7 +24872,7 @@
             {
               "number": 20,
               "name": "Épisode 20",
-              "overview": "",
+              "overview": "Poussée par le deuil et la vengeance, Wei Rao refuse un refuge sûr. Mais de mystérieuses morts sur le domaine exposent sa maisonnée à des rivaux hostiles.",
               "air_date": "2026-10-27",
               "sources": [
                 {
@@ -24872,7 +24886,7 @@
             {
               "number": 21,
               "name": "Épisode 21",
-              "overview": "",
+              "overview": "La fortune cachée des Han éclate au grand jour tandis que Wei Rao trouve un allié inattendu. Han Liao la piège, mais de nouvelles preuves menacent de révéler ses crimes.",
               "air_date": "2026-10-28",
               "sources": [
                 {
@@ -24886,8 +24900,8 @@
             {
               "number": 22,
               "name": "Épisode 22",
-              "overview": "",
-              "air_date": "",
+              "overview": "Un exil royal plonge la cour dans le chaos. Pendant ce temps, Wei Rao assiste à un grand banquet tandis que les preuves d'une série d'enlèvements sur le domaine s'accumulent.",
+              "air_date": "2026-10-29",
               "sources": [
                 {
                   "name": "VIDMOLY",
@@ -24900,8 +24914,8 @@
             {
               "number": 23,
               "name": "Épisode 23",
-              "overview": "",
-              "air_date": "",
+              "overview": "Wei Rao découvre des captifs cachés dans une cour du domaine. Tandis que Lu Zhuo fait diversion, elle mène un raid audacieux pour les libérer.",
+              "air_date": "2026-10-30",
               "sources": [
                 {
                   "name": "VIDMOLY",
@@ -24915,7 +24929,7 @@
               "number": 24,
               "name": "Épisode 24",
               "overview": "",
-              "air_date": "",
+              "air_date": "2026-10-31",
               "sources": [
                 {
                   "name": "VIDMOLY",
@@ -24929,7 +24943,7 @@
               "number": 25,
               "name": "Épisode 25",
               "overview": "",
-              "air_date": "",
+              "air_date": "2026-11-01",
               "sources": [],
               "downloads": []
             },
@@ -24937,7 +24951,7 @@
               "number": 26,
               "name": "Épisode 26",
               "overview": "",
-              "air_date": "",
+              "air_date": "2026-11-02",
               "sources": [],
               "downloads": []
             },
@@ -24945,7 +24959,7 @@
               "number": 27,
               "name": "Épisode 27",
               "overview": "",
-              "air_date": "",
+              "air_date": "2026-11-03",
               "sources": [],
               "downloads": []
             },
@@ -24953,7 +24967,7 @@
               "number": 28,
               "name": "Épisode 28",
               "overview": "",
-              "air_date": "",
+              "air_date": "2026-11-03",
               "sources": [],
               "downloads": []
             },
@@ -24961,7 +24975,7 @@
               "number": 29,
               "name": "Épisode 29",
               "overview": "",
-              "air_date": "",
+              "air_date": "2026-11-03",
               "sources": [],
               "downloads": []
             },
@@ -24969,7 +24983,7 @@
               "number": 30,
               "name": "Épisode 30",
               "overview": "",
-              "air_date": "",
+              "air_date": "2026-11-03",
               "sources": [],
               "downloads": []
             }
@@ -24984,23 +24998,8 @@
       ],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1793463608320,
-      "trend": 86,
-      "videos": [
-        {
-          "key": "lLBSb_Xc1sw",
-          "name": "预告",
-          "type": "Trailer",
-          "lab": "Original"
-        },
-        {
-          "key": "Q5vhvNyFph4",
-          "name": "#WhereTheMaskEnds If everything were laid bare, could one bold move turn the tab",
-          "type": "Trailer",
-          "lab": "Anglais"
-        }
-      ],
-      "eprt": 51
+      "updatedAt": 1793464517878,
+      "trend": 86
     },
     {
       "id": "128995",
@@ -50387,6 +50386,15 @@
   },
   "journal": [
     {
+      "k": "mvwmgumg6iomr",
+      "t": 1793464517896,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "300146",
+      "n": "Where the Mask Ends",
+      "d": ""
+    },
+    {
       "k": "mvwmexjovh7qz",
       "t": 1793464428372,
       "b": "614d778ed0",
@@ -53076,15 +53084,6 @@
       "i": "305551",
       "n": "Merry Berry Love",
       "d": "sources 8 → 9"
-    },
-    {
-      "k": "mvis1opmo80pq",
-      "t": 1792627361626,
-      "b": "head",
-      "a": "edit",
-      "i": "127529",
-      "n": "Bloodhounds",
-      "d": "sources 30 → 38"
     }
   ],
   "refreshAt": 1792423579957
