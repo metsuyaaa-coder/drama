@@ -50221,24 +50221,9 @@
         "en": "Moonlit Reunion",
         "auto": true,
         "at": 1793453009480
-      },
-      {
-        "id": "rmvwlpi1u",
-        "title": "The First Jasmine",
-        "status": "done",
-        "bl": false,
-        "kind": "dl",
-        "votes": 1,
-        "tmdb": 292696,
-        "media": "tv",
-        "year": "2026",
-        "poster": "/pRPDAGXmoUnWlRj34BHQ1Gt05ai.jpg",
-        "origin": "Chine",
-        "en": "",
-        "sid": "292696"
       }
     ],
-    "at": 1793463272851
+    "at": 1793463275167
   },
   "hosts": {
     "items": [
