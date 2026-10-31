@@ -131,10 +131,10 @@ function saveCur() { var id = curId(); if (id) jset(DATA + id, snapshot()); }
 function rid() { var u = new Uint8Array(6); crypto.getRandomValues(u); return Array.prototype.map.call(u, function (x) { return ("0" + x.toString(16)).slice(-2); }).join(""); }
 
 /* changer de profil : on range les données du profil actif, on charge celles du nouveau, puis on recharge */
-function select(id) {
+function select(id, resume) {
   var ps = metas(); if (!ps.filter(function (p) { return p.id === id; })[0]) return;
   if (id !== curId()) { saveCur(); applySnap(jget(DATA + id, {})); try { localStorage.setItem(CUR, id); } catch (e) {} }
-  try { sessionStorage.setItem(SESS, "1"); sessionStorage.removeItem(PULLED); sessionStorage.setItem(HELLO, id); } catch (e) {}
+  try { sessionStorage.setItem(SESS, "1"); sessionStorage.removeItem(PULLED); sessionStorage.setItem(HELLO, id + (resume ? ":r" : "")); } catch (e) {}
   location.href = "/";
 }
 function create(name, avatar, cloud, photo) {
@@ -304,13 +304,16 @@ function open(m, opts) {
 function close() { if (scr) { scr.remove(); scr = null; } document.documentElement.classList.remove("pfopen"); }
 /* ===== Animations : choix d'un profil, « Continuer sans profil », accueil « Bonjour » ===== */
 function fast() { return document.documentElement.classList.contains("noanim") || (window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches); }
-function hello(id) {
+function greeting() { var h = new Date().getHours(); return h >= 18 || h < 5 ? "Bonsoir" : "Bonjour"; }   /* selon l'heure de l'appareil */
+function hello(id, opt) {
+  opt = opt || {};
   var p = id ? metas().filter(function (x) { return x.id === id; })[0] : null;
-  var o = document.createElement("div"); o.className = "pfhello"; o.setAttribute("aria-hidden", "true");
-  o.innerHTML = p ? '<div class="pfhv"><span class="pfhav">' + avHTML(p.avatar, p.photo, 200) + '</span><i class="pfhring"></i></div><small>Bonjour</small><b>' + E(p.name) + '</b>'
+  var o = document.createElement("div"); o.className = "pfhello" + (opt.resume ? " resume" : ""); o.setAttribute("aria-hidden", "true");
+  o.innerHTML = p ? '<div class="pfhv"><span class="pfhav">' + avHTML(p.avatar, p.photo, 200) + '</span><i class="pfhring"></i></div><small>' + greeting() + '</small><b>' + E(p.name) + '</b>'
     : '<div class="pfhlogo"><span>DRAMA</span><span>BYM</span></div><small>Bon visionnage</small>';
   document.body.appendChild(o);
-  var t = fast() ? 350 : 1500;
+  if (opt.hold) return;   /* l'écran reste affiché jusqu'au rechargement : pas de « gel » sur le carré */
+  var t = opt.resume ? (fast() ? 150 : 700) : (fast() ? 350 : 1500);
   setTimeout(function () { o.classList.add("out"); setTimeout(function () { o.remove(); }, fast() ? 50 : 520); }, t);
 }
 function enter(id, btn) {
@@ -319,8 +322,8 @@ function enter(id, btn) {
   scr.classList.add("leaving");
   setTimeout(function () {
     if (id === curId()) { try { sessionStorage.setItem(SESS, "1"); } catch (e) {} close(); hello(id); }
-    else select(id);
-  }, fast() ? 0 : 700);
+    else { hello(id, { hold: true }); setTimeout(function () { select(id, true); }, fast() ? 0 : 1000); }   /* « Bonjour » s'affiche tout de suite, le rechargement se fait derrière */
+  }, fast() ? 0 : 500);
 }
 function skip() {
   if (!scr || scr.classList.contains("leaving")) return;
@@ -434,7 +437,7 @@ function init() {
   paintBtn();
   var asked = false, skipped = false, hid = ""; try { asked = !!sessionStorage.getItem(SESS); skipped = localStorage.getItem(SKIP) === "1"; hid = sessionStorage.getItem(HELLO) || ""; sessionStorage.removeItem(HELLO); } catch (e) {}
   var adminRoute = /^\/(admin|headadmin|motdepasse|panel)(\/|$)/.test(location.pathname);
-  if (hid) hello(hid);                                                               /* on vient de choisir un profil */
+  if (hid) hello(hid.split(":")[0], { resume: hid.split(":")[1] === "r" });         /* on vient de choisir un profil */
   else if (ps.length >= 2 && !asked) open("choose", { boot: true });                /* plusieurs profils : on demande qui regarde */
   else if (!ps.length && !skipped && !asked && !adminRoute) open("choose", { boot: true });   /* toute première visite */
   else try { sessionStorage.setItem(SESS, "1"); } catch (e) {}

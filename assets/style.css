@@ -2780,3 +2780,5 @@ html.pfopen { overflow: hidden; }
 .pfhlogo span + span { color: var(--acc); animation-delay: .15s; }
 @keyframes pfLetter { from { opacity: 0; transform: translateY(40%) scale(.9); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) { .pftitle, .pfcard, .pfhint, .pfactions, .pfhv, .pfhring, .pfhello small, .pfhello b, .pfhlogo span { animation: none !important; } }
+.pfhello.resume .pfhv, .pfhello.resume small, .pfhello.resume b, .pfhello.resume .pfhlogo span { animation: none !important; }
+.pfhello.resume .pfhring { display: none; }
