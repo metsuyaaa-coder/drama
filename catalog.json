@@ -49838,7 +49838,7 @@
       {
         "id": "rmvsmok7o",
         "title": "尚公主",
-        "status": "wait",
+        "status": "done",
         "bl": false,
         "kind": "both",
         "votes": 3,
@@ -49870,7 +49870,7 @@
       {
         "id": "rmvtm1z72",
         "title": "Un autre amour que le tien",
-        "status": "wait",
+        "status": "done",
         "bl": false,
         "kind": "dl",
         "votes": 1,
@@ -50077,7 +50077,7 @@
         "at": 1793451718042
       }
     ],
-    "at": 1793452637759
+    "at": 1793452649614
   },
   "hosts": {
     "items": [
