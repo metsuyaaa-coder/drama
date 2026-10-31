@@ -1017,7 +1017,13 @@
               "name": "Épisode 7",
               "overview": "",
               "air_date": "2026-10-30",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-pkg7epbt5u2e.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -1076,7 +1082,7 @@
       ],
       "original_language": "ko",
       "posterV": 2,
-      "updatedAt": 1793130201661,
+      "updatedAt": 1793464428353,
       "networks": [
         "SBS"
       ],
@@ -50381,6 +50387,15 @@
   },
   "journal": [
     {
+      "k": "mvwmexjovh7qz",
+      "t": 1793464428372,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "293610",
+      "n": "Doctor X: Mafia in White",
+      "d": "sources 22 → 23"
+    },
+    {
       "k": "mvwmbfv5byneq",
       "t": 1793464265489,
       "b": "614d778ed0",
@@ -53070,15 +53085,6 @@
       "i": "127529",
       "n": "Bloodhounds",
       "d": "sources 30 → 38"
-    },
-    {
-      "k": "mvis198pm2hng",
-      "t": 1792627341577,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "319077",
-      "n": "The Vacation Principle",
-      "d": ""
     }
   ],
   "refreshAt": 1792423579957
