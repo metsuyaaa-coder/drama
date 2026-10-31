@@ -50092,9 +50092,31 @@
         "en": "",
         "auto": true,
         "at": 1793430395740
+      },
+      {
+        "id": "rmvwdy5w5",
+        "title": "L'amour sous couverture",
+        "status": "wait",
+        "bl": false,
+        "kind": "dl",
+        "votes": 1,
+        "tmdb": "303745",
+        "media": "tv",
+        "year": "2026",
+        "poster": "/xima3BlIJxlrONQgZ9mYuSLAq0f.jpg",
+        "origin": "Corée",
+        "en": "Love in Disguise",
+        "auto": true,
+        "at": 1793450209109
       }
     ],
-    "at": 1793430395740
+    "at": 1793450209109,
+    "log": [
+      {
+        "v": "55d048ce",
+        "t": 1793450209109
+      }
+    ]
   },
   "hosts": {
     "items": [
