@@ -49550,13 +49550,13 @@
     "at": 1792947443163
   },
   "announce": {
-    "on": false,
-    "text": "demandes : l’ajout des contenus peut prendre du temps selon leur disponibilité et la nécessité éventuelle de réaliser les sous-titres français. Merci également de ne pas renvoyer une demande déjà effectuée. Restez simplement à l’affût de son ajout.\n\n— Nebula",
+    "on": true,
+    "text": "Vidmoly : Le serveur peut être bloqué ou inaccessible dans certaines régions pour certains utilisateurs, ou les sous-titres peuvent parfois ne pas s’afficher. Si vous rencontrez l’un de ces problèmes, consultez ce",
     "kind": "info",
-    "link": "",
-    "label": "",
-    "id": "1793213145427",
-    "at": 1793291716662
+    "link": "https://www.tumblr.com/dramavor/823667546752516096/lisez-attentivement-cette-publication-bonsoir?source=share",
+    "label": "lien",
+    "id": "1793448154287",
+    "at": 1793448154287
   },
   "inbox": {
     "at": 1792539388187,
