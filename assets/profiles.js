@@ -6,7 +6,7 @@
 "use strict";
 var PF_KEYS = ["noir.list", "noir.seen", "noir.resume", "noir.prefs", "noir.collections", "noir.dropped", "noir.mlview", "noir.notif.subs", "noir.notif.read", "noir.notif.gone", "noir.notif.items", "noir.notif.since"];
 var PF_CLOUD_KEYS = ["noir.list", "noir.seen", "noir.resume", "noir.prefs", "noir.collections", "noir.dropped", "noir.mlview", "noir.notif.subs", "noir.notif.read", "noir.notif.gone"];   /* ce qui est sauvegardé en ligne (pas les données qui se recalculent) */
-var META = "noir.profiles", CUR = "noir.pf.cur", DATA = "noir.pf.d.", SESS = "noir.pf.ok", PULLED = "noir.pf.pulled";
+var META = "noir.profiles", CUR = "noir.pf.cur", DATA = "noir.pf.d.", SESS = "noir.pf.ok", PULLED = "noir.pf.pulled", SKIP = "noir.pf.skip", HELLO = "noir.pf.hello";
 var WORDS = "lune soleil etoile nuage pluie neige vent orage brume aurore sable ocean vague rivage ile lac source fleuve pont mont colline foret prairie jardin verger champ sentier route tunnel phare port barque voile ancre perle corail coquille galet cristal rubis opale jade ambre onyx argent cuivre bronze fer or tigre dragon panda lapin renard loup ours cerf biche hibou aigle moineau cygne grue canard poney chat chien souris panthere lion zebre koala singe paon colibri papillon abeille fourmi grenouille tortue poisson requin dauphin baleine crabe pieuvre meduse licorne cerise pomme poire peche prune mangue ananas citron orange banane melon raisin fraise framboise myrtille noix noisette amande riz the cafe miel sucre sel poivre menthe basilic thym safran vanille cannelle gingembre ramen sushi gateau bonbon glace crepe brioche biscuit tarte pizza soupe salade fromage beurre lait chocolat fleur rose lotus iris tulipe pivoine orchidee lilas violette jasmin lavande bambou pin chene erable saule cedre palmier cactus fougere mousse lierre bruyere ruban plume ballon cadeau cloche tambour guitare piano violon flute harpe radio camera livre carnet crayon pinceau miroir lampe bougie lanterne parapluie echarpe chapeau bottes gants valise horloge boussole carte voyage fusee comete galaxie planete eclipse arcenciel tonnerre eclair flamme braise cendre volcan geyser glacier desert oasis canyon grotte falaise recif lagune delta archipel savane tundra jungle steppe plaine vallee cascade ruisseau etang marais jonc nenuphar trefle muguet coquelicot bleuet marguerite camelia glycine magnolia gardenia hibiscus azalee aube crepuscule zenith horizon mirage tempete bourrasque rosee givre grele brouillard souffle echo rythme melodie refrain ballade sonate poeme conte".split(" ");
 
 /* ===== Avatars : personnages dessinés en SVG (aucune image à charger) ===== */
@@ -134,7 +134,7 @@ function rid() { var u = new Uint8Array(6); crypto.getRandomValues(u); return Ar
 function select(id) {
   var ps = metas(); if (!ps.filter(function (p) { return p.id === id; })[0]) return;
   if (id !== curId()) { saveCur(); applySnap(jget(DATA + id, {})); try { localStorage.setItem(CUR, id); } catch (e) {} }
-  try { sessionStorage.setItem(SESS, "1"); sessionStorage.removeItem(PULLED); } catch (e) {}
+  try { sessionStorage.setItem(SESS, "1"); sessionStorage.removeItem(PULLED); sessionStorage.setItem(HELLO, id); } catch (e) {}
   location.href = "/";
 }
 function create(name, avatar, cloud, photo) {
@@ -154,7 +154,7 @@ function remove(id) {
   if (curId() === id) {
     try { localStorage.removeItem(CUR); } catch (e) {}
     if (ps.length) { select(ps[0].id); return; }
-    applySnap({}); try { sessionStorage.removeItem(SESS); } catch (e) {} location.href = "/";
+    applySnap({}); try { sessionStorage.removeItem(SESS); localStorage.setItem(SKIP, "1"); } catch (e) {} location.href = "/";
   }
 }
 
@@ -261,12 +261,12 @@ function render() {
   if (!scr) return;
   var ps = metas(), c = curId(), h = "";
   if (mode === "choose") {
-    h = '<h1 class="pftitle" id="pftitle">' + (manage ? "Gérer les profils" : ps.length ? "Qui regarde ?" : "Crée ton profil") + '</h1>';
-    h += '<div class="pfgrid">' + ps.map(function (p) {
-      return '<button type="button" class="pfcard' + (p.id === c ? " cur" : "") + '" data-pf="' + (manage ? "edit" : "pick") + '" data-id="' + p.id + '"><span class="pfav">' + avHTML(p.avatar, p.photo, 200) + (manage ? '<span class="pfedit" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 17.25V21h3.75L17.8 9.94l-3.75-3.75L3 17.25zM20.7 7.04a1 1 0 0 0 0-1.41l-2.34-2.34a1 1 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg></span>' : '') + '</span><b>' + E(p.name) + '</b></button>';
-    }).join("") + (ps.length < 6 ? '<button type="button" class="pfcard add" data-pf="new"><span class="pfav plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span><b>Ajouter un profil</b></button>' : '') + '</div>';
-    h += '<p class="pfhint">' + (ps.length ? "Chaque profil a sa propre liste, sa progression et ses réglages." : "Un profil garde ta liste, ta progression et tes réglages. Tu peux en créer plusieurs sur le même appareil.") + '</p>';
-    h += '<div class="pfactions">' + (ps.length ? '<button type="button" class="btn ghost" data-pf="manage">' + (manage ? "Terminé" : "Gérer les profils") + '</button>' : '') + '<button type="button" class="pflink" data-pf="restore">Me reconnecter avec ma phrase secrète</button></div>';
+    h = '<h1 class="pftitle" id="pftitle">' + (manage ? "Gérer les profils" : "Qui regarde ?") + '</h1>';
+    h += '<div class="pfgrid">' + ps.map(function (p, n) {
+      return '<button type="button" class="pfcard' + (p.id === c ? " cur" : "") + '" style="--i:' + n + '" data-pf="' + (manage ? "edit" : "pick") + '" data-id="' + p.id + '"><span class="pfav">' + avHTML(p.avatar, p.photo, 200) + (manage ? '<span class="pfedit" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 17.25V21h3.75L17.8 9.94l-3.75-3.75L3 17.25zM20.7 7.04a1 1 0 0 0 0-1.41l-2.34-2.34a1 1 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg></span>' : '') + '</span><b>' + E(p.name) + '</b></button>';
+    }).join("") + (ps.length < 6 ? '<button type="button" class="pfcard add" style="--i:' + ps.length + '" data-pf="new"><span class="pfav plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span><b>Ajouter un profil</b></button>' : '') + '</div>';
+    h += '<p class="pfhint">' + (ps.length ? "Chaque profil a sa propre liste, sa progression et ses réglages." : "Un profil garde ta liste, ta progression et tes réglages, sur tous tes appareils avec ta phrase secrète. Tu peux aussi continuer sans profil.") + '</p>';
+    h += '<div class="pfactions">' + (!ps.length && !manage ? '<button type="button" class="btn" data-pf="skip">Continuer sans profil</button>' : '') + (ps.length ? '<button type="button" class="btn ghost" data-pf="manage">' + (manage ? "Terminé" : "Gérer les profils") + '</button>' : '') + '<button type="button" class="pflink" data-pf="restore">Me reconnecter avec ma phrase secrète</button></div>';
   } else if (mode === "form") {
     var cu = customAv(), catList = PF_CATS.concat(cu.some(function (x) { return (x.cat || "x") === "x"; }) ? [{ id: "x", name: "Spécial" }] : []);
     var cats = catList.map(function (k) { return '<button type="button" class="pftab' + (selCat === k.id ? " on" : "") + '" data-pf="cat" data-cat="' + k.id + '">' + k.name + '</button>'; }).join("");
@@ -302,6 +302,32 @@ function open(m, opts) {
   cloudOk(); render();
 }
 function close() { if (scr) { scr.remove(); scr = null; } document.documentElement.classList.remove("pfopen"); }
+/* ===== Animations : choix d'un profil, « Continuer sans profil », accueil « Bonjour » ===== */
+function fast() { return document.documentElement.classList.contains("noanim") || (window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches); }
+function hello(id) {
+  var p = id ? metas().filter(function (x) { return x.id === id; })[0] : null;
+  var o = document.createElement("div"); o.className = "pfhello"; o.setAttribute("aria-hidden", "true");
+  o.innerHTML = p ? '<div class="pfhv"><span class="pfhav">' + avHTML(p.avatar, p.photo, 200) + '</span><i class="pfhring"></i></div><small>Bonjour</small><b>' + E(p.name) + '</b>'
+    : '<div class="pfhlogo"><span>DRAMA</span><span>BYM</span></div><small>Bon visionnage</small>';
+  document.body.appendChild(o);
+  var t = fast() ? 350 : 1500;
+  setTimeout(function () { o.classList.add("out"); setTimeout(function () { o.remove(); }, fast() ? 50 : 520); }, t);
+}
+function enter(id, btn) {
+  if (!scr || scr.classList.contains("leaving")) return;
+  if (btn) btn.classList.add("picked");
+  scr.classList.add("leaving");
+  setTimeout(function () {
+    if (id === curId()) { try { sessionStorage.setItem(SESS, "1"); } catch (e) {} close(); hello(id); }
+    else select(id);
+  }, fast() ? 0 : 700);
+}
+function skip() {
+  if (!scr || scr.classList.contains("leaving")) return;
+  try { localStorage.setItem(SKIP, "1"); sessionStorage.setItem(SESS, "1"); } catch (e) {}
+  scr.classList.add("leaving", "skipping");
+  setTimeout(function () { close(); hello(null); }, fast() ? 0 : 450);
+}
 function onChange(e) {
   if (e.target.id !== "pfphoto") return;
   var f = e.target.files && e.target.files[0]; e.target.value = "";
@@ -322,7 +348,8 @@ function onClick(e) {
   var t = e.target.closest ? e.target.closest("[data-pf]") : null; if (!t) return;
   var a = t.dataset.pf, ps = metas();
   if (a === "close") { if (!boot) close(); }
-  else if (a === "pick") select(t.dataset.id);
+  else if (a === "pick") enter(t.dataset.id, t);
+  else if (a === "skip") skip();
   else if (a === "manage") { manage = !manage; render(); }
   else if (a === "edit") startForm(ps.filter(function (p) { return p.id === t.dataset.id; })[0]);
   else if (a === "new") startForm(null);
@@ -333,7 +360,7 @@ function onClick(e) {
   else if (a === "save") saveForm();
   else if (a === "del") { if (edit && window.confirm("Supprimer le profil « " + edit.name + " » ? Sa liste, sa progression et ses réglages seront effacés de cet appareil" + (edit.cloud ? " et de la sauvegarde en ligne." : "."))) remove(edit.id); }
   else if (a === "copy") { try { navigator.clipboard.writeText(phraseShown).then(function () { toast("Phrase copiée"); }, function () { toast("Copie impossible : note-la à la main"); }); } catch (er) { toast("Copie impossible : note-la à la main"); } }
-  else if (a === "done") { var pd = pending; pending = null; phraseShown = ""; if (pd) { close(); if (pd.first) { paintBtn(); toast("Profil créé"); startSync(); pushNow(true); } else select(pd.p.id); } }
+  else if (a === "done") { var pd = pending; pending = null; phraseShown = ""; if (pd) { close(); if (pd.first) { paintBtn(); hello(pd.p.id); startSync(); pushNow(true); } else select(pd.p.id); } }
   else if (a === "dorestore") doRestore();
 }
 function saveForm() {
@@ -345,7 +372,7 @@ function saveForm() {
   if (edit) { update(edit.id, { name: n, avatar: selAv, photo: ph }); edit = null; mode = "choose"; paintBtn(); render(); if (cur() && cur().cloud) pushNow(true); return; }
   var btn = scr.querySelector('[data-pf="save"]'); btn.disabled = true;
   cloudOk().then(function (ok) {
-    if (!ok) { var r = create(n, selAv, null, ph); paintBtn(); if (r.first) { close(); toast("Profil créé (sauvegarde en ligne indisponible)"); } else select(r.p.id); return; }
+    if (!ok) { var r = create(n, selAv, null, ph); paintBtn(); if (r.first) { close(); hello(r.p.id); toast("Profil créé (sauvegarde en ligne indisponible)"); } else select(r.p.id); return; }
     setErr("Création en cours…", true);
     var phrase = newPhrase();
     return derive(phrase).then(function (d) {
@@ -405,8 +432,11 @@ function init() {
   ["pfbtn", "pftab"].forEach(function (id) { var b = document.getElementById(id); if (b) b.addEventListener("click", function () { open("choose"); }); });
   document.addEventListener("keydown", function (e) { if (e.key === "Escape" && scr && !boot) close(); });
   paintBtn();
-  var asked = false; try { asked = !!sessionStorage.getItem(SESS); } catch (e) {}
-  if (ps.length >= 2 && !asked) open("choose", { boot: true });
+  var asked = false, skipped = false, hid = ""; try { asked = !!sessionStorage.getItem(SESS); skipped = localStorage.getItem(SKIP) === "1"; hid = sessionStorage.getItem(HELLO) || ""; sessionStorage.removeItem(HELLO); } catch (e) {}
+  var adminRoute = /^\/(admin|headadmin|motdepasse|panel)(\/|$)/.test(location.pathname);
+  if (hid) hello(hid);                                                               /* on vient de choisir un profil */
+  else if (ps.length >= 2 && !asked) open("choose", { boot: true });                /* plusieurs profils : on demande qui regarde */
+  else if (!ps.length && !skipped && !asked && !adminRoute) open("choose", { boot: true });   /* toute première visite */
   else try { sessionStorage.setItem(SESS, "1"); } catch (e) {}
   startSync();
 }

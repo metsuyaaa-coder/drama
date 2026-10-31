@@ -2753,3 +2753,30 @@ html.pfopen { overflow: hidden; }
 .mlgrid.dense { grid-template-columns: repeat(auto-fill, minmax(132px, 1fr)); gap: 20px 12px; }
 .mlstat { position: absolute; left: 8px; bottom: 8px; z-index: 3; padding: 3px 7px; background: rgba(0, 0, 0, .75); border: 1px solid var(--line); color: var(--fg); font: 500 10px var(--mono); letter-spacing: .08em; text-transform: uppercase; }
 @media (max-width: 520px) { .mlview { margin-left: 0; } .mlgrid.dense { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px 8px; } }
+
+/* Profils : animations d'entrée et de sortie */
+.pftitle { animation: pfIn .6s var(--ease) both; }
+.pfcard { animation: pfIn .55s calc(.12s + var(--i, 0) * .08s) var(--ease) both; }
+.pfhint, .pfactions { animation: pfIn .6s .35s var(--ease) both; }
+@keyframes pfIn { from { opacity: 0; transform: translateY(14px) scale(.96); } to { opacity: 1; transform: none; } }
+.pfscreen.leaving .pftitle, .pfscreen.leaving .pfhint, .pfscreen.leaving .pfactions, .pfscreen.leaving .pfclose { opacity: 0; transform: translateY(-10px); transition: opacity .35s, transform .35s var(--ease); animation: none; }
+.pfscreen.leaving .pfcard { animation: none; transition: opacity .4s, transform .55s var(--ease), filter .4s; opacity: 0; transform: scale(.88); filter: blur(4px); pointer-events: none; }
+.pfscreen.leaving .pfcard.picked { opacity: 1; transform: scale(1.22); filter: none; }
+.pfscreen.leaving .pfcard.picked .pfav { border-color: var(--acc); }
+.pfscreen.leaving .pfcard.picked b { color: var(--fg); }
+.pfscreen.skipping { transition: opacity .45s, transform .45s var(--ease); opacity: 0; transform: scale(1.05); }
+.pfhello { position: fixed; inset: 0; z-index: 170; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; background: var(--bg); text-align: center; transition: opacity .5s var(--ease), transform .5s var(--ease); }
+.pfhello.out { opacity: 0; transform: scale(1.04); pointer-events: none; }
+.pfhv { position: relative; width: clamp(110px, 24vw, 170px); aspect-ratio: 1; margin-bottom: 8px; animation: pfPop .7s var(--ease) both; }
+.pfhav { display: block; width: 100%; height: 100%; overflow: hidden; border-radius: 8px; }
+.pfhav svg, .pfhav img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.pfhring { position: absolute; inset: -10px; border: 2px solid var(--acc); border-radius: 12px; opacity: 0; animation: pfRing 1.2s .25s var(--ease) both; }
+@keyframes pfPop { from { opacity: 0; transform: scale(.55) rotate(-4deg); } 60% { transform: scale(1.06) rotate(1deg); } to { opacity: 1; transform: none; } }
+@keyframes pfRing { 0% { opacity: .9; transform: scale(.9); } 100% { opacity: 0; transform: scale(1.35); } }
+.pfhello small { font: 500 12px var(--mono); letter-spacing: .24em; text-transform: uppercase; color: var(--dim); animation: pfIn .5s .35s var(--ease) both; }
+.pfhello b { font-family: var(--display); font-weight: 900; font-size: clamp(40px, 9vw, 84px); line-height: 1; text-transform: uppercase; animation: pfIn .6s .5s var(--ease) both; }
+.pfhlogo { display: flex; gap: .06em; font-family: var(--display); font-weight: 900; font-size: clamp(54px, 13vw, 120px); line-height: .9; }
+.pfhlogo span { display: inline-block; animation: pfLetter .7s var(--ease) both; }
+.pfhlogo span + span { color: var(--acc); animation-delay: .15s; }
+@keyframes pfLetter { from { opacity: 0; transform: translateY(40%) scale(.9); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .pftitle, .pfcard, .pfhint, .pfactions, .pfhv, .pfhring, .pfhello small, .pfhello b, .pfhlogo span { animation: none !important; } }
