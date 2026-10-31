@@ -33571,7 +33571,13 @@
               "name": "Épisode 18",
               "overview": "",
               "air_date": "2026-10-30",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-f622dlelv1pz.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -33579,7 +33585,13 @@
               "name": "Épisode 19",
               "overview": "",
               "air_date": "2026-10-31",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-n6q5wugxq92k.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -33760,7 +33772,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1793380990844,
+      "updatedAt": 1793463705299,
       "trend": 72,
       "eprt": 48
     },
@@ -50357,6 +50369,15 @@
   },
   "journal": [
     {
+      "k": "mvwlzfmuhdyiu",
+      "t": 1793463705318,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "286171",
+      "n": "Tigers Sniff the Rose",
+      "d": "sources 17 → 19"
+    },
+    {
       "k": "mvwlxcsxdqu4d",
       "t": 1793463608337,
       "b": "614d778ed0",
@@ -53046,15 +53067,6 @@
       "i": "289424",
       "n": "We Are All Trying Here",
       "d": "sources 12 → 24"
-    },
-    {
-      "k": "mviqaib9465sz",
-      "t": 1792624414005,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "305551",
-      "n": "Merry Berry Love",
-      "d": "sources 6 → 7"
     }
   ],
   "refreshAt": 1792423579957
