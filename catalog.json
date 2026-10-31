@@ -7034,7 +7034,13 @@
               "name": "Épisode 33",
               "overview": "",
               "air_date": "2026-10-30",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-7cxdyx397a2l.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -7104,7 +7110,7 @@
       ],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1793380827598,
+      "updatedAt": 1793463776787,
       "trend": 42
     },
     {
@@ -50369,6 +50375,15 @@
   },
   "journal": [
     {
+      "k": "mvwm0ysns600q",
+      "t": 1793463776807,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "304452",
+      "n": "The Lament of Autumn",
+      "d": "sources 32 → 33"
+    },
+    {
       "k": "mvwlzfmuhdyiu",
       "t": 1793463705318,
       "b": "614d778ed0",
@@ -53058,15 +53073,6 @@
       "i": "289424",
       "n": "We Are All Trying Here",
       "d": "sources 36 → 48"
-    },
-    {
-      "k": "mviquzznc7cuu",
-      "t": 1792625370035,
-      "b": "head",
-      "a": "edit",
-      "i": "289424",
-      "n": "We Are All Trying Here",
-      "d": "sources 12 → 24"
     }
   ],
   "refreshAt": 1792423579957
