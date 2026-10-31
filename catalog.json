@@ -50071,22 +50071,6 @@
         "at": 1793404041795
       },
       {
-        "id": "rmvwdy5w5",
-        "title": "L'amour sous couverture",
-        "status": "done",
-        "bl": false,
-        "kind": "dl",
-        "votes": 1,
-        "tmdb": "303745",
-        "media": "tv",
-        "year": "2026",
-        "poster": "/xima3BlIJxlrONQgZ9mYuSLAq0f.jpg",
-        "origin": "Corée",
-        "en": "Love in Disguise",
-        "auto": true,
-        "at": 1793450209109
-      },
-      {
         "id": "rmvweui6y",
         "title": "Deserter Pursuit",
         "status": "wait",
@@ -50119,7 +50103,7 @@
         "at": 1793453009480
       }
     ],
-    "at": 1793456623326
+    "at": 1793456628065
   },
   "hosts": {
     "items": [
