@@ -49982,22 +49982,6 @@
         "at": 1793213714120
       },
       {
-        "id": "rmvsmok7o",
-        "title": "尚公主",
-        "status": "done",
-        "bl": false,
-        "kind": "both",
-        "votes": 3,
-        "tmdb": "286171",
-        "media": "tv",
-        "year": "2026",
-        "poster": "/bgPVGcFIlY2vetjneDXQ1WQbJRD.jpg",
-        "origin": "Chine",
-        "en": "Tigers Sniff the Rose",
-        "auto": true,
-        "at": 1793223012948
-      },
-      {
         "id": "rmvtj2cvv",
         "title": "如期",
         "status": "wait",
@@ -50012,22 +49996,6 @@
         "en": "As Promised",
         "auto": true,
         "at": 1793277404348
-      },
-      {
-        "id": "rmvtm1z72",
-        "title": "Un autre amour que le tien",
-        "status": "done",
-        "bl": false,
-        "kind": "dl",
-        "votes": 1,
-        "tmdb": "314939",
-        "media": "tv",
-        "year": "2026",
-        "poster": "/lu3tuzFl4c6rx1WcoLOGZlkTjaw.jpg",
-        "origin": "Corée",
-        "en": "A Love Other Than Yours",
-        "auto": true,
-        "at": 1793282425454
       },
       {
         "id": "rmvtvd44v",
@@ -50108,22 +50076,6 @@
         "en": "The Remarried Empress",
         "auto": true,
         "at": 1793348962722
-      },
-      {
-        "id": "rmvv3ns5g",
-        "title": "你好1983",
-        "status": "wait",
-        "bl": false,
-        "kind": "stream",
-        "votes": 1,
-        "tmdb": "280822",
-        "media": "tv",
-        "year": "2026",
-        "poster": "/j8rOn9MSKJ8tAuqOjTOzLsa0oqu.jpg",
-        "origin": "Chine",
-        "en": "Dream of Golden Years",
-        "auto": true,
-        "at": 1793372462404
       },
       {
         "id": "rmvv4eext",
@@ -50222,7 +50174,7 @@
         "at": 1793453009480
       }
     ],
-    "at": 1793456604100
+    "at": 1793456611822
   },
   "hosts": {
     "items": [
