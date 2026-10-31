@@ -50619,9 +50619,31 @@
         "en": "",
         "auto": true,
         "at": 1793466052450
+      },
+      {
+        "id": "rmvwqwjzt",
+        "title": "연애박사",
+        "status": "wait",
+        "bl": false,
+        "kind": "dl",
+        "votes": 1,
+        "tmdb": "307106",
+        "media": "tv",
+        "year": "2026",
+        "poster": "/vyrpZOFIZJkQG8ZWTezmlNGav8R.jpg",
+        "origin": "Corée",
+        "en": "Between Steps",
+        "auto": true,
+        "at": 1793471969081
       }
     ],
-    "at": 1793466052450
+    "at": 1793471969081,
+    "log": [
+      {
+        "v": "dfbb591c",
+        "t": 1793471969081
+      }
+    ]
   },
   "hosts": {
     "items": [
