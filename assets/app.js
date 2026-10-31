@@ -7374,4 +7374,4 @@ function pollCatalog() {
 }
 setInterval(pollCatalog, 30000);
 document.addEventListener("visibilitychange", function () { if (!document.hidden) pollCatalog(); });
-try { if (!localStorage.getItem(WELKEY)) setTimeout(openWelcome, 700); } catch (e) {}
+/* Message « Bienvenue / site en bêta » : plus affiché automatiquement. Il reste ouvert par le bouton info du pied de page (btn-info). */
