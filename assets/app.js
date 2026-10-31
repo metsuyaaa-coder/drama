@@ -529,7 +529,7 @@ function toggleList(id) {
   try { localStorage.setItem(LISTKEY, JSON.stringify(l)); } catch (e) { toast("Stockage plein ou bloqué par le navigateur"); }
   return k === -1;
 }
-function listItems() { return readList().map(function (id) { return byId(id); }).filter(Boolean); }
+function listItems() { return readList().map(function (id) { return byId(id); }).filter(inScope); }   /* Ma liste : propre à chaque espace (site principal / BL) */
 /* Met à jour la fiche en place après un changement « vu », sans tout redessiner */
 function refreshSeen(s) {
   var seen = readSeen()[s.id] || {};
@@ -2093,7 +2093,7 @@ document.addEventListener("click", function (e) {
 var listTab = "list";
 function seenTitles() {
   var all = readSeen(), out = [];
-  allSorted().forEach(function (s) {
+  sortedDb().forEach(function (s) {
     if (isMovie(s) || !all[s.id]) return;
     var n = 0, total = 0;
     (s.seasons || []).forEach(function (se) {
@@ -2119,7 +2119,7 @@ var MLTABS = ["list", "subs", "seen", "cols"], MLICON = { list: "bookmark", subs
 var mlQuery = "", mlSort = "recent";
 function subsItems() {
   var subs = nSubs(), out = [];
-  Object.keys(subs).forEach(function (id) { var f = byId(id); if (f) out.push(Object.assign({}, f, { _at: (subs[id] && subs[id].at) || 0 })); });
+  Object.keys(subs).forEach(function (id) { var f = byId(id); if (f && inScope(f)) out.push(Object.assign({}, f, { _at: (subs[id] && subs[id].at) || 0 })); });
   return out.sort(function (x, y) { return y._at - x._at; });
 }
 function mlProgress(s) {
@@ -2149,7 +2149,7 @@ function mlData() {
     var m = function (ids) { return ids.map(function (id) { return byId(id); }).filter(Boolean); };
     return { list: m(mlShared.l), subs: m(mlShared.s), seen: m(mlShared.w), cols: mlShared.c };
   }
-  return { list: listItems(), subs: subsItems(), seen: seenTitles(), cols: readCols() };
+  return { list: listItems(), subs: subsItems(), seen: seenTitles(), cols: readCols().filter(colHere) };
 }
 function mlFilter(arr, tab) {
   var q = mlQuery.trim().toLowerCase(), out = arr.slice();
@@ -2174,6 +2174,11 @@ function mlCard(s, i, tab) {
       inner += '<span class="mlring" style="--p:' + pr.p.toFixed(3) + '"><svg viewBox="0 0 36 36" aria-hidden="true"><circle class="bg" cx="18" cy="18" r="15.9" pathLength="100"/><circle class="fg" cx="18" cy="18" r="15.9" pathLength="100"/></svg><b>' + (pr.p >= 1 ? nsvg("check") : Math.round(pr.p * 100) + "%") + '</b></span>';
     } else if (pr.n) inner += '<span class="mlbar"><i style="--p:' + pr.p.toFixed(3) + '"></i></span>';
   }
+  if (tab === "seen" && pr && pr.t) {
+    var dro = pr.p < 1 && !!readDropped()[s.id];
+    if (dro) inner += '<span class="mlstat">Abandonné</span>';
+    if (pr.p < 1) inner += '<button type="button" class="mlb rm" data-drop="' + id + '" data-on="' + (dro ? 0 : 1) + '" aria-label="' + (dro ? "Reprendre" : "Abandonner") + '" title="' + (dro ? "Reprendre" : "Abandonner") + '">' + nsvg(dro ? "eye" : "x") + '</button>';
+  }
   var acts = (tab === "col" ? '<button type="button" class="mlb rm" data-colrm="' + id + '" aria-label="Retirer de la collection" title="Retirer de la collection">' + nsvg("bookmark-x") + '</button>' : '') + (tab === "list" ? '<button type="button" class="mlb rm" data-mlrm="' + id + '" aria-label="Retirer de ma liste" title="Retirer de ma liste">' + nsvg("bookmark-x") + '</button>' : '') +
     (ro ? (function () { var on = inList(s.id), tt = on ? "Retirer de ma liste" : "Ajouter à ma liste"; return '<button type="button" class="mlb bm' + (on ? ' on' : '') + '" data-lsbm="' + id + '" aria-pressed="' + (on ? 'true' : 'false') + '" aria-label="' + tt + '" title="' + tt + '">' + nsvg("bookmark") + '</button>'; })() : '') +
     (tab === "subs" ? '<button type="button" class="mlb rm" data-unfollow="' + id + '" aria-label="Ne plus suivre" title="Ne plus suivre">' + nsvg("bell-off") + '</button>' : '');
@@ -2183,7 +2188,10 @@ function mlCard(s, i, tab) {
     '<a class="mlmeta" href="/serie/' + id + '"><b>' + esc(s.name) + '</b><span>' + esc(meta) + '</span>' + (extra ? '<em>' + esc(extra) + '</em>' : '') + '</a></div>';
 }
 /* « Vu » : En cours de visionnage / Terminés / Abandonnés (l'abandon se marque à la main, par profil) */
-var DROPKEY = "noir.dropped", seenCat = "going";
+var DROPKEY = "noir.dropped", MLVIEWKEY = "noir.mlview", seenCat = "going";
+function mlViewGet() { return readJSON(MLVIEWKEY, "rows") === "grid" ? "grid" : "rows"; }
+function mlViewSet(v) { try { localStorage.setItem(MLVIEWKEY, JSON.stringify(v === "grid" ? "grid" : "rows")); } catch (e) {} }
+var MLVIEWICO = { rows: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>', grid: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="3" y="3" width="8" height="8" rx="1.5"/><rect x="13" y="3" width="8" height="8" rx="1.5"/><rect x="3" y="13" width="8" height="8" rx="1.5"/><rect x="13" y="13" width="8" height="8" rx="1.5"/></svg>' };
 var SEENCATS = [["going", "En cours de visionnage"], ["done", "Terminés"], ["drop", "Abandonnés"]];
 function readDropped() { var v = readJSON(DROPKEY, {}); return v && typeof v === "object" && !Array.isArray(v) ? v : {}; }
 function setDropped(id, on) { var d = readDropped(); if (on) d[id] = Date.now(); else delete d[id]; try { localStorage.setItem(DROPKEY, JSON.stringify(d)); } catch (e) {} }
@@ -2272,12 +2280,12 @@ function mlRenderBody(L, still, swap) {
   var arr = mlFilter(L[listTab], listTab), seenMode = listTab === "seen" && !mlShared, chips = "";
   if (seenMode) {
     var cn = seenCounts(L.seen), dd = readDropped();
-    chips = '<div class="mlcats" role="tablist">' + SEENCATS.map(function (k) { return '<button type="button" class="mlcat' + (seenCat === k[0] ? " on" : "") + '" role="tab" aria-selected="' + (seenCat === k[0] ? "true" : "false") + '" data-seencat="' + k[0] + '">' + k[1] + '<b>' + cn[k[0]] + '</b></button>'; }).join("") + '</div>';
+    chips = '<div class="mlcats" role="tablist">' + SEENCATS.map(function (k) { return '<button type="button" class="mlcat' + (seenCat === k[0] ? " on" : "") + '" role="tab" aria-selected="' + (seenCat === k[0] ? "true" : "false") + '" data-seencat="' + k[0] + '">' + k[1] + '<b>' + cn[k[0]] + '</b></button>'; }).join("") + '<div class="mlview" role="group" aria-label="Affichage">' + [["rows", "Lignes"], ["grid", "Grille"]].map(function (v) { return '<button type="button" class="' + (mlViewGet() === v[0] ? "on" : "") + '" data-mlview="' + v[0] + '" aria-pressed="' + (mlViewGet() === v[0] ? "true" : "false") + '" aria-label="' + v[1] + '" title="' + v[1] + '">' + MLVIEWICO[v[0]] + '</button>'; }).join("") + '</div></div>';
     arr = arr.filter(function (s) { return seenCatOf(s, dd) === seenCat; });
   }
   body.className = swap ? "mlswap" : "";
   if (swap) { void body.offsetWidth; body.className = "mlswap"; }
-  body.innerHTML = chips + (arr.length ? (listTab === "seen" && !mlShared ? '<div class="mlsgrid' + (still ? ' still' : '') + '">' + arr.map(function (s, i) { return mlSeenRow(s, i); }).join("") + '</div>' : '<div class="mlgrid' + (still ? ' still' : '') + '">' + arr.map(function (s, i) { return mlCard(s, i, mlShared ? "ro" : listTab); }).join("") + '</div>') : (seenMode ? seenEmpty(q) : mlEmpty(listTab, q && L[listTab].length)));
+  body.innerHTML = chips + (arr.length ? (listTab === "seen" && !mlShared && mlViewGet() === "rows" ? '<div class="mlsgrid' + (still ? ' still' : '') + '">' + arr.map(function (s, i) { return mlSeenRow(s, i); }).join("") + '</div>' : listTab === "seen" && !mlShared ? '<div class="mlgrid dense' + (still ? ' still' : '') + '">' + arr.map(function (s, i) { return mlCard(s, i, "seen"); }).join("") + '</div>' : '<div class="mlgrid' + (still ? ' still' : '') + '">' + arr.map(function (s, i) { return mlCard(s, i, mlShared ? "ro" : listTab); }).join("") + '</div>') : (seenMode ? seenEmpty(q) : mlEmpty(listTab, q && L[listTab].length)));
   var sum = $("#mlsum"); if (sum) {
     var n = arr.length;
     if (listTab === "seen" && !mlShared) { var ep = 0; arr.forEach(function (x) { ep += x._n || 0; }); sum.textContent = ep + (ep > 1 ? " épisodes vus" : " épisode vu"); }
@@ -2295,7 +2303,7 @@ function mlBuild() {
     '<div class="mltitle"><svg class="mllogo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"/><path class="sp" d="m12 7.2.9 2 2.1.3-1.5 1.5.4 2.1-1.9-1-1.9 1 .4-2.1L9 9.5l2.1-.3z"/></svg>' +
     (mlShared ? '<div class="mlhead"><h1>Liste partagée</h1><p class="note">Aperçu en lecture seule · rien n\'est ajouté à ta liste sans ton accord</p></div></div>' +
       '<div class="mlsact"><button type="button" class="btn" data-mlsadd>' + nsvg("plus") + '<span>Ajouter à ma liste</span></button><a class="btn ghost" href="/ma-liste">' + nsvg("bookmark") + '<span>Voir ma liste</span></a></div>' :
-      '<div class="mlhead"><h1>Ma liste</h1><p class="note">Enregistrée sur cet appareil</p></div>' +
+      '<div class="mlhead"><h1>Ma liste' + (BLMODE ? " BL" : "") + '</h1><p class="note">' + (BLMODE ? "Ta liste de l\'espace BL · enregistrée sur cet appareil" : "Enregistrée sur cet appareil") + '</p></div>' +
       '<button type="button" class="btn small ghost share mlshare" id="mlshare" data-mlshare aria-label="Partager toute ma liste" title="Partager toute ma liste" hidden>' + SHICON + '<span>Partager</span></button></div>') +
     '<div class="mltabs four" id="mltabs" data-i="' + MLTABS.indexOf(listTab) + '" role="tablist"><span class="mlind"></span>' + tabs + '</div></div></div>' +
     '<div class="wrap"><div id="mlstats"></div><div class="mltools"><label class="mlsearch">' + nsvg("search") + '<input id="mlq" type="search" placeholder="Rechercher dans ma liste" autocomplete="off" aria-label="Rechercher dans ma liste"></label>' +
@@ -5503,11 +5511,12 @@ function colShrink(file) {
     im.src = url;
   });
 }
+function colHere(c) { return !!c.bl === BLMODE; }   /* une collection appartient à l'espace où elle a été créée */
 function colClean(c) {
   if (!c || typeof c !== "object" || !COLID.test(String(c.id || ""))) return null;
   var seen = {}, ids = (Array.isArray(c.i) ? c.i : []).map(String).filter(function (x) { if (!COLSID.test(x) || seen[x]) return false; seen[x] = 1; return true; }).slice(0, 300);
   var ci = parseInt(c.c, 10), ei = parseInt(c.e, 10), fi = parseInt(c.f, 10), si = parseInt(c.s, 10), pv = String(c.p || "").trim();
-  return { id: String(c.id), n: String(c.n || "").trim().slice(0, 40) || "Sans titre", d: String(c.d || "").trim().slice(0, 140), c: ci >= 0 && ci < COLPAL.length ? ci : 0, e: ei >= 0 && ei < COLEMO.length ? ei : 0, f: fi > 0 && fi < COLFX.length ? fi : 0, s: si > 0 && si < COLFM.length ? si : 0, o: c.o ? 1 : 0, p: (/^https:\/\/[^\s'"()<>\\]{4,290}$/.test(pv) || COLIMG.test(pv)) ? pv : "", i: ids, at: +c.at || 0 };
+  return { id: String(c.id), bl: c.bl ? 1 : 0, n: String(c.n || "").trim().slice(0, 40) || "Sans titre", d: String(c.d || "").trim().slice(0, 140), c: ci >= 0 && ci < COLPAL.length ? ci : 0, e: ei >= 0 && ei < COLEMO.length ? ei : 0, f: fi > 0 && fi < COLFX.length ? fi : 0, s: si > 0 && si < COLFM.length ? si : 0, o: c.o ? 1 : 0, p: (/^https:\/\/[^\s'"()<>\\]{4,290}$/.test(pv) || COLIMG.test(pv)) ? pv : "", i: ids, at: +c.at || 0 };
 }
 function readCols() { var l = readJSON(COLKEY, []); return Array.isArray(l) ? l.map(colClean).filter(Boolean) : []; }
 function saveCols(l) { try { localStorage.setItem(COLKEY, JSON.stringify(l)); return true; } catch (e) { toast("Stockage plein ou bloqué par le navigateur"); return false; } }
@@ -5619,7 +5628,7 @@ function colEdit(id, addSid) {
     if (!cur.n.trim()) { name.focus(); return; }
     var l = readCols(), saved;
     if (base) { saved = l.filter(function (x) { return x.id === base.id; })[0]; if (!saved) return; saved.n = cur.n; saved.d = cur.d; saved.c = cur.c; saved.e = cur.e; saved.f = cur.f; saved.s = cur.s || 0; saved.o = cur.o ? 1 : 0; saved.p = cur.p || ""; saved.at = Date.now(); saved = colClean(saved); l = l.map(function (x) { return x.id === saved.id ? saved : x; }); }
-    else { saved = colClean({ id: colNewId(), n: cur.n, d: cur.d, c: cur.c, e: cur.e, f: cur.f, s: cur.s || 0, o: cur.o ? 1 : 0, p: cur.p || "", i: cur.i, at: Date.now() }); l.unshift(saved); }
+    else { saved = colClean({ id: colNewId(), bl: BLMODE ? 1 : 0, n: cur.n, d: cur.d, c: cur.c, e: cur.e, f: cur.f, s: cur.s || 0, o: cur.o ? 1 : 0, p: cur.p || "", i: cur.i, at: Date.now() }); l.unshift(saved); }
     if (!saveCols(l)) return;
     colClose(); toast(base ? "Collection mise à jour" : "Collection créée ✓");
     if (addSid && !base) colRefreshBtn(addSid);
@@ -5638,7 +5647,7 @@ function colRefreshBtn(sid) {
   var on = colInAny(sid); b.textContent = on ? "✓ En collection" : "+ Collection"; b.classList.toggle("on", on);
 }
 function colPickHTML(sid) {
-  var l = readCols();
+  var l = readCols().filter(colHere);
   return '<div class="cpick">' + l.map(function (c) {
     var on = colHas(c, sid);
     return '<button type="button" class="cprow' + (on ? " on" : "") + '" data-colt="' + esc(c.id) + '" style="' + colStyle(c) + '"><span class="ce">' + colIco(c.e) + '</span><span class="ct"><b>' + esc(c.n) + '</b><em>' + c.i.length + (c.i.length > 1 ? " titres" : " titre") + '</em></span><span class="ck">' + nsvg("check") + '</span></button>';
@@ -5779,7 +5788,7 @@ document.addEventListener("click", function (e) {
   }
   if (t.hasAttribute("data-colsave")) {
     var sc = colDecode(location.hash.slice(1)); if (!sc) return;
-    sc.id = colNewId(); sc.at = Date.now(); var l = readCols(); l.unshift(sc);
+    sc.id = colNewId(); sc.bl = BLMODE ? 1 : 0; sc.at = Date.now(); var l = readCols(); l.unshift(sc);
     if (saveCols(l)) { toast("Collection enregistrée ✓"); go("/collection/" + sc.id); }
     return;
   }
@@ -6678,8 +6687,9 @@ document.addEventListener("change", function (e) {   /* panneau admin : ajout d'
 });
 /* Vu : changer de catégorie, abandonner / reprendre une série (avant le clic sur la ligne, qui ouvre la fiche) */
 document.addEventListener("click", function (e) {
-  var d = e.target.closest ? e.target.closest("[data-drop],[data-seencat]") : null; if (!d) return;
+  var d = e.target.closest ? e.target.closest("[data-drop],[data-seencat],[data-mlview]") : null; if (!d) return;
   e.preventDefault(); e.stopPropagation();
+  if (d.dataset.mlview) { mlViewSet(d.dataset.mlview); if ($("#mlroot")) mlPatch(true); return; }
   if (d.dataset.seencat) { seenCat = d.dataset.seencat; if ($("#mlroot")) mlPatch(true); return; }
   setDropped(d.dataset.drop, d.dataset.on === "1");
   toast(d.dataset.on === "1" ? "Rangé dans « Abandonnés »" : "Remis « En cours de visionnage »");
