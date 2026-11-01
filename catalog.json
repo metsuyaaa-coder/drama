@@ -33649,7 +33649,13 @@
               "name": "Épisode 20",
               "overview": "",
               "air_date": "2026-10-31",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-zbgxm5xfovlr.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -33657,7 +33663,13 @@
               "name": "Épisode 21",
               "overview": "",
               "air_date": "2026-11-01",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-fkxvm73a5lmr.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -33822,7 +33834,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1793463705299,
+      "updatedAt": 1793548945597,
       "trend": 71,
       "eprt": 48
     },
@@ -50657,6 +50669,15 @@
   },
   "journal": [
     {
+      "k": "mvy0qfh639fnh",
+      "t": 1793548945626,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "286171",
+      "n": "Tigers Sniff the Rose",
+      "d": "sources 19 → 21"
+    },
+    {
       "k": "mvy0jjn5q91xw",
       "t": 1793548624433,
       "b": "614d778ed0",
@@ -53346,15 +53367,6 @@
       "i": "220074",
       "n": "Flex X Cop",
       "d": "téléchargements 0 → 2"
-    },
-    {
-      "k": "mvji9aflyqvb4",
-      "t": 1792671714668,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "292121",
-      "n": "The Scarecrow",
-      "d": "téléchargements 0 → 1"
     }
   ],
   "refreshAt": 1792423579957
