@@ -1031,7 +1031,13 @@
               "name": "Épisode 8",
               "overview": "",
               "air_date": "2026-10-31",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-ehncico0yk12.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -1082,7 +1088,7 @@
       ],
       "original_language": "ko",
       "posterV": 2,
-      "updatedAt": 1793464428353,
+      "updatedAt": 1793536982462,
       "networks": [
         "SBS"
       ],
@@ -50599,6 +50605,15 @@
   },
   "journal": [
     {
+      "k": "mvxtm0nhdrxp1",
+      "t": 1793536982477,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "293610",
+      "n": "Doctor X: Mafia in White",
+      "d": "sources 23 → 24"
+    },
+    {
       "k": "mvxtjeyn5tvvg",
       "t": 1793536861055,
       "b": "614d778ed0",
@@ -53288,15 +53303,6 @@
       "i": "",
       "n": "lien DLSURF de Between Steps (NEBULA)",
       "d": ""
-    },
-    {
-      "k": "mvjghchv43lnl",
-      "t": 1792668403075,
-      "b": "head",
-      "a": "edit",
-      "i": "293607",
-      "n": "100 Days of Deception",
-      "d": "téléchargements 5 → 4"
     }
   ],
   "refreshAt": 1792423579957
