@@ -1280,7 +1280,7 @@ var CREDKEY = "noir.credits", CREDITS = readJSON(CREDKEY, null);
 var VIPKEY = "noir.vip", VIPREGKEY = "noir.vipreg", VIPPLAINKEY = "noir.vipplain";
 var VIPREG = readJSON(VIPREGKEY, null), VIP = readJSON(VIPKEY, null);
 var VIPTHEMES = { gold: "#0b0905", rose: "#0d0509", emerald: "#04100b", ice: "#04101a", fire: "#0f0602", silver: "#08080a", lime: "#070d02" };
-var CREDDEFAULT = "# Développeur\nMeyriuu\n\n# Uploadeurs\nMeyriuu\nNebula\n\n# Merci\n> Un grand merci à tous ceux qui soutiennent DramaByM.";
+var CREDDEFAULT = "# Développeur et fondateur\nMeyriuu\n\n# Uploadeurs\nMeyriuu\nNebula\n\n# Merci\n> Un grand merci à tous ceux qui soutiennent DramaByM.";
 function hex2rgb(h) { return [parseInt(h.substr(1, 2), 16), parseInt(h.substr(3, 2), 16), parseInt(h.substr(5, 2), 16)]; }
 function rgb2hex(a) { return "#" + a.map(function (v) { v = Math.max(0, Math.min(255, Math.round(v))); return ("0" + v.toString(16)).slice(-2); }).join(""); }
 function mixc(a, b, t) { return a.map(function (v, i) { return v + (b[i] - v) * t; }); }
@@ -4821,6 +4821,77 @@ function adoptAvatars(data) {
   var r = data.avatars;
   if (!ADMIN || (+r.at || 0) >= (+AVT.at || 0)) { AVT = { items: r.items, at: +r.at || 0 }; avSave(); avRefresh(); }
 }
+/* ===== Profil du fondateur : carte ouverte depuis le pied de page, modifiable par le Head admin, publiée dans catalog.json (founder) ===== */
+var FNDKEY = "noir.founder", FND_DEF = { name: "Meyriuu", discord: "meyriuu.", photo: "", since: "", at: 0 };
+var FND_PHOTO = /^data:image\/jpeg;base64,[A-Za-z0-9+\/=]{20,90000}$/;
+function fndClean(r) {
+  r = r && typeof r === "object" ? r : {};
+  return { name: String(r.name || FND_DEF.name).replace(/\s+/g, " ").trim().slice(0, 30) || FND_DEF.name, discord: String(r.discord == null ? FND_DEF.discord : r.discord).trim().slice(0, 40),
+    photo: FND_PHOTO.test(String(r.photo || "")) ? String(r.photo) : "", since: String(r.since || "").trim().slice(0, 24), at: +r.at || 0 };
+}
+var FND = fndClean(readJSON(FNDKEY, null));
+function fndSave() { try { localStorage.setItem(FNDKEY, JSON.stringify(FND)); } catch (e) {} }
+function adoptFounder(data) {
+  if (!data || Array.isArray(data) || !data.founder || typeof data.founder !== "object") return;
+  var r = fndClean(data.founder);
+  if (!ADMIN || r.at >= (+FND.at || 0)) { FND = r; fndSave(); fndPaint(); }
+}
+function fndPaint() { var b = $("#devbtn"); if (b) b.textContent = FND.name; }
+var FD_FLAME = '<svg class="fl" viewBox="0 0 24 32" aria-hidden="true"><path d="M12 31C5 31 2 25 4 19c1-4 4-6 4-10 2 1 3 3 3 5 1-4 2-9 1-14 6 4 10 11 10 18 0 5-3 13-9 13z" fill="url(#fdg)"/></svg>';
+function fndFlames() {
+  var l = [[3, 30, 0], [22, 40, .35], [41, 32, .15], [60, 44, .5], [79, 34, .25]];
+  return '<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><linearGradient id="fdg" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#ff2a00"/><stop offset=".55" stop-color="#ff8a00"/><stop offset="1" stop-color="#ffe27a"/></linearGradient></defs></svg><div class="fdflames" aria-hidden="true">' +
+    l.map(function (f) { return FD_FLAME.replace('class="fl"', 'class="fl" style="left:' + f[0] + '%;height:' + f[1] + 'px;animation-delay:-' + f[2] + 's"'); }).join("") +
+    [8, 24, 40, 58, 74, 90].map(function (x, i) { return '<i class="em" style="left:' + x + '%;animation-delay:-' + (i * .7) + 's"></i>'; }).join("") + '</div>';
+}
+function fndCard(edit) {
+  var f = FND, av = f.photo ? '<img src="' + f.photo + '" alt="">' : '<span class="fdl">' + esc(f.name.charAt(0).toUpperCase()) + '</span>';
+  var body;
+  if (edit) {
+    body = '<div class="fdform"><label class="f"><span>Nom</span><input type="text" id="fdname" maxlength="30" value="' + esc(f.name) + '" autocomplete="off"></label>' +
+      '<label class="f"><span>Discord</span><input type="text" id="fddisc" maxlength="40" value="' + esc(f.discord) + '" autocomplete="off" placeholder="ex. pseudo"></label>' +
+      '<label class="f"><span>Depuis (facultatif)</span><input type="text" id="fdsince" maxlength="24" value="' + esc(f.since) + '" autocomplete="off" placeholder="ex. SEPT 2026"></label>' +
+      '<div class="row"><label class="btn small ghost pffile">Changer la photo<input type="file" id="fdphoto" accept="image/*" hidden></label>' + (f.photo ? '<button type="button" class="btn small ghost" data-fdnophoto>Retirer la photo</button>' : '') + '</div>' +
+      '<div class="row"><button type="button" class="btn small" data-fdsave>Enregistrer</button><button type="button" class="btn small ghost" data-fdcancel>Annuler</button></div></div>';
+  } else {
+    body = '<div class="fdinfo"><h2 class="fdname">' + esc(f.name) + '</h2><p class="fdrole">Développeur et fondateur</p>' + (f.since ? '<p class="fdsince">EST. ' + esc(f.since) + '</p>' : '') + '</div>' +
+      '<div class="fdfoot">' + (f.discord ? '<span>Discord</span><b>' + esc(f.discord) + '</b><button type="button" class="btn small ghost" data-copy="' + esc(f.discord) + '">Copier</button>' : '') + (isHead() ? '<button type="button" class="btn small ghost" data-fdedit>Modifier</button>' : '') + '</div>';
+  }
+  return '<div class="fdcard' + (edit ? " editing" : "") + '"><button type="button" class="fdx" data-fdclose aria-label="Fermer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button><div class="fdband"></div>' +
+    '<div class="fdav">' + fndFlames() + '<div class="fdframe"><div class="fdin">' + av + '</div></div></div>' + body + '</div>';
+}
+var fdPhotoDraft = null;   /* photo choisie pendant la modification (pas encore enregistrée) : null = inchangée, "" = retirée */
+function fndShow(edit) { var b = $("#fdbody"); if (b) b.innerHTML = fndCard(!!edit); }
+function fndOpen() {
+  var d = $("#founder"); if (!d) return;
+  fdPhotoDraft = null; fndShow(false);
+  if (d.showModal && !d.open) d.showModal(); else d.setAttribute("open", "");
+}
+document.addEventListener("click", function (e) {
+  var t = e.target; if (!t || !t.closest) return;
+  if (t.closest("#devbtn")) { e.preventDefault(); fndOpen(); return; }
+  var d = $("#founder"); if (!d) return;
+  if (t === d || t.closest("[data-fdclose]")) { if (d.close) d.close(); else d.removeAttribute("open"); return; }
+  if (!isHead()) return;
+  if (t.closest("[data-fdedit]")) { fdPhotoDraft = null; fndShow(true); return; }
+  if (t.closest("[data-fdcancel]")) { fdPhotoDraft = null; fndShow(false); return; }
+  if (t.closest("[data-fdnophoto]")) { fdPhotoDraft = ""; var im = d.querySelector(".fdin"); if (im) im.innerHTML = '<span class="fdl">' + esc(($("#fdname").value || FND.name).charAt(0).toUpperCase()) + '</span>'; return; }
+  if (t.closest("[data-fdsave]")) {
+    var nm = ($("#fdname").value || "").trim();
+    if (!nm) { toast("Le nom ne peut pas être vide"); return; }
+    FND = fndClean({ name: nm, discord: $("#fddisc").value, since: $("#fdsince").value, photo: fdPhotoDraft === null ? FND.photo : fdPhotoDraft, at: Date.now() });
+    fndSave(); fndPaint(); markDirty(); fdPhotoDraft = null; fndShow(false);
+    toast("Profil enregistré" + (autoSyncOn() ? "" : ". Clique sur « Publier » pour l'appliquer.")); return;
+  }
+});
+document.addEventListener("change", function (e) {
+  var t = e.target; if (!t || t.id !== "fdphoto" || !isHead()) return;
+  var f = t.files && t.files[0]; t.value = ""; if (!f) return;
+  cropToJpeg(f, 256, .86).then(function (data) {
+    if (!FND_PHOTO.test(data)) throw new Error("Photo trop lourde");
+    fdPhotoDraft = data; var d = $("#founder .fdin"); if (d) d.innerHTML = '<img src="' + data + '" alt="">';
+  }).catch(function (er) { toast(er && er.message ? er.message : "Impossible de lire cette image"); });
+});
 /* image de la galerie -> carré rogné, JPEG léger */
 function cropToJpeg(file, size, q) {
   return new Promise(function (res, rej) {
@@ -6415,6 +6486,7 @@ function ghPublish(obj, tried, opts) {
       obj.requests = rq;
     }
     if (remote && remote.avatars && Array.isArray(remote.avatars.items) && (+remote.avatars.at || 0) > (+AVT.at || 0)) obj.avatars = remote.avatars; else if (AVT.at) obj.avatars = AVT;
+    if (remote && remote.founder && (+remote.founder.at || 0) > (+FND.at || 0)) obj.founder = remote.founder; else if (FND.at) obj.founder = FND;
     if (remote && remote.hosts && (+remote.hosts.at || 0) > (+STAT.at || 0)) obj.hosts = remote.hosts; else if (STAT.at) obj.hosts = STAT;
     var rps = remote && remote.settings;
     if (rps && "player" in rps && (+rps.playerAt || 0) > (+SETTINGS.playerAt || 0) && obj.settings) { obj.settings.player = rps.player; obj.settings.playerAt = rps.playerAt; }
@@ -6490,6 +6562,7 @@ function buildCatalogObj() {
   if (INBOX && INBOX.at) obj.inbox = INBOX;
   if (REQS.at) obj.requests = REQS;
   if (AVT.at) obj.avatars = AVT;
+  if (FND.at) obj.founder = FND;
   if (STAT.at) obj.hosts = STAT;
   var jl = journalList(); if (jl.length) obj.journal = jl;
   return obj;
@@ -7051,7 +7124,7 @@ function loadCatalogCore() {
     var priv = !!(st && st.downloads === "private");
     if (!EDITOR) db = data;
     if (!ADMIN) SETTINGS.downloads = priv ? "private" : "public";
-    safe(function () { adoptTeam(raw); }); safe(function () { adoptHero(raw); }); safe(function () { adoptCalx(raw); }); safe(function () { adoptReqs(raw); }); safe(function () { adoptAvatars(raw); }); safe(function () { adoptStat(raw); }); safe(function () { adoptAnnounce(raw); }); safe(function () { adoptInbox(raw); }); safe(function () { adoptCredits(raw); }); safe(function () { adoptVip(raw); });
+    safe(function () { adoptTeam(raw); }); safe(function () { adoptHero(raw); }); safe(function () { adoptCalx(raw); }); safe(function () { adoptReqs(raw); }); safe(function () { adoptAvatars(raw); }); safe(function () { adoptFounder(raw); }); safe(function () { adoptStat(raw); }); safe(function () { adoptAnnounce(raw); }); safe(function () { adoptInbox(raw); }); safe(function () { adoptCredits(raw); }); safe(function () { adoptVip(raw); });
     safe(function () { adoptPlayer(st); });
     if (!EDITOR) { /* déjà posé plus haut */ }
     else if (!db.length) {
