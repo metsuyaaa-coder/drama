@@ -50683,6 +50683,746 @@
       "downloads": [],
       "posterCustom": true,
       "updatedAt": 1793570134509
+    },
+    {
+      "id": "282326",
+      "type": "tv",
+      "name": "Against the Current",
+      "original_name": "兰香如故",
+      "origin_country": [
+        "CN"
+      ],
+      "networks": [
+        "Tencent Video"
+      ],
+      "original_language": "zh",
+      "aka": [
+        "Against the Current",
+        "蘭香如故",
+        "หอมรักมิรู้เลือน",
+        "Contra la Corriente",
+        "Lan Hương Như Cố",
+        "Contra a Correnteza",
+        "Срещу течението",
+        "蘭香如故～流れに逆らって～",
+        "난향여고",
+        "lan xiang ru gu",
+        "兰香缘",
+        "兰香如故"
+      ],
+      "year": "2026",
+      "overview": "Faussement accusée de trahison, la famille de Shen Jia Lan (Tan Song Yun) est brutalement exécutée, la dépouillant de son statut de noble. Pour se protéger, son fiancé Lin Jin Qi (Liu Xue Yi) et sa famille rompent leurs fiançailles. Recueillie par une famille de serviteurs de la maison Lin, Jia Lan adopte l'identité de leur fille défunte, « Xu Lan Xiang ». Débutant comme une humble servante de troisième rang, elle affronte les intrigues de la demeure. Grâce à son esprit et sa résilience, elle surmonte les barrières sociales et les injustices. En gravissant les échelons, saura-t-elle gagner le respect de la famille, reconquérir le cœur de Jin Qi et blanchir les siens tout en restant fidèle à elle-même ? Adapté du roman « Lan Xiang Yuan » de He Yan Shan.",
+      "genres": [
+        "Drame",
+        "Familial"
+      ],
+      "rating": "7.8",
+      "pop": 18.1008,
+      "status": "Ended",
+      "poster": "https://image.tmdb.org/t/p/w500/euBlF64efQmsl2y54LeNmLQPNob.jpg",
+      "posterV": 2,
+      "backdrop": "https://image.tmdb.org/t/p/original/mZSewqVlY4F2F2Axm7hiG6KBOBp.jpg",
+      "videos": [
+        {
+          "key": "K5Un3rAW_NU",
+          "name": "【Trailer】《兰香如故》Against The Current｜生而向光预告：以己之微光 共引前路｜谭松韵、刘学义",
+          "type": "Trailer",
+          "lab": "Original"
+        },
+        {
+          "key": "HXxzKhKBwAM",
+          "name": "Trailer【Against The Current兰香如故】| Tan Songyun, Liu Xueyi | WeTV",
+          "type": "Trailer",
+          "lab": "Anglais"
+        }
+      ],
+      "cast": [
+        {
+          "name": "谭松韵",
+          "character": "Xu Lanxiang / Shen Jialan",
+          "id": 1614218
+        },
+        {
+          "name": "刘学义",
+          "character": "Lin Jinqi",
+          "id": 2084467
+        }
+      ],
+      "eprt": 46,
+      "seasons": [
+        {
+          "number": 1,
+          "name": "Saison 1",
+          "episodes": [
+            {
+              "number": 1,
+              "name": "Épisode 1",
+              "overview": "Shen Jia Lan’s family is destroyed after a political dispute, and she is sent to the state brothel with the other women. Xu Lan Xiang’s parents secretly save Jia Lan by taking her place, allowing her to escape. Jia Lan survives, but is devastated by the loss of her family.",
+              "air_date": "2026-09-11",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-xlm1pmazkub6.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 2,
+              "name": "Épisode 2",
+              "overview": "Jia Lan begins a new life with Lan Xiang’s parents in Jin Ling, hiding her true identity. Her cleverness helps her adoptive father avoid a major debt and earn a promotion. Meanwhile, Lin Jin Qi returns to Jin Ling after years of military service.",
+              "air_date": "2026-09-11",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-iw4yvylth3ng.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 3,
+              "name": "Épisode 3",
+              "overview": "Lin Jin Qi returns home and discovers how much his household has changed during his absence. Jia Lan is unexpectedly recruited as a maid for the Lin family despite her parents’ attempts to stop it. She enters the household alongside several other young maids.",
+              "air_date": "2026-09-11",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-qp6pgwp4u9oy.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 4,
+              "name": "Épisode 4",
+              "overview": "Jia Lan begins working in the Lin household and quietly hides her intelligence. She discovers that a Buddhist scripture is actually connected to false accounts and realizes there may be trouble behind the household’s finances. Meanwhile, Lv Jie’er becomes increasingly eager to attract Lin Jin Qi’s attention.",
+              "air_date": "2026-09-11",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-tyqv7hdkr4y6.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 5,
+              "name": "Épisode 5",
+              "overview": "Lin Jin Qi uncovers evidence of Zhao Xing Tang’s illegal lending, while tensions between the household women and servants increase. After Qing Xiang is sent away and Lv Jie’er is severely punished, Jialan intervenes to save her. Zhao Xing Tang also secretly maintains a relationship with Qian Shao Ze, who helps her manage her accounts.",
+              "air_date": "2026-09-12",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-zoxbkkjvi6va.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 6,
+              "name": "Épisode 6",
+              "overview": "Jia Lan and Xiao Lian are promoted to second-class maids, but the change brings new concerns rather than happiness. Jia Lan begins suspecting that Zhao Xing Tang has someone outside the household and notices that Lin Jin Qi is investigating her affairs. Lin Jin Qi then asks Jia Lan to secretly become his eyes and ears.",
+              "air_date": "2026-09-12",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-939tun284eim.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 7,
+              "name": "Épisode 7",
+              "overview": "Jia Lan realizes that Qian Shao Ze is disguising himself as a woman and carefully creates an alibi to avoid being implicated. Lin Jin Qi also begins watching the situation around Jin Xiu Fang, while Jia Lan tries to protect herself and Xiao Lian. Afterward, Lin Jin Qi confirms that Jia Lan can read and asks her to help him investigate.",
+              "air_date": "2026-09-13",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-tgmttl7rdu49.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 8,
+              "name": "Épisode 8",
+              "overview": "At Zhao Xing Tang’s mother’s birthday celebration, Jialan notices that something is wrong and tries to keep Xiao Lian safe. Lin Jinqi eventually catches Zhao Xing Tang and Qian Shao Ze together, exposing their relationship. He then demands a separation, forcing the Zhao family to agree to a formal divorce.",
+              "air_date": "2026-09-13",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-abrg2niiywgd.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 9,
+              "name": "Épisode 9",
+              "overview": "Jia Lan and Xiao Lian narrowly avoid being implicated in Zhao Xing Tang’s scandal, helped by Shou Yi’s intervention. After the divorce, the Lin household undergoes major changes, and Yu Chan returns after separating from her husband. With Zhao Xing Tang gone, Jia Lan and the other maids finally have the chance to begin a more peaceful life.",
+              "air_date": "2026-09-14",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-ulzz78iwu7y1.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 10,
+              "name": "Épisode 10",
+              "overview": "Lin Jin Qi struggles to obtain supplies for his soldiers and relies on Du Zheng, who once saved his life, for help. Du Zheng and his younger sister Du Cui Que become connected to the Lin household, while Jia Lan earns a position in the inner study because of her literacy. As the new year arrives, Jialan finally feels that the danger surrounding Zhao Xing Tang has passed.",
+              "air_date": "2026-09-14",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-eojcm9xeabnj.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 11,
+              "name": "Épisode 11",
+              "overview": "The Lin family arranges a gathering for eligible young men as they begin considering a marriage for Second Miss. Jia Lan discovers that a delphinium flower ornament given to Lin Jin Qi could cause damaging rumors about his relationship with Du Cui Que. Using her quick thinking, she finds a way to prevent the misunderstanding from spreading.",
+              "air_date": "2026-09-15",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-3mfj4xiljuvm.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 12,
+              "name": "Épisode 12",
+              "overview": "As a reward for her actions, Jia Lan asks for a day off to visit her parents and medicine for her mother’s frostbite. Meanwhile, Lin Jin Qi is suspended after soldiers die from poor-quality winter uniforms, putting his investigation and Second Miss’s marriage prospects in jeopardy. Jia Lan then suggests a way to track down the merchant responsible.",
+              "air_date": "2026-09-15",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-a6hfh2ievus8.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 13,
+              "name": "Épisode 13",
+              "overview": "Jia Lan disguises herself as a woman looking for sewing work and successfully enters a suspicious household connected to the investigation. When her identity is discovered, she is placed in danger, but Lin Jin Qi and his men arrive in time. After examining the evidence, Lin Jin Qi suspects that the merchant Lu Da Lang was actually a Japanese pirate and that someone in the court may be helping them.",
+              "air_date": "2026-09-16",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-rvn5jekub6ia.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 14,
+              "name": "Épisode 14",
+              "overview": "Second Miss is devastated when the Xie family cancels her engagement, while Lin Jin Qi is arrested over the military supplies case. Jia Lan and Yu Chan manage to get crucial information to Yongchang Marquis, allowing him and Lin Jin Qi’s men to intercept Lu Da Lang’s group. Lin Jin Qi is released, and he becomes increasingly drawn to Jialan after seeing how confidently she speaks to the soldiers.",
+              "air_date": "2026-09-16",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-nmdjpcgn33l9.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 15,
+              "name": "Épisode 15",
+              "overview": "Yongchang Marquis praises Jialan and even asks Lin Jin Qi to give her to him, but Lin Jinqi refuses. As Jia Lan begins noticing suspicious details surrounding Du Zheng and his sister, she also worries about Yu Chan, who has developed a serious rash. Meanwhile, Lin Jin Qi and Yongchang Marquis investigate the poisoning of a Japanese pirate in custody, while Jia Lan secretly seeks medical help for Yu Chan.",
+              "air_date": "2026-09-17",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-ogeuhq935lk2.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 16,
+              "name": "Épisode 16",
+              "overview": "Lin Xiu Ru witnesses Lin Xiu Wan and Du Zheng in an embrace. In a panic, she manages to disrupt their tryst and looks for her brother to seek his advice. Unfortunately, Jin Qi was urgently called away before she could tell him. Marquis Yong Chang and Jin Qi have their hands full with dead prisoners and being assassination targets. An epidemic gets Lin Manor sealed after Jin Qi had left, but his enemies think he's trapped inside.",
+              "air_date": "2026-09-17",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-wzdsjikryx9m.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 17,
+              "name": "Épisode 17",
+              "overview": "Once Lin Manor is sealed, First Madam divides up which courtyard will house the sick and which will house those who have no symptoms. Lin Xiu Ru confides in Lan Xiang that she had Du Cui Que's maid, Ling Dang, follow; Ling Dang only spoke to two maids carrying bath water, then returned to Cui Que's courtyard. Lan Xiang's roommate also mentions that Lady Du said it was too bad Jin Qi had to leave after his bath. No matter how tired she was, Lan Xiang's mind was working overtime and couldn't let go of all the talk about bath water. She started to wonder whether the epidemic was not contagious but was brought on by poison instead. In the meantime, Lin Jin Qi and the Marquis have their own traps to set to catch those trying to kill them.",
+              "air_date": "2026-09-18",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-b11lx4cr5xmh.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 18,
+              "name": "Épisode 18",
+              "overview": "During the altercation between the Wo pirates and Commander Yuan, Du Zheng makes an unexpected move, eventually resulting in a grave injury. In the meantime, time is running out for those who remained ill at the Lin Manor. In an attempt to obtain an antidote to the poison, Lan Xiang takes a huge gamble, one Lady Du had not foreseen.",
+              "air_date": "2026-09-18",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-h0c67c7zj70d.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 19,
+              "name": "Épisode 19",
+              "overview": "Lin Jin Qi wraps up his military duties at the garrison. Du Zheng's barely coherent mumblings are an answer enough to why Zheng attacked him and to the recent events at Lin Manor. Jin Qi, along with Jiu Gao and Nan Ke, return near the end of the maids' celebratory banquet at Lin Manor. Jin Qi offers a toast to a drunk Lan Xiang.",
+              "air_date": "2026-09-19",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-pr6qly0hup87.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 20,
+              "name": "Épisode 20",
+              "overview": "Lin San agrees to marry Marquis Yongchang and begins taking control of her own future. Lan Xiang and her parents find a new home and work at a calligraphy shop. The investigation into the Japanese pirates is officially stopped, while the Crown Prince secretly continues looking into it. Lin Jin Qi visits Lan Xiang and becomes jealous after seeing her growing connection with Han Liang.",
+              "air_date": "2026-09-19",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-fn114ulcqjcg.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 21,
+              "name": "Épisode 21",
+              "overview": "Han Liang brings his widowed sister home, and Lan Xiang helps protect her from her late husband's family. Meanwhile, Lin San's marriage is settled, and Lin Er begins to change after reading the books Lin Jin Qi gives her. Lin Jin Qi visits Lan Xiang and sees her growing closeness with Han Liang. Han Liang realizes he loves Lan Xiang and asks his mother to arrange a proposal.",
+              "air_date": "2026-09-20",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-qbgxjyiey8zv.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 22,
+              "name": "Épisode 22",
+              "overview": "Zheng Man Yi visits the Lin family, and Lin Jin Qi makes it clear he does not want to align himself with her family. After discovering Lan Xiang’s relationship with him, Zheng Man Yi plots to destroy her. Lan Xiang is kidnapped and framed with Han Liang, but she escapes the trap. Lin Jin Qi begins searching for her and learns that the authorities are also secretly looking for the deposed Crown Prince.",
+              "air_date": "2026-09-20",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-1q6rjp1o1mra.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 23,
+              "name": "Épisode 23",
+              "overview": "Lin Jin Qi discovers that Zheng Man Yi’s family is behind Lan Xiang’s kidnapping and learns she has been taken to Yangzhou. He sets out to find her while also helping the Crown Prince escape. Meanwhile, Lan Xiang is sold to a brothel, where she meets Lv Jie'er, who helps her escape. Lin Jin Qi arrives too late and misses her.",
+              "air_date": "2026-09-21",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-s3ixti4wnzmf.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 24,
+              "name": "Épisode 24",
+              "overview": "Lan Xiang is rescued by Fu Rong and Han Liang and returns home safely. She realizes Zheng Man Yi was behind everything and decides to confront her. During Marquis Yongchang's wedding, Lan Xiang disguises herself as a ghost in a theatrical performance, deliberately provoking Zheng Man Yi. Meanwhile, Lin Jin Qi and his allies secretly help the Crown Prince escape.",
+              "air_date": "2026-09-21",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-01r8bvm9suhp.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 25,
+              "name": "Épisode 25",
+              "overview": "Zheng Bai Chuan’s assassination plot fails, and the Crown Prince safely escapes Jinling with Lin Jin Qi. Zheng Bai Chuan and his followers are forced to surrender, while Zheng Man Yi is captured. Lan Xiang's family rescues A Zhi but cannot find Lv Jie Er. The Crown Prince returns to the capital and ascends the throne after the Emperor's death. Just as Han Liang's family comes to propose to Lan Xiang, an imperial decree arrives ordering Lan Xiang to marry Lin Jin Qi.",
+              "air_date": "2026-09-22",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-e4kw5nwuk9jj.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 26,
+              "name": "Épisode 26",
+              "overview": "Lan Xiang struggles with the forced marriage, while Han Liang accepts that he has lost his chance. Lin Jin Qi is punished by his family for requesting the imperial marriage decree, but his siblings stand by him. Meanwhile, the Zheng family is sentenced, and Lan Xiang’s parents prepare for her wedding.",
+              "air_date": "2026-09-22",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-u28ihr2r72ge.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 27,
+              "name": "Épisode 27",
+              "overview": "The Lin-Wu bridal party is blocked by a group celebrating Scholar Han getting an award as First Place Scholar. Lin Jin Qi appeals to Scholar Han to make way, as a smooth bridal procession makes for a smooth marriage. The wedding goes on as expected until the bride has reluctance to bow to her groom. In the bridal chamber, as soon as the veil is lifted, Lan Xiang slaps her new husband, who commands the crowd to leave and keep the incident quiet.",
+              "air_date": "2026-09-23",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-b4chwan08tyr.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 28,
+              "name": "Épisode 28",
+              "overview": "Lan Xiang has made it very clear that she's unhappy in her marriage, so Lin Jin Qi appeases her as much as he can. He is giddily happy to finally be married to the woman he loves; he is determined to let her know how much he loves her and to shield her from his family's disapproval. Jin Qi is preparing for his transfer to the Capital and has sought permission from his Grandfather to have his cousin and his brother join him. In addition, Lin Xiu Wan was allowed to join the group to go to the Capital.",
+              "air_date": "2026-09-23",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-xylouz1vxvq4.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 29,
+              "name": "Épisode 29",
+              "overview": "Jin Qi and Lan Xiang visit her parents, and Jin Qi makes them feel comfortable around him and tells them about his sudden move to the Capital. They try to convince Lan Xiang to join Jin Qi in the Capital, esp. since they're newlyweds. Jiu Gao, who had previously avoided his mother's marital arrangements, is trying to let Yu Chan know how he feels, but she treats him like an annoying younger brother. A Zhi, who was rescued by Master Lu and Lan Xiang's father from the Qingyan brothel, reappears and claims to have information on Ji Er's whereabouts.",
+              "air_date": "2026-09-24",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-feraai8kkpil.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 30,
+              "name": "Épisode 30",
+              "overview": "Lan Xiang and Lin Jin Qi arrive in the capital, where they are given the Shen family’s former residence. Lan Xiang is overwhelmed by memories of her childhood. She finds Lv Jie Er being mistreated and learns that her contract belongs to Zhao Jin Tang, forcing her to confront her former rival. Lan Xiang also discovers that Qing Cang has returned to Zhao Jin Tang’s side and decides to investigate them.",
+              "air_date": "2026-09-24",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-r9sm6eewzwsc.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 31,
+              "name": "Épisode 31",
+              "overview": "Lan Xiang goes against Zhao Xing Tang to get Lu Ji Er and Xiao Pu's indenture papers. Xing Tang wanted 30,000 taels of silver, but Lan Xiang offered her something better: a way for a woman in her position to keep the money she earns, so that it doesn't end up in her family's coffers or her husband's hands. Once free, Lu Ji Er and Xiao Pu decide they want to start new lives in a new city. They chose Quanzhou, and A Zhi decides to join them. Lan Xiang gives Lu Ji Er gold, equivalent to 500 taels of silver, only revealed right before they boarded their caravan. Lin Jin Qi finds out Lan Xiang pawned her jewelry for three months to get the money for Lu Ji Er, so he redeemed it immediately. Three months later, he and Lan Xiang had the awkward conversation about how Lan Xiang could earn 500 taels of silver in just three months.",
+              "air_date": "2026-09-25",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-z0gkdznzbqua.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 32,
+              "name": "Épisode 32",
+              "overview": "Lin Xiu Lai seeks help from her aunt Wang Ling Xiao to separate from her husband Lu Jian, but Ling Xiao is more worried about the family reputation and how the younger cousins will be able to find marriage prospects. Even with proof of severe abuse, Ling Xiao counsels Xiu Lai to stay in the marriage. If not for Lin Xiu Wan's interference, Lan Xiang would not have known about the abuse and would not have known to act swiftly to get Xiu Lai out of the Lu household.",
+              "air_date": "2026-09-25",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-9rb3hwwkaq3p.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 33,
+              "name": "Épisode 33",
+              "overview": "Lan Xiang uses evidence of the Lu family stealing the elder sister’s dowry to force Lu Ji An to agree to the divorce. Lin Jin Qi takes his sister’s punishment upon himself and is severely beaten. Lan Xiang worries about him and protects him from further harm, while Lin Jin Qi realizes how carefully she considers his family.",
+              "air_date": "2026-09-26",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-uliyuz66l86s.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 34,
+              "name": "Épisode 34",
+              "overview": "Lan Xiang notices several suspicious signs suggesting the Prince of Han is preparing a rebellion. She warns Lin Jin Qi just in time, preventing him from walking into an ambush. Lin Jin Qi heads to the Divine Machine Camp, where the commander sides with Han Wang. After a fierce confrontation, Lin Jin Qi destroys the weapons depot and is seriously injured.",
+              "air_date": "2026-09-26",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-afkc82sxjq6c.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 35,
+              "name": "Épisode 35",
+              "overview": "Badly wounded, Lin Jin Qi send Nan Ke to seek help while the rebellion spreads through the capital. Lan Xiang refuses to abandon him and finds him before the rebels can capture him, disguising herself as a servant and helping him escape. Meanwhile, Lin Jin Qi’s family hides in a theater, while Lan Xiang takes the injured Lin Jin Qi to a remote hut, where he teaches her how to use a firearm.",
+              "air_date": "2026-09-27",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-4wfm20j70wv4.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 36,
+              "name": "Épisode 36",
+              "overview": "Lan Xiang saves Zhao Xing Tang from rebel soldiers and takes her to safety. Before dying, Zhao gives Lan Xiang evidence that could destroy the Lin family. Lan Xiang burns it without hesitation, earning Lin Jin Qi’s trust. As rebel forces close in, Lin Jin Qi tries to persuade Wei Bao to surrender.",
+              "air_date": "2026-09-27",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-ttqf2mt8b3dl.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 37,
+              "name": "Épisode 37",
+              "overview": "Lin Jin Qi convinces Wei Bao to surrender, while Han Liang joins the search for him and Lan Xiang. After they are rescued, Lan Xiang learns about the chaos in the Lin household and discovers the truth about Zhao Xing Tang’s marriage. She begins planning a new arrangement for the family.",
+              "air_date": "2026-09-28",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-4flfcfgjzuw0.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 38,
+              "name": "Épisode 38",
+              "overview": "Lan Xiang asks the eldest sister to manage the household and earn her own income. Lin Jin Qi is promoted to Marquis, while Jiu Gao and Nan Ke gain official positions. Later, Lin Jin Qi takes Lan Xiang to pay respects to the Shen family and reveals that he secretly helped save their servants. Lan Xiang finally shares the truth about her past and her connection to the Shen family.",
+              "air_date": "2026-09-29",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-9756plksbyru.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 39,
+              "name": "Épisode 39",
+              "overview": "Lan Xiang warns Lin Jin Qi about the dangers of blindly serving the emperor and urges him to consider the Lin family’s future. After Second Master’s death and news of the Old Madam’s passing, Lin Jin Qi decides to resign and return to Jinling. Back home, Lan Xiang grows closer to Lin Jin Qi and helps prepare for Fourth Miss’s upcoming marriage.",
+              "air_date": "2026-10-01",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-6e70be42acip.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 40,
+              "name": "Épisode 40",
+              "overview": "As the Lin family’s fortunes decline, Lan Xiang helps resolve tensions caused by Third Master’s thoughtless gift. Meanwhile, Lin Xiu Ru faces pressure from the Yuan family to let her husband take a concubine to produce a male heir. With Lan Xiang’s help, Lin Jin Qi and the Lin family matriarch negotiate with the Yuan family to protect Lin Xiu Ru and her daughters’ interests.",
+              "air_date": "2026-10-02",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-2pm7srg8l137.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 41,
+              "name": "Épisode 41",
+              "overview": "Rong Jie Er and her sisters thank Lan Xiang and the Lin family for protecting them, while the family deals with tensions over choosing a concubine for Yuan Shao Hui. Lan Xiang reassures the maids that no one will be forced into marriage, and Xiao Lian and Nan Ke eventually marry, alongside Gan Tang and Da Song. Yu Chan also confesses her feelings for Jiu Gao, and they agree to marry. Meanwhile, Lan Xiang gives birth to a daughter, and Lin Jin Qi begins questioning her true identity after discovering inconsistencies in her past.",
+              "air_date": "2026-10-03",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-5lw9uz4ztr22.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 42,
+              "name": "Épisode 42",
+              "overview": "Lin Jin Qi investigates Lan Xiang’s identity but ultimately decides to protect her secrets and accept her as his wife. When Lin Mu becomes critically ill, she entrusts the household management authority to Lan Xiang before passing away. Lan Xiang handles the funeral arrangements despite resistance from Cheng Shi and the Second Madam. Later, she discovers that Cheng Shi plans to frame two children for stealing a ceremonial jade artifact and refuses to let them seek revenge.",
+              "air_date": "2026-10-04",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-1nansrfaawxi.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 43,
+              "name": "Épisode 43",
+              "overview": "Lan Xiang teaches the two children to face their circumstances with dignity, and the Old Master allows them to take the Lin surname and join the family genealogy. He also formally recognizes Lan Xiang’s authority over the household, leaving Cheng Shi to face punishment for her actions. After the emperor dies and a new ruler takes the throne, Lin Jin Qi is appointed to a difficult military post overseeing the troubled Longjiang Guard. Meanwhile, Lin Xiu Wan begins working at Gan Tang’s textile workshop but is kidnapped by bandits along with a weaver.",
+              "air_date": "2026-10-05",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-t9zhwbz1b0lm.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 44,
+              "name": "Épisode 44",
+              "overview": "Xie Zhao rescues Lin Xiu Wan and the weaver from the bandits and secretly helps them return home. His drawing of the criminals allows Lin Jin Qi to identify one of the suspects as Du Cui Que, who has joined forces with pirates. Seeking revenge against Lin Jin Qi, Du Cui Que sends Zhang Shui Zai to attack Yuan Shao Hui’s forces, and Yuan Shao Hui dies while trying to protect his men. As the political situation worsens, Lin Jin Qi prepares to transport military supplies, unaware of the full extent of Du Cui Que’s plans.",
+              "air_date": "2026-10-05",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-0wo4axiyjqu4.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 45,
+              "name": "Épisode 45",
+              "overview": "After learning of Yuan Shao Hui’s death, Lin Jin Qi wants revenge, but Lan Xiang persuades him to follow a more strategic plan to stop Du Cui Que. Du Cui Que plans to burn the military supplies and seize control of Jinling, while Lan Xiang prepares the Lin household for an attack. When the pirates storm the city, Lan Xiang and the women defend the family home, while Lin Jin Qi confronts Zhang Shui Zai at the supply ships. Their coordinated efforts defeat the pirates and bring Du Cui Que’s plans to an end, allowing Lin Jin Qi to continue transporting the military supplies to the capital.",
+              "air_date": "2026-10-05",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-27r7z26uesql.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 46,
+              "name": "Épisode 46",
+              "overview": "After the pirates’ attack on the Lin residence fails, Lan Xiang explains how she and Lin Jin Qi anticipated their plans. Xie Zhao proposes marriage to Lin Xiu Wan, and the two finally confess their feelings for each other. Meanwhile, Lin Xiu Ru resolves a dispute with the Yuan family, and Lin Jin Qi asks the new emperor for permission to return to Jinling. As the political situation shifts, Lan Xiang spends New Year’s Eve caring for the children while Lin Jin Qi remains away.",
+              "air_date": "2026-10-05",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-gpnokpkxwrp5.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 47,
+              "name": "Épisode 47",
+              "overview": "After political turmoil returns to the capital, Lin Jin Qi eventually comes back to Jinling and reunites with Lan Xiang and their children. Together, they focus on raising their family, with Lin Jin Qi teaching their daughter to value wisdom and courage. Meanwhile, Lan Xiang continues writing stories about women and the Shen family, hoping to preserve their history and seek justice for the past.",
+              "air_date": "2026-10-05",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-yswgzg5ci7j9.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            }
+          ],
+          "downloads": []
+        }
+      ],
+      "sources": [],
+      "addedAt": 1793571530023,
+      "langs": [
+        "VOSTFR"
+      ],
+      "downloads": [],
+      "updatedAt": 1793572604230
     }
   ],
   "deletedLinks": [
@@ -51538,6 +52278,15 @@
     "at": 1793280056955
   },
   "journal": [
+    {
+      "k": "mvyetil935aud",
+      "t": 1793572604253,
+      "b": "614d778ed0",
+      "a": "add",
+      "i": "282326",
+      "n": "Against the Current",
+      "d": ""
+    },
     {
       "k": "mvydcky0qzzd1",
       "t": 1793570134536,
@@ -54228,15 +54977,6 @@
       "i": "307106",
       "n": "Between Steps",
       "d": "téléchargements 6 → 7"
-    },
-    {
-      "k": "mvjm13mocvtae",
-      "t": 1792677988047,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "292121",
-      "n": "The Scarecrow",
-      "d": "téléchargements 2 → 14"
     }
   ],
   "refreshAt": 1792423579957
