@@ -4837,13 +4837,6 @@ function adoptFounder(data) {
   if (!ADMIN || r.at >= (+FND.at || 0)) { FND = r; fndSave(); fndPaint(); }
 }
 function fndPaint() { var b = $("#devbtn"); if (b) b.textContent = FND.name; }
-var FD_FLAME = '<svg class="fl" viewBox="0 0 24 32" aria-hidden="true"><path d="M12 31C5 31 2 25 4 19c1-4 4-6 4-10 2 1 3 3 3 5 1-4 2-9 1-14 6 4 10 11 10 18 0 5-3 13-9 13z" fill="url(#fdg)"/></svg>';
-function fndFlames() {
-  var l = [[3, 30, 0], [22, 40, .35], [41, 32, .15], [60, 44, .5], [79, 34, .25]];
-  return '<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><linearGradient id="fdg" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#ff2a00"/><stop offset=".55" stop-color="#ff8a00"/><stop offset="1" stop-color="#ffe27a"/></linearGradient></defs></svg><div class="fdflames" aria-hidden="true">' +
-    l.map(function (f) { return FD_FLAME.replace('class="fl"', 'class="fl" style="left:' + f[0] + '%;height:' + f[1] + 'px;animation-delay:-' + f[2] + 's"'); }).join("") +
-    [8, 24, 40, 58, 74, 90].map(function (x, i) { return '<i class="em" style="left:' + x + '%;animation-delay:-' + (i * .7) + 's"></i>'; }).join("") + '</div>';
-}
 function fndCard(edit) {
   var f = FND, av = f.photo ? '<img src="' + f.photo + '" alt="">' : '<span class="fdl">' + esc(f.name.charAt(0).toUpperCase()) + '</span>';
   var body;
@@ -4858,7 +4851,7 @@ function fndCard(edit) {
       '<div class="fdfoot">' + (f.discord ? '<span>Discord</span><b>' + esc(f.discord) + '</b><button type="button" class="btn small ghost" data-copy="' + esc(f.discord) + '">Copier</button>' : '') + (isHead() ? '<button type="button" class="btn small ghost" data-fdedit>Modifier</button>' : '') + '</div>';
   }
   return '<div class="fdcard' + (edit ? " editing" : "") + '"><button type="button" class="fdx" data-fdclose aria-label="Fermer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button><div class="fdband"></div>' +
-    '<div class="fdav">' + fndFlames() + '<div class="fdframe"><div class="fdin">' + av + '</div></div></div>' + body + '</div>';
+    '<div class="fdav"><div class="fdframe"><div class="fdin">' + av + '</div></div></div>' + body + '</div>';
 }
 var fdPhotoDraft = null;   /* photo choisie pendant la modification (pas encore enregistrée) : null = inchangée, "" = retirée */
 function fndShow(edit) { var b = $("#fdbody"); if (b) b.innerHTML = fndCard(!!edit); }
