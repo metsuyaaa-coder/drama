@@ -42085,6 +42085,7 @@
                 {
                   "name": "VIDMOLY",
                   "url": "https://vidmoly.org/embed-oi2hgmzi483a.html",
+                  "fansub": "Dramavore : Rafia",
                   "by": "614d778ed0"
                 }
               ],
@@ -42196,7 +42197,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1793564389648,
+      "updatedAt": 1793564409526,
       "trend": 51
     },
     {
@@ -51173,6 +51174,15 @@
   },
   "journal": [
     {
+      "k": "mvy9zjfc46b54",
+      "t": 1793564487192,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "314939",
+      "n": "A Love Other Than Yours",
+      "d": "sources 48 → 49"
+    },
+    {
       "k": "mvy9xg66ca5r9",
       "t": 1793564409542,
       "b": "614d778ed0",
@@ -53862,15 +53872,6 @@
       "i": "",
       "n": "2 liens de NEBULA (DLSURF)",
       "d": ""
-    },
-    {
-      "k": "mvjl32imcbowb",
-      "t": 1792676135038,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "320513",
-      "n": "kiDnap GAME",
-      "d": "téléchargements 0 → 1"
     }
   ],
   "refreshAt": 1792423579957
