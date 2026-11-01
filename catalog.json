@@ -2460,7 +2460,7 @@
       ],
       "rating": "6.3",
       "pop": 40.24,
-      "status": "Returning Series",
+      "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/iKgdhgBPi1cCRRqsUgaxUDRuFP6.jpg",
       "backdrop": "https://image.tmdb.org/t/p/original/moUjiEzpJVNZc7hyNRBbLPt0CPX.jpg",
       "cast": [
@@ -2858,7 +2858,13 @@
               "name": "Épisode 14",
               "overview": "",
               "air_date": "2026-11-01",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-cn93hrwufvk9.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             }
           ],
@@ -2873,7 +2879,7 @@
       ],
       "downloads": [],
       "posterV": 2,
-      "updatedAt": 1793537122614,
+      "updatedAt": 1793564592566,
       "networks": [
         "KBS2"
       ],
@@ -51175,7 +51181,7 @@
   "journal": [
     {
       "k": "mvy9zjfc46b54",
-      "t": 1793564487192,
+      "t": 1793564592583,
       "b": "614d778ed0",
       "a": "edit",
       "i": "314939",
