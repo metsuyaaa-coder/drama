@@ -7085,7 +7085,13 @@
               "name": "Épisode 34",
               "overview": "",
               "air_date": "2026-10-31",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-vv69hnvizkvc.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -7147,7 +7153,7 @@
       ],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1793463776787,
+      "updatedAt": 1793548624418,
       "trend": 70
     },
     {
@@ -50651,6 +50657,15 @@
   },
   "journal": [
     {
+      "k": "mvy0jjn5q91xw",
+      "t": 1793548624433,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "304452",
+      "n": "The Lament of Autumn",
+      "d": "sources 33 → 34"
+    },
+    {
       "k": "mvy0hvibd6nir",
       "t": 1793548546499,
       "b": "614d778ed0",
@@ -53340,15 +53355,6 @@
       "i": "292121",
       "n": "The Scarecrow",
       "d": "téléchargements 0 → 1"
-    },
-    {
-      "k": "mvjidvumzjpb9",
-      "t": 1792671600766,
-      "b": "head",
-      "a": "del",
-      "i": "",
-      "n": "3 liens de NEBULA (DLSURF)",
-      "d": ""
     }
   ],
   "refreshAt": 1792423579957
