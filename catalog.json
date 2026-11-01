@@ -43003,7 +43003,14 @@
               "name": "Épisode 15",
               "overview": "",
               "air_date": "2026-10-28",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-9jvxtdu72uao.html",
+                  "fansub": "Drama Paradise : Inzaghi",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -43011,7 +43018,14 @@
               "name": "Épisode 16",
               "overview": "",
               "air_date": "2026-10-29",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-w72a8oftulr7.html",
+                  "fansub": "Drama Paradise : Inzaghi",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -43019,7 +43033,14 @@
               "name": "Épisode 17",
               "overview": "",
               "air_date": "2026-10-30",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-a4n1gju60t49.html",
+                  "fansub": "Drama Paradise : Inzaghi",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -43027,7 +43048,14 @@
               "name": "Épisode 18",
               "overview": "",
               "air_date": "2026-10-31",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-cd2drl17uuqq.html",
+                  "fansub": "Drama Paradise : Inzaghi",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -43088,7 +43116,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1793145968013
+      "updatedAt": 1793549238068
     },
     {
       "id": "332134",
@@ -50669,6 +50697,15 @@
   },
   "journal": [
     {
+      "k": "mvy0wp5ovs9to",
+      "t": 1793549238108,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "339366",
+      "n": "My Loong",
+      "d": "sources 14 → 18"
+    },
+    {
       "k": "mvy0qfh639fnh",
       "t": 1793548945626,
       "b": "614d778ed0",
@@ -53358,15 +53395,6 @@
       "i": "",
       "n": "3 liens de NEBULA (DLSURF)",
       "d": ""
-    },
-    {
-      "k": "mvjil386uy3qp",
-      "t": 1792671936918,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "220074",
-      "n": "Flex X Cop",
-      "d": "téléchargements 0 → 2"
     }
   ],
   "refreshAt": 1792423579957
