@@ -41778,7 +41778,13 @@
               "name": "Épisode 3",
               "overview": "",
               "air_date": "2026-10-31",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-j9mcrbmi32cn.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -41864,7 +41870,7 @@
       ],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1793130295005,
+      "updatedAt": 1793538369239,
       "trend": 72
     },
     {
@@ -50623,6 +50629,15 @@
   },
   "journal": [
     {
+      "k": "mvxufqpilaa8w",
+      "t": 1793538369270,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "316702",
+      "n": "Final Table",
+      "d": "sources 4 → 5"
+    },
+    {
       "k": "mvxtr20a5d4wl",
       "t": 1793537217514,
       "b": "614d778ed0",
@@ -53312,15 +53327,6 @@
       "i": "220074",
       "n": "Flex X Cop",
       "d": "téléchargements 0 → 2"
-    },
-    {
-      "k": "mvji3l9wemxyh",
-      "t": 1792671120500,
-      "b": "head",
-      "a": "del",
-      "i": "",
-      "n": "13 liens de NEBULA (DLSURF)",
-      "d": ""
     }
   ],
   "refreshAt": 1792423579957
