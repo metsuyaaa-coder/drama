@@ -2051,7 +2051,7 @@
       ],
       "rating": "9.0",
       "pop": 13.9271,
-      "status": "Returning Series",
+      "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/6OAuQOGqjYY1JXbkTlWz4Mm2Kmi.jpg",
       "backdrop": "https://image.tmdb.org/t/p/original/jseW3HucgNjN2CwJa3MiOlF4xMO.jpg",
       "cast": [
@@ -2394,7 +2394,7 @@
       ],
       "original_language": "ko",
       "posterV": 2,
-      "updatedAt": 1793563925853,
+      "updatedAt": 1793564850216,
       "networks": [
         "Channel A"
       ],
@@ -51180,6 +51180,15 @@
   },
   "journal": [
     {
+      "k": "mvya7bjtutov0",
+      "t": 1793564850233,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "316197",
+      "n": "Dive into You",
+      "d": ""
+    },
+    {
       "k": "mvy9zjfc46b54",
       "t": 1793564592583,
       "b": "614d778ed0",
@@ -53869,15 +53878,6 @@
       "i": "320513",
       "n": "kiDnap GAME",
       "d": "téléchargements 6 → 7"
-    },
-    {
-      "k": "mvjlms76z591e",
-      "t": 1792677054786,
-      "b": "head",
-      "a": "del",
-      "i": "",
-      "n": "2 liens de NEBULA (DLSURF)",
-      "d": ""
     }
   ],
   "refreshAt": 1792423579957
