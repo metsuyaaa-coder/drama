@@ -2334,7 +2334,13 @@
               "name": "Épisode 11",
               "overview": "",
               "air_date": "2026-10-31",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-r5gf9pzp55iu.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -2376,7 +2382,7 @@
       ],
       "original_language": "ko",
       "posterV": 2,
-      "updatedAt": 1793367292957,
+      "updatedAt": 1793537054921,
       "networks": [
         "Channel A"
       ],
@@ -50605,6 +50611,15 @@
   },
   "journal": [
     {
+      "k": "mvxtnkkbfxnj8",
+      "t": 1793537054939,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "316197",
+      "n": "Dive into You",
+      "d": "sources 34 → 35"
+    },
+    {
       "k": "mvxtm0nhdrxp1",
       "t": 1793536982477,
       "b": "614d778ed0",
@@ -53293,15 +53308,6 @@
       "a": "del",
       "i": "",
       "n": "15 liens de NEBULA (DLSURF)",
-      "d": ""
-    },
-    {
-      "k": "mvjgkr7lx8nbh",
-      "t": 1792668562113,
-      "b": "head",
-      "a": "del",
-      "i": "",
-      "n": "lien DLSURF de Between Steps (NEBULA)",
       "d": ""
     }
   ],
