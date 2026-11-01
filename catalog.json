@@ -346,7 +346,13 @@
               "name": "Épisode 8",
               "overview": "",
               "air_date": "2026-11-01",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-9fmxml4de85m.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -430,7 +436,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1793464265469,
+      "updatedAt": 1793564017393,
       "trend": 84,
       "videos": [
         {
@@ -41822,7 +41828,13 @@
               "name": "Épisode 4",
               "overview": "",
               "air_date": "2026-11-01",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-w0bm9vagd2ht.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -41900,7 +41912,7 @@
       ],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1793538369239,
+      "updatedAt": 1793564145366,
       "trend": 0
     },
     {
@@ -42069,7 +42081,13 @@
               "name": "Épisode 4",
               "overview": "",
               "air_date": "2026-11-01",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-oi2hgmzi483a.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -42178,7 +42196,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1793537217489,
+      "updatedAt": 1793564389648,
       "trend": 51
     },
     {
@@ -51155,6 +51173,24 @@
   },
   "journal": [
     {
+      "k": "mvy9xg66ca5r9",
+      "t": 1793564409542,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "334517",
+      "n": "Oh! My Guard",
+      "d": "sources 3 → 4"
+    },
+    {
+      "k": "mvy9s7onj0x36",
+      "t": 1793564145383,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "316702",
+      "n": "Final Table",
+      "d": "sources 5 → 6"
+    },
+    {
       "k": "mvy9pgxx67a89",
       "t": 1793564017413,
       "b": "614d778ed0",
@@ -53835,24 +53871,6 @@
       "i": "320513",
       "n": "kiDnap GAME",
       "d": "téléchargements 0 → 1"
-    },
-    {
-      "k": "mvjl1ioa8af0h",
-      "t": 1792676062666,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "307106",
-      "n": "Between Steps",
-      "d": "téléchargements 6 → 7"
-    },
-    {
-      "k": "mvjjdna4wnxr7",
-      "t": 1792673269276,
-      "b": "head",
-      "a": "edit",
-      "i": "220074",
-      "n": "Flex X Cop",
-      "d": ""
     }
   ],
   "refreshAt": 1792423579957
