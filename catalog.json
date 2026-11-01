@@ -42018,7 +42018,14 @@
               "name": "Épisode 3",
               "overview": "",
               "air_date": "2026-10-31",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-zt79ph66nt9e.html",
+                  "fansub": "Dramavore : Rafia",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -42135,7 +42142,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1793130296805,
+      "updatedAt": 1793537217489,
       "trend": 0
     },
     {
@@ -50616,6 +50623,15 @@
   },
   "journal": [
     {
+      "k": "mvxtr20a5d4wl",
+      "t": 1793537217514,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "334517",
+      "n": "Oh! My Guard",
+      "d": "sources 2 → 3"
+    },
+    {
       "k": "mvxtp0so1kuk0",
       "t": 1793537122632,
       "b": "614d778ed0",
@@ -53305,15 +53321,6 @@
       "i": "",
       "n": "13 liens de NEBULA (DLSURF)",
       "d": ""
-    },
-    {
-      "k": "mvjh5uyetykws",
-      "t": 1792670004190,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "292121",
-      "n": "The Scarecrow",
-      "d": "téléchargements 1 → 13"
     }
   ],
   "refreshAt": 1792423579957
