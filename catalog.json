@@ -53077,22 +53077,6 @@
         "at": 1793344053429
       },
       {
-        "id": "rmvupo3o9",
-        "title": "L'impératrice remariée",
-        "status": "wait",
-        "bl": false,
-        "kind": "stream",
-        "votes": 1,
-        "tmdb": "279246",
-        "media": "tv",
-        "year": "2026",
-        "poster": "/1TKAhnnicIIV5k2L8bquwnU1B0s.jpg",
-        "origin": "Corée",
-        "en": "The Remarried Empress",
-        "auto": true,
-        "at": 1793348962722
-      },
-      {
         "id": "rmvv4eext",
         "title": "Walking on Thin Ice",
         "status": "wait",
@@ -53316,13 +53300,7 @@
         "at": 1793620380647
       }
     ],
-    "at": 1793620380646,
-    "log": [
-      {
-        "v": "003e75ba",
-        "t": 1793620380646
-      }
-    ]
+    "at": 1793620455621
   },
   "founder": {
     "name": "Meyriuu",
