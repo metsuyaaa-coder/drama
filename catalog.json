@@ -8469,7 +8469,14 @@
               "name": "Épisode 9",
               "overview": "Youjin grows increasingly close to Professor Jihoon. He shares that he met Minjae in the US and gives her Minjae's new contact information. But Youjin brushes it off, insisting that their love is over. Meanwhile, Youseong happens to get in touch with Minjae and secretly investigates the couple's past without Youjin's knowledge. What could have happened between two people who were once so deeply in love?",
               "air_date": "2026-11-02",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-vblvryt5bzzn.html",
+                  "fansub": "Dramavore :Rafia",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -8513,7 +8520,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1793130217314,
+      "updatedAt": 1793637952740,
       "networks": [
         "ENA"
       ],
@@ -55641,13 +55648,7 @@
         "at": 1793634811938
       }
     ],
-    "at": 1793634811938,
-    "log": [
-      {
-        "v": "254e123f",
-        "t": 1793634811938
-      }
-    ]
+    "at": 1793634811938
   },
   "founder": {
     "name": "Meyriuu",
@@ -55766,6 +55767,15 @@
     "at": 1793280056955
   },
   "journal": [
+    {
+      "k": "mvzhq5tt1acfl",
+      "t": 1793637952769,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "307106",
+      "n": "Between Steps",
+      "d": "sources 26 → 27"
+    },
     {
       "k": "mvzenukwjbmu1",
       "t": 1793632806032,
@@ -58456,15 +58466,6 @@
       "i": "293607",
       "n": "100 Days of Deception",
       "d": "téléchargements 4 → 5"
-    },
-    {
-      "k": "mvk6wajp7h9gr",
-      "t": 1792712770405,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "110356",
-      "n": "My Name",
-      "d": "affiche"
     }
   ],
   "refreshAt": 1792423579957
