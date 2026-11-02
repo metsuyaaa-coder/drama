@@ -24626,7 +24626,7 @@
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/original/lneFeeibBiJu7NpPlD3XUUb1pgI.jpg",
       "posterV": 2,
-      "backdrop": "https://image.tmdb.org/t/p/original/1vYs0w1DVH3dpAo4Ayx3Rse3sW.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/original/gAJV0W0RgpxxYJpaE8Hraa3Ohpp.jpg",
       "videos": [
         {
           "key": "lLBSb_Xc1sw",
@@ -25066,7 +25066,7 @@
       ],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1793627478345,
+      "updatedAt": 1793627587584,
       "trend": 87
     },
     {
@@ -55745,7 +55745,7 @@
   "journal": [
     {
       "k": "mvzb6kgtbuf0u",
-      "t": 1793627478362,
+      "t": 1793627587597,
       "b": "614d778ed0",
       "a": "edit",
       "i": "300146",
