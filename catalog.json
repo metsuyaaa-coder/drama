@@ -52553,6 +52553,583 @@
       "downloads": [],
       "updatedAt": 1793620680915,
       "posterCustom": true
+    },
+    {
+      "id": "285143",
+      "type": "tv",
+      "name": "Road to Success",
+      "original_name": "灿如繁星",
+      "origin_country": [
+        "CN"
+      ],
+      "networks": [
+        "iQiyi"
+      ],
+      "original_language": "zh",
+      "aka": [
+        "Road to Success",
+        "灿如繁星",
+        "燦如繁星",
+        "ดาวประกายพร่างพรายฝัน",
+        "Tỏa Sáng Như Những Vì Sao",
+        "Camino al Éxito",
+        "星のように煌めく",
+        "찬여번성: 별처럼 빛나리",
+        "O Caminho para o Sucesso",
+        "Дорога к успеху",
+        "狭路",
+        "Can Ru Fan Xing",
+        "찬여변성",
+        "Путь к успеху",
+        "As Bright as the Stars"
+      ],
+      "year": "2026",
+      "overview": "Lorsque Lin Wanxing retourne dans sa ville natale et accepte un poste dans un lycée local, elle se voit confier de manière inattendue la mission de faire renaître l’équipe de football de l’établissement, dissoute depuis longtemps. Avec l’aide de son mystérieux locataire, Wang Fa, un ancien entraîneur, ils s’efforcent de reconstruire l’équipe, d’aider les élèves à réaliser leurs rêves et, chemin faisant, de faire face aux blessures de leur propre passé.",
+      "genres": [
+        "Drame"
+      ],
+      "rating": "6.7",
+      "pop": 7.0807,
+      "status": "Ended",
+      "poster": "https://image.tmdb.org/t/p/original/k8qwZRQ7kS5HVC8TgdGCoppL9jf.jpg",
+      "posterV": 2,
+      "backdrop": "https://image.tmdb.org/t/p/original/1ROm53Gq1gBSuKfjWZ4oNIB849k.jpg",
+      "videos": [
+        {
+          "key": "abAtk97SRRk",
+          "name": "Trailer:Believe In Light!🕯️Narrow Paths Will Lead To Glory| Road to success 灿如繁",
+          "type": "Trailer",
+          "lab": "Anglais"
+        }
+      ],
+      "cast": [
+        {
+          "name": "虞书欣",
+          "character": "Lin Wanxing",
+          "id": 2140103
+        },
+        {
+          "name": "陈靖可",
+          "character": "Wang Fa",
+          "id": 2682101
+        },
+        {
+          "name": "刘骏",
+          "character": "Fu Xinshu",
+          "id": 5507659
+        },
+        {
+          "name": "Zhu Boyan",
+          "character": "Qin Ao",
+          "id": 6464844
+        },
+        {
+          "name": "赵鹏皓",
+          "character": "Lin Lu",
+          "id": 5656699
+        },
+        {
+          "name": "董李无忧",
+          "character": "Chen Jianghe",
+          "id": 2564967
+        },
+        {
+          "name": "闫玉晨",
+          "character": "Wen Chengye",
+          "id": 5027730
+        },
+        {
+          "name": "芦展翔",
+          "character": "Yu Ming",
+          "id": 2974329
+        },
+        {
+          "name": "杨星慧",
+          "character": "Zheng Feiyang",
+          "id": 5775903
+        },
+        {
+          "name": "叶恺文",
+          "character": "Zheng Ren",
+          "id": 5414794
+        },
+        {
+          "name": "杨昀昊",
+          "character": "Feng Suo",
+          "id": 5164436
+        },
+        {
+          "name": "张铭予",
+          "character": "Zhi Hui",
+          "id": 5698837
+        }
+      ],
+      "eprt": 46,
+      "seasons": [
+        {
+          "number": 1,
+          "name": "Saison 1",
+          "episodes": [
+            {
+              "number": 1,
+              "name": "Rebuilding the Soccer Team",
+              "overview": "Lin Wanxing comes out on top in the teacher recruitment process. However, she chooses the easy position of sports equipment manager, seeking a quiet and simple life. This is when the school decides to rebuild the soccer team to compete in the Youth Super League. Lin Wanxing is selected to serve as the team's supervising teacher.",
+              "air_date": "2026-07-05",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-lg3iujvcw5dh.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 2,
+              "name": "The First Match",
+              "overview": "Among the students in the soccer team, only the captain, Fu Xinshu, still wants to keep playing. Lin Wanxing and Fu Xinshu manage to gather enough players to take the field, only to be demolished by their opponent.",
+              "air_date": "2026-07-05",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-vyeka121kv6c.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 3,
+              "name": "Turning the Tide",
+              "overview": "Lin Wanxing introduces Wang Fa to the team and bluntly states that he can help them win the match. However, they have doubts about this \"former Nanton coach\" who appeared out of nowhere.",
+              "air_date": "2026-07-05",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-vkgzrxmugq3c.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 4,
+              "name": "Winning Wang Fa Over",
+              "overview": "Lin Wanxing racks her brains to persuade Wang Fa to become the soccer team's coach, using all sorts of psychological tactics. However, Wang Fa easily deflects them all.",
+              "air_date": "2026-07-05",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-pv3nb4gc21db.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 5,
+              "name": "Swapping Lives",
+              "overview": "Their 'life swap' begins. Wang Fa agrees to coaching the soccer team if his insomnia can be alleviated.",
+              "air_date": "2026-07-05",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-9t6rq3c8pqr5.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 6,
+              "name": "Catfish Effect",
+              "overview": "The students are deeply discouraged when substitute player Chen Weidong drops out of the team. To ignite the team's fighting spirit, Lin Wanxing gets Wen Chengye to challenge them, using the 'catfish effect' to restore the players' passion and drive.",
+              "air_date": "2026-07-05",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-etyan1l32jof.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 7,
+              "name": "Secret",
+              "overview": "Fu Xinshu once again sincerely invites Wen Chengye to join the soccer team. Wen Chengye proposes that if Fu Xinshu can beat his English score in the next monthly exam, he will agree to join the team.",
+              "air_date": "2026-07-06",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-1mhtr0r8rwtt.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 8,
+              "name": "Honoring a Promise",
+              "overview": "Through his tireless efforts, Fu Xinshu achieves excellent scores in the monthly exam. Wen Chengye acknowledges that he lost the competition and joins the soccer team.",
+              "air_date": "2026-07-06",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-1dwttsxcn7r9.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 9,
+              "name": "Independent Thinking",
+              "overview": "On the day of the game, Wang Fa doesn't show up. The students and Lin Wanxing are anxious but determined to give their all. Meanwhile, Wang Fa purposely didn't show up in order to foster the students' ability to think independently.",
+              "air_date": "2026-07-07",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-frlkp2i15ip8.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 10,
+              "name": "Original Aspiration",
+              "overview": "Accompanied by Lin Wanxing and Wang Fa, Fu Xinshu pours his heart out to his mother and finally feels at peace. After dinner, Lin Wanxing and Wang Fa discuss their original aspirations to safeguard the students' growth, deeply resonating with one other.",
+              "air_date": "2026-07-07",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-csl4wsmsz9fv.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 11,
+              "name": "Mysterious Gift Box",
+              "overview": "Fu Xinshu receives a mysterious gift box. Lin Wanxing successfully solves the riddle, and the answer leads her to a photo studio. She and Wang Fa pretend to be a couple and go to the photo studio for a photoshoot, using the opportunity to solve the mystery.",
+              "air_date": "2026-07-08",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-kan6rgskef65.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 12,
+              "name": "Poaching",
+              "overview": "The manager of the Hengjiu Soccer Club extends an invitation to Wang Fa to join them. Lin Wanxing wants to ask Wang Fa to stay but can't bring herself to say it.",
+              "air_date": "2026-07-08",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-kcyj2mzqw89s.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 13,
+              "name": "The Reason for Playing Soccer",
+              "overview": "Lin Wanxing notices the students' reluctance and can't help but ask them why they play soccer. Their answers vary, but at the core, they all have a passion for soccer.",
+              "air_date": "2026-07-09",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-iosm16bdat6d.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 14,
+              "name": "Flirty Vibes",
+              "overview": "Wang Fa has already banished all suspicions about Lin Wanxing. His initial intention for staying at Hongjing No. 8 High School has turned into an attachment to Lin Wanxing and the students. Wang Fa patiently teaches Lin Wanxing how to ride a bike, and something more starts to build between them.",
+              "air_date": "2026-07-09",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-j44jek1akbxo.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 15,
+              "name": "Father and Son Reconcile",
+              "overview": "Together, Lin Wanxing and Wang Fa patiently counsel Qin Ao's father, and his attitude towards Qin Ao gradually softens. The Qin father and son mend their relationship.",
+              "air_date": "2026-07-10",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-9fl0ixyo9zij.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 16,
+              "name": "Leaving Hongjing No. 8 High School",
+              "overview": "Jason's mother shows up out of the blue to see Wang Fa and airs her grievances to him. Overwhelmed by guilt, Wang Fa ultimately decides to leave Hongjing No. 8 High School.",
+              "air_date": "2026-07-10",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-tmu6wp769c91.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 17,
+              "name": "Past Regrets",
+              "overview": "Lin Wanxing realizes that Wang Fa lied about leaving to join Hengjiu and that he must have another reason. She rushes over to stop Wang Fa and successfully catches him before he leaves.",
+              "air_date": "2026-07-11",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-zwccg6bmg6yd.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 18,
+              "name": "Heading to the UK",
+              "overview": "Wang Fa learns from Yu Bo that there is a new lead in Jason's case in the UK. He departs for the UK right away.",
+              "air_date": "2026-07-11",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-7tx1nawb93bn.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 19,
+              "name": "Opening Up About the Past",
+              "overview": "Wang Fa returns from the UK. He senses that Lin Wanxing's attitude towards him has gone cold and guesses that she has learned the truth.",
+              "air_date": "2026-07-12",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-6dfy3dym7h79.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 20,
+              "name": "Facing It Together",
+              "overview": "Ju Li goes to Lin Wanxing's house but can't reach her. She discovers a note the Lin Wanxing left and worries that something happened to her. She and Wang Fa anxiously search for her.",
+              "air_date": "2026-07-12",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-anbxrgr6oy2m.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 21,
+              "name": "Making Up",
+              "overview": "With a sudden change to the matchup, Hongjing's team has to face the strongest contender in the group stage...",
+              "air_date": "2026-07-13",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-h4x1c37no3ho.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 22,
+              "name": "Misunderstanding",
+              "overview": "The kids are feeling lost and anxious, unsure of what the team's future holds. Lin Wanxing is worried that the team will disband.",
+              "air_date": "2026-07-14",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-q1bv826ygtl6.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 23,
+              "name": "Voting",
+              "overview": "Lin Wanxing proposes a vote to let the children decide for themselves whether they want to continue competing. If even one person votes no, they will forfeit the next match.",
+              "air_date": "2026-07-15",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-ft9uqun9skdo.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 24,
+              "name": "A Child's Dream",
+              "overview": "Wen Chengye's father orders him to quit the team. Lin Wanxing and Wang Fa persuade Mr. Wen to respect his son's dream. He ultimately agrees to let Wen Chengye continue to play soccer.",
+              "air_date": "2026-07-16",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-dim0o3h3k2kr.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 25,
+              "name": "Wish",
+              "overview": "Wang Fa confesses his feelings to Lin Wanxing and gives her an origami frog containing a list of 100 wishes that he had written down. The last wish on the list is to be with Ms. Xiao Lin.",
+              "air_date": "2026-07-17",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-k1zm60i09o75.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 26,
+              "name": "A Buried Past",
+              "overview": "The school principal receives an anonymous letter accusing Lin Wanxing of being the culprit who induced her mentor's suicide. The buried past is suddenly unearthed, but Lin Wanxing offers no explanation.",
+              "air_date": "2026-07-18",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-td2jrv1mw76l.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 27,
+              "name": "Unconditional Trust",
+              "overview": "Wang Fa books out a theater in Hanling and makes posters to guide Lin Wanxing there. On the screen, she watches a video of the kids expressing their longing and encouragement.",
+              "air_date": "2026-07-18",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-9v9xm27mxw5i.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 28,
+              "name": "Gathering Evidence",
+              "overview": "Lin Wanxing and the kids watch the video that Grandpa Lin and Coach Jiang left for them. Lin Wanxing finally musters up the courage to face the shadows of the past and begins investigating.",
+              "air_date": "2026-07-19",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-to2c77p8xdy8.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 29,
+              "name": "Seeking Justice",
+              "overview": "Lin Wanxing decides to take Xiang Zi to court. In the courtroom, she stands up for herself, detailing the injustices she had endured and appealing to the law for justice.",
+              "air_date": "2026-07-19",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-dr1qfqjrmkap.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 30,
+              "name": "Meeting the Parents",
+              "overview": "Lin Wanxing visits the Wang residence and \"meets the parents\". Wang Genfa personally prepares the meal. After dinner, Wang Fa's mother, Kang Qiao, takes Lin Wanxing aside to gaze at the stars.",
+              "air_date": "2026-07-19",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-vimwphxdedj7.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 31,
+              "name": "All-Out Preparations",
+              "overview": "With the championship match fast approaching, Wang Fa takes the kids to a professional training facility for intensive training. To their surprise, during training, they catch Fang Sulun, the captain of the Yongchuan Hengjiu team, sneaking out of the Hongjing team's quarters.",
+              "air_date": "2026-07-19",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-pf5278zo3las.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 32,
+              "name": "A Tough Call",
+              "overview": "Fang Sulun admits to stealing, leaving the team facing a dilemma. Reporting him to the police would likely result in Fang Sulun's disqualification from the competition, and while Hongjing would win, it would affect Fang Sulun's future. This time, Lin Wanxing lets the kids decide for themselves.",
+              "air_date": "2026-07-19",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-6bvp5bfyyl3e.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            }
+          ],
+          "downloads": []
+        }
+      ],
+      "sources": [],
+      "addedAt": 1793620988442,
+      "langs": [
+        "VOSTFR"
+      ],
+      "downloads": [],
+      "posterCustom": true,
+      "updatedAt": 1793621785066
     }
   ],
   "deletedLinks": [
@@ -53419,6 +53996,15 @@
     "at": 1793280056955
   },
   "journal": [
+    {
+      "k": "mvz83n20w8hgx",
+      "t": 1793621785464,
+      "b": "614d778ed0",
+      "a": "add",
+      "i": "285143",
+      "n": "Road to Success",
+      "d": ""
+    },
     {
       "k": "mvz772yn0r0mp",
       "t": 1793620680925,
@@ -56109,15 +56695,6 @@
       "i": "292121",
       "n": "The Scarecrow",
       "d": "téléchargements 1 → 2"
-    },
-    {
-      "k": "mvjycnt5qvyj0",
-      "t": 1792698417545,
-      "b": "head",
-      "a": "add",
-      "i": "110356",
-      "n": "My Name",
-      "d": ""
     }
   ],
   "refreshAt": 1792423579957
