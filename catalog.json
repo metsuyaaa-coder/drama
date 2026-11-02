@@ -19050,7 +19050,7 @@
       ],
       "rating": "8.0",
       "pop": 2.603,
-      "status": "Returning Series",
+      "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/9ACz4RNhdAH1sZjW2x8OnWuUsqS.jpg",
       "posterV": 2,
       "backdrop": "https://image.tmdb.org/t/p/original/tGH6KZB1bGeJaIz9ZiSPLxbck22.jpg",
@@ -19194,7 +19194,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1793130247949,
+      "updatedAt": 1793661830910,
       "networks": [
         "MBS"
       ]
@@ -56329,6 +56329,15 @@
   },
   "journal": [
     {
+      "k": "mvzvxyvvgwodk",
+      "t": 1793661831643,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "323264",
+      "n": "Let's End Our Friendship Now",
+      "d": ""
+    },
+    {
       "k": "mvzuwoiia6v0p",
       "t": 1793660091930,
       "b": "614d778ed0",
@@ -59017,15 +59026,6 @@
       "a": "edit",
       "i": "251600",
       "n": "The Eternal Fragrance",
-      "d": "affiche"
-    },
-    {
-      "k": "mvk93jp6zrl2w",
-      "t": 1792716468090,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "297982",
-      "n": "Irreplaceable",
       "d": "affiche"
     }
   ],
