@@ -2052,7 +2052,7 @@
       "rating": "9.0",
       "pop": 13.9271,
       "status": "Ended",
-      "poster": "https://image.tmdb.org/t/p/w500/6OAuQOGqjYY1JXbkTlWz4Mm2Kmi.jpg",
+      "poster": "https://image.tmdb.org/t/p/original/aNsDcDBTME099JMT0kfwnib9ONY.jpg",
       "backdrop": "https://image.tmdb.org/t/p/original/jseW3HucgNjN2CwJa3MiOlF4xMO.jpg",
       "cast": [
         {
@@ -2394,7 +2394,7 @@
       ],
       "original_language": "ko",
       "posterV": 2,
-      "updatedAt": 1793564850216,
+      "updatedAt": 1793627723378,
       "networks": [
         "Channel A"
       ],
@@ -2413,7 +2413,8 @@
           "lab": "Anglais"
         }
       ],
-      "eprt": 63
+      "eprt": 63,
+      "posterCustom": true
     },
     {
       "id": "314939",
@@ -55744,6 +55745,15 @@
   },
   "journal": [
     {
+      "k": "mvzbmwsdsz15p",
+      "t": 1793627723389,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "316197",
+      "n": "Dive into You",
+      "d": "affiche"
+    },
+    {
       "k": "mvzb6kgtbuf0u",
       "t": 1793627587597,
       "b": "614d778ed0",
@@ -58433,15 +58443,6 @@
       "i": "311648",
       "n": "Make Me Tingle",
       "d": "sources 16 → 18, téléchargements 4 → 5"
-    },
-    {
-      "k": "mvk6ifgil9hl2",
-      "t": 1792712123586,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "307106",
-      "n": "Between Steps",
-      "d": "téléchargements 6 → 7"
     }
   ],
   "refreshAt": 1792423579957
