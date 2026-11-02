@@ -51969,7 +51969,7 @@
       "rating": "9.5",
       "pop": 12.1702,
       "status": "Ended",
-      "poster": "https://image.tmdb.org/t/p/original/taE9IJbHjcLMoXfxSoVhreEuYYX.jpg",
+      "poster": "https://image.tmdb.org/t/p/original/3pKKNmPPNbpVHxw5jbZkqtWFeXA.jpg",
       "posterV": 2,
       "backdrop": "https://image.tmdb.org/t/p/original/zyAFGC97834c2Ld4xPY02uacdQk.jpg",
       "videos": [
@@ -52564,7 +52564,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1793620680915,
+      "updatedAt": 1793632806001,
       "posterCustom": true
     },
     {
@@ -55745,6 +55745,15 @@
   },
   "journal": [
     {
+      "k": "mvzenukwjbmu1",
+      "t": 1793632806032,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "287496",
+      "n": "The Road to Splendor",
+      "d": "affiche"
+    },
+    {
       "k": "mvzbmwsdsz15p",
       "t": 1793627723389,
       "b": "614d778ed0",
@@ -58434,15 +58443,6 @@
       "i": "110356",
       "n": "My Name",
       "d": "affiche"
-    },
-    {
-      "k": "mvk6nfqcqat9u",
-      "t": 1792712357220,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "311648",
-      "n": "Make Me Tingle",
-      "d": "sources 16 → 18, téléchargements 4 → 5"
     }
   ],
   "refreshAt": 1792423579957
