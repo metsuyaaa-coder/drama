@@ -53161,7 +53161,7 @@
       "genres": [
         "Drame"
       ],
-      "rating": "7.4",
+      "rating": "8.2",
       "pop": 10.9823,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/6mVIY9Y1g4nmhCIeU6mWaa5Kk1w.jpg",
@@ -53665,9 +53665,11 @@
       ],
       "sources": [],
       "addedAt": 1793622097065,
-      "langs": [],
+      "langs": [
+        "VOSTFR"
+      ],
       "downloads": [],
-      "updatedAt": 1793622635573
+      "updatedAt": 1793622761568
     }
   ],
   "deletedLinks": [
@@ -54534,6 +54536,15 @@
     "at": 1793280056955
   },
   "journal": [
+    {
+      "k": "mvz8ok8a2tf2i",
+      "t": 1793622761578,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "291392",
+      "n": "Love For You",
+      "d": ""
+    },
     {
       "k": "mvz8lv0xdkr6h",
       "t": 1793622635601,
@@ -57224,15 +57235,6 @@
       "i": "110356",
       "n": "My Name",
       "d": "sources 16 → 24"
-    },
-    {
-      "k": "mvjyr3worb3ox",
-      "t": 1792699091592,
-      "b": "head",
-      "a": "edit",
-      "i": "110356",
-      "n": "My Name",
-      "d": "sources 8 → 16"
     }
   ],
   "refreshAt": 1792423579957
