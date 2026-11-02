@@ -51956,7 +51956,7 @@
       "rating": "9.5",
       "pop": 12.1702,
       "status": "Ended",
-      "poster": "https://image.tmdb.org/t/p/original/ff2TwS8U4Q0n5j1ZA1IGP8x8zS9.jpg",
+      "poster": "https://image.tmdb.org/t/p/original/taE9IJbHjcLMoXfxSoVhreEuYYX.jpg",
       "posterV": 2,
       "backdrop": "https://image.tmdb.org/t/p/original/zyAFGC97834c2Ld4xPY02uacdQk.jpg",
       "videos": [
@@ -52551,7 +52551,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1793620266412,
+      "updatedAt": 1793620680915,
       "posterCustom": true
     }
   ],
@@ -53420,6 +53420,15 @@
   },
   "journal": [
     {
+      "k": "mvz772yn0r0mp",
+      "t": 1793620680925,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "287496",
+      "n": "The Road to Splendor",
+      "d": "affiche"
+    },
+    {
       "k": "mvz7e358w5990",
       "t": 1793620593260,
       "b": "614d778ed0",
@@ -53427,15 +53436,6 @@
       "i": "294990",
       "n": "Spring of the Blade",
       "d": "affiche"
-    },
-    {
-      "k": "mvz772yn0r0mp",
-      "t": 1793620266431,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "287496",
-      "n": "The Road to Splendor",
-      "d": ""
     },
     {
       "k": "mvyx3xz4o07lq",
