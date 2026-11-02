@@ -43770,7 +43770,13 @@
               "name": "Épisode 3",
               "overview": "",
               "air_date": "2026-11-02",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-25atnkd7mone.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -43839,7 +43845,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1793140501175,
+      "updatedAt": 1793639802237,
       "trend": 0
     },
     {
@@ -55774,6 +55780,15 @@
   },
   "journal": [
     {
+      "k": "mvzitt7y9n885",
+      "t": 1793639802670,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "335951",
+      "n": "Summer Vacation",
+      "d": "sources 2 → 3"
+    },
+    {
       "k": "mvzhs6gqkn5cb",
       "t": 1793638046906,
       "b": "614d778ed0",
@@ -58463,15 +58478,6 @@
       "i": "289271",
       "n": "Ashes to Crown",
       "d": "affiche"
-    },
-    {
-      "k": "mvk8btd99f2sm",
-      "t": 1792715174253,
-      "b": "614d778ed0",
-      "a": "add",
-      "i": "289271",
-      "n": "Ashes to Crown",
-      "d": ""
     }
   ],
   "refreshAt": 1792423579957
