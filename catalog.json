@@ -55623,9 +55623,31 @@
         "en": "",
         "auto": true,
         "at": 1793620380647
+      },
+      {
+        "id": "rmvzfuuci",
+        "title": "A Bona Fide Killer",
+        "status": "wait",
+        "bl": false,
+        "kind": "dl",
+        "votes": 1,
+        "tmdb": "294095",
+        "media": "tv",
+        "year": "2026",
+        "poster": "/snVma1wanEn9p4hWgQxZ211vQdG.jpg",
+        "origin": "Corée",
+        "en": "",
+        "auto": true,
+        "at": 1793634811938
       }
     ],
-    "at": 1793620455621
+    "at": 1793634811938,
+    "log": [
+      {
+        "v": "254e123f",
+        "t": 1793634811938
+      }
+    ]
   },
   "founder": {
     "name": "Meyriuu",
