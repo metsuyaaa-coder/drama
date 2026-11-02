@@ -19700,7 +19700,7 @@
       ],
       "rating": "8.0",
       "pop": 6.0378,
-      "status": "Returning Series",
+      "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/jWFblgNFKpKmkQ6akAnIY2lSXgS.jpg",
       "posterV": 2,
       "backdrop": "https://image.tmdb.org/t/p/original/mOALTFnD4MjvXIYdTlEl5aUEQT0.jpg",
@@ -19921,7 +19921,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1793388788563,
+      "updatedAt": 1793661965791,
       "networks": [
         "Nippon TV"
       ],
@@ -56329,6 +56329,15 @@
   },
   "journal": [
     {
+      "k": "mvzw0uehwh0at",
+      "t": 1793661965801,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "326063",
+      "n": "25 Years of You",
+      "d": ""
+    },
+    {
       "k": "mvzw042jviylm",
       "t": 1793661931675,
       "b": "614d778ed0",
@@ -59017,15 +59026,6 @@
       "a": "edit",
       "i": "270420",
       "n": "No Tail to Tell",
-      "d": "affiche"
-    },
-    {
-      "k": "mvka6muuc3ocr",
-      "t": 1792718291766,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "127529",
-      "n": "Bloodhounds",
       "d": "affiche"
     }
   ],
