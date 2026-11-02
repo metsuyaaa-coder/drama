@@ -25014,7 +25014,13 @@
               "name": "Épisode 26",
               "overview": "",
               "air_date": "2026-11-02",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-epuf4qgi5xim.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -25060,7 +25066,7 @@
       ],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1793626960913,
+      "updatedAt": 1793627397578,
       "trend": 87
     },
     {
@@ -55738,6 +55744,15 @@
   },
   "journal": [
     {
+      "k": "mvzb6kgtbuf0u",
+      "t": 1793627397594,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "300146",
+      "n": "Where the Mask Ends",
+      "d": "sources 25 → 26"
+    },
+    {
       "k": "mvzb3uv5hqfve",
       "t": 1793627339577,
       "b": "614d778ed0",
@@ -55745,15 +55760,6 @@
       "i": "304452",
       "n": "The Lament of Autumn",
       "d": "sources 34 → 35"
-    },
-    {
-      "k": "mvzb6kgtbuf0u",
-      "t": 1793626960925,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "300146",
-      "n": "Where the Mask Ends",
-      "d": "affiche"
     },
     {
       "k": "mvzaxe9qdh2zt",
