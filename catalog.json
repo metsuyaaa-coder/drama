@@ -55449,7 +55449,7 @@
         "Drame",
         "Science-Fiction & Fantastique"
       ],
-      "rating": "",
+      "rating": "8.5",
       "pop": 12.978,
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/original/oYQg1fKSRbjeqFRci2J6yMYmzxY.jpg",
@@ -55537,7 +55537,7 @@
           "id": 3529900
         }
       ],
-      "eprt": "",
+      "eprt": "54",
       "seasons": [
         {
           "number": 1,
@@ -55658,7 +55658,7 @@
       ],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1793710753131
+      "updatedAt": 1793710979547
     }
   ],
   "deletedLinks": [
@@ -56594,7 +56594,7 @@
   "journal": [
     {
       "k": "mw0p08po1g0y7",
-      "t": 1793710753142,
+      "t": 1793710979557,
       "b": "614d778ed0",
       "a": "edit",
       "i": "279246",
