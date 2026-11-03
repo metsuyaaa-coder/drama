@@ -8490,7 +8490,14 @@
               "name": "Épisode 10",
               "overview": "",
               "air_date": "2026-11-03",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-wcdd7vkeu40i.html",
+                  "fansub": "Dramavore :Rafia",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -8526,7 +8533,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1793637952740,
+      "updatedAt": 1793720633105,
       "networks": [
         "ENA"
       ],
@@ -56652,6 +56659,15 @@
   },
   "journal": [
     {
+      "k": "mw0uyafgfpku2",
+      "t": 1793720633164,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "307106",
+      "n": "Between Steps",
+      "d": "sources 27 → 28"
+    },
+    {
       "k": "mw0t3nagotkwu",
       "t": 1793717523880,
       "b": "614d778ed0",
@@ -59340,15 +59356,6 @@
       "a": "edit",
       "i": "212204",
       "n": "Twinkling Watermelon",
-      "d": "affiche"
-    },
-    {
-      "k": "mvkb0efpl3lex",
-      "t": 1792719680533,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "287011",
-      "n": "Sold Out on You",
       "d": "affiche"
     }
   ],
