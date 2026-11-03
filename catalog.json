@@ -33738,7 +33738,13 @@
               "name": "Épisode 22",
               "overview": "",
               "air_date": "2026-11-01",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-q4hlaoh62fnu.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -33746,7 +33752,13 @@
               "name": "Épisode 23",
               "overview": "",
               "air_date": "",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-xun996jo461f.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -33895,7 +33907,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1793548945597,
+      "updatedAt": 1793714940690,
       "trend": 0,
       "eprt": 48
     },
@@ -56605,6 +56617,15 @@
   },
   "journal": [
     {
+      "k": "mw0rkadjk42sa",
+      "t": 1793714941063,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "286171",
+      "n": "Tigers Sniff the Rose",
+      "d": "sources 21 → 23"
+    },
+    {
       "k": "mw0riru8klzqt",
       "t": 1793714870384,
       "b": "614d778ed0",
@@ -59293,15 +59314,6 @@
       "a": "edit",
       "i": "287009",
       "n": "Doctor on the Edge",
-      "d": "affiche"
-    },
-    {
-      "k": "mvkasv712zu3k",
-      "t": 1792719329005,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "259837",
-      "n": "The WONDERfools",
       "d": "affiche"
     }
   ],
