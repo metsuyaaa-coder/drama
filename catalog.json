@@ -25986,7 +25986,13 @@
               "name": "Épisode 6",
               "overview": "",
               "air_date": "2026-11-03",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-l5qh52saafph.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -26047,7 +26053,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1793638046888,
+      "updatedAt": 1793717454216,
       "trend": 71,
       "videos": [
         {
@@ -56617,6 +56623,15 @@
   },
   "journal": [
     {
+      "k": "mw0t25kbtyu3g",
+      "t": 1793717454251,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "303745",
+      "n": "Love in Disguise",
+      "d": "sources 11 → 12"
+    },
+    {
       "k": "mw0rkadjk42sa",
       "t": 1793714941063,
       "b": "614d778ed0",
@@ -59305,15 +59320,6 @@
       "a": "edit",
       "i": "220074",
       "n": "Flex X Cop",
-      "d": "affiche"
-    },
-    {
-      "k": "mvkavwt00rcfu",
-      "t": 1792719471060,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "287009",
-      "n": "Doctor on the Edge",
       "d": "affiche"
     }
   ],
