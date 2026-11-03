@@ -43828,7 +43828,13 @@
               "name": "Épisode 4",
               "overview": "",
               "air_date": "2026-11-03",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-0decsa48kwcp.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -43889,7 +43895,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1793671512572,
+      "updatedAt": 1793724483685,
       "trend": 0
     },
     {
@@ -56653,6 +56659,15 @@
   },
   "journal": [
     {
+      "k": "mw0x8tiyd83hc",
+      "t": 1793724483706,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "335951",
+      "n": "Summer Vacation",
+      "d": "sources 3 → 4"
+    },
+    {
       "k": "mw0uyafgfpku2",
       "t": 1793720633164,
       "b": "614d778ed0",
@@ -59341,15 +59356,6 @@
       "a": "edit",
       "i": "279323",
       "n": "The East Palace",
-      "d": "affiche"
-    },
-    {
-      "k": "mvkb39ux5pqg2",
-      "t": 1792719814569,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "212204",
-      "n": "Twinkling Watermelon",
       "d": "affiche"
     }
   ],
