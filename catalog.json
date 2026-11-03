@@ -1919,6 +1919,281 @@
       "updatedAt": 1793603323826
     },
     {
+      "id": "237411",
+      "type": "tv",
+      "name": "The Sign",
+      "original_name": "ลางสังหรณ์",
+      "origin_country": [
+        "TH"
+      ],
+      "networks": [
+        "Channel 3"
+      ],
+      "original_language": "th",
+      "aka": [
+        "The Sign",
+        "THE SIGN - 2023",
+        "O Sinal",
+        "预感讯号",
+        "ลางสังหรณ์",
+        "Điềm Báo",
+        "預感訊號",
+        "预感",
+        "Langsanghon",
+        "Premonition"
+      ],
+      "year": "2023",
+      "overview": "Depuis sa naissance, Tharn ressent certains évènements avant qu'ils n'aient lieu et ses prémonitions peuvent porter aussi bien sur des circonstances joyeuses que dangereuses. Lorsque son chemin croise celui de Phaya, il a le sentiment qu'ils se connaissent depuis longtemps. Partenaires d'une unité spéciale d'enquêteurs sur-entrainés ils devront surmonter bien des obstacles pour rester ensemble et découvrir la vérité.",
+      "genres": [
+        "Mystère",
+        "Drame",
+        "Action & Adventure",
+        "Science-Fiction & Fantastique"
+      ],
+      "rating": "8.6",
+      "pop": 5.7816,
+      "status": "Ended",
+      "poster": "https://image.tmdb.org/t/p/w500/bqAjpdhw3vMNgyMwOJ0C29q9Vb5.jpg",
+      "posterV": 2,
+      "backdrop": "https://image.tmdb.org/t/p/original/zvrmkaqCWwIGX6zBgGIGZHG3AaH.jpg",
+      "videos": [
+        {
+          "key": "4A-IewiE8zs",
+          "name": "[ Official Trailer ] THE SIGN ลางสังหรณ์",
+          "type": "Trailer",
+          "lab": "Anglais"
+        }
+      ],
+      "cast": [
+        {
+          "name": "ภัทรชนน อ่อนสอาด",
+          "character": "Phaya / Sakuna",
+          "id": 2674892
+        },
+        {
+          "name": "เบ้บ ธนทัต พรรณวิริยะกุล",
+          "character": "Tharn",
+          "id": 4328672
+        },
+        {
+          "name": "จักริน  ภูริพัฒน์",
+          "character": "Yai",
+          "id": 3282861
+        },
+        {
+          "name": "พงศกร สุเกียง",
+          "character": "Khem",
+          "id": 4396545
+        },
+        {
+          "name": "ณัฐภาสน์ ตันติเสถียรชัย",
+          "character": "Thongthai",
+          "id": 4440788
+        },
+        {
+          "name": "อัศวฤทธิ์ พินิตกาญจนพันธุ์",
+          "character": "Chalothorn",
+          "id": 3380429
+        },
+        {
+          "name": "Surprise Pittikorn Siripornsawan",
+          "character": "Singh",
+          "id": 3422325
+        },
+        {
+          "name": "อัครัฐ นิมิตรชัย",
+          "character": "Akk",
+          "id": 3406040
+        }
+      ],
+      "eprt": 68,
+      "seasons": [
+        {
+          "number": 1,
+          "name": "Saison 1",
+          "episodes": [
+            {
+              "number": 1,
+              "name": "Épisode 1",
+              "overview": "A mysterious trainee with prophetic powers saves Paya, igniting fate and rivalry within the IDF.",
+              "air_date": "2023-11-25",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-3m7tfyl6c5b8.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 2,
+              "name": "Épisode 2",
+              "overview": "Tharn saves Paya from a deadly vision, tying their fates together amid an unauthorized probe.",
+              "air_date": "2023-12-02",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-0t9od7h9pips.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 3,
+              "name": "Épisode 3",
+              "overview": "A return to Tharn’s hometown reveals a childhood link — and a destiny written long before.",
+              "air_date": "2023-12-09",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-ksg31a63cnjf.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 4,
+              "name": "Épisode 4",
+              "overview": "A brutal murder case unveils visions of doom — and a curse binding Tharn and Paya’s souls.",
+              "air_date": "2023-12-16",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-v2rtn1e2bjlv.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 5,
+              "name": "Épisode 5",
+              "overview": "In a deadly rescue, Tharn faces a strange force — and gives everything to protect Paya.",
+              "air_date": "2023-12-23",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-wt6iv7n0rtrg.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 6,
+              "name": "Épisode 6",
+              "overview": "Haunted by dreams of Tharn, Paya’s longing deepens as a jealous rival plots to divide them.",
+              "air_date": "2023-12-30",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-clu3iwegn334.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 7,
+              "name": "Épisode 7",
+              "overview": "An art show turns violent, forcing Tharn and Paya to confront jealousy, guilt, and old wounds.",
+              "air_date": "2024-01-06",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-tjps9mr30npq.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 8,
+              "name": "Épisode 8",
+              "overview": "Visions awaken past lives as Tharn and Paya uncover their cursed bond by the river’s edge.",
+              "air_date": "2024-01-13",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-t6u3ju2bhupp.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 9,
+              "name": "Épisode 9",
+              "overview": "Haunted by guilt, Tharn hunts a gang tied to his parents’ deaths — and to his own darkness.",
+              "air_date": "2024-01-20",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-egnf2ivgbb4u.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 10,
+              "name": "Épisode 10",
+              "overview": "Ancient warnings and buried truths lead Paya and Tharn toward danger — and revelation.",
+              "air_date": "2024-01-27",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-u3tlq1d0fpjo.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 11,
+              "name": "Épisode 11",
+              "overview": "A tiger attack and a deadly raid expose the dark ties between power, revenge, and fate.",
+              "air_date": "2024-02-03",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-hxhtmu09uxui.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 12,
+              "name": "Épisode 12",
+              "overview": "As the operation nears its end, Tharn faces Charothon in a battle to break destiny itself.",
+              "air_date": "2024-02-10",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-v7pw9gd41she.html",
+                  "by": "f2b389cb62"
+                }
+              ],
+              "downloads": []
+            }
+          ],
+          "downloads": []
+        }
+      ],
+      "sources": [],
+      "addedAt": 1793737574532,
+      "langs": [
+        "VOSTFR"
+      ],
+      "downloads": [],
+      "bl": true,
+      "updatedAt": 1793737881691
+    },
+    {
       "id": "293607",
       "type": "tv",
       "name": "100 Days of Deception",
@@ -55777,7 +56052,6 @@
     "320513\thttps://vidmoly.org/embed-7kon45gviu2g.html[Dramavore]"
   ],
   "deletedFiches": [
-    "237411",
     "1396"
   ],
   "team": {
@@ -56675,6 +56949,15 @@
     "at": 1793280056955
   },
   "journal": [
+    {
+      "k": "mw157zhhr7d1e",
+      "t": 1793737881701,
+      "b": "f2b389cb62",
+      "a": "add",
+      "i": "237411",
+      "n": "The Sign",
+      "d": ""
+    },
     {
       "k": "mw1514kpo0hfq",
       "t": 1793737561705,
@@ -59364,15 +59647,6 @@
       "a": "edit",
       "i": "300727",
       "n": "The Apartment Job",
-      "d": "affiche"
-    },
-    {
-      "k": "mvkboarqlqcxy",
-      "t": 1792720795526,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "208336",
-      "n": "Revenge of Others",
       "d": "affiche"
     }
   ],
