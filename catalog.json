@@ -55454,7 +55454,7 @@
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/original/oYQg1fKSRbjeqFRci2J6yMYmzxY.jpg",
       "posterV": 2,
-      "backdrop": "https://image.tmdb.org/t/p/original/fNcpHmuZLKoyhNMBEzdqzX8iIvg.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/original/r7wa6EQI0PwMy21LfgFs5B4Zfm5.jpg",
       "videos": [
         {
           "key": "cle5dSjQkkM",
@@ -55658,7 +55658,7 @@
       ],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1793710013492
+      "updatedAt": 1793710646546
     }
   ],
   "deletedLinks": [
@@ -56592,6 +56592,15 @@
     "at": 1793280056955
   },
   "journal": [
+    {
+      "k": "mw0p08po1g0y7",
+      "t": 1793710646556,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "279246",
+      "n": "The Remarried Empress",
+      "d": ""
+    },
     {
       "k": "mw0omo93pmf25",
       "t": 1793710013511,
@@ -59281,15 +59290,6 @@
       "a": "edit",
       "i": "289424",
       "n": "We Are All Trying Here",
-      "d": "affiche"
-    },
-    {
-      "k": "mvkaf4n631wi7",
-      "t": 1792718688066,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "286198",
-      "n": "Shin's Project",
       "d": "affiche"
     }
   ],
