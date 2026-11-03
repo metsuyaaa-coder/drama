@@ -56537,13 +56537,33 @@
         "en": "The Remarried Empress",
         "auto": true,
         "at": 1793718864062
+      },
+      {
+        "id": "rmw14mxg5",
+        "title": "Watashitachi wa Douka Shiteiru",
+        "status": "wait",
+        "bl": false,
+        "kind": "stream",
+        "votes": 1,
+        "tmdb": "106128",
+        "media": "tv",
+        "year": "2020",
+        "poster": "/qDP7bwx7i9zesqPmarsyy0C5Qep.jpg",
+        "origin": "Japon",
+        "en": "Cursed in Love",
+        "auto": true,
+        "at": 1793736899285
       }
     ],
-    "at": 1793736066093,
+    "at": 1793736899285,
     "log": [
       {
         "v": "5063d2e6",
         "t": 1793736066093
+      },
+      {
+        "v": "46514f49",
+        "t": 1793736899285
       }
     ]
   },
