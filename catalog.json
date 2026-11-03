@@ -25036,7 +25036,13 @@
               "name": "Épisode 27",
               "overview": "",
               "air_date": "2026-11-03",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-7qu035mj6rrc.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -25074,7 +25080,7 @@
       ],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1793627587584,
+      "updatedAt": 1793714777164,
       "trend": 97
     },
     {
@@ -56593,6 +56599,15 @@
   },
   "journal": [
     {
+      "k": "mw0rgs8hbjfcs",
+      "t": 1793714777585,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "300146",
+      "n": "Where the Mask Ends",
+      "d": "sources 26 → 27"
+    },
+    {
       "k": "mw0p08po1g0y7",
       "t": 1793710979557,
       "b": "614d778ed0",
@@ -59281,15 +59296,6 @@
       "a": "edit",
       "i": "281010",
       "n": "Phantom Lawyer",
-      "d": "affiche"
-    },
-    {
-      "k": "mvkanm605bkeg",
-      "t": 1792719084024,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "289424",
-      "n": "We Are All Trying Here",
       "d": "affiche"
     }
   ],
