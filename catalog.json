@@ -7137,7 +7137,13 @@
               "name": "Épisode 36",
               "overview": "",
               "air_date": "2026-11-01",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-beo92v1to1u5.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -7183,7 +7189,7 @@
       ],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1793627339565,
+      "updatedAt": 1793714870369,
       "trend": 0
     },
     {
@@ -56599,6 +56605,15 @@
   },
   "journal": [
     {
+      "k": "mw0riru8klzqt",
+      "t": 1793714870384,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "304452",
+      "n": "The Lament of Autumn",
+      "d": "sources 35 → 36"
+    },
+    {
       "k": "mw0rgs8hbjfcs",
       "t": 1793714777585,
       "b": "614d778ed0",
@@ -59287,15 +59302,6 @@
       "a": "edit",
       "i": "259837",
       "n": "The WONDERfools",
-      "d": "affiche"
-    },
-    {
-      "k": "mvkaqg23vk3y3",
-      "t": 1792719216075,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "281010",
-      "n": "Phantom Lawyer",
       "d": "affiche"
     }
   ],
