@@ -21109,7 +21109,14 @@
               "name": "Épisode 5",
               "overview": "",
               "air_date": "2026-11-03",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-4ew7flebblce.html",
+                  "fansub": "Dramavore : Rafia",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -21177,7 +21184,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1793207060491,
+      "updatedAt": 1793717523863,
       "networks": [
         "Fuji TV",
         "Channel A"
@@ -56623,6 +56630,15 @@
   },
   "journal": [
     {
+      "k": "mw0t3nagotkwu",
+      "t": 1793717523880,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "320513",
+      "n": "kiDnap GAME",
+      "d": "sources 4 → 5"
+    },
+    {
       "k": "mw0t25kbtyu3g",
       "t": 1793717454251,
       "b": "614d778ed0",
@@ -59311,15 +59327,6 @@
       "a": "edit",
       "i": "287011",
       "n": "Sold Out on You",
-      "d": "affiche"
-    },
-    {
-      "k": "mvkaxoydy2ncb",
-      "t": 1792719554197,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "220074",
-      "n": "Flex X Cop",
       "d": "affiche"
     }
   ],
