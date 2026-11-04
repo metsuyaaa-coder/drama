@@ -7921,7 +7921,13 @@
               "name": "Épisode 5",
               "overview": "After sharing a kiss with Yubin under the fireworks, Karin starts to wonder if this is the start of a Korean-style \"budding romance.\" Meanwhile, Sia, an acquaintance of Yubin's, arrives on Charo Island. She urges him to return to Korea while revealing to Karin the real reason he came to the island.",
               "air_date": "2026-11-04",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-a6xbcmithqve.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -7975,7 +7981,7 @@
         "VF"
       ],
       "downloads": [],
-      "updatedAt": 1793287796569,
+      "updatedAt": 1793814525300,
       "networks": [
         "Nippon TV"
       ],
@@ -57229,6 +57235,15 @@
   },
   "journal": [
     {
+      "k": "mw2euq2nftd3d",
+      "t": 1793814525311,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "305551",
+      "n": "Merry Berry Love",
+      "d": "sources 11 → 12"
+    },
+    {
       "k": "mw2esi0q5ivyq",
       "t": 1793814421562,
       "b": "614d778ed0",
@@ -59917,15 +59932,6 @@
       "a": "edit",
       "i": "289690",
       "n": "Love Phobia",
-      "d": "affiche"
-    },
-    {
-      "k": "mvkc5uene7sfs",
-      "t": 1792721614127,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "314784",
-      "n": "Absolute Value of Romance",
       "d": "affiche"
     }
   ],
