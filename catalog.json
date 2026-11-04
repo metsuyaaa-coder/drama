@@ -56180,75 +56180,6 @@
   "requests": {
     "items": [
       {
-        "id": "rmvdyz1yh",
-        "title": "Queen of Darkness",
-        "status": "wait",
-        "votes": 1,
-        "tmdb": 284929,
-        "media": "tv",
-        "year": "2025",
-        "poster": "/xOaNlT8cr8tM8dBYF3tRq22Y9y5.jpg",
-        "origin": "Chine",
-        "en": "",
-        "kind": "stream"
-      },
-      {
-        "id": "rmvjtkv28",
-        "title": "My Name",
-        "status": "done",
-        "kind": "stream",
-        "votes": 2,
-        "tmdb": 110356,
-        "media": "tv",
-        "year": "2021",
-        "poster": "/ncAKKmr1sfFhQvn6LeGTY2QBge.jpg",
-        "origin": "Corée",
-        "en": "",
-        "sid": "110356"
-      },
-      {
-        "id": "rmvlfj3n0",
-        "title": "Héros fragile",
-        "status": "done",
-        "kind": "stream",
-        "votes": 1,
-        "tmdb": 200709,
-        "media": "tv",
-        "year": "2022",
-        "poster": "/qWY4cFftaZxvtHet3S9p7NYTZeD.jpg",
-        "origin": "Corée",
-        "en": "Weak Hero"
-      },
-      {
-        "id": "rmvogdfdd",
-        "title": "Memories of Murder",
-        "status": "done",
-        "bl": false,
-        "kind": "stream",
-        "votes": 1,
-        "tmdb": 11423,
-        "media": "movie",
-        "year": "2003",
-        "poster": "/fz5NYI8PUmPplu3UA70AOqEDJL7.jpg",
-        "origin": "Corée",
-        "en": "",
-        "sid": "m11423"
-      },
-      {
-        "id": "rmvqtf5uz",
-        "title": "Mémoire fatale",
-        "status": "done",
-        "bl": false,
-        "kind": "stream",
-        "votes": 1,
-        "tmdb": 203344,
-        "media": "tv",
-        "year": "2023",
-        "poster": "/bnrvfaJOFQQteHHbIW2NAGuwClf.jpg",
-        "origin": "Corée",
-        "en": "Pandora: Beneath the Paradise"
-      },
-      {
         "id": "rmvqtg88w",
         "title": "박하경 여행기",
         "status": "wait",
@@ -56261,21 +56192,6 @@
         "poster": "/fumf21EdFlDqqUFsGEVXNF03ng9.jpg",
         "origin": "Corée",
         "en": "One Day Off"
-      },
-      {
-        "id": "rmvr661lb",
-        "title": "Soulmate",
-        "status": "done",
-        "bl": false,
-        "kind": "stream",
-        "votes": 1,
-        "tmdb": 617882,
-        "media": "movie",
-        "year": "2023",
-        "poster": "/xAKkGNENcRrwYDmqmXIaGPPELTm.jpg",
-        "origin": "Corée",
-        "en": "",
-        "sid": "m617882"
       },
       {
         "id": "rmvs5vmfg",
@@ -56292,20 +56208,6 @@
         "en": ""
       },
       {
-        "id": "rmvs5vv1h",
-        "title": "ONE : High School Heroes",
-        "status": "done",
-        "bl": false,
-        "kind": "stream",
-        "votes": 1,
-        "tmdb": 233219,
-        "media": "tv",
-        "year": "2025",
-        "poster": "/7jIZaNtpZlEwNLWGaj0dXl4sDSq.jpg",
-        "origin": "Corée",
-        "en": "ONE: High School Heroes"
-      },
-      {
         "id": "rmvs5w2ef",
         "title": "瞄准你的未来",
         "status": "wait",
@@ -56320,20 +56222,6 @@
         "en": "Out with a Bang"
       },
       {
-        "id": "rmvs5wh2p",
-        "title": "错过了，遗憾吗？",
-        "status": "done",
-        "bl": false,
-        "kind": "stream",
-        "votes": 1,
-        "tmdb": 1607073,
-        "media": "movie",
-        "year": "2026",
-        "poster": "/mGtTX043UCeBSTnKiLZAMBYjXxX.jpg",
-        "origin": "Chine",
-        "en": "Be Yourself"
-      },
-      {
         "id": "rmvs5wqpd",
         "title": "我要逆风去",
         "status": "wait",
@@ -56346,20 +56234,6 @@
         "poster": "/xjB5bSjQwuYnKH0ZXzvXn9tOnH8.jpg",
         "origin": "Chine",
         "en": "Rising with the Wind"
-      },
-      {
-        "id": "rmvs5x8rc",
-        "title": "爱你",
-        "status": "wait",
-        "bl": false,
-        "kind": "stream",
-        "votes": 4,
-        "tmdb": 256128,
-        "media": "tv",
-        "year": "2025",
-        "poster": "/n9wfQg9QHCksPH3BGbvR0YIn5cz.jpg",
-        "origin": "Chine",
-        "en": "The Best Thing"
       },
       {
         "id": "rmvs66ddy",
@@ -56516,22 +56390,6 @@
         "at": 1793397884672
       },
       {
-        "id": "rmvvmgmyr",
-        "title": "Recharge mon Coeur",
-        "status": "wait",
-        "bl": false,
-        "kind": "stream",
-        "votes": 1,
-        "tmdb": "289423",
-        "media": "tv",
-        "year": "2026",
-        "poster": "/p5UJ0xS2NVmqtUfy9i0DMIJ1Lf3.jpg",
-        "origin": "Corée",
-        "en": "Take Charge of My Heart",
-        "auto": true,
-        "at": 1793404041795
-      },
-      {
         "id": "rmvweui6y",
         "title": "Deserter Pursuit",
         "status": "wait",
@@ -56562,53 +56420,6 @@
         "en": "Moonlit Reunion",
         "auto": true,
         "at": 1793453009480
-      },
-      {
-        "id": "rmvwlr5jd",
-        "title": "The First Jasmine",
-        "status": "wait",
-        "bl": false,
-        "kind": "dl",
-        "votes": 2,
-        "tmdb": 292696,
-        "media": "tv",
-        "year": "2026",
-        "poster": "/pRPDAGXmoUnWlRj34BHQ1Gt05ai.jpg",
-        "origin": "Chine",
-        "en": "",
-        "sid": "292696"
-      },
-      {
-        "id": "rmvwndqoy",
-        "title": "Parasite",
-        "status": "wait",
-        "bl": false,
-        "kind": "stream",
-        "votes": 1,
-        "tmdb": "496243",
-        "media": "movie",
-        "year": "2019",
-        "poster": "/7hLSzZX2jROmEXz2aEoh6JKUFy2.jpg",
-        "origin": "Corée",
-        "en": "",
-        "auto": true,
-        "at": 1793466052450
-      },
-      {
-        "id": "rmvwqwjzt",
-        "title": "연애박사",
-        "status": "wait",
-        "bl": false,
-        "kind": "dl",
-        "votes": 1,
-        "tmdb": "307106",
-        "media": "tv",
-        "year": "2026",
-        "poster": "/vyrpZOFIZJkQG8ZWTezmlNGav8R.jpg",
-        "origin": "Corée",
-        "en": "Between Steps",
-        "auto": true,
-        "at": 1793471969081
       },
       {
         "id": "rmvx65udy",
@@ -56771,7 +56582,7 @@
         "at": 1793798018819
       }
     ],
-    "at": 1793812636984
+    "at": 1793812648182
   },
   "founder": {
     "name": "Meyriuu",
