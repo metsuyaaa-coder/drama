@@ -56560,7 +56560,7 @@
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/dcqOJ4p61cCgfR2zY8r43oF59kW.jpg",
       "posterV": 2,
-      "backdrop": "https://image.tmdb.org/t/p/original/xk1FjT0j5YraC0CQgtq7AGQxT0j.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/original/lVVcf8QzTaaLU0RefnhKmz4GOGo.jpg",
       "videos": [
         {
           "key": "RRq4GRGFQdM",
@@ -57175,7 +57175,7 @@
       ],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1793818709908
+      "updatedAt": 1793818880361
     }
   ],
   "deletedLinks": [
@@ -57891,6 +57891,15 @@
     "at": 1793280056955
   },
   "journal": [
+    {
+      "k": "mw2hg2gra0wfn",
+      "t": 1793818880379,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "272484",
+      "n": "Fated Hearts",
+      "d": ""
+    },
     {
       "k": "mw2hceyt9ac9v",
       "t": 1793818709957,
@@ -60581,15 +60590,6 @@
       "i": "289271",
       "n": "Ashes to Crown",
       "d": ""
-    },
-    {
-      "k": "mvkccfiruuv0g",
-      "t": 1792721921427,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "303143",
-      "n": "My Royal Nemesis",
-      "d": "affiche"
     }
   ],
   "refreshAt": 1792423579957
