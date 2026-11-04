@@ -55986,6 +55986,527 @@
       "downloads": [],
       "bl": true,
       "updatedAt": 1793737881691
+    },
+    {
+      "id": "285625",
+      "type": "tv",
+      "name": "Small Town Remedy",
+      "original_name": "小城良方",
+      "origin_country": [
+        "CN"
+      ],
+      "networks": [
+        "CCTV-8",
+        "iQiyi"
+      ],
+      "original_language": "zh",
+      "aka": [
+        "Small Town Remedy",
+        "วอร์ดรักฮีลใจ",
+        "Tiểu Thành Lương Phương",
+        "小城良方",
+        "Liu Yi Sheng Fan Xiang Ji",
+        "飞刀",
+        "刘医生返乡记"
+      ],
+      "year": "2026",
+      "overview": "Liu Zheng Liang est un talentueux médecin, qui, après un incident se retrouve à devoir retourner dans sa ville natale et rejoint alors les médecins urgentistes de l'hôpital local de sa ville. Imprégné du quotidien des patients, de leurs sentiments humains et de la passion des différents médecins, il va y trouver sa propre voie ainsi qu'un moyen de guérir ses maux.",
+      "genres": [
+        "Drame"
+      ],
+      "rating": "8.3",
+      "pop": 16.6857,
+      "status": "Ended",
+      "poster": "https://image.tmdb.org/t/p/original/mzYWwU2FBBn4ozILMu9e0M7mhfn.jpg",
+      "posterV": 2,
+      "backdrop": "https://image.tmdb.org/t/p/original/nhQKKALP3SOi1Ft5MZU6KU05VcY.jpg",
+      "videos": [],
+      "cast": [
+        {
+          "name": "Xiào Zhàn",
+          "character": "Liu Zhengliang",
+          "id": 2084790
+        },
+        {
+          "name": "倪大红",
+          "character": "Long Dongdong",
+          "id": 17382
+        },
+        {
+          "name": "姜妍",
+          "character": "Ai Chen",
+          "id": 1993059
+        },
+        {
+          "name": "史彭元",
+          "character": "Liu Zhengguang",
+          "id": 2682525
+        },
+        {
+          "name": "菅纫姿",
+          "character": "Che Mingming",
+          "id": 1756427
+        },
+        {
+          "name": "张国强",
+          "character": "Huang Dongsheng",
+          "id": 1006596
+        },
+        {
+          "name": "王彦霖",
+          "character": "Chen Junnan",
+          "id": 1724346
+        },
+        {
+          "name": "丁嘉丽",
+          "character": "Lao Duan",
+          "id": 1293226
+        },
+        {
+          "name": "任程伟",
+          "character": "Che Changhai",
+          "id": 2390029
+        },
+        {
+          "name": "刘桦",
+          "character": "Ai San",
+          "id": 929120
+        },
+        {
+          "name": "Chen Jin",
+          "character": "Mi Si",
+          "id": 557424
+        },
+        {
+          "name": "Hongbo Jiang",
+          "character": "Li Zhongling",
+          "id": 144427
+        }
+      ],
+      "eprt": 46,
+      "seasons": [
+        {
+          "number": 1,
+          "name": "Saison 1",
+          "episodes": [
+            {
+              "number": 1,
+              "name": "Missing Mother",
+              "overview": "At the hospital, Liu Zhengliang reunites with his younger brother, Liu Zhengguang, who resents him for being away for so many years. Liu Zhengliang, with composure that borders on cold-bloodedness, concludes that their missing mother is dead. With hardly any words exchanged, the two brothers give each other the cold shoulder.",
+              "air_date": "2026-10-21",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-gwh4t4lfjala.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 2,
+              "name": "Wide Open",
+              "overview": "Long Dongdong sees Liu Zhengliang's capabilities and offers to help him change his registered practice location to Xiaoximen Hospital, enabling him to operate legally. However, the condition is that he must stay and work at the rundown Xiaoximen Hospital.",
+              "air_date": "2026-10-21",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-by5zcykf75lc.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 3,
+              "name": "Real Brothers",
+              "overview": "Liu Zhengliang returns to the hospital ward to visit his brother, Liu Zhengguang, and discovers that he doesn't actually work for a foreign enterprise like he thought all along. Liu Zhengliang is then set on finding a different job for him.",
+              "air_date": "2026-10-21",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-t73niec0pskl.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 4,
+              "name": "The Meaning of Existence",
+              "overview": "Jia Xin brings his mother, Duan, to see a doctor. She insists on having an IV drip without undergoing any tests, and she's so stubborn that no one can talk her out of it. Liu Zhengliang claims he's staying out of this, but puts on his white coat and takes over anyway.",
+              "air_date": "2026-10-21",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-lg4jl86qrrlk.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 5,
+              "name": "Survive",
+              "overview": "Che Mingming examines a young girl and determines that she has multiple fractures to her left skull and is on the verge of death. There is no time to transfer her to another hospital. Given the high risks associated with the surgery, everyone pins their hopes on Liu Zhengliang.",
+              "air_date": "2026-10-22",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-hsqoz7ir5ewt.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 6,
+              "name": "Caring About Patients",
+              "overview": "Liu Zhengliang still says that he wants to return to the south, but he has already been tied down by Zhang Jiao.",
+              "air_date": "2026-10-22",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-8qlqurtjbv0b.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 7,
+              "name": "Mother's Body Found",
+              "overview": "They finally find Li Zhongling's body. Liu Zhengliang suggests, \"No funeral. Just cremate her\". Liu Zhengguang accuses his brother of being heartless, and the two argue again over their mother's funeral arrangements.",
+              "air_date": "2026-10-23",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-11r4ndookxeb.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 8,
+              "name": "The Key in His Hand",
+              "overview": "Liu Zhengliang uses work to numb himself. As Long Dongdong puts it, Liu Zhengliang is the one holding the key. No one else can help.",
+              "air_date": "2026-10-23",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-uvb1cztktto5.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 9,
+              "name": "Avoidance",
+              "overview": "Liu Zhengguang sees his mother's presence in every corner of his home. He decides to leave Fucheng for Beijing without discussing it with Liu Zhengliang.",
+              "air_date": "2026-10-24",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-xrmfkyecxrx6.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 10,
+              "name": "Deputy Chief Liu",
+              "overview": "Long Dongdong drags Liu Zhengliang to have his professional portrait taken, then turns around and uses it for a flashy poster that hangs high on the side of the building. He also promotes Liu Zhengliang to deputy chief of both the Emergency Department and the Neurosurgery Department.",
+              "air_date": "2026-10-24",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-rn2tdbysryhl.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 11,
+              "name": "A Patient Dies",
+              "overview": "Liu Zhengliang sees a patient named Shao Nan, who suffers from abdominal pain. Her husband, Jiang Chao, refuses a blood test, so Liu Zhengliang can only prescribe her anti-diarrheal medication and request that she stay for observation. Soon after, Shao Nan goes into shock and passes away.",
+              "air_date": "2026-10-25",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-3okxm0pwnx1e.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 12,
+              "name": "A Tricky Patient",
+              "overview": "Just when Liu Zhengliang is about to leave Xiaoximen Hospital, he gets held up by a patient named Wang Zongqi, who is difficult to diagnose.",
+              "air_date": "2026-10-25",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-so8qgxaa9vvs.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 13,
+              "name": "Heading to Fuzhou",
+              "overview": "Long Dongdong refers Liu Zhengliang to a hospital in Fuzhou. Before leaving, Liu Zhengliang says a final goodbye to Ai Chen.",
+              "air_date": "2026-10-26",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-yk8bhv3osd6i.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 14,
+              "name": "A Streak of Bad Luck",
+              "overview": "Liu Zhengliang helps a pregnant woman on the train deliver her baby. After seeing that mother and child are safe, he realizes that he had left all his belongings on the train.",
+              "air_date": "2026-10-26",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-p9eecejjgbel.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 15,
+              "name": "Stranded in Bengbu",
+              "overview": "Liu Guangliang is stranded in Bengbu. He goes to an internet cafe to send out resumes online and meets a young man named Zhou Zheng. Seeing that Liu Zhengliang has nowhere to go, Zhou Zheng takes him to his family's Dream Garden Theme Hotel.",
+              "air_date": "2026-10-27",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-xirakpo016kc.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 16,
+              "name": "Have No Regrets",
+              "overview": "Mr. Li is a patient who faked his illness to get attention from his son. His words resonate with Ai Chen. Determined not to have any regrets, she immediately sets out for Fuzhou.",
+              "air_date": "2026-10-27",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-mm6uzdhbrhpv.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 17,
+              "name": "Revealing Her Feelings",
+              "overview": "Ai Chen reaches Bengbu and quickly hits it off with Zhou Zheng. She checks into the Dream Garden Theme Hotel. While she is in Bengbu, Ai Chen reveals her feelings to Liu Zhengliang.",
+              "air_date": "2026-10-28",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-r0ptve1ebawu.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 18,
+              "name": "Giving Up on Treatment",
+              "overview": "Zhou Zheng reveals his secret. He has glioblastoma and has given up on treatment. He asks Liu Zhengliang to keep it a secret and not tell his mother.",
+              "air_date": "2026-10-28",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-ymflt7qs08ii.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 19,
+              "name": "Returning to Xiaoximen",
+              "overview": "Director Yan formally announces that Xiaoximen Hospital will soon be shut down. Liu Zhengliang still decides to sign a new contract and return to Xiaoximen.",
+              "air_date": "2026-10-29",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-72zvllf8g5q1.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 20,
+              "name": "One Last Goodbye",
+              "overview": "After surgery, Du Fang suffers a sudden, severe heart attack. He briefly sees Su Jing and their child one last time before passing away.",
+              "air_date": "2026-10-29",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-4y7pwmmykmkx.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 21,
+              "name": "A Public Statement",
+              "overview": "A television crew arrives to conduct interviews, and Long Dongdong speaks his mind on camera, insisting that Xiaoximen shouldn't be shut down. Many locals who have been treated at Xiaoximen before show up in force to speak up for this hospital that is often looked down on.",
+              "air_date": "2026-10-30",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-oxm5e9xb8hko.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 22,
+              "name": "Exposure Therapy",
+              "overview": "Liu Zhengliang comes up with the idea of using ice for exposure therapy to treat his \"chionophobia\". Che Changhai suggests visiting the newly opened aquarium to see the ice in the penguin exhibit.",
+              "air_date": "2026-10-30",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-0gtcxblrvt12.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 23,
+              "name": "Taking the Initiative",
+              "overview": "Liu Zhengliang enters a cold storage facility for exposure therapy. Seeing the room covered in ice, memories from his childhood come flooding back. In a daze, he sees his mother and his younger self before losing consciousness.",
+              "air_date": "2026-10-31",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-o0roonpb96o5.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 24,
+              "name": "A Child with a Family",
+              "overview": "Liu Zhengliang visits his parents' graves. The caretaker tells him that Li Zhongling used to visit every year during the 12th lunar month and on Qingming. Liu Zhengliang gains a deeper understanding of his mother's loneliness and love. When he leaves the cemetery, he cheerfully tells the caretaker that he is a child with a family.",
+              "air_date": "2026-10-31",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-pmm66mafrct6.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 25,
+              "name": "Épisode 25",
+              "overview": "",
+              "air_date": "2026-11-01",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-nx6qwvd12exh.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 26,
+              "name": "Épisode 26",
+              "overview": "",
+              "air_date": "2026-11-01",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-qs4whrn2semb.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 27,
+              "name": "Épisode 27",
+              "overview": "",
+              "air_date": "2026-11-01",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-bvemq5qxde5f.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 28,
+              "name": "Épisode 28",
+              "overview": "",
+              "air_date": "2026-11-01",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-1rd7h6shb2om.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 29,
+              "name": "Épisode 29",
+              "overview": "",
+              "air_date": "2026-11-01",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-f9a9yopubaiz.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            }
+          ],
+          "downloads": []
+        }
+      ],
+      "sources": [],
+      "addedAt": 1793812739027,
+      "langs": [
+        "VOSTFR"
+      ],
+      "downloads": [],
+      "posterCustom": true,
+      "updatedAt": 1793813723479
     }
   ],
   "deletedLinks": [
@@ -56701,6 +57222,15 @@
     "at": 1793280056955
   },
   "journal": [
+    {
+      "k": "mw2edjfhdenay",
+      "t": 1793813723549,
+      "b": "614d778ed0",
+      "a": "add",
+      "i": "285625",
+      "n": "Small Town Remedy",
+      "d": ""
+    },
     {
       "k": "mw157zhhr7d1e",
       "t": 1793737881701,
@@ -59390,15 +59920,6 @@
       "a": "edit",
       "i": "291496",
       "n": "Our Sticky Love",
-      "d": "affiche"
-    },
-    {
-      "k": "mvkbyroc0jz8l",
-      "t": 1792721325504,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "300727",
-      "n": "The Apartment Job",
       "d": "affiche"
     }
   ],
