@@ -56844,9 +56844,25 @@
         "en": "",
         "auto": true,
         "at": 1793740191653
+      },
+      {
+        "id": "rmw1ssn2g",
+        "title": "Welcome back, First love.",
+        "status": "wait",
+        "bl": false,
+        "kind": "dl",
+        "votes": 1,
+        "tmdb": "334323",
+        "media": "tv",
+        "year": "2026",
+        "poster": "/gZ7dPo58d30aAJ05RtqrgTEFmhs.jpg",
+        "origin": "Japon",
+        "en": "",
+        "auto": true,
+        "at": 1793777476552
       }
     ],
-    "at": 1793742916568,
+    "at": 1793777476552,
     "log": [
       {
         "v": "85f9c243",
@@ -56855,6 +56871,10 @@
       {
         "v": "4c5060ad",
         "t": 1793742916568
+      },
+      {
+        "v": "9b0f98c6",
+        "t": 1793777476552
       }
     ]
   },
