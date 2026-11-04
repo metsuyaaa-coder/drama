@@ -31852,7 +31852,7 @@
       "rating": "8.2",
       "pop": 10.226,
       "status": "Ended",
-      "poster": "https://image.tmdb.org/t/p/original/g9INBUtEuCFVijhh1o46EWyYagk.jpg",
+      "poster": "https://image.tmdb.org/t/p/original/zwJGGY1KcWLacmGrKDQjhtRoBpx.jpg",
       "posterV": 2,
       "backdrop": "https://image.tmdb.org/t/p/original/eZTq2kkhZ9AQtQ1H5SD7h1Q0PIc.jpg",
       "videos": [
@@ -32313,7 +32313,7 @@
       ],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1793130277011,
+      "updatedAt": 1793820544563,
       "eprt": 44
     },
     {
@@ -58747,6 +58747,15 @@
   },
   "journal": [
     {
+      "k": "mw2ifqkwmmek9",
+      "t": 1793820577912,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "295558",
+      "n": "Key to the Phoenix Heart",
+      "d": "affiche"
+    },
+    {
       "k": "mw2hud8lnckyu",
       "t": 1793819547525,
       "b": "614d778ed0",
@@ -61435,15 +61444,6 @@
       "a": "edit",
       "i": "281231",
       "n": "The Epoch of Miyu",
-      "d": ""
-    },
-    {
-      "k": "mvkckkex37g7d",
-      "t": 1792722301017,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "297982",
-      "n": "Irreplaceable",
       "d": ""
     }
   ],
