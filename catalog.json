@@ -58091,7 +58091,7 @@
           "id": 5884161
         }
       ],
-      "eprt": "",
+      "eprt": "10",
       "seasons": [
         {
           "number": 1,
@@ -58443,7 +58443,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1793821441641
+      "updatedAt": 1793821603378
     }
   ],
   "deletedLinks": [
@@ -59159,6 +59159,15 @@
     "at": 1793280056955
   },
   "journal": [
+    {
+      "k": "mw2j2fk7oiq0i",
+      "t": 1793821803451,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "308551",
+      "n": "A Vow in the Dark",
+      "d": ""
+    },
     {
       "k": "mw2iyysnyaj54",
       "t": 1793821441703,
@@ -61848,15 +61857,6 @@
       "a": "edit",
       "i": "295558",
       "n": "Key to the Phoenix Heart",
-      "d": "affiche"
-    },
-    {
-      "k": "mvkcqs0am0hcn",
-      "t": 1792722590794,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "126035",
-      "n": "Nevertheless,",
       "d": "affiche"
     }
   ],
