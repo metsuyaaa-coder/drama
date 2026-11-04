@@ -57785,6 +57785,252 @@
       ],
       "downloads": [],
       "updatedAt": 1793819272485
+    },
+    {
+      "id": "263292",
+      "type": "tv",
+      "name": "Twelve Letters",
+      "original_name": "十二封信",
+      "origin_country": [
+        "CN"
+      ],
+      "networks": [
+        "Tencent Video"
+      ],
+      "original_language": "zh",
+      "aka": [
+        "Twelve Letters",
+        "Mười Hai Lá Thư",
+        "十二封信",
+        "จดหมายสิบสองฉบับ",
+        "Dua Belas Pesan",
+        "십이봉신 : 열두 통의 편지",
+        "Las 12 cartas",
+        "اثنا عشر رسالة",
+        "Doze Cartas",
+        "Dvanaest pisama",
+        "Двенадцать писем",
+        "后会有期"
+      ],
+      "year": "2025",
+      "overview": "En 1991, Ye Hai Tang est une jeune lycéenne qui vit avec son père violent, accros aux jeux d'argent et criblé de dettes. Elle fait la rencontre de Tan Yi Xun un jeune camarade de classe qui survit en collectant les dettes.\nLorsqu'un jour, une lettre d'amour signée de Tang Yi Xun datant de 2026 vient semer le trouble. Elle provient d'une étrange boîte aux lettres rouge apparue récemment.\n\nLassée, fatiguée de sa vie faite de souffrance et de solitude, Ye Hai Tang écrit une lettre de suicide un soir de septembre 1991 et la glisse dans la mystérieuse boîte aux lettres rouge. Plus tard sa lettre disparaît.\n\nEn 2026, Yu Nian recherche son père porté disparu. Elle découvre dans une boîte aux lettres rouge la lettre de suicide de Ye Hai Tang. Ses recherches finissent par la conduire à Shen Cheng qui essaie de retrouver sa mère dont il n'a plus aucune nouvelle.\n\nFace à ces événements mystérieux, tous se questionnent et commencent à enquêter.\nDébute alors une correspondance entre 1991 et 2026 qui liera à jamais le destin de Ye Hai Tang, Tang Yi Xun, Yu Nian et Shen Cheng.",
+      "genres": [
+        "Drame",
+        "Mystère",
+        "Science-Fiction & Fantastique"
+      ],
+      "rating": "9.4",
+      "pop": 5.4745,
+      "status": "Ended",
+      "poster": "https://image.tmdb.org/t/p/original/tLM3RVnc7VZU0UQ2dr3VP2INpnz.jpg",
+      "posterV": 2,
+      "backdrop": "https://image.tmdb.org/t/p/original/na4tRfTWzYVRU9bRLSHomKov1uB.jpg",
+      "videos": [
+        {
+          "key": "Asvf9pHDd44",
+          "name": "时序交响版预告",
+          "type": "Teaser",
+          "lab": "Original"
+        }
+      ],
+      "cast": [
+        {
+          "name": "周翊然",
+          "character": "Tang Yixun",
+          "id": 3067811
+        },
+        {
+          "name": "王影璐",
+          "character": "Ye Haitang",
+          "id": 3066782
+        }
+      ],
+      "eprt": 51,
+      "seasons": [
+        {
+          "number": 1,
+          "name": "Saison 1",
+          "episodes": [
+            {
+              "number": 1,
+              "name": "The Letter Writer",
+              "overview": "",
+              "air_date": "2025-08-29",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-sv0ens0nobmq.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 2,
+              "name": "Love Letter",
+              "overview": "",
+              "air_date": "2025-08-29",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-sh34qxb4dig4.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 3,
+              "name": "Time and the Youth",
+              "overview": "",
+              "air_date": "2025-08-29",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-a7lo9r2226a7.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 4,
+              "name": "I Want to Give You Sunny Day, But I Only Have An Umbrella Woven from Storm Clouds",
+              "overview": "",
+              "air_date": "2025-08-29",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-hp95miy5yba6.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 5,
+              "name": "Hello, Stranger",
+              "overview": "",
+              "air_date": "2025-08-30",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-506m8tp3014p.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 6,
+              "name": "Family",
+              "overview": "",
+              "air_date": "2025-08-30",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-ul9w3nrjpylt.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 7,
+              "name": "A Xun? I'm Here",
+              "overview": "",
+              "air_date": "2025-08-31",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-iz230u0s0j3u.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 8,
+              "name": "The Spring is Bright, But Gone Forever",
+              "overview": "",
+              "air_date": "2025-08-31",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-3p4gs2oe4hva.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 9,
+              "name": "If.....",
+              "overview": "",
+              "air_date": "2025-09-01",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-sb7yrm6ni37y.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 10,
+              "name": "Fate",
+              "overview": "",
+              "air_date": "2025-09-01",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-xhv7ybd33ab3.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 11,
+              "name": "Reunion in Spring",
+              "overview": "",
+              "air_date": "2025-09-01",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-sl3rvlqg1osd.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 12,
+              "name": "Twelve Letters",
+              "overview": "",
+              "air_date": "2025-09-01",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-1axjkqt3h82z.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            }
+          ],
+          "downloads": []
+        }
+      ],
+      "sources": [],
+      "addedAt": 1793819369978,
+      "langs": [
+        "VOSTFR"
+      ],
+      "downloads": [],
+      "posterCustom": true,
+      "updatedAt": 1793819547474
     }
   ],
   "deletedLinks": [
@@ -58500,6 +58746,15 @@
     "at": 1793280056955
   },
   "journal": [
+    {
+      "k": "mw2hud8lnckyu",
+      "t": 1793819547525,
+      "b": "614d778ed0",
+      "a": "add",
+      "i": "263292",
+      "n": "Twelve Letters",
+      "d": ""
+    },
     {
       "k": "mw2hoh120d8gn",
       "t": 1793819272502,
@@ -61189,15 +61444,6 @@
       "a": "edit",
       "i": "297982",
       "n": "Irreplaceable",
-      "d": ""
-    },
-    {
-      "k": "mvkck2wxqbgrd",
-      "t": 1792722278337,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "295558",
-      "n": "Key to the Phoenix Heart",
       "d": ""
     }
   ],
