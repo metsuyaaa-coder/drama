@@ -7151,7 +7151,13 @@
               "name": "Épisode 37",
               "overview": "",
               "air_date": "2026-11-01",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-4qhzqsqepyi0.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -7189,7 +7195,7 @@
       ],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1793714870369,
+      "updatedAt": 1793814421549,
       "trend": 0
     },
     {
@@ -57223,6 +57229,15 @@
   },
   "journal": [
     {
+      "k": "mw2esi0q5ivyq",
+      "t": 1793814421562,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "304452",
+      "n": "The Lament of Autumn",
+      "d": "sources 36 → 37"
+    },
+    {
       "k": "mw2edjfhdenay",
       "t": 1793813723549,
       "b": "614d778ed0",
@@ -59911,15 +59926,6 @@
       "a": "edit",
       "i": "314784",
       "n": "Absolute Value of Romance",
-      "d": "affiche"
-    },
-    {
-      "k": "mvkc3ywod8roa",
-      "t": 1792721526648,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "291496",
-      "n": "Our Sticky Love",
       "d": "affiche"
     }
   ],
