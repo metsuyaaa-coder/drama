@@ -56707,22 +56707,6 @@
         "at": 1793620380647
       },
       {
-        "id": "rmvzfuuci",
-        "title": "A Bona Fide Killer",
-        "status": "wait",
-        "bl": false,
-        "kind": "dl",
-        "votes": 1,
-        "tmdb": "294095",
-        "media": "tv",
-        "year": "2026",
-        "poster": "/snVma1wanEn9p4hWgQxZ211vQdG.jpg",
-        "origin": "Corée",
-        "en": "",
-        "auto": true,
-        "at": 1793634811938
-      },
-      {
         "id": "rmvzrrmpi",
         "title": "The Sign",
         "status": "wait",
@@ -56755,22 +56739,6 @@
         "at": 1793695563164
       },
       {
-        "id": "rmw0twddq",
-        "title": "L'impératrice remariée",
-        "status": "wait",
-        "bl": false,
-        "kind": "dl",
-        "votes": 1,
-        "tmdb": "279246",
-        "media": "tv",
-        "year": "2026",
-        "poster": "/1TKAhnnicIIV5k2L8bquwnU1B0s.jpg",
-        "origin": "Corée",
-        "en": "The Remarried Empress",
-        "auto": true,
-        "at": 1793718864062
-      },
-      {
         "id": "rmw16lhut",
         "title": "Kingdom: Ashin of the North",
         "status": "wait",
@@ -56785,22 +56753,6 @@
         "en": "",
         "auto": true,
         "at": 1793740191653
-      },
-      {
-        "id": "rmw1ssn2g",
-        "title": "Welcome back, First love.",
-        "status": "wait",
-        "bl": false,
-        "kind": "dl",
-        "votes": 1,
-        "tmdb": "334323",
-        "media": "tv",
-        "year": "2026",
-        "poster": "/gZ7dPo58d30aAJ05RtqrgTEFmhs.jpg",
-        "origin": "Japon",
-        "en": "",
-        "auto": true,
-        "at": 1793777476552
       },
       {
         "id": "rmw250xkz",
@@ -56819,7 +56771,7 @@
         "at": 1793798018819
       }
     ],
-    "at": 1793812594866
+    "at": 1793812636984
   },
   "founder": {
     "name": "Meyriuu",
