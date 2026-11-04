@@ -437,7 +437,7 @@
       ],
       "downloads": [],
       "updatedAt": 1793564017393,
-      "trend": 46,
+      "trend": 45,
       "videos": [
         {
           "key": "OsF0AxLqBzY",
@@ -1088,7 +1088,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "trend": 61,
+      "trend": 64,
       "origin_country": [
         "KR"
       ],
@@ -7196,7 +7196,7 @@
       "downloads": [],
       "posterCustom": true,
       "updatedAt": 1793814421549,
-      "trend": 0
+      "trend": 44
     },
     {
       "id": "208336",
@@ -8549,7 +8549,7 @@
       "networks": [
         "ENA"
       ],
-      "trend": 50,
+      "trend": 0,
       "videos": [
         {
           "key": "4HsK_-QQE5Y",
@@ -25113,7 +25113,7 @@
       "downloads": [],
       "posterCustom": true,
       "updatedAt": 1793714777164,
-      "trend": 83
+      "trend": 89
     },
     {
       "id": "128995",
@@ -26080,7 +26080,7 @@
       ],
       "downloads": [],
       "updatedAt": 1793717454216,
-      "trend": 63,
+      "trend": 56,
       "videos": [
         {
           "key": "55ATD_SJ_Xw",
@@ -33940,7 +33940,7 @@
       ],
       "downloads": [],
       "updatedAt": 1793714940690,
-      "trend": 56,
+      "trend": 61,
       "eprt": 48
     },
     {
@@ -35959,7 +35959,7 @@
       "posterCustom": true,
       "updatedAt": 1793130283285,
       "eprt": 48,
-      "trend": 85
+      "trend": 0
     },
     {
       "id": "272938",
@@ -42007,7 +42007,7 @@
       "downloads": [],
       "posterCustom": true,
       "updatedAt": 1793564145366,
-      "trend": 43
+      "trend": 0
     },
     {
       "id": "334517",
@@ -43909,7 +43909,7 @@
       ],
       "downloads": [],
       "updatedAt": 1793724483685,
-      "trend": 44
+      "trend": 0
     },
     {
       "id": "203344",
@@ -49049,7 +49049,7 @@
       ],
       "downloads": [],
       "updatedAt": 1793654060109,
-      "trend": 78
+      "trend": 68
     },
     {
       "id": "330718",
@@ -55722,7 +55722,7 @@
       "downloads": [],
       "posterCustom": true,
       "updatedAt": 1793710979547,
-      "trend": 99
+      "trend": 96
     },
     {
       "id": "237411",
@@ -56518,7 +56518,664 @@
       ],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1793814321442
+      "updatedAt": 1793814321442,
+      "trend": 57
+    },
+    {
+      "id": "272484",
+      "type": "tv",
+      "name": "Fated Hearts",
+      "original_name": "一笑随歌",
+      "origin_country": [
+        "CN"
+      ],
+      "networks": [
+        "iQiyi"
+      ],
+      "original_language": "zh",
+      "aka": [
+        "Fated Hearts",
+        "일소수가",
+        "一笑隨歌",
+        "Nhất Tiếu Tùy Ca",
+        "อริรักลิขิตใจ",
+        "Corações Destinados",
+        "Судьбой связанные сердца",
+        "Corazones destinados",
+        "绾心记",
+        "一笑",
+        "笑歌行‎",
+        "宿敵契約",
+        "Судьбоносные сердца",
+        "一笑随歌"
+      ],
+      "year": "2025",
+      "overview": "Alors que le royaume de Jinxiu est sur le point de perdre la bataille de Pingling, Fu Yi Xiao, une archère vêtue de rouge, tire une flèche sur Feng Sui Ge, le prince héritier de Susha, renversant ainsi le cours de la bataille. Mais peu après, elle chute accidentellement d’une falaise et perd la mémoire.\n\nRecueillie par la famille Ling, des médecins réputés de la Villa de la Vertu, elle retrouve contre toute attente son ancien ennemi, Feng Sui Ge. Ce dernier comprend que les mésaventures de la jeune femme pourraient être liées aux événements de Pingling. Il décide alors de se servir d’elle pour découvrir la vérité, tandis que Yi Xiao compte sur lui pour échapper à ceux qui la traquent.\n\nContraints de s’allier malgré leur haine passée, les deux ennemis doivent désormais compter l’un sur l’autre pour survivre dans la ville agitée de Yujing. Au fil des épreuves et des dangers, leurs sentiments évoluent peu à peu. Mais entre trahisons, mensonges, rancunes et complots, chacun avance sur un échiquier où il est à la fois joueur et pion. Pour déjouer les machinations qui les menacent et reprendre leur destin en main, Yi Xiao et Sui Ge devront unir leurs forces, sans se trahir ni se perdre.Adapté du roman Yi Xiao de Chi Yi Qian Yu.",
+      "genres": [
+        "Drame",
+        "Mystère"
+      ],
+      "rating": "9.0",
+      "pop": 13.9959,
+      "status": "Ended",
+      "poster": "https://image.tmdb.org/t/p/original/dcqOJ4p61cCgfR2zY8r43oF59kW.jpg",
+      "posterV": 2,
+      "backdrop": "https://image.tmdb.org/t/p/original/xk1FjT0j5YraC0CQgtq7AGQxT0j.jpg",
+      "videos": [
+        {
+          "key": "RRq4GRGFQdM",
+          "name": "TRAILER [ENG SUB]",
+          "type": "Trailer",
+          "lab": "Anglais"
+        }
+      ],
+      "cast": [
+        {
+          "name": "李沁",
+          "character": "Fu Yixiao",
+          "id": 568304
+        },
+        {
+          "name": "陈哲远",
+          "character": "Feng Suige",
+          "id": 2439184
+        },
+        {
+          "name": "夏梦",
+          "character": "Feng Xiyang",
+          "id": 3091307
+        },
+        {
+          "name": "陈鹤一",
+          "character": "Xia Jingshi",
+          "id": 2972064
+        },
+        {
+          "name": "Zuo Ye",
+          "character": "Murong Yao",
+          "id": 3331196
+        },
+        {
+          "name": "Qin Tianyu",
+          "character": "Xia Jingyan",
+          "id": 2576414
+        },
+        {
+          "name": "王子腾",
+          "character": "Lu Ke",
+          "id": 3238405
+        },
+        {
+          "name": "田广宇",
+          "character": "Yun Fang",
+          "id": 4628589
+        },
+        {
+          "name": "辛凯丽",
+          "character": "Ling Xueying",
+          "id": 4962974
+        },
+        {
+          "name": "张珹朗",
+          "character": "Ning Fei",
+          "id": 5723933
+        },
+        {
+          "name": "盛英豪",
+          "character": "Xiao Weiran",
+          "id": 2660693
+        }
+      ],
+      "eprt": 46,
+      "seasons": [
+        {
+          "number": 1,
+          "name": "Saison 1",
+          "episodes": [
+            {
+              "number": 1,
+              "name": "Épisode 1",
+              "overview": "During the battle in Pingling City, Jinxiu’s military commander, Fu Yi Xiao, severely injures Susha’s eldest Prince, Feng Sui Ge, who quickly flees for safety. Meanwhile, Fu Yi Xiao becomes the target of assassins and is also severely injured, trying to escape. Both survive with the help of the physicians from Zhengnian Villa. As they try to speed recovery using the hidden medicine pool, they meet again, but Fu Yi Xiao has lost her memory, and Feng Sui Ge takes advantage of this.",
+              "air_date": "2025-10-02",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-dhyly5e4zl5g.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 2,
+              "name": "Épisode 2",
+              "overview": "Feng Sui Ge tortures Fu Yi Xiao to gain information about the battle at Pingling and, in so doing, helps her remember some of her past memories. He decides to keep her alive, hoping to figure out who tried to assassinate them. They head back to the palace, but are stopped at the city gates while Sui Ge’s brother completes his coming-of-age ceremony. Meanwhile, Jinxiu’s Prince Xia Jing Shi is forced to marry Susha’s princess for diplomatic peace.",
+              "air_date": "2025-10-02",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-z9dwynb7r4zi.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 3,
+              "name": "Épisode 3",
+              "overview": "Before striking a deal to cooperate with each other, Yi Xiao and Sui Ge get even with each other. Yi Xiao lures the assassins following her, but they hold back for some reason. The Prime Minister pressures his daughter, Empress Zhang, to prepare Princess Feng Xi Yang, Sui Ge’s sister, for marriage with the Prince of Jinxiu. Three little kids end up in Zhengnian Villa looking for their missing master.",
+              "air_date": "2025-10-02",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-cafdrfajr3xr.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 4,
+              "name": "Épisode 4",
+              "overview": "Sui Ge comes up with a plan to not only confirm his cooperation with Yi Xiao, but also to surface the assassins after her. Xue Ying arrives at the capital, bringing Yi Xiao’s three little disciples. However, Yi Xiao is wary of them since she is unable to remember her past with them. News from Jinxiu arrives, and the imperial court ministers debate the marriage proposal between the Princess of Sasha and the Prince of Jinxiu for peace.",
+              "air_date": "2025-10-02",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-iffy9wfl3euj.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 5,
+              "name": "Épisode 5",
+              "overview": "Sui Ge tells his sister Jinxiu’s plan to have her marry the Prince of Jinxiu, Xia Jing Shi, who is in love with Yi Xiao. Sui Ge vows to protect her and prevent her marriage. Yi Xiao entrusts her little disciples to Xue Ying, but things go awry when the disciples run away and A’Fang goes missing. Yi Xiao looks for him and falls into her assassin’s trap. Jing Shi receives news that Yi Xiao is alive and heads for Yujing to save her from Sui Ge.",
+              "air_date": "2025-10-02",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-0g66gt9irkpg.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 6,
+              "name": "Épisode 6",
+              "overview": "Sui Ge discovers that his sister has fallen in love with the Prince of Jinxiu and therefore wants to marry him. Shocked and angry that she could marry his sworn enemy, Sui Ge blames himself for her naïveté because he shielded her from treacherous people while growing up. Concerned by his sudden change in behavior, Yi Xiao accompanies Sui Ge as he tries to drown away his sorrows. Meanwhile, the Prince of Jinxiu makes haste for Yujing.",
+              "air_date": "2025-10-02",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-wawa0dg6oqzg.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 7,
+              "name": "Épisode 7",
+              "overview": "Sui Ge calls upon Yi Xiao to help him find his most skilled archer, who has gone rogue, thinking to relieve Sui Ge of his burdens by killing Xia Jing Shi, the Prince of Jinxiu. Yi Xiao agrees on the condition that Sui Ge concedes to five of her terms and conditions. She accompanies Sui Ge to watch Jing Shi’s arrival, and past memories resurface upon seeing him. Meanwhile, Princess Xi Yang meets with Jing Shi and recounts how they first met during battle, years before.",
+              "air_date": "2025-10-03",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-31n5efhfb2uu.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 8,
+              "name": "Épisode 8",
+              "overview": "Princess Xi Yang is melancholy after learning that Jing Shi’s heart belongs to another woman. The Empress meets with Jing Shi to confirm his feelings for Yi Xiao, fearing Xi Yang will withdraw from the betrothal. Ning Fei and Wei Ran plead with Xue Ying to help them meet with Yi Xiao. Fearing for her safety, Sui Ge restrains Yi Xiao from meeting her Jinxiu comrades, but Yi Xiao finds a way to meet face-to-face with Jing Shi.",
+              "air_date": "2025-10-03",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-hfnldxkv9gmr.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 9,
+              "name": "Épisode 9",
+              "overview": "Despite remembering past events with Jing Shi, Yi Xiao makes it clear to him that she does not harbor the same affections for him as he does for her, which distresses him. Jing Shi tries to bring her back to Jinxiu as part of the marriage alliance negotiations, while Sui Ge prepares a surprise for him. To ascertain which of her close friends tried to kill her, she gets Ning Fei and Wei Ran drunk. Xi Yang meets with Yi Xiao, and together they run into both Jing Shi and Sui Ge while walking the city streets.",
+              "air_date": "2025-10-04",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-agj7m2h46mkb.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 10,
+              "name": "Épisode 10",
+              "overview": "Yi Xiao catches a glimpse of Jing Shi’s pendant, prompting memories of her falling off the cliff. She decides to stay close to him, secretly asking Sui Ge for help. She discovers Jing Shi suffers from poisoning, but he keeps the details of this hidden, as it relates to his grand plan. Sui Ge awaits a response from the Emperor of Jinxiu as he, too, has grand plans of his own. Upset that Jing Shi shows a preference for Yi Xiao, the Empress enacts her own plan to ensure Jing Shi remains true to Xi Yang.",
+              "air_date": "2025-10-04",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-j4o9mpuvdbio.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 11,
+              "name": "Épisode 11",
+              "overview": "The Emperor of Jinxiu happily accepts Sui Ge’s proposal to keep Jing Shi in Susha after the wedding with his sister, as it allows him to take control of Jing Shi’s army. Yi Xiao continues to probe Ning Fei, Wei Ran, and Jing Shi about what happened after the battle in Pingling, and their differing responses make her more suspicious of Wei Ran and Jing Shi. She trades intel with Sui Ge so that she can pursue her other leads, while Prime Minister Zhuang Shen makes his move against Sui Ge.",
+              "air_date": "2025-10-05",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-mmgu1k40cap4.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 12,
+              "name": "Épisode 12",
+              "overview": "Prime Minister Zhuang’s plan fails when the Emperor receives word from the Emperor of Jinxiu accepting Jing Shi’s matrilocal marriage with Xi Yang. Upon hearing the news, Jing Shi sets out to meet with his Susha contact while Sui Ge’s men lie in wait. Assassins target Yi Xia,o and though she is able to fight them off, she is unexpectedly forced to confront her true enemy. Xi Yang confronts Sui Ge, accusing him of using her marriage to Jing Shi to trap him in Susha.",
+              "air_date": "2025-10-05",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-t3tj1fe450li.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 13,
+              "name": "Épisode 13",
+              "overview": "Sui Ge’s plan falls into place when Ning Fei realizes the truth and confronts Wei Ran. Yi Xiao hears everything, vowing they are no longer sworn siblings, but strangers henceforth. Ning Fei collapses after being shot by a poisoned arrow during his scuffle with Yi Xiao’s assassins. Sui Ge finds Xue Ying’s father, who figures out a way to help Ning Fei. Meanwhile, Jing Shi uses his contact in Susha to set Wei Ran free.",
+              "air_date": "2025-10-06",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-l2yfcsgyb4dk.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 14,
+              "name": "Épisode 14",
+              "overview": "Yi Xiao confronts Jing Shi and learns the truth behind her fall after the Pingling battle, and declares he will be her enemy henceforth. Sui Ge takes Yi Xiao to his mother’s residence in the woods and acknowledges his promise to Yi Xiao, granting her freedom now that she’s uncovered who tried to kill her. He then heads to meet with the Emperor to get justice for Yi Xiao, who was targeted by the Empress.",
+              "air_date": "2025-10-06",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-dkrd4403ofau.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 15,
+              "name": "Épisode 15",
+              "overview": "Sui Ge angers his father when he accuses him of turning a blind eye to the Empress’ actions in trying to kill Yi Xiao. Sui Ge is removed as the secondary officiant in the Ancestral Ceremony and replaced by his younger brother, indicating Sui Ge is no longer favored by the Emperor. Knowing he’s upset, Yi Xiao takes Sui Ge to a place to help calm him and, in so doing, learns the story behind his mother’s death. Murong Yao and his father arrive to attend Xi Yang’s wedding, and though Murong Yao is to keep tabs on Jing Shi, Jing Shi suddenly disappears.",
+              "air_date": "2025-10-07",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-7vq0h0nm7xzy.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 16,
+              "name": "Épisode 16",
+              "overview": "While following a lead to the masked man working with Jing Shi, Yi Xiao spots a familiar face and unexpectedly falls into a trap in a death camp. She learns who the mastermind behind it all is, while Sui Ge discovers another lead to Manager Luo. Sui Ge and his sister mend their relationship before her royal wedding, with Sui Ge promising to attend. All the while, Sui Ge and Yi Xiao slowly grow closer together.",
+              "air_date": "2025-10-07",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-c7olsgofzw6i.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 17,
+              "name": "Épisode 17",
+              "overview": "Sui Ge begins to share his true feelings for Yi Xiao. Despite Jing Shi’s apathy towards Xi Yang on their wedding night, Xi Yang pledges to be by his side and gives him the gift of freedom. Sui Ge pursues them, intending to bring them back to the capital, and Yi Xiao follows, knowing Jing Shi has other motives. During the confrontation, Jing Shi targets Sui Ge, while Yi Xiao targets Jing Shi, putting her injured left arm at risk of permanent damage.",
+              "air_date": "2025-10-08",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-4jqd0gxuswk0.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 18,
+              "name": "Épisode 18",
+              "overview": "Not believing that Ning Fei is dead, Jing Shi commands Wei Ran to look for him. Xue Ying’s father performs surgery on Yi Xiao’s injured left arm. Sui Ge defies his father’s summons to attend the imperial court to ensure Yi Xiao’s surgery goes well, then meets with his father alone to seek punishment. However, his father suddenly falls ill soon after meeting him, and a confrontation between him and the Empress ensues. Yi Xiao catches a glimpse of the masked man’s carriage.",
+              "air_date": "2025-10-08",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-yl6aticcjhwz.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 19,
+              "name": "Épisode 19",
+              "overview": "Sui Ge convinces Yi Xiao to leave the capital, knowing she will be targeted by the imperial ministers. Yi Xiao sets an elaborate trap to capture Ru Yan and use her as the bait for the masked man. However, she is caught off guard when she finds out the identity of the masked man, and he intercepts her before she can warn Sui Ge. Meanwhile, Sui Ge’s investigation leads him to Jing Shi’s death warriors and their attempt to assassinate the imperial minister of war.",
+              "air_date": "2025-10-09",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-h7qwt739mwf2.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 20,
+              "name": "Épisode 20",
+              "overview": "While Yi Xiao tries to convince Ru Yan to move on with her life, Sui Ge focuses on getting the identity of the masked man by interrogating the death warriors. The Empress Dowager of Jinxiu and her son, the Emperor, scheme to keep control of Jing Shi now that he’s back. Prime Minister Zhuang takes control of the imperial court, planning to replace Sui Ge’s only supporter with his own. Things come to a head when the Prime Minister insinuates the Emperor’s current state is caused by Sui Ge.",
+              "air_date": "2025-10-09",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-u8v0nljiypi0.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 21,
+              "name": "Épisode 21",
+              "overview": "Yi Xiao thinks of a way to control Murong Yao since she’s not able to tell Sui Ge the truth about him. Back in Jinxiu, the Emperor finds ways to ridicule and exert his dominance over Jing Shi, while Jing Shi slowly bides his time. Lord Ling makes it known that the Emperor has a terminal illness he’s been keeping secret for the past 15 years. Prime Minister Zhuang begins influencing the ministers to make Sui Ge’s brother the next emperor, but surprisingly wants to keep the Emperor alive.",
+              "air_date": "2025-10-10",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-uks7ti1f5t85.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 22,
+              "name": "Épisode 22",
+              "overview": "The Empress and Prime Minister Zhuang sow discord between Sui Ge and his brother, forcing his brother to accept becoming the next emperor when his father dies. Yi Xiao makes the difficult decision to tell Sui Ge the truth about the masked man’s identity, wondering if Sui Ge would believe her…",
+              "air_date": "2025-10-10",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-sb0o3ckbgh0i.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 23,
+              "name": "Épisode 23",
+              "overview": "With Murong Yao’s father held captive by Yi Xiao, Murong Yao and Prime Minister Zhuang are at odds over how to deal with the Emperor. With the help of his nephew, Prime Minister Zhuang obtains what he needs to enact revenge against the Emperor. Realizing his father is at the mercy of Murong Yao, Sui Ge summons his Qionqi Unit and Feng Battalion to seize control of his father’s protection.",
+              "air_date": "2025-10-11",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-j4iu2om4y93d.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 24,
+              "name": "Épisode 24",
+              "overview": "Intent on keeping his father alive, Sui Ge storms the palace and confronts Prime Minister Zhuang, who has assembled the imperial guards to thwart Sui Ge. Meanwhile, Jing Shi entrusts his plans to overthrow his brother to Xi Yang, but his brother’s interest in Xi Yang sows a seed of doubt in Jing Shi. In his attempt to find his father, Sui Ge comes face-to-face with the reality of his mother’s death.",
+              "air_date": "2025-10-11",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-936hzwqtf9ws.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 25,
+              "name": "Épisode 25",
+              "overview": "The Emperor continues to justify his actions, but both Sui Ge and Yi Xiao don’t agree with his principles, with Sui Ge refusing to be his successor. Murong Yao finds his father, but his father is disappointed in what his son has become. Prime Minister Zhuang continues with his plans for revenge, enlisting his nephew, Zhuang Ming. Meanwhile, Xi Yang becomes embittered by her loveless marriage to Jing Shi.",
+              "air_date": "2025-10-12",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-m16tzrl15vc9.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 26,
+              "name": "Épisode 26",
+              "overview": "The Emperor of Jinxiu spares no effort in helping Xi Yang realize how cruel Jing Shi really is. He makes it known to her that her father is deathly ill, but try as she might, she is not able to leave and visit him. Prime Minister Zhuang’s plan goes into effect, even sacrificing innocent people in the process. Things culminate to the point of finally exposing the truth behind Sui Ge’s mother’s death.",
+              "air_date": "2025-10-12",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-fnoz40pt1low.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 27,
+              "name": "Épisode 27",
+              "overview": "Sui Ge finally avenges his mother’s wrongful death and then bids farewell to his father, not wanting to do anything more with him. As he and his men celebrate, the Empress confronts the Emperor with devastating consequences. Murong Zhong lies in wait, looking for someone who can help protect his son from his treasonous crimes.",
+              "air_date": "2025-10-13",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-0iz8duw6uc4z.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 28,
+              "name": "Épisode 28",
+              "overview": "The Empress colludes with Murong Zhong to pin the Emperor’s death on Sui Ge. Though Murong Yao heeds his father’s commands, he still holds brotherly love for Sui Ge. Yi Xiao, along with Sui Ge’s men, fights with all their might to save Sui Ge, but it comes at a high cost. Meanwhile, Xi Yang regrets marrying Jing Shi, proclaiming she has divorced him. As news of the Emperor’s and Sui Ge’s deaths circulates, Jing Yan is anxious to be rid of Jing Shi.",
+              "air_date": "2025-10-13",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-g31sruhc71jz.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 29,
+              "name": "Épisode 29",
+              "overview": "Upon arriving at the Storm Alliance, Yi Xiao faces obstacles in getting treatment for Sui Ge. Despite the Storm Alliance’s grim history with the Fengs, Yi Xiao makes a case for Sui Ge using the basic principles upon which the Storm Alliance was founded. Xi Yang vows not only to rely on herself moving forward, but also to take revenge on those who murdered her father and brother.",
+              "air_date": "2025-10-14",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-5kay82ghlgvo.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 30,
+              "name": "Épisode 30",
+              "overview": "Cheng Yang ascends the throne but is already cautioned to be wary of the Murong family, while the Murong family plots to stay in power. Jing Shi gathers his men and makes his move, while Xi Yang makes a sacrifice to learn who was behind the deaths of her father and brother. Although Sui Ge is saved, he’s not completely in the clear, health-wise. He and Yi Xiao weigh the costs and benefits of further treatment.",
+              "air_date": "2025-10-14",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-a2f60xsph9s5.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 31,
+              "name": "Épisode 31",
+              "overview": "Xi Yang is incredulous after hearing the reports of what happened in Susha. Disbelieving, she asks Jing Yan to continue investigating and slowly aligns herself with him. Realizing Jing Yan is infatuated with Xi Yang, the Empress of Jinxiu looks to Jing Shi to attack Susha. Yi Xiao discovers that the man who had lost his memories still remembers his wife, so she takes a gamble with her life and confronts Sui Ge.",
+              "air_date": "2025-10-15",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-um8wc9m5lu1p.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 32,
+              "name": "Épisode 32",
+              "overview": "Yi Xiao’s gamble pays off, but now they must find a way to leave the premises of Storm Alliance. Elders Zhou and Zhang have plans of their own, counter to Elder Lei. Xi Yang makes a bet with Jing Yan and wins after exposing Jing Shi’s planted spy. Meanwhile, back at Susha, Emperor Cheng Yang learns more about the death of his father.",
+              "air_date": "2025-10-15",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-k4n9t5tzc0al.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 33,
+              "name": "Épisode 33",
+              "overview": "Sui Ge and Yi Xiao deduce what Elders Zhou and Zhang are planning and make their own plans. Elder Lei realizes how stifling the rules are, while Sui Ge vows to find who was behind the Storm Alliance massacre. Emperor Cheng Yang confronts his mother and learns the truth. Xi Yang makes another wager with Jing Yan. Sui Ge finally reunites with his brothers in arms.",
+              "air_date": "2025-10-16",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-531wqw8dpaas.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 34,
+              "name": "Épisode 34",
+              "overview": "Sui Ge’s men give him updates on the happenings at the palace. Sui Ge decides to schedule a meeting with his brother, Cheng Yang. The Empress Dowager can no longer stand Xi Yang and does everything in her power to get rid of her. Xi Yang tries to persuade Jing Yan to help kill the Murongs, while Jing Shi plans on dealing with Xi Yang.",
+              "air_date": "2025-10-16",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-d863jtnnucug.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 35,
+              "name": "Épisode 35",
+              "overview": "Sui Ge and his team are suddenly ambushed by Murong Yao. Sui Ge decides to seek out his Feng battalion to see if they will still stand with him. The Empress Dowager leans more and more heavily on Jing Shi, who decides to finally make his move. Cheng Yang’s suspicions are validated when his mother decides to wrest control from him and place him under house arrest.",
+              "air_date": "2025-10-16",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-e7pooax0mwlu.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 36,
+              "name": "Épisode 36",
+              "overview": "With his powers stripped by Cheng Yang, Murong Yao heads back to his residence, finding Sui Ge and his battalion waiting for him. Xi Yang receives a letter from Sui Ge and pleads with Jing Yan to allow her to see him. Worried for Xi Yang’s safety, Sui Ge immediately heads off to Jinxiu. Xi Yang receives alarming news that changes Jing Shi’s plans for attack.",
+              "air_date": "2025-10-16",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-hvinqwismwrb.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 37,
+              "name": "Épisode 37",
+              "overview": "Xi Yang promises Jing Yan that if he allows her to see her brother, she will stay with him on his birthday. Knowing Sui Ge will take his sister away, Jing Yan heartbrokenly agrees. Yi Xiao and Ning Fei confront Wei Ran and realize Jing Shi will make his move soon. Worried, Sui Ge chases after Xi Yang, who has left to spend time with Jing Yan on his birthday.",
+              "air_date": "2025-10-16",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-g1rknivlqavz.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 38,
+              "name": "Épisode 38",
+              "overview": "Jing Shi finally gets the revenge he’s been planning and waiting for, but is dismayed when Yi Xiao makes it clear she only sees him as her enemy. Sui Ge gathers his men for a showdown with Jing Shi, who has prepared an ambush. Unwilling to accompany the dead Emperor in the mausoleum, the Empress Zhuang makes her own plans for her future. In the aftermath, Sui Ge leaves the governmental affairs to Xi Yang, while Cheng Yang lives in seclusion in Youqi temple, and Sui Ge mourns for 3 years before deciding what to do next.",
+              "air_date": "2025-10-16",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-jwm4qockt4s7.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            }
+          ],
+          "downloads": []
+        }
+      ],
+      "sources": [],
+      "addedAt": 1793818294745,
+      "langs": [
+        "VOSTFR"
+      ],
+      "downloads": [],
+      "posterCustom": true,
+      "updatedAt": 1793818709908
     }
   ],
   "deletedLinks": [
@@ -57115,13 +57772,7 @@
         "at": 1793798018819
       }
     ],
-    "at": 1793816540931,
-    "log": [
-      {
-        "v": "407f7460",
-        "t": 1793816540931
-      }
-    ]
+    "at": 1793816540931
   },
   "founder": {
     "name": "Meyriuu",
@@ -57240,6 +57891,15 @@
     "at": 1793280056955
   },
   "journal": [
+    {
+      "k": "mw2hceyt9ac9v",
+      "t": 1793818709957,
+      "b": "614d778ed0",
+      "a": "add",
+      "i": "272484",
+      "n": "Fated Hearts",
+      "d": ""
+    },
     {
       "k": "mw2euq2nftd3d",
       "t": 1793814525311,
@@ -59929,15 +60589,6 @@
       "a": "edit",
       "i": "303143",
       "n": "My Royal Nemesis",
-      "d": "affiche"
-    },
-    {
-      "k": "mvkcb09oyzb70",
-      "t": 1792721855004,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "289690",
-      "n": "Love Phobia",
       "d": "affiche"
     }
   ],
