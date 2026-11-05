@@ -8880,7 +8880,13 @@
               "name": "Épisode 9",
               "overview": "",
               "air_date": "2026-11-05",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-8l9mb6vmo3vx.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -8888,7 +8894,13 @@
               "name": "Épisode 10",
               "overview": "",
               "air_date": "2026-11-05",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-4jhhjf4pst3i.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             }
           ],
@@ -8908,7 +8920,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1793287656271,
+      "updatedAt": 1793890365088,
       "trend": 0,
       "networks": [
         "TVING"
@@ -59530,6 +59542,15 @@
   },
   "journal": [
     {
+      "k": "mw3o08pukxf94",
+      "t": 1793890365474,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "311648",
+      "n": "Make Me Tingle",
+      "d": "sources 20 → 22"
+    },
+    {
       "k": "mw3nvimys5ei0",
       "t": 1793890145050,
       "b": "614d778ed0",
@@ -62218,15 +62239,6 @@
       "a": "edit",
       "i": "233221",
       "n": "Oh My Ghost Clients",
-      "d": ""
-    },
-    {
-      "k": "mvl2vv6fhrdq9",
-      "t": 1792766498199,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "270420",
-      "n": "No Tail to Tell",
       "d": ""
     }
   ],
