@@ -59436,13 +59436,33 @@
         "en": "Single in Seoul",
         "auto": true,
         "at": 1793891171889
+      },
+      {
+        "id": "rmw3xznli",
+        "title": "Le Deuil de l’Automne",
+        "status": "wait",
+        "bl": false,
+        "kind": "dl",
+        "votes": 1,
+        "tmdb": "304452",
+        "media": "tv",
+        "year": "2026",
+        "poster": "/r5N8g3WEes9x1z76Sil614Do9Bv.jpg",
+        "origin": "Chine",
+        "en": "The Lament of Autumn",
+        "auto": true,
+        "at": 1793907134262
       }
     ],
-    "at": 1793891171889,
+    "at": 1793907134262,
     "log": [
       {
         "v": "0d11effa",
         "t": 1793891171889
+      },
+      {
+        "v": "0c642155",
+        "t": 1793907134262
       }
     ]
   },
