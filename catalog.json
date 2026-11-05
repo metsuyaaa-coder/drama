@@ -7165,7 +7165,13 @@
               "name": "Épisode 38",
               "overview": "",
               "air_date": "2026-11-01",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-dunq9hriat3u.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -7195,7 +7201,7 @@
       ],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1793814421549,
+      "updatedAt": 1793889691924,
       "trend": 0
     },
     {
@@ -59506,6 +59512,15 @@
   },
   "journal": [
     {
+      "k": "mw3nlt0mjrk5w",
+      "t": 1793889691942,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "304452",
+      "n": "The Lament of Autumn",
+      "d": "sources 37 → 38"
+    },
+    {
       "k": "mw3nbfz3lj4kl",
       "t": 1793889491434,
       "b": "614d778ed0",
@@ -62194,15 +62209,6 @@
       "a": "edit",
       "i": "288328",
       "n": "Light the Dark",
-      "d": ""
-    },
-    {
-      "k": "mvl2lzapwuuf7",
-      "t": 1792766036977,
-      "b": "614d778ed0",
-      "a": "add",
-      "i": "338103",
-      "n": "Quite the Girl",
       "d": ""
     }
   ],
