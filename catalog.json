@@ -33804,7 +33804,13 @@
               "name": "Épisode 24",
               "overview": "",
               "air_date": "",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-4odh5ovffobb.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -33812,7 +33818,13 @@
               "name": "Épisode 25",
               "overview": "",
               "air_date": "",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-amds7qk3xj3p.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -33945,7 +33957,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1793714940690,
+      "updatedAt": 1793890039415,
       "trend": 0,
       "eprt": 48
     },
@@ -59512,6 +59524,15 @@
   },
   "journal": [
     {
+      "k": "mw3nt94zeuls6",
+      "t": 1793890039427,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "286171",
+      "n": "Tigers Sniff the Rose",
+      "d": "sources 23 → 25"
+    },
+    {
       "k": "mw3nlt0mjrk5w",
       "t": 1793889691942,
       "b": "614d778ed0",
@@ -62200,15 +62221,6 @@
       "a": "edit",
       "i": "297982",
       "n": "Irreplaceable",
-      "d": ""
-    },
-    {
-      "k": "mvl2ox8uiz85g",
-      "t": 1792766174286,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "288328",
-      "n": "Light the Dark",
       "d": ""
     }
   ],
