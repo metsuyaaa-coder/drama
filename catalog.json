@@ -58881,22 +58881,6 @@
         "at": 1793373704993
       },
       {
-        "id": "rmvviso3k",
-        "title": "광안 : 세자의 여자",
-        "status": "wait",
-        "bl": false,
-        "kind": "stream",
-        "votes": 3,
-        "tmdb": "320953",
-        "media": "tv",
-        "year": "2026",
-        "poster": "/8D2b2CztzsNNt9eArEeEfHCUKzJ.jpg",
-        "origin": "Corée",
-        "en": "Wild Eyes: The Woman of the Prince",
-        "auto": true,
-        "at": 1793397884672
-      },
-      {
         "id": "rmvweui6y",
         "title": "Deserter Pursuit",
         "status": "wait",
@@ -59105,17 +59089,7 @@
         "at": 1793865167007
       }
     ],
-    "at": 1793869944879,
-    "log": [
-      {
-        "v": "ba6668db",
-        "t": 1793865167007
-      },
-      {
-        "v": "4c5060ad",
-        "t": 1793869944879
-      }
-    ]
+    "at": 1793881801862
   },
   "founder": {
     "name": "Meyriuu",
