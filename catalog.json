@@ -59420,9 +59420,31 @@
         "en": "Ace Troops",
         "auto": true,
         "at": 1793865167007
+      },
+      {
+        "id": "rmw3ohiy9",
+        "title": "싱글 인 서울",
+        "status": "wait",
+        "bl": false,
+        "kind": "stream",
+        "votes": 1,
+        "tmdb": "717088",
+        "media": "movie",
+        "year": "2023",
+        "poster": "/26naUaD3na4jhGkFoT5nl734Yev.jpg",
+        "origin": "Corée",
+        "en": "Single in Seoul",
+        "auto": true,
+        "at": 1793891171889
       }
     ],
-    "at": 1793881801862
+    "at": 1793891171889,
+    "log": [
+      {
+        "v": "0d11effa",
+        "t": 1793891171889
+      }
+    ]
   },
   "founder": {
     "name": "Meyriuu",
