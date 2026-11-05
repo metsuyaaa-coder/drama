@@ -58476,7 +58476,7 @@
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/original/mWJT8AOY72FyInCPxUNCW9Y82rR.jpg",
       "posterV": 2,
-      "backdrop": "https://image.tmdb.org/t/p/original/oVL5YOeccwfDZvdxXUZQTbCy6Yz.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/original/cziabztruxhb7ETFuFDMHZOgJDF.jpg",
       "videos": [
         {
           "key": "Rq_bgcQyfsI",
@@ -58789,7 +58789,7 @@
       ],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1793889141159
+      "updatedAt": 1793889208465
     }
   ],
   "deletedLinks": [
@@ -59505,6 +59505,15 @@
     "at": 1793280056955
   },
   "journal": [
+    {
+      "k": "mw3nbfz3lj4kl",
+      "t": 1793889208479,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "270431",
+      "n": "When I Meet the Moon",
+      "d": ""
+    },
     {
       "k": "mw3na0205n416",
       "t": 1793889141192,
@@ -62195,15 +62204,6 @@
       "i": "338103",
       "n": "Quite the Girl",
       "d": ""
-    },
-    {
-      "k": "mvl1wxckx1u1c",
-      "t": 1792764868052,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "300146",
-      "n": "Where the Mask Ends",
-      "d": "sources 15 → 16"
     }
   ],
   "refreshAt": 1792423579957
