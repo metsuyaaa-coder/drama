@@ -25088,7 +25088,13 @@
               "name": "Épisode 28",
               "overview": "",
               "air_date": "2026-11-03",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-na8ga9cq03wj.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -25118,7 +25124,7 @@
       ],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1793714777164,
+      "updatedAt": 1793890145037,
       "trend": 87
     },
     {
@@ -59524,6 +59530,15 @@
   },
   "journal": [
     {
+      "k": "mw3nvimys5ei0",
+      "t": 1793890145050,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "300146",
+      "n": "Where the Mask Ends",
+      "d": "sources 27 → 28"
+    },
+    {
       "k": "mw3nt94zeuls6",
       "t": 1793890039427,
       "b": "614d778ed0",
@@ -62212,15 +62227,6 @@
       "a": "edit",
       "i": "270420",
       "n": "No Tail to Tell",
-      "d": ""
-    },
-    {
-      "k": "mvl2rmapam6uy",
-      "t": 1792766300065,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "297982",
-      "n": "Irreplaceable",
       "d": ""
     }
   ],
