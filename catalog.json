@@ -21220,7 +21220,7 @@
       ],
       "rating": "7.8",
       "pop": 11.1743,
-      "status": "Returning Series",
+      "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/fRgQ7noEDUoP6w2EEQlQgvnrpiy.jpg",
       "posterV": 2,
       "backdrop": "https://image.tmdb.org/t/p/original/hZvPXP2jtZ7oSu0pSeOB3bB8fhJ.jpg",
@@ -21427,7 +21427,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1793130253583,
+      "updatedAt": 1793846632691,
       "networks": [
         "Netflix"
       ],
@@ -59209,6 +59209,15 @@
   },
   "journal": [
     {
+      "k": "mw2xywc7oxaoh",
+      "t": 1793846632759,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "300529",
+      "n": "Straight to Hell",
+      "d": ""
+    },
+    {
       "k": "mw2xwcelwsvtp",
       "t": 1793846513613,
       "b": "614d778ed0",
@@ -61898,15 +61907,6 @@
       "i": "286171",
       "n": "Tigers Sniff the Rose",
       "d": ""
-    },
-    {
-      "k": "mvl1hlq16da38",
-      "t": 1792764153145,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "304452",
-      "n": "The Lament of Autumn",
-      "d": "sources 18 → 21"
     }
   ],
   "refreshAt": 1792423579957
