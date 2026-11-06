@@ -56678,7 +56678,7 @@
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/dcqOJ4p61cCgfR2zY8r43oF59kW.jpg",
       "posterV": 2,
-      "backdrop": "https://image.tmdb.org/t/p/original/xk1FjT0j5YraC0CQgtq7AGQxT0j.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/original/lVVcf8QzTaaLU0RefnhKmz4GOGo.jpg",
       "videos": [
         {
           "key": "RRq4GRGFQdM",
@@ -57293,7 +57293,7 @@
       ],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1793968912247
+      "updatedAt": 1794008315303
     },
     {
       "id": "253955",
@@ -60619,6 +60619,15 @@
   },
   "journal": [
     {
+      "k": "mw5m8bfjputxz",
+      "t": 1794008315359,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "272484",
+      "n": "Fated Hearts",
+      "d": ""
+    },
+    {
       "k": "mw5m5yr80wpn7",
       "t": 1794008205620,
       "b": "614d778ed0",
@@ -63307,15 +63316,6 @@
       "a": "edit",
       "i": "294636",
       "n": "The Ordinary Jackpot",
-      "d": ""
-    },
-    {
-      "k": "mvl3vzvnbgzmq",
-      "t": 1792768183907,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "307106",
-      "n": "Between Steps",
       "d": ""
     }
   ],
