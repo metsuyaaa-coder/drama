@@ -21398,7 +21398,13 @@
               "name": "Épisode 5",
               "overview": "",
               "air_date": "2026-11-05",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-0ms2k2ckrz5d.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -21451,7 +21457,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1793968827200,
+      "updatedAt": 1793981827004,
       "networks": [
         "MBS"
       ],
@@ -60538,6 +60544,15 @@
   },
   "journal": [
     {
+      "k": "mw56gkw85fakh",
+      "t": 1793981827016,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "334323",
+      "n": "Welcome back, First love.",
+      "d": "sources 4 → 5"
+    },
+    {
       "k": "mw56cjiivdwj5",
       "t": 1793981638602,
       "b": "614d778ed0",
@@ -63226,15 +63241,6 @@
       "a": "edit",
       "i": "316197",
       "n": "Dive into You",
-      "d": ""
-    },
-    {
-      "k": "mvl3lkznho9b5",
-      "t": 1792767698051,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "305644",
-      "n": "Four Hands, Two Sonatas",
       "d": ""
     }
   ],
