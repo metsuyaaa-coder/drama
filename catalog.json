@@ -44,6 +44,7 @@
         "100 วันปฏิบัติการลวง",
         "100 días de engaño",
         "100 de zile de minciuni",
+        "100 Μέρες Απάτης",
         "100 Ngày Lừa Dối",
         "100 dni oszustwa",
         "100日の嘘",
@@ -65,8 +66,8 @@
         "Action & Adventure",
         "Drame"
       ],
-      "rating": "9.4",
-      "pop": 34.9256,
+      "rating": "8.5",
+      "pop": 33.1353,
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/w500/bZHEU42QynnMrHUWK1Hhvj2cdPA.jpg",
       "posterV": 2,
@@ -74,7 +75,7 @@
       "cast": [
         {
           "name": "Kim You-jung",
-          "character": "Lee Ga-kyung",
+          "character": "Lee Ga-kyung / Keum Seo-Hee",
           "id": 140335
         },
         {
@@ -118,7 +119,7 @@
           "id": 4776019
         },
         {
-          "name": "김인권",
+          "name": "Kim In-kwon",
           "character": "Han Cheol-ryong",
           "id": 115904
         },
@@ -272,7 +273,7 @@
             {
               "number": 6,
               "name": "Épisode 6",
-              "overview": "",
+              "overview": "Sato Shinichi confronts his past. As the interrogation escalates, so do Ga-kyung's fears — leading her to find unexpected solace in Tae-ung.",
               "air_date": "2026-10-25",
               "sources": [
                 {
@@ -300,7 +301,7 @@
             {
               "number": 7,
               "name": "Épisode 7",
-              "overview": "",
+              "overview": "Tae-ung confides in Ga-kyung about his hidden family past, bringing the two closer together. Meanwhile, Ga-kyung makes some discoveries of her own.",
               "air_date": "2026-10-31",
               "sources": [
                 {
@@ -313,7 +314,7 @@
             {
               "number": 8,
               "name": "Épisode 8",
-              "overview": "",
+              "overview": "Fuzzy about the details of their shared night out, Ga-kyung finds herself flustered in Tae-ung's presence. Later, Tae-ung faces some harsh truths.",
               "air_date": "2026-11-01",
               "sources": [
                 {
@@ -387,7 +388,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793564017393,
+      "updatedAt": 1793968760224,
       "trend": 0,
       "videos": [
         {
@@ -415,7 +416,7 @@
       "genres": [
         "Drame"
       ],
-      "rating": "7.2",
+      "rating": "7.3",
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/pJsIzlTjmx07ilwEkl0cglrMVa1.jpg",
       "backdrop": "https://image.tmdb.org/t/p/original/uc1p1PEbEMpdIHqnU9TESNC6Jhp.jpg",
@@ -625,13 +626,13 @@
         "丑闻",
         "스캔들"
       ],
-      "pop": 32.402,
+      "pop": 12.7121,
       "origin_country": [
         "KR"
       ],
       "original_language": "ko",
       "posterV": 2,
-      "updatedAt": 1793130200824,
+      "updatedAt": 1793968760892,
       "networks": [
         "Netflix"
       ],
@@ -691,11 +692,11 @@
         "Drame",
         "Crime"
       ],
-      "rating": "9.4",
-      "pop": 57.9931,
+      "rating": "9.0",
+      "pop": 45.2356,
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/original/u0DrgmScTheIyCVEaeDKQ3sagLu.jpg",
-      "backdrop": "https://image.tmdb.org/t/p/original/mDYIV71RL3mkaW8IfSGNthuVB7l.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/original/rjzbt01IVAJVp9WBdRl4mT3Yl2w.jpg",
       "cast": [
         {
           "name": "Kim Ji-won",
@@ -927,7 +928,7 @@
             {
               "number": 7,
               "name": "Épisode 7",
-              "overview": "",
+              "overview": "Su-jeong remains determined to save her patient, but a sudden disappearance complicates matters. A VIP code-blue crisis hits the hospital.",
               "air_date": "2026-10-30",
               "sources": [
                 {
@@ -940,7 +941,7 @@
             {
               "number": 8,
               "name": "Épisode 8",
-              "overview": "",
+              "overview": "A young patient with an extreme diagnosis catches Su-jeong's attention. Hospital director Bu Seung-gwon remains doubtful of Su-jeong's true identity.",
               "air_date": "2026-10-31",
               "sources": [
                 {
@@ -992,7 +993,7 @@
       ],
       "original_language": "ko",
       "posterV": 2,
-      "updatedAt": 1793536982462,
+      "updatedAt": 1793968761575,
       "networks": [
         "SBS"
       ],
@@ -1324,13 +1325,13 @@
         "Wife of a 21st Century Prince",
         "21세기 대군부인"
       ],
-      "pop": 20.6223,
+      "pop": 19.8702,
       "origin_country": [
         "KR"
       ],
       "original_language": "ko",
       "posterV": 2,
-      "updatedAt": 1793130202515,
+      "updatedAt": 1793968762319,
       "posterCustom": true,
       "networks": [
         "MBC"
@@ -1364,11 +1365,11 @@
         "Action"
       ],
       "rating": "6.8",
-      "pop": 541.9762,
+      "pop": 376.6821,
       "status": "Released",
       "runtime": 160,
       "poster": "https://image.tmdb.org/t/p/original/jcu78jA4HBXjqSLPOcv1IZvFCvF.jpg",
-      "backdrop": "https://image.tmdb.org/t/p/original/qqHFLg90IUSoTmSMpKOOW5RyqN3.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/original/j96rurZqmBjyY37Fncl3IB0qJNe.jpg",
       "cast": [
         {
           "name": "Hwang Jung-min",
@@ -1376,7 +1377,7 @@
           "id": 68903
         },
         {
-          "name": "조인성",
+          "name": "Zo In-sung",
           "character": "Go Sung-ki",
           "id": 127564
         },
@@ -1411,12 +1412,12 @@
           "id": 564847
         },
         {
-          "name": "음문석",
+          "name": "Um Mun-suk",
           "character": "Yang-bae",
           "id": 2370779
         },
         {
-          "name": "임현식",
+          "name": "Im Hyun-sik",
           "character": "Hae-sul",
           "id": 1305674
         },
@@ -1491,7 +1492,7 @@
       ],
       "trend": 79,
       "posterV": 2,
-      "updatedAt": 1793130202985,
+      "updatedAt": 1793968762726,
       "videos": [
         {
           "key": "ztqZZO-lLsE",
@@ -1525,7 +1526,7 @@
         "Drame"
       ],
       "rating": "9.2",
-      "pop": 15.8442,
+      "pop": 13.9996,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/eTzC7L3HgsNNBEkTpl9s3tVJUYv.jpg",
       "backdrop": "https://image.tmdb.org/t/p/original/fYL4I6cezb06BHhQlrNjNhy7jhf.jpg",
@@ -1917,7 +1918,7 @@
       ],
       "original_language": "ko",
       "posterV": 2,
-      "updatedAt": 1793130203825,
+      "updatedAt": 1793968764206,
       "networks": [
         "tvN"
       ],
@@ -1960,6 +1961,7 @@
         "ดิ่งลึกสู่ใจเธอ",
         "الغوص في حبك",
         "Погружение к тебе",
+        "در تو غوطه‌ور شوم",
         "向你Dive",
         "潜入你心",
         "Погружаясь в тебя",
@@ -1972,8 +1974,8 @@
         "Drame",
         "Science-Fiction & Fantastique"
       ],
-      "rating": "9.0",
-      "pop": 13.9271,
+      "rating": "6.0",
+      "pop": 11.0277,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/aNsDcDBTME099JMT0kfwnib9ONY.jpg",
       "posterV": 2,
@@ -2250,7 +2252,7 @@
             {
               "number": 10,
               "name": "Épisode 10",
-              "overview": "",
+              "overview": "The twins piece together the events after discovering Jun-mo’s true identity, while Jun-mo threatens Woo-jae, demanding that he bring him the camcorder.",
               "air_date": "2026-10-25",
               "sources": [
                 {
@@ -2263,7 +2265,7 @@
             {
               "number": 11,
               "name": "Épisode 11",
-              "overview": "",
+              "overview": "As Woo-jae destroys the camcorder, the time travel comes to an end, bringing them back to 2026. However, while filming a movie, someone attacks Woo-jae and Ha-na with a knife.",
               "air_date": "2026-10-31",
               "sources": [
                 {
@@ -2276,7 +2278,7 @@
             {
               "number": 12,
               "name": "Épisode 12",
-              "overview": "",
+              "overview": "To save Ha-na, who is in a coma, Woo-jae and Ha-ru travel through time. Can they uncover Jun-mo’s crimes and change their fate?",
               "air_date": "2026-11-01",
               "sources": [
                 {
@@ -2294,7 +2296,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793627723378,
+      "updatedAt": 1793968765256,
       "trend": 0,
       "videos": [
         {
@@ -2310,7 +2312,7 @@
           "lab": "Anglais"
         }
       ],
-      "eprt": 63,
+      "eprt": 64,
       "posterCustom": true
     },
     {
@@ -2359,8 +2361,8 @@
         "Drame",
         "Comédie"
       ],
-      "rating": "6.3",
-      "pop": 40.24,
+      "rating": "5.3",
+      "pop": 29.7549,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/iKgdhgBPi1cCRRqsUgaxUDRuFP6.jpg",
       "posterV": 2,
@@ -2682,8 +2684,8 @@
             },
             {
               "number": 12,
-              "name": "Épisode 12",
-              "overview": "",
+              "name": "Who Do We Love the Most?",
+              "overview": "Namgung tries to stop Su-a from putting herself at risk, but the conflict between them deepens as neither is willing to back down. Meanwhile, under pressure from Ju-hyeok, Tae-seung heads to a rural village, where he encounters someone unexpected.",
               "air_date": "2026-10-25",
               "sources": [
                 {
@@ -2710,8 +2712,8 @@
             },
             {
               "number": 13,
-              "name": "Épisode 13",
-              "overview": "",
+              "name": "Who Will We Be With in Ten Years?",
+              "overview": "With less than a month left, Namgung and Mi-do decide to see it through. Watching them, Tae-seung and Su-a realize that their own feelings for each other have grown too deep to turn back.",
               "air_date": "2026-10-31",
               "sources": [
                 {
@@ -2728,8 +2730,8 @@
             },
             {
               "number": 14,
-              "name": "Épisode 14",
-              "overview": "",
+              "name": "What Brought Us Together?",
+              "overview": "After their feelings pull them in different directions, Namgung and Mi-do meet again, as do Tae-seung and Su-a. At a moment that can no longer be put off, the four finally confront their true feelings.",
               "air_date": "2026-11-01",
               "sources": [
                 {
@@ -2753,7 +2755,7 @@
         "VOSTFR",
         "VF"
       ],
-      "updatedAt": 1793566109892,
+      "updatedAt": 1793968766233,
       "trend": 0,
       "videos": [
         {
@@ -2816,7 +2818,7 @@
         "Mystère"
       ],
       "rating": "8.1",
-      "pop": 13.4477,
+      "pop": 10.2342,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/2mwgHfOyrFrmvozjFoEXHRdfGhv.jpg",
       "backdrop": "https://image.tmdb.org/t/p/original/3bHz9dYSZ5XDxY0zDaBpYgUOhE2.jpg",
@@ -3061,7 +3063,7 @@
       ],
       "original_language": "ko",
       "posterV": 2,
-      "updatedAt": 1793130206274,
+      "updatedAt": 1793968767195,
       "networks": [
         "Netflix"
       ],
@@ -3118,7 +3120,7 @@
         "Drame"
       ],
       "rating": "8.3",
-      "pop": 10.1173,
+      "pop": 8.6446,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/9fYt7bfsTOLEKmiHqX2x9fGduhn.jpg",
       "backdrop": "https://image.tmdb.org/t/p/original/eBD46F44qKGPZiRLffO4q3JF8Hc.jpg",
@@ -3539,7 +3541,7 @@
       ],
       "original_language": "ko",
       "posterV": 2,
-      "updatedAt": 1793464753851,
+      "updatedAt": 1793968768268,
       "networks": [
         "tvN"
       ],
@@ -3599,7 +3601,7 @@
         "Drame"
       ],
       "rating": "8.8",
-      "pop": 14.956,
+      "pop": 13.5707,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/m56EaJ4zLG84F8jpNT7ZmaL0IAS.jpg",
       "backdrop": "https://image.tmdb.org/t/p/original/efaMS00Fevc3fw2dbeP7rh22O6D.jpg",
@@ -3625,7 +3627,7 @@
           "id": 1576065
         },
         {
-          "name": "최원영",
+          "name": "Choi Won-young",
           "character": "Eun-gyeol's Father",
           "id": 1258630
         },
@@ -4051,7 +4053,7 @@
       ],
       "original_language": "ko",
       "posterV": 2,
-      "updatedAt": 1793130208214,
+      "updatedAt": 1793968769245,
       "networks": [
         "tvN"
       ],
@@ -4116,7 +4118,7 @@
         "Comédie"
       ],
       "rating": "8.5",
-      "pop": 19.3027,
+      "pop": 16.2073,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/xBnscv5BrJREKVSvh0le61y4KDk.jpg",
       "backdrop": "https://image.tmdb.org/t/p/original/eSB0fD6CbNW3LT8Z55V07fmYFpo.jpg",
@@ -4568,7 +4570,7 @@
       ],
       "original_language": "ko",
       "posterV": 2,
-      "updatedAt": 1793130209109,
+      "updatedAt": 1793968770204,
       "networks": [
         "SBS"
       ],
@@ -4643,7 +4645,7 @@
         "Comédie"
       ],
       "rating": "9.4",
-      "pop": 50.9233,
+      "pop": 36.8263,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/fMECSPrTmRClSViMsXFYmiYIcWP.jpg",
       "backdrop": "https://image.tmdb.org/t/p/original/vyG93jhmPL7tBIhRtCLa5mdBKob.jpg",
@@ -4868,7 +4870,7 @@
       ],
       "original_language": "ko",
       "posterV": 2,
-      "updatedAt": 1793130209944,
+      "updatedAt": 1793968771203,
       "networks": [
         "Netflix"
       ],
@@ -4927,7 +4929,7 @@
         "Science-Fiction & Fantastique"
       ],
       "rating": "8.3",
-      "pop": 35.8525,
+      "pop": 31.0271,
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/w500/pTEFqAjLd5YTsMD6NSUxV6Dq7A6.jpg",
       "backdrop": "https://image.tmdb.org/t/p/original/8hp2CuGnw1iP5dLBVMAPUv23swx.jpg",
@@ -5158,7 +5160,7 @@
       ],
       "original_language": "ko",
       "posterV": 2,
-      "updatedAt": 1793130210823,
+      "updatedAt": 1793968772229,
       "networks": [
         "Netflix"
       ],
@@ -5219,8 +5221,8 @@
       "genres": [
         "Drame"
       ],
-      "rating": "7.6",
-      "pop": 12.4354,
+      "rating": "7.5",
+      "pop": 8.4519,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/u0mCeqVvQW2HEfrRy1we9UklsQd.jpg",
       "backdrop": "https://image.tmdb.org/t/p/original/mIjERiWlnDzQWHTcZdtucLmTCeO.jpg",
@@ -5231,7 +5233,7 @@
           "id": 1130611
         },
         {
-          "name": "仲里依紗",
+          "name": "Riisa Naka",
           "character": "Rin Tohyama",
           "id": 122468
         },
@@ -5409,7 +5411,7 @@
       ],
       "original_language": "ja",
       "posterV": 2,
-      "updatedAt": 1793130211659,
+      "updatedAt": 1793968773215,
       "networks": [
         "Netflix"
       ],
@@ -5455,8 +5457,8 @@
         "Crime",
         "Drame"
       ],
-      "rating": "8.2",
-      "pop": 12.5913,
+      "rating": "8.1",
+      "pop": 12.3188,
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/original/2yi3gOIQt22NjJam1u5jqBa3GQ1.jpg",
       "backdrop": "https://image.tmdb.org/t/p/original/fRR6jHutlHuYxMeZp4cZfjgafzd.jpg",
@@ -5699,7 +5701,7 @@
       ],
       "original_language": "ko",
       "posterV": 2,
-      "updatedAt": 1793130212435,
+      "updatedAt": 1793968774208,
       "networks": [
         "Disney+"
       ],
@@ -5763,10 +5765,10 @@
         "Drame"
       ],
       "rating": "8.8",
-      "pop": 40.2075,
+      "pop": 34.5994,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/ecRrKGXfflZmDZBD4irdkybClT.jpg",
-      "backdrop": "https://image.tmdb.org/t/p/original/rN9xHDp83kZ3cOr82JR1b4rFIFk.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/original/cnb3SelfQKewpo0bw4HCNRHjwY4.jpg",
       "cast": [
         {
           "name": "Kim Young-kwang",
@@ -5782,6 +5784,11 @@
           "name": "차우민",
           "character": "Ji Eun-ho",
           "id": 3186373
+        },
+        {
+          "name": "Heo Dong-won",
+          "character": "",
+          "id": 1332468
         }
       ],
       "seasons": [
@@ -6012,7 +6019,7 @@
       "original_language": "ko",
       "posterV": 2,
       "trend": 0,
-      "updatedAt": 1793130213240,
+      "updatedAt": 1793968775244,
       "networks": [
         "Netflix"
       ],
@@ -6060,8 +6067,8 @@
         "Comédie",
         "Science-Fiction & Fantastique"
       ],
-      "rating": "7.1",
-      "pop": 6.1351,
+      "rating": "7.4",
+      "pop": 4.1347,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/npbdAzfLAx6zXnIMN4nYs7l8mgX.jpg",
       "backdrop": "https://image.tmdb.org/t/p/original/SYzF7EFhhKTspLDzogpel2HHDl.jpg",
@@ -6315,7 +6322,7 @@
         "VOSTFR"
       ],
       "posterV": 2,
-      "updatedAt": 1793130214157,
+      "updatedAt": 1793968776201,
       "networks": [
         "Lifetime",
         "U+ Mobile TV"
@@ -6355,9 +6362,9 @@
       "genres": [
         "Drame"
       ],
-      "rating": "8.0",
-      "pop": 50.6392,
-      "status": "Returning Series",
+      "rating": "7.7",
+      "pop": 33.6817,
+      "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/P7mvLJgsMWPGGkdYlY1rL14sIA.jpg",
       "backdrop": "https://image.tmdb.org/t/p/original/vD84yLJVVd7cC2lKF8sEukQG2A3.jpg",
       "cast": [
@@ -6652,8 +6659,8 @@
             },
             {
               "number": 22,
-              "name": "Épisode 22",
-              "overview": "",
+              "name": "Watching Over Day and Night",
+              "overview": "When Ye Pingjun goes to pick up her mother, the wooden lodge is on fire. She rushes into the fire to save her, only to realize that her mother has run out of strength.",
               "air_date": "2026-10-23",
               "sources": [
                 {
@@ -6665,8 +6672,8 @@
             },
             {
               "number": 23,
-              "name": "Épisode 23",
-              "overview": "",
+              "name": "Amnesia",
+              "overview": "Ye Pingjun finally wakes up, but she has no memory of Yu Changxuan.",
               "air_date": "2026-10-24",
               "sources": [
                 {
@@ -6678,8 +6685,8 @@
             },
             {
               "number": 24,
-              "name": "Épisode 24",
-              "overview": "",
+              "name": "Two Different Worlds",
+              "overview": "Ye Pingjun is grateful for Yu Changxuan's care and devotion, but she still can't remember anything from the past and always feels as though she and Yu Changxuan belong to two different worlds.",
               "air_date": "2026-10-25",
               "sources": [
                 {
@@ -6691,9 +6698,9 @@
             },
             {
               "number": 25,
-              "name": "Épisode 25",
-              "overview": "",
-              "air_date": "",
+              "name": "Kidnapping",
+              "overview": "Lan Qing secretly instructs the coachman to take Ye Pingjun to a secluded spot, where Tong Chunhai's men abduct her.",
+              "air_date": "2026-10-26",
               "sources": [
                 {
                   "name": "VIDMOLY",
@@ -6704,9 +6711,9 @@
             },
             {
               "number": 26,
-              "name": "Épisode 26",
-              "overview": "",
-              "air_date": "",
+              "name": "Lan Qing's Past",
+              "overview": "As Yu Changxuan and Ye Pingjun pack to move back to the Yu family home, he tells her about Lan Qing's history with his older brother, Yu Mingxuan.",
+              "air_date": "2026-10-26",
               "sources": [
                 {
                   "name": "VIDMOLY",
@@ -6717,9 +6724,9 @@
             },
             {
               "number": 27,
-              "name": "Épisode 27",
-              "overview": "",
-              "air_date": "",
+              "name": "The Mold",
+              "overview": "Yu Changxuan sets up a sting operation to track down the mole in contact with Cai Fuhu and sets up surveillance at the Laifu Teahouse. On the day of the meeting, Kuang Bingwen shows up.",
+              "air_date": "2026-10-27",
               "sources": [
                 {
                   "name": "VIDMOLY",
@@ -6730,9 +6737,9 @@
             },
             {
               "number": 28,
-              "name": "Épisode 28",
-              "overview": "",
-              "air_date": "",
+              "name": "Medicinal Pillow",
+              "overview": "Jin Xuan nearly miscarries due to an allergic reaction to the musk in the medicinal pillow. The pillow was handmade by Ye Ping Jun. Furious, Yu Zhong Quan seeks to punish her, but Yu Chang Xuan vigorously defends his wife.",
+              "air_date": "2026-10-27",
               "sources": [
                 {
                   "name": "VIDMOLY",
@@ -6743,9 +6750,9 @@
             },
             {
               "number": 29,
-              "name": "Épisode 29",
-              "overview": "",
-              "air_date": "",
+              "name": "Paying for Her Father's Sins",
+              "overview": "News breaks that Tao Xi Li may have played a part in Yu Ming Xuan's death. Yu Zhong Quan takes his anger out on Ye Ping Jun, locking her in the ancestral hall and forcing her to kneel in penance for her father.",
+              "air_date": "2026-10-28",
               "sources": [
                 {
                   "name": "VIDMOLY",
@@ -6756,9 +6763,9 @@
             },
             {
               "number": 30,
-              "name": "Épisode 30",
-              "overview": "",
-              "air_date": "",
+              "name": "Fate Unknown",
+              "overview": "Yu Chang Xuan visits the arsenal to oversee a test, but an explosion reduces the site to rubble. He and several others are buried in the wreckage, their fate unknown.",
+              "air_date": "2026-10-28",
               "sources": [
                 {
                   "name": "VIDMOLY",
@@ -6769,9 +6776,9 @@
             },
             {
               "number": 31,
-              "name": "Épisode 31",
-              "overview": "",
-              "air_date": "",
+              "name": "Sweet Days",
+              "overview": "On the night of the Mid-Autumn Festival, the entire Yu family gathers at the Yu Residence. Yu Chang Xuan takes Ye Ping Jun on a nighttime stroll through the streets, buying her sweet potatoes and playing air gun at the stall, enjoying a simple yet sweet moment.",
+              "air_date": "2026-10-29",
               "sources": [
                 {
                   "name": "VIDMOLY",
@@ -6782,9 +6789,9 @@
             },
             {
               "number": 32,
-              "name": "Épisode 32",
-              "overview": "",
-              "air_date": "",
+              "name": "Lies",
+              "overview": "Jiang Xue Ting reveals to Ye Ping Jun that Yu Chang Xuan threatened her with his own life and tells him the truth about her mother's death. Yu Chang Xuan admits to lying to Ye Ping Jun. Ye Ping Jun breaks down. Thinking that all they have between them is just lies, she decides to leave by boat.",
+              "air_date": "2026-10-29",
               "sources": [
                 {
                   "name": "VIDMOLY",
@@ -6795,9 +6802,9 @@
             },
             {
               "number": 33,
-              "name": "Épisode 33",
-              "overview": "",
-              "air_date": "",
+              "name": "Memories Resurface",
+              "overview": "Ye Ping Jun goes to the hospital for a checkup and learns she has been pregnant for nearly two months. Overjoyed, she sets out for headquarters to tell Yu Chang Xuan, but on the way, she passes a shop on fire, and the thick smoke and flames awaken her lost memories.",
+              "air_date": "2026-10-30",
               "sources": [
                 {
                   "name": "VIDMOLY",
@@ -6808,9 +6815,9 @@
             },
             {
               "number": 34,
-              "name": "Épisode 34",
-              "overview": "",
-              "air_date": "",
+              "name": "Miscarriage",
+              "overview": "Ye Ping Jun arrives in Siping Town, preparing to take a train south. Three thugs target and pester her. She falls while evading their grapple, causing her to suffer a miscarriage.",
+              "air_date": "2026-10-31",
               "sources": [
                 {
                   "name": "VIDMOLY",
@@ -6821,9 +6828,9 @@
             },
             {
               "number": 35,
-              "name": "Épisode 35",
-              "overview": "",
-              "air_date": "",
+              "name": "Unmasked",
+              "overview": "While Yu Chang Xuan is inspecting the front lines, he is ambushed by Colonel Lu. News of his death reaches Yu Residence. Kuang Bing Wen and Chen Wan Qiao finally show their true colors.",
+              "air_date": "2026-11-01",
               "sources": [
                 {
                   "name": "VIDMOLY",
@@ -6834,9 +6841,9 @@
             },
             {
               "number": 36,
-              "name": "Épisode 36",
-              "overview": "",
-              "air_date": "",
+              "name": "A Marriage Alliance",
+              "overview": "With the Yu Army losing ground, Yu Zhong Quan seeks help from the Jun family. They demand a marriage alliance in return. Facing the possible destruction of his army, he agrees to their terms on his own.",
+              "air_date": "2026-11-01",
               "sources": [
                 {
                   "name": "VIDMOLY",
@@ -6847,9 +6854,9 @@
             },
             {
               "number": 37,
-              "name": "Épisode 37",
-              "overview": "",
-              "air_date": "",
+              "name": "Forced Compromise",
+              "overview": "Ye Ping Jun gives birth to a boy. However, Jiang Xue Ting takes him away by force. Using his safety as a bargaining chip, he demands that Ye Ping Jun stop resisting. Ye Ping Jun is forced to compromise.",
+              "air_date": "2026-11-01",
               "sources": [
                 {
                   "name": "VIDMOLY",
@@ -6860,9 +6867,9 @@
             },
             {
               "number": 38,
-              "name": "Épisode 38",
-              "overview": "",
-              "air_date": "",
+              "name": "Falling Out",
+              "overview": "Yu Chang Xuan finds out that his father has been going to the cemetery in the western suburbs and follows him. He sees his father erecting a tombstone for Ye Ping Jun. Yu Zhong Quan admits to causing Ping Jun's death. Yu Chang Xuan is consumed by grief and anger and has a falling out with his father.",
+              "air_date": "2026-11-01",
               "sources": [
                 {
                   "name": "VIDMOLY",
@@ -6873,16 +6880,16 @@
             },
             {
               "number": 39,
-              "name": "Épisode 39",
-              "overview": "",
-              "air_date": "",
+              "name": "The Death of Jiang Xue Ting",
+              "overview": "Before he dies, Jiang Xue Ting tells Ye Ping Jun that Little Yu is alive. He gives her a travel pass and urges her to leave quickly.",
+              "air_date": "2026-11-01",
               "sources": []
             },
             {
               "number": 40,
               "name": "Épisode 40",
               "overview": "",
-              "air_date": "",
+              "air_date": "2026-11-01",
               "sources": []
             }
           ]
@@ -6894,7 +6901,7 @@
         "VOSTFR"
       ],
       "posterV": 2,
-      "updatedAt": 1793889691924,
+      "updatedAt": 1793968777188,
       "trend": 0,
       "networks": [
         "Hunan Television",
@@ -6909,7 +6916,7 @@
           "lab": "Anglais"
         }
       ],
-      "eprt": 48
+      "eprt": 50
     },
     {
       "id": "208336",
@@ -6955,7 +6962,7 @@
         "Mystère"
       ],
       "rating": "8.2",
-      "pop": 10.8266,
+      "pop": 9.662,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/hk8u9W7YBZf106zBGX8P4COVpWl.jpg",
       "posterV": 2,
@@ -7312,7 +7319,7 @@
         "VOSTFR",
         "VF"
       ],
-      "updatedAt": 1793130215153,
+      "updatedAt": 1793968778200,
       "networks": [
         "Disney+"
       ],
@@ -7357,8 +7364,9 @@
         "موسم الفراولة",
         "Chuyện Tình Mùa Dâu",
         "Temporada de Amor",
-        "爱上草莓的季节",
         "메리베리러브",
+        "Merii Berii Rabu",
+        "Meri Beri Reobeu",
         "Веселая ягодная любовь",
         "メリーベリーラブ"
       ],
@@ -7368,8 +7376,8 @@
         "Comédie",
         "Drame"
       ],
-      "rating": "9.8",
-      "pop": 27.2809,
+      "rating": "8.3",
+      "pop": 20.8843,
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/w500/av7wQdYaicBCCUFQ6jRlm9ylZx4.jpg",
       "posterV": 2,
@@ -7575,7 +7583,7 @@
         "VOSTFR",
         "VF"
       ],
-      "updatedAt": 1793814525300,
+      "updatedAt": 1793968779242,
       "networks": [
         "Nippon TV"
       ],
@@ -7609,9 +7617,9 @@
         "Колонія",
         "屍速禁區",
         "ยึดร่างคลั่ง",
+        "Zona cero",
         "Zona Zero",
         "Bầy Xác Sống",
-        "Zona cero",
         "Koloni",
         "Kolonija",
         "مستعمرة",
@@ -7621,6 +7629,7 @@
         "კოლონია",
         "コロニー／群体",
         "Колончлол",
+        "Umamusume: Pretty Derby - Egy új korszak kezdete",
         "Gunche",
         "Grove",
         "Zona Zero (Colony)",
@@ -7638,7 +7647,7 @@
         "Science-Fiction"
       ],
       "rating": "8.2",
-      "pop": 89.3123,
+      "pop": 46.7006,
       "status": "Released",
       "runtime": 123,
       "poster": "https://image.tmdb.org/t/p/original/wC69brhk65GvrgNQdqLRUqtneUH.jpg",
@@ -7728,7 +7737,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793468940480,
+      "updatedAt": 1793968779948,
       "trend": 43,
       "posterCustom": true,
       "videos": [
@@ -7787,7 +7796,7 @@
         "Comédie"
       ],
       "rating": "9.1",
-      "pop": 27.0684,
+      "pop": 21.3334,
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/w500/pGqcErS76y8bcvZZSFUefdZOg2x.jpg",
       "posterV": 2,
@@ -8046,7 +8055,7 @@
             {
               "number": 10,
               "name": "Épisode 10",
-              "overview": "",
+              "overview": "Jihoon reveals his feelings for Youjin. At a welcome party, she runs into Minjae, now a professor.",
               "air_date": "2026-11-03",
               "sources": [
                 {
@@ -8079,7 +8088,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793720633105,
+      "updatedAt": 1793968781259,
       "networks": [
         "ENA"
       ],
@@ -8122,6 +8131,7 @@
         "Заставь меня дрожать",
         "Izazovi mi trnce",
         "Hazme vibrar",
+        "منو قلقلک بده",
         "让我心动",
         "Make Me Tremble"
       ],
@@ -8132,7 +8142,7 @@
         "Comédie"
       ],
       "rating": "9.0",
-      "pop": 21.1103,
+      "pop": 21.6568,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/e4MlbtE02So4D5DJy197DbiAxqs.jpg",
       "posterV": 2,
@@ -8340,7 +8350,7 @@
             {
               "number": 7,
               "name": "Épisode 7",
-              "overview": "",
+              "overview": "Met with resistance after confessing her feelings to Dal, Yeon-su proposes a tailor-made relationship just for him.",
               "air_date": "2026-10-29",
               "sources": [
                 {
@@ -8353,7 +8363,7 @@
             {
               "number": 8,
               "name": "Épisode 8",
-              "overview": "",
+              "overview": "Dal’s true feelings for Yeon-su begins to surface at an untimely moment.",
               "air_date": "2026-10-29",
               "sources": [
                 {
@@ -8366,7 +8376,7 @@
             {
               "number": 9,
               "name": "Épisode 9",
-              "overview": "",
+              "overview": "Standing up to her family's fierce opposition, Yeon-su moves in with Dal instead.",
               "air_date": "2026-11-05",
               "sources": [
                 {
@@ -8379,7 +8389,7 @@
             {
               "number": 10,
               "name": "Épisode 10",
-              "overview": "",
+              "overview": "As Loand opens its flagship store, Yeon-su wins her family's approval and begins a real romance with Dal at last.",
               "air_date": "2026-11-05",
               "sources": [
                 {
@@ -8397,7 +8407,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793890398867,
+      "updatedAt": 1793968782203,
       "trend": 44,
       "networks": [
         "TVING"
@@ -8449,7 +8459,7 @@
         "Drame"
       ],
       "rating": "7.4",
-      "pop": 12.2463,
+      "pop": 8.7022,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/hub0e50sPTkEH8FKhJmXCW60xVl.jpg",
       "posterV": 2,
@@ -8492,7 +8502,7 @@
         },
         {
           "name": "박보경",
-          "character": "Park Hyun-sook",
+          "character": "General Manager Park",
           "id": 3555452
         },
         {
@@ -8649,7 +8659,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793130219034,
+      "updatedAt": 1793968783240,
       "networks": [
         "TVING"
       ],
@@ -8697,7 +8707,7 @@
         "Familial"
       ],
       "rating": "6.0",
-      "pop": 5.2176,
+      "pop": 12.8925,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/9JaeSxCUS7XWPb6ta6KmRDct6xh.jpg",
       "posterV": 2,
@@ -8918,7 +8928,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793130219943,
+      "updatedAt": 1793968784200,
       "networks": [
         "KBS Drama"
       ],
@@ -8983,7 +8993,7 @@
         "Comédie"
       ],
       "rating": "8.7",
-      "pop": 28.3645,
+      "pop": 21.1814,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/9TcVxrWEJeFjoTXDBSrqqXNptye.jpg",
       "posterV": 2,
@@ -9399,7 +9409,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793130220773,
+      "updatedAt": 1793968785198,
       "networks": [
         "Netflix"
       ],
@@ -9457,7 +9467,7 @@
         "Crime"
       ],
       "rating": "8.4",
-      "pop": 13.4537,
+      "pop": 10.429,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/t735IT5vH3vSjm63EusFVg5HEqd.jpg",
       "posterV": 2,
@@ -9714,7 +9724,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793130221616,
+      "updatedAt": 1793968786213,
       "networks": [
         "MBC"
       ],
@@ -9768,7 +9778,7 @@
         "Drame"
       ],
       "rating": "8.3",
-      "pop": 8.1367,
+      "pop": 6.3093,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/k1uOMMHv0o9xPJuxh0q28nqN83Y.jpg",
       "posterV": 2,
@@ -9922,7 +9932,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793130222498,
+      "updatedAt": 1793968787219,
       "networks": [
         "Coupang Play"
       ],
@@ -9989,7 +9999,7 @@
         "Drame"
       ],
       "rating": "8.7",
-      "pop": 16.8625,
+      "pop": 12.9362,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/cGpfU5zWci552BFDfrby8iRCAPu.jpg",
       "posterV": 2,
@@ -10200,7 +10210,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793130223431,
+      "updatedAt": 1793968788209,
       "networks": [
         "tvN"
       ],
@@ -10263,8 +10273,8 @@
         "Science-Fiction & Fantastique",
         "Drame"
       ],
-      "rating": "8.1",
-      "pop": 12.7812,
+      "rating": "8.0",
+      "pop": 10.7723,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/mUoFBZvlnmiKBXFsH1Z5JpS6MHr.jpg",
       "posterV": 2,
@@ -10408,7 +10418,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793130224235,
+      "updatedAt": 1793968789197,
       "networks": [
         "Netflix"
       ],
@@ -10456,6 +10466,7 @@
         "El caso del Espantapájaros",
         "Опудало",
         "הדחליל",
+        "Strach z Gangseong",
         "かかし",
         "허수아비"
       ],
@@ -10467,7 +10478,7 @@
         "Drame"
       ],
       "rating": "8.2",
-      "pop": 7.9185,
+      "pop": 6.0184,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/dCJBMHvNxTn4mxUWV5y4yolwEXo.jpg",
       "posterV": 2,
@@ -10693,7 +10704,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793130225052,
+      "updatedAt": 1793968790193,
       "networks": [
         "ENA"
       ],
@@ -10751,7 +10762,7 @@
         "Mystère"
       ],
       "rating": "8.8",
-      "pop": 8.9599,
+      "pop": 6.5123,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/z74qJEf1MRsEEIKFgbeyBAHmJXg.jpg",
       "posterV": 2,
@@ -10977,7 +10988,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793130225825,
+      "updatedAt": 1793968791247,
       "networks": [
         "KBS2"
       ],
@@ -11039,7 +11050,7 @@
         "Crime"
       ],
       "rating": "8.5",
-      "pop": 12.2911,
+      "pop": 9.9484,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/yeudYKqoLPiTsdbUEIpRDbNGEHl.jpg",
       "posterV": 2,
@@ -11270,7 +11281,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793130226633,
+      "updatedAt": 1793968792191,
       "networks": [
         "JTBC"
       ],
@@ -11318,9 +11329,9 @@
         "Ξεπουλήθηκα για Σένα",
         "Beru tě všema deseti",
         "Miłość w promocji",
+        "本日も完売しました",
         "今天也售罄了",
         "קנית אותי",
-        "本日も完売しました",
         "Специальное предложение",
         "Сегодня снова всё распродано",
         "Sold Out Today",
@@ -11333,7 +11344,7 @@
         "Drame"
       ],
       "rating": "8.4",
-      "pop": 11.8449,
+      "pop": 8.9495,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/uPDaIn065n79UBLYr8zwnXis6n2.jpg",
       "posterV": 2,
@@ -11393,6 +11404,11 @@
           "name": "Jo Woo-ri",
           "character": "Moon Ae-ra",
           "id": 2081771
+        },
+        {
+          "name": "엄현경",
+          "character": "",
+          "id": 1623728
         }
       ],
       "seasons": [
@@ -11564,7 +11580,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793130227392,
+      "updatedAt": 1793968793201,
       "networks": [
         "SBS"
       ],
@@ -11635,8 +11651,8 @@
         "Comédie",
         "Drame"
       ],
-      "rating": "8.9",
-      "pop": 14.8066,
+      "rating": "8.8",
+      "pop": 9.8907,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/30P3ySNo0m0xNhHQMXzpmquLwxa.jpg",
       "posterV": 2,
@@ -11867,7 +11883,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793464658123,
+      "updatedAt": 1793968794206,
       "networks": [
         "tvN"
       ],
@@ -11917,8 +11933,8 @@
         "Drame",
         "Science-Fiction & Fantastique"
       ],
-      "rating": "8.2",
-      "pop": 9.7024,
+      "rating": "8.3",
+      "pop": 8.0537,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/kPHv37XVpyWCsae3gtHujw1wPyW.jpg",
       "posterV": 2,
@@ -12154,7 +12170,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793130229078,
+      "updatedAt": 1793968795194,
       "networks": [
         "JTBC"
       ],
@@ -12210,7 +12226,7 @@
         "Drame"
       ],
       "rating": "7.9",
-      "pop": 7.5338,
+      "pop": 7.377,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/4HsHVDD4K3IWr6jmTL5bIkM7qPV.jpg",
       "posterV": 2,
@@ -12343,7 +12359,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793130229862,
+      "updatedAt": 1793968796212,
       "networks": [
         "Netflix"
       ],
@@ -12399,7 +12415,7 @@
         "Science-Fiction & Fantastique"
       ],
       "rating": "6.8",
-      "pop": 7.4522,
+      "pop": 4.9206,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/iLf17aFCx2ESajFp1oyb03fmzNp.jpg",
       "posterV": 2,
@@ -12573,7 +12589,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793130230661,
+      "updatedAt": 1793968797211,
       "networks": [
         "Lifetime",
         "U+ Mobile TV"
@@ -12624,7 +12640,7 @@
         "Comédie"
       ],
       "rating": "9.4",
-      "pop": 12.6371,
+      "pop": 10.2903,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/cBiwrUwUNNYXTc5xrDEQWcMqftd.jpg",
       "posterV": 2,
@@ -12835,7 +12851,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793130231456,
+      "updatedAt": 1793968798206,
       "networks": [
         "ENA"
       ],
@@ -12897,7 +12913,7 @@
         "Drame"
       ],
       "rating": "8.2",
-      "pop": 11.68,
+      "pop": 8.1739,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/zwEYhe03vN1rbjF8Bsf9Dng0W8e.jpg",
       "posterV": 2,
@@ -13103,7 +13119,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793368863194,
+      "updatedAt": 1793968799205,
       "networks": [
         "ENA"
       ],
@@ -13173,8 +13189,8 @@
         "Crime",
         "Drame"
       ],
-      "rating": "8.5",
-      "pop": 26.6204,
+      "rating": "8.4",
+      "pop": 20.8745,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/mxa7YxVln3Rwnd2Va82PoclTznj.jpg",
       "posterV": 2,
@@ -13219,6 +13235,16 @@
           "name": "Won Hyun-jun",
           "character": "Kang Guk-cheol (Mole Cricket)",
           "id": 2240619
+        },
+        {
+          "name": "엄현경",
+          "character": "",
+          "id": 1623728
+        },
+        {
+          "name": "함은정",
+          "character": "",
+          "id": 1252339
         }
       ],
       "seasons": [
@@ -13364,7 +13390,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793130233080,
+      "updatedAt": 1793968800210,
       "networks": [
         "SBS"
       ],
@@ -13417,11 +13443,10 @@
       "overview": "Chan Seon Wu est un animateur plein d'énergie, toujours souriant, mais derrière son allure joyeuse se cache un homme brisé : un accident lui a fait perdre sa mémoire et son audition.\nSong Ha Ran, designer talentueuse et aînée de trois frères et sœurs, vit dans un monde qu'elle contrôle à la perfection. Elle s'entend avec tout le monde, mais garde ses distances, préférant ne pas s'attacher.\nLeurs chemins se croisent, et Ha Ran devient peu à peu le guide de Seon Wu dans sa vie chamboulée. Ensemble, ils vont apprendre que même dans le silence et l'oubli, il est possible de se reconnecter au monde... et à soi-même.",
       "genres": [
         "Mystère",
-        "Drame",
-        "Familial"
+        "Drame"
       ],
       "rating": "8.1",
-      "pop": 9.7959,
+      "pop": 8.7224,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/dc4YYEMeoiYLas0ao5UZugXeSSo.jpg",
       "posterV": 2,
@@ -13657,7 +13682,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793130233931,
+      "updatedAt": 1793968801201,
       "networks": [
         "MBC"
       ],
@@ -13716,7 +13741,7 @@
         "Comédie"
       ],
       "rating": "8.8",
-      "pop": 13.5215,
+      "pop": 10.859,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/yVGZMiqDiuTpT5gmOFXUD7gZZxd.jpg",
       "posterV": 2,
@@ -13969,7 +13994,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793130234813,
+      "updatedAt": 1793968802189,
       "networks": [
         "Coupang Play"
       ],
@@ -14015,6 +14040,7 @@
         "احمق های شگفت انگیز",
         "SUPERpaka",
         "הוונדרפוּלס",
+        "ワンダーフールズ",
         "הטיפשים המופלאים",
         "더 원더 fools",
         "Deo B Tim",
@@ -14035,7 +14061,7 @@
         "Drame"
       ],
       "rating": "8.8",
-      "pop": 17.629,
+      "pop": 16.649,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/sDuoTe6bLbXwkW3fWLOknXwHYwt.jpg",
       "posterV": 2,
@@ -14245,7 +14271,7 @@
         "VOSTFR",
         "VF"
       ],
-      "updatedAt": 1793130235613,
+      "updatedAt": 1793968803190,
       "networks": [
         "Netflix"
       ],
@@ -14300,7 +14326,7 @@
         "Drame"
       ],
       "rating": "8.5",
-      "pop": 12.6394,
+      "pop": 9.6512,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/avO54r6aVZxS61XSUqJjWo58t1x.jpg",
       "posterV": 2,
@@ -14536,7 +14562,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793130236471,
+      "updatedAt": 1793968804204,
       "networks": [
         "tvN"
       ],
@@ -14598,11 +14624,11 @@
       "year": "2026",
       "overview": "Une mystérieuse application promet d'exaucer des vœux — avant de déclencher un compte à rebours vers la mort. Un groupe d'ados pris au piège doit briser l'engrenage pour survivre.",
       "genres": [
-        "Mystère",
-        "Drame"
+        "Drame",
+        "Mystère"
       ],
       "rating": "8.0",
-      "pop": 14.0148,
+      "pop": 10.839,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/oldJKLaDBPLDQBdXvdNTLCEehUI.jpg",
       "posterV": 2,
@@ -14766,7 +14792,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793130237275,
+      "updatedAt": 1793968805231,
       "networks": [
         "Netflix"
       ],
@@ -14825,7 +14851,7 @@
         "Drame"
       ],
       "rating": "8.1",
-      "pop": 14.6455,
+      "pop": 9.9565,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/5dgTRxtP5g07RSH5LEOl367Fuwi.jpg",
       "posterV": 2,
@@ -15061,7 +15087,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793130238079,
+      "updatedAt": 1793968806194,
       "networks": [
         "tvN"
       ],
@@ -15114,7 +15140,7 @@
         "Comédie"
       ],
       "rating": "7.7",
-      "pop": 14.2472,
+      "pop": 8.7144,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/sC0xzkx7e6JMSlN3BGy1bITeWck.jpg",
       "posterV": 2,
@@ -15392,7 +15418,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793130239095,
+      "updatedAt": 1793968807238,
       "networks": [
         "SBS"
       ],
@@ -15440,6 +15466,7 @@
         "Mój królewski wróg",
         "Η Βασιλική μου Νέμεσις",
         "Моят кралски враг",
+        "素晴らしき新世界",
         "美丽新世界",
         "帅气新世界",
         "Meotjin Shinsegye",
@@ -15456,8 +15483,8 @@
         "Comédie",
         "Science-Fiction & Fantastique"
       ],
-      "rating": "8.8",
-      "pop": 19.4392,
+      "rating": "8.7",
+      "pop": 15.8006,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/rYLQbyIvbEd0lF84iXrx7CbPcBB.jpg",
       "posterV": 2,
@@ -15494,7 +15521,7 @@
           "id": 2663919
         },
         {
-          "name": "윤주상",
+          "name": "Yun Ju-sang",
           "character": "Cha Dal-su",
           "id": 552069
         },
@@ -15699,7 +15726,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793130239916,
+      "updatedAt": 1793968808198,
       "networks": [
         "SBS"
       ],
@@ -15749,7 +15776,7 @@
         "Drame"
       ],
       "rating": "6.7",
-      "pop": 4.4664,
+      "pop": 2.762,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/aWWBq5tA2En7bxlTKh8XpCGJUFz.jpg",
       "posterV": 2,
@@ -15897,7 +15924,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793130240727,
+      "updatedAt": 1793968809312,
       "posterCustom": true,
       "networks": [
         "MBN Plus"
@@ -15945,8 +15972,8 @@
         "Mystère",
         "Drame"
       ],
-      "rating": "6.2",
-      "pop": 5.3128,
+      "rating": "6.7",
+      "pop": 3.9096,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/AuOpTRzztBKq0fAagGxc2tGexNO.jpg",
       "posterV": 2,
@@ -16120,7 +16147,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793130241525,
+      "updatedAt": 1793968810292,
       "networks": [
         "wavve"
       ],
@@ -16175,7 +16202,7 @@
         "Mystère"
       ],
       "rating": "7.9",
-      "pop": 11.0391,
+      "pop": 6.4281,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/ixBHQ96ryMa8Q0uIOFdUCjqRyy8.jpg",
       "posterV": 2,
@@ -16360,7 +16387,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793130242292,
+      "updatedAt": 1793968811216,
       "networks": [
         "Disney+"
       ],
@@ -16415,7 +16442,7 @@
         "Drame"
       ],
       "rating": "8.5",
-      "pop": 11.9702,
+      "pop": 9.1063,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/nXDJ4rlinP0WFPEN9sUXXImr56u.jpg",
       "posterV": 2,
@@ -16457,7 +16484,7 @@
           "id": 1258626
         },
         {
-          "name": "최원영",
+          "name": "Choi Won-young",
           "character": "Choi Dong-hyeon",
           "id": 1258630
         },
@@ -16831,7 +16858,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793130243080,
+      "updatedAt": 1793968812207,
       "networks": [
         "JTBC"
       ],
@@ -16876,7 +16903,7 @@
         "Drame"
       ],
       "rating": "0.5",
-      "pop": 4.0544,
+      "pop": 3.3528,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/7mKYQWgTDe0Zf13FXn8QYxPf18r.jpg",
       "posterV": 2,
@@ -17073,7 +17100,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793130243865,
+      "updatedAt": 1793968813195,
       "networks": [
         "MBS"
       ],
@@ -17108,8 +17135,8 @@
         "Drame"
       ],
       "rating": "",
-      "pop": 1.6864,
-      "status": "Ended",
+      "pop": 0.7986,
+      "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/w500/b8KrYRjYZEohssl8wKMsRbbxLMN.jpg",
       "posterV": 2,
       "backdrop": "https://image.tmdb.org/t/p/original/l3jPRm9xqJNkq3PYIdXrXE7aM81.jpg",
@@ -17252,7 +17279,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793661931664,
+      "updatedAt": 1793968814203,
       "networks": [
         "CBC"
       ]
@@ -17284,11 +17311,11 @@
         "Comédie"
       ],
       "rating": "4.0",
-      "pop": 5.7553,
+      "pop": 3.591,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/wc9IbG1FkxzGGSkrP3kxUDpt2Ls.jpg",
       "posterV": 2,
-      "backdrop": "https://image.tmdb.org/t/p/original/laZKQVzGS2quLi1iEAbuA6IxYk8.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/original/o6jJ6j0ZxaSebdrvLnxZjcqC12F.jpg",
       "cast": [
         {
           "name": "Kanna Hashimoto",
@@ -17568,7 +17595,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793130245570,
+      "updatedAt": 1793968815202,
       "networks": [
         "ABEMA"
       ],
@@ -17605,8 +17632,8 @@
         "Drame"
       ],
       "rating": "",
-      "pop": 3.3425,
-      "status": "Ended",
+      "pop": 2.2078,
+      "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/original/sAOEypaK8zSIP5a1Vlk7yLbaiIK.jpg",
       "posterV": 2,
       "backdrop": "https://image.tmdb.org/t/p/original/6oCCGi56rrSYNKIqfbrRxFEweBk.jpg",
@@ -17749,7 +17776,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793661886209,
+      "updatedAt": 1793968816217,
       "networks": [
         "BS TV Tokyo"
       ],
@@ -17780,7 +17807,7 @@
         "Comédie"
       ],
       "rating": "9.5",
-      "pop": 3.1929,
+      "pop": 2.7152,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/zrAv5ht5ORQycrERpHvdy5R2SXG.jpg",
       "posterV": 2,
@@ -17947,7 +17974,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793130247162,
+      "updatedAt": 1793968817192,
       "networks": [
         "MBS"
       ],
@@ -17976,8 +18003,8 @@
         "Drame"
       ],
       "rating": "8.0",
-      "pop": 2.603,
-      "status": "Ended",
+      "pop": 2.2029,
+      "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/w500/9ACz4RNhdAH1sZjW2x8OnWuUsqS.jpg",
       "posterV": 2,
       "backdrop": "https://image.tmdb.org/t/p/original/tGH6KZB1bGeJaIz9ZiSPLxbck22.jpg",
@@ -18112,7 +18139,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793661830910,
+      "updatedAt": 1793968818223,
       "networks": [
         "MBS"
       ]
@@ -18143,7 +18170,7 @@
         "Drame"
       ],
       "rating": "5.0",
-      "pop": 5.0229,
+      "pop": 2.4914,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/4FlQ5JdJLMLOrPo14KN4EZu3uuI.jpg",
       "posterV": 2,
@@ -18323,7 +18350,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793130248752,
+      "updatedAt": 1793968819215,
       "networks": [
         "TV Tokyo"
       ],
@@ -18350,6 +18377,7 @@
         "Hasta que la camiseta se seque",
         "直到T恤干了为止",
         "T-shirt ga Kawaku made",
+        "金曜ドラマ『Tシャツが乾くまで』",
         "티셔츠가 마를 때까지"
       ],
       "year": "2026",
@@ -18359,7 +18387,7 @@
         "Mystère"
       ],
       "rating": "5.5",
-      "pop": 7.9941,
+      "pop": 5.4807,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/xVZvNASRqY91hD09g1cXHpErhGX.jpg",
       "posterV": 2,
@@ -18386,7 +18414,7 @@
           "id": 228079
         },
         {
-          "name": "松山ケンイチ",
+          "name": "Kenichi Matsuyama",
           "character": "Mitsuru Seo",
           "id": 79037
         },
@@ -18549,7 +18577,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793130249554,
+      "updatedAt": 1793968820250,
       "networks": [
         "TBS"
       ],
@@ -18593,14 +18621,14 @@
         "Mystère"
       ],
       "rating": "8.0",
-      "pop": 6.0378,
-      "status": "Ended",
+      "pop": 4.8689,
+      "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/original/jWFblgNFKpKmkQ6akAnIY2lSXgS.jpg",
       "posterV": 2,
       "backdrop": "https://image.tmdb.org/t/p/original/mOALTFnD4MjvXIYdTlEl5aUEQT0.jpg",
       "cast": [
         {
-          "name": "松村北斗",
+          "name": "Hokuto Matsumura",
           "character": "Sota Yukimura",
           "id": 1256882
         },
@@ -18803,7 +18831,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793661965791,
+      "updatedAt": 1793968821200,
       "networks": [
         "Nippon TV"
       ],
@@ -18850,7 +18878,7 @@
         "Action & Adventure"
       ],
       "rating": "8.0",
-      "pop": 10.0747,
+      "pop": 6.4142,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/kllmJ1DdzuRszNNwFFu0M7V55Fg.jpg",
       "posterV": 2,
@@ -18902,7 +18930,7 @@
           "id": 70209
         },
         {
-          "name": "原田美枝子",
+          "name": "Mieko Harada",
           "character": "Miyuki Shimura",
           "id": 72607
         },
@@ -19008,7 +19036,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793130251096,
+      "updatedAt": 1793968822235,
       "networks": [
         "Netflix"
       ],
@@ -19052,7 +19080,7 @@
         "Comédie"
       ],
       "rating": "7.7",
-      "pop": 5.8506,
+      "pop": 3.6564,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/d78INqowmEx6DeoqqtE9UZakFTz.jpg",
       "posterV": 2,
@@ -19262,7 +19290,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793130251948,
+      "updatedAt": 1793968823205,
       "networks": [
         "TBS"
       ],
@@ -19298,7 +19326,7 @@
         "Crime"
       ],
       "rating": "6.9",
-      "pop": 5.926,
+      "pop": 4.3121,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/69MPQL5lEcmI3x82tgCSVUZGha.jpg",
       "posterV": 2,
@@ -19503,7 +19531,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793130252776,
+      "updatedAt": 1793968824206,
       "networks": [
         "TBS"
       ],
@@ -19560,8 +19588,8 @@
         "Drame"
       ],
       "rating": "7.8",
-      "pop": 11.1743,
-      "status": "Ended",
+      "pop": 8.4925,
+      "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/w500/fRgQ7noEDUoP6w2EEQlQgvnrpiy.jpg",
       "posterV": 2,
       "backdrop": "https://image.tmdb.org/t/p/original/hZvPXP2jtZ7oSu0pSeOB3bB8fhJ.jpg",
@@ -19757,7 +19785,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793846632691,
+      "updatedAt": 1793968825192,
       "networks": [
         "Netflix"
       ],
@@ -19795,6 +19823,7 @@
         "綁架遊戲 kiDnap GAME",
         "Trò Chơi Bắt Cóc",
         "لعبة الاختطاف",
+        "Игра в похищение",
         "Kiddo Nappu Gēmu",
         "キッドナップ ゲーム"
       ],
@@ -19805,7 +19834,7 @@
         "Drame"
       ],
       "rating": "5.0",
-      "pop": 13.7075,
+      "pop": 11.0783,
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/w500/tjbKBHKqFLDdqscv3aVMVpmkGxj.jpg",
       "posterV": 2,
@@ -19918,8 +19947,8 @@
             },
             {
               "number": 4,
-              "name": "Épisode 4",
-              "overview": "",
+              "name": "Breaking Point",
+              "overview": "Only seven days remain in the game. Surgeon Han Kiju struggles with his mission: “Kill someone.” As a doctor, he encounters countless opportunities to take a life. Yet it is precisely because he is a doctor that he cannot bring himself to do so. With concern for his beloved daughter weighing heavily on his mind, Kiju is pushed ever closer to breaking point.",
               "air_date": "2026-10-27",
               "sources": [
                 {
@@ -19932,8 +19961,8 @@
             },
             {
               "number": 5,
-              "name": "Épisode 5",
-              "overview": "",
+              "name": "The Clues",
+              "overview": "Having decided to join forces to solve the case, Toshiro Niide and Han Kiju fly to Taipei in search of clues, hoping to speak with fellow participant Christina Lin. Her mission is: \"Release a video of her affair to the entire world.\" Christina is torn between the reputation she has built as a model and saving the husband who is being held captive.",
               "air_date": "2026-11-03",
               "sources": [
                 {
@@ -19994,7 +20023,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793717523863,
+      "updatedAt": 1793968826238,
       "networks": [
         "Fuji TV",
         "Channel A"
@@ -20013,7 +20042,7 @@
           "lab": "Anglais"
         }
       ],
-      "eprt": 59
+      "eprt": 57
     },
     {
       "id": "334323",
@@ -20038,7 +20067,7 @@
         "Drame"
       ],
       "rating": "",
-      "pop": 3.2676,
+      "pop": 2.4384,
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/w500/gZ7dPo58d30aAJ05RtqrgTEFmhs.jpg",
       "posterV": 2,
@@ -20177,7 +20206,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793380769138,
+      "updatedAt": 1793968827200,
       "networks": [
         "MBS"
       ],
@@ -20214,7 +20243,7 @@
         "Mystère"
       ],
       "rating": "8.5",
-      "pop": 8.7417,
+      "pop": 4.7467,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/t69nmUrT8G4HQ452nLDzkZujEDj.jpg",
       "posterV": 2,
@@ -20405,7 +20434,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793130256215,
+      "updatedAt": 1793968828198,
       "networks": [
         "iQiyi"
       ],
@@ -20472,7 +20501,7 @@
         "Mystère"
       ],
       "rating": "8.5",
-      "pop": 24.8188,
+      "pop": 19.4928,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/f6urgYb39ZDHQCZmkzTDmZc5DpS.jpg",
       "posterV": 2,
@@ -20757,7 +20786,7 @@
         "VOSTFR"
       ],
       "posterCustom": true,
-      "updatedAt": 1793130257030,
+      "updatedAt": 1793968829248,
       "networks": [
         "Disney+"
       ],
@@ -20816,7 +20845,7 @@
         "Crime"
       ],
       "rating": "6.6",
-      "pop": 7.8981,
+      "pop": 5.2383,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/hwEfhJNLii8oUfuiRBPk11DDv8y.jpg",
       "posterV": 2,
@@ -20833,7 +20862,7 @@
           "id": 3353541
         },
         {
-          "name": "庹宗華",
+          "name": "Tou Tsung-hua",
           "character": "Thackery Huang / Fixer Celestial",
           "id": 1366128
         },
@@ -20996,7 +21025,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793130257804,
+      "updatedAt": 1793968830199,
       "eprt": 44
     },
     {
@@ -21035,12 +21064,12 @@
         "با این حال",
         "Algoitjiman",
         "Тем не менее",
-        "Я знаю, но",
         "Так или иначе",
+        "Я знаю, но",
         "รักนี้ห้ามไม่ได้",
         "เนเวอร์เดอะเลส: รักนี้ห้ามไม่ได้",
-        "Yine de",
         "Buna Rağmen",
+        "Yine de",
         "I Know But"
       ],
       "year": "2021",
@@ -21048,8 +21077,8 @@
       "genres": [
         "Drame"
       ],
-      "rating": "7.4",
-      "pop": 8.1107,
+      "rating": "7.3",
+      "pop": 6.3366,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/zBzdzNeGjYSrPbHrgF6fGTSTGil.jpg",
       "posterV": 2,
@@ -21359,7 +21388,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793130258586,
+      "updatedAt": 1793968831195,
       "videos": [
         {
           "key": "rR-R-kL7B80",
@@ -21424,8 +21453,8 @@
         "Mystère",
         "Drame"
       ],
-      "rating": "7.5",
-      "pop": 10.6221,
+      "rating": "7.6",
+      "pop": 7.3319,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/8hZqZB4DAC1Ebzbk80zc0H80SNa.jpg",
       "posterV": 2,
@@ -21585,7 +21614,7 @@
         "VOSTFR",
         "VF"
       ],
-      "updatedAt": 1793130259436,
+      "updatedAt": 1793968832246,
       "posterCustom": true,
       "videos": [
         {
@@ -21636,7 +21665,7 @@
         "Drame"
       ],
       "rating": "7.5",
-      "pop": 6.3652,
+      "pop": 4.6566,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/iiBkY6mrYWdyosaHtJQm0pFXyBt.jpg",
       "posterV": 2,
@@ -21873,7 +21902,7 @@
         "VOSTFR"
       ],
       "posterCustom": true,
-      "updatedAt": 1793130260327,
+      "updatedAt": 1793968833229,
       "videos": [
         {
           "key": "v_x2FUX7jVk",
@@ -21923,7 +21952,7 @@
         "Drame"
       ],
       "rating": "8.1",
-      "pop": 5.9239,
+      "pop": 4.0723,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/ysc63ghJEM5mXBd9qWEgB0ohWTy.jpg",
       "posterV": 2,
@@ -22108,7 +22137,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793130261186,
+      "updatedAt": 1793968834191,
       "videos": [
         {
           "key": "93CiNzRELLc",
@@ -22153,11 +22182,11 @@
         "Drame"
       ],
       "rating": "8.0",
-      "pop": 9.5901,
+      "pop": 9.067,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/u6RP5nWJidQRkPTFzqAjBgiyip8.jpg",
       "posterV": 2,
-      "backdrop": "https://image.tmdb.org/t/p/original/wHSxLJAGE6Y7PQecQfViEDzbNUx.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/original/h1bGO8w5hyn22DGNv0MOZKTog1X.jpg",
       "cast": [
         {
           "name": "包上恩",
@@ -22586,7 +22615,7 @@
         "VOSTFR"
       ],
       "posterCustom": true,
-      "updatedAt": 1793846513536,
+      "updatedAt": 1793968835191,
       "videos": [
         {
           "key": "m6aJOU2iMwc",
@@ -22637,7 +22666,7 @@
         "Drame"
       ],
       "rating": "8.3",
-      "pop": 13.0677,
+      "pop": 10.7356,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/hg9fl45RQVR2yZ63DUWqy0hCZ1G.jpg",
       "posterV": 2,
@@ -23141,7 +23170,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793130263108,
+      "updatedAt": 1793968836215,
       "videos": [
         {
           "key": "dBI_FXWoyII",
@@ -23168,6 +23197,7 @@
         "CN"
       ],
       "networks": [
+        "CCTV-8",
         "Youku"
       ],
       "original_language": "zh",
@@ -23191,6 +23221,7 @@
         "Kde končí maska",
         "Zamiana z dziedziczką",
         "Maske Düştüğünde",
+        "Destin sub mască",
         "Jia Jin Chai",
         "Женитьба на золотой шпильке",
         "Transfer Gold Hairpin",
@@ -23201,12 +23232,12 @@
       "genres": [
         "Drame"
       ],
-      "rating": "8.2",
-      "pop": 86.7996,
-      "status": "Returning Series",
+      "rating": "6.7",
+      "pop": 83.4738,
+      "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/lneFeeibBiJu7NpPlD3XUUb1pgI.jpg",
       "posterV": 2,
-      "backdrop": "https://image.tmdb.org/t/p/original/gAJV0W0RgpxxYJpaE8Hraa3Ohpp.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/original/q6VPQREsEGFccpWVF7wFvy9oc25.jpg",
       "cast": [
         {
           "name": "Tian Xiwei",
@@ -23448,7 +23479,7 @@
             {
               "number": 18,
               "name": "Épisode 18",
-              "overview": "",
+              "overview": "Désormais indépendante, Wei Rao accueille des réfugiés. Han Liao cherche désespérément ses faveurs, mais la maladie d'une parente ravive de vieilles querelles familiales.",
               "air_date": "2026-10-25",
               "sources": [
                 {
@@ -23461,7 +23492,7 @@
             {
               "number": 19,
               "name": "Épisode 19",
-              "overview": "",
+              "overview": "Des intrigues impériales imposent un tournoi martial pour remporter la main de Wei Rao, poussant Lu Zhuo, blessé, à affronter Han Liao. Mais la victoire a un prix tragique.",
               "air_date": "2026-10-26",
               "sources": [
                 {
@@ -23474,7 +23505,7 @@
             {
               "number": 20,
               "name": "Épisode 20",
-              "overview": "",
+              "overview": "Poussée par le deuil et la vengeance, Wei Rao refuse un refuge sûr. Mais de mystérieuses morts sur le domaine exposent sa maisonnée à des rivaux hostiles.",
               "air_date": "2026-10-27",
               "sources": [
                 {
@@ -23487,7 +23518,7 @@
             {
               "number": 21,
               "name": "Épisode 21",
-              "overview": "",
+              "overview": "La fortune cachée des Han éclate au grand jour tandis que Wei Rao trouve un allié inattendu. Han Liao la piège, mais de nouvelles preuves menacent de révéler ses crimes.",
               "air_date": "2026-10-28",
               "sources": [
                 {
@@ -23500,8 +23531,8 @@
             {
               "number": 22,
               "name": "Épisode 22",
-              "overview": "",
-              "air_date": "",
+              "overview": "Un exil royal plonge la cour dans le chaos. Pendant ce temps, Wei Rao assiste à un grand banquet tandis que les preuves d'une série d'enlèvements sur le domaine s'accumulent.",
+              "air_date": "2026-10-29",
               "sources": [
                 {
                   "name": "VIDMOLY",
@@ -23513,8 +23544,8 @@
             {
               "number": 23,
               "name": "Épisode 23",
-              "overview": "",
-              "air_date": "",
+              "overview": "Wei Rao découvre des captifs cachés dans une cour du domaine. Tandis que Lu Zhuo fait diversion, elle mène un raid audacieux pour les libérer.",
+              "air_date": "2026-10-30",
               "sources": [
                 {
                   "name": "VIDMOLY",
@@ -23526,8 +23557,8 @@
             {
               "number": 24,
               "name": "Épisode 24",
-              "overview": "",
-              "air_date": "",
+              "overview": "Alors qu'un prince déchu subit son châtiment, Wei Rao déjoue les manœuvres de la cour, où intrigues matrimoniales et alliances secrètes menacent son avenir avec Lu Zhuo.",
+              "air_date": "2026-10-31",
               "sources": [
                 {
                   "name": "VIDMOLY",
@@ -23539,8 +23570,8 @@
             {
               "number": 25,
               "name": "Épisode 25",
-              "overview": "",
-              "air_date": "",
+              "overview": "Une éclipse solaire rapproche Wei Rao et Lu Zhuo, mais une sombre découverte sur le passé de Wei et une sinistre prédiction lors d'un banquet printanier menacent son avenir.",
+              "air_date": "2026-11-01",
               "sources": [
                 {
                   "name": "VIDMOLY",
@@ -23552,8 +23583,8 @@
             {
               "number": 26,
               "name": "Épisode 26",
-              "overview": "",
-              "air_date": "",
+              "overview": "Les exigences du palais mettent Wei Rao à l'épreuve, mais une soudaine épidémie près du domaine déclenche une course contre la montre pour fermer les portes avant la panique.",
+              "air_date": "2026-11-02",
               "sources": [
                 {
                   "name": "VIDMOLY",
@@ -23565,8 +23596,8 @@
             {
               "number": 27,
               "name": "Épisode 27",
-              "overview": "",
-              "air_date": "",
+              "overview": "Tandis qu'une trahison insidieuse gangrène son foyer, des rivaux impériaux calomnient Wei Rao pour orchestrer sa cruelle humiliation publique.",
+              "air_date": "2026-11-03",
               "sources": [
                 {
                   "name": "VIDMOLY",
@@ -23578,8 +23609,8 @@
             {
               "number": 28,
               "name": "Épisode 28",
-              "overview": "",
-              "air_date": "",
+              "overview": "Des troubles généralisés poussent la famille royale à fuir, offrant à Wei Rao l'occasion inattendue de défier ses ennemis dans un dangereux jeu de balance des pouvoirs.",
+              "air_date": "2026-11-03",
               "sources": [
                 {
                   "name": "VIDMOLY",
@@ -23592,14 +23623,14 @@
               "number": 29,
               "name": "Épisode 29",
               "overview": "",
-              "air_date": "",
+              "air_date": "2026-11-03",
               "sources": []
             },
             {
               "number": 30,
               "name": "Épisode 30",
               "overview": "",
-              "air_date": "",
+              "air_date": "2026-11-03",
               "sources": []
             }
           ]
@@ -23611,7 +23642,7 @@
         "VOSTFR"
       ],
       "posterCustom": true,
-      "updatedAt": 1793890145037,
+      "updatedAt": 1793968837226,
       "trend": 86,
       "videos": [
         {
@@ -23666,8 +23697,8 @@
         "Comédie",
         "Drame"
       ],
-      "rating": "8.0",
-      "pop": 14.4523,
+      "rating": "8.1",
+      "pop": 12.4108,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/bD3ZosBZYfswsSFQs1kkHELJDF7.jpg",
       "posterV": 2,
@@ -24213,7 +24244,7 @@
         "VOSTFR"
       ],
       "posterCustom": true,
-      "updatedAt": 1793130264947,
+      "updatedAt": 1793968838233,
       "videos": [
         {
           "key": "Ce9zR79lf94",
@@ -24266,6 +24297,7 @@
         "Кохання під прикриттям",
         "Любовь под прикрытием",
         "为什么不知道我是女人？",
+        "伪装恋爱",
         "나의 유죄인간",
         "여자인 걸 왜 모르지?",
         "My Guilty Man"
@@ -24278,8 +24310,8 @@
         "Crime",
         "Action & Adventure"
       ],
-      "rating": "8.8",
-      "pop": 93.8258,
+      "rating": "9.0",
+      "pop": 85.0249,
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/w500/kSAXIAovLC4z7Wp2Hy8oqLmpkox.jpg",
       "posterV": 2,
@@ -24306,7 +24338,7 @@
           "id": 1875826
         },
         {
-          "name": "류승수",
+          "name": "Ryu Seung-soo",
           "character": "Kang Seok-goo",
           "id": 1243892
         },
@@ -24331,7 +24363,7 @@
           "id": 2123187
         },
         {
-          "name": "김인권",
+          "name": "Kim In-kwon",
           "character": "Park Bong",
           "id": 115904
         },
@@ -24410,7 +24442,7 @@
             {
               "number": 3,
               "name": "Épisode 3",
-              "overview": "",
+              "overview": "Yi-jun stays prickly but starts trusting Jae-hee. Jae-hee notices something suspicious about the milk Yi-jun was drinking and realizes he is being threatened. The investigating team thinks the perpetrator could be someone else. Jae-hee finally gets the chance to enter the room that's been banned from entering. She searches for the missing phone in the room but immediately faces danger.",
               "air_date": "2026-10-26",
               "sources": [
                 {
@@ -24423,7 +24455,7 @@
             {
               "number": 4,
               "name": "Épisode 4",
-              "overview": "",
+              "overview": "The investigating team finds traces of herbicide in the milk and suspects that someone is after Yi-jun. Jae-hee keeps an eye on Yoon Na-jung, the ambitious second daughter of Taekang, and follows Yi-jun to the family dinner, which is full of tension. Chairman Yoon makes an unexpected decision, causing a stir. Jae-hee joins Yi-jun for a drink and her drinking habit starts coming out.",
               "air_date": "2026-10-27",
               "sources": [
                 {
@@ -24436,7 +24468,7 @@
             {
               "number": 5,
               "name": "Épisode 5",
-              "overview": "",
+              "overview": "Jae-hee can't remember what happened the previous night and is anxious if Yi-jun is crabby because he got wind of her true identity while drunk. What's worse, Yi-jun's fiancée, Lee Si-a, returns from France. Yi-jun feels confused but stays cold toward Jae-hee, and Jae-hee is upset when Yi-jun goes to have dinner with Si-a. After much searching, Jae-hee finally gets hold of the key evidence.",
               "air_date": "2026-11-02",
               "sources": [
                 {
@@ -24449,7 +24481,7 @@
             {
               "number": 6,
               "name": "Épisode 6",
-              "overview": "",
+              "overview": "Yi-jun kisses Jae-hee but insists that he sees Jae-hee as a little brother and continues to nitpick. Meanwhile, the investigating team summons Hye-jung as a witness, shocking Yi-jun and Si-hyun. To make matters worse, Chairman Yoon is putting pressure on Yi-jun as well. Overwhelmed by the pressure and confusion, Yi-jun pushes away Jae-hee, who eventually has enough and says she will quit.",
               "air_date": "2026-11-03",
               "sources": [
                 {
@@ -24509,7 +24541,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793717454216,
+      "updatedAt": 1793968839238,
       "trend": 55,
       "videos": [
         {
@@ -24562,7 +24594,7 @@
         "Drame"
       ],
       "rating": "8.5",
-      "pop": 27.3079,
+      "pop": 34.4355,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/8QybFgm5jzNoJPjwWYW1r1ZBdOb.jpg",
       "posterV": 2,
@@ -25061,7 +25093,7 @@
         "VOSTFR"
       ],
       "posterCustom": true,
-      "updatedAt": 1793130266638,
+      "updatedAt": 1793968840236,
       "videos": [
         {
           "key": "AoM_Qz9I-QE",
@@ -25112,7 +25144,7 @@
         "Science-Fiction & Fantastique"
       ],
       "rating": "8.2",
-      "pop": 8.2692,
+      "pop": 6.7376,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/vM1LMQoKTtKGZ0RtT7KviIDGtkk.jpg",
       "posterV": 2,
@@ -25651,7 +25683,7 @@
         "VOSTFR"
       ],
       "posterCustom": true,
-      "updatedAt": 1793130267456,
+      "updatedAt": 1793968841229,
       "videos": [
         {
           "key": "V8dN-148qls",
@@ -25698,7 +25730,7 @@
         "Drame"
       ],
       "rating": "8.8",
-      "pop": 11.6146,
+      "pop": 11.1472,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/x7ENbberEtM1sOrTJbfK8RubvB.jpg",
       "posterV": 2,
@@ -26232,7 +26264,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793130268406,
+      "updatedAt": 1793968842241,
       "videos": [
         {
           "key": "4xUpx0B012E",
@@ -26281,8 +26313,8 @@
       "genres": [
         "Drame"
       ],
-      "rating": "7.6",
-      "pop": 9.2006,
+      "rating": "7.8",
+      "pop": 7.6869,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/hW9WvgtXk9Bf58bB4TZ1Dy0WquB.jpg",
       "posterV": 2,
@@ -26772,7 +26804,7 @@
         "VOSTFR"
       ],
       "posterCustom": true,
-      "updatedAt": 1793130269314,
+      "updatedAt": 1793968843203,
       "videos": [
         {
           "key": "Z3WCk7AHBzk",
@@ -26814,7 +26846,7 @@
         "Drame"
       ],
       "rating": "8",
-      "pop": 3.284,
+      "pop": 2.4169,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/9QeX8kaPvQw6aIDqRQqlX1iNST5.jpg",
       "posterV": 2,
@@ -27172,7 +27204,7 @@
         "VOSTFR"
       ],
       "posterCustom": true,
-      "updatedAt": 1793130270221,
+      "updatedAt": 1793968844184,
       "eprt": 18
     },
     {
@@ -27220,7 +27252,7 @@
         "Drame"
       ],
       "rating": "8.0",
-      "pop": 9.4068,
+      "pop": 6.4219,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/w8JLCb6hjnQ88Vpjd5B8bJgGlO9.jpg",
       "posterV": 2,
@@ -27579,7 +27611,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793130271283,
+      "updatedAt": 1793968845199,
       "posterCustom": true,
       "eprt": 61
     },
@@ -27638,7 +27670,7 @@
         "Comédie"
       ],
       "rating": "8.4",
-      "pop": 15.6052,
+      "pop": 11.9841,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/3ipCrnOCifJm9xeme8DzoMgmIND.jpg",
       "posterV": 2,
@@ -27980,7 +28012,7 @@
         "VOSTFR",
         "VF"
       ],
-      "updatedAt": 1793130272211,
+      "updatedAt": 1793968846219,
       "posterCustom": true,
       "eprt": 65
     },
@@ -28029,7 +28061,7 @@
         "Crime"
       ],
       "rating": "8.5",
-      "pop": 40.1604,
+      "pop": 30.3452,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/yu4oHDi6kO3cYXdmEnYT6SibATj.jpg",
       "posterV": 2,
@@ -28400,7 +28432,7 @@
         "VOSTFR",
         "VF"
       ],
-      "updatedAt": 1793130273203,
+      "updatedAt": 1793968847205,
       "posterCustom": true,
       "eprt": 59
     },
@@ -28447,8 +28479,8 @@
         "Mystère",
         "Action & Adventure"
       ],
-      "rating": "7.6",
-      "pop": 16.3744,
+      "rating": "7.7",
+      "pop": 13.8116,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/CPi0q1KWOc0I9sRR4mgX3HkUHy.jpg",
       "posterV": 2,
@@ -28908,7 +28940,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793130274498,
+      "updatedAt": 1793968848212,
       "posterCustom": true,
       "eprt": 65
     },
@@ -28957,7 +28989,7 @@
         "Mystère"
       ],
       "rating": "8.2",
-      "pop": 11.863,
+      "pop": 9.2247,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/qboMRJiRYkU5uf7fUJCuGs5gsoJ.jpg",
       "posterV": 2,
@@ -29212,7 +29244,7 @@
         "VOSTFR",
         "VF"
       ],
-      "updatedAt": 1793130275347,
+      "updatedAt": 1793968849196,
       "posterCustom": true,
       "eprt": 49
     },
@@ -29253,7 +29285,7 @@
         "Drame"
       ],
       "rating": "7.6",
-      "pop": 9.2173,
+      "pop": 8.7768,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/avupwPQBoIp8ahCaIYIQfT1N6ps.jpg",
       "posterV": 2,
@@ -29634,7 +29666,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793130276148,
+      "updatedAt": 1793968850254,
       "posterCustom": true,
       "eprt": 44
     },
@@ -29669,11 +29701,11 @@
         "Drame"
       ],
       "rating": "8.2",
-      "pop": 10.226,
+      "pop": 8.541,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/zwJGGY1KcWLacmGrKDQjhtRoBpx.jpg",
       "posterV": 2,
-      "backdrop": "https://image.tmdb.org/t/p/original/r5IwLS8f4ZTStZtdP0yEM2mlAKi.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/original/eZTq2kkhZ9AQtQ1H5SD7h1Q0PIc.jpg",
       "videos": [
         {
           "key": "tzSBxximk8c",
@@ -29709,7 +29741,7 @@
           "id": 1982964
         },
         {
-          "name": "何润东",
+          "name": "Peter Ho",
           "character": "Xie Huaigui",
           "id": 2337443
         },
@@ -30102,7 +30134,7 @@
         "VOSTFR"
       ],
       "posterCustom": true,
-      "updatedAt": 1793820577894,
+      "updatedAt": 1793968851236,
       "eprt": 44
     },
     {
@@ -30142,8 +30174,8 @@
       "genres": [
         "Drame"
       ],
-      "rating": "8.4",
-      "pop": 13.6031,
+      "rating": "7.6",
+      "pop": 9.3,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/1O9UEg4dR3Iv7y4kqjGJdHYBF2K.jpg",
       "posterV": 2,
@@ -30492,7 +30524,7 @@
         "VOSTFR"
       ],
       "posterCustom": true,
-      "updatedAt": 1793130277898,
+      "updatedAt": 1793968852198,
       "eprt": 45
     },
     {
@@ -30529,8 +30561,8 @@
         "Familial",
         "Soap"
       ],
-      "rating": "8.7",
-      "pop": 8.2956,
+      "rating": "6.8",
+      "pop": 8.5187,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/aT7eKnrhoK7Wi1imEuPW7RAtWmX.jpg",
       "posterV": 2,
@@ -30550,7 +30582,7 @@
           "id": 1183233
         },
         {
-          "name": "朱珠",
+          "name": "Zhu Zhu",
           "character": "Xu Miyu",
           "id": 1077356
         },
@@ -31103,7 +31135,7 @@
         "VOSTFR"
       ],
       "posterCustom": true,
-      "updatedAt": 1793130278910,
+      "updatedAt": 1793968853235,
       "eprt": 43
     },
     {
@@ -31131,8 +31163,8 @@
       "genres": [
         "Drame"
       ],
-      "rating": "9.3",
-      "pop": 17.3027,
+      "rating": "9.5",
+      "pop": 19.4681,
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/w500/5OuUPWLwr5JKLZBhzF7antNWdvY.jpg",
       "posterV": 2,
@@ -31201,7 +31233,7 @@
             {
               "number": 1,
               "name": "Épisode 1",
-              "overview": "",
+              "overview": "Mu Wanyao punishes the negligent maid. At the village school, Yan Shang learns of court affairs.",
               "air_date": "2026-10-23",
               "sources": [
                 {
@@ -31214,7 +31246,7 @@
             {
               "number": 2,
               "name": "Épisode 2",
-              "overview": "",
+              "overview": "Yan Shang seeks Mu Wanyao's help to reach Sheng'an, then conceals her whereabouts from officials.",
               "air_date": "2026-10-23",
               "sources": [
                 {
@@ -31227,7 +31259,7 @@
             {
               "number": 3,
               "name": "Épisode 3",
-              "overview": "",
+              "overview": "Yan Shang saves Mu Wanyao, while Liu Wenji plans to join him in Sheng'an for the imperial exams.",
               "air_date": "2026-10-23",
               "sources": [
                 {
@@ -31240,7 +31272,7 @@
             {
               "number": 4,
               "name": "Épisode 4",
-              "overview": "",
+              "overview": "Mu Wanyao confronts Yan Shang, then steps in to protect the Crown Prince from Minister Yu Cheng'an.",
               "air_date": "2026-10-23",
               "sources": [
                 {
@@ -31253,7 +31285,7 @@
             {
               "number": 5,
               "name": "Épisode 5",
-              "overview": "",
+              "overview": "Yan Shang befriends Wei Shu and confronts Zhang Renjing over a harassed singer.",
               "air_date": "2026-10-24",
               "sources": [
                 {
@@ -31266,7 +31298,7 @@
             {
               "number": 6,
               "name": "Épisode 6",
-              "overview": "",
+              "overview": "Mu Wanyao rejects Yang Si's proposal, while Yan Shang's mistaken for Wei Shu and mocked by Yang Si.",
               "air_date": "2026-10-24",
               "sources": [
                 {
@@ -31279,7 +31311,7 @@
             {
               "number": 7,
               "name": "Épisode 7",
-              "overview": "",
+              "overview": "Yan Shang plots revenge as Mu Wanyao approves Chunhua and Liu Wenji's marriage.",
               "air_date": "2026-10-25",
               "sources": [
                 {
@@ -31292,7 +31324,7 @@
             {
               "number": 8,
               "name": "Épisode 8",
-              "overview": "",
+              "overview": "Liu Wenji and Chunhua confess their feelings, while Yan Shang sets his trap.",
               "air_date": "2026-10-25",
               "sources": [
                 {
@@ -31305,7 +31337,7 @@
             {
               "number": 9,
               "name": "Épisode 9",
-              "overview": "",
+              "overview": "Yan Shang stands with Mu Wanyao against corruption as Yang Si suspects him of murder.",
               "air_date": "2026-10-26",
               "sources": [
                 {
@@ -31318,7 +31350,7 @@
             {
               "number": 10,
               "name": "Épisode 10",
-              "overview": "",
+              "overview": "Four friends vow loyalty regardless of rank, while Mu Wanyao uncovers a hidden force in court.",
               "air_date": "2026-10-26",
               "sources": [
                 {
@@ -31331,7 +31363,7 @@
             {
               "number": 11,
               "name": "Épisode 11",
-              "overview": "",
+              "overview": "Li Zhi pressures Mu Wanyao to marry Wei Shu, but the Emperor proposes Yan Shang as her husband.",
               "air_date": "2026-10-27",
               "sources": [
                 {
@@ -31344,7 +31376,7 @@
             {
               "number": 12,
               "name": "Épisode 12",
-              "overview": "",
+              "overview": "Princess Luling abducts Yan Shang on a rainy night, prompting Mu Wanyao to race to his rescue.",
               "air_date": "2026-10-27",
               "sources": [
                 {
@@ -31357,8 +31389,8 @@
             {
               "number": 13,
               "name": "Épisode 13",
-              "overview": "",
-              "air_date": "",
+              "overview": "Chunhua encounters Prince Jin, while Mu Wanyao witnesses the Divine Strategy Army abusing villagers.",
+              "air_date": "2026-10-28",
               "sources": [
                 {
                   "name": "VIDMOLY",
@@ -31370,8 +31402,8 @@
             {
               "number": 14,
               "name": "Épisode 14",
-              "overview": "",
-              "air_date": "",
+              "overview": "Chunhua escapes home, while the Divine Strategy Army demolishes villagers' homes.",
+              "air_date": "2026-10-28",
               "sources": [
                 {
                   "name": "VIDMOLY",
@@ -31383,8 +31415,8 @@
             {
               "number": 15,
               "name": "Épisode 15",
-              "overview": "",
-              "air_date": "",
+              "overview": "Yan Shang refuses to confess as Wei Shu and Liu Wenji rally public support.",
+              "air_date": "2026-10-29",
               "sources": [
                 {
                   "name": "VIDMOLY",
@@ -31396,8 +31428,8 @@
             {
               "number": 16,
               "name": "Épisode 16",
-              "overview": "",
-              "air_date": "",
+              "overview": "Yu Cheng'an condemns Chunhua, who chooses to marry Prince Jin to spare Liu Wenji.",
+              "air_date": "2026-10-29",
               "sources": [
                 {
                   "name": "VIDMOLY",
@@ -31409,8 +31441,8 @@
             {
               "number": 17,
               "name": "Épisode 17",
-              "overview": "",
-              "air_date": "",
+              "overview": "Yu Cheng'an plots to control Prince Jin, while Yan Shang meets Liu Ruozhu.",
+              "air_date": "2026-10-30",
               "sources": [
                 {
                   "name": "VIDMOLY",
@@ -31422,8 +31454,8 @@
             {
               "number": 18,
               "name": "Épisode 18",
-              "overview": "",
-              "air_date": "",
+              "overview": "Mu Wanyao frames Zhang Jun for shooting Yu Xianyao with his own abandoned bow.",
+              "air_date": "2026-10-30",
               "sources": [
                 {
                   "name": "VIDMOLY",
@@ -31435,8 +31467,8 @@
             {
               "number": 19,
               "name": "Épisode 19",
-              "overview": "",
-              "air_date": "",
+              "overview": "Mu Wanyao gathers intelligence, while Yan Shang helps Liu Wenji escape palace bullying.",
+              "air_date": "2026-10-31",
               "sources": [
                 {
                   "name": "VIDMOLY",
@@ -31448,8 +31480,8 @@
             {
               "number": 20,
               "name": "Épisode 20",
-              "overview": "",
-              "air_date": "",
+              "overview": "Liu Wenji seeks Yu Cheng'an's favor, while Meng Zaishi secretly watches Mu and Yan's date.",
+              "air_date": "2026-10-31",
               "sources": [
                 {
                   "name": "VIDMOLY",
@@ -31461,8 +31493,8 @@
             {
               "number": 21,
               "name": "Épisode 21",
-              "overview": "",
-              "air_date": "",
+              "overview": "Mu Wanyao is forced to marry Meng Baiyu, while Meng Zaishi faces suspicion.",
+              "air_date": "2026-11-01",
               "sources": [
                 {
                   "name": "VIDMOLY",
@@ -31474,8 +31506,8 @@
             {
               "number": 22,
               "name": "Épisode 22",
-              "overview": "",
-              "air_date": "",
+              "overview": "Meng Zaishi pressures Mu Wanyao to return to Beijing, while Liu Wenji is framed by a rival.",
+              "air_date": "2026-11-01",
               "sources": [
                 {
                   "name": "VIDMOLY",
@@ -31487,8 +31519,8 @@
             {
               "number": 23,
               "name": "Épisode 23",
-              "overview": "",
-              "air_date": "",
+              "overview": "Mu Wanyao proposes a winter hunt to decide her marriage, while Liu Wenji wins Yu Cheng'an's favor.",
+              "air_date": "2026-11-02",
               "sources": [
                 {
                   "name": "VIDMOLY",
@@ -31500,8 +31532,8 @@
             {
               "number": 24,
               "name": "Épisode 24",
-              "overview": "",
-              "air_date": "",
+              "overview": "Yan Shang stops Mu Wanyao from killing Meng Zaishi and urges them to unite against Yu Cheng'an.",
+              "air_date": "2026-11-03",
               "sources": [
                 {
                   "name": "VIDMOLY",
@@ -31514,7 +31546,7 @@
               "number": 25,
               "name": "Épisode 25",
               "overview": "",
-              "air_date": "",
+              "air_date": "2026-11-04",
               "sources": [
                 {
                   "name": "VIDMOLY",
@@ -31527,56 +31559,56 @@
               "number": 26,
               "name": "Épisode 26",
               "overview": "",
-              "air_date": "",
+              "air_date": "2026-11-05",
               "sources": []
             },
             {
               "number": 27,
               "name": "Épisode 27",
               "overview": "",
-              "air_date": "",
+              "air_date": "2026-11-05",
               "sources": []
             },
             {
               "number": 28,
               "name": "Épisode 28",
               "overview": "",
-              "air_date": "",
+              "air_date": "2026-11-06",
               "sources": []
             },
             {
               "number": 29,
               "name": "Épisode 29",
               "overview": "",
-              "air_date": "",
+              "air_date": "2026-11-06",
               "sources": []
             },
             {
               "number": 30,
               "name": "Épisode 30",
               "overview": "",
-              "air_date": "",
+              "air_date": "2026-11-07",
               "sources": []
             },
             {
               "number": 31,
               "name": "Épisode 31",
               "overview": "",
-              "air_date": "",
+              "air_date": "2026-11-07",
               "sources": []
             },
             {
               "number": 32,
               "name": "Épisode 32",
               "overview": "",
-              "air_date": "",
+              "air_date": "2026-11-08",
               "sources": []
             },
             {
               "number": 33,
               "name": "Épisode 33",
               "overview": "",
-              "air_date": "",
+              "air_date": "2026-11-08",
               "sources": []
             },
             {
@@ -31636,7 +31668,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793890039415,
+      "updatedAt": 1793968854233,
       "trend": 42,
       "eprt": 48
     },
@@ -31670,7 +31702,7 @@
         "Drame"
       ],
       "rating": "7.0",
-      "pop": 5.628,
+      "pop": 2.6957,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/hdAz513vwhLsAMNgs57vMZ1yuHl.jpg",
       "posterV": 2,
@@ -31961,7 +31993,7 @@
               "number": 20,
               "name": "Épisode 20",
               "overview": "",
-              "air_date": "2026-10-21",
+              "air_date": "2026-10-20",
               "sources": [
                 {
                   "name": "VIDMOLY",
@@ -31974,7 +32006,7 @@
               "number": 21,
               "name": "Épisode 21",
               "overview": "",
-              "air_date": "2026-10-22",
+              "air_date": "2026-10-20",
               "sources": [
                 {
                   "name": "VIDMOLY",
@@ -31987,7 +32019,7 @@
               "number": 22,
               "name": "Épisode 22",
               "overview": "",
-              "air_date": "2026-10-23",
+              "air_date": "2026-10-20",
               "sources": [
                 {
                   "name": "VIDMOLY",
@@ -32000,7 +32032,7 @@
               "number": 23,
               "name": "Épisode 23",
               "overview": "",
-              "air_date": "2026-10-24",
+              "air_date": "2026-10-20",
               "sources": [
                 {
                   "name": "VIDMOLY",
@@ -32013,7 +32045,7 @@
               "number": 24,
               "name": "Épisode 24",
               "overview": "",
-              "air_date": "2026-10-25",
+              "air_date": "2026-10-20",
               "sources": [
                 {
                   "name": "VIDMOLY",
@@ -32026,7 +32058,7 @@
               "number": 25,
               "name": "Épisode 25",
               "overview": "",
-              "air_date": "2026-10-26",
+              "air_date": "2026-10-20",
               "sources": [
                 {
                   "name": "VIDMOLY",
@@ -32039,7 +32071,7 @@
               "number": 26,
               "name": "Épisode 26",
               "overview": "",
-              "air_date": "2026-10-27",
+              "air_date": "2026-10-20",
               "sources": [
                 {
                   "name": "VIDMOLY",
@@ -32052,7 +32084,7 @@
               "number": 27,
               "name": "Épisode 27",
               "overview": "",
-              "air_date": "2026-10-28",
+              "air_date": "2026-10-20",
               "sources": [
                 {
                   "name": "VIDMOLY",
@@ -32065,7 +32097,7 @@
               "number": 28,
               "name": "Épisode 28",
               "overview": "",
-              "air_date": "2026-10-29",
+              "air_date": "2026-10-20",
               "sources": [
                 {
                   "name": "VIDMOLY",
@@ -32078,7 +32110,7 @@
               "number": 29,
               "name": "Épisode 29",
               "overview": "",
-              "air_date": "2026-10-30",
+              "air_date": "2026-10-20",
               "sources": [
                 {
                   "name": "VIDMOLY",
@@ -32095,7 +32127,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793381847701,
+      "updatedAt": 1793968855237,
       "eprt": 14
     },
     {
@@ -32131,8 +32163,8 @@
         "Drame",
         "Comédie"
       ],
-      "rating": "7.4",
-      "pop": 6.5041,
+      "rating": "6.8",
+      "pop": 6.054,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/ecUJK58QyF1uBuDzJwxTItWg2WK.jpg",
       "posterV": 2,
@@ -32513,7 +32545,7 @@
         "VOSTFR"
       ],
       "posterCustom": true,
-      "updatedAt": 1793130281542,
+      "updatedAt": 1793968856223,
       "eprt": 45
     },
     {
@@ -32551,7 +32583,7 @@
         "Mystère"
       ],
       "rating": "7.5",
-      "pop": 13.9576,
+      "pop": 11.9879,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/nWIGqemMxYbomrZCfd6xpVUsE38.jpg",
       "posterV": 2,
@@ -33139,7 +33171,7 @@
         "VOSTFR"
       ],
       "posterCustom": true,
-      "updatedAt": 1793130282427,
+      "updatedAt": 1793968857211,
       "eprt": 39
     },
     {
@@ -33175,7 +33207,7 @@
         "Drame"
       ],
       "rating": "8.2",
-      "pop": 20.694,
+      "pop": 19.031,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/jApbazll5smAY1AVd6dDoceBM3r.jpg",
       "posterV": 2,
@@ -33196,7 +33228,7 @@
       ],
       "cast": [
         {
-          "name": "井柏然",
+          "name": "Jing Boran",
           "character": "Luan Nian",
           "id": 1094210
         },
@@ -33532,7 +33564,7 @@
         "VOSTFR"
       ],
       "posterCustom": true,
-      "updatedAt": 1793130283285,
+      "updatedAt": 1793968858206,
       "eprt": 48,
       "trend": 0
     },
@@ -33574,7 +33606,7 @@
         "Science-Fiction & Fantastique"
       ],
       "rating": "6.6",
-      "pop": 8.0439,
+      "pop": 6.5428,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/87irKQfNYW0HlOFXemvSMygDkvD.jpg",
       "posterV": 2,
@@ -34017,7 +34049,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793130284217,
+      "updatedAt": 1793968859201,
       "eprt": 44
     },
     {
@@ -34057,7 +34089,7 @@
         "Mystère"
       ],
       "rating": "7.0",
-      "pop": 10.4552,
+      "pop": 9.0115,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/qgre8p9hitXLbeZSD0dv6RoOFa7.jpg",
       "posterV": 2,
@@ -34555,7 +34587,7 @@
         "VOSTFR"
       ],
       "posterCustom": true,
-      "updatedAt": 1793130285088,
+      "updatedAt": 1793968860210,
       "eprt": 40
     },
     {
@@ -34585,6 +34617,7 @@
         "Miš",
         "マウス  ～ある殺人者の系譜～",
         "موش",
+        "Mysz",
         "Musen",
         "Mouse (Ratón)",
         "พันธุ์นักฆ่า"
@@ -34595,8 +34628,8 @@
         "Crime",
         "Mystère"
       ],
-      "rating": "8.3",
-      "pop": 17.5926,
+      "rating": "8.4",
+      "pop": 16.1652,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/kK0srwMp0SMKV5KXvfTAyd5ZQsR.jpg",
       "posterV": 2,
@@ -35135,7 +35168,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793130286972,
+      "updatedAt": 1793968861230,
       "posterCustom": true,
       "eprt": 73
     },
@@ -35177,7 +35210,7 @@
         "Comédie"
       ],
       "rating": "7.8",
-      "pop": 10.0091,
+      "pop": 8.8695,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/6CgxIE21h2EofyrbTja1Jscgx35.jpg",
       "posterV": 2,
@@ -35698,7 +35731,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793130285917,
+      "updatedAt": 1793968862237,
       "eprt": 45
     },
     {
@@ -35717,6 +35750,7 @@
         "生逢其时",
         "In My Prime",
         "生逢其時",
+        "ช่วงชีวิตที่ผลิบาน",
         "Sheng Feng Qi Shi",
         "近邻"
       ],
@@ -35727,7 +35761,7 @@
         "Drame"
       ],
       "rating": "8.3",
-      "pop": 6.6111,
+      "pop": 5.5586,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/bu2XARQuFZJERIWFRjwRdx61QyM.jpg",
       "posterV": 2,
@@ -36139,7 +36173,7 @@
         "VOSTFR"
       ],
       "posterCustom": true,
-      "updatedAt": 1793130287850,
+      "updatedAt": 1793968863201,
       "eprt": 46
     },
     {
@@ -36172,8 +36206,8 @@
       "genres": [
         "Drame"
       ],
-      "rating": "7.3",
-      "pop": 12.3241,
+      "rating": "7.2",
+      "pop": 11.0617,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/a8OJNu3bZZ9ui8ekbi57G4Vvjvu.jpg",
       "posterV": 2,
@@ -36600,7 +36634,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793130288690,
+      "updatedAt": 1793968864208,
       "eprt": 45
     },
     {
@@ -36634,7 +36668,7 @@
         "Science-Fiction & Fantastique"
       ],
       "rating": "8.3",
-      "pop": 10.2203,
+      "pop": 9.4399,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/fBgbr6rGLxV7qwiVJ5BnosDE0av.jpg",
       "posterV": 2,
@@ -37228,7 +37262,7 @@
         "VOSTFR"
       ],
       "posterCustom": true,
-      "updatedAt": 1793130289539,
+      "updatedAt": 1793968865200,
       "eprt": 44
     },
     {
@@ -37261,7 +37295,7 @@
         "Drame"
       ],
       "rating": "7.5",
-      "pop": 6.6418,
+      "pop": 5.5019,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/m0BCLac2W1zIMGDPmsZGBSund6j.jpg",
       "posterV": 2,
@@ -37693,7 +37727,7 @@
         "VOSTFR"
       ],
       "posterCustom": true,
-      "updatedAt": 1793130290365,
+      "updatedAt": 1793968866265,
       "eprt": 46
     },
     {
@@ -37731,7 +37765,7 @@
         "Comédie"
       ],
       "rating": "8.7",
-      "pop": 22.3654,
+      "pop": 10.6457,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/4AxQDI4nCoKwrWyISgXlQuo61LQ.jpg",
       "posterV": 2,
@@ -37771,7 +37805,7 @@
           "id": 3168903
         },
         {
-          "name": "董潔",
+          "name": "Dong Jie",
           "character": "Guo Jin",
           "id": 12676
         }
@@ -38311,7 +38345,7 @@
         "VOSTFR"
       ],
       "posterCustom": true,
-      "updatedAt": 1793130291413
+      "updatedAt": 1793968867199
     },
     {
       "id": "295599",
@@ -38343,8 +38377,8 @@
       "genres": [
         "Drame"
       ],
-      "rating": "8.5",
-      "pop": 7.0955,
+      "rating": "8.6",
+      "pop": 6.0528,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/31nFRRsQQnCti8TiBuiEgNKYaZp.jpg",
       "posterV": 2,
@@ -38830,7 +38864,7 @@
         "VOSTFR"
       ],
       "posterCustom": true,
-      "updatedAt": 1793130293140
+      "updatedAt": 1793968868253
     },
     {
       "id": "316702",
@@ -38858,12 +38892,14 @@
         "Son Masa",
         "Poslední stůl",
         "Το τελευταίο μενού",
+        "Финальный стол",
         "المائدة الأخيرة",
         "फ़ाइनल टेबल",
         "สงครามนักปรุง",
         "ファイナル･テーブル",
         "最後一桌",
         "ෆයිනල් ටේබල්",
+        "Bàn Ăn Cuối Cùng",
         "国际名厨争霸赛",
         "파이널 테이블"
       ],
@@ -38872,8 +38908,8 @@
       "genres": [
         "Drame"
       ],
-      "rating": "8.2",
-      "pop": 33.082,
+      "rating": "8.5",
+      "pop": 19.1325,
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/original/uO1teDsPlsd60laweip8qHVv98E.jpg",
       "posterV": 2,
@@ -38939,7 +38975,7 @@
           "id": 571168
         }
       ],
-      "eprt": 71,
+      "eprt": 67,
       "seasons": [
         {
           "number": 1,
@@ -38966,7 +39002,7 @@
             {
               "number": 2,
               "name": "Épisode 2",
-              "overview": "",
+              "overview": "Han's dish leaves everyone in awe. With his departure imminent, Song-yi begs him to stay. Just then, news of a culinary competition catches his eye.",
               "air_date": "2026-10-25",
               "sources": [
                 {
@@ -38984,7 +39020,7 @@
             {
               "number": 3,
               "name": "Épisode 3",
-              "overview": "",
+              "overview": "Kang Han enters The Table: K-Chef 2026 as Famiglia's head chef but needs new team members to compete. After forming a team, he faces top chefs.",
               "air_date": "2026-10-31",
               "sources": [
                 {
@@ -38997,7 +39033,7 @@
             {
               "number": 4,
               "name": "Épisode 4",
-              "overview": "",
+              "overview": "Chefs put their creativity to the test with the puzzling theme \"Island.\" Kang Han faces an unexpected hurdle before revealing his unique take.",
               "air_date": "2026-11-01",
               "sources": [
                 {
@@ -39072,7 +39108,7 @@
         "VOSTFR"
       ],
       "posterCustom": true,
-      "updatedAt": 1793564145366,
+      "updatedAt": 1793968869217,
       "trend": 0
     },
     {
@@ -39110,7 +39146,7 @@
         "Science-Fiction & Fantastique"
       ],
       "rating": "",
-      "pop": 11.7971,
+      "pop": 8.74,
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/w500/dg4IIruyBEtSgjW5fdXi46xrSzC.jpg",
       "posterV": 2,
@@ -39185,7 +39221,7 @@
           "id": 2879352
         }
       ],
-      "eprt": 61,
+      "eprt": 66,
       "seasons": [
         {
           "number": 1,
@@ -39207,8 +39243,8 @@
             },
             {
               "number": 2,
-              "name": "Épisode 2",
-              "overview": "",
+              "name": "Three Years Out of Time",
+              "overview": "Hae Ra wakes after three lost years and finds a world that has moved on without her. Convinced she is Cha Hong Du, she rushes to protect Um Tae Bong, only to discover the star has no memory of her and wants his missing ring back. As fragments of the past collide with Tae Bong's guarded secret, the truth behind Hae Ra's missing years draws dangerously close.",
               "air_date": "2026-10-25",
               "sources": [
                 {
@@ -39221,8 +39257,8 @@
             },
             {
               "number": 3,
-              "name": "Épisode 3",
-              "overview": "",
+              "name": "Whispers of the Past",
+              "overview": "Targeted by a mysterious stalker, actor Um Tae Bong hires the spirited Cha Hong Du as his undercover bodyguard. As she grows closer to Han Jung Woo, Cha Hong Du spots the man she believes is her late father and plunges into danger. Desperate for answers, she pulls Um Tae Bong into a bizarre world where truth and deception collide.",
               "air_date": "2026-10-31",
               "sources": [
                 {
@@ -39235,8 +39271,8 @@
             },
             {
               "number": 4,
-              "name": "Épisode 4",
-              "overview": "",
+              "name": "The World Hong-du Believes In",
+              "overview": "Hong Du's search for answers about her father leaves her wondering if he could still be alive. Tae Bong discovers that Hong Du truly believes she is the heroine of his old drama and pushes her away, only to realise he cannot stop worrying about her. Just as he brings her back into his life, Hong Du comes face-to-face with a man she is certain is her long-lost father.",
               "air_date": "2026-11-01",
               "sources": [
                 {
@@ -39339,7 +39375,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793564409526,
+      "updatedAt": 1793968870197,
       "trend": 0
     },
     {
@@ -39396,7 +39432,7 @@
         "Thriller"
       ],
       "rating": "8.1",
-      "pop": 20.853,
+      "pop": 12.1302,
       "status": "Released",
       "runtime": 129,
       "poster": "https://image.tmdb.org/t/p/original/dsEoTJKM1s5OVDkS2P2JdoTxo4K.jpg",
@@ -39507,7 +39543,7 @@
         "VOSTFR",
         "VF"
       ],
-      "updatedAt": 1793130298149,
+      "updatedAt": 1793968870939,
       "posterCustom": true
     },
     {
@@ -39566,7 +39602,7 @@
         "Drame"
       ],
       "rating": "8.7",
-      "pop": 36.7384,
+      "pop": 31.4993,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/5Sd01WeraL2oA3Vv6O4rcRxockn.jpg",
       "posterV": 2,
@@ -39871,7 +39907,7 @@
         "VOSTFR",
         "VF"
       ],
-      "updatedAt": 1793553061802,
+      "updatedAt": 1793968872201,
       "posterCustom": true
     },
     {
@@ -39902,7 +39938,7 @@
         "Drame"
       ],
       "rating": "",
-      "pop": 3.1547,
+      "pop": 4.7041,
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/w500/jfM4j2hQozZeeSikl96AMBgnFSg.jpg",
       "posterV": 2,
@@ -39918,16 +39954,6 @@
           "name": "胡连馨",
           "character": "Yue Wangshu",
           "id": 3404029
-        },
-        {
-          "name": "黃思瑞",
-          "character": "Yue Xingyao",
-          "id": 3091884
-        },
-        {
-          "name": "刘佳烨",
-          "character": "Zhu Xun",
-          "id": 6025842
         }
       ],
       "eprt": 17,
@@ -40238,7 +40264,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793549238068
+      "updatedAt": 1793968873204
     },
     {
       "id": "332134",
@@ -40266,7 +40292,7 @@
         "Science-Fiction & Fantastique"
       ],
       "rating": "",
-      "pop": 3.1979,
+      "pop": 1.729,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/pALWLpQI6YSL3Psysl6iCPP62ns.jpg",
       "posterV": 2,
@@ -40651,7 +40677,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793130303580
+      "updatedAt": 1793968874242
     },
     {
       "id": "335951",
@@ -40667,11 +40693,12 @@
       ],
       "original_language": "ko",
       "aka": [
-        "暑假",
+        "夏日假期",
         "Summer Vacation",
         "Лятна ваканция",
         "ซัมเมอร์ วาเคชั่น",
-        "夏日假期",
+        "عطلة الصيف",
+        "暑假",
         "Summer Break",
         "여름방학"
       ],
@@ -40683,7 +40710,7 @@
         "Mystère"
       ],
       "rating": "",
-      "pop": 8.5778,
+      "pop": 10.7735,
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/w500/ru4oyTVoPVQZPUE5rI3YPMgLHBY.jpg",
       "posterV": 2,
@@ -40772,8 +40799,8 @@
           "episodes": [
             {
               "number": 1,
-              "name": "Épisode 1",
-              "overview": "",
+              "name": "Kim Ha-yeon B",
+              "overview": "Ha-yeon, an ordinary second-year high school student, heads to Upo-ri with her parents for summer vacation. Struggling with friendships and family relationships, she unexpectedly meets Yu-gyeom, the young heir of a traditional Korean family. The two then experience something unbelievably mysterious.",
               "air_date": "2026-10-26",
               "sources": [
                 {
@@ -40785,8 +40812,8 @@
             },
             {
               "number": 2,
-              "name": "Épisode 2",
-              "overview": "",
+              "name": "There Was No Desire to Die",
+              "overview": "Ha-yeon goes to Upo High School for extra classes. After sharing a special moment with Yu-gyeom, she gets angry at him for already having a girlfriend. However, Yu-gyeom continues to ask Ha-yeon to keep seeing him. The two share another special moment. When Yu-gyeom’s girlfriend, Sae-ryeong, finds out, she visits Ha-yeon late at night.",
               "air_date": "2026-10-27",
               "sources": [
                 {
@@ -40798,8 +40825,8 @@
             },
             {
               "number": 3,
-              "name": "Épisode 3",
-              "overview": "",
+              "name": "Just One Summer",
+              "overview": "After a sudden accident, Ha-yeon leaves for Seoul, leaving behind a farewell letter. The police visit her parents and Yu-gyeom, while rumors spread at school that Sae-ryeong has died. After discovering Ha-yeon's letter, her older brother Jeong-yeon heads to Seoul to find his sister, who has become entangled with a human trafficking ring.",
               "air_date": "2026-11-02",
               "sources": [
                 {
@@ -40811,8 +40838,8 @@
             },
             {
               "number": 4,
-              "name": "Épisode 4",
-              "overview": "",
+              "name": "A New World",
+              "overview": "Ha-yeon and Yu-gyeom return to their normal lives. Sae-ryeong, who was seriously injured, also returns to school, but a group of students begins to grow suspicious of her identity. When they discover that Sae-ryeong and Yu-gyeom have broken up, they start digging into her past. Despite Sae-ryeong's best efforts to keep things under control, her long-kept lie is eventually exposed.",
               "air_date": "2026-11-03",
               "sources": [
                 {
@@ -40872,7 +40899,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793724483685,
+      "updatedAt": 1793968875225,
       "trend": 0
     },
     {
@@ -40916,7 +40943,7 @@
         "Action & Adventure"
       ],
       "rating": "5.2",
-      "pop": 9.7725,
+      "pop": 5.2922,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/izagySpzRhw4ioTlbui6uUttuuo.jpg",
       "posterV": 2,
@@ -41220,7 +41247,7 @@
         "VOSTFR"
       ],
       "posterCustom": true,
-      "updatedAt": 1793228006010
+      "updatedAt": 1793968876219
     },
     {
       "id": "m617882",
@@ -41250,7 +41277,7 @@
         "Romance"
       ],
       "rating": "8.0",
-      "pop": 3.3732,
+      "pop": 2.942,
       "status": "Released",
       "runtime": 124,
       "poster": "https://image.tmdb.org/t/p/original/9W6kZpBO0C7PULbhAvdu91cXC4b.jpg",
@@ -41345,7 +41372,7 @@
         "VOSTFR"
       ],
       "posterCustom": true,
-      "updatedAt": 1793135332673
+      "updatedAt": 1793968876985
     },
     {
       "id": "233219",
@@ -41381,7 +41408,7 @@
         "Drame"
       ],
       "rating": "8.1",
-      "pop": 12.7,
+      "pop": 9.9319,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/uWK4QcYrLGITRNDvhLelm66j4Er.jpg",
       "posterV": 2,
@@ -41574,7 +41601,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793195040886
+      "updatedAt": 1793968878191
     },
     {
       "id": "m1607073",
@@ -41593,7 +41620,7 @@
         "Romance"
       ],
       "rating": "2.5",
-      "pop": 2.9808,
+      "pop": 1.525,
       "status": "Released",
       "runtime": "",
       "poster": "https://image.tmdb.org/t/p/w500/3pVhnHsXTy5pNlPa5HLBrBKBdTb.jpg",
@@ -41677,7 +41704,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793197409964
+      "updatedAt": 1793968878923
     },
     {
       "id": "316294",
@@ -41713,7 +41740,7 @@
         "Action & Adventure"
       ],
       "rating": "8.9",
-      "pop": 8.7225,
+      "pop": 7.1553,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/616HQHGVqEh0ZbQIRdyjIBQfqhU.jpg",
       "posterV": 2,
@@ -41933,7 +41960,7 @@
         "VOSTFR"
       ],
       "bl": true,
-      "updatedAt": 1793223686126
+      "updatedAt": 1793968880200
     },
     {
       "id": "318664",
@@ -41961,8 +41988,8 @@
         "Drame",
         "Science-Fiction & Fantastique"
       ],
-      "rating": "7.7",
-      "pop": 3.7234,
+      "rating": "7.8",
+      "pop": 3.1928,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/qSMLWNahW1FmHR4d6LrED59oF8l.jpg",
       "posterV": 2,
@@ -42156,7 +42183,7 @@
         "VOSTFR"
       ],
       "bl": true,
-      "updatedAt": 1793239972579
+      "updatedAt": 1793968881238
     },
     {
       "id": "317308",
@@ -42177,6 +42204,7 @@
         "จิกซอว์ชิ้นสุดท้ายของเรา",
         "A Peça Que Faltava",
         "청기주아적명자 : 내 이름을 기억해 줘",
+        "The Missing Piece～君の中から消えた名前～",
         "貌合神离",
         "季先生",
         "Appearance in harmony but feels apart",
@@ -42188,8 +42216,8 @@
       "genres": [
         "Drame"
       ],
-      "rating": "9.3",
-      "pop": 4.6132,
+      "rating": "8.7",
+      "pop": 3.4628,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/ozxzhIThHt3csoDmov1pOYdp9am.jpg",
       "posterV": 2,
@@ -42417,7 +42445,7 @@
         "VOSTFR"
       ],
       "bl": true,
-      "updatedAt": 1793277291576
+      "updatedAt": 1793968882217
     },
     {
       "id": "332507",
@@ -42449,8 +42477,8 @@
         "Action & Adventure",
         "Science-Fiction & Fantastique"
       ],
-      "rating": "8.5",
-      "pop": 6.1106,
+      "rating": "8.6",
+      "pop": 5.2001,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/6Gt3rbhwfniiZoeORGcuDai5Nar.jpg",
       "posterV": 2,
@@ -42466,7 +42494,7 @@
       "cast": [
         {
           "name": "陈名豪",
-          "character": "A Leh",
+          "character": "A Leh / Gao Liang",
           "id": 4282685
         },
         {
@@ -42812,7 +42840,7 @@
         "VOSTFR"
       ],
       "bl": true,
-      "updatedAt": 1793277278711
+      "updatedAt": 1793968883239
     },
     {
       "id": "318634",
@@ -42851,9 +42879,9 @@
       "genres": [
         "Drame"
       ],
-      "rating": "5.0",
-      "pop": 14.9838,
-      "status": "Returning Series",
+      "rating": "5.5",
+      "pop": 17.548,
+      "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/h5UlSUBTG7XQ8UsGdAdkqeiNTSo.jpg",
       "posterV": 2,
       "backdrop": "https://image.tmdb.org/t/p/original/jIR92epQdsA90SSAaCkHh3EweLQ.jpg",
@@ -42934,7 +42962,7 @@
             },
             {
               "number": 4,
-              "name": "Épisode 4",
+              "name": "Twisted Triangle",
               "overview": "",
               "air_date": "2026-10-29",
               "sources": [
@@ -42947,7 +42975,7 @@
             },
             {
               "number": 5,
-              "name": "Épisode 5",
+              "name": "Finally Complete",
               "overview": "",
               "air_date": "2026-11-05",
               "sources": []
@@ -42968,7 +42996,7 @@
         "VOSTFR"
       ],
       "bl": true,
-      "updatedAt": 1793280703667
+      "updatedAt": 1793968884199
     },
     {
       "id": "284929",
@@ -42997,7 +43025,7 @@
         "Drame"
       ],
       "rating": "7.3",
-      "pop": 2.8788,
+      "pop": 3.3376,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/5B7zARFeOLC0qJsQ1RDNgXHI7Tc.jpg",
       "posterV": 2,
@@ -43368,7 +43396,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793293244944
+      "updatedAt": 1793968885256
     },
     {
       "id": "315044",
@@ -43400,7 +43428,7 @@
         "Science-Fiction & Fantastique"
       ],
       "rating": "7.7",
-      "pop": 3.7209,
+      "pop": 2.2352,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/123SH5RVqynQ7BwzKcq1O8mJKA0.jpg",
       "posterV": 2,
@@ -43577,7 +43605,7 @@
         "VOSTFR"
       ],
       "bl": true,
-      "updatedAt": 1793293625660
+      "updatedAt": 1793968886220
     },
     {
       "id": "311025",
@@ -43609,7 +43637,7 @@
         "Drame"
       ],
       "rating": "8.1",
-      "pop": 7.0587,
+      "pop": 4.5441,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/8cXJxfSbHqHfamaJFyYRhTMg5uM.jpg",
       "posterV": 2,
@@ -44224,7 +44252,7 @@
         "VOSTFR"
       ],
       "posterCustom": true,
-      "updatedAt": 1793325038714
+      "updatedAt": 1793968887262
     },
     {
       "id": "317326",
@@ -44243,6 +44271,7 @@
         "Fool in Love",
         "你卻愛著一個他",
         "Fool in Love: Yêu Một Kẻ Ngốc",
+        "Влюблённый глупец",
         "My Beloved Fool",
         "In Love with an Idiot",
         "คนโง่รักเข(ล)า"
@@ -44253,7 +44282,7 @@
         "Drame"
       ],
       "rating": "10.0",
-      "pop": 10.2611,
+      "pop": 9.9055,
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/w500/tE5gpl1mUEnyyGS0KpaOqs042Z9.jpg",
       "posterV": 2,
@@ -44412,8 +44441,8 @@
             },
             {
               "number": 8,
-              "name": "Épisode 8",
-              "overview": "",
+              "name": "Survive Tonight, Be Mine",
+              "overview": "After their painful breakup, Yok prepares to leave for America, but a devastating typhoon brings Ing rushing to his rescue.",
               "air_date": "2026-11-01",
               "sources": [
                 {
@@ -44425,8 +44454,8 @@
             },
             {
               "number": 9,
-              "name": "Épisode 9",
-              "overview": "",
+              "name": "Would You Take My Ring?",
+              "overview": "As Yok and Ing grow closer after the accident, Ith reveals a painful truth that leaves Yok torn between them.",
               "air_date": "2026-11-05",
               "sources": []
             },
@@ -44516,7 +44545,7 @@
         "VOSTFR"
       ],
       "bl": true,
-      "updatedAt": 1793918127563
+      "updatedAt": 1793968888261
     },
     {
       "id": "254993",
@@ -44550,7 +44579,7 @@
         "Mystère"
       ],
       "rating": "7.9",
-      "pop": 4.843,
+      "pop": 3.8738,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/dGBg7KKsNRNzeVeKePrgwfKw1m5.jpg",
       "posterV": 2,
@@ -44785,7 +44814,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793309132047
+      "updatedAt": 1793968889208
     },
     {
       "id": "284934",
@@ -44812,7 +44841,7 @@
         "Drame"
       ],
       "rating": "8.7",
-      "pop": 3.192,
+      "pop": 2.5919,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/6NmvdCps25ZTc6QfQLjNm8E2wrC.jpg",
       "posterV": 2,
@@ -45201,7 +45230,7 @@
         "VOSTFR"
       ],
       "posterCustom": true,
-      "updatedAt": 1793324769369
+      "updatedAt": 1793968890281
     },
     {
       "id": "289517",
@@ -45234,19 +45263,22 @@
         "งานสนุก จะตาย",
         "Việc ma, lương quái",
         "Работа с призрачными перспективами",
-        "甜蜜兼职",
         "Un job mortel",
+        "Сладка работа",
+        "Une job mortelle",
+        "شغل بدون آینده",
+        "甜蜜兼职",
+        "Идеальная работа",
         "Dead End Job",
         "꿀알바"
       ],
       "year": "2026",
       "overview": "Un jeune homme criblé de dettes se voit proposer un job par un mystérieuse agence d'intérim qui propose 50 fois le taux horaire. Sautant sur l'occasion, il va rapidement déchanter. En effet, ce travail va virer rapidement au cauchemar lorsqu'il est confronté à des phénomènes étranges et terrifiants.",
       "genres": [
-        "Mystère",
-        "Science-Fiction & Fantastique"
+        "Mystère"
       ],
-      "rating": "10.0",
-      "pop": 13.9828,
+      "rating": "7.7",
+      "pop": 145.5769,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/4QA54CD2POmR42Nfv2n8v1dH3u.jpg",
       "posterV": 2,
@@ -45260,7 +45292,7 @@
         },
         {
           "key": "Sn2ZCxOxsN0",
-          "name": "Official Trailer [ENG SUB]",
+          "name": "Official Trailer [Subtitled]",
           "type": "Trailer",
           "lab": "Anglais"
         }
@@ -45268,12 +45300,12 @@
       "cast": [
         {
           "name": "Lee Jae-wook",
-          "character": "Byeon Hyuk-joon",
+          "character": "Byeon Hyeok-jun",
           "id": 1879169
         },
         {
           "name": "Go Min-si",
-          "character": "Yeon-joo",
+          "character": "Eum Yeon-joo",
           "id": 1787992
         },
         {
@@ -45283,55 +45315,20 @@
         },
         {
           "name": "이희준",
-          "character": "Kang-joon / Mr. S",
+          "character": "Head of Spider Staffing Agency",
           "id": 1046863
-        },
-        {
-          "name": "Yoon Byung-hee",
-          "character": "Special appearance",
-          "id": 2663919
-        },
-        {
-          "name": "Cho Hyun-chul",
-          "character": "Special appearance",
-          "id": 1750380
-        },
-        {
-          "name": "최현욱",
-          "character": "Special appearance",
-          "id": 3126573
-        },
-        {
-          "name": "Yoon Kyung-ho",
-          "character": "Special appearance",
-          "id": 560081
-        },
-        {
-          "name": "Ko Chang-seok",
-          "character": "",
-          "id": 150697
-        },
-        {
-          "name": "김민주",
-          "character": "Female factory worker 3",
-          "id": 4854585
-        },
-        {
-          "name": "김승호",
-          "character": "",
-          "id": 2825236
         }
       ],
       "eprt": 38,
       "seasons": [
         {
           "number": 1,
-          "name": "Saison 1",
+          "name": "Mini-série",
           "episodes": [
             {
               "number": 1,
-              "name": "Épisode 1",
-              "overview": "",
+              "name": "Les Règles de la supérette",
+              "overview": "Sans le sou et sans solution, Byeon Hyeok-jun accepte un travail louche dans une supérette qui paie 50 fois le salaire minimum, et il comprend vite pourquoi.",
               "air_date": "2026-10-30",
               "sources": [
                 {
@@ -45348,8 +45345,8 @@
             },
             {
               "number": 2,
-              "name": "Épisode 2",
-              "overview": "",
+              "name": "Une virée avec Pierrot",
+              "overview": "Effrayé et confus après sa dernière mission, Hyeok-jun reçoit une nouvelle proposition assortie d'une règle bizarre : ne jamais perdre le clown de vue.",
               "air_date": "2026-10-30",
               "sources": [
                 {
@@ -45366,8 +45363,8 @@
             },
             {
               "number": 3,
-              "name": "Épisode 3",
-              "overview": "",
+              "name": "Le Vlog du laitier",
+              "overview": "Hyeok-jun jure d'éviter les missions risquées, mais on lui propose une livraison de lait pour 200 fois le salaire minimum. Cette fois-ci, il se sent prêt à affronter l'inconnu.",
               "air_date": "2026-10-30",
               "sources": [
                 {
@@ -45384,8 +45381,8 @@
             },
             {
               "number": 4,
-              "name": "Épisode 4",
-              "overview": "",
+              "name": "Le Cinéma de l'angoisse",
+              "overview": "Après avoir entendu parler du nouvel emploi de Hyeok-jun et de l'agence, la curiosité de sa sœur Ji-yoon la mène à un travail de nuit où ses pires craintes se réalisent.",
               "air_date": "2026-10-30",
               "sources": [
                 {
@@ -45402,8 +45399,8 @@
             },
             {
               "number": 5,
-              "name": "Épisode 5",
-              "overview": "",
+              "name": "Essai clinique",
+              "overview": "Hyeok-jun se fait passer pour un autre pour infiltrer un essai clinique qui vire à la mission de sauvetage après une rencontre inattendue avec un ami.",
               "air_date": "2026-10-30",
               "sources": [
                 {
@@ -45420,8 +45417,8 @@
             },
             {
               "number": 6,
-              "name": "Épisode 6",
-              "overview": "",
+              "name": "Les murs ne parlent pas",
+              "overview": "Plus perplexe que jamais, Hyeok-jun accepte un travail de nuit sur un site de construction et découvre la véritable horreur que cache la mystérieuse agence.",
               "air_date": "2026-10-30",
               "sources": [
                 {
@@ -45438,8 +45435,8 @@
             },
             {
               "number": 7,
-              "name": "Épisode 7",
-              "overview": "",
+              "name": "Une nuit à Neo World",
+              "overview": "Prévenu que sa dernière mission ne ressemblera à aucune autre, Hyeok-jun participe à une parade de contes de fées dans un parc d'attractions qui pourrait lui apporter des réponses.",
               "air_date": "2026-10-30",
               "sources": [
                 {
@@ -45456,8 +45453,8 @@
             },
             {
               "number": 8,
-              "name": "Épisode 8",
-              "overview": "",
+              "name": "Bouquet final",
+              "overview": "Une fête foraine cauchemardesque rassemble tout le monde, alors que Hyeok-jun doit prendre une décision qui changera sa vie. Parviendra-t-il enfin à quitter ce job mortel ?",
               "air_date": "2026-10-30",
               "sources": [
                 {
@@ -45481,7 +45478,7 @@
         "VOSTFR",
         "VF"
       ],
-      "updatedAt": 1793368541205,
+      "updatedAt": 1793968891307,
       "trend": 98,
       "posterCustom": true
     },
@@ -45499,15 +45496,19 @@
       "original_language": "ko",
       "aka": [
         "The Perfect Lie",
-        "完美的谎言",
+        "谎言",
         "A Mentira Perfeita",
         "謊言",
         "完璧な嘘",
         "Ідеальна брехня",
         "รักซ่อนลวง",
+        "Лъжец",
+        "الكذبة المثالية",
+        "Minciuna perfectă",
         "Raieo",
         "Ra-i-eo",
         "Liar",
+        "The Perfect Lie KR",
         "라이어"
       ],
       "year": "2026",
@@ -45517,8 +45518,8 @@
         "Crime",
         "Mystère"
       ],
-      "rating": "10.0",
-      "pop": 7.9923,
+      "rating": "8.5",
+      "pop": 23.3254,
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/w500/thXJkiBByDitV7iFSv1hU1sg7ij.jpg",
       "posterV": 2,
@@ -45599,7 +45600,7 @@
           "id": 5137029
         }
       ],
-      "eprt": "",
+      "eprt": 66,
       "seasons": [
         {
           "number": 1,
@@ -45620,8 +45621,8 @@
             },
             {
               "number": 2,
-              "name": "Épisode 2",
-              "overview": "",
+              "name": "That Night",
+              "overview": "Joonho and Jisun remember the night differently. A polygraph points to an unexpected person.",
               "air_date": "2026-10-31",
               "sources": [
                 {
@@ -45633,21 +45634,21 @@
             },
             {
               "number": 3,
-              "name": "Épisode 3",
+              "name": "Two Faces",
               "overview": "",
               "air_date": "2026-11-06",
               "sources": []
             },
             {
               "number": 4,
-              "name": "Épisode 4",
+              "name": "Boomerang",
               "overview": "",
               "air_date": "2026-11-07",
               "sources": []
             },
             {
               "number": 5,
-              "name": "Épisode 5",
+              "name": "M",
               "overview": "",
               "air_date": "2026-11-13",
               "sources": []
@@ -45709,7 +45710,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793654060109,
+      "updatedAt": 1793968892201,
       "trend": 67
     },
     {
@@ -45738,7 +45739,7 @@
         "Drame"
       ],
       "rating": "7.5",
-      "pop": 4.1527,
+      "pop": 2.0695,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/ak2wE5VVlt6y03UNnafEgcukdof.jpg",
       "posterV": 2,
@@ -46102,7 +46103,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793459199315
+      "updatedAt": 1793968893205
     },
     {
       "id": "m1268127",
@@ -46134,7 +46135,7 @@
         "Drame"
       ],
       "rating": "7.4",
-      "pop": 10.2135,
+      "pop": 8.8402,
       "status": "Released",
       "runtime": 120,
       "poster": "https://image.tmdb.org/t/p/original/vUw2VOItNTZfGHSSZWqxstUB8ok.jpg",
@@ -46156,7 +46157,7 @@
       ],
       "cast": [
         {
-          "name": "조인성",
+          "name": "Zo In-sung",
           "character": "Manager Zo",
           "id": 127564
         },
@@ -46244,7 +46245,7 @@
         "VOSTFR",
         "VF"
       ],
-      "updatedAt": 1793455452201,
+      "updatedAt": 1793968893924,
       "posterCustom": true
     },
     {
@@ -46290,7 +46291,7 @@
         "Drame"
       ],
       "rating": "8.5",
-      "pop": 7.4248,
+      "pop": 5.4469,
       "status": "Released",
       "runtime": 106,
       "poster": "https://image.tmdb.org/t/p/w500/5eNN8KLDPUXDqIkTdCbmn1gx5P7.jpg",
@@ -46384,7 +46385,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793455887085
+      "updatedAt": 1793968894923
     },
     {
       "id": "m1264805",
@@ -46412,8 +46413,8 @@
         "Romance",
         "Drame"
       ],
-      "rating": "7.8",
-      "pop": 4.051,
+      "rating": "7.7",
+      "pop": 3.1209,
       "status": "Released",
       "runtime": 115,
       "poster": "https://image.tmdb.org/t/p/w500/ivBI8FRQPIKzoZAryZK93xriOT.jpg",
@@ -46501,7 +46502,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793459790692
+      "updatedAt": 1793968895940
     },
     {
       "id": "m496243",
@@ -46551,7 +46552,7 @@
         "Drame"
       ],
       "rating": "8.5",
-      "pop": 39.058,
+      "pop": 33.3636,
       "status": "Released",
       "runtime": 135,
       "poster": "https://image.tmdb.org/t/p/original/iO8eAh1qxbhK9ZQS73SDWteY7l.jpg",
@@ -46652,7 +46653,7 @@
         "VOSTFR",
         "VF"
       ],
-      "updatedAt": 1793553148229,
+      "updatedAt": 1793968896946,
       "posterCustom": true
     },
     {
@@ -46680,7 +46681,7 @@
         "Science-Fiction & Fantastique"
       ],
       "rating": "8",
-      "pop": 1.7885,
+      "pop": 1.4976,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/rGMaUGFLzv7WbDL4lxfQvVXoO1e.jpg",
       "posterV": 2,
@@ -47049,7 +47050,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793554056146
+      "updatedAt": 1793968898374
     },
     {
       "id": "313642",
@@ -47068,6 +47069,7 @@
         "Chiêu Dương Công Chúa",
         "องค์หญิงเจาหยาง",
         "昭陽公主",
+        "소양공주",
         "Princess Zhaoyang",
         "昭阳公主"
       ],
@@ -47077,7 +47079,7 @@
         "Drame"
       ],
       "rating": "8.0",
-      "pop": 6.4371,
+      "pop": 4.6652,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/e5lsBN3BwepSxaPLJ0PsalIHDW4.jpg",
       "posterV": 2,
@@ -47361,7 +47363,7 @@
         "VOSTFR"
       ],
       "posterCustom": true,
-      "updatedAt": 1793570134509
+      "updatedAt": 1793968899226
     },
     {
       "id": "282326",
@@ -47396,11 +47398,11 @@
         "Familial"
       ],
       "rating": "7.8",
-      "pop": 18.1008,
+      "pop": 14.8645,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/wZTgC4VopxiKqk8ZNsJu3E5nBBS.jpg",
       "posterV": 2,
-      "backdrop": "https://image.tmdb.org/t/p/original/yUrEANF0C9yycej6n0Gwua6r0n1.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/original/mZSewqVlY4F2F2Axm7hiG6KBOBp.jpg",
       "videos": [
         {
           "key": "K5Un3rAW_NU",
@@ -48052,7 +48054,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793572988010,
+      "updatedAt": 1793968900197,
       "posterCustom": true
     },
     {
@@ -48087,7 +48089,7 @@
         "Drame"
       ],
       "rating": "8.1",
-      "pop": 11.1883,
+      "pop": 8.7332,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/uPX6wWe61dDctaVuC1F5TZq52Ce.jpg",
       "posterV": 2,
@@ -48517,7 +48519,7 @@
         "VOSTFR"
       ],
       "posterCustom": true,
-      "updatedAt": 1793620593244
+      "updatedAt": 1793968901211
     },
     {
       "id": "287496",
@@ -48551,8 +48553,8 @@
       "genres": [
         "Drame"
       ],
-      "rating": "9.5",
-      "pop": 12.1702,
+      "rating": "7.6",
+      "pop": 10.9787,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/3pKKNmPPNbpVHxw5jbZkqtWFeXA.jpg",
       "posterV": 2,
@@ -49111,7 +49113,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793632806001,
+      "updatedAt": 1793968902196,
       "posterCustom": true
     },
     {
@@ -49149,7 +49151,7 @@
         "Drame"
       ],
       "rating": "6.7",
-      "pop": 7.0807,
+      "pop": 6.1191,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/bj7Dh0jh7CehYirzR7GogY9CyZZ.jpg",
       "posterV": 2,
@@ -49655,7 +49657,7 @@
         "VOSTFR"
       ],
       "posterCustom": true,
-      "updatedAt": 1793626532978
+      "updatedAt": 1793968903205
     },
     {
       "id": "291392",
@@ -49687,12 +49689,12 @@
       "genres": [
         "Drame"
       ],
-      "rating": "8.2",
-      "pop": 10.9823,
+      "rating": "7.4",
+      "pop": 9.184,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/luKNvVTizD4O46XjTJ5Hlj2EuHt.jpg",
       "posterV": 2,
-      "backdrop": "https://image.tmdb.org/t/p/original/oqRpMcOlkD7bKF1ErK0psglvsWj.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/original/zldji8QZ3HdoosmtUIf59YmDoxZ.jpg",
       "videos": [],
       "cast": [
         {
@@ -50161,7 +50163,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793626257170,
+      "updatedAt": 1793968904234,
       "posterCustom": true
     },
     {
@@ -50193,7 +50195,7 @@
         "Drame"
       ],
       "rating": "",
-      "pop": 3.2348,
+      "pop": 2.12,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/pkEdSjM91sXmO1OWTHLkP6iWgaM.jpg",
       "posterV": 2,
@@ -50576,7 +50578,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793623868715
+      "updatedAt": 1793968905280
     },
     {
       "id": "318884",
@@ -50605,7 +50607,7 @@
         "Drame"
       ],
       "rating": "7",
-      "pop": 2.475,
+      "pop": 1.6662,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/ftDlayhSa7qamJtA04BajWOm4lI.jpg",
       "posterV": 2,
@@ -50902,7 +50904,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793624944512
+      "updatedAt": 1793968906300
     },
     {
       "id": "323686",
@@ -50928,7 +50930,7 @@
         "Drame"
       ],
       "rating": "8",
-      "pop": 2.1769,
+      "pop": 1.4537,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/pePAjshC0UPALgync8t4o3w6hO6.jpg",
       "posterV": 2,
@@ -51282,7 +51284,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793624896358
+      "updatedAt": 1793968907222
     },
     {
       "id": "256128",
@@ -51308,14 +51310,14 @@
         "Самое лучшее",
         "O Melhor de Tudo",
         "Най-хубавото нещо в живота ми",
-        "爱你是我做过最好的事",
         "Ai Ni",
+        "爱你是我做过最好的事",
         "Ai Ni Shi Wo Zuo Guo Zui Hao De Shi",
         "爱你",
         "爱你，是我做过最好的事",
         "爱上你是我做过最好的事",
-        "Loving You is the Best Thing I Have Ever Done",
         "For Love",
+        "Loving You is the Best Thing I Have Ever Done",
         "Loving You is the Best Thing I Have Done"
       ],
       "year": "2025",
@@ -51323,8 +51325,8 @@
       "genres": [
         "Drame"
       ],
-      "rating": "5.6",
-      "pop": 11.6256,
+      "rating": "8.0",
+      "pop": 9.5775,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/1uwSzUGioNzCfEiaBfN7cimzoEc.jpg",
       "posterV": 2,
@@ -51768,7 +51770,7 @@
         "VOSTFR"
       ],
       "posterCustom": true,
-      "updatedAt": 1793660091876
+      "updatedAt": 1793968908231
     },
     {
       "id": "279246",
@@ -51795,10 +51797,17 @@
         "Второй брак императрицы",
         "Імператриця, що вийшла заміж вдруге",
         "Die neuvermählte Kaiserin",
+        "الإمبراطورة المتزوجة مجددا",
+        "Hoàng Hậu Tái Hôn",
+        "O Novo Casamento da Imperatriz",
+        "Новият брак на императрицата",
+        "Znovu vdaná císařovna",
+        "Ponowne zaślubiny cesarzowej",
         "A Imperatriz Divorciada",
         "The Second Marriage",
         "Jaehon Hwanghu",
         "Chaehon Hwanghu",
+        "انتقام إمبراطورة",
         "재혼 황후"
       ],
       "year": "2026",
@@ -51807,12 +51816,12 @@
         "Drame",
         "Science-Fiction & Fantastique"
       ],
-      "rating": "8.5",
-      "pop": 12.978,
+      "rating": "8.3",
+      "pop": 155.6144,
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/original/oYQg1fKSRbjeqFRci2J6yMYmzxY.jpg",
       "posterV": 2,
-      "backdrop": "https://image.tmdb.org/t/p/original/i6TwJ9uOynLnSWpKWnzqkV37iJ1.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/original/1ptukf8gx19U1HcBv3aRzzlXuyJ.jpg",
       "videos": [
         {
           "key": "cle5dSjQkkM",
@@ -51822,7 +51831,7 @@
         },
         {
           "key": "aScUjuKvHSo",
-          "name": "Character Trailer",
+          "name": "Character Trailer [ENG SUB]",
           "type": "Trailer",
           "lab": "Anglais"
         },
@@ -51853,49 +51862,9 @@
           "name": "Lee Se-young",
           "character": "Rashta Isqua",
           "id": 1257142
-        },
-        {
-          "name": "Lee Bong-ryun",
-          "character": "Eliza",
-          "id": 2133921
-        },
-        {
-          "name": "Choi Dae-hoon",
-          "character": "McKenna",
-          "id": 1500616
-        },
-        {
-          "name": "Park Ho-san",
-          "character": "Viscount Lotteshu",
-          "id": 1872629
-        },
-        {
-          "name": "Jeong Young-joo",
-          "character": "Albani",
-          "id": 2463266
-        },
-        {
-          "name": "차우민",
-          "character": "",
-          "id": 3186373
-        },
-        {
-          "name": "한성민",
-          "character": "",
-          "id": 2496632
-        },
-        {
-          "name": "소이한",
-          "character": "Young Wharton",
-          "id": 6014534
-        },
-        {
-          "name": "Kim Young-mi",
-          "character": "Young Elysee",
-          "id": 3529900
         }
       ],
-      "eprt": "54",
+      "eprt": 55,
       "seasons": [
         {
           "number": 1,
@@ -51904,8 +51873,8 @@
             {
               "number": 1,
               "name": "Épisode 1",
-              "overview": "",
-              "air_date": "2026-11-04",
+              "overview": "Le monde de Sovieshu et Navier s'effondre à l'arrivée de Lasta, une esclave en fuite.",
+              "air_date": "2026-11-03",
               "sources": [
                 {
                   "name": "VIDMOLY",
@@ -51917,8 +51886,8 @@
             {
               "number": 2,
               "name": "Épisode 2",
-              "overview": "",
-              "air_date": "2026-11-04",
+              "overview": "Sovieshu ébranle Navier. L'arrivée du prince Heinri du Royaume de l'Ouest change la donne.",
+              "air_date": "2026-11-03",
               "sources": [
                 {
                   "name": "VIDMOLY",
@@ -51930,8 +51899,8 @@
             {
               "number": 3,
               "name": "Épisode 3",
-              "overview": "",
-              "air_date": "2026-11-04",
+              "overview": "Pendant les festivités, l'audace de Lasta et l'arrivée de Heinri font monter la tension au palais.",
+              "air_date": "2026-11-03",
               "sources": [
                 {
                   "name": "VIDMOLY",
@@ -51943,8 +51912,8 @@
             {
               "number": 4,
               "name": "Épisode 4",
-              "overview": "",
-              "air_date": "2026-11-04",
+              "overview": "Le Nouvel An rapproche Navier et Heinri. Lasta, qui les observe, utilise leur secret pour comploter.",
+              "air_date": "2026-11-03",
               "sources": [
                 {
                   "name": "VIDMOLY",
@@ -52004,7 +51973,7 @@
         "VOSTFR"
       ],
       "posterCustom": true,
-      "updatedAt": 1793710979547,
+      "updatedAt": 1793968909208,
       "trend": 93
     },
     {
@@ -52040,7 +52009,7 @@
         "Science-Fiction & Fantastique"
       ],
       "rating": "8.6",
-      "pop": 5.7816,
+      "pop": 4.6278,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/bqAjpdhw3vMNgyMwOJ0C29q9Vb5.jpg",
       "posterV": 2,
@@ -52266,7 +52235,7 @@
         "VOSTFR"
       ],
       "bl": true,
-      "updatedAt": 1793737881691
+      "updatedAt": 1793968910199
     },
     {
       "id": "285625",
@@ -52296,7 +52265,7 @@
         "Drame"
       ],
       "rating": "8.3",
-      "pop": 16.6857,
+      "pop": 14.1964,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/mzYWwU2FBBn4ozILMu9e0M7mhfn.jpg",
       "posterV": 2,
@@ -52684,8 +52653,8 @@
             },
             {
               "number": 25,
-              "name": "Épisode 25",
-              "overview": "",
+              "name": "Corporate-Style Management",
+              "overview": "Xiaoximen Hospital is acquired by Xikang Group and transitions to a corporate-style management model. Huang Dongsheng is appointed interim hospital director.",
               "air_date": "2026-11-01",
               "sources": [
                 {
@@ -52697,8 +52666,8 @@
             },
             {
               "number": 26,
-              "name": "Épisode 26",
-              "overview": "",
+              "name": "I Like You",
+              "overview": "When Liu Zhengguang hears that Jia Xin had suffered burns, he quits his job and rushes back to Fucheng to see him. He finds Jia Xin slowly on the mend with Gong Xue by his side. He is shocked to learn that the two of them are planning to get married.",
               "air_date": "2026-11-01",
               "sources": [
                 {
@@ -52756,7 +52725,7 @@
         "VOSTFR"
       ],
       "posterCustom": true,
-      "updatedAt": 1793814321442,
+      "updatedAt": 1793968911215,
       "trend": 0
     },
     {
@@ -52794,11 +52763,11 @@
         "Mystère"
       ],
       "rating": "9.0",
-      "pop": 13.9959,
+      "pop": 12.1402,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/dcqOJ4p61cCgfR2zY8r43oF59kW.jpg",
       "posterV": 2,
-      "backdrop": "https://image.tmdb.org/t/p/original/lVVcf8QzTaaLU0RefnhKmz4GOGo.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/original/xk1FjT0j5YraC0CQgtq7AGQxT0j.jpg",
       "videos": [
         {
           "key": "RRq4GRGFQdM",
@@ -53373,7 +53342,7 @@
         "VOSTFR"
       ],
       "posterCustom": true,
-      "updatedAt": 1793818880361
+      "updatedAt": 1793968912247
     },
     {
       "id": "253955",
@@ -53407,11 +53376,11 @@
         "Action & Adventure"
       ],
       "rating": "7.3",
-      "pop": 6.5357,
+      "pop": 5.6403,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/4bGLAKdqOqrCR2oGuQGrdR51Piq.jpg",
       "posterV": 2,
-      "backdrop": "https://image.tmdb.org/t/p/original/wHBiEwprtIgaIbKqFp1OYHEDZYd.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/original/bqtIpYB9sfWJ0jGmSSGXiATD4ew.jpg",
       "videos": [
         {
           "key": "qWuTNsidqcw",
@@ -53944,7 +53913,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793819272485
+      "updatedAt": 1793968913215
     },
     {
       "id": "263292",
@@ -53980,7 +53949,7 @@
         "Science-Fiction & Fantastique"
       ],
       "rating": "9.4",
-      "pop": 5.4745,
+      "pop": 5.079,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/tLM3RVnc7VZU0UQ2dr3VP2INpnz.jpg",
       "posterV": 2,
@@ -54176,7 +54145,7 @@
         "VOSTFR"
       ],
       "posterCustom": true,
-      "updatedAt": 1793819547474
+      "updatedAt": 1793968914259
     },
     {
       "id": "308551",
@@ -54209,7 +54178,7 @@
         "Drame"
       ],
       "rating": "7.0",
-      "pop": 2.692,
+      "pop": 1.6734,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/8id4siIpAkePJZs6K99rQcQqT3k.jpg",
       "posterV": 2,
@@ -54563,7 +54532,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793821803433
+      "updatedAt": 1793968915250
     },
     {
       "id": "270431",
@@ -54584,19 +54553,20 @@
         "Gấp Ánh Trăng",
         "折月亮～月に出会ったとき～",
         "절월량: 달을 만났을 때",
-        "Cuando Encuentre la Luna"
+        "Cuando Encuentre la Luna",
+        "Когато срещна Луната"
       ],
       "year": "2026",
       "overview": "Pour gagner en indépendance, Yun Li, qui est d'une timidité extrême et souffre d'angoisse sociale, décide de poursuivre ses études et de faire un doctorat. C'est ainsi qu'elle retrouve son premier amour, Fu Shi Ze, à qui elle n'avait jamais osé se déclarer au lycée. Décidée cette fois à gagner son coeur, tous les deux finissent par tomber amoureux mais finissent par rompre à cause de leurs blessures personnelles.\nDes années plus tard, Fu Shi Ze est maintenant un grand chercheur et Yun Li revient de l'étranger. Cette fois, c'est au tour de Fu Shi Ze de tenter de la conquérir.",
       "genres": [
         "Drame"
       ],
-      "rating": "9.0",
-      "pop": 7.0442,
+      "rating": "9.2",
+      "pop": 22.0622,
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/original/mWJT8AOY72FyInCPxUNCW9Y82rR.jpg",
       "posterV": 2,
-      "backdrop": "https://image.tmdb.org/t/p/original/cziabztruxhb7ETFuFDMHZOgJDF.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/original/Agg3jHAbPAnKdTEfBcESa6hefdW.jpg",
       "videos": [
         {
           "key": "Rq_bgcQyfsI",
@@ -54880,7 +54850,7 @@
         "VOSTFR"
       ],
       "posterCustom": true,
-      "updatedAt": 1793889491422,
+      "updatedAt": 1793968916215,
       "trend": 76
     },
     {
@@ -54905,7 +54875,7 @@
         "Drame"
       ],
       "rating": "",
-      "pop": 1.1857,
+      "pop": 1.3071,
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/8hYNqfxJP9ZhaHlAFwCpnIRXzTY.jpg",
       "posterV": 2,
@@ -55259,7 +55229,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793918755608
+      "updatedAt": 1793968917234
     },
     {
       "id": "m1654940",
@@ -55369,7 +55339,7 @@
         "VF",
         "VOSTFR"
       ],
-      "updatedAt": 1793966904964
+      "updatedAt": 1793968917774
     },
     {
       "id": "m1483525",
@@ -55494,7 +55464,7 @@
         "VOSTFR",
         "VF"
       ],
-      "updatedAt": 1793968701387
+      "updatedAt": 1793968918785
     }
   ],
   "deletedLinks": [
@@ -56245,6 +56215,15 @@
     "at": 1793280056955
   },
   "journal": [
+    {
+      "k": "mw4yrxi64991q",
+      "t": 1793968919646,
+      "b": "head",
+      "a": "tmdb",
+      "i": "",
+      "n": "Toutes les fiches",
+      "d": "161 fiches"
+    },
     {
       "k": "mw4yn93ppz1g2",
       "t": 1793968701397,
@@ -58934,15 +58913,6 @@
       "a": "edit",
       "i": "215072",
       "n": "A Shop for Killers",
-      "d": ""
-    },
-    {
-      "k": "mvl3adyiwayu6",
-      "t": 1792767199531,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "127529",
-      "n": "Bloodhounds",
       "d": ""
     }
   ]
