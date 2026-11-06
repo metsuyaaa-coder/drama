@@ -58605,7 +58605,13 @@
               "name": "Épisode 5",
               "overview": "",
               "air_date": "2026-11-06",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-efusowcdd0mz.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -58613,7 +58619,13 @@
               "name": "Épisode 6",
               "overview": "",
               "air_date": "2026-11-06",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-18a8ip5r9453.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -58795,7 +58807,7 @@
       ],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1793968916215,
+      "updatedAt": 1793978551102,
       "trend": 76
     },
     {
@@ -60495,6 +60507,15 @@
     "at": 1793280056955
   },
   "journal": [
+    {
+      "k": "mw54id8446cie",
+      "t": 1793978551156,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "270431",
+      "n": "When I Meet the Moon",
+      "d": "sources 4 → 6"
+    },
     {
       "k": "mw53r773t8kx6",
       "t": 1793977283631,
@@ -63184,15 +63205,6 @@
       "a": "edit",
       "i": "286198",
       "n": "Shin's Project",
-      "d": ""
-    },
-    {
-      "k": "mvl3eqjtty45z",
-      "t": 1792767378665,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "246473",
-      "n": "Made in Korea",
       "d": ""
     }
   ],
