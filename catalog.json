@@ -25145,7 +25145,13 @@
               "name": "Épisode 29",
               "overview": "",
               "air_date": "2026-11-03",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-g265d8mrncpe.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -25167,7 +25173,7 @@
       ],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1793968837226,
+      "updatedAt": 1793978625270,
       "trend": 86
     },
     {
@@ -60508,6 +60514,15 @@
   },
   "journal": [
     {
+      "k": "mw54jyfqe8emb",
+      "t": 1793978625302,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "300146",
+      "n": "Where the Mask Ends",
+      "d": "sources 28 → 29"
+    },
+    {
       "k": "mw54id8446cie",
       "t": 1793978551156,
       "b": "614d778ed0",
@@ -63196,15 +63211,6 @@
       "a": "edit",
       "i": "293607",
       "n": "100 Days of Deception",
-      "d": ""
-    },
-    {
-      "k": "mvl3fnp9in4nt",
-      "t": 1792767421629,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "286198",
-      "n": "Shin's Project",
       "d": ""
     }
   ],
