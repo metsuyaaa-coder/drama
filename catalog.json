@@ -59871,6 +59871,642 @@
       "downloads": [],
       "posterCustom": true,
       "updatedAt": 1793972417855
+    },
+    {
+      "id": "134331",
+      "type": "tv",
+      "name": "Lighter and Princess",
+      "original_name": "点燃我，温暖你",
+      "origin_country": [
+        "CN"
+      ],
+      "networks": [
+        "Youku"
+      ],
+      "original_language": "zh",
+      "aka": [
+        "Lighter and Princess",
+        "点燃我，温暖你",
+        "Chiếc Bật Lửa Và Váy Công Chúa",
+        "점연아, 온난니 : 너는 나의 불꽃",
+        "點燃我，溫暖你",
+        "點燃我，温暖你",
+        "Зажигалка и платье принцессы",
+        "Lighter & Princess",
+        "O Isqueiro e o vestido da Princesa",
+        "ไฟแช็กกับชุดเจ้าหญิง",
+        "L&P",
+        "打火机与公主裙",
+        "Dian Ran Wo, Wen Nuan Ni",
+        "Dahuoji Yu Gongzhu Qun",
+        "Dianran Wo, Wennuan Ni",
+        "打火機與公主裙",
+        "The Lighter and the Princess' Gown",
+        "Lighter and Princess' Dress"
+      ],
+      "year": "2022",
+      "overview": "Li Xun (Arthur Chen), développeur de génie, voit la vie comme la programmation d'un ordinateur. Il vit dans un monde à part et ne comprend pas cette émotion qu'on appelle « amour ». Son existence change du tout au tout quand il rencontre Zhu Yun (Zhang Jing Yi), une jeune femme à l'esprit cartésien qui ne voit en Li Xun qu'un fauteur de troubles. Malgré leurs différences, ils sont attirés l'un l'autre et une douce romance naît entre eux, jusqu'à ce qu'un incident bouleverse leur vie et menace de les séparer pour toujours.",
+      "genres": [
+        "Drame"
+      ],
+      "rating": "8.2",
+      "pop": 9.7667,
+      "status": "Ended",
+      "poster": "https://image.tmdb.org/t/p/original/lsoPAmgkgJcHkmJisoGle3rmFYA.jpg",
+      "posterV": 2,
+      "backdrop": "https://image.tmdb.org/t/p/original/wxz9DOg9wMhkl4E2F3CjwZWSYS9.jpg",
+      "videos": [
+        {
+          "key": "mHHdPGO-9io",
+          "name": "ENGSUB【TRAILER】纯爱版预告来袭！乖乖女朱韵追爱“校霸”男神李峋 | 打火机与公主裙 Lighter&Princess | 陈飞宇/张婧仪/赵志伟/",
+          "type": "Trailer",
+          "lab": "Anglais"
+        }
+      ],
+      "cast": [
+        {
+          "name": "陈飞宇",
+          "character": "Li Xun",
+          "id": 2165598
+        },
+        {
+          "name": "Zhāng Jìng-Yí",
+          "character": "Zhu Yun",
+          "id": 2631253
+        },
+        {
+          "name": "赵志伟",
+          "character": "Gao Jianhong",
+          "id": 2300678
+        },
+        {
+          "name": "曾可妮",
+          "character": "Ren Di",
+          "id": 2376754
+        },
+        {
+          "name": "崔雨鑫",
+          "character": "Fang Zhijing",
+          "id": 2730675
+        },
+        {
+          "name": "Didi Qian",
+          "character": "Xu Lina",
+          "id": 3182751
+        },
+        {
+          "name": "Zhang Xilin",
+          "character": "Dong Siyang",
+          "id": 2307499
+        },
+        {
+          "name": "徐洁儿",
+          "character": "Li Lan",
+          "id": 1626670
+        },
+        {
+          "name": "Cai Gang",
+          "character": "Uncle Qian",
+          "id": 1638483
+        },
+        {
+          "name": "Ху Бинь Гэ",
+          "character": "Liu Xiaoyan",
+          "id": 4815862
+        },
+        {
+          "name": "Ху И Мин",
+          "character": "Jiang Xingchi",
+          "id": 4819107
+        },
+        {
+          "name": "Hu Wenxuan",
+          "character": "Fu Yizhuo",
+          "id": 4100985
+        }
+      ],
+      "eprt": 48,
+      "seasons": [
+        {
+          "number": 1,
+          "name": "Saison 1",
+          "episodes": [
+            {
+              "number": 1,
+              "name": "Épisode 1",
+              "overview": "After years abroad, Zhu Yun returns to her hometown filled with memories and old friends. Meanwhile, Li Xun tries to adapt to his post-prison life.",
+              "air_date": "2022-11-03",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-928s4hpi08qc.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 2,
+              "name": "Épisode 2",
+              "overview": "An unexpected reunion sends Zhu Yun on a trip down memory lane, where a defiant classmate becomes a major headache during her freshman year.",
+              "air_date": "2022-11-03",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-pt5mbqnmmfud.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 3,
+              "name": "Épisode 3",
+              "overview": "Zhu Yun confronts Li Xun about his absence from class. Soon after, a computer virus from Li Xun causes chaos in his department.",
+              "air_date": "2022-11-03",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-nk6erlinhe24.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 4,
+              "name": "Épisode 4",
+              "overview": "Zhu Yun grows frustrated with Li Xun's defiant moves. At the school's talent show, her stand-up act is disrupted by a daring confession.",
+              "air_date": "2022-11-03",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-89miroloa1p8.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 5,
+              "name": "Épisode 5",
+              "overview": "Zhu Yun and Gao Jianhong feel threatened as people flock to Li Xun's coding camp, and they decide to challenge him to prove their programming skills.",
+              "air_date": "2022-11-04",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-q7cmqhyy5mng.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 6,
+              "name": "Épisode 6",
+              "overview": "Before her abrupt departure from school, Ren Di shares a secret with Zhu Yun. Shortly after, Mr. Lin offers Zhu Yun some thought-provoking advice.",
+              "air_date": "2022-11-04",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-42v5fqmom949.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 7,
+              "name": "Épisode 7",
+              "overview": "Gao Jianhong's ego grows as the team tries to secure a major project, but things don't go as planned. Soon, Zhu Yun has to face a harsh reality.",
+              "air_date": "2022-11-05",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-rt3o74y9gh7b.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 8,
+              "name": "Épisode 8",
+              "overview": "The arrival of a condescending supervisor unsettles the coding camp members. Li Xun grows closer to Zhu Yun after they confide in each other.",
+              "air_date": "2022-11-06",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-q5lrp2jen0pe.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 9,
+              "name": "Épisode 9",
+              "overview": "On a hiking trip, Li Xun, Zhu Yun and Gao Jianhong agree to form a trio to develop their own app. However, their efforts leave Zhang Xiaobei furious.",
+              "air_date": "2022-11-07",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-glkb9p7ssb8t.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 10,
+              "name": "Épisode 10",
+              "overview": "A vengeful act from Zhang Xiaobei threatens Zhu Yun's future. Later, Li Xun decides to sacrifice their project to protect Zhu Yun.",
+              "air_date": "2022-11-07",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-u13h77gfy0e9.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 11,
+              "name": "Épisode 11",
+              "overview": "Zhu Yun's mother asks her to stay away from a bad influence. After a volleyball class goes awry, a new admirer of Zhu Yun ignites jealousy in Li Xun.",
+              "air_date": "2022-11-08",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-m7v8hywbxzb2.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 12,
+              "name": "Épisode 12",
+              "overview": "A new pursuer of Zhu Yun fuels Li Xun's competitiveness. Later, a meeting with Li Xun's sister gives Zhu Yun some insight into his past.",
+              "air_date": "2022-11-08",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-ls0cttognbpd.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 13,
+              "name": "Épisode 13",
+              "overview": "After losing a cherished item, Li Xun opens up about his past. Gao Jianhong, feeling excluded in the coding camp, wants to pursue his own ventures.",
+              "air_date": "2022-11-09",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-gzy1em8cgvpn.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 14,
+              "name": "Épisode 14",
+              "overview": "As the holiday season approaches, Zhu Yun grows worried about Li Xun who falls ill. Later, they find a way to spend a special New Year's Eve together.",
+              "air_date": "2022-11-10",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-btbtzjx4ilq4.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 15,
+              "name": "Épisode 15",
+              "overview": "After an unexpected encounter, Zhu Yun tries to keep her distance from Tian Xiuzhu. Gao Jianhong becomes infatuated with a passionate fan.",
+              "air_date": "2022-11-11",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-1d1pc6r6tw1s.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 16,
+              "name": "Épisode 16",
+              "overview": "A run-in with a condescending rival ignites Zhu Yun's competitive spirit. Another conflict breaks out between Li Xun and Gao Jianhong.",
+              "air_date": "2022-11-12",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-igtfup3il0zl.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 17,
+              "name": "Épisode 17",
+              "overview": "Gao Jianhong accidentally uncovers a scandalous secret. Soon after, Fang Zhijing has to face a bold public challenge from Li Xun.",
+              "air_date": "2022-11-13",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-wv3vr9vkl3gn.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 18,
+              "name": "Épisode 18",
+              "overview": "Zhu Yun musters the courage to reveal her true feelings to Li Xun. Three years later, Li Xun presents Zhu Yun with a grand and unexpected surprise.",
+              "air_date": "2022-11-14",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-fz7p9kstv5ji.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 19,
+              "name": "Épisode 19",
+              "overview": "As graduation day nears, Zhu Yun and her friends begin to plan for their future. Meanwhile, Gao Jianhong stuns everyone with an unexpected decision.",
+              "air_date": "2022-11-14",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-1qn58j57lh6h.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 20,
+              "name": "Épisode 20",
+              "overview": "While Gao Jianhong prepares to study abroad, he turns to Li Xun for a favor. Zhu Yun's career decision leads to a huge fallout with her parents.",
+              "air_date": "2022-11-15",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-i2rwu20qgjbm.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 21,
+              "name": "Épisode 21",
+              "overview": "Zhu Yun tries to console Li Xun after a devastating tragedy. Soon after, Li Xun meets with the Zhu family in hopes of gaining their blessings.",
+              "air_date": "2022-11-15",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-tiyn149v5otg.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 22,
+              "name": "Épisode 22",
+              "overview": "The misunderstanding between Li Xun and Zhu Yun intensifies. Soon after, Fang Zhijing's award acceptance speech devolves into a scene of chaos.",
+              "air_date": "2022-11-16",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-5gkxxwzqx53c.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 23,
+              "name": "Épisode 23",
+              "overview": "Zhu Yun faces a cruel confession at a prison visit. As time goes by, Gao Jianhong reveals his true colors as he assumes control of Li Xun's company.",
+              "air_date": "2022-11-21",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-gjuy7g3v5l3s.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 24,
+              "name": "Épisode 24",
+              "overview": "At an industry summit, Li Xun issues an ultimatum to Gao Jianhong. Later, Zhu Yun and Li Xun reunite as colleagues at another startup.",
+              "air_date": "2022-11-21",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-ydn34ogs89f6.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 25,
+              "name": "Épisode 25",
+              "overview": "At their new company, Zhu Yun and Li Xun face a rocky start and a peculiar boss while the two try to save a doomed project.",
+              "air_date": "2022-11-22",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-e74sanuvw11o.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 26,
+              "name": "Épisode 26",
+              "overview": "An unexpected visitor shows up at Li Xun's place with a generous offer. Tian Xiuzhu’s close friendship with Zhu Yun leaves Li Xun bitter inside.",
+              "air_date": "2022-11-22",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-384meuv11h45.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 27,
+              "name": "Épisode 27",
+              "overview": "Out of his jealousy of Tian Xiuzhu, Li Xun hurts Zhu Yun once again. A medical emergency reveals Zhu Yun’s pain in the past three years.",
+              "air_date": "2022-11-23",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-ueqa9p3l3exe.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 28,
+              "name": "Épisode 28",
+              "overview": "Li Xun and Zhu Yun's new game is released to rave reviews, but its success ignites Gao Jianhong's envy. Hou Ning's efforts to help Li Xun backfire.",
+              "air_date": "2022-11-28",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-vsehxy3i37gg.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 29,
+              "name": "Épisode 29",
+              "overview": "Zhu Yun and Li Xun's startup struggles against a massive ad campaign from a rival game. Dong Siyang takes his team to a retreat to boost morale.",
+              "air_date": "2022-11-28",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-uj7ai2ed3qlj.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 30,
+              "name": "Épisode 30",
+              "overview": "Li Xun pours his passion into a new entrepreneurial endeavor. Meanwhile, Gao Jianhong launches an investigation into Hou Ning's past.",
+              "air_date": "2022-11-29",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-oo2eb8dpxlda.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 31,
+              "name": "Épisode 31",
+              "overview": "During the holiday season, a hacking incident leaves Zhu Yun and Li Xun scrambling to fix their game while Dong Siyang tries to track down the hacker.",
+              "air_date": "2022-11-29",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-33apds569tyl.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 32,
+              "name": "Épisode 32",
+              "overview": "Despite his past misconduct, Hou Ning finds a home and a new job. A revelation makes Ren Di realize the sacrifice her partner makes.",
+              "air_date": "2022-11-30",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-233crovne3bv.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 33,
+              "name": "Épisode 33",
+              "overview": "Gao Jianhong sends his wife to perform a despicable task. After an award ceremony, Xu Lina opens up to Li Xun about her life in the past few years.",
+              "air_date": "2022-12-05",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-a8eeikdschvn.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 34,
+              "name": "Épisode 34",
+              "overview": "Obsessed with winning, Gao Jianhong entangles himself in one crisis after another. Xu Lina tries to convince Li Xun and Zhu Yun to drop a big lawsuit.",
+              "air_date": "2022-12-05",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-xux2cbv68tu1.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 35,
+              "name": "Épisode 35",
+              "overview": "Gao Jianhong hopes to leverage a sex scandal to win a legal battle. Later, Li Xun and Zhu Yun contemplate Gao Jianhong's sudden decline in health.",
+              "air_date": "2022-12-06",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-ox1vovurpq7b.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            },
+            {
+              "number": 36,
+              "name": "Épisode 36",
+              "overview": "Gao Jianhong reveals his struggles over all these years. Accompanied by friends, Li Xun and Zhu Yun progress to the next phase of their lives.",
+              "air_date": "2022-12-06",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-z2qq99knmzm6.html",
+                  "by": "614d778ed0"
+                }
+              ],
+              "downloads": []
+            }
+          ],
+          "downloads": []
+        }
+      ],
+      "sources": [],
+      "addedAt": 1794008813069,
+      "langs": [
+        "VOSTFR"
+      ],
+      "downloads": [],
+      "posterCustom": true,
+      "updatedAt": 1794009081810
     }
   ],
   "deletedLinks": [
@@ -60618,6 +61254,15 @@
     "at": 1793983583821
   },
   "journal": [
+    {
+      "k": "mw5moqvvdg4sp",
+      "t": 1794009081883,
+      "b": "614d778ed0",
+      "a": "add",
+      "i": "134331",
+      "n": "Lighter and Princess",
+      "d": ""
+    },
     {
       "k": "mw5m8bfjputxz",
       "t": 1794008315359,
@@ -63307,15 +63952,6 @@
       "a": "edit",
       "i": "291496",
       "n": "Our Sticky Love",
-      "d": ""
-    },
-    {
-      "k": "mvl3x2xu43wjh",
-      "t": 1792768234530,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "294636",
-      "n": "The Ordinary Jackpot",
       "d": ""
     }
   ],
