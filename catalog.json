@@ -60564,6 +60564,15 @@
   },
   "journal": [
     {
+      "k": "mw5do59kesx9f",
+      "t": 1793993937320,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "282326",
+      "n": "Against the Current",
+      "d": ""
+    },
+    {
       "k": "mw5dlmjhjxmp4",
       "t": 1793993819741,
       "b": "614d778ed0",
@@ -63252,15 +63261,6 @@
       "a": "edit",
       "i": "289423",
       "n": "Take Charge of My Heart",
-      "d": ""
-    },
-    {
-      "k": "mvl3qzmjl1yrn",
-      "t": 1792767950299,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "276161",
-      "n": "Teach You a Lesson",
       "d": ""
     }
   ],
