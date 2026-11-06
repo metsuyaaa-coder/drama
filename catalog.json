@@ -57331,7 +57331,7 @@
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/w500/4bGLAKdqOqrCR2oGuQGrdR51Piq.jpg",
       "posterV": 2,
-      "backdrop": "https://image.tmdb.org/t/p/original/bqtIpYB9sfWJ0jGmSSGXiATD4ew.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/original/wHBiEwprtIgaIbKqFp1OYHEDZYd.jpg",
       "videos": [
         {
           "key": "qWuTNsidqcw",
@@ -57902,7 +57902,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1793968913215
+      "updatedAt": 1794008205548
     },
     {
       "id": "263292",
@@ -60619,6 +60619,15 @@
   },
   "journal": [
     {
+      "k": "mw5m5yr80wpn7",
+      "t": 1794008205620,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "253955",
+      "n": "The Wanted Detective",
+      "d": ""
+    },
+    {
       "k": "mw5had8yb8hci",
       "t": 1794000012946,
       "b": "614d778ed0",
@@ -63307,15 +63316,6 @@
       "a": "edit",
       "i": "307106",
       "n": "Between Steps",
-      "d": ""
-    },
-    {
-      "k": "mvl3tj6qwz67n",
-      "t": 1792768091296,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "289690",
-      "n": "Love Phobia",
       "d": ""
     }
   ],
