@@ -33894,7 +33894,13 @@
               "name": "Épisode 26",
               "overview": "",
               "air_date": "",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-cz1bum6x41xp.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -33902,7 +33908,13 @@
               "name": "Épisode 27",
               "overview": "",
               "air_date": "",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-c1s6494el9o4.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -33910,7 +33922,13 @@
               "name": "Épisode 28",
               "overview": "",
               "air_date": "",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-2f7izz09eia0.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -34019,7 +34037,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1793968854233,
+      "updatedAt": 1793981638589,
       "trend": 42,
       "eprt": 48
     },
@@ -60520,6 +60538,15 @@
   },
   "journal": [
     {
+      "k": "mw56cjiivdwj5",
+      "t": 1793981638602,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "286171",
+      "n": "Tigers Sniff the Rose",
+      "d": "sources 25 → 28"
+    },
+    {
       "k": "mw565ijf1w0e1",
       "t": 1793981310747,
       "b": "614d778ed0",
@@ -63208,15 +63235,6 @@
       "a": "edit",
       "i": "305644",
       "n": "Four Hands, Two Sonatas",
-      "d": ""
-    },
-    {
-      "k": "mvl3iirl0ixr8",
-      "t": 1792767555201,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "275102",
-      "n": "The Scandal",
       "d": ""
     }
   ],
