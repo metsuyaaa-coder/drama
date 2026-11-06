@@ -59842,9 +59842,31 @@
         "en": "Single in Seoul",
         "auto": true,
         "at": 1793891171889
+      },
+      {
+        "id": "rmw4c6kuj",
+        "title": "半是蜜糖半是伤",
+        "status": "wait",
+        "bl": false,
+        "kind": "stream",
+        "votes": 1,
+        "tmdb": "110632",
+        "media": "tv",
+        "year": "2020",
+        "poster": "/8K6gt1Eve7EHcwxG1h4bijntOUu.jpg",
+        "origin": "Chine",
+        "en": "Love is Sweet",
+        "auto": true,
+        "at": 1793930971915
       }
     ],
-    "at": 1793914479204
+    "at": 1793930971915,
+    "log": [
+      {
+        "v": "6eb69b77",
+        "t": 1793930971915
+      }
+    ]
   },
   "founder": {
     "name": "Meyriuu",
