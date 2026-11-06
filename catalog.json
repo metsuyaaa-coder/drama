@@ -55260,6 +55260,116 @@
         "VOSTFR"
       ],
       "updatedAt": 1793918755608
+    },
+    {
+      "id": "m1654940",
+      "type": "movie",
+      "name": "One Year to Live, Buy a Man",
+      "original_name": "余命一年、男をかう",
+      "aka": [
+        "One Year to Live, Buy a Man",
+        "餘命一年買男人",
+        "시한부 1년, 남자를 사다",
+        "Został mi rok życia, kupię sobie mężczyznę",
+        "余命一年买男人",
+        "Un poco de compañía antes de morir",
+        "Um Ano de Vida, Compre Um Homem",
+        "Életem utolsó éve",
+        "Un an à vivre, un homme à acheter",
+        "Bir Yıllık Ömrün Kaldıysa Bir Erkek Satın Al",
+        "ซื้อผู้ชาย เพราะอยู่ได้อีกปีเดียว",
+        "Мені лишився рік, куплю чоловіка",
+        "Една година живот, купи си мъж",
+        "Yomei Ichinen, Otoko wo Kau",
+        "余命一年、男をかう"
+      ],
+      "year": "2026",
+      "overview": "Yui Katakura,40 ans, est une célibataire qui passe son temps à faire des économies. Elle se constitue patiemment un pécule pour sa retraite, jusqu'au jour où un dépistage gratuit du cancer bouleverse sa vie bien rangée. Il révèle qu'il ne lui resterait qu'un an à vivre. Encore sous le choc, elle voit surgir Yoshitaka Sena, alias Ryuma, un hôte séduisant aux cheveux roses, qui lui demande si elle pourrait lui prêter de l'argent. Puisqu'elle va mourir, à quoi bon continuer d'économiser ? Yui accepte cette demande osée et \"achète\" Sena pour 720 000 yens. Leur étrange relation prend alors une tournure inattendue.",
+      "genres": [
+        "Romance",
+        "Drame"
+      ],
+      "rating": "6.8",
+      "pop": 25.8021,
+      "status": "Released",
+      "runtime": 109,
+      "poster": "https://image.tmdb.org/t/p/w500/fez7kLyGzpowduJapTFZZ1feCS0.jpg",
+      "posterV": 2,
+      "backdrop": "https://image.tmdb.org/t/p/original/6vGH7JZFLzFawpwCcnNweF8j3KD.jpg",
+      "videos": [
+        {
+          "key": "WH-RRKQGdJ8",
+          "name": "Official Trailer [Subtitled]",
+          "type": "Trailer",
+          "lab": "Anglais"
+        }
+      ],
+      "cast": [
+        {
+          "name": "Ko Shibasaki",
+          "character": "Yui Katakura",
+          "id": 58593
+        },
+        {
+          "name": "赤楚衛二",
+          "character": "Sena",
+          "id": 1509675
+        },
+        {
+          "name": "筒井道隆",
+          "character": "Masami Ikuyama",
+          "id": 150715
+        },
+        {
+          "name": "Naomi Nishida",
+          "character": "Mizuho Maruyama",
+          "id": 66153
+        },
+        {
+          "name": "鳴海唯",
+          "character": "Nachi",
+          "id": 3118980
+        },
+        {
+          "name": "宮世琉弥",
+          "character": "Kiriya",
+          "id": 2560735
+        },
+        {
+          "name": "近藤公園",
+          "character": "Doctor",
+          "id": 107106
+        },
+        {
+          "name": "濱田マリ",
+          "character": "Sena's Mother",
+          "id": 556785
+        },
+        {
+          "name": "森口瑤子",
+          "character": "Yui's Mother",
+          "id": 932012
+        },
+        {
+          "name": "尾碕真花",
+          "character": "",
+          "id": 2189469
+        }
+      ],
+      "seasons": [],
+      "sources": [
+        {
+          "name": "EMBEDORIGIN",
+          "url": "https://embedorigin.cc/e/d567a2iwecww",
+          "by": "head"
+        }
+      ],
+      "addedAt": 1793966900132,
+      "langs": [
+        "VF",
+        "VOSTFR"
+      ],
+      "updatedAt": 1793966904964
     }
   ],
   "deletedLinks": [
@@ -56010,6 +56120,15 @@
     "at": 1793280056955
   },
   "journal": [
+    {
+      "k": "mw4xkqz2l25r8",
+      "t": 1793966904974,
+      "b": "head",
+      "a": "add",
+      "i": "m1654940",
+      "n": "One Year to Live, Buy a Man",
+      "d": ""
+    },
     {
       "k": "mw44wqpj7eyn8",
       "t": 1793918755639,
@@ -58699,15 +58818,6 @@
       "a": "edit",
       "i": "218539",
       "n": "My Demon",
-      "d": ""
-    },
-    {
-      "k": "mvl36ic3sa41u",
-      "t": 1792766994771,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "208336",
-      "n": "Revenge of Others",
       "d": ""
     }
   ]
