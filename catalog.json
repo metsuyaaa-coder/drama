@@ -59345,7 +59345,7 @@
       "pop": 10.4277,
       "status": "Released",
       "runtime": 165,
-      "poster": "https://image.tmdb.org/t/p/w500/1ERGPNiKtnEcsvJS1ywsmqmcIDO.jpg",
+      "poster": "https://image.tmdb.org/t/p/original/wHOuHSigvSibAOJTTVKuatAZxiw.jpg",
       "posterV": 2,
       "backdrop": "https://image.tmdb.org/t/p/original/kPbyLj2OyjojqvR1jfK1VvXzabg.jpg",
       "videos": [
@@ -59437,8 +59437,9 @@
         "VOSTFR",
         "VF"
       ],
-      "updatedAt": 1793968918785,
-      "downloads": []
+      "updatedAt": 1793977283606,
+      "downloads": [],
+      "posterCustom": true
     },
     {
       "id": "307853",
@@ -60494,6 +60495,15 @@
     "at": 1793280056955
   },
   "journal": [
+    {
+      "k": "mw53r773t8kx6",
+      "t": 1793977283631,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "m1483525",
+      "n": "Possible Love",
+      "d": "affiche"
+    },
     {
       "k": "mw50uwr9zck8o",
       "t": 1793972417877,
@@ -63183,15 +63193,6 @@
       "a": "edit",
       "i": "246473",
       "n": "Made in Korea",
-      "d": ""
-    },
-    {
-      "k": "mvl3drnpix6b4",
-      "t": 1792767333445,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "220074",
-      "n": "Flex X Cop",
       "d": ""
     }
   ],
