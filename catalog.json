@@ -7186,7 +7186,13 @@
               "name": "Épisode 39",
               "overview": "",
               "air_date": "2026-11-01",
-              "sources": [],
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-pix07ilhfm51.html",
+                  "by": "614d778ed0"
+                }
+              ],
               "downloads": []
             },
             {
@@ -7208,7 +7214,7 @@
       ],
       "downloads": [],
       "posterCustom": true,
-      "updatedAt": 1793968777188,
+      "updatedAt": 1793981310732,
       "trend": 0
     },
     {
@@ -60514,6 +60520,15 @@
   },
   "journal": [
     {
+      "k": "mw565ijf1w0e1",
+      "t": 1793981310747,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "304452",
+      "n": "The Lament of Autumn",
+      "d": "sources 38 → 39"
+    },
+    {
       "k": "mw54jyfqe8emb",
       "t": 1793978625302,
       "b": "614d778ed0",
@@ -63202,15 +63217,6 @@
       "a": "edit",
       "i": "275102",
       "n": "The Scandal",
-      "d": ""
-    },
-    {
-      "k": "mvl3h427dfmws",
-      "t": 1792767489487,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "293607",
-      "n": "100 Days of Deception",
       "d": ""
     }
   ],
