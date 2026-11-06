@@ -987,7 +987,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "trend": 69,
+      "trend": 0,
       "origin_country": [
         "KR"
       ],
@@ -1490,7 +1490,7 @@
         "Upanje",
         "호프"
       ],
-      "trend": 79,
+      "trend": 92,
       "posterV": 2,
       "updatedAt": 1793968762726,
       "videos": [
@@ -7744,7 +7744,7 @@
         "VOSTFR"
       ],
       "updatedAt": 1793968779948,
-      "trend": 43,
+      "trend": 0,
       "posterCustom": true,
       "videos": [
         {
@@ -8414,7 +8414,7 @@
         "VOSTFR"
       ],
       "updatedAt": 1793968782203,
-      "trend": 44,
+      "trend": 0,
       "networks": [
         "TVING"
       ],
@@ -23661,7 +23661,7 @@
       ],
       "posterCustom": true,
       "updatedAt": 1793978625270,
-      "trend": 86,
+      "trend": 70,
       "videos": [
         {
           "key": "lLBSb_Xc1sw",
@@ -24560,7 +24560,7 @@
         "VOSTFR"
       ],
       "updatedAt": 1793968839238,
-      "trend": 55,
+      "trend": 43,
       "videos": [
         {
           "key": "55ATD_SJ_Xw",
@@ -31705,7 +31705,7 @@
         "VOSTFR"
       ],
       "updatedAt": 1793981638589,
-      "trend": 42,
+      "trend": 0,
       "eprt": 48
     },
     {
@@ -45515,7 +45515,7 @@
         "VF"
       ],
       "updatedAt": 1793968891307,
-      "trend": 98,
+      "trend": 93,
       "posterCustom": true
     },
     {
@@ -45747,7 +45747,7 @@
         "VOSTFR"
       ],
       "updatedAt": 1793968892201,
-      "trend": 67
+      "trend": 0
     },
     {
       "id": "330718",
@@ -52031,7 +52031,7 @@
       ],
       "posterCustom": true,
       "updatedAt": 1793982937989,
-      "trend": 93
+      "trend": 94
     },
     {
       "id": "237411",
@@ -54920,7 +54920,7 @@
       ],
       "posterCustom": true,
       "updatedAt": 1793978571323,
-      "trend": 76
+      "trend": 0
     },
     {
       "id": "336458",
@@ -55433,7 +55433,7 @@
         "가능한 사랑"
       ],
       "year": "2026",
-      "overview": "",
+      "overview": "Un employé licencié et son épouse, qui croisent la route d'une documentariste et de son conjoint, affrontent leurs désirs cachés.",
       "genres": [
         "Drame"
       ],
@@ -55533,7 +55533,7 @@
         "VOSTFR",
         "VF"
       ],
-      "updatedAt": 1793977283606,
+      "updatedAt": 1793993517661,
       "posterCustom": true
     },
     {
@@ -55814,7 +55814,8 @@
         "VOSTFR"
       ],
       "posterCustom": true,
-      "updatedAt": 1793972417855
+      "updatedAt": 1793972417855,
+      "trend": 58
     }
   ],
   "deletedLinks": [
@@ -56563,6 +56564,15 @@
     "at": 1793983583821
   },
   "journal": [
+    {
+      "k": "mw5df5gns4ug8",
+      "t": 1793993517671,
+      "b": "head",
+      "a": "edit",
+      "i": "m1483525",
+      "n": "Possible Love",
+      "d": ""
+    },
     {
       "k": "mw57408m73wsh",
       "t": 1793982937999,
@@ -59252,15 +59262,6 @@
       "a": "edit",
       "i": "290193",
       "n": "Mousetrap",
-      "d": ""
-    },
-    {
-      "k": "mvl3onz14vkxj",
-      "t": 1792767841885,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "314939",
-      "n": "A Love Other Than Yours",
       "d": ""
     }
   ]
