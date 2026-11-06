@@ -53389,7 +53389,7 @@
       "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/luKNvVTizD4O46XjTJ5Hlj2EuHt.jpg",
       "posterV": 2,
-      "backdrop": "https://image.tmdb.org/t/p/original/zldji8QZ3HdoosmtUIf59YmDoxZ.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/original/oqRpMcOlkD7bKF1ErK0psglvsWj.jpg",
       "videos": [],
       "cast": [
         {
@@ -53892,7 +53892,7 @@
         "VOSTFR"
       ],
       "downloads": [],
-      "updatedAt": 1793968904234,
+      "updatedAt": 1794009235956,
       "posterCustom": true
     },
     {
@@ -61255,6 +61255,15 @@
   },
   "journal": [
     {
+      "k": "mw5ms1t8wckd1",
+      "t": 1794009236012,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "291392",
+      "n": "Love For You",
+      "d": ""
+    },
+    {
       "k": "mw5mq1a0jmgmf",
       "t": 1794009142008,
       "b": "614d778ed0",
@@ -63943,15 +63952,6 @@
       "a": "edit",
       "i": "292121",
       "n": "The Scarecrow",
-      "d": ""
-    },
-    {
-      "k": "mvl3z6zievv9d",
-      "t": 1792768333086,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "279323",
-      "n": "The East Palace",
       "d": ""
     }
   ],
