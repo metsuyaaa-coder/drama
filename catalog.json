@@ -58294,9 +58294,31 @@
         "en": "Political Lupin",
         "auto": true,
         "at": 1794065640039
+      },
+      {
+        "id": "rmw6phnmq",
+        "title": "Project Y",
+        "status": "wait",
+        "bl": false,
+        "kind": "stream",
+        "votes": 1,
+        "tmdb": "1401542",
+        "media": "movie",
+        "year": "2026",
+        "poster": "/s4z1ek0vRtIa5ZOcK4EpdU6qen9.jpg",
+        "origin": "Corée",
+        "en": "",
+        "auto": true,
+        "at": 1794074256098
       }
     ],
-    "at": 1794065640039
+    "at": 1794074256098,
+    "log": [
+      {
+        "v": "ebfffbd2",
+        "t": 1794074256098
+      }
+    ]
   },
   "founder": {
     "name": "Meyriuu",
