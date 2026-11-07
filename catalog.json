@@ -322,7 +322,13 @@
               "name": "Épisode 9",
               "overview": "",
               "air_date": "2026-11-07",
-              "sources": []
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-9sl031tj91mr.html",
+                  "by": "614d778ed0"
+                }
+              ]
             },
             {
               "number": 10,
@@ -415,7 +421,7 @@
         "KR"
       ],
       "original_language": "ko",
-      "updatedAt": 1793968760224,
+      "updatedAt": 1794077112825,
       "networks": [
         "tvN"
       ],
@@ -58438,6 +58444,15 @@
   },
   "journal": [
     {
+      "k": "mw6r6vwqdslq2",
+      "t": 1794077112842,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "293607",
+      "n": "100 Days of Deception",
+      "d": "sources 24 → 25"
+    },
+    {
       "k": "mw6r0gxoxzide",
       "t": 1794076813500,
       "b": "614d778ed0",
@@ -61127,15 +61142,6 @@
       "i": "262932",
       "n": "Generation to Generation",
       "d": "affiche"
-    },
-    {
-      "k": "mvl7vm4u9emax",
-      "t": 1792774884558,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "286988",
-      "n": "Blossom Through the Cloud",
-      "d": ""
     }
   ],
   "refreshAt": 1792423579957
