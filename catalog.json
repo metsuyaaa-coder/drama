@@ -57600,6 +57600,163 @@
       ],
       "posterCustom": true,
       "updatedAt": 1794009141941
+    },
+    {
+      "id": "332269",
+      "type": "tv",
+      "name": "Francesca Next Door",
+      "original_name": "옆자리, 프란체스카",
+      "origin_country": [
+        "KR"
+      ],
+      "networks": [
+        "wavve"
+      ],
+      "original_language": "ko",
+      "aka": [
+        "隔壁座位，弗兰西斯卡",
+        "Francesca Next Door",
+        "隔壁座位，弗蘭西斯卡",
+        "Next Door, Francesca",
+        "옆자리, 프란체스카"
+      ],
+      "year": "2026",
+      "overview": "Na Yeong, une jeune vampire originaire de Roumanie, intègre un lycée humain sans rien connaître aux codes sociaux ni aux habitudes du quotidien. Bien qu’elle suive sa propre logique et ne cherche jamais à faire de mal, son manque de familiarité avec le monde des humains la plonge souvent dans des situations embarrassantes.\n\nTout bascule lorsqu’elle rencontre U Ju. Pour la première fois, elle ressent son cœur s’emballer et découvre des émotions jusqu’alors inconnues.\n\nMais son attirance grandissante pour un humain se complique lorsqu’un autre vampire éveille en elle des instincts qu’elle s’efforce de maîtriser. Partagée entre sentiments naissants et pulsions incontrôlables, Na Yeong doit trouver sa place entre amour, désir et nature vampirique.\n\nAu cœur de sa vie lycéenne, elle s’apprête à vivre une romance aussi douce que dangereuse.",
+      "genres": [
+        "Drame",
+        "Comédie",
+        "Science-Fiction & Fantastique"
+      ],
+      "rating": "",
+      "pop": 9.9761,
+      "status": "Returning Series",
+      "poster": "https://image.tmdb.org/t/p/original/fltCV5mYBQg1Fap7Cun4UpyoiYN.jpg",
+      "posterV": 2,
+      "backdrop": "https://image.tmdb.org/t/p/original/p0icSpmo5fZqvtEXRj9n8jPy93d.jpg",
+      "videos": [
+        {
+          "key": "fQP40mU3UFc",
+          "name": "메인 티저",
+          "type": "Teaser",
+          "lab": "Original"
+        },
+        {
+          "key": "ANEZVV8nedE",
+          "name": "Teaser [ENG SUB]",
+          "type": "Teaser",
+          "lab": "Anglais"
+        }
+      ],
+      "cast": [
+        {
+          "name": "Han Su-ah",
+          "character": "Pi Na-young",
+          "id": 3652323
+        },
+        {
+          "name": "김현진",
+          "character": "Jang Woo-ju",
+          "id": 3261027
+        },
+        {
+          "name": "이승규",
+          "character": "Yu-hyeol",
+          "id": 3932299
+        },
+        {
+          "name": "Shim Hye-jin",
+          "character": "Francesca",
+          "id": 117349
+        },
+        {
+          "name": "박슬기",
+          "character": "Sofia",
+          "id": 1632223
+        },
+        {
+          "name": "박희진",
+          "character": "Hee-jin",
+          "id": 1623703
+        },
+        {
+          "name": "조연지",
+          "character": "Cho Ji-ah",
+          "id": 6054748
+        },
+        {
+          "name": "주윤찬",
+          "character": "Joo Yoon-chan",
+          "id": 4511290
+        },
+        {
+          "name": "김도민",
+          "character": "Do-min",
+          "id": 6379217
+        },
+        {
+          "name": "이아라",
+          "character": "Ara",
+          "id": 5584585
+        }
+      ],
+      "eprt": 36,
+      "seasons": [
+        {
+          "number": 1,
+          "name": "Saison 1",
+          "episodes": [
+            {
+              "number": 1,
+              "name": "Let’s Stay Out of Each Other’s Business",
+              "overview": "Model student and class president U Ju lives strictly by the book until Na Young arrives to his class. Clueless about human life and hiding an impossible secret, the eccentric new transfer student turns U Ju's picture-perfect routine into utter chaos.",
+              "air_date": "2026-11-06",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-ksxmz8wrpk1u.html",
+                  "fansub": "Dramavore : Rafia",
+                  "by": "614d778ed0"
+                }
+              ]
+            },
+            {
+              "number": 2,
+              "name": "Not a Butler, But a Guide",
+              "overview": "To protect her secret identity, Na Young strikes a private tutoring deal with U Ju. But just as their awkward study sessions begin to stir strange, brand-new feelings neither expected, another vampire, Yoo Hyeol, appears to disrupt their delicate new bond.",
+              "air_date": "2026-11-06",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-oz93n5ph2n96.html",
+                  "fansub": "Dramavore : Rafia",
+                  "by": "614d778ed0"
+                }
+              ]
+            },
+            {
+              "number": 3,
+              "name": "Épisode 3",
+              "overview": "",
+              "air_date": "2026-11-13",
+              "sources": []
+            },
+            {
+              "number": 4,
+              "name": "Épisode 4",
+              "overview": "",
+              "air_date": "2026-11-13",
+              "sources": []
+            }
+          ]
+        }
+      ],
+      "sources": [],
+      "addedAt": 1794077193090,
+      "langs": [
+        "VOSTFR"
+      ],
+      "posterCustom": true,
+      "updatedAt": 1794077482295
     }
   ],
   "deletedLinks": [
@@ -58443,6 +58600,15 @@
     "at": 1793983583821
   },
   "journal": [
+    {
+      "k": "mw6reszw4tggp",
+      "t": 1794077482316,
+      "b": "614d778ed0",
+      "a": "add",
+      "i": "332269",
+      "n": "Francesca Next Door",
+      "d": ""
+    },
     {
       "k": "mw6r6vwqdslq2",
       "t": 1794077112842,
@@ -61132,15 +61298,6 @@
       "a": "edit",
       "i": "299952",
       "n": "The Early Spring",
-      "d": "affiche"
-    },
-    {
-      "k": "mvl7gfr7wxa2r",
-      "t": 1792774899653,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "262932",
-      "n": "Generation to Generation",
       "d": "affiche"
     }
   ],
