@@ -56567,14 +56567,14 @@
         "폭싹 속았수다"
       ],
       "year": "2025",
-      "overview": "Cette histoire au long cours d'une jeune fille imaginative et d'un garçon résolu de l'île de Jeju prouve que l'amour défie le temps, au fil des peines et des victoires de la vie.",
+      "overview": "Dans la Corée des années 1950, sur l'île de Jeju, Oh Ae Sun et Yang Gwan Sik grandissent ensemble entre rêves et épreuves. Ae Sun, rebelle dans l'âme et passionnée de littérature, aspire à devenir poétesse malgré la pauvreté qui l'empêche d'aller à l'école. Libre et expressive, elle ne cache jamais ses émotions. Gwan Sik, quant à lui, est un jeune homme discret et inflexible, qui n'aime qu'Ae Sun et la soutient avec sincérité.",
       "genres": [
         "Drame"
       ],
       "rating": "8.8",
       "pop": 23.4523,
       "status": "Ended",
-      "poster": "https://image.tmdb.org/t/p/w500/1VC3sEFxYXYDqQUCAnvWfUsYg1s.jpg",
+      "poster": "https://image.tmdb.org/t/p/original/o5LG0J7mUZDrNbK7QOvCWb0IIFb.jpg",
       "posterV": 2,
       "backdrop": "https://image.tmdb.org/t/p/original/a9qlroMOHewiDsUR93PYMVfpbF5.jpg",
       "videos": [
@@ -56842,7 +56842,8 @@
         "VOSTFR",
         "VF"
       ],
-      "updatedAt": 1794088530708
+      "updatedAt": 1794092329180,
+      "posterCustom": true
     }
   ],
   "deletedLinks": [
@@ -57720,6 +57721,15 @@
     "at": 1793983583821
   },
   "journal": [
+    {
+      "k": "mw7091ekx1t2s",
+      "t": 1794092329820,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "219246",
+      "n": "When Life Gives You Tangerines",
+      "d": "affiche"
+    },
     {
       "k": "mw702h3zc0qqe",
       "t": 1794092137330,
@@ -60410,15 +60420,6 @@
       "i": "117378",
       "n": "Mouse",
       "d": ""
-    },
-    {
-      "k": "mvlbaqkrfdchh",
-      "t": 1792780629003,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "278605",
-      "n": "Archives: The Nanyang Mystery",
-      "d": "affiche"
     }
   ],
   "refreshAt": 1792423579957
