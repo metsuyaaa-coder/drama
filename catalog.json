@@ -261,8 +261,7 @@
                   "url": "https://vidmoly.org/embed-xqd1iiu5heod.html",
                   "by": "614d778ed0"
                 }
-              ],
-              "downloads": []
+              ]
             },
             {
               "number": 6,
@@ -374,8 +373,7 @@
               "air_date": "2026-11-29",
               "sources": []
             }
-          ],
-          "downloads": []
+          ]
         }
       ],
       "sources": [],
@@ -6959,7 +6957,13 @@
               "name": "Épisode 40",
               "overview": "",
               "air_date": "",
-              "sources": []
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-zqrrjsm45h1x.html",
+                  "by": "614d778ed0"
+                }
+              ]
             }
           ]
         }
@@ -6970,7 +6974,7 @@
         "VOSTFR"
       ],
       "posterV": 2,
-      "updatedAt": 1793981310732,
+      "updatedAt": 1794073762761,
       "trend": 0,
       "networks": [
         "Hunan Television",
@@ -8300,8 +8304,7 @@
               "air_date": "2026-11-10",
               "sources": []
             }
-          ],
-          "downloads": []
+          ]
         }
       ],
       "sources": [],
@@ -8656,8 +8659,7 @@
                 }
               ]
             }
-          ],
-          "downloads": []
+          ]
         }
       ],
       "sources": [],
@@ -20411,8 +20413,7 @@
               "air_date": "2026-12-15",
               "sources": []
             }
-          ],
-          "downloads": []
+          ]
         }
       ],
       "sources": [],
@@ -29642,8 +29643,7 @@
                 }
               ]
             }
-          ],
-          "downloads": []
+          ]
         },
         {
           "number": 2,
@@ -29831,8 +29831,7 @@
                 }
               ]
             }
-          ],
-          "downloads": []
+          ]
         }
       ],
       "sources": [],
@@ -58385,6 +58384,15 @@
   },
   "journal": [
     {
+      "k": "mw6p72zaocgdb",
+      "t": 1794073762774,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "304452",
+      "n": "The Lament of Autumn",
+      "d": "sources 39 → 40"
+    },
+    {
       "k": "mw6hrk2eo7999",
       "t": 1794061281110,
       "b": "614d778ed0",
@@ -61073,15 +61081,6 @@
       "a": "edit",
       "i": "319600",
       "n": "Azure Spring",
-      "d": ""
-    },
-    {
-      "k": "mvl4bmhfduubz",
-      "t": 1792768913043,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "284000",
-      "n": "Reverse",
       "d": ""
     }
   ],
