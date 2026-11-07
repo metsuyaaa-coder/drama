@@ -7048,7 +7048,10 @@ function noteRemovedLinks(oldF, newF) {
   gone.forEach(function (u) { var k = lkey(oldF.id, u); if (t.indexOf(k) < 0) t.push(k); });
   linkTombSave(t);
 }
+/* Une copie locale peut ne pas avoir la liste (sources / downloads) que la version en ligne a : on la crée au lieu de planter */
+function ensureArr(o, k, rv) { if (o && Array.isArray(rv) && rv.length && !Array.isArray(o[k])) o[k] = []; }
 function addMissingLinks(local, remote, fid) {
+  if (!Array.isArray(local)) return false;
   var me = myId(), ch = false, dead = allLinkTombs();
   (remote || []).forEach(function (r) {
     if (!r || !r.url || r.by === me || findUrl(local, r.url) || isLinkDead(fid, r.url, dead)) return;
@@ -7058,6 +7061,7 @@ function addMissingLinks(local, remote, fid) {
 }
 /* Sources d'un film / épisode : l'ordre publié passe en premier, puis les miennes pas encore publiées, le tout limité à 3 */
 function syncSources(local, remote, fid) {
+  if (!Array.isArray(local)) return false;
   var dead = allLinkTombs(), out = [];
   (remote || []).forEach(function (r) {
     if (!r || !r.url || isLinkDead(fid, r.url, dead) || findUrl(out, r.url)) return;
@@ -7078,15 +7082,18 @@ function mergeFiche(l, r) {
   }
   /* affiche choisie avec la règle anglais / langue originale : elle remplace une ancienne affiche française */
   if (r.posterV >= 2 && !(l.posterV >= 2) && r.poster && r.poster !== l.poster && !customPoster(l)) { l.poster = r.poster; l.posterV = r.posterV; ch = true; }
+  ensureArr(l, "sources", r.sources); ensureArr(l, "downloads", r.downloads);
   ch = syncSources(l.sources, r.sources, fid) || ch;
   ch = addMissingLinks(l.downloads, r.downloads, fid) || ch;
   (r.seasons || []).forEach(function (rs) {
     var ls = null; (l.seasons || []).forEach(function (x) { if (x.number === rs.number) ls = x; });
     if (!ls) { (l.seasons = l.seasons || []).push(rs); ch = true; return; }
+    ensureArr(ls, "downloads", rs.downloads);
     ch = addMissingLinks(ls.downloads, rs.downloads, fid) || ch;
     (rs.episodes || []).forEach(function (re) {
       var le = null; (ls.episodes || []).forEach(function (x) { if (x.number === re.number) le = x; });
       if (!le) { (ls.episodes = ls.episodes || []).push(re); ch = true; return; }
+      ensureArr(le, "sources", re.sources); ensureArr(le, "downloads", re.downloads);
       ch = syncSources(le.sources, re.sources, fid) || ch;
       ch = addMissingLinks(le.downloads, re.downloads, fid) || ch;
     });
