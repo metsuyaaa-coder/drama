@@ -56469,7 +56469,7 @@
               "sources": [
                 {
                   "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-z75z5ftbm301.html",
+                  "url": "https://vidmoly.org/embed-a3nyych1tvwm.html",
                   "fansub": "Dramavore : Rafia",
                   "by": "614d778ed0"
                 }
@@ -56512,10 +56512,11 @@
         "VOSTFR"
       ],
       "posterCustom": true,
-      "updatedAt": 1794078939474
+      "updatedAt": 1794080245110
     }
   ],
   "deletedLinks": [
+    "332269\thttps://vidmoly.org/embed-z75z5ftbm301.html",
     "317326\thttps://vidmoly.org/embed-lngchnbpe8h8.html",
     "335951\thttps://vidmoly.org/embed-25atnkd7mone.html",
     "307478\thttps://vidmoly.org/embed-vcenakzerm8h.html",
@@ -57240,13 +57241,7 @@
         "at": 1794079633338
       }
     ],
-    "at": 1794079633338,
-    "log": [
-      {
-        "v": "47cb2477",
-        "t": 1794079633338
-      }
-    ]
+    "at": 1794079633338
   },
   "founder": {
     "name": "Meyriuu",
@@ -57363,6 +57358,15 @@
     "at": 1793983583821
   },
   "journal": [
+    {
+      "k": "mw6t20sqpmoxg",
+      "t": 1794080245130,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "332269",
+      "n": "Francesca Next Door",
+      "d": ""
+    },
     {
       "k": "mw6sa1cste45c",
       "t": 1794078939484,
@@ -60053,15 +60057,6 @@
       "i": "272938",
       "n": "Pull Strings",
       "d": ""
-    },
-    {
-      "k": "mvl9omv083fv7",
-      "t": 1792778027645,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "295558",
-      "n": "Key to the Phoenix Heart",
-      "d": "affiche"
     }
   ],
   "refreshAt": 1792423579957
