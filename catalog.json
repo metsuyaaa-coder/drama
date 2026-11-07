@@ -57255,9 +57255,25 @@
         "en": "",
         "auto": true,
         "at": 1794085463888
+      },
+      {
+        "id": "rmw6xx2gz",
+        "title": "La vie portera ses fruits",
+        "status": "wait",
+        "bl": false,
+        "kind": "stream",
+        "votes": 1,
+        "tmdb": "219246",
+        "media": "tv",
+        "year": "2025",
+        "poster": "/1WQTk3Ot9OGTClKZNPgcUG4JDHt.jpg",
+        "origin": "Corée",
+        "en": "When Life Gives You Tangerines",
+        "auto": true,
+        "at": 1794088412099
       }
     ],
-    "at": 1794085463888,
+    "at": 1794088412099,
     "log": [
       {
         "v": "0d11effa",
@@ -57266,6 +57282,10 @@
       {
         "v": "9c6da8fc",
         "t": 1794085463888
+      },
+      {
+        "v": "9737b707",
+        "t": 1794088412099
       }
     ]
   },
