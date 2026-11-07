@@ -381,7 +381,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "trend": 0,
+      "trend": 57,
       "aka": [
         "100 Days of Deception",
         "百日谎言",
@@ -1032,7 +1032,13 @@
               "name": "Épisode 10",
               "overview": "",
               "air_date": "2026-11-07",
-              "sources": []
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-rhyff4vfsbsu.html",
+                  "by": "614d778ed0"
+                }
+              ]
             },
             {
               "number": 11,
@@ -1056,13 +1062,13 @@
       "langs": [
         "VOSTFR"
       ],
-      "trend": 0,
+      "trend": 88,
       "posterV": 2,
       "origin_country": [
         "KR"
       ],
       "original_language": "ko",
-      "updatedAt": 1794000012881,
+      "updatedAt": 1794076813480,
       "networks": [
         "SBS"
       ],
@@ -1545,7 +1551,7 @@
         "Upanje",
         "호프"
       ],
-      "trend": 0,
+      "trend": 87,
       "posterV": 2,
       "updatedAt": 1793968762726,
       "videos": [
@@ -7917,7 +7923,7 @@
         "VOSTFR"
       ],
       "updatedAt": 1793968779948,
-      "trend": 0,
+      "trend": 54,
       "posterCustom": true,
       "videos": [
         {
@@ -24144,7 +24150,7 @@
       ],
       "posterV": 2,
       "updatedAt": 1794073849284,
-      "trend": 82,
+      "trend": 87,
       "networks": [
         "CCTV-8",
         "Youku"
@@ -25080,7 +25086,7 @@
         "VOSTFR"
       ],
       "updatedAt": 1793968839238,
-      "trend": 0,
+      "trend": 41,
       "videos": [
         {
           "key": "55ATD_SJ_Xw",
@@ -40263,7 +40269,7 @@
       ],
       "posterCustom": true,
       "updatedAt": 1793968869217,
-      "trend": 0
+      "trend": 58
     },
     {
       "id": "334517",
@@ -46658,7 +46664,7 @@
       ],
       "updatedAt": 1793968891307,
       "posterCustom": true,
-      "trend": 98
+      "trend": 95
     },
     {
       "id": "307478",
@@ -46889,7 +46895,7 @@
         "VOSTFR"
       ],
       "updatedAt": 1793968892201,
-      "trend": 66
+      "trend": 85
     },
     {
       "id": "330718",
@@ -53173,7 +53179,7 @@
       ],
       "posterCustom": true,
       "updatedAt": 1793982937989,
-      "trend": 96
+      "trend": 97
     },
     {
       "id": "237411",
@@ -56074,7 +56080,7 @@
       ],
       "posterCustom": true,
       "updatedAt": 1794074111834,
-      "trend": 0
+      "trend": 82
     },
     {
       "id": "336458",
@@ -56563,7 +56569,7 @@
         "VOSTFR"
       ],
       "updatedAt": 1793968917774,
-      "trend": 0
+      "trend": 73
     },
     {
       "id": "m1483525",
@@ -56689,7 +56695,8 @@
         "VF"
       ],
       "updatedAt": 1793993517661,
-      "posterCustom": true
+      "posterCustom": true,
+      "trend": 84
     },
     {
       "id": "307853",
@@ -56987,7 +56994,8 @@
         "VOSTFR"
       ],
       "posterCustom": true,
-      "updatedAt": 1794061281098
+      "updatedAt": 1794061281098,
+      "trend": 51
     },
     {
       "id": "134331",
@@ -58312,13 +58320,7 @@
         "at": 1794074256098
       }
     ],
-    "at": 1794074256098,
-    "log": [
-      {
-        "v": "ebfffbd2",
-        "t": 1794074256098
-      }
-    ]
+    "at": 1794074256098
   },
   "founder": {
     "name": "Meyriuu",
@@ -58435,6 +58437,15 @@
     "at": 1793983583821
   },
   "journal": [
+    {
+      "k": "mw6r0gxoxzide",
+      "t": 1794076813500,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "293610",
+      "n": "Doctor X: Mafia in White",
+      "d": "sources 25 → 26"
+    },
     {
       "k": "mw6pekbpin46k",
       "t": 1794074111845,
@@ -61124,15 +61135,6 @@
       "a": "edit",
       "i": "286988",
       "n": "Blossom Through the Cloud",
-      "d": ""
-    },
-    {
-      "k": "mvl7q28055ax7",
-      "t": 1792774625472,
-      "b": "614d778ed0",
-      "a": "add",
-      "i": "299952",
-      "n": "The Early Spring",
       "d": ""
     }
   ],
