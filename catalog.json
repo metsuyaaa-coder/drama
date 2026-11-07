@@ -32504,14 +32504,26 @@
               "name": "Épisode 29",
               "overview": "",
               "air_date": "",
-              "sources": []
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-mz2lwvqrlrbl.html",
+                  "by": "614d778ed0"
+                }
+              ]
             },
             {
               "number": 30,
               "name": "Épisode 30",
               "overview": "",
               "air_date": "",
-              "sources": []
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-uj7gz3wvs6tu.html",
+                  "by": "614d778ed0"
+                }
+              ]
             },
             {
               "number": 31,
@@ -32591,7 +32603,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793981638589,
+      "updatedAt": 1794073957698,
       "trend": 0,
       "eprt": 48
     },
@@ -58390,6 +58402,15 @@
   },
   "journal": [
     {
+      "k": "mw6pb9e53jrq7",
+      "t": 1794073957709,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "286171",
+      "n": "Tigers Sniff the Rose",
+      "d": "sources 28 → 30"
+    },
+    {
       "k": "mw6p8xqml92ki",
       "t": 1794073849294,
       "b": "614d778ed0",
@@ -61078,15 +61099,6 @@
       "a": "add",
       "i": "262932",
       "n": "Generation to Generation",
-      "d": ""
-    },
-    {
-      "k": "mvl6os6fhwpzl",
-      "t": 1792772886183,
-      "b": "614d778ed0",
-      "a": "add",
-      "i": "286988",
-      "n": "Blossom Through the Cloud",
       "d": ""
     }
   ],
