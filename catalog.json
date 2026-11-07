@@ -24126,7 +24126,13 @@
               "name": "Épisode 30",
               "overview": "",
               "air_date": "",
-              "sources": []
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-sh6w013lyw8r.html",
+                  "by": "614d778ed0"
+                }
+              ]
             }
           ]
         }
@@ -24137,7 +24143,7 @@
         "VOSTFR"
       ],
       "posterV": 2,
-      "updatedAt": 1793978625270,
+      "updatedAt": 1794073849284,
       "trend": 82,
       "networks": [
         "CCTV-8",
@@ -58384,6 +58390,15 @@
   },
   "journal": [
     {
+      "k": "mw6p8xqml92ki",
+      "t": 1794073849294,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "300146",
+      "n": "Where the Mask Ends",
+      "d": "sources 29 → 30"
+    },
+    {
       "k": "mw6p72zaocgdb",
       "t": 1794073762774,
       "b": "614d778ed0",
@@ -61072,15 +61087,6 @@
       "a": "add",
       "i": "286988",
       "n": "Blossom Through the Cloud",
-      "d": ""
-    },
-    {
-      "k": "mvl4cql2utws1",
-      "t": 1792768965014,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "319600",
-      "n": "Azure Spring",
       "d": ""
     }
   ],
