@@ -61199,9 +61199,25 @@
         "en": "Graceful Family",
         "auto": true,
         "at": 1794063522767
+      },
+      {
+        "id": "rmw6kczfr",
+        "title": "ポリティカルパン",
+        "status": "wait",
+        "bl": false,
+        "kind": "stream",
+        "votes": 1,
+        "tmdb": "332261",
+        "media": "tv",
+        "year": "2026",
+        "poster": "/hZtrOm4lgEcGtzidBThjhVxoaTx.jpg",
+        "origin": "Japon",
+        "en": "Political Lupin",
+        "auto": true,
+        "at": 1794065640039
       }
     ],
-    "at": 1794063522767,
+    "at": 1794065640039,
     "log": [
       {
         "v": "b7c01477",
@@ -61226,6 +61242,10 @@
       {
         "v": "118863ae",
         "t": 1794063522767
+      },
+      {
+        "v": "fa5325e2",
+        "t": 1794065640039
       }
     ]
   },
