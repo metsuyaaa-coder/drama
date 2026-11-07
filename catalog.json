@@ -56507,12 +56507,12 @@
         }
       ],
       "sources": [],
-      "addedAt": 1794078611643,
+      "addedAt": 1794078845116,
       "langs": [
         "VOSTFR"
       ],
       "posterCustom": true,
-      "updatedAt": 1794078784221
+      "updatedAt": 1794078939474
     }
   ],
   "deletedLinks": [
@@ -57341,6 +57341,15 @@
     "at": 1793983583821
   },
   "journal": [
+    {
+      "k": "mw6sa1cste45c",
+      "t": 1794078939484,
+      "b": "614d778ed0",
+      "a": "add",
+      "i": "332269",
+      "n": "Francesca Next Door",
+      "d": ""
+    },
     {
       "k": "mw6s6pkdffxud",
       "t": 1794078784237,
@@ -60030,15 +60039,6 @@
       "a": "edit",
       "i": "295558",
       "n": "Key to the Phoenix Heart",
-      "d": "affiche"
-    },
-    {
-      "k": "mvl9gwctgpqw1",
-      "t": 1792777557197,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "289139",
-      "n": "Overdo",
       "d": "affiche"
     }
   ],
