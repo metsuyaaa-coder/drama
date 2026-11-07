@@ -55910,14 +55910,26 @@
               "name": "Épisode 7",
               "overview": "",
               "air_date": "2026-11-07",
-              "sources": []
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-cxadbeqqp1nj.html",
+                  "by": "614d778ed0"
+                }
+              ]
             },
             {
               "number": 8,
               "name": "Épisode 8",
               "overview": "",
               "air_date": "2026-11-07",
-              "sources": []
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-qe2xds7cs387.html",
+                  "by": "614d778ed0"
+                }
+              ]
             },
             {
               "number": 9,
@@ -56061,7 +56073,7 @@
         "VOSTFR"
       ],
       "posterCustom": true,
-      "updatedAt": 1793978571323,
+      "updatedAt": 1794074111834,
       "trend": 0
     },
     {
@@ -58401,6 +58413,15 @@
     "at": 1793983583821
   },
   "journal": [
+    {
+      "k": "mw6pekbpin46k",
+      "t": 1794074111845,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "270431",
+      "n": "When I Meet the Moon",
+      "d": "sources 6 → 8"
+    },
     {
       "k": "mw6pb9e53jrq7",
       "t": 1794073957709,
@@ -61090,15 +61111,6 @@
       "a": "add",
       "i": "299952",
       "n": "The Early Spring",
-      "d": ""
-    },
-    {
-      "k": "mvl7f8tbut40t",
-      "t": 1792774120799,
-      "b": "614d778ed0",
-      "a": "add",
-      "i": "262932",
-      "n": "Generation to Generation",
       "d": ""
     }
   ],
