@@ -61167,9 +61167,25 @@
         "en": "",
         "auto": true,
         "at": 1794057897849
+      },
+      {
+        "id": "rmw6fz6or",
+        "title": "옆자리, 프란체스카",
+        "status": "wait",
+        "bl": false,
+        "kind": "stream",
+        "votes": 1,
+        "tmdb": "332269",
+        "media": "tv",
+        "year": "2026",
+        "poster": "/sAds5i0s8SUTWb0uoL7zWOTvEc2.jpg",
+        "origin": "Corée",
+        "en": "Francesca Next Door",
+        "auto": true,
+        "at": 1794058277787
       }
     ],
-    "at": 1794057897849,
+    "at": 1794058277787,
     "log": [
       {
         "v": "b7c01477",
@@ -61182,6 +61198,10 @@
       {
         "v": "787baa01",
         "t": 1794057897849
+      },
+      {
+        "v": "c7a42926",
+        "t": 1794058277787
       }
     ]
   },
