@@ -312,6 +312,11 @@
                   "name": "EMBEDORIGIN",
                   "url": "https://embedorigin.cc/e/b7jr0m9sngja",
                   "by": "head"
+                },
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-drgcr116272t.html",
+                  "by": "614d778ed0"
                 }
               ]
             },
@@ -399,7 +404,7 @@
         "KR"
       ],
       "original_language": "ko",
-      "updatedAt": 1794161405706,
+      "updatedAt": 1794175480217,
       "networks": [
         "tvN"
       ],
@@ -31032,7 +31037,7 @@
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/w500/5OuUPWLwr5JKLZBhzF7antNWdvY.jpg",
       "posterV": 2,
-      "backdrop": "https://image.tmdb.org/t/p/original/ccG6WAuf2XBC808HFaeIjvk2hXW.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/original/iEfJX7ggvNg8ti1r5fbCIsfh0ng.jpg",
       "videos": [
         {
           "key": "vJI_UGSkj38",
@@ -31489,14 +31494,26 @@
               "name": "Épisode 31",
               "overview": "",
               "air_date": "",
-              "sources": []
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-o5003qwspyx0.html",
+                  "by": "614d778ed0"
+                }
+              ]
             },
             {
               "number": 32,
               "name": "Épisode 32",
               "overview": "",
               "air_date": "",
-              "sources": []
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-mtyca3ualksv.html",
+                  "by": "614d778ed0"
+                }
+              ]
             },
             {
               "number": 33,
@@ -31562,7 +31579,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1794073957698,
+      "updatedAt": 1794174004483,
       "trend": 61,
       "eprt": 48
     },
@@ -58168,22 +58185,6 @@
         "at": 1793654817462
       },
       {
-        "id": "rmw0g0yak",
-        "title": "墨白",
-        "status": "wait",
-        "bl": false,
-        "kind": "stream",
-        "votes": 1,
-        "tmdb": "214927",
-        "media": "tv",
-        "year": "2022",
-        "poster": "/krNKR07uq6wvCA91wI2uc5cNwDe.jpg",
-        "origin": "Chine",
-        "en": "Double Love",
-        "auto": true,
-        "at": 1793695563164
-      },
-      {
         "id": "rmw16lhut",
         "title": "Kingdom: Ashin of the North",
         "status": "wait",
@@ -58440,13 +58441,7 @@
         "at": 1794160067595
       }
     ],
-    "at": 1794173309063,
-    "log": [
-      {
-        "v": "5063d2e6",
-        "t": 1794173309063
-      }
-    ]
+    "at": 1794173735065
   },
   "founder": {
     "name": "Meyriuu",
@@ -58563,6 +58558,24 @@
     "at": 1793983583821
   },
   "journal": [
+    {
+      "k": "mw8dr8p0yhcw6",
+      "t": 1794175480260,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "293607",
+      "n": "100 Days of Deception",
+      "d": "sources 27 → 28"
+    },
+    {
+      "k": "mw8cdzsv6s397",
+      "t": 1794173444792,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "286171",
+      "n": "Tigers Sniff the Rose",
+      "d": "sources 30 → 32"
+    },
     {
       "k": "mw8c8tzp5mmo7",
       "t": 1794172941781,
@@ -61243,24 +61256,6 @@
       "a": "edit",
       "i": "317415",
       "n": "That Genius is Attached to His Fake Girlfriend",
-      "d": ""
-    },
-    {
-      "k": "mvll7m9lxh8uz",
-      "t": 1792797279609,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "285415",
-      "n": "Fascination",
-      "d": ""
-    },
-    {
-      "k": "mvlku81m8xfia",
-      "t": 1792796654650,
-      "b": "614d778ed0",
-      "a": "add",
-      "i": "287641",
-      "n": "Dazzling",
       "d": ""
     }
   ],
