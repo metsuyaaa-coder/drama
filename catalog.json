@@ -15980,7 +15980,7 @@
       "rating": "7.9",
       "pop": 6.4281,
       "status": "Ended",
-      "poster": "https://image.tmdb.org/t/p/original/ixBHQ96ryMa8Q0uIOFdUCjqRyy8.jpg",
+      "poster": "https://image.tmdb.org/t/p/original/vbrUJCkqFwn7h4UItBCfRTcFWQ6.jpg",
       "posterV": 2,
       "backdrop": "https://image.tmdb.org/t/p/original/AoJgqEYpxRWd58gNQKNwYlPUFeZ.jpg",
       "cast": [
@@ -16163,7 +16163,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793968811216,
+      "updatedAt": 1794180684315,
       "networks": [
         "Disney+"
       ],
@@ -16181,7 +16181,8 @@
           "lab": "Anglais"
         }
       ],
-      "eprt": 66
+      "eprt": 66,
+      "posterCustom": true
     },
     {
       "id": "289424",
@@ -58560,6 +58561,15 @@
   },
   "journal": [
     {
+      "k": "mw8gus6xrcrca",
+      "t": 1794180684345,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "278113",
+      "n": "Gold Land",
+      "d": "affiche"
+    },
+    {
       "k": "mw8fi51l2u8vb",
       "t": 1794178475714,
       "b": "614d778ed0",
@@ -61248,15 +61258,6 @@
       "a": "edit",
       "i": "326063",
       "n": "25 Years of You",
-      "d": ""
-    },
-    {
-      "k": "mvllbdsq0tbsb",
-      "t": 1792797455258,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "323264",
-      "n": "Let's End Our Friendship Now",
       "d": ""
     }
   ],
