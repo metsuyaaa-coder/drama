@@ -35,7 +35,7 @@
       "rating": "8.5",
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/original/fDTrCMH5uhmNBHdaZ9A62lN7iEk.jpg",
-      "backdrop": "https://image.tmdb.org/t/p/original/3SvKCITqMtjgPIhFBjRc4yTAc4H.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/original/3eprGh6r58pOBVWinM2uRgGYAyZ.jpg",
       "cast": [
         {
           "name": "Kim You-jung",
@@ -404,7 +404,7 @@
         "KR"
       ],
       "original_language": "ko",
-      "updatedAt": 1794178414842,
+      "updatedAt": 1794178475700,
       "networks": [
         "tvN"
       ],
@@ -58561,7 +58561,7 @@
   "journal": [
     {
       "k": "mw8fi51l2u8vb",
-      "t": 1794178414857,
+      "t": 1794178475714,
       "b": "614d778ed0",
       "a": "edit",
       "i": "293607",
