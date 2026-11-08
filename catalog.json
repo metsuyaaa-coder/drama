@@ -38949,7 +38949,13 @@
               "name": "Épisode 6",
               "overview": "",
               "air_date": "2026-11-08",
-              "sources": []
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-tbeg38vedzxg.html",
+                  "by": "614d778ed0"
+                }
+              ]
             },
             {
               "number": 7,
@@ -39002,7 +39008,7 @@
         "VOSTFR"
       ],
       "posterCustom": true,
-      "updatedAt": 1794092137317,
+      "updatedAt": 1794171138738,
       "trend": 44
     },
     {
@@ -58048,6 +58054,15 @@
   },
   "journal": [
     {
+      "k": "mw8b66sws0c0k",
+      "t": 1794171138800,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "316702",
+      "n": "Final Table",
+      "d": "sources 7 → 8"
+    },
+    {
       "k": "mw85dkpjzprir",
       "t": 1794161405719,
       "b": "head",
@@ -60736,15 +60751,6 @@
       "a": "edit",
       "i": "286686",
       "n": "In My Prime",
-      "d": ""
-    },
-    {
-      "k": "mvljrgcf36dhg",
-      "t": 1792794845823,
-      "b": "614d778ed0",
-      "a": "add",
-      "i": "289116",
-      "n": "Genius Girlfriend",
       "d": ""
     }
   ],
