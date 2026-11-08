@@ -39221,7 +39221,14 @@
               "name": "Épisode 5",
               "overview": "",
               "air_date": "2026-11-07",
-              "sources": []
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-xhdv3n0ote2f.html",
+                  "fansub": "Dramavore : Rafia",
+                  "by": "614d778ed0"
+                }
+              ]
             },
             {
               "number": 6,
@@ -39308,7 +39315,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793968870197,
+      "updatedAt": 1794143501566,
       "trend": 0
     },
     {
@@ -57753,6 +57760,15 @@
   },
   "journal": [
     {
+      "k": "mw7uptshrdgsf",
+      "t": 1794143501585,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "334517",
+      "n": "Oh! My Guard",
+      "d": "sources 4 → 5"
+    },
+    {
       "k": "mw7uf3atnq4jx",
       "t": 1794143000693,
       "b": "614d778ed0",
@@ -60442,15 +60458,6 @@
       "i": "",
       "n": "Toutes les fiches",
       "d": "104 fiches"
-    },
-    {
-      "k": "mvlf50zv6elwl",
-      "t": 1792787081035,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "262932",
-      "n": "Generation to Generation",
-      "d": ""
     }
   ],
   "refreshAt": 1792423579957
