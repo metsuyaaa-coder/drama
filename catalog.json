@@ -34,7 +34,7 @@
       ],
       "rating": "8.5",
       "status": "Returning Series",
-      "poster": "https://image.tmdb.org/t/p/w500/bZHEU42QynnMrHUWK1Hhvj2cdPA.jpg",
+      "poster": "https://image.tmdb.org/t/p/original/fDTrCMH5uhmNBHdaZ9A62lN7iEk.jpg",
       "backdrop": "https://image.tmdb.org/t/p/original/3SvKCITqMtjgPIhFBjRc4yTAc4H.jpg",
       "cast": [
         {
@@ -404,7 +404,7 @@
         "KR"
       ],
       "original_language": "ko",
-      "updatedAt": 1794175480217,
+      "updatedAt": 1794178414842,
       "networks": [
         "tvN"
       ],
@@ -422,7 +422,8 @@
           "lab": "Anglais"
         }
       ],
-      "eprt": 69
+      "eprt": 69,
+      "posterCustom": true
     },
     {
       "id": "275102",
@@ -58559,6 +58560,15 @@
   },
   "journal": [
     {
+      "k": "mw8fi51l2u8vb",
+      "t": 1794178414857,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "293607",
+      "n": "100 Days of Deception",
+      "d": "affiche"
+    },
+    {
       "k": "mw8dr8p0yhcw6",
       "t": 1794175480260,
       "b": "614d778ed0",
@@ -61247,15 +61257,6 @@
       "a": "edit",
       "i": "323264",
       "n": "Let's End Our Friendship Now",
-      "d": ""
-    },
-    {
-      "k": "mvlla4ne54f1d",
-      "t": 1792797396746,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "317415",
-      "n": "That Genius is Attached to His Fake Girlfriend",
       "d": ""
     }
   ],
