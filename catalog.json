@@ -55566,7 +55566,7 @@
       "genres": [
         "Drame"
       ],
-      "rating": "",
+      "rating": "8.5",
       "pop": 3.5216,
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/original/tckCJzClnmd85VIrtaycHkcgXhM.jpg",
@@ -55732,7 +55732,13 @@
               "name": "Épisode 9",
               "overview": "",
               "air_date": "",
-              "sources": []
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-qj916q0ssq60.html",
+                  "by": "614d778ed0"
+                }
+              ]
             },
             {
               "number": 10,
@@ -55848,7 +55854,7 @@
         "VOSTFR"
       ],
       "posterCustom": true,
-      "updatedAt": 1794188857673,
+      "updatedAt": 1794238171333,
       "trend": 75
     },
     {
@@ -59074,6 +59080,15 @@
   },
   "journal": [
     {
+      "k": "mw9f2xh4e7a83",
+      "t": 1794238171384,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "307853",
+      "n": "Sunshine Through the Rain",
+      "d": "sources 8 → 9"
+    },
+    {
       "k": "mw9dk5xzr4nr9",
       "t": 1794235616279,
       "b": "614d778ed0",
@@ -61762,15 +61777,6 @@
       "a": "add",
       "i": "292696",
       "n": "The First Jasmine",
-      "d": ""
-    },
-    {
-      "k": "mvlle8nj10k2n",
-      "t": 1792797588559,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "325063",
-      "n": "My Cold Coworker Obsessively Loves Me",
       "d": ""
     }
   ],
