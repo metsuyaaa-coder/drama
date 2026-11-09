@@ -59219,13 +59219,33 @@
         "en": "Love in Red Dust",
         "auto": true,
         "at": 1794259628744
+      },
+      {
+        "id": "rmw9s73f8",
+        "title": "Bitch and Rich",
+        "status": "wait",
+        "bl": false,
+        "kind": "stream",
+        "votes": 1,
+        "tmdb": "214994",
+        "media": "tv",
+        "year": "2023",
+        "poster": "/7Wlxdu6Z1sYcti7xgbtLLmxRFOk.jpg",
+        "origin": "Corée",
+        "en": "Bitch X Rich",
+        "auto": true,
+        "at": 1794260200724
       }
     ],
-    "at": 1794259628744,
+    "at": 1794260200724,
     "log": [
       {
         "v": "a26c30aa",
         "t": 1794259628744
+      },
+      {
+        "v": "94b155a7",
+        "t": 1794260200724
       }
     ]
   },
