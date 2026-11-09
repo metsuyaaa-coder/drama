@@ -58396,13 +58396,33 @@
         "en": "Cases Between Us",
         "auto": true,
         "at": 1794160067595
+      },
+      {
+        "id": "rmw96dujn",
+        "title": "The Liar and His Lover",
+        "status": "wait",
+        "bl": false,
+        "kind": "stream",
+        "votes": 1,
+        "tmdb": "70191",
+        "media": "tv",
+        "year": "2017",
+        "poster": "/oU7aRBViTy8MSP7QLzCl5mpRKMk.jpg",
+        "origin": "Corée",
+        "en": "",
+        "auto": true,
+        "at": 1794223564259
       }
     ],
-    "at": 1794211775992,
+    "at": 1794223564259,
     "log": [
       {
         "v": "4c5060ad",
         "t": 1794211775992
+      },
+      {
+        "v": "cfaa4607",
+        "t": 1794223564259
       }
     ]
   },
