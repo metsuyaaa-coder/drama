@@ -40216,42 +40216,84 @@
               "name": "Épisode 19",
               "overview": "",
               "air_date": "2026-11-01",
-              "sources": []
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-3q43xk59vcjj.html",
+                  "fansub": "Drama Paradise : Inzaghi",
+                  "by": "614d778ed0"
+                }
+              ]
             },
             {
               "number": 20,
               "name": "Épisode 20",
               "overview": "",
               "air_date": "2026-11-02",
-              "sources": []
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-yvzg2rtsgzs5.html",
+                  "fansub": "Drama Paradise : Inzaghi",
+                  "by": "614d778ed0"
+                }
+              ]
             },
             {
               "number": 21,
               "name": "Épisode 21",
               "overview": "",
               "air_date": "2026-11-03",
-              "sources": []
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-0yk6yzq146uv.html",
+                  "fansub": "Drama Paradise : Inzaghi",
+                  "by": "614d778ed0"
+                }
+              ]
             },
             {
               "number": 22,
               "name": "Épisode 22",
               "overview": "",
               "air_date": "2026-11-04",
-              "sources": []
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-9wottjn6sznq.html",
+                  "fansub": "Drama Paradise : Inzaghi",
+                  "by": "614d778ed0"
+                }
+              ]
             },
             {
               "number": 23,
               "name": "Épisode 23",
               "overview": "",
               "air_date": "2026-11-05",
-              "sources": []
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-jx9pnbm3xzk0.html",
+                  "fansub": "Drama Paradise : Inzaghi",
+                  "by": "614d778ed0"
+                }
+              ]
             },
             {
               "number": 24,
               "name": "Épisode 24",
               "overview": "",
               "air_date": "2026-11-06",
-              "sources": []
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-awak5nh8l0pk.html",
+                  "fansub": "Drama Paradise : Inzaghi",
+                  "by": "614d778ed0"
+                }
+              ]
             }
           ]
         }
@@ -40261,7 +40303,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793968873204
+      "updatedAt": 1794248100426
     },
     {
       "id": "332134",
@@ -59117,6 +59159,15 @@
   },
   "journal": [
     {
+      "k": "mw9kzqtcdimnj",
+      "t": 1794248100480,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "339366",
+      "n": "My Loong",
+      "d": "sources 18 → 24"
+    },
+    {
       "k": "mw9j07841yaa9",
       "t": 1794244762516,
       "b": "614d778ed0",
@@ -61803,15 +61854,6 @@
       "t": 1792850029551,
       "b": "head",
       "a": "del",
-      "i": "1396",
-      "n": "Breaking Bad",
-      "d": ""
-    },
-    {
-      "k": "mvmgfwyj5d9w7",
-      "t": 1792849734811,
-      "b": "f2b389cb62",
-      "a": "add",
       "i": "1396",
       "n": "Breaking Bad",
       "d": ""
