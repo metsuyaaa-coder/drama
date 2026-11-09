@@ -57884,6 +57884,254 @@
       ],
       "posterCustom": true,
       "updatedAt": 1794234743187
+    },
+    {
+      "id": "301885",
+      "type": "tv",
+      "name": "Gimbap and Onigiri",
+      "original_name": "キンパとおにぎり〜恋するふたりは似ていてちがう〜",
+      "origin_country": [
+        "JP"
+      ],
+      "networks": [
+        "TV Tokyo",
+        "TV Aichi",
+        "TVQ",
+        "TV Osaka",
+        "TVh",
+        "TSC"
+      ],
+      "original_language": "ja",
+      "aka": [
+        "Gimbap and Onigiri",
+        "첫입에 반하다",
+        "紫菜包饭和饭团～相爱的两个人相似又不一样～",
+        "韓式飯卷與日式飯糰",
+        "Bolinhos de Arroz",
+        "韓式飯捲與日式飯糰",
+        "Gimbap và Onigiri",
+        "Gimbap & Onigiri",
+        "Kinpa to onigiri 〜 koisurufutari wa nite ite chigau 〜",
+        "Kinpa to Onigiri Koisuru Futari wa Niteite Chigau",
+        "キンパとおにぎり〜恋するふたりは似ていてちがう〜"
+      ],
+      "year": "2026",
+      "overview": "Hase Taiga est employé à temps partiel dans un petit restaurant depuis presque trois ans. Même s'il n'a plus de rêve à proprement parler, il commence à trouver du plaisir à son travail.\n\nPark Rin est une étudiante coréenne venue se perfectionner en animation au Japon. Déjà épuisée par les travaux qu'elle doit rendre pour ses cours, elle apprend en plus qu'elle va devoir se trouver un nouveau logement.\n\nEn mangeant un onigiri préparé par Taiga, Rin retrouve toute son énergie et son sourire va faire fondre le jeune homme.",
+      "genres": [
+        "Drame"
+      ],
+      "rating": "7.0",
+      "pop": 3.1099,
+      "status": "Ended",
+      "poster": "https://image.tmdb.org/t/p/original/zQ301rc8RB1YXgD8DKnOX28M89d.jpg",
+      "posterV": 2,
+      "backdrop": "https://image.tmdb.org/t/p/original/nAHO0MPmz9iigYKhXxvpMQ7PA12.jpg",
+      "videos": [
+        {
+          "key": "B2SQ5CfEmzI",
+          "name": "最新ティザー公開！",
+          "type": "Teaser",
+          "lab": "Original"
+        }
+      ],
+      "cast": [
+        {
+          "name": "赤楚衛二",
+          "character": "Taiga Hase",
+          "id": 1509675
+        },
+        {
+          "name": "강혜원",
+          "character": "Park Rin",
+          "id": 2359299
+        },
+        {
+          "name": "문지후",
+          "character": "Kang Jun-ho",
+          "id": 1848761
+        },
+        {
+          "name": "深川麻衣",
+          "character": "Masumi Miyauchi",
+          "id": 2130091
+        },
+        {
+          "name": "Rin Kataoka",
+          "character": "Noa Somejima",
+          "id": 3702470
+        },
+        {
+          "name": "福山翔大",
+          "character": "Akinori Ohba",
+          "id": 1738735
+        },
+        {
+          "name": "Mitsuru Fukikoshi",
+          "character": "Shigeo Taguchi",
+          "id": 120918
+        },
+        {
+          "name": "서혜원",
+          "character": "Lee Yoon-gyeol",
+          "id": 2285866
+        }
+      ],
+      "eprt": 38,
+      "seasons": [
+        {
+          "number": 1,
+          "name": "Saison 1",
+          "episodes": [
+            {
+              "number": 1,
+              "name": "Épisode 1",
+              "overview": "After completing a tough assignment, grad student Rin Park learns she's being evicted. Meanwhile, Taiga Hase gets to come up with a new menu item.",
+              "air_date": "2026-01-12",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-fmz5oympp3c3.html",
+                  "fansub": "Dramavore-Rafia",
+                  "by": "614d778ed0"
+                }
+              ]
+            },
+            {
+              "number": 2,
+              "name": "Épisode 2",
+              "overview": "Though shaken by the fact that Rin's time in Japan is limited, Taiga musters the courage to ask her out, but a sudden call interrupts their aquarium date.",
+              "air_date": "2026-01-19",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-zlp8ieaiykam.html",
+                  "fansub": "Dramavore-Rafia",
+                  "by": "614d778ed0"
+                }
+              ]
+            },
+            {
+              "number": 3,
+              "name": "Épisode 3",
+              "overview": "As communication issues arise between the new couple, Taiga helps Rin move into her new apartment. A surprise visit derails their plans for the day.",
+              "air_date": "2026-01-26",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-mqq3sovjmfe7.html",
+                  "fansub": "Dramavore-Rafia",
+                  "by": "614d778ed0"
+                }
+              ]
+            },
+            {
+              "number": 4,
+              "name": "Épisode 4",
+              "overview": "After resolving his first fight with Rin, Taiga must return to his hometown for his father's memorial service — a place he has avoided for years.",
+              "air_date": "2026-02-02",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-451yww4a9d43.html",
+                  "fansub": "Dramavore-Rafia",
+                  "by": "614d778ed0"
+                }
+              ]
+            },
+            {
+              "number": 5,
+              "name": "Épisode 5",
+              "overview": "As Taiga regains confidence running a catering event with a familiar face from his past, Rin contemplates her future after graduation.",
+              "air_date": "2026-02-10",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-3pb1cgkez958.html",
+                  "fansub": "Dramavore-Rafia",
+                  "by": "614d778ed0"
+                }
+              ]
+            },
+            {
+              "number": 6,
+              "name": "Épisode 6",
+              "overview": "Rin and Taiga take a trip to a beautiful hot springs area, but Rin struggles to forget about seeing Taiga together with his former girlfriend",
+              "air_date": "2026-02-16",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-qthleh8es58v.html",
+                  "fansub": "Dramavore-Rafia",
+                  "by": "614d778ed0"
+                }
+              ]
+            },
+            {
+              "number": 7,
+              "name": "Épisode 7",
+              "overview": "While Taiga and Rin can't stop thinking about each other, Masumi and Jun-ho reflect on their own love lives as they worry about their friends.",
+              "air_date": "2026-02-23",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-1aswx2b7hd9p.html",
+                  "fansub": "Dramavore-Rafia",
+                  "by": "614d778ed0"
+                }
+              ]
+            },
+            {
+              "number": 8,
+              "name": "Épisode 8",
+              "overview": "Back together with Rin, Taiga invites her to a New Year's party at Tanomi. Meanwhile, Akinori is tempted by a questionable investment opportunity.",
+              "air_date": "2026-03-02",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-uejrgzkxm9sa.html",
+                  "fansub": "Dramavore-Rafia",
+                  "by": "614d778ed0"
+                }
+              ]
+            },
+            {
+              "number": 9,
+              "name": "Épisode 9",
+              "overview": "As Taiga and Rin work diligently toward achieving their dreams, Rin’s mother drops by unannounced and learns about Taiga for the first time.",
+              "air_date": "2026-03-09",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-h3ow5cy3ciri.html",
+                  "fansub": "Dramavore-Rafia",
+                  "by": "614d778ed0"
+                }
+              ]
+            },
+            {
+              "number": 10,
+              "name": "Épisode 10",
+              "overview": "With Rin set on returning to Korea after receiving a job offer, she and Taiga think back on their time together and contemplate what the future holds.",
+              "air_date": "2026-03-16",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-elx6y2pekgkq.html",
+                  "fansub": "Dramavore-Rafia",
+                  "by": "614d778ed0"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "sources": [],
+      "addedAt": 1794234866747,
+      "langs": [
+        "VOSTFR"
+      ],
+      "posterCustom": true,
+      "updatedAt": 1794235616247
     }
   ],
   "deletedLinks": [
@@ -58825,6 +59073,15 @@
     "at": 1793983583821
   },
   "journal": [
+    {
+      "k": "mw9dk5xzr4nr9",
+      "t": 1794235616279,
+      "b": "614d778ed0",
+      "a": "add",
+      "i": "301885",
+      "n": "Gimbap and Onigiri",
+      "d": ""
+    },
     {
       "k": "mw9d1g9v2sl5r",
       "t": 1794234743203,
@@ -61514,15 +61771,6 @@
       "a": "edit",
       "i": "325063",
       "n": "My Cold Coworker Obsessively Loves Me",
-      "d": ""
-    },
-    {
-      "k": "mvlldlstm8lqw",
-      "t": 1792797558941,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "300529",
-      "n": "Straight to Hell",
       "d": ""
     }
   ],
