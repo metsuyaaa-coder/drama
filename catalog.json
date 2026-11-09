@@ -54798,14 +54798,26 @@
               "name": "Épisode 11",
               "overview": "",
               "air_date": "2026-11-09",
-              "sources": []
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-yttoczu3xhso.html",
+                  "by": "614d778ed0"
+                }
+              ]
             },
             {
               "number": 12,
               "name": "Épisode 12",
               "overview": "",
               "air_date": "2026-11-09",
-              "sources": []
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-z1tidz18pq8a.html",
+                  "by": "614d778ed0"
+                }
+              ]
             },
             {
               "number": 13,
@@ -54921,7 +54933,7 @@
         "VOSTFR"
       ],
       "posterCustom": true,
-      "updatedAt": 1794143000676,
+      "updatedAt": 1794238260530,
       "trend": 83
     },
     {
@@ -59080,6 +59092,15 @@
   },
   "journal": [
     {
+      "k": "mw9f4ua3tsxe8",
+      "t": 1794238260555,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "270431",
+      "n": "When I Meet the Moon",
+      "d": "sources 10 → 12"
+    },
+    {
       "k": "mw9f2xh4e7a83",
       "t": 1794238171384,
       "b": "614d778ed0",
@@ -61766,15 +61787,6 @@
       "t": 1792800262682,
       "b": "614d778ed0",
       "a": "edit",
-      "i": "292696",
-      "n": "The First Jasmine",
-      "d": ""
-    },
-    {
-      "k": "mvlmr8qjgpdza",
-      "t": 1792799874811,
-      "b": "614d778ed0",
-      "a": "add",
       "i": "292696",
       "n": "The First Jasmine",
       "d": ""
