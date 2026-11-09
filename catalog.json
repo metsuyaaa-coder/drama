@@ -7847,7 +7847,13 @@
               "name": "Épisode 11",
               "overview": "",
               "air_date": "2026-11-09",
-              "sources": []
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-gu73dhne9ht2.html",
+                  "by": "614d778ed0"
+                }
+              ]
             },
             {
               "number": 12,
@@ -7864,7 +7870,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793968781259,
+      "updatedAt": 1794241708856,
       "networks": [
         "ENA"
       ],
@@ -59098,6 +59104,15 @@
   },
   "journal": [
     {
+      "k": "mw9h6r1irnlfx",
+      "t": 1794241708902,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "307106",
+      "n": "Between Steps",
+      "d": "sources 28 → 29"
+    },
+    {
       "k": "mw9h5qj63zozt",
       "t": 1794241661586,
       "b": "614d778ed0",
@@ -61786,15 +61801,6 @@
       "a": "add",
       "i": "1396",
       "n": "Breaking Bad",
-      "d": ""
-    },
-    {
-      "k": "mvln40xz1vdox",
-      "t": 1792800471239,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "307106",
-      "n": "Between Steps",
       "d": ""
     }
   ],
