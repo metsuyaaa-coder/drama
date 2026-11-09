@@ -7850,7 +7850,7 @@
               "sources": [
                 {
                   "name": "VIDMOLY",
-                  "url": "https://vidmoly.org/embed-v76z9qrb2pgd.html",
+                  "url": "https://vidmoly.org/embed-2pbgd27pcc5o.html",
                   "fansub": "Dramavore :Rafia",
                   "by": "614d778ed0"
                 }
@@ -7871,7 +7871,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1794263645072,
+      "updatedAt": 1794264495074,
       "networks": [
         "ENA"
       ],
@@ -58250,6 +58250,7 @@
     }
   ],
   "deletedLinks": [
+    "307106\thttps://vidmoly.org/embed-v76z9qrb2pgd.html",
     "307106\thttps://vidmoly.org/embed-gu73dhne9ht2.html",
     "317326\thttps://vidmoly.org/embed-lngchnbpe8h8.html",
     "335951\thttps://vidmoly.org/embed-25atnkd7mone.html",
@@ -59221,6 +59222,15 @@
     "at": 1793983583821
   },
   "journal": [
+    {
+      "k": "mw9ur4za5uif2",
+      "t": 1794264495094,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "307106",
+      "n": "Between Steps",
+      "d": ""
+    },
     {
       "k": "mw9u8x4b3js7l",
       "t": 1794263645099,
@@ -61908,15 +61918,6 @@
       "t": 1792859236045,
       "b": "head",
       "a": "edit",
-      "i": "316294",
-      "n": "Payback",
-      "d": ""
-    },
-    {
-      "k": "mvmlksnb7nq2h",
-      "t": 1792858360583,
-      "b": "f2b389cb62",
-      "a": "add",
       "i": "316294",
       "n": "Payback",
       "d": ""
