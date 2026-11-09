@@ -40851,7 +40851,13 @@
               "name": "Épisode 5",
               "overview": "",
               "air_date": "2026-11-09",
-              "sources": []
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-zjbb3atrap7c.html",
+                  "by": "614d778ed0"
+                }
+              ]
             },
             {
               "number": 6,
@@ -40896,7 +40902,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793968875225,
+      "updatedAt": 1794244762502,
       "trend": 0
     },
     {
@@ -59111,6 +59117,15 @@
   },
   "journal": [
     {
+      "k": "mw9j07841yaa9",
+      "t": 1794244762516,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "335951",
+      "n": "Summer Vacation",
+      "d": "sources 4 → 5"
+    },
+    {
       "k": "mw9igf6glh4da",
       "t": 1794243839704,
       "b": "614d778ed0",
@@ -61797,15 +61812,6 @@
       "t": 1792849734811,
       "b": "f2b389cb62",
       "a": "add",
-      "i": "1396",
-      "n": "Breaking Bad",
-      "d": ""
-    },
-    {
-      "k": "mvlt7kftqio7v",
-      "t": 1792810714169,
-      "b": "614d778ed0",
-      "a": "del",
       "i": "1396",
       "n": "Breaking Bad",
       "d": ""
