@@ -2345,9 +2345,11 @@
       ],
       "sources": [],
       "addedAt": 1794323892661,
-      "langs": [],
+      "langs": [
+        "VOSTFR"
+      ],
       "bl": true,
-      "updatedAt": 1794324150515
+      "updatedAt": 1794324186375
     },
     {
       "id": "293607",
@@ -63087,6 +63089,15 @@
   },
   "journal": [
     {
+      "k": "mwauaj2qkm7u6",
+      "t": 1794324186386,
+      "b": "f2b389cb62",
+      "a": "edit",
+      "i": "284825",
+      "n": "Mr. Fanboy",
+      "d": ""
+    },
+    {
       "k": "mwau9rekntgzp",
       "t": 1794324150524,
       "b": "f2b389cb62",
@@ -65776,15 +65787,6 @@
       "i": "314939",
       "n": "A Love Other Than Yours",
       "d": "sources 40 → 41"
-    },
-    {
-      "k": "mvmmc6dzuzmk9",
-      "t": 1792859638103,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "295599",
-      "n": "Royal Betrothal",
-      "d": "affiche"
     }
   ],
   "refreshAt": 1792423579957
