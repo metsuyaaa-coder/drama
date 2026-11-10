@@ -24376,7 +24376,13 @@
               "name": "Épisode 8",
               "overview": "",
               "air_date": "2026-11-10",
-              "sources": []
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-pfjvrvu4p5bg.html",
+                  "by": "614d778ed0"
+                }
+              ]
             },
             {
               "number": 9,
@@ -24414,7 +24420,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1794241661540,
+      "updatedAt": 1794343688913,
       "trend": 77,
       "videos": [
         {
@@ -60136,6 +60142,15 @@
   },
   "journal": [
     {
+      "k": "mwb5wjc05o0dg",
+      "t": 1794343688928,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "303745",
+      "n": "Love in Disguise",
+      "d": "sources 13 → 14"
+    },
+    {
       "k": "mwb5upy07znkj",
       "t": 1794343604184,
       "b": "614d778ed0",
@@ -62824,15 +62839,6 @@
       "a": "edit",
       "i": "287009",
       "n": "Doctor on the Edge",
-      "d": "affiche"
-    },
-    {
-      "k": "mvmp9m93817e9",
-      "t": 1792864557543,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "295599",
-      "n": "Royal Betrothal",
       "d": "affiche"
     }
   ],
