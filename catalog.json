@@ -58800,12 +58800,12 @@
   },
   "announce": {
     "on": true,
-    "text": "Vidmoly : Avant de signaler un lien mort veuillez patienter lors des chargement des vidéos et sachez que Le serveur peut être bloqué ou inaccessible dans certaines régions pour certains utilisateurs, ou les sous-titres peuvent parfois ne pas s’afficher donc si c'est votre cas consultez ce",
+    "text": "Avant de signaler un lien mort, patientez 24 h après avoir constaté le bug (car la vidéo peut redevenir accessible)\n\nLe serveur peut être bloqué/inaccessible certaines régions et les sous-titres peuvent ne pas s'afficher. Si c'est votre cas, consultez ce",
     "kind": "info",
     "link": "https://www.tumblr.com/dramavor/823667546752516096/lisez-attentivement-cette-publication-bonsoir?source=share",
     "label": "lien",
-    "id": "1793643262409",
-    "at": 1793643262409
+    "id": "1794281215788",
+    "at": 1794281215788
   },
   "inbox": {
     "at": 1793452840500,
