@@ -59517,11 +59517,18 @@
       {
         "id": "vidmoly",
         "state": "maint",
-        "note": "",
-        "at": 1794271324590
+        "note": "Merci de patienter",
+        "at": 1794271337199
       }
     ],
     "log": [
+      {
+        "t": 1794271337199,
+        "id": "vidmoly",
+        "name": "Vidmoly",
+        "state": "maint",
+        "note": "Merci de patienter"
+      },
       {
         "t": 1794271324590,
         "id": "vidmoly",
@@ -59606,7 +59613,7 @@
       "dlsurf",
       "gofile"
     ],
-    "at": 1794271324590
+    "at": 1794271337200
   },
   "journal": [
     {
