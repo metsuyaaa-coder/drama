@@ -59910,13 +59910,33 @@
         "en": "Beautiful Love, Wonderful Life",
         "auto": true,
         "at": 1794334231140
+      },
+      {
+        "id": "rmwb0ncw0",
+        "title": "Lovely Runner",
+        "status": "wait",
+        "bl": false,
+        "kind": "stream",
+        "votes": 1,
+        "tmdb": "230923",
+        "media": "tv",
+        "year": "2024",
+        "poster": "/9gEp7Rs43Fi3eEEBsIMc8xGewNp.jpg",
+        "origin": "Corée",
+        "en": "",
+        "auto": true,
+        "at": 1794334862592
       }
     ],
-    "at": 1794334231140,
+    "at": 1794334862592,
     "log": [
       {
         "v": "c82e4fca",
         "t": 1794334231140
+      },
+      {
+        "v": "17d4beff",
+        "t": 1794334862592
       }
     ]
   },
