@@ -54935,14 +54935,26 @@
               "name": "Épisode 13",
               "overview": "",
               "air_date": "2026-11-10",
-              "sources": []
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-2rlvv1apjzi0.html",
+                  "by": "614d778ed0"
+                }
+              ]
             },
             {
               "number": 14,
               "name": "Épisode 14",
               "overview": "",
               "air_date": "2026-11-10",
-              "sources": []
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-x3y6ti1qgku6.html",
+                  "by": "614d778ed0"
+                }
+              ]
             },
             {
               "number": 15,
@@ -55044,7 +55056,7 @@
         "VOSTFR"
       ],
       "posterCustom": true,
-      "updatedAt": 1794238260530,
+      "updatedAt": 1794341338861,
       "trend": 68
     },
     {
@@ -59951,25 +59963,7 @@
         "at": 1794336790805
       }
     ],
-    "at": 1794336790805,
-    "log": [
-      {
-        "v": "c82e4fca",
-        "t": 1794334231140
-      },
-      {
-        "v": "17d4beff",
-        "t": 1794334862592
-      },
-      {
-        "v": "4c5060ad",
-        "t": 1794335291803
-      },
-      {
-        "v": "1ed30fd4",
-        "t": 1794336790805
-      }
-    ]
+    "at": 1794336790805
   },
   "founder": {
     "name": "Meyriuu",
@@ -60135,6 +60129,15 @@
     "at": 1794272052815
   },
   "journal": [
+    {
+      "k": "mwb4i61ai0nwv",
+      "t": 1794341338894,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "270431",
+      "n": "When I Meet the Moon",
+      "d": "sources 12 → 14"
+    },
     {
       "k": "mwb1t7biyql09",
       "t": 1794336814926,
@@ -62825,15 +62828,6 @@
       "i": "293610",
       "n": "Doctor X: Mafia in White",
       "d": "sources 17 → 20"
-    },
-    {
-      "k": "mvmn3k7qa5xjp",
-      "t": 1792860915734,
-      "b": "head",
-      "a": "del",
-      "i": "316294",
-      "n": "Payback",
-      "d": ""
     }
   ],
   "refreshAt": 1792423579957
