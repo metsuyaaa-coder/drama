@@ -19754,7 +19754,7 @@
                 {
                   "name": "VIDMOLY",
                   "url": "https://vidmoly.org/embed-7kon45gviu2g.html",
-                  "fansub": "Dramavore",
+                  "fansub": "Dramavore : Rafia",
                   "by": "614d778ed0"
                 }
               ]
@@ -19768,7 +19768,7 @@
                 {
                   "name": "VIDMOLY",
                   "url": "https://vidmoly.org/embed-5bmmihh0hcgi.html",
-                  "fansub": "Dramavore",
+                  "fansub": "Dramavore : Rafia",
                   "by": "614d778ed0"
                 }
               ]
@@ -19782,7 +19782,7 @@
                 {
                   "name": "VIDMOLY",
                   "url": "https://vidmoly.org/embed-e28yk846zf0v.html",
-                  "fansub": "Dramavore",
+                  "fansub": "Dramavore : Rafia",
                   "by": "614d778ed0"
                 }
               ]
@@ -19820,7 +19820,14 @@
               "name": "Épisode 6",
               "overview": "",
               "air_date": "2026-11-10",
-              "sources": []
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-3a65jkd1qpcl.html",
+                  "fansub": "Dramavore : Rafia",
+                  "by": "614d778ed0"
+                }
+              ]
             },
             {
               "number": 7,
@@ -19865,7 +19872,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1793968826238,
+      "updatedAt": 1794336814875,
       "networks": [
         "Fuji TV",
         "Channel A"
@@ -60129,6 +60136,15 @@
   },
   "journal": [
     {
+      "k": "mwb1t7biyql09",
+      "t": 1794336814926,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "320513",
+      "n": "kiDnap GAME",
+      "d": "sources 5 → 6"
+    },
+    {
       "k": "mway2t2ys906y",
       "t": 1794330729766,
       "b": "614d778ed0",
@@ -62818,15 +62834,6 @@
       "i": "316294",
       "n": "Payback",
       "d": ""
-    },
-    {
-      "k": "mvmmdb444d350",
-      "t": 1792859690884,
-      "b": "head",
-      "a": "edit",
-      "i": "293607",
-      "n": "100 Days of Deception",
-      "d": "sources 16 → 17"
     }
   ],
   "refreshAt": 1792423579957
