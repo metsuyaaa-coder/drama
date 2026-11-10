@@ -40950,7 +40950,13 @@
               "name": "Épisode 6",
               "overview": "",
               "air_date": "2026-11-10",
-              "sources": []
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-qvn0xyvmvr87.html",
+                  "by": "614d778ed0"
+                }
+              ]
             },
             {
               "number": 7,
@@ -40988,7 +40994,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1794244762502,
+      "updatedAt": 1794343604096,
       "trend": 0
     },
     {
@@ -60130,6 +60136,15 @@
   },
   "journal": [
     {
+      "k": "mwb5upy07znkj",
+      "t": 1794343604184,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "335951",
+      "n": "Summer Vacation",
+      "d": "sources 5 → 6"
+    },
+    {
       "k": "mwb4i61ai0nwv",
       "t": 1794341338894,
       "b": "614d778ed0",
@@ -62819,15 +62834,6 @@
       "i": "295599",
       "n": "Royal Betrothal",
       "d": "affiche"
-    },
-    {
-      "k": "mvmnkg0sznvhi",
-      "t": 1792861703452,
-      "b": "head",
-      "a": "edit",
-      "i": "293610",
-      "n": "Doctor X: Mafia in White",
-      "d": "sources 17 → 20"
     }
   ],
   "refreshAt": 1792423579957
