@@ -59563,9 +59563,25 @@
         "en": "The Road to Glory",
         "auto": true,
         "at": 1794322779911
+      },
+      {
+        "id": "rmwatqwxi",
+        "title": "赖猫的狮子倒影",
+        "status": "wait",
+        "bl": false,
+        "kind": "stream",
+        "votes": 1,
+        "tmdb": "154493",
+        "media": "tv",
+        "year": "2021",
+        "poster": "/2RXgis1kg0HMFjQF8NcV0SH0lXo.jpg",
+        "origin": "Chine",
+        "en": "The Lion's Secret",
+        "auto": true,
+        "at": 1794323271222
       }
     ],
-    "at": 1794322779911,
+    "at": 1794323271222,
     "log": [
       {
         "v": "47cb2477",
@@ -59586,6 +59602,10 @@
       {
         "v": "6eb69b77",
         "t": 1794322779911
+      },
+      {
+        "v": "fe5766f5",
+        "t": 1794323271222
       }
     ]
   },
