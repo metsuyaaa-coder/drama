@@ -59926,9 +59926,25 @@
         "en": "",
         "auto": true,
         "at": 1794334862592
+      },
+      {
+        "id": "rmwb1soph",
+        "title": "My mister",
+        "status": "wait",
+        "bl": false,
+        "kind": "stream",
+        "votes": 1,
+        "tmdb": "76662",
+        "media": "tv",
+        "year": "2018",
+        "poster": "/aPjpO3UBZ8v4rmj1RmMS1CkypDq.jpg",
+        "origin": "Corée",
+        "en": "My Mister",
+        "auto": true,
+        "at": 1794336790805
       }
     ],
-    "at": 1794335291803,
+    "at": 1794336790805,
     "log": [
       {
         "v": "c82e4fca",
@@ -59941,6 +59957,10 @@
       {
         "v": "4c5060ad",
         "t": 1794335291803
+      },
+      {
+        "v": "1ed30fd4",
+        "t": 1794336790805
       }
     ]
   },
