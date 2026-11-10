@@ -59531,9 +59531,25 @@
         "en": "The First Frost",
         "auto": true,
         "at": 1794316800877
+      },
+      {
+        "id": "rmwat1g52",
+        "title": "รักสุดใจนายแฟนบอย",
+        "status": "wait",
+        "bl": true,
+        "kind": "stream",
+        "votes": 1,
+        "tmdb": "284825",
+        "media": "tv",
+        "year": "2026",
+        "poster": "/m0bMTgWSDNwaZiz9TKTNqkCCDUX.jpg",
+        "origin": "Thaïlande",
+        "en": "Mr. Fanboy",
+        "auto": true,
+        "at": 1794322083062
       }
     ],
-    "at": 1794316800877,
+    "at": 1794322083062,
     "log": [
       {
         "v": "47cb2477",
@@ -59546,6 +59562,10 @@
       {
         "v": "c08945b5",
         "t": 1794316800877
+      },
+      {
+        "v": "9bee4e40",
+        "t": 1794322083062
       }
     ]
   },
