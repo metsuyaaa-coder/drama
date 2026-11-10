@@ -59517,11 +59517,18 @@
       {
         "id": "vidmoly",
         "state": "up",
-        "note": "",
-        "at": 1794271859435
+        "note": "Évitez de signaler directement la vidéo. Attendez environ 24 h après avoir constaté le bug, car elle pourrait redevenir accessible entre-tem",
+        "at": 1794272052815
       }
     ],
     "log": [
+      {
+        "t": 1794272052815,
+        "id": "vidmoly",
+        "name": "Vidmoly",
+        "state": "up",
+        "note": "Évitez de signaler directement la vidéo. Attendez environ 24 h après avoir constaté le bug, car elle pourrait redevenir accessible entre-tem"
+      },
       {
         "t": 1794271859435,
         "id": "vidmoly",
@@ -59641,7 +59648,7 @@
       "dlsurf",
       "gofile"
     ],
-    "at": 1794271859435
+    "at": 1794272052815
   },
   "journal": [
     {
