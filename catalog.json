@@ -370,7 +370,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "trend": 49,
+      "trend": 0,
       "aka": [
         "100 Days of Deception",
         "百日谎言",
@@ -1003,7 +1003,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "trend": 57,
+      "trend": 65,
       "posterV": 2,
       "origin_country": [
         "KR"
@@ -1492,7 +1492,7 @@
         "Upanje",
         "호프"
       ],
-      "trend": 74,
+      "trend": 75,
       "posterV": 2,
       "updatedAt": 1793968762726,
       "videos": [
@@ -7882,7 +7882,7 @@
       "networks": [
         "ENA"
       ],
-      "trend": 0,
+      "trend": 47,
       "videos": [
         {
           "key": "4HsK_-QQE5Y",
@@ -23505,7 +23505,7 @@
       ],
       "posterV": 2,
       "updatedAt": 1794073849284,
-      "trend": 91,
+      "trend": 69,
       "networks": [
         "CCTV-8",
         "Youku"
@@ -24421,7 +24421,7 @@
         "VOSTFR"
       ],
       "updatedAt": 1794343688913,
-      "trend": 77,
+      "trend": 0,
       "videos": [
         {
           "key": "55ATD_SJ_Xw",
@@ -31651,7 +31651,7 @@
         "VOSTFR"
       ],
       "updatedAt": 1794243839688,
-      "trend": 0,
+      "trend": 44,
       "eprt": 48
     },
     {
@@ -45617,7 +45617,7 @@
       ],
       "updatedAt": 1793968891307,
       "posterCustom": true,
-      "trend": 92
+      "trend": 85
     },
     {
       "id": "307478",
@@ -52132,7 +52132,7 @@
       ],
       "posterCustom": true,
       "updatedAt": 1793982937989,
-      "trend": 98
+      "trend": 95
     },
     {
       "id": "237411",
@@ -55069,7 +55069,7 @@
       ],
       "posterCustom": true,
       "updatedAt": 1794341338861,
-      "trend": 68
+      "trend": 77
     },
     {
       "id": "336458",
@@ -55558,7 +55558,7 @@
         "VOSTFR"
       ],
       "updatedAt": 1793968917774,
-      "trend": 78
+      "trend": 74
     },
     {
       "id": "m1483525",
@@ -55685,7 +55685,7 @@
       ],
       "updatedAt": 1793993517661,
       "posterCustom": true,
-      "trend": 94
+      "trend": 91
     },
     {
       "id": "307853",
@@ -55892,14 +55892,26 @@
               "name": "Épisode 10",
               "overview": "",
               "air_date": "",
-              "sources": []
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-p161wvxe8ge5.html",
+                  "by": "614d778ed0"
+                }
+              ]
             },
             {
               "number": 11,
               "name": "Épisode 11",
               "overview": "",
               "air_date": "",
-              "sources": []
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-s3j7ohhx0nwa.html",
+                  "by": "614d778ed0"
+                }
+              ]
             },
             {
               "number": 12,
@@ -56001,8 +56013,8 @@
         "VOSTFR"
       ],
       "posterCustom": true,
-      "updatedAt": 1794238171333,
-      "trend": 88
+      "updatedAt": 1794343922878,
+      "trend": 74
     },
     {
       "id": "134331",
@@ -58037,7 +58049,7 @@
       ],
       "posterCustom": true,
       "updatedAt": 1794234743187,
-      "trend": 76
+      "trend": 0
     },
     {
       "id": "301885",
@@ -60141,6 +60153,15 @@
     "at": 1794272052815
   },
   "journal": [
+    {
+      "k": "mwb61jv08wcyi",
+      "t": 1794343922892,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "307853",
+      "n": "Sunshine Through the Rain",
+      "d": "sources 9 → 11"
+    },
     {
       "k": "mwb5wjc05o0dg",
       "t": 1794343688928,
@@ -62831,15 +62852,6 @@
       "i": "",
       "n": "Toutes les fiches",
       "d": "110 fiches"
-    },
-    {
-      "k": "mvmpi9c6b6stk",
-      "t": 1792864960710,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "287009",
-      "n": "Doctor on the Edge",
-      "d": "affiche"
     }
   ],
   "refreshAt": 1792423579957
