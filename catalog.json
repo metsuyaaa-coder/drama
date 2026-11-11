@@ -59668,7 +59668,7 @@
         "싱글 인 서울"
       ],
       "year": "2023",
-      "overview": "Ju Hyeon Jin travaille dans une maison d'édition. L'auteure qui était prévue pour l'écriture de l'un des livres de leur nouvelle série sur la vie des célibataires étant tombée enceinte, l'équipe doit trouver un nouvel auteur. Le directeur Jin Pyo propose alors Park Yeong Ho, un professeur qui rédige souvent des publications Instagram sur la vie d'un célibataire à Séoul.",
+      "overview": "Park Young Ho, célèbre conférencier et influenceur suivi par 300 000 abonnés, profite pleinement de son célibat, oscillant entre sensibilité et prétention. À l'opposé, Joo Hyun Jin, jeune éditrice talentueuse et rédactrice en chef d'une série d'essais intitulée « Célibataire en ville », supporte difficilement la solitude.\n\nLeur rencontre autour de ce projet les amène à confronter leurs visions opposées du célibat, mais aussi à rouvrir les blessures laissées par leurs anciennes histoires d'amour.",
       "genres": [
         "Romance",
         "Comédie"
@@ -59767,7 +59767,7 @@
       ],
       "addedAt": 1794408101543,
       "langs": [],
-      "updatedAt": 1794408404839
+      "updatedAt": 1794409353309
     }
   ],
   "deletedLinks": [
@@ -60985,6 +60985,15 @@
     "at": 1794272052815
   },
   "journal": [
+    {
+      "k": "mwc8zyp8ihkpu",
+      "t": 1794409353836,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "m717088",
+      "n": "Single in Seoul",
+      "d": ""
+    },
     {
       "k": "mwc8ki2e63me1",
       "t": 1794408981594,
@@ -63674,15 +63683,6 @@
       "a": "add",
       "i": "316702",
       "n": "Final Table",
-      "d": ""
-    },
-    {
-      "k": "mvn0zk18vtm63",
-      "t": 1792884243500,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "326063",
-      "n": "25 Years of You",
       "d": ""
     }
   ],
