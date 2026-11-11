@@ -52089,6 +52089,11 @@
                   "name": "EMBEDORIGIN",
                   "url": "https://embedorigin.cc/e/nc09q6q5eh0o",
                   "by": "head"
+                },
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-9bz2oanu858g.html",
+                  "by": "614d778ed0"
                 }
               ]
             },
@@ -52102,6 +52107,11 @@
                   "name": "EMBEDORIGIN",
                   "url": "https://embedorigin.cc/e/uppm0ni0owy1",
                   "by": "head"
+                },
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-xor2do9dfeav.html",
+                  "by": "614d778ed0"
                 }
               ]
             },
@@ -52143,7 +52153,7 @@
         "VF"
       ],
       "posterCustom": true,
-      "updatedAt": 1794415868680,
+      "updatedAt": 1794440096422,
       "trend": 97
     },
     {
@@ -61206,6 +61216,15 @@
   },
   "journal": [
     {
+      "k": "mwcravxhn8zpl",
+      "t": 1794440096549,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "279246",
+      "n": "The Remarried Empress",
+      "d": "sources 10 → 12"
+    },
+    {
       "k": "mwcqu3t9ecr3b",
       "t": 1794439313613,
       "b": "614d778ed0",
@@ -63895,15 +63914,6 @@
       "i": "316702",
       "n": "Final Table",
       "d": "sources 1 → 2"
-    },
-    {
-      "k": "mvn4k4d2ozsbf",
-      "t": 1792890241814,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "334517",
-      "n": "Oh! My Guard",
-      "d": ""
     }
   ],
   "refreshAt": 1792423579957
