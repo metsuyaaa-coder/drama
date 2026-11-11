@@ -63384,13 +63384,33 @@
         "en": "My Mister",
         "auto": true,
         "at": 1794336790805
+      },
+      {
+        "id": "rmwbf80zk",
+        "title": "Glory",
+        "status": "wait",
+        "bl": false,
+        "kind": "stream",
+        "votes": 1,
+        "tmdb": "284512",
+        "media": "tv",
+        "year": "2025",
+        "poster": "/emQR37pN4UluVbq7pGoMjXOAKX6.jpg",
+        "origin": "Chine",
+        "en": "",
+        "auto": true,
+        "at": 1794359341568
       }
     ],
-    "at": 1794351494913,
+    "at": 1794359341568,
     "log": [
       {
         "v": "b235636c",
         "t": 1794351494913
+      },
+      {
+        "v": "cfaa4607",
+        "t": 1794359341568
       }
     ]
   },
