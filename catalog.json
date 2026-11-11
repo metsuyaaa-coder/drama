@@ -60339,9 +60339,31 @@
         "en": "Queen of Tears",
         "auto": true,
         "at": 1794387769912
+      },
+      {
+        "id": "rmwc6i8a1",
+        "title": "Des vœux pour un génie",
+        "status": "wait",
+        "bl": false,
+        "kind": "stream",
+        "votes": 1,
+        "tmdb": "228689",
+        "media": "tv",
+        "year": "2025",
+        "poster": "/cbkhEYdYjM85rNlF4aj5OO56cY4.jpg",
+        "origin": "Corée",
+        "en": "Genie, Make a Wish",
+        "auto": true,
+        "at": 1794405167209
       }
     ],
-    "at": 1794387769912
+    "at": 1794405167209,
+    "log": [
+      {
+        "v": "fa5325e2",
+        "t": 1794405167209
+      }
+    ]
   },
   "founder": {
     "name": "Meyriuu",
