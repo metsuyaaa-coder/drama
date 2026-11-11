@@ -60277,13 +60277,33 @@
         "en": "",
         "auto": true,
         "at": 1794359341568
+      },
+      {
+        "id": "rmwbw5cfs",
+        "title": "La Reine des larmes",
+        "status": "wait",
+        "bl": false,
+        "kind": "stream",
+        "votes": 1,
+        "tmdb": "215720",
+        "media": "tv",
+        "year": "2024",
+        "poster": "/3x8GHyMTMsuXVX8pZ1OhUUHgOBx.jpg",
+        "origin": "Corée",
+        "en": "Queen of Tears",
+        "auto": true,
+        "at": 1794387769912
       }
     ],
-    "at": 1794385926369,
+    "at": 1794387769912,
     "log": [
       {
         "v": "300af961",
         "t": 1794385926369
+      },
+      {
+        "v": "9c6da8fc",
+        "t": 1794387769912
       }
     ]
   },
