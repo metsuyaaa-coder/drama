@@ -59349,7 +59349,7 @@
       "rating": "8.5",
       "pop": 8.8473,
       "status": "Ended",
-      "poster": "https://image.tmdb.org/t/p/w500/gE9tZDycsA31wvtzUcDWVk6Nf7t.jpg",
+      "poster": "https://image.tmdb.org/t/p/original/cRGJKYnzwNpzSE7ROKlhD4KBsA7.jpg",
       "posterV": 2,
       "backdrop": "https://image.tmdb.org/t/p/original/i7prwa7UwOAUcpTmWnUd75J2PWe.jpg",
       "videos": [
@@ -59650,7 +59650,8 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1794354656539
+      "updatedAt": 1794408632416,
+      "posterCustom": true
     },
     {
       "id": "m717088",
@@ -60984,6 +60985,15 @@
     "at": 1794272052815
   },
   "journal": [
+    {
+      "k": "mwc8ki2e63me1",
+      "t": 1794408632438,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "76662",
+      "n": "My Mister",
+      "d": "affiche"
+    },
     {
       "k": "mwc8fmgsqkjdl",
       "t": 1794408404860,
@@ -63673,15 +63683,6 @@
       "a": "edit",
       "i": "326063",
       "n": "25 Years of You",
-      "d": ""
-    },
-    {
-      "k": "mvn0y9c2b4lgo",
-      "t": 1792884182978,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "325063",
-      "n": "My Cold Coworker Obsessively Loves Me",
       "d": ""
     }
   ],
