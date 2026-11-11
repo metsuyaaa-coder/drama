@@ -59811,7 +59811,7 @@
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/original/timUDTTUoB08h8imJlvA39Mpck7.jpg",
       "posterV": 2,
-      "backdrop": "https://image.tmdb.org/t/p/original/ypJyuwEqvF60u3H1yprnrYZPtw9.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/original/v0ELnkrBzn5lEH9xVmdaocDRIBe.jpg",
       "videos": [
         {
           "key": "k1_Pdr9cb5c",
@@ -59987,7 +59987,7 @@
         "VOSTFR"
       ],
       "posterCustom": true,
-      "updatedAt": 1794439039527
+      "updatedAt": 1794439313594
     }
   ],
   "deletedLinks": [
@@ -61205,6 +61205,15 @@
     "at": 1794272052815
   },
   "journal": [
+    {
+      "k": "mwcqu3t9ecr3b",
+      "t": 1794439313613,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "326975",
+      "n": "What a Boss Wants",
+      "d": ""
+    },
     {
       "k": "mwcqo8cks1t6m",
       "t": 1794439039556,
@@ -63892,15 +63901,6 @@
       "t": 1792890241814,
       "b": "614d778ed0",
       "a": "edit",
-      "i": "334517",
-      "n": "Oh! My Guard",
-      "d": ""
-    },
-    {
-      "k": "mvn48q1r0j42f",
-      "t": 1792889710047,
-      "b": "614d778ed0",
-      "a": "add",
       "i": "334517",
       "n": "Oh! My Guard",
       "d": ""
