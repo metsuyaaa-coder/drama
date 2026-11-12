@@ -308,6 +308,11 @@
                   "name": "VIDMOLY",
                   "url": "https://vidmoly.org/embed-17nn5dwgyuev.html",
                   "by": "614d778ed0"
+                },
+                {
+                  "name": "EMBEDORIGIN",
+                  "url": "https://embedorigin.cc/e/bh0ms1nb9wvy",
+                  "by": "head"
                 }
               ]
             },
@@ -321,6 +326,11 @@
                   "name": "VIDMOLY",
                   "url": "https://vidmoly.org/embed-9fmxml4de85m.html",
                   "by": "614d778ed0"
+                },
+                {
+                  "name": "EMBEDORIGIN",
+                  "url": "https://embedorigin.cc/e/tzh5a92srdww",
+                  "by": "head"
                 }
               ]
             },
@@ -410,7 +420,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1794178475700,
+      "updatedAt": 1794518382955,
       "trend": 58,
       "videos": [
         {
@@ -63233,6 +63243,15 @@
   },
   "journal": [
     {
+      "k": "mwe1wu47fey0v",
+      "t": 1794518382967,
+      "b": "head",
+      "a": "edit",
+      "i": "293607",
+      "n": "100 Days of Deception",
+      "d": "sources 28 → 30"
+    },
+    {
       "k": "mwe1u7101cmjv",
       "t": 1794518259732,
       "b": "head",
@@ -65922,15 +65941,6 @@
       "i": "200709",
       "n": "Weak Hero",
       "d": ""
-    },
-    {
-      "k": "mvo5y8d3jwksw",
-      "t": 1792953057806,
-      "b": "head",
-      "a": "edit",
-      "i": "m11423",
-      "n": "Memories of Murder",
-      "d": "sources 2 → 3"
     }
   ]
 }
