@@ -60808,6 +60808,251 @@
         "VF"
       ],
       "updatedAt": 1794515538724
+    },
+    {
+      "id": "256226",
+      "type": "tv",
+      "name": "Dear X",
+      "original_name": "친애하는 X",
+      "origin_country": [
+        "KR"
+      ],
+      "networks": [
+        "TVING"
+      ],
+      "original_language": "ko",
+      "aka": [
+        "Dear X",
+        "亲爱的X",
+        "親愛なるX",
+        "เหลี่ยมมายามรณะ",
+        "親愛的Ｘ",
+        "Querido x",
+        "Cartas Para X",
+        "Дорогой Икс",
+        "محبوبي المجهول",
+        "X Thân Mến!",
+        "Dragi X",
+        "Queridos X",
+        "Sevgili X",
+        "איקס X",
+        "親愛的X",
+        "عزيزي إكس",
+        "친애하는 X"
+      ],
+      "year": "2025",
+      "overview": "Derrière un visage angélique se cache une nature cruelle : Baek Ah-jin, qui perce à jour les cœurs et les manipule. Après avoir piétiné les sacrifices de nombreux êtres pour atteindre le sommet, tout bascule dès son arrivée. Une femme masquée, cherchant à échapper à l'enfer et à gravir les échelons du pouvoir. Et l'histoire des X, brutalement anéantis par ses mains.",
+      "genres": [
+        "Crime",
+        "Drame"
+      ],
+      "rating": "8.7",
+      "pop": 10.3163,
+      "status": "Ended",
+      "poster": "https://image.tmdb.org/t/p/w500/j2w2PZ5JHEv0HUXwrhsToYiTP4r.jpg",
+      "posterV": 2,
+      "backdrop": "https://image.tmdb.org/t/p/original/iDnZoZvv220H6pigUWt3BlfPdxQ.jpg",
+      "videos": [
+        {
+          "key": "4_s3l_jrEmM",
+          "name": "Dear X | Official Trailer | November 6 on #HBOMaxAsia",
+          "type": "Trailer",
+          "lab": "Anglais"
+        }
+      ],
+      "cast": [
+        {
+          "name": "Kim You-jung",
+          "character": "Baek Ah-jin",
+          "id": 140335
+        },
+        {
+          "name": "Kim Young-dae",
+          "character": "Yoon Joon-seo",
+          "id": 2260418
+        },
+        {
+          "name": "김도훈",
+          "character": "Kim Jae-oh",
+          "id": 2152558
+        },
+        {
+          "name": "Lee Yul-eum",
+          "character": "Lim Le-na",
+          "id": 1467384
+        }
+      ],
+      "eprt": 66,
+      "seasons": [
+        {
+          "number": 1,
+          "name": "Saison 1",
+          "episodes": [
+            {
+              "number": 1,
+              "name": "Her \"Xs\"",
+              "overview": "When Sung-hee attempts to expose Ah-jin's secrets, she strikes back with the help of fellow classmates.",
+              "air_date": "2025-11-06",
+              "sources": [
+                {
+                  "name": "EMBEDORIGIN",
+                  "url": "https://embedorigin.cc/e/f3tb25qgds4x",
+                  "by": "head"
+                }
+              ]
+            },
+            {
+              "number": 2,
+              "name": "The Moment a Human Becomes a Devil",
+              "overview": "Ah-jin is accepted into her dream law school, but her dreams are crushed when her father returns.",
+              "air_date": "2025-11-06",
+              "sources": [
+                {
+                  "name": "EMBEDORIGIN",
+                  "url": "https://embedorigin.cc/e/hn5rq7w96hsm",
+                  "by": "head"
+                }
+              ]
+            },
+            {
+              "number": 3,
+              "name": "Breaking the Shackles",
+              "overview": "With her dream shattered, Ah-jin begins to work at a cafe and secretly schemes to manipulate Jung-ho.",
+              "air_date": "2025-11-06",
+              "sources": [
+                {
+                  "name": "EMBEDORIGIN",
+                  "url": "https://embedorigin.cc/e/4ypvpym4i8dx",
+                  "by": "head"
+                }
+              ]
+            },
+            {
+              "number": 4,
+              "name": "No Turning Back",
+              "overview": "As suspicions fall on Ah-jin with nowhere to turn, she is approached by Mi-ri, who steps in to save her.",
+              "air_date": "2025-11-06",
+              "sources": [
+                {
+                  "name": "EMBEDORIGIN",
+                  "url": "https://embedorigin.cc/e/153wbklotvoc",
+                  "by": "head"
+                }
+              ]
+            },
+            {
+              "number": 5,
+              "name": "Grant Me the Power to Rise to the Top",
+              "overview": "Ah-jin makes her debut as an actress and grows increasingly wary of Lena.",
+              "air_date": "2025-11-13",
+              "sources": [
+                {
+                  "name": "EMBEDORIGIN",
+                  "url": "https://embedorigin.cc/e/ordy9f0z7k89",
+                  "by": "head"
+                }
+              ]
+            },
+            {
+              "number": 6,
+              "name": "Setting the Trap",
+              "overview": "Determined to advance her career, Ah-jin sets her sights on top star, Heo In-gang.",
+              "air_date": "2025-11-13",
+              "sources": [
+                {
+                  "name": "EMBEDORIGIN",
+                  "url": "https://embedorigin.cc/e/n0acoyq1xn54",
+                  "by": "head"
+                }
+              ]
+            },
+            {
+              "number": 7,
+              "name": "The Wheel of Fate",
+              "overview": "Ah-jin's year-long romance with In-gang deepens, but her past is at risk of being exposed.",
+              "air_date": "2025-11-20",
+              "sources": [
+                {
+                  "name": "EMBEDORIGIN",
+                  "url": "https://embedorigin.cc/e/v4va1a1zc6nq",
+                  "by": "head"
+                }
+              ]
+            },
+            {
+              "number": 8,
+              "name": "Before Judgment",
+              "overview": "After his grandmother's passing, In-gang proposes, but Ah-jin ends their relationship instead.",
+              "air_date": "2025-11-20",
+              "sources": [
+                {
+                  "name": "EMBEDORIGIN",
+                  "url": "https://embedorigin.cc/e/wh1fbmwh5yai",
+                  "by": "head"
+                }
+              ]
+            },
+            {
+              "number": 9,
+              "name": "New Heights",
+              "overview": "As Ah-jin faces public backlash for her break up with In-gang, a wealthy savior comes to her rescue.",
+              "air_date": "2025-11-27",
+              "sources": [
+                {
+                  "name": "EMBEDORIGIN",
+                  "url": "https://embedorigin.cc/e/gg7lmxe1uj5r",
+                  "by": "head"
+                }
+              ]
+            },
+            {
+              "number": 10,
+              "name": "The Monster in the Mirror",
+              "overview": "Jun-seo learns the secret of his birth and leaves Ah-jin’s side while she marries Do-hyuk.",
+              "air_date": "2025-11-27",
+              "sources": [
+                {
+                  "name": "EMBEDORIGIN",
+                  "url": "https://embedorigin.cc/e/551qknu25p96",
+                  "by": "head"
+                }
+              ]
+            },
+            {
+              "number": 11,
+              "name": "Save Me, My God",
+              "overview": "Ah-jin discovers the unnerving truth about her husband. Desperate to break free, she turns to Jae-oh.",
+              "air_date": "2025-12-04",
+              "sources": [
+                {
+                  "name": "EMBEDORIGIN",
+                  "url": "https://embedorigin.cc/e/tk6iqch4y9aa",
+                  "by": "head"
+                }
+              ]
+            },
+            {
+              "number": 12,
+              "name": "The Final X",
+              "overview": "Ah-jin’s deepest darkest secrets are revealed just as she rises to the very top.",
+              "air_date": "2025-12-04",
+              "sources": [
+                {
+                  "name": "EMBEDORIGIN",
+                  "url": "https://embedorigin.cc/e/v77s7ua0rasi",
+                  "by": "head"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "sources": [],
+      "addedAt": 1794516069635,
+      "langs": [
+        "VOSTFR"
+      ],
+      "updatedAt": 1794516096152
     }
   ],
   "deletedLinks": [
@@ -62075,6 +62320,15 @@
     "at": 1794272052815
   },
   "journal": [
+    {
+      "k": "mwe0jtlw8l8oq",
+      "t": 1794516096164,
+      "b": "head",
+      "a": "add",
+      "i": "256226",
+      "n": "Dear X",
+      "d": ""
+    },
     {
       "k": "mwe07vhrememd",
       "t": 1794515538735,
@@ -64765,15 +65019,6 @@
       "i": "293610",
       "n": "Doctor X: Mafia in White",
       "d": "sources 20 → 22"
-    },
-    {
-      "k": "mvo2w11fxijef",
-      "t": 1792947904323,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "338103",
-      "n": "Quite the Girl",
-      "d": "sources 22 → 24"
     }
   ]
 }
