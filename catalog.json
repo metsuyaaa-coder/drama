@@ -7338,7 +7338,13 @@
               "name": "Épisode 6",
               "overview": "",
               "air_date": "2026-11-11",
-              "sources": []
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-qnxfobi3u0q7.html",
+                  "by": "614d778ed0"
+                }
+              ]
             },
             {
               "number": 7,
@@ -7377,7 +7383,7 @@
         "VOSTFR",
         "VF"
       ],
-      "updatedAt": 1793968779242,
+      "updatedAt": 1794501662585,
       "trend": 0,
       "networks": [
         "Nippon TV"
@@ -61317,6 +61323,15 @@
   },
   "journal": [
     {
+      "k": "mwdrygljf3w54",
+      "t": 1794501662599,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "305551",
+      "n": "Merry Berry Love",
+      "d": "sources 12 → 13"
+    },
+    {
       "k": "mwdrw6vu2mx2d",
       "t": 1794501556698,
       "b": "614d778ed0",
@@ -64006,15 +64021,6 @@
       "i": "316702",
       "n": "Final Table",
       "d": "sources 2 → 3"
-    },
-    {
-      "k": "mvnzomwyfay6w",
-      "t": 1792942520578,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "316197",
-      "n": "Dive into You",
-      "d": "sources 32 → 33"
     }
   ],
   "refreshAt": 1792423579957
