@@ -62306,6 +62306,405 @@
         "VOSTFR"
       ],
       "updatedAt": 1794521014127
+    },
+    {
+      "id": "214994",
+      "type": "tv",
+      "name": "Bitch X Rich",
+      "original_name": "청담국제고등학교",
+      "origin_country": [
+        "KR"
+      ],
+      "networks": [
+        "wavve"
+      ],
+      "original_language": "ko",
+      "aka": [
+        "청담국제고등학교",
+        "Bitch X Rich",
+        "清潭国际高中",
+        "O Preço do Silêncio",
+        "清潭國際高等學校",
+        "Chị Đại Học Đường",
+        "ချောင်းဒမ်နိုင်ငံတကာ အထက်တန်းကျောင်း",
+        "สืบคดีคุณหนูโรงเรียนชองดัม",
+        "כלבה ועשירה",
+        "Bitch and Rich",
+        "Perra y rica",
+        "Международная старшая школа Чхондам"
+      ],
+      "year": "2023",
+      "overview": "Baek Je-na est un conglomérat de troisième génération et une cuillère en or de la classe la plus élevée du lycée international de Cheongdam. Kim Hye-in a grandi dans la pauvreté et se voit offrir une chance d'étudier au lycée international de Cheongdam en échange de son silence sur un meurtre dont elle a été témoin. Cheongdam International High School est un mystère homicide qui suit la rivalité entre Je-na et Kim Hye-in, qui s'affrontent dans une guerre mentale.",
+      "genres": [
+        "Drame",
+        "Mystère"
+      ],
+      "rating": "8.2",
+      "pop": 6.4026,
+      "status": "Returning Series",
+      "poster": "https://image.tmdb.org/t/p/w500/r2qOi6cSb0aUH1lzrg8vbr6i0Uw.jpg",
+      "posterV": 2,
+      "backdrop": "https://image.tmdb.org/t/p/original/t2fl4Po0H38ZYwzPboTTXhQ6v3Y.jpg",
+      "videos": [
+        {
+          "key": "-A_6h3nYAvk",
+          "name": "너한텐 특별히 학교가 지옥이 되게 해줄 테니까 [청담국제고등학교] 5/31 공개 (ENG)",
+          "type": "Teaser",
+          "lab": "Original"
+        },
+        {
+          "key": "RR9ki1MCYoI",
+          "name": "[Trailer] Bitch x Rich | Coming to Viu for FREE this 31 May!",
+          "type": "Trailer",
+          "lab": "Anglais"
+        }
+      ],
+      "cast": [
+        {
+          "name": "Lee Eun-saem",
+          "character": "Kim Hye-in",
+          "id": 3202770
+        },
+        {
+          "name": "YERI",
+          "character": "Baek Je-na",
+          "id": 1875636
+        },
+        {
+          "name": "Lee Jong-hyuk",
+          "character": "Seo Do-eon",
+          "id": 3209018
+        },
+        {
+          "name": "Park Shi-woo",
+          "character": "Min Yul-hee",
+          "id": 2939496
+        },
+        {
+          "name": "Jang Sung-yoon",
+          "character": "Kim Hae-in",
+          "id": 3206679
+        },
+        {
+          "name": "Jang Se-hyuk",
+          "character": "Park Woo-jin",
+          "id": 5333883
+        },
+        {
+          "name": "김민규",
+          "character": "Cha Jin-uk",
+          "id": 2933047
+        },
+        {
+          "name": "원규빈",
+          "character": "Lee Sa-rang",
+          "id": 5631412
+        },
+        {
+          "name": "오지호",
+          "character": "Seo Hui-kwon",
+          "id": 96784
+        },
+        {
+          "name": "허현서",
+          "character": "Bae Young",
+          "id": 6065642
+        }
+      ],
+      "eprt": 36,
+      "seasons": [
+        {
+          "number": 1,
+          "name": "Saison 1",
+          "episodes": [
+            {
+              "number": 1,
+              "name": "Dirt Poor",
+              "overview": "Hye-in, a student of Seonwoo Girls' High School, works as a part-timer to make ends meet. One day, she gets a tutoring job for a wealthy middle schooler who wants to go to Cheongdam International High School. While her student is away, Hye-in takes a photo with the student's designer bag, and the photo goes viral.",
+              "air_date": "2023-05-31",
+              "sources": [
+                {
+                  "name": "EMBEDORIGIN",
+                  "url": "https://embedorigin.cc/e/mn93ww7iitrt",
+                  "by": "head"
+                }
+              ]
+            },
+            {
+              "number": 2,
+              "name": "The Guilty One",
+              "overview": "Hye-in starts posting more pictures taken with Na-yeon's expensive stuff. She goes overboard and even tries on Cheongdam High's uniform. Na-yeon catches her in the uniform and finds the pictures Hye-in's been uploading. Hye-in begs Na-yeon not to tell her mom about it, and Na-yeon makes Hye-in run errands for her instead.",
+              "air_date": "2023-05-31",
+              "sources": [
+                {
+                  "name": "EMBEDORIGIN",
+                  "url": "https://embedorigin.cc/e/gsi99kyml5ns",
+                  "by": "head"
+                }
+              ]
+            },
+            {
+              "number": 3,
+              "name": "The Witness",
+              "overview": "Na-yeon's family makes complaints to Hye-in's school about her forgery and fraud. Hye-in is on the verge of getting expelled, so she meets the school director of Cheongdam High and begs for mercy. There, she witnesses something she shouldn't have.",
+              "air_date": "2023-06-07",
+              "sources": [
+                {
+                  "name": "EMBEDORIGIN",
+                  "url": "https://embedorigin.cc/e/k25l0wdbvold",
+                  "by": "head"
+                }
+              ]
+            },
+            {
+              "number": 4,
+              "name": "Barking Up The Wrong Tree",
+              "overview": "Hye-in is offered a place in Cheongdam International High School in return for keeping silent about the incident she witnessed. She buys a new pair of shoes for her new school but accidentally loses them. She runs into Je-na, who happened to be wearing the same shoes and mistakes her for a thief.",
+              "air_date": "2023-06-07",
+              "sources": [
+                {
+                  "name": "EMBEDORIGIN",
+                  "url": "https://embedorigin.cc/e/lkvtzrqlw8om",
+                  "by": "head"
+                }
+              ]
+            },
+            {
+              "number": 5,
+              "name": "The Fiery Pit",
+              "overview": "Hye-in forcefully takes the designer shoes off of Je-na and hurts her without knowing who she is. Je-na is determined to make Hye-in's life miserable at school. Do-eon sees Hye-in's application for enrolment in his father's study and decides to approach her.",
+              "air_date": "2023-06-14",
+              "sources": [
+                {
+                  "name": "EMBEDORIGIN",
+                  "url": "https://embedorigin.cc/e/702of9fhhxtp",
+                  "by": "head"
+                }
+              ]
+            },
+            {
+              "number": 6,
+              "name": "The Sorority Party",
+              "overview": "Do-eon asks Hye-in to tell him what happened on the night Hae-in fell from the rooftop. But Hye-in sets a condition in exchange for telling the truth. Hye-in gets invited to the sorority party, an exclusive party for the rich. There, she runs into Je-na again.",
+              "air_date": "2023-06-14",
+              "sources": [
+                {
+                  "name": "EMBEDORIGIN",
+                  "url": "https://embedorigin.cc/e/4zyt55ht896g",
+                  "by": "head"
+                }
+              ]
+            },
+            {
+              "number": 7,
+              "name": "The Deal",
+              "overview": "Je-na teaches Hye-in a lesson by ruining her dress and humiliating her at the party. After finding out what happened to Hye-in, Do-eon warns Je-na to stop bullying her. But Je-na pushes Hye-in further and tells her to drop out.",
+              "air_date": "2023-06-21",
+              "sources": [
+                {
+                  "name": "EMBEDORIGIN",
+                  "url": "https://embedorigin.cc/e/zdph1jfd5jky",
+                  "by": "head"
+                }
+              ]
+            },
+            {
+              "number": 8,
+              "name": "The Part-time Job",
+              "overview": "Si-eun tells Hye-in about Lee Duk-min who lends money to the kids in urgent need of money. Hye-in ends up borrowing money from Duk-min without knowing the consequences it could bring. Meanwhile, Do-eon asks Hye-in to help him one more time...",
+              "air_date": "2023-06-21",
+              "sources": [
+                {
+                  "name": "EMBEDORIGIN",
+                  "url": "https://embedorigin.cc/e/p37vquav39i2",
+                  "by": "head"
+                }
+              ]
+            },
+            {
+              "number": 9,
+              "name": "Oh Si-eun's True Colours",
+              "overview": "Je-na confronts Si-eun, telling her to leave Hye-in alone, but Si-eun backs her off with the story of her brother. Hye-in is shocked to find out what Si-eun wanted in the first place, but she doesn't back down and finds a way to make it through.",
+              "air_date": "2023-06-28",
+              "sources": [
+                {
+                  "name": "EMBEDORIGIN",
+                  "url": "https://embedorigin.cc/e/gs452l272hzd",
+                  "by": "head"
+                }
+              ]
+            },
+            {
+              "number": 10,
+              "name": "Déjà Vu",
+              "overview": "So-mang catches Si-eun and Hye-in in the secluded restroom. After hearing how Si-eun blackmailed Hye-in, he promises to help her. On the day of Yul-hee and Woo-jin's anniversary, the ugly truth gets revealed. Hye-in witnesses something she shouldn't have again.",
+              "air_date": "2023-06-28",
+              "sources": [
+                {
+                  "name": "EMBEDORIGIN",
+                  "url": "https://embedorigin.cc/e/b6iwgk25ghk5",
+                  "by": "head"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": 2,
+          "name": "Saison 2",
+          "episodes": [
+            {
+              "number": 1,
+              "name": "Vengeance Ignited by the Privileged",
+              "overview": "After Oh Si Eun's death, Kim Hye In becomes the prime suspect in the murder investigation. At school, her classmates harass her with scorn, labeling her an 'Equal Opportunity loser.' Realizing that she may never be able to change the course of her life, Hye In resolves to fight back.",
+              "air_date": "2025-07-03",
+              "sources": [
+                {
+                  "name": "EMBEDORIGIN",
+                  "url": "https://embedorigin.cc/e/lety33csgxww",
+                  "by": "head"
+                }
+              ]
+            },
+            {
+              "number": 2,
+              "name": "New Members of Diamond 6 Unveiled",
+              "overview": "Je Na goes through daily distress caused by her family. Her father is on the verge of divorce, and Cha Jin Uk, a suitor with a contract marriage in mind, suddenly enters the picture. Meanwhile, facing expulsion, Hye In proposes a deal to Je Na to include her as a member of Diamond 6. Would Je Na accept Hye In’s offer?",
+              "air_date": "2025-07-04",
+              "sources": [
+                {
+                  "name": "EMBEDORIGIN",
+                  "url": "https://embedorigin.cc/e/zr2trnj4nop1",
+                  "by": "head"
+                }
+              ]
+            },
+            {
+              "number": 3,
+              "name": "Secrets Unfold At Cheongdam High School",
+              "overview": "With Je Na’s help, Hye In makes it into Diamond 6 and decides to act accordingly. Meanwhile, Hae In regains consciousness in the hospital and returns to Cheongdam International High School, but she appears to have lost her memory. Another new student, Jin Uk becomes the subject of gossip. As the backstories of the main characters gradually come to light, will Hye In be able to make it through school life safely?",
+              "air_date": "2025-07-10",
+              "sources": [
+                {
+                  "name": "EMBEDORIGIN",
+                  "url": "https://embedorigin.cc/e/l9gyn953yfic",
+                  "by": "head"
+                }
+              ]
+            },
+            {
+              "number": 4,
+              "name": "Secrets Unveiled, Bold Moves At The Party",
+              "overview": "Amidst being mistreated and looked down upon for her memory loss, Hae In seems to make up her mind and asks Do Eon to take her as his partner to the party. Meanwhile, Je Na joins the party and reveals her secret in front of everyone. As the main characters make bold moves, what is the secret that Hae In is hiding? And what kind of consequences will it bring?",
+              "air_date": "2025-07-11",
+              "sources": [
+                {
+                  "name": "EMBEDORIGIN",
+                  "url": "https://embedorigin.cc/e/evr4w31uk5oq",
+                  "by": "head"
+                }
+              ]
+            },
+            {
+              "number": 5,
+              "name": "Friend Or Foe, Who Can Be Trusted",
+              "overview": "As relationships twist and allegiances shift, Yul Hui begins reaching out to Je Na’s enemies, determined to bring her down. On Je Na’s side, her once dismissive attitude toward Jin Uk begins to soften and the two form a reluctant yet increasingly cooperative alliance. In a tangled web of betrayal, manipulation, and shifting loyalties, no one can tell who is truly a friend or an enemy.",
+              "air_date": "2025-07-17",
+              "sources": [
+                {
+                  "name": "EMBEDORIGIN",
+                  "url": "https://embedorigin.cc/e/h8j5fk7209if",
+                  "by": "head"
+                }
+              ]
+            },
+            {
+              "number": 6,
+              "name": "Rumours Of Baek Je Na",
+              "overview": "Hye In interrogates Sa Rang about whether he is actually Black Dog. Ultimately, Sa Rang confesses the truth regarding Oh Si Eun’s cellphone. After hearing Sa Rang’s account, Hye In is convinced that the person who took Si Eun’s phone is the one who pushed Si Eun. Meanwhile, rumours begin to spread about Baek Je Na’s drug abuse.",
+              "air_date": "2025-07-18",
+              "sources": [
+                {
+                  "name": "EMBEDORIGIN",
+                  "url": "https://embedorigin.cc/e/rlqs82zsntui",
+                  "by": "head"
+                }
+              ]
+            },
+            {
+              "number": 7,
+              "name": "Unravelling The Truth Behind A Murder",
+              "overview": "Framed in a drug scandal orchestrated by Yul Hui, Je Na’s downfall seems imminent, until her allies step in. Meanwhile, Hye In follows a clue tied to a wrist injury and begins to suspect who holds Si Eun’s phone. With everyone hiding their true loyalties and intentions, can Hye In uncover the truth and protect herself before it’s too late?",
+              "air_date": "2025-07-24",
+              "sources": [
+                {
+                  "name": "EMBEDORIGIN",
+                  "url": "https://embedorigin.cc/e/xqd8keuvf44s",
+                  "by": "head"
+                }
+              ]
+            },
+            {
+              "number": 8,
+              "name": "Ties That Strangle",
+              "overview": "Tensions escalate as Hye In is forced into submission, becoming Yul Hui's pawn. However, Yul Hui's schemes unravel when her role in a setup against Je Na is exposed, putting her in a desperate position. Meanwhile, a new strategy emerges to take down Diamond 6 members, with plans to leak the truth through Black Dog's channel.",
+              "air_date": "2025-07-25",
+              "sources": [
+                {
+                  "name": "EMBEDORIGIN",
+                  "url": "https://embedorigin.cc/e/lpoyij9vca07",
+                  "by": "head"
+                }
+              ]
+            },
+            {
+              "number": 9,
+              "name": "Truth, Betrayal, And A Choice That Changes Everything",
+              "overview": "After Hae In's death, the fragile balance between the characters starts to collapse. Yul Hui pressures Hye In to expose Je Na with a lie during her engagement ceremony with Jin Uk, using a video as leverage. As the fateful day approaches, Hye In stands at a crossroads. With everyone watching, Hye In’s next move could change everything. Will she betray and bring Je Na down, or choose the truth?",
+              "air_date": "2025-07-31",
+              "sources": [
+                {
+                  "name": "EMBEDORIGIN",
+                  "url": "https://embedorigin.cc/e/9cf6jfitovpe",
+                  "by": "head"
+                }
+              ]
+            },
+            {
+              "number": 10,
+              "name": "The Reckoning",
+              "overview": "Despite the risk of revealing herself, Hye In bravely exposes Yul Hui and the web of corruption festering within the school during Je Na's wedding. As her meticulous plan sets off a chain reaction, buried truths begin to surface, drawing everyone deeper into chaos. Loyalties get tested, and tension simmers dangerously close to exploding. Meanwhile, Yul Hui seethes with rage as damning accusations come at her from all sides.",
+              "air_date": "2025-08-01",
+              "sources": [
+                {
+                  "name": "EMBEDORIGIN",
+                  "url": "https://embedorigin.cc/e/fkd88cvv77iz",
+                  "by": "head"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": 3,
+          "name": "Saison 3",
+          "episodes": [
+            {
+              "number": 1,
+              "name": "Épisode 1",
+              "overview": "",
+              "air_date": "",
+              "sources": []
+            }
+          ]
+        }
+      ],
+      "sources": [],
+      "addedAt": 1794522225716,
+      "langs": [
+        "VOSTFR"
+      ],
+      "updatedAt": 1794522251498
     }
   ],
   "deletedLinks": [
@@ -63575,6 +63974,15 @@
     "at": 1794272052815
   },
   "journal": [
+    {
+      "k": "mwe47r3sq0gww",
+      "t": 1794522251512,
+      "b": "head",
+      "a": "add",
+      "i": "214994",
+      "n": "Bitch X Rich",
+      "d": ""
+    },
     {
       "k": "mwe3h8cas6le8",
       "t": 1794521014138,
@@ -66264,15 +66672,6 @@
       "a": "edit",
       "i": "319077",
       "n": "The Vacation Principle",
-      "d": ""
-    },
-    {
-      "k": "mvogr74rulbmz",
-      "t": 1792971193563,
-      "b": "614d778ed0",
-      "a": "add",
-      "i": "339366",
-      "n": "My Loong",
       "d": ""
     }
   ]
