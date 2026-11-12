@@ -62705,6 +62705,126 @@
         "VOSTFR"
       ],
       "updatedAt": 1794522251498
+    },
+    {
+      "id": "m1616687",
+      "type": "movie",
+      "name": "Never Surrender",
+      "original_name": "Serangan Balik",
+      "aka": [
+        "Never Surrender",
+        "Sem Desistir",
+        "Nie poddamy się",
+        "No nos rendimos",
+        "สู้ไม่ถอย",
+        "絕境反擊",
+        "Nikdy se nevzdávej",
+        "绝境反击",
+        "Asla Teslim Olma",
+        "네버 서렌더",
+        "Não Nos Rendemos",
+        "Soha nem adjuk fel",
+        "Nikdy sa nevzdávaj",
+        "Serangan Balik"
+      ],
+      "year": "2026",
+      "overview": "Dans un village isolé du centre de Java, un ancien militaire mène une existence solitaire jusqu'au retour inattendu de ses deux petits-enfants, qu'il n'a pas vus depuis longtemps. Mais leurs retrouvailles tournent au cauchemar lorsqu'une bande de criminels impitoyables venus de Jakarta prend d'assaut leur refuge, les piégeant dans une situation de vie ou de mort. Pour survivre, le grand-père et ses petits-enfants n’ont qu’un choix à faire : se rendre, ou se battre.",
+      "genres": [
+        "Action",
+        "Crime",
+        "Thriller"
+      ],
+      "rating": "7.8",
+      "pop": 2.8266,
+      "status": "Released",
+      "runtime": 137,
+      "poster": "https://image.tmdb.org/t/p/w500/hKROmLddpzpjkxKKVFYFRAOXX1b.jpg",
+      "posterV": 2,
+      "backdrop": "https://image.tmdb.org/t/p/original/umxN2kMcUm6VoxSOdcEcQoXuC4q.jpg",
+      "videos": [
+        {
+          "key": "o0d1IA85D9o",
+          "name": "Official Trailer [Subtitled]",
+          "type": "Trailer",
+          "lab": "Anglais"
+        }
+      ],
+      "cast": [
+        {
+          "name": "Lukman Sardi",
+          "character": "Eyang Hari",
+          "id": 1206436
+        },
+        {
+          "name": "Callista Arum",
+          "character": "Putri",
+          "id": 4684137
+        },
+        {
+          "name": "Sulthan Hamonangan",
+          "character": "Dimas",
+          "id": 4137347
+        },
+        {
+          "name": "Derby Romero",
+          "character": "Bastian",
+          "id": 1179545
+        },
+        {
+          "name": "Donny Alamsyah",
+          "character": "Ulo",
+          "id": 1202416
+        },
+        {
+          "name": "Ismi Melinda",
+          "character": "Jegeg",
+          "id": 2413870
+        },
+        {
+          "name": "Laras Sardi",
+          "character": "Mayang",
+          "id": 3022892
+        },
+        {
+          "name": "Dennis Adishwara",
+          "character": "Agus",
+          "id": 121970
+        },
+        {
+          "name": "Erick Estrada",
+          "character": "Iyang",
+          "id": 1822123
+        },
+        {
+          "name": "M. N. Qomaruddin",
+          "character": "Bendot",
+          "id": 2480832
+        },
+        {
+          "name": "Amos Putra",
+          "character": "Tuku",
+          "id": 5047161
+        },
+        {
+          "name": "Winky Wiryawan",
+          "character": "Colonel Anton",
+          "id": 1322116
+        }
+      ],
+      "seasons": [],
+      "sources": [
+        {
+          "name": "EMBEDORIGIN",
+          "url": "https://embedorigin.cc/e/ie14xj660isx",
+          "by": "head"
+        }
+      ],
+      "addedAt": 1794525773960,
+      "langs": [
+        "VOSTFR",
+        "VF"
+      ],
+      "updatedAt": 1794525779375
     }
   ],
   "deletedLinks": [
@@ -63974,6 +64094,15 @@
     "at": 1794272052815
   },
   "journal": [
+    {
+      "k": "mwe6bd8dwzlhh",
+      "t": 1794525779389,
+      "b": "head",
+      "a": "add",
+      "i": "m1616687",
+      "n": "Never Surrender",
+      "d": ""
+    },
     {
       "k": "mwe47r3sq0gww",
       "t": 1794522251512,
@@ -66664,15 +66793,6 @@
       "i": "m11423",
       "n": "Memories of Murder",
       "d": "affiche"
-    },
-    {
-      "k": "mvohbxavtw1sc",
-      "t": 1792972160599,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "319077",
-      "n": "The Vacation Principle",
-      "d": ""
     }
   ]
 }
