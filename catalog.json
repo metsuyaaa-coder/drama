@@ -61675,6 +61675,296 @@
         "VOSTFR"
       ],
       "updatedAt": 1794518130663
+    },
+    {
+      "id": "110534",
+      "type": "tv",
+      "name": "D.P.",
+      "original_name": "D.P.",
+      "origin_country": [
+        "KR"
+      ],
+      "networks": [
+        "Netflix"
+      ],
+      "original_language": "ko",
+      "aka": [
+        "D.P.",
+        "D.P. : El cazadesertores",
+        "Охотник за дезертирами",
+        "D.P：逃兵追緝令",
+        "D.P Dog Day",
+        "D.P：逃兵追缉令",
+        "Deserter Pursuit",
+        "Dezertőrvadászok",
+        "Dezertér",
+        "Truy Bắt Lính Đào Ngũ",
+        "D. P.: El cazadesertores",
+        "‏איתור עריקים",
+        "D.P. หน่วยล่าทหารหนีทัพ",
+        "D.P.: Κυνηγοί Λιποτακτών",
+        "D.P. -脱走兵追跡官-",
+        "Погоня за дезертирами",
+        "逃兵追缉令",
+        "디피",
+        "หน่วยล่าทหารหนีทัพ",
+        "Полювання за дезертирами",
+        "Day of the Dog",
+        "Deserter Pursuit Dog Day",
+        "D.P"
+      ],
+      "year": "2021",
+      "overview": "La mission d'un jeune soldat préposé à la chasse aux déserteurs révèle la dure réalité vécue par les appelés pendant leur service militaire obligatoire.",
+      "genres": [
+        "Drame",
+        "Action & Adventure",
+        "Crime"
+      ],
+      "rating": "8.0",
+      "pop": 8.5807,
+      "status": "Ended",
+      "poster": "https://image.tmdb.org/t/p/w500/akvPsqe1u1NpIQ8Ln2Vt06uhOv9.jpg",
+      "posterV": 2,
+      "backdrop": "https://image.tmdb.org/t/p/original/kTf8vPcZVONrBHB35hEg1lG2Bk.jpg",
+      "videos": [
+        {
+          "key": "tngyy2UcWuI",
+          "name": "D.P. | 디피 메인 예고편 | 넷플릭스",
+          "type": "Trailer",
+          "lab": "Original"
+        },
+        {
+          "key": "ru0PmaWoHxM",
+          "name": "Official Trailer [ENG SUB]",
+          "type": "Trailer",
+          "lab": "Anglais"
+        }
+      ],
+      "cast": [
+        {
+          "name": "Jung Hae-in",
+          "character": "An Jun-ho",
+          "id": 1470763
+        },
+        {
+          "name": "Koo Kyo-hwan",
+          "character": "Han Ho-yeol",
+          "id": 1096458
+        },
+        {
+          "name": "Kim Sung-kyun",
+          "character": "Park Beom-gu",
+          "id": 1024396
+        },
+        {
+          "name": "Son Seok-koo",
+          "character": "Lim Ji-seop",
+          "id": 2035488
+        },
+        {
+          "name": "Jeong Seok-yong",
+          "character": "Oh Min-u",
+          "id": 17127
+        },
+        {
+          "name": "김지현",
+          "character": "Seo-eun",
+          "id": 2183220
+        },
+        {
+          "name": "지진희",
+          "character": "Gu Ja-woon",
+          "id": 145989
+        },
+        {
+          "name": "Bae Na-ra",
+          "character": "Jang Nina",
+          "id": 4185856
+        },
+        {
+          "name": "최현욱",
+          "character": "Shin Ah-wi",
+          "id": 3126573
+        }
+      ],
+      "eprt": 52,
+      "seasons": [
+        {
+          "number": 1,
+          "name": "Saison 1",
+          "episodes": [
+            {
+              "number": 1,
+              "name": "A Man Holding Flowers",
+              "overview": "An Jun-ho's keen eye earns him a position in the Deserter Pursuit unit. On his first mission with Park Sung-woo, things don't go quite as planned.",
+              "air_date": "2021-08-27",
+              "sources": [
+                {
+                  "name": "EMBEDORIGIN",
+                  "url": "https://embedorigin.cc/e/x7wwl9mhusdr",
+                  "by": "head"
+                }
+              ]
+            },
+            {
+              "number": 2,
+              "name": "Daydream",
+              "overview": "Discharged from the hospital, Han Ho-yeol returns to the base and partners up with Jun-ho to search for a soldier last spotted at a subway station.",
+              "air_date": "2021-08-27",
+              "sources": [
+                {
+                  "name": "EMBEDORIGIN",
+                  "url": "https://embedorigin.cc/e/5yrt4cv4tv13",
+                  "by": "head"
+                }
+              ]
+            },
+            {
+              "number": 3,
+              "name": "That Woman",
+              "overview": "Jun-ho and Ho-yeol assist with a mission while on break. In an attempt to gain intel, the two go undercover to befriend a deserter's girlfriend.",
+              "air_date": "2021-08-27",
+              "sources": [
+                {
+                  "name": "EMBEDORIGIN",
+                  "url": "https://embedorigin.cc/e/65966ulrusq5",
+                  "by": "head"
+                }
+              ]
+            },
+            {
+              "number": 4,
+              "name": "The Monty Hall Problem",
+              "overview": "Relentless hazing shifts Cho Suk-bong's once-warm personality. Riddled with responsibilities, an enlistee jumps the fence at the dead of night.",
+              "air_date": "2021-08-27",
+              "sources": [
+                {
+                  "name": "EMBEDORIGIN",
+                  "url": "https://embedorigin.cc/e/o37oz65r63pk",
+                  "by": "head"
+                }
+              ]
+            },
+            {
+              "number": 5,
+              "name": "Military Dog",
+              "overview": "Suk-bong is pushed over the edge. During their investigation, the D.P. duo learns of events that unfolded at Hwang Jang-soo's discharge.",
+              "air_date": "2021-08-27",
+              "sources": [
+                {
+                  "name": "EMBEDORIGIN",
+                  "url": "https://embedorigin.cc/e/43o5pnf4fdm8",
+                  "by": "head"
+                }
+              ]
+            },
+            {
+              "number": 6,
+              "name": "Onlookers",
+              "overview": "When a chase after a deserter turns into a manhunt for a criminal at large, Jun-ho and Ho-yeol rush to find him before armed men bring him down.",
+              "air_date": "2021-08-27",
+              "sources": [
+                {
+                  "name": "EMBEDORIGIN",
+                  "url": "https://embedorigin.cc/e/8yfmrf1hcsnd",
+                  "by": "head"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": 2,
+          "name": "Saison 2",
+          "episodes": [
+            {
+              "number": 1,
+              "name": "The Rains",
+              "overview": "Jun-ho navigates his life post-tragedy. Park Beom-gu feels pressure to cover up recent events. A sudden attack shocks the military.",
+              "air_date": "2023-07-28",
+              "sources": [
+                {
+                  "name": "EMBEDORIGIN",
+                  "url": "https://embedorigin.cc/e/nszrsinq8z2y",
+                  "by": "head"
+                }
+              ]
+            },
+            {
+              "number": 2,
+              "name": "Dirty Play",
+              "overview": "While Kim Ru-ri goes public with his motive, Seo Eun sets up a lure to catch him. Jun-ho and Ho-yeol attempt to stop the growing escalation.",
+              "air_date": "2023-07-28",
+              "sources": [
+                {
+                  "name": "EMBEDORIGIN",
+                  "url": "https://embedorigin.cc/e/6qovi1gl7qmy",
+                  "by": "head"
+                }
+              ]
+            },
+            {
+              "number": 3,
+              "name": "Curtain Call",
+              "overview": "Jun-ho and Ho-yeol receive unexpected praise from the military. They later set off to catch a deserter who was bullied relentlessly for being different.",
+              "air_date": "2023-07-28",
+              "sources": [
+                {
+                  "name": "EMBEDORIGIN",
+                  "url": "https://embedorigin.cc/e/h1kic9fsvvhg",
+                  "by": "head"
+                }
+              ]
+            },
+            {
+              "number": 4,
+              "name": "The Charred Remains",
+              "overview": "Lim Ji-seop and Beom-gu realize that an investigation into a military death isn't as it seems. The government faces a damning accusation.",
+              "air_date": "2023-07-28",
+              "sources": [
+                {
+                  "name": "EMBEDORIGIN",
+                  "url": "https://embedorigin.cc/e/j6agi4djeeki",
+                  "by": "head"
+                }
+              ]
+            },
+            {
+              "number": 5,
+              "name": "An Jun-ho",
+              "overview": "Jun-ho discovers the extent of the military's secrets — making a critical decision. Oh Min-u pursues crucial evidence to stop it from being released.",
+              "air_date": "2023-07-28",
+              "sources": [
+                {
+                  "name": "EMBEDORIGIN",
+                  "url": "https://embedorigin.cc/e/goq452hnu0vb",
+                  "by": "head"
+                }
+              ]
+            },
+            {
+              "number": 6,
+              "name": "The Day",
+              "overview": "Ho-yeol makes a deal to help Jun-ho, who faces harsh consequences. In a fight for justice, the trial against the government takes a surprising turn.",
+              "air_date": "2023-07-28",
+              "sources": [
+                {
+                  "name": "EMBEDORIGIN",
+                  "url": "https://embedorigin.cc/e/v63ss3n8ch3i",
+                  "by": "head"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "sources": [],
+      "addedAt": 1794518239660,
+      "langs": [
+        "VOSTFR",
+        "VF"
+      ],
+      "updatedAt": 1794518259721
     }
   ],
   "deletedLinks": [
@@ -62942,6 +63232,15 @@
     "at": 1794272052815
   },
   "journal": [
+    {
+      "k": "mwe1u7101cmjv",
+      "t": 1794518259732,
+      "b": "head",
+      "a": "add",
+      "i": "110534",
+      "n": "D.P.",
+      "d": ""
+    },
     {
       "k": "mwe1rfg6ysv36",
       "t": 1794518130678,
@@ -65632,15 +65931,6 @@
       "i": "m11423",
       "n": "Memories of Murder",
       "d": "sources 2 → 3"
-    },
-    {
-      "k": "mvo5v8t3mewxd",
-      "t": 1792952906583,
-      "b": "head",
-      "a": "add",
-      "i": "m11423",
-      "n": "Memories of Murder",
-      "d": ""
     }
   ]
 }
