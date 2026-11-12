@@ -31598,14 +31598,26 @@
               "name": "Épisode 34",
               "overview": "",
               "air_date": "",
-              "sources": []
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-d6s62h86f6ms.html",
+                  "by": "614d778ed0"
+                }
+              ]
             },
             {
               "number": 35,
               "name": "Épisode 35",
               "overview": "",
               "air_date": "",
-              "sources": []
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-ma51b1nylxty.html",
+                  "by": "614d778ed0"
+                }
+              ]
             },
             {
               "number": 36,
@@ -31650,7 +31662,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1794243839688,
+      "updatedAt": 1794501556683,
       "trend": 0,
       "eprt": 48
     },
@@ -61305,6 +61317,15 @@
   },
   "journal": [
     {
+      "k": "mwdrw6vu2mx2d",
+      "t": 1794501556698,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "286171",
+      "n": "Tigers Sniff the Rose",
+      "d": "sources 33 → 35"
+    },
+    {
       "k": "mwdrrh0od6pwd",
       "t": 1794501336552,
       "b": "614d778ed0",
@@ -63994,15 +64015,6 @@
       "i": "316197",
       "n": "Dive into You",
       "d": "sources 32 → 33"
-    },
-    {
-      "k": "mvnzauyyolarj",
-      "t": 1792941877834,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "314939",
-      "n": "A Love Other Than Yours",
-      "d": "sources 44 → 46"
     }
   ],
   "refreshAt": 1792423579957
