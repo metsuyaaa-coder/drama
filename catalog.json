@@ -60364,7 +60364,7 @@
         "Dogonić miłość"
       ],
       "year": "2024",
-      "overview": "Im Sol, une jeune femme pétillante devenue handicapé après un accident, trouve du réconfort dans la musique de la star Ryu Sun-jae. Le jour où elle apprend sa mort tragique, elle est anéantie… jusqu'à ce qu'un miracle la renvoie 15 ans en arrière, à l'époque du lycée. Déterminée à changer le destin, elle décide de sauver celui qu'elle aime, même si cela signifie bouleverser le cours du temps.",
+      "overview": "Im Sol est une grande fan et admiratrice de Ryu Seon Jae, membre du célèbre groupe Eclipse. Mais derrière tous ces strass et paillettes, la vie de star est loin d'être rose. Im Sol le constate en apprenant la mort de son idole, dévastée, elle se retrouve par hasard 15 ans en arrière, encore au lycée. Voyant cela comme une aubaine, Im Sol décide de changer le destin en sauvant Ryu Seon Jae coûte que coûte.",
       "genres": [
         "Drame",
         "Science-Fiction & Fantastique",
@@ -60676,7 +60676,7 @@
         "VOSTFR",
         "VF"
       ],
-      "updatedAt": 1794515538724
+      "updatedAt": 1794516403151
     },
     {
       "id": "256226",
@@ -62188,6 +62188,15 @@
     "at": 1794272052815
   },
   "journal": [
+    {
+      "k": "mwe0qehu9xvxr",
+      "t": 1794516403170,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "230923",
+      "n": "Lovely Runner",
+      "d": ""
+    },
     {
       "k": "mwe0jtlw8l8oq",
       "t": 1794516096164,
@@ -64878,15 +64887,6 @@
       "i": "316702",
       "n": "Final Table",
       "d": "sources 3 → 4"
-    },
-    {
-      "k": "mvo2y9eraax8y",
-      "t": 1792948008483,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "293610",
-      "n": "Doctor X: Mafia in White",
-      "d": "sources 20 → 22"
     }
   ],
   "refreshAt": 1792423579957
