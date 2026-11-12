@@ -61064,13 +61064,33 @@
         "en": "Falling Before Fireworks",
         "auto": true,
         "at": 1794442229419
+      },
+      {
+        "id": "rmwd83mtb",
+        "title": "梦回缘",
+        "status": "wait",
+        "bl": false,
+        "kind": "stream",
+        "votes": 1,
+        "tmdb": "335023",
+        "media": "tv",
+        "year": "2026",
+        "poster": "/Ainq2bSrsR45LGl4LlDup26bnOd.jpg",
+        "origin": "Chine",
+        "en": "Echoes Through Ink",
+        "auto": true,
+        "at": 1794468311615
       }
     ],
-    "at": 1794442229419,
+    "at": 1794468311615,
     "log": [
       {
         "v": "cfaa4607",
         "t": 1794442229419
+      },
+      {
+        "v": "fe5766f5",
+        "t": 1794468311615
       }
     ]
   },
