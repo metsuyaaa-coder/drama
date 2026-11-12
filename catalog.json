@@ -59989,7 +59989,13 @@
               "name": "Épisode 2",
               "overview": "",
               "air_date": "2026-11-12",
-              "sources": []
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-afnnuuymw3kk.html",
+                  "by": "614d778ed0"
+                }
+              ]
             },
             {
               "number": 3,
@@ -60070,7 +60076,7 @@
         "VOSTFR"
       ],
       "posterCustom": true,
-      "updatedAt": 1794439313594,
+      "updatedAt": 1794508346739,
       "trend": 90
     }
   ],
@@ -61322,6 +61328,15 @@
     "at": 1794272052815
   },
   "journal": [
+    {
+      "k": "mwdvxq547rqoo",
+      "t": 1794508346776,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "326975",
+      "n": "What a Boss Wants",
+      "d": "sources 1 → 2"
+    },
     {
       "k": "mwdrygljf3w54",
       "t": 1794501662599,
@@ -64012,15 +64027,6 @@
       "i": "316197",
       "n": "Dive into You",
       "d": "sources 33 → 34"
-    },
-    {
-      "k": "mvo1pu5d9t5j5",
-      "t": 1792945935841,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "316702",
-      "n": "Final Table",
-      "d": "sources 2 → 3"
     }
   ],
   "refreshAt": 1792423579957
