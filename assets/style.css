@@ -2827,3 +2827,9 @@ dialog#founder::backdrop { background: rgba(0, 0, 0, .88); }
   .fdl { font-size: 62px; }
 }
 @media (prefers-reduced-motion: reduce) { .fdframe::before, .fdframe::after { animation: none !important; } }
+
+/* Notification « demande complétée » : affiche de la série */
+.nitem.rq { grid-template-columns: 46px minmax(0, 1fr) auto; }
+.nitem .ni.nposter { width: 46px; height: 66px; padding: 0; overflow: hidden; background: var(--panel); }
+.nitem .ni.nposter img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.nitem .ni.nposter svg { width: 20px; height: 20px; }

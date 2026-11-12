@@ -862,6 +862,7 @@ function nToggleSub(id) {
   return true;
 }
 function nTextOf(n) {
+  if (n.kind === "request") return "Ta demande de " + (n.media === "movie" ? "film" : "série") + " « " + n.name + " » a été complétée.";
   var e = n.eps || [];
   if (e.length === 1) { var p = String(e[0]).split("x"); return (+p[0] === 0 ? "Épisode spécial " : "Saison " + p[0] + " · Épisode ") + p[1] + " : un lien vient d'être ajouté."; }
   return e.length + " nouveaux épisodes ont un lien.";
@@ -886,6 +887,16 @@ function notifScan() {
     var n = { id: "ep:" + id + ":" + Date.now(), kind: "episode", sid: String(id), name: s.name, eps: add.slice(0, 60), at: Date.now(), read: false };
     items.unshift(n); fresh.push(n);
   });
+  /* demandes que j'ai faites : le titre est maintenant au catalogue */
+  var mine = nMyReqs(), ch2 = false;
+  mine.forEach(function (r) {
+    if (!r || r.done) return;
+    var f = myReqFiche(r); if (!f) return;
+    r.done = true; ch2 = true; changed = true;
+    var n = { id: "rq:" + r.k + ":" + Date.now(), kind: "request", sid: String(f.id), name: f.name, media: isMovie(f) ? "movie" : "tv", poster: f.poster || "", at: Date.now(), read: false };
+    items.unshift(n); fresh.push(n);
+  });
+  if (ch2) nSave(MYREQKEY, mine);
   if (changed) { nSave(NSUBKEY, subs); nSave(NITEMKEY, items.slice(0, 60)); }
   fresh.forEach(nSystemNotify);
 }
@@ -909,7 +920,7 @@ function nMsgs() {
   return (INBOX.items || []).filter(function (m) { return gone.indexOf(m.id) < 0 && (!m.at || m.at > old); });
 }
 function nAll() {
-  var rd = nArr(NREADKEY), list = nArr(NITEMKEY).map(function (n) { return { type: "ep", id: n.id, at: n.at || 0, read: !!n.read, n: n }; });
+  var rd = nArr(NREADKEY), list = nArr(NITEMKEY).map(function (n) { return { type: n.kind === "request" ? "rq" : "ep", id: n.id, at: n.at || 0, read: !!n.read, n: n }; });
   nMsgs().forEach(function (m) { list.push({ type: "msg", id: m.id, at: m.at || 0, read: rd.indexOf(m.id) > -1 || (m.at || 0) < NSINCE, m: m }); });
   list.sort(function (a, b) { return b.at - a.at; });
   return list;
@@ -925,6 +936,11 @@ function nAgo(t) {
 }
 function nItemHTML(x) {
   var rm = '<button type="button" class="nx" data-nrm="' + esc(x.id) + '" aria-label="Supprimer la notification" title="Supprimer">' + nsvg("x") + '</button>';
+  if (x.type === "rq") {
+    var q = x.n;
+    return '<div class="nitem lk rq' + (x.read ? "" : " unread") + '"><span class="ni nposter">' + (q.poster ? '<img src="' + esc(th(q.poster)) + '" alt="" loading="lazy">' : nsvg("checks")) + '</span><span class="nt"><b>' + esc(q.name) + '</b><p>' + esc(nTextOf(q)) + '</p><small>' + esc(nAgo(q.at)) + ' · Ouvrir la fiche</small></span>' + rm +
+      '<a class="nstretch" href="/serie/' + esc(q.sid) + '" data-nopen="' + esc(x.id) + '" aria-label="' + esc(q.name + " : ouvrir la fiche") + '"></a></div>';
+  }
   if (x.type === "ep") {
     var n = x.n;
     return '<div class="nitem lk' + (x.read ? "" : " unread") + '"><span class="ni">' + nsvg("tv") + '</span><span class="nt"><b>' + esc(n.name) + '</b><p>' + esc(nTextOf(n)) + '</p><small>' + esc(nAgo(n.at)) + '</small></span>' + rm +
@@ -1001,7 +1017,7 @@ document.addEventListener("click", function (e) {
 });
 /* supprimer une notification (bouton X ou glissement) */
 function nRemove(id) {
-  if (String(id).indexOf("ep:") === 0) nSave(NITEMKEY, nArr(NITEMKEY).filter(function (n) { return n.id !== id; }));
+  if (/^(ep|rq):/.test(String(id))) nSave(NITEMKEY, nArr(NITEMKEY).filter(function (n) { return n.id !== id; }));
   else { var g = nArr(NGONEKEY); if (g.indexOf(id) < 0) g.push(id); nSave(NGONEKEY, g.slice(-100)); }
 }
 /* glisser une notification vers la gauche ou la droite (au doigt) pour la supprimer ; le X reste disponible */
@@ -1043,7 +1059,7 @@ document.addEventListener("keydown", function (e) {
 /* Visiteurs : s'ils suivent des séries, on relit le catalogue de temps en temps pour les prévenir sans qu'ils rechargent la page */
 var nPolling = false, nLastPoll = Date.now();
 function notifPoll() {
-  if (ADMIN || PREVIEW || nPolling || document.hidden || !Object.keys(nSubs()).length || Date.now() - nLastPoll < 60000) return;
+  if (ADMIN || PREVIEW || nPolling || document.hidden || (!Object.keys(nSubs()).length && !nMyReqs().some(function (r) { return r && !r.done; })) || Date.now() - nLastPoll < 60000) return;
   nPolling = true; nLastPoll = Date.now();
   loadCatalog().then(function () { nPolling = false; }, function () { nPolling = false; });
 }
@@ -1880,6 +1896,24 @@ function visitorId() {
   return v;
 }
 function reqToday() { var r = readJSON("noir.reqDay", null); return r && r.d === todayKey() ? (+r.n || 0) : 0; }
+/* Mes demandes : gardées sur l'appareil (par profil) pour prévenir dans la cloche dès que le titre est ajouté */
+var MYREQKEY = "noir.myreqs";
+function nMyReqs() { return nArr(MYREQKEY); }
+function myReqFiche(r) {
+  var f = r.tmdb ? byId(r.media === "movie" ? "m" + r.tmdb : String(r.tmdb)) : null;
+  if (!f) {
+    var it = (REQS.items || []).filter(function (x) { return x.status === "done" && x.sid && ((r.tmdb && x.tmdb && String(x.tmdb) === String(r.tmdb) && x.media === r.media) || String(x.title).toLowerCase() === String(r.title).toLowerCase()); })[0];
+    if (it) f = byId(it.sid);
+  }
+  if (!f) f = reqFind(r.title);
+  return f && !!f.bl === !!r.bl ? f : null;
+}
+function myReqAdd(r) {
+  var rec = { k: (r.bl ? "b" : "s") + "-" + (r.tmdb ? r.media + r.tmdb : String(r.title).toLowerCase().replace(/\W+/g, "").slice(0, 24)), title: String(r.title || "").slice(0, 150), media: r.media === "movie" ? "movie" : "tv", tmdb: String(r.tmdb || "").replace(/\D/g, ""), bl: !!r.bl, at: Date.now(), done: false };
+  if (myReqFiche(rec)) return;   /* déjà au catalogue : rien à annoncer */
+  var l = nMyReqs().filter(function (x) { return x.k !== rec.k && Date.now() - (+x.at || 0) < 90 * 864e5; });
+  l.unshift(rec); nSave(MYREQKEY, l.slice(0, 40));
+}
 function bumpReq() { try { localStorage.setItem("noir.reqDay", JSON.stringify({ d: todayKey(), n: reqToday() + 1 })); } catch (e) {} }
 var REQ_URL = "https://formsubmit.co/ajax/318f68b57ef527181c572ab6c865d64a";
 /* Notifications Discord : le site appelle /api/notify (api/notify.js), qui garde l'adresse du webhook secrète. Aucune base de données. */
@@ -6234,6 +6268,7 @@ document.addEventListener("submit", function (e) {
     }).then(function () {
       try { localStorage.setItem("noir.reqAt", String(Date.now())); } catch (er) {}
       bumpReq();
+      try { myReqAdd({ title: titre, media: reqSel && reqSel.media, tmdb: reqSel && reqSel.id, bl: !!fd.get("bl") }); } catch (er) {}
       $("#app").innerHTML = '<div class="wrap"><div class="authbox"><h1>Merci</h1><p class="lead">Ta demande est bien envoyée. ' + (isVip() ? 'En tant que VIP, elle sera traitée en 12 h maximum.' : 'Je l\'ajoute dès que possible.') + '</p><div class="row"><a class="btn" href="/">Retour à l\'accueil</a><a class="btn ghost" href="/demande">Une autre demande</a></div></div></div>';
     }).catch(function (err) {
       rb.disabled = false; rb.textContent = "Envoyer";
