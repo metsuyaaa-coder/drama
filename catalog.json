@@ -55970,28 +55970,52 @@
               "name": "Épisode 12",
               "overview": "",
               "air_date": "",
-              "sources": []
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-fxj9s0d5a6hl.html",
+                  "by": "614d778ed0"
+                }
+              ]
             },
             {
               "number": 13,
               "name": "Épisode 13",
               "overview": "",
               "air_date": "",
-              "sources": []
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-e0rd8t724t5z.html",
+                  "by": "614d778ed0"
+                }
+              ]
             },
             {
               "number": 14,
               "name": "Épisode 14",
               "overview": "",
               "air_date": "",
-              "sources": []
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-5qkj49ktwa3u.html",
+                  "by": "614d778ed0"
+                }
+              ]
             },
             {
               "number": 15,
               "name": "Épisode 15",
               "overview": "",
               "air_date": "",
-              "sources": []
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-u39valdpeqoy.html",
+                  "by": "614d778ed0"
+                }
+              ]
             },
             {
               "number": 16,
@@ -56065,7 +56089,7 @@
         "VOSTFR"
       ],
       "posterCustom": true,
-      "updatedAt": 1794343922878,
+      "updatedAt": 1794501336536,
       "trend": 0
     },
     {
@@ -61281,6 +61305,15 @@
   },
   "journal": [
     {
+      "k": "mwdrrh0od6pwd",
+      "t": 1794501336552,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "307853",
+      "n": "Sunshine Through the Rain",
+      "d": "sources 11 → 15"
+    },
+    {
       "k": "mwdrlq4urkedb",
       "t": 1794501068430,
       "b": "614d778ed0",
@@ -63970,15 +64003,6 @@
       "i": "314939",
       "n": "A Love Other Than Yours",
       "d": "sources 44 → 46"
-    },
-    {
-      "k": "mvnyrbq3w60jh",
-      "t": 1792940966427,
-      "b": "head",
-      "a": "edit",
-      "i": "314939",
-      "n": "A Love Other Than Yours",
-      "d": "sources 41 → 44"
     }
   ],
   "refreshAt": 1792423579957
