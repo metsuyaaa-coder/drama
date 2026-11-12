@@ -60718,7 +60718,7 @@
       "rating": "8.7",
       "pop": 10.3163,
       "status": "Ended",
-      "poster": "https://image.tmdb.org/t/p/w500/j2w2PZ5JHEv0HUXwrhsToYiTP4r.jpg",
+      "poster": "https://image.tmdb.org/t/p/original/cCMQ0O5yKnScjxn0cYxLIjRIMjB.jpg",
       "posterV": 2,
       "backdrop": "https://image.tmdb.org/t/p/original/iDnZoZvv220H6pigUWt3BlfPdxQ.jpg",
       "videos": [
@@ -60921,7 +60921,8 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1794516096152
+      "updatedAt": 1794516694600,
+      "posterCustom": true
     }
   ],
   "deletedLinks": [
@@ -62188,6 +62189,15 @@
     "at": 1794272052815
   },
   "journal": [
+    {
+      "k": "mwe0wndlwchtd",
+      "t": 1794516694617,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "256226",
+      "n": "Dear X",
+      "d": "affiche"
+    },
     {
       "k": "mwe0qehu9xvxr",
       "t": 1794516403170,
@@ -64878,15 +64888,6 @@
       "i": "295599",
       "n": "Royal Betrothal",
       "d": "affiche"
-    },
-    {
-      "k": "mvo3rztsy7kuz",
-      "t": 1792949395744,
-      "b": "head",
-      "a": "edit",
-      "i": "316702",
-      "n": "Final Table",
-      "d": "sources 3 → 4"
     }
   ],
   "refreshAt": 1792423579957
