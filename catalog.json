@@ -61879,7 +61879,7 @@
       "rating": "7.0",
       "pop": 3.696,
       "status": "Ended",
-      "poster": "https://image.tmdb.org/t/p/w500/dFgYTNvzvPUpHrK92GRP9xZlZSi.jpg",
+      "poster": "https://image.tmdb.org/t/p/original/rFw9GDFJLn6OXGE4KIA3sMzFJKW.jpg",
       "posterV": 2,
       "backdrop": "https://image.tmdb.org/t/p/original/faFkxzBklW9H3yCsA5AieT6PIab.jpg",
       "videos": [
@@ -62174,7 +62174,8 @@
       "langs": [
         "VOSTFR"
       ],
-      "updatedAt": 1794521014127
+      "updatedAt": 1794529078197,
+      "posterCustom": true
     },
     {
       "id": "214994",
@@ -63844,6 +63845,15 @@
     "at": 1794272052815
   },
   "journal": [
+    {
+      "k": "mwe8a2mhdd7u7",
+      "t": 1794529078217,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "74076",
+      "n": "Mad Dog",
+      "d": "affiche"
+    },
     {
       "k": "mwe873s4wzirl",
       "t": 1794528939748,
@@ -66534,15 +66544,6 @@
       "i": "332134",
       "n": "Born Again",
       "d": ""
-    },
-    {
-      "k": "mvoie11zxpbr6",
-      "t": 1792973938391,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "m1375646",
-      "n": "Colony",
-      "d": "affiche"
     }
   ],
   "refreshAt": 1792423579957
