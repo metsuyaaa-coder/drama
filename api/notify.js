@@ -56,7 +56,7 @@ async function listAdd(b, vid, max) {
     }
     if (vid) log.push({ v: vid, t: nowT });
     obj.requests = { items: rq.items, at: nowT, log: log.slice(-300) };
-    var put = await fetch(url, { method: "PUT", headers: H(), body: JSON.stringify({ message: "Nouvelle demande : " + title, content: Buffer.from(JSON.stringify(obj, null, 2), "utf8").toString("base64"), sha: sha, branch: branch }) });
+    var put = await fetch(url, { method: "PUT", headers: H(), body: JSON.stringify({ message: "Nouvelle demande : " + title, content: Buffer.from(JSON.stringify(obj), "utf8").toString("base64"), sha: sha, branch: branch }) });
     if (put.ok) return true;
     if (put.status !== 409 && put.status !== 422) return "écriture GitHub refusée (HTTP " + put.status + ") : le jeton doit avoir « Contents : Read and write »";
     await new Promise(function (res) { setTimeout(res, 700 * (n + 1)); });   /* quelqu'un a publié entre-temps : on relit et on recommence */
@@ -134,11 +134,17 @@ module.exports = async function (req, res) {
     var link = httpUrl(b.url);
     if (!title || !link) { res.status(400).json({ error: "signalement incomplet" }); return; }
     var sub = clean(b.sub, 100);
+    var note = clean(b.note, 300);
+    if (note.length < 10) { res.status(400).json({ error: "note obligatoire" }); return; }       /* le visiteur doit décrire le problème */
+    if (b.vpn !== true) { res.status(400).json({ error: "confirmation VPN obligatoire" }); return; }   /* et confirmer avoir essayé avec un VPN */
     var video = b.reason === "video"; /* "dead" (serveur mort, par défaut) ou "video" (la vidéo ne marche pas) */
     var fields2 = [
       { name: "Problème", value: video ? "La vidéo ne marche pas" : "Serveur mort", inline: true },
       { name: "Serveur", value: clean(b.source, 60) || "?", inline: true },
-      { name: "Lien", value: "<" + link + ">" }
+      { name: "Lien", value: "<" + link + ">" },
+      { name: "Note du visiteur", value: note },
+      { name: "VPN essayé", value: "Oui ✓ (confirmé)", inline: true },
+      { name: "ID", value: vid ? "`" + vid + "`" : "inconnu", inline: true }
     ];
     var page = httpUrl(b.page);
     try { if (page && new URL(page).host === host) fields2.push({ name: "Fiche sur le site", value: "<" + page + ">" }); } catch (e) {}
