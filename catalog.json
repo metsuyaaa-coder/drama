@@ -380,7 +380,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "trend": 58,
+      "trend": 0,
       "aka": [
         "100 Days of Deception",
         "百日谎言",
@@ -1013,7 +1013,7 @@
       "langs": [
         "VOSTFR"
       ],
-      "trend": 55,
+      "trend": 91,
       "posterV": 2,
       "origin_country": [
         "KR"
@@ -1502,7 +1502,7 @@
         "Upanje",
         "호프"
       ],
-      "trend": 70,
+      "trend": 68,
       "posterV": 2,
       "updatedAt": 1793968762726,
       "videos": [
@@ -7898,7 +7898,7 @@
       "networks": [
         "ENA"
       ],
-      "trend": 67,
+      "trend": 54,
       "videos": [
         {
           "key": "4HsK_-QQE5Y",
@@ -23521,7 +23521,7 @@
       ],
       "posterV": 2,
       "updatedAt": 1794073849284,
-      "trend": 77,
+      "trend": 62,
       "networks": [
         "CCTV-8",
         "Youku"
@@ -24437,7 +24437,7 @@
         "VOSTFR"
       ],
       "updatedAt": 1794343688913,
-      "trend": 83,
+      "trend": 45,
       "videos": [
         {
           "key": "55ATD_SJ_Xw",
@@ -31679,7 +31679,7 @@
         "VOSTFR"
       ],
       "updatedAt": 1794501556683,
-      "trend": 73,
+      "trend": 0,
       "eprt": 48
     },
     {
@@ -45651,7 +45651,7 @@
       ],
       "updatedAt": 1793968891307,
       "posterCustom": true,
-      "trend": 80
+      "trend": 77
     },
     {
       "id": "307478",
@@ -52188,7 +52188,7 @@
       ],
       "posterCustom": true,
       "updatedAt": 1794441541319,
-      "trend": 95
+      "trend": 93
     },
     {
       "id": "237411",
@@ -54768,7 +54768,8 @@
         "折月亮～月に出会ったとき～",
         "절월량: 달을 만났을 때",
         "Cuando Encuentre la Luna",
-        "Когато срещна Луната"
+        "Когато срещна Луната",
+        "Quando Eu Encontrar a Lua"
       ],
       "year": "2026",
       "overview": "Pour gagner en indépendance, Yun Li, qui est d'une timidité extrême et souffre d'angoisse sociale, décide de poursuivre ses études et de faire un doctorat. C'est ainsi qu'elle retrouve son premier amour, Fu Shi Ze, à qui elle n'avait jamais osé se déclarer au lycée. Décidée cette fois à gagner son coeur, tous les deux finissent par tomber amoureux mais finissent par rompre à cause de leurs blessures personnelles.\nDes années plus tard, Fu Shi Ze est maintenant un grand chercheur et Yun Li revient de l'étranger. Cette fois, c'est au tour de Fu Shi Ze de tenter de la conquérir.",
@@ -54776,7 +54777,7 @@
         "Drame"
       ],
       "rating": "9.2",
-      "pop": 22.0622,
+      "pop": 38.043,
       "status": "Returning Series",
       "poster": "https://image.tmdb.org/t/p/original/mWJT8AOY72FyInCPxUNCW9Y82rR.jpg",
       "posterV": 2,
@@ -54791,14 +54792,14 @@
       ],
       "cast": [
         {
-          "name": "林一",
-          "character": "Fu Shize",
-          "id": 2312400
-        },
-        {
           "name": "卢昱晓",
           "character": "Yun Li ",
           "id": 3503861
+        },
+        {
+          "name": "林一",
+          "character": "Fu Shize",
+          "id": 2312400
         },
         {
           "name": "卢洋洋",
@@ -54836,7 +54837,7 @@
           "id": 5656699
         }
       ],
-      "eprt": 45,
+      "eprt": 44,
       "seasons": [
         {
           "number": 1,
@@ -55054,7 +55055,7 @@
               "number": 17,
               "name": "Épisode 17",
               "overview": "",
-              "air_date": "",
+              "air_date": "2026-11-12",
               "sources": [
                 {
                   "name": "VIDMOLY",
@@ -55067,7 +55068,7 @@
               "number": 18,
               "name": "Épisode 18",
               "overview": "",
-              "air_date": "",
+              "air_date": "2026-11-12",
               "sources": [
                 {
                   "name": "VIDMOLY",
@@ -55080,63 +55081,63 @@
               "number": 19,
               "name": "Épisode 19",
               "overview": "",
-              "air_date": "",
+              "air_date": "2026-11-13",
               "sources": []
             },
             {
               "number": 20,
               "name": "Épisode 20",
               "overview": "",
-              "air_date": "",
+              "air_date": "2026-11-13",
               "sources": []
             },
             {
               "number": 21,
               "name": "Épisode 21",
               "overview": "",
-              "air_date": "",
+              "air_date": "2026-11-14",
               "sources": []
             },
             {
               "number": 22,
               "name": "Épisode 22",
               "overview": "",
-              "air_date": "",
+              "air_date": "2026-11-14",
               "sources": []
             },
             {
               "number": 23,
               "name": "Épisode 23",
               "overview": "",
-              "air_date": "",
+              "air_date": "2026-11-15",
               "sources": []
             },
             {
               "number": 24,
               "name": "Épisode 24",
               "overview": "",
-              "air_date": "",
+              "air_date": "2026-11-15",
               "sources": []
             },
             {
               "number": 25,
               "name": "Épisode 25",
               "overview": "",
-              "air_date": "",
+              "air_date": "2026-11-15",
               "sources": []
             },
             {
               "number": 26,
               "name": "Épisode 26",
               "overview": "",
-              "air_date": "",
+              "air_date": "2026-11-15",
               "sources": []
             },
             {
               "number": 27,
               "name": "Épisode 27",
               "overview": "",
-              "air_date": "",
+              "air_date": "2026-11-15",
               "sources": []
             }
           ]
@@ -55144,12 +55145,10 @@
       ],
       "sources": [],
       "addedAt": 1793888781134,
-      "langs": [
-        "VOSTFR"
-      ],
+      "langs": [],
       "posterCustom": true,
-      "updatedAt": 1794501067828,
-      "trend": 85
+      "updatedAt": 1794588264675,
+      "trend": 84
     },
     {
       "id": "336458",
@@ -55638,7 +55637,7 @@
         "VOSTFR"
       ],
       "updatedAt": 1793968917774,
-      "trend": 84
+      "trend": 60
     },
     {
       "id": "m1483525",
@@ -58154,7 +58153,7 @@
       ],
       "posterCustom": true,
       "updatedAt": 1794234743187,
-      "trend": 47
+      "trend": 42
     },
     {
       "id": "301885",
@@ -60087,7 +60086,7 @@
       ],
       "posterCustom": true,
       "updatedAt": 1794508346739,
-      "trend": 41
+      "trend": 0
     },
     {
       "id": "m1280738",
@@ -63711,21 +63710,7 @@
         "at": 1794548487321
       }
     ],
-    "at": 1794553088416,
-    "log": [
-      {
-        "v": "cfaa4607",
-        "t": 1794529932556
-      },
-      {
-        "v": "a065885a",
-        "t": 1794548487321
-      },
-      {
-        "v": "4e1c5067",
-        "t": 1794553088416
-      }
-    ]
+    "at": 1794553088416
   },
   "founder": {
     "name": "Meyriuu",
@@ -63891,6 +63876,15 @@
     "at": 1794272052815
   },
   "journal": [
+    {
+      "k": "mwf7in7dfy4yu",
+      "t": 1794588264697,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "270431",
+      "n": "When I Meet the Moon",
+      "d": ""
+    },
     {
       "k": "mwe8a2mhdd7u7",
       "t": 1794529078217,
@@ -66581,15 +66575,6 @@
       "i": "307106",
       "n": "Between Steps",
       "d": "sources 24 → 25"
-    },
-    {
-      "k": "mvoiz0ox980cw",
-      "t": 1792974917697,
-      "b": "614d778ed0",
-      "a": "add",
-      "i": "332134",
-      "n": "Born Again",
-      "d": ""
     }
   ],
   "refreshAt": 1792423579957
