@@ -62649,7 +62649,7 @@
       ],
       "rating": "8.0",
       "pop": 30.5086,
-      "status": "Returning Series",
+      "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/uWk2K7tsazi87Y96QfxParT4VyD.jpg",
       "posterV": 2,
       "backdrop": "https://image.tmdb.org/t/p/original/ginRZDiTKS1VmkLPaSFZlmLcVnm.jpg",
@@ -62800,7 +62800,7 @@
         "VOSTFR"
       ],
       "posterCustom": true,
-      "updatedAt": 1794596982146
+      "updatedAt": 1794597402741
     }
   ],
   "deletedLinks": [
@@ -64118,6 +64118,15 @@
     "at": 1794272052815
   },
   "journal": [
+    {
+      "k": "mwfcyi6c0uf0f",
+      "t": 1794597402756,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "312661",
+      "n": "Miracles of the ER",
+      "d": ""
+    },
     {
       "k": "mwfcphnuf0phy",
       "t": 1794596982186,
@@ -66808,15 +66817,6 @@
       "i": "300146",
       "n": "Where the Mask Ends",
       "d": "sources 18 → 19"
-    },
-    {
-      "k": "mvpurotaezk5a",
-      "t": 1793055197278,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "304452",
-      "n": "The Lament of Autumn",
-      "d": "sources 23 → 25"
     }
   ],
   "refreshAt": 1792423579957
