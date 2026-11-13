@@ -63693,13 +63693,33 @@
         "en": "Blossom",
         "auto": true,
         "at": 1794529932556
+      },
+      {
+        "id": "rmweju2s9",
+        "title": "뜨거운 안녕",
+        "status": "wait",
+        "bl": false,
+        "kind": "stream",
+        "votes": 1,
+        "tmdb": "299764",
+        "media": "tv",
+        "year": "2026",
+        "poster": "/dJa6CReOqtLDsYdwBS0hW8NgDlD.jpg",
+        "origin": "Corée",
+        "en": "Happy Anding",
+        "auto": true,
+        "at": 1794548487321
       }
     ],
-    "at": 1794529932556,
+    "at": 1794548487321,
     "log": [
       {
         "v": "cfaa4607",
         "t": 1794529932556
+      },
+      {
+        "v": "a065885a",
+        "t": 1794548487321
       }
     ]
   },
