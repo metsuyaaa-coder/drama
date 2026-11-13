@@ -56067,7 +56067,13 @@
               "name": "Épisode 16",
               "overview": "",
               "air_date": "",
-              "sources": []
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-hv4okguevl0c.html",
+                  "by": "614d778ed0"
+                }
+              ]
             },
             {
               "number": 17,
@@ -56134,7 +56140,7 @@
         "VOSTFR"
       ],
       "posterCustom": true,
-      "updatedAt": 1794501336536,
+      "updatedAt": 1794593337221,
       "trend": 0
     },
     {
@@ -63744,13 +63750,7 @@
         "at": 1794589426208
       }
     ],
-    "at": 1794592951886,
-    "log": [
-      {
-        "v": "7ae20f25",
-        "t": 1794592951886
-      }
-    ]
+    "at": 1794592951886
   },
   "founder": {
     "name": "Meyriuu",
@@ -63916,6 +63916,15 @@
     "at": 1794272052815
   },
   "journal": [
+    {
+      "k": "mwfajd7jpro8k",
+      "t": 1794593337247,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "307853",
+      "n": "Sunshine Through the Rain",
+      "d": "sources 15 → 16"
+    },
     {
       "k": "mwf9b39x0abpc",
       "t": 1794591271509,
@@ -66606,15 +66615,6 @@
       "i": "303745",
       "n": "Love in Disguise",
       "d": "sources 8 → 9"
-    },
-    {
-      "k": "mvpif2njesyg4",
-      "t": 1793034453295,
-      "b": "614d778ed0",
-      "a": "add",
-      "i": "335951",
-      "n": "Summer Vacation",
-      "d": ""
     }
   ],
   "refreshAt": 1792423579957
