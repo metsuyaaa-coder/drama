@@ -56769,7 +56769,7 @@
       ],
       "rating": "",
       "pop": 9.9761,
-      "status": "Returning Series",
+      "status": "Ended",
       "poster": "https://image.tmdb.org/t/p/original/fltCV5mYBQg1Fap7Cun4UpyoiYN.jpg",
       "posterV": 2,
       "backdrop": "https://image.tmdb.org/t/p/original/p0icSpmo5fZqvtEXRj9n8jPy93d.jpg",
@@ -56854,7 +56854,7 @@
                 {
                   "name": "VIDMOLY",
                   "url": "https://vidmoly.org/embed-a3nyych1tvwm.html",
-                  "fansub": "Dramavore : Rafia",
+                  "fansub": "Dramavore-Rafia",
                   "by": "614d778ed0"
                 }
               ]
@@ -56868,7 +56868,7 @@
                 {
                   "name": "VIDMOLY",
                   "url": "https://vidmoly.org/embed-oz93n5ph2n96.html",
-                  "fansub": "Dramavore : Rafia",
+                  "fansub": "Dramavore-Rafia",
                   "by": "614d778ed0"
                 }
               ]
@@ -56878,14 +56878,28 @@
               "name": "Épisode 3",
               "overview": "",
               "air_date": "2026-11-13",
-              "sources": []
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-7niext8x59p1.html",
+                  "fansub": "Dramavore-Rafia",
+                  "by": "614d778ed0"
+                }
+              ]
             },
             {
               "number": 4,
               "name": "Épisode 4",
               "overview": "",
               "air_date": "2026-11-13",
-              "sources": []
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-1wvlsbg7ax0u.html",
+                  "fansub": "Dramavore-Rafia",
+                  "by": "614d778ed0"
+                }
+              ]
             }
           ]
         }
@@ -56896,7 +56910,7 @@
         "VOSTFR"
       ],
       "posterCustom": true,
-      "updatedAt": 1794080354703,
+      "updatedAt": 1794596081721,
       "trend": 0
     },
     {
@@ -63917,6 +63931,15 @@
   },
   "journal": [
     {
+      "k": "mwfc66vm060t7",
+      "t": 1794596081746,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "332269",
+      "n": "Francesca Next Door",
+      "d": "sources 2 → 4"
+    },
+    {
       "k": "mwfajd7jpro8k",
       "t": 1794593337247,
       "b": "614d778ed0",
@@ -66606,15 +66629,6 @@
       "i": "286171",
       "n": "Tigers Sniff the Rose",
       "d": ""
-    },
-    {
-      "k": "mvpj7k0wy18cc",
-      "t": 1793035782176,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "303745",
-      "n": "Love in Disguise",
-      "d": "sources 8 → 9"
     }
   ],
   "refreshAt": 1792423579957
