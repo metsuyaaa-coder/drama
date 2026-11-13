@@ -62613,6 +62613,194 @@
       ],
       "updatedAt": 1794528939213,
       "posterCustom": true
+    },
+    {
+      "id": "312661",
+      "type": "tv",
+      "name": "Miracles of the ER",
+      "original_name": "急診室的奇蹟",
+      "origin_country": [
+        "TW"
+      ],
+      "networks": [
+        "Netflix"
+      ],
+      "original_language": "zh",
+      "aka": [
+        "Miracles of the ER",
+        "急诊室的奇迹",
+        "Milagres da Sala de Emergência",
+        "Дива невідкладної допомоги",
+        "Θαύματα στα Επείγοντα",
+        "Acil Servisin Mucizeleri",
+        "Urgences Humaines",
+        "ปาฏิหาริย์ในห้องฉุกเฉิน",
+        "Milagros en urgencias",
+        "Cuda na ostrym dyżurze",
+        "응급실의 기적",
+        "Kỳ Tích Phòng Cấp Cứu",
+        "The Miracle of ER",
+        "急診室的奇蹟"
+      ],
+      "year": "2026",
+      "overview": "À l’hôpital universitaire Yang-Da, Chou Cheng Jun, directeur adjoint du service des urgences, prend une décision audacieuse en recrutant Lin Geng Ming, un jeune diplômé en médecine aux résultats académiques plutôt moyens. Ce dernier intègre les urgences en tant qu’interne, aux côtés de deux étudiants particulièrement brillants, Tang Hsi et Chiang Tung Yen. Ensemble, ils travaillent sans relâche pour sauver des vies.\n\nEncadrée par le médecin senior He Yu Hua, l’équipe doit faire face à un quotidien éprouvant, rythmé par des urgences médicales incessantes, des dilemmes éthiques et des luttes de pouvoir au sein même de l’hôpital. Entre médecins, patients et familles, Miracles of the ER explore les relations humaines complexes qui se nouent dans cet environnement sous tension, où se mêlent conflits, émotions et profonde compassion.",
+      "genres": [
+        "Drame"
+      ],
+      "rating": "8.0",
+      "pop": 30.5086,
+      "status": "Returning Series",
+      "poster": "https://image.tmdb.org/t/p/original/uWk2K7tsazi87Y96QfxParT4VyD.jpg",
+      "posterV": 2,
+      "backdrop": "https://image.tmdb.org/t/p/original/ginRZDiTKS1VmkLPaSFZlmLcVnm.jpg",
+      "videos": [],
+      "cast": [
+        {
+          "name": "霍建華",
+          "character": "Zhou Cheng-jun",
+          "id": 1192904
+        },
+        {
+          "name": "楊謹華",
+          "character": "He Yu-hua",
+          "id": 1247111
+        },
+        {
+          "name": "蔡凡熙",
+          "character": "Lin Geng-ming",
+          "id": 1794453
+        },
+        {
+          "name": "詹子萱",
+          "character": "Tang Hsi",
+          "id": 3682439
+        },
+        {
+          "name": "彭千祐",
+          "character": "Chiang Tung-yen",
+          "id": 3563039
+        }
+      ],
+      "eprt": 49,
+      "seasons": [
+        {
+          "number": 1,
+          "name": "Saison 1",
+          "episodes": [
+            {
+              "number": 1,
+              "name": "The Misfit",
+              "overview": "As three new doctors start their first day at the busy Yang-Da ER, rookie Geng-ming struggles to perform a routine procedure on a famous patient.",
+              "air_date": "2026-11-12",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-rgqwrg035ayq.html",
+                  "by": "614d778ed0"
+                }
+              ]
+            },
+            {
+              "number": 2,
+              "name": "Room for Error",
+              "overview": "Yu-hua faces a malpractice mediation. Meanwhile, Hsi must decide whether to involve police after suspecting a patient of harming animals.",
+              "air_date": "2026-11-12",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-ugh6fr0ommf9.html",
+                  "by": "614d778ed0"
+                }
+              ]
+            },
+            {
+              "number": 3,
+              "name": "333",
+              "overview": "The doctors try to protect an injured teenage girl who is terrified of her father. Geng-ming comes to Hsi's aid when a patient steps out of line.",
+              "air_date": "2026-11-12",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-5v6h16g5hb08.html",
+                  "by": "614d778ed0"
+                }
+              ]
+            },
+            {
+              "number": 4,
+              "name": "A Doctor's Choice",
+              "overview": "Tung-yen's past resurfaces when a gangster enters the ER. As a cancer patient tries to leave to avoid costly bills, Hsi looks for a way to help him.",
+              "air_date": "2026-11-12",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-ephaku3c4x7t.html",
+                  "by": "614d778ed0"
+                }
+              ]
+            },
+            {
+              "number": 5,
+              "name": "Wishes and Last Wishes",
+              "overview": "The staff rally to help a widow secure a life insurance claim. Chou's confidence in his research is shaken when a rival releases conflicting findings.",
+              "air_date": "2026-11-12",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-140208a7ib2m.html",
+                  "by": "614d778ed0"
+                }
+              ]
+            },
+            {
+              "number": 6,
+              "name": "Good Doctor, Bad Doctor",
+              "overview": "When a migrant worker arrives at the ER, Geng-ming notices something off about his test results. Yu-hua faces intense scrutiny at the malpractice trial.",
+              "air_date": "2026-11-12",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-2unl2z9ornmr.html",
+                  "by": "614d778ed0"
+                }
+              ]
+            },
+            {
+              "number": 7,
+              "name": "Truth and Lies",
+              "overview": "The new head of the ER department causes problems for the staff and patients. A protest at the hospital quickly threatens to turn violent.",
+              "air_date": "2026-11-12",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-23zfby6zinfi.html",
+                  "by": "614d778ed0"
+                }
+              ]
+            },
+            {
+              "number": 8,
+              "name": "The Relentless",
+              "overview": "After a mass stabbing on a city bus, the doctors try to cope with the influx of injured patients flooding into the ER — including the perpetrator.",
+              "air_date": "2026-11-12",
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-zp2bejuo6mo7.html",
+                  "by": "614d778ed0"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "sources": [],
+      "addedAt": 1794596229330,
+      "langs": [
+        "VOSTFR"
+      ],
+      "posterCustom": true,
+      "updatedAt": 1794596982146
     }
   ],
   "deletedLinks": [
@@ -63930,6 +64118,15 @@
     "at": 1794272052815
   },
   "journal": [
+    {
+      "k": "mwfcphnuf0phy",
+      "t": 1794596982186,
+      "b": "614d778ed0",
+      "a": "add",
+      "i": "312661",
+      "n": "Miracles of the ER",
+      "d": ""
+    },
     {
       "k": "mwfc66vm060t7",
       "t": 1794596081746,
@@ -66620,15 +66817,6 @@
       "i": "304452",
       "n": "The Lament of Autumn",
       "d": "sources 23 → 25"
-    },
-    {
-      "k": "mvpu0bntumyan",
-      "t": 1793053920521,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "286171",
-      "n": "Tigers Sniff the Rose",
-      "d": ""
     }
   ],
   "refreshAt": 1792423579957
