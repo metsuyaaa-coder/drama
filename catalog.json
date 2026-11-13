@@ -55082,14 +55082,26 @@
               "name": "Épisode 19",
               "overview": "",
               "air_date": "2026-11-13",
-              "sources": []
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-oje3k1zwgrlx.html",
+                  "by": "614d778ed0"
+                }
+              ]
             },
             {
               "number": 20,
               "name": "Épisode 20",
               "overview": "",
               "air_date": "2026-11-13",
-              "sources": []
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-88peruskmv49.html",
+                  "by": "614d778ed0"
+                }
+              ]
             },
             {
               "number": 21,
@@ -55147,7 +55159,7 @@
       "addedAt": 1793888781134,
       "langs": [],
       "posterCustom": true,
-      "updatedAt": 1794588264675,
+      "updatedAt": 1794590354950,
       "trend": 84
     },
     {
@@ -63726,13 +63738,7 @@
         "at": 1794589426208
       }
     ],
-    "at": 1794589426208,
-    "log": [
-      {
-        "v": "b235636c",
-        "t": 1794589426208
-      }
-    ]
+    "at": 1794589426208
   },
   "founder": {
     "name": "Meyriuu",
@@ -63898,6 +63904,15 @@
     "at": 1794272052815
   },
   "journal": [
+    {
+      "k": "mwf8rg36057fs",
+      "t": 1794590354994,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "270431",
+      "n": "When I Meet the Moon",
+      "d": "sources 18 → 20"
+    },
     {
       "k": "mwf7in7dfy4yu",
       "t": 1794588264697,
@@ -66588,15 +66603,6 @@
       "i": "334517",
       "n": "Oh! My Guard",
       "d": "sources 1 → 2"
-    },
-    {
-      "k": "mvpf6sotjjrim",
-      "t": 1793029028285,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "307106",
-      "n": "Between Steps",
-      "d": "sources 24 → 25"
     }
   ],
   "refreshAt": 1792423579957
