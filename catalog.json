@@ -996,7 +996,13 @@
               "name": "Épisode 11",
               "overview": "",
               "air_date": "2026-11-13",
-              "sources": []
+              "sources": [
+                {
+                  "name": "VIDMOLY",
+                  "url": "https://vidmoly.org/embed-70yj9obc5vr9.html",
+                  "by": "614d778ed0"
+                }
+              ]
             },
             {
               "number": 12,
@@ -1019,7 +1025,7 @@
         "KR"
       ],
       "original_language": "ko",
-      "updatedAt": 1794076813480,
+      "updatedAt": 1794591271488,
       "networks": [
         "SBS"
       ],
@@ -63905,6 +63911,15 @@
   },
   "journal": [
     {
+      "k": "mwf9b39x0abpc",
+      "t": 1794591271509,
+      "b": "614d778ed0",
+      "a": "edit",
+      "i": "293610",
+      "n": "Doctor X: Mafia in White",
+      "d": "sources 26 → 27"
+    },
+    {
       "k": "mwf8rg36057fs",
       "t": 1794590354994,
       "b": "614d778ed0",
@@ -66594,15 +66609,6 @@
       "i": "335951",
       "n": "Summer Vacation",
       "d": ""
-    },
-    {
-      "k": "mvph0pvlc8vuo",
-      "t": 1793032103937,
-      "b": "614d778ed0",
-      "a": "edit",
-      "i": "334517",
-      "n": "Oh! My Guard",
-      "d": "sources 1 → 2"
     }
   ],
   "refreshAt": 1792423579957
