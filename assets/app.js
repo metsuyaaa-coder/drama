@@ -529,7 +529,7 @@ function toggleList(id) {
   try { localStorage.setItem(LISTKEY, JSON.stringify(l)); } catch (e) { toast("Stockage plein ou bloqué par le navigateur"); }
   return k === -1;
 }
-function listItems() { return readList().map(function (id) { return byId(id); }).filter(Boolean); }
+function listItems() { return readList().map(function (id) { return byId(id); }).filter(inScope); }   /* Ma liste : propre à chaque espace (site principal / BL) */
 /* Met à jour la fiche en place après un changement « vu », sans tout redessiner */
 function refreshSeen(s) {
   var seen = readSeen()[s.id] || {};
@@ -862,6 +862,7 @@ function nToggleSub(id) {
   return true;
 }
 function nTextOf(n) {
+  if (n.kind === "request") return "Ta demande de " + (n.media === "movie" ? "film" : "série") + " « " + n.name + " » a été complétée.";
   var e = n.eps || [];
   if (e.length === 1) { var p = String(e[0]).split("x"); return (+p[0] === 0 ? "Épisode spécial " : "Saison " + p[0] + " · Épisode ") + p[1] + " : un lien vient d'être ajouté."; }
   return e.length + " nouveaux épisodes ont un lien.";
@@ -886,6 +887,16 @@ function notifScan() {
     var n = { id: "ep:" + id + ":" + Date.now(), kind: "episode", sid: String(id), name: s.name, eps: add.slice(0, 60), at: Date.now(), read: false };
     items.unshift(n); fresh.push(n);
   });
+  /* demandes que j'ai faites : le titre est maintenant au catalogue */
+  var mine = nMyReqs(), ch2 = false;
+  mine.forEach(function (r) {
+    if (!r || r.done) return;
+    var f = myReqFiche(r); if (!f) return;
+    r.done = true; ch2 = true; changed = true;
+    var n = { id: "rq:" + r.k + ":" + Date.now(), kind: "request", sid: String(f.id), name: f.name, media: isMovie(f) ? "movie" : "tv", poster: f.poster || "", at: Date.now(), read: false };
+    items.unshift(n); fresh.push(n);
+  });
+  if (ch2) nSave(MYREQKEY, mine);
   if (changed) { nSave(NSUBKEY, subs); nSave(NITEMKEY, items.slice(0, 60)); }
   fresh.forEach(nSystemNotify);
 }
@@ -909,7 +920,7 @@ function nMsgs() {
   return (INBOX.items || []).filter(function (m) { return gone.indexOf(m.id) < 0 && (!m.at || m.at > old); });
 }
 function nAll() {
-  var rd = nArr(NREADKEY), list = nArr(NITEMKEY).map(function (n) { return { type: "ep", id: n.id, at: n.at || 0, read: !!n.read, n: n }; });
+  var rd = nArr(NREADKEY), list = nArr(NITEMKEY).map(function (n) { return { type: n.kind === "request" ? "rq" : "ep", id: n.id, at: n.at || 0, read: !!n.read, n: n }; });
   nMsgs().forEach(function (m) { list.push({ type: "msg", id: m.id, at: m.at || 0, read: rd.indexOf(m.id) > -1 || (m.at || 0) < NSINCE, m: m }); });
   list.sort(function (a, b) { return b.at - a.at; });
   return list;
@@ -925,6 +936,11 @@ function nAgo(t) {
 }
 function nItemHTML(x) {
   var rm = '<button type="button" class="nx" data-nrm="' + esc(x.id) + '" aria-label="Supprimer la notification" title="Supprimer">' + nsvg("x") + '</button>';
+  if (x.type === "rq") {
+    var q = x.n;
+    return '<div class="nitem lk rq' + (x.read ? "" : " unread") + '"><span class="ni nposter">' + (q.poster ? '<img src="' + esc(th(q.poster)) + '" alt="" loading="lazy">' : nsvg("checks")) + '</span><span class="nt"><b>' + esc(q.name) + '</b><p>' + esc(nTextOf(q)) + '</p><small>' + esc(nAgo(q.at)) + ' · Ouvrir la fiche</small></span>' + rm +
+      '<a class="nstretch" href="/serie/' + esc(q.sid) + '" data-nopen="' + esc(x.id) + '" aria-label="' + esc(q.name + " : ouvrir la fiche") + '"></a></div>';
+  }
   if (x.type === "ep") {
     var n = x.n;
     return '<div class="nitem lk' + (x.read ? "" : " unread") + '"><span class="ni">' + nsvg("tv") + '</span><span class="nt"><b>' + esc(n.name) + '</b><p>' + esc(nTextOf(n)) + '</p><small>' + esc(nAgo(n.at)) + '</small></span>' + rm +
@@ -1001,7 +1017,7 @@ document.addEventListener("click", function (e) {
 });
 /* supprimer une notification (bouton X ou glissement) */
 function nRemove(id) {
-  if (String(id).indexOf("ep:") === 0) nSave(NITEMKEY, nArr(NITEMKEY).filter(function (n) { return n.id !== id; }));
+  if (/^(ep|rq):/.test(String(id))) nSave(NITEMKEY, nArr(NITEMKEY).filter(function (n) { return n.id !== id; }));
   else { var g = nArr(NGONEKEY); if (g.indexOf(id) < 0) g.push(id); nSave(NGONEKEY, g.slice(-100)); }
 }
 /* glisser une notification vers la gauche ou la droite (au doigt) pour la supprimer ; le X reste disponible */
@@ -1043,7 +1059,7 @@ document.addEventListener("keydown", function (e) {
 /* Visiteurs : s'ils suivent des séries, on relit le catalogue de temps en temps pour les prévenir sans qu'ils rechargent la page */
 var nPolling = false, nLastPoll = Date.now();
 function notifPoll() {
-  if (ADMIN || PREVIEW || nPolling || document.hidden || !Object.keys(nSubs()).length || Date.now() - nLastPoll < 60000) return;
+  if (ADMIN || PREVIEW || nPolling || document.hidden || (!Object.keys(nSubs()).length && !nMyReqs().some(function (r) { return r && !r.done; })) || Date.now() - nLastPoll < 60000) return;
   nPolling = true; nLastPoll = Date.now();
   loadCatalog().then(function () { nPolling = false; }, function () { nPolling = false; });
 }
@@ -1202,7 +1218,7 @@ function ghBackup(gi, src, tried, opts) {
   if (!n) return Promise.resolve();
   if (!(opts && opts.manual) && Date.now() - (+readJSON(BKKEY, 0) || 0) < BKGAP) return Promise.resolve();
   var name = "catalog-" + bkStamp(new Date()) + "-" + myId() + ".json";
-  var body = { message: "Sauvegarde avant publication (" + myId() + ")", content: btoa(unescape(encodeURIComponent(JSON.stringify(src, null, 2)))), branch: gi.branch };
+  var body = { message: "Sauvegarde avant publication (" + myId() + ")", content: btoa(unescape(encodeURIComponent(JSON.stringify(src)))), branch: gi.branch };
   return fetch(bkDirUrl(gi) + "/" + name, { method: "PUT", headers: ghHeaders({ "Content-Type": "application/json" }), body: JSON.stringify(body) }).then(function (r) {
     if (!r.ok) throw ghErr(r);
     try { localStorage.setItem(BKKEY, String(Date.now())); } catch (e) {}
@@ -1280,7 +1296,7 @@ var CREDKEY = "noir.credits", CREDITS = readJSON(CREDKEY, null);
 var VIPKEY = "noir.vip", VIPREGKEY = "noir.vipreg", VIPPLAINKEY = "noir.vipplain";
 var VIPREG = readJSON(VIPREGKEY, null), VIP = readJSON(VIPKEY, null);
 var VIPTHEMES = { gold: "#0b0905", rose: "#0d0509", emerald: "#04100b", ice: "#04101a", fire: "#0f0602", silver: "#08080a", lime: "#070d02" };
-var CREDDEFAULT = "# Développeur\nMeyriuu\n\n# Uploadeurs\nMeyriuu\nNebula\n\n# Merci\n> Un grand merci à tous ceux qui soutiennent DramaByM.";
+var CREDDEFAULT = "# Développeur et fondateur\nMeyriuu\n\n# Uploadeurs\nMeyriuu\nNebula\n\n# Merci\n> Un grand merci à tous ceux qui soutiennent DramaByM.";
 function hex2rgb(h) { return [parseInt(h.substr(1, 2), 16), parseInt(h.substr(3, 2), 16), parseInt(h.substr(5, 2), 16)]; }
 function rgb2hex(a) { return "#" + a.map(function (v) { v = Math.max(0, Math.min(255, Math.round(v))); return ("0" + v.toString(16)).slice(-2); }).join(""); }
 function mixc(a, b, t) { return a.map(function (v, i) { return v + (b[i] - v) * t; }); }
@@ -1880,6 +1896,24 @@ function visitorId() {
   return v;
 }
 function reqToday() { var r = readJSON("noir.reqDay", null); return r && r.d === todayKey() ? (+r.n || 0) : 0; }
+/* Mes demandes : gardées sur l'appareil (par profil) pour prévenir dans la cloche dès que le titre est ajouté */
+var MYREQKEY = "noir.myreqs";
+function nMyReqs() { return nArr(MYREQKEY); }
+function myReqFiche(r) {
+  var f = r.tmdb ? byId(r.media === "movie" ? "m" + r.tmdb : String(r.tmdb)) : null;
+  if (!f) {
+    var it = (REQS.items || []).filter(function (x) { return x.status === "done" && x.sid && ((r.tmdb && x.tmdb && String(x.tmdb) === String(r.tmdb) && x.media === r.media) || String(x.title).toLowerCase() === String(r.title).toLowerCase()); })[0];
+    if (it) f = byId(it.sid);
+  }
+  if (!f) f = reqFind(r.title);
+  return f && !!f.bl === !!r.bl ? f : null;
+}
+function myReqAdd(r) {
+  var rec = { k: (r.bl ? "b" : "s") + "-" + (r.tmdb ? r.media + r.tmdb : String(r.title).toLowerCase().replace(/\W+/g, "").slice(0, 24)), title: String(r.title || "").slice(0, 150), media: r.media === "movie" ? "movie" : "tv", tmdb: String(r.tmdb || "").replace(/\D/g, ""), bl: !!r.bl, at: Date.now(), done: false };
+  if (myReqFiche(rec)) return;   /* déjà au catalogue : rien à annoncer */
+  var l = nMyReqs().filter(function (x) { return x.k !== rec.k && Date.now() - (+x.at || 0) < 90 * 864e5; });
+  l.unshift(rec); nSave(MYREQKEY, l.slice(0, 40));
+}
 function bumpReq() { try { localStorage.setItem("noir.reqDay", JSON.stringify({ d: todayKey(), n: reqToday() + 1 })); } catch (e) {} }
 var REQ_URL = "https://formsubmit.co/ajax/318f68b57ef527181c572ab6c865d64a";
 /* Notifications Discord : le site appelle /api/notify (api/notify.js), qui garde l'adresse du webhook secrète. Aucune base de données. */
@@ -1910,7 +1944,7 @@ function paintReport(sent) {
 function refreshReport() { paintReport(reportedAlready()); }
 
 /* Fenêtre « Quel est le problème ? » : serveur mort ou vidéo qui ne marche pas */
-var reporting = false;
+var reporting = false, rpReason = "";
 function reportMsg(t, cls) { var m = $("#rpmsg"); m.textContent = t || ""; m.className = "rpmsg" + (cls ? " " + cls : ""); }
 function openReport() {
   var s = cur.sources && cur.sources[cur.i]; if (!s) return;
@@ -1919,26 +1953,38 @@ function openReport() {
   Object.keys(seen).forEach(function (k) { if (now - seen[k] <= 86400000) n++; });
   var d = $("#reportdlg");
   $("#rpwhat").textContent = (cur.title || "") + (cur.sub ? " · " + cur.sub : "") + " · " + (s.name || "Serveur");
-  $("#rpopts").hidden = false; $("#rpcancel").textContent = "Annuler";
-  Array.prototype.forEach.call(document.querySelectorAll("#rpopts .ropt"), function (b) { b.disabled = n >= 10; });
+  $("#rpopts").hidden = false; $("#rpform").hidden = false; $("#rpsend").hidden = false; $("#rpcancel").textContent = "Annuler";
+  rpReason = ""; $("#rpnote").value = ""; $("#rpvpn").checked = false; $("#rpcnt").textContent = "0";
+  Array.prototype.forEach.call(document.querySelectorAll("#rpopts .ropt"), function (b) { b.disabled = n >= 10; b.classList.remove("on"); b.setAttribute("aria-pressed", "false"); });
+  $("#rpsend").disabled = n >= 10;
   reportMsg(n >= 10 ? "Limite de signalements atteinte pour aujourd'hui." : "", n >= 10 ? "err" : "");
   if (d.showModal && !d.open) d.showModal();
 }
-function sendReport(reason) {
+/* Envoi : il faut choisir le problème, le décrire (10 caractères minimum) et confirmer avoir essayé un VPN */
+function submitReport() {
+  if (reporting) return;
+  var note = ($("#rpnote").value || "").replace(/\s+/g, " ").trim();
+  if (!rpReason) { reportMsg("Choisis d'abord le type de problème.", "err"); return; }
+  if (note.length < 10) { reportMsg("Décris le problème en quelques mots (10 caractères minimum).", "err"); $("#rpnote").focus(); return; }
+  if (!$("#rpvpn").checked) { reportMsg("Coche la case pour confirmer que tu as essayé avec un VPN.", "err"); return; }
+  sendReport(rpReason, note);
+}
+function sendReport(reason, note) {
   var s = cur.sources && cur.sources[cur.i]; if (!s || reporting) return;
   var key = reportKey();
   reporting = true; reportMsg("Envoi du signalement…");
-  Array.prototype.forEach.call(document.querySelectorAll("#rpopts .ropt"), function (b) { b.disabled = true; });
-  notifyDiscord({ kind: "deadlink", reason: reason === "video" ? "video" : "dead", title: cur.title || "", sub: cur.sub || "", source: s.name || "", url: s.url || "", page: location.href }).then(function (ok) {
+  var lock = function (v) { Array.prototype.forEach.call(document.querySelectorAll("#rpopts .ropt"), function (b) { b.disabled = v; }); $("#rpsend").disabled = v; $("#rpnote").disabled = v; $("#rpvpn").disabled = v; };
+  lock(true);
+  notifyDiscord({ kind: "deadlink", reason: reason === "video" ? "video" : "dead", note: note, vpn: true, vid: visitorId(), title: cur.title || "", sub: cur.sub || "", source: s.name || "", url: s.url || "", page: location.href }).then(function (ok) {
     reporting = false;
     if (!ok) {
       reportMsg("Envoi impossible pour l'instant, réessaie dans un instant.", "err");
-      Array.prototype.forEach.call(document.querySelectorAll("#rpopts .ropt"), function (b) { b.disabled = false; });
+      lock(false);
       return;
     }
     var seen = readJSON("noir.reported", {}); seen[key] = Date.now();
     try { localStorage.setItem("noir.reported", JSON.stringify(seen)); } catch (e) {}
-    $("#rpopts").hidden = true; $("#rpcancel").textContent = "Fermer";
+    $("#rpopts").hidden = true; $("#rpform").hidden = true; $("#rpsend").hidden = true; lock(false); $("#rpcancel").textContent = "Fermer";
     reportMsg("✓ Signalement envoyé, merci !", "ok");
     if (reportKey() === key) paintReport(true);
     setTimeout(function () { var d = $("#reportdlg"); if (d.open) d.close(); }, 1800);
@@ -1946,9 +1992,15 @@ function sendReport(reason) {
 }
 $("#reportdlg").addEventListener("click", function (e) {
   var o = e.target.closest(".ropt");
-  if (o && !o.disabled) { sendReport(o.dataset.reason); return; }
+  if (o && !o.disabled) {
+    rpReason = o.dataset.reason;
+    Array.prototype.forEach.call(document.querySelectorAll("#rpopts .ropt"), function (b) { var on = b === o; b.classList.toggle("on", on); b.setAttribute("aria-pressed", on ? "true" : "false"); });
+    reportMsg(""); return;
+  }
+  if (e.target.closest("#rpsend")) { submitReport(); return; }
   if (e.target === this || e.target.closest("#rpcancel")) this.close();
 });
+$("#rpnote").addEventListener("input", function () { $("#rpcnt").textContent = this.value.length; reportMsg(""); });
 document.addEventListener("click", function (e) {
   if (e.target.closest("#preport")) { e.preventDefault(); openReport(); }
 });
@@ -1961,7 +2013,7 @@ function viewRequest(pre, kind) {
     '<p class="note" style="margin:-6px 0 0">Laisse ton pseudo Discord pour que je puisse te prévenir quand ton titre est ajouté.</p>' +
     '<div class="rqwrap"><label class="f"><span>Nom du drama ou du film</span><input type="text" name="titre" id="reqtitre" required maxlength="120" value="' + esc(t) + '" autocomplete="off" placeholder="Tape le titre, dans n\'importe quelle langue" role="combobox" aria-expanded="false" aria-controls="reqsugg" aria-autocomplete="list"></label><div class="sugg tsug" id="reqsugg" role="listbox" hidden></div></div>' +
     '<p class="note" id="reqok">Choisis ton titre dans la liste proposée par TMDB pour pouvoir envoyer la demande.</p>' +
-    '<label class="f"><span>Ta demande</span><select name="type"><option value="stream"' + (kind === "stream" ? " selected" : "") + '>Streaming</option><option value="dl"' + (kind === "dl" ? " selected" : "") + '>Téléchargement</option><option value="both"' + (kind === "both" ? " selected" : "") + '>Les deux (streaming + téléchargement)</option></select></label>' +
+    '<input type="hidden" name="type" value="' + kind + '">' +
     (blOpen() ? '<div class="f"><span class="lbl">Espace</span><div class="langpick"><label class="chk"><input type="checkbox" name="bl"' + (BLMODE ? " checked" : "") + '><i>BL</i></label></div></div>' +
     '<p class="note" style="margin:-6px 0 0">Coche si c\'est un titre BL : il sera ajouté dans l\'espace BL.</p>' : "") +
     '<label class="f"><span>Date de sortie (ou année)</span><input type="text" name="date" class="auto" readonly maxlength="40" placeholder="Rempli automatiquement"></label>' +
@@ -2093,7 +2145,7 @@ document.addEventListener("click", function (e) {
 var listTab = "list";
 function seenTitles() {
   var all = readSeen(), out = [];
-  allSorted().forEach(function (s) {
+  sortedDb().forEach(function (s) {
     if (isMovie(s) || !all[s.id]) return;
     var n = 0, total = 0;
     (s.seasons || []).forEach(function (se) {
@@ -2119,7 +2171,7 @@ var MLTABS = ["list", "subs", "seen", "cols"], MLICON = { list: "bookmark", subs
 var mlQuery = "", mlSort = "recent";
 function subsItems() {
   var subs = nSubs(), out = [];
-  Object.keys(subs).forEach(function (id) { var f = byId(id); if (f) out.push(Object.assign({}, f, { _at: (subs[id] && subs[id].at) || 0 })); });
+  Object.keys(subs).forEach(function (id) { var f = byId(id); if (f && inScope(f)) out.push(Object.assign({}, f, { _at: (subs[id] && subs[id].at) || 0 })); });
   return out.sort(function (x, y) { return y._at - x._at; });
 }
 function mlProgress(s) {
@@ -2149,7 +2201,7 @@ function mlData() {
     var m = function (ids) { return ids.map(function (id) { return byId(id); }).filter(Boolean); };
     return { list: m(mlShared.l), subs: m(mlShared.s), seen: m(mlShared.w), cols: mlShared.c };
   }
-  return { list: listItems(), subs: subsItems(), seen: seenTitles(), cols: readCols() };
+  return { list: listItems(), subs: subsItems(), seen: seenTitles(), cols: readCols().filter(colHere) };
 }
 function mlFilter(arr, tab) {
   var q = mlQuery.trim().toLowerCase(), out = arr.slice();
@@ -2174,6 +2226,11 @@ function mlCard(s, i, tab) {
       inner += '<span class="mlring" style="--p:' + pr.p.toFixed(3) + '"><svg viewBox="0 0 36 36" aria-hidden="true"><circle class="bg" cx="18" cy="18" r="15.9" pathLength="100"/><circle class="fg" cx="18" cy="18" r="15.9" pathLength="100"/></svg><b>' + (pr.p >= 1 ? nsvg("check") : Math.round(pr.p * 100) + "%") + '</b></span>';
     } else if (pr.n) inner += '<span class="mlbar"><i style="--p:' + pr.p.toFixed(3) + '"></i></span>';
   }
+  if (tab === "seen" && pr && pr.t) {
+    var dro = pr.p < 1 && !!readDropped()[s.id];
+    if (dro) inner += '<span class="mlstat">Abandonné</span>';
+    if (pr.p < 1) inner += '<button type="button" class="mlb rm" data-drop="' + id + '" data-on="' + (dro ? 0 : 1) + '" aria-label="' + (dro ? "Reprendre" : "Abandonner") + '" title="' + (dro ? "Reprendre" : "Abandonner") + '">' + nsvg(dro ? "eye" : "x") + '</button>';
+  }
   var acts = (tab === "col" ? '<button type="button" class="mlb rm" data-colrm="' + id + '" aria-label="Retirer de la collection" title="Retirer de la collection">' + nsvg("bookmark-x") + '</button>' : '') + (tab === "list" ? '<button type="button" class="mlb rm" data-mlrm="' + id + '" aria-label="Retirer de ma liste" title="Retirer de ma liste">' + nsvg("bookmark-x") + '</button>' : '') +
     (ro ? (function () { var on = inList(s.id), tt = on ? "Retirer de ma liste" : "Ajouter à ma liste"; return '<button type="button" class="mlb bm' + (on ? ' on' : '') + '" data-lsbm="' + id + '" aria-pressed="' + (on ? 'true' : 'false') + '" aria-label="' + tt + '" title="' + tt + '">' + nsvg("bookmark") + '</button>'; })() : '') +
     (tab === "subs" ? '<button type="button" class="mlb rm" data-unfollow="' + id + '" aria-label="Ne plus suivre" title="Ne plus suivre">' + nsvg("bell-off") + '</button>' : '');
@@ -2181,6 +2238,33 @@ function mlCard(s, i, tab) {
     (s.poster ? '<img loading="lazy" decoding="async" src="' + esc(th(s.poster)) + '" alt="">' : '<div class="ph">' + esc(String(s.name).charAt(0)) + '</div>') +
     (langLabel(s) ? '<span class="lang">' + esc(langLabel(s)) + '</span>' : '') + (newEpisode(s) ? newBadge("Nouvel ép.") : '') + inner + acts + '</div>' +
     '<a class="mlmeta" href="/serie/' + id + '"><b>' + esc(s.name) + '</b><span>' + esc(meta) + '</span>' + (extra ? '<em>' + esc(extra) + '</em>' : '') + '</a></div>';
+}
+/* « Vu » : En cours de visionnage / Terminés / Abandonnés (l'abandon se marque à la main, par profil) */
+var DROPKEY = "noir.dropped", MLVIEWKEY = "noir.mlview", seenCat = "going";
+function mlViewGet() { return readJSON(MLVIEWKEY, "rows") === "grid" ? "grid" : "rows"; }
+function mlViewSet(v) { try { localStorage.setItem(MLVIEWKEY, JSON.stringify(v === "grid" ? "grid" : "rows")); } catch (e) {} }
+var MLVIEWICO = { rows: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>', grid: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="3" y="3" width="8" height="8" rx="1.5"/><rect x="13" y="3" width="8" height="8" rx="1.5"/><rect x="3" y="13" width="8" height="8" rx="1.5"/><rect x="13" y="13" width="8" height="8" rx="1.5"/></svg>' };
+var SEENCATS = [["going", "En cours de visionnage"], ["done", "Terminés"], ["drop", "Abandonnés"]];
+function readDropped() { var v = readJSON(DROPKEY, {}); return v && typeof v === "object" && !Array.isArray(v) ? v : {}; }
+function setDropped(id, on) { var d = readDropped(); if (on) d[id] = Date.now(); else delete d[id]; try { localStorage.setItem(DROPKEY, JSON.stringify(d)); } catch (e) {} }
+function seenCatOf(s, drop) { if (drop[s.id]) return "drop"; return s._t && s._n >= s._t ? "done" : "going"; }
+function seenCounts(arr) { var d = readDropped(), c = { going: 0, done: 0, drop: 0 }; arr.forEach(function (s) { c[seenCatOf(s, d)]++; }); return c; }
+function seenCatAuto(arr) { var c = seenCounts(arr); return c.going ? "going" : c.done ? "done" : c.drop ? "drop" : "going"; }
+function seenEmpty(q) {
+  if (q) return '<div class="mlempty">' + nsvg("search", "mlei") + '<h3>Aucun résultat</h3><p>Rien ne correspond à « ' + esc(mlQuery.trim()) + ' » dans cette catégorie.</p></div>';
+  var T = { going: ["Rien en cours", "Les séries que tu as commencées sans les finir apparaissent ici."], done: ["Rien de terminé", "Une série dont tu as vu tous les épisodes passe ici."], drop: ["Aucun abandon", "Sur une série en cours, clique sur « Abandonner » pour la ranger ici. Tu peux la reprendre quand tu veux."] }[seenCat];
+  return '<div class="mlempty">' + nsvg("eye", "mlei") + '<h3>' + T[0] + '</h3><p>' + T[1] + '</p></div>';
+}
+/* Statistiques : combien de K-Drama, J-Drama, C-Drama… tu as vus (au moins un épisode) */
+function mlStatsPaint(L) {
+  var el = $("#mlstats"); if (!el) return;
+  if (mlShared || !L.seen.length) { el.innerHTML = ""; return; }
+  var g = { K: [0, 0], J: [0, 0], C: [0, 0], T: [0, 0], O: [0, 0] }, ep = 0, done = 0;
+  L.seen.forEach(function (s) { var d = dramaType(s) || "O", fin = s._t && s._n >= s._t; g[d][0]++; if (fin) { g[d][1]++; done++; } ep += s._n || 0; });
+  var tile = function (n, lab, sub, cls) { return '<div class="mlst' + (cls ? " " + cls : "") + '"><b>' + n + '</b><span>' + lab + '</span>' + (sub ? '<small>' + sub + '</small>' : '') + '</div>'; };
+  var fin = function (n) { return n ? n + (n > 1 ? " terminées" : " terminée") : ""; };
+  el.innerHTML = '<div class="mlstats">' + tile(L.seen.length, "Séries vues", fin(done), "tot") + tile(ep, ep > 1 ? "Épisodes vus" : "Épisode vu", "", "tot") +
+    tile(g.K[0], "K-Drama", fin(g.K[1])) + tile(g.J[0], "J-Drama", fin(g.J[1])) + tile(g.C[0], "C-Drama", fin(g.C[1])) + tile(g.T[0], "Thaï / Taïwan", fin(g.T[1])) + (g.O[0] ? tile(g.O[0], "Autres", fin(g.O[1])) : "") + '</div>';
 }
 /* Onglet « Vus » : une ligne par série avec progression, dernier épisode vu et prochain à regarder */
 function mlSeenRow(s, i) {
@@ -2191,14 +2275,15 @@ function mlSeenRow(s, i) {
       else if (!next) next = "S" + se.number + " · Ép. " + ep.number;
     });
   });
-  var done = pr.t && pr.n >= pr.t, pct = Math.round(pr.p * 100);
+  var done = pr.t && pr.n >= pr.t, pct = Math.round(pr.p * 100), dr = !done && !!readDropped()[s.id];
   var meta = [isMovie(s) ? "Film" : "Série", s.year, s.rating ? "★ " + s.rating : ""].filter(Boolean).join("  ·  ");
-  return '<a class="mls' + (done ? " done" : "") + '" style="--i:' + Math.min(i || 0, 14) + ';--p:' + pr.p.toFixed(3) + '" href="/serie/' + id + '">' +
+  return '<a class="mls' + (done ? " done" : "") + (dr ? " drop" : "") + '" style="--i:' + Math.min(i || 0, 14) + ';--p:' + pr.p.toFixed(3) + '" href="/serie/' + id + '">' +
     '<span class="mlsp">' + (s.poster ? '<img loading="lazy" decoding="async" src="' + esc(th(s.poster)) + '" alt="">' : '<em>' + esc(String(s.name).charAt(0)) + '</em>') + '</span>' +
     '<span class="mlsb"><b>' + esc(s.name) + '</b><span class="mlsm">' + esc(meta) + '</span>' +
     '<span class="mlsbar"><i></i></span>' +
     '<span class="mlsl"><span>' + (pr.t ? pr.n + ' / ' + pr.t + ' épisodes · ' + pct + ' %' : 'Aucun épisode') + '</span>' + (last ? '<span>Dernier vu : ' + esc(last) + '</span>' : '') + '</span></span>' +
-    '<span class="mlsc ' + (done ? "ok" : "go") + '">' + (done ? nsvg("check") + 'Terminé' : (next ? 'Suivant<small>' + esc(next) + '</small>' : 'En cours')) + '</span></a>';
+    '<span class="mlsc ' + (done ? "ok" : "go") + '">' + (done ? nsvg("check") + 'Terminé' : dr ? 'Abandonné' : (next ? 'Suivant<small>' + esc(next) + '</small>' : 'En cours')) + '</span>' +
+    (done ? '' : '<button type="button" class="mlsx" data-drop="' + id + '" data-on="' + (dr ? 0 : 1) + '">' + (dr ? "Reprendre" : "Abandonner") + '</button>') + '</a>';
 }
 function mlEmpty(tab, q) {
   if (mlShared && !q) return '<div class="mlempty">' + nsvg(MLICON[tab], "mlei") + '<h3>Rien ici</h3><p>Cet onglet est vide dans la liste partagée.</p></div>';
@@ -2244,10 +2329,15 @@ function mlRenderBody(L, still, swap) {
     var cs = $("#mlsum"); if (cs) cs.textContent = carr.length + (carr.length > 1 ? " collections" : " collection");
     return;
   }
-  var arr = mlFilter(L[listTab], listTab);
+  var arr = mlFilter(L[listTab], listTab), seenMode = listTab === "seen" && !mlShared, chips = "";
+  if (seenMode) {
+    var cn = seenCounts(L.seen), dd = readDropped();
+    chips = '<div class="mlcats" role="tablist">' + SEENCATS.map(function (k) { return '<button type="button" class="mlcat' + (seenCat === k[0] ? " on" : "") + '" role="tab" aria-selected="' + (seenCat === k[0] ? "true" : "false") + '" data-seencat="' + k[0] + '">' + k[1] + '<b>' + cn[k[0]] + '</b></button>'; }).join("") + '<div class="mlview" role="group" aria-label="Affichage">' + [["rows", "Lignes"], ["grid", "Grille"]].map(function (v) { return '<button type="button" class="' + (mlViewGet() === v[0] ? "on" : "") + '" data-mlview="' + v[0] + '" aria-pressed="' + (mlViewGet() === v[0] ? "true" : "false") + '" aria-label="' + v[1] + '" title="' + v[1] + '">' + MLVIEWICO[v[0]] + '</button>'; }).join("") + '</div></div>';
+    arr = arr.filter(function (s) { return seenCatOf(s, dd) === seenCat; });
+  }
   body.className = swap ? "mlswap" : "";
   if (swap) { void body.offsetWidth; body.className = "mlswap"; }
-  body.innerHTML = arr.length ? (listTab === "seen" && !mlShared ? '<div class="mlsgrid' + (still ? ' still' : '') + '">' + arr.map(function (s, i) { return mlSeenRow(s, i); }).join("") + '</div>' : '<div class="mlgrid' + (still ? ' still' : '') + '">' + arr.map(function (s, i) { return mlCard(s, i, mlShared ? "ro" : listTab); }).join("") + '</div>') : mlEmpty(listTab, q && L[listTab].length);
+  body.innerHTML = chips + (arr.length ? (listTab === "seen" && !mlShared && mlViewGet() === "rows" ? '<div class="mlsgrid' + (still ? ' still' : '') + '">' + arr.map(function (s, i) { return mlSeenRow(s, i); }).join("") + '</div>' : listTab === "seen" && !mlShared ? '<div class="mlgrid dense' + (still ? ' still' : '') + '">' + arr.map(function (s, i) { return mlCard(s, i, "seen"); }).join("") + '</div>' : '<div class="mlgrid' + (still ? ' still' : '') + '">' + arr.map(function (s, i) { return mlCard(s, i, mlShared ? "ro" : listTab); }).join("") + '</div>') : (seenMode ? seenEmpty(q) : mlEmpty(listTab, q && L[listTab].length)));
   var sum = $("#mlsum"); if (sum) {
     var n = arr.length;
     if (listTab === "seen" && !mlShared) { var ep = 0; arr.forEach(function (x) { ep += x._n || 0; }); sum.textContent = ep + (ep > 1 ? " épisodes vus" : " épisode vu"); }
@@ -2265,14 +2355,15 @@ function mlBuild() {
     '<div class="mltitle"><svg class="mllogo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"/><path class="sp" d="m12 7.2.9 2 2.1.3-1.5 1.5.4 2.1-1.9-1-1.9 1 .4-2.1L9 9.5l2.1-.3z"/></svg>' +
     (mlShared ? '<div class="mlhead"><h1>Liste partagée</h1><p class="note">Aperçu en lecture seule · rien n\'est ajouté à ta liste sans ton accord</p></div></div>' +
       '<div class="mlsact"><button type="button" class="btn" data-mlsadd>' + nsvg("plus") + '<span>Ajouter à ma liste</span></button><a class="btn ghost" href="/ma-liste">' + nsvg("bookmark") + '<span>Voir ma liste</span></a></div>' :
-      '<div class="mlhead"><h1>Ma liste</h1><p class="note">Enregistrée sur cet appareil</p></div>' +
+      '<div class="mlhead"><h1>Ma liste' + (BLMODE ? " BL" : "") + '</h1><p class="note">' + (BLMODE ? "Ta liste de l\'espace BL · enregistrée sur cet appareil" : "Enregistrée sur cet appareil") + '</p></div>' +
       '<button type="button" class="btn small ghost share mlshare" id="mlshare" data-mlshare aria-label="Partager toute ma liste" title="Partager toute ma liste" hidden>' + SHICON + '<span>Partager</span></button></div>') +
     '<div class="mltabs four" id="mltabs" data-i="' + MLTABS.indexOf(listTab) + '" role="tablist"><span class="mlind"></span>' + tabs + '</div></div></div>' +
-    '<div class="wrap"><div class="mltools"><label class="mlsearch">' + nsvg("search") + '<input id="mlq" type="search" placeholder="Rechercher dans ma liste" autocomplete="off" aria-label="Rechercher dans ma liste"></label>' +
+    '<div class="wrap"><div id="mlstats"></div><div class="mltools"><label class="mlsearch">' + nsvg("search") + '<input id="mlq" type="search" placeholder="Rechercher dans ma liste" autocomplete="off" aria-label="Rechercher dans ma liste"></label>' +
     '<div class="mlsort" role="group" aria-label="Trier">' + sorts + '</div><div class="mlend"><span class="mlsum" id="mlsum"></span><button type="button" class="colplus" id="colplus" data-colnew aria-label="Nouvelle collection" title="Nouvelle collection" hidden>' + nsvg("plus") + '</button></div></div><div id="mlbody"></div></div></div>';
-  mlSetTabs(L, true); mlRenderBody(L, false, false);
+  if (listTab === "seen" && !mlShared) seenCat = seenCatAuto(L.seen);
+  mlSetTabs(L, true); mlRenderBody(L, false, false); mlStatsPaint(L);
 }
-function mlPatch(still) { var L = mlData(); mlSetTabs(L, false); mlRenderBody(L, !!still, !still); }
+function mlPatch(still) { var L = mlData(); mlSetTabs(L, false); mlRenderBody(L, !!still, !still); mlStatsPaint(L); }
 function viewMyList() {
   var prev = mlShared;
   mlShared = null;
@@ -2999,6 +3090,18 @@ function trailersSection() {
       ? 'Activées : les fiches qui ont une vidéo affichent « Bande-annonce » et la lisent dans le lecteur du site. Les vidéos viennent de TMDB : pour les fiches déjà au catalogue, lance « Tout mettre à jour depuis TMDB ».'
       : 'Désactivées : le bouton « Bande-annonce » est caché pour tout le monde.') + '</p>', 2);
 }
+var AVCATS = [["k", "K-Drama"], ["j", "J-Drama"], ["c", "C-Drama"], ["t", "Thaï"], ["b", "BL"], ["x", "Spécial"]];
+function avatarsSection() {
+  var list = avatarItems(), opts = AVCATS.map(function (c) { return '<option value="' + c[0] + '">' + c[1] + '</option>'; }).join("");
+  var rows = list.length ? '<div class="pnavs">' + list.map(function (x) {
+    return '<div class="pnav"><img src="' + esc(x.src) + '" alt="" loading="lazy"><span><b>' + esc(x.name || "Photo") + '</b><small>' + esc((AVCATS.filter(function (c) { return c[0] === x.cat; })[0] || AVCATS[5])[1]) + '</small></span><button type="button" class="btn danger small" data-avdel="' + esc(x.id) + '">Retirer</button></div>';
+  }).join("") + '</div>' : '<p class="note">Aucune photo ajoutée pour l\'instant.</p>';
+  return pnCard("user", "Photos de profil" + pnPill(list.length > 0, list.length + (list.length > 1 ? " photos" : " photo"), "Aucune"), "Ajoute des photos que tout le monde pourra choisir pour son profil.",
+    '<div class="pnavform"><label class="f"><span>Nom</span><input type="text" id="avname" maxlength="24" autocomplete="off" placeholder="ex. Hallyu Star"></label>' +
+    '<label class="f"><span>Catégorie</span><select id="avcat">' + opts + '</select></label>' +
+    '<label class="btn small ghost pnavfile">Choisir une image et l\'ajouter<input type="file" id="avfile" accept="image/*" hidden></label></div>' +
+    '<p class="note">L\'image est rognée en carré (256 px) et envoyée dans ton dépôt GitHub (dossier avatars). Il faut avoir lié GitHub dans le volet admin.</p>' + rows, 3);
+}
 function blSection() {
   var on = blEnabled();
   return pnCard("globe", "Espace BL" + pnPill(on, "Activé", "Désactivé"), "Réservé au Head admin.",
@@ -3644,7 +3747,7 @@ function panBody(tab) {
           ? 'Privé : seul toi (en mode admin) vois les boutons et l\'onglet Télécharger. À la publication, les liens sont retirés de catalog.json, donc personne ne peut les lire dans le fichier. Ils restent sur ce navigateur : fais une sauvegarde complète.'
           : 'Public : tous les visiteurs voient les boutons et l\'onglet Télécharger sur les fiches qui ont des liens.') + '</p>' +
         '<div class="row"><button class="btn ghost small" type="button" data-preview="1">' + pnIco("eye") + '<span>Voir comme un visiteur</span></button></div>', 0) +
-      (head ? adsSection() : '') + (head ? trailersSection() : '') + (head ? blSection() : '') +
+      (head ? adsSection() : '') + (head ? trailersSection() : '') + (head ? blSection() : '') + (head ? avatarsSection() : '') +
       annSection() +
       playerSection();
   }
@@ -4263,7 +4366,7 @@ function renderPlayer() {
   $("#psub").textContent = cur.sub || "";
   paintPlayerHead();
   var rq = "/demande/" + encodeURIComponent(cur.title || "");
-  $("#pdl").innerHTML = dlOpen() ? ((cur.dl || []).length ? dlButtons(cur.dl, "Télécharger", " ghost") : '<a class="btn small ghost" data-reqdl="1" href="' + rq + '/dl">' + DLICON + '<span>Télécharger</span></a>') : "";
+  $("#pdl").innerHTML = dlOpen() && (cur.dl || []).length ? dlButtons(cur.dl, "Télécharger", " ghost") : "";   /* pas de lien de téléchargement : pas de bouton */
   Array.prototype.forEach.call(document.querySelectorAll("#pdl .btn"), function (b) { var n = b.dataset.dlname || "Télécharger"; b.title = n; b.setAttribute("aria-label", n); });
   $("#pdemande").href = rq + "/stream"; $("#pdemande2").href = rq + "/dl";
   /* Sur Playmate / Vidara / Uqload, l'astuce langue s'affiche en premier à chaque changement de serveur */
@@ -4272,8 +4375,8 @@ function renderPlayer() {
   showTip(tipIdx);
   clearInterval(tipTimer); tipTimer = setInterval(function () { showTip(tipIdx + 1); }, 9000);
   $("#pl").style.display = (cur.sources.length > 1 || (cur.sources[0] && cur.sources[0].fansub)) ? "flex" : "none";
-  $("#pone").style.display = cur.sources.length <= 1 ? "flex" : "none";
-  $("#pone2").style.display = (dlOpen() && !(cur.dl || []).length) ? "flex" : "none";
+  $("#pone").style.display = "none";    /* plus de message « demander une autre source / un lien de téléchargement » dans le lecteur */
+  $("#pone2").style.display = "none";
   $("#pnav").style.display = cur.nav ? "flex" : "none";
   $("#peplist").style.display = (cur.nav && cur.nav.eps) ? "" : "none";
   $("#peps").hidden = true; $("#epsback").hidden = true;
@@ -4759,6 +4862,103 @@ document.addEventListener("touchend", function (e) {
 /* ===== Demandes en cours : liste tenue à la main par l'admin, publiée dans catalog.json (pas de base de données) ===== */
 var REQKEY = "noir.reqs", REQS = readJSON(REQKEY, null) || { items: [], at: 0 };
 if (!Array.isArray(REQS.items)) REQS = { items: [], at: 0 };
+/* Photos de profil proposées à tout le monde (ajoutées par le Head admin, publiées dans catalog.json : avatars) */
+var AVKEY = "noir.avatars", AVT = readJSON(AVKEY, null) || { items: [], at: 0 };
+if (!Array.isArray(AVT.items)) AVT = { items: [], at: 0 };
+function avSave() { try { localStorage.setItem(AVKEY, JSON.stringify(AVT)); } catch (e) {} }
+function avatarItems() { return AVT.items.filter(function (x) { return x && /^\w+$/.test(String(x.id)) && /^https:\/\//.test(String(x.src)); }); }
+function avRefresh() { try { if (window.PF && PF.refresh) PF.refresh(); } catch (e) {} }
+function adoptAvatars(data) {
+  if (!data || Array.isArray(data) || !data.avatars || !Array.isArray(data.avatars.items)) return;
+  var r = data.avatars;
+  if (!ADMIN || (+r.at || 0) >= (+AVT.at || 0)) { AVT = { items: r.items, at: +r.at || 0 }; avSave(); avRefresh(); }
+}
+/* ===== Profil du fondateur : carte ouverte depuis le pied de page, modifiable par le Head admin, publiée dans catalog.json (founder) ===== */
+var FNDKEY = "noir.founder", FND_DEF = { name: "Meyriuu", discord: "meyriuu.", photo: "", since: "", at: 0 };
+var FND_PHOTO = /^data:image\/jpeg;base64,[A-Za-z0-9+\/=]{20,90000}$/;
+function fndClean(r) {
+  r = r && typeof r === "object" ? r : {};
+  return { name: String(r.name || FND_DEF.name).replace(/\s+/g, " ").trim().slice(0, 30) || FND_DEF.name, discord: String(r.discord == null ? FND_DEF.discord : r.discord).trim().slice(0, 40),
+    photo: FND_PHOTO.test(String(r.photo || "")) ? String(r.photo) : "", since: String(r.since || "").trim().slice(0, 24), at: +r.at || 0 };
+}
+var FND = fndClean(readJSON(FNDKEY, null));
+function fndSave() { try { localStorage.setItem(FNDKEY, JSON.stringify(FND)); } catch (e) {} }
+function adoptFounder(data) {
+  if (!data || Array.isArray(data) || !data.founder || typeof data.founder !== "object") return;
+  var r = fndClean(data.founder);
+  if (!ADMIN || r.at >= (+FND.at || 0)) { FND = r; fndSave(); fndPaint(); }
+}
+function fndPaint() { var b = $("#devbtn"); if (b) b.textContent = FND.name; }
+function fndCard(edit) {
+  var f = FND, av = f.photo ? '<img src="' + f.photo + '" alt="">' : '<span class="fdl">' + esc(f.name.charAt(0).toUpperCase()) + '</span>';
+  var body;
+  if (edit) {
+    body = '<div class="fdform"><label class="f"><span>Nom</span><input type="text" id="fdname" maxlength="30" value="' + esc(f.name) + '" autocomplete="off"></label>' +
+      '<label class="f"><span>Discord</span><input type="text" id="fddisc" maxlength="40" value="' + esc(f.discord) + '" autocomplete="off" placeholder="ex. pseudo"></label>' +
+      '<label class="f"><span>Depuis (facultatif)</span><input type="text" id="fdsince" maxlength="24" value="' + esc(f.since) + '" autocomplete="off" placeholder="ex. SEPT 2026"></label>' +
+      '<div class="row"><label class="btn small ghost pffile">Changer la photo<input type="file" id="fdphoto" accept="image/*" hidden></label>' + (f.photo ? '<button type="button" class="btn small ghost" data-fdnophoto>Retirer la photo</button>' : '') + '</div>' +
+      '<div class="row"><button type="button" class="btn small" data-fdsave>Enregistrer</button><button type="button" class="btn small ghost" data-fdcancel>Annuler</button></div></div>';
+  } else {
+    body = '<div class="fdinfo"><h2 class="fdname">' + esc(f.name) + '</h2><p class="fdrole">Développeur et fondateur</p>' + (f.since ? '<p class="fdsince">EST. ' + esc(f.since) + '</p>' : '') + '</div>' +
+      '<div class="fdfoot">' + (f.discord ? '<span>Discord</span><b>' + esc(f.discord) + '</b><button type="button" class="btn small ghost" data-copy="' + esc(f.discord) + '">Copier</button>' : '') + (isHead() ? '<button type="button" class="btn small ghost" data-fdedit>Modifier</button>' : '') + '</div>';
+  }
+  return '<div class="fdcard' + (edit ? " editing" : "") + '"><button type="button" class="fdx" data-fdclose aria-label="Fermer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button><div class="fdband"></div>' +
+    '<div class="fdav"><div class="fdframe"><div class="fdin">' + av + '</div></div></div>' + body + '</div>';
+}
+var fdPhotoDraft = null;   /* photo choisie pendant la modification (pas encore enregistrée) : null = inchangée, "" = retirée */
+function fndShow(edit) { var b = $("#fdbody"); if (b) b.innerHTML = fndCard(!!edit); }
+function fndOpen() {
+  var d = $("#founder"); if (!d) return;
+  fdPhotoDraft = null; fndShow(false);
+  if (d.showModal && !d.open) d.showModal(); else d.setAttribute("open", "");
+}
+document.addEventListener("click", function (e) {
+  var t = e.target; if (!t || !t.closest) return;
+  if (t.closest("#devbtn")) { e.preventDefault(); fndOpen(); return; }
+  var d = $("#founder"); if (!d) return;
+  if (t === d || t.closest("[data-fdclose]")) { if (d.close) d.close(); else d.removeAttribute("open"); return; }
+  if (!isHead()) return;
+  if (t.closest("[data-fdedit]")) { fdPhotoDraft = null; fndShow(true); return; }
+  if (t.closest("[data-fdcancel]")) { fdPhotoDraft = null; fndShow(false); return; }
+  if (t.closest("[data-fdnophoto]")) { fdPhotoDraft = ""; var im = d.querySelector(".fdin"); if (im) im.innerHTML = '<span class="fdl">' + esc(($("#fdname").value || FND.name).charAt(0).toUpperCase()) + '</span>'; return; }
+  if (t.closest("[data-fdsave]")) {
+    var nm = ($("#fdname").value || "").trim();
+    if (!nm) { toast("Le nom ne peut pas être vide"); return; }
+    FND = fndClean({ name: nm, discord: $("#fddisc").value, since: $("#fdsince").value, photo: fdPhotoDraft === null ? FND.photo : fdPhotoDraft, at: Date.now() });
+    fndSave(); fndPaint(); markDirty(); fdPhotoDraft = null; fndShow(false);
+    toast("Profil enregistré" + (autoSyncOn() ? "" : ". Clique sur « Publier » pour l'appliquer.")); return;
+  }
+});
+document.addEventListener("change", function (e) {
+  var t = e.target; if (!t || t.id !== "fdphoto" || !isHead()) return;
+  var f = t.files && t.files[0]; t.value = ""; if (!f) return;
+  cropToJpeg(f, 256, .86).then(function (data) {
+    if (!FND_PHOTO.test(data)) throw new Error("Photo trop lourde");
+    fdPhotoDraft = data; var d = $("#founder .fdin"); if (d) d.innerHTML = '<img src="' + data + '" alt="">';
+  }).catch(function (er) { toast(er && er.message ? er.message : "Impossible de lire cette image"); });
+});
+/* image de la galerie -> carré rogné, JPEG léger */
+function cropToJpeg(file, size, q) {
+  return new Promise(function (res, rej) {
+    if (!file || !/^image\//.test(file.type || "")) { rej(new Error("Choisis une image (JPG, PNG, WebP…)")); return; }
+    if (file.size > 15 * 1048576) { rej(new Error("Image trop lourde (15 Mo maximum)")); return; }
+    var rd = new FileReader();
+    rd.onerror = function () { rej(new Error("Lecture de l'image impossible")); };
+    rd.onload = function () {
+      var im = new Image();
+      im.onerror = function () { rej(new Error("Ce fichier n'est pas une image valide")); };
+      im.onload = function () {
+        var s = Math.min(im.width, im.height), c = document.createElement("canvas");
+        c.width = c.height = size;
+        var g = c.getContext("2d"); g.fillStyle = "#000"; g.fillRect(0, 0, size, size);
+        g.drawImage(im, (im.width - s) / 2, (im.height - s) / 2, s, s, 0, 0, size, size);
+        res(c.toDataURL("image/jpeg", q || .85));
+      };
+      im.src = rd.result;
+    };
+    rd.readAsDataURL(file);
+  });
+}
 function reqSave() { try { localStorage.setItem(REQKEY, JSON.stringify(REQS)); } catch (e) {} }
 function adoptReqs(data) {
   if (!data || Array.isArray(data) || !data.requests || !Array.isArray(data.requests.items)) return;
@@ -5427,11 +5627,12 @@ function colShrink(file) {
     im.src = url;
   });
 }
+function colHere(c) { return !!c.bl === BLMODE; }   /* une collection appartient à l'espace où elle a été créée */
 function colClean(c) {
   if (!c || typeof c !== "object" || !COLID.test(String(c.id || ""))) return null;
   var seen = {}, ids = (Array.isArray(c.i) ? c.i : []).map(String).filter(function (x) { if (!COLSID.test(x) || seen[x]) return false; seen[x] = 1; return true; }).slice(0, 300);
   var ci = parseInt(c.c, 10), ei = parseInt(c.e, 10), fi = parseInt(c.f, 10), si = parseInt(c.s, 10), pv = String(c.p || "").trim();
-  return { id: String(c.id), n: String(c.n || "").trim().slice(0, 40) || "Sans titre", d: String(c.d || "").trim().slice(0, 140), c: ci >= 0 && ci < COLPAL.length ? ci : 0, e: ei >= 0 && ei < COLEMO.length ? ei : 0, f: fi > 0 && fi < COLFX.length ? fi : 0, s: si > 0 && si < COLFM.length ? si : 0, o: c.o ? 1 : 0, p: (/^https:\/\/[^\s'"()<>\\]{4,290}$/.test(pv) || COLIMG.test(pv)) ? pv : "", i: ids, at: +c.at || 0 };
+  return { id: String(c.id), bl: c.bl ? 1 : 0, n: String(c.n || "").trim().slice(0, 40) || "Sans titre", d: String(c.d || "").trim().slice(0, 140), c: ci >= 0 && ci < COLPAL.length ? ci : 0, e: ei >= 0 && ei < COLEMO.length ? ei : 0, f: fi > 0 && fi < COLFX.length ? fi : 0, s: si > 0 && si < COLFM.length ? si : 0, o: c.o ? 1 : 0, p: (/^https:\/\/[^\s'"()<>\\]{4,290}$/.test(pv) || COLIMG.test(pv)) ? pv : "", i: ids, at: +c.at || 0 };
 }
 function readCols() { var l = readJSON(COLKEY, []); return Array.isArray(l) ? l.map(colClean).filter(Boolean) : []; }
 function saveCols(l) { try { localStorage.setItem(COLKEY, JSON.stringify(l)); return true; } catch (e) { toast("Stockage plein ou bloqué par le navigateur"); return false; } }
@@ -5543,7 +5744,7 @@ function colEdit(id, addSid) {
     if (!cur.n.trim()) { name.focus(); return; }
     var l = readCols(), saved;
     if (base) { saved = l.filter(function (x) { return x.id === base.id; })[0]; if (!saved) return; saved.n = cur.n; saved.d = cur.d; saved.c = cur.c; saved.e = cur.e; saved.f = cur.f; saved.s = cur.s || 0; saved.o = cur.o ? 1 : 0; saved.p = cur.p || ""; saved.at = Date.now(); saved = colClean(saved); l = l.map(function (x) { return x.id === saved.id ? saved : x; }); }
-    else { saved = colClean({ id: colNewId(), n: cur.n, d: cur.d, c: cur.c, e: cur.e, f: cur.f, s: cur.s || 0, o: cur.o ? 1 : 0, p: cur.p || "", i: cur.i, at: Date.now() }); l.unshift(saved); }
+    else { saved = colClean({ id: colNewId(), bl: BLMODE ? 1 : 0, n: cur.n, d: cur.d, c: cur.c, e: cur.e, f: cur.f, s: cur.s || 0, o: cur.o ? 1 : 0, p: cur.p || "", i: cur.i, at: Date.now() }); l.unshift(saved); }
     if (!saveCols(l)) return;
     colClose(); toast(base ? "Collection mise à jour" : "Collection créée ✓");
     if (addSid && !base) colRefreshBtn(addSid);
@@ -5562,7 +5763,7 @@ function colRefreshBtn(sid) {
   var on = colInAny(sid); b.textContent = on ? "✓ En collection" : "+ Collection"; b.classList.toggle("on", on);
 }
 function colPickHTML(sid) {
-  var l = readCols();
+  var l = readCols().filter(colHere);
   return '<div class="cpick">' + l.map(function (c) {
     var on = colHas(c, sid);
     return '<button type="button" class="cprow' + (on ? " on" : "") + '" data-colt="' + esc(c.id) + '" style="' + colStyle(c) + '"><span class="ce">' + colIco(c.e) + '</span><span class="ct"><b>' + esc(c.n) + '</b><em>' + c.i.length + (c.i.length > 1 ? " titres" : " titre") + '</em></span><span class="ck">' + nsvg("check") + '</span></button>';
@@ -5703,7 +5904,7 @@ document.addEventListener("click", function (e) {
   }
   if (t.hasAttribute("data-colsave")) {
     var sc = colDecode(location.hash.slice(1)); if (!sc) return;
-    sc.id = colNewId(); sc.at = Date.now(); var l = readCols(); l.unshift(sc);
+    sc.id = colNewId(); sc.bl = BLMODE ? 1 : 0; sc.at = Date.now(); var l = readCols(); l.unshift(sc);
     if (saveCols(l)) { toast("Collection enregistrée ✓"); go("/collection/" + sc.id); }
     return;
   }
@@ -5955,7 +6156,7 @@ document.addEventListener("click", function (e) {
     keepOpenDl = di; renderEditor(); keepOpenDl = null;
     toast(ddone + " épisode" + (ddone > 1 ? "s" : "") + " rempli" + (ddone > 1 ? "s" : "") + (dlines.length > deps.length - dfirst ? " (trop de lignes, les derniers sont ignorés)" : ""));
   }
-  else if (t.dataset.listtab != null) { listTab = t.dataset.listtab; if (rerender) rerender(); }
+  else if (t.dataset.listtab != null) { listTab = t.dataset.listtab; if (listTab === "seen" && !mlShared) seenCat = seenCatAuto(seenTitles()); if (rerender) rerender(); }
   else if (t.dataset.genre != null) { filter = t.dataset.genre; fOpen = ""; if (rerender) rerender(); }
   else if (t.dataset.langf != null) { langFilter = t.dataset.langf; fOpen = ""; if (rerender) rerender(); }
   else if (t.dataset.kdf != null) { kdFilter = t.dataset.kdf; fOpen = ""; if (rerender) rerender(); }
@@ -6085,6 +6286,7 @@ document.addEventListener("submit", function (e) {
     }).then(function () {
       try { localStorage.setItem("noir.reqAt", String(Date.now())); } catch (er) {}
       bumpReq();
+      try { myReqAdd({ title: titre, media: reqSel && reqSel.media, tmdb: reqSel && reqSel.id, bl: !!fd.get("bl") }); } catch (er) {}
       $("#app").innerHTML = '<div class="wrap"><div class="authbox"><h1>Merci</h1><p class="lead">Ta demande est bien envoyée. ' + (isVip() ? 'En tant que VIP, elle sera traitée en 12 h maximum.' : 'Je l\'ajoute dès que possible.') + '</p><div class="row"><a class="btn" href="/">Retour à l\'accueil</a><a class="btn ghost" href="/demande">Une autre demande</a></div></div></div>';
     }).catch(function (err) {
       rb.disabled = false; rb.textContent = "Envoyer";
@@ -6277,9 +6479,34 @@ function saveJson(obj, name) {
 var GHTOKEY = "noir.ghtoken", GHREPOKEY = "noir.ghrepo";
 function ghToken() { try { return localStorage.getItem(GHTOKEY) || ""; } catch (e) { return ""; } }
 function ghRepo() { var r = CONFIG.GITHUB_REPO || ""; if (!r) { try { r = localStorage.getItem(GHREPOKEY) || ""; } catch (e) {} } return r; }
+/* Appels GitHub fiables : on réessaie tout seul (coupure réseau, « Failed to fetch », erreur 5xx, limite de débit) au lieu d'échouer une fois sur deux */
+function ghFetch(url, opt, n) {
+  n = n || 0;
+  var pause = function (ms) { return new Promise(function (res) { setTimeout(res, ms); }); };
+  var steps = [700, 1800, 3500, 6000];
+  return fetch(url, opt).then(function (r) {
+    if (r.ok || n >= steps.length) return r;
+    if (r.status >= 500 || r.status === 429) return pause(steps[n]).then(function () { return ghFetch(url, opt, n + 1); });
+    if (r.status === 403) {
+      var ra = +(r.headers && r.headers.get ? r.headers.get("retry-after") : 0) || 0;
+      return r.clone().text().then(function (t) {
+        if (ra || /rate limit|abuse|secondary/i.test(t)) return pause(Math.min(ra ? ra * 1000 : steps[n], 15000)).then(function () { return ghFetch(url, opt, n + 1); });
+        return r;
+      }, function () { return r; });
+    }
+    return r;
+  }, function (err) {
+    if (n >= steps.length) throw err;
+    return pause(steps[n]).then(function () { return ghFetch(url, opt, n + 1); });
+  });
+}
+function ghMsg(e) {
+  if (e instanceof TypeError) return "connexion instable avec GitHub (réseau coupé ou trop lent)";
+  return e && e.message ? e.message : "GitHub";
+}
 function ghErr(r) {
   var m = r.status === 401 ? "Jeton GitHub refusé (expiré ou faux)"
-    : r.status === 403 ? "GitHub refuse l'accès (droits du jeton ou limite atteinte)"
+    : r.status === 403 ? "GitHub refuse l'accès (droits du jeton, ou trop d'envois d'affilée : attends une minute)"
     : r.status === 404 ? "Dépôt ou branche introuvable (vérifie le nom et les droits « Contents : Read and write »)"
     : r.status === 409 || r.status === 422 ? "Conflit : le fichier a changé entre-temps, réessaie"
     : "Erreur GitHub " + r.status;
@@ -6296,7 +6523,7 @@ function ghPublish(obj, tried, opts) {
   var url = ghUrl(gi);
   var backupSrc = null;
   /* 1) on lit les suppressions déjà publiées, 2) on les applique au catalogue qu'on s'apprête à envoyer (une vieille copie locale ne peut plus rien ressusciter) */
-  return fetch(url + "?ref=" + encodeURIComponent(gi.branch), { headers: ghHeaders({ Accept: "application/vnd.github.raw+json" }), cache: "no-store" }).then(function (r) {
+  return ghFetch(url + "?ref=" + encodeURIComponent(gi.branch), { headers: ghHeaders({ Accept: "application/vnd.github.raw+json" }), cache: "no-store" }).then(function (r) {
     if (r.status === 404) return {};
     if (!r.ok) throw ghErr(r);
     return r.json();
@@ -6329,6 +6556,8 @@ function ghPublish(obj, tried, opts) {
       ((remote && remote.requests && remote.requests.items) || []).forEach(function (r) { if (r && r.auto && (+r.at || 0) > (+REQS.at || 0) && !rq.items.some(function (x) { return x.id === r.id; })) rq.items.push(r); });
       obj.requests = rq;
     }
+    if (remote && remote.avatars && Array.isArray(remote.avatars.items) && (+remote.avatars.at || 0) > (+AVT.at || 0)) obj.avatars = remote.avatars; else if (AVT.at) obj.avatars = AVT;
+    if (remote && remote.founder && (+remote.founder.at || 0) > (+FND.at || 0)) obj.founder = remote.founder; else if (FND.at) obj.founder = FND;
     if (remote && remote.hosts && (+remote.hosts.at || 0) > (+STAT.at || 0)) obj.hosts = remote.hosts; else if (STAT.at) obj.hosts = STAT;
     var rps = remote && remote.settings;
     if (rps && "player" in rps && (+rps.playerAt || 0) > (+SETTINGS.playerAt || 0) && obj.settings) { obj.settings.player = rps.player; obj.settings.playerAt = rps.playerAt; }
@@ -6338,7 +6567,7 @@ function ghPublish(obj, tried, opts) {
     if (rps && (+rps.blAt || 0) > (+SETTINGS.blAt || 0) && obj.settings) { obj.settings.bl = rps.bl === "off" ? "off" : "on"; obj.settings.blAt = rps.blAt; }
     if (remote && !Array.isArray(remote) && remote.journal) { journalMerge(remote.journal); var jm = journalList(); if (jm.length) obj.journal = jm; }
     var rfa = Math.max(+(remote && remote.refreshAt) || 0, +readJSON(RFKEY, 0) || 0); if (rfa) obj.refreshAt = rfa;
-    return fetch(url + "?ref=" + encodeURIComponent(gi.branch), { headers: ghHeaders(), cache: "no-store" });
+    return ghFetch(url + "?ref=" + encodeURIComponent(gi.branch), { headers: ghHeaders(), cache: "no-store" });
   }).then(function (r) {
     if (r.status === 404) return null;
     if (!r.ok) throw ghErr(r);
@@ -6346,9 +6575,10 @@ function ghPublish(obj, tried, opts) {
   }).then(function (cur) {
     return ghBackup(gi, backupSrc, tried, opts).then(function () { return cur; });
   }).then(function (cur) {
-    var body = { message: "Mise à jour du catalogue (" + myId() + ")", content: btoa(unescape(encodeURIComponent(JSON.stringify(obj, null, 2)))), branch: gi.branch };
+    /* JSON compact : ~40 % plus léger à envoyer (moins de coupures sur une connexion lente) */
+    var body = { message: "Mise à jour du catalogue (" + myId() + ")", content: btoa(unescape(encodeURIComponent(JSON.stringify(obj)))), branch: gi.branch };
     if (cur && cur.sha) body.sha = cur.sha;
-    return fetch(url, { method: "PUT", headers: ghHeaders({ "Content-Type": "application/json" }), body: JSON.stringify(body) });
+    return ghFetch(url, { method: "PUT", headers: ghHeaders({ "Content-Type": "application/json" }), body: JSON.stringify(body) });
   }).then(function (r) {
     if (!r.ok) {
       var e = ghErr(r), n = tried || 0;
@@ -6403,6 +6633,8 @@ function buildCatalogObj() {
   if (ANN) obj.announce = ANN;
   if (INBOX && INBOX.at) obj.inbox = INBOX;
   if (REQS.at) obj.requests = REQS;
+  if (AVT.at) obj.avatars = AVT;
+  if (FND.at) obj.founder = FND;
   if (STAT.at) obj.hosts = STAT;
   var jl = journalList(); if (jl.length) obj.journal = jl;
   return obj;
@@ -6423,7 +6655,7 @@ function runAutoSync() {
   ghPublish(obj).then(function () {
     afterPublish(obj); syncBusy = false; toast("Synchronisé ✓");
     if (syncAgain) { syncAgain = false; markDirty(); } else setTimeout(pollCatalog, 800);
-  }).catch(function (e) { syncBusy = false; toast("Synchro impossible (" + (e && e.message ? e.message : "GitHub") + ") : clique sur « Publier »"); });
+  }).catch(function (e) { syncBusy = false; toast("Synchro impossible (" + ghMsg(e) + ") : clique sur « Publier »"); });
 }
 $("#btn-export").addEventListener("click", function () {
   var priv = SETTINGS.downloads === "private";
@@ -6434,7 +6666,7 @@ $("#btn-export").addEventListener("click", function () {
     ghPublish(obj, 0, { manual: true }).then(function () {
       afterPublish(obj);
       toast("Publié sur GitHub ✓" + (priv ? " (liens de téléchargement retirés)" : "") + (CONFIG.GITHUB_REPO ? " Les visiteurs le voient dans quelques secondes." : " Visible après le redéploiement de GitHub Pages (environ 1 minute)."));
-    }).catch(function (e) { download(); toast((e && e.message ? e.message : "Échec GitHub") + " : catalog.json téléchargé à la place"); });
+    }).catch(function (e) { download(); toast(ghMsg(e) + " : catalog.json téléchargé à la place"); });
     return;
   }
   download();
@@ -6460,6 +6692,12 @@ document.addEventListener("click", function (e) {
     SETTINGS.trailers = tt2.dataset.settrailers === "off" ? "off" : "on"; SETTINGS.trailersAt = Date.now(); saveSettings(); viewPanel();
     toast("Bandes-annonces : " + (trailersOn() ? "activées" : "désactivées") + (autoSyncOn() ? " pour tout le monde" : ". Clique sur « Publier » pour l'appliquer aux visiteurs."));
     markDirty(); return;
+  }
+  var ad = e.target.closest("[data-avdel]");
+  if (ad) {
+    if (!isHead()) return;
+    AVT = { items: AVT.items.filter(function (x) { return x.id !== ad.dataset.avdel; }), at: Date.now() }; avSave(); avRefresh(); viewPanel(); markDirty();
+    toast("Photo retirée" + (autoSyncOn() ? "" : ". Clique sur « Publier » pour l'appliquer.")); return;
   }
   var tb = e.target.closest("[data-setbl]");
   if (tb) {
@@ -6575,6 +6813,33 @@ $("#btn-key").addEventListener("click", function () {
       '<div class="row"><button class="btn ghost" type="button" id="copyhash">Copier la ligne</button><a class="btn" href="/">Continuer</a></div></div></div>';
   }).catch(function () { toast("Impossible de chiffrer la clé ici (ouvre le site en https)"); });
 });
+document.addEventListener("change", function (e) {   /* panneau admin : ajout d'une photo de profil */
+  var t = e.target; if (!t || t.id !== "avfile") return;
+  var f = t.files && t.files[0]; t.value = "";
+  if (!f || !isHead()) return;
+  var gi = ghParse(ghRepo());
+  if (!gi || !ghToken()) { toast("Lie d'abord GitHub (volet admin) pour envoyer la photo"); return; }
+  var nm = (($("#avname") || {}).value || "").replace(/\s+/g, " ").trim().slice(0, 24) || f.name.replace(/\.[^.]+$/, "").slice(0, 24) || "Photo", cat = ($("#avcat") || {}).value || "x";
+  toast("Envoi de la photo…");
+  cropToJpeg(f, 256, .86).then(function (data) {
+    var id = "a" + Date.now().toString(36), path = "avatars/" + id + ".jpg";
+    return fetch("https://api.github.com/repos/" + gi.repo + "/contents/" + path, { method: "PUT", headers: ghHeaders({ "Content-Type": "application/json" }), body: JSON.stringify({ message: "Photo de profil : " + nm, content: data.split(",")[1], branch: gi.branch }) }).then(function (r) {
+      if (!r.ok) throw ghErr(r);
+      AVT = { items: AVT.items.concat([{ id: id, name: nm, cat: cat, src: "https://raw.githubusercontent.com/" + gi.repo + "/" + gi.branch + "/" + path }]), at: Date.now() };
+      avSave(); avRefresh(); viewPanel(); markDirty(); toast("Photo ajoutée");
+    });
+  }).catch(function (er) { toast(er && er.message ? er.message : "Impossible d'ajouter la photo"); });
+});
+/* Vu : changer de catégorie, abandonner / reprendre une série (avant le clic sur la ligne, qui ouvre la fiche) */
+document.addEventListener("click", function (e) {
+  var d = e.target.closest ? e.target.closest("[data-drop],[data-seencat],[data-mlview]") : null; if (!d) return;
+  e.preventDefault(); e.stopPropagation();
+  if (d.dataset.mlview) { mlViewSet(d.dataset.mlview); if ($("#mlroot")) mlPatch(true); return; }
+  if (d.dataset.seencat) { seenCat = d.dataset.seencat; if ($("#mlroot")) mlPatch(true); return; }
+  setDropped(d.dataset.drop, d.dataset.on === "1");
+  toast(d.dataset.on === "1" ? "Rangé dans « Abandonnés »" : "Remis « En cours de visionnage »");
+  if ($("#mlroot")) mlPatch(true);
+}, true);
 /* Onglet BL : confirmation avant d'entrer dans l'espace BL */
 document.addEventListener("click", function (e) {
   if (e.button || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
@@ -6862,7 +7127,10 @@ function noteRemovedLinks(oldF, newF) {
   gone.forEach(function (u) { var k = lkey(oldF.id, u); if (t.indexOf(k) < 0) t.push(k); });
   linkTombSave(t);
 }
+/* Une copie locale peut ne pas avoir la liste (sources / downloads) que la version en ligne a : on la crée au lieu de planter */
+function ensureArr(o, k, rv) { if (o && Array.isArray(rv) && rv.length && !Array.isArray(o[k])) o[k] = []; }
 function addMissingLinks(local, remote, fid) {
+  if (!Array.isArray(local)) return false;
   var me = myId(), ch = false, dead = allLinkTombs();
   (remote || []).forEach(function (r) {
     if (!r || !r.url || r.by === me || findUrl(local, r.url) || isLinkDead(fid, r.url, dead)) return;
@@ -6872,6 +7140,7 @@ function addMissingLinks(local, remote, fid) {
 }
 /* Sources d'un film / épisode : l'ordre publié passe en premier, puis les miennes pas encore publiées, le tout limité à 3 */
 function syncSources(local, remote, fid) {
+  if (!Array.isArray(local)) return false;
   var dead = allLinkTombs(), out = [];
   (remote || []).forEach(function (r) {
     if (!r || !r.url || isLinkDead(fid, r.url, dead) || findUrl(out, r.url)) return;
@@ -6892,15 +7161,18 @@ function mergeFiche(l, r) {
   }
   /* affiche choisie avec la règle anglais / langue originale : elle remplace une ancienne affiche française */
   if (r.posterV >= 2 && !(l.posterV >= 2) && r.poster && r.poster !== l.poster && !customPoster(l)) { l.poster = r.poster; l.posterV = r.posterV; ch = true; }
+  ensureArr(l, "sources", r.sources); ensureArr(l, "downloads", r.downloads);
   ch = syncSources(l.sources, r.sources, fid) || ch;
   ch = addMissingLinks(l.downloads, r.downloads, fid) || ch;
   (r.seasons || []).forEach(function (rs) {
     var ls = null; (l.seasons || []).forEach(function (x) { if (x.number === rs.number) ls = x; });
     if (!ls) { (l.seasons = l.seasons || []).push(rs); ch = true; return; }
+    ensureArr(ls, "downloads", rs.downloads);
     ch = addMissingLinks(ls.downloads, rs.downloads, fid) || ch;
     (rs.episodes || []).forEach(function (re) {
       var le = null; (ls.episodes || []).forEach(function (x) { if (x.number === re.number) le = x; });
       if (!le) { (ls.episodes = ls.episodes || []).push(re); ch = true; return; }
+      ensureArr(le, "sources", re.sources); ensureArr(le, "downloads", re.downloads);
       ch = syncSources(le.sources, re.sources, fid) || ch;
       ch = addMissingLinks(le.downloads, re.downloads, fid) || ch;
     });
@@ -6931,7 +7203,7 @@ function loadCatalogCore() {
     var priv = !!(st && st.downloads === "private");
     if (!EDITOR) db = data;
     if (!ADMIN) SETTINGS.downloads = priv ? "private" : "public";
-    safe(function () { adoptTeam(raw); }); safe(function () { adoptHero(raw); }); safe(function () { adoptCalx(raw); }); safe(function () { adoptReqs(raw); }); safe(function () { adoptStat(raw); }); safe(function () { adoptAnnounce(raw); }); safe(function () { adoptInbox(raw); }); safe(function () { adoptCredits(raw); }); safe(function () { adoptVip(raw); });
+    safe(function () { adoptTeam(raw); }); safe(function () { adoptHero(raw); }); safe(function () { adoptCalx(raw); }); safe(function () { adoptReqs(raw); }); safe(function () { adoptAvatars(raw); }); safe(function () { adoptFounder(raw); }); safe(function () { adoptStat(raw); }); safe(function () { adoptAnnounce(raw); }); safe(function () { adoptInbox(raw); }); safe(function () { adoptCredits(raw); }); safe(function () { adoptVip(raw); });
     safe(function () { adoptPlayer(st); });
     if (!EDITOR) { /* déjà posé plus haut */ }
     else if (!db.length) {
@@ -7254,4 +7526,4 @@ function pollCatalog() {
 }
 setInterval(pollCatalog, 30000);
 document.addEventListener("visibilitychange", function () { if (!document.hidden) pollCatalog(); });
-try { if (!localStorage.getItem(WELKEY)) setTimeout(openWelcome, 700); } catch (e) {}
+/* Message « Bienvenue / site en bêta » : plus affiché automatiquement. Il reste ouvert par le bouton info du pied de page (btn-info). */
