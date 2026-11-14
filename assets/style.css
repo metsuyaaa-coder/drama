@@ -2833,3 +2833,15 @@ dialog#founder::backdrop { background: rgba(0, 0, 0, .88); }
 .nitem .ni.nposter { width: 46px; height: 66px; padding: 0; overflow: hidden; background: var(--panel); }
 .nitem .ni.nposter img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .nitem .ni.nposter svg { width: 20px; height: 20px; }
+
+/* Signalement : note obligatoire + confirmation VPN */
+.ropt.on { border-color: var(--acc); background: var(--s1); }
+.rbox .row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+.rpta { width: 100%; padding: 12px 14px; border: 1px solid var(--line); background: var(--panel); color: var(--fg); font: inherit; font-size: 14px; resize: vertical; min-height: 84px; }
+.rpta:focus { outline: none; border-color: var(--fg); }
+#rpform { display: grid; gap: 10px; margin-top: 14px; }
+#rpform[hidden] { display: none; }
+.rpcount { margin: -4px 0 0; font: 500 11px var(--mono); letter-spacing: .06em; color: var(--dim); }
+.rpvpn { display: flex; }
+.rpvpn i { white-space: normal; line-height: 1.5; text-align: left; }
+.rpsub { margin: 0; font-size: 13px; color: var(--dim); }

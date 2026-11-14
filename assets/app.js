@@ -1218,7 +1218,7 @@ function ghBackup(gi, src, tried, opts) {
   if (!n) return Promise.resolve();
   if (!(opts && opts.manual) && Date.now() - (+readJSON(BKKEY, 0) || 0) < BKGAP) return Promise.resolve();
   var name = "catalog-" + bkStamp(new Date()) + "-" + myId() + ".json";
-  var body = { message: "Sauvegarde avant publication (" + myId() + ")", content: btoa(unescape(encodeURIComponent(JSON.stringify(src, null, 2)))), branch: gi.branch };
+  var body = { message: "Sauvegarde avant publication (" + myId() + ")", content: btoa(unescape(encodeURIComponent(JSON.stringify(src)))), branch: gi.branch };
   return fetch(bkDirUrl(gi) + "/" + name, { method: "PUT", headers: ghHeaders({ "Content-Type": "application/json" }), body: JSON.stringify(body) }).then(function (r) {
     if (!r.ok) throw ghErr(r);
     try { localStorage.setItem(BKKEY, String(Date.now())); } catch (e) {}
@@ -1944,7 +1944,7 @@ function paintReport(sent) {
 function refreshReport() { paintReport(reportedAlready()); }
 
 /* Fenêtre « Quel est le problème ? » : serveur mort ou vidéo qui ne marche pas */
-var reporting = false;
+var reporting = false, rpReason = "";
 function reportMsg(t, cls) { var m = $("#rpmsg"); m.textContent = t || ""; m.className = "rpmsg" + (cls ? " " + cls : ""); }
 function openReport() {
   var s = cur.sources && cur.sources[cur.i]; if (!s) return;
@@ -1953,26 +1953,38 @@ function openReport() {
   Object.keys(seen).forEach(function (k) { if (now - seen[k] <= 86400000) n++; });
   var d = $("#reportdlg");
   $("#rpwhat").textContent = (cur.title || "") + (cur.sub ? " · " + cur.sub : "") + " · " + (s.name || "Serveur");
-  $("#rpopts").hidden = false; $("#rpcancel").textContent = "Annuler";
-  Array.prototype.forEach.call(document.querySelectorAll("#rpopts .ropt"), function (b) { b.disabled = n >= 10; });
+  $("#rpopts").hidden = false; $("#rpform").hidden = false; $("#rpsend").hidden = false; $("#rpcancel").textContent = "Annuler";
+  rpReason = ""; $("#rpnote").value = ""; $("#rpvpn").checked = false; $("#rpcnt").textContent = "0";
+  Array.prototype.forEach.call(document.querySelectorAll("#rpopts .ropt"), function (b) { b.disabled = n >= 10; b.classList.remove("on"); b.setAttribute("aria-pressed", "false"); });
+  $("#rpsend").disabled = n >= 10;
   reportMsg(n >= 10 ? "Limite de signalements atteinte pour aujourd'hui." : "", n >= 10 ? "err" : "");
   if (d.showModal && !d.open) d.showModal();
 }
-function sendReport(reason) {
+/* Envoi : il faut choisir le problème, le décrire (10 caractères minimum) et confirmer avoir essayé un VPN */
+function submitReport() {
+  if (reporting) return;
+  var note = ($("#rpnote").value || "").replace(/\s+/g, " ").trim();
+  if (!rpReason) { reportMsg("Choisis d'abord le type de problème.", "err"); return; }
+  if (note.length < 10) { reportMsg("Décris le problème en quelques mots (10 caractères minimum).", "err"); $("#rpnote").focus(); return; }
+  if (!$("#rpvpn").checked) { reportMsg("Coche la case pour confirmer que tu as essayé avec un VPN.", "err"); return; }
+  sendReport(rpReason, note);
+}
+function sendReport(reason, note) {
   var s = cur.sources && cur.sources[cur.i]; if (!s || reporting) return;
   var key = reportKey();
   reporting = true; reportMsg("Envoi du signalement…");
-  Array.prototype.forEach.call(document.querySelectorAll("#rpopts .ropt"), function (b) { b.disabled = true; });
-  notifyDiscord({ kind: "deadlink", reason: reason === "video" ? "video" : "dead", title: cur.title || "", sub: cur.sub || "", source: s.name || "", url: s.url || "", page: location.href }).then(function (ok) {
+  var lock = function (v) { Array.prototype.forEach.call(document.querySelectorAll("#rpopts .ropt"), function (b) { b.disabled = v; }); $("#rpsend").disabled = v; $("#rpnote").disabled = v; $("#rpvpn").disabled = v; };
+  lock(true);
+  notifyDiscord({ kind: "deadlink", reason: reason === "video" ? "video" : "dead", note: note, vpn: true, vid: visitorId(), title: cur.title || "", sub: cur.sub || "", source: s.name || "", url: s.url || "", page: location.href }).then(function (ok) {
     reporting = false;
     if (!ok) {
       reportMsg("Envoi impossible pour l'instant, réessaie dans un instant.", "err");
-      Array.prototype.forEach.call(document.querySelectorAll("#rpopts .ropt"), function (b) { b.disabled = false; });
+      lock(false);
       return;
     }
     var seen = readJSON("noir.reported", {}); seen[key] = Date.now();
     try { localStorage.setItem("noir.reported", JSON.stringify(seen)); } catch (e) {}
-    $("#rpopts").hidden = true; $("#rpcancel").textContent = "Fermer";
+    $("#rpopts").hidden = true; $("#rpform").hidden = true; $("#rpsend").hidden = true; lock(false); $("#rpcancel").textContent = "Fermer";
     reportMsg("✓ Signalement envoyé, merci !", "ok");
     if (reportKey() === key) paintReport(true);
     setTimeout(function () { var d = $("#reportdlg"); if (d.open) d.close(); }, 1800);
@@ -1980,9 +1992,15 @@ function sendReport(reason) {
 }
 $("#reportdlg").addEventListener("click", function (e) {
   var o = e.target.closest(".ropt");
-  if (o && !o.disabled) { sendReport(o.dataset.reason); return; }
+  if (o && !o.disabled) {
+    rpReason = o.dataset.reason;
+    Array.prototype.forEach.call(document.querySelectorAll("#rpopts .ropt"), function (b) { var on = b === o; b.classList.toggle("on", on); b.setAttribute("aria-pressed", on ? "true" : "false"); });
+    reportMsg(""); return;
+  }
+  if (e.target.closest("#rpsend")) { submitReport(); return; }
   if (e.target === this || e.target.closest("#rpcancel")) this.close();
 });
+$("#rpnote").addEventListener("input", function () { $("#rpcnt").textContent = this.value.length; reportMsg(""); });
 document.addEventListener("click", function (e) {
   if (e.target.closest("#preport")) { e.preventDefault(); openReport(); }
 });
@@ -6461,9 +6479,34 @@ function saveJson(obj, name) {
 var GHTOKEY = "noir.ghtoken", GHREPOKEY = "noir.ghrepo";
 function ghToken() { try { return localStorage.getItem(GHTOKEY) || ""; } catch (e) { return ""; } }
 function ghRepo() { var r = CONFIG.GITHUB_REPO || ""; if (!r) { try { r = localStorage.getItem(GHREPOKEY) || ""; } catch (e) {} } return r; }
+/* Appels GitHub fiables : on réessaie tout seul (coupure réseau, « Failed to fetch », erreur 5xx, limite de débit) au lieu d'échouer une fois sur deux */
+function ghFetch(url, opt, n) {
+  n = n || 0;
+  var pause = function (ms) { return new Promise(function (res) { setTimeout(res, ms); }); };
+  var steps = [700, 1800, 3500, 6000];
+  return fetch(url, opt).then(function (r) {
+    if (r.ok || n >= steps.length) return r;
+    if (r.status >= 500 || r.status === 429) return pause(steps[n]).then(function () { return ghFetch(url, opt, n + 1); });
+    if (r.status === 403) {
+      var ra = +(r.headers && r.headers.get ? r.headers.get("retry-after") : 0) || 0;
+      return r.clone().text().then(function (t) {
+        if (ra || /rate limit|abuse|secondary/i.test(t)) return pause(Math.min(ra ? ra * 1000 : steps[n], 15000)).then(function () { return ghFetch(url, opt, n + 1); });
+        return r;
+      }, function () { return r; });
+    }
+    return r;
+  }, function (err) {
+    if (n >= steps.length) throw err;
+    return pause(steps[n]).then(function () { return ghFetch(url, opt, n + 1); });
+  });
+}
+function ghMsg(e) {
+  if (e instanceof TypeError) return "connexion instable avec GitHub (réseau coupé ou trop lent)";
+  return e && e.message ? e.message : "GitHub";
+}
 function ghErr(r) {
   var m = r.status === 401 ? "Jeton GitHub refusé (expiré ou faux)"
-    : r.status === 403 ? "GitHub refuse l'accès (droits du jeton ou limite atteinte)"
+    : r.status === 403 ? "GitHub refuse l'accès (droits du jeton, ou trop d'envois d'affilée : attends une minute)"
     : r.status === 404 ? "Dépôt ou branche introuvable (vérifie le nom et les droits « Contents : Read and write »)"
     : r.status === 409 || r.status === 422 ? "Conflit : le fichier a changé entre-temps, réessaie"
     : "Erreur GitHub " + r.status;
@@ -6480,7 +6523,7 @@ function ghPublish(obj, tried, opts) {
   var url = ghUrl(gi);
   var backupSrc = null;
   /* 1) on lit les suppressions déjà publiées, 2) on les applique au catalogue qu'on s'apprête à envoyer (une vieille copie locale ne peut plus rien ressusciter) */
-  return fetch(url + "?ref=" + encodeURIComponent(gi.branch), { headers: ghHeaders({ Accept: "application/vnd.github.raw+json" }), cache: "no-store" }).then(function (r) {
+  return ghFetch(url + "?ref=" + encodeURIComponent(gi.branch), { headers: ghHeaders({ Accept: "application/vnd.github.raw+json" }), cache: "no-store" }).then(function (r) {
     if (r.status === 404) return {};
     if (!r.ok) throw ghErr(r);
     return r.json();
@@ -6524,7 +6567,7 @@ function ghPublish(obj, tried, opts) {
     if (rps && (+rps.blAt || 0) > (+SETTINGS.blAt || 0) && obj.settings) { obj.settings.bl = rps.bl === "off" ? "off" : "on"; obj.settings.blAt = rps.blAt; }
     if (remote && !Array.isArray(remote) && remote.journal) { journalMerge(remote.journal); var jm = journalList(); if (jm.length) obj.journal = jm; }
     var rfa = Math.max(+(remote && remote.refreshAt) || 0, +readJSON(RFKEY, 0) || 0); if (rfa) obj.refreshAt = rfa;
-    return fetch(url + "?ref=" + encodeURIComponent(gi.branch), { headers: ghHeaders(), cache: "no-store" });
+    return ghFetch(url + "?ref=" + encodeURIComponent(gi.branch), { headers: ghHeaders(), cache: "no-store" });
   }).then(function (r) {
     if (r.status === 404) return null;
     if (!r.ok) throw ghErr(r);
@@ -6532,9 +6575,10 @@ function ghPublish(obj, tried, opts) {
   }).then(function (cur) {
     return ghBackup(gi, backupSrc, tried, opts).then(function () { return cur; });
   }).then(function (cur) {
-    var body = { message: "Mise à jour du catalogue (" + myId() + ")", content: btoa(unescape(encodeURIComponent(JSON.stringify(obj, null, 2)))), branch: gi.branch };
+    /* JSON compact : ~40 % plus léger à envoyer (moins de coupures sur une connexion lente) */
+    var body = { message: "Mise à jour du catalogue (" + myId() + ")", content: btoa(unescape(encodeURIComponent(JSON.stringify(obj)))), branch: gi.branch };
     if (cur && cur.sha) body.sha = cur.sha;
-    return fetch(url, { method: "PUT", headers: ghHeaders({ "Content-Type": "application/json" }), body: JSON.stringify(body) });
+    return ghFetch(url, { method: "PUT", headers: ghHeaders({ "Content-Type": "application/json" }), body: JSON.stringify(body) });
   }).then(function (r) {
     if (!r.ok) {
       var e = ghErr(r), n = tried || 0;
@@ -6611,7 +6655,7 @@ function runAutoSync() {
   ghPublish(obj).then(function () {
     afterPublish(obj); syncBusy = false; toast("Synchronisé ✓");
     if (syncAgain) { syncAgain = false; markDirty(); } else setTimeout(pollCatalog, 800);
-  }).catch(function (e) { syncBusy = false; toast("Synchro impossible (" + (e && e.message ? e.message : "GitHub") + ") : clique sur « Publier »"); });
+  }).catch(function (e) { syncBusy = false; toast("Synchro impossible (" + ghMsg(e) + ") : clique sur « Publier »"); });
 }
 $("#btn-export").addEventListener("click", function () {
   var priv = SETTINGS.downloads === "private";
@@ -6622,7 +6666,7 @@ $("#btn-export").addEventListener("click", function () {
     ghPublish(obj, 0, { manual: true }).then(function () {
       afterPublish(obj);
       toast("Publié sur GitHub ✓" + (priv ? " (liens de téléchargement retirés)" : "") + (CONFIG.GITHUB_REPO ? " Les visiteurs le voient dans quelques secondes." : " Visible après le redéploiement de GitHub Pages (environ 1 minute)."));
-    }).catch(function (e) { download(); toast((e && e.message ? e.message : "Échec GitHub") + " : catalog.json téléchargé à la place"); });
+    }).catch(function (e) { download(); toast(ghMsg(e) + " : catalog.json téléchargé à la place"); });
     return;
   }
   download();
