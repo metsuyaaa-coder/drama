@@ -437,9 +437,18 @@ function init() {
   paintBtn();
   var asked = false, skipped = false, hid = ""; try { asked = !!sessionStorage.getItem(SESS); skipped = localStorage.getItem(SKIP) === "1"; hid = sessionStorage.getItem(HELLO) || ""; sessionStorage.removeItem(HELLO); } catch (e) {}
   var adminRoute = /^\/(admin|headadmin|motdepasse|panel)(\/|$)/.test(location.pathname);
+  var root = document.documentElement, app = root.classList.contains("standalone");
+  var mobileBrowser = !app && window.matchMedia && matchMedia("(max-width: 720px)").matches;   /* « Qui regarde ? » au lancement : appli installée et ordinateur, pas navigateur mobile */
+  /* dans l'appli, on attend la fin de l'animation d'ouverture avant d'afficher l'écran */
+  var afterSplash = function (fn) {
+    if (!root.classList.contains("splash-on")) { fn(); return; }
+    var done = false, run = function () { if (done) return; done = true; clearInterval(t); setTimeout(fn, 120); };
+    var t = setInterval(function () { if (!root.classList.contains("splash-on")) run(); }, 80); setTimeout(run, 9000);
+  };
   if (hid) hello(hid.split(":")[0], { resume: hid.split(":")[1] === "r" });         /* on vient de choisir un profil */
-  else if (ps.length >= 2 && !asked) open("choose", { boot: true });                /* plusieurs profils : on demande qui regarde */
-  else if (!ps.length && !skipped && !asked && !adminRoute) open("choose", { boot: true });   /* toute première visite */
+  else if (mobileBrowser) { try { sessionStorage.setItem(SESS, "1"); } catch (e) {} }
+  else if (ps.length >= 2 && !asked) afterSplash(function () { open("choose", { boot: true }); });   /* plusieurs profils : on demande qui regarde */
+  else if (!ps.length && !skipped && !asked && !adminRoute) afterSplash(function () { open("choose", { boot: true }); });   /* toute première visite */
   else try { sessionStorage.setItem(SESS, "1"); } catch (e) {}
   startSync();
 }
