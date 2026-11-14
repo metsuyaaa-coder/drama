@@ -2842,6 +2842,13 @@ dialog#founder::backdrop { background: rgba(0, 0, 0, .88); }
 #rpform { display: grid; gap: 10px; margin-top: 14px; }
 #rpform[hidden] { display: none; }
 .rpcount { margin: -4px 0 0; font: 500 11px var(--mono); letter-spacing: .06em; color: var(--dim); }
-.rpvpn { display: flex; }
-.rpvpn i { white-space: normal; line-height: 1.5; text-align: left; }
+.rpcheck { display: flex; align-items: flex-start; gap: 12px; cursor: pointer; font-size: 14px; line-height: 1.45; }
+.rpcheck input { position: absolute; opacity: 0; width: 18px; height: 18px; margin: 0; pointer-events: none; }
+.rpbox { position: relative; flex: none; width: 18px; height: 18px; margin-top: 1px; border: 1.5px solid var(--dim); background: transparent; transition: background .15s, border-color .15s; }
+.rpbox::after { content: ""; position: absolute; left: 5px; top: 1px; width: 5px; height: 10px; border: solid var(--on-acc); border-width: 0 2px 2px 0; transform: rotate(45deg) scale(0); transition: transform .15s var(--ease); }
+.rpcheck:hover .rpbox { border-color: var(--fg); }
+.rpcheck input:checked + .rpbox { background: var(--acc); border-color: var(--acc); }
+.rpcheck input:checked + .rpbox::after { transform: rotate(45deg) scale(1); }
+.rpcheck input:focus-visible + .rpbox { outline: 2px solid var(--fg); outline-offset: 3px; }
+.rptxt { color: var(--fg); }
 .rpsub { margin: 0; font-size: 13px; color: var(--dim); }
