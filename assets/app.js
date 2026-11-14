@@ -7476,7 +7476,8 @@ function splashDone() {
   if (splashGone) return; splashGone = true;
   var sp = document.getElementById("splash"), root = document.documentElement;
   if (!sp || !root.classList.contains("splash-on")) return;
-  var wait = Math.max(0, 900 - (window.performance && performance.now ? performance.now() : 900));
+  var still = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var wait = Math.max(0, (still ? 500 : 2300) - (window.performance && performance.now ? performance.now() : 2300));   /* l'animation d'ouverture a le temps de se jouer en entier */
   setTimeout(function () {
     sp.classList.add("out");
     setTimeout(function () { root.classList.remove("splash-on"); if (sp.parentNode) sp.parentNode.removeChild(sp); }, 600);
