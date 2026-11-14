@@ -2852,3 +2852,12 @@ dialog#founder::backdrop { background: rgba(0, 0, 0, .88); }
 .rpcheck input:focus-visible + .rpbox { outline: 2px solid var(--fg); outline-offset: 3px; }
 .rptxt { color: var(--fg); }
 .rpsub { margin: 0; font-size: 13px; color: var(--dim); }
+
+/* Signalement : onglet « Pourquoi ? » en orange */
+.rpwhy { font-size: 13px; }
+.rpwhy summary { display: inline-flex; align-items: center; gap: 6px; cursor: pointer; list-style: none; color: #ff8a00; font: 600 12px var(--mono); letter-spacing: .08em; text-transform: uppercase; }
+.rpwhy summary::-webkit-details-marker { display: none; }
+.rpwhy summary svg { width: 15px; height: 15px; }
+.rpwhy summary:hover { color: #ffb347; }
+.rpwhy[open] summary { margin-bottom: 8px; }
+.rpwhy p { margin: 0; padding: 10px 12px; border-left: 2px solid #ff8a00; background: var(--panel); color: var(--dim); line-height: 1.5; }

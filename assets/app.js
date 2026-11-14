@@ -1954,6 +1954,7 @@ function openReport() {
   var d = $("#reportdlg");
   $("#rpwhat").textContent = (cur.title || "") + (cur.sub ? " · " + cur.sub : "") + " · " + (s.name || "Serveur");
   $("#rpopts").hidden = false; $("#rpform").hidden = false; $("#rpsend").hidden = false; $("#rpcancel").textContent = "Annuler";
+  var why = document.querySelector("#reportdlg .rpwhy"); if (why) why.open = false;
   rpReason = ""; $("#rpnote").value = ""; $("#rpvpn").checked = false; $("#rpcnt").textContent = "0";
   Array.prototype.forEach.call(document.querySelectorAll("#rpopts .ropt"), function (b) { b.disabled = n >= 10; b.classList.remove("on"); b.setAttribute("aria-pressed", "false"); });
   $("#rpsend").disabled = n >= 10;
